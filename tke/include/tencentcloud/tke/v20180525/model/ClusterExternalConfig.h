@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 开启第三方节点池支持配置信息
+                * 开启注册节点池支持配置信息
                 */
                 class ClusterExternalConfig : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan
-                     * @return NetworkType 集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan
+                     * 获取容器网络类型，支持：HostNetwork、CiliumBGP
+                     * @return NetworkType 容器网络类型，支持：HostNetwork、CiliumBGP
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan
-                     * @param _networkType 集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan
+                     * 设置容器网络类型，支持：HostNetwork、CiliumBGP
+                     * @param _networkType 容器网络类型，支持：HostNetwork、CiliumBGP
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取Pod CIDR
+                     * 获取集群CIDR，网络模式HostNetwork 时无需填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterCIDR Pod CIDR
+                     * @return ClusterCIDR 集群CIDR，网络模式HostNetwork 时无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterCIDR() const;
 
                     /**
-                     * 设置Pod CIDR
+                     * 设置集群CIDR，网络模式HostNetwork 时无需填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterCIDR Pod CIDR
+                     * @param _clusterCIDR 集群CIDR，网络模式HostNetwork 时无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ClusterCIDRHasBeenSet() const;
 
                     /**
-                     * 获取是否开启第三方节点池支持
-                     * @return Enabled 是否开启第三方节点池支持
+                     * 获取【已废弃】是否开启专线连接能力
+                     * @return Enabled 【已废弃】是否开启专线连接能力
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否开启第三方节点池支持
-                     * @param _enabled 是否开启第三方节点池支持
+                     * 设置【已废弃】是否开启专线连接能力
+                     * @param _enabled 【已废弃】是否开启专线连接能力
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群网络插件类型，支持：Flannel、CiliumBGP、CiliumVXLan
+                     * 容器网络类型，支持：HostNetwork、CiliumBGP
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -149,14 +149,14 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * Pod CIDR
+                     * 集群CIDR，网络模式HostNetwork 时无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterCIDR;
                     bool m_clusterCIDRHasBeenSet;
 
                     /**
-                     * 是否开启第三方节点池支持
+                     * 【已废弃】是否开启专线连接能力
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

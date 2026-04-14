@@ -34,7 +34,9 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_skipValidateOptionsHasBeenSet(false),
     m_instanceAdvancedSettingsOverridesHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false)
+    m_nodeTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -165,6 +167,29 @@ string AddExistedInstancesRequest::ToJsonString() const
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -365,6 +390,38 @@ void AddExistedInstancesRequest::SetNodeType(const string& _nodeType)
 bool AddExistedInstancesRequest::NodeTypeHasBeenSet() const
 {
     return m_nodeTypeHasBeenSet;
+}
+
+vector<Tag> AddExistedInstancesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void AddExistedInstancesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string AddExistedInstancesRequest::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void AddExistedInstancesRequest::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 
 

@@ -22,7 +22,8 @@ using namespace std;
 
 RegularNodeInfo::RegularNodeInfo() :
     m_instanceAdvancedSettingsHasBeenSet(false),
-    m_autoscalingGroupIdHasBeenSet(false)
+    m_autoscalingGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,26 @@ CoreInternalOutcome RegularNodeInfo::Deserialize(const rapidjson::Value &value)
         m_autoscalingGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegularNodeInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +101,21 @@ void RegularNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AutoscalingGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoscalingGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -115,5 +151,21 @@ void RegularNodeInfo::SetAutoscalingGroupId(const string& _autoscalingGroupId)
 bool RegularNodeInfo::AutoscalingGroupIdHasBeenSet() const
 {
     return m_autoscalingGroupIdHasBeenSet;
+}
+
+vector<Tag> RegularNodeInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void RegularNodeInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RegularNodeInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

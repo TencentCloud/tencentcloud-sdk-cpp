@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/hai/v20230812/model/DeploymentConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务ID
-                     * @return ServiceId 服务ID
+                     * 获取<p>服务ID</p>
+                     * @return ServiceId <p>服务ID</p>
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置服务ID
-                     * @param _serviceId 服务ID
+                     * 设置<p>服务ID</p>
+                     * @param _serviceId <p>服务ID</p>
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取期望副本数
-                     * @return TargetReplicas 期望副本数
+                     * 获取<p>期望副本数</p>
+                     * @return TargetReplicas <p>期望副本数</p>
                      * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
-                     * 设置期望副本数
-                     * @param _targetReplicas 期望副本数
+                     * 设置<p>期望副本数</p>
+                     * @param _targetReplicas <p>期望副本数</p>
                      * 
                      */
                     void SetTargetReplicas(const int64_t& _targetReplicas);
@@ -84,19 +85,46 @@ namespace TencentCloud
                      */
                     bool TargetReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取<p>启动参数、环境变量等参数</p>
+                     * @return DeploymentConfigs <p>启动参数、环境变量等参数</p>
+                     * 
+                     */
+                    std::vector<DeploymentConfig> GetDeploymentConfigs() const;
+
+                    /**
+                     * 设置<p>启动参数、环境变量等参数</p>
+                     * @param _deploymentConfigs <p>启动参数、环境变量等参数</p>
+                     * 
+                     */
+                    void SetDeploymentConfigs(const std::vector<DeploymentConfig>& _deploymentConfigs);
+
+                    /**
+                     * 判断参数 DeploymentConfigs 是否已赋值
+                     * @return DeploymentConfigs 是否已赋值
+                     * 
+                     */
+                    bool DeploymentConfigsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务ID
+                     * <p>服务ID</p>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 期望副本数
+                     * <p>期望副本数</p>
                      */
                     int64_t m_targetReplicas;
                     bool m_targetReplicasHasBeenSet;
+
+                    /**
+                     * <p>启动参数、环境变量等参数</p>
+                     */
+                    std::vector<DeploymentConfig> m_deploymentConfigs;
+                    bool m_deploymentConfigsHasBeenSet;
 
                 };
             }

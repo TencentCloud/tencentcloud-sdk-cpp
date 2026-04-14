@@ -134,6 +134,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否常驻实例</p>
+                     * @return Persistent <p>是否常驻实例</p>
+                     * 
+                     */
+                    bool GetPersistent() const;
+
+                    /**
+                     * 设置<p>是否常驻实例</p>
+                     * @param _persistent <p>是否常驻实例</p>
+                     * 
+                     */
+                    void SetPersistent(const bool& _persistent);
+
+                    /**
+                     * 判断参数 Persistent 是否已赋值
+                     * @return Persistent 是否已赋值
+                     * 
+                     */
+                    bool PersistentHasBeenSet() const;
+
+                    /**
                      * 获取<p>超时时间（秒），null 表示无超时设置</p>
                      * @return TimeoutSeconds <p>超时时间（秒），null 表示无超时设置</p>
                      * 
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>是否常驻实例</p>
+                     */
+                    bool m_persistent;
+                    bool m_persistentHasBeenSet;
 
                     /**
                      * <p>超时时间（秒），null 表示无超时设置</p>

@@ -63,6 +63,8 @@
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateProcessImageTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateProcessImageTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateProjectRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateProjectResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h>
@@ -131,6 +133,8 @@
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteProcessImageTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteProjectRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteProjectResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateRequest.h>
@@ -399,6 +403,8 @@
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/QueryProjectRequest.h>
+#include <tencentcloud/mps/v20190612/model/QueryProjectResponse.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeAudioRequest.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeAudioResponse.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueRequest.h>
@@ -417,6 +423,8 @@
 #include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationRequest.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationResponse.h>
+#include <tencentcloud/mps/v20190612/model/UpdateProjectRequest.h>
+#include <tencentcloud/mps/v20190612/model/UpdateProjectResponse.h>
 #include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h>
 #include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkResponse.h>
 
@@ -493,6 +501,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProcessImageTemplateResponse> CreateProcessImageTemplateOutcome;
                 typedef std::future<CreateProcessImageTemplateOutcome> CreateProcessImageTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateProcessImageTemplateRequest&, CreateProcessImageTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcessImageTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
+                typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQualityControlTemplateResponse> CreateQualityControlTemplateOutcome;
                 typedef std::future<CreateQualityControlTemplateOutcome> CreateQualityControlTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateQualityControlTemplateRequest&, CreateQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityControlTemplateAsyncHandler;
@@ -595,6 +606,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProcessImageTemplateResponse> DeleteProcessImageTemplateOutcome;
                 typedef std::future<DeleteProcessImageTemplateOutcome> DeleteProcessImageTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteProcessImageTemplateRequest&, DeleteProcessImageTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcessImageTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
+                typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQualityControlTemplateResponse> DeleteQualityControlTemplateOutcome;
                 typedef std::future<DeleteQualityControlTemplateOutcome> DeleteQualityControlTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteQualityControlTemplateRequest&, DeleteQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityControlTemplateAsyncHandler;
@@ -997,6 +1011,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryProjectResponse> QueryProjectOutcome;
+                typedef std::future<QueryProjectOutcome> QueryProjectOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::QueryProjectRequest&, QueryProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeAudioResponse> RecognizeAudioOutcome;
                 typedef std::future<RecognizeAudioOutcome> RecognizeAudioOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::RecognizeAudioRequest&, RecognizeAudioOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeAudioAsyncHandler;
@@ -1024,6 +1041,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextTranslationResponse> TextTranslationOutcome;
                 typedef std::future<TextTranslationOutcome> TextTranslationOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::TextTranslationRequest&, TextTranslationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProjectResponse> UpdateProjectOutcome;
+                typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::UpdateProjectRequest&, UpdateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawsWatermarkResponse> WithdrawsWatermarkOutcome;
                 typedef std::future<WithdrawsWatermarkOutcome> WithdrawsWatermarkOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::WithdrawsWatermarkRequest&, WithdrawsWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawsWatermarkAsyncHandler;
@@ -1213,6 +1233,15 @@ namespace TencentCloud
                 CreateProcessImageTemplateOutcome CreateProcessImageTemplate(const Model::CreateProcessImageTemplateRequest &request);
                 void CreateProcessImageTemplateAsync(const Model::CreateProcessImageTemplateRequest& request, const CreateProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProcessImageTemplateOutcomeCallable CreateProcessImageTemplateCallable(const Model::CreateProcessImageTemplateRequest& request);
+
+                /**
+                 *剧集项目创建
+                 * @param req CreateProjectRequest
+                 * @return CreateProjectOutcome
+                 */
+                CreateProjectOutcome CreateProject(const Model::CreateProjectRequest &request);
+                void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
 
                 /**
                  *创建媒体质检模板，数量上限：50。
@@ -1547,6 +1576,15 @@ namespace TencentCloud
                 DeleteProcessImageTemplateOutcome DeleteProcessImageTemplate(const Model::DeleteProcessImageTemplateRequest &request);
                 void DeleteProcessImageTemplateAsync(const Model::DeleteProcessImageTemplateRequest& request, const DeleteProcessImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProcessImageTemplateOutcomeCallable DeleteProcessImageTemplateCallable(const Model::DeleteProcessImageTemplateRequest& request);
+
+                /**
+                 *剧集项目删除接口
+                 * @param req DeleteProjectRequest
+                 * @return DeleteProjectOutcome
+                 */
+                DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest &request);
+                void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request);
 
                 /**
                  *删除媒体质检模板
@@ -2798,6 +2836,15 @@ namespace TencentCloud
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
 
                 /**
+                 *剧集项目查询
+                 * @param req QueryProjectRequest
+                 * @return QueryProjectOutcome
+                 */
+                QueryProjectOutcome QueryProject(const Model::QueryProjectRequest &request);
+                void QueryProjectAsync(const Model::QueryProjectRequest& request, const QueryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryProjectOutcomeCallable QueryProjectCallable(const Model::QueryProjectRequest& request);
+
+                /**
                  *同步接口，返回语音识别结果
                  * @param req RecognizeAudioRequest
                  * @return RecognizeAudioOutcome
@@ -2877,6 +2924,15 @@ namespace TencentCloud
                 TextTranslationOutcome TextTranslation(const Model::TextTranslationRequest &request);
                 void TextTranslationAsync(const Model::TextTranslationRequest& request, const TextTranslationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextTranslationOutcomeCallable TextTranslationCallable(const Model::TextTranslationRequest& request);
+
+                /**
+                 *剧集项目更新
+                 * @param req UpdateProjectRequest
+                 * @return UpdateProjectOutcome
+                 */
+                UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest &request);
+                void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request);
 
                 /**
                  *提取视频中的盲水印。

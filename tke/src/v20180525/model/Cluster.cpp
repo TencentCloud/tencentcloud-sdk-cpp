@@ -46,7 +46,8 @@ Cluster::Cluster() :
     m_runtimeVersionHasBeenSet(false),
     m_clusterEtcdNodeNumHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_isHighAvailabilityHasBeenSet(false)
+    m_isHighAvailabilityHasBeenSet(false),
+    m_securityModeConfigHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,23 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_isHighAvailabilityHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityModeConfig") && !value["SecurityModeConfig"].IsNull())
+    {
+        if (!value["SecurityModeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.SecurityModeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityModeConfig.Deserialize(value["SecurityModeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityModeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +571,15 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IsHighAvailability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHighAvailability, allocator);
+    }
+
+    if (m_securityModeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityModeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityModeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -972,5 +999,21 @@ void Cluster::SetIsHighAvailability(const bool& _isHighAvailability)
 bool Cluster::IsHighAvailabilityHasBeenSet() const
 {
     return m_isHighAvailabilityHasBeenSet;
+}
+
+SecurityModeConfig Cluster::GetSecurityModeConfig() const
+{
+    return m_securityModeConfig;
+}
+
+void Cluster::SetSecurityModeConfig(const SecurityModeConfig& _securityModeConfig)
+{
+    m_securityModeConfig = _securityModeConfig;
+    m_securityModeConfigHasBeenSet = true;
+}
+
+bool Cluster::SecurityModeConfigHasBeenSet() const
+{
+    return m_securityModeConfigHasBeenSet;
 }
 

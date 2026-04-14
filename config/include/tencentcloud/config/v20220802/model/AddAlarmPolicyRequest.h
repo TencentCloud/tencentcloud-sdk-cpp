@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略名
-                     * @return Name 告警策略名
+                     * 获取<p>告警策略名</p>
+                     * @return Name <p>告警策略名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警策略名
-                     * @param _name 告警策略名
+                     * 设置<p>告警策略名</p>
+                     * @param _name <p>告警策略名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取事件范围  1：当前账号  2：多账号
-                     * @return EventScope 事件范围  1：当前账号  2：多账号
+                     * 获取<p>事件类型 1：资源不合规事件</p>
+                     * @return Type <p>事件类型 1：资源不合规事件</p>
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置<p>事件类型 1：资源不合规事件</p>
+                     * @param _type <p>事件类型 1：资源不合规事件</p>
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>事件范围  1：当前账号  2：多账号</p>
+                     * @return EventScope <p>事件范围  1：当前账号  2：多账号</p>
                      * 
                      */
                     std::vector<int64_t> GetEventScope() const;
 
                     /**
-                     * 设置事件范围  1：当前账号  2：多账号
-                     * @param _eventScope 事件范围  1：当前账号  2：多账号
+                     * 设置<p>事件范围  1：当前账号  2：多账号</p>
+                     * @param _eventScope <p>事件范围  1：当前账号  2：多账号</p>
                      * 
                      */
                     void SetEventScope(const std::vector<int64_t>& _eventScope);
@@ -85,15 +106,15 @@ namespace TencentCloud
                     bool EventScopeHasBeenSet() const;
 
                     /**
-                     * 获取风险等级 1：高风险  2：中风险 3：低风险
-                     * @return RiskLevel 风险等级 1：高风险  2：中风险 3：低风险
+                     * 获取<p>风险等级 1：高风险  2：中风险 3：低风险</p>
+                     * @return RiskLevel <p>风险等级 1：高风险  2：中风险 3：低风险</p>
                      * 
                      */
                     std::vector<int64_t> GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级 1：高风险  2：中风险 3：低风险
-                     * @param _riskLevel 风险等级 1：高风险  2：中风险 3：低风险
+                     * 设置<p>风险等级 1：高风险  2：中风险 3：低风险</p>
+                     * @param _riskLevel <p>风险等级 1：高风险  2：中风险 3：低风险</p>
                      * 
                      */
                     void SetRiskLevel(const std::vector<int64_t>& _riskLevel);
@@ -106,15 +127,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取通知时间段
-                     * @return NoticeTime 通知时间段
+                     * 获取<p>通知时间段</p>
+                     * @return NoticeTime <p>通知时间段</p>
                      * 
                      */
                     std::string GetNoticeTime() const;
 
                     /**
-                     * 设置通知时间段
-                     * @param _noticeTime 通知时间段
+                     * 设置<p>通知时间段</p>
+                     * @param _noticeTime <p>通知时间段</p>
                      * 
                      */
                     void SetNoticeTime(const std::string& _noticeTime);
@@ -127,15 +148,15 @@ namespace TencentCloud
                     bool NoticeTimeHasBeenSet() const;
 
                     /**
-                     * 获取通知机制
-                     * @return NotificationMechanism 通知机制
+                     * 获取<p>通知机制</p>
+                     * @return NotificationMechanism <p>通知机制</p>
                      * 
                      */
                     std::string GetNotificationMechanism() const;
 
                     /**
-                     * 设置通知机制
-                     * @param _notificationMechanism 通知机制
+                     * 设置<p>通知机制</p>
+                     * @param _notificationMechanism <p>通知机制</p>
                      * 
                      */
                     void SetNotificationMechanism(const std::string& _notificationMechanism);
@@ -148,15 +169,15 @@ namespace TencentCloud
                     bool NotificationMechanismHasBeenSet() const;
 
                     /**
-                     * 获取状态 1：启用 2：停用
-                     * @return Status 状态 1：启用 2：停用
+                     * 获取<p>状态 1：启用 2：停用</p>
+                     * @return Status <p>状态 1：启用 2：停用</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态 1：启用 2：停用
-                     * @param _status 状态 1：启用 2：停用
+                     * 设置<p>状态 1：启用 2：停用</p>
+                     * @param _status <p>状态 1：启用 2：停用</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取通知周期
-                     * @return NoticePeriod 通知周期
+                     * 获取<p>通知周期</p>
+                     * @return NoticePeriod <p>通知周期</p>
                      * 
                      */
                     std::vector<int64_t> GetNoticePeriod() const;
 
                     /**
-                     * 设置通知周期
-                     * @param _noticePeriod 通知周期
+                     * 设置<p>通知周期</p>
+                     * @param _noticePeriod <p>通知周期</p>
                      * 
                      */
                     void SetNoticePeriod(const std::vector<int64_t>& _noticePeriod);
@@ -190,15 +211,15 @@ namespace TencentCloud
                     bool NoticePeriodHasBeenSet() const;
 
                     /**
-                     * 获取策略描述
-                     * @return Description 策略描述
+                     * 获取<p>策略描述</p>
+                     * @return Description <p>策略描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置策略描述
-                     * @param _description 策略描述
+                     * 设置<p>策略描述</p>
+                     * @param _description <p>策略描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -213,49 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略名
+                     * <p>告警策略名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 事件范围  1：当前账号  2：多账号
+                     * <p>事件类型 1：资源不合规事件</p>
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>事件范围  1：当前账号  2：多账号</p>
                      */
                     std::vector<int64_t> m_eventScope;
                     bool m_eventScopeHasBeenSet;
 
                     /**
-                     * 风险等级 1：高风险  2：中风险 3：低风险
+                     * <p>风险等级 1：高风险  2：中风险 3：低风险</p>
                      */
                     std::vector<int64_t> m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 通知时间段
+                     * <p>通知时间段</p>
                      */
                     std::string m_noticeTime;
                     bool m_noticeTimeHasBeenSet;
 
                     /**
-                     * 通知机制
+                     * <p>通知机制</p>
                      */
                     std::string m_notificationMechanism;
                     bool m_notificationMechanismHasBeenSet;
 
                     /**
-                     * 状态 1：启用 2：停用
+                     * <p>状态 1：启用 2：停用</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 通知周期
+                     * <p>通知周期</p>
                      */
                     std::vector<int64_t> m_noticePeriod;
                     bool m_noticePeriodHasBeenSet;
 
                     /**
-                     * 策略描述
+                     * <p>策略描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

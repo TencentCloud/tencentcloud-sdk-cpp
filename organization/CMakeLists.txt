@@ -318,6 +318,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DescribeShareUnitMembersRequest.h
   include/tencentcloud/organization/v20210331/model/RemoveExternalSAMLIdPCertificateRequest.h
   include/tencentcloud/organization/v20210331/model/ListPoliciesForTarget.h
+  include/tencentcloud/organization/v20210331/model/UpdateIPWhitelistRequest.h
   include/tencentcloud/organization/v20210331/model/GetUserSyncProvisioningRequest.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberAuthIdentityRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMonthRequest.h
@@ -337,6 +338,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/ListSCIMCredentialsResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationNodesRequest.h
   include/tencentcloud/organization/v20210331/model/UpdateCustomPolicyForRoleConfigurationRequest.h
+  include/tencentcloud/organization/v20210331/model/UpdateIPWhitelistResponse.h
   include/tencentcloud/organization/v20210331/model/ShareResourceToMember.h
   include/tencentcloud/organization/v20210331/model/InviteOrganizationMemberResponse.h
   include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h
@@ -688,6 +690,7 @@ set(organization_src
   src/v20210331/model/DescribeShareUnitMembersRequest.cpp
   src/v20210331/model/RemoveExternalSAMLIdPCertificateRequest.cpp
   src/v20210331/model/ListPoliciesForTarget.cpp
+  src/v20210331/model/UpdateIPWhitelistRequest.cpp
   src/v20210331/model/GetUserSyncProvisioningRequest.cpp
   src/v20210331/model/CreateOrganizationMemberAuthIdentityRequest.cpp
   src/v20210331/model/DescribeOrganizationFinancialByMonthRequest.cpp
@@ -707,6 +710,7 @@ set(organization_src
   src/v20210331/model/ListSCIMCredentialsResponse.cpp
   src/v20210331/model/DescribeOrganizationNodesRequest.cpp
   src/v20210331/model/UpdateCustomPolicyForRoleConfigurationRequest.cpp
+  src/v20210331/model/UpdateIPWhitelistResponse.cpp
   src/v20210331/model/ShareResourceToMember.cpp
   src/v20210331/model/InviteOrganizationMemberResponse.cpp
   src/v20210331/model/BindOrganizationMemberAuthAccountResponse.cpp

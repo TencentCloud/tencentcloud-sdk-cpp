@@ -26,6 +26,7 @@ SandboxTool::SandboxTool() :
     m_toolTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_persistentHasBeenSet(false),
     m_defaultTimeoutSecondsHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -92,6 +93,16 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Persistent") && !value["Persistent"].IsNull())
+    {
+        if (!value["Persistent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.Persistent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_persistent = value["Persistent"].GetBool();
+        m_persistentHasBeenSet = true;
     }
 
     if (value.HasMember("DefaultTimeoutSeconds") && !value["DefaultTimeoutSeconds"].IsNull())
@@ -282,6 +293,14 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_persistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Persistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_persistent, allocator);
+    }
+
     if (m_defaultTimeoutSecondsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -460,6 +479,22 @@ void SandboxTool::SetDescription(const string& _description)
 bool SandboxTool::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool SandboxTool::GetPersistent() const
+{
+    return m_persistent;
+}
+
+void SandboxTool::SetPersistent(const bool& _persistent)
+{
+    m_persistent = _persistent;
+    m_persistentHasBeenSet = true;
+}
+
+bool SandboxTool::PersistentHasBeenSet() const
+{
+    return m_persistentHasBeenSet;
 }
 
 uint64_t SandboxTool::GetDefaultTimeoutSeconds() const

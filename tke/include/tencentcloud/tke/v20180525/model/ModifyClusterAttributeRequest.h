@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/AutoUpgradeClusterLevel.h>
 #include <tencentcloud/tke/v20180525/model/ClusterProperty.h>
+#include <tencentcloud/tke/v20180525/model/SecurityModeConfig.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/457/31862">DescribeClusters</a></p>
+                     * @return ClusterId <p>集群ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/457/31862">DescribeClusters</a></p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/457/31862">DescribeClusters</a></p>
+                     * @param _clusterId <p>集群ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/457/31862">DescribeClusters</a></p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群所属项目
-                     * @return ProjectId 集群所属项目
+                     * 获取<p>集群所属项目</p>
+                     * @return ProjectId <p>集群所属项目</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置集群所属项目
-                     * @param _projectId 集群所属项目
+                     * 设置<p>集群所属项目</p>
+                     * @param _projectId <p>集群所属项目</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -87,15 +88,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称,字符长度50
-                     * @return ClusterName 集群名称,字符长度50
+                     * 获取<p>集群名称,字符长度50</p>
+                     * @return ClusterName <p>集群名称,字符长度50</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称,字符长度50
-                     * @param _clusterName 集群名称,字符长度50
+                     * 设置<p>集群名称,字符长度50</p>
+                     * @param _clusterName <p>集群名称,字符长度50</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -108,15 +109,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群描述
-                     * @return ClusterDesc 集群描述
+                     * 获取<p>集群描述</p>
+                     * @return ClusterDesc <p>集群描述</p>
                      * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
-                     * 设置集群描述
-                     * @param _clusterDesc 集群描述
+                     * 设置<p>集群描述</p>
+                     * @param _clusterDesc <p>集群描述</p>
                      * 
                      */
                     void SetClusterDesc(const std::string& _clusterDesc);
@@ -129,15 +130,15 @@ namespace TencentCloud
                     bool ClusterDescHasBeenSet() const;
 
                     /**
-                     * 获取集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
-                     * @return ClusterLevel 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * 获取<p>集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000</p>
+                     * @return ClusterLevel <p>集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000</p>
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
-                     * 设置集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
-                     * @param _clusterLevel 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * 设置<p>集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000</p>
+                     * @param _clusterLevel <p>集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000</p>
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -150,15 +151,15 @@ namespace TencentCloud
                     bool ClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取自动变配集群等级
-                     * @return AutoUpgradeClusterLevel 自动变配集群等级
+                     * 获取<p>自动变配集群等级</p>
+                     * @return AutoUpgradeClusterLevel <p>自动变配集群等级</p>
                      * 
                      */
                     AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
 
                     /**
-                     * 设置自动变配集群等级
-                     * @param _autoUpgradeClusterLevel 自动变配集群等级
+                     * 设置<p>自动变配集群等级</p>
+                     * @param _autoUpgradeClusterLevel <p>自动变配集群等级</p>
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const AutoUpgradeClusterLevel& _autoUpgradeClusterLevel);
@@ -171,15 +172,15 @@ namespace TencentCloud
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启QGPU共享
-                     * @return QGPUShareEnable 是否开启QGPU共享
+                     * 获取<p>是否开启QGPU共享</p>
+                     * @return QGPUShareEnable <p>是否开启QGPU共享</p>
                      * 
                      */
                     bool GetQGPUShareEnable() const;
 
                     /**
-                     * 设置是否开启QGPU共享
-                     * @param _qGPUShareEnable 是否开启QGPU共享
+                     * 设置<p>是否开启QGPU共享</p>
+                     * @param _qGPUShareEnable <p>是否开启QGPU共享</p>
                      * 
                      */
                     void SetQGPUShareEnable(const bool& _qGPUShareEnable);
@@ -192,15 +193,15 @@ namespace TencentCloud
                     bool QGPUShareEnableHasBeenSet() const;
 
                     /**
-                     * 获取集群属性
-                     * @return ClusterProperty 集群属性
+                     * 获取<p>集群属性</p>
+                     * @return ClusterProperty <p>集群属性</p>
                      * 
                      */
                     ClusterProperty GetClusterProperty() const;
 
                     /**
-                     * 设置集群属性
-                     * @param _clusterProperty 集群属性
+                     * 设置<p>集群属性</p>
+                     * @param _clusterProperty <p>集群属性</p>
                      * 
                      */
                     void SetClusterProperty(const ClusterProperty& _clusterProperty);
@@ -213,15 +214,15 @@ namespace TencentCloud
                     bool ClusterPropertyHasBeenSet() const;
 
                     /**
-                     * 获取集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
-                     * @return IsHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 获取<p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
+                     * @return IsHighAvailability <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      * 
                      */
                     bool GetIsHighAvailability() const;
 
                     /**
-                     * 设置集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
-                     * @param _isHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 设置<p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
+                     * @param _isHighAvailability <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      * 
                      */
                     void SetIsHighAvailability(const bool& _isHighAvailability);
@@ -233,61 +234,88 @@ namespace TencentCloud
                      */
                     bool IsHighAvailabilityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群安全模式配置</p>
+                     * @return SecurityModeConfig <p>集群安全模式配置</p>
+                     * 
+                     */
+                    SecurityModeConfig GetSecurityModeConfig() const;
+
+                    /**
+                     * 设置<p>集群安全模式配置</p>
+                     * @param _securityModeConfig <p>集群安全模式配置</p>
+                     * 
+                     */
+                    void SetSecurityModeConfig(const SecurityModeConfig& _securityModeConfig);
+
+                    /**
+                     * 判断参数 SecurityModeConfig 是否已赋值
+                     * @return SecurityModeConfig 是否已赋值
+                     * 
+                     */
+                    bool SecurityModeConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/457/31862">DescribeClusters</a></p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群所属项目
+                     * <p>集群所属项目</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 集群名称,字符长度50
+                     * <p>集群名称,字符长度50</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群描述
+                     * <p>集群描述</p>
                      */
                     std::string m_clusterDesc;
                     bool m_clusterDescHasBeenSet;
 
                     /**
-                     * 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * <p>集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000</p>
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;
 
                     /**
-                     * 自动变配集群等级
+                     * <p>自动变配集群等级</p>
                      */
                     AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
-                     * 是否开启QGPU共享
+                     * <p>是否开启QGPU共享</p>
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;
 
                     /**
-                     * 集群属性
+                     * <p>集群属性</p>
                      */
                     ClusterProperty m_clusterProperty;
                     bool m_clusterPropertyHasBeenSet;
 
                     /**
-                     * 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      */
                     bool m_isHighAvailability;
                     bool m_isHighAvailabilityHasBeenSet;
+
+                    /**
+                     * <p>集群安全模式配置</p>
+                     */
+                    SecurityModeConfig m_securityModeConfig;
+                    bool m_securityModeConfigHasBeenSet;
 
                 };
             }

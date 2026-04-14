@@ -198,15 +198,15 @@ major 大版本原地升级
                     bool SkipPreCheckHasBeenSet() const;
 
                     /**
-                     * 获取最大可容忍的不可用Pod比例
-                     * @return MaxNotReadyPercent 最大可容忍的不可用Pod比例
+                     * 获取最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
+                     * @return MaxNotReadyPercent 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
                      * 
                      */
                     double GetMaxNotReadyPercent() const;
 
                     /**
-                     * 设置最大可容忍的不可用Pod比例
-                     * @param _maxNotReadyPercent 最大可容忍的不可用Pod比例
+                     * 设置最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
+                     * @param _maxNotReadyPercent 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
                      * 
                      */
                     void SetMaxNotReadyPercent(const double& _maxNotReadyPercent);
@@ -238,6 +238,27 @@ major 大版本原地升级
                      * 
                      */
                     bool UpgradeRunTimeHasBeenSet() const;
+
+                    /**
+                     * 获取支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * @return Concurrent 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * 
+                     */
+                    int64_t GetConcurrent() const;
+
+                    /**
+                     * 设置支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * @param _concurrent 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     * 
+                     */
+                    void SetConcurrent(const int64_t& _concurrent);
+
+                    /**
+                     * 判断参数 Concurrent 是否已赋值
+                     * @return Concurrent 是否已赋值
+                     * 
+                     */
+                    bool ConcurrentHasBeenSet() const;
 
                 private:
 
@@ -285,7 +306,7 @@ major 大版本原地升级
                     bool m_skipPreCheckHasBeenSet;
 
                     /**
-                     * 最大可容忍的不可用Pod比例
+                     * 最大可容忍的不可用Pod比例，如果设置 0 表示不做校验
                      */
                     double m_maxNotReadyPercent;
                     bool m_maxNotReadyPercentHasBeenSet;
@@ -295,6 +316,12 @@ major 大版本原地升级
                      */
                     bool m_upgradeRunTime;
                     bool m_upgradeRunTimeHasBeenSet;
+
+                    /**
+                     * 支持多个节点并行升级，默认值为 1，最大并行数为15
+                     */
+                    int64_t m_concurrent;
+                    bool m_concurrentHasBeenSet;
 
                 };
             }

@@ -1643,7 +1643,7 @@ namespace TencentCloud
                 CreateEksLogConfigOutcomeCallable CreateEksLogConfigCallable(const Model::CreateEksLogConfigRequest& request);
 
                 /**
-                 *创建第三方节点池
+                 *创建注册节点池
                  * @param req CreateExternalNodePoolRequest
                  * @return CreateExternalNodePoolOutcome
                  */
@@ -1940,7 +1940,7 @@ namespace TencentCloud
                 DeleteEdgeClusterInstancesOutcomeCallable DeleteEdgeClusterInstancesCallable(const Model::DeleteEdgeClusterInstancesRequest& request);
 
                 /**
-                 *删除第三方节点
+                 *删除注册节点
                  * @param req DeleteExternalNodeRequest
                  * @return DeleteExternalNodeOutcome
                  */
@@ -1949,7 +1949,7 @@ namespace TencentCloud
                 DeleteExternalNodeOutcomeCallable DeleteExternalNodeCallable(const Model::DeleteExternalNodeRequest& request);
 
                 /**
-                 *删除第三方节点池
+                 *删除注册节点池
                  * @param req DeleteExternalNodePoolRequest
                  * @return DeleteExternalNodePoolOutcome
                  */
@@ -2588,7 +2588,7 @@ namespace TencentCloud
                 DescribeExistedInstancesOutcomeCallable DescribeExistedInstancesCallable(const Model::DescribeExistedInstancesRequest& request);
 
                 /**
-                 *查看第三方节点列表
+                 *查看注册节点列表
                  * @param req DescribeExternalNodeRequest
                  * @return DescribeExternalNodeOutcome
                  */
@@ -2597,7 +2597,7 @@ namespace TencentCloud
                 DescribeExternalNodeOutcomeCallable DescribeExternalNodeCallable(const Model::DescribeExternalNodeRequest& request);
 
                 /**
-                 *查看第三方节点池列表
+                 *查看注册节点池列表
                  * @param req DescribeExternalNodePoolsRequest
                  * @return DescribeExternalNodePoolsOutcome
                  */
@@ -2606,7 +2606,7 @@ namespace TencentCloud
                 DescribeExternalNodePoolsOutcomeCallable DescribeExternalNodePoolsCallable(const Model::DescribeExternalNodePoolsRequest& request);
 
                 /**
-                 *获取第三方节点添加脚本
+                 *获取注册节点初始化脚本
                  * @param req DescribeExternalNodeScriptRequest
                  * @return DescribeExternalNodeScriptOutcome
                  */
@@ -2615,7 +2615,7 @@ namespace TencentCloud
                 DescribeExternalNodeScriptOutcomeCallable DescribeExternalNodeScriptCallable(const Model::DescribeExternalNodeScriptRequest& request);
 
                 /**
-                 *查看开启第三方节点池配置信息
+                 *查看开启注册节点池配置信息
                  * @param req DescribeExternalNodeSupportConfigRequest
                  * @return DescribeExternalNodeSupportConfigOutcome
                  */
@@ -3146,7 +3146,7 @@ namespace TencentCloud
                 DrainClusterVirtualNodeOutcomeCallable DrainClusterVirtualNodeCallable(const Model::DrainClusterVirtualNodeRequest& request);
 
                 /**
-                 *驱逐第三方节点
+                 *驱逐注册节点
                  * @param req DrainExternalNodeRequest
                  * @return DrainExternalNodeOutcome
                  */
@@ -3209,7 +3209,7 @@ namespace TencentCloud
                 EnableEventPersistenceOutcomeCallable EnableEventPersistenceCallable(const Model::EnableEventPersistenceRequest& request);
 
                 /**
-                 *开启第三方节点池支持
+                 *开启注册节点池支持
                  * @param req EnableExternalNodeSupportRequest
                  * @return EnableExternalNodeSupportOutcome
                  */
@@ -3461,7 +3461,7 @@ namespace TencentCloud
                 ModifyClusterVirtualNodePoolOutcomeCallable ModifyClusterVirtualNodePoolCallable(const Model::ModifyClusterVirtualNodePoolRequest& request);
 
                 /**
-                 *修改第三方节点池
+                 *修改注册节点池
                  * @param req ModifyExternalNodePoolRequest
                  * @return ModifyExternalNodePoolOutcome
                  */

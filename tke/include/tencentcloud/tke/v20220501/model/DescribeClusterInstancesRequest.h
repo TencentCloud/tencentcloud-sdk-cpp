@@ -153,6 +153,27 @@ InstanceIds(实例ID),InstanceType(实例类型：Regular，Native，Super，Ext
                      */
                     bool SortByHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回节点云标签
+                     * @return NeedTags 是否返回节点云标签
+                     * 
+                     */
+                    bool GetNeedTags() const;
+
+                    /**
+                     * 设置是否返回节点云标签
+                     * @param _needTags 是否返回节点云标签
+                     * 
+                     */
+                    void SetNeedTags(const bool& _needTags);
+
+                    /**
+                     * 判断参数 NeedTags 是否已赋值
+                     * @return NeedTags 是否已赋值
+                     * 
+                     */
+                    bool NeedTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +206,12 @@ InstanceIds(实例ID),InstanceType(实例类型：Regular，Native，Super，Ext
                      */
                     SortBy m_sortBy;
                     bool m_sortByHasBeenSet;
+
+                    /**
+                     * 是否返回节点云标签
+                     */
+                    bool m_needTags;
+                    bool m_needTagsHasBeenSet;
 
                 };
             }

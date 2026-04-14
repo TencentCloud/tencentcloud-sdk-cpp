@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取算式高度
-                     * @return Height 算式高度
+                     * 获取<p>算式高度（单位：px）</p>
+                     * @return Height <p>算式高度（单位：px）</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置算式高度
-                     * @param _height 算式高度
+                     * 设置<p>算式高度（单位：px）</p>
+                     * @param _height <p>算式高度（单位：px）</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取算式宽度
-                     * @return Width 算式宽度
+                     * 获取<p>算式宽度（单位：px）</p>
+                     * @return Width <p>算式宽度（单位：px）</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置算式宽度
-                     * @param _width 算式宽度
+                     * 设置<p>算式宽度（单位：px）</p>
+                     * @param _width <p>算式宽度（单位：px）</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取算式图的左上角横坐标
-                     * @return X 算式图的左上角横坐标
+                     * 获取<p>算式图的左上角横坐标</p>
+                     * @return X <p>算式图的左上角横坐标</p>
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
-                     * 设置算式图的左上角横坐标
-                     * @param _x 算式图的左上角横坐标
+                     * 设置<p>算式图的左上角横坐标</p>
+                     * @param _x <p>算式图的左上角横坐标</p>
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取算式图的左上角纵坐标
-                     * @return Y 算式图的左上角纵坐标
+                     * 获取<p>算式图的左上角纵坐标</p>
+                     * @return Y <p>算式图的左上角纵坐标</p>
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
-                     * 设置算式图的左上角纵坐标
-                     * @param _y 算式图的左上角纵坐标
+                     * 设置<p>算式图的左上角纵坐标</p>
+                     * @param _y <p>算式图的左上角纵坐标</p>
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 算式高度
+                     * <p>算式高度（单位：px）</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 算式宽度
+                     * <p>算式宽度（单位：px）</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 算式图的左上角横坐标
+                     * <p>算式图的左上角横坐标</p>
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * 算式图的左上角纵坐标
+                     * <p>算式图的左上角纵坐标</p>
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;

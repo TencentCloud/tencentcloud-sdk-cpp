@@ -157,6 +157,27 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否常驻沙箱</p>
+                     * @return Persistent <p>是否常驻沙箱</p>
+                     * 
+                     */
+                    bool GetPersistent() const;
+
+                    /**
+                     * 设置<p>是否常驻沙箱</p>
+                     * @param _persistent <p>是否常驻沙箱</p>
+                     * 
+                     */
+                    void SetPersistent(const bool& _persistent);
+
+                    /**
+                     * 判断参数 Persistent 是否已赋值
+                     * @return Persistent 是否已赋值
+                     * 
+                     */
+                    bool PersistentHasBeenSet() const;
+
+                    /**
                      * 获取<p>默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时</p>
                      * @return DefaultTimeoutSeconds <p>默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时</p>
                      * 
@@ -397,6 +418,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>是否常驻沙箱</p>
+                     */
+                    bool m_persistent;
+                    bool m_persistentHasBeenSet;
 
                     /**
                      * <p>默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时</p>

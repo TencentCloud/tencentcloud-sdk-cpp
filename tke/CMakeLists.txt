@@ -630,6 +630,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterExtraArgsResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
   include/tencentcloud/tke/v20180525/model/SwitchClusterEndpointResponse.h
+  include/tencentcloud/tke/v20180525/model/SecurityModeConfig.h
   include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h
   include/tencentcloud/tke/v20180525/model/DisableEventPersistenceRequest.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
@@ -1468,6 +1469,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterExtraArgsResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp
   src/v20180525/model/SwitchClusterEndpointResponse.cpp
+  src/v20180525/model/SecurityModeConfig.cpp
   src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.cpp
   src/v20180525/model/DisableEventPersistenceRequest.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp

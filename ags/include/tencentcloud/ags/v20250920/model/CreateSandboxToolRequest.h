@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool LogConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>常驻沙箱标识</p>
+                     * @return Persistent <p>常驻沙箱标识</p>
+                     * 
+                     */
+                    bool GetPersistent() const;
+
+                    /**
+                     * 设置<p>常驻沙箱标识</p>
+                     * @param _persistent <p>常驻沙箱标识</p>
+                     * 
+                     */
+                    void SetPersistent(const bool& _persistent);
+
+                    /**
+                     * 判断参数 Persistent 是否已赋值
+                     * @return Persistent 是否已赋值
+                     * 
+                     */
+                    bool PersistentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     LogConfiguration m_logConfiguration;
                     bool m_logConfigurationHasBeenSet;
+
+                    /**
+                     * <p>常驻沙箱标识</p>
+                     */
+                    bool m_persistent;
+                    bool m_persistentHasBeenSet;
 
                 };
             }

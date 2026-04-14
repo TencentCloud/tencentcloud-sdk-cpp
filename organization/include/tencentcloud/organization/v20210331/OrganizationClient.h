@@ -259,6 +259,8 @@
 #include <tencentcloud/organization/v20210331/model/UpdateCustomPolicyForRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateGroupRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateGroupResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateIPWhitelistRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateIPWhitelistResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h>
@@ -655,6 +657,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateGroupResponse> UpdateGroupOutcome;
                 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateGroupRequest&, UpdateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateIPWhitelistResponse> UpdateIPWhitelistOutcome;
+                typedef std::future<UpdateIPWhitelistOutcome> UpdateIPWhitelistOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateIPWhitelistRequest&, UpdateIPWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIPWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationIdentityResponse> UpdateOrganizationIdentityOutcome;
                 typedef std::future<UpdateOrganizationIdentityOutcome> UpdateOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationIdentityRequest&, UpdateOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationIdentityAsyncHandler;
@@ -1761,6 +1766,15 @@ namespace TencentCloud
                 UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest &request);
                 void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request);
+
+                /**
+                 *更新新建ip白名单
+                 * @param req UpdateIPWhitelistRequest
+                 * @return UpdateIPWhitelistOutcome
+                 */
+                UpdateIPWhitelistOutcome UpdateIPWhitelist(const Model::UpdateIPWhitelistRequest &request);
+                void UpdateIPWhitelistAsync(const Model::UpdateIPWhitelistRequest& request, const UpdateIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateIPWhitelistOutcomeCallable UpdateIPWhitelistCallable(const Model::UpdateIPWhitelistRequest& request);
 
                 /**
                  *更新组织身份

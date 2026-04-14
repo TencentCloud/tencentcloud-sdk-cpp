@@ -34,7 +34,10 @@ SuperNodeInfo::SuperNodeInfo() :
     m_activeAtHasBeenSet(false),
     m_expireAtHasBeenSet(false),
     m_maxCPUScheduledPodHasBeenSet(false),
-    m_instanceAttributeHasBeenSet(false)
+    m_instanceAttributeHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -183,6 +186,36 @@ CoreInternalOutcome SuperNodeInfo::Deserialize(const rapidjson::Value &value)
         m_instanceAttributeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeInfo.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeInfo.Duration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = string(value["Duration"].GetString());
+        m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +333,30 @@ void SuperNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceAttribute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceAttribute.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_duration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +584,53 @@ void SuperNodeInfo::SetInstanceAttribute(const string& _instanceAttribute)
 bool SuperNodeInfo::InstanceAttributeHasBeenSet() const
 {
     return m_instanceAttributeHasBeenSet;
+}
+
+string SuperNodeInfo::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void SuperNodeInfo::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool SuperNodeInfo::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+string SuperNodeInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void SuperNodeInfo::SetDuration(const string& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool SuperNodeInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
+}
+
+string SuperNodeInfo::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void SuperNodeInfo::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool SuperNodeInfo::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h>
+#include <tencentcloud/tke/v20220501/model/Tag.h>
 
 
 namespace TencentCloud
@@ -97,6 +98,31 @@ namespace TencentCloud
                      */
                     bool AutoscalingGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取普通节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 普通节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置普通节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 普通节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +138,13 @@ namespace TencentCloud
                      */
                     std::string m_autoscalingGroupId;
                     bool m_autoscalingGroupIdHasBeenSet;
+
+                    /**
+                     * 普通节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

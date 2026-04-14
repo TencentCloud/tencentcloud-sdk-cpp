@@ -28,6 +28,7 @@
 #include <tencentcloud/tke/v20220501/model/InternetAccessible.h>
 #include <tencentcloud/tke/v20220501/model/GPUParams.h>
 #include <tencentcloud/tke/v20220501/model/DataDisk.h>
+#include <tencentcloud/tke/v20220501/model/Tag.h>
 
 
 namespace TencentCloud
@@ -731,6 +732,31 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取原生节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 原生节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置原生节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 原生节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -924,6 +950,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 原生节点云标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

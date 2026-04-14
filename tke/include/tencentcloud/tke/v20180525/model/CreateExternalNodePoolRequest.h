@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点label
-                     * @return Labels 第三方节点label
+                     * 获取注册节点标签
+                     * @return Labels 注册节点标签
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置第三方节点label
-                     * @param _labels 第三方节点label
+                     * 设置注册节点标签
+                     * @param _labels 注册节点标签
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点taint
-                     * @return Taints 第三方节点taint
+                     * 获取注册节点污点
+                     * @return Taints 注册节点污点
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置第三方节点taint
-                     * @param _taints 第三方节点taint
+                     * 设置注册节点污点
+                     * @param _taints 注册节点污点
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点高级设置
-                     * @return InstanceAdvancedSettings 第三方节点高级设置
+                     * 获取注册节点高级设置
+                     * @return InstanceAdvancedSettings 注册节点高级设置
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
-                     * 设置第三方节点高级设置
-                     * @param _instanceAdvancedSettings 第三方节点高级设置
+                     * 设置注册节点高级设置
+                     * @param _instanceAdvancedSettings 注册节点高级设置
                      * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
-                     * @return NodeType 节点类型
+                     * 获取节点类型，支持 CPU、GPU
+                     * @return NodeType 节点类型，支持 CPU、GPU
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型
-                     * @param _nodeType 节点类型
+                     * 设置节点类型，支持 CPU、GPU
+                     * @param _nodeType 节点类型，支持 CPU、GPU
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -261,19 +261,19 @@ namespace TencentCloud
                     bool m_runtimeVersionHasBeenSet;
 
                     /**
-                     * 第三方节点label
+                     * 注册节点标签
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 第三方节点taint
+                     * 注册节点污点
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 第三方节点高级设置
+                     * 注册节点高级设置
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * 节点类型，支持 CPU、GPU
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点列表
-                     * @return Names 第三方节点列表
+                     * 获取注册节点列表
+                     * @return Names 注册节点列表
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置第三方节点列表
-                     * @param _names 第三方节点列表
+                     * 设置注册节点列表
+                     * @param _names 注册节点列表
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamesHasBeenSet() const;
 
                     /**
-                     * 获取是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除
-                     * @return Force 是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * 获取是否强制删除：如果注册节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * @return Force 是否强制删除：如果注册节点上有运行中Pod，则非强制删除状态下不会进行删除
                      * 
                      */
                     bool GetForce() const;
 
                     /**
-                     * 设置是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除
-                     * @param _force 是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * 设置是否强制删除：如果注册节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * @param _force 是否强制删除：如果注册节点上有运行中Pod，则非强制删除状态下不会进行删除
                      * 
                      */
                     void SetForce(const bool& _force);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 第三方节点列表
+                     * 注册节点列表
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
 
                     /**
-                     * 是否强制删除：如果第三方节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * 是否强制删除：如果注册节点上有运行中Pod，则非强制删除状态下不会进行删除
                      */
                     bool m_force;
                     bool m_forceHasBeenSet;

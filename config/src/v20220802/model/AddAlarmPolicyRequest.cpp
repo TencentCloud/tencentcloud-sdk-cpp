@@ -24,6 +24,7 @@ using namespace std;
 
 AddAlarmPolicyRequest::AddAlarmPolicyRequest() :
     m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_eventScopeHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
     m_noticeTimeHasBeenSet(false),
@@ -47,6 +48,14 @@ string AddAlarmPolicyRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
     if (m_eventScopeHasBeenSet)
@@ -142,6 +151,22 @@ void AddAlarmPolicyRequest::SetName(const string& _name)
 bool AddAlarmPolicyRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+int64_t AddAlarmPolicyRequest::GetType() const
+{
+    return m_type;
+}
+
+void AddAlarmPolicyRequest::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AddAlarmPolicyRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 vector<int64_t> AddAlarmPolicyRequest::GetEventScope() const

@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点池列表
+                     * 获取注册节点池列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodePoolSet 第三方节点池列表
+                     * @return NodePoolSet 注册节点池列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -86,7 +86,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 第三方节点池列表
+                     * 注册节点池列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExternalNodePool> m_nodePoolSet;

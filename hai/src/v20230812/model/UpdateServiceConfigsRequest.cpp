@@ -24,7 +24,8 @@ using namespace std;
 
 UpdateServiceConfigsRequest::UpdateServiceConfigsRequest() :
     m_serviceIdHasBeenSet(false),
-    m_targetReplicasHasBeenSet(false)
+    m_targetReplicasHasBeenSet(false),
+    m_deploymentConfigsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string UpdateServiceConfigsRequest::ToJsonString() const
         string key = "TargetReplicas";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_targetReplicas, allocator);
+    }
+
+    if (m_deploymentConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deploymentConfigs.begin(); itr != m_deploymentConfigs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void UpdateServiceConfigsRequest::SetTargetReplicas(const int64_t& _targetReplic
 bool UpdateServiceConfigsRequest::TargetReplicasHasBeenSet() const
 {
     return m_targetReplicasHasBeenSet;
+}
+
+vector<DeploymentConfig> UpdateServiceConfigsRequest::GetDeploymentConfigs() const
+{
+    return m_deploymentConfigs;
+}
+
+void UpdateServiceConfigsRequest::SetDeploymentConfigs(const vector<DeploymentConfig>& _deploymentConfigs)
+{
+    m_deploymentConfigs = _deploymentConfigs;
+    m_deploymentConfigsHasBeenSet = true;
+}
+
+bool UpdateServiceConfigsRequest::DeploymentConfigsHasBeenSet() const
+{
+    return m_deploymentConfigsHasBeenSet;
 }
 
 

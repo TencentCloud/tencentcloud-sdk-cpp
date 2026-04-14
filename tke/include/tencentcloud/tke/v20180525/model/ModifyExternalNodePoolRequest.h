@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点label
-                     * @return Labels 第三方节点label
+                     * 获取注册节点标签
+                     * @return Labels 注册节点标签
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置第三方节点label
-                     * @param _labels 第三方节点label
+                     * 设置注册节点标签
+                     * @param _labels 注册节点标签
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点taint
-                     * @return Taints 第三方节点taint
+                     * 获取注册节点污点
+                     * @return Taints 注册节点污点
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置第三方节点taint
-                     * @param _taints 第三方节点taint
+                     * 设置注册节点污点
+                     * @param _taints 注册节点污点
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -212,13 +212,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 第三方节点label
+                     * 注册节点标签
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 第三方节点taint
+                     * 注册节点污点
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;

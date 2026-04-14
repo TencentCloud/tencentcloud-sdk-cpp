@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ClusterCIDRHasBeenSet() const;
 
                     /**
-                     * 获取集群网络插件类型，支持：CiliumBGP、CiliumVXLan
-                     * @return NetworkType 集群网络插件类型，支持：CiliumBGP、CiliumVXLan
+                     * 获取集群网络插件类型，支持：CiliumOverlay、HostNetwork
+                     * @return NetworkType 集群网络插件类型，支持：CiliumOverlay、HostNetwork
                      * 
                      */
                     std::string GetNetworkType() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启第三方节点专线连接支持
-                     * @return Enabled 是否开启第三方节点专线连接支持
+                     * 获取是否开启注册节点专线连接支持
+                     * @return Enabled 是否开启注册节点专线连接支持
                      * 
                      */
                     bool GetEnabled() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool SwitchIPHasBeenSet() const;
 
                     /**
-                     * 获取开启第三方节点池状态
-                     * @return Status 开启第三方节点池状态
+                     * 获取开启注册节点池状态，支持 Initializing、InitFailed、Enabled、Disabled
+                     * @return Status 开启注册节点池状态，支持 Initializing、InitFailed、Enabled、Disabled
                      * 
                      */
                     std::string GetStatus() const;
@@ -185,9 +185,9 @@ namespace TencentCloud
                     bool ProxyHasBeenSet() const;
 
                     /**
-                     * 获取用于记录开启第三方节点的过程进行到哪一步了
+                     * 获取开启注册节点能力的进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Progress 用于记录开启第三方节点的过程进行到哪一步了
+                     * @return Progress 开启注册节点能力的进度
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,8 +201,8 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取是否开启第三方节点公网连接支持
-                     * @return EnabledPublicConnect 是否开启第三方节点公网连接支持
+                     * 获取是否开启注册节点公网连接支持
+                     * @return EnabledPublicConnect 是否开启注册节点公网连接支持
                      * 
                      */
                     bool GetEnabledPublicConnect() const;
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_clusterCIDRHasBeenSet;
 
                     /**
-                     * 集群网络插件类型，支持：CiliumBGP、CiliumVXLan
+                     * 集群网络插件类型，支持：CiliumOverlay、HostNetwork
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 是否开启第三方节点专线连接支持
+                     * 是否开启注册节点专线连接支持
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
@@ -281,7 +281,7 @@ namespace TencentCloud
                     bool m_switchIPHasBeenSet;
 
                     /**
-                     * 开启第三方节点池状态
+                     * 开启注册节点池状态，支持 Initializing、InitFailed、Enabled、Disabled
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -305,14 +305,14 @@ namespace TencentCloud
                     bool m_proxyHasBeenSet;
 
                     /**
-                     * 用于记录开启第三方节点的过程进行到哪一步了
+                     * 开启注册节点能力的进度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Step> m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 是否开启第三方节点公网连接支持
+                     * 是否开启注册节点公网连接支持
                      */
                     bool m_enabledPublicConnect;
                     bool m_enabledPublicConnectHasBeenSet;

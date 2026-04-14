@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取注册节点池ID
+                     * @return NodePoolId 注册节点池ID
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置注册节点池ID
+                     * @param _nodePoolId 注册节点池ID
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池ID
+                     * 注册节点池ID
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;

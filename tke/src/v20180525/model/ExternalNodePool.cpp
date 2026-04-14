@@ -30,7 +30,8 @@ ExternalNodePool::ExternalNodePool() :
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_instanceAdvancedSettingsHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome ExternalNodePool::Deserialize(const rapidjson::Value &value)
         m_deletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalNodePool.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +285,14 @@ void ExternalNodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -437,5 +456,21 @@ void ExternalNodePool::SetDeletionProtection(const bool& _deletionProtection)
 bool ExternalNodePool::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string ExternalNodePool::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void ExternalNodePool::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool ExternalNodePool::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
 }
 

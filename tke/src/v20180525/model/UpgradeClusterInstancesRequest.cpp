@@ -30,7 +30,8 @@ UpgradeClusterInstancesRequest::UpgradeClusterInstancesRequest() :
     m_resetParamHasBeenSet(false),
     m_skipPreCheckHasBeenSet(false),
     m_maxNotReadyPercentHasBeenSet(false),
-    m_upgradeRunTimeHasBeenSet(false)
+    m_upgradeRunTimeHasBeenSet(false),
+    m_concurrentHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string UpgradeClusterInstancesRequest::ToJsonString() const
         string key = "UpgradeRunTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_upgradeRunTime, allocator);
+    }
+
+    if (m_concurrentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Concurrent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_concurrent, allocator);
     }
 
 
@@ -245,6 +254,22 @@ void UpgradeClusterInstancesRequest::SetUpgradeRunTime(const bool& _upgradeRunTi
 bool UpgradeClusterInstancesRequest::UpgradeRunTimeHasBeenSet() const
 {
     return m_upgradeRunTimeHasBeenSet;
+}
+
+int64_t UpgradeClusterInstancesRequest::GetConcurrent() const
+{
+    return m_concurrent;
+}
+
+void UpgradeClusterInstancesRequest::SetConcurrent(const int64_t& _concurrent)
+{
+    m_concurrent = _concurrent;
+    m_concurrentHasBeenSet = true;
+}
+
+bool UpgradeClusterInstancesRequest::ConcurrentHasBeenSet() const
+{
+    return m_concurrentHasBeenSet;
 }
 
 

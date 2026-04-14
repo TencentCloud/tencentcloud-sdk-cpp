@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-CreateAuditKeywordLibResponse::CreateAuditKeywordLibResponse()
+CreateAuditKeywordLibResponse::CreateAuditKeywordLibResponse() :
+    m_libIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateAuditKeywordLibResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("LibId") && !rsp["LibId"].IsNull())
+    {
+        if (!rsp["LibId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LibId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_libId = string(rsp["LibId"].GetString());
+        m_libIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateAuditKeywordLibResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_libIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateAuditKeywordLibResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAuditKeywordLibResponse::GetLibId() const
+{
+    return m_libId;
+}
+
+bool CreateAuditKeywordLibResponse::LibIdHasBeenSet() const
+{
+    return m_libIdHasBeenSet;
+}
 
 

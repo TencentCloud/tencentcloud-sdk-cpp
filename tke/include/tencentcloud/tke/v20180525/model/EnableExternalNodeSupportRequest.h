@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取开启第三方节点池支持配置信息
-                     * @return ClusterExternalConfig 开启第三方节点池支持配置信息
+                     * 获取开启注册节点池支持配置信息
+                     * @return ClusterExternalConfig 开启注册节点池支持配置信息
                      * 
                      */
                     ClusterExternalConfig GetClusterExternalConfig() const;
 
                     /**
-                     * 设置开启第三方节点池支持配置信息
-                     * @param _clusterExternalConfig 开启第三方节点池支持配置信息
+                     * 设置开启注册节点池支持配置信息
+                     * @param _clusterExternalConfig 开启注册节点池支持配置信息
                      * 
                      */
                     void SetClusterExternalConfig(const ClusterExternalConfig& _clusterExternalConfig);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 开启第三方节点池支持配置信息
+                     * 开启注册节点池支持配置信息
                      */
                     ClusterExternalConfig m_clusterExternalConfig;
                     bool m_clusterExternalConfigHasBeenSet;

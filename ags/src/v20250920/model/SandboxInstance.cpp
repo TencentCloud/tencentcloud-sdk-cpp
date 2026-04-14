@@ -25,6 +25,7 @@ SandboxInstance::SandboxInstance() :
     m_toolIdHasBeenSet(false),
     m_toolNameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_persistentHasBeenSet(false),
     m_timeoutSecondsHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
@@ -80,6 +81,16 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Persistent") && !value["Persistent"].IsNull())
+    {
+        if (!value["Persistent"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.Persistent` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_persistent = value["Persistent"].GetBool();
+        m_persistentHasBeenSet = true;
     }
 
     if (value.HasMember("TimeoutSeconds") && !value["TimeoutSeconds"].IsNull())
@@ -238,6 +249,14 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_persistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Persistent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_persistent, allocator);
+    }
+
     if (m_timeoutSecondsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -390,6 +409,22 @@ void SandboxInstance::SetStatus(const string& _status)
 bool SandboxInstance::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool SandboxInstance::GetPersistent() const
+{
+    return m_persistent;
+}
+
+void SandboxInstance::SetPersistent(const bool& _persistent)
+{
+    m_persistent = _persistent;
+    m_persistentHasBeenSet = true;
+}
+
+bool SandboxInstance::PersistentHasBeenSet() const
+{
+    return m_persistentHasBeenSet;
 }
 
 uint64_t SandboxInstance::GetTimeoutSeconds() const

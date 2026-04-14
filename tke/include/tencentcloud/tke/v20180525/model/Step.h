@@ -69,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startAt 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartAt(const std::string& _startAt);
@@ -90,14 +94,18 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endAt 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndAt(const std::string& _endAt);
@@ -151,6 +159,27 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取错误详情
+                     * @return Detail 错误详情
+                     * 
+                     */
+                    std::string GetDetail() const;
+
+                    /**
+                     * 设置错误详情
+                     * @param _detail 错误详情
+                     * 
+                     */
+                    void SetDetail(const std::string& _detail);
+
+                    /**
+                     * 判断参数 Detail 是否已赋值
+                     * @return Detail 是否已赋值
+                     * 
+                     */
+                    bool DetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,12 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startAt;
                     bool m_startAtHasBeenSet;
 
                     /**
                      * 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endAt;
                     bool m_endAtHasBeenSet;
@@ -182,6 +213,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 错误详情
+                     */
+                    std::string m_detail;
+                    bool m_detailHasBeenSet;
 
                 };
             }

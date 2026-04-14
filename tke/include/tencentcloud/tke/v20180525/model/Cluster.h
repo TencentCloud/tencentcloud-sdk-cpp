@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h>
 #include <tencentcloud/tke/v20180525/model/TagSpecification.h>
+#include <tencentcloud/tke/v20180525/model/SecurityModeConfig.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群描述
-                     * @return ClusterDescription 集群描述
+                     * 获取<p>集群描述</p>
+                     * @return ClusterDescription <p>集群描述</p>
                      * 
                      */
                     std::string GetClusterDescription() const;
 
                     /**
-                     * 设置集群描述
-                     * @param _clusterDescription 集群描述
+                     * 设置<p>集群描述</p>
+                     * @param _clusterDescription <p>集群描述</p>
                      * 
                      */
                     void SetClusterDescription(const std::string& _clusterDescription);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool ClusterDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取集群版本（默认值为1.10.5）
-                     * @return ClusterVersion 集群版本（默认值为1.10.5）
+                     * 获取<p>集群版本（默认值为1.10.5）</p>
+                     * @return ClusterVersion <p>集群版本（默认值为1.10.5）</p>
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
-                     * 设置集群版本（默认值为1.10.5）
-                     * @param _clusterVersion 集群版本（默认值为1.10.5）
+                     * 设置<p>集群版本（默认值为1.10.5）</p>
+                     * @param _clusterVersion <p>集群版本（默认值为1.10.5）</p>
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool ClusterVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @return ClusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 获取<p>集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64</p>
+                     * @return ClusterOs <p>集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64</p>
                      * 
                      */
                     std::string GetClusterOs() const;
 
                     /**
-                     * 设置集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @param _clusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 设置<p>集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64</p>
+                     * @param _clusterOs <p>集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64</p>
                      * 
                      */
                     void SetClusterOs(const std::string& _clusterOs);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool ClusterOsHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
-                     * @return ClusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * 获取<p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
+                     * @return ClusterType <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
-                     * @param _clusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * 设置<p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
+                     * @param _clusterType <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -175,15 +176,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群网络相关参数
-                     * @return ClusterNetworkSettings 集群网络相关参数
+                     * 获取<p>集群网络相关参数</p>
+                     * @return ClusterNetworkSettings <p>集群网络相关参数</p>
                      * 
                      */
                     ClusterNetworkSettings GetClusterNetworkSettings() const;
 
                     /**
-                     * 设置集群网络相关参数
-                     * @param _clusterNetworkSettings 集群网络相关参数
+                     * 设置<p>集群网络相关参数</p>
+                     * @param _clusterNetworkSettings <p>集群网络相关参数</p>
                      * 
                      */
                     void SetClusterNetworkSettings(const ClusterNetworkSettings& _clusterNetworkSettings);
@@ -196,15 +197,15 @@ namespace TencentCloud
                     bool ClusterNetworkSettingsHasBeenSet() const;
 
                     /**
-                     * 获取集群当前node数量
-                     * @return ClusterNodeNum 集群当前node数量
+                     * 获取<p>集群当前node数量</p>
+                     * @return ClusterNodeNum <p>集群当前node数量</p>
                      * 
                      */
                     uint64_t GetClusterNodeNum() const;
 
                     /**
-                     * 设置集群当前node数量
-                     * @param _clusterNodeNum 集群当前node数量
+                     * 设置<p>集群当前node数量</p>
+                     * @param _clusterNodeNum <p>集群当前node数量</p>
                      * 
                      */
                     void SetClusterNodeNum(const uint64_t& _clusterNodeNum);
@@ -217,15 +218,15 @@ namespace TencentCloud
                     bool ClusterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取集群所属的项目ID
-                     * @return ProjectId 集群所属的项目ID
+                     * 获取<p>集群所属的项目ID</p>
+                     * @return ProjectId <p>集群所属的项目ID</p>
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置集群所属的项目ID
-                     * @param _projectId 集群所属的项目ID
+                     * 设置<p>集群所属的项目ID</p>
+                     * @param _projectId <p>集群所属的项目ID</p>
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -238,18 +239,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取标签描述列表。
+                     * 获取<p>标签描述列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagSpecification 标签描述列表。
+                     * @return TagSpecification <p>标签描述列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagSpecification> GetTagSpecification() const;
 
                     /**
-                     * 设置标签描述列表。
+                     * 设置<p>标签描述列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagSpecification 标签描述列表。
+                     * @param _tagSpecification <p>标签描述列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -263,15 +264,15 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)
-                     * @return ClusterStatus 集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)
+                     * 获取<p>集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)</p>
+                     * @return ClusterStatus <p>集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)</p>
                      * 
                      */
                     std::string GetClusterStatus() const;
 
                     /**
-                     * 设置集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)
-                     * @param _clusterStatus 集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)
+                     * 设置<p>集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)</p>
+                     * @param _clusterStatus <p>集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)</p>
                      * 
                      */
                     void SetClusterStatus(const std::string& _clusterStatus);
@@ -284,15 +285,15 @@ namespace TencentCloud
                     bool ClusterStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-                     * @return Property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+                     * 获取<p>集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))</p>
+                     * @return Property <p>集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))</p>
                      * 
                      */
                     std::string GetProperty() const;
 
                     /**
-                     * 设置集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-                     * @param _property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+                     * 设置<p>集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))</p>
+                     * @param _property <p>集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))</p>
                      * 
                      */
                     void SetProperty(const std::string& _property);
@@ -305,15 +306,15 @@ namespace TencentCloud
                     bool PropertyHasBeenSet() const;
 
                     /**
-                     * 获取集群当前master数量
-                     * @return ClusterMaterNodeNum 集群当前master数量
+                     * 获取<p>集群当前master数量</p>
+                     * @return ClusterMaterNodeNum <p>集群当前master数量</p>
                      * 
                      */
                     uint64_t GetClusterMaterNodeNum() const;
 
                     /**
-                     * 设置集群当前master数量
-                     * @param _clusterMaterNodeNum 集群当前master数量
+                     * 设置<p>集群当前master数量</p>
+                     * @param _clusterMaterNodeNum <p>集群当前master数量</p>
                      * 
                      */
                     void SetClusterMaterNodeNum(const uint64_t& _clusterMaterNodeNum);
@@ -326,15 +327,15 @@ namespace TencentCloud
                     bool ClusterMaterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取集群使用镜像id
-                     * @return ImageId 集群使用镜像id
+                     * 获取<p>集群使用镜像id</p>
+                     * @return ImageId <p>集群使用镜像id</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置集群使用镜像id
-                     * @param _imageId 集群使用镜像id
+                     * 设置<p>集群使用镜像id</p>
+                     * @param _imageId <p>集群使用镜像id</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -347,15 +348,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取OsCustomizeType 系统定制类型
-                     * @return OsCustomizeType OsCustomizeType 系统定制类型
+                     * 获取<p>OsCustomizeType 系统定制类型</p>
+                     * @return OsCustomizeType <p>OsCustomizeType 系统定制类型</p>
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
-                     * 设置OsCustomizeType 系统定制类型
-                     * @param _osCustomizeType OsCustomizeType 系统定制类型
+                     * 设置<p>OsCustomizeType 系统定制类型</p>
+                     * @param _osCustomizeType <p>OsCustomizeType 系统定制类型</p>
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -368,15 +369,15 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群运行环境docker或container
-                     * @return ContainerRuntime 集群运行环境docker或container
+                     * 获取<p>集群运行环境docker或container</p>
+                     * @return ContainerRuntime <p>集群运行环境docker或container</p>
                      * 
                      */
                     std::string GetContainerRuntime() const;
 
                     /**
-                     * 设置集群运行环境docker或container
-                     * @param _containerRuntime 集群运行环境docker或container
+                     * 设置<p>集群运行环境docker或container</p>
+                     * @param _containerRuntime <p>集群运行环境docker或container</p>
                      * 
                      */
                     void SetContainerRuntime(const std::string& _containerRuntime);
@@ -389,15 +390,15 @@ namespace TencentCloud
                     bool ContainerRuntimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -410,15 +411,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群删除保护开关，打开：true，关闭：false
-                     * @return DeletionProtection 集群删除保护开关，打开：true，关闭：false
+                     * 获取<p>集群删除保护开关，打开：true，关闭：false</p>
+                     * @return DeletionProtection <p>集群删除保护开关，打开：true，关闭：false</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置集群删除保护开关，打开：true，关闭：false
-                     * @param _deletionProtection 集群删除保护开关，打开：true，关闭：false
+                     * 设置<p>集群删除保护开关，打开：true，关闭：false</p>
+                     * @param _deletionProtection <p>集群删除保护开关，打开：true，关闭：false</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -431,15 +432,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取集群是否开启第三方节点支持，开启：true，关闭：false
-                     * @return EnableExternalNode 集群是否开启第三方节点支持，开启：true，关闭：false
+                     * 获取<p>集群是否开启第三方节点支持，开启：true，关闭：false</p>
+                     * @return EnableExternalNode <p>集群是否开启第三方节点支持，开启：true，关闭：false</p>
                      * 
                      */
                     bool GetEnableExternalNode() const;
 
                     /**
-                     * 设置集群是否开启第三方节点支持，开启：true，关闭：false
-                     * @param _enableExternalNode 集群是否开启第三方节点支持，开启：true，关闭：false
+                     * 设置<p>集群是否开启第三方节点支持，开启：true，关闭：false</p>
+                     * @param _enableExternalNode <p>集群是否开启第三方节点支持，开启：true，关闭：false</p>
                      * 
                      */
                     void SetEnableExternalNode(const bool& _enableExternalNode);
@@ -452,15 +453,15 @@ namespace TencentCloud
                     bool EnableExternalNodeHasBeenSet() const;
 
                     /**
-                     * 获取集群等级，针对托管集群生效
-                     * @return ClusterLevel 集群等级，针对托管集群生效
+                     * 获取<p>集群等级，针对托管集群生效</p>
+                     * @return ClusterLevel <p>集群等级，针对托管集群生效</p>
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
-                     * 设置集群等级，针对托管集群生效
-                     * @param _clusterLevel 集群等级，针对托管集群生效
+                     * 设置<p>集群等级，针对托管集群生效</p>
+                     * @param _clusterLevel <p>集群等级，针对托管集群生效</p>
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -473,15 +474,15 @@ namespace TencentCloud
                     bool ClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取自动变配集群等级，针对托管集群生效。开启：true，关闭：false
-                     * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
+                     * 获取<p>自动变配集群等级，针对托管集群生效。开启：true，关闭：false</p>
+                     * @return AutoUpgradeClusterLevel <p>自动变配集群等级，针对托管集群生效。开启：true，关闭：false</p>
                      * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
-                     * 设置自动变配集群等级，针对托管集群生效。开启：true，关闭：false
-                     * @param _autoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
+                     * 设置<p>自动变配集群等级，针对托管集群生效。开启：true，关闭：false</p>
+                     * @param _autoUpgradeClusterLevel <p>自动变配集群等级，针对托管集群生效。开启：true，关闭：false</p>
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
@@ -494,15 +495,15 @@ namespace TencentCloud
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启QGPU共享，开启：true，关闭：false
-                     * @return QGPUShareEnable 是否开启QGPU共享，开启：true，关闭：false
+                     * 获取<p>是否开启QGPU共享，开启：true，关闭：false</p>
+                     * @return QGPUShareEnable <p>是否开启QGPU共享，开启：true，关闭：false</p>
                      * 
                      */
                     bool GetQGPUShareEnable() const;
 
                     /**
-                     * 设置是否开启QGPU共享，开启：true，关闭：false
-                     * @param _qGPUShareEnable 是否开启QGPU共享，开启：true，关闭：false
+                     * 设置<p>是否开启QGPU共享，开启：true，关闭：false</p>
+                     * @param _qGPUShareEnable <p>是否开启QGPU共享，开启：true，关闭：false</p>
                      * 
                      */
                     void SetQGPUShareEnable(const bool& _qGPUShareEnable);
@@ -515,15 +516,15 @@ namespace TencentCloud
                     bool QGPUShareEnableHasBeenSet() const;
 
                     /**
-                     * 获取运行时版本
-                     * @return RuntimeVersion 运行时版本
+                     * 获取<p>运行时版本</p>
+                     * @return RuntimeVersion <p>运行时版本</p>
                      * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
-                     * 设置运行时版本
-                     * @param _runtimeVersion 运行时版本
+                     * 设置<p>运行时版本</p>
+                     * @param _runtimeVersion <p>运行时版本</p>
                      * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
@@ -536,15 +537,15 @@ namespace TencentCloud
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群当前etcd数量
-                     * @return ClusterEtcdNodeNum 集群当前etcd数量
+                     * 获取<p>集群当前etcd数量</p>
+                     * @return ClusterEtcdNodeNum <p>集群当前etcd数量</p>
                      * 
                      */
                     uint64_t GetClusterEtcdNodeNum() const;
 
                     /**
-                     * 设置集群当前etcd数量
-                     * @param _clusterEtcdNodeNum 集群当前etcd数量
+                     * 设置<p>集群当前etcd数量</p>
+                     * @param _clusterEtcdNodeNum <p>集群当前etcd数量</p>
                      * 
                      */
                     void SetClusterEtcdNodeNum(const uint64_t& _clusterEtcdNodeNum);
@@ -557,15 +558,15 @@ namespace TencentCloud
                     bool ClusterEtcdNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取本地专用集群Id
-                     * @return CdcId 本地专用集群Id
+                     * 获取<p>本地专用集群Id</p>
+                     * @return CdcId <p>本地专用集群Id</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置本地专用集群Id
-                     * @param _cdcId 本地专用集群Id
+                     * 设置<p>本地专用集群Id</p>
+                     * @param _cdcId <p>本地专用集群Id</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -578,15 +579,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
-                     * @return IsHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 获取<p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
+                     * @return IsHighAvailability <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      * 
                      */
                     bool GetIsHighAvailability() const;
 
                     /**
-                     * 设置集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
-                     * @param _isHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 设置<p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
+                     * @param _isHighAvailability <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      * 
                      */
                     void SetIsHighAvailability(const bool& _isHighAvailability);
@@ -598,164 +599,191 @@ namespace TencentCloud
                      */
                     bool IsHighAvailabilityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开启后会下发Gatekeeper和网络策略</p>
+                     * @return SecurityModeConfig <p>开启后会下发Gatekeeper和网络策略</p>
+                     * 
+                     */
+                    SecurityModeConfig GetSecurityModeConfig() const;
+
+                    /**
+                     * 设置<p>开启后会下发Gatekeeper和网络策略</p>
+                     * @param _securityModeConfig <p>开启后会下发Gatekeeper和网络策略</p>
+                     * 
+                     */
+                    void SetSecurityModeConfig(const SecurityModeConfig& _securityModeConfig);
+
+                    /**
+                     * 判断参数 SecurityModeConfig 是否已赋值
+                     * @return SecurityModeConfig 是否已赋值
+                     * 
+                     */
+                    bool SecurityModeConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群描述
+                     * <p>集群描述</p>
                      */
                     std::string m_clusterDescription;
                     bool m_clusterDescriptionHasBeenSet;
 
                     /**
-                     * 集群版本（默认值为1.10.5）
+                     * <p>集群版本（默认值为1.10.5）</p>
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
 
                     /**
-                     * 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * <p>集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64</p>
                      */
                     std::string m_clusterOs;
                     bool m_clusterOsHasBeenSet;
 
                     /**
-                     * 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群网络相关参数
+                     * <p>集群网络相关参数</p>
                      */
                     ClusterNetworkSettings m_clusterNetworkSettings;
                     bool m_clusterNetworkSettingsHasBeenSet;
 
                     /**
-                     * 集群当前node数量
+                     * <p>集群当前node数量</p>
                      */
                     uint64_t m_clusterNodeNum;
                     bool m_clusterNodeNumHasBeenSet;
 
                     /**
-                     * 集群所属的项目ID
+                     * <p>集群所属的项目ID</p>
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 标签描述列表。
+                     * <p>标签描述列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagSpecification> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)
+                     * <p>集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Scaling 规模调整中,Upgrading 升级中,WaittingForConnect 等待注册,Trading 集群开通中,Isolated 欠费隔离中,Pause 集群升级暂停,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 隔离中,ResourceIsolated 已隔离,ResourceReverse 冲正中,Abnormal 异常)</p>
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
-                     * 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
+                     * <p>集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))</p>
                      */
                     std::string m_property;
                     bool m_propertyHasBeenSet;
 
                     /**
-                     * 集群当前master数量
+                     * <p>集群当前master数量</p>
                      */
                     uint64_t m_clusterMaterNodeNum;
                     bool m_clusterMaterNodeNumHasBeenSet;
 
                     /**
-                     * 集群使用镜像id
+                     * <p>集群使用镜像id</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * OsCustomizeType 系统定制类型
+                     * <p>OsCustomizeType 系统定制类型</p>
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
-                     * 集群运行环境docker或container
+                     * <p>集群运行环境docker或container</p>
                      */
                     std::string m_containerRuntime;
                     bool m_containerRuntimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 集群删除保护开关，打开：true，关闭：false
+                     * <p>集群删除保护开关，打开：true，关闭：false</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 集群是否开启第三方节点支持，开启：true，关闭：false
+                     * <p>集群是否开启第三方节点支持，开启：true，关闭：false</p>
                      */
                     bool m_enableExternalNode;
                     bool m_enableExternalNodeHasBeenSet;
 
                     /**
-                     * 集群等级，针对托管集群生效
+                     * <p>集群等级，针对托管集群生效</p>
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;
 
                     /**
-                     * 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
+                     * <p>自动变配集群等级，针对托管集群生效。开启：true，关闭：false</p>
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
-                     * 是否开启QGPU共享，开启：true，关闭：false
+                     * <p>是否开启QGPU共享，开启：true，关闭：false</p>
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;
 
                     /**
-                     * 运行时版本
+                     * <p>运行时版本</p>
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;
 
                     /**
-                     * 集群当前etcd数量
+                     * <p>集群当前etcd数量</p>
                      */
                     uint64_t m_clusterEtcdNodeNum;
                     bool m_clusterEtcdNodeNumHasBeenSet;
 
                     /**
-                     * 本地专用集群Id
+                     * <p>本地专用集群Id</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * <p>集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行</p>
                      */
                     bool m_isHighAvailability;
                     bool m_isHighAvailabilityHasBeenSet;
+
+                    /**
+                     * <p>开启后会下发Gatekeeper和网络策略</p>
+                     */
+                    SecurityModeConfig m_securityModeConfig;
+                    bool m_securityModeConfigHasBeenSet;
 
                 };
             }

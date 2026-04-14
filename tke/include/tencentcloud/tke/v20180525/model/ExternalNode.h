@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 第三方节点
+                * 注册节点
                 */
                 class ExternalNode : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方节点名称
-                     * @return Name 第三方节点名称
+                     * 获取<p>注册节点名称</p>
+                     * @return Name <p>注册节点名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置第三方节点名称
-                     * @param _name 第三方节点名称
+                     * 设置<p>注册节点名称</p>
+                     * @param _name <p>注册节点名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点所属节点池
+                     * 获取<p>注册节点所属节点池</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodePoolId 第三方节点所属节点池
+                     * @return NodePoolId <p>注册节点所属节点池</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置第三方节点所属节点池
+                     * 设置<p>注册节点所属节点池</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodePoolId 第三方节点所属节点池
+                     * @param _nodePoolId <p>注册节点所属节点池</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方IP地址
-                     * @return IP 第三方IP地址
+                     * 获取<p>注册节点IP地址</p>
+                     * @return IP <p>注册节点IP地址</p>
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置第三方IP地址
-                     * @param _iP 第三方IP地址
+                     * 设置<p>注册节点IP地址</p>
+                     * @param _iP <p>注册节点IP地址</p>
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取第三方地域
-                     * @return Location 第三方地域
+                     * 获取<p>注册节点地域</p>
+                     * @return Location <p>注册节点地域</p>
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置第三方地域
-                     * @param _location 第三方地域
+                     * 设置<p>注册节点地域</p>
+                     * @param _location <p>注册节点地域</p>
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点状态
-                     * @return Status 第三方节点状态
+                     * 获取<p>注册节点状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Failed： 异常状态</li><li>Terminating： 删除中</li><li>Draining： 驱逐中</li></ul>
+                     * @return Status <p>注册节点状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Failed： 异常状态</li><li>Terminating： 删除中</li><li>Draining： 驱逐中</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置第三方节点状态
-                     * @param _status 第三方节点状态
+                     * 设置<p>注册节点状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Failed： 异常状态</li><li>Terminating： 删除中</li><li>Draining： 驱逐中</li></ul>
+                     * @param _status <p>注册节点状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Failed： 异常状态</li><li>Terminating： 删除中</li><li>Draining： 驱逐中</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedTime 创建时间
+                     * @return CreatedTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdTime 创建时间
+                     * @param _createdTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,18 +181,18 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取异常原因
+                     * 获取<p>异常原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Reason 异常原因
+                     * @return Reason <p>异常原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置异常原因
+                     * 设置<p>异常原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reason 异常原因
+                     * @param _reason <p>异常原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,18 +206,18 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取是否封锁。true表示已封锁，false表示未封锁
+                     * 获取<p>是否封锁。true表示已封锁，false表示未封锁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Unschedulable 是否封锁。true表示已封锁，false表示未封锁
+                     * @return Unschedulable <p>是否封锁。true表示已封锁，false表示未封锁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUnschedulable() const;
 
                     /**
-                     * 设置是否封锁。true表示已封锁，false表示未封锁
+                     * 设置<p>是否封锁。true表示已封锁，false表示未封锁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unschedulable 是否封锁。true表示已封锁，false表示未封锁
+                     * @param _unschedulable <p>是否封锁。true表示已封锁，false表示未封锁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,52 +233,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方节点名称
+                     * <p>注册节点名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 第三方节点所属节点池
+                     * <p>注册节点所属节点池</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 第三方IP地址
+                     * <p>注册节点IP地址</p>
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * 第三方地域
+                     * <p>注册节点地域</p>
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 第三方节点状态
+                     * <p>注册节点状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Failed： 异常状态</li><li>Terminating： 删除中</li><li>Draining： 驱逐中</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 异常原因
+                     * <p>异常原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 是否封锁。true表示已封锁，false表示未封锁
+                     * <p>是否封锁。true表示已封锁，false表示未封锁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_unschedulable;

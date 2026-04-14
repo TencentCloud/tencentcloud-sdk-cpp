@@ -890,6 +890,56 @@ VclmClient::SubmitImageToVideoGeneralJobOutcomeCallable VclmClient::SubmitImageT
     return prom->get_future();
 }
 
+VclmClient::SubmitImageToVideoViduJobOutcome VclmClient::SubmitImageToVideoViduJob(const SubmitImageToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitImageToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitImageToVideoViduJobResponse rsp = SubmitImageToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitImageToVideoViduJobOutcome(rsp);
+        else
+            return SubmitImageToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitImageToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitImageToVideoViduJobAsync(const SubmitImageToVideoViduJobRequest& request, const SubmitImageToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitImageToVideoViduJobRequest&;
+    using Resp = SubmitImageToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitImageToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitImageToVideoViduJobOutcomeCallable VclmClient::SubmitImageToVideoViduJobCallable(const SubmitImageToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitImageToVideoViduJobOutcome>>();
+    SubmitImageToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitImageToVideoViduJobRequest&,
+        SubmitImageToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::SubmitPortraitSingJobOutcome VclmClient::SubmitPortraitSingJob(const SubmitPortraitSingJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitPortraitSingJob");

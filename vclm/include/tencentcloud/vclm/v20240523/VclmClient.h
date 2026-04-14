@@ -57,6 +57,8 @@
 #include <tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitImageToVideoViduJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitImageToVideoViduJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h>
@@ -134,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitImageToVideoGeneralJobResponse> SubmitImageToVideoGeneralJobOutcome;
                 typedef std::future<SubmitImageToVideoGeneralJobOutcome> SubmitImageToVideoGeneralJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitImageToVideoGeneralJobRequest&, SubmitImageToVideoGeneralJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageToVideoGeneralJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitImageToVideoViduJobResponse> SubmitImageToVideoViduJobOutcome;
+                typedef std::future<SubmitImageToVideoViduJobOutcome> SubmitImageToVideoViduJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitImageToVideoViduJobRequest&, SubmitImageToVideoViduJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitImageToVideoViduJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitPortraitSingJobResponse> SubmitPortraitSingJobOutcome;
                 typedef std::future<SubmitPortraitSingJobOutcome> SubmitPortraitSingJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitPortraitSingJobRequest&, SubmitPortraitSingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPortraitSingJobAsyncHandler;
@@ -311,6 +316,15 @@ namespace TencentCloud
                 SubmitImageToVideoGeneralJobOutcome SubmitImageToVideoGeneralJob(const Model::SubmitImageToVideoGeneralJobRequest &request);
                 void SubmitImageToVideoGeneralJobAsync(const Model::SubmitImageToVideoGeneralJobRequest& request, const SubmitImageToVideoGeneralJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitImageToVideoGeneralJobOutcomeCallable SubmitImageToVideoGeneralJobCallable(const Model::SubmitImageToVideoGeneralJobRequest& request);
+
+                /**
+                 *提交Vidu图生视频任务接口
+                 * @param req SubmitImageToVideoViduJobRequest
+                 * @return SubmitImageToVideoViduJobOutcome
+                 */
+                SubmitImageToVideoViduJobOutcome SubmitImageToVideoViduJob(const Model::SubmitImageToVideoViduJobRequest &request);
+                void SubmitImageToVideoViduJobAsync(const Model::SubmitImageToVideoViduJobRequest& request, const SubmitImageToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitImageToVideoViduJobOutcomeCallable SubmitImageToVideoViduJobCallable(const Model::SubmitImageToVideoViduJobRequest& request);
 
                 /**
                  *用于提交图片唱演任务。

@@ -31,7 +31,8 @@ ModifyClusterAttributeRequest::ModifyClusterAttributeRequest() :
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
     m_clusterPropertyHasBeenSet(false),
-    m_isHighAvailabilityHasBeenSet(false)
+    m_isHighAvailabilityHasBeenSet(false),
+    m_securityModeConfigHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,15 @@ string ModifyClusterAttributeRequest::ToJsonString() const
         string key = "IsHighAvailability";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isHighAvailability, allocator);
+    }
+
+    if (m_securityModeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityModeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityModeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -266,6 +276,22 @@ void ModifyClusterAttributeRequest::SetIsHighAvailability(const bool& _isHighAva
 bool ModifyClusterAttributeRequest::IsHighAvailabilityHasBeenSet() const
 {
     return m_isHighAvailabilityHasBeenSet;
+}
+
+SecurityModeConfig ModifyClusterAttributeRequest::GetSecurityModeConfig() const
+{
+    return m_securityModeConfig;
+}
+
+void ModifyClusterAttributeRequest::SetSecurityModeConfig(const SecurityModeConfig& _securityModeConfig)
+{
+    m_securityModeConfig = _securityModeConfig;
+    m_securityModeConfigHasBeenSet = true;
+}
+
+bool ModifyClusterAttributeRequest::SecurityModeConfigHasBeenSet() const
+{
+    return m_securityModeConfigHasBeenSet;
 }
 
 

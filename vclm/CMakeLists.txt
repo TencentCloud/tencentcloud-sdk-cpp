@@ -21,12 +21,14 @@ set(vclm_public_header
 set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoGeneralJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoViduJobRequest.h
   include/tencentcloud/vclm/v20240523/model/LogoParam.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitHumanActorJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/FaceTemplateInfo.h
   include/tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoViduJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobResponse.h
@@ -79,12 +81,14 @@ set(vclm_src
   src/v20240523/VclmClient.cpp
   src/v20240523/model/DescribeImageToVideoGeneralJobResponse.cpp
   src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
+  src/v20240523/model/SubmitImageToVideoViduJobRequest.cpp
   src/v20240523/model/LogoParam.cpp
   src/v20240523/model/DescribeVideoVoiceJobResponse.cpp
   src/v20240523/model/SubmitHumanActorJobRequest.cpp
   src/v20240523/model/SubmitImageAnimateJobResponse.cpp
   src/v20240523/model/FaceTemplateInfo.cpp
   src/v20240523/model/DescribeAigcVideoJobRequest.cpp
+  src/v20240523/model/SubmitImageToVideoViduJobResponse.cpp
   src/v20240523/model/SubmitImageAnimateJobRequest.cpp
   src/v20240523/model/DescribeVideoVoiceJobRequest.cpp
   src/v20240523/model/SubmitImageToVideoGeneralJobResponse.cpp

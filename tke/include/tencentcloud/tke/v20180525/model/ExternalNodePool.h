@@ -39,7 +39,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 第三方节点池信息
+                * 注册节点池信息
                 */
                 class ExternalNodePool : public AbstractModel
                 {
@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方节点池ID
-                     * @return NodePoolId 第三方节点池ID
+                     * 获取注册节点池ID
+                     * @return NodePoolId 注册节点池ID
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置第三方节点池ID
-                     * @param _nodePoolId 第三方节点池ID
+                     * 设置注册节点池ID
+                     * @param _nodePoolId 注册节点池ID
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点池名称
-                     * @return Name 第三方节点池名称
+                     * 获取注册节点池名称
+                     * @return Name 注册节点池名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置第三方节点池名称
-                     * @param _name 第三方节点池名称
+                     * 设置注册节点池名称
+                     * @param _name 注册节点池名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点Runtime配置
-                     * @return RuntimeConfig 第三方节点Runtime配置
+                     * 获取注册节点运行时配置
+                     * @return RuntimeConfig 注册节点运行时配置
                      * 
                      */
                     RuntimeConfig GetRuntimeConfig() const;
 
                     /**
-                     * 设置第三方节点Runtime配置
-                     * @param _runtimeConfig 第三方节点Runtime配置
+                     * 设置注册节点运行时配置
+                     * @param _runtimeConfig 注册节点运行时配置
                      * 
                      */
                     void SetRuntimeConfig(const RuntimeConfig& _runtimeConfig);
@@ -177,18 +177,18 @@ namespace TencentCloud
                     bool RuntimeConfigHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点label
+                     * 获取注册节点标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 第三方节点label
+                     * @return Labels 注册节点标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置第三方节点label
+                     * 设置注册节点标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labels 第三方节点label
+                     * @param _labels 注册节点标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,18 +202,18 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点taint
+                     * 获取注册节点污点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Taints 第三方节点taint
+                     * @return Taints 注册节点污点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置第三方节点taint
+                     * 设置注册节点污点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taints 第三方节点taint
+                     * @param _taints 注册节点污点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -227,18 +227,18 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取第三方节点高级设置
+                     * 获取注册节点高级设置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceAdvancedSettings 第三方节点高级设置
+                     * @return InstanceAdvancedSettings 注册节点高级设置
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
-                     * 设置第三方节点高级设置
+                     * 设置注册节点高级设置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceAdvancedSettings 第三方节点高级设置
+                     * @param _instanceAdvancedSettings 注册节点高级设置
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -276,16 +276,37 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取注册节点类型
+                     * @return NodeType 注册节点类型
+                     * 
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置注册节点类型
+                     * @param _nodeType 注册节点类型
+                     * 
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     * 
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 第三方节点池ID
+                     * 注册节点池ID
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 第三方节点池名称
+                     * 注册节点池名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -309,27 +330,27 @@ namespace TencentCloud
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 第三方节点Runtime配置
+                     * 注册节点运行时配置
                      */
                     RuntimeConfig m_runtimeConfig;
                     bool m_runtimeConfigHasBeenSet;
 
                     /**
-                     * 第三方节点label
+                     * 注册节点标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 第三方节点taint
+                     * 注册节点污点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 第三方节点高级设置
+                     * 注册节点高级设置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * 注册节点类型
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
 
                 };
             }

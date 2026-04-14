@@ -33,7 +33,8 @@ CreateSandboxToolRequest::CreateSandboxToolRequest() :
     m_roleArnHasBeenSet(false),
     m_storageMountsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_persistentHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,14 @@ string CreateSandboxToolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_persistentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Persistent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_persistent, allocator);
     }
 
 
@@ -331,6 +340,22 @@ void CreateSandboxToolRequest::SetLogConfiguration(const LogConfiguration& _logC
 bool CreateSandboxToolRequest::LogConfigurationHasBeenSet() const
 {
     return m_logConfigurationHasBeenSet;
+}
+
+bool CreateSandboxToolRequest::GetPersistent() const
+{
+    return m_persistent;
+}
+
+void CreateSandboxToolRequest::SetPersistent(const bool& _persistent)
+{
+    m_persistent = _persistent;
+    m_persistentHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::PersistentHasBeenSet() const
+{
+    return m_persistentHasBeenSet;
 }
 
 

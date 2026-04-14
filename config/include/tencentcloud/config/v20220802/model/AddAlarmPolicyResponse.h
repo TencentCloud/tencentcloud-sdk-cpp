@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略唯一id
+                     * 获取<p>告警策略唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmPolicyId 告警策略唯一id
+                     * @return AlarmPolicyId <p>告警策略唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略唯一id
+                     * <p>告警策略唯一id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmPolicyId;

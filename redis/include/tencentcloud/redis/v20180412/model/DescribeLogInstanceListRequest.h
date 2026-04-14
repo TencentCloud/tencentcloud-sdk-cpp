@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LogSubTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>
-                     * @return LogSwitch <p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>
+                     * 获取<p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>
+                     * @return LogSwitch <p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>
                      * 
                      */
                     std::string GetLogSwitch() const;
 
                     /**
-                     * 设置<p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>
-                     * @param _logSwitch <p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>
+                     * 设置<p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>
+                     * @param _logSwitch <p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>
                      * 
                      */
                     void SetLogSwitch(const std::string& _logSwitch);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_logSubTypeHasBeenSet;
 
                     /**
-                     * <p>日志开关。不传查询所有日志实例。</p><ul><li>on：开启。</li><li>off：关闭。</li></ul>
+                     * <p>日志开关。</p><p>枚举值：</p><ul><li>on： 开启</li><li>off： 关闭</li></ul><p>默认值：off</p>
                      */
                     std::string m_logSwitch;
                     bool m_logSwitchHasBeenSet;

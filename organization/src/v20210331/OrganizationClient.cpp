@@ -5940,6 +5940,56 @@ OrganizationClient::UpdateGroupOutcomeCallable OrganizationClient::UpdateGroupCa
     return prom->get_future();
 }
 
+OrganizationClient::UpdateIPWhitelistOutcome OrganizationClient::UpdateIPWhitelist(const UpdateIPWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateIPWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateIPWhitelistResponse rsp = UpdateIPWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateIPWhitelistOutcome(rsp);
+        else
+            return UpdateIPWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateIPWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdateIPWhitelistAsync(const UpdateIPWhitelistRequest& request, const UpdateIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateIPWhitelistRequest&;
+    using Resp = UpdateIPWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateIPWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::UpdateIPWhitelistOutcomeCallable OrganizationClient::UpdateIPWhitelistCallable(const UpdateIPWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateIPWhitelistOutcome>>();
+    UpdateIPWhitelistAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const UpdateIPWhitelistRequest&,
+        UpdateIPWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OrganizationClient::UpdateOrganizationIdentityOutcome OrganizationClient::UpdateOrganizationIdentity(const UpdateOrganizationIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateOrganizationIdentity");

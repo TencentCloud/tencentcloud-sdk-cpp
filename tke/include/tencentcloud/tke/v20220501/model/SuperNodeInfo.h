@@ -396,6 +396,69 @@ namespace TencentCloud
                      */
                     bool InstanceAttributeHasBeenSet() const;
 
+                    /**
+                     * 获取节点名称
+                     * @return NodeName 节点名称
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点名称
+                     * @param _nodeName 节点名称
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取包销时长
+                     * @return Duration 包销时长
+                     * 
+                     */
+                    std::string GetDuration() const;
+
+                    /**
+                     * 设置包销时长
+                     * @param _duration 包销时长
+                     * 
+                     */
+                    void SetDuration(const std::string& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取预付费资源ID
+                     * @return ResourceId 预付费资源ID
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置预付费资源ID
+                     * @param _resourceId 预付费资源ID
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +558,24 @@ namespace TencentCloud
                      */
                     std::string m_instanceAttribute;
                     bool m_instanceAttributeHasBeenSet;
+
+                    /**
+                     * 节点名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 包销时长
+                     */
+                    std::string m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * 预付费资源ID
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

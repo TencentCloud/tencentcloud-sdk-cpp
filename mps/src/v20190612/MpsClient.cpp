@@ -1040,6 +1040,56 @@ MpsClient::CreateProcessImageTemplateOutcomeCallable MpsClient::CreateProcessIma
     return prom->get_future();
 }
 
+MpsClient::CreateProjectOutcome MpsClient::CreateProject(const CreateProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProjectResponse rsp = CreateProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProjectOutcome(rsp);
+        else
+            return CreateProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProjectOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateProjectRequest&;
+    using Resp = CreateProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateProjectOutcomeCallable MpsClient::CreateProjectCallable(const CreateProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateProjectOutcome>>();
+    CreateProjectAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateProjectRequest&,
+        CreateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateQualityControlTemplateOutcome MpsClient::CreateQualityControlTemplate(const CreateQualityControlTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateQualityControlTemplate");
@@ -2732,6 +2782,56 @@ MpsClient::DeleteProcessImageTemplateOutcomeCallable MpsClient::DeleteProcessIma
         const MpsClient*,
         const DeleteProcessImageTemplateRequest&,
         DeleteProcessImageTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DeleteProjectOutcome MpsClient::DeleteProject(const DeleteProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProjectResponse rsp = DeleteProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProjectOutcome(rsp);
+        else
+            return DeleteProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProjectOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProjectRequest&;
+    using Resp = DeleteProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DeleteProjectOutcomeCallable MpsClient::DeleteProjectCallable(const DeleteProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProjectOutcome>>();
+    DeleteProjectAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DeleteProjectRequest&,
+        DeleteProjectOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9440,6 +9540,56 @@ MpsClient::ProcessMediaOutcomeCallable MpsClient::ProcessMediaCallable(const Pro
     return prom->get_future();
 }
 
+MpsClient::QueryProjectOutcome MpsClient::QueryProject(const QueryProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryProjectResponse rsp = QueryProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryProjectOutcome(rsp);
+        else
+            return QueryProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryProjectOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::QueryProjectAsync(const QueryProjectRequest& request, const QueryProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryProjectRequest&;
+    using Resp = QueryProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::QueryProjectOutcomeCallable MpsClient::QueryProjectCallable(const QueryProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryProjectOutcome>>();
+    QueryProjectAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const QueryProjectRequest&,
+        QueryProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::RecognizeAudioOutcome MpsClient::RecognizeAudio(const RecognizeAudioRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeAudio");
@@ -9882,6 +10032,56 @@ MpsClient::TextTranslationOutcomeCallable MpsClient::TextTranslationCallable(con
         const MpsClient*,
         const TextTranslationRequest&,
         TextTranslationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::UpdateProjectOutcome MpsClient::UpdateProject(const UpdateProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProjectResponse rsp = UpdateProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProjectOutcome(rsp);
+        else
+            return UpdateProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProjectOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateProjectRequest&;
+    using Resp = UpdateProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::UpdateProjectOutcomeCallable MpsClient::UpdateProjectCallable(const UpdateProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateProjectOutcome>>();
+    UpdateProjectAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const UpdateProjectRequest&,
+        UpdateProjectOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

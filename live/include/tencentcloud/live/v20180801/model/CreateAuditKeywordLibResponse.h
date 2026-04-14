@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>新建的词库 Id。</p>
+                     * @return LibId <p>新建的词库 Id。</p>
+                     * 
+                     */
+                    std::string GetLibId() const;
+
+                    /**
+                     * 判断参数 LibId 是否已赋值
+                     * @return LibId 是否已赋值
+                     * 
+                     */
+                    bool LibIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>新建的词库 Id。</p>
+                     */
+                    std::string m_libId;
+                    bool m_libIdHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ ModifyClusterAttributeResponse::ModifyClusterAttributeResponse() :
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
     m_clusterPropertyHasBeenSet(false),
-    m_isHighAvailabilityHasBeenSet(false)
+    m_isHighAvailabilityHasBeenSet(false),
+    m_securityModeConfigHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,23 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
         m_isHighAvailabilityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SecurityModeConfig") && !rsp["SecurityModeConfig"].IsNull())
+    {
+        if (!rsp["SecurityModeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityModeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityModeConfig.Deserialize(rsp["SecurityModeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityModeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +255,15 @@ string ModifyClusterAttributeResponse::ToJsonString() const
         string key = "IsHighAvailability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHighAvailability, allocator);
+    }
+
+    if (m_securityModeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityModeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityModeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -329,6 +356,16 @@ bool ModifyClusterAttributeResponse::GetIsHighAvailability() const
 bool ModifyClusterAttributeResponse::IsHighAvailabilityHasBeenSet() const
 {
     return m_isHighAvailabilityHasBeenSet;
+}
+
+SecurityModeConfig ModifyClusterAttributeResponse::GetSecurityModeConfig() const
+{
+    return m_securityModeConfig;
+}
+
+bool ModifyClusterAttributeResponse::SecurityModeConfigHasBeenSet() const
+{
+    return m_securityModeConfigHasBeenSet;
 }
 
 

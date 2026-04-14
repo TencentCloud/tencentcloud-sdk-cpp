@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AccessModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>
-                     * @return LoginMode <p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>
+                     * 获取<p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>
+                     * @return LoginMode <p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>
                      * 
                      */
                     uint64_t GetLoginMode() const;
 
                     /**
-                     * 设置<p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>
-                     * @param _loginMode <p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>
+                     * 设置<p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>
+                     * @param _loginMode <p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>
                      * 
                      */
                     void SetLoginMode(const uint64_t& _loginMode);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DomainPrefixHasBeenSet() const;
 
                     /**
-                     * 获取<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>
-                     * @return Accounts <p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>
+                     * 获取<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
+                     * @return Accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
                      * 
                      */
                     std::vector<ConsoleAccount> GetAccounts() const;
 
                     /**
-                     * 设置<p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>
-                     * @param _accounts <p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>
+                     * 设置<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
+                     * @param _accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
                      * 
                      */
                     void SetAccounts(const std::vector<ConsoleAccount>& _accounts);
@@ -371,7 +371,7 @@ namespace TencentCloud
                     bool m_accessModeHasBeenSet;
 
                     /**
-                     * <p>登录方式：0 - 账号密码鉴权，1 - 匿名登陆，2 - 第三方认证登录</p>
+                     * <p>登录方式</p><p>枚举值：</p><ul><li>0： 账号密码鉴权</li><li>1： 匿名登录</li><li>2： 第三方认证登录</li></ul>
                      */
                     uint64_t m_loginMode;
                     bool m_loginModeHasBeenSet;
@@ -383,7 +383,7 @@ namespace TencentCloud
                     bool m_domainPrefixHasBeenSet;
 
                     /**
-                     * <p>用户账号信息</p><p>“账号密码鉴权“登录方式必传</p>
+                     * <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
                      */
                     std::vector<ConsoleAccount> m_accounts;
                     bool m_accountsHasBeenSet;
