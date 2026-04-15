@@ -87,6 +87,20 @@ namespace TencentCloud
                      */
                     bool AvailableWhiteListNamesHasBeenSet() const;
 
+                    /**
+                     * 获取隔离天数
+                     * @return IsolationDays 隔离天数
+                     * 
+                     */
+                    int64_t GetIsolationDays() const;
+
+                    /**
+                     * 判断参数 IsolationDays 是否已赋值
+                     * @return IsolationDays 是否已赋值
+                     * 
+                     */
+                    bool IsolationDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_availableWhiteListNames;
                     bool m_availableWhiteListNamesHasBeenSet;
+
+                    /**
+                     * 隔离天数
+                     */
+                    int64_t m_isolationDays;
+                    bool m_isolationDaysHasBeenSet;
 
                 };
             }

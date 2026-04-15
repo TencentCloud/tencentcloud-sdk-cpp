@@ -26,6 +26,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/SecurityGroupBound.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupResponse.h
@@ -39,12 +40,14 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupPolicyResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSecurityGroupsResponse.h
-  include/tencentcloud/tdmysql/v20211122/model/BackupPolicyModelInput.h
+  include/tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/DBParamValue.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseFunction.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupPolicyRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.h
+  include/tencentcloud/tdmysql/v20211122/model/BackupPolicyModelInput.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DestroyInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersResponse.h
@@ -60,7 +63,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseProcedure.h
-  include/tencentcloud/tdmysql/v20211122/model/DBParamValue.h
+  include/tencentcloud/tdmysql/v20211122/model/ArchiveLogModel.h
   include/tencentcloud/tdmysql/v20211122/model/ParamConstraint.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBParametersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.h
@@ -77,6 +80,7 @@ set(tdmysql_src
   src/v20211122/model/ModifyInstanceNameResponse.cpp
   src/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20211122/model/DescribeDBParametersRequest.cpp
+  src/v20211122/model/DescribeDBSArchiveLogsResponse.cpp
   src/v20211122/model/DescribeDatabaseObjectsResponse.cpp
   src/v20211122/model/SecurityGroupBound.cpp
   src/v20211122/model/CreateDBSBackupResponse.cpp
@@ -90,12 +94,14 @@ set(tdmysql_src
   src/v20211122/model/ModifyDBSBackupPolicyResponse.cpp
   src/v20211122/model/DescribeDBSCloneInstancesResponse.cpp
   src/v20211122/model/DescribeDBSecurityGroupsResponse.cpp
-  src/v20211122/model/BackupPolicyModelInput.cpp
+  src/v20211122/model/DescribeDBSArchiveLogsRequest.cpp
+  src/v20211122/model/DBParamValue.cpp
   src/v20211122/model/DatabaseFunction.cpp
   src/v20211122/model/ModifyDBSBackupPolicyRequest.cpp
   src/v20211122/model/DescribeDBSCloneInstancesRequest.cpp
   src/v20211122/model/DescribeDatabaseObjectsRequest.cpp
   src/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.cpp
+  src/v20211122/model/BackupPolicyModelInput.cpp
   src/v20211122/model/ModifyAutoRenewFlagResponse.cpp
   src/v20211122/model/DestroyInstancesResponse.cpp
   src/v20211122/model/DescribeDBParametersResponse.cpp
@@ -111,7 +117,7 @@ set(tdmysql_src
   src/v20211122/model/CancelIsolateDBInstancesRequest.cpp
   src/v20211122/model/ModifyDBSBackupSetCommentRequest.cpp
   src/v20211122/model/DatabaseProcedure.cpp
-  src/v20211122/model/DBParamValue.cpp
+  src/v20211122/model/ArchiveLogModel.cpp
   src/v20211122/model/ParamConstraint.cpp
   src/v20211122/model/ModifyDBParametersRequest.cpp
   src/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.cpp

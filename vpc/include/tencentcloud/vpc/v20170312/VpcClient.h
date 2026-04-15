@@ -739,6 +739,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyIpv6AddressesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyLocalGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyLocalGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAdvancedAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAdvancedAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleRequest.h>
@@ -2005,6 +2007,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLocalGatewayResponse> ModifyLocalGatewayOutcome;
                 typedef std::future<ModifyLocalGatewayOutcome> ModifyLocalGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyLocalGatewayRequest&, ModifyLocalGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLocalGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNatGatewayAdvancedAttributeResponse> ModifyNatGatewayAdvancedAttributeOutcome;
+                typedef std::future<ModifyNatGatewayAdvancedAttributeOutcome> ModifyNatGatewayAdvancedAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyNatGatewayAdvancedAttributeRequest&, ModifyNatGatewayAdvancedAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatGatewayAdvancedAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNatGatewayAttributeResponse> ModifyNatGatewayAttributeOutcome;
                 typedef std::future<ModifyNatGatewayAttributeOutcome> ModifyNatGatewayAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNatGatewayAttributeRequest&, ModifyNatGatewayAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatGatewayAttributeAsyncHandler;
@@ -5766,6 +5771,15 @@ LimitTypes取值范围：
                 ModifyLocalGatewayOutcome ModifyLocalGateway(const Model::ModifyLocalGatewayRequest &request);
                 void ModifyLocalGatewayAsync(const Model::ModifyLocalGatewayRequest& request, const ModifyLocalGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLocalGatewayOutcomeCallable ModifyLocalGatewayCallable(const Model::ModifyLocalGatewayRequest& request);
+
+                /**
+                 *本接口（ModifyNatGatewayAdvancedAttribute）用于修改NAT网关的高级属性。
+                 * @param req ModifyNatGatewayAdvancedAttributeRequest
+                 * @return ModifyNatGatewayAdvancedAttributeOutcome
+                 */
+                ModifyNatGatewayAdvancedAttributeOutcome ModifyNatGatewayAdvancedAttribute(const Model::ModifyNatGatewayAdvancedAttributeRequest &request);
+                void ModifyNatGatewayAdvancedAttributeAsync(const Model::ModifyNatGatewayAdvancedAttributeRequest& request, const ModifyNatGatewayAdvancedAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatGatewayAdvancedAttributeOutcomeCallable ModifyNatGatewayAdvancedAttributeCallable(const Model::ModifyNatGatewayAdvancedAttributeRequest& request);
 
                 /**
                  *本接口（ModifyNatGatewayAttribute）用于修改NAT网关的属性。

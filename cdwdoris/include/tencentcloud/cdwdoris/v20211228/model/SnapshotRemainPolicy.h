@@ -109,6 +109,39 @@ namespace TencentCloud
                      */
                     bool RemainLatestNumHasBeenSet() const;
 
+                    /**
+                     * 获取天数单位
+0：天
+1：季度
+2：年
+                     * @return RemainDaysUnit 天数单位
+0：天
+1：季度
+2：年
+                     * 
+                     */
+                    int64_t GetRemainDaysUnit() const;
+
+                    /**
+                     * 设置天数单位
+0：天
+1：季度
+2：年
+                     * @param _remainDaysUnit 天数单位
+0：天
+1：季度
+2：年
+                     * 
+                     */
+                    void SetRemainDaysUnit(const int64_t& _remainDaysUnit);
+
+                    /**
+                     * 判断参数 RemainDaysUnit 是否已赋值
+                     * @return RemainDaysUnit 是否已赋值
+                     * 
+                     */
+                    bool RemainDaysUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +161,15 @@ namespace TencentCloud
                      */
                     int64_t m_remainLatestNum;
                     bool m_remainLatestNumHasBeenSet;
+
+                    /**
+                     * 天数单位
+0：天
+1：季度
+2：年
+                     */
+                    int64_t m_remainDaysUnit;
+                    bool m_remainDaysUnitHasBeenSet;
 
                 };
             }

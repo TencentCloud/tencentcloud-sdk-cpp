@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取父节点ID
+                     * 获取<p>父节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentId 父节点ID
+                     * @return ParentId <p>父节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool ParentIdHasBeenSet() const;
 
                     /**
-                     * 获取当前文件夹ID
+                     * 获取<p>当前文件夹ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 当前文件夹ID
+                     * @return Id <p>当前文件夹ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,9 +78,9 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取当前文件夹名
+                     * 获取<p>当前文件夹名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 当前文件夹名
+                     * @return Name <p>当前文件夹名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,9 +94,9 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取当前文件夹下的作业列表
+                     * 获取<p>当前文件夹下的作业列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobSet 当前文件夹下的作业列表
+                     * @return JobSet <p>当前文件夹下的作业列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,9 +110,9 @@ namespace TencentCloud
                     bool JobSetHasBeenSet() const;
 
                     /**
-                     * 获取迭代子目录
+                     * 获取<p>迭代子目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Children 迭代子目录
+                     * @return Children <p>迭代子目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,35 +128,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 父节点ID
+                     * <p>父节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
-                     * 当前文件夹ID
+                     * <p>当前文件夹ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 当前文件夹名
+                     * <p>当前文件夹名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 当前文件夹下的作业列表
+                     * <p>当前文件夹下的作业列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TreeJobSets> m_jobSet;
                     bool m_jobSetHasBeenSet;
 
                     /**
-                     * 迭代子目录
+                     * <p>迭代子目录</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeTreeJobsRsp> m_children;

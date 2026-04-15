@@ -57,6 +57,10 @@
 #include <tencentcloud/tcbr/v20220217/model/ReleaseGrayResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/SearchClsLogRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/SearchClsLogResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/StartVersionInstanceRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/StartVersionInstanceResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/StopVersionInstanceRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/StopVersionInstanceResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/SubmitServerRollbackRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/SubmitServerRollbackResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/UpdateCloudRunServerRequest.h>
@@ -126,6 +130,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
                 typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartVersionInstanceResponse> StartVersionInstanceOutcome;
+                typedef std::future<StartVersionInstanceOutcome> StartVersionInstanceOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::StartVersionInstanceRequest&, StartVersionInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartVersionInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopVersionInstanceResponse> StopVersionInstanceOutcome;
+                typedef std::future<StopVersionInstanceOutcome> StopVersionInstanceOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::StopVersionInstanceRequest&, StopVersionInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopVersionInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitServerRollbackResponse> SubmitServerRollbackOutcome;
                 typedef std::future<SubmitServerRollbackOutcome> SubmitServerRollbackOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::SubmitServerRollbackRequest&, SubmitServerRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitServerRollbackAsyncHandler;
@@ -287,6 +297,24 @@ namespace TencentCloud
                 SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
                 void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
+
+                /**
+                 *启动版本实例
+                 * @param req StartVersionInstanceRequest
+                 * @return StartVersionInstanceOutcome
+                 */
+                StartVersionInstanceOutcome StartVersionInstance(const Model::StartVersionInstanceRequest &request);
+                void StartVersionInstanceAsync(const Model::StartVersionInstanceRequest& request, const StartVersionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartVersionInstanceOutcomeCallable StartVersionInstanceCallable(const Model::StartVersionInstanceRequest& request);
+
+                /**
+                 *停止版本实例
+                 * @param req StopVersionInstanceRequest
+                 * @return StopVersionInstanceOutcome
+                 */
+                StopVersionInstanceOutcome StopVersionInstance(const Model::StopVersionInstanceRequest &request);
+                void StopVersionInstanceAsync(const Model::StopVersionInstanceRequest& request, const StopVersionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopVersionInstanceOutcomeCallable StopVersionInstanceCallable(const Model::StopVersionInstanceRequest& request);
 
                 /**
                  *回滚版本

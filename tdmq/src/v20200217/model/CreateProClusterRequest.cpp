@@ -31,7 +31,8 @@ CreateProClusterRequest::CreateProClusterRequest() :
     m_autoVoucherHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_vpcHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string CreateProClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -277,6 +286,22 @@ void CreateProClusterRequest::SetTags(const vector<Tag>& _tags)
 bool CreateProClusterRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateProClusterRequest::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void CreateProClusterRequest::SetInstanceVersion(const string& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool CreateProClusterRequest::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
 }
 
 

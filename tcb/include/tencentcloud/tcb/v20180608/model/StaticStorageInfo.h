@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/ExternalStorage.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取静态CDN域名
-                     * @return StaticDomain 静态CDN域名
+                     * 获取<p>静态CDN域名</p>
+                     * @return StaticDomain <p>静态CDN域名</p>
                      * 
                      */
                     std::string GetStaticDomain() const;
 
                     /**
-                     * 设置静态CDN域名
-                     * @param _staticDomain 静态CDN域名
+                     * 设置<p>静态CDN域名</p>
+                     * @param _staticDomain <p>静态CDN域名</p>
                      * 
                      */
                     void SetStaticDomain(const std::string& _staticDomain);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool StaticDomainHasBeenSet() const;
 
                     /**
-                     * 获取静态CDN默认文件夹，当前为根目录
-                     * @return DefaultDirName 静态CDN默认文件夹，当前为根目录
+                     * 获取<p>静态CDN默认文件夹，当前为根目录</p>
+                     * @return DefaultDirName <p>静态CDN默认文件夹，当前为根目录</p>
                      * 
                      */
                     std::string GetDefaultDirName() const;
 
                     /**
-                     * 设置静态CDN默认文件夹，当前为根目录
-                     * @param _defaultDirName 静态CDN默认文件夹，当前为根目录
+                     * 设置<p>静态CDN默认文件夹，当前为根目录</p>
+                     * @param _defaultDirName <p>静态CDN默认文件夹，当前为根目录</p>
                      * 
                      */
                     void SetDefaultDirName(const std::string& _defaultDirName);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool DefaultDirNameHasBeenSet() const;
 
                     /**
-                     * 获取资源状态(process/online/offline/init)
-                     * @return Status 资源状态(process/online/offline/init)
+                     * 获取<p>资源状态(process/online/offline/init)</p>
+                     * @return Status <p>资源状态(process/online/offline/init)</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置资源状态(process/online/offline/init)
-                     * @param _status 资源状态(process/online/offline/init)
+                     * 设置<p>资源状态(process/online/offline/init)</p>
+                     * @param _status <p>资源状态(process/online/offline/init)</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取cos所属区域
-                     * @return Region cos所属区域
+                     * 获取<p>cos所属区域</p>
+                     * @return Region <p>cos所属区域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置cos所属区域
-                     * @param _region cos所属区域
+                     * 设置<p>cos所属区域</p>
+                     * @param _region <p>cos所属区域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取bucket信息
-                     * @return Bucket bucket信息
+                     * 获取<p>bucket信息</p>
+                     * @return Bucket <p>bucket信息</p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置bucket信息
-                     * @param _bucket bucket信息
+                     * 设置<p>bucket信息</p>
+                     * @param _bucket <p>bucket信息</p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -151,37 +152,91 @@ namespace TencentCloud
                      */
                     bool BucketHasBeenSet() const;
 
+                    /**
+                     * 获取<p>到期时间（秒级时间戳）</p>
+                     * @return AccessExpire <p>到期时间（秒级时间戳）</p>
+                     * 
+                     */
+                    int64_t GetAccessExpire() const;
+
+                    /**
+                     * 设置<p>到期时间（秒级时间戳）</p>
+                     * @param _accessExpire <p>到期时间（秒级时间戳）</p>
+                     * 
+                     */
+                    void SetAccessExpire(const int64_t& _accessExpire);
+
+                    /**
+                     * 判断参数 AccessExpire 是否已赋值
+                     * @return AccessExpire 是否已赋值
+                     * 
+                     */
+                    bool AccessExpireHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部存储。</p>
+                     * @return ExternalStorage <p>外部存储。</p>
+                     * 
+                     */
+                    ExternalStorage GetExternalStorage() const;
+
+                    /**
+                     * 设置<p>外部存储。</p>
+                     * @param _externalStorage <p>外部存储。</p>
+                     * 
+                     */
+                    void SetExternalStorage(const ExternalStorage& _externalStorage);
+
+                    /**
+                     * 判断参数 ExternalStorage 是否已赋值
+                     * @return ExternalStorage 是否已赋值
+                     * 
+                     */
+                    bool ExternalStorageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 静态CDN域名
+                     * <p>静态CDN域名</p>
                      */
                     std::string m_staticDomain;
                     bool m_staticDomainHasBeenSet;
 
                     /**
-                     * 静态CDN默认文件夹，当前为根目录
+                     * <p>静态CDN默认文件夹，当前为根目录</p>
                      */
                     std::string m_defaultDirName;
                     bool m_defaultDirNameHasBeenSet;
 
                     /**
-                     * 资源状态(process/online/offline/init)
+                     * <p>资源状态(process/online/offline/init)</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * cos所属区域
+                     * <p>cos所属区域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * bucket信息
+                     * <p>bucket信息</p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * <p>到期时间（秒级时间戳）</p>
+                     */
+                    int64_t m_accessExpire;
+                    bool m_accessExpireHasBeenSet;
+
+                    /**
+                     * <p>外部存储。</p>
+                     */
+                    ExternalStorage m_externalStorage;
+                    bool m_externalStorageHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组信息
-                     * @return WorkloadGroups 资源组信息
+                     * 获取<p>资源组信息</p>
+                     * @return WorkloadGroups <p>资源组信息</p>
                      * 
                      */
                     std::vector<WorkloadGroupConfig> GetWorkloadGroups() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool WorkloadGroupsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启资源组：开启-open、关闭-close
-                     * @return Status 是否开启资源组：开启-open、关闭-close
+                     * 获取<p>是否开启资源组：开启-open、关闭-close</p>
+                     * @return Status <p>是否开启资源组：开启-open、关闭-close</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMsg 错误信息
+                     * 获取<p>错误信息</p>
+                     * @return ErrorMsg <p>错误信息</p>
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -86,25 +86,45 @@ namespace TencentCloud
                      */
                     bool ErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启监控，0：未开启，1：开启</p>
+                     * @return MonitorStatus <p>是否开启监控，0：未开启，1：开启</p>
+                     * 
+                     */
+                    int64_t GetMonitorStatus() const;
+
+                    /**
+                     * 判断参数 MonitorStatus 是否已赋值
+                     * @return MonitorStatus 是否已赋值
+                     * 
+                     */
+                    bool MonitorStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源组信息
+                     * <p>资源组信息</p>
                      */
                     std::vector<WorkloadGroupConfig> m_workloadGroups;
                     bool m_workloadGroupsHasBeenSet;
 
                     /**
-                     * 是否开启资源组：开启-open、关闭-close
+                     * <p>是否开启资源组：开启-open、关闭-close</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * <p>是否开启监控，0：未开启，1：开启</p>
+                     */
+                    int64_t m_monitorStatus;
+                    bool m_monitorStatusHasBeenSet;
 
                 };
             }

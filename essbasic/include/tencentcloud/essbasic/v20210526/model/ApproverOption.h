@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool ForbidAddSignDateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * @return ApproverMobileMode <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * 
+                     */
+                    std::string GetApproverMobileMode() const;
+
+                    /**
+                     * 设置<p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * @param _approverMobileMode <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * 
+                     */
+                    void SetApproverMobileMode(const std::string& _approverMobileMode);
+
+                    /**
+                     * 判断参数 ApproverMobileMode 是否已赋值
+                     * @return ApproverMobileMode 是否已赋值
+                     * 
+                     */
+                    bool ApproverMobileModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     bool m_forbidAddSignDate;
                     bool m_forbidAddSignDateHasBeenSet;
+
+                    /**
+                     * <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>渠道方签署人不会触发</li><li>非渠道方签署人在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     */
+                    std::string m_approverMobileMode;
+                    bool m_approverMobileModeHasBeenSet;
 
                 };
             }

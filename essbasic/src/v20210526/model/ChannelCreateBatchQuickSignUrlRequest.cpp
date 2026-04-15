@@ -37,7 +37,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_cacheApproverInfoHasBeenSet(false),
     m_canBatchRejectHasBeenSet(false),
     m_presetApproverInfoHasBeenSet(false),
-    m_canSkipReadFlowHasBeenSet(false)
+    m_canSkipReadFlowHasBeenSet(false),
+    m_expiredOnHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,14 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         string key = "CanSkipReadFlow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canSkipReadFlow, allocator);
+    }
+
+    if (m_expiredOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredOn, allocator);
     }
 
 
@@ -434,6 +443,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetCanSkipReadFlow(const bool& _canS
 bool ChannelCreateBatchQuickSignUrlRequest::CanSkipReadFlowHasBeenSet() const
 {
     return m_canSkipReadFlowHasBeenSet;
+}
+
+int64_t ChannelCreateBatchQuickSignUrlRequest::GetExpiredOn() const
+{
+    return m_expiredOn;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetExpiredOn(const int64_t& _expiredOn)
+{
+    m_expiredOn = _expiredOn;
+    m_expiredOnHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::ExpiredOnHasBeenSet() const
+{
+    return m_expiredOnHasBeenSet;
 }
 
 

@@ -255,7 +255,6 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/DeleteSyncCompareTaskRequest.h
   include/tencentcloud/dts/v20211206/model/TagItem.h
   include/tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h
-  include/tencentcloud/dts/v20211206/model/OnlineDDL.h
   include/tencentcloud/dts/v20211206/model/DescribeSubscribeJobsResponse.h
   include/tencentcloud/dts/v20211206/model/ResetSubscribeRequest.h
   include/tencentcloud/dts/v20211206/model/DatabaseTableObject.h
@@ -564,7 +563,6 @@ set(dts_src
   src/v20211206/model/DeleteSyncCompareTaskRequest.cpp
   src/v20211206/model/TagItem.cpp
   src/v20211206/model/RecoverMigrateJobRequest.cpp
-  src/v20211206/model/OnlineDDL.cpp
   src/v20211206/model/DescribeSubscribeJobsResponse.cpp
   src/v20211206/model/ResetSubscribeRequest.cpp
   src/v20211206/model/DatabaseTableObject.cpp

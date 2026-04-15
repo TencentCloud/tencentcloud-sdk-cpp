@@ -433,6 +433,27 @@ namespace TencentCloud
                      */
                     bool ImageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>
+                     * @return WebUIType <p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetWebUIType() const;
+
+                    /**
+                     * 设置<p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>
+                     * @param _webUIType <p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetWebUIType(const int64_t& _webUIType);
+
+                    /**
+                     * 判断参数 WebUIType 是否已赋值
+                     * @return WebUIType 是否已赋值
+                     * 
+                     */
+                    bool WebUITypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,6 +563,12 @@ namespace TencentCloud
                      */
                     std::string m_imageVersion;
                     bool m_imageVersionHasBeenSet;
+
+                    /**
+                     * <p>类型：0 公网，1 内网</p><p>枚举值：</p><ul><li>0： 公网</li><li>1： 内网</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_webUIType;
+                    bool m_webUITypeHasBeenSet;
 
                 };
             }

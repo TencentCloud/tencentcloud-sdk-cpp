@@ -940,6 +940,56 @@ EmrClient::DescribeAutoScaleStrategiesOutcomeCallable EmrClient::DescribeAutoSca
     return prom->get_future();
 }
 
+EmrClient::DescribeBootScriptOutcome EmrClient::DescribeBootScript(const DescribeBootScriptRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBootScript");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBootScriptResponse rsp = DescribeBootScriptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBootScriptOutcome(rsp);
+        else
+            return DescribeBootScriptOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBootScriptOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeBootScriptAsync(const DescribeBootScriptRequest& request, const DescribeBootScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBootScriptRequest&;
+    using Resp = DescribeBootScriptResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBootScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeBootScriptOutcomeCallable EmrClient::DescribeBootScriptCallable(const DescribeBootScriptRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBootScriptOutcome>>();
+    DescribeBootScriptAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeBootScriptRequest&,
+        DescribeBootScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeClusterFlowStatusDetailOutcome EmrClient::DescribeClusterFlowStatusDetail(const DescribeClusterFlowStatusDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterFlowStatusDetail");
@@ -3282,6 +3332,56 @@ EmrClient::ModifyAutoScaleStrategyOutcomeCallable EmrClient::ModifyAutoScaleStra
         const EmrClient*,
         const ModifyAutoScaleStrategyRequest&,
         ModifyAutoScaleStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EmrClient::ModifyBootScriptOutcome EmrClient::ModifyBootScript(const ModifyBootScriptRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBootScript");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBootScriptResponse rsp = ModifyBootScriptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBootScriptOutcome(rsp);
+        else
+            return ModifyBootScriptOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBootScriptOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyBootScriptAsync(const ModifyBootScriptRequest& request, const ModifyBootScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBootScriptRequest&;
+    using Resp = ModifyBootScriptResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBootScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::ModifyBootScriptOutcomeCallable EmrClient::ModifyBootScriptCallable(const ModifyBootScriptRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBootScriptOutcome>>();
+    ModifyBootScriptAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const ModifyBootScriptRequest&,
+        ModifyBootScriptOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool LogoAddHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>
+                     * @return EnableBGM <p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>
+                     * 
+                     */
+                    std::string GetEnableBGM() const;
+
+                    /**
+                     * 设置<p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>
+                     * @param _enableBGM <p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>
+                     * 
+                     */
+                    void SetEnableBGM(const std::string& _enableBGM);
+
+                    /**
+                     * 判断参数 EnableBGM 是否已赋值
+                     * @return EnableBGM 是否已赋值
+                     * 
+                     */
+                    bool EnableBGMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     std::string m_logoAdd;
                     bool m_logoAddHasBeenSet;
+
+                    /**
+                     * <p>是否为生成的视频添加背景音乐。</p><p>枚举值：</p><ul><li>Enabled： 系统将从预设 BGM 库中自动挑选合适的音乐并添加。</li><li>Disabled： 不添加BGM。</li></ul><p>默认值：Disabled</p>
+                     */
+                    std::string m_enableBGM;
+                    bool m_enableBGMHasBeenSet;
 
                 };
             }

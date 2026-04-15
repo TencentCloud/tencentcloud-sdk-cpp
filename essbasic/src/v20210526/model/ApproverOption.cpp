@@ -26,7 +26,8 @@ ApproverOption::ApproverOption() :
     m_hideOneKeySignHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false),
-    m_forbidAddSignDateHasBeenSet(false)
+    m_forbidAddSignDateHasBeenSet(false),
+    m_approverMobileModeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         m_forbidAddSignDateHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverMobileMode") && !value["ApproverMobileMode"].IsNull())
+    {
+        if (!value["ApproverMobileMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.ApproverMobileMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverMobileMode = string(value["ApproverMobileMode"].GetString());
+        m_approverMobileModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ForbidAddSignDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidAddSignDate, allocator);
+    }
+
+    if (m_approverMobileModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverMobileMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverMobileMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ApproverOption::SetForbidAddSignDate(const bool& _forbidAddSignDate)
 bool ApproverOption::ForbidAddSignDateHasBeenSet() const
 {
     return m_forbidAddSignDateHasBeenSet;
+}
+
+string ApproverOption::GetApproverMobileMode() const
+{
+    return m_approverMobileMode;
+}
+
+void ApproverOption::SetApproverMobileMode(const string& _approverMobileMode)
+{
+    m_approverMobileMode = _approverMobileMode;
+    m_approverMobileModeHasBeenSet = true;
+}
+
+bool ApproverOption::ApproverMobileModeHasBeenSet() const
+{
+    return m_approverMobileModeHasBeenSet;
 }
 

@@ -17940,6 +17940,56 @@ VpcClient::ModifyLocalGatewayOutcomeCallable VpcClient::ModifyLocalGatewayCallab
     return prom->get_future();
 }
 
+VpcClient::ModifyNatGatewayAdvancedAttributeOutcome VpcClient::ModifyNatGatewayAdvancedAttribute(const ModifyNatGatewayAdvancedAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNatGatewayAdvancedAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNatGatewayAdvancedAttributeResponse rsp = ModifyNatGatewayAdvancedAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNatGatewayAdvancedAttributeOutcome(rsp);
+        else
+            return ModifyNatGatewayAdvancedAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNatGatewayAdvancedAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyNatGatewayAdvancedAttributeAsync(const ModifyNatGatewayAdvancedAttributeRequest& request, const ModifyNatGatewayAdvancedAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNatGatewayAdvancedAttributeRequest&;
+    using Resp = ModifyNatGatewayAdvancedAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNatGatewayAdvancedAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::ModifyNatGatewayAdvancedAttributeOutcomeCallable VpcClient::ModifyNatGatewayAdvancedAttributeCallable(const ModifyNatGatewayAdvancedAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNatGatewayAdvancedAttributeOutcome>>();
+    ModifyNatGatewayAdvancedAttributeAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const ModifyNatGatewayAdvancedAttributeRequest&,
+        ModifyNatGatewayAdvancedAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::ModifyNatGatewayAttributeOutcome VpcClient::ModifyNatGatewayAttribute(const ModifyNatGatewayAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNatGatewayAttribute");

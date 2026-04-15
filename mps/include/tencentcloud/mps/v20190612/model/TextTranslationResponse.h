@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取翻译后的文本
-                     * @return TargetText 翻译后的文本
+                     * 获取<p>翻译后的文本</p>
+                     * @return TargetText <p>翻译后的文本</p>
                      * 
                      */
                     std::string GetTargetText() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TargetTextHasBeenSet() const;
 
                     /**
-                     * 获取源语言，详见入参Source
-                     * @return Source 源语言，详见入参Source
+                     * 获取<p>源语言，详见入参Source</p>
+                     * @return Source <p>源语言，详见入参Source</p>
                      * 
                      */
                     std::string GetSource() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取目标语言，详见入参Target
-                     * @return Target 目标语言，详见入参Target
+                     * 获取<p>目标语言，详见入参Target</p>
+                     * @return Target <p>目标语言，详见入参Target</p>
                      * 
                      */
                     std::string GetTarget() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 翻译后的文本
+                     * <p>翻译后的文本</p>
                      */
                     std::string m_targetText;
                     bool m_targetTextHasBeenSet;
 
                     /**
-                     * 源语言，详见入参Source
+                     * <p>源语言，详见入参Source</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 目标语言，详见入参Target
+                     * <p>目标语言，详见入参Target</p>
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;

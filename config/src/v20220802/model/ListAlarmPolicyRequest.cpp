@@ -23,7 +23,8 @@ using namespace TencentCloud::Config::V20220802::Model;
 using namespace std;
 
 ListAlarmPolicyRequest::ListAlarmPolicyRequest() :
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ListAlarmPolicyRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ListAlarmPolicyRequest::SetOffset(const uint64_t& _offset)
 bool ListAlarmPolicyRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+uint64_t ListAlarmPolicyRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListAlarmPolicyRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListAlarmPolicyRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

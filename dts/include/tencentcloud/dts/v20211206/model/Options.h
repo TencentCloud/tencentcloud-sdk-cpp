@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。
-                     * @return InitType 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。
+                     * 获取<p>同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。</p>
+                     * @return InitType <p>同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。</p>
                      * 
                      */
                     std::string GetInitType() const;
 
                     /**
-                     * 设置同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。
-                     * @param _initType 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。
+                     * 设置<p>同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。</p>
+                     * @param _initType <p>同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。</p>
                      * 
                      */
                     void SetInitType(const std::string& _initType);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool InitTypeHasBeenSet() const;
 
                     /**
-                     * 获取同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
-                     * @return DealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 获取<p>同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)</p>
+                     * @return DealOfExistSameTable <p>同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)</p>
                      * 
                      */
                     std::string GetDealOfExistSameTable() const;
 
                     /**
-                     * 设置同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
-                     * @param _dealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 设置<p>同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)</p>
+                     * @param _dealOfExistSameTable <p>同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)</p>
                      * 
                      */
                     void SetDealOfExistSameTable(const std::string& _dealOfExistSameTable);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool DealOfExistSameTableHasBeenSet() const;
 
                     /**
-                     * 获取冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
-                     * @return ConflictHandleType 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
+                     * 获取<p>冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)</p>
+                     * @return ConflictHandleType <p>冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)</p>
                      * 
                      */
                     std::string GetConflictHandleType() const;
 
                     /**
-                     * 设置冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
-                     * @param _conflictHandleType 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
+                     * 设置<p>冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)</p>
+                     * @param _conflictHandleType <p>冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)</p>
                      * 
                      */
                     void SetConflictHandleType(const std::string& _conflictHandleType);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ConflictHandleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否添加附加列
-                     * @return AddAdditionalColumn 是否添加附加列
+                     * 获取<p>是否添加附加列</p>
+                     * @return AddAdditionalColumn <p>是否添加附加列</p>
                      * 
                      */
                     bool GetAddAdditionalColumn() const;
 
                     /**
-                     * 设置是否添加附加列
-                     * @param _addAdditionalColumn 是否添加附加列
+                     * 设置<p>是否添加附加列</p>
+                     * @param _addAdditionalColumn <p>是否添加附加列</p>
                      * 
                      */
                     void SetAddAdditionalColumn(const bool& _addAdditionalColumn);
@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool AddAdditionalColumnHasBeenSet() const;
 
                     /**
-                     * 获取所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。
+                     * 获取<p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。
+                     * @return OpTypes <p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOpTypes() const;
 
                     /**
-                     * 设置所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。
+                     * 设置<p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _opTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。
+                     * @param _opTypes <p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool OpTypesHasBeenSet() const;
 
                     /**
-                     * 获取冲突处理的详细选项，如条件覆盖中的条件行和条件操作
-                     * @return ConflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
+                     * 获取<p>冲突处理的详细选项，如条件覆盖中的条件行和条件操作</p>
+                     * @return ConflictHandleOption <p>冲突处理的详细选项，如条件覆盖中的条件行和条件操作</p>
                      * 
                      */
                     ConflictHandleOption GetConflictHandleOption() const;
 
                     /**
-                     * 设置冲突处理的详细选项，如条件覆盖中的条件行和条件操作
-                     * @param _conflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
+                     * 设置<p>冲突处理的详细选项，如条件覆盖中的条件行和条件操作</p>
+                     * @param _conflictHandleOption <p>冲突处理的详细选项，如条件覆盖中的条件行和条件操作</p>
                      * 
                      */
                     void SetConflictHandleOption(const ConflictHandleOption& _conflictHandleOption);
@@ -181,18 +181,18 @@ namespace TencentCloud
                     bool ConflictHandleOptionHasBeenSet() const;
 
                     /**
-                     * 获取DDL同步选项，具体描述要同步哪些DDL
+                     * 获取<p>DDL同步选项，具体描述要同步哪些DDL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdlOptions DDL同步选项，具体描述要同步哪些DDL
+                     * @return DdlOptions <p>DDL同步选项，具体描述要同步哪些DDL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DdlOption> GetDdlOptions() const;
 
                     /**
-                     * 设置DDL同步选项，具体描述要同步哪些DDL
+                     * 设置<p>DDL同步选项，具体描述要同步哪些DDL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ddlOptions DDL同步选项，具体描述要同步哪些DDL
+                     * @param _ddlOptions <p>DDL同步选项，具体描述要同步哪些DDL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,15 +206,15 @@ namespace TencentCloud
                     bool DdlOptionsHasBeenSet() const;
 
                     /**
-                     * 获取kafka同步选项
-                     * @return KafkaOption kafka同步选项
+                     * 获取<p>kafka同步选项</p>
+                     * @return KafkaOption <p>kafka同步选项</p>
                      * 
                      */
                     KafkaOption GetKafkaOption() const;
 
                     /**
-                     * 设置kafka同步选项
-                     * @param _kafkaOption kafka同步选项
+                     * 设置<p>kafka同步选项</p>
+                     * @param _kafkaOption <p>kafka同步选项</p>
                      * 
                      */
                     void SetKafkaOption(const KafkaOption& _kafkaOption);
@@ -227,15 +227,15 @@ namespace TencentCloud
                     bool KafkaOptionHasBeenSet() const;
 
                     /**
-                     * 获取任务限速信息
-                     * @return RateLimitOption 任务限速信息
+                     * 获取<p>任务限速信息</p>
+                     * @return RateLimitOption <p>任务限速信息</p>
                      * 
                      */
                     RateLimitOption GetRateLimitOption() const;
 
                     /**
-                     * 设置任务限速信息
-                     * @param _rateLimitOption 任务限速信息
+                     * 设置<p>任务限速信息</p>
+                     * @param _rateLimitOption <p>任务限速信息</p>
                      * 
                      */
                     void SetRateLimitOption(const RateLimitOption& _rateLimitOption);
@@ -248,15 +248,15 @@ namespace TencentCloud
                     bool RateLimitOptionHasBeenSet() const;
 
                     /**
-                     * 获取自动重试的时间窗口设置
-                     * @return AutoRetryTimeRangeMinutes 自动重试的时间窗口设置
+                     * 获取<p>自动重试的时间窗口设置</p>
+                     * @return AutoRetryTimeRangeMinutes <p>自动重试的时间窗口设置</p>
                      * 
                      */
                     int64_t GetAutoRetryTimeRangeMinutes() const;
 
                     /**
-                     * 设置自动重试的时间窗口设置
-                     * @param _autoRetryTimeRangeMinutes 自动重试的时间窗口设置
+                     * 设置<p>自动重试的时间窗口设置</p>
+                     * @param _autoRetryTimeRangeMinutes <p>自动重试的时间窗口设置</p>
                      * 
                      */
                     void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
@@ -269,15 +269,15 @@ namespace TencentCloud
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
                     /**
-                     * 获取同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。
-                     * @return StartPosition 同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。
+                     * 获取<p>同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。</p>
+                     * @return StartPosition <p>同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。</p>
                      * 
                      */
                     std::string GetStartPosition() const;
 
                     /**
-                     * 设置同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。
-                     * @param _startPosition 同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。
+                     * 设置<p>同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。</p>
+                     * @param _startPosition <p>同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。</p>
                      * 
                      */
                     void SetStartPosition(const std::string& _startPosition);
@@ -290,15 +290,15 @@ namespace TencentCloud
                     bool StartPositionHasBeenSet() const;
 
                     /**
-                     * 获取同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
-                     * @return FilterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 获取<p>同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持</p>
+                     * @return FilterBeginCommit <p>同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持</p>
                      * 
                      */
                     bool GetFilterBeginCommit() const;
 
                     /**
-                     * 设置同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
-                     * @param _filterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 设置<p>同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持</p>
+                     * @param _filterBeginCommit <p>同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持</p>
                      * 
                      */
                     void SetFilterBeginCommit(const bool& _filterBeginCommit);
@@ -311,15 +311,15 @@ namespace TencentCloud
                     bool FilterBeginCommitHasBeenSet() const;
 
                     /**
-                     * 获取同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
-                     * @return FilterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 获取<p>同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持</p>
+                     * @return FilterCheckpoint <p>同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持</p>
                      * 
                      */
                     bool GetFilterCheckpoint() const;
 
                     /**
-                     * 设置同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
-                     * @param _filterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 设置<p>同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持</p>
+                     * @param _filterCheckpoint <p>同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持</p>
                      * 
                      */
                     void SetFilterCheckpoint(const bool& _filterCheckpoint);
@@ -334,81 +334,81 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。
+                     * <p>同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)；mongodb链路只支持全量数据初始化或仅增量。</p>
                      */
                     std::string m_initType;
                     bool m_initTypeHasBeenSet;
 
                     /**
-                     * 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * <p>同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)</p>
                      */
                     std::string m_dealOfExistSameTable;
                     bool m_dealOfExistSameTableHasBeenSet;
 
                     /**
-                     * 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
+                     * <p>冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)</p>
                      */
                     std::string m_conflictHandleType;
                     bool m_conflictHandleTypeHasBeenSet;
 
                     /**
-                     * 是否添加附加列
+                     * <p>是否添加附加列</p>
                      */
                     bool m_addAdditionalColumn;
                     bool m_addAdditionalColumnHasBeenSet;
 
                     /**
-                     * 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。
+                     * <p>所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， PartialDDL(自定义,和DdlOptions一起配合使用)。注意，这里至少需要包含DML中的一种。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_opTypes;
                     bool m_opTypesHasBeenSet;
 
                     /**
-                     * 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
+                     * <p>冲突处理的详细选项，如条件覆盖中的条件行和条件操作</p>
                      */
                     ConflictHandleOption m_conflictHandleOption;
                     bool m_conflictHandleOptionHasBeenSet;
 
                     /**
-                     * DDL同步选项，具体描述要同步哪些DDL
+                     * <p>DDL同步选项，具体描述要同步哪些DDL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdlOption> m_ddlOptions;
                     bool m_ddlOptionsHasBeenSet;
 
                     /**
-                     * kafka同步选项
+                     * <p>kafka同步选项</p>
                      */
                     KafkaOption m_kafkaOption;
                     bool m_kafkaOptionHasBeenSet;
 
                     /**
-                     * 任务限速信息
+                     * <p>任务限速信息</p>
                      */
                     RateLimitOption m_rateLimitOption;
                     bool m_rateLimitOptionHasBeenSet;
 
                     /**
-                     * 自动重试的时间窗口设置
+                     * <p>自动重试的时间窗口设置</p>
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                     /**
-                     * 同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。
+                     * <p>同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。</p>
                      */
                     std::string m_startPosition;
                     bool m_startPositionHasBeenSet;
 
                     /**
-                     * 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * <p>同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持</p>
                      */
                     bool m_filterBeginCommit;
                     bool m_filterBeginCommitHasBeenSet;
 
                     /**
-                     * 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * <p>同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持</p>
                      */
                     bool m_filterCheckpoint;
                     bool m_filterCheckpointHasBeenSet;

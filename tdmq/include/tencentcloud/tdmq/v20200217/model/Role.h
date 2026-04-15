@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色名称。
-                     * @return RoleName 角色名称。
+                     * 获取<p>角色名称。</p>
+                     * @return RoleName <p>角色名称。</p>
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称。
-                     * @param _roleName 角色名称。
+                     * 设置<p>角色名称。</p>
+                     * @param _roleName <p>角色名称。</p>
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取角色token值。
-                     * @return Token 角色token值。
+                     * 获取<p>角色token值。</p>
+                     * @return Token <p>角色token值。</p>
                      * 
                      */
                     std::string GetToken() const;
 
                     /**
-                     * 设置角色token值。
-                     * @param _token 角色token值。
+                     * 设置<p>角色token值。</p>
+                     * @param _token <p>角色token值。</p>
                      * 
                      */
                     void SetToken(const std::string& _token);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取备注说明。
-                     * @return Remark 备注说明。
+                     * 获取<p>备注说明。</p>
+                     * @return Remark <p>备注说明。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注说明。
-                     * @param _remark 备注说明。
+                     * 设置<p>备注说明。</p>
+                     * @param _remark <p>备注说明。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreateTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdateTime 更新时间。
+                     * 获取<p>更新时间。</p>
+                     * @return UpdateTime <p>更新时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updateTime 更新时间。
+                     * 设置<p>更新时间。</p>
+                     * @param _updateTime <p>更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
-                     * @return PermType 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * 获取<p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>
+                     * @return PermType <p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>
                      * 
                      */
                     std::string GetPermType() const;
 
                     /**
-                     * 设置授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
-                     * @param _permType 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * 设置<p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>
+                     * @param _permType <p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>
                      * 
                      */
                     void SetPermType(const std::string& _permType);
@@ -172,43 +172,124 @@ namespace TencentCloud
                      */
                     bool PermTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>
+                     * @return TokenType <p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>
+                     * 
+                     */
+                    std::string GetTokenType() const;
+
+                    /**
+                     * 设置<p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>
+                     * @param _tokenType <p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>
+                     * 
+                     */
+                    void SetTokenType(const std::string& _tokenType);
+
+                    /**
+                     * 判断参数 TokenType 是否已赋值
+                     * @return TokenType 是否已赋值
+                     * 
+                     */
+                    bool TokenTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SSM 唯一 ID</p>
+                     * @return SecretName <p>SSM 唯一 ID</p>
+                     * 
+                     */
+                    std::string GetSecretName() const;
+
+                    /**
+                     * 设置<p>SSM 唯一 ID</p>
+                     * @param _secretName <p>SSM 唯一 ID</p>
+                     * 
+                     */
+                    void SetSecretName(const std::string& _secretName);
+
+                    /**
+                     * 判断参数 SecretName 是否已赋值
+                     * @return SecretName 是否已赋值
+                     * 
+                     */
+                    bool SecretNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>轮转周期</p><p>单位：天</p>
+                     * @return RotateFreq <p>轮转周期</p><p>单位：天</p>
+                     * 
+                     */
+                    uint64_t GetRotateFreq() const;
+
+                    /**
+                     * 设置<p>轮转周期</p><p>单位：天</p>
+                     * @param _rotateFreq <p>轮转周期</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetRotateFreq(const uint64_t& _rotateFreq);
+
+                    /**
+                     * 判断参数 RotateFreq 是否已赋值
+                     * @return RotateFreq 是否已赋值
+                     * 
+                     */
+                    bool RotateFreqHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色名称。
+                     * <p>角色名称。</p>
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 角色token值。
+                     * <p>角色token值。</p>
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 备注说明。
+                     * <p>备注说明。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * <p>更新时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 授权类型（Cluster：集群；TopicAndGroup：主题或消费组）
+                     * <p>授权类型（Cluster：集群；TopicAndGroup：主题或消费组）</p>
                      */
                     std::string m_permType;
                     bool m_permTypeHasBeenSet;
+
+                    /**
+                     * <p>角色类型</p><p>枚举值：</p><ul><li>Temporary： 轮转密钥</li><li>Permanent： 永久密钥</li></ul>
+                     */
+                    std::string m_tokenType;
+                    bool m_tokenTypeHasBeenSet;
+
+                    /**
+                     * <p>SSM 唯一 ID</p>
+                     */
+                    std::string m_secretName;
+                    bool m_secretNameHasBeenSet;
+
+                    /**
+                     * <p>轮转周期</p><p>单位：天</p>
+                     */
+                    uint64_t m_rotateFreq;
+                    bool m_rotateFreqHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ AddRecordBackupTemplateRequest::AddRecordBackupTemplateRequest() :
     m_templateNameHasBeenSet(false),
     m_timeSectionsHasBeenSet(false),
     m_devTimeSectionsHasBeenSet(false),
-    m_scaleHasBeenSet(false)
+    m_scaleHasBeenSet(false),
+    m_dayOffsetHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string AddRecordBackupTemplateRequest::ToJsonString() const
         string key = "Scale";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scale, allocator);
+    }
+
+    if (m_dayOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOffset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dayOffset, allocator);
     }
 
 
@@ -153,6 +162,22 @@ void AddRecordBackupTemplateRequest::SetScale(const int64_t& _scale)
 bool AddRecordBackupTemplateRequest::ScaleHasBeenSet() const
 {
     return m_scaleHasBeenSet;
+}
+
+int64_t AddRecordBackupTemplateRequest::GetDayOffset() const
+{
+    return m_dayOffset;
+}
+
+void AddRecordBackupTemplateRequest::SetDayOffset(const int64_t& _dayOffset)
+{
+    m_dayOffset = _dayOffset;
+    m_dayOffsetHasBeenSet = true;
+}
+
+bool AddRecordBackupTemplateRequest::DayOffsetHasBeenSet() const
+{
+    return m_dayOffsetHasBeenSet;
 }
 
 

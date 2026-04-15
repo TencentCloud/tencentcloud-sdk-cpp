@@ -28,9 +28,9 @@ DescribeBlockIgnoreListRequest::DescribeBlockIgnoreListRequest() :
     m_directionHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_byHasBeenSet(false),
+    m_showTypeHasBeenSet(false),
     m_searchValueHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false),
-    m_showTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false)
 {
 }
 
@@ -81,6 +81,14 @@ string DescribeBlockIgnoreListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_showTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_searchValueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,14 +103,6 @@ string DescribeBlockIgnoreListRequest::ToJsonString() const
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleType, allocator);
-    }
-
-    if (m_showTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ShowType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -193,6 +193,22 @@ bool DescribeBlockIgnoreListRequest::ByHasBeenSet() const
     return m_byHasBeenSet;
 }
 
+string DescribeBlockIgnoreListRequest::GetShowType() const
+{
+    return m_showType;
+}
+
+void DescribeBlockIgnoreListRequest::SetShowType(const string& _showType)
+{
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
+}
+
+bool DescribeBlockIgnoreListRequest::ShowTypeHasBeenSet() const
+{
+    return m_showTypeHasBeenSet;
+}
+
 string DescribeBlockIgnoreListRequest::GetSearchValue() const
 {
     return m_searchValue;
@@ -223,22 +239,6 @@ void DescribeBlockIgnoreListRequest::SetRuleType(const uint64_t& _ruleType)
 bool DescribeBlockIgnoreListRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
-}
-
-string DescribeBlockIgnoreListRequest::GetShowType() const
-{
-    return m_showType;
-}
-
-void DescribeBlockIgnoreListRequest::SetShowType(const string& _showType)
-{
-    m_showType = _showType;
-    m_showTypeHasBeenSet = true;
-}
-
-bool DescribeBlockIgnoreListRequest::ShowTypeHasBeenSet() const
-{
-    return m_showTypeHasBeenSet;
 }
 
 

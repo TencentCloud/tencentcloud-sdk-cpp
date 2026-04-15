@@ -58,15 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 ID
-                     * @return ClusterId 集群 ID
+                     * 获取<p>集群 ID</p>
+                     * @return ClusterId <p>集群 ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID
-                     * @param _clusterId 集群 ID
+                     * 设置<p>集群 ID</p>
+                     * @param _clusterId <p>集群 ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -79,15 +79,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return Name 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return Name <p>集群名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _name 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _name <p>集群名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,15 +100,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -121,15 +121,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取用户 AppID
-                     * @return AppId 用户 AppID
+                     * 获取<p>用户 AppID</p>
+                     * @return AppId <p>用户 AppID</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户 AppID
-                     * @param _appId 用户 AppID
+                     * 设置<p>用户 AppID</p>
+                     * @param _appId <p>用户 AppID</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -142,15 +142,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取主账号 UIN
-                     * @return OwnerUin 主账号 UIN
+                     * 获取<p>主账号 UIN</p>
+                     * @return OwnerUin <p>主账号 UIN</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置主账号 UIN
-                     * @param _ownerUin 主账号 UIN
+                     * 设置<p>主账号 UIN</p>
+                     * @param _ownerUin <p>主账号 UIN</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -163,15 +163,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建者 UIN
-                     * @return CreatorUin 创建者 UIN
+                     * 获取<p>创建者 UIN</p>
+                     * @return CreatorUin <p>创建者 UIN</p>
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建者 UIN
-                     * @param _creatorUin 创建者 UIN
+                     * 设置<p>创建者 UIN</p>
+                     * @param _creatorUin <p>创建者 UIN</p>
                      * 
                      */
                     void SetCreatorUin(const std::string& _creatorUin);
@@ -184,15 +184,15 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取集群状态, 1 未初始化,3 初始化中，2 运行中
-                     * @return Status 集群状态, 1 未初始化,3 初始化中，2 运行中
+                     * 获取<p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>
+                     * @return Status <p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置集群状态, 1 未初始化,3 初始化中，2 运行中
-                     * @param _status 集群状态, 1 未初始化,3 初始化中，2 运行中
+                     * 设置<p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>
+                     * @param _status <p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -205,15 +205,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Remark 描述
+                     * 获取<p>描述</p>
+                     * @return Remark <p>描述</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置描述
-                     * @param _remark 描述
+                     * 设置<p>描述</p>
+                     * @param _remark <p>描述</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -226,15 +226,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取集群创建时间
-                     * @return CreateTime 集群创建时间
+                     * 获取<p>集群创建时间</p>
+                     * @return CreateTime <p>集群创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置集群创建时间
-                     * @param _createTime 集群创建时间
+                     * 设置<p>集群创建时间</p>
+                     * @param _createTime <p>集群创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -247,15 +247,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后一次操作集群的时间
-                     * @return UpdateTime 最后一次操作集群的时间
+                     * 获取<p>最后一次操作集群的时间</p>
+                     * @return UpdateTime <p>最后一次操作集群的时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最后一次操作集群的时间
-                     * @param _updateTime 最后一次操作集群的时间
+                     * 设置<p>最后一次操作集群的时间</p>
+                     * @param _updateTime <p>最后一次操作集群的时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -268,15 +268,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取CU 数量
-                     * @return CuNum CU 数量
+                     * 获取<p>CU 数量</p>
+                     * @return CuNum <p>CU 数量</p>
                      * 
                      */
                     uint64_t GetCuNum() const;
 
                     /**
-                     * 设置CU 数量
-                     * @param _cuNum CU 数量
+                     * 设置<p>CU 数量</p>
+                     * @param _cuNum <p>CU 数量</p>
                      * 
                      */
                     void SetCuNum(const uint64_t& _cuNum);
@@ -289,15 +289,15 @@ namespace TencentCloud
                     bool CuNumHasBeenSet() const;
 
                     /**
-                     * 获取CU 内存规格
-                     * @return CuMem CU 内存规格
+                     * 获取<p>CU 内存规格</p>
+                     * @return CuMem <p>CU 内存规格</p>
                      * 
                      */
                     uint64_t GetCuMem() const;
 
                     /**
-                     * 设置CU 内存规格
-                     * @param _cuMem CU 内存规格
+                     * 设置<p>CU 内存规格</p>
+                     * @param _cuMem <p>CU 内存规格</p>
                      * 
                      */
                     void SetCuMem(const uint64_t& _cuMem);
@@ -310,15 +310,15 @@ namespace TencentCloud
                     bool CuMemHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -331,15 +331,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
-                     * @return StatusDesc 状态描述
+                     * 获取<p>状态描述</p>
+                     * @return StatusDesc <p>状态描述</p>
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
-                     * 设置状态描述
-                     * @param _statusDesc 状态描述
+                     * 设置<p>状态描述</p>
+                     * @param _statusDesc <p>状态描述</p>
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -352,15 +352,15 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取网络
-                     * @return CCNs 网络
+                     * 获取<p>网络</p>
+                     * @return CCNs <p>网络</p>
                      * 
                      */
                     std::vector<CCN> GetCCNs() const;
 
                     /**
-                     * 设置网络
-                     * @param _cCNs 网络
+                     * 设置<p>网络</p>
+                     * @param _cCNs <p>网络</p>
                      * 
                      */
                     void SetCCNs(const std::vector<CCN>& _cCNs);
@@ -373,15 +373,15 @@ namespace TencentCloud
                     bool CCNsHasBeenSet() const;
 
                     /**
-                     * 获取网络
-                     * @return NetEnvironmentType 网络
+                     * 获取<p>网络</p>
+                     * @return NetEnvironmentType <p>网络</p>
                      * 
                      */
                     uint64_t GetNetEnvironmentType() const;
 
                     /**
-                     * 设置网络
-                     * @param _netEnvironmentType 网络
+                     * 设置<p>网络</p>
+                     * @param _netEnvironmentType <p>网络</p>
                      * 
                      */
                     void SetNetEnvironmentType(const uint64_t& _netEnvironmentType);
@@ -394,15 +394,15 @@ namespace TencentCloud
                     bool NetEnvironmentTypeHasBeenSet() const;
 
                     /**
-                     * 获取空闲 CU
-                     * @return FreeCuNum 空闲 CU
+                     * 获取<p>空闲 CU</p>
+                     * @return FreeCuNum <p>空闲 CU</p>
                      * 
                      */
                     int64_t GetFreeCuNum() const;
 
                     /**
-                     * 设置空闲 CU
-                     * @param _freeCuNum 空闲 CU
+                     * 设置<p>空闲 CU</p>
+                     * @param _freeCuNum <p>空闲 CU</p>
                      * 
                      */
                     void SetFreeCuNum(const int64_t& _freeCuNum);
@@ -415,18 +415,18 @@ namespace TencentCloud
                     bool FreeCuNumHasBeenSet() const;
 
                     /**
-                     * 获取集群绑定的标签
+                     * 获取<p>集群绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 集群绑定的标签
+                     * @return Tags <p>集群绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群绑定的标签
+                     * 设置<p>集群绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 集群绑定的标签
+                     * @param _tags <p>集群绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -440,18 +440,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取集群隔离时间; 没隔离时间，则为 -
+                     * 获取<p>集群隔离时间; 没隔离时间，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime 集群隔离时间; 没隔离时间，则为 -
+                     * @return IsolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置集群隔离时间; 没隔离时间，则为 -
+                     * 设置<p>集群隔离时间; 没隔离时间，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolatedTime 集群隔离时间; 没隔离时间，则为 -
+                     * @param _isolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -465,18 +465,18 @@ namespace TencentCloud
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群过期时间; 没过期概念，则为 -
+                     * 获取<p>集群过期时间; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 集群过期时间; 没过期概念，则为 -
+                     * @return ExpireTime <p>集群过期时间; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置集群过期时间; 没过期概念，则为 -
+                     * 设置<p>集群过期时间; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 集群过期时间; 没过期概念，则为 -
+                     * @param _expireTime <p>集群过期时间; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -490,18 +490,18 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取距离过期还有多少秒; 没过期概念，则为 -
+                     * 获取<p>距离过期还有多少秒; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecondsUntilExpiry 距离过期还有多少秒; 没过期概念，则为 -
+                     * @return SecondsUntilExpiry <p>距离过期还有多少秒; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecondsUntilExpiry() const;
 
                     /**
-                     * 设置距离过期还有多少秒; 没过期概念，则为 -
+                     * 设置<p>距离过期还有多少秒; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _secondsUntilExpiry 距离过期还有多少秒; 没过期概念，则为 -
+                     * @param _secondsUntilExpiry <p>距离过期还有多少秒; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -515,18 +515,18 @@ namespace TencentCloud
                     bool SecondsUntilExpiryHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)
+                     * 获取<p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlag 自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)
+                     * @return AutoRenewFlag <p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)
+                     * 设置<p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlag 自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)
+                     * @param _autoRenewFlag <p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -540,18 +540,18 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取集群的默认 COS 存储桶
+                     * 获取<p>集群的默认 COS 存储桶</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultCOSBucket 集群的默认 COS 存储桶
+                     * @return DefaultCOSBucket <p>集群的默认 COS 存储桶</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultCOSBucket() const;
 
                     /**
-                     * 设置集群的默认 COS 存储桶
+                     * 设置<p>集群的默认 COS 存储桶</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultCOSBucket 集群的默认 COS 存储桶
+                     * @param _defaultCOSBucket <p>集群的默认 COS 存储桶</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -565,18 +565,18 @@ namespace TencentCloud
                     bool DefaultCOSBucketHasBeenSet() const;
 
                     /**
-                     * 获取集群的CLS 日志集 LogSet
+                     * 获取<p>集群的CLS 日志集 LogSet</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CLSLogSet 集群的CLS 日志集 LogSet
+                     * @return CLSLogSet <p>集群的CLS 日志集 LogSet</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLSLogSet() const;
 
                     /**
-                     * 设置集群的CLS 日志集 LogSet
+                     * 设置<p>集群的CLS 日志集 LogSet</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cLSLogSet 集群的CLS 日志集 LogSet
+                     * @param _cLSLogSet <p>集群的CLS 日志集 LogSet</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -590,18 +590,18 @@ namespace TencentCloud
                     bool CLSLogSetHasBeenSet() const;
 
                     /**
-                     * 获取集群的CLS 日志主题 TopicId
+                     * 获取<p>集群的CLS 日志主题 TopicId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CLSTopicId 集群的CLS 日志主题 TopicId
+                     * @return CLSTopicId <p>集群的CLS 日志主题 TopicId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLSTopicId() const;
 
                     /**
-                     * 设置集群的CLS 日志主题 TopicId
+                     * 设置<p>集群的CLS 日志主题 TopicId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cLSTopicId 集群的CLS 日志主题 TopicId
+                     * @param _cLSTopicId <p>集群的CLS 日志主题 TopicId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -615,18 +615,18 @@ namespace TencentCloud
                     bool CLSTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取集群的CLS 日志集  名字
+                     * 获取<p>集群的CLS 日志集  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CLSLogName 集群的CLS 日志集  名字
+                     * @return CLSLogName <p>集群的CLS 日志集  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLSLogName() const;
 
                     /**
-                     * 设置集群的CLS 日志集  名字
+                     * 设置<p>集群的CLS 日志集  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cLSLogName 集群的CLS 日志集  名字
+                     * @param _cLSLogName <p>集群的CLS 日志集  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -640,18 +640,18 @@ namespace TencentCloud
                     bool CLSLogNameHasBeenSet() const;
 
                     /**
-                     * 获取集群的CLS 日志主题  名字
+                     * 获取<p>集群的CLS 日志主题  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CLSTopicName 集群的CLS 日志主题  名字
+                     * @return CLSTopicName <p>集群的CLS 日志主题  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLSTopicName() const;
 
                     /**
-                     * 设置集群的CLS 日志主题  名字
+                     * 设置<p>集群的CLS 日志主题  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cLSTopicName 集群的CLS 日志主题  名字
+                     * @param _cLSTopicName <p>集群的CLS 日志主题  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -665,18 +665,18 @@ namespace TencentCloud
                     bool CLSTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取集群的版本信息
+                     * 获取<p>集群的版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 集群的版本信息
+                     * @return Version <p>集群的版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClusterVersion GetVersion() const;
 
                     /**
-                     * 设置集群的版本信息
+                     * 设置<p>集群的版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 集群的版本信息
+                     * @param _version <p>集群的版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -690,18 +690,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取细粒度资源下的空闲CU
+                     * 获取<p>细粒度资源下的空闲CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FreeCu 细粒度资源下的空闲CU
+                     * @return FreeCu <p>细粒度资源下的空闲CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFreeCu() const;
 
                     /**
-                     * 设置细粒度资源下的空闲CU
+                     * 设置<p>细粒度资源下的空闲CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _freeCu 细粒度资源下的空闲CU
+                     * @param _freeCu <p>细粒度资源下的空闲CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -715,18 +715,18 @@ namespace TencentCloud
                     bool FreeCuHasBeenSet() const;
 
                     /**
-                     * 获取集群的默认日志采集配置
+                     * 获取<p>集群的默认日志采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultLogCollectConf 集群的默认日志采集配置
+                     * @return DefaultLogCollectConf <p>集群的默认日志采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultLogCollectConf() const;
 
                     /**
-                     * 设置集群的默认日志采集配置
+                     * 设置<p>集群的默认日志采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultLogCollectConf 集群的默认日志采集配置
+                     * @param _defaultLogCollectConf <p>集群的默认日志采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -740,18 +740,18 @@ namespace TencentCloud
                     bool DefaultLogCollectConfHasBeenSet() const;
 
                     /**
-                     * 获取取值：0-没有设置，1-已设置，2-不允许设置
+                     * 获取<p>取值：0-没有设置，1-已设置，2-不允许设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomizedDNSEnabled 取值：0-没有设置，1-已设置，2-不允许设置
+                     * @return CustomizedDNSEnabled <p>取值：0-没有设置，1-已设置，2-不允许设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCustomizedDNSEnabled() const;
 
                     /**
-                     * 设置取值：0-没有设置，1-已设置，2-不允许设置
+                     * 设置<p>取值：0-没有设置，1-已设置，2-不允许设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customizedDNSEnabled 取值：0-没有设置，1-已设置，2-不允许设置
+                     * @param _customizedDNSEnabled <p>取值：0-没有设置，1-已设置，2-不允许设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -765,18 +765,18 @@ namespace TencentCloud
                     bool CustomizedDNSEnabledHasBeenSet() const;
 
                     /**
-                     * 获取空间信息
+                     * 获取<p>空间信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Correlations 空间信息
+                     * @return Correlations <p>空间信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkSpaceClusterItem> GetCorrelations() const;
 
                     /**
-                     * 设置空间信息
+                     * 设置<p>空间信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _correlations 空间信息
+                     * @param _correlations <p>空间信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -790,18 +790,18 @@ namespace TencentCloud
                     bool CorrelationsHasBeenSet() const;
 
                     /**
-                     * 获取运行CU
+                     * 获取<p>运行CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCu 运行CU
+                     * @return RunningCu <p>运行CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCu() const;
 
                     /**
-                     * 设置运行CU
+                     * 设置<p>运行CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCu 运行CU
+                     * @param _runningCu <p>运行CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -815,18 +815,18 @@ namespace TencentCloud
                     bool RunningCuHasBeenSet() const;
 
                     /**
-                     * 获取0 后付费,1 预付费
+                     * 获取<p>0 后付费,1 预付费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayMode 0 后付费,1 预付费
+                     * @return PayMode <p>0 后付费,1 预付费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置0 后付费,1 预付费
+                     * 设置<p>0 后付费,1 预付费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payMode 0 后付费,1 预付费
+                     * @param _payMode <p>0 后付费,1 预付费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -840,18 +840,18 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+                     * 获取<p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsNeedManageNode 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+                     * @return IsNeedManageNode <p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsNeedManageNode() const;
 
                     /**
-                     * 设置前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+                     * 设置<p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isNeedManageNode 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+                     * @param _isNeedManageNode <p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -865,18 +865,18 @@ namespace TencentCloud
                     bool IsNeedManageNodeHasBeenSet() const;
 
                     /**
-                     * 获取session集群信息
+                     * 获取<p>session集群信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterSessions session集群信息
+                     * @return ClusterSessions <p>session集群信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClusterSession> GetClusterSessions() const;
 
                     /**
-                     * 设置session集群信息
+                     * 设置<p>session集群信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterSessions session集群信息
+                     * @param _clusterSessions <p>session集群信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -890,18 +890,18 @@ namespace TencentCloud
                     bool ClusterSessionsHasBeenSet() const;
 
                     /**
-                     * 获取V3版本 = 2
+                     * 获取<p>V3版本 = 2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ArchGeneration V3版本 = 2
+                     * @return ArchGeneration <p>V3版本 = 2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetArchGeneration() const;
 
                     /**
-                     * 设置V3版本 = 2
+                     * 设置<p>V3版本 = 2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _archGeneration V3版本 = 2
+                     * @param _archGeneration <p>V3版本 = 2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -915,18 +915,18 @@ namespace TencentCloud
                     bool ArchGenerationHasBeenSet() const;
 
                     /**
-                     * 获取0:TKE, 1:EKS
+                     * 获取<p>0:TKE, 1:EKS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 0:TKE, 1:EKS
+                     * @return ClusterType <p>0:TKE, 1:EKS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetClusterType() const;
 
                     /**
-                     * 设置0:TKE, 1:EKS
+                     * 设置<p>0:TKE, 1:EKS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterType 0:TKE, 1:EKS
+                     * @param _clusterType <p>0:TKE, 1:EKS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -940,18 +940,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取订单信息
+                     * 获取<p>订单信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Orders 订单信息
+                     * @return Orders <p>订单信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Order> GetOrders() const;
 
                     /**
-                     * 设置订单信息
+                     * 设置<p>订单信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _orders 订单信息
+                     * @param _orders <p>订单信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -965,18 +965,18 @@ namespace TencentCloud
                     bool OrdersHasBeenSet() const;
 
                     /**
-                     * 获取Gateway信息
+                     * 获取<p>Gateway信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SqlGateways Gateway信息
+                     * @return SqlGateways <p>Gateway信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SqlGatewayItem> GetSqlGateways() const;
 
                     /**
-                     * 设置Gateway信息
+                     * 设置<p>Gateway信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sqlGateways Gateway信息
+                     * @param _sqlGateways <p>Gateway信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -990,18 +990,18 @@ namespace TencentCloud
                     bool SqlGatewaysHasBeenSet() const;
 
                     /**
-                     * 获取0 公网访问 // 1 内网访问	
+                     * 获取<p>0 公网访问 // 1 内网访问</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebUIType 0 公网访问 // 1 内网访问	
+                     * @return WebUIType <p>0 公网访问 // 1 内网访问</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWebUIType() const;
 
                     /**
-                     * 设置0 公网访问 // 1 内网访问	
+                     * 设置<p>0 公网访问 // 1 内网访问</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webUIType 0 公网访问 // 1 内网访问	
+                     * @param _webUIType <p>0 公网访问 // 1 内网访问</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1015,18 +1015,18 @@ namespace TencentCloud
                     bool WebUITypeHasBeenSet() const;
 
                     /**
-                     * 获取2 独享集群
+                     * 获取<p>2 独享集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 2 独享集群
+                     * @return Type <p>2 独享集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置2 独享集群
+                     * 设置<p>2 独享集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 2 独享集群
+                     * @param _type <p>2 独享集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1040,18 +1040,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取子eks集群
+                     * 获取<p>子eks集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubEks 子eks集群
+                     * @return SubEks <p>子eks集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubEks GetSubEks() const;
 
                     /**
-                     * 设置子eks集群
+                     * 设置<p>子eks集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subEks 子eks集群
+                     * @param _subEks <p>子eks集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1065,18 +1065,18 @@ namespace TencentCloud
                     bool SubEksHasBeenSet() const;
 
                     /**
-                     * 获取上级集群
+                     * 获取<p>上级集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentSerialId 上级集群
+                     * @return AgentSerialId <p>上级集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAgentSerialId() const;
 
                     /**
-                     * 设置上级集群
+                     * 设置<p>上级集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _agentSerialId 上级集群
+                     * @param _agentSerialId <p>上级集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1090,18 +1090,18 @@ namespace TencentCloud
                     bool AgentSerialIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
+                     * 获取<p>资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 资源类型
+                     * @return ResourceType <p>资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型
+                     * 设置<p>资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceType 资源类型
+                     * @param _resourceType <p>资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1115,18 +1115,18 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
+                     * 获取<p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingResourceMode 集群类型
+                     * @return BillingResourceMode <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingResourceMode() const;
 
                     /**
-                     * 设置集群类型
+                     * 设置<p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingResourceMode 集群类型
+                     * @param _billingResourceMode <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1140,18 +1140,18 @@ namespace TencentCloud
                     bool BillingResourceModeHasBeenSet() const;
 
                     /**
-                     * 获取Cu比例
+                     * 获取<p>Cu比例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MemRatio Cu比例
+                     * @return MemRatio <p>Cu比例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemRatio() const;
 
                     /**
-                     * 设置Cu比例
+                     * 设置<p>Cu比例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _memRatio Cu比例
+                     * @param _memRatio <p>Cu比例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1165,15 +1165,15 @@ namespace TencentCloud
                     bool MemRatioHasBeenSet() const;
 
                     /**
-                     * 获取是否开启跨租户弹性网卡
-                     * @return CrossTenantEniMode 是否开启跨租户弹性网卡
+                     * 获取<p>是否开启跨租户弹性网卡</p>
+                     * @return CrossTenantEniMode <p>是否开启跨租户弹性网卡</p>
                      * 
                      */
                     int64_t GetCrossTenantEniMode() const;
 
                     /**
-                     * 设置是否开启跨租户弹性网卡
-                     * @param _crossTenantEniMode 是否开启跨租户弹性网卡
+                     * 设置<p>是否开启跨租户弹性网卡</p>
+                     * @param _crossTenantEniMode <p>是否开启跨租户弹性网卡</p>
                      * 
                      */
                     void SetCrossTenantEniMode(const int64_t& _crossTenantEniMode);
@@ -1186,15 +1186,15 @@ namespace TencentCloud
                     bool CrossTenantEniModeHasBeenSet() const;
 
                     /**
-                     * 获取总的CPU
-                     * @return TotalCpu 总的CPU
+                     * 获取<p>总的CPU</p>
+                     * @return TotalCpu <p>总的CPU</p>
                      * 
                      */
                     double GetTotalCpu() const;
 
                     /**
-                     * 设置总的CPU
-                     * @param _totalCpu 总的CPU
+                     * 设置<p>总的CPU</p>
+                     * @param _totalCpu <p>总的CPU</p>
                      * 
                      */
                     void SetTotalCpu(const double& _totalCpu);
@@ -1207,15 +1207,15 @@ namespace TencentCloud
                     bool TotalCpuHasBeenSet() const;
 
                     /**
-                     * 获取总的内存
-                     * @return TotalMem 总的内存
+                     * 获取<p>总的内存</p>
+                     * @return TotalMem <p>总的内存</p>
                      * 
                      */
                     double GetTotalMem() const;
 
                     /**
-                     * 设置总的内存
-                     * @param _totalMem 总的内存
+                     * 设置<p>总的内存</p>
+                     * @param _totalMem <p>总的内存</p>
                      * 
                      */
                     void SetTotalMem(const double& _totalMem);
@@ -1228,15 +1228,15 @@ namespace TencentCloud
                     bool TotalMemHasBeenSet() const;
 
                     /**
-                     * 获取运行的CPU
-                     * @return RunningCpu 运行的CPU
+                     * 获取<p>运行的CPU</p>
+                     * @return RunningCpu <p>运行的CPU</p>
                      * 
                      */
                     double GetRunningCpu() const;
 
                     /**
-                     * 设置运行的CPU
-                     * @param _runningCpu 运行的CPU
+                     * 设置<p>运行的CPU</p>
+                     * @param _runningCpu <p>运行的CPU</p>
                      * 
                      */
                     void SetRunningCpu(const double& _runningCpu);
@@ -1249,15 +1249,15 @@ namespace TencentCloud
                     bool RunningCpuHasBeenSet() const;
 
                     /**
-                     * 获取运行的内存
-                     * @return RunningMem 运行的内存
+                     * 获取<p>运行的内存</p>
+                     * @return RunningMem <p>运行的内存</p>
                      * 
                      */
                     double GetRunningMem() const;
 
                     /**
-                     * 设置运行的内存
-                     * @param _runningMem 运行的内存
+                     * 设置<p>运行的内存</p>
+                     * @param _runningMem <p>运行的内存</p>
                      * 
                      */
                     void SetRunningMem(const double& _runningMem);
@@ -1270,18 +1270,18 @@ namespace TencentCloud
                     bool RunningMemHasBeenSet() const;
 
                     /**
-                     * 获取setats集群
+                     * 获取<p>setats集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Setats setats集群
+                     * @return Setats <p>setats集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Setats GetSetats() const;
 
                     /**
-                     * 设置setats集群
+                     * 设置<p>setats集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _setats setats集群
+                     * @param _setats <p>setats集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1295,18 +1295,18 @@ namespace TencentCloud
                     bool SetatsHasBeenSet() const;
 
                     /**
-                     * 获取[]
+                     * 获取<p>[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Yarns []
+                     * @return Yarns <p>[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HadoopYarnItem> GetYarns() const;
 
                     /**
-                     * 设置[]
+                     * 设置<p>[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _yarns []
+                     * @param _yarns <p>[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1320,18 +1320,18 @@ namespace TencentCloud
                     bool YarnsHasBeenSet() const;
 
                     /**
-                     * 获取0 单可用区 1多可用区
+                     * 获取<p>0 单可用区 1多可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeploymentMode 0 单可用区 1多可用区
+                     * @return DeploymentMode <p>0 单可用区 1多可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeploymentMode() const;
 
                     /**
-                     * 设置0 单可用区 1多可用区
+                     * 设置<p>0 单可用区 1多可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deploymentMode 0 单可用区 1多可用区
+                     * @param _deploymentMode <p>0 单可用区 1多可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1345,18 +1345,18 @@ namespace TencentCloud
                     bool DeploymentModeHasBeenSet() const;
 
                     /**
-                     * 获取备可用区
+                     * 获取<p>备可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaveZones 备可用区
+                     * @return SlaveZones <p>备可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SlaveZone> GetSlaveZones() const;
 
                     /**
-                     * 设置备可用区
+                     * 设置<p>备可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _slaveZones 备可用区
+                     * @param _slaveZones <p>备可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1370,15 +1370,15 @@ namespace TencentCloud
                     bool SlaveZonesHasBeenSet() const;
 
                     /**
-                     * 获取集群的日志cos存储
-                     * @return LogCOSBucket 集群的日志cos存储
+                     * 获取<p>集群的日志cos存储</p>
+                     * @return LogCOSBucket <p>集群的日志cos存储</p>
                      * 
                      */
                     std::string GetLogCOSBucket() const;
 
                     /**
-                     * 设置集群的日志cos存储
-                     * @param _logCOSBucket 集群的日志cos存储
+                     * 设置<p>集群的日志cos存储</p>
+                     * @param _logCOSBucket <p>集群的日志cos存储</p>
                      * 
                      */
                     void SetLogCOSBucket(const std::string& _logCOSBucket);
@@ -1391,18 +1391,18 @@ namespace TencentCloud
                     bool LogCOSBucketHasBeenSet() const;
 
                     /**
-                     * 获取Cdc集群Id
+                     * 获取<p>Cdc集群Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcId Cdc集群Id
+                     * @return CdcId <p>Cdc集群Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置Cdc集群Id
+                     * 设置<p>Cdc集群Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcId Cdc集群Id
+                     * @param _cdcId <p>Cdc集群Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1415,390 +1415,449 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群进度</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterProcessMsg <p>集群进度</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterProcessMsg() const;
+
+                    /**
+                     * 设置<p>集群进度</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterProcessMsg <p>集群进度</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterProcessMsg(const std::string& _clusterProcessMsg);
+
+                    /**
+                     * 判断参数 ClusterProcessMsg 是否已赋值
+                     * @return ClusterProcessMsg 是否已赋值
+                     * 
+                     */
+                    bool ClusterProcessMsgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单作业最大可配置 CU 数</p>
+                     * @return MaxCuPerJob <p>单作业最大可配置 CU 数</p>
+                     * 
+                     */
+                    int64_t GetMaxCuPerJob() const;
+
+                    /**
+                     * 设置<p>单作业最大可配置 CU 数</p>
+                     * @param _maxCuPerJob <p>单作业最大可配置 CU 数</p>
+                     * 
+                     */
+                    void SetMaxCuPerJob(const int64_t& _maxCuPerJob);
+
+                    /**
+                     * 判断参数 MaxCuPerJob 是否已赋值
+                     * @return MaxCuPerJob 是否已赋值
+                     * 
+                     */
+                    bool MaxCuPerJobHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群 ID
+                     * <p>集群 ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 用户 AppID
+                     * <p>用户 AppID</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 主账号 UIN
+                     * <p>主账号 UIN</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建者 UIN
+                     * <p>创建者 UIN</p>
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 集群状态, 1 未初始化,3 初始化中，2 运行中
+                     * <p>集群状态, 1 未初始化,3 初始化中，2 运行中</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 集群创建时间
+                     * <p>集群创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后一次操作集群的时间
+                     * <p>最后一次操作集群的时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * CU 数量
+                     * <p>CU 数量</p>
                      */
                     uint64_t m_cuNum;
                     bool m_cuNumHasBeenSet;
 
                     /**
-                     * CU 内存规格
+                     * <p>CU 内存规格</p>
                      */
                     uint64_t m_cuMem;
                     bool m_cuMemHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * <p>状态描述</p>
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * 网络
+                     * <p>网络</p>
                      */
                     std::vector<CCN> m_cCNs;
                     bool m_cCNsHasBeenSet;
 
                     /**
-                     * 网络
+                     * <p>网络</p>
                      */
                     uint64_t m_netEnvironmentType;
                     bool m_netEnvironmentTypeHasBeenSet;
 
                     /**
-                     * 空闲 CU
+                     * <p>空闲 CU</p>
                      */
                     int64_t m_freeCuNum;
                     bool m_freeCuNumHasBeenSet;
 
                     /**
-                     * 集群绑定的标签
+                     * <p>集群绑定的标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 集群隔离时间; 没隔离时间，则为 -
+                     * <p>集群隔离时间; 没隔离时间，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
 
                     /**
-                     * 集群过期时间; 没过期概念，则为 -
+                     * <p>集群过期时间; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 距离过期还有多少秒; 没过期概念，则为 -
+                     * <p>距离过期还有多少秒; 没过期概念，则为 -</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secondsUntilExpiry;
                     bool m_secondsUntilExpiryHasBeenSet;
 
                     /**
-                     * 自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)
+                     * <p>自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 集群的默认 COS 存储桶
+                     * <p>集群的默认 COS 存储桶</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultCOSBucket;
                     bool m_defaultCOSBucketHasBeenSet;
 
                     /**
-                     * 集群的CLS 日志集 LogSet
+                     * <p>集群的CLS 日志集 LogSet</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLSLogSet;
                     bool m_cLSLogSetHasBeenSet;
 
                     /**
-                     * 集群的CLS 日志主题 TopicId
+                     * <p>集群的CLS 日志主题 TopicId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLSTopicId;
                     bool m_cLSTopicIdHasBeenSet;
 
                     /**
-                     * 集群的CLS 日志集  名字
+                     * <p>集群的CLS 日志集  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLSLogName;
                     bool m_cLSLogNameHasBeenSet;
 
                     /**
-                     * 集群的CLS 日志主题  名字
+                     * <p>集群的CLS 日志主题  名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLSTopicName;
                     bool m_cLSTopicNameHasBeenSet;
 
                     /**
-                     * 集群的版本信息
+                     * <p>集群的版本信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClusterVersion m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 细粒度资源下的空闲CU
+                     * <p>细粒度资源下的空闲CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_freeCu;
                     bool m_freeCuHasBeenSet;
 
                     /**
-                     * 集群的默认日志采集配置
+                     * <p>集群的默认日志采集配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultLogCollectConf;
                     bool m_defaultLogCollectConfHasBeenSet;
 
                     /**
-                     * 取值：0-没有设置，1-已设置，2-不允许设置
+                     * <p>取值：0-没有设置，1-已设置，2-不允许设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_customizedDNSEnabled;
                     bool m_customizedDNSEnabledHasBeenSet;
 
                     /**
-                     * 空间信息
+                     * <p>空间信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkSpaceClusterItem> m_correlations;
                     bool m_correlationsHasBeenSet;
 
                     /**
-                     * 运行CU
+                     * <p>运行CU</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
 
                     /**
-                     * 0 后付费,1 预付费
+                     * <p>0 后付费,1 预付费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+                     * <p>前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isNeedManageNode;
                     bool m_isNeedManageNodeHasBeenSet;
 
                     /**
-                     * session集群信息
+                     * <p>session集群信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterSession> m_clusterSessions;
                     bool m_clusterSessionsHasBeenSet;
 
                     /**
-                     * V3版本 = 2
+                     * <p>V3版本 = 2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_archGeneration;
                     bool m_archGenerationHasBeenSet;
 
                     /**
-                     * 0:TKE, 1:EKS
+                     * <p>0:TKE, 1:EKS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 订单信息
+                     * <p>订单信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Order> m_orders;
                     bool m_ordersHasBeenSet;
 
                     /**
-                     * Gateway信息
+                     * <p>Gateway信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SqlGatewayItem> m_sqlGateways;
                     bool m_sqlGatewaysHasBeenSet;
 
                     /**
-                     * 0 公网访问 // 1 内网访问	
+                     * <p>0 公网访问 // 1 内网访问</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_webUIType;
                     bool m_webUITypeHasBeenSet;
 
                     /**
-                     * 2 独享集群
+                     * <p>2 独享集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 子eks集群
+                     * <p>子eks集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubEks m_subEks;
                     bool m_subEksHasBeenSet;
 
                     /**
-                     * 上级集群
+                     * <p>上级集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentSerialId;
                     bool m_agentSerialIdHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * <p>资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * <p>集群类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingResourceMode;
                     bool m_billingResourceModeHasBeenSet;
 
                     /**
-                     * Cu比例
+                     * <p>Cu比例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memRatio;
                     bool m_memRatioHasBeenSet;
 
                     /**
-                     * 是否开启跨租户弹性网卡
+                     * <p>是否开启跨租户弹性网卡</p>
                      */
                     int64_t m_crossTenantEniMode;
                     bool m_crossTenantEniModeHasBeenSet;
 
                     /**
-                     * 总的CPU
+                     * <p>总的CPU</p>
                      */
                     double m_totalCpu;
                     bool m_totalCpuHasBeenSet;
 
                     /**
-                     * 总的内存
+                     * <p>总的内存</p>
                      */
                     double m_totalMem;
                     bool m_totalMemHasBeenSet;
 
                     /**
-                     * 运行的CPU
+                     * <p>运行的CPU</p>
                      */
                     double m_runningCpu;
                     bool m_runningCpuHasBeenSet;
 
                     /**
-                     * 运行的内存
+                     * <p>运行的内存</p>
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
 
                     /**
-                     * setats集群
+                     * <p>setats集群</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Setats m_setats;
                     bool m_setatsHasBeenSet;
 
                     /**
-                     * []
+                     * <p>[]</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HadoopYarnItem> m_yarns;
                     bool m_yarnsHasBeenSet;
 
                     /**
-                     * 0 单可用区 1多可用区
+                     * <p>0 单可用区 1多可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deploymentMode;
                     bool m_deploymentModeHasBeenSet;
 
                     /**
-                     * 备可用区
+                     * <p>备可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SlaveZone> m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
 
                     /**
-                     * 集群的日志cos存储
+                     * <p>集群的日志cos存储</p>
                      */
                     std::string m_logCOSBucket;
                     bool m_logCOSBucketHasBeenSet;
 
                     /**
-                     * Cdc集群Id
+                     * <p>Cdc集群Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * <p>集群进度</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterProcessMsg;
+                    bool m_clusterProcessMsgHasBeenSet;
+
+                    /**
+                     * <p>单作业最大可配置 CU 数</p>
+                     */
+                    int64_t m_maxCuPerJob;
+                    bool m_maxCuPerJobHasBeenSet;
 
                 };
             }

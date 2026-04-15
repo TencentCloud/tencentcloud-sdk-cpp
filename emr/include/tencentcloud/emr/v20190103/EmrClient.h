@@ -59,6 +59,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeBootScriptRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeBootScriptResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
@@ -153,6 +155,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyBootScriptRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyBootScriptResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsRequest.h>
@@ -277,6 +281,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoScaleStrategiesResponse> DescribeAutoScaleStrategiesOutcome;
                 typedef std::future<DescribeAutoScaleStrategiesOutcome> DescribeAutoScaleStrategiesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleStrategiesRequest&, DescribeAutoScaleStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleStrategiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBootScriptResponse> DescribeBootScriptOutcome;
+                typedef std::future<DescribeBootScriptOutcome> DescribeBootScriptOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeBootScriptRequest&, DescribeBootScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBootScriptAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterFlowStatusDetailResponse> DescribeClusterFlowStatusDetailOutcome;
                 typedef std::future<DescribeClusterFlowStatusDetailOutcome> DescribeClusterFlowStatusDetailOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeClusterFlowStatusDetailRequest&, DescribeClusterFlowStatusDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterFlowStatusDetailAsyncHandler;
@@ -418,6 +425,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAutoScaleStrategyResponse> ModifyAutoScaleStrategyOutcome;
                 typedef std::future<ModifyAutoScaleStrategyOutcome> ModifyAutoScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyAutoScaleStrategyRequest&, ModifyAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScaleStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBootScriptResponse> ModifyBootScriptOutcome;
+                typedef std::future<ModifyBootScriptOutcome> ModifyBootScriptOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyBootScriptRequest&, ModifyBootScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBootScriptAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
                 typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
@@ -669,6 +679,15 @@ namespace TencentCloud
                 DescribeAutoScaleStrategiesOutcome DescribeAutoScaleStrategies(const Model::DescribeAutoScaleStrategiesRequest &request);
                 void DescribeAutoScaleStrategiesAsync(const Model::DescribeAutoScaleStrategiesRequest& request, const DescribeAutoScaleStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoScaleStrategiesOutcomeCallable DescribeAutoScaleStrategiesCallable(const Model::DescribeAutoScaleStrategiesRequest& request);
+
+                /**
+                 *获取引导脚本
+                 * @param req DescribeBootScriptRequest
+                 * @return DescribeBootScriptOutcome
+                 */
+                DescribeBootScriptOutcome DescribeBootScript(const Model::DescribeBootScriptRequest &request);
+                void DescribeBootScriptAsync(const Model::DescribeBootScriptRequest& request, const DescribeBootScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBootScriptOutcomeCallable DescribeBootScriptCallable(const Model::DescribeBootScriptRequest& request);
 
                 /**
                  *查询EMR任务运行详情状态
@@ -1094,6 +1113,15 @@ namespace TencentCloud
                 ModifyAutoScaleStrategyOutcome ModifyAutoScaleStrategy(const Model::ModifyAutoScaleStrategyRequest &request);
                 void ModifyAutoScaleStrategyAsync(const Model::ModifyAutoScaleStrategyRequest& request, const ModifyAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAutoScaleStrategyOutcomeCallable ModifyAutoScaleStrategyCallable(const Model::ModifyAutoScaleStrategyRequest& request);
+
+                /**
+                 *修改引导脚本
+                 * @param req ModifyBootScriptRequest
+                 * @return ModifyBootScriptOutcome
+                 */
+                ModifyBootScriptOutcome ModifyBootScript(const Model::ModifyBootScriptRequest &request);
+                void ModifyBootScriptAsync(const Model::ModifyBootScriptRequest& request, const ModifyBootScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBootScriptOutcomeCallable ModifyBootScriptCallable(const Model::ModifyBootScriptRequest& request);
 
                 /**
                  *修改YARN资源调度的全局配置

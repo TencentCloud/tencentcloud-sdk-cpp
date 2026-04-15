@@ -23,6 +23,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/FwDeploy.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterIsolateResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAclRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAclRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceWithRegionResponse.h
@@ -99,6 +100,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchRequest.h
   include/tencentcloud/cfw/v20190904/model/EnterpriseSecurityGroupRuleBetaInfo.h
+  include/tencentcloud/cfw/v20190904/model/FieldOption.h
   include/tencentcloud/cfw/v20190904/model/DescribeIpsModeSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h
@@ -137,6 +139,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupItemRuleStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/LogInfo.h
   include/tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListRequest.h
   include/tencentcloud/cfw/v20190904/model/AcListsData.h
   include/tencentcloud/cfw/v20190904/model/SequenceData.h
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchErrorRequest.h
@@ -184,6 +187,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/TagInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleRequest.h
+  include/tencentcloud/cfw/v20190904/model/OperatorFilter.h
   include/tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleListResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h
   include/tencentcloud/cfw/v20190904/model/CommonIdName.h
@@ -258,6 +262,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/RemoveAclRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/BanAndAllowRule.h
+  include/tencentcloud/cfw/v20190904/model/NDRAssetServiceStats.h
   include/tencentcloud/cfw/v20190904/model/SearchLogInfos.h
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h
@@ -337,10 +342,12 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/RegionFwStatus.h
   include/tencentcloud/cfw/v20190904/model/NatInstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h
+  include/tencentcloud/cfw/v20190904/model/NDRAssetCategoryStats.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeClusterVpcFwSwitchsResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesRequest.h
+  include/tencentcloud/cfw/v20190904/model/NDRAssetServiceInfo.h
   include/tencentcloud/cfw/v20190904/model/SwitchListsData.h
   include/tencentcloud/cfw/v20190904/model/CreateVpcFwGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h
@@ -369,6 +376,7 @@ set(cfw_src
   src/v20190904/model/ModifyFwGroupSwitchRequest.cpp
   src/v20190904/model/FwDeploy.cpp
   src/v20190904/model/CreateAlertCenterIsolateResponse.cpp
+  src/v20190904/model/DescribeNDRAssetIdentificationListResponse.cpp
   src/v20190904/model/ModifyAclRuleRequest.cpp
   src/v20190904/model/DescribeAclRuleResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceWithRegionResponse.cpp
@@ -445,6 +453,7 @@ set(cfw_src
   src/v20190904/model/SetNatFwDnatRuleRequest.cpp
   src/v20190904/model/StopSecurityGroupRuleDispatchRequest.cpp
   src/v20190904/model/EnterpriseSecurityGroupRuleBetaInfo.cpp
+  src/v20190904/model/FieldOption.cpp
   src/v20190904/model/DescribeIpsModeSwitchRequest.cpp
   src/v20190904/model/ModifyBlockTopResponse.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstResponse.cpp
@@ -483,6 +492,7 @@ set(cfw_src
   src/v20190904/model/ModifySecurityGroupItemRuleStatusResponse.cpp
   src/v20190904/model/LogInfo.cpp
   src/v20190904/model/DeleteBlockIgnoreRuleListResponse.cpp
+  src/v20190904/model/DescribeNDRAssetIdentificationListRequest.cpp
   src/v20190904/model/AcListsData.cpp
   src/v20190904/model/SequenceData.cpp
   src/v20190904/model/DescribeSwitchErrorRequest.cpp
@@ -530,6 +540,7 @@ set(cfw_src
   src/v20190904/model/TagInfo.cpp
   src/v20190904/model/DescribeResourceGroupResponse.cpp
   src/v20190904/model/DeleteSecurityGroupRuleRequest.cpp
+  src/v20190904/model/OperatorFilter.cpp
   src/v20190904/model/DescribeEnterpriseSecurityGroupRuleListResponse.cpp
   src/v20190904/model/DescribeSecurityGroupListRequest.cpp
   src/v20190904/model/CommonIdName.cpp
@@ -604,6 +615,7 @@ set(cfw_src
   src/v20190904/model/CreateDatabaseWhiteListRulesRequest.cpp
   src/v20190904/model/RemoveAclRuleResponse.cpp
   src/v20190904/model/BanAndAllowRule.cpp
+  src/v20190904/model/NDRAssetServiceStats.cpp
   src/v20190904/model/SearchLogInfos.cpp
   src/v20190904/model/ModifyStorageSettingRequest.cpp
   src/v20190904/model/DescribeNatFwDnatRuleRequest.cpp
@@ -683,10 +695,12 @@ set(cfw_src
   src/v20190904/model/RegionFwStatus.cpp
   src/v20190904/model/NatInstanceInfo.cpp
   src/v20190904/model/CreateAcRulesRequest.cpp
+  src/v20190904/model/NDRAssetCategoryStats.cpp
   src/v20190904/model/DescribeNatFwDnatRuleResponse.cpp
   src/v20190904/model/DescribeGuideScanInfoRequest.cpp
   src/v20190904/model/DescribeClusterVpcFwSwitchsResponse.cpp
   src/v20190904/model/CreateSecurityGroupRulesRequest.cpp
+  src/v20190904/model/NDRAssetServiceInfo.cpp
   src/v20190904/model/SwitchListsData.cpp
   src/v20190904/model/CreateVpcFwGroupRequest.cpp
   src/v20190904/model/CreateNatFwInstanceWithDomainRequest.cpp

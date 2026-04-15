@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）
-                     * @return TemplateName 模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）
+                     * 获取<p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>
+                     * @return TemplateName <p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）
-                     * @param _templateName 模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）
+                     * 设置<p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>
+                     * @param _templateName <p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-                     * @return TimeSections 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * 获取<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
+                     * @return TimeSections <p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      * 
                      */
                     std::vector<RecordTemplateTimeSections> GetTimeSections() const;
 
                     /**
-                     * 设置上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-                     * @param _timeSections 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * 设置<p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
+                     * @param _timeSections <p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      * 
                      */
                     void SetTimeSections(const std::vector<RecordTemplateTimeSections>& _timeSections);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TimeSectionsHasBeenSet() const;
 
                     /**
-                     * 获取录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-                     * @return DevTimeSections 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * 获取<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
+                     * @return DevTimeSections <p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      * 
                      */
                     std::vector<RecordTemplateTimeSections> GetDevTimeSections() const;
 
                     /**
-                     * 设置录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
-                     * @param _devTimeSections 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * 设置<p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
+                     * @param _devTimeSections <p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      * 
                      */
                     void SetDevTimeSections(const std::vector<RecordTemplateTimeSections>& _devTimeSections);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DevTimeSectionsHasBeenSet() const;
 
                     /**
-                     * 获取上云倍速（支持1，2，4倍速）
-                     * @return Scale 上云倍速（支持1，2，4倍速）
+                     * 获取<p>上云倍速（支持1，2，4倍速）</p>
+                     * @return Scale <p>上云倍速（支持1，2，4倍速）</p>
                      * 
                      */
                     int64_t GetScale() const;
 
                     /**
-                     * 设置上云倍速（支持1，2，4倍速）
-                     * @param _scale 上云倍速（支持1，2，4倍速）
+                     * 设置<p>上云倍速（支持1，2，4倍速）</p>
+                     * @param _scale <p>上云倍速（支持1，2，4倍速）</p>
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -127,31 +127,58 @@ namespace TencentCloud
                      */
                     bool ScaleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>
+                     * @return DayOffset <p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetDayOffset() const;
+
+                    /**
+                     * 设置<p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>
+                     * @param _dayOffset <p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>
+                     * 
+                     */
+                    void SetDayOffset(const int64_t& _dayOffset);
+
+                    /**
+                     * 判断参数 DayOffset 是否已赋值
+                     * @return DayOffset 是否已赋值
+                     * 
+                     */
+                    bool DayOffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）
+                     * <p>模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * <p>上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      */
                     std::vector<RecordTemplateTimeSections> m_timeSections;
                     bool m_timeSectionsHasBeenSet;
 
                     /**
-                     * 录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）
+                     * <p>录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）</p>
                      */
                     std::vector<RecordTemplateTimeSections> m_devTimeSections;
                     bool m_devTimeSectionsHasBeenSet;
 
                     /**
-                     * 上云倍速（支持1，2，4倍速）
+                     * <p>上云倍速（支持1，2，4倍速）</p>
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
+
+                    /**
+                     * <p>周期偏移量，默认1，表示拉取昨天的设备录像，0表示取去今天的设备录像，3表示拉取前天的设备录像</p><p>取值范围：[0, 90]</p><p>默认值：1</p>
+                     */
+                    int64_t m_dayOffset;
+                    bool m_dayOffsetHasBeenSet;
 
                 };
             }

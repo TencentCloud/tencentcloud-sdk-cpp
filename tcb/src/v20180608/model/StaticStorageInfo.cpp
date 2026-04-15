@@ -25,7 +25,9 @@ StaticStorageInfo::StaticStorageInfo() :
     m_defaultDirNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_bucketHasBeenSet(false)
+    m_bucketHasBeenSet(false),
+    m_accessExpireHasBeenSet(false),
+    m_externalStorageHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,33 @@ CoreInternalOutcome StaticStorageInfo::Deserialize(const rapidjson::Value &value
         m_bucketHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessExpire") && !value["AccessExpire"].IsNull())
+    {
+        if (!value["AccessExpire"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.AccessExpire` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessExpire = value["AccessExpire"].GetInt64();
+        m_accessExpireHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalStorage") && !value["ExternalStorage"].IsNull())
+    {
+        if (!value["ExternalStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaticStorageInfo.ExternalStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_externalStorage.Deserialize(value["ExternalStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_externalStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +158,23 @@ void StaticStorageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Bucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessExpireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessExpire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessExpire, allocator);
+    }
+
+    if (m_externalStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externalStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +258,37 @@ void StaticStorageInfo::SetBucket(const string& _bucket)
 bool StaticStorageInfo::BucketHasBeenSet() const
 {
     return m_bucketHasBeenSet;
+}
+
+int64_t StaticStorageInfo::GetAccessExpire() const
+{
+    return m_accessExpire;
+}
+
+void StaticStorageInfo::SetAccessExpire(const int64_t& _accessExpire)
+{
+    m_accessExpire = _accessExpire;
+    m_accessExpireHasBeenSet = true;
+}
+
+bool StaticStorageInfo::AccessExpireHasBeenSet() const
+{
+    return m_accessExpireHasBeenSet;
+}
+
+ExternalStorage StaticStorageInfo::GetExternalStorage() const
+{
+    return m_externalStorage;
+}
+
+void StaticStorageInfo::SetExternalStorage(const ExternalStorage& _externalStorage)
+{
+    m_externalStorage = _externalStorage;
+    m_externalStorageHasBeenSet = true;
+}
+
+bool StaticStorageInfo::ExternalStorageHasBeenSet() const
+{
+    return m_externalStorageHasBeenSet;
 }
 

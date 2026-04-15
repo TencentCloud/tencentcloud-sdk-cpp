@@ -1,0 +1,220 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoExtendKlingJobRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Vclm::V20240523::Model;
+using namespace std;
+
+SubmitVideoExtendKlingJobRequest::SubmitVideoExtendKlingJobRequest() :
+    m_videoIdHasBeenSet(false),
+    m_promptHasBeenSet(false),
+    m_negativePromptHasBeenSet(false),
+    m_cfgScaleHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_logoAddHasBeenSet(false),
+    m_logoParamHasBeenSet(false)
+{
+}
+
+string SubmitVideoExtendKlingJobRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_videoIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_negativePromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegativePrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cfgScaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfgScale";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cfgScale, allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logoAdd, allocator);
+    }
+
+    if (m_logoParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logoParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string SubmitVideoExtendKlingJobRequest::GetVideoId() const
+{
+    return m_videoId;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetVideoId(const string& _videoId)
+{
+    m_videoId = _videoId;
+    m_videoIdHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::VideoIdHasBeenSet() const
+{
+    return m_videoIdHasBeenSet;
+}
+
+string SubmitVideoExtendKlingJobRequest::GetPrompt() const
+{
+    return m_prompt;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetPrompt(const string& _prompt)
+{
+    m_prompt = _prompt;
+    m_promptHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::PromptHasBeenSet() const
+{
+    return m_promptHasBeenSet;
+}
+
+string SubmitVideoExtendKlingJobRequest::GetNegativePrompt() const
+{
+    return m_negativePrompt;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetNegativePrompt(const string& _negativePrompt)
+{
+    m_negativePrompt = _negativePrompt;
+    m_negativePromptHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::NegativePromptHasBeenSet() const
+{
+    return m_negativePromptHasBeenSet;
+}
+
+double SubmitVideoExtendKlingJobRequest::GetCfgScale() const
+{
+    return m_cfgScale;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetCfgScale(const double& _cfgScale)
+{
+    m_cfgScale = _cfgScale;
+    m_cfgScaleHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::CfgScaleHasBeenSet() const
+{
+    return m_cfgScaleHasBeenSet;
+}
+
+string SubmitVideoExtendKlingJobRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
+int64_t SubmitVideoExtendKlingJobRequest::GetLogoAdd() const
+{
+    return m_logoAdd;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetLogoAdd(const int64_t& _logoAdd)
+{
+    m_logoAdd = _logoAdd;
+    m_logoAddHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::LogoAddHasBeenSet() const
+{
+    return m_logoAddHasBeenSet;
+}
+
+LogoParam SubmitVideoExtendKlingJobRequest::GetLogoParam() const
+{
+    return m_logoParam;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetLogoParam(const LogoParam& _logoParam)
+{
+    m_logoParam = _logoParam;
+    m_logoParamHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::LogoParamHasBeenSet() const
+{
+    return m_logoParamHasBeenSet;
+}
+
+

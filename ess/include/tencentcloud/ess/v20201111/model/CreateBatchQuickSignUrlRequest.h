@@ -49,43 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
-<ul>
-<li>若为个人参与方：ApproverType=1</li>
-<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
-</ul>
-注:
-`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
-`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
-                     * @return FlowApproverInfo 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
-<ul>
-<li>若为个人参与方：ApproverType=1</li>
-<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
-</ul>
-注:
-`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
-`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+                     * 获取<p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType=1</li><li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li></ul>注:<code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code>
+                     * @return FlowApproverInfo <p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType=1</li><li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li></ul>注:<code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code>
                      * 
                      */
                     FlowCreateApprover GetFlowApproverInfo() const;
 
                     /**
-                     * 设置批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
-<ul>
-<li>若为个人参与方：ApproverType=1</li>
-<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
-</ul>
-注:
-`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
-`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
-                     * @param _flowApproverInfo 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
-<ul>
-<li>若为个人参与方：ApproverType=1</li>
-<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
-</ul>
-注:
-`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
-`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+                     * 设置<p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType=1</li><li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li></ul>注:<code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code>
+                     * @param _flowApproverInfo <p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType=1</li><li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li></ul>注:<code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code>
                      * 
                      */
                     void SetFlowApproverInfo(const FlowCreateApprover& _flowApproverInfo);
@@ -98,19 +70,15 @@ namespace TencentCloud
                     bool FlowApproverInfoHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -123,19 +91,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -148,19 +112,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @return FlowIds 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * 获取<p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>
+                     * @return FlowIds <p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
-                     * @param _flowIds 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * 设置<p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>
+                     * @param _flowIds <p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -173,19 +133,15 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取合同组编号
-注：`该参数和合同流程ID数组必须二选一`
-                     * @return FlowGroupId 合同组编号
-注：`该参数和合同流程ID数组必须二选一`
+                     * 获取<p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>
+                     * @return FlowGroupId <p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
-                     * 设置合同组编号
-注：`该参数和合同流程ID数组必须二选一`
-                     * @param _flowGroupId 合同组编号
-注：`该参数和合同流程ID数组必须二选一`
+                     * 设置<p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>
+                     * @param _flowGroupId <p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -198,15 +154,15 @@ namespace TencentCloud
                     bool FlowGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
-                     * @return JumpUrl 签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
+                     * 获取<p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>
+                     * @return JumpUrl <p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>
                      * 
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
-                     * @param _jumpUrl 签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
+                     * 设置<p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>
+                     * @param _jumpUrl <p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>
                      * 
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
@@ -219,63 +175,15 @@ namespace TencentCloud
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取指定批量签署合同的签名类型，可传递以下值：
-<ul><li>**0**：手写签名(默认)</li>
-<li>**1**：OCR楷体</li>
-<li>**2**：姓名印章</li>
-<li>**3**：图片印章</li>
-<li>**4**：系统签名</li>
-<li>**5**：长效手写签名（包含手写签名）</li></ul>
-注：
-<ul><li>默认情况下，签名类型为手写签名</li>
-<li>您可以传递多种值，表示可用多种签名类型。</li>
-<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
-<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>
-</ul>
-                     * @return SignatureTypes 指定批量签署合同的签名类型，可传递以下值：
-<ul><li>**0**：手写签名(默认)</li>
-<li>**1**：OCR楷体</li>
-<li>**2**：姓名印章</li>
-<li>**3**：图片印章</li>
-<li>**4**：系统签名</li>
-<li>**5**：长效手写签名（包含手写签名）</li></ul>
-注：
-<ul><li>默认情况下，签名类型为手写签名</li>
-<li>您可以传递多种值，表示可用多种签名类型。</li>
-<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
-<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>
-</ul>
+                     * 获取<p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>
+                     * @return SignatureTypes <p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetSignatureTypes() const;
 
                     /**
-                     * 设置指定批量签署合同的签名类型，可传递以下值：
-<ul><li>**0**：手写签名(默认)</li>
-<li>**1**：OCR楷体</li>
-<li>**2**：姓名印章</li>
-<li>**3**：图片印章</li>
-<li>**4**：系统签名</li>
-<li>**5**：长效手写签名（包含手写签名）</li></ul>
-注：
-<ul><li>默认情况下，签名类型为手写签名</li>
-<li>您可以传递多种值，表示可用多种签名类型。</li>
-<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
-<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>
-</ul>
-                     * @param _signatureTypes 指定批量签署合同的签名类型，可传递以下值：
-<ul><li>**0**：手写签名(默认)</li>
-<li>**1**：OCR楷体</li>
-<li>**2**：姓名印章</li>
-<li>**3**：图片印章</li>
-<li>**4**：系统签名</li>
-<li>**5**：长效手写签名（包含手写签名）</li></ul>
-注：
-<ul><li>默认情况下，签名类型为手写签名</li>
-<li>您可以传递多种值，表示可用多种签名类型。</li>
-<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
-<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>
-</ul>
+                     * 设置<p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>
+                     * @param _signatureTypes <p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>
                      * 
                      */
                     void SetSignatureTypes(const std::vector<int64_t>& _signatureTypes);
@@ -288,39 +196,15 @@ namespace TencentCloud
                     bool SignatureTypesHasBeenSet() const;
 
                     /**
-                     * 获取指定批量签署合同的认证校验方式，可传递以下值：
-<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>
-<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>
-<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>
-注：
-<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>
-<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
-                     * @return ApproverSignTypes 指定批量签署合同的认证校验方式，可传递以下值：
-<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>
-<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>
-<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>
-注：
-<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>
-<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
+                     * 获取<p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
+                     * @return ApproverSignTypes <p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetApproverSignTypes() const;
 
                     /**
-                     * 设置指定批量签署合同的认证校验方式，可传递以下值：
-<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>
-<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>
-<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>
-注：
-<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>
-<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
-                     * @param _approverSignTypes 指定批量签署合同的认证校验方式，可传递以下值：
-<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>
-<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>
-<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>
-注：
-<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>
-<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
+                     * 设置<p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
+                     * @param _approverSignTypes <p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
                      * 
                      */
                     void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
@@ -333,31 +217,15 @@ namespace TencentCloud
                     bool ApproverSignTypesHasBeenSet() const;
 
                     /**
-                     * 获取生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
-<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
-<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
-注：
-`不指定该值时，默认为签署方自行选择。`
-                     * @return SignTypeSelector 生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
-<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
-<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
-注：
-`不指定该值时，默认为签署方自行选择。`
+                     * 获取<p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>
+                     * @return SignTypeSelector <p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>
                      * 
                      */
                     uint64_t GetSignTypeSelector() const;
 
                     /**
-                     * 设置生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
-<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
-<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
-注：
-`不指定该值时，默认为签署方自行选择。`
-                     * @param _signTypeSelector 生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
-<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
-<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
-注：
-`不指定该值时，默认为签署方自行选择。`
+                     * 设置<p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>
+                     * @param _signTypeSelector <p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>
                      * 
                      */
                     void SetSignTypeSelector(const uint64_t& _signTypeSelector);
@@ -370,23 +238,15 @@ namespace TencentCloud
                     bool SignTypeSelectorHasBeenSet() const;
 
                     /**
-                     * 获取批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
-
-注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
-                     * @return FlowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
-
-注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
+                     * 获取<p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>
+                     * @return FlowBatchUrlInfo <p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>
                      * 
                      */
                     FlowBatchUrlInfo GetFlowBatchUrlInfo() const;
 
                     /**
-                     * 设置批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
-
-注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
-                     * @param _flowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
-
-注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
+                     * 设置<p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>
+                     * @param _flowBatchUrlInfo <p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>
                      * 
                      */
                     void SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flowBatchUrlInfo);
@@ -399,35 +259,15 @@ namespace TencentCloud
                     bool FlowBatchUrlInfoHasBeenSet() const;
 
                     /**
-                     * 获取<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 
-
- 注意： 
-1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。
-2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 
-3. 签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。
-                     * @return Intention <b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 
-
- 注意： 
-1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。
-2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 
-3. 签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。
+                     * 获取<p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 </p><p> 注意： </p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 </li><li>签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>
+                     * @return Intention <p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 </p><p> 注意： </p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 </li><li>签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>
                      * 
                      */
                     Intention GetIntention() const;
 
                     /**
-                     * 设置<b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 
-
- 注意： 
-1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。
-2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 
-3. 签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。
-                     * @param _intention <b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 
-
- 注意： 
-1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。
-2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 
-3. 签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。
+                     * 设置<p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 </p><p> 注意： </p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 </li><li>签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>
+                     * @param _intention <p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 </p><p> 注意： </p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 </li><li>签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>
                      * 
                      */
                     void SetIntention(const Intention& _intention);
@@ -440,15 +280,15 @@ namespace TencentCloud
                     bool IntentionHasBeenSet() const;
 
                     /**
-                     * 获取用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
-                     * @return VideoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 获取<p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>
+                     * @return VideoVerifyTimesLimit <p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>
                      * 
                      */
                     int64_t GetVideoVerifyTimesLimit() const;
 
                     /**
-                     * 设置用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
-                     * @param _videoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 设置<p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>
+                     * @param _videoVerifyTimesLimit <p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>
                      * 
                      */
                     void SetVideoVerifyTimesLimit(const int64_t& _videoVerifyTimesLimit);
@@ -461,23 +301,15 @@ namespace TencentCloud
                     bool VideoVerifyTimesLimitHasBeenSet() const;
 
                     /**
-                     * 获取缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
-
-注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
-                     * @return CacheApproverInfo 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
-
-注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
+                     * 获取<p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>
+                     * @return CacheApproverInfo <p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>
                      * 
                      */
                     bool GetCacheApproverInfo() const;
 
                     /**
-                     * 设置缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
-
-注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
-                     * @param _cacheApproverInfo 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
-
-注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
+                     * 设置<p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>
+                     * @param _cacheApproverInfo <p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>
                      * 
                      */
                     void SetCacheApproverInfo(const bool& _cacheApproverInfo);
@@ -490,31 +322,15 @@ namespace TencentCloud
                     bool CacheApproverInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否允许此链接中签署方批量拒签。
- <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
-
-注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
-
-                     * @return CanBatchReject 是否允许此链接中签署方批量拒签。
- <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
-
-注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
-
+                     * 获取<p>是否允许此链接中签署方批量拒签。<br> <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p><p>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>
+                     * @return CanBatchReject <p>是否允许此链接中签署方批量拒签。<br> <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p><p>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>
                      * 
                      */
                     bool GetCanBatchReject() const;
 
                     /**
-                     * 设置是否允许此链接中签署方批量拒签。
- <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
-
-注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
-
-                     * @param _canBatchReject 是否允许此链接中签署方批量拒签。
- <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
-
-注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
-
+                     * 设置<p>是否允许此链接中签署方批量拒签。<br> <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p><p>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>
+                     * @param _canBatchReject <p>是否允许此链接中签署方批量拒签。<br> <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p><p>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>
                      * 
                      */
                     void SetCanBatchReject(const bool& _canBatchReject);
@@ -527,15 +343,15 @@ namespace TencentCloud
                     bool CanBatchRejectHasBeenSet() const;
 
                     /**
-                     * 获取	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
-                     * @return PresetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 获取<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
+                     * @return PresetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
                      * 
                      */
                     PresetApproverInfo GetPresetApproverInfo() const;
 
                     /**
-                     * 设置	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
-                     * @param _presetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 设置<p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
+                     * @param _presetApproverInfo <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
                      * 
                      */
                     void SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo);
@@ -548,15 +364,15 @@ namespace TencentCloud
                     bool PresetApproverInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
-                     * @return CanSkipReadFlow 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * 获取<p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>
+                     * @return CanSkipReadFlow <p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>
                      * 
                      */
                     bool GetCanSkipReadFlow() const;
 
                     /**
-                     * 设置是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
-                     * @param _canSkipReadFlow 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * 设置<p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>
+                     * @param _canSkipReadFlow <p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>
                      * 
                      */
                     void SetCanSkipReadFlow(const bool& _canSkipReadFlow);
@@ -568,149 +384,130 @@ namespace TencentCloud
                      */
                     bool CanSkipReadFlowHasBeenSet() const;
 
+                    /**
+                     * 获取<p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。 </p><p>注意： </p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code> </li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>
+                     * @return ExpiredOn <p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。 </p><p>注意： </p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code> </li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>
+                     * 
+                     */
+                    int64_t GetExpiredOn() const;
+
+                    /**
+                     * 设置<p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。 </p><p>注意： </p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code> </li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>
+                     * @param _expiredOn <p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。 </p><p>注意： </p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code> </li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>
+                     * 
+                     */
+                    void SetExpiredOn(const int64_t& _expiredOn);
+
+                    /**
+                     * 判断参数 ExpiredOn 是否已赋值
+                     * @return ExpiredOn 是否已赋值
+                     * 
+                     */
+                    bool ExpiredOnHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。
-<ul>
-<li>若为个人参与方：ApproverType=1</li>
-<li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li>
-</ul>
-注:
-`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`
-`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`
+                     * <p>批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。</p><ul><li>若为个人参与方：ApproverType=1</li><li>若为企业参与方：ApproverType=0。同时 OrganizationName 参数需传入参与方企业名称。 </li></ul>注:<code>1. 暂不支持签署人拖动签署控件功能，以及签批控件。</code><code>2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。</code>
                      */
                     FlowCreateApprover m_flowApproverInfo;
                     bool m_flowApproverInfoHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 批量签署的合同流程ID数组。
-注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`
+                     * <p>批量签署的合同流程ID数组。<br>注: <code>在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。</code></p>
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 合同组编号
-注：`该参数和合同流程ID数组必须二选一`
+                     * <p>合同组编号<br>注：<code>该参数和合同流程ID数组必须二选一</code></p>
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
 
                     /**
-                     * 签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)
+                     * <p>签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)</p>
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 指定批量签署合同的签名类型，可传递以下值：
-<ul><li>**0**：手写签名(默认)</li>
-<li>**1**：OCR楷体</li>
-<li>**2**：姓名印章</li>
-<li>**3**：图片印章</li>
-<li>**4**：系统签名</li>
-<li>**5**：长效手写签名（包含手写签名）</li></ul>
-注：
-<ul><li>默认情况下，签名类型为手写签名</li>
-<li>您可以传递多种值，表示可用多种签名类型。</li>
-<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li>
-<li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li>
-</ul>
+                     * <p>指定批量签署合同的签名类型，可传递以下值：</p><ul><li>**0**：手写签名(默认)</li><li>**1**：OCR楷体</li><li>**2**：姓名印章</li><li>**3**：图片印章</li><li>**4**：系统签名</li><li>**5**：长效手写签名（包含手写签名）</li></ul>注：<ul><li>默认情况下，签名类型为手写签名</li><li>您可以传递多种值，表示可用多种签名类型。</li><li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li><li>若签署方为个人，签名类型“5:长效手写签名”不可用，签名方式将以合同中为准。</li></ul>
                      */
                     std::vector<int64_t> m_signatureTypes;
                     bool m_signatureTypesHasBeenSet;
 
                     /**
-                     * 指定批量签署合同的认证校验方式，可传递以下值：
-<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>
-<li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li>
-<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>
-注：
-<ul><li>默认情况下，认证校验方式为人脸和密码认证</li>
-<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
+                     * <p>指定批量签署合同的认证校验方式，可传递以下值：</p><ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li><li>**2**：密码认证(默认)，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署</li><li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>注：<ul><li>默认情况下，认证校验方式为人脸和密码认证</li><li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;
 
                     /**
-                     * 生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：
-<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>
-<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>
-注：
-`不指定该值时，默认为签署方自行选择。`
+                     * <p>生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：</p><ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li><li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>注：<code>不指定该值时，默认为签署方自行选择。</code>
                      */
                     uint64_t m_signTypeSelector;
                     bool m_signTypeSelectorHasBeenSet;
 
                     /**
-                     * 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
-
-注: `若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充`
+                     * <p>批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。    </p><p>注: <code>若签署方为企业员工，暂不支持通过H5端进行动态签署人的补充</code></p>
                      */
                     FlowBatchUrlInfo m_flowBatchUrlInfo;
                     bool m_flowBatchUrlInfoHasBeenSet;
 
                     /**
-                     * <b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 
-
- 注意： 
-1. 视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。
-2. 使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 
-3. 签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。
+                     * <p><b>只有在生成H5签署链接的情形下</b>（ 如调用<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateFlowSignUrl" target="_blank">获取H5签署链接</a>、<a href="https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchQuickSignUrl" target="_blank">获取H5批量签署链接</a>等接口），该配置才会生效。  您可以指定H5签署视频核身的意图配置，选择问答模式或点头模式的语音文本。 </p><p> 注意： </p><ol><li>视频认证为<b>白名单功能，使用前请联系对接的客户经理沟通</b>。</li><li>使用视频认证时，<b>生成H5签署链接的时候必须将签署认证方式指定为人脸</b>（即ApproverSignTypes设置成人脸签署）。 </li><li>签署完成后，可以通过<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelDescribeSignFaceVideo" target="_blank">查询签署认证人脸视频</a>获取到当时的视频。</li></ol>
                      */
                     Intention m_intention;
                     bool m_intentionHasBeenSet;
 
                     /**
-                     * 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * <p>用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。</p>
                      */
                     int64_t m_videoVerifyTimesLimit;
                     bool m_videoVerifyTimesLimitHasBeenSet;
 
                     /**
-                     * 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
-
-注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
+                     * <p>缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。</p><p>注: <code>若参与方为企业员工时，暂不支持对参与方信息进行缓存</code></p>
                      */
                     bool m_cacheApproverInfo;
                     bool m_cacheApproverInfoHasBeenSet;
 
                     /**
-                     * 是否允许此链接中签署方批量拒签。
- <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>
-
-注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`
-
+                     * <p>是否允许此链接中签署方批量拒签。<br> <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul></p><p>注：<code>当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。</code></p>
                      */
                     bool m_canBatchReject;
                     bool m_canBatchRejectHasBeenSet;
 
                     /**
-                     * 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * <p>预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。</p>
                      */
                     PresetApproverInfo m_presetApproverInfo;
                     bool m_presetApproverInfoHasBeenSet;
 
                     /**
-                     * 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * <p>是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：<code>1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。</code></p>
                      */
                     bool m_canSkipReadFlow;
                     bool m_canSkipReadFlowHasBeenSet;
+
+                    /**
+                     * <p>链接的有效时间，单位为秒。取值范围为 30分钟（1800）-90天（7776000）。如果不传，默认有效期为30分钟。 </p><p>注意： </p><ol><li><code>出于安全性考虑，若有效期大于30分钟，同设备24小时内点击链接查看合同需要进行手机验证码校验。</code> </li><li><code>动态签署方链接暂不支持修改过期时间。</code></li></ol>
+                     */
+                    int64_t m_expiredOn;
+                    bool m_expiredOnHasBeenSet;
 
                 };
             }

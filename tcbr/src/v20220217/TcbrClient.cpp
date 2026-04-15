@@ -890,6 +890,106 @@ TcbrClient::SearchClsLogOutcomeCallable TcbrClient::SearchClsLogCallable(const S
     return prom->get_future();
 }
 
+TcbrClient::StartVersionInstanceOutcome TcbrClient::StartVersionInstance(const StartVersionInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartVersionInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartVersionInstanceResponse rsp = StartVersionInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartVersionInstanceOutcome(rsp);
+        else
+            return StartVersionInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return StartVersionInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::StartVersionInstanceAsync(const StartVersionInstanceRequest& request, const StartVersionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartVersionInstanceRequest&;
+    using Resp = StartVersionInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartVersionInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::StartVersionInstanceOutcomeCallable TcbrClient::StartVersionInstanceCallable(const StartVersionInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartVersionInstanceOutcome>>();
+    StartVersionInstanceAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const StartVersionInstanceRequest&,
+        StartVersionInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbrClient::StopVersionInstanceOutcome TcbrClient::StopVersionInstance(const StopVersionInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopVersionInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopVersionInstanceResponse rsp = StopVersionInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopVersionInstanceOutcome(rsp);
+        else
+            return StopVersionInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return StopVersionInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::StopVersionInstanceAsync(const StopVersionInstanceRequest& request, const StopVersionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopVersionInstanceRequest&;
+    using Resp = StopVersionInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopVersionInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::StopVersionInstanceOutcomeCallable TcbrClient::StopVersionInstanceCallable(const StopVersionInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopVersionInstanceOutcome>>();
+    StopVersionInstanceAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const StopVersionInstanceRequest&,
+        StopVersionInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbrClient::SubmitServerRollbackOutcome TcbrClient::SubmitServerRollback(const SubmitServerRollbackRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitServerRollback");

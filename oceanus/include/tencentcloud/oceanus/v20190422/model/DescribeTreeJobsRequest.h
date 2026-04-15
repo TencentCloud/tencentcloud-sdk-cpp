@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
-                     * @return Filters 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
+                     * 获取<p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>
+                     * @return Filters <p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
-                     * @param _filters 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
+                     * 设置<p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>
+                     * @param _filters <p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 Serialid
-                     * @return WorkSpaceId 工作空间 Serialid
+                     * 获取<p>工作空间 Serialid</p>
+                     * @return WorkSpaceId <p>工作空间 Serialid</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 Serialid
-                     * @param _workSpaceId 工作空间 Serialid
+                     * 设置<p>工作空间 Serialid</p>
+                     * @param _workSpaceId <p>工作空间 Serialid</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录
+                     * <p>筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 工作空间 Serialid
+                     * <p>工作空间 Serialid</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;

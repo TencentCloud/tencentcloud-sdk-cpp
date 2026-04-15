@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBackUpSchedulesRequest::DescribeBackUpSchedulesRequest() :
     m_applicationTypeHasBeenSet(false),
-    m_encryptionFiltersHasBeenSet(false)
+    m_encryptionFiltersHasBeenSet(false),
+    m_scheduleIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DescribeBackUpSchedulesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_scheduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scheduleId, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DescribeBackUpSchedulesRequest::SetEncryptionFilters(const vector<int64_t>&
 bool DescribeBackUpSchedulesRequest::EncryptionFiltersHasBeenSet() const
 {
     return m_encryptionFiltersHasBeenSet;
+}
+
+int64_t DescribeBackUpSchedulesRequest::GetScheduleId() const
+{
+    return m_scheduleId;
+}
+
+void DescribeBackUpSchedulesRequest::SetScheduleId(const int64_t& _scheduleId)
+{
+    m_scheduleId = _scheduleId;
+    m_scheduleIdHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::ScheduleIdHasBeenSet() const
+{
+    return m_scheduleIdHasBeenSet;
 }
 
 

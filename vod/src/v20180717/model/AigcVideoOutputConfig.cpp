@@ -35,7 +35,8 @@ AigcVideoOutputConfig::AigcVideoOutputConfig() :
     m_enhanceSwitchHasBeenSet(false),
     m_offPeakHasBeenSet(false),
     m_frameInterpolateHasBeenSet(false),
-    m_logoAddHasBeenSet(false)
+    m_logoAddHasBeenSet(false),
+    m_enableBGMHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome AigcVideoOutputConfig::Deserialize(const rapidjson::Value &v
         m_logoAddHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableBGM") && !value["EnableBGM"].IsNull())
+    {
+        if (!value["EnableBGM"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoOutputConfig.EnableBGM` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBGM = string(value["EnableBGM"].GetString());
+        m_enableBGMHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void AigcVideoOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "LogoAdd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logoAdd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableBGMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBGM";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableBGM.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void AigcVideoOutputConfig::SetLogoAdd(const string& _logoAdd)
 bool AigcVideoOutputConfig::LogoAddHasBeenSet() const
 {
     return m_logoAddHasBeenSet;
+}
+
+string AigcVideoOutputConfig::GetEnableBGM() const
+{
+    return m_enableBGM;
+}
+
+void AigcVideoOutputConfig::SetEnableBGM(const string& _enableBGM)
+{
+    m_enableBGM = _enableBGM;
+    m_enableBGMHasBeenSet = true;
+}
+
+bool AigcVideoOutputConfig::EnableBGMHasBeenSet() const
+{
+    return m_enableBGMHasBeenSet;
 }
 

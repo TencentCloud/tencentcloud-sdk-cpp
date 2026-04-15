@@ -23,7 +23,8 @@ using namespace std;
 SnapshotRemainPolicy::SnapshotRemainPolicy() :
     m_typeHasBeenSet(false),
     m_remainDaysHasBeenSet(false),
-    m_remainLatestNumHasBeenSet(false)
+    m_remainLatestNumHasBeenSet(false),
+    m_remainDaysUnitHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SnapshotRemainPolicy::Deserialize(const rapidjson::Value &va
         m_remainLatestNumHasBeenSet = true;
     }
 
+    if (value.HasMember("RemainDaysUnit") && !value["RemainDaysUnit"].IsNull())
+    {
+        if (!value["RemainDaysUnit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotRemainPolicy.RemainDaysUnit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainDaysUnit = value["RemainDaysUnit"].GetInt64();
+        m_remainDaysUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SnapshotRemainPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "RemainLatestNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remainLatestNum, allocator);
+    }
+
+    if (m_remainDaysUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainDaysUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainDaysUnit, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SnapshotRemainPolicy::SetRemainLatestNum(const int64_t& _remainLatestNum)
 bool SnapshotRemainPolicy::RemainLatestNumHasBeenSet() const
 {
     return m_remainLatestNumHasBeenSet;
+}
+
+int64_t SnapshotRemainPolicy::GetRemainDaysUnit() const
+{
+    return m_remainDaysUnit;
+}
+
+void SnapshotRemainPolicy::SetRemainDaysUnit(const int64_t& _remainDaysUnit)
+{
+    m_remainDaysUnit = _remainDaysUnit;
+    m_remainDaysUnitHasBeenSet = true;
+}
+
+bool SnapshotRemainPolicy::RemainDaysUnitHasBeenSet() const
+{
+    return m_remainDaysUnitHasBeenSet;
 }
 

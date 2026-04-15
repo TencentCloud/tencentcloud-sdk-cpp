@@ -49,7 +49,8 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_dataRemoteRegionHasBeenSet(false),
     m_bucketEncryptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_encryptionEnabledHasBeenSet(false)
+    m_encryptionEnabledHasBeenSet(false),
+    m_scheduleIdHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,16 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_encryptionEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleId") && !value["ScheduleId"].IsNull())
+    {
+        if (!value["ScheduleId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.ScheduleId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleId = value["ScheduleId"].GetInt64();
+        m_scheduleIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -617,6 +628,14 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EncryptionEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encryptionEnabled, allocator);
+    }
+
+    if (m_scheduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scheduleId, allocator);
     }
 
 }
@@ -1084,5 +1103,21 @@ void BackUpJobDisplay::SetEncryptionEnabled(const bool& _encryptionEnabled)
 bool BackUpJobDisplay::EncryptionEnabledHasBeenSet() const
 {
     return m_encryptionEnabledHasBeenSet;
+}
+
+int64_t BackUpJobDisplay::GetScheduleId() const
+{
+    return m_scheduleId;
+}
+
+void BackUpJobDisplay::SetScheduleId(const int64_t& _scheduleId)
+{
+    m_scheduleId = _scheduleId;
+    m_scheduleIdHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::ScheduleIdHasBeenSet() const
+{
+    return m_scheduleIdHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 DescribeWorkloadGroupResponse::DescribeWorkloadGroupResponse() :
     m_workloadGroupsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_monitorStatusHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeWorkloadGroupResponse::Deserialize(const string &pay
         m_errorMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MonitorStatus") && !rsp["MonitorStatus"].IsNull())
+    {
+        if (!rsp["MonitorStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorStatus = rsp["MonitorStatus"].GetInt64();
+        m_monitorStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeWorkloadGroupResponse::ToJsonString() const
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorStatus, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ string DescribeWorkloadGroupResponse::GetErrorMsg() const
 bool DescribeWorkloadGroupResponse::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+int64_t DescribeWorkloadGroupResponse::GetMonitorStatus() const
+{
+    return m_monitorStatus;
+}
+
+bool DescribeWorkloadGroupResponse::MonitorStatusHasBeenSet() const
+{
+    return m_monitorStatusHasBeenSet;
 }
 
 

@@ -133,6 +133,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h>
@@ -454,6 +456,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
                 typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNDRAssetIdentificationListResponse> DescribeNDRAssetIdentificationListOutcome;
+                typedef std::future<DescribeNDRAssetIdentificationListOutcome> DescribeNDRAssetIdentificationListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNDRAssetIdentificationListRequest&, DescribeNDRAssetIdentificationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNDRAssetIdentificationListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatAcRuleResponse> DescribeNatAcRuleOutcome;
                 typedef std::future<DescribeNatAcRuleOutcome> DescribeNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatAcRuleRequest&, DescribeNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatAcRuleAsyncHandler;
@@ -1166,6 +1171,15 @@ namespace TencentCloud
                 DescribeLogsOutcome DescribeLogs(const Model::DescribeLogsRequest &request);
                 void DescribeLogsAsync(const Model::DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
+
+                /**
+                 *DescribeNDRAssetIdentificationList - 获取NDR资产识别结果列表
+                 * @param req DescribeNDRAssetIdentificationListRequest
+                 * @return DescribeNDRAssetIdentificationListOutcome
+                 */
+                DescribeNDRAssetIdentificationListOutcome DescribeNDRAssetIdentificationList(const Model::DescribeNDRAssetIdentificationListRequest &request);
+                void DescribeNDRAssetIdentificationListAsync(const Model::DescribeNDRAssetIdentificationListRequest& request, const DescribeNDRAssetIdentificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNDRAssetIdentificationListOutcomeCallable DescribeNDRAssetIdentificationListCallable(const Model::DescribeNDRAssetIdentificationListRequest& request);
 
                 /**
                  *查询NAT访问控制列表

@@ -81,7 +81,9 @@ InstanceInfo::InstanceInfo() :
     m_instanceTypeHasBeenSet(false),
     m_masterInstanceHasBeenSet(false),
     m_slaveInstancesHasBeenSet(false),
-    m_syncerIpHasBeenSet(false)
+    m_syncerIpHasBeenSet(false),
+    m_enableSqlConvHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -747,6 +749,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_syncerIpHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableSqlConv") && !value["EnableSqlConv"].IsNull())
+    {
+        if (!value["EnableSqlConv"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableSqlConv` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSqlConv = value["EnableSqlConv"].GetInt64();
+        m_enableSqlConvHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeZone") && !value["TimeZone"].IsNull())
+    {
+        if (!value["TimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.TimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeZone = string(value["TimeZone"].GetString());
+        m_timeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1266,6 +1288,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SyncerIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_syncerIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSqlConvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSqlConv";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSqlConv, allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2245,5 +2283,37 @@ void InstanceInfo::SetSyncerIp(const string& _syncerIp)
 bool InstanceInfo::SyncerIpHasBeenSet() const
 {
     return m_syncerIpHasBeenSet;
+}
+
+int64_t InstanceInfo::GetEnableSqlConv() const
+{
+    return m_enableSqlConv;
+}
+
+void InstanceInfo::SetEnableSqlConv(const int64_t& _enableSqlConv)
+{
+    m_enableSqlConv = _enableSqlConv;
+    m_enableSqlConvHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableSqlConvHasBeenSet() const
+{
+    return m_enableSqlConvHasBeenSet;
+}
+
+string InstanceInfo::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void InstanceInfo::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool InstanceInfo::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
 }
 

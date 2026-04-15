@@ -1366,6 +1366,48 @@ Changing  变更中
                      */
                     bool SyncerIpHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持sql convertor
+                     * @return EnableSqlConv 是否支持sql convertor
+                     * 
+                     */
+                    int64_t GetEnableSqlConv() const;
+
+                    /**
+                     * 设置是否支持sql convertor
+                     * @param _enableSqlConv 是否支持sql convertor
+                     * 
+                     */
+                    void SetEnableSqlConv(const int64_t& _enableSqlConv);
+
+                    /**
+                     * 判断参数 EnableSqlConv 是否已赋值
+                     * @return EnableSqlConv 是否已赋值
+                     * 
+                     */
+                    bool EnableSqlConvHasBeenSet() const;
+
+                    /**
+                     * 获取集群时区，默认+08:00
+                     * @return TimeZone 集群时区，默认+08:00
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置集群时区，默认+08:00
+                     * @param _timeZone 集群时区，默认+08:00
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1742,6 +1784,18 @@ Changing  变更中
                      */
                     std::string m_syncerIp;
                     bool m_syncerIpHasBeenSet;
+
+                    /**
+                     * 是否支持sql convertor
+                     */
+                    int64_t m_enableSqlConv;
+                    bool m_enableSqlConvHasBeenSet;
+
+                    /**
+                     * 集群时区，默认+08:00
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
 
                 };
             }

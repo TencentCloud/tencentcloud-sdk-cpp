@@ -24,7 +24,8 @@ StorageInfo::StorageInfo() :
     m_regionHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_cdnDomainHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_externalStorageHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome StorageInfo::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalStorage") && !value["ExternalStorage"].IsNull())
+    {
+        if (!value["ExternalStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageInfo.ExternalStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_externalStorage.Deserialize(value["ExternalStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_externalStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void StorageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externalStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void StorageInfo::SetAppId(const string& _appId)
 bool StorageInfo::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+ExternalStorage StorageInfo::GetExternalStorage() const
+{
+    return m_externalStorage;
+}
+
+void StorageInfo::SetExternalStorage(const ExternalStorage& _externalStorage)
+{
+    m_externalStorage = _externalStorage;
+    m_externalStorageHasBeenSet = true;
+}
+
+bool StorageInfo::ExternalStorageHasBeenSet() const
+{
+    return m_externalStorageHasBeenSet;
 }
 

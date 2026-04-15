@@ -240,6 +240,56 @@ TdmysqlClient::DescribeDBParametersOutcomeCallable TdmysqlClient::DescribeDBPara
     return prom->get_future();
 }
 
+TdmysqlClient::DescribeDBSArchiveLogsOutcome TdmysqlClient::DescribeDBSArchiveLogs(const DescribeDBSArchiveLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSArchiveLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSArchiveLogsResponse rsp = DescribeDBSArchiveLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSArchiveLogsOutcome(rsp);
+        else
+            return DescribeDBSArchiveLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSArchiveLogsOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBSArchiveLogsAsync(const DescribeDBSArchiveLogsRequest& request, const DescribeDBSArchiveLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBSArchiveLogsRequest&;
+    using Resp = DescribeDBSArchiveLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSArchiveLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBSArchiveLogsOutcomeCallable TdmysqlClient::DescribeDBSArchiveLogsCallable(const DescribeDBSArchiveLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBSArchiveLogsOutcome>>();
+    DescribeDBSArchiveLogsAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBSArchiveLogsRequest&,
+        DescribeDBSArchiveLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::DescribeDBSAvailableRecoveryTimeOutcome TdmysqlClient::DescribeDBSAvailableRecoveryTime(const DescribeDBSAvailableRecoveryTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSAvailableRecoveryTime");

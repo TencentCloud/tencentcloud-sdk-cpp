@@ -28,7 +28,8 @@ DescribeClusterConfigsResponse::DescribeClusterConfigsResponse() :
     m_buildVersionHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
     m_hasCNHasBeenSet(false),
-    m_existingJarConfListHasBeenSet(false)
+    m_existingJarConfListHasBeenSet(false),
+    m_iPDBFileSizeLimitHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,16 @@ CoreInternalOutcome DescribeClusterConfigsResponse::Deserialize(const string &pa
         m_existingJarConfListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IPDBFileSizeLimit") && !rsp["IPDBFileSizeLimit"].IsNull())
+    {
+        if (!rsp["IPDBFileSizeLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPDBFileSizeLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPDBFileSizeLimit = string(rsp["IPDBFileSizeLimit"].GetString());
+        m_iPDBFileSizeLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeClusterConfigsResponse::ToJsonString() const
         }
     }
 
+    if (m_iPDBFileSizeLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPDBFileSizeLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPDBFileSizeLimit.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -260,6 +279,16 @@ vector<ClusterConfigsInfoFromEMR> DescribeClusterConfigsResponse::GetExistingJar
 bool DescribeClusterConfigsResponse::ExistingJarConfListHasBeenSet() const
 {
     return m_existingJarConfListHasBeenSet;
+}
+
+string DescribeClusterConfigsResponse::GetIPDBFileSizeLimit() const
+{
+    return m_iPDBFileSizeLimit;
+}
+
+bool DescribeClusterConfigsResponse::IPDBFileSizeLimitHasBeenSet() const
+{
+    return m_iPDBFileSizeLimitHasBeenSet;
 }
 
 

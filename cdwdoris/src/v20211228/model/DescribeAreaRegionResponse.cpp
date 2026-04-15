@@ -26,7 +26,8 @@ using namespace std;
 DescribeAreaRegionResponse::DescribeAreaRegionResponse() :
     m_itemsHasBeenSet(false),
     m_frontEndRulesHasBeenSet(false),
-    m_availableWhiteListNamesHasBeenSet(false)
+    m_availableWhiteListNamesHasBeenSet(false),
+    m_isolationDaysHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DescribeAreaRegionResponse::Deserialize(const string &payloa
         m_availableWhiteListNamesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsolationDays") && !rsp["IsolationDays"].IsNull())
+    {
+        if (!rsp["IsolationDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolationDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolationDays = rsp["IsolationDays"].GetInt64();
+        m_isolationDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +181,14 @@ string DescribeAreaRegionResponse::ToJsonString() const
         }
     }
 
+    if (m_isolationDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationDays, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -210,6 +229,16 @@ vector<string> DescribeAreaRegionResponse::GetAvailableWhiteListNames() const
 bool DescribeAreaRegionResponse::AvailableWhiteListNamesHasBeenSet() const
 {
     return m_availableWhiteListNamesHasBeenSet;
+}
+
+int64_t DescribeAreaRegionResponse::GetIsolationDays() const
+{
+    return m_isolationDays;
+}
+
+bool DescribeAreaRegionResponse::IsolationDaysHasBeenSet() const
+{
+    return m_isolationDaysHasBeenSet;
 }
 
 

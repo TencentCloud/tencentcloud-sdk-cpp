@@ -2790,6 +2790,56 @@ CfwClient::DescribeLogsOutcomeCallable CfwClient::DescribeLogsCallable(const Des
     return prom->get_future();
 }
 
+CfwClient::DescribeNDRAssetIdentificationListOutcome CfwClient::DescribeNDRAssetIdentificationList(const DescribeNDRAssetIdentificationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNDRAssetIdentificationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNDRAssetIdentificationListResponse rsp = DescribeNDRAssetIdentificationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNDRAssetIdentificationListOutcome(rsp);
+        else
+            return DescribeNDRAssetIdentificationListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNDRAssetIdentificationListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNDRAssetIdentificationListAsync(const DescribeNDRAssetIdentificationListRequest& request, const DescribeNDRAssetIdentificationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNDRAssetIdentificationListRequest&;
+    using Resp = DescribeNDRAssetIdentificationListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNDRAssetIdentificationList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNDRAssetIdentificationListOutcomeCallable CfwClient::DescribeNDRAssetIdentificationListCallable(const DescribeNDRAssetIdentificationListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNDRAssetIdentificationListOutcome>>();
+    DescribeNDRAssetIdentificationListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNDRAssetIdentificationListRequest&,
+        DescribeNDRAssetIdentificationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeNatAcRuleOutcome CfwClient::DescribeNatAcRule(const DescribeNatAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatAcRule");

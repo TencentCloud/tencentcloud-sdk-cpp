@@ -31,6 +31,8 @@
 #include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersResponse.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsRequest.h>
+#include <tencentcloud/tdmysql/v20211122/model/DescribeDBSArchiveLogsResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesRequest.h>
@@ -83,6 +85,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
                 typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBSArchiveLogsResponse> DescribeDBSArchiveLogsOutcome;
+                typedef std::future<DescribeDBSArchiveLogsOutcome> DescribeDBSArchiveLogsOutcomeCallable;
+                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSArchiveLogsRequest&, DescribeDBSArchiveLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSArchiveLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSAvailableRecoveryTimeResponse> DescribeDBSAvailableRecoveryTimeOutcome;
                 typedef std::future<DescribeDBSAvailableRecoveryTimeOutcome> DescribeDBSAvailableRecoveryTimeOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBSAvailableRecoveryTimeRequest&, DescribeDBSAvailableRecoveryTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSAvailableRecoveryTimeAsyncHandler;
@@ -160,6 +165,15 @@ namespace TencentCloud
                 DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest &request);
                 void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
+
+                /**
+                 *查询实例归档日志列表 DescribeDBSArchiveLogs
+                 * @param req DescribeDBSArchiveLogsRequest
+                 * @return DescribeDBSArchiveLogsOutcome
+                 */
+                DescribeDBSArchiveLogsOutcome DescribeDBSArchiveLogs(const Model::DescribeDBSArchiveLogsRequest &request);
+                void DescribeDBSArchiveLogsAsync(const Model::DescribeDBSArchiveLogsRequest& request, const DescribeDBSArchiveLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBSArchiveLogsOutcomeCallable DescribeDBSArchiveLogsCallable(const Model::DescribeDBSArchiveLogsRequest& request);
 
                 /**
                  *获取可恢复时间 DescribeDBSAvailableRecoveryTime

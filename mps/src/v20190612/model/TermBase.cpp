@@ -22,7 +22,9 @@ using namespace std;
 
 TermBase::TermBase() :
     m_srcHasBeenSet(false),
-    m_dstHasBeenSet(false)
+    m_dstHasBeenSet(false),
+    m_srcLanguageHasBeenSet(false),
+    m_dstLanguageHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome TermBase::Deserialize(const rapidjson::Value &value)
         m_dstHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcLanguage") && !value["SrcLanguage"].IsNull())
+    {
+        if (!value["SrcLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TermBase.SrcLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcLanguage = string(value["SrcLanguage"].GetString());
+        m_srcLanguageHasBeenSet = true;
+    }
+
+    if (value.HasMember("DstLanguage") && !value["DstLanguage"].IsNull())
+    {
+        if (!value["DstLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TermBase.DstLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dstLanguage = string(value["DstLanguage"].GetString());
+        m_dstLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void TermBase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Dst";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dst.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dstLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void TermBase::SetDst(const string& _dst)
 bool TermBase::DstHasBeenSet() const
 {
     return m_dstHasBeenSet;
+}
+
+string TermBase::GetSrcLanguage() const
+{
+    return m_srcLanguage;
+}
+
+void TermBase::SetSrcLanguage(const string& _srcLanguage)
+{
+    m_srcLanguage = _srcLanguage;
+    m_srcLanguageHasBeenSet = true;
+}
+
+bool TermBase::SrcLanguageHasBeenSet() const
+{
+    return m_srcLanguageHasBeenSet;
+}
+
+string TermBase::GetDstLanguage() const
+{
+    return m_dstLanguage;
+}
+
+void TermBase::SetDstLanguage(const string& _dstLanguage)
+{
+    m_dstLanguage = _dstLanguage;
+    m_dstLanguageHasBeenSet = true;
+}
+
+bool TermBase::DstLanguageHasBeenSet() const
+{
+    return m_dstLanguageHasBeenSet;
 }
 

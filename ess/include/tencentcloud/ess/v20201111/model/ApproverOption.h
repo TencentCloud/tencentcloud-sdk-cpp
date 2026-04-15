@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署方是否可以拒签
-
-<ul><li> **false** : ( 默认)可以拒签</li>
-<li> **true** :不可以拒签</li></ul>
-                     * @return NoRefuse 签署方是否可以拒签
-
-<ul><li> **false** : ( 默认)可以拒签</li>
-<li> **true** :不可以拒签</li></ul>
+                     * 获取<p>签署方是否可以拒签</p><ul><li> **false** : ( 默认)可以拒签</li><li> **true** :不可以拒签</li></ul>
+                     * @return NoRefuse <p>签署方是否可以拒签</p><ul><li> **false** : ( 默认)可以拒签</li><li> **true** :不可以拒签</li></ul>
                      * 
                      */
                     bool GetNoRefuse() const;
 
                     /**
-                     * 设置签署方是否可以拒签
-
-<ul><li> **false** : ( 默认)可以拒签</li>
-<li> **true** :不可以拒签</li></ul>
-                     * @param _noRefuse 签署方是否可以拒签
-
-<ul><li> **false** : ( 默认)可以拒签</li>
-<li> **true** :不可以拒签</li></ul>
+                     * 设置<p>签署方是否可以拒签</p><ul><li> **false** : ( 默认)可以拒签</li><li> **true** :不可以拒签</li></ul>
+                     * @param _noRefuse <p>签署方是否可以拒签</p><ul><li> **false** : ( 默认)可以拒签</li><li> **true** :不可以拒签</li></ul>
                      * 
                      */
                     void SetNoRefuse(const bool& _noRefuse);
@@ -80,27 +68,15 @@ namespace TencentCloud
                     bool NoRefuseHasBeenSet() const;
 
                     /**
-                     * 获取签署方是否可以转他人处理
-
-<ul><li> **false** : ( 默认)可以转他人处理</li>
-<li> **true** :不可以转他人处理</li></ul>
-                     * @return NoTransfer 签署方是否可以转他人处理
-
-<ul><li> **false** : ( 默认)可以转他人处理</li>
-<li> **true** :不可以转他人处理</li></ul>
+                     * 获取<p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>
+                     * @return NoTransfer <p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>
                      * 
                      */
                     bool GetNoTransfer() const;
 
                     /**
-                     * 设置签署方是否可以转他人处理
-
-<ul><li> **false** : ( 默认)可以转他人处理</li>
-<li> **true** :不可以转他人处理</li></ul>
-                     * @param _noTransfer 签署方是否可以转他人处理
-
-<ul><li> **false** : ( 默认)可以转他人处理</li>
-<li> **true** :不可以转他人处理</li></ul>
+                     * 设置<p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>
+                     * @param _noTransfer <p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>
                      * 
                      */
                     void SetNoTransfer(const bool& _noTransfer);
@@ -113,15 +89,15 @@ namespace TencentCloud
                     bool NoTransferHasBeenSet() const;
 
                     /**
-                     * 获取允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
-                     * @return CanEditApprover 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * 获取<p>允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑</p>
+                     * @return CanEditApprover <p>允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑</p>
                      * 
                      */
                     bool GetCanEditApprover() const;
 
                     /**
-                     * 设置允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
-                     * @param _canEditApprover 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * 设置<p>允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑</p>
+                     * @param _canEditApprover <p>允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑</p>
                      * 
                      */
                     void SetCanEditApprover(const bool& _canEditApprover);
@@ -134,47 +110,15 @@ namespace TencentCloud
                     bool CanEditApproverHasBeenSet() const;
 
                     /**
-                     * 获取签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-
-
-注：
-1. `使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关`
-2. 此参数在嵌入式场景下无效。
-                     * @return FillType 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-
-
-注：
-1. `使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关`
-2. 此参数在嵌入式场景下无效。
+                     * 获取<p>签署人信息补充类型，默认无需补充。</p><ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul><p>注：</p><ol><li><code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></li><li>此参数在嵌入式场景下无效。</li></ol>
+                     * @return FillType <p>签署人信息补充类型，默认无需补充。</p><ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul><p>注：</p><ol><li><code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></li><li>此参数在嵌入式场景下无效。</li></ol>
                      * 
                      */
                     int64_t GetFillType() const;
 
                     /**
-                     * 设置签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-
-
-注：
-1. `使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关`
-2. 此参数在嵌入式场景下无效。
-                     * @param _fillType 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-
-
-注：
-1. `使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关`
-2. 此参数在嵌入式场景下无效。
+                     * 设置<p>签署人信息补充类型，默认无需补充。</p><ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul><p>注：</p><ol><li><code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></li><li>此参数在嵌入式场景下无效。</li></ol>
+                     * @param _fillType <p>签署人信息补充类型，默认无需补充。</p><ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul><p>注：</p><ol><li><code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></li><li>此参数在嵌入式场景下无效。</li></ol>
                      * 
                      */
                     void SetFillType(const int64_t& _fillType);
@@ -187,43 +131,15 @@ namespace TencentCloud
                     bool FillTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @return FlowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 获取<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @return FlowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     std::string GetFlowReadLimit() const;
 
                     /**
-                     * 设置签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @param _flowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 设置<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @param _flowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     void SetFlowReadLimit(const std::string& _flowReadLimit);
@@ -236,35 +152,15 @@ namespace TencentCloud
                     bool FlowReadLimitHasBeenSet() const;
 
                     /**
-                     * 获取禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @return ForbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 获取<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @return ForbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     bool GetForbidAddSignDate() const;
 
                     /**
-                     * 设置禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @param _forbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 设置<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @param _forbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     void SetForbidAddSignDate(const bool& _forbidAddSignDate);
@@ -276,69 +172,70 @@ namespace TencentCloud
                      */
                     bool ForbidAddSignDateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * @return ApproverMobileMode <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * 
+                     */
+                    std::string GetApproverMobileMode() const;
+
+                    /**
+                     * 设置<p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * @param _approverMobileMode <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     * 
+                     */
+                    void SetApproverMobileMode(const std::string& _approverMobileMode);
+
+                    /**
+                     * 判断参数 ApproverMobileMode 是否已赋值
+                     * @return ApproverMobileMode 是否已赋值
+                     * 
+                     */
+                    bool ApproverMobileModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 签署方是否可以拒签
-
-<ul><li> **false** : ( 默认)可以拒签</li>
-<li> **true** :不可以拒签</li></ul>
+                     * <p>签署方是否可以拒签</p><ul><li> **false** : ( 默认)可以拒签</li><li> **true** :不可以拒签</li></ul>
                      */
                     bool m_noRefuse;
                     bool m_noRefuseHasBeenSet;
 
                     /**
-                     * 签署方是否可以转他人处理
-
-<ul><li> **false** : ( 默认)可以转他人处理</li>
-<li> **true** :不可以转他人处理</li></ul>
+                     * <p>签署方是否可以转他人处理</p><ul><li> **false** : ( 默认)可以转他人处理</li><li> **true** :不可以转他人处理</li></ul>
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;
 
                     /**
-                     * 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * <p>允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑</p>
                      */
                     bool m_canEditApprover;
                     bool m_canEditApproverHasBeenSet;
 
                     /**
-                     * 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-
-
-注：
-1. `使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关`
-2. 此参数在嵌入式场景下无效。
+                     * <p>签署人信息补充类型，默认无需补充。</p><ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul><p>注：</p><ol><li><code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></li><li>此参数在嵌入式场景下无效。</li></ol>
                      */
                     int64_t m_fillType;
                     bool m_fillTypeHasBeenSet;
 
                     /**
-                     * 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      */
                     std::string m_flowReadLimit;
                     bool m_flowReadLimitHasBeenSet;
 
                     /**
-                     * 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      */
                     bool m_forbidAddSignDate;
                     bool m_forbidAddSignDateHasBeenSet;
+
+                    /**
+                     * <p>签署人手机号传参模式</p><p>枚举值：</p><ul><li>REPLACE： 接受已有认证手机号并替换</li><li>GIVEN： 以客户入参输入手机号为主</li><li>VALIDATE： 若与认证手机号不一致则报错</li></ul><p>默认值：REPLACE</p><p>会触发手机号传参模式的前提是：签署人是指定了具体身份信息的</p><ul><li>在指定签署人姓名，证件号的情况下会触发</li></ul>
+                     */
+                    std::string m_approverMobileMode;
+                    bool m_approverMobileModeHasBeenSet;
 
                 };
             }

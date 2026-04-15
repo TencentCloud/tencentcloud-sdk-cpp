@@ -96,6 +96,27 @@ namespace TencentCloud
                      */
                     bool EncryptionFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取调度任务id过滤
+                     * @return ScheduleId 调度任务id过滤
+                     * 
+                     */
+                    int64_t GetScheduleId() const;
+
+                    /**
+                     * 设置调度任务id过滤
+                     * @param _scheduleId 调度任务id过滤
+                     * 
+                     */
+                    void SetScheduleId(const int64_t& _scheduleId);
+
+                    /**
+                     * 判断参数 ScheduleId 是否已赋值
+                     * @return ScheduleId 是否已赋值
+                     * 
+                     */
+                    bool ScheduleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_encryptionFilters;
                     bool m_encryptionFiltersHasBeenSet;
+
+                    /**
+                     * 调度任务id过滤
+                     */
+                    int64_t m_scheduleId;
+                    bool m_scheduleIdHasBeenSet;
 
                 };
             }

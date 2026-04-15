@@ -659,6 +659,27 @@ namespace TencentCloud
                      */
                     bool EncryptionEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取任务调度id
+                     * @return ScheduleId 任务调度id
+                     * 
+                     */
+                    int64_t GetScheduleId() const;
+
+                    /**
+                     * 设置任务调度id
+                     * @param _scheduleId 任务调度id
+                     * 
+                     */
+                    void SetScheduleId(const int64_t& _scheduleId);
+
+                    /**
+                     * 判断参数 ScheduleId 是否已赋值
+                     * @return ScheduleId 是否已赋值
+                     * 
+                     */
+                    bool ScheduleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -834,6 +855,12 @@ namespace TencentCloud
                      */
                     bool m_encryptionEnabled;
                     bool m_encryptionEnabledHasBeenSet;
+
+                    /**
+                     * 任务调度id
+                     */
+                    int64_t m_scheduleId;
+                    bool m_scheduleIdHasBeenSet;
 
                 };
             }

@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool OutputComplianceCheckHasBeenSet() const;
 
+                    /**
+                     * 获取<p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>
+                     * @return OutputImageCount <p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>
+                     * 
+                     */
+                    uint64_t GetOutputImageCount() const;
+
+                    /**
+                     * 设置<p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>
+                     * @param _outputImageCount <p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>
+                     * 
+                     */
+                    void SetOutputImageCount(const uint64_t& _outputImageCount);
+
+                    /**
+                     * 判断参数 OutputImageCount 是否已赋值
+                     * @return OutputImageCount 是否已赋值
+                     * 
+                     */
+                    bool OutputImageCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_outputComplianceCheck;
                     bool m_outputComplianceCheckHasBeenSet;
+
+                    /**
+                     * <p>生成图片张数。*<em>仅ModelName为Kling时有效，可选值 1-9 *</em>。</p>
+                     */
+                    uint64_t m_outputImageCount;
+                    bool m_outputImageCountHasBeenSet;
 
                 };
             }

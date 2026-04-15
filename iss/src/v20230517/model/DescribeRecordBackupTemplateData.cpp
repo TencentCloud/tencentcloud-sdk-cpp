@@ -27,7 +27,8 @@ DescribeRecordBackupTemplateData::DescribeRecordBackupTemplateData() :
     m_devTimeSectionsHasBeenSet(false),
     m_scaleHasBeenSet(false),
     m_createAtHasBeenSet(false),
-    m_updateAtHasBeenSet(false)
+    m_updateAtHasBeenSet(false),
+    m_dayOffsetHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DescribeRecordBackupTemplateData::Deserialize(const rapidjso
         m_updateAtHasBeenSet = true;
     }
 
+    if (value.HasMember("DayOffset") && !value["DayOffset"].IsNull())
+    {
+        if (!value["DayOffset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeRecordBackupTemplateData.DayOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dayOffset = value["DayOffset"].GetInt64();
+        m_dayOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +212,14 @@ void DescribeRecordBackupTemplateData::ToJsonObject(rapidjson::Value &value, rap
         string key = "UpdateAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dayOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dayOffset, allocator);
     }
 
 }
@@ -316,5 +335,21 @@ void DescribeRecordBackupTemplateData::SetUpdateAt(const string& _updateAt)
 bool DescribeRecordBackupTemplateData::UpdateAtHasBeenSet() const
 {
     return m_updateAtHasBeenSet;
+}
+
+int64_t DescribeRecordBackupTemplateData::GetDayOffset() const
+{
+    return m_dayOffset;
+}
+
+void DescribeRecordBackupTemplateData::SetDayOffset(const int64_t& _dayOffset)
+{
+    m_dayOffset = _dayOffset;
+    m_dayOffsetHasBeenSet = true;
+}
+
+bool DescribeRecordBackupTemplateData::DayOffsetHasBeenSet() const
+{
+    return m_dayOffsetHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子订单号
-                     * @return DealName 子订单号
+                     * 获取<p>子订单号</p>
+                     * @return DealName <p>子订单号</p>
                      * 
                      */
                     std::string GetDealName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealNameHasBeenSet() const;
 
                     /**
-                     * 获取订单号
-                     * @return BigDealId 订单号
+                     * 获取<p>订单号</p>
+                     * @return BigDealId <p>订单号</p>
                      * 
                      */
                     std::string GetBigDealId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool BigDealIdHasBeenSet() const;
 
                     /**
-                     * 获取集群Id
-                     * @return ClusterId 集群Id
+                     * 获取<p>集群Id</p>
+                     * @return ClusterId <p>集群Id</p>
                      * 
                      */
                     std::string GetClusterId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子订单号
+                     * <p>子订单号</p>
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
-                     * 订单号
+                     * <p>订单号</p>
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
 
                     /**
-                     * 集群Id
+                     * <p>集群Id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;

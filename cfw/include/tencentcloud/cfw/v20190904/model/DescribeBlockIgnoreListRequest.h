@@ -148,6 +148,31 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
+                     * 获取blocklist 封禁列表
+whitelist 白名单列表
+                     * @return ShowType blocklist 封禁列表
+whitelist 白名单列表
+                     * 
+                     */
+                    std::string GetShowType() const;
+
+                    /**
+                     * 设置blocklist 封禁列表
+whitelist 白名单列表
+                     * @param _showType blocklist 封禁列表
+whitelist 白名单列表
+                     * 
+                     */
+                    void SetShowType(const std::string& _showType);
+
+                    /**
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
+                     * 
+                     */
+                    bool ShowTypeHasBeenSet() const;
+
+                    /**
                      * 获取搜索参数，json格式字符串，空则传"{}"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common
                      * @return SearchValue 搜索参数，json格式字符串，空则传"{}"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common
                      * 
@@ -189,31 +214,6 @@ namespace TencentCloud
                      */
                     bool RuleTypeHasBeenSet() const;
 
-                    /**
-                     * 获取blocklist 封禁列表
-whitelist 白名单列表
-                     * @return ShowType blocklist 封禁列表
-whitelist 白名单列表
-                     * 
-                     */
-                    std::string GetShowType() const;
-
-                    /**
-                     * 设置blocklist 封禁列表
-whitelist 白名单列表
-                     * @param _showType blocklist 封禁列表
-whitelist 白名单列表
-                     * 
-                     */
-                    void SetShowType(const std::string& _showType);
-
-                    /**
-                     * 判断参数 ShowType 是否已赋值
-                     * @return ShowType 是否已赋值
-                     * 
-                     */
-                    bool ShowTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -247,6 +247,13 @@ whitelist 白名单列表
                     bool m_byHasBeenSet;
 
                     /**
+                     * blocklist 封禁列表
+whitelist 白名单列表
+                     */
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
+
+                    /**
                      * 搜索参数，json格式字符串，空则传"{}"，域名：domain，危险等级：level，放通原因：ignore_reason，安全事件来源：rule_source，地理位置：address，模糊搜索：common
                      */
                     std::string m_searchValue;
@@ -257,13 +264,6 @@ whitelist 白名单列表
                      */
                     uint64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
-
-                    /**
-                     * blocklist 封禁列表
-whitelist 白名单列表
-                     */
-                    std::string m_showType;
-                    bool m_showTypeHasBeenSet;
 
                 };
             }

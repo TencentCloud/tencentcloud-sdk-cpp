@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
-#define TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
+#ifndef TENCENTCLOUD_VCLM_V20240523_MODEL_ELEMENT_H_
+#define TENCENTCLOUD_VCLM_V20240523_MODEL_ELEMENT_H_
 
 #include <string>
 #include <vector>
@@ -28,52 +28,52 @@
 
 namespace TencentCloud
 {
-    namespace Dts
+    namespace Vclm
     {
-        namespace V20211206
+        namespace V20240523
         {
             namespace Model
             {
                 /**
-                * OnlineDDL类型
+                * Element
                 */
-                class OnlineDDL : public AbstractModel
+                class Element : public AbstractModel
                 {
                 public:
-                    OnlineDDL();
-                    ~OnlineDDL() = default;
+                    Element();
+                    ~Element() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取状态，ON-启用，OFF-不启用。
-                     * @return Status 状态，ON-启用，OFF-不启用。
+                     * 获取<p>ID配置</p>
+                     * @return ElementId <p>ID配置</p>
                      * 
                      */
-                    std::string GetStatus() const;
+                    std::string GetElementId() const;
 
                     /**
-                     * 设置状态，ON-启用，OFF-不启用。
-                     * @param _status 状态，ON-启用，OFF-不启用。
+                     * 设置<p>ID配置</p>
+                     * @param _elementId <p>ID配置</p>
                      * 
                      */
-                    void SetStatus(const std::string& _status);
+                    void SetElementId(const std::string& _elementId);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 ElementId 是否已赋值
+                     * @return ElementId 是否已赋值
                      * 
                      */
-                    bool StatusHasBeenSet() const;
+                    bool ElementIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 状态，ON-启用，OFF-不启用。
+                     * <p>ID配置</p>
                      */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    std::string m_elementId;
+                    bool m_elementIdHasBeenSet;
 
                 };
             }
@@ -81,4 +81,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DTS_V20211206_MODEL_ONLINEDDL_H_
+#endif // !TENCENTCLOUD_VCLM_V20240523_MODEL_ELEMENT_H_

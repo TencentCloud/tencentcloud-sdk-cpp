@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回记录的数量
-                     * @return Total 返回记录的数量
+                     * 获取<p>返回记录的数量</p>
+                     * @return Total <p>返回记录的数量</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取告警策略返回值
-                     * @return AlarmPolicyList 告警策略返回值
+                     * 获取<p>告警策略返回值</p>
+                     * @return AlarmPolicyList <p>告警策略返回值</p>
                      * 
                      */
                     std::vector<AlarmPolicyRsp> GetAlarmPolicyList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回记录的数量
+                     * <p>返回记录的数量</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 告警策略返回值
+                     * <p>告警策略返回值</p>
                      */
                     std::vector<AlarmPolicyRsp> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/ExternalStorage.h>
 
 
 namespace TencentCloud
@@ -47,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源所属地域。
-当前支持ap-shanghai
-                     * @return Region 资源所属地域。
-当前支持ap-shanghai
+                     * 获取<p>资源所属地域。<br>当前支持ap-shanghai</p>
+                     * @return Region <p>资源所属地域。<br>当前支持ap-shanghai</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置资源所属地域。
-当前支持ap-shanghai
-                     * @param _region 资源所属地域。
-当前支持ap-shanghai
+                     * 设置<p>资源所属地域。<br>当前支持ap-shanghai</p>
+                     * @param _region <p>资源所属地域。<br>当前支持ap-shanghai</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -72,15 +69,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取桶名，存储资源的唯一标识
-                     * @return Bucket 桶名，存储资源的唯一标识
+                     * 获取<p>桶名，存储资源的唯一标识</p>
+                     * @return Bucket <p>桶名，存储资源的唯一标识</p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置桶名，存储资源的唯一标识
-                     * @param _bucket 桶名，存储资源的唯一标识
+                     * 设置<p>桶名，存储资源的唯一标识</p>
+                     * @param _bucket <p>桶名，存储资源的唯一标识</p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -93,15 +90,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取cdn 域名
-                     * @return CdnDomain cdn 域名
+                     * 获取<p>cdn 域名</p>
+                     * @return CdnDomain <p>cdn 域名</p>
                      * 
                      */
                     std::string GetCdnDomain() const;
 
                     /**
-                     * 设置cdn 域名
-                     * @param _cdnDomain cdn 域名
+                     * 设置<p>cdn 域名</p>
+                     * @param _cdnDomain <p>cdn 域名</p>
                      * 
                      */
                     void SetCdnDomain(const std::string& _cdnDomain);
@@ -114,15 +111,15 @@ namespace TencentCloud
                     bool CdnDomainHasBeenSet() const;
 
                     /**
-                     * 获取资源所属用户的腾讯云appId
-                     * @return AppId 资源所属用户的腾讯云appId
+                     * 获取<p>资源所属用户的腾讯云appId</p>
+                     * @return AppId <p>资源所属用户的腾讯云appId</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置资源所属用户的腾讯云appId
-                     * @param _appId 资源所属用户的腾讯云appId
+                     * 设置<p>资源所属用户的腾讯云appId</p>
+                     * @param _appId <p>资源所属用户的腾讯云appId</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -134,32 +131,58 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>外部存储介质相关信息。</p>
+                     * @return ExternalStorage <p>外部存储介质相关信息。</p>
+                     * 
+                     */
+                    ExternalStorage GetExternalStorage() const;
+
+                    /**
+                     * 设置<p>外部存储介质相关信息。</p>
+                     * @param _externalStorage <p>外部存储介质相关信息。</p>
+                     * 
+                     */
+                    void SetExternalStorage(const ExternalStorage& _externalStorage);
+
+                    /**
+                     * 判断参数 ExternalStorage 是否已赋值
+                     * @return ExternalStorage 是否已赋值
+                     * 
+                     */
+                    bool ExternalStorageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源所属地域。
-当前支持ap-shanghai
+                     * <p>资源所属地域。<br>当前支持ap-shanghai</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 桶名，存储资源的唯一标识
+                     * <p>桶名，存储资源的唯一标识</p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * cdn 域名
+                     * <p>cdn 域名</p>
                      */
                     std::string m_cdnDomain;
                     bool m_cdnDomainHasBeenSet;
 
                     /**
-                     * 资源所属用户的腾讯云appId
+                     * <p>资源所属用户的腾讯云appId</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>外部存储介质相关信息。</p>
+                     */
+                    ExternalStorage m_externalStorage;
+                    bool m_externalStorageHasBeenSet;
 
                 };
             }

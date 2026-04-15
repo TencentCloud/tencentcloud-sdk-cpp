@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool CheckStatusHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return AppID 
+                     * 
+                     */
+                    uint64_t GetAppID() const;
+
+                    /**
+                     * 设置
+                     * @param _appID 
+                     * 
+                     */
+                    void SetAppID(const uint64_t& _appID);
+
+                    /**
+                     * 判断参数 AppID 是否已赋值
+                     * @return AppID 是否已赋值
+                     * 
+                     */
+                    bool AppIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_checkStatus;
                     bool m_checkStatusHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    uint64_t m_appID;
+                    bool m_appIDHasBeenSet;
 
                 };
             }

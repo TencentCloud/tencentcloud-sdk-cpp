@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码
-                     * @return Offset 页码
+                     * 获取<p>页码</p>
+                     * @return Offset <p>页码</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置页码
-                     * @param _offset 页码
+                     * 设置<p>页码</p>
+                     * @param _offset <p>页码</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>每页展示数量</p>
+                     * @return Limit <p>每页展示数量</p>
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>每页展示数量</p>
+                     * @param _limit <p>每页展示数量</p>
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>每页展示数量</p>
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

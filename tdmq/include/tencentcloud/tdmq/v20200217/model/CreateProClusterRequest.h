@@ -45,23 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取多可用区部署选择三个可用区，示例[200002,200003,200004]
-
-单可用区部署选择一个可用区，示例[200002]
-                     * @return ZoneIds 多可用区部署选择三个可用区，示例[200002,200003,200004]
-
-单可用区部署选择一个可用区，示例[200002]
+                     * 获取<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>
+                     * @return ZoneIds <p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置多可用区部署选择三个可用区，示例[200002,200003,200004]
-
-单可用区部署选择一个可用区，示例[200002]
-                     * @param _zoneIds 多可用区部署选择三个可用区，示例[200002,200003,200004]
-
-单可用区部署选择一个可用区，示例[200002]
+                     * 设置<p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>
+                     * @param _zoneIds <p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -74,19 +66,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群规格代号
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @return ProductName 集群规格代号
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 获取<p>集群规格代号<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
+                     * @return ProductName <p>集群规格代号<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置集群规格代号
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @param _productName 集群规格代号
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 设置<p>集群规格代号<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
+                     * @param _productName <p>集群规格代号<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -99,23 +87,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取1: true，开启自动按月续费
-
-0: false，关闭自动按月续费
-                     * @return AutoRenewFlag 1: true，开启自动按月续费
-
-0: false，关闭自动按月续费
+                     * 获取<p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>
+                     * @return AutoRenewFlag <p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置1: true，开启自动按月续费
-
-0: false，关闭自动按月续费
-                     * @param _autoRenewFlag 1: true，开启自动按月续费
-
-0: false，关闭自动按月续费
+                     * 设置<p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>
+                     * @param _autoRenewFlag <p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -128,15 +108,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，取值范围：1～50
-                     * @return TimeSpan 购买时长，取值范围：1～50
+                     * 获取<p>购买时长，取值范围：1～50</p>
+                     * @return TimeSpan <p>购买时长，取值范围：1～50</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长，取值范围：1～50
-                     * @param _timeSpan 购买时长，取值范围：1～50
+                     * 设置<p>购买时长，取值范围：1～50</p>
+                     * @param _timeSpan <p>购买时长，取值范围：1～50</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -149,15 +129,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
-                     * @return ClusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * 获取<p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>
+                     * @return ClusterName <p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
-                     * @param _clusterName 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * 设置<p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>
+                     * @param _clusterName <p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -170,15 +150,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取是否自动选择代金券 1是 0否 默认为0
-                     * @return AutoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 获取<p>是否自动选择代金券 1是 0否 默认为0</p>
+                     * @return AutoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p>
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动选择代金券 1是 0否 默认为0
-                     * @param _autoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 设置<p>是否自动选择代金券 1是 0否 默认为0</p>
+                     * @param _autoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p>
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -191,19 +171,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @return StorageSize 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 获取<p>存储规格<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
+                     * @return StorageSize <p>存储规格<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
-                     * 设置存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
-                     * @param _storageSize 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * 设置<p>存储规格<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
+                     * @param _storageSize <p>存储规格<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      * 
                      */
                     void SetStorageSize(const int64_t& _storageSize);
@@ -216,15 +192,15 @@ namespace TencentCloud
                     bool StorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络标签
-                     * @return Vpc vpc网络标签
+                     * 获取<p>vpc网络标签</p>
+                     * @return Vpc <p>vpc网络标签</p>
                      * 
                      */
                     VpcInfo GetVpc() const;
 
                     /**
-                     * 设置vpc网络标签
-                     * @param _vpc vpc网络标签
+                     * 设置<p>vpc网络标签</p>
+                     * @param _vpc <p>vpc网络标签</p>
                      * 
                      */
                     void SetVpc(const VpcInfo& _vpc);
@@ -237,15 +213,15 @@ namespace TencentCloud
                     bool VpcHasBeenSet() const;
 
                     /**
-                     * 获取集群的标签列表(已废弃)
-                     * @return Tags 集群的标签列表(已废弃)
+                     * 获取<p>集群的标签列表(已废弃)</p>
+                     * @return Tags <p>集群的标签列表(已废弃)</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群的标签列表(已废弃)
-                     * @param _tags 集群的标签列表(已废弃)
+                     * 设置<p>集群的标签列表(已废弃)</p>
+                     * @param _tags <p>集群的标签列表(已废弃)</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -257,67 +233,88 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群版本信息</p>
+                     * @return InstanceVersion <p>集群版本信息</p>
+                     * 
+                     */
+                    std::string GetInstanceVersion() const;
+
+                    /**
+                     * 设置<p>集群版本信息</p>
+                     * @param _instanceVersion <p>集群版本信息</p>
+                     * 
+                     */
+                    void SetInstanceVersion(const std::string& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 多可用区部署选择三个可用区，示例[200002,200003,200004]
-
-单可用区部署选择一个可用区，示例[200002]
+                     * <p>多可用区部署选择三个可用区，示例[200002,200003,200004]<br>单可用区部署选择一个可用区，示例[200002]</p><p>当选择PULSAR.P2.MINI1 时只支持两个可用区，其他支持三个可用区</p>
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 集群规格代号
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * <p>集群规格代号<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 1: true，开启自动按月续费
-
-0: false，关闭自动按月续费
+                     * <p>1: true，开启自动按月续费</p><p>0: false，关闭自动按月续费</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 购买时长，取值范围：1～50
+                     * <p>购买时长，取值范围：1～50</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。
+                     * <p>集群名称不能为空，支持数字、字母、中文以及符号 “-_=:.”，长度不超过64个字符</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 是否自动选择代金券 1是 0否 默认为0
+                     * <p>是否自动选择代金券 1是 0否 默认为0</p>
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 存储规格
-参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)
+                     * <p>存储规格<br>参考 <a href="https://cloud.tencent.com/document/product/1179/83705">专业集群规格</a></p>
                      */
                     int64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
 
                     /**
-                     * vpc网络标签
+                     * <p>vpc网络标签</p>
                      */
                     VpcInfo m_vpc;
                     bool m_vpcHasBeenSet;
 
                     /**
-                     * 集群的标签列表(已废弃)
+                     * <p>集群的标签列表(已废弃)</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>集群版本信息</p>
+                     */
+                    std::string m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
 
                 };
             }

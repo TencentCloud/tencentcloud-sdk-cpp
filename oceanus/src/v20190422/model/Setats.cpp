@@ -36,7 +36,8 @@ Setats::Setats() :
     m_ownerClusterGroupSerialIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_setatsUiUrlHasBeenSet(false),
-    m_imageVersionHasBeenSet(false)
+    m_imageVersionHasBeenSet(false),
+    m_webUITypeHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_imageVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("WebUIType") && !value["WebUIType"].IsNull())
+    {
+        if (!value["WebUIType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.WebUIType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webUIType = value["WebUIType"].GetInt64();
+        m_webUITypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +390,14 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "ImageVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webUITypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUIType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webUIType, allocator);
     }
 
 }
@@ -638,5 +657,21 @@ void Setats::SetImageVersion(const string& _imageVersion)
 bool Setats::ImageVersionHasBeenSet() const
 {
     return m_imageVersionHasBeenSet;
+}
+
+int64_t Setats::GetWebUIType() const
+{
+    return m_webUIType;
+}
+
+void Setats::SetWebUIType(const int64_t& _webUIType)
+{
+    m_webUIType = _webUIType;
+    m_webUITypeHasBeenSet = true;
+}
+
+bool Setats::WebUITypeHasBeenSet() const
+{
+    return m_webUITypeHasBeenSet;
 }
 

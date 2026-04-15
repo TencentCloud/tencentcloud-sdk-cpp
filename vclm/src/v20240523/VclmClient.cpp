@@ -340,6 +340,156 @@ VclmClient::DescribeImageToVideoGeneralJobOutcomeCallable VclmClient::DescribeIm
     return prom->get_future();
 }
 
+VclmClient::DescribeImageToVideoJobOutcome VclmClient::DescribeImageToVideoJob(const DescribeImageToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageToVideoJobResponse rsp = DescribeImageToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageToVideoJobOutcome(rsp);
+        else
+            return DescribeImageToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeImageToVideoJobAsync(const DescribeImageToVideoJobRequest& request, const DescribeImageToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageToVideoJobRequest&;
+    using Resp = DescribeImageToVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageToVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeImageToVideoJobOutcomeCallable VclmClient::DescribeImageToVideoJobCallable(const DescribeImageToVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageToVideoJobOutcome>>();
+    DescribeImageToVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeImageToVideoJobRequest&,
+        DescribeImageToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeImageToVideoViduJobOutcome VclmClient::DescribeImageToVideoViduJob(const DescribeImageToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageToVideoViduJobResponse rsp = DescribeImageToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageToVideoViduJobOutcome(rsp);
+        else
+            return DescribeImageToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeImageToVideoViduJobAsync(const DescribeImageToVideoViduJobRequest& request, const DescribeImageToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageToVideoViduJobRequest&;
+    using Resp = DescribeImageToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeImageToVideoViduJobOutcomeCallable VclmClient::DescribeImageToVideoViduJobCallable(const DescribeImageToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageToVideoViduJobOutcome>>();
+    DescribeImageToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeImageToVideoViduJobRequest&,
+        DescribeImageToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeMotionControlKlingJobOutcome VclmClient::DescribeMotionControlKlingJob(const DescribeMotionControlKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMotionControlKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMotionControlKlingJobResponse rsp = DescribeMotionControlKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMotionControlKlingJobOutcome(rsp);
+        else
+            return DescribeMotionControlKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMotionControlKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeMotionControlKlingJobAsync(const DescribeMotionControlKlingJobRequest& request, const DescribeMotionControlKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMotionControlKlingJobRequest&;
+    using Resp = DescribeMotionControlKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMotionControlKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeMotionControlKlingJobOutcomeCallable VclmClient::DescribeMotionControlKlingJobCallable(const DescribeMotionControlKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMotionControlKlingJobOutcome>>();
+    DescribeMotionControlKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeMotionControlKlingJobRequest&,
+        DescribeMotionControlKlingJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribePortraitSingJobOutcome VclmClient::DescribePortraitSingJob(const DescribePortraitSingJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePortraitSingJob");
@@ -382,6 +532,56 @@ VclmClient::DescribePortraitSingJobOutcomeCallable VclmClient::DescribePortraitS
         const VclmClient*,
         const DescribePortraitSingJobRequest&,
         DescribePortraitSingJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeReferenceToVideoViduJobOutcome VclmClient::DescribeReferenceToVideoViduJob(const DescribeReferenceToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReferenceToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReferenceToVideoViduJobResponse rsp = DescribeReferenceToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReferenceToVideoViduJobOutcome(rsp);
+        else
+            return DescribeReferenceToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReferenceToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeReferenceToVideoViduJobAsync(const DescribeReferenceToVideoViduJobRequest& request, const DescribeReferenceToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReferenceToVideoViduJobRequest&;
+    using Resp = DescribeReferenceToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReferenceToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeReferenceToVideoViduJobOutcomeCallable VclmClient::DescribeReferenceToVideoViduJobCallable(const DescribeReferenceToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReferenceToVideoViduJobOutcome>>();
+    DescribeReferenceToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeReferenceToVideoViduJobRequest&,
+        DescribeReferenceToVideoViduJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -440,6 +640,106 @@ VclmClient::DescribeTemplateToVideoJobOutcomeCallable VclmClient::DescribeTempla
     return prom->get_future();
 }
 
+VclmClient::DescribeTextToVideoJobOutcome VclmClient::DescribeTextToVideoJob(const DescribeTextToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextToVideoJobResponse rsp = DescribeTextToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextToVideoJobOutcome(rsp);
+        else
+            return DescribeTextToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeTextToVideoJobAsync(const DescribeTextToVideoJobRequest& request, const DescribeTextToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTextToVideoJobRequest&;
+    using Resp = DescribeTextToVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTextToVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeTextToVideoJobOutcomeCallable VclmClient::DescribeTextToVideoJobCallable(const DescribeTextToVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTextToVideoJobOutcome>>();
+    DescribeTextToVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeTextToVideoJobRequest&,
+        DescribeTextToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeTextToVideoViduJobOutcome VclmClient::DescribeTextToVideoViduJob(const DescribeTextToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextToVideoViduJobResponse rsp = DescribeTextToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextToVideoViduJobOutcome(rsp);
+        else
+            return DescribeTextToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeTextToVideoViduJobAsync(const DescribeTextToVideoViduJobRequest& request, const DescribeTextToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTextToVideoViduJobRequest&;
+    using Resp = DescribeTextToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTextToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeTextToVideoViduJobOutcomeCallable VclmClient::DescribeTextToVideoViduJobCallable(const DescribeTextToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTextToVideoViduJobOutcome>>();
+    DescribeTextToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeTextToVideoViduJobRequest&,
+        DescribeTextToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeVideoEditJobOutcome VclmClient::DescribeVideoEditJob(const DescribeVideoEditJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoEditJob");
@@ -482,6 +782,106 @@ VclmClient::DescribeVideoEditJobOutcomeCallable VclmClient::DescribeVideoEditJob
         const VclmClient*,
         const DescribeVideoEditJobRequest&,
         DescribeVideoEditJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeVideoEditKlingJobOutcome VclmClient::DescribeVideoEditKlingJob(const DescribeVideoEditKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoEditKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoEditKlingJobResponse rsp = DescribeVideoEditKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoEditKlingJobOutcome(rsp);
+        else
+            return DescribeVideoEditKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoEditKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoEditKlingJobAsync(const DescribeVideoEditKlingJobRequest& request, const DescribeVideoEditKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVideoEditKlingJobRequest&;
+    using Resp = DescribeVideoEditKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoEditKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeVideoEditKlingJobOutcomeCallable VclmClient::DescribeVideoEditKlingJobCallable(const DescribeVideoEditKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVideoEditKlingJobOutcome>>();
+    DescribeVideoEditKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeVideoEditKlingJobRequest&,
+        DescribeVideoEditKlingJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeVideoExtendKlingJobOutcome VclmClient::DescribeVideoExtendKlingJob(const DescribeVideoExtendKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoExtendKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoExtendKlingJobResponse rsp = DescribeVideoExtendKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoExtendKlingJobOutcome(rsp);
+        else
+            return DescribeVideoExtendKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoExtendKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoExtendKlingJobAsync(const DescribeVideoExtendKlingJobRequest& request, const DescribeVideoExtendKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVideoExtendKlingJobRequest&;
+    using Resp = DescribeVideoExtendKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoExtendKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeVideoExtendKlingJobOutcomeCallable VclmClient::DescribeVideoExtendKlingJobCallable(const DescribeVideoExtendKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVideoExtendKlingJobOutcome>>();
+    DescribeVideoExtendKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeVideoExtendKlingJobRequest&,
+        DescribeVideoExtendKlingJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -890,6 +1290,56 @@ VclmClient::SubmitImageToVideoGeneralJobOutcomeCallable VclmClient::SubmitImageT
     return prom->get_future();
 }
 
+VclmClient::SubmitImageToVideoJobOutcome VclmClient::SubmitImageToVideoJob(const SubmitImageToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitImageToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitImageToVideoJobResponse rsp = SubmitImageToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitImageToVideoJobOutcome(rsp);
+        else
+            return SubmitImageToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitImageToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitImageToVideoJobAsync(const SubmitImageToVideoJobRequest& request, const SubmitImageToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitImageToVideoJobRequest&;
+    using Resp = SubmitImageToVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitImageToVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitImageToVideoJobOutcomeCallable VclmClient::SubmitImageToVideoJobCallable(const SubmitImageToVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitImageToVideoJobOutcome>>();
+    SubmitImageToVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitImageToVideoJobRequest&,
+        SubmitImageToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::SubmitImageToVideoViduJobOutcome VclmClient::SubmitImageToVideoViduJob(const SubmitImageToVideoViduJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitImageToVideoViduJob");
@@ -932,6 +1382,56 @@ VclmClient::SubmitImageToVideoViduJobOutcomeCallable VclmClient::SubmitImageToVi
         const VclmClient*,
         const SubmitImageToVideoViduJobRequest&,
         SubmitImageToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitMotionControlKlingJobOutcome VclmClient::SubmitMotionControlKlingJob(const SubmitMotionControlKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitMotionControlKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitMotionControlKlingJobResponse rsp = SubmitMotionControlKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitMotionControlKlingJobOutcome(rsp);
+        else
+            return SubmitMotionControlKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitMotionControlKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitMotionControlKlingJobAsync(const SubmitMotionControlKlingJobRequest& request, const SubmitMotionControlKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitMotionControlKlingJobRequest&;
+    using Resp = SubmitMotionControlKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitMotionControlKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitMotionControlKlingJobOutcomeCallable VclmClient::SubmitMotionControlKlingJobCallable(const SubmitMotionControlKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitMotionControlKlingJobOutcome>>();
+    SubmitMotionControlKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitMotionControlKlingJobRequest&,
+        SubmitMotionControlKlingJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -990,6 +1490,56 @@ VclmClient::SubmitPortraitSingJobOutcomeCallable VclmClient::SubmitPortraitSingJ
     return prom->get_future();
 }
 
+VclmClient::SubmitReferenceToVideoViduJobOutcome VclmClient::SubmitReferenceToVideoViduJob(const SubmitReferenceToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitReferenceToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitReferenceToVideoViduJobResponse rsp = SubmitReferenceToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitReferenceToVideoViduJobOutcome(rsp);
+        else
+            return SubmitReferenceToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitReferenceToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitReferenceToVideoViduJobAsync(const SubmitReferenceToVideoViduJobRequest& request, const SubmitReferenceToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitReferenceToVideoViduJobRequest&;
+    using Resp = SubmitReferenceToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitReferenceToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitReferenceToVideoViduJobOutcomeCallable VclmClient::SubmitReferenceToVideoViduJobCallable(const SubmitReferenceToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitReferenceToVideoViduJobOutcome>>();
+    SubmitReferenceToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitReferenceToVideoViduJobRequest&,
+        SubmitReferenceToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::SubmitTemplateToVideoJobOutcome VclmClient::SubmitTemplateToVideoJob(const SubmitTemplateToVideoJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitTemplateToVideoJob");
@@ -1040,6 +1590,106 @@ VclmClient::SubmitTemplateToVideoJobOutcomeCallable VclmClient::SubmitTemplateTo
     return prom->get_future();
 }
 
+VclmClient::SubmitTextToVideoJobOutcome VclmClient::SubmitTextToVideoJob(const SubmitTextToVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTextToVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTextToVideoJobResponse rsp = SubmitTextToVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTextToVideoJobOutcome(rsp);
+        else
+            return SubmitTextToVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTextToVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitTextToVideoJobAsync(const SubmitTextToVideoJobRequest& request, const SubmitTextToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitTextToVideoJobRequest&;
+    using Resp = SubmitTextToVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitTextToVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitTextToVideoJobOutcomeCallable VclmClient::SubmitTextToVideoJobCallable(const SubmitTextToVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitTextToVideoJobOutcome>>();
+    SubmitTextToVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitTextToVideoJobRequest&,
+        SubmitTextToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitTextToVideoViduJobOutcome VclmClient::SubmitTextToVideoViduJob(const SubmitTextToVideoViduJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTextToVideoViduJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTextToVideoViduJobResponse rsp = SubmitTextToVideoViduJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTextToVideoViduJobOutcome(rsp);
+        else
+            return SubmitTextToVideoViduJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTextToVideoViduJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitTextToVideoViduJobAsync(const SubmitTextToVideoViduJobRequest& request, const SubmitTextToVideoViduJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitTextToVideoViduJobRequest&;
+    using Resp = SubmitTextToVideoViduJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitTextToVideoViduJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitTextToVideoViduJobOutcomeCallable VclmClient::SubmitTextToVideoViduJobCallable(const SubmitTextToVideoViduJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitTextToVideoViduJobOutcome>>();
+    SubmitTextToVideoViduJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitTextToVideoViduJobRequest&,
+        SubmitTextToVideoViduJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::SubmitVideoEditJobOutcome VclmClient::SubmitVideoEditJob(const SubmitVideoEditJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitVideoEditJob");
@@ -1082,6 +1732,106 @@ VclmClient::SubmitVideoEditJobOutcomeCallable VclmClient::SubmitVideoEditJobCall
         const VclmClient*,
         const SubmitVideoEditJobRequest&,
         SubmitVideoEditJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitVideoEditKlingJobOutcome VclmClient::SubmitVideoEditKlingJob(const SubmitVideoEditKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoEditKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoEditKlingJobResponse rsp = SubmitVideoEditKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoEditKlingJobOutcome(rsp);
+        else
+            return SubmitVideoEditKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoEditKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoEditKlingJobAsync(const SubmitVideoEditKlingJobRequest& request, const SubmitVideoEditKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitVideoEditKlingJobRequest&;
+    using Resp = SubmitVideoEditKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitVideoEditKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitVideoEditKlingJobOutcomeCallable VclmClient::SubmitVideoEditKlingJobCallable(const SubmitVideoEditKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitVideoEditKlingJobOutcome>>();
+    SubmitVideoEditKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitVideoEditKlingJobRequest&,
+        SubmitVideoEditKlingJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitVideoExtendKlingJobOutcome VclmClient::SubmitVideoExtendKlingJob(const SubmitVideoExtendKlingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoExtendKlingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoExtendKlingJobResponse rsp = SubmitVideoExtendKlingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoExtendKlingJobOutcome(rsp);
+        else
+            return SubmitVideoExtendKlingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoExtendKlingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoExtendKlingJobAsync(const SubmitVideoExtendKlingJobRequest& request, const SubmitVideoExtendKlingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitVideoExtendKlingJobRequest&;
+    using Resp = SubmitVideoExtendKlingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitVideoExtendKlingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitVideoExtendKlingJobOutcomeCallable VclmClient::SubmitVideoExtendKlingJobCallable(const SubmitVideoExtendKlingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitVideoExtendKlingJobOutcome>>();
+    SubmitVideoExtendKlingJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitVideoExtendKlingJobRequest&,
+        SubmitVideoExtendKlingJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
