@@ -29,7 +29,9 @@ TextToSpeechSSERequest::TextToSpeechSSERequest() :
     m_audioFormatHasBeenSet(false),
     m_aPIKeyHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_languageHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_pronunciationDictHasBeenSet(false),
+    m_alignmentModeHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,29 @@ string TextToSpeechSSERequest::ToJsonString() const
         string key = "Language";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pronunciationDictHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PronunciationDict";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_pronunciationDict.begin(); itr != m_pronunciationDict.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_alignmentModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlignmentMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alignmentMode, allocator);
     }
 
 
@@ -216,6 +241,38 @@ void TextToSpeechSSERequest::SetLanguage(const string& _language)
 bool TextToSpeechSSERequest::LanguageHasBeenSet() const
 {
     return m_languageHasBeenSet;
+}
+
+vector<PronunciationDict> TextToSpeechSSERequest::GetPronunciationDict() const
+{
+    return m_pronunciationDict;
+}
+
+void TextToSpeechSSERequest::SetPronunciationDict(const vector<PronunciationDict>& _pronunciationDict)
+{
+    m_pronunciationDict = _pronunciationDict;
+    m_pronunciationDictHasBeenSet = true;
+}
+
+bool TextToSpeechSSERequest::PronunciationDictHasBeenSet() const
+{
+    return m_pronunciationDictHasBeenSet;
+}
+
+uint64_t TextToSpeechSSERequest::GetAlignmentMode() const
+{
+    return m_alignmentMode;
+}
+
+void TextToSpeechSSERequest::SetAlignmentMode(const uint64_t& _alignmentMode)
+{
+    m_alignmentMode = _alignmentMode;
+    m_alignmentModeHasBeenSet = true;
+}
+
+bool TextToSpeechSSERequest::AlignmentModeHasBeenSet() const
+{
+    return m_alignmentModeHasBeenSet;
 }
 
 

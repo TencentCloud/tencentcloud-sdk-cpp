@@ -56,6 +56,9 @@ namespace TencentCloud
 - TextToSpeech 非流式接口
 
  支持 pcm,wav,mp3,  默认: pcm
+
+- AsyncTextToSpeech
+支持pcm,mp3, 默认：mp3
                      * @return Format 生成的音频格式
 
 - TextToSpeechSSE 流式接口
@@ -65,6 +68,9 @@ namespace TencentCloud
 - TextToSpeech 非流式接口
 
  支持 pcm,wav,mp3,  默认: pcm
+
+- AsyncTextToSpeech
+支持pcm,mp3, 默认：mp3
                      * 
                      */
                     std::string GetFormat() const;
@@ -79,6 +85,9 @@ namespace TencentCloud
 - TextToSpeech 非流式接口
 
  支持 pcm,wav,mp3,  默认: pcm
+
+- AsyncTextToSpeech
+支持pcm,mp3, 默认：mp3
                      * @param _format 生成的音频格式
 
 - TextToSpeechSSE 流式接口
@@ -88,6 +97,9 @@ namespace TencentCloud
 - TextToSpeech 非流式接口
 
  支持 pcm,wav,mp3,  默认: pcm
+
+- AsyncTextToSpeech
+支持pcm,mp3, 默认：mp3
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -165,6 +177,9 @@ namespace TencentCloud
 - TextToSpeech 非流式接口
 
  支持 pcm,wav,mp3,  默认: pcm
+
+- AsyncTextToSpeech
+支持pcm,mp3, 默认：mp3
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

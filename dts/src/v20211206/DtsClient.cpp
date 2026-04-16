@@ -990,6 +990,56 @@ DtsClient::DescribeCheckSyncJobResultOutcomeCallable DtsClient::DescribeCheckSyn
     return prom->get_future();
 }
 
+DtsClient::DescribeCompareDiffItemsOutcome DtsClient::DescribeCompareDiffItems(const DescribeCompareDiffItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCompareDiffItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCompareDiffItemsResponse rsp = DescribeCompareDiffItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCompareDiffItemsOutcome(rsp);
+        else
+            return DescribeCompareDiffItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCompareDiffItemsOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeCompareDiffItemsAsync(const DescribeCompareDiffItemsRequest& request, const DescribeCompareDiffItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCompareDiffItemsRequest&;
+    using Resp = DescribeCompareDiffItemsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCompareDiffItems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeCompareDiffItemsOutcomeCallable DtsClient::DescribeCompareDiffItemsCallable(const DescribeCompareDiffItemsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCompareDiffItemsOutcome>>();
+    DescribeCompareDiffItemsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeCompareDiffItemsRequest&,
+        DescribeCompareDiffItemsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DtsClient::DescribeCompareReportOutcome DtsClient::DescribeCompareReport(const DescribeCompareReportRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCompareReport");
@@ -1632,6 +1682,56 @@ DtsClient::DescribeSubscribeReturnableOutcomeCallable DtsClient::DescribeSubscri
         const DtsClient*,
         const DescribeSubscribeReturnableRequest&,
         DescribeSubscribeReturnableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DtsClient::DescribeSyncCompareDiffItemsOutcome DtsClient::DescribeSyncCompareDiffItems(const DescribeSyncCompareDiffItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSyncCompareDiffItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSyncCompareDiffItemsResponse rsp = DescribeSyncCompareDiffItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSyncCompareDiffItemsOutcome(rsp);
+        else
+            return DescribeSyncCompareDiffItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSyncCompareDiffItemsOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSyncCompareDiffItemsAsync(const DescribeSyncCompareDiffItemsRequest& request, const DescribeSyncCompareDiffItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSyncCompareDiffItemsRequest&;
+    using Resp = DescribeSyncCompareDiffItemsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSyncCompareDiffItems", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DtsClient::DescribeSyncCompareDiffItemsOutcomeCallable DtsClient::DescribeSyncCompareDiffItemsCallable(const DescribeSyncCompareDiffItemsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSyncCompareDiffItemsOutcome>>();
+    DescribeSyncCompareDiffItemsAsync(
+    request,
+    [prom](
+        const DtsClient*,
+        const DescribeSyncCompareDiffItemsRequest&,
+        DescribeSyncCompareDiffItemsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

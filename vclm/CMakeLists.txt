@@ -29,6 +29,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitVideoEditJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoExtendKlingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoEditKlingJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/DescribeAigcElementResponse.h
   include/tencentcloud/vclm/v20240523/model/Voice.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobResponse.h
@@ -37,7 +38,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitMotionControlKlingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoExtendKlingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/DeleteAigcElementResponse.h
   include/tencentcloud/vclm/v20240523/model/LogoRect.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoEditKlingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoVoiceJobRequest.h
@@ -53,18 +54,21 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoGeneralJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitAigcVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoVoiceJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DeleteAigcElementRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoViduJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/CreateAigcElementResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/DescribeMotionControlKlingJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTextToVideoViduJobResponse.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoEditJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitHumanActorJobResponse.h
   include/tencentcloud/vclm/v20240523/model/VideoEditParam.h
   include/tencentcloud/vclm/v20240523/model/ReferenceSubject.h
+  include/tencentcloud/vclm/v20240523/model/ReferImageItem.h
   include/tencentcloud/vclm/v20240523/model/ImageInfo.h
   include/tencentcloud/vclm/v20240523/model/Image.h
   include/tencentcloud/vclm/v20240523/model/DescribeMotionControlKlingJobResponse.h
@@ -75,22 +79,26 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/FaceTemplateInfo.h
   include/tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTextToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoViduJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoEditKlingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/CameraControlConfig.h
   include/tencentcloud/vclm/v20240523/model/DescribeReferenceToVideoViduJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/ElementImageList.h
+  include/tencentcloud/vclm/v20240523/model/ProviderDetail.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoExtendKlingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeHumanActorJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitMotionControlKlingJobResponse.h
-  include/tencentcloud/vclm/v20240523/model/SubmitTextToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/CreateAigcElementRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/MultiPrompt.h
   include/tencentcloud/vclm/v20240523/model/DescribeTextToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/SubmitTextToVideoViduJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribeMotionControlKlingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobResponse.h
@@ -102,6 +110,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobResponse.h
   include/tencentcloud/vclm/v20240523/model/FaceMergeInfo.h
+  include/tencentcloud/vclm/v20240523/model/DescribeAigcElementRequest.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoExtendKlingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobRequest.h
@@ -115,6 +124,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeVideoEditKlingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/FaceRect.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/TagList.h
   )
 
 set(vclm_src
@@ -129,6 +139,7 @@ set(vclm_src
   src/v20240523/model/SubmitVideoEditJobRequest.cpp
   src/v20240523/model/DescribeVideoExtendKlingJobRequest.cpp
   src/v20240523/model/SubmitVideoEditKlingJobRequest.cpp
+  src/v20240523/model/DescribeAigcElementResponse.cpp
   src/v20240523/model/Voice.cpp
   src/v20240523/model/SubmitImageAnimateJobResponse.cpp
   src/v20240523/model/SubmitVideoFaceFusionJobResponse.cpp
@@ -137,7 +148,7 @@ set(vclm_src
   src/v20240523/model/SubmitMotionControlKlingJobRequest.cpp
   src/v20240523/model/SubmitVideoExtendKlingJobRequest.cpp
   src/v20240523/model/SubmitTemplateToVideoJobResponse.cpp
-  src/v20240523/model/SubmitTemplateToVideoJobRequest.cpp
+  src/v20240523/model/DeleteAigcElementResponse.cpp
   src/v20240523/model/LogoRect.cpp
   src/v20240523/model/DescribeVideoEditKlingJobRequest.cpp
   src/v20240523/model/SubmitVideoVoiceJobRequest.cpp
@@ -153,18 +164,21 @@ set(vclm_src
   src/v20240523/model/DescribeImageToVideoGeneralJobRequest.cpp
   src/v20240523/model/SubmitAigcVideoJobResponse.cpp
   src/v20240523/model/SubmitVideoVoiceJobResponse.cpp
+  src/v20240523/model/DeleteAigcElementRequest.cpp
   src/v20240523/model/SubmitImageToVideoViduJobResponse.cpp
   src/v20240523/model/SubmitPortraitSingJobResponse.cpp
+  src/v20240523/model/CreateAigcElementResponse.cpp
   src/v20240523/model/DescribeImageToVideoJobResponse.cpp
   src/v20240523/model/DescribePortraitSingJobRequest.cpp
   src/v20240523/model/DescribeHunyuanToVideoJobRequest.cpp
-  src/v20240523/model/DescribeMotionControlKlingJobRequest.cpp
+  src/v20240523/model/SubmitTextToVideoViduJobResponse.cpp
   src/v20240523/model/CheckAnimateImageJobResponse.cpp
   src/v20240523/model/SubmitVideoEditJobResponse.cpp
   src/v20240523/model/DescribeVideoStylizationJobRequest.cpp
   src/v20240523/model/SubmitHumanActorJobResponse.cpp
   src/v20240523/model/VideoEditParam.cpp
   src/v20240523/model/ReferenceSubject.cpp
+  src/v20240523/model/ReferImageItem.cpp
   src/v20240523/model/ImageInfo.cpp
   src/v20240523/model/Image.cpp
   src/v20240523/model/DescribeMotionControlKlingJobResponse.cpp
@@ -175,22 +189,26 @@ set(vclm_src
   src/v20240523/model/FaceTemplateInfo.cpp
   src/v20240523/model/DescribeAigcVideoJobRequest.cpp
   src/v20240523/model/SubmitImageAnimateJobRequest.cpp
+  src/v20240523/model/SubmitTextToVideoJobResponse.cpp
   src/v20240523/model/DescribeVideoFaceFusionJobRequest.cpp
   src/v20240523/model/DescribeImageToVideoViduJobRequest.cpp
   src/v20240523/model/SubmitVideoEditKlingJobResponse.cpp
   src/v20240523/model/CameraControlConfig.cpp
   src/v20240523/model/DescribeReferenceToVideoViduJobRequest.cpp
+  src/v20240523/model/ElementImageList.cpp
+  src/v20240523/model/ProviderDetail.cpp
   src/v20240523/model/DescribeImageAnimateJobResponse.cpp
   src/v20240523/model/DescribeAigcVideoJobResponse.cpp
   src/v20240523/model/SubmitVideoExtendKlingJobResponse.cpp
   src/v20240523/model/DescribeHumanActorJobResponse.cpp
   src/v20240523/model/SubmitMotionControlKlingJobResponse.cpp
-  src/v20240523/model/SubmitTextToVideoJobResponse.cpp
+  src/v20240523/model/CreateAigcElementRequest.cpp
+  src/v20240523/model/SubmitTemplateToVideoJobRequest.cpp
   src/v20240523/model/MultiPrompt.cpp
   src/v20240523/model/DescribeTextToVideoJobRequest.cpp
   src/v20240523/model/DescribeImageToVideoJobRequest.cpp
   src/v20240523/model/DescribeTemplateToVideoJobRequest.cpp
-  src/v20240523/model/SubmitTextToVideoViduJobResponse.cpp
+  src/v20240523/model/DescribeMotionControlKlingJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobResponse.cpp
   src/v20240523/model/DescribeHunyuanToVideoJobResponse.cpp
@@ -202,6 +220,7 @@ set(vclm_src
   src/v20240523/model/DescribeVideoFaceFusionJobResponse.cpp
   src/v20240523/model/SubmitImageToVideoGeneralJobResponse.cpp
   src/v20240523/model/FaceMergeInfo.cpp
+  src/v20240523/model/DescribeAigcElementRequest.cpp
   src/v20240523/model/CheckAnimateImageJobRequest.cpp
   src/v20240523/model/DescribeVideoExtendKlingJobResponse.cpp
   src/v20240523/model/SubmitPortraitSingJobRequest.cpp
@@ -215,6 +234,7 @@ set(vclm_src
   src/v20240523/model/DescribeVideoEditKlingJobResponse.cpp
   src/v20240523/model/FaceRect.cpp
   src/v20240523/model/SubmitImageToVideoJobResponse.cpp
+  src/v20240523/model/TagList.cpp
   )
 
 set(vclm_include

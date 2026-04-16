@@ -540,6 +540,56 @@ LiveClient::CancelCommonMixStreamOutcomeCallable LiveClient::CancelCommonMixStre
     return prom->get_future();
 }
 
+LiveClient::CloseSourceStreamOutcome LiveClient::CloseSourceStream(const CloseSourceStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseSourceStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseSourceStreamResponse rsp = CloseSourceStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseSourceStreamOutcome(rsp);
+        else
+            return CloseSourceStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseSourceStreamOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CloseSourceStreamAsync(const CloseSourceStreamRequest& request, const CloseSourceStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseSourceStreamRequest&;
+    using Resp = CloseSourceStreamResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseSourceStream", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CloseSourceStreamOutcomeCallable LiveClient::CloseSourceStreamCallable(const CloseSourceStreamRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseSourceStreamOutcome>>();
+    CloseSourceStreamAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CloseSourceStreamRequest&,
+        CloseSourceStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CopyCasterOutcome LiveClient::CopyCaster(const CopyCasterRequest &request)
 {
     auto outcome = MakeRequest(request, "CopyCaster");
@@ -7790,6 +7840,56 @@ LiveClient::DescribeMonitorReportOutcomeCallable LiveClient::DescribeMonitorRepo
     return prom->get_future();
 }
 
+LiveClient::DescribeOriginStreamInfoOutcome LiveClient::DescribeOriginStreamInfo(const DescribeOriginStreamInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOriginStreamInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOriginStreamInfoResponse rsp = DescribeOriginStreamInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOriginStreamInfoOutcome(rsp);
+        else
+            return DescribeOriginStreamInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOriginStreamInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeOriginStreamInfoAsync(const DescribeOriginStreamInfoRequest& request, const DescribeOriginStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOriginStreamInfoRequest&;
+    using Resp = DescribeOriginStreamInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOriginStreamInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeOriginStreamInfoOutcomeCallable LiveClient::DescribeOriginStreamInfoCallable(const DescribeOriginStreamInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOriginStreamInfoOutcome>>();
+    DescribeOriginStreamInfoAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeOriginStreamInfoRequest&,
+        DescribeOriginStreamInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribePlayErrorCodeDetailInfoListOutcome LiveClient::DescribePlayErrorCodeDetailInfoList(const DescribePlayErrorCodeDetailInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlayErrorCodeDetailInfoList");
@@ -10182,6 +10282,56 @@ LiveClient::ModifyLiveTranscodeTemplateOutcomeCallable LiveClient::ModifyLiveTra
         const LiveClient*,
         const ModifyLiveTranscodeTemplateRequest&,
         ModifyLiveTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::ModifyOriginStreamInfoOutcome LiveClient::ModifyOriginStreamInfo(const ModifyOriginStreamInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOriginStreamInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOriginStreamInfoResponse rsp = ModifyOriginStreamInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOriginStreamInfoOutcome(rsp);
+        else
+            return ModifyOriginStreamInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOriginStreamInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyOriginStreamInfoAsync(const ModifyOriginStreamInfoRequest& request, const ModifyOriginStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyOriginStreamInfoRequest&;
+    using Resp = ModifyOriginStreamInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyOriginStreamInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::ModifyOriginStreamInfoOutcomeCallable LiveClient::ModifyOriginStreamInfoCallable(const ModifyOriginStreamInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyOriginStreamInfoOutcome>>();
+    ModifyOriginStreamInfoAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const ModifyOriginStreamInfoRequest&,
+        ModifyOriginStreamInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

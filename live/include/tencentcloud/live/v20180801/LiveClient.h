@@ -43,6 +43,8 @@
 #include <tencentcloud/live/v20180801/model/AuthenticateDomainOwnerResponse.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/CloseSourceStreamRequest.h>
+#include <tencentcloud/live/v20180801/model/CloseSourceStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CopyLiveAvatarRoomRequest.h>
@@ -333,6 +335,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLogDownloadListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeMonitorReportRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeMonitorReportResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginStreamInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginStreamInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeSumInfoListRequest.h>
@@ -429,6 +433,8 @@
 #include <tencentcloud/live/v20180801/model/ModifyLiveTimeShiftTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveTranscodeTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveTranscodeTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyOriginStreamInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyOriginStreamInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamConfigRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamStatusRequest.h>
@@ -519,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelCommonMixStreamResponse> CancelCommonMixStreamOutcome;
                 typedef std::future<CancelCommonMixStreamOutcome> CancelCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CancelCommonMixStreamRequest&, CancelCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonMixStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseSourceStreamResponse> CloseSourceStreamOutcome;
+                typedef std::future<CloseSourceStreamOutcome> CloseSourceStreamOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CloseSourceStreamRequest&, CloseSourceStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSourceStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyCasterResponse> CopyCasterOutcome;
                 typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, CopyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
@@ -954,6 +963,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMonitorReportResponse> DescribeMonitorReportOutcome;
                 typedef std::future<DescribeMonitorReportOutcome> DescribeMonitorReportOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeMonitorReportRequest&, DescribeMonitorReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginStreamInfoResponse> DescribeOriginStreamInfoOutcome;
+                typedef std::future<DescribeOriginStreamInfoOutcome> DescribeOriginStreamInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeOriginStreamInfoRequest&, DescribeOriginStreamInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginStreamInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePlayErrorCodeDetailInfoListResponse> DescribePlayErrorCodeDetailInfoListOutcome;
                 typedef std::future<DescribePlayErrorCodeDetailInfoListOutcome> DescribePlayErrorCodeDetailInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePlayErrorCodeDetailInfoListRequest&, DescribePlayErrorCodeDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayErrorCodeDetailInfoListAsyncHandler;
@@ -1098,6 +1110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLiveTranscodeTemplateResponse> ModifyLiveTranscodeTemplateOutcome;
                 typedef std::future<ModifyLiveTranscodeTemplateOutcome> ModifyLiveTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveTranscodeTemplateRequest&, ModifyLiveTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOriginStreamInfoResponse> ModifyOriginStreamInfoOutcome;
+                typedef std::future<ModifyOriginStreamInfoOutcome> ModifyOriginStreamInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyOriginStreamInfoRequest&, ModifyOriginStreamInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginStreamInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPullStreamConfigResponse> ModifyPullStreamConfigOutcome;
                 typedef std::future<ModifyPullStreamConfigOutcome> ModifyPullStreamConfigOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyPullStreamConfigRequest&, ModifyPullStreamConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPullStreamConfigAsyncHandler;
@@ -1261,6 +1276,15 @@ namespace TencentCloud
                 CancelCommonMixStreamOutcome CancelCommonMixStream(const Model::CancelCommonMixStreamRequest &request);
                 void CancelCommonMixStreamAsync(const Model::CancelCommonMixStreamRequest& request, const CancelCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelCommonMixStreamOutcomeCallable CancelCommonMixStreamCallable(const Model::CancelCommonMixStreamRequest& request);
+
+                /**
+                 *用于关闭回源客户源站功能
+                 * @param req CloseSourceStreamRequest
+                 * @return CloseSourceStreamOutcome
+                 */
+                CloseSourceStreamOutcome CloseSourceStream(const Model::CloseSourceStreamRequest &request);
+                void CloseSourceStreamAsync(const Model::CloseSourceStreamRequest& request, const CloseSourceStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseSourceStreamOutcomeCallable CloseSourceStreamCallable(const Model::CloseSourceStreamRequest& request);
 
                 /**
                  *该接口用来复制导播台配置
@@ -2667,6 +2691,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeMonitorReportOutcomeCallable DescribeMonitorReportCallable(const Model::DescribeMonitorReportRequest& request);
 
                 /**
+                 *获取直播源站配置信息，支持直播原站格式。
+                 * @param req DescribeOriginStreamInfoRequest
+                 * @return DescribeOriginStreamInfoOutcome
+                 */
+                DescribeOriginStreamInfoOutcome DescribeOriginStreamInfo(const Model::DescribeOriginStreamInfoRequest &request);
+                void DescribeOriginStreamInfoAsync(const Model::DescribeOriginStreamInfoRequest& request, const DescribeOriginStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginStreamInfoOutcomeCallable DescribeOriginStreamInfoCallable(const Model::DescribeOriginStreamInfoRequest& request);
+
+                /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。
 查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。
                  * @param req DescribePlayErrorCodeDetailInfoListRequest
@@ -3127,6 +3160,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveTranscodeTemplateOutcome ModifyLiveTranscodeTemplate(const Model::ModifyLiveTranscodeTemplateRequest &request);
                 void ModifyLiveTranscodeTemplateAsync(const Model::ModifyLiveTranscodeTemplateRequest& request, const ModifyLiveTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveTranscodeTemplateOutcomeCallable ModifyLiveTranscodeTemplateCallable(const Model::ModifyLiveTranscodeTemplateRequest& request);
+
+                /**
+                 *变更直播源站配置，支持直播原站格式。
+                 * @param req ModifyOriginStreamInfoRequest
+                 * @return ModifyOriginStreamInfoOutcome
+                 */
+                ModifyOriginStreamInfoOutcome ModifyOriginStreamInfo(const Model::ModifyOriginStreamInfoRequest &request);
+                void ModifyOriginStreamInfoAsync(const Model::ModifyOriginStreamInfoRequest& request, const ModifyOriginStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOriginStreamInfoOutcomeCallable ModifyOriginStreamInfoCallable(const Model::ModifyOriginStreamInfoRequest& request);
 
                 /**
                  *更新拉流配置。该接口为已下线接口，请使用新接口 ModifyLivePullStreamTask。

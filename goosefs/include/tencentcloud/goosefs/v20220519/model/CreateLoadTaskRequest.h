@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 ID
-                     * @return ClusterId 集群 ID
+                     * 获取<p>集群 ID</p>
+                     * @return ClusterId <p>集群 ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID
-                     * @param _clusterId 集群 ID
+                     * 设置<p>集群 ID</p>
+                     * @param _clusterId <p>集群 ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取创建预热任务参数
-                     * @return LoadTaskCreationAttrs 创建预热任务参数
+                     * 获取<p>创建预热任务参数</p>
+                     * @return LoadTaskCreationAttrs <p>创建预热任务参数</p>
                      * 
                      */
                     LoadTaskCreationAttrs GetLoadTaskCreationAttrs() const;
 
                     /**
-                     * 设置创建预热任务参数
-                     * @param _loadTaskCreationAttrs 创建预热任务参数
+                     * 设置<p>创建预热任务参数</p>
+                     * @param _loadTaskCreationAttrs <p>创建预热任务参数</p>
                      * 
                      */
                     void SetLoadTaskCreationAttrs(const LoadTaskCreationAttrs& _loadTaskCreationAttrs);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群 ID
+                     * <p>集群 ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 创建预热任务参数
+                     * <p>创建预热任务参数</p>
                      */
                     LoadTaskCreationAttrs m_loadTaskCreationAttrs;
                     bool m_loadTaskCreationAttrsHasBeenSet;

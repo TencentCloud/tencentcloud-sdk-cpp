@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AlignmentItem.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool AudioHasBeenSet() const;
 
+                    /**
+                     * 获取字幕对齐数据
+                     * @return Alignments 字幕对齐数据
+                     * 
+                     */
+                    std::vector<AlignmentItem> GetAlignments() const;
+
+                    /**
+                     * 判断参数 Alignments 是否已赋值
+                     * @return Alignments 是否已赋值
+                     * 
+                     */
+                    bool AlignmentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     std::string m_audio;
                     bool m_audioHasBeenSet;
+
+                    /**
+                     * 字幕对齐数据
+                     */
+                    std::vector<AlignmentItem> m_alignments;
+                    bool m_alignmentsHasBeenSet;
 
                 };
             }

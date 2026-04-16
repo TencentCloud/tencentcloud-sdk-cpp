@@ -203,6 +203,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeDesignTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeDesignTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesRequest.h>
@@ -313,6 +315,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeWordSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DesignVoiceAsyncRequest.h>
+#include <tencentcloud/mps/v20190612/model/DesignVoiceAsyncResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
@@ -711,6 +715,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDesignTaskResponse> DescribeDesignTaskOutcome;
+                typedef std::future<DescribeDesignTaskOutcome> DescribeDesignTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeDesignTaskRequest&, DescribeDesignTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDesignTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupAttachFlowsByIdResponse> DescribeGroupAttachFlowsByIdOutcome;
                 typedef std::future<DescribeGroupAttachFlowsByIdOutcome> DescribeGroupAttachFlowsByIdOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeGroupAttachFlowsByIdRequest&, DescribeGroupAttachFlowsByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAttachFlowsByIdAsyncHandler;
@@ -876,6 +883,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkflowsResponse> DescribeWorkflowsOutcome;
                 typedef std::future<DescribeWorkflowsOutcome> DescribeWorkflowsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeWorkflowsRequest&, DescribeWorkflowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DesignVoiceAsyncResponse> DesignVoiceAsyncOutcome;
+                typedef std::future<DesignVoiceAsyncOutcome> DesignVoiceAsyncOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DesignVoiceAsyncRequest&, DesignVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DesignVoiceAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableScheduleResponse> DisableScheduleOutcome;
                 typedef std::future<DisableScheduleOutcome> DisableScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableScheduleRequest&, DisableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableScheduleAsyncHandler;
@@ -1893,6 +1903,15 @@ namespace TencentCloud
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
 
                 /**
+                 *查询配音相关任务（异步）结果
+                 * @param req DescribeDesignTaskRequest
+                 * @return DescribeDesignTaskOutcome
+                 */
+                DescribeDesignTaskOutcome DescribeDesignTask(const Model::DescribeDesignTaskRequest &request);
+                void DescribeDesignTaskAsync(const Model::DescribeDesignTaskRequest& request, const DescribeDesignTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDesignTaskOutcomeCallable DescribeDesignTaskCallable(const Model::DescribeDesignTaskRequest& request);
+
+                /**
                  *根据安全组反差关联的Flow信息。
                  * @param req DescribeGroupAttachFlowsByIdRequest
                  * @return DescribeGroupAttachFlowsByIdOutcome
@@ -2390,6 +2409,15 @@ namespace TencentCloud
                 DescribeWorkflowsOutcome DescribeWorkflows(const Model::DescribeWorkflowsRequest &request);
                 void DescribeWorkflowsAsync(const Model::DescribeWorkflowsRequest& request, const DescribeWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkflowsOutcomeCallable DescribeWorkflowsCallable(const Model::DescribeWorkflowsRequest& request);
+
+                /**
+                 *音色设计，根据prompt生成音色ID
+                 * @param req DesignVoiceAsyncRequest
+                 * @return DesignVoiceAsyncOutcome
+                 */
+                DesignVoiceAsyncOutcome DesignVoiceAsync(const Model::DesignVoiceAsyncRequest &request);
+                void DesignVoiceAsyncAsync(const Model::DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DesignVoiceAsyncOutcomeCallable DesignVoiceAsyncCallable(const Model::DesignVoiceAsyncRequest& request);
 
                 /**
                  *禁用自动化触发编排任务。

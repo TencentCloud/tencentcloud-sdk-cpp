@@ -21,7 +21,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 LogConfiguration::LogConfiguration() :
-    m_cLSConfigHasBeenSet(false)
+    m_cLSConfigHasBeenSet(false),
+    m_logSourcesHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome LogConfiguration::Deserialize(const rapidjson::Value &value)
         m_cLSConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("LogSources") && !value["LogSources"].IsNull())
+    {
+        if (!value["LogSources"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogConfiguration.LogSources` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logSources.Deserialize(value["LogSources"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logSourcesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void LogConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cLSConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logSourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logSources.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void LogConfiguration::SetCLSConfig(const CLSConfig& _cLSConfig)
 bool LogConfiguration::CLSConfigHasBeenSet() const
 {
     return m_cLSConfigHasBeenSet;
+}
+
+LogSources LogConfiguration::GetLogSources() const
+{
+    return m_logSources;
+}
+
+void LogConfiguration::SetLogSources(const LogSources& _logSources)
+{
+    m_logSources = _logSources;
+    m_logSourcesHasBeenSet = true;
+}
+
+bool LogConfiguration::LogSourcesHasBeenSet() const
+{
+    return m_logSourcesHasBeenSet;
 }
 

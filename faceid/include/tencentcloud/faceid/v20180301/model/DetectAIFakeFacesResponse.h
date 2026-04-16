@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool AttackRiskDetailListHasBeenSet() const;
 
                     /**
-                     * 获取<p>返回额外信息（包括命中模版的详细信息）。</p>
-                     * @return ExtraInfo <p>返回额外信息（包括命中模版的详细信息）。</p>
+                     * 获取<p>返回额外信息（包括命中模板的详细信息）。</p>
+                     * @return ExtraInfo <p>返回额外信息（包括命中模板的详细信息）。</p>
                      * 
                      */
                     ExtraInfo GetExtraInfo() const;
@@ -102,7 +102,7 @@ namespace TencentCloud
                     bool m_attackRiskDetailListHasBeenSet;
 
                     /**
-                     * <p>返回额外信息（包括命中模版的详细信息）。</p>
+                     * <p>返回额外信息（包括命中模板的详细信息）。</p>
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;

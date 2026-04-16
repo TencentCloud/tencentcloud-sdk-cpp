@@ -90,6 +90,156 @@ VclmClient::CheckAnimateImageJobOutcomeCallable VclmClient::CheckAnimateImageJob
     return prom->get_future();
 }
 
+VclmClient::CreateAigcElementOutcome VclmClient::CreateAigcElement(const CreateAigcElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcElementResponse rsp = CreateAigcElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcElementOutcome(rsp);
+        else
+            return CreateAigcElementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcElementOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::CreateAigcElementAsync(const CreateAigcElementRequest& request, const CreateAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcElementRequest&;
+    using Resp = CreateAigcElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::CreateAigcElementOutcomeCallable VclmClient::CreateAigcElementCallable(const CreateAigcElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcElementOutcome>>();
+    CreateAigcElementAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const CreateAigcElementRequest&,
+        CreateAigcElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DeleteAigcElementOutcome VclmClient::DeleteAigcElement(const DeleteAigcElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcElementResponse rsp = DeleteAigcElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcElementOutcome(rsp);
+        else
+            return DeleteAigcElementOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcElementOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DeleteAigcElementAsync(const DeleteAigcElementRequest& request, const DeleteAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcElementRequest&;
+    using Resp = DeleteAigcElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DeleteAigcElementOutcomeCallable VclmClient::DeleteAigcElementCallable(const DeleteAigcElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcElementOutcome>>();
+    DeleteAigcElementAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DeleteAigcElementRequest&,
+        DeleteAigcElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::DescribeAigcElementOutcome VclmClient::DescribeAigcElement(const DescribeAigcElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcElementResponse rsp = DescribeAigcElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcElementOutcome(rsp);
+        else
+            return DescribeAigcElementOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcElementOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeAigcElementAsync(const DescribeAigcElementRequest& request, const DescribeAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcElementRequest&;
+    using Resp = DescribeAigcElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeAigcElementOutcomeCallable VclmClient::DescribeAigcElementCallable(const DescribeAigcElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcElementOutcome>>();
+    DescribeAigcElementAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeAigcElementRequest&,
+        DescribeAigcElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeAigcVideoJobOutcome VclmClient::DescribeAigcVideoJob(const DescribeAigcVideoJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAigcVideoJob");

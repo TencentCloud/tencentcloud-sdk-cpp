@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/Voice.h>
 #include <tencentcloud/trtc/v20190722/model/AudioFormat.h>
+#include <tencentcloud/trtc/v20190722/model/PronunciationDict.h>
 
 
 namespace TencentCloud
@@ -227,6 +228,48 @@ namespace TencentCloud
                      */
                     bool LanguageHasBeenSet() const;
 
+                    /**
+                     * 获取多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * @return PronunciationDict 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * 
+                     */
+                    std::vector<PronunciationDict> GetPronunciationDict() const;
+
+                    /**
+                     * 设置多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * @param _pronunciationDict 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * 
+                     */
+                    void SetPronunciationDict(const std::vector<PronunciationDict>& _pronunciationDict);
+
+                    /**
+                     * 判断参数 PronunciationDict 是否已赋值
+                     * @return PronunciationDict 是否已赋值
+                     * 
+                     */
+                    bool PronunciationDictHasBeenSet() const;
+
+                    /**
+                     * 获取默认为0，0表示不生成字幕，1表示生成字幕
+                     * @return AlignmentMode 默认为0，0表示不生成字幕，1表示生成字幕
+                     * 
+                     */
+                    uint64_t GetAlignmentMode() const;
+
+                    /**
+                     * 设置默认为0，0表示不生成字幕，1表示生成字幕
+                     * @param _alignmentMode 默认为0，0表示不生成字幕，1表示生成字幕
+                     * 
+                     */
+                    void SetAlignmentMode(const uint64_t& _alignmentMode);
+
+                    /**
+                     * 判断参数 AlignmentMode 是否已赋值
+                     * @return AlignmentMode 是否已赋值
+                     * 
+                     */
+                    bool AlignmentModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +322,18 @@ namespace TencentCloud
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
+
+                    /**
+                     * 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     */
+                    std::vector<PronunciationDict> m_pronunciationDict;
+                    bool m_pronunciationDictHasBeenSet;
+
+                    /**
+                     * 默认为0，0表示不生成字幕，1表示生成字幕
+                     */
+                    uint64_t m_alignmentMode;
+                    bool m_alignmentModeHasBeenSet;
 
                 };
             }

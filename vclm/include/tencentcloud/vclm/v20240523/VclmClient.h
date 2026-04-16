@@ -25,6 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/CreateAigcElementRequest.h>
+#include <tencentcloud/vclm/v20240523/model/CreateAigcElementResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DeleteAigcElementRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DeleteAigcElementResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeAigcElementRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeAigcElementResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHumanActorJobRequest.h>
@@ -118,6 +124,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAnimateImageJobResponse> CheckAnimateImageJobOutcome;
                 typedef std::future<CheckAnimateImageJobOutcome> CheckAnimateImageJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::CheckAnimateImageJobRequest&, CheckAnimateImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAnimateImageJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcElementResponse> CreateAigcElementOutcome;
+                typedef std::future<CreateAigcElementOutcome> CreateAigcElementOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::CreateAigcElementRequest&, CreateAigcElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcElementResponse> DeleteAigcElementOutcome;
+                typedef std::future<DeleteAigcElementOutcome> DeleteAigcElementOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DeleteAigcElementRequest&, DeleteAigcElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcElementResponse> DescribeAigcElementOutcome;
+                typedef std::future<DescribeAigcElementOutcome> DescribeAigcElementOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeAigcElementRequest&, DescribeAigcElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcElementAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcVideoJobResponse> DescribeAigcVideoJobOutcome;
                 typedef std::future<DescribeAigcVideoJobOutcome> DescribeAigcVideoJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeAigcVideoJobRequest&, DescribeAigcVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcVideoJobAsyncHandler;
@@ -243,6 +258,33 @@ namespace TencentCloud
                 CheckAnimateImageJobOutcome CheckAnimateImageJob(const Model::CheckAnimateImageJobRequest &request);
                 void CheckAnimateImageJobAsync(const Model::CheckAnimateImageJobRequest& request, const CheckAnimateImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAnimateImageJobOutcomeCallable CheckAnimateImageJobCallable(const Model::CheckAnimateImageJobRequest& request);
+
+                /**
+                 *提交视频特效任务接口
+                 * @param req CreateAigcElementRequest
+                 * @return CreateAigcElementOutcome
+                 */
+                CreateAigcElementOutcome CreateAigcElement(const Model::CreateAigcElementRequest &request);
+                void CreateAigcElementAsync(const Model::CreateAigcElementRequest& request, const CreateAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcElementOutcomeCallable CreateAigcElementCallable(const Model::CreateAigcElementRequest& request);
+
+                /**
+                 *删除主体库
+                 * @param req DeleteAigcElementRequest
+                 * @return DeleteAigcElementOutcome
+                 */
+                DeleteAigcElementOutcome DeleteAigcElement(const Model::DeleteAigcElementRequest &request);
+                void DeleteAigcElementAsync(const Model::DeleteAigcElementRequest& request, const DeleteAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcElementOutcomeCallable DeleteAigcElementCallable(const Model::DeleteAigcElementRequest& request);
+
+                /**
+                 *提交视频特效任务接口
+                 * @param req DescribeAigcElementRequest
+                 * @return DescribeAigcElementOutcome
+                 */
+                DescribeAigcElementOutcome DescribeAigcElement(const Model::DescribeAigcElementRequest &request);
+                void DescribeAigcElementAsync(const Model::DescribeAigcElementRequest& request, const DescribeAigcElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcElementOutcomeCallable DescribeAigcElementCallable(const Model::DescribeAigcElementRequest& request);
 
                 /**
                  *查询生视频任务

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/CLSConfig.h>
+#include <tencentcloud/ags/v20250920/model/LogSources.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,27 @@ namespace TencentCloud
                      */
                     bool CLSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志源配置</p>
+                     * @return LogSources <p>日志源配置</p>
+                     * 
+                     */
+                    LogSources GetLogSources() const;
+
+                    /**
+                     * 设置<p>日志源配置</p>
+                     * @param _logSources <p>日志源配置</p>
+                     * 
+                     */
+                    void SetLogSources(const LogSources& _logSources);
+
+                    /**
+                     * 判断参数 LogSources 是否已赋值
+                     * @return LogSources 是否已赋值
+                     * 
+                     */
+                    bool LogSourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +97,12 @@ namespace TencentCloud
                      */
                     CLSConfig m_cLSConfig;
                     bool m_cLSConfigHasBeenSet;
+
+                    /**
+                     * <p>日志源配置</p>
+                     */
+                    LogSources m_logSources;
+                    bool m_logSourcesHasBeenSet;
 
                 };
             }

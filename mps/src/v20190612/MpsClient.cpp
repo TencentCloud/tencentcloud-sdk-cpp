@@ -4540,6 +4540,56 @@ MpsClient::DescribeContentReviewTemplatesOutcomeCallable MpsClient::DescribeCont
     return prom->get_future();
 }
 
+MpsClient::DescribeDesignTaskOutcome MpsClient::DescribeDesignTask(const DescribeDesignTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDesignTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDesignTaskResponse rsp = DescribeDesignTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDesignTaskOutcome(rsp);
+        else
+            return DescribeDesignTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDesignTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeDesignTaskAsync(const DescribeDesignTaskRequest& request, const DescribeDesignTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDesignTaskRequest&;
+    using Resp = DescribeDesignTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDesignTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeDesignTaskOutcomeCallable MpsClient::DescribeDesignTaskCallable(const DescribeDesignTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDesignTaskOutcome>>();
+    DescribeDesignTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeDesignTaskRequest&,
+        DescribeDesignTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeGroupAttachFlowsByIdOutcome MpsClient::DescribeGroupAttachFlowsById(const DescribeGroupAttachFlowsByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroupAttachFlowsById");
@@ -7282,6 +7332,56 @@ MpsClient::DescribeWorkflowsOutcomeCallable MpsClient::DescribeWorkflowsCallable
         const MpsClient*,
         const DescribeWorkflowsRequest&,
         DescribeWorkflowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DesignVoiceAsyncOutcome MpsClient::DesignVoiceAsync(const DesignVoiceAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DesignVoiceAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DesignVoiceAsyncResponse rsp = DesignVoiceAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DesignVoiceAsyncOutcome(rsp);
+        else
+            return DesignVoiceAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DesignVoiceAsyncOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DesignVoiceAsyncAsync(const DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DesignVoiceAsyncRequest&;
+    using Resp = DesignVoiceAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DesignVoiceAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DesignVoiceAsyncOutcomeCallable MpsClient::DesignVoiceAsyncCallable(const DesignVoiceAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DesignVoiceAsyncOutcome>>();
+    DesignVoiceAsyncAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DesignVoiceAsyncRequest&,
+        DesignVoiceAsyncOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -61,6 +61,8 @@
 #include <tencentcloud/dts/v20211206/model/DeleteSyncCompareTaskResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeCompareDiffItemsRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeCompareDiffItemsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCompareReportRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCompareReportResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeCompareTasksRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeJobsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableResponse.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareDiffItemsRequest.h>
+#include <tencentcloud/dts/v20211206/model/DescribeSyncCompareDiffItemsResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareReportRequest.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareReportResponse.h>
 #include <tencentcloud/dts/v20211206/model/DescribeSyncCompareTasksRequest.h>
@@ -254,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCheckSyncJobResultResponse> DescribeCheckSyncJobResultOutcome;
                 typedef std::future<DescribeCheckSyncJobResultOutcome> DescribeCheckSyncJobResultOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeCheckSyncJobResultRequest&, DescribeCheckSyncJobResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCheckSyncJobResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCompareDiffItemsResponse> DescribeCompareDiffItemsOutcome;
+                typedef std::future<DescribeCompareDiffItemsOutcome> DescribeCompareDiffItemsOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeCompareDiffItemsRequest&, DescribeCompareDiffItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCompareDiffItemsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCompareReportResponse> DescribeCompareReportOutcome;
                 typedef std::future<DescribeCompareReportOutcome> DescribeCompareReportOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeCompareReportRequest&, DescribeCompareReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCompareReportAsyncHandler;
@@ -293,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubscribeReturnableResponse> DescribeSubscribeReturnableOutcome;
                 typedef std::future<DescribeSubscribeReturnableOutcome> DescribeSubscribeReturnableOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSubscribeReturnableRequest&, DescribeSubscribeReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribeReturnableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSyncCompareDiffItemsResponse> DescribeSyncCompareDiffItemsOutcome;
+                typedef std::future<DescribeSyncCompareDiffItemsOutcome> DescribeSyncCompareDiffItemsOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::DescribeSyncCompareDiffItemsRequest&, DescribeSyncCompareDiffItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCompareDiffItemsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSyncCompareReportResponse> DescribeSyncCompareReportOutcome;
                 typedef std::future<DescribeSyncCompareReportOutcome> DescribeSyncCompareReportOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSyncCompareReportRequest&, DescribeSyncCompareReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncCompareReportAsyncHandler;
@@ -617,6 +627,15 @@ namespace TencentCloud
                 DescribeCheckSyncJobResultOutcomeCallable DescribeCheckSyncJobResultCallable(const Model::DescribeCheckSyncJobResultRequest& request);
 
                 /**
+                 *本接口用于查询一致性校验任务中，不一致数据块的详情信息
+                 * @param req DescribeCompareDiffItemsRequest
+                 * @return DescribeCompareDiffItemsOutcome
+                 */
+                DescribeCompareDiffItemsOutcome DescribeCompareDiffItems(const Model::DescribeCompareDiffItemsRequest &request);
+                void DescribeCompareDiffItemsAsync(const Model::DescribeCompareDiffItemsRequest& request, const DescribeCompareDiffItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCompareDiffItemsOutcomeCallable DescribeCompareDiffItemsCallable(const Model::DescribeCompareDiffItemsRequest& request);
+
+                /**
                  *查询一致性校验任务详情
                  * @param req DescribeCompareReportRequest
                  * @return DescribeCompareReportOutcome
@@ -738,6 +757,15 @@ namespace TencentCloud
                 DescribeSubscribeReturnableOutcome DescribeSubscribeReturnable(const Model::DescribeSubscribeReturnableRequest &request);
                 void DescribeSubscribeReturnableAsync(const Model::DescribeSubscribeReturnableRequest& request, const DescribeSubscribeReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubscribeReturnableOutcomeCallable DescribeSubscribeReturnableCallable(const Model::DescribeSubscribeReturnableRequest& request);
+
+                /**
+                 *本接口用于查询一致性校验任务中，不一致数据块的详情信息
+                 * @param req DescribeSyncCompareDiffItemsRequest
+                 * @return DescribeSyncCompareDiffItemsOutcome
+                 */
+                DescribeSyncCompareDiffItemsOutcome DescribeSyncCompareDiffItems(const Model::DescribeSyncCompareDiffItemsRequest &request);
+                void DescribeSyncCompareDiffItemsAsync(const Model::DescribeSyncCompareDiffItemsRequest& request, const DescribeSyncCompareDiffItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSyncCompareDiffItemsOutcomeCallable DescribeSyncCompareDiffItemsCallable(const Model::DescribeSyncCompareDiffItemsRequest& request);
 
                 /**
                  *查询一致性校验任务详情

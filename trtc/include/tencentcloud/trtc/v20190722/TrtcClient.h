@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trtc/v20190722/model/AsyncTextToSpeechRequest.h>
+#include <tencentcloud/trtc/v20190722/model/AsyncTextToSpeechResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateBasicModerationRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAsyncTextToSpeechRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAsyncTextToSpeechResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudModerationRequest.h>
@@ -181,6 +185,9 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AsyncTextToSpeechResponse> AsyncTextToSpeechOutcome;
+                typedef std::future<AsyncTextToSpeechOutcome> AsyncTextToSpeechOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::AsyncTextToSpeechRequest&, AsyncTextToSpeechOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AsyncTextToSpeechAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
                 typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
@@ -229,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAITranscriptionResponse> DescribeAITranscriptionOutcome;
                 typedef std::future<DescribeAITranscriptionOutcome> DescribeAITranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeAITranscriptionRequest&, DescribeAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAITranscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAsyncTextToSpeechResponse> DescribeAsyncTextToSpeechOutcome;
+                typedef std::future<DescribeAsyncTextToSpeechOutcome> DescribeAsyncTextToSpeechOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeAsyncTextToSpeechRequest&, DescribeAsyncTextToSpeechOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncTextToSpeechAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCallDetailInfoResponse> DescribeCallDetailInfoOutcome;
                 typedef std::future<DescribeCallDetailInfoOutcome> DescribeCallDetailInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailInfoRequest&, DescribeCallDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailInfoAsyncHandler;
@@ -401,6 +411,15 @@ namespace TencentCloud
 
 
                 /**
+                 *异步语音合成
+                 * @param req AsyncTextToSpeechRequest
+                 * @return AsyncTextToSpeechOutcome
+                 */
+                AsyncTextToSpeechOutcome AsyncTextToSpeech(const Model::AsyncTextToSpeechRequest &request);
+                void AsyncTextToSpeechAsync(const Model::AsyncTextToSpeechRequest& request, const AsyncTextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AsyncTextToSpeechOutcomeCallable AsyncTextToSpeechCallable(const Model::AsyncTextToSpeechRequest& request);
+
+                /**
                  *提供服务端控制机器人的功能
                  * @param req ControlAIConversationRequest
                  * @return ControlAIConversationOutcome
@@ -567,6 +586,15 @@ namespace TencentCloud
                 DescribeAITranscriptionOutcome DescribeAITranscription(const Model::DescribeAITranscriptionRequest &request);
                 void DescribeAITranscriptionAsync(const Model::DescribeAITranscriptionRequest& request, const DescribeAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAITranscriptionOutcomeCallable DescribeAITranscriptionCallable(const Model::DescribeAITranscriptionRequest& request);
+
+                /**
+                 *查询异步语音合成状态
+                 * @param req DescribeAsyncTextToSpeechRequest
+                 * @return DescribeAsyncTextToSpeechOutcome
+                 */
+                DescribeAsyncTextToSpeechOutcome DescribeAsyncTextToSpeech(const Model::DescribeAsyncTextToSpeechRequest &request);
+                void DescribeAsyncTextToSpeechAsync(const Model::DescribeAsyncTextToSpeechRequest& request, const DescribeAsyncTextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncTextToSpeechOutcomeCallable DescribeAsyncTextToSpeechCallable(const Model::DescribeAsyncTextToSpeechRequest& request);
 
                 /**
                  *查询指定时间内的用户列表及用户通话质量数据，最大可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）

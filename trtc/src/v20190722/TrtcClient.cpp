@@ -40,6 +40,56 @@ TrtcClient::TrtcClient(const Credential &credential, const string &region, const
 }
 
 
+TrtcClient::AsyncTextToSpeechOutcome TrtcClient::AsyncTextToSpeech(const AsyncTextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "AsyncTextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AsyncTextToSpeechResponse rsp = AsyncTextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AsyncTextToSpeechOutcome(rsp);
+        else
+            return AsyncTextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return AsyncTextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::AsyncTextToSpeechAsync(const AsyncTextToSpeechRequest& request, const AsyncTextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AsyncTextToSpeechRequest&;
+    using Resp = AsyncTextToSpeechResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AsyncTextToSpeech", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::AsyncTextToSpeechOutcomeCallable TrtcClient::AsyncTextToSpeechCallable(const AsyncTextToSpeechRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AsyncTextToSpeechOutcome>>();
+    AsyncTextToSpeechAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const AsyncTextToSpeechRequest&,
+        AsyncTextToSpeechOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::ControlAIConversationOutcome TrtcClient::ControlAIConversation(const ControlAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "ControlAIConversation");
@@ -832,6 +882,56 @@ TrtcClient::DescribeAITranscriptionOutcomeCallable TrtcClient::DescribeAITranscr
         const TrtcClient*,
         const DescribeAITranscriptionRequest&,
         DescribeAITranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeAsyncTextToSpeechOutcome TrtcClient::DescribeAsyncTextToSpeech(const DescribeAsyncTextToSpeechRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsyncTextToSpeech");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsyncTextToSpeechResponse rsp = DescribeAsyncTextToSpeechResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsyncTextToSpeechOutcome(rsp);
+        else
+            return DescribeAsyncTextToSpeechOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsyncTextToSpeechOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeAsyncTextToSpeechAsync(const DescribeAsyncTextToSpeechRequest& request, const DescribeAsyncTextToSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAsyncTextToSpeechRequest&;
+    using Resp = DescribeAsyncTextToSpeechResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAsyncTextToSpeech", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeAsyncTextToSpeechOutcomeCallable TrtcClient::DescribeAsyncTextToSpeechCallable(const DescribeAsyncTextToSpeechRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAsyncTextToSpeechOutcome>>();
+    DescribeAsyncTextToSpeechAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeAsyncTextToSpeechRequest&,
+        DescribeAsyncTextToSpeechOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
