@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取商品原图 Url。
-图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return ProductUrl 商品原图 Url。
-图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>商品原图 Url。<br>图片限制：单边分辨率小于4000px，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return ProductUrl <p>商品原图 Url。<br>图片限制：单边分辨率小于4000px，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     std::string GetProductUrl() const;
 
                     /**
-                     * 设置商品原图 Url。
-图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _productUrl 商品原图 Url。
-图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>商品原图 Url。<br>图片限制：单边分辨率小于4000px，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _productUrl <p>商品原图 Url。<br>图片限制：单边分辨率小于4000px，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetProductUrl(const std::string& _productUrl);
@@ -69,23 +65,15 @@ namespace TencentCloud
                     bool ProductUrlHasBeenSet() const;
 
                     /**
-                     * 获取对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
-                     * @return Prompt 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
+                     * 获取<p>对新背景的文本描述。<br>最多支持256个 utf-8 字符，支持中、英文。<br>如果 Prompt = &quot;BackgroundTemplate&quot; 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。</p>
+                     * @return Prompt <p>对新背景的文本描述。<br>最多支持256个 utf-8 字符，支持中、英文。<br>如果 Prompt = &quot;BackgroundTemplate&quot; 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
-                     * @param _prompt 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
+                     * 设置<p>对新背景的文本描述。<br>最多支持256个 utf-8 字符，支持中、英文。<br>如果 Prompt = &quot;BackgroundTemplate&quot; 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。</p>
+                     * @param _prompt <p>对新背景的文本描述。<br>最多支持256个 utf-8 字符，支持中、英文。<br>如果 Prompt = &quot;BackgroundTemplate&quot; 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -98,19 +86,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取反向提示词。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * @return NegativePrompt 反向提示词。
-最多支持256个 utf-8 字符，支持中、英文。
+                     * 获取<p>反向提示词。<br>最多支持256个 utf-8 字符，支持中、英文。</p>
+                     * @return NegativePrompt <p>反向提示词。<br>最多支持256个 utf-8 字符，支持中、英文。</p>
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置反向提示词。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * @param _negativePrompt 反向提示词。
-最多支持256个 utf-8 字符，支持中、英文。
+                     * 设置<p>反向提示词。<br>最多支持256个 utf-8 字符，支持中、英文。</p>
+                     * @param _negativePrompt <p>反向提示词。<br>最多支持256个 utf-8 字符，支持中、英文。</p>
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -123,23 +107,15 @@ namespace TencentCloud
                     bool NegativePromptHasBeenSet() const;
 
                     /**
-                     * 获取商品图中的商品主体名称。
-最多支持50个 utf-8 字符，支持中、英文。
-建议说明商品主体，否则影响生成效果。
-                     * @return Product 商品图中的商品主体名称。
-最多支持50个 utf-8 字符，支持中、英文。
-建议说明商品主体，否则影响生成效果。
+                     * 获取<p>商品图中的商品主体名称。<br>最多支持50个 utf-8 字符，支持中、英文。<br>建议说明商品主体，否则影响生成效果。</p>
+                     * @return Product <p>商品图中的商品主体名称。<br>最多支持50个 utf-8 字符，支持中、英文。<br>建议说明商品主体，否则影响生成效果。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置商品图中的商品主体名称。
-最多支持50个 utf-8 字符，支持中、英文。
-建议说明商品主体，否则影响生成效果。
-                     * @param _product 商品图中的商品主体名称。
-最多支持50个 utf-8 字符，支持中、英文。
-建议说明商品主体，否则影响生成效果。
+                     * 设置<p>商品图中的商品主体名称。<br>最多支持50个 utf-8 字符，支持中、英文。<br>建议说明商品主体，否则影响生成效果。</p>
+                     * @param _product <p>商品图中的商品主体名称。<br>最多支持50个 utf-8 字符，支持中、英文。<br>建议说明商品主体，否则影响生成效果。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -152,19 +128,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取背景模板。
-仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
-                     * @return BackgroundTemplate 背景模板。
-仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * 获取<p>背景模板。<br>仅当 Prompt = &quot;BackgroundTemplate&quot; 时生效，可支持的模板详见 <a href="https://cloud.tencent.com/document/product/1668/115391">商品背景模板列表</a> ，请传入字段“背景名称”中的值。</p>
+                     * @return BackgroundTemplate <p>背景模板。<br>仅当 Prompt = &quot;BackgroundTemplate&quot; 时生效，可支持的模板详见 <a href="https://cloud.tencent.com/document/product/1668/115391">商品背景模板列表</a> ，请传入字段“背景名称”中的值。</p>
                      * 
                      */
                     std::string GetBackgroundTemplate() const;
 
                     /**
-                     * 设置背景模板。
-仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
-                     * @param _backgroundTemplate 背景模板。
-仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * 设置<p>背景模板。<br>仅当 Prompt = &quot;BackgroundTemplate&quot; 时生效，可支持的模板详见 <a href="https://cloud.tencent.com/document/product/1668/115391">商品背景模板列表</a> ，请传入字段“背景名称”中的值。</p>
+                     * @param _backgroundTemplate <p>背景模板。<br>仅当 Prompt = &quot;BackgroundTemplate&quot; 时生效，可支持的模板详见 <a href="https://cloud.tencent.com/document/product/1668/115391">商品背景模板列表</a> ，请传入字段“背景名称”中的值。</p>
                      * 
                      */
                     void SetBackgroundTemplate(const std::string& _backgroundTemplate);
@@ -177,27 +149,15 @@ namespace TencentCloud
                     bool BackgroundTemplateHasBeenSet() const;
 
                     /**
-                     * 获取商品 Mask 图 Url，要求背景透明，保留商品主体。
-如果不传，将自动使用内置的商品分割算法得到 Mask。
-支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
-图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。
-                     * @return MaskUrl 商品 Mask 图 Url，要求背景透明，保留商品主体。
-如果不传，将自动使用内置的商品分割算法得到 Mask。
-支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
-图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。
+                     * 获取<p>商品 Mask 图 Url，要求背景透明，保留商品主体。<br>如果不传，将自动使用内置的商品分割算法得到 Mask。<br>支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。<br>图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。</p>
+                     * @return MaskUrl <p>商品 Mask 图 Url，要求背景透明，保留商品主体。<br>如果不传，将自动使用内置的商品分割算法得到 Mask。<br>支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。<br>图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。</p>
                      * 
                      */
                     std::string GetMaskUrl() const;
 
                     /**
-                     * 设置商品 Mask 图 Url，要求背景透明，保留商品主体。
-如果不传，将自动使用内置的商品分割算法得到 Mask。
-支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
-图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。
-                     * @param _maskUrl 商品 Mask 图 Url，要求背景透明，保留商品主体。
-如果不传，将自动使用内置的商品分割算法得到 Mask。
-支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
-图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。
+                     * 设置<p>商品 Mask 图 Url，要求背景透明，保留商品主体。<br>如果不传，将自动使用内置的商品分割算法得到 Mask。<br>支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。<br>图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。</p>
+                     * @param _maskUrl <p>商品 Mask 图 Url，要求背景透明，保留商品主体。<br>如果不传，将自动使用内置的商品分割算法得到 Mask。<br>支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。<br>图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。</p>
                      * 
                      */
                     void SetMaskUrl(const std::string& _maskUrl);
@@ -210,23 +170,15 @@ namespace TencentCloud
                     bool MaskUrlHasBeenSet() const;
 
                     /**
-                     * 获取替换背景后生成的商品图分辨率。
-支持生成单边分辨率大于500且小于4000、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。
-建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。
-                     * @return Resolution 替换背景后生成的商品图分辨率。
-支持生成单边分辨率大于500且小于4000、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。
-建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。
+                     * 获取<p>替换背景后生成的商品图分辨率。<br>支持生成单边分辨率大于500px且小于4000px、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。<br>建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。</p>
+                     * @return Resolution <p>替换背景后生成的商品图分辨率。<br>支持生成单边分辨率大于500px且小于4000px、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。<br>建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。</p>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置替换背景后生成的商品图分辨率。
-支持生成单边分辨率大于500且小于4000、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。
-建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。
-                     * @param _resolution 替换背景后生成的商品图分辨率。
-支持生成单边分辨率大于500且小于4000、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。
-建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。
+                     * 设置<p>替换背景后生成的商品图分辨率。<br>支持生成单边分辨率大于500px且小于4000px、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。<br>建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。</p>
+                     * @param _resolution <p>替换背景后生成的商品图分辨率。<br>支持生成单边分辨率大于500px且小于4000px、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。<br>建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。</p>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -239,31 +191,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -276,19 +212,15 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @return LogoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @param _logoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -301,19 +233,15 @@ namespace TencentCloud
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
-                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * 获取<p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。<br>生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
+                     * @return RspImgType <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。<br>生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
-                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * 设置<p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。<br>生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
+                     * @param _rspImgType <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。<br>生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -328,79 +256,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 商品原图 Url。
-图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>商品原图 Url。<br>图片限制：单边分辨率小于4000px，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     std::string m_productUrl;
                     bool m_productUrlHasBeenSet;
 
                     /**
-                     * 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-如果 Prompt = "BackgroundTemplate" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。
+                     * <p>对新背景的文本描述。<br>最多支持256个 utf-8 字符，支持中、英文。<br>如果 Prompt = &quot;BackgroundTemplate&quot; 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 反向提示词。
-最多支持256个 utf-8 字符，支持中、英文。
+                     * <p>反向提示词。<br>最多支持256个 utf-8 字符，支持中、英文。</p>
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
 
                     /**
-                     * 商品图中的商品主体名称。
-最多支持50个 utf-8 字符，支持中、英文。
-建议说明商品主体，否则影响生成效果。
+                     * <p>商品图中的商品主体名称。<br>最多支持50个 utf-8 字符，支持中、英文。<br>建议说明商品主体，否则影响生成效果。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 背景模板。
-仅当 Prompt = "BackgroundTemplate" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。
+                     * <p>背景模板。<br>仅当 Prompt = &quot;BackgroundTemplate&quot; 时生效，可支持的模板详见 <a href="https://cloud.tencent.com/document/product/1668/115391">商品背景模板列表</a> ，请传入字段“背景名称”中的值。</p>
                      */
                     std::string m_backgroundTemplate;
                     bool m_backgroundTemplateHasBeenSet;
 
                     /**
-                     * 商品 Mask 图 Url，要求背景透明，保留商品主体。
-如果不传，将自动使用内置的商品分割算法得到 Mask。
-支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
-图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。
+                     * <p>商品 Mask 图 Url，要求背景透明，保留商品主体。<br>如果不传，将自动使用内置的商品分割算法得到 Mask。<br>支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。<br>图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。</p>
                      */
                     std::string m_maskUrl;
                     bool m_maskUrlHasBeenSet;
 
                     /**
-                     * 替换背景后生成的商品图分辨率。
-支持生成单边分辨率大于500且小于4000、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。
-建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。
+                     * <p>替换背景后生成的商品图分辨率。<br>支持生成单边分辨率大于500px且小于4000px、长宽比在2:5 ~ 5:2之间的图片，不传默认生成1280:1280。<br>建议图片比例为1:1、9:16、16:9，生成效果更佳，使用其他比例的生成效果可能不如建议比例。</p>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。<br>生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

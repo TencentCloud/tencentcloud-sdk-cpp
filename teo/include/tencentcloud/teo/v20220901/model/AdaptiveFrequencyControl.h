@@ -69,6 +69,27 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
+                     * 获取自适应频控的规则 ID，仅作为出参返回。
+                     * @return Id 自适应频控的规则 ID，仅作为出参返回。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置自适应频控的规则 ID，仅作为出参返回。
+                     * @param _id 自适应频控的规则 ID，仅作为出参返回。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取自适应频控的限制等级，当 Enabled 为 on 时，此字段必填。取值有：<li>Loose：宽松；</li><li>Moderate：适中；</li><li>Strict：严格。</li>
                      * @return Sensitivity 自适应频控的限制等级，当 Enabled 为 on 时，此字段必填。取值有：<li>Loose：宽松；</li><li>Moderate：适中；</li><li>Strict：严格。</li>
                      * 
@@ -117,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * 自适应频控的规则 ID，仅作为出参返回。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 自适应频控的限制等级，当 Enabled 为 on 时，此字段必填。取值有：<li>Loose：宽松；</li><li>Moderate：适中；</li><li>Strict：严格。</li>

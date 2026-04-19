@@ -48,27 +48,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
-                     * @return BotRatings 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
-                     * 
-                     */
-                    BotRatings GetBotRatings() const;
-
-                    /**
-                     * 设置基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
-                     * @param _botRatings 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
-                     * 
-                     */
-                    void SetBotRatings(const BotRatings& _botRatings);
-
-                    /**
-                     * 判断参数 BotRatings 是否已赋值
-                     * @return BotRatings 是否已赋值
-                     * 
-                     */
-                    bool BotRatingsHasBeenSet() const;
-
-                    /**
                      * 获取Bot 智能分析的具体配置开关。取值有：
 
 on：开启；
@@ -101,13 +80,49 @@ off：关闭。
                      */
                     bool EnabledHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取Bot 智能分析的规则 ID，仅作为出参返回。
+                     * @return Id Bot 智能分析的规则 ID，仅作为出参返回。
+                     * 
+                     */
+                    std::string GetId() const;
 
                     /**
-                     * 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     * 设置Bot 智能分析的规则 ID，仅作为出参返回。
+                     * @param _id Bot 智能分析的规则 ID，仅作为出参返回。
+                     * 
                      */
-                    BotRatings m_botRatings;
-                    bool m_botRatingsHasBeenSet;
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     * @return BotRatings 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     * 
+                     */
+                    BotRatings GetBotRatings() const;
+
+                    /**
+                     * 设置基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     * @param _botRatings 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     * 
+                     */
+                    void SetBotRatings(const BotRatings& _botRatings);
+
+                    /**
+                     * 判断参数 BotRatings 是否已赋值
+                     * @return BotRatings 是否已赋值
+                     * 
+                     */
+                    bool BotRatingsHasBeenSet() const;
+
+                private:
 
                     /**
                      * Bot 智能分析的具体配置开关。取值有：
@@ -117,6 +132,18 @@ off：关闭。
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * Bot 智能分析的规则 ID，仅作为出参返回。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 基于客户端和请求特征，将请求来源分为人类来源请求、合法 Bot 请求、疑似 Bot 请求和高风险 Bot 请求，并提供请求处置选项。
+                     */
+                    BotRatings m_botRatings;
+                    bool m_botRatingsHasBeenSet;
 
                 };
             }

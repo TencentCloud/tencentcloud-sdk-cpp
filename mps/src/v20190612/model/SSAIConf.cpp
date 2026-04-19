@@ -22,6 +22,7 @@ using namespace std;
 
 SSAIConf::SSAIConf() :
     m_adsUrlHasBeenSet(false),
+    m_adsUrlsHasBeenSet(false),
     m_configAliasesHasBeenSet(false),
     m_adMarkerPassthroughHasBeenSet(false),
     m_sCTE35AdTypeHasBeenSet(false),
@@ -33,6 +34,7 @@ SSAIConf::SSAIConf() :
     m_sourceCDNPrefixHasBeenSet(false),
     m_adCDNPrefixHasBeenSet(false),
     m_preRollAdsUrlHasBeenSet(false),
+    m_preRollAdsUrlsHasBeenSet(false),
     m_preRollMaxAllowedDurationHasBeenSet(false),
     m_multiRequestHasBeenSet(false)
 {
@@ -51,6 +53,19 @@ CoreInternalOutcome SSAIConf::Deserialize(const rapidjson::Value &value)
         }
         m_adsUrl = string(value["AdsUrl"].GetString());
         m_adsUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdsUrls") && !value["AdsUrls"].IsNull())
+    {
+        if (!value["AdsUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.AdsUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdsUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_adsUrls.push_back((*itr).GetString());
+        }
+        m_adsUrlsHasBeenSet = true;
     }
 
     if (value.HasMember("ConfigAliases") && !value["ConfigAliases"].IsNull())
@@ -176,6 +191,19 @@ CoreInternalOutcome SSAIConf::Deserialize(const rapidjson::Value &value)
         m_preRollAdsUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("PreRollAdsUrls") && !value["PreRollAdsUrls"].IsNull())
+    {
+        if (!value["PreRollAdsUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.PreRollAdsUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PreRollAdsUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_preRollAdsUrls.push_back((*itr).GetString());
+        }
+        m_preRollAdsUrlsHasBeenSet = true;
+    }
+
     if (value.HasMember("PreRollMaxAllowedDuration") && !value["PreRollMaxAllowedDuration"].IsNull())
     {
         if (!value["PreRollMaxAllowedDuration"].IsInt64())
@@ -209,6 +237,19 @@ void SSAIConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AdsUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_adsUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adsUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdsUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_adsUrls.begin(); itr != m_adsUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_configAliasesHasBeenSet)
@@ -311,6 +352,19 @@ void SSAIConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_preRollAdsUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_preRollAdsUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreRollAdsUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preRollAdsUrls.begin(); itr != m_preRollAdsUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_preRollMaxAllowedDurationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -344,6 +398,22 @@ void SSAIConf::SetAdsUrl(const string& _adsUrl)
 bool SSAIConf::AdsUrlHasBeenSet() const
 {
     return m_adsUrlHasBeenSet;
+}
+
+vector<string> SSAIConf::GetAdsUrls() const
+{
+    return m_adsUrls;
+}
+
+void SSAIConf::SetAdsUrls(const vector<string>& _adsUrls)
+{
+    m_adsUrls = _adsUrls;
+    m_adsUrlsHasBeenSet = true;
+}
+
+bool SSAIConf::AdsUrlsHasBeenSet() const
+{
+    return m_adsUrlsHasBeenSet;
 }
 
 vector<ConfigAliasesInfo> SSAIConf::GetConfigAliases() const
@@ -520,6 +590,22 @@ void SSAIConf::SetPreRollAdsUrl(const string& _preRollAdsUrl)
 bool SSAIConf::PreRollAdsUrlHasBeenSet() const
 {
     return m_preRollAdsUrlHasBeenSet;
+}
+
+vector<string> SSAIConf::GetPreRollAdsUrls() const
+{
+    return m_preRollAdsUrls;
+}
+
+void SSAIConf::SetPreRollAdsUrls(const vector<string>& _preRollAdsUrls)
+{
+    m_preRollAdsUrls = _preRollAdsUrls;
+    m_preRollAdsUrlsHasBeenSet = true;
+}
+
+bool SSAIConf::PreRollAdsUrlsHasBeenSet() const
+{
+    return m_preRollAdsUrlsHasBeenSet;
 }
 
 int64_t SSAIConf::GetPreRollMaxAllowedDuration() const

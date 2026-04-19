@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表情模板。
-请在 [表情动图模板列表](https://cloud.tencent.com/document/product/1668/115327)  中选择期望的模板，传入 Pose 名称。
-                     * @return Pose 表情模板。
-请在 [表情动图模板列表](https://cloud.tencent.com/document/product/1668/115327)  中选择期望的模板，传入 Pose 名称。
+                     * 获取<p>表情模板。<br>请在 <a href="https://cloud.tencent.com/document/product/1668/115327">表情动图模板列表</a>  中选择期望的模板，传入 Pose 名称。</p>
+                     * @return Pose <p>表情模板。<br>请在 <a href="https://cloud.tencent.com/document/product/1668/115327">表情动图模板列表</a>  中选择期望的模板，传入 Pose 名称。</p>
                      * 
                      */
                     std::string GetPose() const;
 
                     /**
-                     * 设置表情模板。
-请在 [表情动图模板列表](https://cloud.tencent.com/document/product/1668/115327)  中选择期望的模板，传入 Pose 名称。
-                     * @param _pose 表情模板。
-请在 [表情动图模板列表](https://cloud.tencent.com/document/product/1668/115327)  中选择期望的模板，传入 Pose 名称。
+                     * 设置<p>表情模板。<br>请在 <a href="https://cloud.tencent.com/document/product/1668/115327">表情动图模板列表</a>  中选择期望的模板，传入 Pose 名称。</p>
+                     * @param _pose <p>表情模板。<br>请在 <a href="https://cloud.tencent.com/document/product/1668/115327">表情动图模板列表</a>  中选择期望的模板，传入 Pose 名称。</p>
                      * 
                      */
                     void SetPose(const std::string& _pose);
@@ -69,23 +65,15 @@ namespace TencentCloud
                     bool PoseHasBeenSet() const;
 
                     /**
-                     * 获取人像参考图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return InputImage 人像参考图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>人像参考图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return InputImage <p>人像参考图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     std::string GetInputImage() const;
 
                     /**
-                     * 设置人像参考图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _inputImage 人像参考图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>人像参考图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _inputImage <p>人像参考图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetInputImage(const std::string& _inputImage);
@@ -98,23 +86,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool InputImageHasBeenSet() const;
 
                     /**
-                     * 获取人像参考图 Url。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return InputUrl 人像参考图 Url。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>人像参考图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return InputUrl <p>人像参考图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     std::string GetInputUrl() const;
 
                     /**
-                     * 设置人像参考图 Url。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _inputUrl 人像参考图 Url。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>人像参考图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _inputUrl <p>人像参考图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
@@ -127,23 +107,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool InputUrlHasBeenSet() const;
 
                     /**
-                     * 获取生成分辨率。
-真人类型支持256、512，默认为256，
-卡通类型仅支持512。
-                     * @return Resolution 生成分辨率。
-真人类型支持256、512，默认为256，
-卡通类型仅支持512。
+                     * 获取<p>生成分辨率，单位为 px。<br>真人类型支持256、512，默认为256，<br>卡通类型仅支持512。</p>
+                     * @return Resolution <p>生成分辨率，单位为 px。<br>真人类型支持256、512，默认为256，<br>卡通类型仅支持512。</p>
                      * 
                      */
                     int64_t GetResolution() const;
 
                     /**
-                     * 设置生成分辨率。
-真人类型支持256、512，默认为256，
-卡通类型仅支持512。
-                     * @param _resolution 生成分辨率。
-真人类型支持256、512，默认为256，
-卡通类型仅支持512。
+                     * 设置<p>生成分辨率，单位为 px。<br>真人类型支持256、512，默认为256，<br>卡通类型仅支持512。</p>
+                     * @param _resolution <p>生成分辨率，单位为 px。<br>真人类型支持256、512，默认为256，<br>卡通类型仅支持512。</p>
                      * 
                      */
                     void SetResolution(const int64_t& _resolution);
@@ -156,27 +128,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取自定义文案。
-仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。
-如果不传，默认使用自带的文案。
-如果 text = "" 空字符串，代表不在表情动图中添加文案。
-                     * @return Text 自定义文案。
-仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。
-如果不传，默认使用自带的文案。
-如果 text = "" 空字符串，代表不在表情动图中添加文案。
+                     * 获取<p>自定义文案。<br>仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。<br>如果不传，默认使用自带的文案。<br>如果 text = &quot;&quot; 空字符串，代表不在表情动图中添加文案。</p>
+                     * @return Text <p>自定义文案。<br>仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。<br>如果不传，默认使用自带的文案。<br>如果 text = &quot;&quot; 空字符串，代表不在表情动图中添加文案。</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置自定义文案。
-仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。
-如果不传，默认使用自带的文案。
-如果 text = "" 空字符串，代表不在表情动图中添加文案。
-                     * @param _text 自定义文案。
-仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。
-如果不传，默认使用自带的文案。
-如果 text = "" 空字符串，代表不在表情动图中添加文案。
+                     * 设置<p>自定义文案。<br>仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。<br>如果不传，默认使用自带的文案。<br>如果 text = &quot;&quot; 空字符串，代表不在表情动图中添加文案。</p>
+                     * @param _text <p>自定义文案。<br>仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。<br>如果不传，默认使用自带的文案。<br>如果 text = &quot;&quot; 空字符串，代表不在表情动图中添加文案。</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -189,27 +149,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取头发遮罩开关。
-true：裁剪过长的头发。
-false：不裁剪过长的头发。
-仅对卡通类型的 Pose 生效，默认为 false。
-                     * @return Haircut 头发遮罩开关。
-true：裁剪过长的头发。
-false：不裁剪过长的头发。
-仅对卡通类型的 Pose 生效，默认为 false。
+                     * 获取<p>头发遮罩开关。<br>true：裁剪过长的头发。<br>false：不裁剪过长的头发。<br>仅对卡通类型的 Pose 生效，默认为 false。</p>
+                     * @return Haircut <p>头发遮罩开关。<br>true：裁剪过长的头发。<br>false：不裁剪过长的头发。<br>仅对卡通类型的 Pose 生效，默认为 false。</p>
                      * 
                      */
                     bool GetHaircut() const;
 
                     /**
-                     * 设置头发遮罩开关。
-true：裁剪过长的头发。
-false：不裁剪过长的头发。
-仅对卡通类型的 Pose 生效，默认为 false。
-                     * @param _haircut 头发遮罩开关。
-true：裁剪过长的头发。
-false：不裁剪过长的头发。
-仅对卡通类型的 Pose 生效，默认为 false。
+                     * 设置<p>头发遮罩开关。<br>true：裁剪过长的头发。<br>false：不裁剪过长的头发。<br>仅对卡通类型的 Pose 生效，默认为 false。</p>
+                     * @param _haircut <p>头发遮罩开关。<br>true：裁剪过长的头发。<br>false：不裁剪过长的头发。<br>仅对卡通类型的 Pose 生效，默认为 false。</p>
                      * 
                      */
                     void SetHaircut(const bool& _haircut);
@@ -222,31 +170,15 @@ false：不裁剪过长的头发。
                     bool HaircutHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -259,19 +191,15 @@ false：不裁剪过长的头发。
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @return LogoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @param _logoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -286,67 +214,49 @@ false：不裁剪过长的头发。
                 private:
 
                     /**
-                     * 表情模板。
-请在 [表情动图模板列表](https://cloud.tencent.com/document/product/1668/115327)  中选择期望的模板，传入 Pose 名称。
+                     * <p>表情模板。<br>请在 <a href="https://cloud.tencent.com/document/product/1668/115327">表情动图模板列表</a>  中选择期望的模板，传入 Pose 名称。</p>
                      */
                     std::string m_pose;
                     bool m_poseHasBeenSet;
 
                     /**
-                     * 人像参考图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>人像参考图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     std::string m_inputImage;
                     bool m_inputImageHasBeenSet;
 
                     /**
-                     * 人像参考图 Url。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>人像参考图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。<br>图片限制：单边分辨率小于5000px，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;
 
                     /**
-                     * 生成分辨率。
-真人类型支持256、512，默认为256，
-卡通类型仅支持512。
+                     * <p>生成分辨率，单位为 px。<br>真人类型支持256、512，默认为256，<br>卡通类型仅支持512。</p>
                      */
                     int64_t m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 自定义文案。
-仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。
-如果不传，默认使用自带的文案。
-如果 text = "" 空字符串，代表不在表情动图中添加文案。
+                     * <p>自定义文案。<br>仅对真人类型的 Pose 生效，将在生成的表情动图中显示指定的文字。如果传入的字符串长度大于10，只截取前10个显示。<br>如果不传，默认使用自带的文案。<br>如果 text = &quot;&quot; 空字符串，代表不在表情动图中添加文案。</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 头发遮罩开关。
-true：裁剪过长的头发。
-false：不裁剪过长的头发。
-仅对卡通类型的 Pose 生效，默认为 false。
+                     * <p>头发遮罩开关。<br>true：裁剪过长的头发。<br>false：不裁剪过长的头发。<br>仅对卡通类型的 Pose 生效，默认为 false。</p>
                      */
                     bool m_haircut;
                     bool m_haircutHasBeenSet;
 
                     /**
-                     * 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;

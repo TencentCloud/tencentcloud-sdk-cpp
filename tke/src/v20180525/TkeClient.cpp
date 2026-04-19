@@ -11640,6 +11640,56 @@ TkeClient::ModifyGlobalMaintenanceWindowAndExclusionsOutcomeCallable TkeClient::
     return prom->get_future();
 }
 
+TkeClient::ModifyLogConfigOutcome TkeClient::ModifyLogConfig(const ModifyLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogConfigResponse rsp = ModifyLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogConfigOutcome(rsp);
+        else
+            return ModifyLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyLogConfigAsync(const ModifyLogConfigRequest& request, const ModifyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLogConfigRequest&;
+    using Resp = ModifyLogConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLogConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyLogConfigOutcomeCallable TkeClient::ModifyLogConfigCallable(const ModifyLogConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLogConfigOutcome>>();
+    ModifyLogConfigAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyLogConfigRequest&,
+        ModifyLogConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::ModifyMasterComponentOutcome TkeClient::ModifyMasterComponent(const ModifyMasterComponentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMasterComponent");

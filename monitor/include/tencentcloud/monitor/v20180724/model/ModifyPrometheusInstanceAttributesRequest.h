@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/PrometheusRuleKV.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
-                     * @return DataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * 获取<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>
+                     * @return DataRetentionTime <p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
-                     * 设置数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
-                     * @param _dataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * 设置<p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>
+                     * @param _dataRetentionTime <p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>
                      * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
@@ -105,25 +106,52 @@ namespace TencentCloud
                      */
                     bool DataRetentionTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * @return InstanceAttributes <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * 
+                     */
+                    std::vector<PrometheusRuleKV> GetInstanceAttributes() const;
+
+                    /**
+                     * 设置<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * @param _instanceAttributes <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     * 
+                     */
+                    void SetInstanceAttributes(const std::vector<PrometheusRuleKV>& _instanceAttributes);
+
+                    /**
+                     * 判断参数 InstanceAttributes 是否已赋值
+                     * @return InstanceAttributes 是否已赋值
+                     * 
+                     */
+                    bool InstanceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * <p>数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一</p>
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;
+
+                    /**
+                     * <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p>
+                     */
+                    std::vector<PrometheusRuleKV> m_instanceAttributes;
+                    bool m_instanceAttributesHasBeenSet;
 
                 };
             }

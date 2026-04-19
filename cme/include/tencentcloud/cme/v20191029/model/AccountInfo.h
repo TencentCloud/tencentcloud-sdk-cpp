@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户 Id。
-                     * @return UserId 用户 Id。
+                     * 获取<p>用户 Id。</p>
+                     * @return UserId <p>用户 Id。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户 Id。
-                     * @param _userId 用户 Id。
+                     * 设置<p>用户 Id。</p>
+                     * @param _userId <p>用户 Id。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户手机号码。
-                     * @return Phone 用户手机号码。
+                     * 获取<p>用户手机号码。</p>
+                     * @return Phone <p>用户手机号码。</p>
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置用户手机号码。
-                     * @param _phone 用户手机号码。
+                     * 设置<p>用户手机号码。</p>
+                     * @param _phone <p>用户手机号码。</p>
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户昵称。
-                     * @return Nick 用户昵称。
+                     * 获取<p>用户昵称。</p>
+                     * @return Nick <p>用户昵称。</p>
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置用户昵称。
-                     * @param _nick 用户昵称。
+                     * 设置<p>用户昵称。</p>
+                     * @param _nick <p>用户昵称。</p>
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -110,23 +110,15 @@ namespace TencentCloud
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取账号状态，取值：
-<li>Normal：有效；</li>
-<li>Stopped：无效。</li>
-                     * @return Status 账号状态，取值：
-<li>Normal：有效；</li>
-<li>Stopped：无效。</li>
+                     * 获取<p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>
+                     * @return Status <p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置账号状态，取值：
-<li>Normal：有效；</li>
-<li>Stopped：无效。</li>
-                     * @param _status 账号状态，取值：
-<li>Normal：有效；</li>
-<li>Stopped：无效。</li>
+                     * 设置<p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>
+                     * @param _status <p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -138,33 +130,58 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>
+                     * @return CreateTime <p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置<p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>
+                     * @param _createTime <p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户 Id。
+                     * <p>用户 Id。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户手机号码。
+                     * <p>用户手机号码。</p>
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 用户昵称。
+                     * <p>用户昵称。</p>
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * 账号状态，取值：
-<li>Normal：有效；</li>
-<li>Stopped：无效。</li>
+                     * <p>账号状态，取值：</p><li>Normal：有效；</li><li>Stopped：无效。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>账户的创建时间。</p><p>参数格式：使用 ISO 日期格式。</p>
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

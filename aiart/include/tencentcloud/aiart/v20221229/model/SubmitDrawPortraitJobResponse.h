@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取提交生成写真图片任务 ID。
-
-                     * @return JobId 提交生成写真图片任务 ID。
-
+                     * 获取<p>提交生成写真图片任务 ID。</p>
+                     * @return JobId <p>提交生成写真图片任务 ID。</p>
                      * 
                      */
                     std::string GetJobId() const;
@@ -62,8 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 提交生成写真图片任务 ID。
-
+                     * <p>提交生成写真图片任务 ID。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

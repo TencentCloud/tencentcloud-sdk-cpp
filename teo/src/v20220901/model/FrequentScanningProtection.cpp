@@ -22,6 +22,7 @@ using namespace std;
 
 FrequentScanningProtection::FrequentScanningProtection() :
     m_enabledHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_countByHasBeenSet(false),
     m_blockThresholdHasBeenSet(false),
@@ -43,6 +44,16 @@ CoreInternalOutcome FrequentScanningProtection::Deserialize(const rapidjson::Val
         }
         m_enabled = string(value["Enabled"].GetString());
         m_enabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FrequentScanningProtection.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
@@ -117,6 +128,14 @@ void FrequentScanningProtection::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_enabled.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_actionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -175,6 +194,22 @@ void FrequentScanningProtection::SetEnabled(const string& _enabled)
 bool FrequentScanningProtection::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string FrequentScanningProtection::GetId() const
+{
+    return m_id;
+}
+
+void FrequentScanningProtection::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool FrequentScanningProtection::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 SecurityAction FrequentScanningProtection::GetAction() const

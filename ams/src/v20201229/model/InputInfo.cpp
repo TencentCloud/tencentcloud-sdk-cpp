@@ -23,7 +23,9 @@ using namespace std;
 InputInfo::InputInfo() :
     m_typeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_bucketInfoHasBeenSet(false)
+    m_bucketInfoHasBeenSet(false),
+    m_imageUrlListHasBeenSet(false),
+    m_textContentHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,29 @@ CoreInternalOutcome InputInfo::Deserialize(const rapidjson::Value &value)
         m_bucketInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageUrlList") && !value["ImageUrlList"].IsNull())
+    {
+        if (!value["ImageUrlList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InputInfo.ImageUrlList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageUrlList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_imageUrlList.push_back((*itr).GetString());
+        }
+        m_imageUrlListHasBeenSet = true;
+    }
+
+    if (value.HasMember("TextContent") && !value["TextContent"].IsNull())
+    {
+        if (!value["TextContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputInfo.TextContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_textContent = string(value["TextContent"].GetString());
+        m_textContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +124,27 @@ void InputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bucketInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageUrlListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrlList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageUrlList.begin(); itr != m_imageUrlList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_textContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +196,37 @@ void InputInfo::SetBucketInfo(const BucketInfo& _bucketInfo)
 bool InputInfo::BucketInfoHasBeenSet() const
 {
     return m_bucketInfoHasBeenSet;
+}
+
+vector<string> InputInfo::GetImageUrlList() const
+{
+    return m_imageUrlList;
+}
+
+void InputInfo::SetImageUrlList(const vector<string>& _imageUrlList)
+{
+    m_imageUrlList = _imageUrlList;
+    m_imageUrlListHasBeenSet = true;
+}
+
+bool InputInfo::ImageUrlListHasBeenSet() const
+{
+    return m_imageUrlListHasBeenSet;
+}
+
+string InputInfo::GetTextContent() const
+{
+    return m_textContent;
+}
+
+void InputInfo::SetTextContent(const string& _textContent)
+{
+    m_textContent = _textContent;
+    m_textContentHasBeenSet = true;
+}
+
+bool InputInfo::TextContentHasBeenSet() const
+{
+    return m_textContentHasBeenSet;
 }
 

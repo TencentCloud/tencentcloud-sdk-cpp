@@ -328,6 +328,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/OpenConstraintInfo.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusAlertPolicyRequest.h
+  include/tencentcloud/tke/v20180525/model/ModifyLogConfigResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h
@@ -643,6 +644,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterExtraArgsRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h
+  include/tencentcloud/tke/v20180525/model/ModifyLogConfigRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterMaintenanceWindowAndExclusionResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertHistoryItem.h
   include/tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h
@@ -1167,6 +1169,7 @@ set(tke_src
   src/v20180525/model/OpenConstraintInfo.cpp
   src/v20180525/model/DescribeClusterInspectionResultsOverviewRequest.cpp
   src/v20180525/model/ModifyPrometheusAlertPolicyRequest.cpp
+  src/v20180525/model/ModifyLogConfigResponse.cpp
   src/v20180525/model/DescribeOpenPolicyListRequest.cpp
   src/v20180525/model/PrometheusTemplateSyncTarget.cpp
   src/v20180525/model/DescribePrometheusTemplatesRequest.cpp
@@ -1482,6 +1485,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterExtraArgsRequest.cpp
   src/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsResponse.cpp
   src/v20180525/model/DescribeClusterAsGroupsResponse.cpp
+  src/v20180525/model/ModifyLogConfigRequest.cpp
   src/v20180525/model/DeleteClusterMaintenanceWindowAndExclusionResponse.cpp
   src/v20180525/model/PrometheusAlertHistoryItem.cpp
   src/v20180525/model/DescribeLogSwitchesRequest.cpp

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>广告决策服务器URL(ADS)。</p>
-                     * @return AdsUrl <p>广告决策服务器URL(ADS)。</p>
+                     * 获取<p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>
+                     * @return AdsUrl <p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>
                      * 
                      */
                     std::string GetAdsUrl() const;
 
                     /**
-                     * 设置<p>广告决策服务器URL(ADS)。</p>
-                     * @param _adsUrl <p>广告决策服务器URL(ADS)。</p>
+                     * 设置<p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>
+                     * @param _adsUrl <p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>
                      * 
                      */
                     void SetAdsUrl(const std::string& _adsUrl);
@@ -67,6 +67,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AdsUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>广告决策服务器URL数组(ADS)</p>
+                     * @return AdsUrls <p>广告决策服务器URL数组(ADS)</p>
+                     * 
+                     */
+                    std::vector<std::string> GetAdsUrls() const;
+
+                    /**
+                     * 设置<p>广告决策服务器URL数组(ADS)</p>
+                     * @param _adsUrls <p>广告决策服务器URL数组(ADS)</p>
+                     * 
+                     */
+                    void SetAdsUrls(const std::vector<std::string>& _adsUrls);
+
+                    /**
+                     * 判断参数 AdsUrls 是否已赋值
+                     * @return AdsUrls 是否已赋值
+                     * 
+                     */
+                    bool AdsUrlsHasBeenSet() const;
 
                     /**
                      * 获取<p>参数配置。</p>
@@ -295,15 +316,15 @@ namespace TencentCloud
                     bool AdCDNPrefixHasBeenSet() const;
 
                     /**
-                     * 获取<p>预加载广告决策服务地址。</p>
-                     * @return PreRollAdsUrl <p>预加载广告决策服务地址。</p>
+                     * 获取<p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>
+                     * @return PreRollAdsUrl <p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>
                      * 
                      */
                     std::string GetPreRollAdsUrl() const;
 
                     /**
-                     * 设置<p>预加载广告决策服务地址。</p>
-                     * @param _preRollAdsUrl <p>预加载广告决策服务地址。</p>
+                     * 设置<p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>
+                     * @param _preRollAdsUrl <p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>
                      * 
                      */
                     void SetPreRollAdsUrl(const std::string& _preRollAdsUrl);
@@ -314,6 +335,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PreRollAdsUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预加载广告决策服务地址数组</p>
+                     * @return PreRollAdsUrls <p>预加载广告决策服务地址数组</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPreRollAdsUrls() const;
+
+                    /**
+                     * 设置<p>预加载广告决策服务地址数组</p>
+                     * @param _preRollAdsUrls <p>预加载广告决策服务地址数组</p>
+                     * 
+                     */
+                    void SetPreRollAdsUrls(const std::vector<std::string>& _preRollAdsUrls);
+
+                    /**
+                     * 判断参数 PreRollAdsUrls 是否已赋值
+                     * @return PreRollAdsUrls 是否已赋值
+                     * 
+                     */
+                    bool PreRollAdsUrlsHasBeenSet() const;
 
                     /**
                      * 获取<p>预加载广告最大允许时长，0-3600。</p>
@@ -360,10 +402,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>广告决策服务器URL(ADS)。</p>
+                     * <p>广告决策服务器URL(ADS)。注意：填了AdsUrl会自动代替覆盖AdsUrls[0]</p>
                      */
                     std::string m_adsUrl;
                     bool m_adsUrlHasBeenSet;
+
+                    /**
+                     * <p>广告决策服务器URL数组(ADS)</p>
+                     */
+                    std::vector<std::string> m_adsUrls;
+                    bool m_adsUrlsHasBeenSet;
 
                     /**
                      * <p>参数配置。</p>
@@ -430,10 +478,16 @@ namespace TencentCloud
                     bool m_adCDNPrefixHasBeenSet;
 
                     /**
-                     * <p>预加载广告决策服务地址。</p>
+                     * <p>预加载广告决策服务地址。注意：填了PreRollAdsUrl会自动代替覆盖PreRollAdsUrls[0]</p>
                      */
                     std::string m_preRollAdsUrl;
                     bool m_preRollAdsUrlHasBeenSet;
+
+                    /**
+                     * <p>预加载广告决策服务地址数组</p>
+                     */
+                    std::vector<std::string> m_preRollAdsUrls;
+                    bool m_preRollAdsUrlsHasBeenSet;
 
                     /**
                      * <p>预加载广告最大允许时长，0-3600。</p>

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取首次发现时间
-                     * @return CreateTime 首次发现时间
+                     * 获取<p>首次发现时间</p>
+                     * @return CreateTime <p>首次发现时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置首次发现时间
-                     * @param _createTime 首次发现时间
+                     * 设置<p>首次发现时间</p>
+                     * @param _createTime <p>首次发现时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取风险状态
-                     * @return RiskStatus 风险状态
+                     * 获取<p>风险状态</p>
+                     * @return RiskStatus <p>风险状态</p>
                      * 
                      */
                     int64_t GetRiskStatus() const;
 
                     /**
-                     * 设置风险状态
-                     * @param _riskStatus 风险状态
+                     * 设置<p>风险状态</p>
+                     * @param _riskStatus <p>风险状态</p>
                      * 
                      */
                     void SetRiskStatus(const int64_t& _riskStatus);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RiskStatusHasBeenSet() const;
 
                     /**
-                     * 获取风险内容
-                     * @return RiskContent 风险内容
+                     * 获取<p>风险内容</p>
+                     * @return RiskContent <p>风险内容</p>
                      * 
                      */
                     std::string GetRiskContent() const;
 
                     /**
-                     * 设置风险内容
-                     * @param _riskContent 风险内容
+                     * 设置<p>风险内容</p>
+                     * @param _riskContent <p>风险内容</p>
                      * 
                      */
                     void SetRiskContent(const std::string& _riskContent);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RiskContentHasBeenSet() const;
 
                     /**
-                     * 获取云厂商
-                     * @return Provider 云厂商
+                     * 获取<p>云厂商</p>
+                     * @return Provider <p>云厂商</p>
                      * 
                      */
                     std::string GetProvider() const;
 
                     /**
-                     * 设置云厂商
-                     * @param _provider 云厂商
+                     * 设置<p>云厂商</p>
+                     * @param _provider <p>云厂商</p>
                      * 
                      */
                     void SetProvider(const std::string& _provider);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
-                     * 获取云厂商名称
-                     * @return ProviderName 云厂商名称
+                     * 获取<p>云厂商名称</p>
+                     * @return ProviderName <p>云厂商名称</p>
                      * 
                      */
                     std::string GetProviderName() const;
 
                     /**
-                     * 设置云厂商名称
-                     * @param _providerName 云厂商名称
+                     * 设置<p>云厂商名称</p>
+                     * @param _providerName <p>云厂商名称</p>
                      * 
                      */
                     void SetProviderName(const std::string& _providerName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取云账号
-                     * @return CloudAccountId 云账号
+                     * 获取<p>云账号</p>
+                     * @return CloudAccountId <p>云账号</p>
                      * 
                      */
                     std::string GetCloudAccountId() const;
 
                     /**
-                     * 设置云账号
-                     * @param _cloudAccountId 云账号
+                     * 设置<p>云账号</p>
+                     * @param _cloudAccountId <p>云账号</p>
                      * 
                      */
                     void SetCloudAccountId(const std::string& _cloudAccountId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CloudAccountIdHasBeenSet() const;
 
                     /**
-                     * 获取云账号名称
-                     * @return CloudAccountName 云账号名称
+                     * 获取<p>云账号名称</p>
+                     * @return CloudAccountName <p>云账号名称</p>
                      * 
                      */
                     std::string GetCloudAccountName() const;
 
                     /**
-                     * 设置云账号名称
-                     * @param _cloudAccountName 云账号名称
+                     * 设置<p>云账号名称</p>
+                     * @param _cloudAccountName <p>云账号名称</p>
                      * 
                      */
                     void SetCloudAccountName(const std::string& _cloudAccountName);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool CloudAccountNameHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取风险ID
-                     * @return RiskId 风险ID
+                     * 获取<p>风险ID</p>
+                     * @return RiskId <p>风险ID</p>
                      * 
                      */
                     uint64_t GetRiskId() const;
 
                     /**
-                     * 设置风险ID
-                     * @param _riskId 风险ID
+                     * 设置<p>风险ID</p>
+                     * @param _riskId <p>风险ID</p>
                      * 
                      */
                     void SetRiskId(const uint64_t& _riskId);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool RiskIdHasBeenSet() const;
 
                     /**
-                     * 获取风险规则ID
-                     * @return RiskRuleId 风险规则ID
+                     * 获取<p>风险规则ID</p>
+                     * @return RiskRuleId <p>风险规则ID</p>
                      * 
                      */
                     std::string GetRiskRuleId() const;
 
                     /**
-                     * 设置风险规则ID
-                     * @param _riskRuleId 风险规则ID
+                     * 设置<p>风险规则ID</p>
+                     * @param _riskRuleId <p>风险规则ID</p>
                      * 
                      */
                     void SetRiskRuleId(const std::string& _riskRuleId);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool RiskRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取风险验证状态
-                     * @return CheckStatus 风险验证状态
+                     * 获取<p>风险验证状态</p>
+                     * @return CheckStatus <p>风险验证状态</p>
                      * 
                      */
                     std::string GetCheckStatus() const;
 
                     /**
-                     * 设置风险验证状态
-                     * @param _checkStatus 风险验证状态
+                     * 设置<p>风险验证状态</p>
+                     * @param _checkStatus <p>风险验证状态</p>
                      * 
                      */
                     void SetCheckStatus(const std::string& _checkStatus);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool CheckStatusHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return AppID 
+                     * 获取<p>用户AppID</p>
+                     * @return AppID <p>用户AppID</p>
                      * 
                      */
                     uint64_t GetAppID() const;
 
                     /**
-                     * 设置
-                     * @param _appID 
+                     * 设置<p>用户AppID</p>
+                     * @param _appID <p>用户AppID</p>
                      * 
                      */
                     void SetAppID(const uint64_t& _appID);
@@ -343,85 +343,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 首次发现时间
+                     * <p>首次发现时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 风险状态
+                     * <p>风险状态</p>
                      */
                     int64_t m_riskStatus;
                     bool m_riskStatusHasBeenSet;
 
                     /**
-                     * 风险内容
+                     * <p>风险内容</p>
                      */
                     std::string m_riskContent;
                     bool m_riskContentHasBeenSet;
 
                     /**
-                     * 云厂商
+                     * <p>云厂商</p>
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
 
                     /**
-                     * 云厂商名称
+                     * <p>云厂商名称</p>
                      */
                     std::string m_providerName;
                     bool m_providerNameHasBeenSet;
 
                     /**
-                     * 云账号
+                     * <p>云账号</p>
                      */
                     std::string m_cloudAccountId;
                     bool m_cloudAccountIdHasBeenSet;
 
                     /**
-                     * 云账号名称
+                     * <p>云账号名称</p>
                      */
                     std::string m_cloudAccountName;
                     bool m_cloudAccountNameHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 风险ID
+                     * <p>风险ID</p>
                      */
                     uint64_t m_riskId;
                     bool m_riskIdHasBeenSet;
 
                     /**
-                     * 风险规则ID
+                     * <p>风险规则ID</p>
                      */
                     std::string m_riskRuleId;
                     bool m_riskRuleIdHasBeenSet;
 
                     /**
-                     * 风险验证状态
+                     * <p>风险验证状态</p>
                      */
                     std::string m_checkStatus;
                     bool m_checkStatusHasBeenSet;
 
                     /**
-                     * 
+                     * <p>用户AppID</p>
                      */
                     uint64_t m_appID;
                     bool m_appIDHasBeenSet;

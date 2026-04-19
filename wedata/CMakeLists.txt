@@ -240,6 +240,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/CreateResourceGroupResponse.h
   include/tencentcloud/wedata/v20250806/model/TriggerWorkflowRunBrief.h
   include/tencentcloud/wedata/v20250806/model/QualitySubscribeWebHook.h
+  include/tencentcloud/wedata/v20250806/model/ListTriggerTaskRunBrief.h
   include/tencentcloud/wedata/v20250806/model/GetTriggerTaskRequest.h
   include/tencentcloud/wedata/v20250806/model/DeleteSQLScriptRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTasksResponse.h
@@ -302,7 +303,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/CodeStudioFileActionResult.h
   include/tencentcloud/wedata/v20250806/model/CreateResourceFileResponse.h
   include/tencentcloud/wedata/v20250806/model/StopSQLScriptRunRequest.h
-  include/tencentcloud/wedata/v20250806/model/TaskInstanceExecutions.h
+  include/tencentcloud/wedata/v20250806/model/ListTriggerTaskRunResult.h
   include/tencentcloud/wedata/v20250806/model/ListAlarmRulesResult.h
   include/tencentcloud/wedata/v20250806/model/EnableProjectRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTaskInstanceExecutionsResponse.h
@@ -317,6 +318,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/CreateCodePermissionsResponse.h
   include/tencentcloud/wedata/v20250806/model/DisableProjectRequest.h
   include/tencentcloud/wedata/v20250806/model/GetTriggerWorkflowResponse.h
+  include/tencentcloud/wedata/v20250806/model/ListTriggerTaskRunsRequest.h
   include/tencentcloud/wedata/v20250806/model/DependencyStrategyTask.h
   include/tencentcloud/wedata/v20250806/model/Task.h
   include/tencentcloud/wedata/v20250806/model/CreateTaskBaseAttribute.h
@@ -509,6 +511,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/CreateResourceFileRequest.h
   include/tencentcloud/wedata/v20250806/model/WorkflowPermission.h
   include/tencentcloud/wedata/v20250806/model/DeleteTaskFolderResponse.h
+  include/tencentcloud/wedata/v20250806/model/PauseOpsTasksAsyncResponse.h
   include/tencentcloud/wedata/v20250806/model/DeleteWorkflowPermissionsResponse.h
   include/tencentcloud/wedata/v20250806/model/ListLineagePage.h
   include/tencentcloud/wedata/v20250806/model/GetOpsAlarmRuleRequest.h
@@ -523,7 +526,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/ParentDependencyConfigPage.h
   include/tencentcloud/wedata/v20250806/model/ListUpstreamOpsTasksResponse.h
   include/tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowResponse.h
-  include/tencentcloud/wedata/v20250806/model/PauseOpsTasksAsyncResponse.h
+  include/tencentcloud/wedata/v20250806/model/ListTriggerTaskRunsResponse.h
   include/tencentcloud/wedata/v20250806/model/GetSQLFolderResponse.h
   include/tencentcloud/wedata/v20250806/model/LineagePair.h
   include/tencentcloud/wedata/v20250806/model/DeleteOpsAlarmRuleResponse.h
@@ -587,6 +590,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/UpdateSQLScriptRequest.h
   include/tencentcloud/wedata/v20250806/model/ParamInfo.h
   include/tencentcloud/wedata/v20250806/model/CreateQualityRuleVO.h
+  include/tencentcloud/wedata/v20250806/model/TaskInstanceExecutions.h
   include/tencentcloud/wedata/v20250806/model/UpdateTriggerTaskPart.h
   include/tencentcloud/wedata/v20250806/model/DeleteTriggerTaskRequest.h
   include/tencentcloud/wedata/v20250806/model/DeleteDataSourceResponse.h
@@ -1878,6 +1882,7 @@ set(wedata_src
   src/v20250806/model/CreateResourceGroupResponse.cpp
   src/v20250806/model/TriggerWorkflowRunBrief.cpp
   src/v20250806/model/QualitySubscribeWebHook.cpp
+  src/v20250806/model/ListTriggerTaskRunBrief.cpp
   src/v20250806/model/GetTriggerTaskRequest.cpp
   src/v20250806/model/DeleteSQLScriptRequest.cpp
   src/v20250806/model/ListTasksResponse.cpp
@@ -1940,7 +1945,7 @@ set(wedata_src
   src/v20250806/model/CodeStudioFileActionResult.cpp
   src/v20250806/model/CreateResourceFileResponse.cpp
   src/v20250806/model/StopSQLScriptRunRequest.cpp
-  src/v20250806/model/TaskInstanceExecutions.cpp
+  src/v20250806/model/ListTriggerTaskRunResult.cpp
   src/v20250806/model/ListAlarmRulesResult.cpp
   src/v20250806/model/EnableProjectRequest.cpp
   src/v20250806/model/ListTaskInstanceExecutionsResponse.cpp
@@ -1955,6 +1960,7 @@ set(wedata_src
   src/v20250806/model/CreateCodePermissionsResponse.cpp
   src/v20250806/model/DisableProjectRequest.cpp
   src/v20250806/model/GetTriggerWorkflowResponse.cpp
+  src/v20250806/model/ListTriggerTaskRunsRequest.cpp
   src/v20250806/model/DependencyStrategyTask.cpp
   src/v20250806/model/Task.cpp
   src/v20250806/model/CreateTaskBaseAttribute.cpp
@@ -2147,6 +2153,7 @@ set(wedata_src
   src/v20250806/model/CreateResourceFileRequest.cpp
   src/v20250806/model/WorkflowPermission.cpp
   src/v20250806/model/DeleteTaskFolderResponse.cpp
+  src/v20250806/model/PauseOpsTasksAsyncResponse.cpp
   src/v20250806/model/DeleteWorkflowPermissionsResponse.cpp
   src/v20250806/model/ListLineagePage.cpp
   src/v20250806/model/GetOpsAlarmRuleRequest.cpp
@@ -2161,7 +2168,7 @@ set(wedata_src
   src/v20250806/model/ParentDependencyConfigPage.cpp
   src/v20250806/model/ListUpstreamOpsTasksResponse.cpp
   src/v20250806/model/CreateTriggerWorkflowResponse.cpp
-  src/v20250806/model/PauseOpsTasksAsyncResponse.cpp
+  src/v20250806/model/ListTriggerTaskRunsResponse.cpp
   src/v20250806/model/GetSQLFolderResponse.cpp
   src/v20250806/model/LineagePair.cpp
   src/v20250806/model/DeleteOpsAlarmRuleResponse.cpp
@@ -2225,6 +2232,7 @@ set(wedata_src
   src/v20250806/model/UpdateSQLScriptRequest.cpp
   src/v20250806/model/ParamInfo.cpp
   src/v20250806/model/CreateQualityRuleVO.cpp
+  src/v20250806/model/TaskInstanceExecutions.cpp
   src/v20250806/model/UpdateTriggerTaskPart.cpp
   src/v20250806/model/DeleteTriggerTaskRequest.cpp
   src/v20250806/model/DeleteDataSourceResponse.cpp

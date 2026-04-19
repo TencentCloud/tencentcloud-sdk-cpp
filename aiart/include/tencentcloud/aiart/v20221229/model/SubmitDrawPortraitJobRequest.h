@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取写真模型 ID。
-
-                     * @return ModelId 写真模型 ID。
-
+                     * 获取<p>写真模型 ID。</p>
+                     * @return ModelId <p>写真模型 ID。</p>
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置写真模型 ID。
-
-                     * @param _modelId 写真模型 ID。
-
+                     * 设置<p>写真模型 ID。</p>
+                     * @param _modelId <p>写真模型 ID。</p>
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -69,19 +65,15 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
-                     * 获取写真风格模板。
-请在[ AI 写真风格列表](https://cloud.tencent.com/document/product/1668/105740) 中选择期望的风格，传入风格编号。
-                     * @return StyleId 写真风格模板。
-请在[ AI 写真风格列表](https://cloud.tencent.com/document/product/1668/105740) 中选择期望的风格，传入风格编号。
+                     * 获取<p>写真风格模板。<br>请在<a href="https://cloud.tencent.com/document/product/1668/105740"> AI 写真风格列表</a> 中选择期望的风格，传入风格编号。</p>
+                     * @return StyleId <p>写真风格模板。<br>请在<a href="https://cloud.tencent.com/document/product/1668/105740"> AI 写真风格列表</a> 中选择期望的风格，传入风格编号。</p>
                      * 
                      */
                     std::string GetStyleId() const;
 
                     /**
-                     * 设置写真风格模板。
-请在[ AI 写真风格列表](https://cloud.tencent.com/document/product/1668/105740) 中选择期望的风格，传入风格编号。
-                     * @param _styleId 写真风格模板。
-请在[ AI 写真风格列表](https://cloud.tencent.com/document/product/1668/105740) 中选择期望的风格，传入风格编号。
+                     * 设置<p>写真风格模板。<br>请在<a href="https://cloud.tencent.com/document/product/1668/105740"> AI 写真风格列表</a> 中选择期望的风格，传入风格编号。</p>
+                     * @param _styleId <p>写真风格模板。<br>请在<a href="https://cloud.tencent.com/document/product/1668/105740"> AI 写真风格列表</a> 中选择期望的风格，传入风格编号。</p>
                      * 
                      */
                     void SetStyleId(const std::string& _styleId);
@@ -94,15 +86,15 @@ namespace TencentCloud
                     bool StyleIdHasBeenSet() const;
 
                     /**
-                     * 获取本次生成的图片数量，取值范围[1,4]
-                     * @return ImageNum 本次生成的图片数量，取值范围[1,4]
+                     * 获取<p>本次生成的图片数量，取值范围[1,4]</p>
+                     * @return ImageNum <p>本次生成的图片数量，取值范围[1,4]</p>
                      * 
                      */
                     int64_t GetImageNum() const;
 
                     /**
-                     * 设置本次生成的图片数量，取值范围[1,4]
-                     * @param _imageNum 本次生成的图片数量，取值范围[1,4]
+                     * 设置<p>本次生成的图片数量，取值范围[1,4]</p>
+                     * @param _imageNum <p>本次生成的图片数量，取值范围[1,4]</p>
                      * 
                      */
                     void SetImageNum(const int64_t& _imageNum);
@@ -115,31 +107,15 @@ namespace TencentCloud
                     bool ImageNumHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加标识的开关，默认为1。 
-1：添加标识。
- 0：不添加标识。 
-其他数值：默认按1处理。 
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加标识的开关，默认为1。 
-1：添加标识。
- 0：不添加标识。 
-其他数值：默认按1处理。 
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br> 0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br> 0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加标识的开关，默认为1。 
-1：添加标识。
- 0：不添加标识。 
-其他数值：默认按1处理。 
-建议您使用显著标识来提示结果图是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。 
-1：添加标识。
- 0：不添加标识。 
-其他数值：默认按1处理。 
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br> 0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br> 0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -152,19 +128,15 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。 
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。 
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @return LogoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。 
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。 
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @param _logoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -177,39 +149,15 @@ namespace TencentCloud
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取清晰度，支持以下选项：
-sd：基础版，分辨率512:640
-hd：高清畅享版，分辨率1024:1280
-hdpro：高清优享版，分辨率1024:1280（推荐）
-uhd：超清版，分辨率2048:2560
-不填默认为sd。
-
-                     * @return Definition 清晰度，支持以下选项：
-sd：基础版，分辨率512:640
-hd：高清畅享版，分辨率1024:1280
-hdpro：高清优享版，分辨率1024:1280（推荐）
-uhd：超清版，分辨率2048:2560
-不填默认为sd。
-
+                     * 获取<p>清晰度，单位为 px。<br>支持以下选项：<br>sd：基础版，分辨率512:640<br>hd：高清畅享版，分辨率1024:1280<br>hdpro：高清优享版，分辨率1024:1280（推荐）<br>uhd：超清版，分辨率2048:2560<br>不填默认为sd。</p>
+                     * @return Definition <p>清晰度，单位为 px。<br>支持以下选项：<br>sd：基础版，分辨率512:640<br>hd：高清畅享版，分辨率1024:1280<br>hdpro：高清优享版，分辨率1024:1280（推荐）<br>uhd：超清版，分辨率2048:2560<br>不填默认为sd。</p>
                      * 
                      */
                     std::string GetDefinition() const;
 
                     /**
-                     * 设置清晰度，支持以下选项：
-sd：基础版，分辨率512:640
-hd：高清畅享版，分辨率1024:1280
-hdpro：高清优享版，分辨率1024:1280（推荐）
-uhd：超清版，分辨率2048:2560
-不填默认为sd。
-
-                     * @param _definition 清晰度，支持以下选项：
-sd：基础版，分辨率512:640
-hd：高清畅享版，分辨率1024:1280
-hdpro：高清优享版，分辨率1024:1280（推荐）
-uhd：超清版，分辨率2048:2560
-不填默认为sd。
-
+                     * 设置<p>清晰度，单位为 px。<br>支持以下选项：<br>sd：基础版，分辨率512:640<br>hd：高清畅享版，分辨率1024:1280<br>hdpro：高清优享版，分辨率1024:1280（推荐）<br>uhd：超清版，分辨率2048:2560<br>不填默认为sd。</p>
+                     * @param _definition <p>清晰度，单位为 px。<br>支持以下选项：<br>sd：基础版，分辨率512:640<br>hd：高清畅享版，分辨率1024:1280<br>hdpro：高清优享版，分辨率1024:1280（推荐）<br>uhd：超清版，分辨率2048:2560<br>不填默认为sd。</p>
                      * 
                      */
                     void SetDefinition(const std::string& _definition);
@@ -224,50 +172,37 @@ uhd：超清版，分辨率2048:2560
                 private:
 
                     /**
-                     * 写真模型 ID。
-
+                     * <p>写真模型 ID。</p>
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
-                     * 写真风格模板。
-请在[ AI 写真风格列表](https://cloud.tencent.com/document/product/1668/105740) 中选择期望的风格，传入风格编号。
+                     * <p>写真风格模板。<br>请在<a href="https://cloud.tencent.com/document/product/1668/105740"> AI 写真风格列表</a> 中选择期望的风格，传入风格编号。</p>
                      */
                     std::string m_styleId;
                     bool m_styleIdHasBeenSet;
 
                     /**
-                     * 本次生成的图片数量，取值范围[1,4]
+                     * <p>本次生成的图片数量，取值范围[1,4]</p>
                      */
                     int64_t m_imageNum;
                     bool m_imageNumHasBeenSet;
 
                     /**
-                     * 为生成结果图添加标识的开关，默认为1。 
-1：添加标识。
- 0：不添加标识。 
-其他数值：默认按1处理。 
-建议您使用显著标识来提示结果图是 AI 生成的图片。
+                     * <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br> 0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。 
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 清晰度，支持以下选项：
-sd：基础版，分辨率512:640
-hd：高清畅享版，分辨率1024:1280
-hdpro：高清优享版，分辨率1024:1280（推荐）
-uhd：超清版，分辨率2048:2560
-不填默认为sd。
-
+                     * <p>清晰度，单位为 px。<br>支持以下选项：<br>sd：基础版，分辨率512:640<br>hd：高清畅享版，分辨率1024:1280<br>hdpro：高清优享版，分辨率1024:1280（推荐）<br>uhd：超清版，分辨率2048:2560<br>不填默认为sd。</p>
                      */
                     std::string m_definition;
                     bool m_definitionHasBeenSet;

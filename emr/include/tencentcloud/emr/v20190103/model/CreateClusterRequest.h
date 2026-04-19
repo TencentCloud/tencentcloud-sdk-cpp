@@ -618,6 +618,27 @@ namespace TencentCloud
                      */
                     bool PartitionNumberHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务ui地址</p><p>枚举值：</p><ul><li>0： 服务ui地址，只返回1条服务ui地址</li><li>1： 服务ui地址，如果服务含有多个ui地址将全部返回，例如impala的Impalad、StateStore、Catalogd</li></ul><p>默认值：0</p>
+                     * @return WebUiVersion <p>服务ui地址</p><p>枚举值：</p><ul><li>0： 服务ui地址，只返回1条服务ui地址</li><li>1： 服务ui地址，如果服务含有多个ui地址将全部返回，例如impala的Impalad、StateStore、Catalogd</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetWebUiVersion() const;
+
+                    /**
+                     * 设置<p>服务ui地址</p><p>枚举值：</p><ul><li>0： 服务ui地址，只返回1条服务ui地址</li><li>1： 服务ui地址，如果服务含有多个ui地址将全部返回，例如impala的Impalad、StateStore、Catalogd</li></ul><p>默认值：0</p>
+                     * @param _webUiVersion <p>服务ui地址</p><p>枚举值：</p><ul><li>0： 服务ui地址，只返回1条服务ui地址</li><li>1： 服务ui地址，如果服务含有多个ui地址将全部返回，例如impala的Impalad、StateStore、Catalogd</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetWebUiVersion(const int64_t& _webUiVersion);
+
+                    /**
+                     * 判断参数 WebUiVersion 是否已赋值
+                     * @return WebUiVersion 是否已赋值
+                     * 
+                     */
+                    bool WebUiVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -781,6 +802,12 @@ namespace TencentCloud
                      */
                     int64_t m_partitionNumber;
                     bool m_partitionNumberHasBeenSet;
+
+                    /**
+                     * <p>服务ui地址</p><p>枚举值：</p><ul><li>0： 服务ui地址，只返回1条服务ui地址</li><li>1： 服务ui地址，如果服务含有多个ui地址将全部返回，例如impala的Impalad、StateStore、Catalogd</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_webUiVersion;
+                    bool m_webUiVersionHasBeenSet;
 
                 };
             }

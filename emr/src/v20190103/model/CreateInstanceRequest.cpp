@@ -61,7 +61,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_webUiVersionHasBeenSet(false)
 {
 }
 
@@ -433,6 +434,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "PartitionNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partitionNumber, allocator);
+    }
+
+    if (m_webUiVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUiVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_webUiVersion, allocator);
     }
 
 
@@ -1065,6 +1074,22 @@ void CreateInstanceRequest::SetPartitionNumber(const int64_t& _partitionNumber)
 bool CreateInstanceRequest::PartitionNumberHasBeenSet() const
 {
     return m_partitionNumberHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetWebUiVersion() const
+{
+    return m_webUiVersion;
+}
+
+void CreateInstanceRequest::SetWebUiVersion(const int64_t& _webUiVersion)
+{
+    m_webUiVersion = _webUiVersion;
+    m_webUiVersionHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::WebUiVersionHasBeenSet() const
+{
+    return m_webUiVersionHasBeenSet;
 }
 
 

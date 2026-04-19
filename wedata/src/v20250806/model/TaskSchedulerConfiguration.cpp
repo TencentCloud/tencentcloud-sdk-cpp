@@ -53,7 +53,8 @@ TaskSchedulerConfiguration::TaskSchedulerConfiguration() :
     m_maxRetryNumberHasBeenSet(false),
     m_executionTTLMinuteHasBeenSet(false),
     m_waitExecutionTotalTTLMinuteHasBeenSet(false),
-    m_dependencyTriggerPolicyHasBeenSet(false)
+    m_dependencyTriggerPolicyHasBeenSet(false),
+    m_allowDownstreamDependencyHasBeenSet(false)
 {
 }
 
@@ -462,6 +463,16 @@ CoreInternalOutcome TaskSchedulerConfiguration::Deserialize(const rapidjson::Val
         m_dependencyTriggerPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowDownstreamDependency") && !value["AllowDownstreamDependency"].IsNull())
+    {
+        if (!value["AllowDownstreamDependency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskSchedulerConfiguration.AllowDownstreamDependency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowDownstreamDependency = value["AllowDownstreamDependency"].GetInt64();
+        m_allowDownstreamDependencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -780,6 +791,14 @@ void TaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "DependencyTriggerPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowDownstreamDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDownstreamDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowDownstreamDependency, allocator);
     }
 
 }
@@ -1311,5 +1330,21 @@ void TaskSchedulerConfiguration::SetDependencyTriggerPolicy(const string& _depen
 bool TaskSchedulerConfiguration::DependencyTriggerPolicyHasBeenSet() const
 {
     return m_dependencyTriggerPolicyHasBeenSet;
+}
+
+int64_t TaskSchedulerConfiguration::GetAllowDownstreamDependency() const
+{
+    return m_allowDownstreamDependency;
+}
+
+void TaskSchedulerConfiguration::SetAllowDownstreamDependency(const int64_t& _allowDownstreamDependency)
+{
+    m_allowDownstreamDependency = _allowDownstreamDependency;
+    m_allowDownstreamDependencyHasBeenSet = true;
+}
+
+bool TaskSchedulerConfiguration::AllowDownstreamDependencyHasBeenSet() const
+{
+    return m_allowDownstreamDependencyHasBeenSet;
 }
 

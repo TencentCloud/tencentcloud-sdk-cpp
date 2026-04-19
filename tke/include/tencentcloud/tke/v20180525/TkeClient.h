@@ -487,6 +487,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyExternalNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyLogConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyMasterComponentRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyMasterComponentResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
@@ -1273,6 +1275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGlobalMaintenanceWindowAndExclusionsResponse> ModifyGlobalMaintenanceWindowAndExclusionsOutcome;
                 typedef std::future<ModifyGlobalMaintenanceWindowAndExclusionsOutcome> ModifyGlobalMaintenanceWindowAndExclusionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyGlobalMaintenanceWindowAndExclusionsRequest&, ModifyGlobalMaintenanceWindowAndExclusionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalMaintenanceWindowAndExclusionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLogConfigResponse> ModifyLogConfigOutcome;
+                typedef std::future<ModifyLogConfigOutcome> ModifyLogConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyLogConfigRequest&, ModifyLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMasterComponentResponse> ModifyMasterComponentOutcome;
                 typedef std::future<ModifyMasterComponentOutcome> ModifyMasterComponentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyMasterComponentRequest&, ModifyMasterComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMasterComponentAsyncHandler;
@@ -3477,6 +3482,15 @@ namespace TencentCloud
                 ModifyGlobalMaintenanceWindowAndExclusionsOutcome ModifyGlobalMaintenanceWindowAndExclusions(const Model::ModifyGlobalMaintenanceWindowAndExclusionsRequest &request);
                 void ModifyGlobalMaintenanceWindowAndExclusionsAsync(const Model::ModifyGlobalMaintenanceWindowAndExclusionsRequest& request, const ModifyGlobalMaintenanceWindowAndExclusionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGlobalMaintenanceWindowAndExclusionsOutcomeCallable ModifyGlobalMaintenanceWindowAndExclusionsCallable(const Model::ModifyGlobalMaintenanceWindowAndExclusionsRequest& request);
+
+                /**
+                 *修改日志采集配置
+                 * @param req ModifyLogConfigRequest
+                 * @return ModifyLogConfigOutcome
+                 */
+                ModifyLogConfigOutcome ModifyLogConfig(const Model::ModifyLogConfigRequest &request);
+                void ModifyLogConfigAsync(const Model::ModifyLogConfigRequest& request, const ModifyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogConfigOutcomeCallable ModifyLogConfigCallable(const Model::ModifyLogConfigRequest& request);
 
                 /**
                  *修改master组件，支持kube-apiserver、kube-scheduler、kube-controller-manager副本数调整为0和恢复

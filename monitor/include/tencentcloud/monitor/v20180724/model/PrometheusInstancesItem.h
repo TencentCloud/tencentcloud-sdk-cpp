@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/PrometheusTag.h>
 #include <tencentcloud/monitor/v20180724/model/PrometheusInstanceGrantInfo.h>
+#include <tencentcloud/monitor/v20180724/model/PrometheusRuleKV.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceName 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return InstanceName <p>实例名称。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceName 实例名称。
+                     * 设置<p>实例名称。</p>
+                     * @param _instanceName <p>实例名称。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -91,31 +92,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式。取值范围：
-<ul>
-<li>2：包年包月</li>
-<li>3：按量</li>
-</ul>
-                     * @return InstanceChargeType 实例计费模式。取值范围：
-<ul>
-<li>2：包年包月</li>
-<li>3：按量</li>
-</ul>
+                     * 获取<p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>
+                     * @return InstanceChargeType <p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>
                      * 
                      */
                     int64_t GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费模式。取值范围：
-<ul>
-<li>2：包年包月</li>
-<li>3：按量</li>
-</ul>
-                     * @param _instanceChargeType 实例计费模式。取值范围：
-<ul>
-<li>2：包年包月</li>
-<li>3：按量</li>
-</ul>
+                     * 设置<p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>
+                     * @param _instanceChargeType <p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>
                      * 
                      */
                     void SetInstanceChargeType(const int64_t& _instanceChargeType);
@@ -128,15 +113,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域 ID
-                     * @return RegionId 地域 ID
+                     * 获取<p>地域 ID</p>
+                     * @return RegionId <p>地域 ID</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域 ID
-                     * @param _regionId 地域 ID
+                     * 设置<p>地域 ID</p>
+                     * @param _regionId <p>地域 ID</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -149,15 +134,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -170,15 +155,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取<p>VPC ID</p>
+                     * @return VpcId <p>VPC ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置<p>VPC ID</p>
+                     * @param _vpcId <p>VPC ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -191,15 +176,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID
-                     * @return SubnetId 子网 ID
+                     * 获取<p>子网 ID</p>
+                     * @return SubnetId <p>子网 ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID
-                     * @param _subnetId 子网 ID
+                     * 设置<p>子网 ID</p>
+                     * @param _subnetId <p>子网 ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -212,18 +197,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取存储周期
+                     * 获取<p>存储周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataRetentionTime 存储周期
+                     * @return DataRetentionTime <p>存储周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
-                     * 设置存储周期
+                     * 设置<p>存储周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataRetentionTime 存储周期
+                     * @param _dataRetentionTime <p>存储周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -237,55 +222,15 @@ namespace TencentCloud
                     bool DataRetentionTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例业务状态。取值范围：
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重建中</li>
-<li>5：销毁中</li>
-<li>6：已停服</li>
-<li>8：欠费停服中</li>
-<li>9：欠费已停服</li>
-</ul>
-                     * @return InstanceStatus 实例业务状态。取值范围：
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重建中</li>
-<li>5：销毁中</li>
-<li>6：已停服</li>
-<li>8：欠费停服中</li>
-<li>9：欠费已停服</li>
-</ul>
+                     * 获取<p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>
+                     * @return InstanceStatus <p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>
                      * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
-                     * 设置实例业务状态。取值范围：
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重建中</li>
-<li>5：销毁中</li>
-<li>6：已停服</li>
-<li>8：欠费停服中</li>
-<li>9：欠费已停服</li>
-</ul>
-                     * @param _instanceStatus 实例业务状态。取值范围：
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重建中</li>
-<li>5：销毁中</li>
-<li>6：已停服</li>
-<li>8：欠费停服中</li>
-<li>9：欠费已停服</li>
-</ul>
+                     * 设置<p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>
+                     * @param _instanceStatus <p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>
                      * 
                      */
                     void SetInstanceStatus(const int64_t& _instanceStatus);
@@ -298,18 +243,18 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 面板 URL
+                     * 获取<p>Grafana 面板 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GrafanaURL Grafana 面板 URL
+                     * @return GrafanaURL <p>Grafana 面板 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrafanaURL() const;
 
                     /**
-                     * 设置Grafana 面板 URL
+                     * 设置<p>Grafana 面板 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _grafanaURL Grafana 面板 URL
+                     * @param _grafanaURL <p>Grafana 面板 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,15 +268,15 @@ namespace TencentCloud
                     bool GrafanaURLHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdAt <p>创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -344,23 +289,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 Grafana
-<li>0：不开启</li>
-<li>1：开启</li>
-                     * @return EnableGrafana 是否开启 Grafana
-<li>0：不开启</li>
-<li>1：开启</li>
+                     * 获取<p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>
+                     * @return EnableGrafana <p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>
                      * 
                      */
                     int64_t GetEnableGrafana() const;
 
                     /**
-                     * 设置是否开启 Grafana
-<li>0：不开启</li>
-<li>1：开启</li>
-                     * @param _enableGrafana 是否开启 Grafana
-<li>0：不开启</li>
-<li>1：开启</li>
+                     * 设置<p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>
+                     * @param _enableGrafana <p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>
                      * 
                      */
                     void SetEnableGrafana(const int64_t& _enableGrafana);
@@ -373,18 +310,18 @@ namespace TencentCloud
                     bool EnableGrafanaHasBeenSet() const;
 
                     /**
-                     * 获取实例IPV4地址
+                     * 获取<p>实例IPV4地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IPv4Address 实例IPV4地址
+                     * @return IPv4Address <p>实例IPV4地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPv4Address() const;
 
                     /**
-                     * 设置实例IPV4地址
+                     * 设置<p>实例IPV4地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iPv4Address 实例IPV4地址
+                     * @param _iPv4Address <p>实例IPV4地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -398,18 +335,18 @@ namespace TencentCloud
                     bool IPv4AddressHasBeenSet() const;
 
                     /**
-                     * 获取实例关联的标签列表。
+                     * 获取<p>实例关联的标签列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagSpecification 实例关联的标签列表。
+                     * @return TagSpecification <p>实例关联的标签列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PrometheusTag> GetTagSpecification() const;
 
                     /**
-                     * 设置实例关联的标签列表。
+                     * 设置<p>实例关联的标签列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagSpecification 实例关联的标签列表。
+                     * @param _tagSpecification <p>实例关联的标签列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,18 +360,18 @@ namespace TencentCloud
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取购买的实例过期时间
+                     * 获取<p>购买的实例过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 购买的实例过期时间
+                     * @return ExpireTime <p>购买的实例过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置购买的实例过期时间
+                     * 设置<p>购买的实例过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 购买的实例过期时间
+                     * @param _expireTime <p>购买的实例过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -448,46 +385,18 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费状态
-<ul>
-<li>1：正常</li>
-<li>2：过期</li>
-<li>3：销毁</li>
-<li>4：分配中</li>
-<li>5：分配失败</li>
-</ul>
+                     * 获取<p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeStatus 计费状态
-<ul>
-<li>1：正常</li>
-<li>2：过期</li>
-<li>3：销毁</li>
-<li>4：分配中</li>
-<li>5：分配失败</li>
-</ul>
+                     * @return ChargeStatus <p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChargeStatus() const;
 
                     /**
-                     * 设置计费状态
-<ul>
-<li>1：正常</li>
-<li>2：过期</li>
-<li>3：销毁</li>
-<li>4：分配中</li>
-<li>5：分配失败</li>
-</ul>
+                     * 设置<p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _chargeStatus 计费状态
-<ul>
-<li>1：正常</li>
-<li>2：过期</li>
-<li>3：销毁</li>
-<li>4：分配中</li>
-<li>5：分配失败</li>
-</ul>
+                     * @param _chargeStatus <p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -501,18 +410,18 @@ namespace TencentCloud
                     bool ChargeStatusHasBeenSet() const;
 
                     /**
-                     * 获取规格名称
+                     * 获取<p>规格名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpecName 规格名称
+                     * @return SpecName <p>规格名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置规格名称
+                     * 设置<p>规格名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _specName 规格名称
+                     * @param _specName <p>规格名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -526,42 +435,18 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记
-<ul>
-<li>0：不自动续费</li>
-<li>1：开启自动续费</li>
-<li>2：禁止自动续费</li>
-<li>-1：无效</li>
-</ul>
+                     * 获取<p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlag 自动续费标记
-<ul>
-<li>0：不自动续费</li>
-<li>1：开启自动续费</li>
-<li>2：禁止自动续费</li>
-<li>-1：无效</li>
-</ul>
+                     * @return AutoRenewFlag <p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记
-<ul>
-<li>0：不自动续费</li>
-<li>1：开启自动续费</li>
-<li>2：禁止自动续费</li>
-<li>-1：无效</li>
-</ul>
+                     * 设置<p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlag 自动续费标记
-<ul>
-<li>0：不自动续费</li>
-<li>1：开启自动续费</li>
-<li>2：禁止自动续费</li>
-<li>-1：无效</li>
-</ul>
+                     * @param _autoRenewFlag <p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -575,34 +460,18 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否快过期
-<ul>
-<li>0：否</li>
-<li>1：快过期</li>
-</ul>
+                     * 获取<p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsNearExpire 是否快过期
-<ul>
-<li>0：否</li>
-<li>1：快过期</li>
-</ul>
+                     * @return IsNearExpire <p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsNearExpire() const;
 
                     /**
-                     * 设置是否快过期
-<ul>
-<li>0：否</li>
-<li>1：快过期</li>
-</ul>
+                     * 设置<p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isNearExpire 是否快过期
-<ul>
-<li>0：否</li>
-<li>1：快过期</li>
-</ul>
+                     * @param _isNearExpire <p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -616,18 +485,18 @@ namespace TencentCloud
                     bool IsNearExpireHasBeenSet() const;
 
                     /**
-                     * 获取数据写入需要的 Token
+                     * 获取<p>数据写入需要的 Token</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthToken 数据写入需要的 Token
+                     * @return AuthToken <p>数据写入需要的 Token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthToken() const;
 
                     /**
-                     * 设置数据写入需要的 Token
+                     * 设置<p>数据写入需要的 Token</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authToken 数据写入需要的 Token
+                     * @param _authToken <p>数据写入需要的 Token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -641,18 +510,18 @@ namespace TencentCloud
                     bool AuthTokenHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus Remote Write 的地址
+                     * 获取<p>Prometheus Remote Write 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoteWrite Prometheus Remote Write 的地址
+                     * @return RemoteWrite <p>Prometheus Remote Write 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteWrite() const;
 
                     /**
-                     * 设置Prometheus Remote Write 的地址
+                     * 设置<p>Prometheus Remote Write 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remoteWrite Prometheus Remote Write 的地址
+                     * @param _remoteWrite <p>Prometheus Remote Write 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -666,18 +535,18 @@ namespace TencentCloud
                     bool RemoteWriteHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus HTTP Api 根地址
+                     * 获取<p>Prometheus HTTP Api 根地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiRootPath Prometheus HTTP Api 根地址
+                     * @return ApiRootPath <p>Prometheus HTTP Api 根地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiRootPath() const;
 
                     /**
-                     * 设置Prometheus HTTP Api 根地址
+                     * 设置<p>Prometheus HTTP Api 根地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiRootPath Prometheus HTTP Api 根地址
+                     * @param _apiRootPath <p>Prometheus HTTP Api 根地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -691,18 +560,18 @@ namespace TencentCloud
                     bool ApiRootPathHasBeenSet() const;
 
                     /**
-                     * 获取Proxy 的地址
+                     * 获取<p>Proxy 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyAddress Proxy 的地址
+                     * @return ProxyAddress <p>Proxy 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyAddress() const;
 
                     /**
-                     * 设置Proxy 的地址
+                     * 设置<p>Proxy 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _proxyAddress Proxy 的地址
+                     * @param _proxyAddress <p>Proxy 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -716,54 +585,18 @@ namespace TencentCloud
                     bool ProxyAddressHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 运行状态
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重启中</li>
-<li>5：销毁中</li>
-<li>6：已停机</li>
-<li>7：已删除</li>
-</ul>
+                     * 获取<p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GrafanaStatus Grafana 运行状态
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重启中</li>
-<li>5：销毁中</li>
-<li>6：已停机</li>
-<li>7：已删除</li>
-</ul>
+                     * @return GrafanaStatus <p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGrafanaStatus() const;
 
                     /**
-                     * 设置Grafana 运行状态
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重启中</li>
-<li>5：销毁中</li>
-<li>6：已停机</li>
-<li>7：已删除</li>
-</ul>
+                     * 设置<p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _grafanaStatus Grafana 运行状态
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重启中</li>
-<li>5：销毁中</li>
-<li>6：已停机</li>
-<li>7：已删除</li>
-</ul>
+                     * @param _grafanaStatus <p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -777,18 +610,18 @@ namespace TencentCloud
                     bool GrafanaStatusHasBeenSet() const;
 
                     /**
-                     * 获取Grafana IP 白名单列表，使用英文分号分隔
+                     * 获取<p>Grafana IP 白名单列表，使用英文分号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GrafanaIpWhiteList Grafana IP 白名单列表，使用英文分号分隔
+                     * @return GrafanaIpWhiteList <p>Grafana IP 白名单列表，使用英文分号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrafanaIpWhiteList() const;
 
                     /**
-                     * 设置Grafana IP 白名单列表，使用英文分号分隔
+                     * 设置<p>Grafana IP 白名单列表，使用英文分号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _grafanaIpWhiteList Grafana IP 白名单列表，使用英文分号分隔
+                     * @param _grafanaIpWhiteList <p>Grafana IP 白名单列表，使用英文分号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -802,18 +635,18 @@ namespace TencentCloud
                     bool GrafanaIpWhiteListHasBeenSet() const;
 
                     /**
-                     * 获取实例的授权信息
+                     * 获取<p>实例的授权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Grant 实例的授权信息
+                     * @return Grant <p>实例的授权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrometheusInstanceGrantInfo GetGrant() const;
 
                     /**
-                     * 设置实例的授权信息
+                     * 设置<p>实例的授权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _grant 实例的授权信息
+                     * @param _grant <p>实例的授权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -827,18 +660,18 @@ namespace TencentCloud
                     bool GrantHasBeenSet() const;
 
                     /**
-                     * 获取绑定的 Grafana 实例 ID
+                     * 获取<p>绑定的 Grafana 实例 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GrafanaInstanceId 绑定的 Grafana 实例 ID
+                     * @return GrafanaInstanceId <p>绑定的 Grafana 实例 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrafanaInstanceId() const;
 
                     /**
-                     * 设置绑定的 Grafana 实例 ID
+                     * 设置<p>绑定的 Grafana 实例 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _grafanaInstanceId 绑定的 Grafana 实例 ID
+                     * @param _grafanaInstanceId <p>绑定的 Grafana 实例 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -852,18 +685,18 @@ namespace TencentCloud
                     bool GrafanaInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取告警规则限制
+                     * 获取<p>告警规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertRuleLimit 告警规则限制
+                     * @return AlertRuleLimit <p>告警规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAlertRuleLimit() const;
 
                     /**
-                     * 设置告警规则限制
+                     * 设置<p>告警规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alertRuleLimit 告警规则限制
+                     * @param _alertRuleLimit <p>告警规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -877,18 +710,18 @@ namespace TencentCloud
                     bool AlertRuleLimitHasBeenSet() const;
 
                     /**
-                     * 获取预聚合规则限制
+                     * 获取<p>预聚合规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordingRuleLimit 预聚合规则限制
+                     * @return RecordingRuleLimit <p>预聚合规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordingRuleLimit() const;
 
                     /**
-                     * 设置预聚合规则限制
+                     * 设置<p>预聚合规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordingRuleLimit 预聚合规则限制
+                     * @param _recordingRuleLimit <p>预聚合规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -902,18 +735,18 @@ namespace TencentCloud
                     bool RecordingRuleLimitHasBeenSet() const;
 
                     /**
-                     * 获取迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+                     * 获取<p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MigrationType 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+                     * @return MigrationType <p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMigrationType() const;
 
                     /**
-                     * 设置迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+                     * 设置<p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _migrationType 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+                     * @param _migrationType <p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -926,249 +759,239 @@ namespace TencentCloud
                      */
                     bool MigrationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceAttributes <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PrometheusRuleKV> GetInstanceAttributes() const;
+
+                    /**
+                     * 设置<p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceAttributes <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceAttributes(const std::vector<PrometheusRuleKV>& _instanceAttributes);
+
+                    /**
+                     * 判断参数 InstanceAttributes 是否已赋值
+                     * @return InstanceAttributes 是否已赋值
+                     * 
+                     */
+                    bool InstanceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例计费模式。取值范围：
-<ul>
-<li>2：包年包月</li>
-<li>3：按量</li>
-</ul>
+                     * <p>实例计费模式。取值范围：</p><ul><li>2：包年包月</li><li>3：按量</li></ul>
                      */
                     int64_t m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 地域 ID
+                     * <p>地域 ID</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * <p>VPC ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID
+                     * <p>子网 ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 存储周期
+                     * <p>存储周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;
 
                     /**
-                     * 实例业务状态。取值范围：
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重建中</li>
-<li>5：销毁中</li>
-<li>6：已停服</li>
-<li>8：欠费停服中</li>
-<li>9：欠费已停服</li>
-</ul>
+                     * <p>实例业务状态。取值范围：</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重建中</li><li>5：销毁中</li><li>6：已停服</li><li>8：欠费停服中</li><li>9：欠费已停服</li></ul>
                      */
                     int64_t m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * Grafana 面板 URL
+                     * <p>Grafana 面板 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grafanaURL;
                     bool m_grafanaURLHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 是否开启 Grafana
-<li>0：不开启</li>
-<li>1：开启</li>
+                     * <p>是否开启 Grafana</p><li>0：不开启</li><li>1：开启</li>
                      */
                     int64_t m_enableGrafana;
                     bool m_enableGrafanaHasBeenSet;
 
                     /**
-                     * 实例IPV4地址
+                     * <p>实例IPV4地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPv4Address;
                     bool m_iPv4AddressHasBeenSet;
 
                     /**
-                     * 实例关联的标签列表。
+                     * <p>实例关联的标签列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusTag> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
 
                     /**
-                     * 购买的实例过期时间
+                     * <p>购买的实例过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 计费状态
-<ul>
-<li>1：正常</li>
-<li>2：过期</li>
-<li>3：销毁</li>
-<li>4：分配中</li>
-<li>5：分配失败</li>
-</ul>
+                     * <p>计费状态</p><ul><li>1：正常</li><li>2：过期</li><li>3：销毁</li><li>4：分配中</li><li>5：分配失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chargeStatus;
                     bool m_chargeStatusHasBeenSet;
 
                     /**
-                     * 规格名称
+                     * <p>规格名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 自动续费标记
-<ul>
-<li>0：不自动续费</li>
-<li>1：开启自动续费</li>
-<li>2：禁止自动续费</li>
-<li>-1：无效</li>
-</ul>
+                     * <p>自动续费标记</p><ul><li>0：不自动续费</li><li>1：开启自动续费</li><li>2：禁止自动续费</li><li>-1：无效</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 是否快过期
-<ul>
-<li>0：否</li>
-<li>1：快过期</li>
-</ul>
+                     * <p>是否快过期</p><ul><li>0：否</li><li>1：快过期</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isNearExpire;
                     bool m_isNearExpireHasBeenSet;
 
                     /**
-                     * 数据写入需要的 Token
+                     * <p>数据写入需要的 Token</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authToken;
                     bool m_authTokenHasBeenSet;
 
                     /**
-                     * Prometheus Remote Write 的地址
+                     * <p>Prometheus Remote Write 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteWrite;
                     bool m_remoteWriteHasBeenSet;
 
                     /**
-                     * Prometheus HTTP Api 根地址
+                     * <p>Prometheus HTTP Api 根地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiRootPath;
                     bool m_apiRootPathHasBeenSet;
 
                     /**
-                     * Proxy 的地址
+                     * <p>Proxy 的地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyAddress;
                     bool m_proxyAddressHasBeenSet;
 
                     /**
-                     * Grafana 运行状态
-<ul>
-<li>1：正在创建</li>
-<li>2：运行中</li>
-<li>3：异常</li>
-<li>4：重启中</li>
-<li>5：销毁中</li>
-<li>6：已停机</li>
-<li>7：已删除</li>
-</ul>
+                     * <p>Grafana 运行状态</p><ul><li>1：正在创建</li><li>2：运行中</li><li>3：异常</li><li>4：重启中</li><li>5：销毁中</li><li>6：已停机</li><li>7：已删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_grafanaStatus;
                     bool m_grafanaStatusHasBeenSet;
 
                     /**
-                     * Grafana IP 白名单列表，使用英文分号分隔
+                     * <p>Grafana IP 白名单列表，使用英文分号分隔</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grafanaIpWhiteList;
                     bool m_grafanaIpWhiteListHasBeenSet;
 
                     /**
-                     * 实例的授权信息
+                     * <p>实例的授权信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrometheusInstanceGrantInfo m_grant;
                     bool m_grantHasBeenSet;
 
                     /**
-                     * 绑定的 Grafana 实例 ID
+                     * <p>绑定的 Grafana 实例 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grafanaInstanceId;
                     bool m_grafanaInstanceIdHasBeenSet;
 
                     /**
-                     * 告警规则限制
+                     * <p>告警规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alertRuleLimit;
                     bool m_alertRuleLimitHasBeenSet;
 
                     /**
-                     * 预聚合规则限制
+                     * <p>预聚合规则限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordingRuleLimit;
                     bool m_recordingRuleLimitHasBeenSet;
 
                     /**
-                     * 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+                     * <p>迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_migrationType;
                     bool m_migrationTypeHasBeenSet;
+
+                    /**
+                     * <p>标识prom实例特殊属性</p><p>归档存储时长(天):<br>key: LongTermStorageRetentionTime<br>value: 60-730</p><p>实例创建方式：<br>key: CreatedFrom<br>value: 0 - 来自prom控制台<br>1 - 来自tke集群详情页<br>2 - 来自新建集群页</p><p>免费试用到期时间:<br>key: FreeTrialExpireAt<br>value: RFC3339 格式时间字符串</p><p>关联的资源包ID:<br>key: ResourcePackageID<br>value: prompkg-xxxxx</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PrometheusRuleKV> m_instanceAttributes;
+                    bool m_instanceAttributesHasBeenSet;
 
                 };
             }

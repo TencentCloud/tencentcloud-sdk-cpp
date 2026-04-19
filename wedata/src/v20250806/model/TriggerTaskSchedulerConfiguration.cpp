@@ -31,7 +31,8 @@ TriggerTaskSchedulerConfiguration::TriggerTaskSchedulerConfiguration() :
     m_paramTaskOutListHasBeenSet(false),
     m_paramTaskInListHasBeenSet(false),
     m_taskOutputRegistryListHasBeenSet(false),
-    m_dependencyTriggerPolicyHasBeenSet(false)
+    m_dependencyTriggerPolicyHasBeenSet(false),
+    m_allowDownstreamDependencyHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome TriggerTaskSchedulerConfiguration::Deserialize(const rapidjs
         m_dependencyTriggerPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowDownstreamDependency") && !value["AllowDownstreamDependency"].IsNull())
+    {
+        if (!value["AllowDownstreamDependency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskSchedulerConfiguration.AllowDownstreamDependency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowDownstreamDependency = value["AllowDownstreamDependency"].GetInt64();
+        m_allowDownstreamDependencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -311,6 +322,14 @@ void TriggerTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, ra
         string key = "DependencyTriggerPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowDownstreamDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDownstreamDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowDownstreamDependency, allocator);
     }
 
 }
@@ -490,5 +509,21 @@ void TriggerTaskSchedulerConfiguration::SetDependencyTriggerPolicy(const string&
 bool TriggerTaskSchedulerConfiguration::DependencyTriggerPolicyHasBeenSet() const
 {
     return m_dependencyTriggerPolicyHasBeenSet;
+}
+
+int64_t TriggerTaskSchedulerConfiguration::GetAllowDownstreamDependency() const
+{
+    return m_allowDownstreamDependency;
+}
+
+void TriggerTaskSchedulerConfiguration::SetAllowDownstreamDependency(const int64_t& _allowDownstreamDependency)
+{
+    m_allowDownstreamDependency = _allowDownstreamDependency;
+    m_allowDownstreamDependencyHasBeenSet = true;
+}
+
+bool TriggerTaskSchedulerConfiguration::AllowDownstreamDependencyHasBeenSet() const
+{
+    return m_allowDownstreamDependencyHasBeenSet;
 }
 

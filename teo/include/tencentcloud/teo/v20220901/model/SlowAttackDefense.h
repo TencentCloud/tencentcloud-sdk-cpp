@@ -71,6 +71,27 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
+                     * 获取慢速攻击防护的规则 ID，仅作为出参返回。
+                     * @return Id 慢速攻击防护的规则 ID，仅作为出参返回。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置慢速攻击防护的规则 ID，仅作为出参返回。
+                     * @param _id 慢速攻击防护的规则 ID，仅作为出参返回。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取慢速攻击防护的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li>
                      * @return Action 慢速攻击防护的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li>
                      * 
@@ -140,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * 慢速攻击防护的规则 ID，仅作为出参返回。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 慢速攻击防护的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li>

@@ -34,7 +34,8 @@ ComplianceAffectedAsset::ComplianceAffectedAsset() :
     m_instanceIdHasBeenSet(false),
     m_imageRegistryInfoHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_assetUniqueIDHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome ComplianceAffectedAsset::Deserialize(const rapidjson::Value 
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetUniqueID") && !value["AssetUniqueID"].IsNull())
+    {
+        if (!value["AssetUniqueID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAffectedAsset.AssetUniqueID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetUniqueID = string(value["AssetUniqueID"].GetString());
+        m_assetUniqueIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void ComplianceAffectedAsset::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetUniqueIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetUniqueID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetUniqueID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void ComplianceAffectedAsset::SetClusterName(const string& _clusterName)
 bool ComplianceAffectedAsset::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string ComplianceAffectedAsset::GetAssetUniqueID() const
+{
+    return m_assetUniqueID;
+}
+
+void ComplianceAffectedAsset::SetAssetUniqueID(const string& _assetUniqueID)
+{
+    m_assetUniqueID = _assetUniqueID;
+    m_assetUniqueIDHasBeenSet = true;
+}
+
+bool ComplianceAffectedAsset::AssetUniqueIDHasBeenSet() const
+{
+    return m_assetUniqueIDHasBeenSet;
 }
 

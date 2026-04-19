@@ -49,7 +49,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_webUiVersionHasBeenSet(false)
 {
 }
 
@@ -323,6 +324,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "PartitionNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partitionNumber, allocator);
+    }
+
+    if (m_webUiVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUiVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_webUiVersion, allocator);
     }
 
 
@@ -763,6 +772,22 @@ void CreateClusterRequest::SetPartitionNumber(const int64_t& _partitionNumber)
 bool CreateClusterRequest::PartitionNumberHasBeenSet() const
 {
     return m_partitionNumberHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetWebUiVersion() const
+{
+    return m_webUiVersion;
+}
+
+void CreateClusterRequest::SetWebUiVersion(const int64_t& _webUiVersion)
+{
+    m_webUiVersion = _webUiVersion;
+    m_webUiVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::WebUiVersionHasBeenSet() const
+{
+    return m_webUiVersionHasBeenSet;
 }
 
 

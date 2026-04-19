@@ -22,6 +22,7 @@ using namespace std;
 
 BandwidthAbuseDefense::BandwidthAbuseDefense() :
     m_enabledHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_actionHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome BandwidthAbuseDefense::Deserialize(const rapidjson::Value &v
         }
         m_enabled = string(value["Enabled"].GetString());
         m_enabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BandwidthAbuseDefense.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
@@ -73,6 +84,14 @@ void BandwidthAbuseDefense::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_enabled.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_actionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +118,22 @@ void BandwidthAbuseDefense::SetEnabled(const string& _enabled)
 bool BandwidthAbuseDefense::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string BandwidthAbuseDefense::GetId() const
+{
+    return m_id;
+}
+
+void BandwidthAbuseDefense::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool BandwidthAbuseDefense::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 SecurityAction BandwidthAbuseDefense::GetAction() const

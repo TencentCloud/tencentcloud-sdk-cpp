@@ -21,8 +21,9 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 BotIntelligence::BotIntelligence() :
-    m_botRatingsHasBeenSet(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_botRatingsHasBeenSet(false)
 {
 }
 
@@ -30,6 +31,26 @@ CoreInternalOutcome BotIntelligence::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotIntelligence.Enabled` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = string(value["Enabled"].GetString());
+        m_enabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotIntelligence.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
 
     if (value.HasMember("BotRatings") && !value["BotRatings"].IsNull())
     {
@@ -48,22 +69,28 @@ CoreInternalOutcome BotIntelligence::Deserialize(const rapidjson::Value &value)
         m_botRatingsHasBeenSet = true;
     }
 
-    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
-    {
-        if (!value["Enabled"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotIntelligence.Enabled` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_enabled = string(value["Enabled"].GetString());
-        m_enabledHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void BotIntelligence::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enabled.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_botRatingsHasBeenSet)
     {
@@ -74,32 +101,8 @@ void BotIntelligence::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         m_botRatings.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_enabledHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Enabled";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_enabled.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
-
-BotRatings BotIntelligence::GetBotRatings() const
-{
-    return m_botRatings;
-}
-
-void BotIntelligence::SetBotRatings(const BotRatings& _botRatings)
-{
-    m_botRatings = _botRatings;
-    m_botRatingsHasBeenSet = true;
-}
-
-bool BotIntelligence::BotRatingsHasBeenSet() const
-{
-    return m_botRatingsHasBeenSet;
-}
 
 string BotIntelligence::GetEnabled() const
 {
@@ -115,5 +118,37 @@ void BotIntelligence::SetEnabled(const string& _enabled)
 bool BotIntelligence::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string BotIntelligence::GetId() const
+{
+    return m_id;
+}
+
+void BotIntelligence::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool BotIntelligence::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+BotRatings BotIntelligence::GetBotRatings() const
+{
+    return m_botRatings;
+}
+
+void BotIntelligence::SetBotRatings(const BotRatings& _botRatings)
+{
+    m_botRatings = _botRatings;
+    m_botRatingsHasBeenSet = true;
+}
+
+bool BotIntelligence::BotRatingsHasBeenSet() const
+{
+    return m_botRatingsHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
-                     * @return Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
+                     * 获取<p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>
+                     * @return Type <p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
-                     * @param _type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
+                     * 设置<p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>
+                     * @param _type <p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
-                     * @return Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
+                     * 获取<p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>
+                     * @return Url <p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
-                     * @param _url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
+                     * 设置<p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>
+                     * @param _url <p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -90,18 +90,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * 获取<p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * @return BucketInfo <p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BucketInfo GetBucketInfo() const;
 
                     /**
-                     * 设置该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * 设置<p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * @param _bucketInfo <p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,26 +114,80 @@ namespace TencentCloud
                      */
                     bool BucketInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>大模型审核可选输入图片列表</p>
+                     * @return ImageUrlList <p>大模型审核可选输入图片列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImageUrlList() const;
+
+                    /**
+                     * 设置<p>大模型审核可选输入图片列表</p>
+                     * @param _imageUrlList <p>大模型审核可选输入图片列表</p>
+                     * 
+                     */
+                    void SetImageUrlList(const std::vector<std::string>& _imageUrlList);
+
+                    /**
+                     * 判断参数 ImageUrlList 是否已赋值
+                     * @return ImageUrlList 是否已赋值
+                     * 
+                     */
+                    bool ImageUrlListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * @return TextContent <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * 
+                     */
+                    std::string GetTextContent() const;
+
+                    /**
+                     * 设置<p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * @param _textContent <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * 
+                     */
+                    void SetTextContent(const std::string& _textContent);
+
+                    /**
+                     * 判断参数 TextContent 是否已赋值
+                     * @return TextContent 是否已赋值
+                     * 
+                     */
+                    bool TextContentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
+                     * <p>该字段表示文件访问类型，取值为<strong>URL</strong>（资源链接）和<strong>COS</strong> (腾讯云对象存储)。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
+                     * <p>该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
+                     * <p>该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BucketInfo m_bucketInfo;
                     bool m_bucketInfoHasBeenSet;
+
+                    /**
+                     * <p>大模型审核可选输入图片列表</p>
+                     */
+                    std::vector<std::string> m_imageUrlList;
+                    bool m_imageUrlListHasBeenSet;
+
+                    /**
+                     * <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     */
+                    std::string m_textContent;
+                    bool m_textContentHasBeenSet;
 
                 };
             }

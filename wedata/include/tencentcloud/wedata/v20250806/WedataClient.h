@@ -289,6 +289,8 @@
 #include <tencentcloud/wedata/v20250806/model/ListTasksResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListTenantRolesRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListTenantRolesResponse.h>
+#include <tencentcloud/wedata/v20250806/model/ListTriggerTaskRunsRequest.h>
+#include <tencentcloud/wedata/v20250806/model/ListTriggerTaskRunsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListTriggerTaskVersionsRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListTriggerTaskVersionsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListTriggerTasksRequest.h>
@@ -798,6 +800,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTenantRolesResponse> ListTenantRolesOutcome;
                 typedef std::future<ListTenantRolesOutcome> ListTenantRolesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListTenantRolesRequest&, ListTenantRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTenantRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTriggerTaskRunsResponse> ListTriggerTaskRunsOutcome;
+                typedef std::future<ListTriggerTaskRunsOutcome> ListTriggerTaskRunsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ListTriggerTaskRunsRequest&, ListTriggerTaskRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTriggerTaskRunsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTriggerTaskVersionsResponse> ListTriggerTaskVersionsOutcome;
                 typedef std::future<ListTriggerTaskVersionsOutcome> ListTriggerTaskVersionsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListTriggerTaskVersionsRequest&, ListTriggerTaskVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTriggerTaskVersionsAsyncHandler;
@@ -2144,6 +2149,15 @@ namespace TencentCloud
                 ListTenantRolesOutcome ListTenantRoles(const Model::ListTenantRolesRequest &request);
                 void ListTenantRolesAsync(const Model::ListTenantRolesRequest& request, const ListTenantRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTenantRolesOutcomeCallable ListTenantRolesCallable(const Model::ListTenantRolesRequest& request);
+
+                /**
+                 *查询工作流运行
+                 * @param req ListTriggerTaskRunsRequest
+                 * @return ListTriggerTaskRunsOutcome
+                 */
+                ListTriggerTaskRunsOutcome ListTriggerTaskRuns(const Model::ListTriggerTaskRunsRequest &request);
+                void ListTriggerTaskRunsAsync(const Model::ListTriggerTaskRunsRequest& request, const ListTriggerTaskRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTriggerTaskRunsOutcomeCallable ListTriggerTaskRunsCallable(const Model::ListTriggerTaskRunsRequest& request);
 
                 /**
                  *任务保存版本列表

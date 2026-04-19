@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用于线稿生图的文本描述。
-最多支持200个 utf-8 字符。
-建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等
-                     * @return Prompt 用于线稿生图的文本描述。
-最多支持200个 utf-8 字符。
-建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等
+                     * 获取<p>用于线稿生图的文本描述。<br>最多支持200个 utf-8 字符。<br>建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等</p>
+                     * @return Prompt <p>用于线稿生图的文本描述。<br>最多支持200个 utf-8 字符。<br>建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置用于线稿生图的文本描述。
-最多支持200个 utf-8 字符。
-建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等
-                     * @param _prompt 用于线稿生图的文本描述。
-最多支持200个 utf-8 字符。
-建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等
+                     * 设置<p>用于线稿生图的文本描述。<br>最多支持200个 utf-8 字符。<br>建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等</p>
+                     * @param _prompt <p>用于线稿生图的文本描述。<br>最多支持200个 utf-8 字符。<br>建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -73,23 +65,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取线稿图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return InputImage 线稿图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>线稿图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return InputImage <p>线稿图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     std::string GetInputImage() const;
 
                     /**
-                     * 设置线稿图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _inputImage 线稿图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>线稿图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _inputImage <p>线稿图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetInputImage(const std::string& _inputImage);
@@ -102,23 +86,15 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     bool InputImageHasBeenSet() const;
 
                     /**
-                     * 获取线稿图 Url。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return InputUrl 线稿图 Url。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>线稿图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return InputUrl <p>线稿图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     std::string GetInputUrl() const;
 
                     /**
-                     * 设置线稿图 Url。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _inputUrl 线稿图 Url。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>线稿图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _inputUrl <p>线稿图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
@@ -131,31 +107,15 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     bool InputUrlHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -168,19 +128,15 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @return LogoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
+                     * @param _logoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -193,15 +149,15 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
-                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * 获取<p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
+                     * @return RspImgType <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
-                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * 设置<p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
+                     * @param _rspImgType <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -216,48 +172,37 @@ Base64 和 Url 必须提供一个，如果都提供以Url 为准。
                 private:
 
                     /**
-                     * 用于线稿生图的文本描述。
-最多支持200个 utf-8 字符。
-建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等
+                     * <p>用于线稿生图的文本描述。<br>最多支持200个 utf-8 字符。<br>建议格式：线稿中的主体对象+画面场景+配色/材质/元素/风格等</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 线稿图 Base64 数据。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>线稿图 Base64 数据。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     std::string m_inputImage;
                     bool m_inputImageHasBeenSet;
 
                     /**
-                     * 线稿图 Url。
-Base64 和 Url 必须提供一个，如果都提供以Url 为准。
-图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>线稿图 Url。<br>Base64 和 Url 必须提供一个，如果都提供以Url 为准。<br>图片限制：黑白线稿图片，单边分辨率小于5000px且大于128px（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;
 
                     /**
-                     * 为生成结果图添加标识的开关，默认为1。
-1：添加标识。
-0：不添加标识。
-其他数值：默认按1处理。
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * <p>为生成结果图添加标识的开关，默认为1。<br>1：添加标识。<br>0：不添加标识。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。<br>示例值：{&quot;LogoUrl&quot;: &quot;https://cos.ap-guangzhou.myqcloud.com/logo.jpg&quot;, &quot;LogoRect&quot;: {&quot;X&quot;: 10, &quot;Y&quot;: 10, &quot;Width&quot;: 20, &quot;Height&quot;: 20}}</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
+                     * <p>返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。</p>
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

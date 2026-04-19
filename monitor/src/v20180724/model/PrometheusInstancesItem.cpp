@@ -50,7 +50,8 @@ PrometheusInstancesItem::PrometheusInstancesItem() :
     m_grafanaInstanceIdHasBeenSet(false),
     m_alertRuleLimitHasBeenSet(false),
     m_recordingRuleLimitHasBeenSet(false),
-    m_migrationTypeHasBeenSet(false)
+    m_migrationTypeHasBeenSet(false),
+    m_instanceAttributesHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,26 @@ CoreInternalOutcome PrometheusInstancesItem::Deserialize(const rapidjson::Value 
         m_migrationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAttributes") && !value["InstanceAttributes"].IsNull())
+    {
+        if (!value["InstanceAttributes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstancesItem.InstanceAttributes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceAttributes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusRuleKV item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceAttributes.push_back(item);
+        }
+        m_instanceAttributesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -629,6 +650,21 @@ void PrometheusInstancesItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "MigrationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_migrationType, allocator);
+    }
+
+    if (m_instanceAttributesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceAttributes.begin(); itr != m_instanceAttributes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1112,5 +1148,21 @@ void PrometheusInstancesItem::SetMigrationType(const int64_t& _migrationType)
 bool PrometheusInstancesItem::MigrationTypeHasBeenSet() const
 {
     return m_migrationTypeHasBeenSet;
+}
+
+vector<PrometheusRuleKV> PrometheusInstancesItem::GetInstanceAttributes() const
+{
+    return m_instanceAttributes;
+}
+
+void PrometheusInstancesItem::SetInstanceAttributes(const vector<PrometheusRuleKV>& _instanceAttributes)
+{
+    m_instanceAttributes = _instanceAttributes;
+    m_instanceAttributesHasBeenSet = true;
+}
+
+bool PrometheusInstancesItem::InstanceAttributesHasBeenSet() const
+{
+    return m_instanceAttributesHasBeenSet;
 }
 
