@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/VpnGatewayQuota.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例ID。
-                     * @return VpnGatewayId 网关实例ID。
+                     * 获取<p>网关实例ID。</p>
+                     * @return VpnGatewayId <p>网关实例ID。</p>
                      * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置网关实例ID。
-                     * @param _vpnGatewayId 网关实例ID。
+                     * 设置<p>网关实例ID。</p>
+                     * @param _vpnGatewayId <p>网关实例ID。</p>
                      * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID。
-                     * @return VpcId VPC实例ID。
+                     * 获取<p>VPC实例ID。</p>
+                     * @return VpcId <p>VPC实例ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。
-                     * @param _vpcId VPC实例ID。
+                     * 设置<p>VPC实例ID。</p>
+                     * @param _vpcId <p>VPC实例ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取网关实例名称。
-                     * @return VpnGatewayName 网关实例名称。
+                     * 获取<p>网关实例名称。</p>
+                     * @return VpnGatewayName <p>网关实例名称。</p>
                      * 
                      */
                     std::string GetVpnGatewayName() const;
 
                     /**
-                     * 设置网关实例名称。
-                     * @param _vpnGatewayName 网关实例名称。
+                     * 设置<p>网关实例名称。</p>
+                     * @param _vpnGatewayName <p>网关实例名称。</p>
                      * 
                      */
                     void SetVpnGatewayName(const std::string& _vpnGatewayName);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool VpnGatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。
-                     * @return Type 网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。
+                     * 获取<p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>
+                     * @return Type <p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。
-                     * @param _type 网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。
+                     * 设置<p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>
+                     * @param _type <p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。
-                     * @return State 网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。
+                     * 获取<p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>
+                     * @return State <p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。
-                     * @param _state 网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。
+                     * 设置<p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>
+                     * @param _state <p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取网关公网IP。
-                     * @return PublicIpAddress 网关公网IP。
+                     * 获取<p>网关公网IP。</p>
+                     * @return PublicIpAddress <p>网关公网IP。</p>
                      * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
-                     * 设置网关公网IP。
-                     * @param _publicIpAddress 网关公网IP。
+                     * 设置<p>网关公网IP。</p>
+                     * @param _publicIpAddress <p>网关公网IP。</p>
                      * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool PublicIpAddressHasBeenSet() const;
 
                     /**
-                     * 获取网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。
-                     * @return RenewFlag 网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。
+                     * 获取<p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>
+                     * @return RenewFlag <p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。
-                     * @param _renewFlag 网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。
+                     * 设置<p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>
+                     * @param _renewFlag <p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。
-                     * @return InstanceChargeType 网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。
+                     * 获取<p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>
+                     * @return InstanceChargeType <p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。
-                     * @param _instanceChargeType 网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。
+                     * 设置<p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>
+                     * @param _instanceChargeType <p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取网关出带宽，单位：Mbps。
-                     * @return InternetMaxBandwidthOut 网关出带宽，单位：Mbps。
+                     * 获取<p>网关出带宽</p><p>单位：Mbps</p>
+                     * @return InternetMaxBandwidthOut <p>网关出带宽</p><p>单位：Mbps</p>
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置网关出带宽，单位：Mbps。
-                     * @param _internetMaxBandwidthOut 网关出带宽，单位：Mbps。
+                     * 设置<p>网关出带宽</p><p>单位：Mbps</p>
+                     * @param _internetMaxBandwidthOut <p>网关出带宽</p><p>单位：Mbps</p>
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取预付费网关过期时间。
-                     * @return ExpiredTime 预付费网关过期时间。
+                     * 获取<p>预付费网关过期时间。</p>
+                     * @return ExpiredTime <p>预付费网关过期时间。</p>
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置预付费网关过期时间。
-                     * @param _expiredTime 预付费网关过期时间。
+                     * 设置<p>预付费网关过期时间。</p>
+                     * @param _expiredTime <p>预付费网关过期时间。</p>
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网IP是否被封堵。
-                     * @return IsAddressBlocked 公网IP是否被封堵。
+                     * 获取<p>公网IP是否被封堵。</p>
+                     * @return IsAddressBlocked <p>公网IP是否被封堵。</p>
                      * 
                      */
                     bool GetIsAddressBlocked() const;
 
                     /**
-                     * 设置公网IP是否被封堵。
-                     * @param _isAddressBlocked 公网IP是否被封堵。
+                     * 设置<p>公网IP是否被封堵。</p>
+                     * @param _isAddressBlocked <p>公网IP是否被封堵。</p>
                      * 
                      */
                     void SetIsAddressBlocked(const bool& _isAddressBlocked);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool IsAddressBlockedHasBeenSet() const;
 
                     /**
-                     * 获取计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。
-                     * @return NewPurchasePlan 计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。
+                     * 获取<p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>
+                     * @return NewPurchasePlan <p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>
                      * 
                      */
                     std::string GetNewPurchasePlan() const;
 
                     /**
-                     * 设置计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。
-                     * @param _newPurchasePlan 计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。
+                     * 设置<p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>
+                     * @param _newPurchasePlan <p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>
                      * 
                      */
                     void SetNewPurchasePlan(const std::string& _newPurchasePlan);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool NewPurchasePlanHasBeenSet() const;
 
                     /**
-                     * 获取网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。
-                     * @return RestrictState 网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。
+                     * 获取<p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>
+                     * @return RestrictState <p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>
                      * 
                      */
                     std::string GetRestrictState() const;
 
                     /**
-                     * 设置网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。
-                     * @param _restrictState 网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。
+                     * 设置<p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>
+                     * @param _restrictState <p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>
                      * 
                      */
                     void SetRestrictState(const std::string& _restrictState);
@@ -342,15 +343,15 @@ namespace TencentCloud
                     bool RestrictStateHasBeenSet() const;
 
                     /**
-                     * 获取可用区，如：ap-guangzhou-2。
-                     * @return Zone 可用区，如：ap-guangzhou-2。
+                     * 获取<p>可用区，如：ap-guangzhou-2。</p>
+                     * @return Zone <p>可用区，如：ap-guangzhou-2。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区，如：ap-guangzhou-2。
-                     * @param _zone 可用区，如：ap-guangzhou-2。
+                     * 设置<p>可用区，如：ap-guangzhou-2。</p>
+                     * @param _zone <p>可用区，如：ap-guangzhou-2。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -363,15 +364,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取网关带宽配额信息。
-                     * @return VpnGatewayQuotaSet 网关带宽配额信息。
+                     * 获取<p>网关带宽配额信息。</p>
+                     * @return VpnGatewayQuotaSet <p>网关带宽配额信息。</p>
                      * 
                      */
                     std::vector<VpnGatewayQuota> GetVpnGatewayQuotaSet() const;
 
                     /**
-                     * 设置网关带宽配额信息。
-                     * @param _vpnGatewayQuotaSet 网关带宽配额信息。
+                     * 设置<p>网关带宽配额信息。</p>
+                     * @param _vpnGatewayQuotaSet <p>网关带宽配额信息。</p>
                      * 
                      */
                     void SetVpnGatewayQuotaSet(const std::vector<VpnGatewayQuota>& _vpnGatewayQuotaSet);
@@ -384,15 +385,15 @@ namespace TencentCloud
                     bool VpnGatewayQuotaSetHasBeenSet() const;
 
                     /**
-                     * 获取网关实例版本信息。
-                     * @return Version 网关实例版本信息。
+                     * 获取<p>网关实例版本信息。</p>
+                     * @return Version <p>网关实例版本信息。</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置网关实例版本信息。
-                     * @param _version 网关实例版本信息。
+                     * 设置<p>网关实例版本信息。</p>
+                     * @param _version <p>网关实例版本信息。</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -405,15 +406,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取Type值为CCN时，该值表示云联网实例ID。
-                     * @return NetworkInstanceId Type值为CCN时，该值表示云联网实例ID。
+                     * 获取<p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>
+                     * @return NetworkInstanceId <p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>
                      * 
                      */
                     std::string GetNetworkInstanceId() const;
 
                     /**
-                     * 设置Type值为CCN时，该值表示云联网实例ID。
-                     * @param _networkInstanceId Type值为CCN时，该值表示云联网实例ID。
+                     * 设置<p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>
+                     * @param _networkInstanceId <p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>
                      * 
                      */
                     void SetNetworkInstanceId(const std::string& _networkInstanceId);
@@ -426,15 +427,15 @@ namespace TencentCloud
                     bool NetworkInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CDC 实例ID。
-                     * @return CdcId CDC 实例ID。
+                     * 获取<p>CDC 实例ID。</p>
+                     * @return CdcId <p>CDC 实例ID。</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置CDC 实例ID。
-                     * @param _cdcId CDC 实例ID。
+                     * 设置<p>CDC 实例ID。</p>
+                     * @param _cdcId <p>CDC 实例ID。</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -447,15 +448,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取SSL-VPN 客户端连接数。
-                     * @return MaxConnection SSL-VPN 客户端连接数。
+                     * 获取<p>SSL-VPN 客户端连接数。</p>
+                     * @return MaxConnection <p>SSL-VPN 客户端连接数。</p>
                      * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
-                     * 设置SSL-VPN 客户端连接数。
-                     * @param _maxConnection SSL-VPN 客户端连接数。
+                     * 设置<p>SSL-VPN 客户端连接数。</p>
+                     * @param _maxConnection <p>SSL-VPN 客户端连接数。</p>
                      * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
@@ -468,15 +469,15 @@ namespace TencentCloud
                     bool MaxConnectionHasBeenSet() const;
 
                     /**
-                     * 获取Bgp ASN
-                     * @return BgpAsn Bgp ASN
+                     * 获取<p>Bgp ASN</p>
+                     * @return BgpAsn <p>Bgp ASN</p>
                      * 
                      */
                     uint64_t GetBgpAsn() const;
 
                     /**
-                     * 设置Bgp ASN
-                     * @param _bgpAsn Bgp ASN
+                     * 设置<p>Bgp ASN</p>
+                     * @param _bgpAsn <p>Bgp ASN</p>
                      * 
                      */
                     void SetBgpAsn(const uint64_t& _bgpAsn);
@@ -488,133 +489,160 @@ namespace TencentCloud
                      */
                     bool BgpAsnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签列表</p>
+                     * @return TagSet <p>标签列表</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置<p>标签列表</p>
+                     * @param _tagSet <p>标签列表</p>
+                     * 
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     * 
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关实例ID。
+                     * <p>网关实例ID。</p>
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * VPC实例ID。
+                     * <p>VPC实例ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 网关实例名称。
+                     * <p>网关实例名称。</p>
                      */
                     std::string m_vpnGatewayName;
                     bool m_vpnGatewayNameHasBeenSet;
 
                     /**
-                     * 网关实例类型：'IPSEC', 'SSL','CCN','SSL_CCN'。
+                     * <p>网关实例类型</p><p>枚举值：</p><ul><li>IPSEC： IPSEC VPC类型VPN</li><li>SSL： SSL VPC类型VPN</li><li>CCN： IPSEC CCN类型VPN</li><li>SSL_CCN： SSL CCN类型VPN</li></ul><p>默认值：IPSEC</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 网关实例状态， 'PENDING'：生产中，'PENDING_ERROR'：生产失败，'DELETING'：删除中，'DELETING_ERROR'：删除失败，'AVAILABLE'：运行中。
+                     * <p>网关实例状态。</p><p>枚举值：</p><ul><li>PENDING： 生产中</li><li>PENDING_ERROR： 生产失败</li><li>DELETING： 删除中</li><li>DELETING_ERROR： 生产失败</li><li>AVAILABLE： 运行中</li></ul>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 网关公网IP。
+                     * <p>网关公网IP。</p>
                      */
                     std::string m_publicIpAddress;
                     bool m_publicIpAddressHasBeenSet;
 
                     /**
-                     * 网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。
+                     * <p>网关续费类型：&#39;NOTIFY_AND_MANUAL_RENEW&#39;：手动续费，&#39;NOTIFY_AND_AUTO_RENEW&#39;：自动续费，&#39;NOT_NOTIFY_AND_NOT_RENEW&#39;：到期不续费。</p>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。
+                     * <p>网关付费类型：POSTPAID_BY_HOUR：按量计费，PREPAID：包年包月预付费。</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 网关出带宽，单位：Mbps。
+                     * <p>网关出带宽</p><p>单位：Mbps</p>
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 预付费网关过期时间。
+                     * <p>预付费网关过期时间。</p>
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 公网IP是否被封堵。
+                     * <p>公网IP是否被封堵。</p>
                      */
                     bool m_isAddressBlocked;
                     bool m_isAddressBlockedHasBeenSet;
 
                     /**
-                     * 计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。
+                     * <p>计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。</p>
                      */
                     std::string m_newPurchasePlan;
                     bool m_newPurchasePlanHasBeenSet;
 
                     /**
-                     * 网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。
+                     * <p>网关计费状态，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。</p>
                      */
                     std::string m_restrictState;
                     bool m_restrictStateHasBeenSet;
 
                     /**
-                     * 可用区，如：ap-guangzhou-2。
+                     * <p>可用区，如：ap-guangzhou-2。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 网关带宽配额信息。
+                     * <p>网关带宽配额信息。</p>
                      */
                     std::vector<VpnGatewayQuota> m_vpnGatewayQuotaSet;
                     bool m_vpnGatewayQuotaSetHasBeenSet;
 
                     /**
-                     * 网关实例版本信息。
+                     * <p>网关实例版本信息。</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * Type值为CCN时，该值表示云联网实例ID。
+                     * <p>Type值为CCN/SSL_CCN时，该值表示云联网实例ID。</p>
                      */
                     std::string m_networkInstanceId;
                     bool m_networkInstanceIdHasBeenSet;
 
                     /**
-                     * CDC 实例ID。
+                     * <p>CDC 实例ID。</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * SSL-VPN 客户端连接数。
+                     * <p>SSL-VPN 客户端连接数。</p>
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;
 
                     /**
-                     * Bgp ASN
+                     * <p>Bgp ASN</p>
                      */
                     uint64_t m_bgpAsn;
                     bool m_bgpAsnHasBeenSet;
+
+                    /**
+                     * <p>标签列表</p>
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

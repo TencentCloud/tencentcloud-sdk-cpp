@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过期时间
+                     * 获取<p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireMaxAge 过期时间
+                     * @return ExpireMaxAge <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireMaxAge() const;
 
                     /**
-                     * 设置过期时间
+                     * 设置<p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireMaxAge 过期时间
+                     * @param _expireMaxAge <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ExpireMaxAgeHasBeenSet() const;
 
                     /**
-                     * 获取过期大小
+                     * 获取<p>过期大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireMaxSize 过期大小
+                     * @return ExpireMaxSize <p>过期大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireMaxSize() const;
 
                     /**
-                     * 设置过期大小
+                     * 设置<p>过期大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireMaxSize 过期大小
+                     * @param _expireMaxSize <p>过期大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ExpireMaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取滚动周期
+                     * 获取<p>滚动周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RolloverMaxAge 滚动周期
+                     * @return RolloverMaxAge <p>滚动周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRolloverMaxAge() const;
 
                     /**
-                     * 设置滚动周期
+                     * 设置<p>滚动周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rolloverMaxAge 滚动周期
+                     * @param _rolloverMaxAge <p>滚动周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool RolloverMaxAgeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启动态滚动
+                     * 获取<p>是否开启动态滚动</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RolloverDynamic 是否开启动态滚动
+                     * @return RolloverDynamic <p>是否开启动态滚动</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRolloverDynamic() const;
 
                     /**
-                     * 设置是否开启动态滚动
+                     * 设置<p>是否开启动态滚动</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rolloverDynamic 是否开启动态滚动
+                     * @param _rolloverDynamic <p>是否开启动态滚动</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool RolloverDynamicHasBeenSet() const;
 
                     /**
-                     * 获取是否开启动态分片
+                     * 获取<p>是否开启动态分片</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShardNumDynamic 是否开启动态分片
+                     * @return ShardNumDynamic <p>是否开启动态分片</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShardNumDynamic() const;
 
                     /**
-                     * 设置是否开启动态分片
+                     * 设置<p>是否开启动态分片</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shardNumDynamic 是否开启动态分片
+                     * @param _shardNumDynamic <p>是否开启动态分片</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool ShardNumDynamicHasBeenSet() const;
 
                     /**
-                     * 获取时间分区字段
+                     * 获取<p>时间分区字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimestampField 时间分区字段
+                     * @return TimestampField <p>时间分区字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestampField() const;
 
                     /**
-                     * 设置时间分区字段
+                     * 设置<p>时间分区字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestampField 时间分区字段
+                     * @param _timestampField <p>时间分区字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool TimestampFieldHasBeenSet() const;
 
                     /**
-                     * 获取写入模式
+                     * 获取<p>写入模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WriteMode 写入模式
+                     * @return WriteMode <p>写入模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWriteMode() const;
 
                     /**
-                     * 设置写入模式
+                     * 设置<p>写入模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _writeMode 写入模式
+                     * @param _writeMode <p>写入模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,56 +221,137 @@ namespace TencentCloud
                      */
                     bool WriteModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>
+                     * @return FullOffloadedEnable <p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>
+                     * 
+                     */
+                    std::string GetFullOffloadedEnable() const;
+
+                    /**
+                     * 设置<p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>
+                     * @param _fullOffloadedEnable <p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>
+                     * 
+                     */
+                    void SetFullOffloadedEnable(const std::string& _fullOffloadedEnable);
+
+                    /**
+                     * 判断参数 FullOffloadedEnable 是否已赋值
+                     * @return FullOffloadedEnable 是否已赋值
+                     * 
+                     */
+                    bool FullOffloadedEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>完全卸载生命周期</p>
+                     * @return FullOffloadedMaxAge <p>完全卸载生命周期</p>
+                     * 
+                     */
+                    std::string GetFullOffloadedMaxAge() const;
+
+                    /**
+                     * 设置<p>完全卸载生命周期</p>
+                     * @param _fullOffloadedMaxAge <p>完全卸载生命周期</p>
+                     * 
+                     */
+                    void SetFullOffloadedMaxAge(const std::string& _fullOffloadedMaxAge);
+
+                    /**
+                     * 判断参数 FullOffloadedMaxAge 是否已赋值
+                     * @return FullOffloadedMaxAge 是否已赋值
+                     * 
+                     */
+                    bool FullOffloadedMaxAgeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>完全卸载后备索引取回后生命周期</p>
+                     * @return FullOffloadedRetrieveMaxAge <p>完全卸载后备索引取回后生命周期</p>
+                     * 
+                     */
+                    std::string GetFullOffloadedRetrieveMaxAge() const;
+
+                    /**
+                     * 设置<p>完全卸载后备索引取回后生命周期</p>
+                     * @param _fullOffloadedRetrieveMaxAge <p>完全卸载后备索引取回后生命周期</p>
+                     * 
+                     */
+                    void SetFullOffloadedRetrieveMaxAge(const std::string& _fullOffloadedRetrieveMaxAge);
+
+                    /**
+                     * 判断参数 FullOffloadedRetrieveMaxAge 是否已赋值
+                     * @return FullOffloadedRetrieveMaxAge 是否已赋值
+                     * 
+                     */
+                    bool FullOffloadedRetrieveMaxAgeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireMaxAge;
                     bool m_expireMaxAgeHasBeenSet;
 
                     /**
-                     * 过期大小
+                     * <p>过期大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireMaxSize;
                     bool m_expireMaxSizeHasBeenSet;
 
                     /**
-                     * 滚动周期
+                     * <p>滚动周期</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rolloverMaxAge;
                     bool m_rolloverMaxAgeHasBeenSet;
 
                     /**
-                     * 是否开启动态滚动
+                     * <p>是否开启动态滚动</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rolloverDynamic;
                     bool m_rolloverDynamicHasBeenSet;
 
                     /**
-                     * 是否开启动态分片
+                     * <p>是否开启动态分片</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shardNumDynamic;
                     bool m_shardNumDynamicHasBeenSet;
 
                     /**
-                     * 时间分区字段
+                     * <p>时间分区字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestampField;
                     bool m_timestampFieldHasBeenSet;
 
                     /**
-                     * 写入模式
+                     * <p>写入模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_writeMode;
                     bool m_writeModeHasBeenSet;
+
+                    /**
+                     * <p>是否开启完全卸载</p><p>枚举值：</p><ul><li>true： 开启完全卸载</li><li>false： 关闭完全卸载</li></ul>
+                     */
+                    std::string m_fullOffloadedEnable;
+                    bool m_fullOffloadedEnableHasBeenSet;
+
+                    /**
+                     * <p>完全卸载生命周期</p>
+                     */
+                    std::string m_fullOffloadedMaxAge;
+                    bool m_fullOffloadedMaxAgeHasBeenSet;
+
+                    /**
+                     * <p>完全卸载后备索引取回后生命周期</p>
+                     */
+                    std::string m_fullOffloadedRetrieveMaxAge;
+                    bool m_fullOffloadedRetrieveMaxAgeHasBeenSet;
 
                 };
             }

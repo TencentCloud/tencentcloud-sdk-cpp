@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @return FromTopicId 日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 获取<p>日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @return FromTopicId <p>日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetFromTopicId() const;
 
                     /**
-                     * 设置日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
-                     * @param _fromTopicId 日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * 设置<p>日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
+                     * @param _fromTopicId <p>日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetFromTopicId(const std::string& _fromTopicId);
@@ -73,15 +65,15 @@ namespace TencentCloud
                     bool FromTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
-                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
+                     * 获取<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>
+                     * @return Compression <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
-                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
+                     * 设置<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>
+                     * @param _compression <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>
                      * 
                      */
                     void SetCompression(const int64_t& _compression);
@@ -94,15 +86,15 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取kafka协议消费数据格式
-                     * @return ConsumerContent kafka协议消费数据格式
+                     * 获取<p>kafka协议消费数据格式</p>
+                     * @return ConsumerContent <p>kafka协议消费数据格式</p>
                      * 
                      */
                     KafkaConsumerContent GetConsumerContent() const;
 
                     /**
-                     * 设置kafka协议消费数据格式
-                     * @param _consumerContent kafka协议消费数据格式
+                     * 设置<p>kafka协议消费数据格式</p>
+                     * @param _consumerContent <p>kafka协议消费数据格式</p>
                      * 
                      */
                     void SetConsumerContent(const KafkaConsumerContent& _consumerContent);
@@ -114,27 +106,79 @@ namespace TencentCloud
                      */
                     bool ConsumerContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置<p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>
+                     * @return ScopeType <p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>
+                     * 
+                     */
+                    uint64_t GetScopeType() const;
+
+                    /**
+                     * 设置<p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>
+                     * @param _scopeType <p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>
+                     * 
+                     */
+                    void SetScopeType(const uint64_t& _scopeType);
+
+                    /**
+                     * 判断参数 ScopeType 是否已赋值
+                     * @return ScopeType 是否已赋值
+                     * 
+                     */
+                    bool ScopeTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志主题Id。
-- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。
-- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。
+                     * <p>日志主题Id。</p><ul><li>通过 <a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href="https://cloud.tencent.com/document/product/614/56456">创建日志主题</a> 获取日志主题Id。</li></ul>
                      */
                     std::string m_fromTopicId;
                     bool m_fromTopicIdHasBeenSet;
 
                     /**
-                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
+                     * <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0</p>
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * kafka协议消费数据格式
+                     * <p>kafka协议消费数据格式</p>
                      */
                     KafkaConsumerContent m_consumerContent;
                     bool m_consumerContentHasBeenSet;
+
+                    /**
+                     * <p>是否开启投递服务日志。1：关闭，2：开启。 默认值：2</p>
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * <p>消费范围类型，0:最新；1:历史+最新；默认值:0</p>
+                     */
+                    uint64_t m_scopeType;
+                    bool m_scopeTypeHasBeenSet;
 
                 };
             }

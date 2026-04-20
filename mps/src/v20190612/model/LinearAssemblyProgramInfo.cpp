@@ -31,7 +31,8 @@ LinearAssemblyProgramInfo::LinearAssemblyProgramInfo() :
     m_adBreaksHasBeenSet(false),
     m_idHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false)
+    m_sourceLocationNameHasBeenSet(false),
+    m_vodAcquisitionMethodHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome LinearAssemblyProgramInfo::Deserialize(const rapidjson::Valu
         m_sourceLocationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VodAcquisitionMethod") && !value["VodAcquisitionMethod"].IsNull())
+    {
+        if (!value["VodAcquisitionMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LinearAssemblyProgramInfo.VodAcquisitionMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodAcquisitionMethod = string(value["VodAcquisitionMethod"].GetString());
+        m_vodAcquisitionMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +279,14 @@ void LinearAssemblyProgramInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "SourceLocationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceLocationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodAcquisitionMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodAcquisitionMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodAcquisitionMethod.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -447,5 +466,21 @@ void LinearAssemblyProgramInfo::SetSourceLocationName(const string& _sourceLocat
 bool LinearAssemblyProgramInfo::SourceLocationNameHasBeenSet() const
 {
     return m_sourceLocationNameHasBeenSet;
+}
+
+string LinearAssemblyProgramInfo::GetVodAcquisitionMethod() const
+{
+    return m_vodAcquisitionMethod;
+}
+
+void LinearAssemblyProgramInfo::SetVodAcquisitionMethod(const string& _vodAcquisitionMethod)
+{
+    m_vodAcquisitionMethod = _vodAcquisitionMethod;
+    m_vodAcquisitionMethodHasBeenSet = true;
+}
+
+bool LinearAssemblyProgramInfo::VodAcquisitionMethodHasBeenSet() const
+{
+    return m_vodAcquisitionMethodHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改签名响应
-                     * @return ModifySignStatus 修改签名响应
+                     * 获取<p>修改签名响应</p>
+                     * @return ModifySignStatus <p>修改签名响应</p>
                      * 
                      */
                     ModifySignStatus GetModifySignStatus() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改签名响应
+                     * <p>修改签名响应</p>
                      */
                     ModifySignStatus m_modifySignStatus;
                     bool m_modifySignStatusHasBeenSet;

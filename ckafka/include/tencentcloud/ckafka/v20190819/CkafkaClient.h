@@ -97,6 +97,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeAccessPolicyRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeAccessPolicyResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionRequest.h>
@@ -177,6 +179,8 @@
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyAccessPolicyRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyAccessPolicyResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
@@ -334,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeACLResponse> DescribeACLOutcome;
                 typedef std::future<DescribeACLOutcome> DescribeACLOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeACLRequest&, DescribeACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeACLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessPolicyResponse> DescribeAccessPolicyOutcome;
+                typedef std::future<DescribeAccessPolicyOutcome> DescribeAccessPolicyOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeAccessPolicyRequest&, DescribeAccessPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
                 typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
@@ -454,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstanceScalingDownResponse> InstanceScalingDownOutcome;
                 typedef std::future<InstanceScalingDownOutcome> InstanceScalingDownOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::InstanceScalingDownRequest&, InstanceScalingDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstanceScalingDownAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccessPolicyResponse> ModifyAccessPolicyOutcome;
+                typedef std::future<ModifyAccessPolicyOutcome> ModifyAccessPolicyOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyAccessPolicyRequest&, ModifyAccessPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAclRuleResponse> ModifyAclRuleOutcome;
                 typedef std::future<ModifyAclRuleOutcome> ModifyAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyAclRuleRequest&, ModifyAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclRuleAsyncHandler;
@@ -587,7 +597,7 @@ namespace TencentCloud
                 CreateCdcClusterOutcomeCallable CreateCdcClusterCallable(const Model::CreateCdcClusterRequest& request);
 
                 /**
-                 *创建Datahub连接源
+                 *创建连接器连接
                  * @param req CreateConnectResourceRequest
                  * @return CreateConnectResourceOutcome
                  */
@@ -605,7 +615,7 @@ namespace TencentCloud
                 CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
 
                 /**
-                 *创建DIP转储任务
+                 *创建连接器任务
                  * @param req CreateDatahubTaskRequest
                  * @return CreateDatahubTaskOutcome
                  */
@@ -722,7 +732,7 @@ namespace TencentCloud
                 DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
 
                 /**
-                 *删除Datahub连接源
+                 *删除连接器连接
                  * @param req DeleteConnectResourceRequest
                  * @return DeleteConnectResourceOutcome
                  */
@@ -731,7 +741,7 @@ namespace TencentCloud
                 DeleteConnectResourceOutcomeCallable DeleteConnectResourceCallable(const Model::DeleteConnectResourceRequest& request);
 
                 /**
-                 *删除Dip任务
+                 *删除连接器任务
                  * @param req DeleteDatahubTaskRequest
                  * @return DeleteDatahubTaskOutcome
                  */
@@ -839,6 +849,15 @@ namespace TencentCloud
                 DescribeACLOutcomeCallable DescribeACLCallable(const Model::DescribeACLRequest& request);
 
                 /**
+                 *查询实例公网IP白名单列表接口
+                 * @param req DescribeAccessPolicyRequest
+                 * @return DescribeAccessPolicyOutcome
+                 */
+                DescribeAccessPolicyOutcome DescribeAccessPolicy(const Model::DescribeAccessPolicyRequest &request);
+                void DescribeAccessPolicyAsync(const Model::DescribeAccessPolicyRequest& request, const DescribeAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessPolicyOutcomeCallable DescribeAccessPolicyCallable(const Model::DescribeAccessPolicyRequest& request);
+
+                /**
                  *查询ACL规则列表
                  * @param req DescribeAclRuleRequest
                  * @return DescribeAclRuleOutcome
@@ -866,7 +885,7 @@ namespace TencentCloud
                 DescribeCkafkaZoneOutcomeCallable DescribeCkafkaZoneCallable(const Model::DescribeCkafkaZoneRequest& request);
 
                 /**
-                 *查询Datahub连接源
+                 *查询连接器连接详情
                  * @param req DescribeConnectResourceRequest
                  * @return DescribeConnectResourceOutcome
                  */
@@ -875,7 +894,7 @@ namespace TencentCloud
                 DescribeConnectResourceOutcomeCallable DescribeConnectResourceCallable(const Model::DescribeConnectResourceRequest& request);
 
                 /**
-                 *查询Datahub连接源列表
+                 *查询连接器连接列表
                  * @param req DescribeConnectResourcesRequest
                  * @return DescribeConnectResourcesOutcome
                  */
@@ -911,7 +930,7 @@ namespace TencentCloud
                 DescribeDatahubGroupOffsetsOutcomeCallable DescribeDatahubGroupOffsetsCallable(const Model::DescribeDatahubGroupOffsetsRequest& request);
 
                 /**
-                 *查询Datahub任务信息
+                 *查询连接器任务详情
                  * @param req DescribeDatahubTaskRequest
                  * @return DescribeDatahubTaskOutcome
                  */
@@ -920,7 +939,7 @@ namespace TencentCloud
                 DescribeDatahubTaskOutcomeCallable DescribeDatahubTaskCallable(const Model::DescribeDatahubTaskRequest& request);
 
                 /**
-                 *查询Datahub任务列表
+                 *查询连接器任务列表
                  * @param req DescribeDatahubTasksRequest
                  * @return DescribeDatahubTasksOutcome
                  */
@@ -1200,6 +1219,15 @@ namespace TencentCloud
                 InstanceScalingDownOutcomeCallable InstanceScalingDownCallable(const Model::InstanceScalingDownRequest& request);
 
                 /**
+                 *修改实例公网IP白名单列表接口
+                 * @param req ModifyAccessPolicyRequest
+                 * @return ModifyAccessPolicyOutcome
+                 */
+                ModifyAccessPolicyOutcome ModifyAccessPolicy(const Model::ModifyAccessPolicyRequest &request);
+                void ModifyAccessPolicyAsync(const Model::ModifyAccessPolicyRequest& request, const ModifyAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessPolicyOutcomeCallable ModifyAccessPolicyCallable(const Model::ModifyAccessPolicyRequest& request);
+
+                /**
                  *修改ACL策略，目前只支持预设规则的是否应用到新增topic这一项的修改
                  * @param req ModifyAclRuleRequest
                  * @return ModifyAclRuleOutcome
@@ -1209,7 +1237,7 @@ namespace TencentCloud
                 ModifyAclRuleOutcomeCallable ModifyAclRuleCallable(const Model::ModifyAclRuleRequest& request);
 
                 /**
-                 *编辑Datahub连接源
+                 *编辑连接器连接
                  * @param req ModifyConnectResourceRequest
                  * @return ModifyConnectResourceOutcome
                  */
@@ -1218,7 +1246,7 @@ namespace TencentCloud
                 ModifyConnectResourceOutcomeCallable ModifyConnectResourceCallable(const Model::ModifyConnectResourceRequest& request);
 
                 /**
-                 *修改Datahub任务
+                 *修改连接器任务
                  * @param req ModifyDatahubTaskRequest
                  * @return ModifyDatahubTaskOutcome
                  */
@@ -1290,7 +1318,7 @@ namespace TencentCloud
                 ModifyTopicAttributesOutcomeCallable ModifyTopicAttributesCallable(const Model::ModifyTopicAttributesRequest& request);
 
                 /**
-                 *暂停Dip任务
+                 *暂停连接器任务
                  * @param req PauseDatahubTaskRequest
                  * @return PauseDatahubTaskOutcome
                  */
@@ -1308,7 +1336,7 @@ namespace TencentCloud
                 RenewCkafkaInstanceOutcomeCallable RenewCkafkaInstanceCallable(const Model::RenewCkafkaInstanceRequest& request);
 
                 /**
-                 *Datahub任务异常时，重启Datahub任务
+                 *连接器任务异常时，重启连接器任务
                  * @param req RestartDatahubTaskRequest
                  * @return RestartDatahubTaskOutcome
                  */
@@ -1317,7 +1345,7 @@ namespace TencentCloud
                 RestartDatahubTaskOutcomeCallable RestartDatahubTaskCallable(const Model::RestartDatahubTaskRequest& request);
 
                 /**
-                 *恢复Dip任务
+                 *恢复连接器任务
                  * @param req ResumeDatahubTaskRequest
                  * @return ResumeDatahubTaskOutcome
                  */

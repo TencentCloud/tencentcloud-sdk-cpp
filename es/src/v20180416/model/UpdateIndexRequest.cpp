@@ -29,7 +29,10 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_updateMetaJsonHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_rolloverBackingIndexHasBeenSet(false)
+    m_rolloverBackingIndexHasBeenSet(false),
+    m_mountIndexHasBeenSet(false),
+    m_indexUuidHasBeenSet(false),
+    m_backingIndexNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,30 @@ string UpdateIndexRequest::ToJsonString() const
         string key = "RolloverBackingIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rolloverBackingIndex, allocator);
+    }
+
+    if (m_mountIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mountIndex, allocator);
+    }
+
+    if (m_indexUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexUuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backingIndexNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackingIndexName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backingIndexName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +241,54 @@ void UpdateIndexRequest::SetRolloverBackingIndex(const bool& _rolloverBackingInd
 bool UpdateIndexRequest::RolloverBackingIndexHasBeenSet() const
 {
     return m_rolloverBackingIndexHasBeenSet;
+}
+
+bool UpdateIndexRequest::GetMountIndex() const
+{
+    return m_mountIndex;
+}
+
+void UpdateIndexRequest::SetMountIndex(const bool& _mountIndex)
+{
+    m_mountIndex = _mountIndex;
+    m_mountIndexHasBeenSet = true;
+}
+
+bool UpdateIndexRequest::MountIndexHasBeenSet() const
+{
+    return m_mountIndexHasBeenSet;
+}
+
+string UpdateIndexRequest::GetIndexUuid() const
+{
+    return m_indexUuid;
+}
+
+void UpdateIndexRequest::SetIndexUuid(const string& _indexUuid)
+{
+    m_indexUuid = _indexUuid;
+    m_indexUuidHasBeenSet = true;
+}
+
+bool UpdateIndexRequest::IndexUuidHasBeenSet() const
+{
+    return m_indexUuidHasBeenSet;
+}
+
+string UpdateIndexRequest::GetBackingIndexName() const
+{
+    return m_backingIndexName;
+}
+
+void UpdateIndexRequest::SetBackingIndexName(const string& _backingIndexName)
+{
+    m_backingIndexName = _backingIndexName;
+    m_backingIndexNameHasBeenSet = true;
+}
+
+bool UpdateIndexRequest::BackingIndexNameHasBeenSet() const
+{
+    return m_backingIndexNameHasBeenSet;
 }
 
 

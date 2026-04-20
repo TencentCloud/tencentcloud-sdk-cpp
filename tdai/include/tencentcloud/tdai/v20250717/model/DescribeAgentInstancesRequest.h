@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，为空时查询所有，如果填写则会根据InstanceId筛选
-                     * @return InstanceId 实例ID，为空时查询所有，如果填写则会根据InstanceId筛选
+                     * 获取<p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>
+                     * @return InstanceId <p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，为空时查询所有，如果填写则会根据InstanceId筛选
-                     * @param _instanceId 实例ID，为空时查询所有，如果填写则会根据InstanceId筛选
+                     * 设置<p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>
+                     * @param _instanceId <p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名，为空时查询所有，如果填写则会根据InstanceName筛选
-                     * @return InstanceName 实例名，为空时查询所有，如果填写则会根据InstanceName筛选
+                     * 获取<p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>
+                     * @return InstanceName <p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名，为空时查询所有，如果填写则会根据InstanceName筛选
-                     * @param _instanceName 实例名，为空时查询所有，如果填写则会根据InstanceName筛选
+                     * 设置<p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>
+                     * @param _instanceName <p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取智能体ID，为空时查询所有，如果填写则会根据AgentId筛选
-                     * @return AgentId 智能体ID，为空时查询所有，如果填写则会根据AgentId筛选
+                     * 获取<p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>
+                     * @return AgentId <p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置智能体ID，为空时查询所有，如果填写则会根据AgentId筛选
-                     * @param _agentId 智能体ID，为空时查询所有，如果填写则会根据AgentId筛选
+                     * 设置<p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>
+                     * @param _agentId <p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取智能体名称，为空时查询所有，如果填写则会根据AgentName筛选
-                     * @return AgentName 智能体名称，为空时查询所有，如果填写则会根据AgentName筛选
+                     * 获取<p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>
+                     * @return AgentName <p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      * 
                      */
                     std::string GetAgentName() const;
 
                     /**
-                     * 设置智能体名称，为空时查询所有，如果填写则会根据AgentName筛选
-                     * @param _agentName 智能体名称，为空时查询所有，如果填写则会根据AgentName筛选
+                     * 设置<p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>
+                     * @param _agentName <p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      * 
                      */
                     void SetAgentName(const std::string& _agentName);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool AgentNameHasBeenSet() const;
 
                     /**
-                     * 获取智能体类型，为空时查询所有，如果填写则会根据AgentName筛选
-                     * @return AgentInternalName 智能体类型，为空时查询所有，如果填写则会根据AgentName筛选
+                     * 获取<p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>
+                     * @return AgentInternalName <p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      * 
                      */
                     std::string GetAgentInternalName() const;
 
                     /**
-                     * 设置智能体类型，为空时查询所有，如果填写则会根据AgentName筛选
-                     * @param _agentInternalName 智能体类型，为空时查询所有，如果填写则会根据AgentName筛选
+                     * 设置<p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>
+                     * @param _agentInternalName <p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      * 
                      */
                     void SetAgentInternalName(const std::string& _agentInternalName);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool AgentInternalNameHasBeenSet() const;
 
                     /**
-                     * 获取智能体实例状态，为空时查询所有，如果填写则会根据Status筛选
-                     * @return Status 智能体实例状态，为空时查询所有，如果填写则会根据Status筛选
+                     * 获取<p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>
+                     * @return Status <p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置智能体实例状态，为空时查询所有，如果填写则会根据Status筛选
-                     * @param _status 智能体实例状态，为空时查询所有，如果填写则会根据Status筛选
+                     * 设置<p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>
+                     * @param _status <p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤信息
-                     * @return TagFilter 标签过滤信息
+                     * 获取<p>标签过滤信息</p>
+                     * @return TagFilter <p>标签过滤信息</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilter() const;
 
                     /**
-                     * 设置标签过滤信息
-                     * @param _tagFilter 标签过滤信息
+                     * 设置<p>标签过滤信息</p>
+                     * @param _tagFilter <p>标签过滤信息</p>
                      * 
                      */
                     void SetTagFilter(const std::vector<TagFilter>& _tagFilter);
@@ -231,6 +231,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagFilterHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例类型</p>
+                     * @return InstanceType <p>实例类型</p>
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置<p>实例类型</p>
+                     * @param _instanceType <p>实例类型</p>
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
 
                 private:
 
@@ -247,46 +268,52 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 实例ID，为空时查询所有，如果填写则会根据InstanceId筛选
+                     * <p>实例ID，为空时查询所有，如果填写则会根据InstanceId筛选</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名，为空时查询所有，如果填写则会根据InstanceName筛选
+                     * <p>实例名，为空时查询所有，如果填写则会根据InstanceName筛选</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 智能体ID，为空时查询所有，如果填写则会根据AgentId筛选
+                     * <p>智能体ID，为空时查询所有，如果填写则会根据AgentId筛选</p>
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 智能体名称，为空时查询所有，如果填写则会根据AgentName筛选
+                     * <p>智能体名称，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      */
                     std::string m_agentName;
                     bool m_agentNameHasBeenSet;
 
                     /**
-                     * 智能体类型，为空时查询所有，如果填写则会根据AgentName筛选
+                     * <p>智能体类型，为空时查询所有，如果填写则会根据AgentName筛选</p>
                      */
                     std::string m_agentInternalName;
                     bool m_agentInternalNameHasBeenSet;
 
                     /**
-                     * 智能体实例状态，为空时查询所有，如果填写则会根据Status筛选
+                     * <p>智能体实例状态，为空时查询所有，如果填写则会根据Status筛选</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 标签过滤信息
+                     * <p>标签过滤信息</p>
                      */
                     std::vector<TagFilter> m_tagFilter;
                     bool m_tagFilterHasBeenSet;
+
+                    /**
+                     * <p>实例类型</p>
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

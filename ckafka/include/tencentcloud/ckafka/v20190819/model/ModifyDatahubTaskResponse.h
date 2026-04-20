@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return Result 任务id
+                     * 获取<p>任务id</p>
+                     * @return Result <p>任务id</p>
                      * 
                      */
                     DatahubTaskIdRes GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     DatahubTaskIdRes m_result;
                     bool m_resultHasBeenSet;

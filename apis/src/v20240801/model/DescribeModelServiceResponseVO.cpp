@@ -49,7 +49,9 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_relateAgentAppNumHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_promptModerateStatusHasBeenSet(false),
-    m_promptModerateConfigHasBeenSet(false)
+    m_promptModerateConfigHasBeenSet(false),
+    m_sensitiveDataCheckStatusHasBeenSet(false),
+    m_sensitiveDataCheckConfigHasBeenSet(false)
 {
 }
 
@@ -405,6 +407,33 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_promptModerateConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SensitiveDataCheckStatus") && !value["SensitiveDataCheckStatus"].IsNull())
+    {
+        if (!value["SensitiveDataCheckStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.SensitiveDataCheckStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_sensitiveDataCheckStatus = value["SensitiveDataCheckStatus"].GetBool();
+        m_sensitiveDataCheckStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SensitiveDataCheckConfig") && !value["SensitiveDataCheckConfig"].IsNull())
+    {
+        if (!value["SensitiveDataCheckConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.SensitiveDataCheckConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sensitiveDataCheckConfig.Deserialize(value["SensitiveDataCheckConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sensitiveDataCheckConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -675,6 +704,23 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_promptModerateConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sensitiveDataCheckStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveDataCheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sensitiveDataCheckStatus, allocator);
+    }
+
+    if (m_sensitiveDataCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveDataCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sensitiveDataCheckConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1142,5 +1188,37 @@ void DescribeModelServiceResponseVO::SetPromptModerateConfig(const PromptModerat
 bool DescribeModelServiceResponseVO::PromptModerateConfigHasBeenSet() const
 {
     return m_promptModerateConfigHasBeenSet;
+}
+
+bool DescribeModelServiceResponseVO::GetSensitiveDataCheckStatus() const
+{
+    return m_sensitiveDataCheckStatus;
+}
+
+void DescribeModelServiceResponseVO::SetSensitiveDataCheckStatus(const bool& _sensitiveDataCheckStatus)
+{
+    m_sensitiveDataCheckStatus = _sensitiveDataCheckStatus;
+    m_sensitiveDataCheckStatusHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::SensitiveDataCheckStatusHasBeenSet() const
+{
+    return m_sensitiveDataCheckStatusHasBeenSet;
+}
+
+SensitiveDataCheckConfigDTO DescribeModelServiceResponseVO::GetSensitiveDataCheckConfig() const
+{
+    return m_sensitiveDataCheckConfig;
+}
+
+void DescribeModelServiceResponseVO::SetSensitiveDataCheckConfig(const SensitiveDataCheckConfigDTO& _sensitiveDataCheckConfig)
+{
+    m_sensitiveDataCheckConfig = _sensitiveDataCheckConfig;
+    m_sensitiveDataCheckConfigHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::SensitiveDataCheckConfigHasBeenSet() const
+{
+    return m_sensitiveDataCheckConfigHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色id
-                     * @return RoleId 角色id
+                     * 获取<p>角色id</p>
+                     * @return RoleId <p>角色id</p>
                      * 
                      */
                     std::string GetRoleId() const;
 
                     /**
-                     * 设置角色id
-                     * @param _roleId 角色id
+                     * 设置<p>角色id</p>
+                     * @param _roleId <p>角色id</p>
                      * 
                      */
                     void SetRoleId(const std::string& _roleId);
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名称
+                     * 获取<p>角色名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 角色名称
+                     * @return Name <p>角色名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置角色名称
+                     * 设置<p>角色名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 角色名称
+                     * @param _name <p>角色名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,18 +94,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取角色昵称
+                     * 获取<p>角色昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NameCn 角色昵称
+                     * @return NameCn <p>角色昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameCn() const;
 
                     /**
-                     * 设置角色昵称
+                     * 设置<p>角色昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nameCn 角色昵称
+                     * @param _nameCn <p>角色昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool NameCnHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,18 +144,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取角色权限
+                     * 获取<p>角色权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Privileges 角色权限
+                     * @return Privileges <p>角色权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RolePrivilege> GetPrivileges() const;
 
                     /**
-                     * 设置角色权限
+                     * 设置<p>角色权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _privileges 角色权限
+                     * @param _privileges <p>角色权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -169,18 +169,18 @@ namespace TencentCloud
                     bool PrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取方法路径
+                     * 获取<p>方法路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MethodPaths 方法路径
+                     * @return MethodPaths <p>方法路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMethodPaths() const;
 
                     /**
-                     * 设置方法路径
+                     * 设置<p>方法路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _methodPaths 方法路径
+                     * @param _methodPaths <p>方法路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,18 +194,18 @@ namespace TencentCloud
                     bool MethodPathsHasBeenSet() const;
 
                     /**
-                     * 获取角色类型, 分为System,Tenant,Project,Commercial
+                     * 获取<p>角色类型, 分为System,Tenant,Project,Commercial</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleType 角色类型, 分为System,Tenant,Project,Commercial
+                     * @return RoleType <p>角色类型, 分为System,Tenant,Project,Commercial</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleType() const;
 
                     /**
-                     * 设置角色类型, 分为System,Tenant,Project,Commercial
+                     * 设置<p>角色类型, 分为System,Tenant,Project,Commercial</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleType 角色类型, 分为System,Tenant,Project,Commercial
+                     * @param _roleType <p>角色类型, 分为System,Tenant,Project,Commercial</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -219,18 +219,18 @@ namespace TencentCloud
                     bool RoleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否系统默认
+                     * 获取<p>是否系统默认</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SystemInit 是否系统默认
+                     * @return SystemInit <p>是否系统默认</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSystemInit() const;
 
                     /**
-                     * 设置是否系统默认
+                     * 设置<p>是否系统默认</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _systemInit 是否系统默认
+                     * @param _systemInit <p>是否系统默认</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -244,18 +244,18 @@ namespace TencentCloud
                     bool SystemInitHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数
+                     * 获取<p>自定义参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Params 自定义参数
+                     * @return Params <p>自定义参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParams() const;
 
                     /**
-                     * 设置自定义参数
+                     * 设置<p>自定义参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _params 自定义参数
+                     * @param _params <p>自定义参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -268,69 +268,133 @@ namespace TencentCloud
                      */
                     bool ParamsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTimeStr <p>创建时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTimeStr() const;
+
+                    /**
+                     * 设置<p>创建时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTimeStr <p>创建时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTimeStr(const std::string& _createTimeStr);
+
+                    /**
+                     * 判断参数 CreateTimeStr 是否已赋值
+                     * @return CreateTimeStr 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeStrHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator <p>创建人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置<p>创建人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creator <p>创建人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色id
+                     * <p>角色id</p>
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 角色名称
+                     * <p>角色名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 角色昵称
+                     * <p>角色昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameCn;
                     bool m_nameCnHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 角色权限
+                     * <p>角色权限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RolePrivilege> m_privileges;
                     bool m_privilegesHasBeenSet;
 
                     /**
-                     * 方法路径
+                     * <p>方法路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_methodPaths;
                     bool m_methodPathsHasBeenSet;
 
                     /**
-                     * 角色类型, 分为System,Tenant,Project,Commercial
+                     * <p>角色类型, 分为System,Tenant,Project,Commercial</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleType;
                     bool m_roleTypeHasBeenSet;
 
                     /**
-                     * 是否系统默认
+                     * <p>是否系统默认</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_systemInit;
                     bool m_systemInitHasBeenSet;
 
                     /**
-                     * 自定义参数
+                     * <p>自定义参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_params;
                     bool m_paramsHasBeenSet;
+
+                    /**
+                     * <p>创建时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTimeStr;
+                    bool m_createTimeStrHasBeenSet;
+
+                    /**
+                     * <p>创建人</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
 
                 };
             }

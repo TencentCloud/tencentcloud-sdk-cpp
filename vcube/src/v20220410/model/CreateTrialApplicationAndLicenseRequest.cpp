@@ -26,6 +26,7 @@ CreateTrialApplicationAndLicenseRequest::CreateTrialApplicationAndLicenseRequest
     m_appNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_packageNameHasBeenSet(false),
+    m_bundleNameHasBeenSet(false),
     m_featureIdsHasBeenSet(false),
     m_xMagicHasBeenSet(false),
     m_companyPermitHasBeenSet(false),
@@ -68,6 +69,14 @@ string CreateTrialApplicationAndLicenseRequest::ToJsonString() const
         string key = "PackageName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_packageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bundleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_featureIdsHasBeenSet)
@@ -219,6 +228,22 @@ void CreateTrialApplicationAndLicenseRequest::SetPackageName(const string& _pack
 bool CreateTrialApplicationAndLicenseRequest::PackageNameHasBeenSet() const
 {
     return m_packageNameHasBeenSet;
+}
+
+string CreateTrialApplicationAndLicenseRequest::GetBundleName() const
+{
+    return m_bundleName;
+}
+
+void CreateTrialApplicationAndLicenseRequest::SetBundleName(const string& _bundleName)
+{
+    m_bundleName = _bundleName;
+    m_bundleNameHasBeenSet = true;
+}
+
+bool CreateTrialApplicationAndLicenseRequest::BundleNameHasBeenSet() const
+{
+    return m_bundleNameHasBeenSet;
 }
 
 vector<int64_t> CreateTrialApplicationAndLicenseRequest::GetFeatureIds() const

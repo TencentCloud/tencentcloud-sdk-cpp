@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Tdw的bid
-                     * @return Bid Tdw的bid
+                     * 获取<p>Tdw的bid</p>
+                     * @return Bid <p>Tdw的bid</p>
                      * 
                      */
                     std::string GetBid() const;
 
                     /**
-                     * 设置Tdw的bid
-                     * @param _bid Tdw的bid
+                     * 设置<p>Tdw的bid</p>
+                     * @param _bid <p>Tdw的bid</p>
                      * 
                      */
                     void SetBid(const std::string& _bid);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BidHasBeenSet() const;
 
                     /**
-                     * 获取Tdw的tid
-                     * @return Tid Tdw的tid
+                     * 获取<p>Tdw的tid</p>
+                     * @return Tid <p>Tdw的tid</p>
                      * 
                      */
                     std::string GetTid() const;
 
                     /**
-                     * 设置Tdw的tid
-                     * @param _tid Tdw的tid
+                     * 设置<p>Tdw的tid</p>
+                     * @param _tid <p>Tdw的tid</p>
                      * 
                      */
                     void SetTid(const std::string& _tid);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TidHasBeenSet() const;
 
                     /**
-                     * 获取默认true
-                     * @return IsDomestic 默认true
+                     * 获取<p>默认true</p>
+                     * @return IsDomestic <p>默认true</p>
                      * 
                      */
                     bool GetIsDomestic() const;
 
                     /**
-                     * 设置默认true
-                     * @param _isDomestic 默认true
+                     * 设置<p>默认true</p>
+                     * @param _isDomestic <p>默认true</p>
                      * 
                      */
                     void SetIsDomestic(const bool& _isDomestic);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IsDomesticHasBeenSet() const;
 
                     /**
-                     * 获取TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
-                     * @return TdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     * 获取<p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>
+                     * @return TdwHost <p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>
                      * 
                      */
                     std::string GetTdwHost() const;
 
                     /**
-                     * 设置TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
-                     * @param _tdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     * 设置<p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>
+                     * @param _tdwHost <p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>
                      * 
                      */
                     void SetTdwHost(const std::string& _tdwHost);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TdwHostHasBeenSet() const;
 
                     /**
-                     * 获取TDW端口，默认8099
-                     * @return TdwPort TDW端口，默认8099
+                     * 获取<p>TDW端口，默认8099</p>
+                     * @return TdwPort <p>TDW端口，默认8099</p>
                      * 
                      */
                     int64_t GetTdwPort() const;
 
                     /**
-                     * 设置TDW端口，默认8099
-                     * @param _tdwPort TDW端口，默认8099
+                     * 设置<p>TDW端口，默认8099</p>
+                     * @param _tdwPort <p>TDW端口，默认8099</p>
                      * 
                      */
                     void SetTdwPort(const int64_t& _tdwPort);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Tdw的bid
+                     * <p>Tdw的bid</p>
                      */
                     std::string m_bid;
                     bool m_bidHasBeenSet;
 
                     /**
-                     * Tdw的tid
+                     * <p>Tdw的tid</p>
                      */
                     std::string m_tid;
                     bool m_tidHasBeenSet;
 
                     /**
-                     * 默认true
+                     * <p>默认true</p>
                      */
                     bool m_isDomestic;
                     bool m_isDomesticHasBeenSet;
 
                     /**
-                     * TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     * <p>TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com</p>
                      */
                     std::string m_tdwHost;
                     bool m_tdwHostHasBeenSet;
 
                     /**
-                     * TDW端口，默认8099
+                     * <p>TDW端口，默认8099</p>
                      */
                     int64_t m_tdwPort;
                     bool m_tdwPortHasBeenSet;

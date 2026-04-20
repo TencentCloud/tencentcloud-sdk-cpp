@@ -36,7 +36,8 @@ CreateConnectResourceRequest::CreateConnectResourceRequest() :
     m_sQLServerConnectParamHasBeenSet(false),
     m_dorisConnectParamHasBeenSet(false),
     m_kafkaConnectParamHasBeenSet(false),
-    m_mqttConnectParamHasBeenSet(false)
+    m_mqttConnectParamHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,21 @@ string CreateConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mqttConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -400,6 +416,22 @@ void CreateConnectResourceRequest::SetMqttConnectParam(const MqttConnectParam& _
 bool CreateConnectResourceRequest::MqttConnectParamHasBeenSet() const
 {
     return m_mqttConnectParamHasBeenSet;
+}
+
+vector<Tag> CreateConnectResourceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateConnectResourceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateConnectResourceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

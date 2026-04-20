@@ -51,6 +51,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcSubjectRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcSubjectResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoRedrawTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcVideoRedrawTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcVideoTaskRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcVideoTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateRequest.h>
@@ -511,6 +513,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAigcSubjectResponse> CreateAigcSubjectOutcome;
                 typedef std::future<CreateAigcSubjectOutcome> CreateAigcSubjectOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcSubjectRequest&, CreateAigcSubjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcSubjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcVideoRedrawTaskResponse> CreateAigcVideoRedrawTaskOutcome;
+                typedef std::future<CreateAigcVideoRedrawTaskOutcome> CreateAigcVideoRedrawTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcVideoRedrawTaskRequest&, CreateAigcVideoRedrawTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcVideoRedrawTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcVideoTaskResponse> CreateAigcVideoTaskOutcome;
                 typedef std::future<CreateAigcVideoTaskOutcome> CreateAigcVideoTaskOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcVideoTaskRequest&, CreateAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcVideoTaskAsyncHandler;
@@ -1260,6 +1265,15 @@ namespace TencentCloud
                 CreateAigcSubjectOutcome CreateAigcSubject(const Model::CreateAigcSubjectRequest &request);
                 void CreateAigcSubjectAsync(const Model::CreateAigcSubjectRequest& request, const CreateAigcSubjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAigcSubjectOutcomeCallable CreateAigcSubjectCallable(const Model::CreateAigcSubjectRequest& request);
+
+                /**
+                 *该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。
+                 * @param req CreateAigcVideoRedrawTaskRequest
+                 * @return CreateAigcVideoRedrawTaskOutcome
+                 */
+                CreateAigcVideoRedrawTaskOutcome CreateAigcVideoRedrawTask(const Model::CreateAigcVideoRedrawTaskRequest &request);
+                void CreateAigcVideoRedrawTaskAsync(const Model::CreateAigcVideoRedrawTaskRequest& request, const CreateAigcVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcVideoRedrawTaskOutcomeCallable CreateAigcVideoRedrawTaskCallable(const Model::CreateAigcVideoRedrawTaskRequest& request);
 
                 /**
                  *该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。

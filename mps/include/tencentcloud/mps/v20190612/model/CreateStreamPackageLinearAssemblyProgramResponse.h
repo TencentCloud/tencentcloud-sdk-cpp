@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取channel信息。
-                     * @return Info channel信息。
+                     * 获取<p>channel信息。</p>
+                     * @return Info <p>channel信息。</p>
                      * 
                      */
                     LinearAssemblyProgramInfo GetInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * channel信息。
+                     * <p>channel信息。</p>
                      */
                     LinearAssemblyProgramInfo m_info;
                     bool m_infoHasBeenSet;

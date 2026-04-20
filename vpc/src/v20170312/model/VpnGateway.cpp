@@ -41,7 +41,8 @@ VpnGateway::VpnGateway() :
     m_networkInstanceIdHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_maxConnectionHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
+    m_bgpAsnHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,26 @@ CoreInternalOutcome VpnGateway::Deserialize(const rapidjson::Value &value)
         m_bgpAsnHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpnGateway.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +471,21 @@ void VpnGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BgpAsn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bgpAsn, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -789,5 +825,21 @@ void VpnGateway::SetBgpAsn(const uint64_t& _bgpAsn)
 bool VpnGateway::BgpAsnHasBeenSet() const
 {
     return m_bgpAsnHasBeenSet;
+}
+
+vector<Tag> VpnGateway::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void VpnGateway::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool VpnGateway::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

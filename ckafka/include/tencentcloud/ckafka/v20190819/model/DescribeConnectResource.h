@@ -36,6 +36,7 @@
 #include <tencentcloud/ckafka/v20190819/model/DorisConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MqttConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/Tag.h>
 
 
 namespace TencentCloud
@@ -59,15 +60,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接源的Id
-                     * @return ResourceId 连接源的Id
+                     * 获取<p>连接源的Id</p>
+                     * @return ResourceId <p>连接源的Id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置连接源的Id
-                     * @param _resourceId 连接源的Id
+                     * 设置<p>连接源的Id</p>
+                     * @param _resourceId <p>连接源的Id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -80,15 +81,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取连接源名称
-                     * @return ResourceName 连接源名称
+                     * 获取<p>连接源名称</p>
+                     * @return ResourceName <p>连接源名称</p>
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置连接源名称
-                     * @param _resourceName 连接源名称
+                     * 设置<p>连接源名称</p>
+                     * @param _resourceName <p>连接源名称</p>
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -101,15 +102,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取连接源描述
-                     * @return Description 连接源描述
+                     * 获取<p>连接源描述</p>
+                     * @return Description <p>连接源描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置连接源描述
-                     * @param _description 连接源描述
+                     * 设置<p>连接源描述</p>
+                     * @param _description <p>连接源描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -122,15 +123,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取连接源类型
-                     * @return Type 连接源类型
+                     * 获取<p>连接源类型</p>
+                     * @return Type <p>连接源类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置连接源类型
-                     * @param _type 连接源类型
+                     * 设置<p>连接源类型</p>
+                     * @param _type <p>连接源类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -143,15 +144,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取连接源的状态
-                     * @return Status 连接源的状态
+                     * 获取<p>连接源的状态</p>
+                     * @return Status <p>连接源的状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置连接源的状态
-                     * @param _status 连接源的状态
+                     * 设置<p>连接源的状态</p>
+                     * @param _status <p>连接源的状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -164,15 +165,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取连接源的创建时间
-                     * @return CreateTime 连接源的创建时间
+                     * 获取<p>连接源的创建时间</p>
+                     * @return CreateTime <p>连接源的创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置连接源的创建时间
-                     * @param _createTime 连接源的创建时间
+                     * 设置<p>连接源的创建时间</p>
+                     * @param _createTime <p>连接源的创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -185,15 +186,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取连接源的异常信息
-                     * @return ErrorMessage 连接源的异常信息
+                     * 获取<p>连接源的异常信息</p>
+                     * @return ErrorMessage <p>连接源的异常信息</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置连接源的异常信息
-                     * @param _errorMessage 连接源的异常信息
+                     * 设置<p>连接源的异常信息</p>
+                     * @param _errorMessage <p>连接源的异常信息</p>
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -206,15 +207,15 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取该连接源关联的Datahub任务数
-                     * @return DatahubTaskCount 该连接源关联的Datahub任务数
+                     * 获取<p>该连接源关联的Datahub任务数</p>
+                     * @return DatahubTaskCount <p>该连接源关联的Datahub任务数</p>
                      * 
                      */
                     int64_t GetDatahubTaskCount() const;
 
                     /**
-                     * 设置该连接源关联的Datahub任务数
-                     * @param _datahubTaskCount 该连接源关联的Datahub任务数
+                     * 设置<p>该连接源关联的Datahub任务数</p>
+                     * @param _datahubTaskCount <p>该连接源关联的Datahub任务数</p>
                      * 
                      */
                     void SetDatahubTaskCount(const int64_t& _datahubTaskCount);
@@ -227,15 +228,15 @@ namespace TencentCloud
                     bool DatahubTaskCountHasBeenSet() const;
 
                     /**
-                     * 获取连接源的当前所处步骤
-                     * @return CurrentStep 连接源的当前所处步骤
+                     * 获取<p>连接源的当前所处步骤</p>
+                     * @return CurrentStep <p>连接源的当前所处步骤</p>
                      * 
                      */
                     std::string GetCurrentStep() const;
 
                     /**
-                     * 设置连接源的当前所处步骤
-                     * @param _currentStep 连接源的当前所处步骤
+                     * 设置<p>连接源的当前所处步骤</p>
+                     * @param _currentStep <p>连接源的当前所处步骤</p>
                      * 
                      */
                     void SetCurrentStep(const std::string& _currentStep);
@@ -248,15 +249,15 @@ namespace TencentCloud
                     bool CurrentStepHasBeenSet() const;
 
                     /**
-                     * 获取创建进度百分比
-                     * @return TaskProgress 创建进度百分比
+                     * 获取<p>创建进度百分比</p>
+                     * @return TaskProgress <p>创建进度百分比</p>
                      * 
                      */
                     double GetTaskProgress() const;
 
                     /**
-                     * 设置创建进度百分比
-                     * @param _taskProgress 创建进度百分比
+                     * 设置<p>创建进度百分比</p>
+                     * @param _taskProgress <p>创建进度百分比</p>
                      * 
                      */
                     void SetTaskProgress(const double& _taskProgress);
@@ -269,15 +270,15 @@ namespace TencentCloud
                     bool TaskProgressHasBeenSet() const;
 
                     /**
-                     * 获取步骤列表
-                     * @return StepList 步骤列表
+                     * 获取<p>步骤列表</p>
+                     * @return StepList <p>步骤列表</p>
                      * 
                      */
                     std::vector<std::string> GetStepList() const;
 
                     /**
-                     * 设置步骤列表
-                     * @param _stepList 步骤列表
+                     * 设置<p>步骤列表</p>
+                     * @param _stepList <p>步骤列表</p>
                      * 
                      */
                     void SetStepList(const std::vector<std::string>& _stepList);
@@ -290,18 +291,18 @@ namespace TencentCloud
                     bool StepListHasBeenSet() const;
 
                     /**
-                     * 获取Dts配置，Type为DTS时返回
+                     * 获取<p>Dts配置，Type为DTS时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DtsConnectParam Dts配置，Type为DTS时返回
+                     * @return DtsConnectParam <p>Dts配置，Type为DTS时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DtsConnectParam GetDtsConnectParam() const;
 
                     /**
-                     * 设置Dts配置，Type为DTS时返回
+                     * 设置<p>Dts配置，Type为DTS时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dtsConnectParam Dts配置，Type为DTS时返回
+                     * @param _dtsConnectParam <p>Dts配置，Type为DTS时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -315,18 +316,18 @@ namespace TencentCloud
                     bool DtsConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB配置，Type为MONGODB时返回
+                     * 获取<p>MongoDB配置，Type为MONGODB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MongoDBConnectParam MongoDB配置，Type为MONGODB时返回
+                     * @return MongoDBConnectParam <p>MongoDB配置，Type为MONGODB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MongoDBConnectParam GetMongoDBConnectParam() const;
 
                     /**
-                     * 设置MongoDB配置，Type为MONGODB时返回
+                     * 设置<p>MongoDB配置，Type为MONGODB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mongoDBConnectParam MongoDB配置，Type为MONGODB时返回
+                     * @param _mongoDBConnectParam <p>MongoDB配置，Type为MONGODB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -340,18 +341,18 @@ namespace TencentCloud
                     bool MongoDBConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Es配置，Type为ES时返回
+                     * 获取<p>Es配置，Type为ES时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsConnectParam Es配置，Type为ES时返回
+                     * @return EsConnectParam <p>Es配置，Type为ES时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EsConnectParam GetEsConnectParam() const;
 
                     /**
-                     * 设置Es配置，Type为ES时返回
+                     * 设置<p>Es配置，Type为ES时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esConnectParam Es配置，Type为ES时返回
+                     * @param _esConnectParam <p>Es配置，Type为ES时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -365,18 +366,18 @@ namespace TencentCloud
                     bool EsConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取ClickHouse配置，Type为CLICKHOUSE时返回
+                     * 获取<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时返回
+                     * @return ClickHouseConnectParam <p>ClickHouse配置，Type为CLICKHOUSE时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClickHouseConnectParam GetClickHouseConnectParam() const;
 
                     /**
-                     * 设置ClickHouse配置，Type为CLICKHOUSE时返回
+                     * 设置<p>ClickHouse配置，Type为CLICKHOUSE时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时返回
+                     * @param _clickHouseConnectParam <p>ClickHouse配置，Type为CLICKHOUSE时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -390,18 +391,18 @@ namespace TencentCloud
                     bool ClickHouseConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
+                     * 获取<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
+                     * @return MySQLConnectParam <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MySQLConnectParam GetMySQLConnectParam() const;
 
                     /**
-                     * 设置MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
+                     * 设置<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
+                     * @param _mySQLConnectParam <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -415,18 +416,18 @@ namespace TencentCloud
                     bool MySQLConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
+                     * 获取<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
+                     * @return PostgreSQLConnectParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PostgreSQLConnectParam GetPostgreSQLConnectParam() const;
 
                     /**
-                     * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
+                     * 设置<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _postgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
+                     * @param _postgreSQLConnectParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -440,18 +441,18 @@ namespace TencentCloud
                     bool PostgreSQLConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MariaDB配置，Type为MARIADB时返回
+                     * 获取<p>MariaDB配置，Type为MARIADB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MariaDBConnectParam MariaDB配置，Type为MARIADB时返回
+                     * @return MariaDBConnectParam <p>MariaDB配置，Type为MARIADB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MariaDBConnectParam GetMariaDBConnectParam() const;
 
                     /**
-                     * 设置MariaDB配置，Type为MARIADB时返回
+                     * 设置<p>MariaDB配置，Type为MARIADB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mariaDBConnectParam MariaDB配置，Type为MARIADB时返回
+                     * @param _mariaDBConnectParam <p>MariaDB配置，Type为MARIADB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -465,18 +466,18 @@ namespace TencentCloud
                     bool MariaDBConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取SQLServer配置，Type为SQLSERVER时返回
+                     * 获取<p>SQLServer配置，Type为SQLSERVER时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SQLServerConnectParam SQLServer配置，Type为SQLSERVER时返回
+                     * @return SQLServerConnectParam <p>SQLServer配置，Type为SQLSERVER时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SQLServerConnectParam GetSQLServerConnectParam() const;
 
                     /**
-                     * 设置SQLServer配置，Type为SQLSERVER时返回
+                     * 设置<p>SQLServer配置，Type为SQLSERVER时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sQLServerConnectParam SQLServer配置，Type为SQLSERVER时返回
+                     * @param _sQLServerConnectParam <p>SQLServer配置，Type为SQLSERVER时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -490,18 +491,18 @@ namespace TencentCloud
                     bool SQLServerConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Ctsdb配置，Type为CTSDB时返回
+                     * 获取<p>Ctsdb配置，Type为CTSDB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CtsdbConnectParam Ctsdb配置，Type为CTSDB时返回
+                     * @return CtsdbConnectParam <p>Ctsdb配置，Type为CTSDB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CtsdbConnectParam GetCtsdbConnectParam() const;
 
                     /**
-                     * 设置Ctsdb配置，Type为CTSDB时返回
+                     * 设置<p>Ctsdb配置，Type为CTSDB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ctsdbConnectParam Ctsdb配置，Type为CTSDB时返回
+                     * @param _ctsdbConnectParam <p>Ctsdb配置，Type为CTSDB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -515,18 +516,18 @@ namespace TencentCloud
                     bool CtsdbConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Doris 配置，Type 为 DORIS 时返回
+                     * 获取<p>Doris 配置，Type 为 DORIS 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DorisConnectParam Doris 配置，Type 为 DORIS 时返回
+                     * @return DorisConnectParam <p>Doris 配置，Type 为 DORIS 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DorisConnectParam GetDorisConnectParam() const;
 
                     /**
-                     * 设置Doris 配置，Type 为 DORIS 时返回
+                     * 设置<p>Doris 配置，Type 为 DORIS 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dorisConnectParam Doris 配置，Type 为 DORIS 时返回
+                     * @param _dorisConnectParam <p>Doris 配置，Type 为 DORIS 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -540,18 +541,18 @@ namespace TencentCloud
                     bool DorisConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Kafka配置，Type 为 KAFKA 时返回
+                     * 获取<p>Kafka配置，Type 为 KAFKA 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KafkaConnectParam Kafka配置，Type 为 KAFKA 时返回
+                     * @return KafkaConnectParam <p>Kafka配置，Type 为 KAFKA 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KafkaConnectParam GetKafkaConnectParam() const;
 
                     /**
-                     * 设置Kafka配置，Type 为 KAFKA 时返回
+                     * 设置<p>Kafka配置，Type 为 KAFKA 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kafkaConnectParam Kafka配置，Type 为 KAFKA 时返回
+                     * @param _kafkaConnectParam <p>Kafka配置，Type 为 KAFKA 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -565,18 +566,18 @@ namespace TencentCloud
                     bool KafkaConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MQTT配置，Type 为 MQTT 时返回
+                     * 获取<p>MQTT配置，Type 为 MQTT 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MqttConnectParam MQTT配置，Type 为 MQTT 时返回
+                     * @return MqttConnectParam <p>MQTT配置，Type 为 MQTT 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MqttConnectParam GetMqttConnectParam() const;
 
                     /**
-                     * 设置MQTT配置，Type 为 MQTT 时返回
+                     * 设置<p>MQTT配置，Type 为 MQTT 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mqttConnectParam MQTT配置，Type 为 MQTT 时返回
+                     * @param _mqttConnectParam <p>MQTT配置，Type 为 MQTT 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -589,157 +590,184 @@ namespace TencentCloud
                      */
                     bool MqttConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 连接源的Id
+                     * <p>连接源的Id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 连接源名称
+                     * <p>连接源名称</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 连接源描述
+                     * <p>连接源描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 连接源类型
+                     * <p>连接源类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 连接源的状态
+                     * <p>连接源的状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 连接源的创建时间
+                     * <p>连接源的创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 连接源的异常信息
+                     * <p>连接源的异常信息</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 该连接源关联的Datahub任务数
+                     * <p>该连接源关联的Datahub任务数</p>
                      */
                     int64_t m_datahubTaskCount;
                     bool m_datahubTaskCountHasBeenSet;
 
                     /**
-                     * 连接源的当前所处步骤
+                     * <p>连接源的当前所处步骤</p>
                      */
                     std::string m_currentStep;
                     bool m_currentStepHasBeenSet;
 
                     /**
-                     * 创建进度百分比
+                     * <p>创建进度百分比</p>
                      */
                     double m_taskProgress;
                     bool m_taskProgressHasBeenSet;
 
                     /**
-                     * 步骤列表
+                     * <p>步骤列表</p>
                      */
                     std::vector<std::string> m_stepList;
                     bool m_stepListHasBeenSet;
 
                     /**
-                     * Dts配置，Type为DTS时返回
+                     * <p>Dts配置，Type为DTS时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DtsConnectParam m_dtsConnectParam;
                     bool m_dtsConnectParamHasBeenSet;
 
                     /**
-                     * MongoDB配置，Type为MONGODB时返回
+                     * <p>MongoDB配置，Type为MONGODB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MongoDBConnectParam m_mongoDBConnectParam;
                     bool m_mongoDBConnectParamHasBeenSet;
 
                     /**
-                     * Es配置，Type为ES时返回
+                     * <p>Es配置，Type为ES时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EsConnectParam m_esConnectParam;
                     bool m_esConnectParamHasBeenSet;
 
                     /**
-                     * ClickHouse配置，Type为CLICKHOUSE时返回
+                     * <p>ClickHouse配置，Type为CLICKHOUSE时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClickHouseConnectParam m_clickHouseConnectParam;
                     bool m_clickHouseConnectParamHasBeenSet;
 
                     /**
-                     * MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
+                     * <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MySQLConnectParam m_mySQLConnectParam;
                     bool m_mySQLConnectParamHasBeenSet;
 
                     /**
-                     * PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
+                     * <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostgreSQLConnectParam m_postgreSQLConnectParam;
                     bool m_postgreSQLConnectParamHasBeenSet;
 
                     /**
-                     * MariaDB配置，Type为MARIADB时返回
+                     * <p>MariaDB配置，Type为MARIADB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MariaDBConnectParam m_mariaDBConnectParam;
                     bool m_mariaDBConnectParamHasBeenSet;
 
                     /**
-                     * SQLServer配置，Type为SQLSERVER时返回
+                     * <p>SQLServer配置，Type为SQLSERVER时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SQLServerConnectParam m_sQLServerConnectParam;
                     bool m_sQLServerConnectParamHasBeenSet;
 
                     /**
-                     * Ctsdb配置，Type为CTSDB时返回
+                     * <p>Ctsdb配置，Type为CTSDB时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CtsdbConnectParam m_ctsdbConnectParam;
                     bool m_ctsdbConnectParamHasBeenSet;
 
                     /**
-                     * Doris 配置，Type 为 DORIS 时返回
+                     * <p>Doris 配置，Type 为 DORIS 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DorisConnectParam m_dorisConnectParam;
                     bool m_dorisConnectParamHasBeenSet;
 
                     /**
-                     * Kafka配置，Type 为 KAFKA 时返回
+                     * <p>Kafka配置，Type 为 KAFKA 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KafkaConnectParam m_kafkaConnectParam;
                     bool m_kafkaConnectParamHasBeenSet;
 
                     /**
-                     * MQTT配置，Type 为 MQTT 时返回
+                     * <p>MQTT配置，Type 为 MQTT 时返回</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MqttConnectParam m_mqttConnectParam;
                     bool m_mqttConnectParamHasBeenSet;
+
+                    /**
+                     * <p>标签列表</p>
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

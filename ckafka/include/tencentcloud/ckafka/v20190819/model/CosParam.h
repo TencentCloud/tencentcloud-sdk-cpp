@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos 存储桶名称
-                     * @return BucketName cos 存储桶名称
+                     * 获取<p>cos 存储桶名称</p>
+                     * @return BucketName <p>cos 存储桶名称</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置cos 存储桶名称
-                     * @param _bucketName cos 存储桶名称
+                     * 设置<p>cos 存储桶名称</p>
+                     * @param _bucketName <p>cos 存储桶名称</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取地域代码
-                     * @return Region 地域代码
+                     * 获取<p>地域代码</p>
+                     * @return Region <p>地域代码</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域代码
-                     * @param _region 地域代码
+                     * 设置<p>地域代码</p>
+                     * @param _region <p>地域代码</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取对象名称
-                     * @return ObjectKey 对象名称
+                     * 获取<p>对象名称</p>
+                     * @return ObjectKey <p>对象名称</p>
                      * 
                      */
                     std::string GetObjectKey() const;
 
                     /**
-                     * 设置对象名称
-                     * @param _objectKey 对象名称
+                     * 设置<p>对象名称</p>
+                     * @param _objectKey <p>对象名称</p>
                      * 
                      */
                     void SetObjectKey(const std::string& _objectKey);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ObjectKeyHasBeenSet() const;
 
                     /**
-                     * 获取汇聚消息量的大小（单位：MB)
-                     * @return AggregateBatchSize 汇聚消息量的大小（单位：MB)
+                     * 获取<p>汇聚消息量的大小（单位：MB)</p>
+                     * @return AggregateBatchSize <p>汇聚消息量的大小（单位：MB)</p>
                      * 
                      */
                     uint64_t GetAggregateBatchSize() const;
 
                     /**
-                     * 设置汇聚消息量的大小（单位：MB)
-                     * @param _aggregateBatchSize 汇聚消息量的大小（单位：MB)
+                     * 设置<p>汇聚消息量的大小（单位：MB)</p>
+                     * @param _aggregateBatchSize <p>汇聚消息量的大小（单位：MB)</p>
                      * 
                      */
                     void SetAggregateBatchSize(const uint64_t& _aggregateBatchSize);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AggregateBatchSizeHasBeenSet() const;
 
                     /**
-                     * 获取汇聚的时间间隔（单位：小时）
-                     * @return AggregateInterval 汇聚的时间间隔（单位：小时）
+                     * 获取<p>汇聚的时间间隔（单位：小时）</p>
+                     * @return AggregateInterval <p>汇聚的时间间隔（单位：小时）</p>
                      * 
                      */
                     uint64_t GetAggregateInterval() const;
 
                     /**
-                     * 设置汇聚的时间间隔（单位：小时）
-                     * @param _aggregateInterval 汇聚的时间间隔（单位：小时）
+                     * 设置<p>汇聚的时间间隔（单位：小时）</p>
+                     * @param _aggregateInterval <p>汇聚的时间间隔（单位：小时）</p>
                      * 
                      */
                     void SetAggregateInterval(const uint64_t& _aggregateInterval);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool AggregateIntervalHasBeenSet() const;
 
                     /**
-                     * 获取消息汇聚后的文件格式（支持csv, json）
-                     * @return FormatOutputType 消息汇聚后的文件格式（支持csv, json）
+                     * 获取<p>消息汇聚后的文件格式（支持csv, json）</p>
+                     * @return FormatOutputType <p>消息汇聚后的文件格式（支持csv, json）</p>
                      * 
                      */
                     std::string GetFormatOutputType() const;
 
                     /**
-                     * 设置消息汇聚后的文件格式（支持csv, json）
-                     * @param _formatOutputType 消息汇聚后的文件格式（支持csv, json）
+                     * 设置<p>消息汇聚后的文件格式（支持csv, json）</p>
+                     * @param _formatOutputType <p>消息汇聚后的文件格式（支持csv, json）</p>
                      * 
                      */
                     void SetFormatOutputType(const std::string& _formatOutputType);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool FormatOutputTypeHasBeenSet() const;
 
                     /**
-                     * 获取转储的对象目录前缀
-                     * @return ObjectKeyPrefix 转储的对象目录前缀
+                     * 获取<p>转储的对象目录前缀</p>
+                     * @return ObjectKeyPrefix <p>转储的对象目录前缀</p>
                      * 
                      */
                     std::string GetObjectKeyPrefix() const;
 
                     /**
-                     * 设置转储的对象目录前缀
-                     * @param _objectKeyPrefix 转储的对象目录前缀
+                     * 设置<p>转储的对象目录前缀</p>
+                     * @param _objectKeyPrefix <p>转储的对象目录前缀</p>
                      * 
                      */
                     void SetObjectKeyPrefix(const std::string& _objectKeyPrefix);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ObjectKeyPrefixHasBeenSet() const;
 
                     /**
-                     * 获取根据strptime 时间格式化的分区格式
-                     * @return DirectoryTimeFormat 根据strptime 时间格式化的分区格式
+                     * 获取<p>根据strptime 时间格式化的分区格式</p>
+                     * @return DirectoryTimeFormat <p>根据strptime 时间格式化的分区格式</p>
                      * 
                      */
                     std::string GetDirectoryTimeFormat() const;
 
                     /**
-                     * 设置根据strptime 时间格式化的分区格式
-                     * @param _directoryTimeFormat 根据strptime 时间格式化的分区格式
+                     * 设置<p>根据strptime 时间格式化的分区格式</p>
+                     * @param _directoryTimeFormat <p>根据strptime 时间格式化的分区格式</p>
                      * 
                      */
                     void SetDirectoryTimeFormat(const std::string& _directoryTimeFormat);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cos 存储桶名称
+                     * <p>cos 存储桶名称</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 地域代码
+                     * <p>地域代码</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 对象名称
+                     * <p>对象名称</p>
                      */
                     std::string m_objectKey;
                     bool m_objectKeyHasBeenSet;
 
                     /**
-                     * 汇聚消息量的大小（单位：MB)
+                     * <p>汇聚消息量的大小（单位：MB)</p>
                      */
                     uint64_t m_aggregateBatchSize;
                     bool m_aggregateBatchSizeHasBeenSet;
 
                     /**
-                     * 汇聚的时间间隔（单位：小时）
+                     * <p>汇聚的时间间隔（单位：小时）</p>
                      */
                     uint64_t m_aggregateInterval;
                     bool m_aggregateIntervalHasBeenSet;
 
                     /**
-                     * 消息汇聚后的文件格式（支持csv, json）
+                     * <p>消息汇聚后的文件格式（支持csv, json）</p>
                      */
                     std::string m_formatOutputType;
                     bool m_formatOutputTypeHasBeenSet;
 
                     /**
-                     * 转储的对象目录前缀
+                     * <p>转储的对象目录前缀</p>
                      */
                     std::string m_objectKeyPrefix;
                     bool m_objectKeyPrefixHasBeenSet;
 
                     /**
-                     * 根据strptime 时间格式化的分区格式
+                     * <p>根据strptime 时间格式化的分区格式</p>
                      */
                     std::string m_directoryTimeFormat;
                     bool m_directoryTimeFormatHasBeenSet;

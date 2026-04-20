@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
-                     * @return TaskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * 获取<p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>
+                     * @return TaskName <p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
-                     * @param _taskName 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * 设置<p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>
+                     * @param _taskName <p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，SOURCE数据接入，SINK数据流出
-                     * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 获取<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @return TaskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 设置<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @param _taskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源
-                     * @return SourceResource 数据源
+                     * 获取<p>数据源</p>
+                     * @return SourceResource <p>数据源</p>
                      * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
-                     * 设置数据源
-                     * @param _sourceResource 数据源
+                     * 设置<p>数据源</p>
+                     * @param _sourceResource <p>数据源</p>
                      * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SourceResourceHasBeenSet() const;
 
                     /**
-                     * 获取数据目标
-                     * @return TargetResource 数据目标
+                     * 获取<p>数据目标</p>
+                     * @return TargetResource <p>数据目标</p>
                      * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
-                     * 设置数据目标
-                     * @param _targetResource 数据目标
+                     * 设置<p>数据目标</p>
+                     * @param _targetResource <p>数据目标</p>
                      * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TargetResourceHasBeenSet() const;
 
                     /**
-                     * 获取数据处理规则
-                     * @return TransformParam 数据处理规则
+                     * 获取<p>数据处理规则</p>
+                     * @return TransformParam <p>数据处理规则</p>
                      * 
                      */
                     TransformParam GetTransformParam() const;
 
                     /**
-                     * 设置数据处理规则
-                     * @param _transformParam 数据处理规则
+                     * 设置<p>数据处理规则</p>
+                     * @param _transformParam <p>数据处理规则</p>
                      * 
                      */
                     void SetTransformParam(const TransformParam& _transformParam);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool TransformParamHasBeenSet() const;
 
                     /**
-                     * 获取实例连接参数【已废弃】
-                     * @return PrivateLinkParam 实例连接参数【已废弃】
+                     * 获取<p>实例连接参数【已废弃】</p>
+                     * @return PrivateLinkParam <p>实例连接参数【已废弃】</p>
                      * @deprecated
                      */
                     PrivateLinkParam GetPrivateLinkParam() const;
 
                     /**
-                     * 设置实例连接参数【已废弃】
-                     * @param _privateLinkParam 实例连接参数【已废弃】
+                     * 设置<p>实例连接参数【已废弃】</p>
+                     * @param _privateLinkParam <p>实例连接参数【已废弃】</p>
                      * @deprecated
                      */
                     void SetPrivateLinkParam(const PrivateLinkParam& _privateLinkParam);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool PrivateLinkParamHasBeenSet() const;
 
                     /**
-                     * 获取选择所要绑定的SchemaId
-                     * @return SchemaId 选择所要绑定的SchemaId
+                     * 获取<p>选择所要绑定的SchemaId</p>
+                     * @return SchemaId <p>选择所要绑定的SchemaId</p>
                      * 
                      */
                     std::string GetSchemaId() const;
 
                     /**
-                     * 设置选择所要绑定的SchemaId
-                     * @param _schemaId 选择所要绑定的SchemaId
+                     * 设置<p>选择所要绑定的SchemaId</p>
+                     * @param _schemaId <p>选择所要绑定的SchemaId</p>
                      * 
                      */
                     void SetSchemaId(const std::string& _schemaId);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool SchemaIdHasBeenSet() const;
 
                     /**
-                     * 获取数据处理规则
-                     * @return TransformsParam 数据处理规则
+                     * 获取<p>数据处理规则</p>
+                     * @return TransformsParam <p>数据处理规则</p>
                      * 
                      */
                     TransformsParam GetTransformsParam() const;
 
                     /**
-                     * 设置数据处理规则
-                     * @param _transformsParam 数据处理规则
+                     * 设置<p>数据处理规则</p>
+                     * @param _transformsParam <p>数据处理规则</p>
                      * 
                      */
                     void SetTransformsParam(const TransformsParam& _transformsParam);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool TransformsParamHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param _taskId 任务Id
+                     * 设置<p>任务Id</p>
+                     * @param _taskId <p>任务Id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取任务描述信息
-                     * @return Description 任务描述信息
+                     * 获取<p>任务描述信息</p>
+                     * @return Description <p>任务描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述信息
-                     * @param _description 任务描述信息
+                     * 设置<p>任务描述信息</p>
+                     * @param _description <p>任务描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -281,67 +281,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)
+                     * <p>任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型，SOURCE数据接入，SINK数据流出
+                     * <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 数据源
+                     * <p>数据源</p>
                      */
                     DatahubResource m_sourceResource;
                     bool m_sourceResourceHasBeenSet;
 
                     /**
-                     * 数据目标
+                     * <p>数据目标</p>
                      */
                     DatahubResource m_targetResource;
                     bool m_targetResourceHasBeenSet;
 
                     /**
-                     * 数据处理规则
+                     * <p>数据处理规则</p>
                      */
                     TransformParam m_transformParam;
                     bool m_transformParamHasBeenSet;
 
                     /**
-                     * 实例连接参数【已废弃】
+                     * <p>实例连接参数【已废弃】</p>
                      */
                     PrivateLinkParam m_privateLinkParam;
                     bool m_privateLinkParamHasBeenSet;
 
                     /**
-                     * 选择所要绑定的SchemaId
+                     * <p>选择所要绑定的SchemaId</p>
                      */
                     std::string m_schemaId;
                     bool m_schemaIdHasBeenSet;
 
                     /**
-                     * 数据处理规则
+                     * <p>数据处理规则</p>
                      */
                     TransformsParam m_transformsParam;
                     bool m_transformsParamHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 任务描述信息
+                     * <p>任务描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -32,7 +32,14 @@ AgentInstance::AgentInstance() :
     m_parametersHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deployPlaceHasBeenSet(false),
+    m_policyIdsHasBeenSet(false),
+    m_clawConfigHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_allowedActionsHasBeenSet(false),
+    m_lastActiveTimeHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -181,6 +188,89 @@ CoreInternalOutcome AgentInstance::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployPlace") && !value["DeployPlace"].IsNull())
+    {
+        if (!value["DeployPlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.DeployPlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployPlace = string(value["DeployPlace"].GetString());
+        m_deployPlaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PolicyIds") && !value["PolicyIds"].IsNull())
+    {
+        if (!value["PolicyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.PolicyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PolicyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_policyIds.push_back((*itr).GetString());
+        }
+        m_policyIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClawConfig") && !value["ClawConfig"].IsNull())
+    {
+        if (!value["ClawConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.ClawConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clawConfig.Deserialize(value["ClawConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clawConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowedActions") && !value["AllowedActions"].IsNull())
+    {
+        if (!value["AllowedActions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.AllowedActions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllowedActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_allowedActions.push_back((*itr).GetString());
+        }
+        m_allowedActionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastActiveTime") && !value["LastActiveTime"].IsNull())
+    {
+        if (!value["LastActiveTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.LastActiveTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastActiveTime = string(value["LastActiveTime"].GetString());
+        m_lastActiveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +386,73 @@ void AgentInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deployPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployPlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployPlace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clawConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClawConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clawConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowedActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowedActions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_allowedActions.begin(); itr != m_allowedActions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_lastActiveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastActiveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastActiveTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -491,5 +648,117 @@ void AgentInstance::SetTags(const vector<TagItem>& _tags)
 bool AgentInstance::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string AgentInstance::GetDeployPlace() const
+{
+    return m_deployPlace;
+}
+
+void AgentInstance::SetDeployPlace(const string& _deployPlace)
+{
+    m_deployPlace = _deployPlace;
+    m_deployPlaceHasBeenSet = true;
+}
+
+bool AgentInstance::DeployPlaceHasBeenSet() const
+{
+    return m_deployPlaceHasBeenSet;
+}
+
+vector<string> AgentInstance::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void AgentInstance::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool AgentInstance::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
+}
+
+ClawConfigInfo AgentInstance::GetClawConfig() const
+{
+    return m_clawConfig;
+}
+
+void AgentInstance::SetClawConfig(const ClawConfigInfo& _clawConfig)
+{
+    m_clawConfig = _clawConfig;
+    m_clawConfigHasBeenSet = true;
+}
+
+bool AgentInstance::ClawConfigHasBeenSet() const
+{
+    return m_clawConfigHasBeenSet;
+}
+
+string AgentInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void AgentInstance::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool AgentInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+vector<string> AgentInstance::GetAllowedActions() const
+{
+    return m_allowedActions;
+}
+
+void AgentInstance::SetAllowedActions(const vector<string>& _allowedActions)
+{
+    m_allowedActions = _allowedActions;
+    m_allowedActionsHasBeenSet = true;
+}
+
+bool AgentInstance::AllowedActionsHasBeenSet() const
+{
+    return m_allowedActionsHasBeenSet;
+}
+
+string AgentInstance::GetLastActiveTime() const
+{
+    return m_lastActiveTime;
+}
+
+void AgentInstance::SetLastActiveTime(const string& _lastActiveTime)
+{
+    m_lastActiveTime = _lastActiveTime;
+    m_lastActiveTimeHasBeenSet = true;
+}
+
+bool AgentInstance::LastActiveTimeHasBeenSet() const
+{
+    return m_lastActiveTimeHasBeenSet;
+}
+
+string AgentInstance::GetDescription() const
+{
+    return m_description;
+}
+
+void AgentInstance::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AgentInstance::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

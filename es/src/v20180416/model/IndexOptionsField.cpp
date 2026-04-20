@@ -27,7 +27,10 @@ IndexOptionsField::IndexOptionsField() :
     m_rolloverDynamicHasBeenSet(false),
     m_shardNumDynamicHasBeenSet(false),
     m_timestampFieldHasBeenSet(false),
-    m_writeModeHasBeenSet(false)
+    m_writeModeHasBeenSet(false),
+    m_fullOffloadedEnableHasBeenSet(false),
+    m_fullOffloadedMaxAgeHasBeenSet(false),
+    m_fullOffloadedRetrieveMaxAgeHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome IndexOptionsField::Deserialize(const rapidjson::Value &value
         m_writeModeHasBeenSet = true;
     }
 
+    if (value.HasMember("FullOffloadedEnable") && !value["FullOffloadedEnable"].IsNull())
+    {
+        if (!value["FullOffloadedEnable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexOptionsField.FullOffloadedEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullOffloadedEnable = string(value["FullOffloadedEnable"].GetString());
+        m_fullOffloadedEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullOffloadedMaxAge") && !value["FullOffloadedMaxAge"].IsNull())
+    {
+        if (!value["FullOffloadedMaxAge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexOptionsField.FullOffloadedMaxAge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullOffloadedMaxAge = string(value["FullOffloadedMaxAge"].GetString());
+        m_fullOffloadedMaxAgeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FullOffloadedRetrieveMaxAge") && !value["FullOffloadedRetrieveMaxAge"].IsNull())
+    {
+        if (!value["FullOffloadedRetrieveMaxAge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexOptionsField.FullOffloadedRetrieveMaxAge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullOffloadedRetrieveMaxAge = string(value["FullOffloadedRetrieveMaxAge"].GetString());
+        m_fullOffloadedRetrieveMaxAgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void IndexOptionsField::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "WriteMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_writeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullOffloadedEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullOffloadedEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullOffloadedEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullOffloadedMaxAgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullOffloadedMaxAge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullOffloadedMaxAge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullOffloadedRetrieveMaxAgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullOffloadedRetrieveMaxAge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullOffloadedRetrieveMaxAge.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void IndexOptionsField::SetWriteMode(const string& _writeMode)
 bool IndexOptionsField::WriteModeHasBeenSet() const
 {
     return m_writeModeHasBeenSet;
+}
+
+string IndexOptionsField::GetFullOffloadedEnable() const
+{
+    return m_fullOffloadedEnable;
+}
+
+void IndexOptionsField::SetFullOffloadedEnable(const string& _fullOffloadedEnable)
+{
+    m_fullOffloadedEnable = _fullOffloadedEnable;
+    m_fullOffloadedEnableHasBeenSet = true;
+}
+
+bool IndexOptionsField::FullOffloadedEnableHasBeenSet() const
+{
+    return m_fullOffloadedEnableHasBeenSet;
+}
+
+string IndexOptionsField::GetFullOffloadedMaxAge() const
+{
+    return m_fullOffloadedMaxAge;
+}
+
+void IndexOptionsField::SetFullOffloadedMaxAge(const string& _fullOffloadedMaxAge)
+{
+    m_fullOffloadedMaxAge = _fullOffloadedMaxAge;
+    m_fullOffloadedMaxAgeHasBeenSet = true;
+}
+
+bool IndexOptionsField::FullOffloadedMaxAgeHasBeenSet() const
+{
+    return m_fullOffloadedMaxAgeHasBeenSet;
+}
+
+string IndexOptionsField::GetFullOffloadedRetrieveMaxAge() const
+{
+    return m_fullOffloadedRetrieveMaxAge;
+}
+
+void IndexOptionsField::SetFullOffloadedRetrieveMaxAge(const string& _fullOffloadedRetrieveMaxAge)
+{
+    m_fullOffloadedRetrieveMaxAge = _fullOffloadedRetrieveMaxAge;
+    m_fullOffloadedRetrieveMaxAgeHasBeenSet = true;
+}
+
+bool IndexOptionsField::FullOffloadedRetrieveMaxAgeHasBeenSet() const
+{
+    return m_fullOffloadedRetrieveMaxAgeHasBeenSet;
 }
 

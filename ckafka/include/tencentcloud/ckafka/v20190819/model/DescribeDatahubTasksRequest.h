@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100 (超过100限制为100)
-                     * @return Limit 返回数量，默认为20，最大值为100 (超过100限制为100)
+                     * 获取<p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100 (超过100限制为100)
-                     * @param _limit 返回数量，默认为20，最大值为100 (超过100限制为100)
+                     * 设置<p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认为0
-                     * @return Offset 分页偏移量，默认为0
+                     * 获取<p>分页偏移量，默认为0</p>
+                     * @return Offset <p>分页偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认为0
-                     * @param _offset 分页偏移量，默认为0
+                     * 设置<p>分页偏移量，默认为0</p>
+                     * @param _offset <p>分页偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，按照 TaskName 过滤，支持模糊查询
-                     * @return SearchWord 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * 获取<p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>
+                     * @return SearchWord <p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置过滤条件，按照 TaskName 过滤，支持模糊查询
-                     * @param _searchWord 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * 设置<p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>
+                     * @param _searchWord <p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取转储的目标类型
-                     * @return TargetType 转储的目标类型
+                     * 获取<p>转储的目标类型</p>
+                     * @return TargetType <p>转储的目标类型</p>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置转储的目标类型
-                     * @param _targetType 转储的目标类型
+                     * 设置<p>转储的目标类型</p>
+                     * @param _targetType <p>转储的目标类型</p>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，SOURCE数据接入，SINK数据流出
-                     * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 获取<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @return TaskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 设置<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @param _taskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取转储的源类型
-                     * @return SourceType 转储的源类型
+                     * 获取<p>转储的源类型</p>
+                     * @return SourceType <p>转储的源类型</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置转储的源类型
-                     * @param _sourceType 转储的源类型
+                     * 设置<p>转储的源类型</p>
+                     * @param _sourceType <p>转储的源类型</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取转储的资源
-                     * @return Resource 转储的资源
+                     * 获取<p>转储的资源</p>
+                     * @return Resource <p>转储的资源</p>
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置转储的资源
-                     * @param _resource 转储的资源
+                     * 设置<p>转储的资源</p>
+                     * @param _resource <p>转储的资源</p>
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数量，默认为20，最大值为100 (超过100限制为100)
+                     * <p>返回数量，默认为20，最大值为100 (超过100限制为100)</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认为0
+                     * <p>分页偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * <p>过滤条件，按照 TaskName 过滤，支持模糊查询</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 转储的目标类型
+                     * <p>转储的目标类型</p>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 任务类型，SOURCE数据接入，SINK数据流出
+                     * <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 转储的源类型
+                     * <p>转储的源类型</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 转储的资源
+                     * <p>转储的资源</p>
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;

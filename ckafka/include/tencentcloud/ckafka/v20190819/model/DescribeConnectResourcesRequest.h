@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接源类型
-                     * @return Type 连接源类型
+                     * 获取<p>连接源类型</p>
+                     * @return Type <p>连接源类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置连接源类型
-                     * @param _type 连接源类型
+                     * 设置<p>连接源类型</p>
+                     * @param _type <p>连接源类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取连接源名称的关键字查询,支持模糊匹配
-                     * @return SearchWord 连接源名称的关键字查询,支持模糊匹配
+                     * 获取<p>连接源名称的关键字查询,支持模糊匹配</p>
+                     * @return SearchWord <p>连接源名称的关键字查询,支持模糊匹配</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置连接源名称的关键字查询,支持模糊匹配
-                     * @param _searchWord 连接源名称的关键字查询,支持模糊匹配
+                     * 设置<p>连接源名称的关键字查询,支持模糊匹配</p>
+                     * @param _searchWord <p>连接源名称的关键字查询,支持模糊匹配</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认为0
-                     * @return Offset 分页偏移量，默认为0
+                     * 获取<p>分页偏移量，默认为0</p>
+                     * @return Offset <p>分页偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认为0
-                     * @param _offset 分页偏移量，默认为0
+                     * 设置<p>分页偏移量，默认为0</p>
+                     * @param _offset <p>分页偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
-                     * @return Limit 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
+                     * 获取<p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
-                     * @param _limit 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
+                     * 设置<p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)
-                     * @return ResourceRegion 连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)
+                     * 获取<p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>
+                     * @return ResourceRegion <p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)
-                     * @param _resourceRegion 连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)
+                     * 设置<p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>
+                     * @param _resourceRegion <p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 连接源类型
+                     * <p>连接源类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 连接源名称的关键字查询,支持模糊匹配
+                     * <p>连接源名称的关键字查询,支持模糊匹配</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认为0
+                     * <p>分页偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)
+                     * <p>返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)
+                     * <p>连接源的关键字查询, 根据地域查询本地域内连接管理列表中的连接(仅支持包含region输入的连接源)</p>
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;

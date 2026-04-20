@@ -29,7 +29,8 @@ CreateStreamPackageLinearAssemblyProgramRequest::CreateStreamPackageLinearAssemb
     m_sourceLocationIdHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_playbackConfHasBeenSet(false),
-    m_adBreaksHasBeenSet(false)
+    m_adBreaksHasBeenSet(false),
+    m_vodAcquisitionMethodHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,14 @@ string CreateStreamPackageLinearAssemblyProgramRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vodAcquisitionMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodAcquisitionMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vodAcquisitionMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -222,6 +231,22 @@ void CreateStreamPackageLinearAssemblyProgramRequest::SetAdBreaks(const vector<A
 bool CreateStreamPackageLinearAssemblyProgramRequest::AdBreaksHasBeenSet() const
 {
     return m_adBreaksHasBeenSet;
+}
+
+string CreateStreamPackageLinearAssemblyProgramRequest::GetVodAcquisitionMethod() const
+{
+    return m_vodAcquisitionMethod;
+}
+
+void CreateStreamPackageLinearAssemblyProgramRequest::SetVodAcquisitionMethod(const string& _vodAcquisitionMethod)
+{
+    m_vodAcquisitionMethod = _vodAcquisitionMethod;
+    m_vodAcquisitionMethodHasBeenSet = true;
+}
+
+bool CreateStreamPackageLinearAssemblyProgramRequest::VodAcquisitionMethodHasBeenSet() const
+{
+    return m_vodAcquisitionMethodHasBeenSet;
 }
 
 

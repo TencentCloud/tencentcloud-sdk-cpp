@@ -73,6 +73,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceRequest.h
+  include/tencentcloud/teo/v20220901/model/ShieldParameters.h
   include/tencentcloud/teo/v20220901/model/FunctionRegionSelection.h
   include/tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
@@ -873,6 +874,7 @@ set(teo_src
   src/v20220901/model/ModifyFunctionRulePriorityRequest.cpp
   src/v20220901/model/ModifyAccelerationDomainResponse.cpp
   src/v20220901/model/DeleteSecurityAPIResourceRequest.cpp
+  src/v20220901/model/ShieldParameters.cpp
   src/v20220901/model/FunctionRegionSelection.cpp
   src/v20220901/model/ModifyMultiPathGatewayLineRequest.cpp
   src/v20220901/model/DescribeHostsSettingResponse.cpp

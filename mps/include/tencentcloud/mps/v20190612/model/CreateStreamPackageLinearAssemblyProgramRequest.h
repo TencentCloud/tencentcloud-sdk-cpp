@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Program名称。
-                     * @return Name Program名称。
+                     * 获取<p>Program名称。</p>
+                     * @return Name <p>Program名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Program名称。
-                     * @param _name Program名称。
+                     * 设置<p>Program名称。</p>
+                     * @param _name <p>Program名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取绑定的channel。
-                     * @return AttachedChannel 绑定的channel。
+                     * 获取<p>绑定的channel。</p>
+                     * @return AttachedChannel <p>绑定的channel。</p>
                      * 
                      */
                     std::string GetAttachedChannel() const;
 
                     /**
-                     * 设置绑定的channel。
-                     * @param _attachedChannel 绑定的channel。
+                     * 设置<p>绑定的channel。</p>
+                     * @param _attachedChannel <p>绑定的channel。</p>
                      * 
                      */
                     void SetAttachedChannel(const std::string& _attachedChannel);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool AttachedChannelHasBeenSet() const;
 
                     /**
-                     * 获取编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD
-                     * @return SourceType 编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD
+                     * 获取<p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>
+                     * @return SourceType <p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD
-                     * @param _sourceType 编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD
+                     * 设置<p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>
+                     * @param _sourceType <p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取关联的source location。
-                     * @return SourceLocationId 关联的source location。
+                     * 获取<p>关联的source location。</p>
+                     * @return SourceLocationId <p>关联的source location。</p>
                      * 
                      */
                     std::string GetSourceLocationId() const;
 
                     /**
-                     * 设置关联的source location。
-                     * @param _sourceLocationId 关联的source location。
+                     * 设置<p>关联的source location。</p>
+                     * @param _sourceLocationId <p>关联的source location。</p>
                      * 
                      */
                     void SetSourceLocationId(const std::string& _sourceLocationId);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SourceLocationIdHasBeenSet() const;
 
                     /**
-                     * 获取关联的直播or点播，source名称，location下全局唯一。
-                     * @return SourceName 关联的直播or点播，source名称，location下全局唯一。
+                     * 获取<p>关联的直播or点播，source名称，location下全局唯一。</p>
+                     * @return SourceName <p>关联的直播or点播，source名称，location下全局唯一。</p>
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
-                     * 设置关联的直播or点播，source名称，location下全局唯一。
-                     * @param _sourceName 关联的直播or点播，source名称，location下全局唯一。
+                     * 设置<p>关联的直播or点播，source名称，location下全局唯一。</p>
+                     * @param _sourceName <p>关联的直播or点播，source名称，location下全局唯一。</p>
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool SourceNameHasBeenSet() const;
 
                     /**
-                     * 获取PlaybackConf。
-                     * @return PlaybackConf PlaybackConf。
+                     * 获取<p>PlaybackConf。</p>
+                     * @return PlaybackConf <p>PlaybackConf。</p>
                      * 
                      */
                     PlaybackInfoReq GetPlaybackConf() const;
 
                     /**
-                     * 设置PlaybackConf。
-                     * @param _playbackConf PlaybackConf。
+                     * 设置<p>PlaybackConf。</p>
+                     * @param _playbackConf <p>PlaybackConf。</p>
                      * 
                      */
                     void SetPlaybackConf(const PlaybackInfoReq& _playbackConf);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool PlaybackConfHasBeenSet() const;
 
                     /**
-                     * 获取AdBreaks，只有source类型为Vod时有效。
-                     * @return AdBreaks AdBreaks，只有source类型为Vod时有效。
+                     * 获取<p>AdBreaks，只有source类型为Vod时有效。</p>
+                     * @return AdBreaks <p>AdBreaks，只有source类型为Vod时有效。</p>
                      * 
                      */
                     std::vector<AdBreakInfo> GetAdBreaks() const;
 
                     /**
-                     * 设置AdBreaks，只有source类型为Vod时有效。
-                     * @param _adBreaks AdBreaks，只有source类型为Vod时有效。
+                     * 设置<p>AdBreaks，只有source类型为Vod时有效。</p>
+                     * @param _adBreaks <p>AdBreaks，只有source类型为Vod时有效。</p>
                      * 
                      */
                     void SetAdBreaks(const std::vector<AdBreakInfo>& _adBreaks);
@@ -191,49 +191,76 @@ namespace TencentCloud
                      */
                     bool AdBreaksHasBeenSet() const;
 
+                    /**
+                     * 获取<p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>
+                     * @return VodAcquisitionMethod <p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>
+                     * 
+                     */
+                    std::string GetVodAcquisitionMethod() const;
+
+                    /**
+                     * 设置<p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>
+                     * @param _vodAcquisitionMethod <p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>
+                     * 
+                     */
+                    void SetVodAcquisitionMethod(const std::string& _vodAcquisitionMethod);
+
+                    /**
+                     * 判断参数 VodAcquisitionMethod 是否已赋值
+                     * @return VodAcquisitionMethod 是否已赋值
+                     * 
+                     */
+                    bool VodAcquisitionMethodHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Program名称。
+                     * <p>Program名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 绑定的channel。
+                     * <p>绑定的channel。</p>
                      */
                     std::string m_attachedChannel;
                     bool m_attachedChannelHasBeenSet;
 
                     /**
-                     * 编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD
+                     * <p>编排的目标source的类型，分直播Live和点播VOD。Tier为Basic时只支持VOD，Tier为Standard时支持Live和VOD</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 关联的source location。
+                     * <p>关联的source location。</p>
                      */
                     std::string m_sourceLocationId;
                     bool m_sourceLocationIdHasBeenSet;
 
                     /**
-                     * 关联的直播or点播，source名称，location下全局唯一。
+                     * <p>关联的直播or点播，source名称，location下全局唯一。</p>
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
-                     * PlaybackConf。
+                     * <p>PlaybackConf。</p>
                      */
                     PlaybackInfoReq m_playbackConf;
                     bool m_playbackConfHasBeenSet;
 
                     /**
-                     * AdBreaks，只有source类型为Vod时有效。
+                     * <p>AdBreaks，只有source类型为Vod时有效。</p>
                      */
                     std::vector<AdBreakInfo> m_adBreaks;
                     bool m_adBreaksHasBeenSet;
+
+                    /**
+                     * <p>VOD获取方式，支持PreCaching和DynamicUpdating，默认PreCaching，仅Linear频道支持</p>
+                     */
+                    std::string m_vodAcquisitionMethod;
+                    bool m_vodAcquisitionMethodHasBeenSet;
 
                 };
             }

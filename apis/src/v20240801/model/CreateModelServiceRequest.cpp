@@ -41,7 +41,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_pluginConfigsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_promptModerateStatusHasBeenSet(false),
-    m_promptModerateConfigHasBeenSet(false)
+    m_promptModerateConfigHasBeenSet(false),
+    m_sensitiveDataCheckStatusHasBeenSet(false),
+    m_sensitiveDataCheckConfigHasBeenSet(false)
 {
 }
 
@@ -230,6 +232,23 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_promptModerateConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sensitiveDataCheckStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveDataCheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sensitiveDataCheckStatus, allocator);
+    }
+
+    if (m_sensitiveDataCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SensitiveDataCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sensitiveDataCheckConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -542,6 +561,38 @@ void CreateModelServiceRequest::SetPromptModerateConfig(const PromptModerateConf
 bool CreateModelServiceRequest::PromptModerateConfigHasBeenSet() const
 {
     return m_promptModerateConfigHasBeenSet;
+}
+
+bool CreateModelServiceRequest::GetSensitiveDataCheckStatus() const
+{
+    return m_sensitiveDataCheckStatus;
+}
+
+void CreateModelServiceRequest::SetSensitiveDataCheckStatus(const bool& _sensitiveDataCheckStatus)
+{
+    m_sensitiveDataCheckStatus = _sensitiveDataCheckStatus;
+    m_sensitiveDataCheckStatusHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::SensitiveDataCheckStatusHasBeenSet() const
+{
+    return m_sensitiveDataCheckStatusHasBeenSet;
+}
+
+SensitiveDataCheckConfigDTO CreateModelServiceRequest::GetSensitiveDataCheckConfig() const
+{
+    return m_sensitiveDataCheckConfig;
+}
+
+void CreateModelServiceRequest::SetSensitiveDataCheckConfig(const SensitiveDataCheckConfigDTO& _sensitiveDataCheckConfig)
+{
+    m_sensitiveDataCheckConfig = _sensitiveDataCheckConfig;
+    m_sensitiveDataCheckConfigHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::SensitiveDataCheckConfigHasBeenSet() const
+{
+    return m_sensitiveDataCheckConfigHasBeenSet;
 }
 
 

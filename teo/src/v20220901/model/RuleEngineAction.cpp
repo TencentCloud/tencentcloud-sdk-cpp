@@ -48,6 +48,7 @@ RuleEngineAction::RuleEngineAction() :
     m_clientIPCountryParametersHasBeenSet(false),
     m_upstreamFollowRedirectParametersHasBeenSet(false),
     m_upstreamRequestParametersHasBeenSet(false),
+    m_shieldParametersHasBeenSet(false),
     m_tLSConfigParametersHasBeenSet(false),
     m_modifyOriginParametersHasBeenSet(false),
     m_hTTPUpstreamTimeoutParametersHasBeenSet(false),
@@ -520,6 +521,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_upstreamRequestParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("ShieldParameters") && !value["ShieldParameters"].IsNull())
+    {
+        if (!value["ShieldParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.ShieldParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_shieldParameters.Deserialize(value["ShieldParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_shieldParametersHasBeenSet = true;
+    }
+
     if (value.HasMember("TLSConfigParameters") && !value["TLSConfigParameters"].IsNull())
     {
         if (!value["TLSConfigParameters"].IsObject())
@@ -971,6 +989,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_upstreamRequestParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shieldParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShieldParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_shieldParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_tLSConfigParametersHasBeenSet)
@@ -1514,6 +1541,22 @@ void RuleEngineAction::SetUpstreamRequestParameters(const UpstreamRequestParamet
 bool RuleEngineAction::UpstreamRequestParametersHasBeenSet() const
 {
     return m_upstreamRequestParametersHasBeenSet;
+}
+
+ShieldParameters RuleEngineAction::GetShieldParameters() const
+{
+    return m_shieldParameters;
+}
+
+void RuleEngineAction::SetShieldParameters(const ShieldParameters& _shieldParameters)
+{
+    m_shieldParameters = _shieldParameters;
+    m_shieldParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::ShieldParametersHasBeenSet() const
+{
+    return m_shieldParametersHasBeenSet;
 }
 
 TLSConfigParameters RuleEngineAction::GetTLSConfigParameters() const

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回任务查询结果
-                     * @return Result 返回任务查询结果
+                     * 获取<p>返回任务查询结果</p>
+                     * @return Result <p>返回任务查询结果</p>
                      * 
                      */
                     DescribeDatahubTasksRes GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回任务查询结果
+                     * <p>返回任务查询结果</p>
                      */
                     DescribeDatahubTasksRes m_result;
                     bool m_resultHasBeenSet;

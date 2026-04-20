@@ -740,6 +740,56 @@ VodClient::CreateAigcSubjectOutcomeCallable VodClient::CreateAigcSubjectCallable
     return prom->get_future();
 }
 
+VodClient::CreateAigcVideoRedrawTaskOutcome VodClient::CreateAigcVideoRedrawTask(const CreateAigcVideoRedrawTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcVideoRedrawTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcVideoRedrawTaskResponse rsp = CreateAigcVideoRedrawTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcVideoRedrawTaskOutcome(rsp);
+        else
+            return CreateAigcVideoRedrawTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcVideoRedrawTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcVideoRedrawTaskAsync(const CreateAigcVideoRedrawTaskRequest& request, const CreateAigcVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcVideoRedrawTaskRequest&;
+    using Resp = CreateAigcVideoRedrawTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcVideoRedrawTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcVideoRedrawTaskOutcomeCallable VodClient::CreateAigcVideoRedrawTaskCallable(const CreateAigcVideoRedrawTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcVideoRedrawTaskOutcome>>();
+    CreateAigcVideoRedrawTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcVideoRedrawTaskRequest&,
+        CreateAigcVideoRedrawTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcVideoTaskOutcome VodClient::CreateAigcVideoTask(const CreateAigcVideoTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcVideoTask");

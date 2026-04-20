@@ -37,7 +37,10 @@ DescribeDatahubTaskRes::DescribeDatahubTaskRes() :
     m_errorMessageHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_isolateStatusHasBeenSet(false)
+    m_isolateStatusHasBeenSet(false),
+    m_taskMaxHasBeenSet(false),
+    m_syncThrottleLimitHasBeenSet(false),
+    m_autoExpandFlagHasBeenSet(false)
 {
 }
 
@@ -264,6 +267,36 @@ CoreInternalOutcome DescribeDatahubTaskRes::Deserialize(const rapidjson::Value &
         m_isolateStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskMax") && !value["TaskMax"].IsNull())
+    {
+        if (!value["TaskMax"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.TaskMax` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskMax = value["TaskMax"].GetInt64();
+        m_taskMaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncThrottleLimit") && !value["SyncThrottleLimit"].IsNull())
+    {
+        if (!value["SyncThrottleLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.SyncThrottleLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncThrottleLimit = value["SyncThrottleLimit"].GetInt64();
+        m_syncThrottleLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoExpandFlag") && !value["AutoExpandFlag"].IsNull())
+    {
+        if (!value["AutoExpandFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDatahubTaskRes.AutoExpandFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpandFlag = value["AutoExpandFlag"].GetBool();
+        m_autoExpandFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -423,6 +456,30 @@ void DescribeDatahubTaskRes::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IsolateStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isolateStatus, allocator);
+    }
+
+    if (m_taskMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskMax, allocator);
+    }
+
+    if (m_syncThrottleLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncThrottleLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncThrottleLimit, allocator);
+    }
+
+    if (m_autoExpandFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpandFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpandFlag, allocator);
     }
 
 }
@@ -698,5 +755,53 @@ void DescribeDatahubTaskRes::SetIsolateStatus(const int64_t& _isolateStatus)
 bool DescribeDatahubTaskRes::IsolateStatusHasBeenSet() const
 {
     return m_isolateStatusHasBeenSet;
+}
+
+int64_t DescribeDatahubTaskRes::GetTaskMax() const
+{
+    return m_taskMax;
+}
+
+void DescribeDatahubTaskRes::SetTaskMax(const int64_t& _taskMax)
+{
+    m_taskMax = _taskMax;
+    m_taskMaxHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::TaskMaxHasBeenSet() const
+{
+    return m_taskMaxHasBeenSet;
+}
+
+int64_t DescribeDatahubTaskRes::GetSyncThrottleLimit() const
+{
+    return m_syncThrottleLimit;
+}
+
+void DescribeDatahubTaskRes::SetSyncThrottleLimit(const int64_t& _syncThrottleLimit)
+{
+    m_syncThrottleLimit = _syncThrottleLimit;
+    m_syncThrottleLimitHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::SyncThrottleLimitHasBeenSet() const
+{
+    return m_syncThrottleLimitHasBeenSet;
+}
+
+bool DescribeDatahubTaskRes::GetAutoExpandFlag() const
+{
+    return m_autoExpandFlag;
+}
+
+void DescribeDatahubTaskRes::SetAutoExpandFlag(const bool& _autoExpandFlag)
+{
+    m_autoExpandFlag = _autoExpandFlag;
+    m_autoExpandFlagHasBeenSet = true;
+}
+
+bool DescribeDatahubTaskRes::AutoExpandFlagHasBeenSet() const
+{
+    return m_autoExpandFlagHasBeenSet;
 }
 

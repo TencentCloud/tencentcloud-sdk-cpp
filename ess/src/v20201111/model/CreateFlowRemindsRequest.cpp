@@ -25,7 +25,9 @@ using namespace std;
 CreateFlowRemindsRequest::CreateFlowRemindsRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_remindTypesHasBeenSet(false),
+    m_remindEmailInfosHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,34 @@ string CreateFlowRemindsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_remindTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_remindTypes.begin(); itr != m_remindTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_remindEmailInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindEmailInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_remindEmailInfos.begin(); itr != m_remindEmailInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -121,6 +151,38 @@ void CreateFlowRemindsRequest::SetAgent(const Agent& _agent)
 bool CreateFlowRemindsRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<string> CreateFlowRemindsRequest::GetRemindTypes() const
+{
+    return m_remindTypes;
+}
+
+void CreateFlowRemindsRequest::SetRemindTypes(const vector<string>& _remindTypes)
+{
+    m_remindTypes = _remindTypes;
+    m_remindTypesHasBeenSet = true;
+}
+
+bool CreateFlowRemindsRequest::RemindTypesHasBeenSet() const
+{
+    return m_remindTypesHasBeenSet;
+}
+
+vector<RemindEmailInfo> CreateFlowRemindsRequest::GetRemindEmailInfos() const
+{
+    return m_remindEmailInfos;
+}
+
+void CreateFlowRemindsRequest::SetRemindEmailInfos(const vector<RemindEmailInfo>& _remindEmailInfos)
+{
+    m_remindEmailInfos = _remindEmailInfos;
+    m_remindEmailInfosHasBeenSet = true;
+}
+
+bool CreateFlowRemindsRequest::RemindEmailInfosHasBeenSet() const
+{
+    return m_remindEmailInfosHasBeenSet;
 }
 
 

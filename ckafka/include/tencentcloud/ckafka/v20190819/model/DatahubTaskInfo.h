@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param _taskId 任务Id
+                     * 设置<p>任务Id</p>
+                     * @param _taskId <p>任务Id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，SOURCE数据接入，SINK数据流出
-                     * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 获取<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @return TaskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 设置<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @param _taskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
-                     * @return Status 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * 获取<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
+                     * @return Status <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
-                     * @param _status 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * 设置<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
+                     * @param _status <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据源
-                     * @return SourceResource 数据源
+                     * 获取<p>数据源</p>
+                     * @return SourceResource <p>数据源</p>
                      * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
-                     * 设置数据源
-                     * @param _sourceResource 数据源
+                     * 设置<p>数据源</p>
+                     * @param _sourceResource <p>数据源</p>
                      * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SourceResourceHasBeenSet() const;
 
                     /**
-                     * 获取数据目标
-                     * @return TargetResource 数据目标
+                     * 获取<p>数据目标</p>
+                     * @return TargetResource <p>数据目标</p>
                      * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
-                     * 设置数据目标
-                     * @param _targetResource 数据目标
+                     * 设置<p>数据目标</p>
+                     * @param _targetResource <p>数据目标</p>
                      * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool TargetResourceHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreateTime 任务创建时间
+                     * 获取<p>任务创建时间</p>
+                     * @return CreateTime <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createTime 任务创建时间
+                     * 设置<p>任务创建时间</p>
+                     * @param _createTime <p>任务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取异常信息
-                     * @return ErrorMessage 异常信息
+                     * 获取<p>异常信息</p>
+                     * @return ErrorMessage <p>异常信息</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置异常信息
-                     * @param _errorMessage 异常信息
+                     * 设置<p>异常信息</p>
+                     * @param _errorMessage <p>异常信息</p>
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取创建进度百分比
-                     * @return TaskProgress 创建进度百分比
+                     * 获取<p>创建进度百分比</p>
+                     * @return TaskProgress <p>创建进度百分比</p>
                      * 
                      */
                     double GetTaskProgress() const;
 
                     /**
-                     * 设置创建进度百分比
-                     * @param _taskProgress 创建进度百分比
+                     * 设置<p>创建进度百分比</p>
+                     * @param _taskProgress <p>创建进度百分比</p>
                      * 
                      */
                     void SetTaskProgress(const double& _taskProgress);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool TaskProgressHasBeenSet() const;
 
                     /**
-                     * 获取任务当前处于的步骤
-                     * @return TaskCurrentStep 任务当前处于的步骤
+                     * 获取<p>任务当前处于的步骤</p>
+                     * @return TaskCurrentStep <p>任务当前处于的步骤</p>
                      * 
                      */
                     std::string GetTaskCurrentStep() const;
 
                     /**
-                     * 设置任务当前处于的步骤
-                     * @param _taskCurrentStep 任务当前处于的步骤
+                     * 设置<p>任务当前处于的步骤</p>
+                     * @param _taskCurrentStep <p>任务当前处于的步骤</p>
                      * 
                      */
                     void SetTaskCurrentStep(const std::string& _taskCurrentStep);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool TaskCurrentStepHasBeenSet() const;
 
                     /**
-                     * 获取Datahub转储Id
-                     * @return DatahubId Datahub转储Id
+                     * 获取<p>Datahub转储Id</p>
+                     * @return DatahubId <p>Datahub转储Id</p>
                      * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
-                     * 设置Datahub转储Id
-                     * @param _datahubId Datahub转储Id
+                     * 设置<p>Datahub转储Id</p>
+                     * @param _datahubId <p>Datahub转储Id</p>
                      * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool DatahubIdHasBeenSet() const;
 
                     /**
-                     * 获取步骤列表
-                     * @return StepList 步骤列表
+                     * 获取<p>步骤列表</p>
+                     * @return StepList <p>步骤列表</p>
                      * 
                      */
                     std::vector<std::string> GetStepList() const;
 
                     /**
-                     * 设置步骤列表
-                     * @param _stepList 步骤列表
+                     * 设置<p>步骤列表</p>
+                     * @param _stepList <p>步骤列表</p>
                      * 
                      */
                     void SetStepList(const std::vector<std::string>& _stepList);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool StepListHasBeenSet() const;
 
                     /**
-                     * 获取任务描述信息
-                     * @return Description 任务描述信息
+                     * 获取<p>任务描述信息</p>
+                     * @return Description <p>任务描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述信息
-                     * @param _description 任务描述信息
+                     * 设置<p>任务描述信息</p>
+                     * @param _description <p>任务描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -320,85 +320,166 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务并发数</p><p>默认值：1</p>
+                     * @return TaskMax <p>任务并发数</p><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetTaskMax() const;
+
+                    /**
+                     * 设置<p>任务并发数</p><p>默认值：1</p>
+                     * @param _taskMax <p>任务并发数</p><p>默认值：1</p>
+                     * 
+                     */
+                    void SetTaskMax(const int64_t& _taskMax);
+
+                    /**
+                     * 判断参数 TaskMax 是否已赋值
+                     * @return TaskMax 是否已赋值
+                     * 
+                     */
+                    bool TaskMaxHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>
+                     * @return SyncThrottleLimit <p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>
+                     * 
+                     */
+                    int64_t GetSyncThrottleLimit() const;
+
+                    /**
+                     * 设置<p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>
+                     * @param _syncThrottleLimit <p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>
+                     * 
+                     */
+                    void SetSyncThrottleLimit(const int64_t& _syncThrottleLimit);
+
+                    /**
+                     * 判断参数 SyncThrottleLimit 是否已赋值
+                     * @return SyncThrottleLimit 是否已赋值
+                     * 
+                     */
+                    bool SyncThrottleLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>
+                     * @return AutoExpandFlag <p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>
+                     * 
+                     */
+                    bool GetAutoExpandFlag() const;
+
+                    /**
+                     * 设置<p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>
+                     * @param _autoExpandFlag <p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>
+                     * 
+                     */
+                    void SetAutoExpandFlag(const bool& _autoExpandFlag);
+
+                    /**
+                     * 判断参数 AutoExpandFlag 是否已赋值
+                     * @return AutoExpandFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoExpandFlagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型，SOURCE数据接入，SINK数据流出
+                     * <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据源
+                     * <p>数据源</p>
                      */
                     DatahubResource m_sourceResource;
                     bool m_sourceResourceHasBeenSet;
 
                     /**
-                     * 数据目标
+                     * <p>数据目标</p>
                      */
                     DatahubResource m_targetResource;
                     bool m_targetResourceHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 异常信息
+                     * <p>异常信息</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 创建进度百分比
+                     * <p>创建进度百分比</p>
                      */
                     double m_taskProgress;
                     bool m_taskProgressHasBeenSet;
 
                     /**
-                     * 任务当前处于的步骤
+                     * <p>任务当前处于的步骤</p>
                      */
                     std::string m_taskCurrentStep;
                     bool m_taskCurrentStepHasBeenSet;
 
                     /**
-                     * Datahub转储Id
+                     * <p>Datahub转储Id</p>
                      */
                     std::string m_datahubId;
                     bool m_datahubIdHasBeenSet;
 
                     /**
-                     * 步骤列表
+                     * <p>步骤列表</p>
                      */
                     std::vector<std::string> m_stepList;
                     bool m_stepListHasBeenSet;
 
                     /**
-                     * 任务描述信息
+                     * <p>任务描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>任务并发数</p><p>默认值：1</p>
+                     */
+                    int64_t m_taskMax;
+                    bool m_taskMaxHasBeenSet;
+
+                    /**
+                     * <p>任务同步限流值,单位MB/s</p><p>默认值：20MB/s</p>
+                     */
+                    int64_t m_syncThrottleLimit;
+                    bool m_syncThrottleLimitHasBeenSet;
+
+                    /**
+                     * <p>任务是否自动扩容标识</p><p>枚举值：</p><ul><li>true： 自动扩容</li><li>false： 手动扩容</li></ul><p>默认值：true</p>
+                     */
+                    bool m_autoExpandFlag;
+                    bool m_autoExpandFlagHasBeenSet;
 
                 };
             }

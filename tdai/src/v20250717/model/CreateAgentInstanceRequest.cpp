@@ -27,7 +27,12 @@ CreateAgentInstanceRequest::CreateAgentInstanceRequest() :
     m_agentVersionHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
+    m_skillsHasBeenSet(false),
+    m_soulIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -90,6 +95,51 @@ string CreateAgentInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_templateId, allocator);
+    }
+
+    if (m_skillsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Skills";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_skills.begin(); itr != m_skills.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_soulIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoulId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_soulId, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -178,6 +228,86 @@ void CreateAgentInstanceRequest::SetTags(const vector<TagItem>& _tags)
 bool CreateAgentInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateAgentInstanceRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CreateAgentInstanceRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+int64_t CreateAgentInstanceRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void CreateAgentInstanceRequest::SetTemplateId(const int64_t& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
+}
+
+vector<string> CreateAgentInstanceRequest::GetSkills() const
+{
+    return m_skills;
+}
+
+void CreateAgentInstanceRequest::SetSkills(const vector<string>& _skills)
+{
+    m_skills = _skills;
+    m_skillsHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::SkillsHasBeenSet() const
+{
+    return m_skillsHasBeenSet;
+}
+
+int64_t CreateAgentInstanceRequest::GetSoulId() const
+{
+    return m_soulId;
+}
+
+void CreateAgentInstanceRequest::SetSoulId(const int64_t& _soulId)
+{
+    m_soulId = _soulId;
+    m_soulIdHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::SoulIdHasBeenSet() const
+{
+    return m_soulIdHasBeenSet;
+}
+
+string CreateAgentInstanceRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateAgentInstanceRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateAgentInstanceRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

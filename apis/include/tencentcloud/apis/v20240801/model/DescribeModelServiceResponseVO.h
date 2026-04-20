@@ -30,6 +30,7 @@
 #include <tencentcloud/apis/v20240801/model/TmsConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/PluginConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/PromptModerateConfigDTO.h>
+#include <tencentcloud/apis/v20240801/model/SensitiveDataCheckConfigDTO.h>
 
 
 namespace TencentCloud
@@ -53,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云AppID
-                     * @return AppID 腾讯云AppID
+                     * 获取<p>腾讯云AppID</p>
+                     * @return AppID <p>腾讯云AppID</p>
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置腾讯云AppID
-                     * @param _appID 腾讯云AppID
+                     * 设置<p>腾讯云AppID</p>
+                     * @param _appID <p>腾讯云AppID</p>
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -74,15 +75,15 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云Uin
-                     * @return Uin 腾讯云Uin
+                     * 获取<p>腾讯云Uin</p>
+                     * @return Uin <p>腾讯云Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置腾讯云Uin
-                     * @param _uin 腾讯云Uin
+                     * 设置<p>腾讯云Uin</p>
+                     * @param _uin <p>腾讯云Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -116,15 +117,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取模型ID
-                     * @return ID 模型ID
+                     * 获取<p>模型ID</p>
+                     * @return ID <p>模型ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置模型ID
-                     * @param _iD 模型ID
+                     * 设置<p>模型ID</p>
+                     * @param _iD <p>模型ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -137,15 +138,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return Name 模型名称
+                     * 获取<p>模型名称</p>
+                     * @return Name <p>模型名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _name 模型名称
+                     * 设置<p>模型名称</p>
+                     * @param _name <p>模型名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -158,15 +159,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -179,15 +180,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取访问路径
-                     * @return PubPath 访问路径
+                     * 获取<p>访问路径</p>
+                     * @return PubPath <p>访问路径</p>
                      * 
                      */
                     std::string GetPubPath() const;
 
                     /**
-                     * 设置访问路径
-                     * @param _pubPath 访问路径
+                     * 设置<p>访问路径</p>
+                     * @param _pubPath <p>访问路径</p>
                      * 
                      */
                     void SetPubPath(const std::string& _pubPath);
@@ -200,15 +201,15 @@ namespace TencentCloud
                     bool PubPathHasBeenSet() const;
 
                     /**
-                     * 获取路径匹配方式：absolute，prefix，regex
-                     * @return PathMatchType 路径匹配方式：absolute，prefix，regex
+                     * 获取<p>路径匹配方式：absolute，prefix，regex</p>
+                     * @return PathMatchType <p>路径匹配方式：absolute，prefix，regex</p>
                      * 
                      */
                     std::string GetPathMatchType() const;
 
                     /**
-                     * 设置路径匹配方式：absolute，prefix，regex
-                     * @param _pathMatchType 路径匹配方式：absolute，prefix，regex
+                     * 设置<p>路径匹配方式：absolute，prefix，regex</p>
+                     * @param _pathMatchType <p>路径匹配方式：absolute，prefix，regex</p>
                      * 
                      */
                     void SetPathMatchType(const std::string& _pathMatchType);
@@ -221,18 +222,18 @@ namespace TencentCloud
                     bool PathMatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标模型列表
+                     * 获取<p>目标模型列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetModels 目标模型列表
+                     * @return TargetModels <p>目标模型列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TargetModelDTO> GetTargetModels() const;
 
                     /**
-                     * 设置目标模型列表
+                     * 设置<p>目标模型列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetModels 目标模型列表
+                     * @param _targetModels <p>目标模型列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,18 +247,18 @@ namespace TencentCloud
                     bool TargetModelsHasBeenSet() const;
 
                     /**
-                     * 获取模板模型的名称列表
+                     * 获取<p>模板模型的名称列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelNames 模板模型的名称列表
+                     * @return ModelNames <p>模板模型的名称列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetModelNames() const;
 
                     /**
-                     * 设置模板模型的名称列表
+                     * 设置<p>模板模型的名称列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelNames 模板模型的名称列表
+                     * @param _modelNames <p>模板模型的名称列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,15 +272,15 @@ namespace TencentCloud
                     bool ModelNamesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启限流
-                     * @return InvokeLimitConfigStatus 是否开启限流
+                     * 获取<p>是否开启限流</p>
+                     * @return InvokeLimitConfigStatus <p>是否开启限流</p>
                      * 
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
                     /**
-                     * 设置是否开启限流
-                     * @param _invokeLimitConfigStatus 是否开启限流
+                     * 设置<p>是否开启限流</p>
+                     * @param _invokeLimitConfigStatus <p>是否开启限流</p>
                      * 
                      */
                     void SetInvokeLimitConfigStatus(const bool& _invokeLimitConfigStatus);
@@ -292,15 +293,15 @@ namespace TencentCloud
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
                     /**
-                     * 获取限流配置
-                     * @return InvokeLimitConfig 限流配置
+                     * 获取<p>限流配置</p>
+                     * @return InvokeLimitConfig <p>限流配置</p>
                      * 
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
                     /**
-                     * 设置限流配置
-                     * @param _invokeLimitConfig 限流配置
+                     * 设置<p>限流配置</p>
+                     * @param _invokeLimitConfig <p>限流配置</p>
                      * 
                      */
                     void SetInvokeLimitConfig(const InvokeLimitConfigDTO& _invokeLimitConfig);
@@ -313,15 +314,15 @@ namespace TencentCloud
                     bool InvokeLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -334,15 +335,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间
-                     * @return LastUpdateTime 最后修改时间
+                     * 获取<p>最后修改时间</p>
+                     * @return LastUpdateTime <p>最后修改时间</p>
                      * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
-                     * 设置最后修改时间
-                     * @param _lastUpdateTime 最后修改时间
+                     * 设置<p>最后修改时间</p>
+                     * @param _lastUpdateTime <p>最后修改时间</p>
                      * 
                      */
                     void SetLastUpdateTime(const std::string& _lastUpdateTime);
@@ -355,15 +356,15 @@ namespace TencentCloud
                     bool LastUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启token控制
-                     * @return TokenLimitStatus 是否开启token控制
+                     * 获取<p>是否开启token控制</p>
+                     * @return TokenLimitStatus <p>是否开启token控制</p>
                      * 
                      */
                     bool GetTokenLimitStatus() const;
 
                     /**
-                     * 设置是否开启token控制
-                     * @param _tokenLimitStatus 是否开启token控制
+                     * 设置<p>是否开启token控制</p>
+                     * @param _tokenLimitStatus <p>是否开启token控制</p>
                      * 
                      */
                     void SetTokenLimitStatus(const bool& _tokenLimitStatus);
@@ -376,15 +377,15 @@ namespace TencentCloud
                     bool TokenLimitStatusHasBeenSet() const;
 
                     /**
-                     * 获取token控制
-                     * @return TokenLimitConfig token控制
+                     * 获取<p>token控制</p>
+                     * @return TokenLimitConfig <p>token控制</p>
                      * 
                      */
                     TokenLimitConfigDTO GetTokenLimitConfig() const;
 
                     /**
-                     * 设置token控制
-                     * @param _tokenLimitConfig token控制
+                     * 设置<p>token控制</p>
+                     * @param _tokenLimitConfig <p>token控制</p>
                      * 
                      */
                     void SetTokenLimitConfig(const TokenLimitConfigDTO& _tokenLimitConfig);
@@ -397,15 +398,15 @@ namespace TencentCloud
                     bool TokenLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启tms配置
-                     * @return TmsStatus 是否开启tms配置
+                     * 获取<p>是否开启tms配置</p>
+                     * @return TmsStatus <p>是否开启tms配置</p>
                      * 
                      */
                     bool GetTmsStatus() const;
 
                     /**
-                     * 设置是否开启tms配置
-                     * @param _tmsStatus 是否开启tms配置
+                     * 设置<p>是否开启tms配置</p>
+                     * @param _tmsStatus <p>是否开启tms配置</p>
                      * 
                      */
                     void SetTmsStatus(const bool& _tmsStatus);
@@ -418,15 +419,15 @@ namespace TencentCloud
                     bool TmsStatusHasBeenSet() const;
 
                     /**
-                     * 获取tms配置
-                     * @return TmsConfig tms配置
+                     * 获取<p>tms配置</p>
+                     * @return TmsConfig <p>tms配置</p>
                      * 
                      */
                     TmsConfigDTO GetTmsConfig() const;
 
                     /**
-                     * 设置tms配置
-                     * @param _tmsConfig tms配置
+                     * 设置<p>tms配置</p>
+                     * @param _tmsConfig <p>tms配置</p>
                      * 
                      */
                     void SetTmsConfig(const TmsConfigDTO& _tmsConfig);
@@ -439,15 +440,15 @@ namespace TencentCloud
                     bool TmsConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启IP白名单
-                     * @return IpWhiteStatus 是否开启IP白名单
+                     * 获取<p>是否开启IP白名单</p>
+                     * @return IpWhiteStatus <p>是否开启IP白名单</p>
                      * 
                      */
                     bool GetIpWhiteStatus() const;
 
                     /**
-                     * 设置是否开启IP白名单
-                     * @param _ipWhiteStatus 是否开启IP白名单
+                     * 设置<p>是否开启IP白名单</p>
+                     * @param _ipWhiteStatus <p>是否开启IP白名单</p>
                      * 
                      */
                     void SetIpWhiteStatus(const bool& _ipWhiteStatus);
@@ -460,18 +461,18 @@ namespace TencentCloud
                     bool IpWhiteStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP白名单列表
+                     * 获取<p>IP白名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpWhiteList IP白名单列表
+                     * @return IpWhiteList <p>IP白名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpWhiteList() const;
 
                     /**
-                     * 设置IP白名单列表
+                     * 设置<p>IP白名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipWhiteList IP白名单列表
+                     * @param _ipWhiteList <p>IP白名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -485,15 +486,15 @@ namespace TencentCloud
                     bool IpWhiteListHasBeenSet() const;
 
                     /**
-                     * 获取是否开启IP黑名单
-                     * @return IpBlackStatus 是否开启IP黑名单
+                     * 获取<p>是否开启IP黑名单</p>
+                     * @return IpBlackStatus <p>是否开启IP黑名单</p>
                      * 
                      */
                     bool GetIpBlackStatus() const;
 
                     /**
-                     * 设置是否开启IP黑名单
-                     * @param _ipBlackStatus 是否开启IP黑名单
+                     * 设置<p>是否开启IP黑名单</p>
+                     * @param _ipBlackStatus <p>是否开启IP黑名单</p>
                      * 
                      */
                     void SetIpBlackStatus(const bool& _ipBlackStatus);
@@ -506,18 +507,18 @@ namespace TencentCloud
                     bool IpBlackStatusHasBeenSet() const;
 
                     /**
-                     * 获取IP黑名单列表
+                     * 获取<p>IP黑名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpBlackList IP黑名单列表
+                     * @return IpBlackList <p>IP黑名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpBlackList() const;
 
                     /**
-                     * 设置IP黑名单列表
+                     * 设置<p>IP黑名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipBlackList IP黑名单列表
+                     * @param _ipBlackList <p>IP黑名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -531,18 +532,18 @@ namespace TencentCloud
                     bool IpBlackListHasBeenSet() const;
 
                     /**
-                     * 获取插件配置
+                     * 获取<p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PluginConfigs 插件配置
+                     * @return PluginConfigs <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PluginConfigDTO> GetPluginConfigs() const;
 
                     /**
-                     * 设置插件配置
+                     * 设置<p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pluginConfigs 插件配置
+                     * @param _pluginConfigs <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -556,15 +557,15 @@ namespace TencentCloud
                     bool PluginConfigsHasBeenSet() const;
 
                     /**
-                     * 获取超时配置，单位秒
-                     * @return Timeout 超时配置，单位秒
+                     * 获取<p>超时配置，单位秒</p>
+                     * @return Timeout <p>超时配置，单位秒</p>
                      * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
-                     * 设置超时配置，单位秒
-                     * @param _timeout 超时配置，单位秒
+                     * 设置<p>超时配置，单位秒</p>
+                     * @param _timeout <p>超时配置，单位秒</p>
                      * 
                      */
                     void SetTimeout(const int64_t& _timeout);
@@ -577,15 +578,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取状态：normal，disabled
-                     * @return Status 状态：normal，disabled
+                     * 获取<p>状态：normal，disabled</p>
+                     * @return Status <p>状态：normal，disabled</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态：normal，disabled
-                     * @param _status 状态：normal，disabled
+                     * 设置<p>状态：normal，disabled</p>
+                     * @param _status <p>状态：normal，disabled</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -598,15 +599,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取关联应用数
-                     * @return RelateAgentAppNum 关联应用数
+                     * 获取<p>关联应用数</p>
+                     * @return RelateAgentAppNum <p>关联应用数</p>
                      * 
                      */
                     int64_t GetRelateAgentAppNum() const;
 
                     /**
-                     * 设置关联应用数
-                     * @param _relateAgentAppNum 关联应用数
+                     * 设置<p>关联应用数</p>
+                     * @param _relateAgentAppNum <p>关联应用数</p>
                      * 
                      */
                     void SetRelateAgentAppNum(const int64_t& _relateAgentAppNum);
@@ -619,15 +620,15 @@ namespace TencentCloud
                     bool RelateAgentAppNumHasBeenSet() const;
 
                     /**
-                     * 获取请求路径
-                     * @return Url 请求路径
+                     * 获取<p>请求路径</p>
+                     * @return Url <p>请求路径</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置请求路径
-                     * @param _url 请求路径
+                     * 设置<p>请求路径</p>
+                     * @param _url <p>请求路径</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -640,18 +641,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取是否开启提示词安全检测
+                     * 获取<p>是否开启提示词安全检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PromptModerateStatus 是否开启提示词安全检测
+                     * @return PromptModerateStatus <p>是否开启提示词安全检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPromptModerateStatus() const;
 
                     /**
-                     * 设置是否开启提示词安全检测
+                     * 设置<p>是否开启提示词安全检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _promptModerateStatus 是否开启提示词安全检测
+                     * @param _promptModerateStatus <p>是否开启提示词安全检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -665,18 +666,18 @@ namespace TencentCloud
                     bool PromptModerateStatusHasBeenSet() const;
 
                     /**
-                     * 获取提示词安全检测配置
+                     * 获取<p>提示词安全检测配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PromptModerateConfig 提示词安全检测配置
+                     * @return PromptModerateConfig <p>提示词安全检测配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PromptModerateConfigDTO GetPromptModerateConfig() const;
 
                     /**
-                     * 设置提示词安全检测配置
+                     * 设置<p>提示词安全检测配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _promptModerateConfig 提示词安全检测配置
+                     * @param _promptModerateConfig <p>提示词安全检测配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -689,188 +690,252 @@ namespace TencentCloud
                      */
                     bool PromptModerateConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启敏感数据检测</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SensitiveDataCheckStatus <p>是否开启敏感数据检测</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSensitiveDataCheckStatus() const;
+
+                    /**
+                     * 设置<p>是否开启敏感数据检测</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sensitiveDataCheckStatus <p>是否开启敏感数据检测</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSensitiveDataCheckStatus(const bool& _sensitiveDataCheckStatus);
+
+                    /**
+                     * 判断参数 SensitiveDataCheckStatus 是否已赋值
+                     * @return SensitiveDataCheckStatus 是否已赋值
+                     * 
+                     */
+                    bool SensitiveDataCheckStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感数据检测配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SensitiveDataCheckConfig <p>敏感数据检测配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SensitiveDataCheckConfigDTO GetSensitiveDataCheckConfig() const;
+
+                    /**
+                     * 设置<p>敏感数据检测配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sensitiveDataCheckConfig <p>敏感数据检测配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSensitiveDataCheckConfig(const SensitiveDataCheckConfigDTO& _sensitiveDataCheckConfig);
+
+                    /**
+                     * 判断参数 SensitiveDataCheckConfig 是否已赋值
+                     * @return SensitiveDataCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool SensitiveDataCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 腾讯云AppID
+                     * <p>腾讯云AppID</p>
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 腾讯云Uin
+                     * <p>腾讯云Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 模型ID
+                     * <p>模型ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 访问路径
+                     * <p>访问路径</p>
                      */
                     std::string m_pubPath;
                     bool m_pubPathHasBeenSet;
 
                     /**
-                     * 路径匹配方式：absolute，prefix，regex
+                     * <p>路径匹配方式：absolute，prefix，regex</p>
                      */
                     std::string m_pathMatchType;
                     bool m_pathMatchTypeHasBeenSet;
 
                     /**
-                     * 目标模型列表
+                     * <p>目标模型列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TargetModelDTO> m_targetModels;
                     bool m_targetModelsHasBeenSet;
 
                     /**
-                     * 模板模型的名称列表
+                     * <p>模板模型的名称列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_modelNames;
                     bool m_modelNamesHasBeenSet;
 
                     /**
-                     * 是否开启限流
+                     * <p>是否开启限流</p>
                      */
                     bool m_invokeLimitConfigStatus;
                     bool m_invokeLimitConfigStatusHasBeenSet;
 
                     /**
-                     * 限流配置
+                     * <p>限流配置</p>
                      */
                     InvokeLimitConfigDTO m_invokeLimitConfig;
                     bool m_invokeLimitConfigHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后修改时间
+                     * <p>最后修改时间</p>
                      */
                     std::string m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
-                     * 是否开启token控制
+                     * <p>是否开启token控制</p>
                      */
                     bool m_tokenLimitStatus;
                     bool m_tokenLimitStatusHasBeenSet;
 
                     /**
-                     * token控制
+                     * <p>token控制</p>
                      */
                     TokenLimitConfigDTO m_tokenLimitConfig;
                     bool m_tokenLimitConfigHasBeenSet;
 
                     /**
-                     * 是否开启tms配置
+                     * <p>是否开启tms配置</p>
                      */
                     bool m_tmsStatus;
                     bool m_tmsStatusHasBeenSet;
 
                     /**
-                     * tms配置
+                     * <p>tms配置</p>
                      */
                     TmsConfigDTO m_tmsConfig;
                     bool m_tmsConfigHasBeenSet;
 
                     /**
-                     * 是否开启IP白名单
+                     * <p>是否开启IP白名单</p>
                      */
                     bool m_ipWhiteStatus;
                     bool m_ipWhiteStatusHasBeenSet;
 
                     /**
-                     * IP白名单列表
+                     * <p>IP白名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipWhiteList;
                     bool m_ipWhiteListHasBeenSet;
 
                     /**
-                     * 是否开启IP黑名单
+                     * <p>是否开启IP黑名单</p>
                      */
                     bool m_ipBlackStatus;
                     bool m_ipBlackStatusHasBeenSet;
 
                     /**
-                     * IP黑名单列表
+                     * <p>IP黑名单列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipBlackList;
                     bool m_ipBlackListHasBeenSet;
 
                     /**
-                     * 插件配置
+                     * <p>插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PluginConfigDTO> m_pluginConfigs;
                     bool m_pluginConfigsHasBeenSet;
 
                     /**
-                     * 超时配置，单位秒
+                     * <p>超时配置，单位秒</p>
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 状态：normal，disabled
+                     * <p>状态：normal，disabled</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 关联应用数
+                     * <p>关联应用数</p>
                      */
                     int64_t m_relateAgentAppNum;
                     bool m_relateAgentAppNumHasBeenSet;
 
                     /**
-                     * 请求路径
+                     * <p>请求路径</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 是否开启提示词安全检测
+                     * <p>是否开启提示词安全检测</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_promptModerateStatus;
                     bool m_promptModerateStatusHasBeenSet;
 
                     /**
-                     * 提示词安全检测配置
+                     * <p>提示词安全检测配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PromptModerateConfigDTO m_promptModerateConfig;
                     bool m_promptModerateConfigHasBeenSet;
+
+                    /**
+                     * <p>是否开启敏感数据检测</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_sensitiveDataCheckStatus;
+                    bool m_sensitiveDataCheckStatusHasBeenSet;
+
+                    /**
+                     * <p>敏感数据检测配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SensitiveDataCheckConfigDTO m_sensitiveDataCheckConfig;
+                    bool m_sensitiveDataCheckConfigHasBeenSet;
 
                 };
             }

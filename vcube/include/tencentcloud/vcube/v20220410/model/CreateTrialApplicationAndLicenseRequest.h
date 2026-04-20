@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名
-                     * @return AppName 应用名
+                     * 获取<p>应用名</p>
+                     * @return AppName <p>应用名</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名
-                     * @param _appName 应用名
+                     * 设置<p>应用名</p>
+                     * @param _appName <p>应用名</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return BundleId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return BundleId <p>应用ID</p>
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _bundleId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _bundleId <p>应用ID</p>
                      * 
                      */
                     void SetBundleId(const std::string& _bundleId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取包名
-                     * @return PackageName 包名
+                     * 获取<p>包名</p>
+                     * @return PackageName <p>包名</p>
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置包名
-                     * @param _packageName 包名
+                     * 设置<p>包名</p>
+                     * @param _packageName <p>包名</p>
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -106,15 +106,36 @@ namespace TencentCloud
                     bool PackageNameHasBeenSet() const;
 
                     /**
-                     * 获取功能 id 数组
-                     * @return FeatureIds 功能 id 数组
+                     * 获取<p>鸿蒙包包名</p>
+                     * @return BundleName <p>鸿蒙包包名</p>
+                     * 
+                     */
+                    std::string GetBundleName() const;
+
+                    /**
+                     * 设置<p>鸿蒙包包名</p>
+                     * @param _bundleName <p>鸿蒙包包名</p>
+                     * 
+                     */
+                    void SetBundleName(const std::string& _bundleName);
+
+                    /**
+                     * 判断参数 BundleName 是否已赋值
+                     * @return BundleName 是否已赋值
+                     * 
+                     */
+                    bool BundleNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>功能 id 数组</p>
+                     * @return FeatureIds <p>功能 id 数组</p>
                      * 
                      */
                     std::vector<int64_t> GetFeatureIds() const;
 
                     /**
-                     * 设置功能 id 数组
-                     * @param _featureIds 功能 id 数组
+                     * 设置<p>功能 id 数组</p>
+                     * @param _featureIds <p>功能 id 数组</p>
                      * 
                      */
                     void SetFeatureIds(const std::vector<int64_t>& _featureIds);
@@ -127,15 +148,15 @@ namespace TencentCloud
                     bool FeatureIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否要开通优图功能
-                     * @return XMagic 是否要开通优图功能
+                     * 获取<p>是否要开通优图功能</p>
+                     * @return XMagic <p>是否要开通优图功能</p>
                      * 
                      */
                     bool GetXMagic() const;
 
                     /**
-                     * 设置是否要开通优图功能
-                     * @param _xMagic 是否要开通优图功能
+                     * 设置<p>是否要开通优图功能</p>
+                     * @param _xMagic <p>是否要开通优图功能</p>
                      * 
                      */
                     void SetXMagic(const bool& _xMagic);
@@ -148,15 +169,15 @@ namespace TencentCloud
                     bool XMagicHasBeenSet() const;
 
                     /**
-                     * 获取营业执照
-                     * @return CompanyPermit 营业执照
+                     * 获取<p>营业执照</p>
+                     * @return CompanyPermit <p>营业执照</p>
                      * 
                      */
                     std::string GetCompanyPermit() const;
 
                     /**
-                     * 设置营业执照
-                     * @param _companyPermit 营业执照
+                     * 设置<p>营业执照</p>
+                     * @param _companyPermit <p>营业执照</p>
                      * 
                      */
                     void SetCompanyPermit(const std::string& _companyPermit);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool CompanyPermitHasBeenSet() const;
 
                     /**
-                     * 获取公司类型
-                     * @return CompanyType 公司类型
+                     * 获取<p>公司类型</p>
+                     * @return CompanyType <p>公司类型</p>
                      * 
                      */
                     std::string GetCompanyType() const;
 
                     /**
-                     * 设置公司类型
-                     * @param _companyType 公司类型
+                     * 设置<p>公司类型</p>
+                     * @param _companyType <p>公司类型</p>
                      * 
                      */
                     void SetCompanyType(const std::string& _companyType);
@@ -190,15 +211,15 @@ namespace TencentCloud
                     bool CompanyTypeHasBeenSet() const;
 
                     /**
-                     * 获取公司名称
-                     * @return CompanyName 公司名称
+                     * 获取<p>公司名称</p>
+                     * @return CompanyName <p>公司名称</p>
                      * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
-                     * 设置公司名称
-                     * @param _companyName 公司名称
+                     * 设置<p>公司名称</p>
+                     * @param _companyName <p>公司名称</p>
                      * 
                      */
                     void SetCompanyName(const std::string& _companyName);
@@ -211,15 +232,15 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
-                     * 获取要开通的测试功能名称，基础套餐只能有一个
-                     * @return PlanList 要开通的测试功能名称，基础套餐只能有一个
+                     * 获取<p>要开通的测试功能名称，基础套餐只能有一个</p>
+                     * @return PlanList <p>要开通的测试功能名称，基础套餐只能有一个</p>
                      * 
                      */
                     std::vector<std::string> GetPlanList() const;
 
                     /**
-                     * 设置要开通的测试功能名称，基础套餐只能有一个
-                     * @param _planList 要开通的测试功能名称，基础套餐只能有一个
+                     * 设置<p>要开通的测试功能名称，基础套餐只能有一个</p>
+                     * @param _planList <p>要开通的测试功能名称，基础套餐只能有一个</p>
                      * 
                      */
                     void SetPlanList(const std::vector<std::string>& _planList);
@@ -232,15 +253,15 @@ namespace TencentCloud
                     bool PlanListHasBeenSet() const;
 
                     /**
-                     * 获取Mac 进程名
-                     * @return MacBundleId Mac 进程名
+                     * 获取<p>Mac 进程名</p>
+                     * @return MacBundleId <p>Mac 进程名</p>
                      * 
                      */
                     std::string GetMacBundleId() const;
 
                     /**
-                     * 设置Mac 进程名
-                     * @param _macBundleId Mac 进程名
+                     * 设置<p>Mac 进程名</p>
+                     * @param _macBundleId <p>Mac 进程名</p>
                      * 
                      */
                     void SetMacBundleId(const std::string& _macBundleId);
@@ -253,15 +274,15 @@ namespace TencentCloud
                     bool MacBundleIdHasBeenSet() const;
 
                     /**
-                     * 获取Windows 进程名
-                     * @return WinProcessName Windows 进程名
+                     * 获取<p>Windows 进程名</p>
+                     * @return WinProcessName <p>Windows 进程名</p>
                      * 
                      */
                     std::string GetWinProcessName() const;
 
                     /**
-                     * 设置Windows 进程名
-                     * @param _winProcessName Windows 进程名
+                     * 设置<p>Windows 进程名</p>
+                     * @param _winProcessName <p>Windows 进程名</p>
                      * 
                      */
                     void SetWinProcessName(const std::string& _winProcessName);
@@ -274,15 +295,15 @@ namespace TencentCloud
                     bool WinProcessNameHasBeenSet() const;
 
                     /**
-                     * 获取要创建到哪个平台，web、mobile、pc，默认mobile
-                     * @return Platform 要创建到哪个平台，web、mobile、pc，默认mobile
+                     * 获取<p>要创建到哪个平台，web、mobile、pc，默认mobile</p>
+                     * @return Platform <p>要创建到哪个平台，web、mobile、pc，默认mobile</p>
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置要创建到哪个平台，web、mobile、pc，默认mobile
-                     * @param _platform 要创建到哪个平台，web、mobile、pc，默认mobile
+                     * 设置<p>要创建到哪个平台，web、mobile、pc，默认mobile</p>
+                     * @param _platform <p>要创建到哪个平台，web、mobile、pc，默认mobile</p>
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -295,15 +316,15 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取授权域名列表
-                     * @return DomainList 授权域名列表
+                     * 获取<p>授权域名列表</p>
+                     * @return DomainList <p>授权域名列表</p>
                      * 
                      */
                     std::vector<std::string> GetDomainList() const;
 
                     /**
-                     * 设置授权域名列表
-                     * @param _domainList 授权域名列表
+                     * 设置<p>授权域名列表</p>
+                     * @param _domainList <p>授权域名列表</p>
                      * 
                      */
                     void SetDomainList(const std::vector<std::string>& _domainList);
@@ -318,79 +339,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名
+                     * <p>应用名</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * 包名
+                     * <p>包名</p>
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
-                     * 功能 id 数组
+                     * <p>鸿蒙包包名</p>
+                     */
+                    std::string m_bundleName;
+                    bool m_bundleNameHasBeenSet;
+
+                    /**
+                     * <p>功能 id 数组</p>
                      */
                     std::vector<int64_t> m_featureIds;
                     bool m_featureIdsHasBeenSet;
 
                     /**
-                     * 是否要开通优图功能
+                     * <p>是否要开通优图功能</p>
                      */
                     bool m_xMagic;
                     bool m_xMagicHasBeenSet;
 
                     /**
-                     * 营业执照
+                     * <p>营业执照</p>
                      */
                     std::string m_companyPermit;
                     bool m_companyPermitHasBeenSet;
 
                     /**
-                     * 公司类型
+                     * <p>公司类型</p>
                      */
                     std::string m_companyType;
                     bool m_companyTypeHasBeenSet;
 
                     /**
-                     * 公司名称
+                     * <p>公司名称</p>
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
 
                     /**
-                     * 要开通的测试功能名称，基础套餐只能有一个
+                     * <p>要开通的测试功能名称，基础套餐只能有一个</p>
                      */
                     std::vector<std::string> m_planList;
                     bool m_planListHasBeenSet;
 
                     /**
-                     * Mac 进程名
+                     * <p>Mac 进程名</p>
                      */
                     std::string m_macBundleId;
                     bool m_macBundleIdHasBeenSet;
 
                     /**
-                     * Windows 进程名
+                     * <p>Windows 进程名</p>
                      */
                     std::string m_winProcessName;
                     bool m_winProcessNameHasBeenSet;
 
                     /**
-                     * 要创建到哪个平台，web、mobile、pc，默认mobile
+                     * <p>要创建到哪个平台，web、mobile、pc，默认mobile</p>
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 授权域名列表
+                     * <p>授权域名列表</p>
                      */
                     std::vector<std::string> m_domainList;
                     bool m_domainListHasBeenSet;

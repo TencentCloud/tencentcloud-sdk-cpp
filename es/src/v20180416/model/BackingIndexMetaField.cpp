@@ -25,7 +25,8 @@ BackingIndexMetaField::BackingIndexMetaField() :
     m_indexStatusHasBeenSet(false),
     m_indexStorageHasBeenSet(false),
     m_indexPhraseHasBeenSet(false),
-    m_indexCreateTimeHasBeenSet(false)
+    m_indexCreateTimeHasBeenSet(false),
+    m_indexUuidHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome BackingIndexMetaField::Deserialize(const rapidjson::Value &v
         m_indexCreateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexUuid") && !value["IndexUuid"].IsNull())
+    {
+        if (!value["IndexUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackingIndexMetaField.IndexUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexUuid = string(value["IndexUuid"].GetString());
+        m_indexUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void BackingIndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "IndexCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_indexCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexUuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void BackingIndexMetaField::SetIndexCreateTime(const string& _indexCreateTime)
 bool BackingIndexMetaField::IndexCreateTimeHasBeenSet() const
 {
     return m_indexCreateTimeHasBeenSet;
+}
+
+string BackingIndexMetaField::GetIndexUuid() const
+{
+    return m_indexUuid;
+}
+
+void BackingIndexMetaField::SetIndexUuid(const string& _indexUuid)
+{
+    m_indexUuid = _indexUuid;
+    m_indexUuidHasBeenSet = true;
+}
+
+bool BackingIndexMetaField::IndexUuidHasBeenSet() const
+{
+    return m_indexUuidHasBeenSet;
 }
 

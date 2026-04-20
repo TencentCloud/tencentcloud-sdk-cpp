@@ -113,6 +113,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicRequest.h>
@@ -306,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductSKUListResponse> DescribeProductSKUListOutcome;
                 typedef std::future<DescribeProductSKUListOutcome> DescribeProductSKUListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeProductSKUListRequest&, DescribeProductSKUListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionGroupsResponse> DescribeSharedSubscriptionGroupsOutcome;
+                typedef std::future<DescribeSharedSubscriptionGroupsOutcome> DescribeSharedSubscriptionGroupsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionGroupsRequest&, DescribeSharedSubscriptionGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionLagResponse> DescribeSharedSubscriptionLagOutcome;
                 typedef std::future<DescribeSharedSubscriptionLagOutcome> DescribeSharedSubscriptionLagOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionLagRequest&, DescribeSharedSubscriptionLagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionLagAsyncHandler;
@@ -784,6 +789,15 @@ namespace TencentCloud
                 DescribeProductSKUListOutcome DescribeProductSKUList(const Model::DescribeProductSKUListRequest &request);
                 void DescribeProductSKUListAsync(const Model::DescribeProductSKUListRequest& request, const DescribeProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductSKUListOutcomeCallable DescribeProductSKUListCallable(const Model::DescribeProductSKUListRequest& request);
+
+                /**
+                 *查询集群下共享订阅组列表
+                 * @param req DescribeSharedSubscriptionGroupsRequest
+                 * @return DescribeSharedSubscriptionGroupsOutcome
+                 */
+                DescribeSharedSubscriptionGroupsOutcome DescribeSharedSubscriptionGroups(const Model::DescribeSharedSubscriptionGroupsRequest &request);
+                void DescribeSharedSubscriptionGroupsAsync(const Model::DescribeSharedSubscriptionGroupsRequest& request, const DescribeSharedSubscriptionGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedSubscriptionGroupsOutcomeCallable DescribeSharedSubscriptionGroupsCallable(const Model::DescribeSharedSubscriptionGroupsRequest& request);
 
                 /**
                  *查询共享订阅消息堆积量

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接源列表
-                     * @return Result 连接源列表
+                     * 获取<p>连接源列表</p>
+                     * @return Result <p>连接源列表</p>
                      * 
                      */
                     DescribeConnectResourcesResp GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 连接源列表
+                     * <p>连接源列表</p>
                      */
                     DescribeConnectResourcesResp m_result;
                     bool m_resultHasBeenSet;

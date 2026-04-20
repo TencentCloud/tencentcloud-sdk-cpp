@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ES集群ID
-                     * @return InstanceId ES集群ID
+                     * 获取<p>ES集群ID</p>
+                     * @return InstanceId <p>ES集群ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ES集群ID
-                     * @param _instanceId ES集群ID
+                     * 设置<p>ES集群ID</p>
+                     * @param _instanceId <p>ES集群ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取更新的索引类型。auto：自治索引；normal：普通索引
-                     * @return IndexType 更新的索引类型。auto：自治索引；normal：普通索引
+                     * 获取<p>更新的索引类型。auto：自治索引；normal：普通索引</p>
+                     * @return IndexType <p>更新的索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     std::string GetIndexType() const;
 
                     /**
-                     * 设置更新的索引类型。auto：自治索引；normal：普通索引
-                     * @param _indexType 更新的索引类型。auto：自治索引；normal：普通索引
+                     * 设置<p>更新的索引类型。auto：自治索引；normal：普通索引</p>
+                     * @param _indexType <p>更新的索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     void SetIndexType(const std::string& _indexType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取更新的索引名
-                     * @return IndexName 更新的索引名
+                     * 获取<p>更新的索引名</p>
+                     * @return IndexName <p>更新的索引名</p>
                      * 
                      */
                     std::string GetIndexName() const;
 
                     /**
-                     * 设置更新的索引名
-                     * @param _indexName 更新的索引名
+                     * 设置<p>更新的索引名</p>
+                     * @param _indexName <p>更新的索引名</p>
                      * 
                      */
                     void SetIndexName(const std::string& _indexName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
-                     * 获取更新的索引元数据JSON，如mappings、settings
-                     * @return UpdateMetaJson 更新的索引元数据JSON，如mappings、settings
+                     * 获取<p>更新的索引元数据JSON，如mappings、settings</p>
+                     * @return UpdateMetaJson <p>更新的索引元数据JSON，如mappings、settings</p>
                      * 
                      */
                     std::string GetUpdateMetaJson() const;
 
                     /**
-                     * 设置更新的索引元数据JSON，如mappings、settings
-                     * @param _updateMetaJson 更新的索引元数据JSON，如mappings、settings
+                     * 设置<p>更新的索引元数据JSON，如mappings、settings</p>
+                     * @param _updateMetaJson <p>更新的索引元数据JSON，如mappings、settings</p>
                      * 
                      */
                     void SetUpdateMetaJson(const std::string& _updateMetaJson);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UpdateMetaJsonHasBeenSet() const;
 
                     /**
-                     * 获取集群访问用户名
-                     * @return Username 集群访问用户名
+                     * 获取<p>集群访问用户名</p>
+                     * @return Username <p>集群访问用户名</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置集群访问用户名
-                     * @param _username 集群访问用户名
+                     * 设置<p>集群访问用户名</p>
+                     * @param _username <p>集群访问用户名</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取集群访问密码
-                     * @return Password 集群访问密码
+                     * 获取<p>集群访问密码</p>
+                     * @return Password <p>集群访问密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置集群访问密码
-                     * @param _password 集群访问密码
+                     * 设置<p>集群访问密码</p>
+                     * @param _password <p>集群访问密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否滚动后备索引
-                     * @return RolloverBackingIndex 是否滚动后备索引
+                     * 获取<p>是否滚动后备索引</p>
+                     * @return RolloverBackingIndex <p>是否滚动后备索引</p>
                      * 
                      */
                     bool GetRolloverBackingIndex() const;
 
                     /**
-                     * 设置是否滚动后备索引
-                     * @param _rolloverBackingIndex 是否滚动后备索引
+                     * 设置<p>是否滚动后备索引</p>
+                     * @param _rolloverBackingIndex <p>是否滚动后备索引</p>
                      * 
                      */
                     void SetRolloverBackingIndex(const bool& _rolloverBackingIndex);
@@ -189,49 +189,130 @@ namespace TencentCloud
                      */
                     bool RolloverBackingIndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为取回完全卸载索引</p>
+                     * @return MountIndex <p>是否为取回完全卸载索引</p>
+                     * 
+                     */
+                    bool GetMountIndex() const;
+
+                    /**
+                     * 设置<p>是否为取回完全卸载索引</p>
+                     * @param _mountIndex <p>是否为取回完全卸载索引</p>
+                     * 
+                     */
+                    void SetMountIndex(const bool& _mountIndex);
+
+                    /**
+                     * 判断参数 MountIndex 是否已赋值
+                     * @return MountIndex 是否已赋值
+                     * 
+                     */
+                    bool MountIndexHasBeenSet() const;
+
+                    /**
+                     * 获取<p>索引Uuid</p>
+                     * @return IndexUuid <p>索引Uuid</p>
+                     * 
+                     */
+                    std::string GetIndexUuid() const;
+
+                    /**
+                     * 设置<p>索引Uuid</p>
+                     * @param _indexUuid <p>索引Uuid</p>
+                     * 
+                     */
+                    void SetIndexUuid(const std::string& _indexUuid);
+
+                    /**
+                     * 判断参数 IndexUuid 是否已赋值
+                     * @return IndexUuid 是否已赋值
+                     * 
+                     */
+                    bool IndexUuidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后备索引名</p>
+                     * @return BackingIndexName <p>后备索引名</p>
+                     * 
+                     */
+                    std::string GetBackingIndexName() const;
+
+                    /**
+                     * 设置<p>后备索引名</p>
+                     * @param _backingIndexName <p>后备索引名</p>
+                     * 
+                     */
+                    void SetBackingIndexName(const std::string& _backingIndexName);
+
+                    /**
+                     * 判断参数 BackingIndexName 是否已赋值
+                     * @return BackingIndexName 是否已赋值
+                     * 
+                     */
+                    bool BackingIndexNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ES集群ID
+                     * <p>ES集群ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 更新的索引类型。auto：自治索引；normal：普通索引
+                     * <p>更新的索引类型。auto：自治索引；normal：普通索引</p>
                      */
                     std::string m_indexType;
                     bool m_indexTypeHasBeenSet;
 
                     /**
-                     * 更新的索引名
+                     * <p>更新的索引名</p>
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
 
                     /**
-                     * 更新的索引元数据JSON，如mappings、settings
+                     * <p>更新的索引元数据JSON，如mappings、settings</p>
                      */
                     std::string m_updateMetaJson;
                     bool m_updateMetaJsonHasBeenSet;
 
                     /**
-                     * 集群访问用户名
+                     * <p>集群访问用户名</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 集群访问密码
+                     * <p>集群访问密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否滚动后备索引
+                     * <p>是否滚动后备索引</p>
                      */
                     bool m_rolloverBackingIndex;
                     bool m_rolloverBackingIndexHasBeenSet;
+
+                    /**
+                     * <p>是否为取回完全卸载索引</p>
+                     */
+                    bool m_mountIndex;
+                    bool m_mountIndexHasBeenSet;
+
+                    /**
+                     * <p>索引Uuid</p>
+                     */
+                    std::string m_indexUuid;
+                    bool m_indexUuidHasBeenSet;
+
+                    /**
+                     * <p>后备索引名</p>
+                     */
+                    std::string m_backingIndexName;
+                    bool m_backingIndexNameHasBeenSet;
 
                 };
             }

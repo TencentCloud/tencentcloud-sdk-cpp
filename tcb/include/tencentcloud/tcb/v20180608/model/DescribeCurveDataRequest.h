@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,299 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取<h4>文档型数据库相关指标</h4>
-<li> DbRead: 数据库读请求数 </li>
-<li> DbWrite: 数据库写请求数 </li>
-<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>
-<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>
-<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>
-<li> DbSizepkg: 数据库容量，单位MB </li>
-
-<h4>SQL型数据库相关指标</h4>
-<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>
-<li> MysqlCCU: CCU </li>
-<li> MysqlCpuUsageRate:CPU利用率 </li>
-<li> MysqlDbConnections:数据库连接数 </li>
-<li> MysqlMemoryUse: 内存使用量，单位MB </li>
-<li> MysqlSlowQueries:慢查询数 </li>
-<li> MysqlTps: 提交数 </li>
-<li> MysqlQps: QPS </li>
-
-<h4>云函数相关指标</h4>
-<li> FunctionCU: 资源用量</li>
-<li> FunctionInvocation: 调用次数 </li>
-<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>
-<li> FunctionThrottle: 受限次数 </li>
-<li> FunctionConcurrentExecutions: 并发执行个数</li>
-<li> FunctionTimeout: 函数执行超时次数</li>
-<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>
-<li> FunctionError: 云错误次数 </li>
-<li> FunctionDuration: 运行时间, 单位毫秒 </li>
-<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>
-<li>FunctionMemOverFlow：内存超限次数</li>
-<li> FunctionIdleProvisioned: 预置并发闲置量 </li>
-<li> FunctionProvisionedConcurrency: 预置并发个数 </li>
-
-<h4>云托管相关指标</h4>
-<li>TkeRspTimeService ： 响应时间，单位毫秒</li>
-<li>TkeCpuUsedService ： CPU使用量</li>
-<li>TkeMemUsedService ： 内存使用量</li>
-<li>TkeQPSService ： QPS</li>
-<li>TkePodNumService ： 实例个数</li>
-<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>
-<li>TkeCUUsedService ： 内存使用量(CU单位)</li>
-<li>TkeInvokeNumService ： 调用量</li>
-<li>TkeHttpErrorService ： 错误响应（404、500等）</li>
-
-<h4>静态网站托管相关指标</h4>
-<li>StaticFsFluxPkg：流量，单位byte</li>
-<li>StaticFsSizePkg：存储容量，单位MB</li>
-
-<h4>身份认证相关指标</h4>
-<li>AuthInvocationNumPkg：调用次数</li>
-
-<h4>API调用相关指标</h4>
-<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>
-<li>GwWXInvocation：小程序API调用次数</li>
-
-<h4>HTTP网关相关指标</h4>
-<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>
-
-<h4>大模型相关指标</h4>
-<li>AIPromptTokenNumPkg：输入Token</li>
-<li>AICompletionTokenNumPkg：输出Token</li>
-<li>AITotalTokenNumPkg：总Token</li>
-
-<h4>知识库相关指标</h4>
-<li>KnowledgeBaseCapacity：容量，单位bytes</li>
-
-
-<h4>用户登录相关指标</h4>
-<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>
-<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>
-<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>
-<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>
-                     * @return MetricName <h4>文档型数据库相关指标</h4>
-<li> DbRead: 数据库读请求数 </li>
-<li> DbWrite: 数据库写请求数 </li>
-<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>
-<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>
-<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>
-<li> DbSizepkg: 数据库容量，单位MB </li>
-
-<h4>SQL型数据库相关指标</h4>
-<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>
-<li> MysqlCCU: CCU </li>
-<li> MysqlCpuUsageRate:CPU利用率 </li>
-<li> MysqlDbConnections:数据库连接数 </li>
-<li> MysqlMemoryUse: 内存使用量，单位MB </li>
-<li> MysqlSlowQueries:慢查询数 </li>
-<li> MysqlTps: 提交数 </li>
-<li> MysqlQps: QPS </li>
-
-<h4>云函数相关指标</h4>
-<li> FunctionCU: 资源用量</li>
-<li> FunctionInvocation: 调用次数 </li>
-<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>
-<li> FunctionThrottle: 受限次数 </li>
-<li> FunctionConcurrentExecutions: 并发执行个数</li>
-<li> FunctionTimeout: 函数执行超时次数</li>
-<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>
-<li> FunctionError: 云错误次数 </li>
-<li> FunctionDuration: 运行时间, 单位毫秒 </li>
-<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>
-<li>FunctionMemOverFlow：内存超限次数</li>
-<li> FunctionIdleProvisioned: 预置并发闲置量 </li>
-<li> FunctionProvisionedConcurrency: 预置并发个数 </li>
-
-<h4>云托管相关指标</h4>
-<li>TkeRspTimeService ： 响应时间，单位毫秒</li>
-<li>TkeCpuUsedService ： CPU使用量</li>
-<li>TkeMemUsedService ： 内存使用量</li>
-<li>TkeQPSService ： QPS</li>
-<li>TkePodNumService ： 实例个数</li>
-<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>
-<li>TkeCUUsedService ： 内存使用量(CU单位)</li>
-<li>TkeInvokeNumService ： 调用量</li>
-<li>TkeHttpErrorService ： 错误响应（404、500等）</li>
-
-<h4>静态网站托管相关指标</h4>
-<li>StaticFsFluxPkg：流量，单位byte</li>
-<li>StaticFsSizePkg：存储容量，单位MB</li>
-
-<h4>身份认证相关指标</h4>
-<li>AuthInvocationNumPkg：调用次数</li>
-
-<h4>API调用相关指标</h4>
-<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>
-<li>GwWXInvocation：小程序API调用次数</li>
-
-<h4>HTTP网关相关指标</h4>
-<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>
-
-<h4>大模型相关指标</h4>
-<li>AIPromptTokenNumPkg：输入Token</li>
-<li>AICompletionTokenNumPkg：输出Token</li>
-<li>AITotalTokenNumPkg：总Token</li>
-
-<h4>知识库相关指标</h4>
-<li>KnowledgeBaseCapacity：容量，单位bytes</li>
-
-
-<h4>用户登录相关指标</h4>
-<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>
-<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>
-<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>
-<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>
+                     * 获取<h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>
+                     * @return MetricName <h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置<h4>文档型数据库相关指标</h4>
-<li> DbRead: 数据库读请求数 </li>
-<li> DbWrite: 数据库写请求数 </li>
-<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>
-<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>
-<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>
-<li> DbSizepkg: 数据库容量，单位MB </li>
-
-<h4>SQL型数据库相关指标</h4>
-<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>
-<li> MysqlCCU: CCU </li>
-<li> MysqlCpuUsageRate:CPU利用率 </li>
-<li> MysqlDbConnections:数据库连接数 </li>
-<li> MysqlMemoryUse: 内存使用量，单位MB </li>
-<li> MysqlSlowQueries:慢查询数 </li>
-<li> MysqlTps: 提交数 </li>
-<li> MysqlQps: QPS </li>
-
-<h4>云函数相关指标</h4>
-<li> FunctionCU: 资源用量</li>
-<li> FunctionInvocation: 调用次数 </li>
-<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>
-<li> FunctionThrottle: 受限次数 </li>
-<li> FunctionConcurrentExecutions: 并发执行个数</li>
-<li> FunctionTimeout: 函数执行超时次数</li>
-<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>
-<li> FunctionError: 云错误次数 </li>
-<li> FunctionDuration: 运行时间, 单位毫秒 </li>
-<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>
-<li>FunctionMemOverFlow：内存超限次数</li>
-<li> FunctionIdleProvisioned: 预置并发闲置量 </li>
-<li> FunctionProvisionedConcurrency: 预置并发个数 </li>
-
-<h4>云托管相关指标</h4>
-<li>TkeRspTimeService ： 响应时间，单位毫秒</li>
-<li>TkeCpuUsedService ： CPU使用量</li>
-<li>TkeMemUsedService ： 内存使用量</li>
-<li>TkeQPSService ： QPS</li>
-<li>TkePodNumService ： 实例个数</li>
-<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>
-<li>TkeCUUsedService ： 内存使用量(CU单位)</li>
-<li>TkeInvokeNumService ： 调用量</li>
-<li>TkeHttpErrorService ： 错误响应（404、500等）</li>
-
-<h4>静态网站托管相关指标</h4>
-<li>StaticFsFluxPkg：流量，单位byte</li>
-<li>StaticFsSizePkg：存储容量，单位MB</li>
-
-<h4>身份认证相关指标</h4>
-<li>AuthInvocationNumPkg：调用次数</li>
-
-<h4>API调用相关指标</h4>
-<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>
-<li>GwWXInvocation：小程序API调用次数</li>
-
-<h4>HTTP网关相关指标</h4>
-<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>
-
-<h4>大模型相关指标</h4>
-<li>AIPromptTokenNumPkg：输入Token</li>
-<li>AICompletionTokenNumPkg：输出Token</li>
-<li>AITotalTokenNumPkg：总Token</li>
-
-<h4>知识库相关指标</h4>
-<li>KnowledgeBaseCapacity：容量，单位bytes</li>
-
-
-<h4>用户登录相关指标</h4>
-<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>
-<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>
-<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>
-<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>
-                     * @param _metricName <h4>文档型数据库相关指标</h4>
-<li> DbRead: 数据库读请求数 </li>
-<li> DbWrite: 数据库写请求数 </li>
-<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>
-<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>
-<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>
-<li> DbSizepkg: 数据库容量，单位MB </li>
-
-<h4>SQL型数据库相关指标</h4>
-<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>
-<li> MysqlCCU: CCU </li>
-<li> MysqlCpuUsageRate:CPU利用率 </li>
-<li> MysqlDbConnections:数据库连接数 </li>
-<li> MysqlMemoryUse: 内存使用量，单位MB </li>
-<li> MysqlSlowQueries:慢查询数 </li>
-<li> MysqlTps: 提交数 </li>
-<li> MysqlQps: QPS </li>
-
-<h4>云函数相关指标</h4>
-<li> FunctionCU: 资源用量</li>
-<li> FunctionInvocation: 调用次数 </li>
-<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>
-<li> FunctionThrottle: 受限次数 </li>
-<li> FunctionConcurrentExecutions: 并发执行个数</li>
-<li> FunctionTimeout: 函数执行超时次数</li>
-<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>
-<li> FunctionError: 云错误次数 </li>
-<li> FunctionDuration: 运行时间, 单位毫秒 </li>
-<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>
-<li>FunctionMemOverFlow：内存超限次数</li>
-<li> FunctionIdleProvisioned: 预置并发闲置量 </li>
-<li> FunctionProvisionedConcurrency: 预置并发个数 </li>
-
-<h4>云托管相关指标</h4>
-<li>TkeRspTimeService ： 响应时间，单位毫秒</li>
-<li>TkeCpuUsedService ： CPU使用量</li>
-<li>TkeMemUsedService ： 内存使用量</li>
-<li>TkeQPSService ： QPS</li>
-<li>TkePodNumService ： 实例个数</li>
-<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>
-<li>TkeCUUsedService ： 内存使用量(CU单位)</li>
-<li>TkeInvokeNumService ： 调用量</li>
-<li>TkeHttpErrorService ： 错误响应（404、500等）</li>
-
-<h4>静态网站托管相关指标</h4>
-<li>StaticFsFluxPkg：流量，单位byte</li>
-<li>StaticFsSizePkg：存储容量，单位MB</li>
-
-<h4>身份认证相关指标</h4>
-<li>AuthInvocationNumPkg：调用次数</li>
-
-<h4>API调用相关指标</h4>
-<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>
-<li>GwWXInvocation：小程序API调用次数</li>
-
-<h4>HTTP网关相关指标</h4>
-<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>
-
-<h4>大模型相关指标</h4>
-<li>AIPromptTokenNumPkg：输入Token</li>
-<li>AICompletionTokenNumPkg：输出Token</li>
-<li>AITotalTokenNumPkg：总Token</li>
-
-<h4>知识库相关指标</h4>
-<li>KnowledgeBaseCapacity：容量，单位bytes</li>
-
-
-<h4>用户登录相关指标</h4>
-<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>
-<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>
-<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>
-<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>
+                     * 设置<h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>
+                     * @param _metricName <h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -369,15 +85,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
-                     * @return StartTime 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * 获取<p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
+                     * @return StartTime <p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
-                     * @param _startTime 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * 设置<p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
+                     * @param _startTime <p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -390,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
-                     * @return EndTime 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * 获取<p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
+                     * @return EndTime <p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
-                     * @param _endTime 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * 设置<p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
+                     * @param _endTime <p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -411,23 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。
-如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。
-云托管相关指标的查询，必须传入云托管服务名称。
-                     * @return ResourceID 资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。
-如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。
-云托管相关指标的查询，必须传入云托管服务名称。
+                     * 获取<p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>
+                     * @return ResourceID <p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>
                      * 
                      */
                     std::string GetResourceID() const;
 
                     /**
-                     * 设置资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。
-如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。
-云托管相关指标的查询，必须传入云托管服务名称。
-                     * @param _resourceID 资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。
-如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。
-云托管相关指标的查询，必须传入云托管服务名称。
+                     * 设置<p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>
+                     * @param _resourceID <p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>
                      * 
                      */
                     void SetResourceID(const std::string& _resourceID);
@@ -440,15 +148,15 @@ namespace TencentCloud
                     bool ResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取微信AppId，微信必传
-                     * @return WxAppId 微信AppId，微信必传
+                     * 获取<p>微信AppId，微信必传</p>
+                     * @return WxAppId <p>微信AppId，微信必传</p>
                      * 
                      */
                     std::string GetWxAppId() const;
 
                     /**
-                     * 设置微信AppId，微信必传
-                     * @param _wxAppId 微信AppId，微信必传
+                     * 设置<p>微信AppId，微信必传</p>
+                     * @param _wxAppId <p>微信AppId，微信必传</p>
                      * 
                      */
                     void SetWxAppId(const std::string& _wxAppId);
@@ -461,19 +169,15 @@ namespace TencentCloud
                     bool WxAppIdHasBeenSet() const;
 
                     /**
-                     * 获取子资源信息。
-查询云托管相关指标的具体版本的监控数据，需传入。
-                     * @return SubresourceID 子资源信息。
-查询云托管相关指标的具体版本的监控数据，需传入。
+                     * 获取<p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>
+                     * @return SubresourceID <p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>
                      * 
                      */
                     std::string GetSubresourceID() const;
 
                     /**
-                     * 设置子资源信息。
-查询云托管相关指标的具体版本的监控数据，需传入。
-                     * @param _subresourceID 子资源信息。
-查询云托管相关指标的具体版本的监控数据，需传入。
+                     * 设置<p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>
+                     * @param _subresourceID <p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>
                      * 
                      */
                     void SetSubresourceID(const std::string& _subresourceID);
@@ -486,15 +190,15 @@ namespace TencentCloud
                     bool SubresourceIDHasBeenSet() const;
 
                     /**
-                     * 获取网关路由
-                     * @return ThirdResource 网关路由
+                     * 获取<p>网关路由</p>
+                     * @return ThirdResource <p>网关路由</p>
                      * 
                      */
                     std::string GetThirdResource() const;
 
                     /**
-                     * 设置网关路由
-                     * @param _thirdResource 网关路由
+                     * 设置<p>网关路由</p>
+                     * @param _thirdResource <p>网关路由</p>
                      * 
                      */
                     void SetThirdResource(const std::string& _thirdResource);
@@ -507,19 +211,15 @@ namespace TencentCloud
                     bool ThirdResourceHasBeenSet() const;
 
                     /**
-                     * 获取统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。
-如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。
-                     * @return Period 统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。
-如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。
+                     * 获取<p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>
+                     * @return Period <p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。
-如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。
-                     * @param _period 统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。
-如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。
+                     * 设置<p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>
+                     * @param _period <p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -534,130 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * <h4>文档型数据库相关指标</h4>
-<li> DbRead: 数据库读请求数 </li>
-<li> DbWrite: 数据库写请求数 </li>
-<li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li>
-<li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li>
-<li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li>
-<li> DbSizepkg: 数据库容量，单位MB </li>
-
-<h4>SQL型数据库相关指标</h4>
-<li> MysqlStorageUsage: 关系型数据库容量，单位MB </li>
-<li> MysqlCCU: CCU </li>
-<li> MysqlCpuUsageRate:CPU利用率 </li>
-<li> MysqlDbConnections:数据库连接数 </li>
-<li> MysqlMemoryUse: 内存使用量，单位MB </li>
-<li> MysqlSlowQueries:慢查询数 </li>
-<li> MysqlTps: 提交数 </li>
-<li> MysqlQps: QPS </li>
-
-<h4>云函数相关指标</h4>
-<li> FunctionCU: 资源用量</li>
-<li> FunctionInvocation: 调用次数 </li>
-<li> FunctionFlux: 外网出流量, 单位千字节(KB) </li>
-<li> FunctionThrottle: 受限次数 </li>
-<li> FunctionConcurrentExecutions: 并发执行个数</li>
-<li> FunctionTimeout: 函数执行超时次数</li>
-<li> FunctionGBs: 资源用量, 单位Mb*Ms </li>
-<li> FunctionError: 云错误次数 </li>
-<li> FunctionDuration: 运行时间, 单位毫秒 </li>
-<li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li>
-<li>FunctionMemOverFlow：内存超限次数</li>
-<li> FunctionIdleProvisioned: 预置并发闲置量 </li>
-<li> FunctionProvisionedConcurrency: 预置并发个数 </li>
-
-<h4>云托管相关指标</h4>
-<li>TkeRspTimeService ： 响应时间，单位毫秒</li>
-<li>TkeCpuUsedService ： CPU使用量</li>
-<li>TkeMemUsedService ： 内存使用量</li>
-<li>TkeQPSService ： QPS</li>
-<li>TkePodNumService ： 实例个数</li>
-<li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li>
-<li>TkeCUUsedService ： 内存使用量(CU单位)</li>
-<li>TkeInvokeNumService ： 调用量</li>
-<li>TkeHttpErrorService ： 错误响应（404、500等）</li>
-
-<h4>静态网站托管相关指标</h4>
-<li>StaticFsFluxPkg：流量，单位byte</li>
-<li>StaticFsSizePkg：存储容量，单位MB</li>
-
-<h4>身份认证相关指标</h4>
-<li>AuthInvocationNumPkg：调用次数</li>
-
-<h4>API调用相关指标</h4>
-<li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li>
-<li>GwWXInvocation：小程序API调用次数</li>
-
-<h4>HTTP网关相关指标</h4>
-<li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li>
-
-<h4>大模型相关指标</h4>
-<li>AIPromptTokenNumPkg：输入Token</li>
-<li>AICompletionTokenNumPkg：输出Token</li>
-<li>AITotalTokenNumPkg：总Token</li>
-
-<h4>知识库相关指标</h4>
-<li>KnowledgeBaseCapacity：容量，单位bytes</li>
-
-
-<h4>用户登录相关指标</h4>
-<li>DayActiveLoginAnonymousUser：匿名用户登陆日活</li>
-<li>DayActiveLoginAllUser ： 全部用户登陆日活</li>
-<li>DayActiveLoginExternalUser ： 外部用户登陆日活</li>
-<li>DayActiveLoginInternalUser ： 内部用户登陆日活</li>
+                     * <h4>文档型数据库相关指标</h4><li> DbRead: 数据库读请求数 </li><li> DbWrite: 数据库写请求数 </li><li> DbCostTime10ms: 数据库耗时在10ms-50ms请求数 </li><li> DbCostTime50ms: 数据库耗时在50ms-100ms请求数 </li><li> DbCostTime100ms: 数据库耗时在100ms以上请求数 </li><li> DbSizepkg: 数据库容量，单位MB </li><h4>SQL型数据库相关指标</h4><li> MysqlStorageUsage: 关系型数据库容量，单位MB </li><li> MysqlCCU: CCU </li><li> MysqlCpuUsageRate:CPU利用率 </li><li> MysqlDbConnections:数据库连接数 </li><li> MysqlMemoryUse: 内存使用量，单位MB </li><li> MysqlSlowQueries:慢查询数 </li><li> MysqlTps: 提交数 </li><li> MysqlQps: QPS </li><h4>云函数相关指标</h4><li> FunctionCU: 资源用量</li><li> FunctionInvocation: 调用次数 </li><li> FunctionFlux: 外网出流量, 单位千字节(KB) </li><li> FunctionThrottle: 受限次数 </li><li> FunctionConcurrentExecutions: 并发执行个数</li><li> FunctionTimeout: 函数执行超时次数</li><li> FunctionGBs: 资源用量, 单位Mb*Ms </li><li> FunctionError: 云错误次数 </li><li> FunctionDuration: 运行时间, 单位毫秒 </li><li> FunctionConcurrencyMemoryMB: 并发执行内存量 </li><li>FunctionMemOverFlow：内存超限次数</li><li> FunctionIdleProvisioned: 预置并发闲置量 </li><li> FunctionProvisionedConcurrency: 预置并发个数 </li><h4>云托管相关指标</h4><li>TkeRspTimeService ： 响应时间，单位毫秒</li><li>TkeCpuUsedService ： CPU使用量</li><li>TkeMemUsedService ： 内存使用量</li><li>TkeQPSService ： QPS</li><li>TkePodNumService ： 实例个数</li><li>TkeHttpServiceNatPkg ： 外网出流量，单位byte</li><li>TkeCUUsedService ： 内存使用量(CU单位)</li><li>TkeInvokeNumService ： 调用量</li><li>TkeHttpErrorService ： 错误响应（404、500等）</li><h4>静态网站托管相关指标</h4><li>StaticFsFluxPkg：流量，单位byte</li><li>StaticFsSizePkg：存储容量，单位MB</li><h4>身份认证相关指标</h4><li>AuthInvocationNumPkg：调用次数</li><h4>API调用相关指标</h4><li>GwCloudDevelopmentSecureCallsInvocation：云开发API调用次数</li><li>GwWXInvocation：小程序API调用次数</li><h4>HTTP网关相关指标</h4><li>GwCloudDevelopmentStandardCallsInvocation：HTTP调用次数</li><h4>大模型相关指标</h4><li>AIPromptTokenNumPkg：输入Token</li><li>AICompletionTokenNumPkg：输出Token</li><li>AITotalTokenNumPkg：总Token</li><h4>知识库相关指标</h4><li>KnowledgeBaseCapacity：容量，单位bytes</li><h4>用户登录相关指标</h4><li>DayActiveLoginAnonymousUser：匿名用户登录日活</li><li>DayActiveLoginAllUser ： 全部用户登录日活</li><li>DayActiveLoginExternalUser ： 外部用户登录日活</li><li>DayActiveLoginInternalUser ： 内部用户登录日活</li><h4>环境QPS相关指标</h4><li>EnvQPSAll：环境总QPS</li><h4>数据库连接器相关指标</h4><li> MongoConnectorRead: 数据库连接器读请求数 </li><li> MongoConnectorWrite: 数据库连接器写请求数 </li><li> MongoConnectorCostTime10ms: 数据库连接器耗时在10ms-50ms请求数 </li><li> MongoConnectorCostTime50ms: 数据库连接器耗时在50ms-100ms请求数 </li><li> MongoConnectorCostTime100ms: 数据库连接器耗时在100ms以上请求数 </li><li> MongoConnectorInvokeNum: 数据库连接器调用次数</li>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * <p>开始时间，如2018-08-24 10:50:00, 开始时间需要早于结束时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)
+                     * <p>结束时间，如2018-08-24 10:50:00, 结束时间需要晚于开始时间至少五分钟(原因是因为目前统计粒度最小是5分钟)</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 资源ID, 目前仅对文档型数据库、云函数、云托管相关的指标有意义。
-如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。
-云托管相关指标的查询，必须传入云托管服务名称。
+                     * <p>资源ID, 目前仅对文档型数据库、云函数、云托管、数据库连接器相关的指标有意义。<br>如果想查询某个具体云函数/具体数据库集合的指标，则需传入对应的云函数名称/集合名称；如果只想查询整个namespace的指标, 则留空或不传。<br>云托管相关指标的查询，必须传入云托管服务名称。<br>数据库连接器相关指标的查询，必须传入数据库连接器实例id</p>
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
 
                     /**
-                     * 微信AppId，微信必传
+                     * <p>微信AppId，微信必传</p>
                      */
                     std::string m_wxAppId;
                     bool m_wxAppIdHasBeenSet;
 
                     /**
-                     * 子资源信息。
-查询云托管相关指标的具体版本的监控数据，需传入。
+                     * <p>子资源信息。<br>查询云托管相关指标的具体版本的监控数据，需传入。</p>
                      */
                     std::string m_subresourceID;
                     bool m_subresourceIDHasBeenSet;
 
                     /**
-                     * 网关路由
+                     * <p>网关路由</p>
                      */
                     std::string m_thirdResource;
                     bool m_thirdResourceHasBeenSet;
 
                     /**
-                     * 统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。
-如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。
+                     * <p>统计周期(单位秒)，非必传，传入时仅支持传入300，3600，86400。不传采用默认以下默认规则：当时间区间为1天内, 统计周期为300；当时间区间选择为1天以上, 15天以下, 统计周期为3600； 当时间区间选择为15天以上, 180天以下, 统计周期为86400。<br>如果传入period，需遵循以下规则。EndTime-StartTime的时间范围不超过1 天，Period可以取300或3600；EndTime-StartTime的时间范围满足超过1天且不超过3 天，Period可以取300或3600或86400；EndTime-StartTime的时间范围超过3天时，Period可以取3600或86400。</p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

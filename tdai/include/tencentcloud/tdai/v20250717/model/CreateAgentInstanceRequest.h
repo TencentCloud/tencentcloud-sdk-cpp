@@ -149,6 +149,111 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>无</p>
+                     * @return InstanceType <p>无</p>
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _instanceType <p>无</p>
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无</p>
+                     * @return TemplateId <p>无</p>
+                     * 
+                     */
+                    int64_t GetTemplateId() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _templateId <p>无</p>
+                     * 
+                     */
+                    void SetTemplateId(const int64_t& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无</p>
+                     * @return Skills <p>无</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSkills() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _skills <p>无</p>
+                     * 
+                     */
+                    void SetSkills(const std::vector<std::string>& _skills);
+
+                    /**
+                     * 判断参数 Skills 是否已赋值
+                     * @return Skills 是否已赋值
+                     * 
+                     */
+                    bool SkillsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无</p>
+                     * @return SoulId <p>无</p>
+                     * 
+                     */
+                    int64_t GetSoulId() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _soulId <p>无</p>
+                     * 
+                     */
+                    void SetSoulId(const int64_t& _soulId);
+
+                    /**
+                     * 判断参数 SoulId 是否已赋值
+                     * @return SoulId 是否已赋值
+                     * 
+                     */
+                    bool SoulIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无</p>
+                     * @return Description <p>无</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>无</p>
+                     * @param _description <p>无</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +285,36 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    int64_t m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    std::vector<std::string> m_skills;
+                    bool m_skillsHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    int64_t m_soulId;
+                    bool m_soulIdHasBeenSet;
+
+                    /**
+                     * <p>无</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

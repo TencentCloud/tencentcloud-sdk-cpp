@@ -29,10 +29,11 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/DescribeChatsRequest.h
   include/tencentcloud/tdai/v20250717/model/ModifyChatTitleResponse.h
   include/tencentcloud/tdai/v20250717/model/CreateAgentInstanceRequest.h
-  include/tencentcloud/tdai/v20250717/model/ModifyChatTitleRequest.h
+  include/tencentcloud/tdai/v20250717/model/ClawConfigInfo.h
   include/tencentcloud/tdai/v20250717/model/UploadChoice.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTasksResponse.h
   include/tencentcloud/tdai/v20250717/model/Parameter.h
+  include/tencentcloud/tdai/v20250717/model/ClawDeployInfo.h
   include/tencentcloud/tdai/v20250717/model/RecoverAgentInstanceResponse.h
   include/tencentcloud/tdai/v20250717/model/InstanceInfos.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentsResponse.h
@@ -40,6 +41,7 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/DescribeReportUrlResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentInstancesRequest.h
   include/tencentcloud/tdai/v20250717/model/IsolateAgentInstanceResponse.h
+  include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceResponse.h
   include/tencentcloud/tdai/v20250717/model/PauseAgentWorkRequest.h
   include/tencentcloud/tdai/v20250717/model/TagItem.h
   include/tencentcloud/tdai/v20250717/model/ExtraInfo.h
@@ -47,7 +49,8 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTasksRequest.h
   include/tencentcloud/tdai/v20250717/model/PauseAgentWorkResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeChatDetailResponse.h
-  include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceResponse.h
+  include/tencentcloud/tdai/v20250717/model/ModifyChatTitleRequest.h
+  include/tencentcloud/tdai/v20250717/model/StatusItem.h
   include/tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersResponse.h
   include/tencentcloud/tdai/v20250717/model/IsolateAgentInstanceRequest.h
   include/tencentcloud/tdai/v20250717/model/TagFilter.h
@@ -86,10 +89,11 @@ set(tdai_src
   src/v20250717/model/DescribeChatsRequest.cpp
   src/v20250717/model/ModifyChatTitleResponse.cpp
   src/v20250717/model/CreateAgentInstanceRequest.cpp
-  src/v20250717/model/ModifyChatTitleRequest.cpp
+  src/v20250717/model/ClawConfigInfo.cpp
   src/v20250717/model/UploadChoice.cpp
   src/v20250717/model/DescribeAgentDutyTasksResponse.cpp
   src/v20250717/model/Parameter.cpp
+  src/v20250717/model/ClawDeployInfo.cpp
   src/v20250717/model/RecoverAgentInstanceResponse.cpp
   src/v20250717/model/InstanceInfos.cpp
   src/v20250717/model/DescribeAgentsResponse.cpp
@@ -97,6 +101,7 @@ set(tdai_src
   src/v20250717/model/DescribeReportUrlResponse.cpp
   src/v20250717/model/DescribeAgentInstancesRequest.cpp
   src/v20250717/model/IsolateAgentInstanceResponse.cpp
+  src/v20250717/model/TerminateAgentInstanceResponse.cpp
   src/v20250717/model/PauseAgentWorkRequest.cpp
   src/v20250717/model/TagItem.cpp
   src/v20250717/model/ExtraInfo.cpp
@@ -104,7 +109,8 @@ set(tdai_src
   src/v20250717/model/DescribeAgentDutyTasksRequest.cpp
   src/v20250717/model/PauseAgentWorkResponse.cpp
   src/v20250717/model/DescribeChatDetailResponse.cpp
-  src/v20250717/model/TerminateAgentInstanceResponse.cpp
+  src/v20250717/model/ModifyChatTitleRequest.cpp
+  src/v20250717/model/StatusItem.cpp
   src/v20250717/model/ModifyAgentInstanceParametersResponse.cpp
   src/v20250717/model/IsolateAgentInstanceRequest.cpp
   src/v20250717/model/TagFilter.cpp

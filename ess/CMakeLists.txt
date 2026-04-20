@@ -245,6 +245,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.h
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
+  include/tencentcloud/ess/v20201111/model/RemindEmailInfo.h
   include/tencentcloud/ess/v20201111/model/RiskIdentificationRoleInfo.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeLMInformationExtractionTaskFieldFeedbackRequest.h
@@ -682,6 +683,7 @@ set(ess_src
   src/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.cpp
   src/v20201111/model/AuthInfoDetail.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
+  src/v20201111/model/RemindEmailInfo.cpp
   src/v20201111/model/RiskIdentificationRoleInfo.cpp
   src/v20201111/model/CreateUserVerifyUrlRequest.cpp
   src/v20201111/model/DescribeLMInformationExtractionTaskFieldFeedbackRequest.cpp

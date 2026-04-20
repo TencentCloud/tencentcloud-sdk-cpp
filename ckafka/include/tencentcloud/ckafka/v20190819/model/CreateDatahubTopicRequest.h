@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return Name 名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取<p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
+                     * @return Name <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _name 名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置<p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
+                     * @param _name <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Partition个数，大于0
-                     * @return PartitionNum Partition个数，大于0
+                     * 获取<p>Partition个数，最大值为500，大于0</p>
+                     * @return PartitionNum <p>Partition个数，最大值为500，大于0</p>
                      * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
-                     * 设置Partition个数，大于0
-                     * @param _partitionNum Partition个数，大于0
+                     * 设置<p>Partition个数，最大值为500，大于0</p>
+                     * @param _partitionNum <p>Partition个数，最大值为500，大于0</p>
                      * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PartitionNumHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时间，单位ms，当前最小值为60000ms
-                     * @return RetentionMs 消息保留时间，单位ms，当前最小值为60000ms
+                     * 获取<p>消息保留时间，单位ms，当前最小值为60000ms</p>
+                     * @return RetentionMs <p>消息保留时间，单位ms，当前最小值为60000ms</p>
                      * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
-                     * 设置消息保留时间，单位ms，当前最小值为60000ms
-                     * @param _retentionMs 消息保留时间，单位ms，当前最小值为60000ms
+                     * 设置<p>消息保留时间，单位ms，当前最小值为60000ms</p>
+                     * @param _retentionMs <p>消息保留时间，单位ms，当前最小值为60000ms</p>
                      * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RetentionMsHasBeenSet() const;
 
                     /**
-                     * 获取主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return Note 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取<p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>
+                     * @return Note <p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _note 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置<p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>
+                     * @param _note <p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Partition个数，大于0
+                     * <p>Partition个数，最大值为500，大于0</p>
                      */
                     int64_t m_partitionNum;
                     bool m_partitionNumHasBeenSet;
 
                     /**
-                     * 消息保留时间，单位ms，当前最小值为60000ms
+                     * <p>消息保留时间，单位ms，当前最小值为60000ms</p>
                      */
                     int64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
 
                     /**
-                     * 主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * <p>主题备注，是一个不超过 64 个字符的字符串，可以包含字母、数字和横划线(-)。</p>
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -32,6 +32,7 @@
 #include <tencentcloud/ckafka/v20190819/model/DorisConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MqttConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/Tag.h>
 
 
 namespace TencentCloud
@@ -54,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接源名称
-                     * @return ResourceName 连接源名称
+                     * 获取<p>连接源名称</p>
+                     * @return ResourceName <p>连接源名称</p>
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置连接源名称
-                     * @param _resourceName 连接源名称
+                     * 设置<p>连接源名称</p>
+                     * @param _resourceName <p>连接源名称</p>
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -75,15 +76,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取连接源类型
-                     * @return Type 连接源类型
+                     * 获取<p>连接源类型</p>
+                     * @return Type <p>连接源类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置连接源类型
-                     * @param _type 连接源类型
+                     * 设置<p>连接源类型</p>
+                     * @param _type <p>连接源类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -96,15 +97,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取连接源描述
-                     * @return Description 连接源描述
+                     * 获取<p>连接源描述</p>
+                     * @return Description <p>连接源描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置连接源描述
-                     * @param _description 连接源描述
+                     * 设置<p>连接源描述</p>
+                     * @param _description <p>连接源描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -117,15 +118,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Dts配置，Type为DTS时必填
-                     * @return DtsConnectParam Dts配置，Type为DTS时必填
+                     * 获取<p>Dts配置，Type为DTS时必填</p>
+                     * @return DtsConnectParam <p>Dts配置，Type为DTS时必填</p>
                      * 
                      */
                     DtsConnectParam GetDtsConnectParam() const;
 
                     /**
-                     * 设置Dts配置，Type为DTS时必填
-                     * @param _dtsConnectParam Dts配置，Type为DTS时必填
+                     * 设置<p>Dts配置，Type为DTS时必填</p>
+                     * @param _dtsConnectParam <p>Dts配置，Type为DTS时必填</p>
                      * 
                      */
                     void SetDtsConnectParam(const DtsConnectParam& _dtsConnectParam);
@@ -138,15 +139,15 @@ namespace TencentCloud
                     bool DtsConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MongoDB配置，Type为MONGODB时必填
-                     * @return MongoDBConnectParam MongoDB配置，Type为MONGODB时必填
+                     * 获取<p>MongoDB配置，Type为MONGODB时必填</p>
+                     * @return MongoDBConnectParam <p>MongoDB配置，Type为MONGODB时必填</p>
                      * 
                      */
                     MongoDBConnectParam GetMongoDBConnectParam() const;
 
                     /**
-                     * 设置MongoDB配置，Type为MONGODB时必填
-                     * @param _mongoDBConnectParam MongoDB配置，Type为MONGODB时必填
+                     * 设置<p>MongoDB配置，Type为MONGODB时必填</p>
+                     * @param _mongoDBConnectParam <p>MongoDB配置，Type为MONGODB时必填</p>
                      * 
                      */
                     void SetMongoDBConnectParam(const MongoDBConnectParam& _mongoDBConnectParam);
@@ -159,15 +160,15 @@ namespace TencentCloud
                     bool MongoDBConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Es配置，Type为ES时必填
-                     * @return EsConnectParam Es配置，Type为ES时必填
+                     * 获取<p>Es配置，Type为ES时必填</p>
+                     * @return EsConnectParam <p>Es配置，Type为ES时必填</p>
                      * 
                      */
                     EsConnectParam GetEsConnectParam() const;
 
                     /**
-                     * 设置Es配置，Type为ES时必填
-                     * @param _esConnectParam Es配置，Type为ES时必填
+                     * 设置<p>Es配置，Type为ES时必填</p>
+                     * @param _esConnectParam <p>Es配置，Type为ES时必填</p>
                      * 
                      */
                     void SetEsConnectParam(const EsConnectParam& _esConnectParam);
@@ -180,15 +181,15 @@ namespace TencentCloud
                     bool EsConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取ClickHouse配置，Type为CLICKHOUSE时必填
-                     * @return ClickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 获取<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
+                     * @return ClickHouseConnectParam <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
                      * 
                      */
                     ClickHouseConnectParam GetClickHouseConnectParam() const;
 
                     /**
-                     * 设置ClickHouse配置，Type为CLICKHOUSE时必填
-                     * @param _clickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 设置<p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
+                     * @param _clickHouseConnectParam <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
                      * 
                      */
                     void SetClickHouseConnectParam(const ClickHouseConnectParam& _clickHouseConnectParam);
@@ -201,15 +202,15 @@ namespace TencentCloud
                     bool ClickHouseConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
-                     * @return MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * 获取<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>
+                     * @return MySQLConnectParam <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>
                      * 
                      */
                     MySQLConnectParam GetMySQLConnectParam() const;
 
                     /**
-                     * 设置MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
-                     * @param _mySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * 设置<p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>
+                     * @param _mySQLConnectParam <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>
                      * 
                      */
                     void SetMySQLConnectParam(const MySQLConnectParam& _mySQLConnectParam);
@@ -222,15 +223,15 @@ namespace TencentCloud
                     bool MySQLConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
-                     * @return PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 获取<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
+                     * @return PostgreSQLConnectParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
                      * 
                      */
                     PostgreSQLConnectParam GetPostgreSQLConnectParam() const;
 
                     /**
-                     * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
-                     * @param _postgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 设置<p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
+                     * @param _postgreSQLConnectParam <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
                      * 
                      */
                     void SetPostgreSQLConnectParam(const PostgreSQLConnectParam& _postgreSQLConnectParam);
@@ -243,15 +244,15 @@ namespace TencentCloud
                     bool PostgreSQLConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MariaDB配置，Type为MARIADB时必填
-                     * @return MariaDBConnectParam MariaDB配置，Type为MARIADB时必填
+                     * 获取<p>MariaDB配置，Type为MARIADB时必填</p>
+                     * @return MariaDBConnectParam <p>MariaDB配置，Type为MARIADB时必填</p>
                      * 
                      */
                     MariaDBConnectParam GetMariaDBConnectParam() const;
 
                     /**
-                     * 设置MariaDB配置，Type为MARIADB时必填
-                     * @param _mariaDBConnectParam MariaDB配置，Type为MARIADB时必填
+                     * 设置<p>MariaDB配置，Type为MARIADB时必填</p>
+                     * @param _mariaDBConnectParam <p>MariaDB配置，Type为MARIADB时必填</p>
                      * 
                      */
                     void SetMariaDBConnectParam(const MariaDBConnectParam& _mariaDBConnectParam);
@@ -264,15 +265,15 @@ namespace TencentCloud
                     bool MariaDBConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取SQLServer配置，Type为SQLSERVER时必填
-                     * @return SQLServerConnectParam SQLServer配置，Type为SQLSERVER时必填
+                     * 获取<p>SQLServer配置，Type为SQLSERVER时必填</p>
+                     * @return SQLServerConnectParam <p>SQLServer配置，Type为SQLSERVER时必填</p>
                      * 
                      */
                     SQLServerConnectParam GetSQLServerConnectParam() const;
 
                     /**
-                     * 设置SQLServer配置，Type为SQLSERVER时必填
-                     * @param _sQLServerConnectParam SQLServer配置，Type为SQLSERVER时必填
+                     * 设置<p>SQLServer配置，Type为SQLSERVER时必填</p>
+                     * @param _sQLServerConnectParam <p>SQLServer配置，Type为SQLSERVER时必填</p>
                      * 
                      */
                     void SetSQLServerConnectParam(const SQLServerConnectParam& _sQLServerConnectParam);
@@ -285,15 +286,15 @@ namespace TencentCloud
                     bool SQLServerConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Doris 配置，Type为 DORIS 时必填
-                     * @return DorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     * 获取<p>Doris 配置，Type为 DORIS 时必填</p>
+                     * @return DorisConnectParam <p>Doris 配置，Type为 DORIS 时必填</p>
                      * 
                      */
                     DorisConnectParam GetDorisConnectParam() const;
 
                     /**
-                     * 设置Doris 配置，Type为 DORIS 时必填
-                     * @param _dorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     * 设置<p>Doris 配置，Type为 DORIS 时必填</p>
+                     * @param _dorisConnectParam <p>Doris 配置，Type为 DORIS 时必填</p>
                      * 
                      */
                     void SetDorisConnectParam(const DorisConnectParam& _dorisConnectParam);
@@ -306,15 +307,15 @@ namespace TencentCloud
                     bool DorisConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取Kafka配置，Type为 KAFKA 时必填
-                     * @return KafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     * 获取<p>Kafka配置，Type为 KAFKA 时必填</p>
+                     * @return KafkaConnectParam <p>Kafka配置，Type为 KAFKA 时必填</p>
                      * 
                      */
                     KafkaConnectParam GetKafkaConnectParam() const;
 
                     /**
-                     * 设置Kafka配置，Type为 KAFKA 时必填
-                     * @param _kafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     * 设置<p>Kafka配置，Type为 KAFKA 时必填</p>
+                     * @param _kafkaConnectParam <p>Kafka配置，Type为 KAFKA 时必填</p>
                      * 
                      */
                     void SetKafkaConnectParam(const KafkaConnectParam& _kafkaConnectParam);
@@ -327,15 +328,15 @@ namespace TencentCloud
                     bool KafkaConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MQTT配置，Type为 MQTT 时必填
-                     * @return MqttConnectParam MQTT配置，Type为 MQTT 时必填
+                     * 获取<p>MQTT配置，Type为 MQTT 时必填</p>
+                     * @return MqttConnectParam <p>MQTT配置，Type为 MQTT 时必填</p>
                      * 
                      */
                     MqttConnectParam GetMqttConnectParam() const;
 
                     /**
-                     * 设置MQTT配置，Type为 MQTT 时必填
-                     * @param _mqttConnectParam MQTT配置，Type为 MQTT 时必填
+                     * 设置<p>MQTT配置，Type为 MQTT 时必填</p>
+                     * @param _mqttConnectParam <p>MQTT配置，Type为 MQTT 时必填</p>
                      * 
                      */
                     void SetMqttConnectParam(const MqttConnectParam& _mqttConnectParam);
@@ -347,91 +348,118 @@ namespace TencentCloud
                      */
                     bool MqttConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 连接源名称
+                     * <p>连接源名称</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 连接源类型
+                     * <p>连接源类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 连接源描述
+                     * <p>连接源描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Dts配置，Type为DTS时必填
+                     * <p>Dts配置，Type为DTS时必填</p>
                      */
                     DtsConnectParam m_dtsConnectParam;
                     bool m_dtsConnectParamHasBeenSet;
 
                     /**
-                     * MongoDB配置，Type为MONGODB时必填
+                     * <p>MongoDB配置，Type为MONGODB时必填</p>
                      */
                     MongoDBConnectParam m_mongoDBConnectParam;
                     bool m_mongoDBConnectParamHasBeenSet;
 
                     /**
-                     * Es配置，Type为ES时必填
+                     * <p>Es配置，Type为ES时必填</p>
                      */
                     EsConnectParam m_esConnectParam;
                     bool m_esConnectParamHasBeenSet;
 
                     /**
-                     * ClickHouse配置，Type为CLICKHOUSE时必填
+                     * <p>ClickHouse配置，Type为CLICKHOUSE时必填</p>
                      */
                     ClickHouseConnectParam m_clickHouseConnectParam;
                     bool m_clickHouseConnectParamHasBeenSet;
 
                     /**
-                     * MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * <p>MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填</p>
                      */
                     MySQLConnectParam m_mySQLConnectParam;
                     bool m_mySQLConnectParamHasBeenSet;
 
                     /**
-                     * PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * <p>PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填</p>
                      */
                     PostgreSQLConnectParam m_postgreSQLConnectParam;
                     bool m_postgreSQLConnectParamHasBeenSet;
 
                     /**
-                     * MariaDB配置，Type为MARIADB时必填
+                     * <p>MariaDB配置，Type为MARIADB时必填</p>
                      */
                     MariaDBConnectParam m_mariaDBConnectParam;
                     bool m_mariaDBConnectParamHasBeenSet;
 
                     /**
-                     * SQLServer配置，Type为SQLSERVER时必填
+                     * <p>SQLServer配置，Type为SQLSERVER时必填</p>
                      */
                     SQLServerConnectParam m_sQLServerConnectParam;
                     bool m_sQLServerConnectParamHasBeenSet;
 
                     /**
-                     * Doris 配置，Type为 DORIS 时必填
+                     * <p>Doris 配置，Type为 DORIS 时必填</p>
                      */
                     DorisConnectParam m_dorisConnectParam;
                     bool m_dorisConnectParamHasBeenSet;
 
                     /**
-                     * Kafka配置，Type为 KAFKA 时必填
+                     * <p>Kafka配置，Type为 KAFKA 时必填</p>
                      */
                     KafkaConnectParam m_kafkaConnectParam;
                     bool m_kafkaConnectParamHasBeenSet;
 
                     /**
-                     * MQTT配置，Type为 MQTT 时必填
+                     * <p>MQTT配置，Type为 MQTT 时必填</p>
                      */
                     MqttConnectParam m_mqttConnectParam;
                     bool m_mqttConnectParamHasBeenSet;
+
+                    /**
+                     * <p>标签列表</p>
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

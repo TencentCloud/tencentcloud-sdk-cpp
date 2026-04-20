@@ -55,6 +55,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/CreateModelRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeModelRequest.h
   include/tencentcloud/apis/v20240801/model/AgentCredentialContentHeaderDTO.h
+  include/tencentcloud/apis/v20240801/model/SensitiveDataCheckConfigDTO.h
   include/tencentcloud/apis/v20240801/model/BindMcpSecurityRuleVO.h
   include/tencentcloud/apis/v20240801/model/McpSecurityRulesVO.h
   include/tencentcloud/apis/v20240801/model/DeleteAgentAppModelServicesResponse.h
@@ -167,6 +168,7 @@ set(apis_src
   src/v20240801/model/CreateModelRequest.cpp
   src/v20240801/model/DescribeModelRequest.cpp
   src/v20240801/model/AgentCredentialContentHeaderDTO.cpp
+  src/v20240801/model/SensitiveDataCheckConfigDTO.cpp
   src/v20240801/model/BindMcpSecurityRuleVO.cpp
   src/v20240801/model/McpSecurityRulesVO.cpp
   src/v20240801/model/DeleteAgentAppModelServicesResponse.cpp

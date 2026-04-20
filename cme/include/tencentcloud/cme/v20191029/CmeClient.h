@@ -37,6 +37,8 @@
 #include <tencentcloud/cme/v20191029/model/CreateTeamResponse.h>
 #include <tencentcloud/cme/v20191029/model/CreateVideoEncodingPresetRequest.h>
 #include <tencentcloud/cme/v20191029/model/CreateVideoEncodingPresetResponse.h>
+#include <tencentcloud/cme/v20191029/model/DeleteAccountRequest.h>
+#include <tencentcloud/cme/v20191029/model/DeleteAccountResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/DeleteClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteLoginStatusRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h>
 #include <tencentcloud/cme/v20191029/model/FlattenListMediaRequest.h>
 #include <tencentcloud/cme/v20191029/model/FlattenListMediaResponse.h>
+#include <tencentcloud/cme/v20191029/model/ForbidAccountRequest.h>
+#include <tencentcloud/cme/v20191029/model/ForbidAccountResponse.h>
 #include <tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiRequest.h>
 #include <tencentcloud/cme/v20191029/model/GenerateVideoSegmentationSchemeByAiResponse.h>
 #include <tencentcloud/cme/v20191029/model/GrantResourceAuthorizationRequest.h>
@@ -158,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVideoEncodingPresetResponse> CreateVideoEncodingPresetOutcome;
                 typedef std::future<CreateVideoEncodingPresetOutcome> CreateVideoEncodingPresetOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::CreateVideoEncodingPresetRequest&, CreateVideoEncodingPresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoEncodingPresetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
+                typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClassResponse> DeleteClassOutcome;
                 typedef std::future<DeleteClassOutcome> DeleteClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DeleteClassRequest&, DeleteClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClassAsyncHandler;
@@ -236,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FlattenListMediaResponse> FlattenListMediaOutcome;
                 typedef std::future<FlattenListMediaOutcome> FlattenListMediaOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::FlattenListMediaRequest&, FlattenListMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlattenListMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ForbidAccountResponse> ForbidAccountOutcome;
+                typedef std::future<ForbidAccountOutcome> ForbidAccountOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ForbidAccountRequest&, ForbidAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateVideoSegmentationSchemeByAiResponse> GenerateVideoSegmentationSchemeByAiOutcome;
                 typedef std::future<GenerateVideoSegmentationSchemeByAiOutcome> GenerateVideoSegmentationSchemeByAiOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::GenerateVideoSegmentationSchemeByAiRequest&, GenerateVideoSegmentationSchemeByAiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoSegmentationSchemeByAiAsyncHandler;
@@ -358,6 +368,15 @@ namespace TencentCloud
                 CreateVideoEncodingPresetOutcome CreateVideoEncodingPreset(const Model::CreateVideoEncodingPresetRequest &request);
                 void CreateVideoEncodingPresetAsync(const Model::CreateVideoEncodingPresetRequest& request, const CreateVideoEncodingPresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVideoEncodingPresetOutcomeCallable CreateVideoEncodingPresetCallable(const Model::CreateVideoEncodingPresetRequest& request);
+
+                /**
+                 *删除平台归属的账户。
+                 * @param req DeleteAccountRequest
+                 * @return DeleteAccountOutcome
+                 */
+                DeleteAccountOutcome DeleteAccount(const Model::DeleteAccountRequest &request);
+                void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountOutcomeCallable DeleteAccountCallable(const Model::DeleteAccountRequest& request);
 
                 /**
                  *删除分类信息，删除时检验下述限制：
@@ -601,6 +620,15 @@ namespace TencentCloud
                 FlattenListMediaOutcome FlattenListMedia(const Model::FlattenListMediaRequest &request);
                 void FlattenListMediaAsync(const Model::FlattenListMediaRequest& request, const FlattenListMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FlattenListMediaOutcomeCallable FlattenListMediaCallable(const Model::FlattenListMediaRequest& request);
+
+                /**
+                 *禁用账号。
+                 * @param req ForbidAccountRequest
+                 * @return ForbidAccountOutcome
+                 */
+                ForbidAccountOutcome ForbidAccount(const Model::ForbidAccountRequest &request);
+                void ForbidAccountAsync(const Model::ForbidAccountRequest& request, const ForbidAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForbidAccountOutcomeCallable ForbidAccountCallable(const Model::ForbidAccountRequest& request);
 
                 /**
                  *<li>发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。</li>

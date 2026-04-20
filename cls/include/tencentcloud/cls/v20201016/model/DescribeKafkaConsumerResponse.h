@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kafka协议消费是否打开
-                     * @return Status Kafka协议消费是否打开
+                     * 获取<p>Kafka协议消费是否打开</p>
+                     * @return Status <p>Kafka协议消费是否打开</p>
                      * 
                      */
                     bool GetStatus() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取KafkaConsumer 消费时使用的Topic参数
-                     * @return TopicID KafkaConsumer 消费时使用的Topic参数
+                     * 获取<p>KafkaConsumer 消费时使用的Topic参数</p>
+                     * @return TopicID <p>KafkaConsumer 消费时使用的Topic参数</p>
                      * 
                      */
                     std::string GetTopicID() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TopicIDHasBeenSet() const;
 
                     /**
-                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 获取<p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
+                     * @return Compression <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
                      * 
                      */
                     int64_t GetCompression() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取kafka协议消费数据格式
-                     * @return ConsumerContent kafka协议消费数据格式
+                     * 获取<p>kafka协议消费数据格式</p>
+                     * @return ConsumerContent <p>kafka协议消费数据格式</p>
                      * 
                      */
                     KafkaConsumerContent GetConsumerContent() const;
@@ -100,31 +100,71 @@ namespace TencentCloud
                      */
                     bool ConsumerContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费范围类型，0:最新，1:历史+最新</p>
+                     * @return ScopeType <p>消费范围类型，0:最新，1:历史+最新</p>
+                     * 
+                     */
+                    uint64_t GetScopeType() const;
+
+                    /**
+                     * 判断参数 ScopeType 是否已赋值
+                     * @return ScopeType 是否已赋值
+                     * 
+                     */
+                    bool ScopeTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Kafka协议消费是否打开
+                     * <p>Kafka协议消费是否打开</p>
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * KafkaConsumer 消费时使用的Topic参数
+                     * <p>KafkaConsumer 消费时使用的Topic参数</p>
                      */
                     std::string m_topicID;
                     bool m_topicIDHasBeenSet;
 
                     /**
-                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * <p>压缩方式[0:NONE；2:SNAPPY；3:LZ4]</p>
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * kafka协议消费数据格式
+                     * <p>kafka协议消费数据格式</p>
                      */
                     KafkaConsumerContent m_consumerContent;
                     bool m_consumerContentHasBeenSet;
+
+                    /**
+                     * <p>是否开启投递服务日志。1：关闭，2：开启。</p>
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * <p>消费范围类型，0:最新，1:历史+最新</p>
+                     */
+                    uint64_t m_scopeType;
+                    bool m_scopeTypeHasBeenSet;
 
                 };
             }

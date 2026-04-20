@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取中文姓名
-                     * @return Name 中文姓名
+                     * 获取<p>中文姓名</p>
+                     * @return Name <p>中文姓名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取英文姓名
-                     * @return EnglishName 英文姓名
+                     * 获取<p>英文姓名</p>
+                     * @return EnglishName <p>英文姓名</p>
                      * 
                      */
                     std::string GetEnglishName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool EnglishNameHasBeenSet() const;
 
                     /**
-                     * 获取性别
-                     * @return Sex 性别
+                     * 获取<p>性别</p>
+                     * @return Sex <p>性别</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
-                     * @return Birthday 出生日期
+                     * 获取<p>出生日期</p>
+                     * @return Birthday <p>出生日期</p>
                      * 
                      */
                     std::string GetBirthday() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool BirthdayHasBeenSet() const;
 
                     /**
-                     * 获取签发机关
-                     * @return IssueAuthority 签发机关
+                     * 获取<p>签发机关</p>
+                     * @return IssueAuthority <p>签发机关</p>
                      * 
                      */
                     std::string GetIssueAuthority() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool IssueAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取有效期限
-                     * @return ValidDate 有效期限
+                     * 获取<p>有效期限</p>
+                     * @return ValidDate <p>有效期限</p>
                      * 
                      */
                     std::string GetValidDate() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool ValidDateHasBeenSet() const;
 
                     /**
-                     * 获取证件号
-                     * @return Number 证件号
+                     * 获取<p>证件号</p>
+                     * @return Number <p>证件号</p>
                      * 
                      */
                     std::string GetNumber() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取签发地点
-                     * @return IssueAddress 签发地点
+                     * 获取<p>签发地点</p>
+                     * @return IssueAddress <p>签发地点</p>
                      * 
                      */
                     std::string GetIssueAddress() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool IssueAddressHasBeenSet() const;
 
                     /**
-                     * 获取签发次数
-                     * @return IssueNumber 签发次数
+                     * 获取<p>签发次数</p>
+                     * @return IssueNumber <p>签发次数</p>
                      * 
                      */
                     std::string GetIssueNumber() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool IssueNumberHasBeenSet() const;
 
                     /**
-                     * 获取证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
-                     * @return Type 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
+                     * 获取<p>证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。</p>
+                     * @return Type <p>证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。</p>
                      * 
                      */
                     std::string GetType() const;
@@ -185,8 +185,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取RetProfile为True时返回头像字段， Base64编码
-                     * @return Profile RetProfile为True时返回头像字段， Base64编码
+                     * 获取<p>RetProfile为True时返回头像字段， Base64编码</p>
+                     * @return Profile <p>RetProfile为True时返回头像字段， Base64编码</p>
                      * 
                      */
                     std::string GetProfile() const;
@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool ProfileHasBeenSet() const;
 
                     /**
-                     * 获取国籍
-                     * @return Nationality 国籍
+                     * 获取<p>国籍</p>
+                     * @return Nationality <p>国籍</p>
                      * 
                      */
                     std::string GetNationality() const;
@@ -213,8 +213,8 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取背面字段信息
-                     * @return MainlandTravelPermitBackInfos 背面字段信息
+                     * 获取<p>背面字段信息</p>
+                     * @return MainlandTravelPermitBackInfos <p>背面字段信息</p>
                      * 
                      */
                     MainlandTravelPermitBackInfos GetMainlandTravelPermitBackInfos() const;
@@ -229,79 +229,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 中文姓名
+                     * <p>中文姓名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * <p>英文姓名</p>
                      */
                     std::string m_englishName;
                     bool m_englishNameHasBeenSet;
 
                     /**
-                     * 性别
+                     * <p>性别</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * <p>出生日期</p>
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
 
                     /**
-                     * 签发机关
+                     * <p>签发机关</p>
                      */
                     std::string m_issueAuthority;
                     bool m_issueAuthorityHasBeenSet;
 
                     /**
-                     * 有效期限
+                     * <p>有效期限</p>
                      */
                     std::string m_validDate;
                     bool m_validDateHasBeenSet;
 
                     /**
-                     * 证件号
+                     * <p>证件号</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 签发地点
+                     * <p>签发地点</p>
                      */
                     std::string m_issueAddress;
                     bool m_issueAddressHasBeenSet;
 
                     /**
-                     * 签发次数
+                     * <p>签发次数</p>
                      */
                     std::string m_issueNumber;
                     bool m_issueNumberHasBeenSet;
 
                     /**
-                     * 证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。
+                     * <p>证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * RetProfile为True时返回头像字段， Base64编码
+                     * <p>RetProfile为True时返回头像字段， Base64编码</p>
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
 
                     /**
-                     * 国籍
+                     * <p>国籍</p>
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 背面字段信息
+                     * <p>背面字段信息</p>
                      */
                     MainlandTravelPermitBackInfos m_mainlandTravelPermitBackInfos;
                     bool m_mainlandTravelPermitBackInfosHasBeenSet;

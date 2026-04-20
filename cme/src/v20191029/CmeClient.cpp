@@ -390,6 +390,56 @@ CmeClient::CreateVideoEncodingPresetOutcomeCallable CmeClient::CreateVideoEncodi
     return prom->get_future();
 }
 
+CmeClient::DeleteAccountOutcome CmeClient::DeleteAccount(const DeleteAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountResponse rsp = DeleteAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountOutcome(rsp);
+        else
+            return DeleteAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::DeleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAccountRequest&;
+    using Resp = DeleteAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CmeClient::DeleteAccountOutcomeCallable CmeClient::DeleteAccountCallable(const DeleteAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAccountOutcome>>();
+    DeleteAccountAsync(
+    request,
+    [prom](
+        const CmeClient*,
+        const DeleteAccountRequest&,
+        DeleteAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CmeClient::DeleteClassOutcome CmeClient::DeleteClass(const DeleteClassRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClass");
@@ -1682,6 +1732,56 @@ CmeClient::FlattenListMediaOutcomeCallable CmeClient::FlattenListMediaCallable(c
         const CmeClient*,
         const FlattenListMediaRequest&,
         FlattenListMediaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CmeClient::ForbidAccountOutcome CmeClient::ForbidAccount(const ForbidAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ForbidAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ForbidAccountResponse rsp = ForbidAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ForbidAccountOutcome(rsp);
+        else
+            return ForbidAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ForbidAccountOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ForbidAccountAsync(const ForbidAccountRequest& request, const ForbidAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ForbidAccountRequest&;
+    using Resp = ForbidAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ForbidAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CmeClient::ForbidAccountOutcomeCallable CmeClient::ForbidAccountCallable(const ForbidAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ForbidAccountOutcome>>();
+    ForbidAccountAsync(
+    request,
+    [prom](
+        const CmeClient*,
+        const ForbidAccountRequest&,
+        ForbidAccountOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

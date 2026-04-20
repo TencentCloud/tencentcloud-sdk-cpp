@@ -25,7 +25,10 @@ using namespace std;
 ModifyDatahubTaskRequest::ModifyDatahubTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_tasksMaxHasBeenSet(false),
+    m_syncThrottleLimitHasBeenSet(false),
+    m_autoExpandFlagHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string ModifyDatahubTaskRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tasksMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TasksMax";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tasksMax, allocator);
+    }
+
+    if (m_syncThrottleLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncThrottleLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncThrottleLimit, allocator);
+    }
+
+    if (m_autoExpandFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpandFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoExpandFlag, allocator);
     }
 
 
@@ -114,6 +141,54 @@ void ModifyDatahubTaskRequest::SetDescription(const string& _description)
 bool ModifyDatahubTaskRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t ModifyDatahubTaskRequest::GetTasksMax() const
+{
+    return m_tasksMax;
+}
+
+void ModifyDatahubTaskRequest::SetTasksMax(const int64_t& _tasksMax)
+{
+    m_tasksMax = _tasksMax;
+    m_tasksMaxHasBeenSet = true;
+}
+
+bool ModifyDatahubTaskRequest::TasksMaxHasBeenSet() const
+{
+    return m_tasksMaxHasBeenSet;
+}
+
+int64_t ModifyDatahubTaskRequest::GetSyncThrottleLimit() const
+{
+    return m_syncThrottleLimit;
+}
+
+void ModifyDatahubTaskRequest::SetSyncThrottleLimit(const int64_t& _syncThrottleLimit)
+{
+    m_syncThrottleLimit = _syncThrottleLimit;
+    m_syncThrottleLimitHasBeenSet = true;
+}
+
+bool ModifyDatahubTaskRequest::SyncThrottleLimitHasBeenSet() const
+{
+    return m_syncThrottleLimitHasBeenSet;
+}
+
+bool ModifyDatahubTaskRequest::GetAutoExpandFlag() const
+{
+    return m_autoExpandFlag;
+}
+
+void ModifyDatahubTaskRequest::SetAutoExpandFlag(const bool& _autoExpandFlag)
+{
+    m_autoExpandFlag = _autoExpandFlag;
+    m_autoExpandFlagHasBeenSet = true;
+}
+
+bool ModifyDatahubTaskRequest::AutoExpandFlagHasBeenSet() const
+{
+    return m_autoExpandFlagHasBeenSet;
 }
 
 

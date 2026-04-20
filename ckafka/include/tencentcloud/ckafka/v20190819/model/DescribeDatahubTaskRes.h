@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，SOURCE数据接入，SINK数据流出
-                     * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 获取<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @return TaskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 设置<p>任务类型，SOURCE数据接入，SINK数据流出</p>
+                     * @param _taskType <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
-                     * @return Status 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * 获取<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
+                     * @return Status <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
-                     * @param _status 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * 设置<p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
+                     * @param _status <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据源
-                     * @return SourceResource 数据源
+                     * 获取<p>数据源</p>
+                     * @return SourceResource <p>数据源</p>
                      * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
-                     * 设置数据源
-                     * @param _sourceResource 数据源
+                     * 设置<p>数据源</p>
+                     * @param _sourceResource <p>数据源</p>
                      * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool SourceResourceHasBeenSet() const;
 
                     /**
-                     * 获取数据目标
-                     * @return TargetResource 数据目标
+                     * 获取<p>数据目标</p>
+                     * @return TargetResource <p>数据目标</p>
                      * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
-                     * 设置数据目标
-                     * @param _targetResource 数据目标
+                     * 设置<p>数据目标</p>
+                     * @param _targetResource <p>数据目标</p>
                      * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool TargetResourceHasBeenSet() const;
 
                     /**
-                     * 获取Connection列表
-                     * @return Connections Connection列表
+                     * 获取<p>Connection列表</p>
+                     * @return Connections <p>Connection列表</p>
                      * 
                      */
                     std::vector<Connection> GetConnections() const;
 
                     /**
-                     * 设置Connection列表
-                     * @param _connections Connection列表
+                     * 设置<p>Connection列表</p>
+                     * @param _connections <p>Connection列表</p>
                      * 
                      */
                     void SetConnections(const std::vector<Connection>& _connections);
@@ -199,15 +199,15 @@ namespace TencentCloud
                     bool ConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreateTime 任务创建时间
+                     * 获取<p>任务创建时间</p>
+                     * @return CreateTime <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createTime 任务创建时间
+                     * 设置<p>任务创建时间</p>
+                     * @param _createTime <p>任务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -220,18 +220,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取消息处理规则
+                     * 获取<p>消息处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransformParam 消息处理规则
+                     * @return TransformParam <p>消息处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TransformParam GetTransformParam() const;
 
                     /**
-                     * 设置消息处理规则
+                     * 设置<p>消息处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transformParam 消息处理规则
+                     * @param _transformParam <p>消息处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -245,15 +245,15 @@ namespace TencentCloud
                     bool TransformParamHasBeenSet() const;
 
                     /**
-                     * 获取数据接入ID
-                     * @return DatahubId 数据接入ID
+                     * 获取<p>数据接入ID</p>
+                     * @return DatahubId <p>数据接入ID</p>
                      * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
-                     * 设置数据接入ID
-                     * @param _datahubId 数据接入ID
+                     * 设置<p>数据接入ID</p>
+                     * @param _datahubId <p>数据接入ID</p>
                      * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
@@ -266,15 +266,15 @@ namespace TencentCloud
                     bool DatahubIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的SchemaId
-                     * @return SchemaId 绑定的SchemaId
+                     * 获取<p>绑定的SchemaId</p>
+                     * @return SchemaId <p>绑定的SchemaId</p>
                      * 
                      */
                     std::string GetSchemaId() const;
 
                     /**
-                     * 设置绑定的SchemaId
-                     * @param _schemaId 绑定的SchemaId
+                     * 设置<p>绑定的SchemaId</p>
+                     * @param _schemaId <p>绑定的SchemaId</p>
                      * 
                      */
                     void SetSchemaId(const std::string& _schemaId);
@@ -287,15 +287,15 @@ namespace TencentCloud
                     bool SchemaIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的Schema名称
-                     * @return SchemaName 绑定的Schema名称
+                     * 获取<p>绑定的Schema名称</p>
+                     * @return SchemaName <p>绑定的Schema名称</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置绑定的Schema名称
-                     * @param _schemaName 绑定的Schema名称
+                     * 设置<p>绑定的Schema名称</p>
+                     * @param _schemaName <p>绑定的Schema名称</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -308,18 +308,18 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取数据处理规则
+                     * 获取<p>数据处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransformsParam 数据处理规则
+                     * @return TransformsParam <p>数据处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TransformsParam GetTransformsParam() const;
 
                     /**
-                     * 设置数据处理规则
+                     * 设置<p>数据处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transformsParam 数据处理规则
+                     * @param _transformsParam <p>数据处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -333,15 +333,15 @@ namespace TencentCloud
                     bool TransformsParamHasBeenSet() const;
 
                     /**
-                     * 获取异常信息
-                     * @return ErrorMessage 异常信息
+                     * 获取<p>异常信息</p>
+                     * @return ErrorMessage <p>异常信息</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置异常信息
-                     * @param _errorMessage 异常信息
+                     * 设置<p>异常信息</p>
+                     * @param _errorMessage <p>异常信息</p>
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -354,15 +354,15 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取任务标签列表
-                     * @return Tags 任务标签列表
+                     * 获取<p>任务标签列表</p>
+                     * @return Tags <p>任务标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置任务标签列表
-                     * @param _tags 任务标签列表
+                     * 设置<p>任务标签列表</p>
+                     * @param _tags <p>任务标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -375,15 +375,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取任务描述信息	
-                     * @return Description 任务描述信息	
+                     * 获取<p>任务描述信息</p>
+                     * @return Description <p>任务描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述信息	
-                     * @param _description 任务描述信息	
+                     * 设置<p>任务描述信息</p>
+                     * @param _description <p>任务描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -396,15 +396,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取1:正常 2:隔离中
-                     * @return IsolateStatus 1:正常 2:隔离中
+                     * 获取<p>1:正常 2:隔离中</p>
+                     * @return IsolateStatus <p>1:正常 2:隔离中</p>
                      * 
                      */
                     int64_t GetIsolateStatus() const;
 
                     /**
-                     * 设置1:正常 2:隔离中
-                     * @param _isolateStatus 1:正常 2:隔离中
+                     * 设置<p>1:正常 2:隔离中</p>
+                     * @param _isolateStatus <p>1:正常 2:隔离中</p>
                      * 
                      */
                     void SetIsolateStatus(const int64_t& _isolateStatus);
@@ -416,111 +416,192 @@ namespace TencentCloud
                      */
                     bool IsolateStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>并发数</p><p>默认值：1</p>
+                     * @return TaskMax <p>并发数</p><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetTaskMax() const;
+
+                    /**
+                     * 设置<p>并发数</p><p>默认值：1</p>
+                     * @param _taskMax <p>并发数</p><p>默认值：1</p>
+                     * 
+                     */
+                    void SetTaskMax(const int64_t& _taskMax);
+
+                    /**
+                     * 判断参数 TaskMax 是否已赋值
+                     * @return TaskMax 是否已赋值
+                     * 
+                     */
+                    bool TaskMaxHasBeenSet() const;
+
+                    /**
+                     * 获取<p>并发流量预估参考上限，MB/s</p>
+                     * @return SyncThrottleLimit <p>并发流量预估参考上限，MB/s</p>
+                     * 
+                     */
+                    int64_t GetSyncThrottleLimit() const;
+
+                    /**
+                     * 设置<p>并发流量预估参考上限，MB/s</p>
+                     * @param _syncThrottleLimit <p>并发流量预估参考上限，MB/s</p>
+                     * 
+                     */
+                    void SetSyncThrottleLimit(const int64_t& _syncThrottleLimit);
+
+                    /**
+                     * 判断参数 SyncThrottleLimit 是否已赋值
+                     * @return SyncThrottleLimit 是否已赋值
+                     * 
+                     */
+                    bool SyncThrottleLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>
+                     * @return AutoExpandFlag <p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>
+                     * 
+                     */
+                    bool GetAutoExpandFlag() const;
+
+                    /**
+                     * 设置<p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>
+                     * @param _autoExpandFlag <p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>
+                     * 
+                     */
+                    void SetAutoExpandFlag(const bool& _autoExpandFlag);
+
+                    /**
+                     * 判断参数 AutoExpandFlag 是否已赋值
+                     * @return AutoExpandFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoExpandFlagHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型，SOURCE数据接入，SINK数据流出
+                     * <p>任务类型，SOURCE数据接入，SINK数据流出</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败
+                     * <p>状态，-1创建失败，0创建中，1运行中，2删除中，3已删除，4删除失败，5暂停中，6已暂停，7暂停失败，8恢复中，9恢复失败</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据源
+                     * <p>数据源</p>
                      */
                     DatahubResource m_sourceResource;
                     bool m_sourceResourceHasBeenSet;
 
                     /**
-                     * 数据目标
+                     * <p>数据目标</p>
                      */
                     DatahubResource m_targetResource;
                     bool m_targetResourceHasBeenSet;
 
                     /**
-                     * Connection列表
+                     * <p>Connection列表</p>
                      */
                     std::vector<Connection> m_connections;
                     bool m_connectionsHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 消息处理规则
+                     * <p>消息处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TransformParam m_transformParam;
                     bool m_transformParamHasBeenSet;
 
                     /**
-                     * 数据接入ID
+                     * <p>数据接入ID</p>
                      */
                     std::string m_datahubId;
                     bool m_datahubIdHasBeenSet;
 
                     /**
-                     * 绑定的SchemaId
+                     * <p>绑定的SchemaId</p>
                      */
                     std::string m_schemaId;
                     bool m_schemaIdHasBeenSet;
 
                     /**
-                     * 绑定的Schema名称
+                     * <p>绑定的Schema名称</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 数据处理规则
+                     * <p>数据处理规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TransformsParam m_transformsParam;
                     bool m_transformsParamHasBeenSet;
 
                     /**
-                     * 异常信息
+                     * <p>异常信息</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 任务标签列表
+                     * <p>任务标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 任务描述信息	
+                     * <p>任务描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 1:正常 2:隔离中
+                     * <p>1:正常 2:隔离中</p>
                      */
                     int64_t m_isolateStatus;
                     bool m_isolateStatusHasBeenSet;
+
+                    /**
+                     * <p>并发数</p><p>默认值：1</p>
+                     */
+                    int64_t m_taskMax;
+                    bool m_taskMaxHasBeenSet;
+
+                    /**
+                     * <p>并发流量预估参考上限，MB/s</p>
+                     */
+                    int64_t m_syncThrottleLimit;
+                    bool m_syncThrottleLimitHasBeenSet;
+
+                    /**
+                     * <p>自动扩容 true:自动扩容 false:手动扩容</p><p>默认值：true</p>
+                     */
+                    bool m_autoExpandFlag;
+                    bool m_autoExpandFlagHasBeenSet;
 
                 };
             }

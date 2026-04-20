@@ -33,7 +33,10 @@ DatahubTaskInfo::DatahubTaskInfo() :
     m_taskCurrentStepHasBeenSet(false),
     m_datahubIdHasBeenSet(false),
     m_stepListHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_taskMaxHasBeenSet(false),
+    m_syncThrottleLimitHasBeenSet(false),
+    m_autoExpandFlagHasBeenSet(false)
 {
 }
 
@@ -189,6 +192,36 @@ CoreInternalOutcome DatahubTaskInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskMax") && !value["TaskMax"].IsNull())
+    {
+        if (!value["TaskMax"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubTaskInfo.TaskMax` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskMax = value["TaskMax"].GetInt64();
+        m_taskMaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncThrottleLimit") && !value["SyncThrottleLimit"].IsNull())
+    {
+        if (!value["SyncThrottleLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubTaskInfo.SyncThrottleLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncThrottleLimit = value["SyncThrottleLimit"].GetInt64();
+        m_syncThrottleLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoExpandFlag") && !value["AutoExpandFlag"].IsNull())
+    {
+        if (!value["AutoExpandFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubTaskInfo.AutoExpandFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpandFlag = value["AutoExpandFlag"].GetBool();
+        m_autoExpandFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +338,30 @@ void DatahubTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskMax, allocator);
+    }
+
+    if (m_syncThrottleLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncThrottleLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncThrottleLimit, allocator);
+    }
+
+    if (m_autoExpandFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpandFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpandFlag, allocator);
     }
 
 }
@@ -516,5 +573,53 @@ void DatahubTaskInfo::SetDescription(const string& _description)
 bool DatahubTaskInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t DatahubTaskInfo::GetTaskMax() const
+{
+    return m_taskMax;
+}
+
+void DatahubTaskInfo::SetTaskMax(const int64_t& _taskMax)
+{
+    m_taskMax = _taskMax;
+    m_taskMaxHasBeenSet = true;
+}
+
+bool DatahubTaskInfo::TaskMaxHasBeenSet() const
+{
+    return m_taskMaxHasBeenSet;
+}
+
+int64_t DatahubTaskInfo::GetSyncThrottleLimit() const
+{
+    return m_syncThrottleLimit;
+}
+
+void DatahubTaskInfo::SetSyncThrottleLimit(const int64_t& _syncThrottleLimit)
+{
+    m_syncThrottleLimit = _syncThrottleLimit;
+    m_syncThrottleLimitHasBeenSet = true;
+}
+
+bool DatahubTaskInfo::SyncThrottleLimitHasBeenSet() const
+{
+    return m_syncThrottleLimitHasBeenSet;
+}
+
+bool DatahubTaskInfo::GetAutoExpandFlag() const
+{
+    return m_autoExpandFlag;
+}
+
+void DatahubTaskInfo::SetAutoExpandFlag(const bool& _autoExpandFlag)
+{
+    m_autoExpandFlag = _autoExpandFlag;
+    m_autoExpandFlagHasBeenSet = true;
+}
+
+bool DatahubTaskInfo::AutoExpandFlagHasBeenSet() const
+{
+    return m_autoExpandFlagHasBeenSet;
 }
 

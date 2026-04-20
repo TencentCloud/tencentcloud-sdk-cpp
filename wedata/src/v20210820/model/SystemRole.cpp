@@ -29,7 +29,9 @@ SystemRole::SystemRole() :
     m_methodPathsHasBeenSet(false),
     m_roleTypeHasBeenSet(false),
     m_systemInitHasBeenSet(false),
-    m_paramsHasBeenSet(false)
+    m_paramsHasBeenSet(false),
+    m_createTimeStrHasBeenSet(false),
+    m_creatorHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,26 @@ CoreInternalOutcome SystemRole::Deserialize(const rapidjson::Value &value)
         m_paramsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTimeStr") && !value["CreateTimeStr"].IsNull())
+    {
+        if (!value["CreateTimeStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemRole.CreateTimeStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTimeStr = string(value["CreateTimeStr"].GetString());
+        m_createTimeStrHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemRole.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +252,22 @@ void SystemRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Params";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_params.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimeStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTimeStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +415,37 @@ void SystemRole::SetParams(const string& _params)
 bool SystemRole::ParamsHasBeenSet() const
 {
     return m_paramsHasBeenSet;
+}
+
+string SystemRole::GetCreateTimeStr() const
+{
+    return m_createTimeStr;
+}
+
+void SystemRole::SetCreateTimeStr(const string& _createTimeStr)
+{
+    m_createTimeStr = _createTimeStr;
+    m_createTimeStrHasBeenSet = true;
+}
+
+bool SystemRole::CreateTimeStrHasBeenSet() const
+{
+    return m_createTimeStrHasBeenSet;
+}
+
+string SystemRole::GetCreator() const
+{
+    return m_creator;
+}
+
+void SystemRole::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool SystemRole::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 

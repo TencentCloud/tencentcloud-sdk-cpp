@@ -31,7 +31,8 @@ DescribeAgentInstancesRequest::DescribeAgentInstancesRequest() :
     m_agentNameHasBeenSet(false),
     m_agentInternalNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagFilterHasBeenSet(false)
+    m_tagFilterHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string DescribeAgentInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void DescribeAgentInstancesRequest::SetTagFilter(const vector<TagFilter>& _tagFi
 bool DescribeAgentInstancesRequest::TagFilterHasBeenSet() const
 {
     return m_tagFilterHasBeenSet;
+}
+
+string DescribeAgentInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DescribeAgentInstancesRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DescribeAgentInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

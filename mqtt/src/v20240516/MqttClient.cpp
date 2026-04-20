@@ -2290,6 +2290,56 @@ MqttClient::DescribeProductSKUListOutcomeCallable MqttClient::DescribeProductSKU
     return prom->get_future();
 }
 
+MqttClient::DescribeSharedSubscriptionGroupsOutcome MqttClient::DescribeSharedSubscriptionGroups(const DescribeSharedSubscriptionGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSharedSubscriptionGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSharedSubscriptionGroupsResponse rsp = DescribeSharedSubscriptionGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSharedSubscriptionGroupsOutcome(rsp);
+        else
+            return DescribeSharedSubscriptionGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSharedSubscriptionGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeSharedSubscriptionGroupsAsync(const DescribeSharedSubscriptionGroupsRequest& request, const DescribeSharedSubscriptionGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSharedSubscriptionGroupsRequest&;
+    using Resp = DescribeSharedSubscriptionGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSharedSubscriptionGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeSharedSubscriptionGroupsOutcomeCallable MqttClient::DescribeSharedSubscriptionGroupsCallable(const DescribeSharedSubscriptionGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSharedSubscriptionGroupsOutcome>>();
+    DescribeSharedSubscriptionGroupsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeSharedSubscriptionGroupsRequest&,
+        DescribeSharedSubscriptionGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::DescribeSharedSubscriptionLagOutcome MqttClient::DescribeSharedSubscriptionLag(const DescribeSharedSubscriptionLagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSharedSubscriptionLag");

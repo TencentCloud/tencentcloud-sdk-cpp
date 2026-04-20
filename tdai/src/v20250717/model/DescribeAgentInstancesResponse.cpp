@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeAgentInstancesResponse::DescribeAgentInstancesResponse() :
     m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_statusCountsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeAgentInstancesResponse::Deserialize(const string &pa
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StatusCounts") && !rsp["StatusCounts"].IsNull())
+    {
+        if (!rsp["StatusCounts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StatusCounts` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["StatusCounts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatusItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statusCounts.push_back(item);
+        }
+        m_statusCountsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeAgentInstancesResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_statusCountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusCounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statusCounts.begin(); itr != m_statusCounts.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<AgentInstance> DescribeAgentInstancesResponse::GetItems() const
 bool DescribeAgentInstancesResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+vector<StatusItem> DescribeAgentInstancesResponse::GetStatusCounts() const
+{
+    return m_statusCounts;
+}
+
+bool DescribeAgentInstancesResponse::StatusCountsHasBeenSet() const
+{
+    return m_statusCountsHasBeenSet;
 }
 
 

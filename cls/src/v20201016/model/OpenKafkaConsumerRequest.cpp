@@ -25,7 +25,9 @@ using namespace std;
 OpenKafkaConsumerRequest::OpenKafkaConsumerRequest() :
     m_fromTopicIdHasBeenSet(false),
     m_compressionHasBeenSet(false),
-    m_consumerContentHasBeenSet(false)
+    m_consumerContentHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_scopeTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string OpenKafkaConsumerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_consumerContent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_scopeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScopeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scopeType, allocator);
     }
 
 
@@ -115,6 +133,38 @@ void OpenKafkaConsumerRequest::SetConsumerContent(const KafkaConsumerContent& _c
 bool OpenKafkaConsumerRequest::ConsumerContentHasBeenSet() const
 {
     return m_consumerContentHasBeenSet;
+}
+
+uint64_t OpenKafkaConsumerRequest::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void OpenKafkaConsumerRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool OpenKafkaConsumerRequest::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
+uint64_t OpenKafkaConsumerRequest::GetScopeType() const
+{
+    return m_scopeType;
+}
+
+void OpenKafkaConsumerRequest::SetScopeType(const uint64_t& _scopeType)
+{
+    m_scopeType = _scopeType;
+    m_scopeTypeHasBeenSet = true;
+}
+
+bool OpenKafkaConsumerRequest::ScopeTypeHasBeenSet() const
+{
+    return m_scopeTypeHasBeenSet;
 }
 
 
