@@ -35,7 +35,9 @@ OpenClawServiceResponse::OpenClawServiceResponse() :
     m_appLogConfigIdHasBeenSet(false),
     m_appLogConfigNameHasBeenSet(false),
     m_sessionLogConfigIdHasBeenSet(false),
-    m_sessionLogConfigNameHasBeenSet(false)
+    m_sessionLogConfigNameHasBeenSet(false),
+    m_traceTopicIdHasBeenSet(false),
+    m_traceTopicNameHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome OpenClawServiceResponse::Deserialize(const string &payload)
         m_sessionLogConfigNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TraceTopicId") && !rsp["TraceTopicId"].IsNull())
+    {
+        if (!rsp["TraceTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceTopicId = string(rsp["TraceTopicId"].GetString());
+        m_traceTopicIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TraceTopicName") && !rsp["TraceTopicName"].IsNull())
+    {
+        if (!rsp["TraceTopicName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceTopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceTopicName = string(rsp["TraceTopicName"].GetString());
+        m_traceTopicNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +319,22 @@ string OpenClawServiceResponse::ToJsonString() const
         string key = "SessionLogConfigName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionLogConfigName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_traceTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_traceTopicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceTopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceTopicName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -429,6 +467,26 @@ string OpenClawServiceResponse::GetSessionLogConfigName() const
 bool OpenClawServiceResponse::SessionLogConfigNameHasBeenSet() const
 {
     return m_sessionLogConfigNameHasBeenSet;
+}
+
+string OpenClawServiceResponse::GetTraceTopicId() const
+{
+    return m_traceTopicId;
+}
+
+bool OpenClawServiceResponse::TraceTopicIdHasBeenSet() const
+{
+    return m_traceTopicIdHasBeenSet;
+}
+
+string OpenClawServiceResponse::GetTraceTopicName() const
+{
+    return m_traceTopicName;
+}
+
+bool OpenClawServiceResponse::TraceTopicNameHasBeenSet() const
+{
+    return m_traceTopicNameHasBeenSet;
 }
 
 

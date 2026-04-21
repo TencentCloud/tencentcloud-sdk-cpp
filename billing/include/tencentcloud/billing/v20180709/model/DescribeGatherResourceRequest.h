@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量，最大值为1000
-                     * @return Limit 数量，最大值为1000
+                     * 获取<p>数量，最大值为1000</p>
+                     * @return Limit <p>数量，最大值为1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置数量，最大值为1000
-                     * @param _limit 数量，最大值为1000
+                     * 设置<p>数量，最大值为1000</p>
+                     * @param _limit <p>数量，最大值为1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
-                     * @return Offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * 获取<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
+                     * @return Offset <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
-                     * @param _offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * 设置<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
+                     * @param _offset <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取账单月份，格式为2024-02，不传默认当前月
-                     * @return Month 账单月份，格式为2024-02，不传默认当前月
+                     * 获取<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @return Month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置账单月份，格式为2024-02，不传默认当前月
-                     * @param _month 账单月份，格式为2024-02，不传默认当前月
+                     * 设置<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @param _month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取分账单元唯一标识，用作筛选
-                     * @return TreeNodeUniqKey 分账单元唯一标识，用作筛选
+                     * 获取<p>分账单元唯一标识，用作筛选</p>
+                     * @return TreeNodeUniqKey <p>分账单元唯一标识，用作筛选</p>
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
-                     * 设置分账单元唯一标识，用作筛选
-                     * @param _treeNodeUniqKey 分账单元唯一标识，用作筛选
+                     * 设置<p>分账单元唯一标识，用作筛选</p>
+                     * @param _treeNodeUniqKey <p>分账单元唯一标识，用作筛选</p>
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -127,23 +127,15 @@ namespace TencentCloud
                     bool TreeNodeUniqKeyHasBeenSet() const;
 
                     /**
-                     * 获取资源目录类别，枚举值如下：
-all - 全部 
-none - 未归集
-                     * @return GatherType 资源目录类别，枚举值如下：
-all - 全部 
-none - 未归集
+                     * 获取<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
+                     * @return GatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
                      * 
                      */
                     std::string GetGatherType() const;
 
                     /**
-                     * 设置资源目录类别，枚举值如下：
-all - 全部 
-none - 未归集
-                     * @param _gatherType 资源目录类别，枚举值如下：
-all - 全部 
-none - 未归集
+                     * 设置<p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
+                     * @param _gatherType <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
                      * 
                      */
                     void SetGatherType(const std::string& _gatherType);
@@ -156,35 +148,15 @@ none - 未归集
                     bool GatherTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，枚举值如下：
-realCost  - 折后总价
-cashPayAmount - 现金金额
-voucherPayAmount - 代金券金额
-incentivePayAmount  - 赠送金金额
-transferPayAmount -分成金金额
-                     * @return Sort 排序字段，枚举值如下：
-realCost  - 折后总价
-cashPayAmount - 现金金额
-voucherPayAmount - 代金券金额
-incentivePayAmount  - 赠送金金额
-transferPayAmount -分成金金额
+                     * 获取<p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>
+                     * @return Sort <p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序字段，枚举值如下：
-realCost  - 折后总价
-cashPayAmount - 现金金额
-voucherPayAmount - 代金券金额
-incentivePayAmount  - 赠送金金额
-transferPayAmount -分成金金额
-                     * @param _sort 排序字段，枚举值如下：
-realCost  - 折后总价
-cashPayAmount - 现金金额
-voucherPayAmount - 代金券金额
-incentivePayAmount  - 赠送金金额
-transferPayAmount -分成金金额
+                     * 设置<p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>
+                     * @param _sort <p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -197,23 +169,15 @@ transferPayAmount -分成金金额
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取排序类型，枚举值如下：
-asc - 升序
-desc - 降序
-                     * @return SortType 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * 获取<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
+                     * @return SortType <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序类型，枚举值如下：
-asc - 升序
-desc - 降序
-                     * @param _sortType 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * 设置<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
+                     * @param _sortType <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -226,15 +190,15 @@ desc - 降序
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取产品编码，用作筛选
-                     * @return BusinessCodes 产品编码，用作筛选
+                     * 获取<p>产品编码，用作筛选</p>
+                     * @return BusinessCodes <p>产品编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetBusinessCodes() const;
 
                     /**
-                     * 设置产品编码，用作筛选
-                     * @param _businessCodes 产品编码，用作筛选
+                     * 设置<p>产品编码，用作筛选</p>
+                     * @param _businessCodes <p>产品编码，用作筛选</p>
                      * 
                      */
                     void SetBusinessCodes(const std::vector<std::string>& _businessCodes);
@@ -247,15 +211,15 @@ desc - 降序
                     bool BusinessCodesHasBeenSet() const;
 
                     /**
-                     * 获取子产品编码，用作筛选
-                     * @return ProductCodes 子产品编码，用作筛选
+                     * 获取<p>子产品编码，用作筛选</p>
+                     * @return ProductCodes <p>子产品编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetProductCodes() const;
 
                     /**
-                     * 设置子产品编码，用作筛选
-                     * @param _productCodes 子产品编码，用作筛选
+                     * 设置<p>子产品编码，用作筛选</p>
+                     * @param _productCodes <p>子产品编码，用作筛选</p>
                      * 
                      */
                     void SetProductCodes(const std::vector<std::string>& _productCodes);
@@ -268,15 +232,15 @@ desc - 降序
                     bool ProductCodesHasBeenSet() const;
 
                     /**
-                     * 获取组件名称编码，用作筛选
-                     * @return ItemCodes 组件名称编码，用作筛选
+                     * 获取<p>组件名称编码，用作筛选</p>
+                     * @return ItemCodes <p>组件名称编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetItemCodes() const;
 
                     /**
-                     * 设置组件名称编码，用作筛选
-                     * @param _itemCodes 组件名称编码，用作筛选
+                     * 设置<p>组件名称编码，用作筛选</p>
+                     * @param _itemCodes <p>组件名称编码，用作筛选</p>
                      * 
                      */
                     void SetItemCodes(const std::vector<std::string>& _itemCodes);
@@ -289,15 +253,15 @@ desc - 降序
                     bool ItemCodesHasBeenSet() const;
 
                     /**
-                     * 获取地域ID，用作筛选
-                     * @return RegionIds 地域ID，用作筛选
+                     * 获取<p>地域ID，用作筛选</p>
+                     * @return RegionIds <p>地域ID，用作筛选</p>
                      * 
                      */
                     std::vector<uint64_t> GetRegionIds() const;
 
                     /**
-                     * 设置地域ID，用作筛选
-                     * @param _regionIds 地域ID，用作筛选
+                     * 设置<p>地域ID，用作筛选</p>
+                     * @param _regionIds <p>地域ID，用作筛选</p>
                      * 
                      */
                     void SetRegionIds(const std::vector<uint64_t>& _regionIds);
@@ -310,15 +274,15 @@ desc - 降序
                     bool RegionIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例类型编码，用作筛选
-                     * @return InstanceTypes 实例类型编码，用作筛选
+                     * 获取<p>实例类型编码，用作筛选</p>
+                     * @return InstanceTypes <p>实例类型编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置实例类型编码，用作筛选
-                     * @param _instanceTypes 实例类型编码，用作筛选
+                     * 设置<p>实例类型编码，用作筛选</p>
+                     * @param _instanceTypes <p>实例类型编码，用作筛选</p>
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -331,15 +295,15 @@ desc - 降序
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
-                     * 获取计费模式编码，用作筛选
-                     * @return PayModes 计费模式编码，用作筛选
+                     * 获取<p>计费模式编码，用作筛选</p>
+                     * @return PayModes <p>计费模式编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetPayModes() const;
 
                     /**
-                     * 设置计费模式编码，用作筛选
-                     * @param _payModes 计费模式编码，用作筛选
+                     * 设置<p>计费模式编码，用作筛选</p>
+                     * @param _payModes <p>计费模式编码，用作筛选</p>
                      * 
                      */
                     void SetPayModes(const std::vector<std::string>& _payModes);
@@ -352,15 +316,15 @@ desc - 降序
                     bool PayModesHasBeenSet() const;
 
                     /**
-                     * 获取操作者UIN，用作筛选
-                     * @return OperateUins 操作者UIN，用作筛选
+                     * 获取<p>操作者UIN，用作筛选</p>
+                     * @return OperateUins <p>操作者UIN，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetOperateUins() const;
 
                     /**
-                     * 设置操作者UIN，用作筛选
-                     * @param _operateUins 操作者UIN，用作筛选
+                     * 设置<p>操作者UIN，用作筛选</p>
+                     * @param _operateUins <p>操作者UIN，用作筛选</p>
                      * 
                      */
                     void SetOperateUins(const std::vector<std::string>& _operateUins);
@@ -373,15 +337,15 @@ desc - 降序
                     bool OperateUinsHasBeenSet() const;
 
                     /**
-                     * 获取使用者UIN，用作筛选
-                     * @return OwnerUins 使用者UIN，用作筛选
+                     * 获取<p>使用者UIN，用作筛选</p>
+                     * @return OwnerUins <p>使用者UIN，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetOwnerUins() const;
 
                     /**
-                     * 设置使用者UIN，用作筛选
-                     * @param _ownerUins 使用者UIN，用作筛选
+                     * 设置<p>使用者UIN，用作筛选</p>
+                     * @param _ownerUins <p>使用者UIN，用作筛选</p>
                      * 
                      */
                     void SetOwnerUins(const std::vector<std::string>& _ownerUins);
@@ -394,15 +358,15 @@ desc - 降序
                     bool OwnerUinsHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索：支持标签、资源id、资源别名
-                     * @return SearchKey 模糊搜索：支持标签、资源id、资源别名
+                     * 获取<p>模糊搜索：支持标签、资源id、资源别名</p>
+                     * @return SearchKey <p>模糊搜索：支持标签、资源id、资源别名</p>
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置模糊搜索：支持标签、资源id、资源别名
-                     * @param _searchKey 模糊搜索：支持标签、资源id、资源别名
+                     * 设置<p>模糊搜索：支持标签、资源id、资源别名</p>
+                     * @param _searchKey <p>模糊搜索：支持标签、资源id、资源别名</p>
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -415,15 +379,15 @@ desc - 降序
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取标签，用作筛选
-                     * @return Tag 标签，用作筛选
+                     * 获取<p>标签，用作筛选</p>
+                     * @return Tag <p>标签，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetTag() const;
 
                     /**
-                     * 设置标签，用作筛选
-                     * @param _tag 标签，用作筛选
+                     * 设置<p>标签，用作筛选</p>
+                     * @param _tag <p>标签，用作筛选</p>
                      * 
                      */
                     void SetTag(const std::vector<std::string>& _tag);
@@ -436,15 +400,15 @@ desc - 降序
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取项目ID，用作筛选
-                     * @return ProjectIds 项目ID，用作筛选
+                     * 获取<p>项目ID，用作筛选</p>
+                     * @return ProjectIds <p>项目ID，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
-                     * 设置项目ID，用作筛选
-                     * @param _projectIds 项目ID，用作筛选
+                     * 设置<p>项目ID，用作筛选</p>
+                     * @param _projectIds <p>项目ID，用作筛选</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<std::string>& _projectIds);
@@ -457,15 +421,15 @@ desc - 降序
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取交易类型编码，用作筛选
-                     * @return ActionTypes 交易类型编码，用作筛选
+                     * 获取<p>交易类型编码，用作筛选</p>
+                     * @return ActionTypes <p>交易类型编码，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetActionTypes() const;
 
                     /**
-                     * 设置交易类型编码，用作筛选
-                     * @param _actionTypes 交易类型编码，用作筛选
+                     * 设置<p>交易类型编码，用作筛选</p>
+                     * @param _actionTypes <p>交易类型编码，用作筛选</p>
                      * 
                      */
                     void SetActionTypes(const std::vector<std::string>& _actionTypes);
@@ -480,124 +444,115 @@ desc - 降序
                 private:
 
                     /**
-                     * 数量，最大值为1000
+                     * <p>数量，最大值为1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 账单月份，格式为2024-02，不传默认当前月
+                     * <p>账单月份，格式为2024-02，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 分账单元唯一标识，用作筛选
+                     * <p>分账单元唯一标识，用作筛选</p>
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
-                     * 资源目录类别，枚举值如下：
-all - 全部 
-none - 未归集
+                     * <p>资源目录类别，枚举值如下：<br>all - 全部<br>none - 未归集</p>
                      */
                     std::string m_gatherType;
                     bool m_gatherTypeHasBeenSet;
 
                     /**
-                     * 排序字段，枚举值如下：
-realCost  - 折后总价
-cashPayAmount - 现金金额
-voucherPayAmount - 代金券金额
-incentivePayAmount  - 赠送金金额
-transferPayAmount -分成金金额
+                     * <p>排序字段，枚举值如下：<br>realCost  - 折后总价<br>cashPayAmount - 现金金额<br>voucherPayAmount - 代金券金额<br>incentivePayAmount  - 赠送金金额<br>transferPayAmount -分成金金额</p>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 产品编码，用作筛选
+                     * <p>产品编码，用作筛选</p>
                      */
                     std::vector<std::string> m_businessCodes;
                     bool m_businessCodesHasBeenSet;
 
                     /**
-                     * 子产品编码，用作筛选
+                     * <p>子产品编码，用作筛选</p>
                      */
                     std::vector<std::string> m_productCodes;
                     bool m_productCodesHasBeenSet;
 
                     /**
-                     * 组件名称编码，用作筛选
+                     * <p>组件名称编码，用作筛选</p>
                      */
                     std::vector<std::string> m_itemCodes;
                     bool m_itemCodesHasBeenSet;
 
                     /**
-                     * 地域ID，用作筛选
+                     * <p>地域ID，用作筛选</p>
                      */
                     std::vector<uint64_t> m_regionIds;
                     bool m_regionIdsHasBeenSet;
 
                     /**
-                     * 实例类型编码，用作筛选
+                     * <p>实例类型编码，用作筛选</p>
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
 
                     /**
-                     * 计费模式编码，用作筛选
+                     * <p>计费模式编码，用作筛选</p>
                      */
                     std::vector<std::string> m_payModes;
                     bool m_payModesHasBeenSet;
 
                     /**
-                     * 操作者UIN，用作筛选
+                     * <p>操作者UIN，用作筛选</p>
                      */
                     std::vector<std::string> m_operateUins;
                     bool m_operateUinsHasBeenSet;
 
                     /**
-                     * 使用者UIN，用作筛选
+                     * <p>使用者UIN，用作筛选</p>
                      */
                     std::vector<std::string> m_ownerUins;
                     bool m_ownerUinsHasBeenSet;
 
                     /**
-                     * 模糊搜索：支持标签、资源id、资源别名
+                     * <p>模糊搜索：支持标签、资源id、资源别名</p>
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 标签，用作筛选
+                     * <p>标签，用作筛选</p>
                      */
                     std::vector<std::string> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 项目ID，用作筛选
+                     * <p>项目ID，用作筛选</p>
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 交易类型编码，用作筛选
+                     * <p>交易类型编码，用作筛选</p>
                      */
                     std::vector<std::string> m_actionTypes;
                     bool m_actionTypesHasBeenSet;

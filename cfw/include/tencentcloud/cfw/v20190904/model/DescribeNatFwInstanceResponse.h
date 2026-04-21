@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/NatFwInstance.h>
+#include <tencentcloud/cfw/v20190904/model/NatClusterInfo.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例数组
-                     * @return NatinsLst 实例数组
+                     * 获取<p>实例数组</p>
+                     * @return NatinsLst <p>实例数组</p>
                      * 
                      */
                     std::vector<NatFwInstance> GetNatinsLst() const;
@@ -58,13 +59,33 @@ namespace TencentCloud
                      */
                     bool NatinsLstHasBeenSet() const;
 
+                    /**
+                     * 获取<p>nat ccn集群防火墙列表</p>
+                     * @return NatClusterLst <p>nat ccn集群防火墙列表</p>
+                     * 
+                     */
+                    std::vector<NatClusterInfo> GetNatClusterLst() const;
+
+                    /**
+                     * 判断参数 NatClusterLst 是否已赋值
+                     * @return NatClusterLst 是否已赋值
+                     * 
+                     */
+                    bool NatClusterLstHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例数组
+                     * <p>实例数组</p>
                      */
                     std::vector<NatFwInstance> m_natinsLst;
                     bool m_natinsLstHasBeenSet;
+
+                    /**
+                     * <p>nat ccn集群防火墙列表</p>
+                     */
+                    std::vector<NatClusterInfo> m_natClusterLst;
+                    bool m_natClusterLstHasBeenSet;
 
                 };
             }

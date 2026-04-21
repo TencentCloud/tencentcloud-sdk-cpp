@@ -59,8 +59,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品筛选列表
-                     * @return Business 产品筛选列表
+                     * 获取<p>产品筛选列表</p>
+                     * @return Business <p>产品筛选列表</p>
                      * 
                      */
                     std::vector<BillBusiness> GetBusiness() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取子产品筛选列表
-                     * @return Product 子产品筛选列表
+                     * 获取<p>子产品筛选列表</p>
+                     * @return Product <p>子产品筛选列表</p>
                      * 
                      */
                     std::vector<BillProduct> GetProduct() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取组件名称筛选列表
-                     * @return Item 组件名称筛选列表
+                     * 获取<p>组件名称筛选列表</p>
+                     * @return Item <p>组件名称筛选列表</p>
                      * 
                      */
                     std::vector<BillItem> GetItem() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool ItemHasBeenSet() const;
 
                     /**
-                     * 获取地域筛选列表
-                     * @return Region 地域筛选列表
+                     * 获取<p>地域筛选列表</p>
+                     * @return Region <p>地域筛选列表</p>
                      * 
                      */
                     std::vector<BillRegion> GetRegion() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型筛选列表
-                     * @return InstanceType 实例类型筛选列表
+                     * 获取<p>实例类型筛选列表</p>
+                     * @return InstanceType <p>实例类型筛选列表</p>
                      * 
                      */
                     std::vector<BillInstanceType> GetInstanceType() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式筛选列表
-                     * @return PayMode 计费模式筛选列表
+                     * 获取<p>计费模式筛选列表</p>
+                     * @return PayMode <p>计费模式筛选列表</p>
                      * 
                      */
                     std::vector<BillPayMode> GetPayMode() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取项目筛选列表
-                     * @return Project 项目筛选列表
+                     * 获取<p>项目筛选列表</p>
+                     * @return Project <p>项目筛选列表</p>
                      * 
                      */
                     std::vector<BillProject> GetProject() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取标签筛选列表
-                     * @return Tag 标签筛选列表
+                     * 获取<p>标签筛选列表</p>
+                     * @return Tag <p>标签筛选列表</p>
                      * 
                      */
                     std::vector<BillTag> GetTag() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取使用者 UIN 筛选列表
-                     * @return OwnerUin 使用者 UIN 筛选列表
+                     * 获取<p>使用者 UIN 筛选列表</p>
+                     * @return OwnerUin <p>使用者 UIN 筛选列表</p>
                      * 
                      */
                     std::vector<BillOwnerUin> GetOwnerUin() const;
@@ -185,8 +185,8 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取操作者 UIN 筛选列表
-                     * @return OperateUin 操作者 UIN 筛选列表
+                     * 获取<p>操作者 UIN 筛选列表</p>
+                     * @return OperateUin <p>操作者 UIN 筛选列表</p>
                      * 
                      */
                     std::vector<BillOperateUin> GetOperateUin() const;
@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool OperateUinHasBeenSet() const;
 
                     /**
-                     * 获取日期筛选列表
-                     * @return BillDay 日期筛选列表
+                     * 获取<p>日期筛选列表</p>
+                     * @return BillDay <p>日期筛选列表</p>
                      * 
                      */
                     std::vector<BillDays> GetBillDay() const;
@@ -213,8 +213,8 @@ namespace TencentCloud
                     bool BillDayHasBeenSet() const;
 
                     /**
-                     * 获取交易类型筛选列表
-                     * @return ActionType 交易类型筛选列表
+                     * 获取<p>交易类型筛选列表</p>
+                     * @return ActionType <p>交易类型筛选列表</p>
                      * 
                      */
                     std::vector<BillActionType> GetActionType() const;
@@ -227,8 +227,8 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取组件类型筛选列表
-                     * @return Component 组件类型筛选列表
+                     * 获取<p>组件类型筛选列表</p>
+                     * @return Component <p>组件类型筛选列表</p>
                      * 
                      */
                     std::vector<BillComponent> GetComponent() const;
@@ -241,8 +241,8 @@ namespace TencentCloud
                     bool ComponentHasBeenSet() const;
 
                     /**
-                     * 获取可用区筛选列表
-                     * @return Zone 可用区筛选列表
+                     * 获取<p>可用区筛选列表</p>
+                     * @return Zone <p>可用区筛选列表</p>
                      * 
                      */
                     std::vector<BillZoneId> GetZone() const;
@@ -255,8 +255,8 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取分账单元筛选列表
-                     * @return AllocationTreeNode 分账单元筛选列表
+                     * 获取<p>分账单元筛选列表</p>
+                     * @return AllocationTreeNode <p>分账单元筛选列表</p>
                      * 
                      */
                     std::vector<AllocationTreeNode> GetAllocationTreeNode() const;
@@ -269,8 +269,8 @@ namespace TencentCloud
                     bool AllocationTreeNodeHasBeenSet() const;
 
                     /**
-                     * 获取分账标签键
-                     * @return TagKey 分账标签键
+                     * 获取<p>分账标签键</p>
+                     * @return TagKey <p>分账标签键</p>
                      * 
                      */
                     std::vector<std::string> GetTagKey() const;
@@ -285,97 +285,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品筛选列表
+                     * <p>产品筛选列表</p>
                      */
                     std::vector<BillBusiness> m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 子产品筛选列表
+                     * <p>子产品筛选列表</p>
                      */
                     std::vector<BillProduct> m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 组件名称筛选列表
+                     * <p>组件名称筛选列表</p>
                      */
                     std::vector<BillItem> m_item;
                     bool m_itemHasBeenSet;
 
                     /**
-                     * 地域筛选列表
+                     * <p>地域筛选列表</p>
                      */
                     std::vector<BillRegion> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例类型筛选列表
+                     * <p>实例类型筛选列表</p>
                      */
                     std::vector<BillInstanceType> m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 计费模式筛选列表
+                     * <p>计费模式筛选列表</p>
                      */
                     std::vector<BillPayMode> m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 项目筛选列表
+                     * <p>项目筛选列表</p>
                      */
                     std::vector<BillProject> m_project;
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 标签筛选列表
+                     * <p>标签筛选列表</p>
                      */
                     std::vector<BillTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 使用者 UIN 筛选列表
+                     * <p>使用者 UIN 筛选列表</p>
                      */
                     std::vector<BillOwnerUin> m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 操作者 UIN 筛选列表
+                     * <p>操作者 UIN 筛选列表</p>
                      */
                     std::vector<BillOperateUin> m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
-                     * 日期筛选列表
+                     * <p>日期筛选列表</p>
                      */
                     std::vector<BillDays> m_billDay;
                     bool m_billDayHasBeenSet;
 
                     /**
-                     * 交易类型筛选列表
+                     * <p>交易类型筛选列表</p>
                      */
                     std::vector<BillActionType> m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 组件类型筛选列表
+                     * <p>组件类型筛选列表</p>
                      */
                     std::vector<BillComponent> m_component;
                     bool m_componentHasBeenSet;
 
                     /**
-                     * 可用区筛选列表
+                     * <p>可用区筛选列表</p>
                      */
                     std::vector<BillZoneId> m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 分账单元筛选列表
+                     * <p>分账单元筛选列表</p>
                      */
                     std::vector<AllocationTreeNode> m_allocationTreeNode;
                     bool m_allocationTreeNodeHasBeenSet;
 
                     /**
-                     * 分账标签键
+                     * <p>分账标签键</p>
                      */
                     std::vector<std::string> m_tagKey;
                     bool m_tagKeyHasBeenSet;

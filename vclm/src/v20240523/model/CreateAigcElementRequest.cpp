@@ -29,7 +29,8 @@ CreateAigcElementRequest::CreateAigcElementRequest() :
     m_elementImageListHasBeenSet(false),
     m_videoListHasBeenSet(false),
     m_providerHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_elementVoiceIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateAigcElementRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_elementVoiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElementVoiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_elementVoiceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -232,6 +241,22 @@ void CreateAigcElementRequest::SetTagList(const vector<TagList>& _tagList)
 bool CreateAigcElementRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string CreateAigcElementRequest::GetElementVoiceId() const
+{
+    return m_elementVoiceId;
+}
+
+void CreateAigcElementRequest::SetElementVoiceId(const string& _elementVoiceId)
+{
+    m_elementVoiceId = _elementVoiceId;
+    m_elementVoiceIdHasBeenSet = true;
+}
+
+bool CreateAigcElementRequest::ElementVoiceIdHasBeenSet() const
+{
+    return m_elementVoiceIdHasBeenSet;
 }
 
 

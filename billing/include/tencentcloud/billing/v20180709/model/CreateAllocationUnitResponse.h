@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增分账单元ID
-                     * @return Id 新增分账单元ID
+                     * 获取<p>新增分账单元ID</p>
+                     * @return Id <p>新增分账单元ID</p>
                      * 
                      */
                     uint64_t GetId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取分账单元唯一标识
-                     * @return TreeNodeUniqKey 分账单元唯一标识
+                     * 获取<p>分账单元唯一标识</p>
+                     * @return TreeNodeUniqKey <p>分账单元唯一标识</p>
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新增分账单元ID
+                     * <p>新增分账单元ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 分账单元唯一标识
+                     * <p>分账单元唯一标识</p>
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;

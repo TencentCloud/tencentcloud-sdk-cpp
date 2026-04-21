@@ -41,7 +41,8 @@ AudioResult::AudioResult() :
     m_subTagCodeHasBeenSet(false),
     m_hitTypeHasBeenSet(false),
     m_sentencesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_aIGCRecognitionResultsHasBeenSet(false)
 {
 }
 
@@ -340,6 +341,26 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_requestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AIGCRecognitionResults") && !value["AIGCRecognitionResults"].IsNull())
+    {
+        if (!value["AIGCRecognitionResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.AIGCRecognitionResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AIGCRecognitionResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGCRecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_aIGCRecognitionResults.push_back(item);
+        }
+        m_aIGCRecognitionResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +590,21 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aIGCRecognitionResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIGCRecognitionResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_aIGCRecognitionResults.begin(); itr != m_aIGCRecognitionResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -908,5 +944,21 @@ void AudioResult::SetRequestId(const string& _requestId)
 bool AudioResult::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
+}
+
+vector<AIGCRecognitionResult> AudioResult::GetAIGCRecognitionResults() const
+{
+    return m_aIGCRecognitionResults;
+}
+
+void AudioResult::SetAIGCRecognitionResults(const vector<AIGCRecognitionResult>& _aIGCRecognitionResults)
+{
+    m_aIGCRecognitionResults = _aIGCRecognitionResults;
+    m_aIGCRecognitionResultsHasBeenSet = true;
+}
+
+bool AudioResult::AIGCRecognitionResultsHasBeenSet() const
+{
+    return m_aIGCRecognitionResultsHasBeenSet;
 }
 

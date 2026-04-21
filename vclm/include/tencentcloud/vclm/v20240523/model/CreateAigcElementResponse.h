@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return ElementId 
+                     * 获取<p>主体Id</p>
+                     * @return ElementId <p>主体Id</p>
                      * 
                      */
                     std::string GetElementId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ElementIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Status 
+                     * 获取<p>任务状态</p><p>默认值：任务状态</p>
+                     * @return Status <p>任务状态</p><p>默认值：任务状态</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return Provider 
+                     * 获取<p>厂商</p>
+                     * @return Provider <p>厂商</p>
                      * 
                      */
                     std::vector<std::string> GetProvider() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return CreatedAt 
+                     * 获取<p>任务创建时间</p>
+                     * @return CreatedAt <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
@@ -122,25 +122,25 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>主体Id</p>
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>任务状态</p><p>默认值：任务状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 
+                     * <p>厂商</p>
                      */
                     std::vector<std::string> m_provider;
                     bool m_providerHasBeenSet;
 
                     /**
-                     * 
+                     * <p>任务创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 获取<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。</p>
+                     * @return InstanceId <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
-                     * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * 设置<p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。</p>
+                     * @param _instanceId <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云数据库的模式，目前仅支持传入 "protectMode" 表示修改主从同步方式。
-                     * @return Mode 云数据库的模式，目前仅支持传入 "protectMode" 表示修改主从同步方式。
+                     * 获取<p>云数据库的模式，目前仅支持传入 &quot;protectMode&quot; 表示修改主从同步方式。</p>
+                     * @return Mode <p>云数据库的模式，目前仅支持传入 &quot;protectMode&quot; 表示修改主从同步方式。</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置云数据库的模式，目前仅支持传入 "protectMode" 表示修改主从同步方式。
-                     * @param _mode 云数据库的模式，目前仅支持传入 "protectMode" 表示修改主从同步方式。
+                     * 设置<p>云数据库的模式，目前仅支持传入 &quot;protectMode&quot; 表示修改主从同步方式。</p>
+                     * @param _mode <p>云数据库的模式，目前仅支持传入 &quot;protectMode&quot; 表示修改主从同步方式。</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。
-                     * @return ProtectMode 数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。
+                     * 获取<p>数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。</p>
+                     * @return ProtectMode <p>数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。</p>
                      * 
                      */
                     int64_t GetProtectMode() const;
 
                     /**
-                     * 设置数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。
-                     * @param _protectMode 数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。
+                     * 设置<p>数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。</p>
+                     * @param _protectMode <p>数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。</p>
                      * 
                      */
                     void SetProtectMode(const int64_t& _protectMode);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
+                     * <p>实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云数据库的模式，目前仅支持传入 "protectMode" 表示修改主从同步方式。
+                     * <p>云数据库的模式，目前仅支持传入 &quot;protectMode&quot; 表示修改主从同步方式。</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。
+                     * <p>数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。</p>
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;

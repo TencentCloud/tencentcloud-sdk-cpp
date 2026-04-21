@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取所编辑公摊规则ID
-                     * @return RuleId 所编辑公摊规则ID
+                     * 获取<p>所编辑公摊规则ID</p>
+                     * @return RuleId <p>所编辑公摊规则ID</p>
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
-                     * 设置所编辑公摊规则ID
-                     * @param _ruleId 所编辑公摊规则ID
+                     * 设置<p>所编辑公摊规则ID</p>
+                     * @param _ruleId <p>所编辑公摊规则ID</p>
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取编辑后公摊规则名称
-                     * @return Name 编辑后公摊规则名称
+                     * 获取<p>编辑后公摊规则名称</p>
+                     * @return Name <p>编辑后公摊规则名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置编辑后公摊规则名称
-                     * @param _name 编辑后公摊规则名称
+                     * 设置<p>编辑后公摊规则名称</p>
+                     * @param _name <p>编辑后公摊规则名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊
-                     * @return Type 公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊
+                     * 获取<p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>
+                     * @return Type <p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊
-                     * @param _type 公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊
+                     * 设置<p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>
+                     * @param _type <p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取编辑后公摊规则表达式
-                     * @return RuleDetail 编辑后公摊规则表达式
+                     * 获取<p>编辑后公摊规则表达式</p>
+                     * @return RuleDetail <p>编辑后公摊规则表达式</p>
                      * 
                      */
                     AllocationRuleExpression GetRuleDetail() const;
 
                     /**
-                     * 设置编辑后公摊规则表达式
-                     * @param _ruleDetail 编辑后公摊规则表达式
+                     * 设置<p>编辑后公摊规则表达式</p>
+                     * @param _ruleDetail <p>编辑后公摊规则表达式</p>
                      * 
                      */
                     void SetRuleDetail(const AllocationRuleExpression& _ruleDetail);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool RuleDetailHasBeenSet() const;
 
                     /**
-                     * 获取编辑后公摊比例表达式
-                     * @return RatioDetail 编辑后公摊比例表达式
+                     * 获取<p>编辑后公摊比例表达式</p>
+                     * @return RatioDetail <p>编辑后公摊比例表达式</p>
                      * 
                      */
                     std::vector<AllocationRationExpression> GetRatioDetail() const;
 
                     /**
-                     * 设置编辑后公摊比例表达式
-                     * @param _ratioDetail 编辑后公摊比例表达式
+                     * 设置<p>编辑后公摊比例表达式</p>
+                     * @param _ratioDetail <p>编辑后公摊比例表达式</p>
                      * 
                      */
                     void SetRatioDetail(const std::vector<AllocationRationExpression>& _ratioDetail);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RatioDetailHasBeenSet() const;
 
                     /**
-                     * 获取月份，不传默认当前月
-                     * @return Month 月份，不传默认当前月
+                     * 获取<p>月份，不传默认当前月</p>
+                     * @return Month <p>月份，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置月份，不传默认当前月
-                     * @param _month 月份，不传默认当前月
+                     * 设置<p>月份，不传默认当前月</p>
+                     * @param _month <p>月份，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -173,37 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 所编辑公摊规则ID
+                     * <p>所编辑公摊规则ID</p>
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 编辑后公摊规则名称
+                     * <p>编辑后公摊规则名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊
+                     * <p>公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 编辑后公摊规则表达式
+                     * <p>编辑后公摊规则表达式</p>
                      */
                     AllocationRuleExpression m_ruleDetail;
                     bool m_ruleDetailHasBeenSet;
 
                     /**
-                     * 编辑后公摊比例表达式
+                     * <p>编辑后公摊比例表达式</p>
                      */
                     std::vector<AllocationRationExpression> m_ratioDetail;
                     bool m_ratioDetailHasBeenSet;
 
                     /**
-                     * 月份，不传默认当前月
+                     * <p>月份，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;

@@ -23,6 +23,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/FwDeploy.h
   include/tencentcloud/cfw/v20190904/model/CreateAlertCenterIsolateResponse.h
+  include/tencentcloud/cfw/v20190904/model/NatClusterInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAclRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAclRuleResponse.h
@@ -151,6 +152,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyVpcAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/BetaInfoByACL.h
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h
+  include/tencentcloud/cfw/v20190904/model/SwitchFailInfo.h
   include/tencentcloud/cfw/v20190904/model/AddNatAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ScanInfo.h
   include/tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupResponse.h
@@ -376,6 +378,7 @@ set(cfw_src
   src/v20190904/model/ModifyFwGroupSwitchRequest.cpp
   src/v20190904/model/FwDeploy.cpp
   src/v20190904/model/CreateAlertCenterIsolateResponse.cpp
+  src/v20190904/model/NatClusterInfo.cpp
   src/v20190904/model/DescribeNDRAssetIdentificationListResponse.cpp
   src/v20190904/model/ModifyAclRuleRequest.cpp
   src/v20190904/model/DescribeAclRuleResponse.cpp
@@ -504,6 +507,7 @@ set(cfw_src
   src/v20190904/model/ModifyVpcAcRuleRequest.cpp
   src/v20190904/model/BetaInfoByACL.cpp
   src/v20190904/model/DescribeAcListsResponse.cpp
+  src/v20190904/model/SwitchFailInfo.cpp
   src/v20190904/model/AddNatAcRuleRequest.cpp
   src/v20190904/model/ScanInfo.cpp
   src/v20190904/model/DeleteVpcFwGroupResponse.cpp

@@ -42,7 +42,8 @@ SubmitImageToVideoJobRequest::SubmitImageToVideoJobRequest() :
     m_dynamicMasksHasBeenSet(false),
     m_cameraControlHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_voiceListHasBeenSet(false)
+    m_voiceListHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,14 @@ string SubmitImageToVideoJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -571,6 +580,22 @@ void SubmitImageToVideoJobRequest::SetVoiceList(const vector<Voice>& _voiceList)
 bool SubmitImageToVideoJobRequest::VoiceListHasBeenSet() const
 {
     return m_voiceListHasBeenSet;
+}
+
+string SubmitImageToVideoJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void SubmitImageToVideoJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool SubmitImageToVideoJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 

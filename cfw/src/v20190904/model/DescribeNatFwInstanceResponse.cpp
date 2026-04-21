@@ -24,7 +24,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeNatFwInstanceResponse::DescribeNatFwInstanceResponse() :
-    m_natinsLstHasBeenSet(false)
+    m_natinsLstHasBeenSet(false),
+    m_natClusterLstHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeNatFwInstanceResponse::Deserialize(const string &pay
         m_natinsLstHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NatClusterLst") && !rsp["NatClusterLst"].IsNull())
+    {
+        if (!rsp["NatClusterLst"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NatClusterLst` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NatClusterLst"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NatClusterInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_natClusterLst.push_back(item);
+        }
+        m_natClusterLstHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeNatFwInstanceResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_natinsLst.begin(); itr != m_natinsLst.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_natClusterLstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NatClusterLst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_natClusterLst.begin(); itr != m_natClusterLst.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<NatFwInstance> DescribeNatFwInstanceResponse::GetNatinsLst() const
 bool DescribeNatFwInstanceResponse::NatinsLstHasBeenSet() const
 {
     return m_natinsLstHasBeenSet;
+}
+
+vector<NatClusterInfo> DescribeNatFwInstanceResponse::GetNatClusterLst() const
+{
+    return m_natClusterLst;
+}
+
+bool DescribeNatFwInstanceResponse::NatClusterLstHasBeenSet() const
+{
+    return m_natClusterLstHasBeenSet;
 }
 
 

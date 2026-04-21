@@ -38,7 +38,9 @@ ClusterSwitchDetail::ClusterSwitchDetail() :
     m_routingModeHasBeenSet(false),
     m_isPeerHasBeenSet(false),
     m_peerAppidHasBeenSet(false),
-    m_peerStatusHasBeenSet(false)
+    m_peerStatusHasBeenSet(false),
+    m_bypassHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,26 @@ CoreInternalOutcome ClusterSwitchDetail::Deserialize(const rapidjson::Value &val
         m_peerStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Bypass") && !value["Bypass"].IsNull())
+    {
+        if (!value["Bypass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSwitchDetail.Bypass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bypass = value["Bypass"].GetInt64();
+        m_bypassHasBeenSet = true;
+    }
+
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSwitchDetail.Progress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = string(value["Progress"].GetString());
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +432,22 @@ void ClusterSwitchDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "PeerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_peerStatus, allocator);
+    }
+
+    if (m_bypassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bypass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bypass, allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_progress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -701,5 +739,37 @@ void ClusterSwitchDetail::SetPeerStatus(const int64_t& _peerStatus)
 bool ClusterSwitchDetail::PeerStatusHasBeenSet() const
 {
     return m_peerStatusHasBeenSet;
+}
+
+int64_t ClusterSwitchDetail::GetBypass() const
+{
+    return m_bypass;
+}
+
+void ClusterSwitchDetail::SetBypass(const int64_t& _bypass)
+{
+    m_bypass = _bypass;
+    m_bypassHasBeenSet = true;
+}
+
+bool ClusterSwitchDetail::BypassHasBeenSet() const
+{
+    return m_bypassHasBeenSet;
+}
+
+string ClusterSwitchDetail::GetProgress() const
+{
+    return m_progress;
+}
+
+void ClusterSwitchDetail::SetProgress(const string& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool ClusterSwitchDetail::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

@@ -21,32 +21,44 @@ set(bi_public_header
 set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/PageScreenVO.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserDetailInfoRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupTreeListRequest.h
   include/tencentcloud/bi/v20220105/model/Role.h
   include/tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigResult.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserGroupResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
   include/tencentcloud/bi/v20220105/model/CorpUserListData.h
+  include/tencentcloud/bi/v20220105/model/UserGroupUpdateDTO.h
   include/tencentcloud/bi/v20220105/model/RowColumnConfig.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectListResponse.h
+  include/tencentcloud/bi/v20220105/model/QueryUserGroupMemberRequest.h
   include/tencentcloud/bi/v20220105/model/PageScreenListVO.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserGroupMemberResponse.h
+  include/tencentcloud/bi/v20220105/model/UserResourceDTO.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudResponse.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedTokenInfo.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResponse.h
   include/tencentcloud/bi/v20220105/model/Project.h
-  include/tencentcloud/bi/v20220105/model/PermissionComponent.h
-  include/tencentcloud/bi/v20220105/model/RowColumnStatus.h
-  include/tencentcloud/bi/v20220105/model/WidgetVO.h
+  include/tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserGroupMemberRequest.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/WidgetVO.h
+  include/tencentcloud/bi/v20220105/model/RowColumnStatus.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoRequest.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h
+  include/tencentcloud/bi/v20220105/model/CreateUserGroupRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteDatasourceResponse.h
   include/tencentcloud/bi/v20220105/model/CreateProjectRequest.h
-  include/tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoResponse.h
+  include/tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalRequest.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionRoleInfoResponse.h
   include/tencentcloud/bi/v20220105/model/CreatePermissionRanksRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResourceRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeResourceUserGroupPageListResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleRequest.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleRequest.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h
@@ -55,13 +67,20 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/CreateProjectResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupInfoResponse.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h
+  include/tencentcloud/bi/v20220105/model/ResourceItem.h
+  include/tencentcloud/bi/v20220105/model/CreateUserGroupMemberResponse.h
   include/tencentcloud/bi/v20220105/model/RankInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupTreeListResponse.h
   include/tencentcloud/bi/v20220105/model/UserInfo.h
   include/tencentcloud/bi/v20220105/model/UserIdAndUserName.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h
   include/tencentcloud/bi/v20220105/model/RowColumnTagValue.h
-  include/tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribeResourceUserGroupPageListRequest.h
+  include/tencentcloud/bi/v20220105/model/ResourceListDTO.h
+  include/tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoResponse.h
+  include/tencentcloud/bi/v20220105/model/UserGroupTreeNodeDTO.h
   include/tencentcloud/bi/v20220105/model/EmbedTokenInfo.h
   include/tencentcloud/bi/v20220105/model/DatasourceInfoData.h
   include/tencentcloud/bi/v20220105/model/DescribePageWidgetListRequest.h
@@ -69,6 +88,8 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/BaseStateAction.h
   include/tencentcloud/bi/v20220105/model/Data.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h
+  include/tencentcloud/bi/v20220105/model/QueryUserGroupMemberResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserGroupRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleRequest.h
   include/tencentcloud/bi/v20220105/model/UserRoleListData.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectResponse.h
@@ -78,68 +99,95 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleProjectResponse.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionRoleInfoRequest.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserGroupRequest.h
   include/tencentcloud/bi/v20220105/model/IdDTO.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h
   include/tencentcloud/bi/v20220105/model/DataId.h
   include/tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h
+  include/tencentcloud/bi/v20220105/model/UserVO.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupMemberListResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListResponse.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteDatasourceRequest.h
   include/tencentcloud/bi/v20220105/model/WidgetListVO.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h
   include/tencentcloud/bi/v20220105/model/DescribePageWidgetListResponse.h
+  include/tencentcloud/bi/v20220105/model/UserGroupPageTreeVO.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
   include/tencentcloud/bi/v20220105/model/PermissionGroup.h
   include/tencentcloud/bi/v20220105/model/UserGroupDTO.h
+  include/tencentcloud/bi/v20220105/model/CreateUserGroupResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupInfoRequest.h
+  include/tencentcloud/bi/v20220105/model/CreateUserGroupMemberRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyProjectResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleResponse.h
+  include/tencentcloud/bi/v20220105/model/ModifyUserDetailInfoResponse.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionRanksInfoResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyProjectRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResourceResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectListRequest.h
   include/tencentcloud/bi/v20220105/model/UserRoleListDataUserRoleInfo.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserGroupResponse.h
+  include/tencentcloud/bi/v20220105/model/UserGroupTreeVO.h
   include/tencentcloud/bi/v20220105/model/DatasourceInfo.h
+  include/tencentcloud/bi/v20220105/model/ResourceDTO.h
   include/tencentcloud/bi/v20220105/model/ProjectListData.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h
-  include/tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h
+  include/tencentcloud/bi/v20220105/model/DeleteUserGroupRequest.h
+  include/tencentcloud/bi/v20220105/model/ResourceTagValue.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionRanksInfoRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupMemberListRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeDatasourceListResponse.h
   include/tencentcloud/bi/v20220105/model/ErrorInfo.h
-  include/tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h
+  include/tencentcloud/bi/v20220105/model/PermissionComponent.h
   )
 
 set(bi_src
   src/v20220105/BiClient.cpp
   src/v20220105/model/PageScreenVO.cpp
   src/v20220105/model/DeleteProjectRequest.cpp
+  src/v20220105/model/ModifyUserDetailInfoRequest.cpp
+  src/v20220105/model/DescribeUserGroupTreeListRequest.cpp
   src/v20220105/model/Role.cpp
   src/v20220105/model/ExportScreenPageResponse.cpp
   src/v20220105/model/ProjectConfigResult.cpp
+  src/v20220105/model/ModifyUserGroupResponse.cpp
   src/v20220105/model/DeleteUserRoleResponse.cpp
   src/v20220105/model/DescribeUserProjectListRequest.cpp
   src/v20220105/model/CorpUserListData.cpp
+  src/v20220105/model/UserGroupUpdateDTO.cpp
   src/v20220105/model/RowColumnConfig.cpp
   src/v20220105/model/DescribeProjectListResponse.cpp
+  src/v20220105/model/QueryUserGroupMemberRequest.cpp
   src/v20220105/model/PageScreenListVO.cpp
+  src/v20220105/model/DeleteUserGroupMemberResponse.cpp
+  src/v20220105/model/UserResourceDTO.cpp
   src/v20220105/model/ModifyDatasourceCloudResponse.cpp
   src/v20220105/model/CreateUserRoleResponse.cpp
   src/v20220105/model/ApplyEmbedTokenInfo.cpp
+  src/v20220105/model/ModifyResourceUserGroupResponse.cpp
   src/v20220105/model/Project.cpp
-  src/v20220105/model/PermissionComponent.cpp
-  src/v20220105/model/RowColumnStatus.cpp
-  src/v20220105/model/WidgetVO.cpp
+  src/v20220105/model/ExportScreenPageRequest.cpp
+  src/v20220105/model/DeleteUserGroupMemberRequest.cpp
   src/v20220105/model/CreateUserRoleProjectRequest.cpp
+  src/v20220105/model/WidgetVO.cpp
+  src/v20220105/model/RowColumnStatus.cpp
   src/v20220105/model/DescribePermissionStatusInfoRequest.cpp
   src/v20220105/model/CreateDatasourceResponse.cpp
+  src/v20220105/model/CreateUserGroupRequest.cpp
   src/v20220105/model/DeleteDatasourceResponse.cpp
   src/v20220105/model/CreateProjectRequest.cpp
-  src/v20220105/model/DescribePermissionStatusInfoResponse.cpp
+  src/v20220105/model/UserRoleListDataRoleInfo.cpp
   src/v20220105/model/ApplyEmbedIntervalRequest.cpp
   src/v20220105/model/DescribePermissionRoleInfoResponse.cpp
   src/v20220105/model/CreatePermissionRanksRequest.cpp
+  src/v20220105/model/ModifyResourceUserGroupResourceRequest.cpp
   src/v20220105/model/DescribeProjectInfoRequest.cpp
+  src/v20220105/model/DescribeResourceUserGroupPageListResponse.cpp
   src/v20220105/model/ModifyUserRoleRequest.cpp
   src/v20220105/model/CreateUserRoleRequest.cpp
   src/v20220105/model/CreateEmbedTokenRequest.cpp
@@ -148,13 +196,20 @@ set(bi_src
   src/v20220105/model/CreateProjectResponse.cpp
   src/v20220105/model/DescribeProjectInfoResponse.cpp
   src/v20220105/model/DeleteProjectResponse.cpp
+  src/v20220105/model/DescribeUserGroupInfoResponse.cpp
   src/v20220105/model/ApplyEmbedIntervalResponse.cpp
+  src/v20220105/model/ResourceItem.cpp
+  src/v20220105/model/CreateUserGroupMemberResponse.cpp
   src/v20220105/model/RankInfo.cpp
+  src/v20220105/model/DescribeUserGroupTreeListResponse.cpp
   src/v20220105/model/UserInfo.cpp
   src/v20220105/model/UserIdAndUserName.cpp
   src/v20220105/model/DescribeUserRoleListResponse.cpp
   src/v20220105/model/RowColumnTagValue.cpp
-  src/v20220105/model/UserRoleListDataRoleInfo.cpp
+  src/v20220105/model/DescribeResourceUserGroupPageListRequest.cpp
+  src/v20220105/model/ResourceListDTO.cpp
+  src/v20220105/model/DescribePermissionStatusInfoResponse.cpp
+  src/v20220105/model/UserGroupTreeNodeDTO.cpp
   src/v20220105/model/EmbedTokenInfo.cpp
   src/v20220105/model/DatasourceInfoData.cpp
   src/v20220105/model/DescribePageWidgetListRequest.cpp
@@ -162,6 +217,8 @@ set(bi_src
   src/v20220105/model/BaseStateAction.cpp
   src/v20220105/model/Data.cpp
   src/v20220105/model/DescribeUserRoleProjectListResponse.cpp
+  src/v20220105/model/QueryUserGroupMemberResponse.cpp
+  src/v20220105/model/ModifyUserGroupRequest.cpp
   src/v20220105/model/DeleteUserRoleRequest.cpp
   src/v20220105/model/UserRoleListData.cpp
   src/v20220105/model/CreateUserRoleProjectResponse.cpp
@@ -171,36 +228,51 @@ set(bi_src
   src/v20220105/model/DeleteUserRoleProjectResponse.cpp
   src/v20220105/model/DescribePermissionRoleInfoRequest.cpp
   src/v20220105/model/CreateDatasourceCloudRequest.cpp
+  src/v20220105/model/ModifyResourceUserGroupRequest.cpp
   src/v20220105/model/IdDTO.cpp
   src/v20220105/model/ModifyDatasourceCloudRequest.cpp
+  src/v20220105/model/DescribeDatasourceListRequest.cpp
   src/v20220105/model/DataId.cpp
   src/v20220105/model/ClearEmbedTokenRequest.cpp
+  src/v20220105/model/UserVO.cpp
+  src/v20220105/model/DescribeUserGroupMemberListResponse.cpp
   src/v20220105/model/DescribeUserProjectListResponse.cpp
   src/v20220105/model/CreateDatasourceRequest.cpp
   src/v20220105/model/DeleteDatasourceRequest.cpp
   src/v20220105/model/WidgetListVO.cpp
   src/v20220105/model/ModifyDatasourceResponse.cpp
   src/v20220105/model/DescribePageWidgetListResponse.cpp
+  src/v20220105/model/UserGroupPageTreeVO.cpp
   src/v20220105/model/CreateDatasourceCloudResponse.cpp
   src/v20220105/model/ProjectConfigList.cpp
   src/v20220105/model/PermissionGroup.cpp
   src/v20220105/model/UserGroupDTO.cpp
+  src/v20220105/model/CreateUserGroupResponse.cpp
+  src/v20220105/model/DescribeUserGroupInfoRequest.cpp
+  src/v20220105/model/CreateUserGroupMemberRequest.cpp
   src/v20220105/model/ModifyProjectResponse.cpp
   src/v20220105/model/ModifyUserRoleResponse.cpp
+  src/v20220105/model/ModifyUserDetailInfoResponse.cpp
   src/v20220105/model/DescribePermissionRanksInfoResponse.cpp
   src/v20220105/model/ModifyUserRoleProjectResponse.cpp
   src/v20220105/model/ModifyProjectRequest.cpp
   src/v20220105/model/ModifyUserRoleProjectRequest.cpp
+  src/v20220105/model/ModifyResourceUserGroupResourceResponse.cpp
   src/v20220105/model/DescribeProjectListRequest.cpp
   src/v20220105/model/UserRoleListDataUserRoleInfo.cpp
+  src/v20220105/model/DeleteUserGroupResponse.cpp
+  src/v20220105/model/UserGroupTreeVO.cpp
   src/v20220105/model/DatasourceInfo.cpp
+  src/v20220105/model/ResourceDTO.cpp
   src/v20220105/model/ProjectListData.cpp
   src/v20220105/model/CreateEmbedTokenResponse.cpp
-  src/v20220105/model/DescribeDatasourceListRequest.cpp
+  src/v20220105/model/DeleteUserGroupRequest.cpp
+  src/v20220105/model/ResourceTagValue.cpp
   src/v20220105/model/DescribePermissionRanksInfoRequest.cpp
+  src/v20220105/model/DescribeUserGroupMemberListRequest.cpp
   src/v20220105/model/DescribeDatasourceListResponse.cpp
   src/v20220105/model/ErrorInfo.cpp
-  src/v20220105/model/ExportScreenPageRequest.cpp
+  src/v20220105/model/PermissionComponent.cpp
   )
 
 set(bi_include

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数量
-                     * @return TotalCount 总数量
+                     * 获取<p>总数量</p>
+                     * @return TotalCount <p>总数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -58,16 +58,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。
-1. 将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。
-2. 使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。
-3. 使用 UTF-8 字符集，将压缩前的字节数组转换为文本。
-
-                     * @return Spans Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。
-1. 将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。
-2. 使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。
-3. 使用 UTF-8 字符集，将压缩前的字节数组转换为文本。
-
+                     * 获取<p>Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。</p><ol><li>将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。</li><li>使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。</li><li>使用 UTF-8 字符集，将压缩前的字节数组转换为文本。</li></ol>
+                     * @return Spans <p>Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。</p><ol><li>将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。</li><li>使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。</li><li>使用 UTF-8 字符集，将压缩前的字节数组转换为文本。</li></ol>
                      * 
                      */
                     std::string GetSpans() const;
@@ -82,17 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数量
+                     * <p>总数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。
-1. 将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。
-2. 使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。
-3. 使用 UTF-8 字符集，将压缩前的字节数组转换为文本。
-
+                     * <p>Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。</p><ol><li>将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。</li><li>使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。</li><li>使用 UTF-8 字符集，将压缩前的字节数组转换为文本。</li></ol>
                      */
                     std::string m_spans;
                     bool m_spansHasBeenSet;

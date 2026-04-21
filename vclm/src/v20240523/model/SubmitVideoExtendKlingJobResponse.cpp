@@ -24,7 +24,8 @@ using namespace TencentCloud::Vclm::V20240523::Model;
 using namespace std;
 
 SubmitVideoExtendKlingJobResponse::SubmitVideoExtendKlingJobResponse() :
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome SubmitVideoExtendKlingJobResponse::Deserialize(const string 
         m_jobIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExternalTaskId") && !rsp["ExternalTaskId"].IsNull())
+    {
+        if (!rsp["ExternalTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalTaskId = string(rsp["ExternalTaskId"].GetString());
+        m_externalTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string SubmitVideoExtendKlingJobResponse::ToJsonString() const
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string SubmitVideoExtendKlingJobResponse::GetJobId() const
 bool SubmitVideoExtendKlingJobResponse::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+string SubmitVideoExtendKlingJobResponse::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+bool SubmitVideoExtendKlingJobResponse::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 

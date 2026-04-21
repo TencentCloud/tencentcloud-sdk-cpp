@@ -35,7 +35,8 @@ DescribeAigcElementResponse::DescribeAigcElementResponse() :
     m_tagListHasBeenSet(false),
     m_providerDetailsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_elementVoiceIdHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome DescribeAigcElementResponse::Deserialize(const string &paylo
         m_updatedAtHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ElementVoiceId") && !rsp["ElementVoiceId"].IsNull())
+    {
+        if (!rsp["ElementVoiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElementVoiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_elementVoiceId = string(rsp["ElementVoiceId"].GetString());
+        m_elementVoiceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ string DescribeAigcElementResponse::ToJsonString() const
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elementVoiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElementVoiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_elementVoiceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +506,16 @@ string DescribeAigcElementResponse::GetUpdatedAt() const
 bool DescribeAigcElementResponse::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string DescribeAigcElementResponse::GetElementVoiceId() const
+{
+    return m_elementVoiceId;
+}
+
+bool DescribeAigcElementResponse::ElementVoiceIdHasBeenSet() const
+{
+    return m_elementVoiceIdHasBeenSet;
 }
 
 

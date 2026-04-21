@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取敏捷上云名称
-                     * @return Name 敏捷上云名称
+                     * 获取<p>敏捷上云名称</p>
+                     * @return Name <p>敏捷上云名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置敏捷上云名称
-                     * @param _name 敏捷上云名称
+                     * 设置<p>敏捷上云名称</p>
+                     * @param _name <p>敏捷上云名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取需要接入敏捷上云的IDC的地址
-                     * @return IdcAddress 需要接入敏捷上云的IDC的地址
+                     * 获取<p>需要接入敏捷上云的IDC的地址</p>
+                     * @return IdcAddress <p>需要接入敏捷上云的IDC的地址</p>
                      * 
                      */
                     std::string GetIdcAddress() const;
 
                     /**
-                     * 设置需要接入敏捷上云的IDC的地址
-                     * @param _idcAddress 需要接入敏捷上云的IDC的地址
+                     * 设置<p>需要接入敏捷上云的IDC的地址</p>
+                     * @param _idcAddress <p>需要接入敏捷上云的IDC的地址</p>
                      * 
                      */
                     void SetIdcAddress(const std::string& _idcAddress);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IdcAddressHasBeenSet() const;
 
                     /**
-                     * 获取需要接入敏捷上云的IDC的互联网服务提供商类型
-                     * @return IdcType 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * 获取<p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
+                     * @return IdcType <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      * 
                      */
                     std::string GetIdcType() const;
 
                     /**
-                     * 设置需要接入敏捷上云的IDC的互联网服务提供商类型
-                     * @param _idcType 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * 设置<p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
+                     * @param _idcType <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      * 
                      */
                     void SetIdcType(const std::string& _idcType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IdcTypeHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云的带宽，单位为MB
-                     * @return Bandwidth 敏捷上云的带宽，单位为MB
+                     * 获取<p>敏捷上云的带宽，单位为MB</p>
+                     * @return Bandwidth <p>敏捷上云的带宽，单位为MB</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置敏捷上云的带宽，单位为MB
-                     * @param _bandwidth 敏捷上云的带宽，单位为MB
+                     * 设置<p>敏捷上云的带宽，单位为MB</p>
+                     * @param _bandwidth <p>敏捷上云的带宽，单位为MB</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取联系电话
-                     * @return Telephone 联系电话
+                     * 获取<p>联系电话</p>
+                     * @return Telephone <p>联系电话</p>
                      * 
                      */
                     std::string GetTelephone() const;
 
                     /**
-                     * 设置联系电话
-                     * @param _telephone 联系电话
+                     * 设置<p>联系电话</p>
+                     * @param _telephone <p>联系电话</p>
                      * 
                      */
                     void SetTelephone(const std::string& _telephone);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TelephoneHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remarks 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Remarks <p>备注信息</p>
                      * 
                      */
                     std::string GetRemarks() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remarks 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _remarks <p>备注信息</p>
                      * 
                      */
                     void SetRemarks(const std::string& _remarks);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RemarksHasBeenSet() const;
 
                     /**
-                     * 获取接入地域
-                     * @return ArRegion 接入地域
+                     * 获取<p>接入地域</p>
+                     * @return ArRegion <p>接入地域</p>
                      * 
                      */
                     std::string GetArRegion() const;
 
                     /**
-                     * 设置接入地域
-                     * @param _arRegion 接入地域
+                     * 设置<p>接入地域</p>
+                     * @param _arRegion <p>接入地域</p>
                      * 
                      */
                     void SetArRegion(const std::string& _arRegion);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ArRegionHasBeenSet() const;
 
                     /**
-                     * 获取IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
-                     * @return IdcPointType IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 获取<p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
+                     * @return IdcPointType <p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      * 
                      */
                     std::string GetIdcPointType() const;
 
                     /**
-                     * 设置IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
-                     * @param _idcPointType IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 设置<p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
+                     * @param _idcPointType <p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      * 
                      */
                     void SetIdcPointType(const std::string& _idcPointType);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool IdcPointTypeHasBeenSet() const;
 
                     /**
-                     * 获取运营商链路是否有保护
-                     * @return BIapLinkProtected 运营商链路是否有保护
+                     * 获取<p>运营商链路是否有保护</p>
+                     * @return BIapLinkProtected <p>运营商链路是否有保护</p>
                      * 
                      */
                     bool GetBIapLinkProtected() const;
 
                     /**
-                     * 设置运营商链路是否有保护
-                     * @param _bIapLinkProtected 运营商链路是否有保护
+                     * 设置<p>运营商链路是否有保护</p>
+                     * @param _bIapLinkProtected <p>运营商链路是否有保护</p>
                      * 
                      */
                     void SetBIapLinkProtected(const bool& _bIapLinkProtected);
@@ -235,61 +235,88 @@ namespace TencentCloud
                      */
                     bool BIapLinkProtectedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * @return ServiceType <p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置<p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * @param _serviceType <p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 敏捷上云名称
+                     * <p>敏捷上云名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 需要接入敏捷上云的IDC的地址
+                     * <p>需要接入敏捷上云的IDC的地址</p>
                      */
                     std::string m_idcAddress;
                     bool m_idcAddressHasBeenSet;
 
                     /**
-                     * 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      */
                     std::string m_idcType;
                     bool m_idcTypeHasBeenSet;
 
                     /**
-                     * 敏捷上云的带宽，单位为MB
+                     * <p>敏捷上云的带宽，单位为MB</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 联系电话
+                     * <p>联系电话</p>
                      */
                     std::string m_telephone;
                     bool m_telephoneHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_remarks;
                     bool m_remarksHasBeenSet;
 
                     /**
-                     * 接入地域
+                     * <p>接入地域</p>
                      */
                     std::string m_arRegion;
                     bool m_arRegionHasBeenSet;
 
                     /**
-                     * IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * <p>IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      */
                     std::string m_idcPointType;
                     bool m_idcPointTypeHasBeenSet;
 
                     /**
-                     * 运营商链路是否有保护
+                     * <p>运营商链路是否有保护</p>
                      */
                     bool m_bIapLinkProtected;
                     bool m_bIapLinkProtectedHasBeenSet;
+
+                    /**
+                     * <p>服务类型，SHARE-共享型，EXCLUSIVE-独占型</p>
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分账单元ID
-                     * @return Id 分账单元ID
+                     * 获取<p>分账单元ID</p>
+                     * @return Id <p>分账单元ID</p>
                      * 
                      */
                     uint64_t GetId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取分账单元所属UIN
-                     * @return Uin 分账单元所属UIN
+                     * 获取<p>分账单元所属UIN</p>
+                     * @return Uin <p>分账单元所属UIN</p>
                      * 
                      */
                     std::string GetUin() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取分账单元名称
-                     * @return Name 分账单元名称
+                     * 获取<p>分账单元名称</p>
+                     * @return Name <p>分账单元名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分账单元父节点ID
-                     * @return ParentId 分账单元父节点ID
+                     * 获取<p>分账单元父节点ID</p>
+                     * @return ParentId <p>分账单元父节点ID</p>
                      * 
                      */
                     uint64_t GetParentId() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ParentIdHasBeenSet() const;
 
                     /**
-                     * 获取源组织名称
-                     * @return SourceName 源组织名称
+                     * 获取<p>源组织名称</p>
+                     * @return SourceName <p>源组织名称</p>
                      * 
                      */
                     std::string GetSourceName() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool SourceNameHasBeenSet() const;
 
                     /**
-                     * 获取源组织ID
-                     * @return SourceId 源组织ID
+                     * 获取<p>源组织ID</p>
+                     * @return SourceId <p>源组织ID</p>
                      * 
                      */
                     std::string GetSourceId() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取备注说明
-                     * @return Remark 备注说明
+                     * 获取<p>备注说明</p>
+                     * @return Remark <p>备注说明</p>
                      * 
                      */
                     std::string GetRemark() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取分账单元标识
-                     * @return TreeNodeUniqKey 分账单元标识
+                     * 获取<p>分账单元标识</p>
+                     * @return TreeNodeUniqKey <p>分账单元标识</p>
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool TreeNodeUniqKeyHasBeenSet() const;
 
                     /**
-                     * 获取若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回
-                     * @return RuleId 若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回
+                     * 获取<p>若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回</p>
+                     * @return RuleId <p>若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回</p>
                      * 
                      */
                     uint64_t GetRuleId() const;
@@ -172,55 +172,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分账单元ID
+                     * <p>分账单元ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 分账单元所属UIN
+                     * <p>分账单元所属UIN</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 分账单元名称
+                     * <p>分账单元名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分账单元父节点ID
+                     * <p>分账单元父节点ID</p>
                      */
                     uint64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
-                     * 源组织名称
+                     * <p>源组织名称</p>
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
-                     * 源组织ID
+                     * <p>源组织ID</p>
                      */
                     std::string m_sourceId;
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 备注说明
+                     * <p>备注说明</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 分账单元标识
+                     * <p>分账单元标识</p>
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
-                     * 若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回
+                     * <p>若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回</p>
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

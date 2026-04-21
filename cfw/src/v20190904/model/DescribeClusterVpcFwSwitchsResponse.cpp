@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeClusterVpcFwSwitchsResponse::DescribeClusterVpcFwSwitchsResponse() :
     m_totalHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_failDataHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeClusterVpcFwSwitchsResponse::Deserialize(const strin
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FailData") && !rsp["FailData"].IsNull())
+    {
+        if (!rsp["FailData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailData` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SwitchFailInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_failData.push_back(item);
+        }
+        m_failDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeClusterVpcFwSwitchsResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_failDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_failData.begin(); itr != m_failData.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<ClusterSwitchDetail> DescribeClusterVpcFwSwitchsResponse::GetData() const
 bool DescribeClusterVpcFwSwitchsResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<SwitchFailInfo> DescribeClusterVpcFwSwitchsResponse::GetFailData() const
+{
+    return m_failData;
+}
+
+bool DescribeClusterVpcFwSwitchsResponse::FailDataHasBeenSet() const
+{
+    return m_failDataHasBeenSet;
 }
 
 

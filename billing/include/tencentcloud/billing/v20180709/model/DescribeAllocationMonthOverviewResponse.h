@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分账账单月概览详情
-                     * @return Detail 分账账单月概览详情
+                     * 获取<p>分账账单月概览详情</p>
+                     * @return Detail <p>分账账单月概览详情</p>
                      * 
                      */
                     std::vector<AllocationOverviewNode> GetDetail() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取分账账单概览金额汇总
-                     * @return Total 分账账单概览金额汇总
+                     * 获取<p>分账账单概览金额汇总</p>
+                     * @return Total <p>分账账单概览金额汇总</p>
                      * 
                      */
                     AllocationOverviewTotal GetTotal() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分账账单月概览详情
+                     * <p>分账账单月概览详情</p>
                      */
                     std::vector<AllocationOverviewNode> m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 分账账单概览金额汇总
+                     * <p>分账账单概览金额汇总</p>
                      */
                     AllocationOverviewTotal m_total;
                     bool m_totalHasBeenSet;

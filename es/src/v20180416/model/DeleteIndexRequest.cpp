@@ -28,7 +28,8 @@ DeleteIndexRequest::DeleteIndexRequest() :
     m_indexNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_backingIndexNameHasBeenSet(false)
+    m_backingIndexNameHasBeenSet(false),
+    m_indexPhraseHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DeleteIndexRequest::ToJsonString() const
         string key = "BackingIndexName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backingIndexName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexPhraseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexPhrase";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexPhrase.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DeleteIndexRequest::SetBackingIndexName(const string& _backingIndexName)
 bool DeleteIndexRequest::BackingIndexNameHasBeenSet() const
 {
     return m_backingIndexNameHasBeenSet;
+}
+
+string DeleteIndexRequest::GetIndexPhrase() const
+{
+    return m_indexPhrase;
+}
+
+void DeleteIndexRequest::SetIndexPhrase(const string& _indexPhrase)
+{
+    m_indexPhrase = _indexPhrase;
+    m_indexPhraseHasBeenSet = true;
+}
+
+bool DeleteIndexRequest::IndexPhraseHasBeenSet() const
+{
+    return m_indexPhraseHasBeenSet;
 }
 
 

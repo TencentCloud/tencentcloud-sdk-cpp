@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公摊规则列表
-                     * @return RuleList 公摊规则列表
+                     * 获取<p>公摊规则列表</p>
+                     * @return RuleList <p>公摊规则列表</p>
                      * 
                      */
                     AllocationRulesSummary GetRuleList() const;
 
                     /**
-                     * 设置公摊规则列表
-                     * @param _ruleList 公摊规则列表
+                     * 设置<p>公摊规则列表</p>
+                     * @param _ruleList <p>公摊规则列表</p>
                      * 
                      */
                     void SetRuleList(const AllocationRulesSummary& _ruleList);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleListHasBeenSet() const;
 
                     /**
-                     * 获取月份，不传默认当前月
-                     * @return Month 月份，不传默认当前月
+                     * 获取<p>月份，不传默认当前月</p>
+                     * @return Month <p>月份，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置月份，不传默认当前月
-                     * @param _month 月份，不传默认当前月
+                     * 设置<p>月份，不传默认当前月</p>
+                     * @param _month <p>月份，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公摊规则列表
+                     * <p>公摊规则列表</p>
                      */
                     AllocationRulesSummary m_ruleList;
                     bool m_ruleListHasBeenSet;
 
                     /**
-                     * 月份，不传默认当前月
+                     * <p>月份，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;

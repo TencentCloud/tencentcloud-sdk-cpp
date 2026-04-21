@@ -85,6 +85,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/MoanResult.h
   include/tencentcloud/ams/v20201229/model/Position.h
   include/tencentcloud/ams/v20201229/model/CancelTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/AIGCRecognitionResult.h
   include/tencentcloud/ams/v20201229/model/BucketInfo.h
   include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
   include/tencentcloud/ams/v20201229/model/SpeakerResults.h
@@ -165,6 +166,7 @@ set(ams_src
   src/v20201229/model/MoanResult.cpp
   src/v20201229/model/Position.cpp
   src/v20201229/model/CancelTaskResponse.cpp
+  src/v20201229/model/AIGCRecognitionResult.cpp
   src/v20201229/model/BucketInfo.cpp
   src/v20201229/model/AudioResultDetailTextResult.cpp
   src/v20201229/model/SpeakerResults.cpp

@@ -214,6 +214,20 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音色Id</p>
+                     * @return ElementVoiceId <p>音色Id</p>
+                     * 
+                     */
+                    std::string GetElementVoiceId() const;
+
+                    /**
+                     * 判断参数 ElementVoiceId 是否已赋值
+                     * @return ElementVoiceId 是否已赋值
+                     * 
+                     */
+                    bool ElementVoiceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * <p>音色Id</p>
+                     */
+                    std::string m_elementVoiceId;
+                    bool m_elementVoiceIdHasBeenSet;
 
                 };
             }

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等
-                     * @return InsObj 实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等
+                     * 获取<p>实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等</p>
+                     * @return InsObj <p>实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等</p>
                      * 
                      */
                     std::string GetInsObj() const;
 
                     /**
-                     * 设置实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等
-                     * @param _insObj 实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等
+                     * 设置<p>实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等</p>
+                     * @param _insObj <p>实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等</p>
                      * 
                      */
                     void SetInsObj(const std::string& _insObj);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InsObjHasBeenSet() const;
 
                     /**
-                     * 获取实例对象名称
-                     * @return ObjName 实例对象名称
+                     * 获取<p>实例对象名称</p>
+                     * @return ObjName <p>实例对象名称</p>
                      * 
                      */
                     std::string GetObjName() const;
 
                     /**
-                     * 设置实例对象名称
-                     * @param _objName 实例对象名称
+                     * 设置<p>实例对象名称</p>
+                     * @param _objName <p>实例对象名称</p>
                      * 
                      */
                     void SetObjName(const std::string& _objName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ObjNameHasBeenSet() const;
 
                     /**
-                     * 获取防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙
-                     * @return FwType 防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙
+                     * 获取<p>防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙</p>
+                     * @return FwType <p>防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙
-                     * @param _fwType 防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙
+                     * 设置<p>防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙</p>
+                     * @param _fwType <p>防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取资产类型，ccn：ccn实例类型；nat：nat网关类型
-                     * @return AssetType 资产类型，ccn：ccn实例类型；nat：nat网关类型
+                     * 获取<p>资产类型，ccn：ccn实例类型；nat：nat网关类型</p>
+                     * @return AssetType <p>资产类型，ccn：ccn实例类型；nat：nat网关类型</p>
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
-                     * 设置资产类型，ccn：ccn实例类型；nat：nat网关类型
-                     * @param _assetType 资产类型，ccn：ccn实例类型；nat：nat网关类型
+                     * 设置<p>资产类型，ccn：ccn实例类型；nat：nat网关类型</p>
+                     * @param _assetType <p>资产类型，ccn：ccn实例类型；nat：nat网关类型</p>
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool AssetTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -154,35 +154,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取开关状态
-0 : 关闭
-1 : 开启
-2 : 开启中
-3 : 关闭中
-4 : 异常
-                     * @return Status 开关状态
-0 : 关闭
-1 : 开启
-2 : 开启中
-3 : 关闭中
-4 : 异常
+                     * 获取<p>开关状态<br>0 : 关闭<br>1 : 开启<br>2 : 开启中<br>3 : 关闭中<br>4 : 异常</p>
+                     * @return Status <p>开关状态<br>0 : 关闭<br>1 : 开启<br>2 : 开启中<br>3 : 关闭中<br>4 : 异常</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置开关状态
-0 : 关闭
-1 : 开启
-2 : 开启中
-3 : 关闭中
-4 : 异常
-                     * @param _status 开关状态
-0 : 关闭
-1 : 开启
-2 : 开启中
-3 : 关闭中
-4 : 异常
+                     * 设置<p>开关状态<br>0 : 关闭<br>1 : 开启<br>2 : 开启中<br>3 : 关闭中<br>4 : 异常</p>
+                     * @param _status <p>开关状态<br>0 : 关闭<br>1 : 开启<br>2 : 开启中<br>3 : 关闭中<br>4 : 异常</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -195,15 +175,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取开关接入模式，1：自动接入；2，手动接入，0：未选择
-                     * @return SwitchMode 开关接入模式，1：自动接入；2，手动接入，0：未选择
+                     * 获取<p>开关接入模式，1：自动接入；2，手动接入，0：未选择</p>
+                     * @return SwitchMode <p>开关接入模式，1：自动接入；2，手动接入，0：未选择</p>
                      * 
                      */
                     uint64_t GetSwitchMode() const;
 
                     /**
-                     * 设置开关接入模式，1：自动接入；2，手动接入，0：未选择
-                     * @param _switchMode 开关接入模式，1：自动接入；2，手动接入，0：未选择
+                     * 设置<p>开关接入模式，1：自动接入；2，手动接入，0：未选择</p>
+                     * @param _switchMode <p>开关接入模式，1：自动接入；2，手动接入，0：未选择</p>
                      * 
                      */
                     void SetSwitchMode(const uint64_t& _switchMode);
@@ -216,15 +196,15 @@ namespace TencentCloud
                     bool SwitchModeHasBeenSet() const;
 
                     /**
-                     * 获取实例对象是否处于非集群接入场景（主备模式）
-                     * @return NonCluster 实例对象是否处于非集群接入场景（主备模式）
+                     * 获取<p>实例对象是否处于非集群接入场景（主备模式）</p>
+                     * @return NonCluster <p>实例对象是否处于非集群接入场景（主备模式）</p>
                      * 
                      */
                     int64_t GetNonCluster() const;
 
                     /**
-                     * 设置实例对象是否处于非集群接入场景（主备模式）
-                     * @param _nonCluster 实例对象是否处于非集群接入场景（主备模式）
+                     * 设置<p>实例对象是否处于非集群接入场景（主备模式）</p>
+                     * @param _nonCluster <p>实例对象是否处于非集群接入场景（主备模式）</p>
                      * 
                      */
                     void SetNonCluster(const int64_t& _nonCluster);
@@ -237,15 +217,15 @@ namespace TencentCloud
                     bool NonClusterHasBeenSet() const;
 
                     /**
-                     * 获取ip版本，0：ipv4；1：ipv6
-                     * @return IpVersion ip版本，0：ipv4；1：ipv6
+                     * 获取<p>ip版本，0：ipv4；1：ipv6</p>
+                     * @return IpVersion <p>ip版本，0：ipv4；1：ipv6</p>
                      * 
                      */
                     int64_t GetIpVersion() const;
 
                     /**
-                     * 设置ip版本，0：ipv4；1：ipv6
-                     * @param _ipVersion ip版本，0：ipv4；1：ipv6
+                     * 设置<p>ip版本，0：ipv4；1：ipv6</p>
+                     * @param _ipVersion <p>ip版本，0：ipv4；1：ipv6</p>
                      * 
                      */
                     void SetIpVersion(const int64_t& _ipVersion);
@@ -258,18 +238,18 @@ namespace TencentCloud
                     bool IpVersionHasBeenSet() const;
 
                     /**
-                     * 获取关联实例
+                     * 获取<p>关联实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttachIns 关联实例
+                     * @return AttachIns <p>关联实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AttachInsInfo> GetAttachIns() const;
 
                     /**
-                     * 设置关联实例
+                     * 设置<p>关联实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attachIns 关联实例
+                     * @param _attachIns <p>关联实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,18 +263,18 @@ namespace TencentCloud
                     bool AttachInsHasBeenSet() const;
 
                     /**
-                     * 获取引流私有网络端点信息
+                     * 获取<p>引流私有网络端点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Endpoints 引流私有网络端点信息
+                     * @return Endpoints <p>引流私有网络端点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndpointInfo> GetEndpoints() const;
 
                     /**
-                     * 设置引流私有网络端点信息
+                     * 设置<p>引流私有网络端点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endpoints 引流私有网络端点信息
+                     * @param _endpoints <p>引流私有网络端点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,15 +288,15 @@ namespace TencentCloud
                     bool EndpointsHasBeenSet() const;
 
                     /**
-                     * 获取入侵防护模式,0:观察;1:拦截;2:严格;3:关闭
-                     * @return Idpsaction 入侵防护模式,0:观察;1:拦截;2:严格;3:关闭
+                     * 获取<p>入侵防护模式,0:观察;1:拦截;2:严格;3:关闭</p>
+                     * @return Idpsaction <p>入侵防护模式,0:观察;1:拦截;2:严格;3:关闭</p>
                      * 
                      */
                     uint64_t GetIdpsaction() const;
 
                     /**
-                     * 设置入侵防护模式,0:观察;1:拦截;2:严格;3:关闭
-                     * @param _idpsaction 入侵防护模式,0:观察;1:拦截;2:严格;3:关闭
+                     * 设置<p>入侵防护模式,0:观察;1:拦截;2:严格;3:关闭</p>
+                     * @param _idpsaction <p>入侵防护模式,0:观察;1:拦截;2:严格;3:关闭</p>
                      * 
                      */
                     void SetIdpsaction(const uint64_t& _idpsaction);
@@ -329,15 +309,15 @@ namespace TencentCloud
                     bool IdpsactionHasBeenSet() const;
 
                     /**
-                     * 获取//透明模式开关,0:未开启,1:已开启
-                     * @return TransEnable //透明模式开关,0:未开启,1:已开启
+                     * 获取<p>//透明模式开关,0:未开启,1:已开启</p>
+                     * @return TransEnable <p>//透明模式开关,0:未开启,1:已开启</p>
                      * 
                      */
                     uint64_t GetTransEnable() const;
 
                     /**
-                     * 设置//透明模式开关,0:未开启,1:已开启
-                     * @param _transEnable //透明模式开关,0:未开启,1:已开启
+                     * 设置<p>//透明模式开关,0:未开启,1:已开启</p>
+                     * @param _transEnable <p>//透明模式开关,0:未开启,1:已开启</p>
                      * 
                      */
                     void SetTransEnable(const uint64_t& _transEnable);
@@ -350,15 +330,15 @@ namespace TencentCloud
                     bool TransEnableHasBeenSet() const;
 
                     /**
-                     * 获取开关状态 0关闭 1开启
-                     * @return Enable 开关状态 0关闭 1开启
+                     * 获取<p>开关状态 0关闭 1开启</p>
+                     * @return Enable <p>开关状态 0关闭 1开启</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置开关状态 0关闭 1开启
-                     * @param _enable 开关状态 0关闭 1开启
+                     * 设置<p>开关状态 0关闭 1开启</p>
+                     * @param _enable <p>开关状态 0关闭 1开启</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -371,15 +351,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取路由模式：0：多路由表，1：策略路由
-                     * @return RoutingMode 路由模式：0：多路由表，1：策略路由
+                     * 获取<p>路由模式：0：多路由表，1：策略路由</p>
+                     * @return RoutingMode <p>路由模式：0：多路由表，1：策略路由</p>
                      * 
                      */
                     int64_t GetRoutingMode() const;
 
                     /**
-                     * 设置路由模式：0：多路由表，1：策略路由
-                     * @param _routingMode 路由模式：0：多路由表，1：策略路由
+                     * 设置<p>路由模式：0：多路由表，1：策略路由</p>
+                     * @param _routingMode <p>路由模式：0：多路由表，1：策略路由</p>
                      * 
                      */
                     void SetRoutingMode(const int64_t& _routingMode);
@@ -392,15 +372,15 @@ namespace TencentCloud
                     bool RoutingModeHasBeenSet() const;
 
                     /**
-                     * 获取是否跨租户开关 1是 0不是
-                     * @return IsPeer 是否跨租户开关 1是 0不是
+                     * 获取<p>是否跨租户开关 1是 0不是</p>
+                     * @return IsPeer <p>是否跨租户开关 1是 0不是</p>
                      * 
                      */
                     int64_t GetIsPeer() const;
 
                     /**
-                     * 设置是否跨租户开关 1是 0不是
-                     * @param _isPeer 是否跨租户开关 1是 0不是
+                     * 设置<p>是否跨租户开关 1是 0不是</p>
+                     * @param _isPeer <p>是否跨租户开关 1是 0不是</p>
                      * 
                      */
                     void SetIsPeer(const int64_t& _isPeer);
@@ -413,15 +393,15 @@ namespace TencentCloud
                     bool IsPeerHasBeenSet() const;
 
                     /**
-                     * 获取跨租户appid
-                     * @return PeerAppid 跨租户appid
+                     * 获取<p>跨租户appid</p>
+                     * @return PeerAppid <p>跨租户appid</p>
                      * 
                      */
                     std::string GetPeerAppid() const;
 
                     /**
-                     * 设置跨租户appid
-                     * @param _peerAppid 跨租户appid
+                     * 设置<p>跨租户appid</p>
+                     * @param _peerAppid <p>跨租户appid</p>
                      * 
                      */
                     void SetPeerAppid(const std::string& _peerAppid);
@@ -434,15 +414,15 @@ namespace TencentCloud
                     bool PeerAppidHasBeenSet() const;
 
                     /**
-                     * 获取跨租户操作状态 1不允许操作 0可以
-                     * @return PeerStatus 跨租户操作状态 1不允许操作 0可以
+                     * 获取<p>跨租户操作状态 1不允许操作 0可以</p>
+                     * @return PeerStatus <p>跨租户操作状态 1不允许操作 0可以</p>
                      * 
                      */
                     int64_t GetPeerStatus() const;
 
                     /**
-                     * 设置跨租户操作状态 1不允许操作 0可以
-                     * @param _peerStatus 跨租户操作状态 1不允许操作 0可以
+                     * 设置<p>跨租户操作状态 1不允许操作 0可以</p>
+                     * @param _peerStatus <p>跨租户操作状态 1不允许操作 0可以</p>
                      * 
                      */
                     void SetPeerStatus(const int64_t& _peerStatus);
@@ -454,122 +434,171 @@ namespace TencentCloud
                      */
                     bool PeerStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Bypass状态</p>
+                     * @return Bypass <p>Bypass状态</p>
+                     * 
+                     */
+                    int64_t GetBypass() const;
+
+                    /**
+                     * 设置<p>Bypass状态</p>
+                     * @param _bypass <p>Bypass状态</p>
+                     * 
+                     */
+                    void SetBypass(const int64_t& _bypass);
+
+                    /**
+                     * 判断参数 Bypass 是否已赋值
+                     * @return Bypass 是否已赋值
+                     * 
+                     */
+                    bool BypassHasBeenSet() const;
+
+                    /**
+                     * 获取<p>防火墙开关操作时的进度状态：</p><p>// 开启 — 自动模式（3步）<br>&quot;AUTO_OPEN_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_OPEN_CREATING_RESOURCES&quot; // 步骤2: 创建引流网络和资源<br>&quot;AUTO_OPEN_PUSHING_ROUTES&quot; // 步骤3: 创建策略路由</p><p>// 开启 — 手动模式（1步）<br>&quot;MANUAL_OPEN_CREATING_RESOURCES&quot; // 步骤1: 创建引流网络和资源</p><p>// 关闭 — 自动模式（2步）<br>&quot;AUTO_CLOSE_DELETING_ROUTES&quot; // 步骤1: 删除策略路由<br>&quot;AUTO_CLOSE_DELETING_RESOURCES&quot; // 步骤2: 删除引流网络和资源<br>// 关闭 — 手动模式（1步）<br>&quot;MANUAL_CLOSE_DELETING_RESOURCES&quot; // 步骤1: 删除引流网络和资源</p><p>// 修改 — 自动模式（3步）<br>&quot;AUTO_MODIFY_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_MODIFY_DELETING_ROUTES&quot; // 步骤2: 删除旧策略路由<br>&quot;AUTO_MODIFY_PUSHING_ROUTES&quot; // 步骤3: 创建新策略路由</p><p>// 修改 — 手动模式（1步，仅 VPC 防火墙存在手动模式修改）<br>&quot;MANUAL_MODIFY_UPDATING_RESOURCES&quot; // 步骤1: 更新引流网络和资源</p>
+                     * @return Progress <p>防火墙开关操作时的进度状态：</p><p>// 开启 — 自动模式（3步）<br>&quot;AUTO_OPEN_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_OPEN_CREATING_RESOURCES&quot; // 步骤2: 创建引流网络和资源<br>&quot;AUTO_OPEN_PUSHING_ROUTES&quot; // 步骤3: 创建策略路由</p><p>// 开启 — 手动模式（1步）<br>&quot;MANUAL_OPEN_CREATING_RESOURCES&quot; // 步骤1: 创建引流网络和资源</p><p>// 关闭 — 自动模式（2步）<br>&quot;AUTO_CLOSE_DELETING_ROUTES&quot; // 步骤1: 删除策略路由<br>&quot;AUTO_CLOSE_DELETING_RESOURCES&quot; // 步骤2: 删除引流网络和资源<br>// 关闭 — 手动模式（1步）<br>&quot;MANUAL_CLOSE_DELETING_RESOURCES&quot; // 步骤1: 删除引流网络和资源</p><p>// 修改 — 自动模式（3步）<br>&quot;AUTO_MODIFY_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_MODIFY_DELETING_ROUTES&quot; // 步骤2: 删除旧策略路由<br>&quot;AUTO_MODIFY_PUSHING_ROUTES&quot; // 步骤3: 创建新策略路由</p><p>// 修改 — 手动模式（1步，仅 VPC 防火墙存在手动模式修改）<br>&quot;MANUAL_MODIFY_UPDATING_RESOURCES&quot; // 步骤1: 更新引流网络和资源</p>
+                     * 
+                     */
+                    std::string GetProgress() const;
+
+                    /**
+                     * 设置<p>防火墙开关操作时的进度状态：</p><p>// 开启 — 自动模式（3步）<br>&quot;AUTO_OPEN_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_OPEN_CREATING_RESOURCES&quot; // 步骤2: 创建引流网络和资源<br>&quot;AUTO_OPEN_PUSHING_ROUTES&quot; // 步骤3: 创建策略路由</p><p>// 开启 — 手动模式（1步）<br>&quot;MANUAL_OPEN_CREATING_RESOURCES&quot; // 步骤1: 创建引流网络和资源</p><p>// 关闭 — 自动模式（2步）<br>&quot;AUTO_CLOSE_DELETING_ROUTES&quot; // 步骤1: 删除策略路由<br>&quot;AUTO_CLOSE_DELETING_RESOURCES&quot; // 步骤2: 删除引流网络和资源<br>// 关闭 — 手动模式（1步）<br>&quot;MANUAL_CLOSE_DELETING_RESOURCES&quot; // 步骤1: 删除引流网络和资源</p><p>// 修改 — 自动模式（3步）<br>&quot;AUTO_MODIFY_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_MODIFY_DELETING_ROUTES&quot; // 步骤2: 删除旧策略路由<br>&quot;AUTO_MODIFY_PUSHING_ROUTES&quot; // 步骤3: 创建新策略路由</p><p>// 修改 — 手动模式（1步，仅 VPC 防火墙存在手动模式修改）<br>&quot;MANUAL_MODIFY_UPDATING_RESOURCES&quot; // 步骤1: 更新引流网络和资源</p>
+                     * @param _progress <p>防火墙开关操作时的进度状态：</p><p>// 开启 — 自动模式（3步）<br>&quot;AUTO_OPEN_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_OPEN_CREATING_RESOURCES&quot; // 步骤2: 创建引流网络和资源<br>&quot;AUTO_OPEN_PUSHING_ROUTES&quot; // 步骤3: 创建策略路由</p><p>// 开启 — 手动模式（1步）<br>&quot;MANUAL_OPEN_CREATING_RESOURCES&quot; // 步骤1: 创建引流网络和资源</p><p>// 关闭 — 自动模式（2步）<br>&quot;AUTO_CLOSE_DELETING_ROUTES&quot; // 步骤1: 删除策略路由<br>&quot;AUTO_CLOSE_DELETING_RESOURCES&quot; // 步骤2: 删除引流网络和资源<br>// 关闭 — 手动模式（1步）<br>&quot;MANUAL_CLOSE_DELETING_RESOURCES&quot; // 步骤1: 删除引流网络和资源</p><p>// 修改 — 自动模式（3步）<br>&quot;AUTO_MODIFY_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_MODIFY_DELETING_ROUTES&quot; // 步骤2: 删除旧策略路由<br>&quot;AUTO_MODIFY_PUSHING_ROUTES&quot; // 步骤3: 创建新策略路由</p><p>// 修改 — 手动模式（1步，仅 VPC 防火墙存在手动模式修改）<br>&quot;MANUAL_MODIFY_UPDATING_RESOURCES&quot; // 步骤1: 更新引流网络和资源</p>
+                     * 
+                     */
+                    void SetProgress(const std::string& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等
+                     * <p>实例对象可以是ccnid类型:ccn-ad21xuds形式;nat网关类型:nat-da12daxd形式;ip类型:1.1.1.1形式等</p>
                      */
                     std::string m_insObj;
                     bool m_insObjHasBeenSet;
 
                     /**
-                     * 实例对象名称
+                     * <p>实例对象名称</p>
                      */
                     std::string m_objName;
                     bool m_objNameHasBeenSet;
 
                     /**
-                     * 防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙
+                     * <p>防火墙类型，ew：vpc间防火墙；nat：nat防火墙；border：互联网边界防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 资产类型，ccn：ccn实例类型；nat：nat网关类型
+                     * <p>资产类型，ccn：ccn实例类型；nat：nat网关类型</p>
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 开关状态
-0 : 关闭
-1 : 开启
-2 : 开启中
-3 : 关闭中
-4 : 异常
+                     * <p>开关状态<br>0 : 关闭<br>1 : 开启<br>2 : 开启中<br>3 : 关闭中<br>4 : 异常</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 开关接入模式，1：自动接入；2，手动接入，0：未选择
+                     * <p>开关接入模式，1：自动接入；2，手动接入，0：未选择</p>
                      */
                     uint64_t m_switchMode;
                     bool m_switchModeHasBeenSet;
 
                     /**
-                     * 实例对象是否处于非集群接入场景（主备模式）
+                     * <p>实例对象是否处于非集群接入场景（主备模式）</p>
                      */
                     int64_t m_nonCluster;
                     bool m_nonClusterHasBeenSet;
 
                     /**
-                     * ip版本，0：ipv4；1：ipv6
+                     * <p>ip版本，0：ipv4；1：ipv6</p>
                      */
                     int64_t m_ipVersion;
                     bool m_ipVersionHasBeenSet;
 
                     /**
-                     * 关联实例
+                     * <p>关联实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AttachInsInfo> m_attachIns;
                     bool m_attachInsHasBeenSet;
 
                     /**
-                     * 引流私有网络端点信息
+                     * <p>引流私有网络端点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndpointInfo> m_endpoints;
                     bool m_endpointsHasBeenSet;
 
                     /**
-                     * 入侵防护模式,0:观察;1:拦截;2:严格;3:关闭
+                     * <p>入侵防护模式,0:观察;1:拦截;2:严格;3:关闭</p>
                      */
                     uint64_t m_idpsaction;
                     bool m_idpsactionHasBeenSet;
 
                     /**
-                     * //透明模式开关,0:未开启,1:已开启
+                     * <p>//透明模式开关,0:未开启,1:已开启</p>
                      */
                     uint64_t m_transEnable;
                     bool m_transEnableHasBeenSet;
 
                     /**
-                     * 开关状态 0关闭 1开启
+                     * <p>开关状态 0关闭 1开启</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 路由模式：0：多路由表，1：策略路由
+                     * <p>路由模式：0：多路由表，1：策略路由</p>
                      */
                     int64_t m_routingMode;
                     bool m_routingModeHasBeenSet;
 
                     /**
-                     * 是否跨租户开关 1是 0不是
+                     * <p>是否跨租户开关 1是 0不是</p>
                      */
                     int64_t m_isPeer;
                     bool m_isPeerHasBeenSet;
 
                     /**
-                     * 跨租户appid
+                     * <p>跨租户appid</p>
                      */
                     std::string m_peerAppid;
                     bool m_peerAppidHasBeenSet;
 
                     /**
-                     * 跨租户操作状态 1不允许操作 0可以
+                     * <p>跨租户操作状态 1不允许操作 0可以</p>
                      */
                     int64_t m_peerStatus;
                     bool m_peerStatusHasBeenSet;
+
+                    /**
+                     * <p>Bypass状态</p>
+                     */
+                    int64_t m_bypass;
+                    bool m_bypassHasBeenSet;
+
+                    /**
+                     * <p>防火墙开关操作时的进度状态：</p><p>// 开启 — 自动模式（3步）<br>&quot;AUTO_OPEN_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_OPEN_CREATING_RESOURCES&quot; // 步骤2: 创建引流网络和资源<br>&quot;AUTO_OPEN_PUSHING_ROUTES&quot; // 步骤3: 创建策略路由</p><p>// 开启 — 手动模式（1步）<br>&quot;MANUAL_OPEN_CREATING_RESOURCES&quot; // 步骤1: 创建引流网络和资源</p><p>// 关闭 — 自动模式（2步）<br>&quot;AUTO_CLOSE_DELETING_ROUTES&quot; // 步骤1: 删除策略路由<br>&quot;AUTO_CLOSE_DELETING_RESOURCES&quot; // 步骤2: 删除引流网络和资源<br>// 关闭 — 手动模式（1步）<br>&quot;MANUAL_CLOSE_DELETING_RESOURCES&quot; // 步骤1: 删除引流网络和资源</p><p>// 修改 — 自动模式（3步）<br>&quot;AUTO_MODIFY_ORCHESTRATING&quot; // 步骤1: 预编排策略路由<br>&quot;AUTO_MODIFY_DELETING_ROUTES&quot; // 步骤2: 删除旧策略路由<br>&quot;AUTO_MODIFY_PUSHING_ROUTES&quot; // 步骤3: 创建新策略路由</p><p>// 修改 — 手动模式（1步，仅 VPC 防火墙存在手动模式修改）<br>&quot;MANUAL_MODIFY_UPDATING_RESOURCES&quot; // 步骤1: 更新引流网络和资源</p>
+                     */
+                    std::string m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

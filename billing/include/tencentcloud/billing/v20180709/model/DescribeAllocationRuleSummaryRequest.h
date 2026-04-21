@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每次获取数据量，最大值1000
-                     * @return Limit 每次获取数据量，最大值1000
+                     * 获取<p>每次获取数据量，最大值1000</p>
+                     * @return Limit <p>每次获取数据量，最大值1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每次获取数据量，最大值1000
-                     * @param _limit 每次获取数据量，最大值1000
+                     * 设置<p>每次获取数据量，最大值1000</p>
+                     * @param _limit <p>每次获取数据量，最大值1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量
-                     * @return Offset 分页偏移量
+                     * 获取<p>分页偏移量</p>
+                     * @return Offset <p>分页偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量
-                     * @param _offset 分页偏移量
+                     * 设置<p>分页偏移量</p>
+                     * @param _offset <p>分页偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取月份，不传默认当前月
-                     * @return Month 月份，不传默认当前月
+                     * 获取<p>月份，不传默认当前月</p>
+                     * @return Month <p>月份，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置月份，不传默认当前月
-                     * @param _month 月份，不传默认当前月
+                     * 设置<p>月份，不传默认当前月</p>
+                     * @param _month <p>月份，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -106,31 +106,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取公摊策略类型，用于筛选。
-枚举值如下： 
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
-                     * @return Type 公摊策略类型，用于筛选。
-枚举值如下： 
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
+                     * 获取<p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
+                     * @return Type <p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置公摊策略类型，用于筛选。
-枚举值如下： 
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
-                     * @param _type 公摊策略类型，用于筛选。
-枚举值如下： 
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
+                     * 设置<p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
+                     * @param _type <p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -143,15 +127,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取公摊规则名称或分账单元名称，用于模糊筛选。
-                     * @return Name 公摊规则名称或分账单元名称，用于模糊筛选。
+                     * 获取<p>公摊规则名称或分账单元名称，用于模糊筛选。</p>
+                     * @return Name <p>公摊规则名称或分账单元名称，用于模糊筛选。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置公摊规则名称或分账单元名称，用于模糊筛选。
-                     * @param _name 公摊规则名称或分账单元名称，用于模糊筛选。
+                     * 设置<p>公摊规则名称或分账单元名称，用于模糊筛选。</p>
+                     * @param _name <p>公摊规则名称或分账单元名称，用于模糊筛选。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -166,35 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每次获取数据量，最大值1000
+                     * <p>每次获取数据量，最大值1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量
+                     * <p>分页偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 月份，不传默认当前月
+                     * <p>月份，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 公摊策略类型，用于筛选。
-枚举值如下： 
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
+                     * <p>公摊策略类型，用于筛选。<br>枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 公摊规则名称或分账单元名称，用于模糊筛选。
+                     * <p>公摊规则名称或分账单元名称，用于模糊筛选。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

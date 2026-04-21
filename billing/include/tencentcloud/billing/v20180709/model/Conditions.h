@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取只支持6和12两个值
-                     * @return TimeRange 只支持6和12两个值
+                     * 获取<p>只支持6个月和12个月两个值</p>
+                     * @return TimeRange <p>只支持6个月和12个月两个值</p>
                      * 
                      */
                     uint64_t GetTimeRange() const;
 
                     /**
-                     * 设置只支持6和12两个值
-                     * @param _timeRange 只支持6和12两个值
+                     * 设置<p>只支持6个月和12个月两个值</p>
+                     * @param _timeRange <p>只支持6个月和12个月两个值</p>
                      * 
                      */
                     void SetTimeRange(const uint64_t& _timeRange);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimeRangeHasBeenSet() const;
 
                     /**
-                     * 获取产品名称代码
-                     * @return BusinessCode 产品名称代码
+                     * 获取<p>产品名称代码</p>
+                     * @return BusinessCode <p>产品名称代码</p>
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置产品名称代码
-                     * @param _businessCode 产品名称代码
+                     * 设置<p>产品名称代码</p>
+                     * @param _businessCode <p>产品名称代码</p>
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BusinessCodeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取地域ID
-                     * @return RegionId 地域ID
+                     * 获取<p>地域ID</p>
+                     * @return RegionId <p>地域ID</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域ID
-                     * @param _regionId 地域ID
+                     * 设置<p>地域ID</p>
+                     * @param _regionId <p>地域ID</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取付费模式，可选prePay和postPay
-                     * @return PayMode 付费模式，可选prePay和postPay
+                     * 获取<p>付费模式，可选prePay和postPay</p>
+                     * @return PayMode <p>付费模式，可选prePay和postPay</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付费模式，可选prePay和postPay
-                     * @param _payMode 付费模式，可选prePay和postPay
+                     * 设置<p>付费模式，可选prePay和postPay</p>
+                     * @param _payMode <p>付费模式，可选prePay和postPay</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取资源关键字
-                     * @return ResourceKeyword 资源关键字
+                     * 获取<p>资源关键字</p>
+                     * @return ResourceKeyword <p>资源关键字</p>
                      * 
                      */
                     std::string GetResourceKeyword() const;
 
                     /**
-                     * 设置资源关键字
-                     * @param _resourceKeyword 资源关键字
+                     * 设置<p>资源关键字</p>
+                     * @param _resourceKeyword <p>资源关键字</p>
                      * 
                      */
                     void SetResourceKeyword(const std::string& _resourceKeyword);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ResourceKeywordHasBeenSet() const;
 
                     /**
-                     * 获取产品名称代码
-                     * @return BusinessCodes 产品名称代码
+                     * 获取<p>产品名称代码</p>
+                     * @return BusinessCodes <p>产品名称代码</p>
                      * 
                      */
                     std::vector<std::string> GetBusinessCodes() const;
 
                     /**
-                     * 设置产品名称代码
-                     * @param _businessCodes 产品名称代码
+                     * 设置<p>产品名称代码</p>
+                     * @param _businessCodes <p>产品名称代码</p>
                      * 
                      */
                     void SetBusinessCodes(const std::vector<std::string>& _businessCodes);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool BusinessCodesHasBeenSet() const;
 
                     /**
-                     * 获取子产品名称代码
-                     * @return ProductCodes 子产品名称代码
+                     * 获取<p>子产品名称代码</p>
+                     * @return ProductCodes <p>子产品名称代码</p>
                      * 
                      */
                     std::vector<std::string> GetProductCodes() const;
 
                     /**
-                     * 设置子产品名称代码
-                     * @param _productCodes 子产品名称代码
+                     * 设置<p>子产品名称代码</p>
+                     * @param _productCodes <p>子产品名称代码</p>
                      * 
                      */
                     void SetProductCodes(const std::vector<std::string>& _productCodes);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ProductCodesHasBeenSet() const;
 
                     /**
-                     * 获取地域ID
-                     * @return RegionIds 地域ID
+                     * 获取<p>地域ID</p>
+                     * @return RegionIds <p>地域ID</p>
                      * 
                      */
                     std::vector<int64_t> GetRegionIds() const;
 
                     /**
-                     * 设置地域ID
-                     * @param _regionIds 地域ID
+                     * 设置<p>地域ID</p>
+                     * @param _regionIds <p>地域ID</p>
                      * 
                      */
                     void SetRegionIds(const std::vector<int64_t>& _regionIds);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RegionIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectIds 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectIds <p>项目ID</p>
                      * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectIds 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectIds <p>项目ID</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取付费模式，可选prePay和postPay
-                     * @return PayModes 付费模式，可选prePay和postPay
+                     * 获取<p>付费模式，可选prePay和postPay</p>
+                     * @return PayModes <p>付费模式，可选prePay和postPay</p>
                      * 
                      */
                     std::vector<std::string> GetPayModes() const;
 
                     /**
-                     * 设置付费模式，可选prePay和postPay
-                     * @param _payModes 付费模式，可选prePay和postPay
+                     * 设置<p>付费模式，可选prePay和postPay</p>
+                     * @param _payModes <p>付费模式，可选prePay和postPay</p>
                      * 
                      */
                     void SetPayModes(const std::vector<std::string>& _payModes);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool PayModesHasBeenSet() const;
 
                     /**
-                     * 获取交易类型
-                     * @return ActionTypes 交易类型
+                     * 获取<p>交易类型</p>
+                     * @return ActionTypes <p>交易类型</p>
                      * 
                      */
                     std::vector<std::string> GetActionTypes() const;
 
                     /**
-                     * 设置交易类型
-                     * @param _actionTypes 交易类型
+                     * 设置<p>交易类型</p>
+                     * @param _actionTypes <p>交易类型</p>
                      * 
                      */
                     void SetActionTypes(const std::vector<std::string>& _actionTypes);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ActionTypesHasBeenSet() const;
 
                     /**
-                     * 获取是否隐藏0元流水
-                     * @return HideFreeCost 是否隐藏0元流水
+                     * 获取<p>是否隐藏0元流水</p>
+                     * @return HideFreeCost <p>是否隐藏0元流水</p>
                      * 
                      */
                     int64_t GetHideFreeCost() const;
 
                     /**
-                     * 设置是否隐藏0元流水
-                     * @param _hideFreeCost 是否隐藏0元流水
+                     * 设置<p>是否隐藏0元流水</p>
+                     * @param _hideFreeCost <p>是否隐藏0元流水</p>
                      * 
                      */
                     void SetHideFreeCost(const int64_t& _hideFreeCost);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool HideFreeCostHasBeenSet() const;
 
                     /**
-                     * 获取排序规则，可选desc和asc
-                     * @return OrderByCost 排序规则，可选desc和asc
+                     * 获取<p>排序规则，可选desc和asc</p>
+                     * @return OrderByCost <p>排序规则，可选desc和asc</p>
                      * 
                      */
                     std::string GetOrderByCost() const;
 
                     /**
-                     * 设置排序规则，可选desc和asc
-                     * @param _orderByCost 排序规则，可选desc和asc
+                     * 设置<p>排序规则，可选desc和asc</p>
+                     * @param _orderByCost <p>排序规则，可选desc和asc</p>
                      * 
                      */
                     void SetOrderByCost(const std::string& _orderByCost);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool OrderByCostHasBeenSet() const;
 
                     /**
-                     * 获取交易ID
-                     * @return BillIds 交易ID
+                     * 获取<p>交易ID</p>
+                     * @return BillIds <p>交易ID</p>
                      * 
                      */
                     std::vector<std::string> GetBillIds() const;
 
                     /**
-                     * 设置交易ID
-                     * @param _billIds 交易ID
+                     * 设置<p>交易ID</p>
+                     * @param _billIds <p>交易ID</p>
                      * 
                      */
                     void SetBillIds(const std::vector<std::string>& _billIds);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool BillIdsHasBeenSet() const;
 
                     /**
-                     * 获取组件编码
-                     * @return ComponentCodes 组件编码
+                     * 获取<p>组件编码</p>
+                     * @return ComponentCodes <p>组件编码</p>
                      * 
                      */
                     std::vector<std::string> GetComponentCodes() const;
 
                     /**
-                     * 设置组件编码
-                     * @param _componentCodes 组件编码
+                     * 设置<p>组件编码</p>
+                     * @param _componentCodes <p>组件编码</p>
                      * 
                      */
                     void SetComponentCodes(const std::vector<std::string>& _componentCodes);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool ComponentCodesHasBeenSet() const;
 
                     /**
-                     * 获取文件ID
-                     * @return FileIds 文件ID
+                     * 获取<p>文件ID</p>
+                     * @return FileIds <p>文件ID</p>
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置文件ID
-                     * @param _fileIds 文件ID
+                     * 设置<p>文件ID</p>
+                     * @param _fileIds <p>文件ID</p>
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取文件类型
-                     * @return FileTypes 文件类型
+                     * 获取<p>文件类型</p>
+                     * @return FileTypes <p>文件类型</p>
                      * 
                      */
                     std::vector<std::string> GetFileTypes() const;
 
                     /**
-                     * 设置文件类型
-                     * @param _fileTypes 文件类型
+                     * 设置<p>文件类型</p>
+                     * @param _fileTypes <p>文件类型</p>
                      * 
                      */
                     void SetFileTypes(const std::vector<std::string>& _fileTypes);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool FileTypesHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
@@ -448,115 +448,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 只支持6和12两个值
+                     * <p>只支持6个月和12个月两个值</p>
                      */
                     uint64_t m_timeRange;
                     bool m_timeRangeHasBeenSet;
 
                     /**
-                     * 产品名称代码
+                     * <p>产品名称代码</p>
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 地域ID
+                     * <p>地域ID</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 付费模式，可选prePay和postPay
+                     * <p>付费模式，可选prePay和postPay</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 资源关键字
+                     * <p>资源关键字</p>
                      */
                     std::string m_resourceKeyword;
                     bool m_resourceKeywordHasBeenSet;
 
                     /**
-                     * 产品名称代码
+                     * <p>产品名称代码</p>
                      */
                     std::vector<std::string> m_businessCodes;
                     bool m_businessCodesHasBeenSet;
 
                     /**
-                     * 子产品名称代码
+                     * <p>子产品名称代码</p>
                      */
                     std::vector<std::string> m_productCodes;
                     bool m_productCodesHasBeenSet;
 
                     /**
-                     * 地域ID
+                     * <p>地域ID</p>
                      */
                     std::vector<int64_t> m_regionIds;
                     bool m_regionIdsHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 付费模式，可选prePay和postPay
+                     * <p>付费模式，可选prePay和postPay</p>
                      */
                     std::vector<std::string> m_payModes;
                     bool m_payModesHasBeenSet;
 
                     /**
-                     * 交易类型
+                     * <p>交易类型</p>
                      */
                     std::vector<std::string> m_actionTypes;
                     bool m_actionTypesHasBeenSet;
 
                     /**
-                     * 是否隐藏0元流水
+                     * <p>是否隐藏0元流水</p>
                      */
                     int64_t m_hideFreeCost;
                     bool m_hideFreeCostHasBeenSet;
 
                     /**
-                     * 排序规则，可选desc和asc
+                     * <p>排序规则，可选desc和asc</p>
                      */
                     std::string m_orderByCost;
                     bool m_orderByCostHasBeenSet;
 
                     /**
-                     * 交易ID
+                     * <p>交易ID</p>
                      */
                     std::vector<std::string> m_billIds;
                     bool m_billIdsHasBeenSet;
 
                     /**
-                     * 组件编码
+                     * <p>组件编码</p>
                      */
                     std::vector<std::string> m_componentCodes;
                     bool m_componentCodesHasBeenSet;
 
                     /**
-                     * 文件ID
+                     * <p>文件ID</p>
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 文件类型
+                     * <p>文件类型</p>
                      */
                     std::vector<std::string> m_fileTypes;
                     bool m_fileTypesHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::vector<uint64_t> m_status;
                     bool m_statusHasBeenSet;

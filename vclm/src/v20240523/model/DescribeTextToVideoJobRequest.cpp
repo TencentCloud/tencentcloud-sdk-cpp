@@ -23,7 +23,8 @@ using namespace TencentCloud::Vclm::V20240523::Model;
 using namespace std;
 
 DescribeTextToVideoJobRequest::DescribeTextToVideoJobRequest() :
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeTextToVideoJobRequest::ToJsonString() const
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeTextToVideoJobRequest::SetJobId(const string& _jobId)
 bool DescribeTextToVideoJobRequest::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+string DescribeTextToVideoJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void DescribeTextToVideoJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool DescribeTextToVideoJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 

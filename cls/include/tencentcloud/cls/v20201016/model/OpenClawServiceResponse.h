@@ -211,6 +211,34 @@ namespace TencentCloud
                      */
                     bool SessionLogConfigNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>trace 主题 ID</p>
+                     * @return TraceTopicId <p>trace 主题 ID</p>
+                     * 
+                     */
+                    std::string GetTraceTopicId() const;
+
+                    /**
+                     * 判断参数 TraceTopicId 是否已赋值
+                     * @return TraceTopicId 是否已赋值
+                     * 
+                     */
+                    bool TraceTopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>trace 主题名称</p>
+                     * @return TraceTopicName <p>trace 主题名称</p>
+                     * 
+                     */
+                    std::string GetTraceTopicName() const;
+
+                    /**
+                     * 判断参数 TraceTopicName 是否已赋值
+                     * @return TraceTopicName 是否已赋值
+                     * 
+                     */
+                    bool TraceTopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +312,18 @@ namespace TencentCloud
                      */
                     std::string m_sessionLogConfigName;
                     bool m_sessionLogConfigNameHasBeenSet;
+
+                    /**
+                     * <p>trace 主题 ID</p>
+                     */
+                    std::string m_traceTopicId;
+                    bool m_traceTopicIdHasBeenSet;
+
+                    /**
+                     * <p>trace 主题名称</p>
+                     */
+                    std::string m_traceTopicName;
+                    bool m_traceTopicNameHasBeenSet;
 
                 };
             }

@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公摊规则ID
-                     * @return Id 公摊规则ID
+                     * 获取<p>公摊规则ID</p>
+                     * @return Id <p>公摊规则ID</p>
                      * 
                      */
                     uint64_t GetId() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公摊规则所属UIN
-                     * @return Uin 公摊规则所属UIN
+                     * 获取<p>公摊规则所属UIN</p>
+                     * @return Uin <p>公摊规则所属UIN</p>
                      * 
                      */
                     std::string GetUin() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取公摊规则名称
-                     * @return Name 公摊规则名称
+                     * 获取<p>公摊规则名称</p>
+                     * @return Name <p>公摊规则名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -88,14 +88,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取公摊策略类型，枚举值如下：
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
-                     * @return Type 公摊策略类型，枚举值如下：
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
+                     * 获取<p>公摊策略类型，枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
+                     * @return Type <p>公摊策略类型，枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
                      * 
                      */
                     uint64_t GetType() const;
@@ -108,8 +102,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取公摊规则表达式
-                     * @return RuleDetail 公摊规则表达式
+                     * 获取<p>公摊规则表达式</p>
+                     * @return RuleDetail <p>公摊规则表达式</p>
                      * 
                      */
                     AllocationRuleExpression GetRuleDetail() const;
@@ -122,8 +116,8 @@ namespace TencentCloud
                     bool RuleDetailHasBeenSet() const;
 
                     /**
-                     * 获取公摊比例表达式，Type为1和2时返回
-                     * @return RatioDetail 公摊比例表达式，Type为1和2时返回
+                     * 获取<p>公摊比例表达式，Type为1和2时返回</p>
+                     * @return RatioDetail <p>公摊比例表达式，Type为1和2时返回</p>
                      * 
                      */
                     std::vector<AllocationRationExpression> GetRatioDetail() const;
@@ -138,40 +132,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公摊规则ID
+                     * <p>公摊规则ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公摊规则所属UIN
+                     * <p>公摊规则所属UIN</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 公摊规则名称
+                     * <p>公摊规则名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 公摊策略类型，枚举值如下：
-1 - 自定义分摊占比 
-2 - 等比分摊 
-3 - 按占比分摊
+                     * <p>公摊策略类型，枚举值如下：<br>1 - 自定义分摊占比<br>2 - 等比分摊<br>3 - 按占比分摊</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 公摊规则表达式
+                     * <p>公摊规则表达式</p>
                      */
                     AllocationRuleExpression m_ruleDetail;
                     bool m_ruleDetailHasBeenSet;
 
                     /**
-                     * 公摊比例表达式，Type为1和2时返回
+                     * <p>公摊比例表达式，Type为1和2时返回</p>
                      */
                     std::vector<AllocationRationExpression> m_ratioDetail;
                     bool m_ratioDetailHasBeenSet;

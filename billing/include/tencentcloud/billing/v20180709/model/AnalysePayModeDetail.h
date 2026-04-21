@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计费模式code
-                     * @return PayMode 计费模式code
+                     * 获取<p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
+                     * @return PayMode <p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置计费模式code
-                     * @param _payMode 计费模式code
+                     * 设置<p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
+                     * @param _payMode <p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式Name
-                     * @return PayModeName 计费模式Name
+                     * 获取<p>计费模式Name</p>
+                     * @return PayModeName <p>计费模式Name</p>
                      * 
                      */
                     std::string GetPayModeName() const;
 
                     /**
-                     * 设置计费模式Name
-                     * @param _payModeName 计费模式Name
+                     * 设置<p>计费模式Name</p>
+                     * @param _payModeName <p>计费模式Name</p>
                      * 
                      */
                     void SetPayModeName(const std::string& _payModeName);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计费模式code
+                     * <p>计费模式code</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 计费模式Name
+                     * <p>计费模式Name</p>
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;

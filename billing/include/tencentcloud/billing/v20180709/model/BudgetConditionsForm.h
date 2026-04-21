@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品
+                     * 获取<p>产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Business 产品
+                     * @return Business <p>产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBusiness() const;
 
                     /**
-                     * 设置产品
+                     * 设置<p>产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _business 产品
+                     * @param _business <p>产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取计费模式
+                     * 获取<p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayMode 计费模式
+                     * @return PayMode <p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPayMode() const;
 
                     /**
-                     * 设置计费模式
+                     * 设置<p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payMode 计费模式
+                     * @param _payMode <p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取子产品
+                     * 获取<p>子产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductCodes 子产品
+                     * @return ProductCodes <p>子产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProductCodes() const;
 
                     /**
-                     * 设置子产品
+                     * 设置<p>子产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productCodes 子产品
+                     * @param _productCodes <p>子产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool ProductCodesHasBeenSet() const;
 
                     /**
-                     * 获取组件编码
+                     * 获取<p>组件编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComponentCodes 组件编码
+                     * @return ComponentCodes <p>组件编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetComponentCodes() const;
 
                     /**
-                     * 设置组件编码
+                     * 设置<p>组件编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _componentCodes 组件编码
+                     * @param _componentCodes <p>组件编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool ComponentCodesHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneIds 地域
+                     * @return ZoneIds <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneIds 地域
+                     * @param _zoneIds <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区
+                     * 获取<p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionIds 可用区
+                     * @return RegionIds <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegionIds() const;
 
                     /**
-                     * 设置可用区
+                     * 设置<p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionIds 可用区
+                     * @param _regionIds <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool RegionIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目
+                     * 获取<p>项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectIds 项目
+                     * @return ProjectIds <p>项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProjectIds() const;
 
                     /**
-                     * 设置项目
+                     * 设置<p>项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectIds 项目
+                     * @param _projectIds <p>项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取交易类型
+                     * 获取<p>交易类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActionTypes 交易类型
+                     * @return ActionTypes <p>交易类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActionTypes() const;
 
                     /**
-                     * 设置交易类型
+                     * 设置<p>交易类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _actionTypes 交易类型
+                     * @param _actionTypes <p>交易类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool ActionTypesHasBeenSet() const;
 
                     /**
-                     * 获取消耗类型
+                     * 获取<p>消耗类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConsumptionTypes 消耗类型
+                     * @return ConsumptionTypes <p>消耗类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetConsumptionTypes() const;
 
                     /**
-                     * 设置消耗类型
+                     * 设置<p>消耗类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consumptionTypes 消耗类型
+                     * @param _consumptionTypes <p>消耗类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool ConsumptionTypesHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签
+                     * @return Tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagsForm> GetTags() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 标签
+                     * @param _tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +298,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取 末级分账单元
+                     * 获取<p>末级分账单元</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayerUins  末级分账单元
+                     * @return PayerUins <p>末级分账单元</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPayerUins() const;
 
                     /**
-                     * 设置 末级分账单元
+                     * 设置<p>末级分账单元</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payerUins  末级分账单元
+                     * @param _payerUins <p>末级分账单元</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool PayerUinsHasBeenSet() const;
 
                     /**
-                     * 获取主用户Uin
+                     * 获取<p>主用户Uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUins 主用户Uin
+                     * @return OwnerUins <p>主用户Uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOwnerUins() const;
 
                     /**
-                     * 设置主用户Uin
+                     * 设置<p>主用户Uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUins 主用户Uin
+                     * @param _ownerUins <p>主用户Uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,18 +348,18 @@ namespace TencentCloud
                     bool OwnerUinsHasBeenSet() const;
 
                     /**
-                     * 获取 末级分账单元唯一键
+                     * 获取<p>末级分账单元唯一键</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TreeNodeUniqKeys  末级分账单元唯一键
+                     * @return TreeNodeUniqKeys <p>末级分账单元唯一键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTreeNodeUniqKeys() const;
 
                     /**
-                     * 设置 末级分账单元唯一键
+                     * 设置<p>末级分账单元唯一键</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _treeNodeUniqKeys  末级分账单元唯一键
+                     * @param _treeNodeUniqKeys <p>末级分账单元唯一键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -375,91 +375,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品
+                     * <p>产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 计费模式
+                     * <p>计费模式</p><p>枚举值：</p><ul><li>prePay： 包年包月</li><li>postPay： 按量计费</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 子产品
+                     * <p>子产品</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_productCodes;
                     bool m_productCodesHasBeenSet;
 
                     /**
-                     * 组件编码
+                     * <p>组件编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_componentCodes;
                     bool m_componentCodesHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regionIds;
                     bool m_regionIdsHasBeenSet;
 
                     /**
-                     * 项目
+                     * <p>项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 交易类型
+                     * <p>交易类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actionTypes;
                     bool m_actionTypesHasBeenSet;
 
                     /**
-                     * 消耗类型
+                     * <p>消耗类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_consumptionTypes;
                     bool m_consumptionTypesHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagsForm> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     *  末级分账单元
+                     * <p>末级分账单元</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_payerUins;
                     bool m_payerUinsHasBeenSet;
 
                     /**
-                     * 主用户Uin
+                     * <p>主用户Uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ownerUins;
                     bool m_ownerUinsHasBeenSet;
 
                     /**
-                     *  末级分账单元唯一键
+                     * <p>末级分账单元唯一键</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_treeNodeUniqKeys;

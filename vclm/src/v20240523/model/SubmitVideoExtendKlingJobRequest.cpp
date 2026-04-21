@@ -26,6 +26,7 @@ SubmitVideoExtendKlingJobRequest::SubmitVideoExtendKlingJobRequest() :
     m_videoIdHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_negativePromptHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false),
     m_cfgScaleHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -62,6 +63,14 @@ string SubmitVideoExtendKlingJobRequest::ToJsonString() const
         string key = "NegativePrompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cfgScaleHasBeenSet)
@@ -151,6 +160,22 @@ void SubmitVideoExtendKlingJobRequest::SetNegativePrompt(const string& _negative
 bool SubmitVideoExtendKlingJobRequest::NegativePromptHasBeenSet() const
 {
     return m_negativePromptHasBeenSet;
+}
+
+string SubmitVideoExtendKlingJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void SubmitVideoExtendKlingJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool SubmitVideoExtendKlingJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 double SubmitVideoExtendKlingJobRequest::GetCfgScale() const

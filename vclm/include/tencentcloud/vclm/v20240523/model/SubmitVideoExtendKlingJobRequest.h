@@ -107,6 +107,27 @@ namespace TencentCloud
                     bool NegativePromptHasBeenSet() const;
 
                     /**
+                     * 获取
+                     * @return ExternalTaskId 
+                     * 
+                     */
+                    std::string GetExternalTaskId() const;
+
+                    /**
+                     * 设置
+                     * @param _externalTaskId 
+                     * 
+                     */
+                    void SetExternalTaskId(const std::string& _externalTaskId);
+
+                    /**
+                     * 判断参数 ExternalTaskId 是否已赋值
+                     * @return ExternalTaskId 是否已赋值
+                     * 
+                     */
+                    bool ExternalTaskIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>提示词参考强度  取值范围：[0,1]，数值越大参考强度越大</p>
                      * @return CfgScale <p>提示词参考强度  取值范围：[0,1]，数值越大参考强度越大</p>
                      * 
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_externalTaskId;
+                    bool m_externalTaskIdHasBeenSet;
 
                     /**
                      * <p>提示词参考强度  取值范围：[0,1]，数值越大参考强度越大</p>

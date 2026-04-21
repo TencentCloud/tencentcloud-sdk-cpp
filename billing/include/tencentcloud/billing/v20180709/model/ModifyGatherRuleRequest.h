@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取所编辑归集规则ID
-                     * @return Id 所编辑归集规则ID
+                     * 获取<p>所编辑归集规则ID</p>
+                     * @return Id <p>所编辑归集规则ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置所编辑归集规则ID
-                     * @param _id 所编辑归集规则ID
+                     * 设置<p>所编辑归集规则ID</p>
+                     * @param _id <p>所编辑归集规则ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取所编辑分账规则详情
-                     * @return RuleDetail 所编辑分账规则详情
+                     * 获取<p>所编辑分账规则详情</p>
+                     * @return RuleDetail <p>所编辑分账规则详情</p>
                      * 
                      */
                     AllocationRuleExpression GetRuleDetail() const;
 
                     /**
-                     * 设置所编辑分账规则详情
-                     * @param _ruleDetail 所编辑分账规则详情
+                     * 设置<p>所编辑分账规则详情</p>
+                     * @param _ruleDetail <p>所编辑分账规则详情</p>
                      * 
                      */
                     void SetRuleDetail(const AllocationRuleExpression& _ruleDetail);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RuleDetailHasBeenSet() const;
 
                     /**
-                     * 获取月份，不传默认当前月
-                     * @return Month 月份，不传默认当前月
+                     * 获取<p>月份，不传默认当前月</p>
+                     * @return Month <p>月份，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置月份，不传默认当前月
-                     * @param _month 月份，不传默认当前月
+                     * 设置<p>月份，不传默认当前月</p>
+                     * @param _month <p>月份，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 所编辑归集规则ID
+                     * <p>所编辑归集规则ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 所编辑分账规则详情
+                     * <p>所编辑分账规则详情</p>
                      */
                     AllocationRuleExpression m_ruleDetail;
                     bool m_ruleDetailHasBeenSet;
 
                     /**
-                     * 月份，不传默认当前月
+                     * <p>月份，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;

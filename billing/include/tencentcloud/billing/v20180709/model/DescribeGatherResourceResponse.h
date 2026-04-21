@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return RecordNum 总条数
+                     * 获取<p>总条数</p>
+                     * @return RecordNum <p>总条数</p>
                      * 
                      */
                     int64_t GetRecordNum() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool RecordNumHasBeenSet() const;
 
                     /**
-                     * 获取资源归集汇总
+                     * 获取<p>资源归集汇总</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GatherResourceSummary 资源归集汇总
+                     * @return GatherResourceSummary <p>资源归集汇总</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,9 +75,9 @@ namespace TencentCloud
                     bool GatherResourceSummaryHasBeenSet() const;
 
                     /**
-                     * 获取数据更新时间
+                     * 获取<p>数据更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdateTime 数据更新时间
+                     * @return LastUpdateTime <p>数据更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,20 +93,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     int64_t m_recordNum;
                     bool m_recordNumHasBeenSet;
 
                     /**
-                     * 资源归集汇总
+                     * <p>资源归集汇总</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatherResourceSummary> m_gatherResourceSummary;
                     bool m_gatherResourceSummaryHasBeenSet;
 
                     /**
-                     * 数据更新时间
+                     * <p>数据更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpdateTime;

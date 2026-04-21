@@ -30,7 +30,8 @@ DescribeImageToVideoJobResponse::DescribeImageToVideoJobResponse() :
     m_resultVideoUrlHasBeenSet(false),
     m_videoIdHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_finalUnitDeductionHasBeenSet(false)
+    m_finalUnitDeductionHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribeImageToVideoJobResponse::Deserialize(const string &p
         m_finalUnitDeductionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExternalTaskId") && !rsp["ExternalTaskId"].IsNull())
+    {
+        if (!rsp["ExternalTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalTaskId = string(rsp["ExternalTaskId"].GetString());
+        m_externalTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ string DescribeImageToVideoJobResponse::ToJsonString() const
         string key = "FinalUnitDeduction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finalUnitDeduction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +303,16 @@ string DescribeImageToVideoJobResponse::GetFinalUnitDeduction() const
 bool DescribeImageToVideoJobResponse::FinalUnitDeductionHasBeenSet() const
 {
     return m_finalUnitDeductionHasBeenSet;
+}
+
+string DescribeImageToVideoJobResponse::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+bool DescribeImageToVideoJobResponse::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 

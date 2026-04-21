@@ -121,6 +121,10 @@
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/QueryIpTraceLogRequest.h>
 #include <tencentcloud/es/v20180416/model/QueryIpTraceLogResponse.h>
+#include <tencentcloud/es/v20180416/model/RequestInstancesRequest.h>
+#include <tencentcloud/es/v20180416/model/RequestInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/RequestInstancesByGetRequest.h>
+#include <tencentcloud/es/v20180416/model/RequestInstancesByGetResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
@@ -326,6 +330,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryIpTraceLogResponse> QueryIpTraceLogOutcome;
                 typedef std::future<QueryIpTraceLogOutcome> QueryIpTraceLogOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::QueryIpTraceLogRequest&, QueryIpTraceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryIpTraceLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::RequestInstancesResponse> RequestInstancesOutcome;
+                typedef std::future<RequestInstancesOutcome> RequestInstancesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RequestInstancesRequest&, RequestInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RequestInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RequestInstancesByGetResponse> RequestInstancesByGetOutcome;
+                typedef std::future<RequestInstancesByGetOutcome> RequestInstancesByGetOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RequestInstancesByGetRequest&, RequestInstancesByGetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RequestInstancesByGetAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -836,6 +846,24 @@ namespace TencentCloud
                 QueryIpTraceLogOutcome QueryIpTraceLog(const Model::QueryIpTraceLogRequest &request);
                 void QueryIpTraceLogAsync(const Model::QueryIpTraceLogRequest& request, const QueryIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryIpTraceLogOutcomeCallable QueryIpTraceLogCallable(const Model::QueryIpTraceLogRequest& request);
+
+                /**
+                 *请求集群实例
+                 * @param req RequestInstancesRequest
+                 * @return RequestInstancesOutcome
+                 */
+                RequestInstancesOutcome RequestInstances(const Model::RequestInstancesRequest &request);
+                void RequestInstancesAsync(const Model::RequestInstancesRequest& request, const RequestInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RequestInstancesOutcomeCallable RequestInstancesCallable(const Model::RequestInstancesRequest& request);
+
+                /**
+                 *GET请求集群实例
+                 * @param req RequestInstancesByGetRequest
+                 * @return RequestInstancesByGetOutcome
+                 */
+                RequestInstancesByGetOutcome RequestInstancesByGet(const Model::RequestInstancesByGetRequest &request);
+                void RequestInstancesByGetAsync(const Model::RequestInstancesByGetRequest& request, const RequestInstancesByGetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RequestInstancesByGetOutcomeCallable RequestInstancesByGetCallable(const Model::RequestInstancesByGetRequest& request);
 
                 /**
                  *重启ES集群实例(用于系统版本更新等操作)

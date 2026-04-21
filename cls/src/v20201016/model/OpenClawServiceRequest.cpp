@@ -23,7 +23,8 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 OpenClawServiceRequest::OpenClawServiceRequest() :
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_enableTraceHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string OpenClawServiceRequest::ToJsonString() const
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableTraceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTrace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTrace, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void OpenClawServiceRequest::SetTag(const string& _tag)
 bool OpenClawServiceRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+bool OpenClawServiceRequest::GetEnableTrace() const
+{
+    return m_enableTrace;
+}
+
+void OpenClawServiceRequest::SetEnableTrace(const bool& _enableTrace)
+{
+    m_enableTrace = _enableTrace;
+    m_enableTraceHasBeenSet = true;
+}
+
+bool OpenClawServiceRequest::EnableTraceHasBeenSet() const
+{
+    return m_enableTraceHasBeenSet;
 }
 
 

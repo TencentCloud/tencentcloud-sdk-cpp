@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
-                     * @return ProtectMode 主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
+                     * 获取<p>主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。</p>
+                     * @return ProtectMode <p>主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。</p>
                      * 
                      */
                     int64_t GetProtectMode() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ProtectModeHasBeenSet() const;
 
                     /**
-                     * 获取主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
-                     * @return DeployMode 主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
+                     * 获取<p>主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。</p>
+                     * @return DeployMode <p>主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。</p>
                      * 
                      */
                     int64_t GetDeployMode() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区信息，格式如 "ap-shanghai-2"。
-                     * @return Zone 实例可用区信息，格式如 "ap-shanghai-2"。
+                     * 获取<p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
+                     * @return Zone <p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
                      * 
                      */
                     std::string GetZone() const;
@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取备库的配置信息。
+                     * 获取<p>备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaveConfig 备库的配置信息。
+                     * @return SlaveConfig <p>备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -104,9 +104,9 @@ namespace TencentCloud
                     bool SlaveConfigHasBeenSet() const;
 
                     /**
-                     * 获取强同步实例第二备库的配置信息。
+                     * 获取<p>强同步实例第二备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupConfig 强同步实例第二备库的配置信息。
+                     * @return BackupConfig <p>强同步实例第二备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,8 +120,8 @@ namespace TencentCloud
                     bool BackupConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否切换备库。
-                     * @return Switched 是否切换备库。
+                     * 获取<p>是否切换备库。</p>
+                     * @return Switched <p>是否切换备库。</p>
                      * 
                      */
                     bool GetSwitched() const;
@@ -136,39 +136,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。
+                     * <p>主实例数据保护方式，可能的返回值：0 - 异步复制方式，1 - 半同步复制方式，2 - 强同步复制方式。</p>
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;
 
                     /**
-                     * 主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。
+                     * <p>主实例部署方式，可能的返回值：0 - 单可用部署，1 - 多可用区部署。</p>
                      */
                     int64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 实例可用区信息，格式如 "ap-shanghai-2"。
+                     * <p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 备库的配置信息。
+                     * <p>备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveConfig m_slaveConfig;
                     bool m_slaveConfigHasBeenSet;
 
                     /**
-                     * 强同步实例第二备库的配置信息。
+                     * <p>强同步实例第二备库的配置信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupConfig m_backupConfig;
                     bool m_backupConfigHasBeenSet;
 
                     /**
-                     * 是否切换备库。
+                     * <p>是否切换备库。</p>
                      */
                     bool m_switched;
                     bool m_switchedHasBeenSet;

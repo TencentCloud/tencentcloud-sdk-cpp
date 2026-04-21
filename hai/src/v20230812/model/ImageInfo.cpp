@@ -21,7 +21,9 @@ using namespace TencentCloud::Hai::V20230812::Model;
 using namespace std;
 
 ImageInfo::ImageInfo() :
-    m_imageRegistryUrlHasBeenSet(false)
+    m_imageRegistryUrlHasBeenSet(false),
+    m_imageRegistryUsernameHasBeenSet(false),
+    m_imageRegistryPasswordHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
         m_imageRegistryUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageRegistryUsername") && !value["ImageRegistryUsername"].IsNull())
+    {
+        if (!value["ImageRegistryUsername"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.ImageRegistryUsername` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageRegistryUsername = string(value["ImageRegistryUsername"].GetString());
+        m_imageRegistryUsernameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageRegistryPassword") && !value["ImageRegistryPassword"].IsNull())
+    {
+        if (!value["ImageRegistryPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.ImageRegistryPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageRegistryPassword = string(value["ImageRegistryPassword"].GetString());
+        m_imageRegistryPasswordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void ImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ImageRegistryUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageRegistryUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageRegistryUsernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryUsername";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageRegistryUsername.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageRegistryPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageRegistryPassword.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void ImageInfo::SetImageRegistryUrl(const string& _imageRegistryUrl)
 bool ImageInfo::ImageRegistryUrlHasBeenSet() const
 {
     return m_imageRegistryUrlHasBeenSet;
+}
+
+string ImageInfo::GetImageRegistryUsername() const
+{
+    return m_imageRegistryUsername;
+}
+
+void ImageInfo::SetImageRegistryUsername(const string& _imageRegistryUsername)
+{
+    m_imageRegistryUsername = _imageRegistryUsername;
+    m_imageRegistryUsernameHasBeenSet = true;
+}
+
+bool ImageInfo::ImageRegistryUsernameHasBeenSet() const
+{
+    return m_imageRegistryUsernameHasBeenSet;
+}
+
+string ImageInfo::GetImageRegistryPassword() const
+{
+    return m_imageRegistryPassword;
+}
+
+void ImageInfo::SetImageRegistryPassword(const string& _imageRegistryPassword)
+{
+    m_imageRegistryPassword = _imageRegistryPassword;
+    m_imageRegistryPasswordHasBeenSet = true;
+}
+
+bool ImageInfo::ImageRegistryPasswordHasBeenSet() const
+{
+    return m_imageRegistryPasswordHasBeenSet;
 }
 

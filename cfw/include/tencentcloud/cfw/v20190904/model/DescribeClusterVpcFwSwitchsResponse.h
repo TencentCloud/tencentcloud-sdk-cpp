@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/ClusterSwitchDetail.h>
+#include <tencentcloud/cfw/v20190904/model/SwitchFailInfo.h>
 
 
 namespace TencentCloud
@@ -74,6 +75,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取开关开启失败列表
+                     * @return FailData 开关开启失败列表
+                     * 
+                     */
+                    std::vector<SwitchFailInfo> GetFailData() const;
+
+                    /**
+                     * 判断参数 FailData 是否已赋值
+                     * @return FailData 是否已赋值
+                     * 
+                     */
+                    bool FailDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +103,12 @@ namespace TencentCloud
                      */
                     std::vector<ClusterSwitchDetail> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 开关开启失败列表
+                     */
+                    std::vector<SwitchFailInfo> m_failData;
+                    bool m_failDataHasBeenSet;
 
                 };
             }

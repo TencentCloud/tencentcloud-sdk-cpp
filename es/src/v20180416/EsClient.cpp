@@ -2490,6 +2490,106 @@ EsClient::QueryIpTraceLogOutcomeCallable EsClient::QueryIpTraceLogCallable(const
     return prom->get_future();
 }
 
+EsClient::RequestInstancesOutcome EsClient::RequestInstances(const RequestInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RequestInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RequestInstancesResponse rsp = RequestInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RequestInstancesOutcome(rsp);
+        else
+            return RequestInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RequestInstancesOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::RequestInstancesAsync(const RequestInstancesRequest& request, const RequestInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RequestInstancesRequest&;
+    using Resp = RequestInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RequestInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::RequestInstancesOutcomeCallable EsClient::RequestInstancesCallable(const RequestInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RequestInstancesOutcome>>();
+    RequestInstancesAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RequestInstancesRequest&,
+        RequestInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::RequestInstancesByGetOutcome EsClient::RequestInstancesByGet(const RequestInstancesByGetRequest &request)
+{
+    auto outcome = MakeRequest(request, "RequestInstancesByGet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RequestInstancesByGetResponse rsp = RequestInstancesByGetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RequestInstancesByGetOutcome(rsp);
+        else
+            return RequestInstancesByGetOutcome(o.GetError());
+    }
+    else
+    {
+        return RequestInstancesByGetOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::RequestInstancesByGetAsync(const RequestInstancesByGetRequest& request, const RequestInstancesByGetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RequestInstancesByGetRequest&;
+    using Resp = RequestInstancesByGetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RequestInstancesByGet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::RequestInstancesByGetOutcomeCallable EsClient::RequestInstancesByGetCallable(const RequestInstancesByGetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RequestInstancesByGetOutcome>>();
+    RequestInstancesByGetAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const RequestInstancesByGetRequest&,
+        RequestInstancesByGetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::RestartInstanceOutcome EsClient::RestartInstance(const RestartInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartInstance");

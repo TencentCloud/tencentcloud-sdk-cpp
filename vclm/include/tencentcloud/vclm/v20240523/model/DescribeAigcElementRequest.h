@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return ElementId 
+                     * 获取<p>主体Id</p>
+                     * @return ElementId <p>主体Id</p>
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
-                     * 设置
-                     * @param _elementId 
+                     * 设置<p>主体Id</p>
+                     * @param _elementId <p>主体Id</p>
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>主体Id</p>
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;

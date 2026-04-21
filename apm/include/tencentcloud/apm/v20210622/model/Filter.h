@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤方式（=, !=, in）
-                     * @return Type 过滤方式（=, !=, in）
+                     * 获取<p>过滤方式（=, !=, in）</p>
+                     * @return Type <p>过滤方式（=, !=, in）</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置过滤方式（=, !=, in）
-                     * @param _type 过滤方式（=, !=, in）
+                     * 设置<p>过滤方式（=, !=, in）</p>
+                     * @param _type <p>过滤方式（=, !=, in）</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取过滤维度名
-                     * @return Key 过滤维度名
+                     * 获取<p>过滤维度名</p><p>详情参考实际接口字段描述</p>
+                     * @return Key <p>过滤维度名</p><p>详情参考实际接口字段描述</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置过滤维度名
-                     * @param _key 过滤维度名
+                     * 设置<p>过滤维度名</p><p>详情参考实际接口字段描述</p>
+                     * @param _key <p>过滤维度名</p><p>详情参考实际接口字段描述</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取过滤值，in过滤方式用逗号分割多个值
-                     * @return Value 过滤值，in过滤方式用逗号分割多个值
+                     * 获取<p>过滤值，in过滤方式用逗号分割多个值</p>
+                     * @return Value <p>过滤值，in过滤方式用逗号分割多个值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置过滤值，in过滤方式用逗号分割多个值
-                     * @param _value 过滤值，in过滤方式用逗号分割多个值
+                     * 设置<p>过滤值，in过滤方式用逗号分割多个值</p>
+                     * @param _value <p>过滤值，in过滤方式用逗号分割多个值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤方式（=, !=, in）
+                     * <p>过滤方式（=, !=, in）</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 过滤维度名
+                     * <p>过滤维度名</p><p>详情参考实际接口字段描述</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 过滤值，in过滤方式用逗号分割多个值
+                     * <p>过滤值，in过滤方式用逗号分割多个值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

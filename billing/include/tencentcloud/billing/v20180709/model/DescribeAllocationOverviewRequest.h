@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量，最大值为1000
-                     * @return Limit 数量，最大值为1000
+                     * 获取<p>数量，最大值为1000</p>
+                     * @return Limit <p>数量，最大值为1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置数量，最大值为1000
-                     * @param _limit 数量，最大值为1000
+                     * 设置<p>数量，最大值为1000</p>
+                     * @param _limit <p>数量，最大值为1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
-                     * @return Offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * 获取<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
+                     * @return Offset <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
-                     * @param _offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * 设置<p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
+                     * @param _offset <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取账单月份，格式为2024-02，不传默认当前月
-                     * @return Month 账单月份，格式为2024-02，不传默认当前月
+                     * 获取<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @return Month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置账单月份，格式为2024-02，不传默认当前月
-                     * @param _month 账单月份，格式为2024-02，不传默认当前月
+                     * 设置<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @param _month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -106,23 +106,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取统计周期，枚举值如下
-month - 月
-day - 日
-                     * @return PeriodType 统计周期，枚举值如下
-month - 月
-day - 日
+                     * 获取<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>
+                     * @return PeriodType <p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>
                      * 
                      */
                     std::string GetPeriodType() const;
 
                     /**
-                     * 设置统计周期，枚举值如下
-month - 月
-day - 日
-                     * @param _periodType 统计周期，枚举值如下
-month - 月
-day - 日
+                     * 设置<p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>
+                     * @param _periodType <p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>
                      * 
                      */
                     void SetPeriodType(const std::string& _periodType);
@@ -135,15 +127,15 @@ day - 日
                     bool PeriodTypeHasBeenSet() const;
 
                     /**
-                     * 获取分账单元唯一标识，用作筛选
-                     * @return TreeNodeUniqKeys 分账单元唯一标识，用作筛选
+                     * 获取<p>分账单元唯一标识，用作筛选</p>
+                     * @return TreeNodeUniqKeys <p>分账单元唯一标识，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetTreeNodeUniqKeys() const;
 
                     /**
-                     * 设置分账单元唯一标识，用作筛选
-                     * @param _treeNodeUniqKeys 分账单元唯一标识，用作筛选
+                     * 设置<p>分账单元唯一标识，用作筛选</p>
+                     * @param _treeNodeUniqKeys <p>分账单元唯一标识，用作筛选</p>
                      * 
                      */
                     void SetTreeNodeUniqKeys(const std::vector<std::string>& _treeNodeUniqKeys);
@@ -156,79 +148,15 @@ day - 日
                     bool TreeNodeUniqKeysHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，枚举值如下： 
-GatherCashPayAmount - 归集费用(现金)
-GatherVoucherPayAmount- 归集费用(优惠券)
-GatherIncentivePayAmount -  归集费用(赠送金)
-GatherTransferPayAmount - 归集费用(分成金)
-AllocateCashPayAmount - 分摊费用(现金)
-AllocateVoucherPayAmount - 分摊费用(优惠券)
-AllocateIncentivePayAmount - 分摊费用(赠送金)
-AllocateTransferPayAmount - 分摊费用(分成金)
-TotalCashPayAmount - 合计费用(现金)
-TotalVoucherPayAmount - 合计费用(优惠券)
-TotalIncentivePayAmount - 合计费用(赠送金)
-TotalTransferPayAmount - 合计费用(分成金)
-GatherRealCost - 归集费用(折后总额)
-AllocateRealCost - 分摊费用(折后总额)
-RealTotalCost - 合计费用(折后总额)
-Ratio  - 占比(折后总额)
-                     * @return Sort 排序字段，枚举值如下： 
-GatherCashPayAmount - 归集费用(现金)
-GatherVoucherPayAmount- 归集费用(优惠券)
-GatherIncentivePayAmount -  归集费用(赠送金)
-GatherTransferPayAmount - 归集费用(分成金)
-AllocateCashPayAmount - 分摊费用(现金)
-AllocateVoucherPayAmount - 分摊费用(优惠券)
-AllocateIncentivePayAmount - 分摊费用(赠送金)
-AllocateTransferPayAmount - 分摊费用(分成金)
-TotalCashPayAmount - 合计费用(现金)
-TotalVoucherPayAmount - 合计费用(优惠券)
-TotalIncentivePayAmount - 合计费用(赠送金)
-TotalTransferPayAmount - 合计费用(分成金)
-GatherRealCost - 归集费用(折后总额)
-AllocateRealCost - 分摊费用(折后总额)
-RealTotalCost - 合计费用(折后总额)
-Ratio  - 占比(折后总额)
+                     * 获取<p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>
+                     * @return Sort <p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序字段，枚举值如下： 
-GatherCashPayAmount - 归集费用(现金)
-GatherVoucherPayAmount- 归集费用(优惠券)
-GatherIncentivePayAmount -  归集费用(赠送金)
-GatherTransferPayAmount - 归集费用(分成金)
-AllocateCashPayAmount - 分摊费用(现金)
-AllocateVoucherPayAmount - 分摊费用(优惠券)
-AllocateIncentivePayAmount - 分摊费用(赠送金)
-AllocateTransferPayAmount - 分摊费用(分成金)
-TotalCashPayAmount - 合计费用(现金)
-TotalVoucherPayAmount - 合计费用(优惠券)
-TotalIncentivePayAmount - 合计费用(赠送金)
-TotalTransferPayAmount - 合计费用(分成金)
-GatherRealCost - 归集费用(折后总额)
-AllocateRealCost - 分摊费用(折后总额)
-RealTotalCost - 合计费用(折后总额)
-Ratio  - 占比(折后总额)
-                     * @param _sort 排序字段，枚举值如下： 
-GatherCashPayAmount - 归集费用(现金)
-GatherVoucherPayAmount- 归集费用(优惠券)
-GatherIncentivePayAmount -  归集费用(赠送金)
-GatherTransferPayAmount - 归集费用(分成金)
-AllocateCashPayAmount - 分摊费用(现金)
-AllocateVoucherPayAmount - 分摊费用(优惠券)
-AllocateIncentivePayAmount - 分摊费用(赠送金)
-AllocateTransferPayAmount - 分摊费用(分成金)
-TotalCashPayAmount - 合计费用(现金)
-TotalVoucherPayAmount - 合计费用(优惠券)
-TotalIncentivePayAmount - 合计费用(赠送金)
-TotalTransferPayAmount - 合计费用(分成金)
-GatherRealCost - 归集费用(折后总额)
-AllocateRealCost - 分摊费用(折后总额)
-RealTotalCost - 合计费用(折后总额)
-Ratio  - 占比(折后总额)
+                     * 设置<p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>
+                     * @param _sort <p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -241,23 +169,15 @@ Ratio  - 占比(折后总额)
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取排序类型，枚举值如下：
-asc - 升序
-desc - 降序
-                     * @return SortType 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * 获取<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
+                     * @return SortType <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序类型，枚举值如下：
-asc - 升序
-desc - 降序
-                     * @param _sortType 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * 设置<p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
+                     * @param _sortType <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -270,15 +190,15 @@ desc - 降序
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取日期，用作筛选
-                     * @return BillDates 日期，用作筛选
+                     * 获取<p>日期，用作筛选</p>
+                     * @return BillDates <p>日期，用作筛选</p>
                      * 
                      */
                     std::vector<std::string> GetBillDates() const;
 
                     /**
-                     * 设置日期，用作筛选
-                     * @param _billDates 日期，用作筛选
+                     * 设置<p>日期，用作筛选</p>
+                     * @param _billDates <p>日期，用作筛选</p>
                      * 
                      */
                     void SetBillDates(const std::vector<std::string>& _billDates);
@@ -293,69 +213,49 @@ desc - 降序
                 private:
 
                     /**
-                     * 数量，最大值为1000
+                     * <p>数量，最大值为1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * <p>分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 账单月份，格式为2024-02，不传默认当前月
+                     * <p>账单月份，格式为2024-02，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 统计周期，枚举值如下
-month - 月
-day - 日
+                     * <p>统计周期，枚举值如下<br>month - 月<br>day - 日</p>
                      */
                     std::string m_periodType;
                     bool m_periodTypeHasBeenSet;
 
                     /**
-                     * 分账单元唯一标识，用作筛选
+                     * <p>分账单元唯一标识，用作筛选</p>
                      */
                     std::vector<std::string> m_treeNodeUniqKeys;
                     bool m_treeNodeUniqKeysHasBeenSet;
 
                     /**
-                     * 排序字段，枚举值如下： 
-GatherCashPayAmount - 归集费用(现金)
-GatherVoucherPayAmount- 归集费用(优惠券)
-GatherIncentivePayAmount -  归集费用(赠送金)
-GatherTransferPayAmount - 归集费用(分成金)
-AllocateCashPayAmount - 分摊费用(现金)
-AllocateVoucherPayAmount - 分摊费用(优惠券)
-AllocateIncentivePayAmount - 分摊费用(赠送金)
-AllocateTransferPayAmount - 分摊费用(分成金)
-TotalCashPayAmount - 合计费用(现金)
-TotalVoucherPayAmount - 合计费用(优惠券)
-TotalIncentivePayAmount - 合计费用(赠送金)
-TotalTransferPayAmount - 合计费用(分成金)
-GatherRealCost - 归集费用(折后总额)
-AllocateRealCost - 分摊费用(折后总额)
-RealTotalCost - 合计费用(折后总额)
-Ratio  - 占比(折后总额)
+                     * <p>排序字段，枚举值如下：<br>GatherCashPayAmount - 归集费用(现金)<br>GatherVoucherPayAmount- 归集费用(优惠券)<br>GatherIncentivePayAmount -  归集费用(赠送金)<br>GatherTransferPayAmount - 归集费用(分成金)<br>AllocateCashPayAmount - 分摊费用(现金)<br>AllocateVoucherPayAmount - 分摊费用(优惠券)<br>AllocateIncentivePayAmount - 分摊费用(赠送金)<br>AllocateTransferPayAmount - 分摊费用(分成金)<br>TotalCashPayAmount - 合计费用(现金)<br>TotalVoucherPayAmount - 合计费用(优惠券)<br>TotalIncentivePayAmount - 合计费用(赠送金)<br>TotalTransferPayAmount - 合计费用(分成金)<br>GatherRealCost - 归集费用(折后总额)<br>AllocateRealCost - 分摊费用(折后总额)<br>RealTotalCost - 合计费用(折后总额)<br>Ratio  - 占比(折后总额)</p>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 排序类型，枚举值如下：
-asc - 升序
-desc - 降序
+                     * <p>排序类型，枚举值如下：<br>asc - 升序<br>desc - 降序</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 日期，用作筛选
+                     * <p>日期，用作筛选</p>
                      */
                     std::vector<std::string> m_billDates;
                     bool m_billDatesHasBeenSet;

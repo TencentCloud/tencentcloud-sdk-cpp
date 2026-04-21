@@ -25,6 +25,7 @@ using namespace std;
 SubmitVideoEditKlingJobRequest::SubmitVideoEditKlingJobRequest() :
     m_promptHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false),
     m_imageListHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
     m_durationHasBeenSet(false),
@@ -62,6 +63,14 @@ string SubmitVideoEditKlingJobRequest::ToJsonString() const
         string key = "Model";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageListHasBeenSet)
@@ -235,6 +244,22 @@ void SubmitVideoEditKlingJobRequest::SetModel(const string& _model)
 bool SubmitVideoEditKlingJobRequest::ModelHasBeenSet() const
 {
     return m_modelHasBeenSet;
+}
+
+string SubmitVideoEditKlingJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void SubmitVideoEditKlingJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool SubmitVideoEditKlingJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 vector<ImageInfo> SubmitVideoEditKlingJobRequest::GetImageList() const

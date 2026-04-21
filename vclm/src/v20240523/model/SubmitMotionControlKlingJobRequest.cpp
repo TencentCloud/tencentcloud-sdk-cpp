@@ -25,6 +25,7 @@ using namespace std;
 SubmitMotionControlKlingJobRequest::SubmitMotionControlKlingJobRequest() :
     m_modelHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_videoHasBeenSet(false),
     m_modeHasBeenSet(false),
@@ -58,6 +59,14 @@ string SubmitMotionControlKlingJobRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageHasBeenSet)
@@ -178,6 +187,22 @@ void SubmitMotionControlKlingJobRequest::SetPrompt(const string& _prompt)
 bool SubmitMotionControlKlingJobRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string SubmitMotionControlKlingJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void SubmitMotionControlKlingJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool SubmitMotionControlKlingJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 string SubmitMotionControlKlingJobRequest::GetImage() const

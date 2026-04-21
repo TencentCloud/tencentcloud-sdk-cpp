@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账单月份，格式为2024-02，不传默认当前月
-                     * @return Month 账单月份，格式为2024-02，不传默认当前月
+                     * 获取<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @return Month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置账单月份，格式为2024-02，不传默认当前月
-                     * @param _month 账单月份，格式为2024-02，不传默认当前月
+                     * 设置<p>账单月份，格式为2024-02，不传默认当前月</p>
+                     * @param _month <p>账单月份，格式为2024-02，不传默认当前月</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取分账单元唯一标识
-                     * @return TreeNodeUniqKey 分账单元唯一标识
+                     * 获取<p>分账单元唯一标识</p>
+                     * @return TreeNodeUniqKey <p>分账单元唯一标识</p>
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
-                     * 设置分账单元唯一标识
-                     * @param _treeNodeUniqKey 分账单元唯一标识
+                     * 设置<p>分账单元唯一标识</p>
+                     * @param _treeNodeUniqKey <p>分账单元唯一标识</p>
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TreeNodeUniqKeyHasBeenSet() const;
 
                     /**
-                     * 获取产品编码，用作筛选
-                     * @return BusinessCode 产品编码，用作筛选
+                     * 获取<p>产品编码，用作筛选</p>
+                     * @return BusinessCode <p>产品编码，用作筛选</p>
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
-                     * 设置产品编码，用作筛选
-                     * @param _businessCode 产品编码，用作筛选
+                     * 设置<p>产品编码，用作筛选</p>
+                     * @param _businessCode <p>产品编码，用作筛选</p>
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账单月份，格式为2024-02，不传默认当前月
+                     * <p>账单月份，格式为2024-02，不传默认当前月</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 分账单元唯一标识
+                     * <p>分账单元唯一标识</p>
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
-                     * 产品编码，用作筛选
+                     * <p>产品编码，用作筛选</p>
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;

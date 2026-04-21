@@ -52,6 +52,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h
   include/tencentcloud/es/v20180416/model/Namespaces.h
+  include/tencentcloud/es/v20180416/model/RequestInstancesByGetResponse.h
   include/tencentcloud/es/v20180416/model/LogstashBindedES.h
   include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h
   include/tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h
@@ -93,7 +94,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CollectorTarget.h
   include/tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserResponse.h
   include/tencentcloud/es/v20180416/model/DiData.h
-  include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
+  include/tencentcloud/es/v20180416/model/RequestInstancesByGetRequest.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
   include/tencentcloud/es/v20180416/model/QueryIpTraceLogResponse.h
   include/tencentcloud/es/v20180416/model/LogstashExtendedFile.h
@@ -128,6 +129,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ModifyAutoBackUpStrategyResponse.h
   include/tencentcloud/es/v20180416/model/DescribeIndexListResponse.h
   include/tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListRequest.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginInfo.h
   include/tencentcloud/es/v20180416/model/CreateLogstashInstanceResponse.h
@@ -161,6 +163,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/InstanceInfo.h
   include/tencentcloud/es/v20180416/model/CollectorConfigInfo.h
   include/tencentcloud/es/v20180416/model/DeleteIndexResponse.h
+  include/tencentcloud/es/v20180416/model/RequestInstancesRequest.h
   include/tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserRequest.h
   include/tencentcloud/es/v20180416/model/RestartNodesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
@@ -170,6 +173,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/OutboundPublicAcl.h
   include/tencentcloud/es/v20180416/model/DataStreamInfo.h
   include/tencentcloud/es/v20180416/model/ServerlessIndexMetaField.h
+  include/tencentcloud/es/v20180416/model/RequestInstancesResponse.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h
   include/tencentcloud/es/v20180416/model/ProcessDetail.h
@@ -328,6 +332,7 @@ set(es_src
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DiagnoseInstanceRequest.cpp
   src/v20180416/model/Namespaces.cpp
+  src/v20180416/model/RequestInstancesByGetResponse.cpp
   src/v20180416/model/LogstashBindedES.cpp
   src/v20180416/model/UpdateDiagnoseSettingsRequest.cpp
   src/v20180416/model/DeleteServerlessInstanceResponse.cpp
@@ -369,7 +374,7 @@ set(es_src
   src/v20180416/model/CollectorTarget.cpp
   src/v20180416/model/DeleteServerlessSpaceUserResponse.cpp
   src/v20180416/model/DiData.cpp
-  src/v20180416/model/UpgradeLicenseResponse.cpp
+  src/v20180416/model/RequestInstancesByGetRequest.cpp
   src/v20180416/model/KeyValue.cpp
   src/v20180416/model/QueryIpTraceLogResponse.cpp
   src/v20180416/model/LogstashExtendedFile.cpp
@@ -404,6 +409,7 @@ set(es_src
   src/v20180416/model/ModifyAutoBackUpStrategyResponse.cpp
   src/v20180416/model/DescribeIndexListResponse.cpp
   src/v20180416/model/DescribeUserCosSnapshotListRequest.cpp
+  src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/DescribeLogstashInstanceOperationsRequest.cpp
   src/v20180416/model/DescribeInstancePluginInfo.cpp
   src/v20180416/model/CreateLogstashInstanceResponse.cpp
@@ -437,6 +443,7 @@ set(es_src
   src/v20180416/model/InstanceInfo.cpp
   src/v20180416/model/CollectorConfigInfo.cpp
   src/v20180416/model/DeleteIndexResponse.cpp
+  src/v20180416/model/RequestInstancesRequest.cpp
   src/v20180416/model/DeleteServerlessSpaceUserRequest.cpp
   src/v20180416/model/RestartNodesResponse.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
@@ -446,6 +453,7 @@ set(es_src
   src/v20180416/model/OutboundPublicAcl.cpp
   src/v20180416/model/DataStreamInfo.cpp
   src/v20180416/model/ServerlessIndexMetaField.cpp
+  src/v20180416/model/RequestInstancesResponse.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/ModifyEsVipSecurityGroupRequest.cpp
   src/v20180416/model/ProcessDetail.cpp

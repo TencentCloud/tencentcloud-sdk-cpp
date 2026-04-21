@@ -37,7 +37,8 @@ SubmitTextToVideoJobRequest::SubmitTextToVideoJobRequest() :
     m_shotTypeHasBeenSet(false),
     m_multiPromptHasBeenSet(false),
     m_cameraControlHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_externalTaskIdHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,14 @@ string SubmitTextToVideoJobRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -423,6 +432,22 @@ void SubmitTextToVideoJobRequest::SetCallbackUrl(const string& _callbackUrl)
 bool SubmitTextToVideoJobRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+string SubmitTextToVideoJobRequest::GetExternalTaskId() const
+{
+    return m_externalTaskId;
+}
+
+void SubmitTextToVideoJobRequest::SetExternalTaskId(const string& _externalTaskId)
+{
+    m_externalTaskId = _externalTaskId;
+    m_externalTaskIdHasBeenSet = true;
+}
+
+bool SubmitTextToVideoJobRequest::ExternalTaskIdHasBeenSet() const
+{
+    return m_externalTaskIdHasBeenSet;
 }
 
 

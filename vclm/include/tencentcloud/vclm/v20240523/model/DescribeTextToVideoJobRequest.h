@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool JobIdHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return ExternalTaskId 
+                     * 
+                     */
+                    std::string GetExternalTaskId() const;
+
+                    /**
+                     * 设置
+                     * @param _externalTaskId 
+                     * 
+                     */
+                    void SetExternalTaskId(const std::string& _externalTaskId);
+
+                    /**
+                     * 判断参数 ExternalTaskId 是否已赋值
+                     * @return ExternalTaskId 是否已赋值
+                     * 
+                     */
+                    bool ExternalTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_externalTaskId;
+                    bool m_externalTaskIdHasBeenSet;
 
                 };
             }

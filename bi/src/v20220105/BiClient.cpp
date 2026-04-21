@@ -390,6 +390,106 @@ BiClient::CreateProjectOutcomeCallable BiClient::CreateProjectCallable(const Cre
     return prom->get_future();
 }
 
+BiClient::CreateUserGroupOutcome BiClient::CreateUserGroup(const CreateUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserGroupResponse rsp = CreateUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserGroupOutcome(rsp);
+        else
+            return CreateUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserGroupRequest&;
+    using Resp = CreateUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateUserGroupOutcomeCallable BiClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserGroupOutcome>>();
+    CreateUserGroupAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateUserGroupRequest&,
+        CreateUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::CreateUserGroupMemberOutcome BiClient::CreateUserGroupMember(const CreateUserGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserGroupMemberResponse rsp = CreateUserGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserGroupMemberOutcome(rsp);
+        else
+            return CreateUserGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateUserGroupMemberAsync(const CreateUserGroupMemberRequest& request, const CreateUserGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserGroupMemberRequest&;
+    using Resp = CreateUserGroupMemberResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserGroupMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateUserGroupMemberOutcomeCallable BiClient::CreateUserGroupMemberCallable(const CreateUserGroupMemberRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserGroupMemberOutcome>>();
+    CreateUserGroupMemberAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateUserGroupMemberRequest&,
+        CreateUserGroupMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::CreateUserRoleOutcome BiClient::CreateUserRole(const CreateUserRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserRole");
@@ -582,6 +682,106 @@ BiClient::DeleteProjectOutcomeCallable BiClient::DeleteProjectCallable(const Del
         const BiClient*,
         const DeleteProjectRequest&,
         DeleteProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DeleteUserGroupOutcome BiClient::DeleteUserGroup(const DeleteUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserGroupResponse rsp = DeleteUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserGroupOutcome(rsp);
+        else
+            return DeleteUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DeleteUserGroupAsync(const DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserGroupRequest&;
+    using Resp = DeleteUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DeleteUserGroupOutcomeCallable BiClient::DeleteUserGroupCallable(const DeleteUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupOutcome>>();
+    DeleteUserGroupAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DeleteUserGroupRequest&,
+        DeleteUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DeleteUserGroupMemberOutcome BiClient::DeleteUserGroupMember(const DeleteUserGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserGroupMemberResponse rsp = DeleteUserGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserGroupMemberOutcome(rsp);
+        else
+            return DeleteUserGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DeleteUserGroupMemberAsync(const DeleteUserGroupMemberRequest& request, const DeleteUserGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserGroupMemberRequest&;
+    using Resp = DeleteUserGroupMemberResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserGroupMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DeleteUserGroupMemberOutcomeCallable BiClient::DeleteUserGroupMemberCallable(const DeleteUserGroupMemberRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserGroupMemberOutcome>>();
+    DeleteUserGroupMemberAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DeleteUserGroupMemberRequest&,
+        DeleteUserGroupMemberOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1040,6 +1240,206 @@ BiClient::DescribeProjectListOutcomeCallable BiClient::DescribeProjectListCallab
     return prom->get_future();
 }
 
+BiClient::DescribeResourceUserGroupPageListOutcome BiClient::DescribeResourceUserGroupPageList(const DescribeResourceUserGroupPageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceUserGroupPageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceUserGroupPageListResponse rsp = DescribeResourceUserGroupPageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceUserGroupPageListOutcome(rsp);
+        else
+            return DescribeResourceUserGroupPageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceUserGroupPageListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeResourceUserGroupPageListAsync(const DescribeResourceUserGroupPageListRequest& request, const DescribeResourceUserGroupPageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceUserGroupPageListRequest&;
+    using Resp = DescribeResourceUserGroupPageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceUserGroupPageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeResourceUserGroupPageListOutcomeCallable BiClient::DescribeResourceUserGroupPageListCallable(const DescribeResourceUserGroupPageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceUserGroupPageListOutcome>>();
+    DescribeResourceUserGroupPageListAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeResourceUserGroupPageListRequest&,
+        DescribeResourceUserGroupPageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeUserGroupInfoOutcome BiClient::DescribeUserGroupInfo(const DescribeUserGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserGroupInfoResponse rsp = DescribeUserGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserGroupInfoOutcome(rsp);
+        else
+            return DescribeUserGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeUserGroupInfoAsync(const DescribeUserGroupInfoRequest& request, const DescribeUserGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserGroupInfoRequest&;
+    using Resp = DescribeUserGroupInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeUserGroupInfoOutcomeCallable BiClient::DescribeUserGroupInfoCallable(const DescribeUserGroupInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupInfoOutcome>>();
+    DescribeUserGroupInfoAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeUserGroupInfoRequest&,
+        DescribeUserGroupInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeUserGroupMemberListOutcome BiClient::DescribeUserGroupMemberList(const DescribeUserGroupMemberListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserGroupMemberList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserGroupMemberListResponse rsp = DescribeUserGroupMemberListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserGroupMemberListOutcome(rsp);
+        else
+            return DescribeUserGroupMemberListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserGroupMemberListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeUserGroupMemberListAsync(const DescribeUserGroupMemberListRequest& request, const DescribeUserGroupMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserGroupMemberListRequest&;
+    using Resp = DescribeUserGroupMemberListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupMemberList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeUserGroupMemberListOutcomeCallable BiClient::DescribeUserGroupMemberListCallable(const DescribeUserGroupMemberListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupMemberListOutcome>>();
+    DescribeUserGroupMemberListAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeUserGroupMemberListRequest&,
+        DescribeUserGroupMemberListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeUserGroupTreeListOutcome BiClient::DescribeUserGroupTreeList(const DescribeUserGroupTreeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserGroupTreeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserGroupTreeListResponse rsp = DescribeUserGroupTreeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserGroupTreeListOutcome(rsp);
+        else
+            return DescribeUserGroupTreeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserGroupTreeListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeUserGroupTreeListAsync(const DescribeUserGroupTreeListRequest& request, const DescribeUserGroupTreeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserGroupTreeListRequest&;
+    using Resp = DescribeUserGroupTreeListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserGroupTreeList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeUserGroupTreeListOutcomeCallable BiClient::DescribeUserGroupTreeListCallable(const DescribeUserGroupTreeListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserGroupTreeListOutcome>>();
+    DescribeUserGroupTreeListAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeUserGroupTreeListRequest&,
+        DescribeUserGroupTreeListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::DescribeUserProjectListOutcome BiClient::DescribeUserProjectList(const DescribeUserProjectListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserProjectList");
@@ -1390,6 +1790,206 @@ BiClient::ModifyProjectOutcomeCallable BiClient::ModifyProjectCallable(const Mod
     return prom->get_future();
 }
 
+BiClient::ModifyResourceUserGroupOutcome BiClient::ModifyResourceUserGroup(const ModifyResourceUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceUserGroupResponse rsp = ModifyResourceUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceUserGroupOutcome(rsp);
+        else
+            return ModifyResourceUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyResourceUserGroupAsync(const ModifyResourceUserGroupRequest& request, const ModifyResourceUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourceUserGroupRequest&;
+    using Resp = ModifyResourceUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyResourceUserGroupOutcomeCallable BiClient::ModifyResourceUserGroupCallable(const ModifyResourceUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourceUserGroupOutcome>>();
+    ModifyResourceUserGroupAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyResourceUserGroupRequest&,
+        ModifyResourceUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::ModifyResourceUserGroupResourceOutcome BiClient::ModifyResourceUserGroupResource(const ModifyResourceUserGroupResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceUserGroupResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceUserGroupResourceResponse rsp = ModifyResourceUserGroupResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceUserGroupResourceOutcome(rsp);
+        else
+            return ModifyResourceUserGroupResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceUserGroupResourceOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyResourceUserGroupResourceAsync(const ModifyResourceUserGroupResourceRequest& request, const ModifyResourceUserGroupResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourceUserGroupResourceRequest&;
+    using Resp = ModifyResourceUserGroupResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourceUserGroupResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyResourceUserGroupResourceOutcomeCallable BiClient::ModifyResourceUserGroupResourceCallable(const ModifyResourceUserGroupResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourceUserGroupResourceOutcome>>();
+    ModifyResourceUserGroupResourceAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyResourceUserGroupResourceRequest&,
+        ModifyResourceUserGroupResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::ModifyUserDetailInfoOutcome BiClient::ModifyUserDetailInfo(const ModifyUserDetailInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserDetailInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserDetailInfoResponse rsp = ModifyUserDetailInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserDetailInfoOutcome(rsp);
+        else
+            return ModifyUserDetailInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserDetailInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyUserDetailInfoAsync(const ModifyUserDetailInfoRequest& request, const ModifyUserDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserDetailInfoRequest&;
+    using Resp = ModifyUserDetailInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserDetailInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyUserDetailInfoOutcomeCallable BiClient::ModifyUserDetailInfoCallable(const ModifyUserDetailInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserDetailInfoOutcome>>();
+    ModifyUserDetailInfoAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyUserDetailInfoRequest&,
+        ModifyUserDetailInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::ModifyUserGroupOutcome BiClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserGroupResponse rsp = ModifyUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserGroupOutcome(rsp);
+        else
+            return ModifyUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyUserGroupAsync(const ModifyUserGroupRequest& request, const ModifyUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserGroupRequest&;
+    using Resp = ModifyUserGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyUserGroupOutcomeCallable BiClient::ModifyUserGroupCallable(const ModifyUserGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserGroupOutcome>>();
+    ModifyUserGroupAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyUserGroupRequest&,
+        ModifyUserGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::ModifyUserRoleOutcome BiClient::ModifyUserRole(const ModifyUserRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserRole");
@@ -1482,6 +2082,56 @@ BiClient::ModifyUserRoleProjectOutcomeCallable BiClient::ModifyUserRoleProjectCa
         const BiClient*,
         const ModifyUserRoleProjectRequest&,
         ModifyUserRoleProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::QueryUserGroupMemberOutcome BiClient::QueryUserGroupMember(const QueryUserGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryUserGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryUserGroupMemberResponse rsp = QueryUserGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryUserGroupMemberOutcome(rsp);
+        else
+            return QueryUserGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryUserGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::QueryUserGroupMemberAsync(const QueryUserGroupMemberRequest& request, const QueryUserGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryUserGroupMemberRequest&;
+    using Resp = QueryUserGroupMemberResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryUserGroupMember", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::QueryUserGroupMemberOutcomeCallable BiClient::QueryUserGroupMemberCallable(const QueryUserGroupMemberRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryUserGroupMemberOutcome>>();
+    QueryUserGroupMemberAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const QueryUserGroupMemberRequest&,
+        QueryUserGroupMemberOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

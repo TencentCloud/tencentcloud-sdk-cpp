@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分账单元ID
-                     * @return Id 分账单元ID
+                     * 获取<p>分账单元ID</p>
+                     * @return Id <p>分账单元ID</p>
                      * 
                      */
                     uint64_t GetId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取分账单元名称
-                     * @return Name 分账单元名称
+                     * 获取<p>分账单元名称</p>
+                     * @return Name <p>分账单元名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分账单元唯一标识
-                     * @return TreeNodeUniqKey 分账单元唯一标识
+                     * 获取<p>分账单元唯一标识</p>
+                     * @return TreeNodeUniqKey <p>分账单元唯一标识</p>
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool TreeNodeUniqKeyHasBeenSet() const;
 
                     /**
-                     * 获取子树
-                     * @return Children 子树
+                     * 获取<p>子树</p>
+                     * @return Children <p>子树</p>
                      * 
                      */
                     std::vector<AllocationTree> GetChildren() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分账单元ID
+                     * <p>分账单元ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 分账单元名称
+                     * <p>分账单元名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分账单元唯一标识
+                     * <p>分账单元唯一标识</p>
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
-                     * 子树
+                     * <p>子树</p>
                      */
                     std::vector<AllocationTree> m_children;
                     bool m_childrenHasBeenSet;

@@ -32,6 +32,7 @@
 #include <tencentcloud/ams/v20201229/model/LabelResults.h>
 #include <tencentcloud/ams/v20201229/model/TravelResults.h>
 #include <tencentcloud/ams/v20201229/model/Sentence.h>
+#include <tencentcloud/ams/v20201229/model/AIGCRecognitionResult.h>
 
 
 namespace TencentCloud
@@ -55,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-                     * @return HitFlag 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
+                     * 获取<p>该字段用于返回审核内容是否命中审核模型；取值：0（<strong>未命中</strong>）、1（<strong>命中</strong>）。</p>
+                     * @return HitFlag <p>该字段用于返回审核内容是否命中审核模型；取值：0（<strong>未命中</strong>）、1（<strong>命中</strong>）。</p>
                      * 
                      */
                     int64_t GetHitFlag() const;
 
                     /**
-                     * 设置该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
-                     * @param _hitFlag 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
+                     * 设置<p>该字段用于返回审核内容是否命中审核模型；取值：0（<strong>未命中</strong>）、1（<strong>命中</strong>）。</p>
+                     * @param _hitFlag <p>该字段用于返回审核内容是否命中审核模型；取值：0（<strong>未命中</strong>）、1（<strong>命中</strong>）。</p>
                      * 
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
@@ -76,15 +77,15 @@ namespace TencentCloud
                     bool HitFlagHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-                     * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * 获取<p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>
+                     * @return Label <p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-                     * @param _label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * 设置<p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>
+                     * @param _label <p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -97,19 +98,15 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
-返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-                     * @return Suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
-返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
+                     * 获取<p>该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br><br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>
+                     * @return Suggestion <p>该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br><br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>
                      * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
-返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
-                     * @param _suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
-返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
+                     * 设置<p>该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br><br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>
+                     * @param _suggestion <p>该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br><br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>
                      * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -122,15 +119,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-                     * @return Score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
+                     * 获取<p>该字段用于返回当前标签下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表文本越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该文本非常有可能属于色情内容。</p>
+                     * @return Score <p>该字段用于返回当前标签下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表文本越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该文本非常有可能属于色情内容。</p>
                      * 
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
-                     * @param _score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
+                     * 设置<p>该字段用于返回当前标签下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表文本越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该文本非常有可能属于色情内容。</p>
+                     * @param _score <p>该字段用于返回当前标签下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表文本越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该文本非常有可能属于色情内容。</p>
                      * 
                      */
                     void SetScore(const int64_t& _score);
@@ -143,15 +140,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-                     * @return Text 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
+                     * 获取<p>该字段用于返回音频文件经ASR识别后的文本信息。最长可识别<strong>5小时</strong>的音频文件，若超出时长限制，接口将会报错。</p>
+                     * @return Text <p>该字段用于返回音频文件经ASR识别后的文本信息。最长可识别<strong>5小时</strong>的音频文件，若超出时长限制，接口将会报错。</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
-                     * @param _text 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
+                     * 设置<p>该字段用于返回音频文件经ASR识别后的文本信息。最长可识别<strong>5小时</strong>的音频文件，若超出时长限制，接口将会报错。</p>
+                     * @param _text <p>该字段用于返回音频文件经ASR识别后的文本信息。最长可识别<strong>5小时</strong>的音频文件，若超出时长限制，接口将会报错。</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -164,15 +161,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-                     * @return Url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
+                     * 获取<p>该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用<a href="https://cloud.tencent.com/document/product/1265/104001">COS预签名</a>功能更新签名时效。</p>
+                     * @return Url <p>该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用<a href="https://cloud.tencent.com/document/product/1265/104001">COS预签名</a>功能更新签名时效。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
-                     * @param _url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
+                     * 设置<p>该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用<a href="https://cloud.tencent.com/document/product/1265/104001">COS预签名</a>功能更新签名时效。</p>
+                     * @param _url <p>该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用<a href="https://cloud.tencent.com/document/product/1265/104001">COS预签名</a>功能更新签名时效。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -185,15 +182,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频文件的时长，单位为毫秒。
-                     * @return Duration 该字段用于返回音频文件的时长，单位为毫秒。
+                     * 获取<p>该字段用于返回音频文件的时长，单位为毫秒。</p>
+                     * @return Duration <p>该字段用于返回音频文件的时长，单位为毫秒。</p>
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
-                     * 设置该字段用于返回音频文件的时长，单位为毫秒。
-                     * @param _duration 该字段用于返回音频文件的时长，单位为毫秒。
+                     * 设置<p>该字段用于返回音频文件的时长，单位为毫秒。</p>
+                     * @param _duration <p>该字段用于返回音频文件的时长，单位为毫秒。</p>
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -206,15 +203,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。
-                     * @return Extra 该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。
+                     * 获取<p>该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。</p>
+                     * @return Extra <p>该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。</p>
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。
-                     * @param _extra 该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。
+                     * 设置<p>该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。</p>
+                     * @param _extra <p>该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。</p>
                      * 
                      */
                     void SetExtra(const std::string& _extra);
@@ -227,15 +224,15 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
-                     * @return TextResults 该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * 获取<p>该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
+                     * @return TextResults <p>该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      * 
                      */
                     std::vector<AudioResultDetailTextResult> GetTextResults() const;
 
                     /**
-                     * 设置该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
-                     * @param _textResults 该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * 设置<p>该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
+                     * @param _textResults <p>该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      * 
                      */
                     void SetTextResults(const std::vector<AudioResultDetailTextResult>& _textResults);
@@ -248,15 +245,15 @@ namespace TencentCloud
                     bool TextResultsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。
-                     * @return MoanResults 该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。
+                     * 获取<p>该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。</p>
+                     * @return MoanResults <p>该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。</p>
                      * 
                      */
                     std::vector<AudioResultDetailMoanResult> GetMoanResults() const;
 
                     /**
-                     * 设置该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。
-                     * @param _moanResults 该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。
+                     * 设置<p>该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。</p>
+                     * @param _moanResults <p>该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。</p>
                      * 
                      */
                     void SetMoanResults(const std::vector<AudioResultDetailMoanResult>& _moanResults);
@@ -269,15 +266,15 @@ namespace TencentCloud
                     bool MoanResultsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
-                     * @return LanguageResults 该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * 获取<p>该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
+                     * @return LanguageResults <p>该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      * 
                      */
                     std::vector<AudioResultDetailLanguageResult> GetLanguageResults() const;
 
                     /**
-                     * 设置该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
-                     * @param _languageResults 该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * 设置<p>该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
+                     * @param _languageResults <p>该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      * 
                      */
                     void SetLanguageResults(const std::vector<AudioResultDetailLanguageResult>& _languageResults);
@@ -290,15 +287,15 @@ namespace TencentCloud
                     bool LanguageResultsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回当前标签（Lable）下的二级标签。
-                     * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
+                     * 获取<p>该字段用于返回当前标签（Lable）下的二级标签。</p>
+                     * @return SubLabel <p>该字段用于返回当前标签（Lable）下的二级标签。</p>
                      * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
-                     * 设置该字段用于返回当前标签（Lable）下的二级标签。
-                     * @param _subLabel 该字段用于返回当前标签（Lable）下的二级标签。
+                     * 设置<p>该字段用于返回当前标签（Lable）下的二级标签。</p>
+                     * @param _subLabel <p>该字段用于返回当前标签（Lable）下的二级标签。</p>
                      * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -311,15 +308,15 @@ namespace TencentCloud
                     bool SubLabelHasBeenSet() const;
 
                     /**
-                     * 获取识别类标签结果信息列表
-                     * @return RecognitionResults 识别类标签结果信息列表
+                     * 获取<p>识别类标签结果信息列表</p>
+                     * @return RecognitionResults <p>识别类标签结果信息列表</p>
                      * 
                      */
                     std::vector<RecognitionResult> GetRecognitionResults() const;
 
                     /**
-                     * 设置识别类标签结果信息列表
-                     * @param _recognitionResults 识别类标签结果信息列表
+                     * 设置<p>识别类标签结果信息列表</p>
+                     * @param _recognitionResults <p>识别类标签结果信息列表</p>
                      * 
                      */
                     void SetRecognitionResults(const std::vector<RecognitionResult>& _recognitionResults);
@@ -332,15 +329,15 @@ namespace TencentCloud
                     bool RecognitionResultsHasBeenSet() const;
 
                     /**
-                     * 获取说话人结果
-                     * @return SpeakerResults 说话人结果
+                     * 获取<p>说话人结果</p>
+                     * @return SpeakerResults <p>说话人结果</p>
                      * 
                      */
                     std::vector<SpeakerResults> GetSpeakerResults() const;
 
                     /**
-                     * 设置说话人结果
-                     * @param _speakerResults 说话人结果
+                     * 设置<p>说话人结果</p>
+                     * @param _speakerResults <p>说话人结果</p>
                      * 
                      */
                     void SetSpeakerResults(const std::vector<SpeakerResults>& _speakerResults);
@@ -353,15 +350,15 @@ namespace TencentCloud
                     bool SpeakerResultsHasBeenSet() const;
 
                     /**
-                     * 获取歌曲识别结果
-                     * @return LabelResults 歌曲识别结果
+                     * 获取<p>歌曲识别结果</p>
+                     * @return LabelResults <p>歌曲识别结果</p>
                      * 
                      */
                     std::vector<LabelResults> GetLabelResults() const;
 
                     /**
-                     * 设置歌曲识别结果
-                     * @param _labelResults 歌曲识别结果
+                     * 设置<p>歌曲识别结果</p>
+                     * @param _labelResults <p>歌曲识别结果</p>
                      * 
                      */
                     void SetLabelResults(const std::vector<LabelResults>& _labelResults);
@@ -374,15 +371,15 @@ namespace TencentCloud
                     bool LabelResultsHasBeenSet() const;
 
                     /**
-                     * 获取出行结果
-                     * @return TravelResults 出行结果
+                     * 获取<p>出行结果</p>
+                     * @return TravelResults <p>出行结果</p>
                      * 
                      */
                     std::vector<TravelResults> GetTravelResults() const;
 
                     /**
-                     * 设置出行结果
-                     * @param _travelResults 出行结果
+                     * 设置<p>出行结果</p>
+                     * @param _travelResults <p>出行结果</p>
                      * 
                      */
                     void SetTravelResults(const std::vector<TravelResults>& _travelResults);
@@ -395,15 +392,15 @@ namespace TencentCloud
                     bool TravelResultsHasBeenSet() const;
 
                     /**
-                     * 获取三级标签
-                     * @return SubTag 三级标签
+                     * 获取<p>三级标签</p>
+                     * @return SubTag <p>三级标签</p>
                      * 
                      */
                     std::string GetSubTag() const;
 
                     /**
-                     * 设置三级标签
-                     * @param _subTag 三级标签
+                     * 设置<p>三级标签</p>
+                     * @param _subTag <p>三级标签</p>
                      * 
                      */
                     void SetSubTag(const std::string& _subTag);
@@ -416,15 +413,15 @@ namespace TencentCloud
                     bool SubTagHasBeenSet() const;
 
                     /**
-                     * 获取三级标签码
-                     * @return SubTagCode 三级标签码
+                     * 获取<p>三级标签码</p>
+                     * @return SubTagCode <p>三级标签码</p>
                      * 
                      */
                     std::string GetSubTagCode() const;
 
                     /**
-                     * 设置三级标签码
-                     * @param _subTagCode 三级标签码
+                     * 设置<p>三级标签码</p>
+                     * @param _subTagCode <p>三级标签码</p>
                      * 
                      */
                     void SetSubTagCode(const std::string& _subTagCode);
@@ -437,15 +434,15 @@ namespace TencentCloud
                     bool SubTagCodeHasBeenSet() const;
 
                     /**
-                     * 获取审核检测类型
-                     * @return HitType 审核检测类型
+                     * 获取<p>审核检测类型</p>
+                     * @return HitType <p>审核检测类型</p>
                      * 
                      */
                     std::string GetHitType() const;
 
                     /**
-                     * 设置审核检测类型
-                     * @param _hitType 审核检测类型
+                     * 设置<p>审核检测类型</p>
+                     * @param _hitType <p>审核检测类型</p>
                      * 
                      */
                     void SetHitType(const std::string& _hitType);
@@ -458,15 +455,15 @@ namespace TencentCloud
                     bool HitTypeHasBeenSet() const;
 
                     /**
-                     * 获取ASR句子的起止时间
-                     * @return Sentences ASR句子的起止时间
+                     * 获取<p>ASR句子的起止时间</p>
+                     * @return Sentences <p>ASR句子的起止时间</p>
                      * 
                      */
                     std::vector<Sentence> GetSentences() const;
 
                     /**
-                     * 设置ASR句子的起止时间
-                     * @param _sentences ASR句子的起止时间
+                     * 设置<p>ASR句子的起止时间</p>
+                     * @param _sentences <p>ASR句子的起止时间</p>
                      * 
                      */
                     void SetSentences(const std::vector<Sentence>& _sentences);
@@ -479,15 +476,15 @@ namespace TencentCloud
                     bool SentencesHasBeenSet() const;
 
                     /**
-                     * 获取切片请求ID
-                     * @return RequestId 切片请求ID
+                     * 获取<p>切片请求ID</p>
+                     * @return RequestId <p>切片请求ID</p>
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置切片请求ID
-                     * @param _requestId 切片请求ID
+                     * 设置<p>切片请求ID</p>
+                     * @param _requestId <p>切片请求ID</p>
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -499,134 +496,160 @@ namespace TencentCloud
                      */
                     bool RequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AIGC音频片段审核结果</p>
+                     * @return AIGCRecognitionResults <p>AIGC音频片段审核结果</p>
+                     * 
+                     */
+                    std::vector<AIGCRecognitionResult> GetAIGCRecognitionResults() const;
+
+                    /**
+                     * 设置<p>AIGC音频片段审核结果</p>
+                     * @param _aIGCRecognitionResults <p>AIGC音频片段审核结果</p>
+                     * 
+                     */
+                    void SetAIGCRecognitionResults(const std::vector<AIGCRecognitionResult>& _aIGCRecognitionResults);
+
+                    /**
+                     * 判断参数 AIGCRecognitionResults 是否已赋值
+                     * @return AIGCRecognitionResults 是否已赋值
+                     * 
+                     */
+                    bool AIGCRecognitionResultsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。
+                     * <p>该字段用于返回审核内容是否命中审核模型；取值：0（<strong>未命中</strong>）、1（<strong>命中</strong>）。</p>
                      */
                     int64_t m_hitFlag;
                     bool m_hitFlagHasBeenSet;
 
                     /**
-                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * <p>该字段用于返回检测结果所对应的恶意标签。<br>返回值：<strong>Normal</strong>：正常，<strong>Porn</strong>：色情，<strong>Abuse</strong>：谩骂，<strong>Ad</strong>：广告，<strong>Custom</strong>：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。</p>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
-返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
+                     * <p>该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br><br>返回值：<strong>Block</strong>：建议屏蔽，<strong>Review</strong> ：建议人工复审，<strong>Pass</strong>：建议通过</p>
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。
+                     * <p>该字段用于返回当前标签下的置信度，取值范围：0（<strong>置信度最低</strong>）-100（<strong>置信度最高</strong> ），越高代表文本越有可能属于当前返回的标签；如：<em>色情 99</em>，则表明该文本非常有可能属于色情内容。</p>
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。
+                     * <p>该字段用于返回音频文件经ASR识别后的文本信息。最长可识别<strong>5小时</strong>的音频文件，若超出时长限制，接口将会报错。</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
+                     * <p>该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用<a href="https://cloud.tencent.com/document/product/1265/104001">COS预签名</a>功能更新签名时效。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频文件的时长，单位为毫秒。
+                     * <p>该字段用于返回音频文件的时长，单位为毫秒。</p>
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。
+                     * <p>该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。</p>
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * <p>该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      */
                     std::vector<AudioResultDetailTextResult> m_textResults;
                     bool m_textResultsHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。
+                     * <p>该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。</p>
                      */
                     std::vector<AudioResultDetailMoanResult> m_moanResults;
                     bool m_moanResultsHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+                     * <p>该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。</p>
                      */
                     std::vector<AudioResultDetailLanguageResult> m_languageResults;
                     bool m_languageResultsHasBeenSet;
 
                     /**
-                     * 该字段用于返回当前标签（Lable）下的二级标签。
+                     * <p>该字段用于返回当前标签（Lable）下的二级标签。</p>
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
-                     * 识别类标签结果信息列表
+                     * <p>识别类标签结果信息列表</p>
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
 
                     /**
-                     * 说话人结果
+                     * <p>说话人结果</p>
                      */
                     std::vector<SpeakerResults> m_speakerResults;
                     bool m_speakerResultsHasBeenSet;
 
                     /**
-                     * 歌曲识别结果
+                     * <p>歌曲识别结果</p>
                      */
                     std::vector<LabelResults> m_labelResults;
                     bool m_labelResultsHasBeenSet;
 
                     /**
-                     * 出行结果
+                     * <p>出行结果</p>
                      */
                     std::vector<TravelResults> m_travelResults;
                     bool m_travelResultsHasBeenSet;
 
                     /**
-                     * 三级标签
+                     * <p>三级标签</p>
                      */
                     std::string m_subTag;
                     bool m_subTagHasBeenSet;
 
                     /**
-                     * 三级标签码
+                     * <p>三级标签码</p>
                      */
                     std::string m_subTagCode;
                     bool m_subTagCodeHasBeenSet;
 
                     /**
-                     * 审核检测类型
+                     * <p>审核检测类型</p>
                      */
                     std::string m_hitType;
                     bool m_hitTypeHasBeenSet;
 
                     /**
-                     * ASR句子的起止时间
+                     * <p>ASR句子的起止时间</p>
                      */
                     std::vector<Sentence> m_sentences;
                     bool m_sentencesHasBeenSet;
 
                     /**
-                     * 切片请求ID
+                     * <p>切片请求ID</p>
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
+
+                    /**
+                     * <p>AIGC音频片段审核结果</p>
+                     */
+                    std::vector<AIGCRecognitionResult> m_aIGCRecognitionResults;
+                    bool m_aIGCRecognitionResultsHasBeenSet;
 
                 };
             }

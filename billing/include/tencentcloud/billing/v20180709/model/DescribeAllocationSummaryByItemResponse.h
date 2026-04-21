@@ -46,10 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-
-                     * @return RecordNum 总条数
-
+                     * 获取<p>总条数</p>
+                     * @return RecordNum <p>总条数</p>
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -62,8 +60,8 @@ namespace TencentCloud
                     bool RecordNumHasBeenSet() const;
 
                     /**
-                     * 获取分账账单概览金额汇总
-                     * @return Total 分账账单概览金额汇总
+                     * 获取<p>分账账单概览金额汇总</p>
+                     * @return Total <p>分账账单概览金额汇总</p>
                      * 
                      */
                     AllocationOverviewTotal GetTotal() const;
@@ -76,10 +74,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取分账账单按组件汇总明细
-
-                     * @return Detail 分账账单按组件汇总明细
-
+                     * 获取<p>分账账单按组件汇总明细</p>
+                     * @return Detail <p>分账账单按组件汇总明细</p>
                      * 
                      */
                     std::vector<AllocationSummaryByItem> GetDetail() const;
@@ -94,21 +90,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
-
+                     * <p>总条数</p>
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;
 
                     /**
-                     * 分账账单概览金额汇总
+                     * <p>分账账单概览金额汇总</p>
                      */
                     AllocationOverviewTotal m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 分账账单按组件汇总明细
-
+                     * <p>分账账单按组件汇总明细</p>
                      */
                     std::vector<AllocationSummaryByItem> m_detail;
                     bool m_detailHasBeenSet;

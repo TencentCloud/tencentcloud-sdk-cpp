@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>
+                     * @return EnableTrace <p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>
+                     * 
+                     */
+                    bool GetEnableTrace() const;
+
+                    /**
+                     * 设置<p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>
+                     * @param _enableTrace <p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>
+                     * 
+                     */
+                    void SetEnableTrace(const bool& _enableTrace);
+
+                    /**
+                     * 判断参数 EnableTrace 是否已赋值
+                     * @return EnableTrace 是否已赋值
+                     * 
+                     */
+                    bool EnableTraceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * <p>是否创建 trace 主题，默认为 false</p><p>枚举值：</p><ul><li>true： 创建trace 主题</li><li>false： 不创建trace 主题</li></ul>
+                     */
+                    bool m_enableTrace;
+                    bool m_enableTraceHasBeenSet;
 
                 };
             }

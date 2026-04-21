@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ES集群ID
-                     * @return InstanceId ES集群ID
+                     * 获取<p>ES集群ID</p>
+                     * @return InstanceId <p>ES集群ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ES集群ID
-                     * @param _instanceId ES集群ID
+                     * 设置<p>ES集群ID</p>
+                     * @param _instanceId <p>ES集群ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取删除的索引类型。auto：自治索引；normal：普通索引
-                     * @return IndexType 删除的索引类型。auto：自治索引；normal：普通索引
+                     * 获取<p>删除的索引类型。auto：自治索引；normal：普通索引</p>
+                     * @return IndexType <p>删除的索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     std::string GetIndexType() const;
 
                     /**
-                     * 设置删除的索引类型。auto：自治索引；normal：普通索引
-                     * @param _indexType 删除的索引类型。auto：自治索引；normal：普通索引
+                     * 设置<p>删除的索引类型。auto：自治索引；normal：普通索引</p>
+                     * @param _indexType <p>删除的索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     void SetIndexType(const std::string& _indexType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取删除的索引名
-                     * @return IndexName 删除的索引名
+                     * 获取<p>删除的索引名</p>
+                     * @return IndexName <p>删除的索引名</p>
                      * 
                      */
                     std::string GetIndexName() const;
 
                     /**
-                     * 设置删除的索引名
-                     * @param _indexName 删除的索引名
+                     * 设置<p>删除的索引名</p>
+                     * @param _indexName <p>删除的索引名</p>
                      * 
                      */
                     void SetIndexName(const std::string& _indexName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
-                     * 获取集群访问用户名
-                     * @return Username 集群访问用户名
+                     * 获取<p>集群访问用户名</p>
+                     * @return Username <p>集群访问用户名</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置集群访问用户名
-                     * @param _username 集群访问用户名
+                     * 设置<p>集群访问用户名</p>
+                     * @param _username <p>集群访问用户名</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取集群访问密码
-                     * @return Password 集群访问密码
+                     * 获取<p>集群访问密码</p>
+                     * @return Password <p>集群访问密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置集群访问密码
-                     * @param _password 集群访问密码
+                     * 设置<p>集群访问密码</p>
+                     * @param _password <p>集群访问密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取后备索引名
-                     * @return BackingIndexName 后备索引名
+                     * 获取<p>后备索引名</p>
+                     * @return BackingIndexName <p>后备索引名</p>
                      * 
                      */
                     std::string GetBackingIndexName() const;
 
                     /**
-                     * 设置后备索引名
-                     * @param _backingIndexName 后备索引名
+                     * 设置<p>后备索引名</p>
+                     * @param _backingIndexName <p>后备索引名</p>
                      * 
                      */
                     void SetBackingIndexName(const std::string& _backingIndexName);
@@ -168,43 +168,70 @@ namespace TencentCloud
                      */
                     bool BackingIndexNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>索引生命阶段</p>
+                     * @return IndexPhrase <p>索引生命阶段</p>
+                     * 
+                     */
+                    std::string GetIndexPhrase() const;
+
+                    /**
+                     * 设置<p>索引生命阶段</p>
+                     * @param _indexPhrase <p>索引生命阶段</p>
+                     * 
+                     */
+                    void SetIndexPhrase(const std::string& _indexPhrase);
+
+                    /**
+                     * 判断参数 IndexPhrase 是否已赋值
+                     * @return IndexPhrase 是否已赋值
+                     * 
+                     */
+                    bool IndexPhraseHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ES集群ID
+                     * <p>ES集群ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 删除的索引类型。auto：自治索引；normal：普通索引
+                     * <p>删除的索引类型。auto：自治索引；normal：普通索引</p>
                      */
                     std::string m_indexType;
                     bool m_indexTypeHasBeenSet;
 
                     /**
-                     * 删除的索引名
+                     * <p>删除的索引名</p>
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
 
                     /**
-                     * 集群访问用户名
+                     * <p>集群访问用户名</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 集群访问密码
+                     * <p>集群访问密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 后备索引名
+                     * <p>后备索引名</p>
                      */
                     std::string m_backingIndexName;
                     bool m_backingIndexNameHasBeenSet;
+
+                    /**
+                     * <p>索引生命阶段</p>
+                     */
+                    std::string m_indexPhrase;
+                    bool m_indexPhraseHasBeenSet;
 
                 };
             }
