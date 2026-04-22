@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取提供给前端使用，当填写本字段时，会覆盖 formlist 的值
-                     * @return ParamToken 提供给前端使用，当填写本字段时，会覆盖 formlist 的值
+                     * 获取<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>
+                     * @return ParamToken <p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>
                      * 
                      */
                     std::string GetParamToken() const;
 
                     /**
-                     * 设置提供给前端使用，当填写本字段时，会覆盖 formlist 的值
-                     * @param _paramToken 提供给前端使用，当填写本字段时，会覆盖 formlist 的值
+                     * 设置<p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>
+                     * @param _paramToken <p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>
                      * 
                      */
                     void SetParamToken(const std::string& _paramToken);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ParamTokenHasBeenSet() const;
 
                     /**
-                     * 获取问题Id
-                     * @return ClientIdentify 问题Id
+                     * 获取<p>问题Id</p>
+                     * @return ClientIdentify <p>问题Id</p>
                      * 
                      */
                     std::string GetClientIdentify() const;
 
                     /**
-                     * 设置问题Id
-                     * @param _clientIdentify 问题Id
+                     * 设置<p>问题Id</p>
+                     * @param _clientIdentify <p>问题Id</p>
                      * 
                      */
                     void SetClientIdentify(const std::string& _clientIdentify);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ClientIdentifyHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartEventTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartEventTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetStartEventTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startEventTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startEventTime <p>开始时间</p>
                      * 
                      */
                     void SetStartEventTime(const int64_t& _startEventTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartEventTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndEventTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndEventTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndEventTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endEventTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endEventTime <p>结束时间</p>
                      * 
                      */
                     void SetEndEventTime(const int64_t& _endEventTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EndEventTimeHasBeenSet() const;
 
                     /**
-                     * 获取拓展数据
-                     * @return ExtraData 拓展数据
+                     * 获取<p>拓展数据</p>
+                     * @return ExtraData <p>拓展数据</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展数据
-                     * @param _extraData 拓展数据
+                     * 设置<p>拓展数据</p>
+                     * @param _extraData <p>拓展数据</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 提供给前端使用，当填写本字段时，会覆盖 formlist 的值
+                     * <p>提供给前端使用，当填写本字段时，会覆盖 formlist 的值</p>
                      */
                     std::string m_paramToken;
                     bool m_paramTokenHasBeenSet;
 
                     /**
-                     * 问题Id
+                     * <p>问题Id</p>
                      */
                     std::string m_clientIdentify;
                     bool m_clientIdentifyHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_startEventTime;
                     bool m_startEventTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endEventTime;
                     bool m_endEventTimeHasBeenSet;
 
                     /**
-                     * 拓展数据
+                     * <p>拓展数据</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

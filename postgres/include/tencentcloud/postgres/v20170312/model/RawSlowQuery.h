@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢SQL 语句
-                     * @return RawQuery 慢SQL 语句
+                     * 获取<p>慢SQL 语句</p>
+                     * @return RawQuery <p>慢SQL 语句</p>
                      * 
                      */
                     std::string GetRawQuery() const;
 
                     /**
-                     * 设置慢SQL 语句
-                     * @param _rawQuery 慢SQL 语句
+                     * 设置<p>慢SQL 语句</p>
+                     * @param _rawQuery <p>慢SQL 语句</p>
                      * 
                      */
                     void SetRawQuery(const std::string& _rawQuery);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RawQueryHasBeenSet() const;
 
                     /**
-                     * 获取慢SQL 查询的数据库
-                     * @return DatabaseName 慢SQL 查询的数据库
+                     * 获取<p>慢SQL 查询的数据库</p>
+                     * @return DatabaseName <p>慢SQL 查询的数据库</p>
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置慢SQL 查询的数据库
-                     * @param _databaseName 慢SQL 查询的数据库
+                     * 设置<p>慢SQL 查询的数据库</p>
+                     * @param _databaseName <p>慢SQL 查询的数据库</p>
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取慢SQL执行 耗时
-                     * @return Duration 慢SQL执行 耗时
+                     * 获取<p>慢SQL执行 耗时</p>
+                     * @return Duration <p>慢SQL执行 耗时</p>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置慢SQL执行 耗时
-                     * @param _duration 慢SQL执行 耗时
+                     * 设置<p>慢SQL执行 耗时</p>
+                     * @param _duration <p>慢SQL执行 耗时</p>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取执行慢SQL的客户端
-                     * @return ClientAddr 执行慢SQL的客户端
+                     * 获取<p>执行慢SQL的客户端</p>
+                     * @return ClientAddr <p>执行慢SQL的客户端</p>
                      * 
                      */
                     std::string GetClientAddr() const;
 
                     /**
-                     * 设置执行慢SQL的客户端
-                     * @param _clientAddr 执行慢SQL的客户端
+                     * 设置<p>执行慢SQL的客户端</p>
+                     * @param _clientAddr <p>执行慢SQL的客户端</p>
                      * 
                      */
                     void SetClientAddr(const std::string& _clientAddr);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ClientAddrHasBeenSet() const;
 
                     /**
-                     * 获取执行慢SQL的用户名
-                     * @return UserName 执行慢SQL的用户名
+                     * 获取<p>执行慢SQL的用户名</p>
+                     * @return UserName <p>执行慢SQL的用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置执行慢SQL的用户名
-                     * @param _userName 执行慢SQL的用户名
+                     * 设置<p>执行慢SQL的用户名</p>
+                     * @param _userName <p>执行慢SQL的用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取慢SQL执行的开始时间
-                     * @return SessionStartTime 慢SQL执行的开始时间
+                     * 获取<p>慢SQL执行的开始时间</p>
+                     * @return SessionStartTime <p>慢SQL执行的开始时间</p>
                      * 
                      */
                     std::string GetSessionStartTime() const;
 
                     /**
-                     * 设置慢SQL执行的开始时间
-                     * @param _sessionStartTime 慢SQL执行的开始时间
+                     * 设置<p>慢SQL执行的开始时间</p>
+                     * @param _sessionStartTime <p>慢SQL执行的开始时间</p>
                      * 
                      */
                     void SetSessionStartTime(const std::string& _sessionStartTime);
@@ -172,43 +172,203 @@ namespace TencentCloud
                      */
                     bool SessionStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>执行慢SQL的进程ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessId <p>执行慢SQL的进程ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProcessId() const;
+
+                    /**
+                     * 设置<p>执行慢SQL的进程ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processId <p>执行慢SQL的进程ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessId(const int64_t& _processId);
+
+                    /**
+                     * 判断参数 ProcessId 是否已赋值
+                     * @return ProcessId 是否已赋值
+                     * 
+                     */
+                    bool ProcessIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>执行慢SQL的会话ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId <p>执行慢SQL的会话ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置<p>执行慢SQL的会话ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionId <p>执行慢SQL的会话ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>执行慢SQL的事务ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VirtualTransactionId <p>执行慢SQL的事务ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVirtualTransactionId() const;
+
+                    /**
+                     * 设置<p>执行慢SQL的事务ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _virtualTransactionId <p>执行慢SQL的事务ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVirtualTransactionId(const std::string& _virtualTransactionId);
+
+                    /**
+                     * 判断参数 VirtualTransactionId 是否已赋值
+                     * @return VirtualTransactionId 是否已赋值
+                     * 
+                     */
+                    bool VirtualTransactionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>执行慢SQL的状态码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SqlStateCode <p>执行慢SQL的状态码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSqlStateCode() const;
+
+                    /**
+                     * 设置<p>执行慢SQL的状态码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sqlStateCode <p>执行慢SQL的状态码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSqlStateCode(const std::string& _sqlStateCode);
+
+                    /**
+                     * 判断参数 SqlStateCode 是否已赋值
+                     * @return SqlStateCode 是否已赋值
+                     * 
+                     */
+                    bool SqlStateCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>执行慢SQL的客户端名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName <p>执行慢SQL的客户端名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationName() const;
+
+                    /**
+                     * 设置<p>执行慢SQL的客户端名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationName <p>执行慢SQL的客户端名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationName(const std::string& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     * 
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 慢SQL 语句
+                     * <p>慢SQL 语句</p>
                      */
                     std::string m_rawQuery;
                     bool m_rawQueryHasBeenSet;
 
                     /**
-                     * 慢SQL 查询的数据库
+                     * <p>慢SQL 查询的数据库</p>
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 慢SQL执行 耗时
+                     * <p>慢SQL执行 耗时</p>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 执行慢SQL的客户端
+                     * <p>执行慢SQL的客户端</p>
                      */
                     std::string m_clientAddr;
                     bool m_clientAddrHasBeenSet;
 
                     /**
-                     * 执行慢SQL的用户名
+                     * <p>执行慢SQL的用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 慢SQL执行的开始时间
+                     * <p>慢SQL执行的开始时间</p>
                      */
                     std::string m_sessionStartTime;
                     bool m_sessionStartTimeHasBeenSet;
+
+                    /**
+                     * <p>执行慢SQL的进程ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_processId;
+                    bool m_processIdHasBeenSet;
+
+                    /**
+                     * <p>执行慢SQL的会话ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>执行慢SQL的事务ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_virtualTransactionId;
+                    bool m_virtualTransactionIdHasBeenSet;
+
+                    /**
+                     * <p>执行慢SQL的状态码</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sqlStateCode;
+                    bool m_sqlStateCodeHasBeenSet;
+
+                    /**
+                     * <p>执行慢SQL的客户端名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationName;
+                    bool m_applicationNameHasBeenSet;
 
                 };
             }

@@ -140,6 +140,27 @@ namespace TencentCloud
                      */
                     bool UserScriptHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点组Id</p>
+                     * @return TkeClusterNodePool <p>节点组Id</p>
+                     * 
+                     */
+                    std::string GetTkeClusterNodePool() const;
+
+                    /**
+                     * 设置<p>节点组Id</p>
+                     * @param _tkeClusterNodePool <p>节点组Id</p>
+                     * 
+                     */
+                    void SetTkeClusterNodePool(const std::string& _tkeClusterNodePool);
+
+                    /**
+                     * 判断参数 TkeClusterNodePool 是否已赋值
+                     * @return TkeClusterNodePool 是否已赋值
+                     * 
+                     */
+                    bool TkeClusterNodePoolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +188,12 @@ namespace TencentCloud
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;
+
+                    /**
+                     * <p>节点组Id</p>
+                     */
+                    std::string m_tkeClusterNodePool;
+                    bool m_tkeClusterNodePoolHasBeenSet;
 
                 };
             }

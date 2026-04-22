@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @return FormList 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 获取<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @return FormList <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     std::string GetFormList() const;
 
                     /**
-                     * 设置接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @param _formList 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 设置<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @param _formList <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     void SetFormList(const std::string& _formList);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FormListHasBeenSet() const;
 
                     /**
-                     * 获取接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @return FormListA 接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 获取<p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @return FormListA <p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     std::string GetFormListA() const;
 
                     /**
-                     * 设置接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @param _formListA 接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 设置<p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @param _formListA <p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     void SetFormListA(const std::string& _formListA);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FormListAHasBeenSet() const;
 
                     /**
-                     * 获取接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @return FormListB 接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 获取<p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @return FormListB <p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     std::string GetFormListB() const;
 
                     /**
-                     * 设置接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @param _formListB 接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 设置<p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @param _formListB <p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     void SetFormListB(const std::string& _formListB);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FormListBHasBeenSet() const;
 
                     /**
-                     * 获取提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @return ParamToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 获取<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @return ParamToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     std::string GetParamToken() const;
 
                     /**
-                     * 设置提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @param _paramToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 设置<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @param _paramToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     void SetParamToken(const std::string& _paramToken);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ParamTokenHasBeenSet() const;
 
                     /**
-                     * 获取问题类型
-                     * @return IssueType 问题类型
+                     * 获取<p>问题类型</p>
+                     * @return IssueType <p>问题类型</p>
                      * 
                      */
                     int64_t GetIssueType() const;
 
                     /**
-                     * 设置问题类型
-                     * @param _issueType 问题类型
+                     * 设置<p>问题类型</p>
+                     * @param _issueType <p>问题类型</p>
                      * 
                      */
                     void SetIssueType(const int64_t& _issueType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IssueTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return SortField 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return SortField <p>排序字段</p>
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _sortField 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _sortField <p>排序字段</p>
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return SortType 排序方式
+                     * 获取<p>排序方式</p>
+                     * @return SortType <p>排序方式</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _sortType 排序方式
+                     * 设置<p>排序方式</p>
+                     * @param _sortType <p>排序方式</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取每页数目
-                     * @return PageSize 每页数目
+                     * 获取<p>每页数目</p>
+                     * @return PageSize <p>每页数目</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数目
-                     * @param _pageSize 每页数目
+                     * 设置<p>每页数目</p>
+                     * @param _pageSize <p>每页数目</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取<p>页码</p>
+                     * @return PageNumber <p>页码</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置<p>页码</p>
+                     * @param _pageNumber <p>页码</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值
-                     * @return SortABRatio 问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值
+                     * 获取<p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>
+                     * @return SortABRatio <p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>
                      * 
                      */
                     std::string GetSortABRatio() const;
 
                     /**
-                     * 设置问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值
-                     * @param _sortABRatio 问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值
+                     * 设置<p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>
+                     * @param _sortABRatio <p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>
                      * 
                      */
                     void SetSortABRatio(const std::string& _sortABRatio);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SortABRatioHasBeenSet() const;
 
                     /**
-                     * 获取模式：false:问题列表模式，true:对比列表模式
-                     * @return Compare 模式：false:问题列表模式，true:对比列表模式
+                     * 获取<p>模式：false:问题列表模式，true:对比列表模式</p>
+                     * @return Compare <p>模式：false:问题列表模式，true:对比列表模式</p>
                      * 
                      */
                     bool GetCompare() const;
 
                     /**
-                     * 设置模式：false:问题列表模式，true:对比列表模式
-                     * @param _compare 模式：false:问题列表模式，true:对比列表模式
+                     * 设置<p>模式：false:问题列表模式，true:对比列表模式</p>
+                     * @param _compare <p>模式：false:问题列表模式，true:对比列表模式</p>
                      * 
                      */
                     void SetCompare(const bool& _compare);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool CompareHasBeenSet() const;
 
                     /**
-                     * 获取对比状态 0:所有 1:新增 2：遗留 3:已解决
-                     * @return CompareStatus 对比状态 0:所有 1:新增 2：遗留 3:已解决
+                     * 获取<p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>
+                     * @return CompareStatus <p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>
                      * 
                      */
                     int64_t GetCompareStatus() const;
 
                     /**
-                     * 设置对比状态 0:所有 1:新增 2：遗留 3:已解决
-                     * @param _compareStatus 对比状态 0:所有 1:新增 2：遗留 3:已解决
+                     * 设置<p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>
+                     * @param _compareStatus <p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>
                      * 
                      */
                     void SetCompareStatus(const int64_t& _compareStatus);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool CompareStatusHasBeenSet() const;
 
                     /**
-                     * 获取拓展字段
-                     * @return ExtraData 拓展字段
+                     * 获取<p>拓展字段</p>
+                     * @return ExtraData <p>拓展字段</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展字段
-                     * @param _extraData 拓展字段
+                     * 设置<p>拓展字段</p>
+                     * @param _extraData <p>拓展字段</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -360,91 +360,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      */
                     std::string m_formList;
                     bool m_formListHasBeenSet;
 
                     /**
-                     * 接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * <p>接口调试专用，对比模式下条件A，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      */
                     std::string m_formListA;
                     bool m_formListAHasBeenSet;
 
                     /**
-                     * 接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * <p>接口调试专用，对比模式下条件B，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      */
                     std::string m_formListB;
                     bool m_formListBHasBeenSet;
 
                     /**
-                     * 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      */
                     std::string m_paramToken;
                     bool m_paramTokenHasBeenSet;
 
                     /**
-                     * 问题类型
+                     * <p>问题类型</p>
                      */
                     int64_t m_issueType;
                     bool m_issueTypeHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 每页数目
+                     * <p>每页数目</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值
+                     * <p>问题对比列表模式下，用于标识是按照sort_field字段的A值排序还是B值还是ratio值</p>
                      */
                     std::string m_sortABRatio;
                     bool m_sortABRatioHasBeenSet;
 
                     /**
-                     * 模式：false:问题列表模式，true:对比列表模式
+                     * <p>模式：false:问题列表模式，true:对比列表模式</p>
                      */
                     bool m_compare;
                     bool m_compareHasBeenSet;
 
                     /**
-                     * 对比状态 0:所有 1:新增 2：遗留 3:已解决
+                     * <p>对比状态 0:所有 1:新增 2：遗留 3:已解决</p>
                      */
                     int64_t m_compareStatus;
                     bool m_compareStatusHasBeenSet;
 
                     /**
-                     * 拓展字段
+                     * <p>拓展字段</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

@@ -280,6 +280,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ComponentLimit.h
   include/tencentcloud/ess/v20201111/model/ModifyPartnerAuthorizationRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.h
+  include/tencentcloud/ess/v20201111/model/FlowRemarkItem.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/ess/v20201111/model/FlowForwardResult.h
@@ -370,6 +371,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
+  include/tencentcloud/ess/v20201111/model/OperateFlowRemarksResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
@@ -386,6 +388,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResultDetail.h
   include/tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/OperateFlowRemarksRequest.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/DescribeInformationExtractionTaskResponse.h
   include/tencentcloud/ess/v20201111/model/OutputRisk.h
@@ -718,6 +721,7 @@ set(ess_src
   src/v20201111/model/ComponentLimit.cpp
   src/v20201111/model/ModifyPartnerAuthorizationRequest.cpp
   src/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.cpp
+  src/v20201111/model/FlowRemarkItem.cpp
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20201111/model/FlowForwardResult.cpp
@@ -808,6 +812,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowComponentsResponse.cpp
   src/v20201111/model/DescribeContractReviewWebUrlResponse.cpp
   src/v20201111/model/CancelFailureFlow.cpp
+  src/v20201111/model/OperateFlowRemarksResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
   src/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.cpp
   src/v20201111/model/CreateFlowRequest.cpp
@@ -824,6 +829,7 @@ set(ess_src
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/IntentionActionResultDetail.cpp
   src/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
+  src/v20201111/model/OperateFlowRemarksRequest.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
   src/v20201111/model/DescribeInformationExtractionTaskResponse.cpp
   src/v20201111/model/OutputRisk.cpp

@@ -6890,6 +6890,56 @@ EssClient::ModifySingleSignOnEmployeesOutcomeCallable EssClient::ModifySingleSig
     return prom->get_future();
 }
 
+EssClient::OperateFlowRemarksOutcome EssClient::OperateFlowRemarks(const OperateFlowRemarksRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateFlowRemarks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateFlowRemarksResponse rsp = OperateFlowRemarksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateFlowRemarksOutcome(rsp);
+        else
+            return OperateFlowRemarksOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateFlowRemarksOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::OperateFlowRemarksAsync(const OperateFlowRemarksRequest& request, const OperateFlowRemarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OperateFlowRemarksRequest&;
+    using Resp = OperateFlowRemarksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OperateFlowRemarks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::OperateFlowRemarksOutcomeCallable EssClient::OperateFlowRemarksCallable(const OperateFlowRemarksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OperateFlowRemarksOutcome>>();
+    OperateFlowRemarksAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const OperateFlowRemarksRequest&,
+        OperateFlowRemarksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::OperateSealsOutcome EssClient::OperateSeals(const OperateSealsRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateSeals");

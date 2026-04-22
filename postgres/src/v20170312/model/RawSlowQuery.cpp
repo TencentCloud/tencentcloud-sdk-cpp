@@ -26,7 +26,12 @@ RawSlowQuery::RawSlowQuery() :
     m_durationHasBeenSet(false),
     m_clientAddrHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_sessionStartTimeHasBeenSet(false)
+    m_sessionStartTimeHasBeenSet(false),
+    m_processIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_virtualTransactionIdHasBeenSet(false),
+    m_sqlStateCodeHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +100,56 @@ CoreInternalOutcome RawSlowQuery::Deserialize(const rapidjson::Value &value)
         m_sessionStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessId") && !value["ProcessId"].IsNull())
+    {
+        if (!value["ProcessId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSlowQuery.ProcessId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processId = value["ProcessId"].GetInt64();
+        m_processIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSlowQuery.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VirtualTransactionId") && !value["VirtualTransactionId"].IsNull())
+    {
+        if (!value["VirtualTransactionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSlowQuery.VirtualTransactionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualTransactionId = string(value["VirtualTransactionId"].GetString());
+        m_virtualTransactionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SqlStateCode") && !value["SqlStateCode"].IsNull())
+    {
+        if (!value["SqlStateCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSlowQuery.SqlStateCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sqlStateCode = string(value["SqlStateCode"].GetString());
+        m_sqlStateCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSlowQuery.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationName = string(value["ApplicationName"].GetString());
+        m_applicationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +203,46 @@ void RawSlowQuery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SessionStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processId, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virtualTransactionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirtualTransactionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virtualTransactionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sqlStateCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlStateCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlStateCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +342,85 @@ void RawSlowQuery::SetSessionStartTime(const string& _sessionStartTime)
 bool RawSlowQuery::SessionStartTimeHasBeenSet() const
 {
     return m_sessionStartTimeHasBeenSet;
+}
+
+int64_t RawSlowQuery::GetProcessId() const
+{
+    return m_processId;
+}
+
+void RawSlowQuery::SetProcessId(const int64_t& _processId)
+{
+    m_processId = _processId;
+    m_processIdHasBeenSet = true;
+}
+
+bool RawSlowQuery::ProcessIdHasBeenSet() const
+{
+    return m_processIdHasBeenSet;
+}
+
+string RawSlowQuery::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void RawSlowQuery::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool RawSlowQuery::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string RawSlowQuery::GetVirtualTransactionId() const
+{
+    return m_virtualTransactionId;
+}
+
+void RawSlowQuery::SetVirtualTransactionId(const string& _virtualTransactionId)
+{
+    m_virtualTransactionId = _virtualTransactionId;
+    m_virtualTransactionIdHasBeenSet = true;
+}
+
+bool RawSlowQuery::VirtualTransactionIdHasBeenSet() const
+{
+    return m_virtualTransactionIdHasBeenSet;
+}
+
+string RawSlowQuery::GetSqlStateCode() const
+{
+    return m_sqlStateCode;
+}
+
+void RawSlowQuery::SetSqlStateCode(const string& _sqlStateCode)
+{
+    m_sqlStateCode = _sqlStateCode;
+    m_sqlStateCodeHasBeenSet = true;
+}
+
+bool RawSlowQuery::SqlStateCodeHasBeenSet() const
+{
+    return m_sqlStateCodeHasBeenSet;
+}
+
+string RawSlowQuery::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void RawSlowQuery::SetApplicationName(const string& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool RawSlowQuery::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 

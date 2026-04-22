@@ -297,6 +297,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/OperateFlowRemarksRequest.h>
+#include <tencentcloud/ess/v20201111/model/OperateFlowRemarksResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsRequest.h>
 #include <tencentcloud/ess/v20201111/model/OperateSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/OperateTemplateRequest.h>
@@ -742,6 +744,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySingleSignOnEmployeesResponse> ModifySingleSignOnEmployeesOutcome;
                 typedef std::future<ModifySingleSignOnEmployeesOutcome> ModifySingleSignOnEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifySingleSignOnEmployeesRequest&, ModifySingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySingleSignOnEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateFlowRemarksResponse> OperateFlowRemarksOutcome;
+                typedef std::future<OperateFlowRemarksOutcome> OperateFlowRemarksOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::OperateFlowRemarksRequest&, OperateFlowRemarksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateFlowRemarksAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateSealsResponse> OperateSealsOutcome;
                 typedef std::future<OperateSealsOutcome> OperateSealsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::OperateSealsRequest&, OperateSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateSealsAsyncHandler;
@@ -3032,6 +3037,31 @@ namespace TencentCloud
                 ModifySingleSignOnEmployeesOutcome ModifySingleSignOnEmployees(const Model::ModifySingleSignOnEmployeesRequest &request);
                 void ModifySingleSignOnEmployeesAsync(const Model::ModifySingleSignOnEmployeesRequest& request, const ModifySingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySingleSignOnEmployeesOutcomeCallable ModifySingleSignOnEmployeesCallable(const Model::ModifySingleSignOnEmployeesRequest& request);
+
+                /**
+                 *此接口（OperateFlowRemarks）用于对企业合同备注进行管理操作，支持新增，创建和删除。
+
+
+用户可以通过接口对合同备注进行管理，支持对创建后的备注进行搜索关联的合同流程。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/cac8af24804ab4f7455be2d5b39a43e5.png)
+
+注：
+
+对合同备注进行操作前，操作人需要获取对应权限：合同操作 - 设置合同类型及备注。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/ce4f0ca867ab5020f4fdfecc39050f0f.png)
+
+
+没有对应权限的用户，并且不属于超管、法人，该合同的参与方（包含签署方与发起方），将无法对对应合同的备注进行编辑，如果备注内容包含敏感信息，将会对其进行打码显示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/e5ef298c41f999b656f6b620c8b3d888.png)
+                 * @param req OperateFlowRemarksRequest
+                 * @return OperateFlowRemarksOutcome
+                 */
+                OperateFlowRemarksOutcome OperateFlowRemarks(const Model::OperateFlowRemarksRequest &request);
+                void OperateFlowRemarksAsync(const Model::OperateFlowRemarksRequest& request, const OperateFlowRemarksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateFlowRemarksOutcomeCallable OperateFlowRemarksCallable(const Model::OperateFlowRemarksRequest& request);
 
                 /**
                  *修改印章状态（停用、启用）

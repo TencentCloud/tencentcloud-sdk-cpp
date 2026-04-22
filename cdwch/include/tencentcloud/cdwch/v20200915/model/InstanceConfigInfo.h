@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool AbnormalParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否生效</p>
+                     * @return ConfigEffective <p>是否生效</p>
+                     * 
+                     */
+                    std::string GetConfigEffective() const;
+
+                    /**
+                     * 设置<p>是否生效</p>
+                     * @param _configEffective <p>是否生效</p>
+                     * 
+                     */
+                    void SetConfigEffective(const std::string& _configEffective);
+
+                    /**
+                     * 判断参数 ConfigEffective 是否已赋值
+                     * @return ConfigEffective 是否已赋值
+                     * 
+                     */
+                    bool ConfigEffectiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_abnormalParam;
                     bool m_abnormalParamHasBeenSet;
+
+                    /**
+                     * <p>是否生效</p>
+                     */
+                    std::string m_configEffective;
+                    bool m_configEffectiveHasBeenSet;
 
                 };
             }

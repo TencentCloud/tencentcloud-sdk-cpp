@@ -26,7 +26,8 @@ using namespace std;
 DescribeFlowInfoResponse::DescribeFlowInfoResponse() :
     m_flowDetailInfosHasBeenSet(false),
     m_flowGroupIdHasBeenSet(false),
-    m_flowGroupNameHasBeenSet(false)
+    m_flowGroupNameHasBeenSet(false),
+    m_flowGroupRemarksHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ CoreInternalOutcome DescribeFlowInfoResponse::Deserialize(const string &payload)
         m_flowGroupNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowGroupRemarks") && !rsp["FlowGroupRemarks"].IsNull())
+    {
+        if (!rsp["FlowGroupRemarks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowGroupRemarks` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FlowGroupRemarks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_flowGroupRemarks.push_back((*itr).GetString());
+        }
+        m_flowGroupRemarksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +157,19 @@ string DescribeFlowInfoResponse::ToJsonString() const
         string key = "FlowGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupRemarksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupRemarks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_flowGroupRemarks.begin(); itr != m_flowGroupRemarks.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +212,16 @@ string DescribeFlowInfoResponse::GetFlowGroupName() const
 bool DescribeFlowInfoResponse::FlowGroupNameHasBeenSet() const
 {
     return m_flowGroupNameHasBeenSet;
+}
+
+vector<string> DescribeFlowInfoResponse::GetFlowGroupRemarks() const
+{
+    return m_flowGroupRemarks;
+}
+
+bool DescribeFlowInfoResponse::FlowGroupRemarksHasBeenSet() const
+{
+    return m_flowGroupRemarksHasBeenSet;
 }
 
 

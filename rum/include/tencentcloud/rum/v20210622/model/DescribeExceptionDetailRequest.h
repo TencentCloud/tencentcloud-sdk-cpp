@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取消息唯一标识
-                     * @return ClientIdentify 消息唯一标识
+                     * 获取<p>消息唯一标识</p>
+                     * @return ClientIdentify <p>消息唯一标识</p>
                      * 
                      */
                     std::string GetClientIdentify() const;
 
                     /**
-                     * 设置消息唯一标识
-                     * @param _clientIdentify 消息唯一标识
+                     * 设置<p>消息唯一标识</p>
+                     * @param _clientIdentify <p>消息唯一标识</p>
                      * 
                      */
                     void SetClientIdentify(const std::string& _clientIdentify);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClientIdentifyHasBeenSet() const;
 
                     /**
-                     * 获取集群堆栈类型
-                     * @return ClusterStackType 集群堆栈类型
+                     * 获取<p>集群堆栈类型</p>
+                     * @return ClusterStackType <p>集群堆栈类型</p>
                      * 
                      */
                     int64_t GetClusterStackType() const;
 
                     /**
-                     * 设置集群堆栈类型
-                     * @param _clusterStackType 集群堆栈类型
+                     * 设置<p>集群堆栈类型</p>
+                     * @param _clusterStackType <p>集群堆栈类型</p>
                      * 
                      */
                     void SetClusterStackType(const int64_t& _clusterStackType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ClusterStackTypeHasBeenSet() const;
 
                     /**
-                     * 获取特征
-                     * @return Feature 特征
+                     * 获取<p>特征</p>
+                     * @return Feature <p>特征</p>
                      * 
                      */
                     std::string GetFeature() const;
 
                     /**
-                     * 设置特征
-                     * @param _feature 特征
+                     * 设置<p>特征</p>
+                     * @param _feature <p>特征</p>
                      * 
                      */
                     void SetFeature(const std::string& _feature);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FeatureHasBeenSet() const;
 
                     /**
-                     * 获取问题类型
-                     * @return IssueType 问题类型
+                     * 获取<p>问题类型</p>
+                     * @return IssueType <p>问题类型</p>
                      * 
                      */
                     int64_t GetIssueType() const;
 
                     /**
-                     * 设置问题类型
-                     * @param _issueType 问题类型
+                     * 设置<p>问题类型</p>
+                     * @param _issueType <p>问题类型</p>
                      * 
                      */
                     void SetIssueType(const int64_t& _issueType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IssueTypeHasBeenSet() const;
 
                     /**
-                     * 获取事件开始时间
-                     * @return StartEventTime 事件开始时间
+                     * 获取<p>事件开始时间</p>
+                     * @return StartEventTime <p>事件开始时间</p>
                      * 
                      */
                     int64_t GetStartEventTime() const;
 
                     /**
-                     * 设置事件开始时间
-                     * @param _startEventTime 事件开始时间
+                     * 设置<p>事件开始时间</p>
+                     * @param _startEventTime <p>事件开始时间</p>
                      * 
                      */
                     void SetStartEventTime(const int64_t& _startEventTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartEventTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件结束时间
-                     * @return EndEventTime 事件结束时间
+                     * 获取<p>事件结束时间</p>
+                     * @return EndEventTime <p>事件结束时间</p>
                      * 
                      */
                     int64_t GetEndEventTime() const;
 
                     /**
-                     * 设置事件结束时间
-                     * @param _endEventTime 事件结束时间
+                     * 设置<p>事件结束时间</p>
+                     * @param _endEventTime <p>事件结束时间</p>
                      * 
                      */
                     void SetEndEventTime(const int64_t& _endEventTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EndEventTimeHasBeenSet() const;
 
                     /**
-                     * 获取拓展数据
-                     * @return ExtraData 拓展数据
+                     * 获取<p>拓展数据</p>
+                     * @return ExtraData <p>拓展数据</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展数据
-                     * @param _extraData 拓展数据
+                     * 设置<p>拓展数据</p>
+                     * @param _extraData <p>拓展数据</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -234,55 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 消息唯一标识
+                     * <p>消息唯一标识</p>
                      */
                     std::string m_clientIdentify;
                     bool m_clientIdentifyHasBeenSet;
 
                     /**
-                     * 集群堆栈类型
+                     * <p>集群堆栈类型</p>
                      */
                     int64_t m_clusterStackType;
                     bool m_clusterStackTypeHasBeenSet;
 
                     /**
-                     * 特征
+                     * <p>特征</p>
                      */
                     std::string m_feature;
                     bool m_featureHasBeenSet;
 
                     /**
-                     * 问题类型
+                     * <p>问题类型</p>
                      */
                     int64_t m_issueType;
                     bool m_issueTypeHasBeenSet;
 
                     /**
-                     * 事件开始时间
+                     * <p>事件开始时间</p>
                      */
                     int64_t m_startEventTime;
                     bool m_startEventTimeHasBeenSet;
 
                     /**
-                     * 事件结束时间
+                     * <p>事件结束时间</p>
                      */
                     int64_t m_endEventTime;
                     bool m_endEventTimeHasBeenSet;
 
                     /**
-                     * 拓展数据
+                     * <p>拓展数据</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

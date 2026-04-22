@@ -29,7 +29,8 @@ DescribeDBErrlogsRequest::DescribeDBErrlogsRequest() :
     m_databaseNameHasBeenSet(false),
     m_searchKeysHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_logFiltersHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,21 @@ string DescribeDBErrlogsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_logFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logFilters.begin(); itr != m_logFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +235,22 @@ void DescribeDBErrlogsRequest::SetOffset(const int64_t& _offset)
 bool DescribeDBErrlogsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<LogFilter> DescribeDBErrlogsRequest::GetLogFilters() const
+{
+    return m_logFilters;
+}
+
+void DescribeDBErrlogsRequest::SetLogFilters(const vector<LogFilter>& _logFilters)
+{
+    m_logFilters = _logFilters;
+    m_logFiltersHasBeenSet = true;
+}
+
+bool DescribeDBErrlogsRequest::LogFiltersHasBeenSet() const
+{
+    return m_logFiltersHasBeenSet;
 }
 
 

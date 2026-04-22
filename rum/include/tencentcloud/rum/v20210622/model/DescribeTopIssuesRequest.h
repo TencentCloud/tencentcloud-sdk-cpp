@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取需要对比的查询条件，没有则不填
-                     * @return Compare 需要对比的查询条件，没有则不填
+                     * 获取<p>需要对比的查询条件，没有则不填</p>
+                     * @return Compare <p>需要对比的查询条件，没有则不填</p>
                      * 
                      */
                     CompareCondition GetCompare() const;
 
                     /**
-                     * 设置需要对比的查询条件，没有则不填
-                     * @param _compare 需要对比的查询条件，没有则不填
+                     * 设置<p>需要对比的查询条件，没有则不填</p>
+                     * @param _compare <p>需要对比的查询条件，没有则不填</p>
                      * 
                      */
                     void SetCompare(const CompareCondition& _compare);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool CompareHasBeenSet() const;
 
                     /**
-                     * 获取查询条件
-                     * @return Condition 查询条件
+                     * 获取<p>查询条件</p>
+                     * @return Condition <p>查询条件</p>
                      * 
                      */
                     CompareCondition GetCondition() const;
 
                     /**
-                     * 设置查询条件
-                     * @param _condition 查询条件
+                     * 设置<p>查询条件</p>
+                     * @param _condition <p>查询条件</p>
                      * 
                      */
                     void SetCondition(const CompareCondition& _condition);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取问题类型
-                     * @return IssueType 问题类型
+                     * 获取<p>问题类型</p>
+                     * @return IssueType <p>问题类型</p>
                      * 
                      */
                     int64_t GetIssueType() const;
 
                     /**
-                     * 设置问题类型
-                     * @param _issueType 问题类型
+                     * 设置<p>问题类型</p>
+                     * @param _issueType <p>问题类型</p>
                      * 
                      */
                     void SetIssueType(const int64_t& _issueType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool IssueTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return SortField 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return SortField <p>排序字段</p>
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _sortField 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _sortField <p>排序字段</p>
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return SortType 排序方式
+                     * 获取<p>排序方式</p>
+                     * @return SortType <p>排序方式</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _sortType 排序方式
+                     * 设置<p>排序方式</p>
+                     * @param _sortType <p>排序方式</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取topN
-                     * @return TopNum topN
+                     * 获取<p>topN</p>
+                     * @return TopNum <p>topN</p>
                      * 
                      */
                     int64_t GetTopNum() const;
 
                     /**
-                     * 设置topN
-                     * @param _topNum topN
+                     * 设置<p>topN</p>
+                     * @param _topNum <p>topN</p>
                      * 
                      */
                     void SetTopNum(const int64_t& _topNum);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool TopNumHasBeenSet() const;
 
                     /**
-                     * 获取拓展字段
-                     * @return ExtraData 拓展字段
+                     * 获取<p>拓展字段</p>
+                     * @return ExtraData <p>拓展字段</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展字段
-                     * @param _extraData 拓展字段
+                     * 设置<p>拓展字段</p>
+                     * @param _extraData <p>拓展字段</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -235,55 +235,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 需要对比的查询条件，没有则不填
+                     * <p>需要对比的查询条件，没有则不填</p>
                      */
                     CompareCondition m_compare;
                     bool m_compareHasBeenSet;
 
                     /**
-                     * 查询条件
+                     * <p>查询条件</p>
                      */
                     CompareCondition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 问题类型
+                     * <p>问题类型</p>
                      */
                     int64_t m_issueType;
                     bool m_issueTypeHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * topN
+                     * <p>topN</p>
                      */
                     int64_t m_topNum;
                     bool m_topNumHasBeenSet;
 
                     /**
-                     * 拓展字段
+                     * <p>拓展字段</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

@@ -151,6 +151,8 @@
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/InstallSoftwareRequest.h>
+#include <tencentcloud/emr/v20190103/model/InstallSoftwareResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyRequest.h>
@@ -419,6 +421,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceUpdateInstanceResponse> InquiryPriceUpdateInstanceOutcome;
                 typedef std::future<InquiryPriceUpdateInstanceOutcome> InquiryPriceUpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceUpdateInstanceRequest&, InquiryPriceUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallSoftwareResponse> InstallSoftwareOutcome;
+                typedef std::future<InstallSoftwareOutcome> InstallSoftwareOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::InstallSoftwareRequest&, InstallSoftwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallSoftwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAutoRenewFlagResponse> ModifyAutoRenewFlagOutcome;
                 typedef std::future<ModifyAutoRenewFlagOutcome> ModifyAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyAutoRenewFlagRequest&, ModifyAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewFlagAsyncHandler;
@@ -1094,6 +1099,15 @@ namespace TencentCloud
                 InquiryPriceUpdateInstanceOutcome InquiryPriceUpdateInstance(const Model::InquiryPriceUpdateInstanceRequest &request);
                 void InquiryPriceUpdateInstanceAsync(const Model::InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpdateInstanceOutcomeCallable InquiryPriceUpdateInstanceCallable(const Model::InquiryPriceUpdateInstanceRequest& request);
+
+                /**
+                 *安装组件。对于依赖元数据库的组件，有可能会需要下单一个cdb。可根据InstallSoftWareInfo查看当前集群可安装的组件，以及哪些组件有可能需要cdb。
+                 * @param req InstallSoftwareRequest
+                 * @return InstallSoftwareOutcome
+                 */
+                InstallSoftwareOutcome InstallSoftware(const Model::InstallSoftwareRequest &request);
+                void InstallSoftwareAsync(const Model::InstallSoftwareRequest& request, const InstallSoftwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallSoftwareOutcomeCallable InstallSoftwareCallable(const Model::InstallSoftwareRequest& request);
 
                 /**
                  *前提：预付费集群

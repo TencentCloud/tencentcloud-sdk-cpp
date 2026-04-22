@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @return FormListString 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 获取<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @return FormListString <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     std::string GetFormListString() const;
 
                     /**
-                     * 设置接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @param _formListString 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 设置<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @param _formListString <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     void SetFormListString(const std::string& _formListString);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FormListStringHasBeenSet() const;
 
                     /**
-                     * 获取分布维度是自定义维度时，填‘user_custom’
-                     * @return DimType 分布维度是自定义维度时，填‘user_custom’
+                     * 获取<p>分布维度是自定义维度时，填‘user_custom’</p>
+                     * @return DimType <p>分布维度是自定义维度时，填‘user_custom’</p>
                      * 
                      */
                     std::string GetDimType() const;
 
                     /**
-                     * 设置分布维度是自定义维度时，填‘user_custom’
-                     * @param _dimType 分布维度是自定义维度时，填‘user_custom’
+                     * 设置<p>分布维度是自定义维度时，填‘user_custom’</p>
+                     * @param _dimType <p>分布维度是自定义维度时，填‘user_custom’</p>
                      * 
                      */
                     void SetDimType(const std::string& _dimType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DimTypeHasBeenSet() const;
 
                     /**
-                     * 获取维度，e.g. os_version, app_version, model等
-                     * @return Dimension 维度，e.g. os_version, app_version, model等
+                     * 获取<p>维度，e.g. os_version, app_version, model等</p>
+                     * @return Dimension <p>维度，e.g. os_version, app_version, model等</p>
                      * 
                      */
                     std::string GetDimension() const;
 
                     /**
-                     * 设置维度，e.g. os_version, app_version, model等
-                     * @param _dimension 维度，e.g. os_version, app_version, model等
+                     * 设置<p>维度，e.g. os_version, app_version, model等</p>
+                     * @param _dimension <p>维度，e.g. os_version, app_version, model等</p>
                      * 
                      */
                     void SetDimension(const std::string& _dimension);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DimensionHasBeenSet() const;
 
                     /**
-                     * 获取数字类型字段的区间范围
-                     * @return Intervals 数字类型字段的区间范围
+                     * 获取<p>数字类型字段的区间范围</p>
+                     * @return Intervals <p>数字类型字段的区间范围</p>
                      * 
                      */
                     std::vector<int64_t> GetIntervals() const;
 
                     /**
-                     * 设置数字类型字段的区间范围
-                     * @param _intervals 数字类型字段的区间范围
+                     * 设置<p>数字类型字段的区间范围</p>
+                     * @param _intervals <p>数字类型字段的区间范围</p>
                      * 
                      */
                     void SetIntervals(const std::vector<int64_t>& _intervals);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IntervalsHasBeenSet() const;
 
                     /**
-                     * 获取提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @return ParamToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 获取<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @return ParamToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     std::string GetParamToken() const;
 
                     /**
-                     * 设置提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @param _paramToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 设置<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @param _paramToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     void SetParamToken(const std::string& _paramToken);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ParamTokenHasBeenSet() const;
 
                     /**
-                     * 获取问题Id
-                     * @return IssueId 问题Id
+                     * 获取<p>问题Id</p>
+                     * @return IssueId <p>问题Id</p>
                      * 
                      */
                     std::string GetIssueId() const;
 
                     /**
-                     * 设置问题Id
-                     * @param _issueId 问题Id
+                     * 设置<p>问题Id</p>
+                     * @param _issueId <p>问题Id</p>
                      * 
                      */
                     void SetIssueId(const std::string& _issueId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool IssueIdHasBeenSet() const;
 
                     /**
-                     * 获取问题类型
-                     * @return IssueType 问题类型
+                     * 获取<p>问题类型</p>
+                     * @return IssueType <p>问题类型</p>
                      * 
                      */
                     int64_t GetIssueType() const;
 
                     /**
-                     * 设置问题类型
-                     * @param _issueType 问题类型
+                     * 设置<p>问题类型</p>
+                     * @param _issueType <p>问题类型</p>
                      * 
                      */
                     void SetIssueType(const int64_t& _issueType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool IssueTypeHasBeenSet() const;
 
                     /**
-                     * 获取限制返回的个数，默认返回所有值
-                     * @return ParamLimit 限制返回的个数，默认返回所有值
+                     * 获取<p>限制返回的个数，默认返回所有值</p>
+                     * @return ParamLimit <p>限制返回的个数，默认返回所有值</p>
                      * 
                      */
                     int64_t GetParamLimit() const;
 
                     /**
-                     * 设置限制返回的个数，默认返回所有值
-                     * @param _paramLimit 限制返回的个数，默认返回所有值
+                     * 设置<p>限制返回的个数，默认返回所有值</p>
+                     * @param _paramLimit <p>限制返回的个数，默认返回所有值</p>
                      * 
                      */
                     void SetParamLimit(const int64_t& _paramLimit);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool ParamLimitHasBeenSet() const;
 
                     /**
-                     * 获取键
-                     * @return MapKey 键
+                     * 获取<p>键</p>
+                     * @return MapKey <p>键</p>
                      * 
                      */
                     std::string GetMapKey() const;
 
                     /**
-                     * 设置键
-                     * @param _mapKey 键
+                     * 设置<p>键</p>
+                     * @param _mapKey <p>键</p>
                      * 
                      */
                     void SetMapKey(const std::string& _mapKey);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool MapKeyHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return MapName 名称
+                     * 获取<p>名称</p>
+                     * @return MapName <p>名称</p>
                      * 
                      */
                     std::string GetMapName() const;
 
                     /**
-                     * 设置名称
-                     * @param _mapName 名称
+                     * 设置<p>名称</p>
+                     * @param _mapName <p>名称</p>
                      * 
                      */
                     void SetMapName(const std::string& _mapName);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool MapNameHasBeenSet() const;
 
                     /**
-                     * 获取指标类型
-                     * @return MetricType 指标类型
+                     * 获取<p>指标类型</p>
+                     * @return MetricType <p>指标类型</p>
                      * 
                      */
                     int64_t GetMetricType() const;
 
                     /**
-                     * 设置指标类型
-                     * @param _metricType 指标类型
+                     * 设置<p>指标类型</p>
+                     * @param _metricType <p>指标类型</p>
                      * 
                      */
                     void SetMetricType(const int64_t& _metricType);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool MetricTypeHasBeenSet() const;
 
                     /**
-                     * 获取每页数目
-                     * @return PageSize 每页数目
+                     * 获取<p>每页数目</p>
+                     * @return PageSize <p>每页数目</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数目
-                     * @param _pageSize 每页数目
+                     * 设置<p>每页数目</p>
+                     * @param _pageSize <p>每页数目</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取<p>页码</p>
+                     * @return PageNumber <p>页码</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置<p>页码</p>
+                     * @param _pageNumber <p>页码</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义维度key
-                     * @return UserCustomKey 用户自定义维度key
+                     * 获取<p>用户自定义维度key</p>
+                     * @return UserCustomKey <p>用户自定义维度key</p>
                      * 
                      */
                     std::string GetUserCustomKey() const;
 
                     /**
-                     * 设置用户自定义维度key
-                     * @param _userCustomKey 用户自定义维度key
+                     * 设置<p>用户自定义维度key</p>
+                     * @param _userCustomKey <p>用户自定义维度key</p>
                      * 
                      */
                     void SetUserCustomKey(const std::string& _userCustomKey);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool UserCustomKeyHasBeenSet() const;
 
                     /**
-                     * 获取拓展字段
-                     * @return ExtraData 拓展字段
+                     * 获取<p>拓展字段</p>
+                     * @return ExtraData <p>拓展字段</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展字段
-                     * @param _extraData 拓展字段
+                     * 设置<p>拓展字段</p>
+                     * @param _extraData <p>拓展字段</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -402,103 +402,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      */
                     std::string m_formListString;
                     bool m_formListStringHasBeenSet;
 
                     /**
-                     * 分布维度是自定义维度时，填‘user_custom’
+                     * <p>分布维度是自定义维度时，填‘user_custom’</p>
                      */
                     std::string m_dimType;
                     bool m_dimTypeHasBeenSet;
 
                     /**
-                     * 维度，e.g. os_version, app_version, model等
+                     * <p>维度，e.g. os_version, app_version, model等</p>
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;
 
                     /**
-                     * 数字类型字段的区间范围
+                     * <p>数字类型字段的区间范围</p>
                      */
                     std::vector<int64_t> m_intervals;
                     bool m_intervalsHasBeenSet;
 
                     /**
-                     * 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      */
                     std::string m_paramToken;
                     bool m_paramTokenHasBeenSet;
 
                     /**
-                     * 问题Id
+                     * <p>问题Id</p>
                      */
                     std::string m_issueId;
                     bool m_issueIdHasBeenSet;
 
                     /**
-                     * 问题类型
+                     * <p>问题类型</p>
                      */
                     int64_t m_issueType;
                     bool m_issueTypeHasBeenSet;
 
                     /**
-                     * 限制返回的个数，默认返回所有值
+                     * <p>限制返回的个数，默认返回所有值</p>
                      */
                     int64_t m_paramLimit;
                     bool m_paramLimitHasBeenSet;
 
                     /**
-                     * 键
+                     * <p>键</p>
                      */
                     std::string m_mapKey;
                     bool m_mapKeyHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_mapName;
                     bool m_mapNameHasBeenSet;
 
                     /**
-                     * 指标类型
+                     * <p>指标类型</p>
                      */
                     int64_t m_metricType;
                     bool m_metricTypeHasBeenSet;
 
                     /**
-                     * 每页数目
+                     * <p>每页数目</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 用户自定义维度key
+                     * <p>用户自定义维度key</p>
                      */
                     std::string m_userCustomKey;
                     bool m_userCustomKeyHasBeenSet;
 
                     /**
-                     * 拓展字段
+                     * <p>拓展字段</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

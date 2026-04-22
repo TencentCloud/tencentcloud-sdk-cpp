@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/postgres/v20170312/model/LogFilter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。	可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @return DBInstanceId 实例ID。	可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 获取<p>实例ID。    可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @return DBInstanceId <p>实例ID。    可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID。	可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @param _dBInstanceId 实例ID。	可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 设置<p>实例ID。    可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @param _dBInstanceId <p>实例ID。    可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
-                     * @return StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * 获取<p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>
+                     * @return StartTime <p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
-                     * @param _startTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * 设置<p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>
+                     * @param _startTime <p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，形如2018-01-01 00:00:00。	
-                     * @return EndTime 查询结束时间，形如2018-01-01 00:00:00。	
+                     * 获取<p>查询结束时间，形如2018-01-01 00:00:00。</p>
+                     * @return EndTime <p>查询结束时间，形如2018-01-01 00:00:00。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，形如2018-01-01 00:00:00。	
-                     * @param _endTime 查询结束时间，形如2018-01-01 00:00:00。	
+                     * 设置<p>查询结束时间，形如2018-01-01 00:00:00。</p>
+                     * @param _endTime <p>查询结束时间，形如2018-01-01 00:00:00。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据库名字。
-                     * @return DatabaseName 数据库名字。
+                     * 获取<p>数据库名字。</p>
+                     * @return DatabaseName <p>数据库名字。</p>
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置数据库名字。
-                     * @param _databaseName 数据库名字。
+                     * 设置<p>数据库名字。</p>
+                     * @param _databaseName <p>数据库名字。</p>
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字。
-                     * @return SearchKeys 搜索关键字。
+                     * 获取<p>搜索关键字。</p>
+                     * @return SearchKeys <p>搜索关键字。</p>
                      * 
                      */
                     std::vector<std::string> GetSearchKeys() const;
 
                     /**
-                     * 设置搜索关键字。
-                     * @param _searchKeys 搜索关键字。
+                     * 设置<p>搜索关键字。</p>
+                     * @param _searchKeys <p>搜索关键字。</p>
                      * 
                      */
                     void SetSearchKeys(const std::vector<std::string>& _searchKeys);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool SearchKeysHasBeenSet() const;
 
                     /**
-                     * 获取每页显示数量，取值范围为1-100。默认值为50。	
-                     * @return Limit 每页显示数量，取值范围为1-100。默认值为50。	
+                     * 获取<p>每页显示数量，取值范围为1-100。默认值为50。</p>
+                     * @return Limit <p>每页显示数量，取值范围为1-100。默认值为50。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页显示数量，取值范围为1-100。默认值为50。	
-                     * @param _limit 每页显示数量，取值范围为1-100。默认值为50。	
+                     * 设置<p>每页显示数量，取值范围为1-100。默认值为50。</p>
+                     * @param _limit <p>每页显示数量，取值范围为1-100。默认值为50。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，从0开始。默认值为0。	
-                     * @return Offset 数据偏移量，从0开始。默认值为0。	
+                     * 获取<p>数据偏移量，从0开始。默认值为0。</p>
+                     * @return Offset <p>数据偏移量，从0开始。默认值为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，从0开始。默认值为0。	
-                     * @param _offset 数据偏移量，从0开始。默认值为0。	
+                     * 设置<p>数据偏移量，从0开始。默认值为0。</p>
+                     * @param _offset <p>数据偏移量，从0开始。默认值为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -189,49 +190,76 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>
+                     * @return LogFilters <p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>
+                     * 
+                     */
+                    std::vector<LogFilter> GetLogFilters() const;
+
+                    /**
+                     * 设置<p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>
+                     * @param _logFilters <p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>
+                     * 
+                     */
+                    void SetLogFilters(const std::vector<LogFilter>& _logFilters);
+
+                    /**
+                     * 判断参数 LogFilters 是否已赋值
+                     * @return LogFilters 是否已赋值
+                     * 
+                     */
+                    bool LogFiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID。	可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * <p>实例ID。    可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。	
+                     * <p>查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，形如2018-01-01 00:00:00。	
+                     * <p>查询结束时间，形如2018-01-01 00:00:00。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 数据库名字。
+                     * <p>数据库名字。</p>
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 搜索关键字。
+                     * <p>搜索关键字。</p>
                      */
                     std::vector<std::string> m_searchKeys;
                     bool m_searchKeysHasBeenSet;
 
                     /**
-                     * 每页显示数量，取值范围为1-100。默认值为50。	
+                     * <p>每页显示数量，取值范围为1-100。默认值为50。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据偏移量，从0开始。默认值为0。	
+                     * <p>数据偏移量，从0开始。默认值为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>日志过滤条件。格式为  [{Type: &quot;ApplicationName&quot;, Compare: &quot;INC&quot;, Value: [&quot;123&quot;]}]。</p>
+                     */
+                    std::vector<LogFilter> m_logFilters;
+                    bool m_logFiltersHasBeenSet;
 
                 };
             }

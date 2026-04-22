@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取销毁节点ID。该参数为预留参数，用户无需配置。
-                     * @return ResourceIds 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * 获取<p>销毁节点ID。该参数为预留参数，用户无需配置。</p>
+                     * @return ResourceIds <p>销毁节点ID。该参数为预留参数，用户无需配置。</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置销毁节点ID。该参数为预留参数，用户无需配置。
-                     * @param _resourceIds 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * 设置<p>销毁节点ID。该参数为预留参数，用户无需配置。</p>
+                     * @param _resourceIds <p>销毁节点ID。该参数为预留参数，用户无需配置。</p>
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
-                     * @return ResourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * 获取<p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>
+                     * @return ResourceBaseType <p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>
                      * 
                      */
                     std::string GetResourceBaseType() const;
 
                     /**
-                     * 设置类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
-                     * @param _resourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * 设置<p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>
+                     * @param _resourceBaseType <p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>
                      * 
                      */
                     void SetResourceBaseType(const std::string& _resourceBaseType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceBaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取计算资源ID
-                     * @return ComputeResourceId 计算资源ID
+                     * 获取<p>计算资源ID</p>
+                     * @return ComputeResourceId <p>计算资源ID</p>
                      * 
                      */
                     std::string GetComputeResourceId() const;
 
                     /**
-                     * 设置计算资源ID
-                     * @param _computeResourceId 计算资源ID
+                     * 设置<p>计算资源ID</p>
+                     * @param _computeResourceId <p>计算资源ID</p>
                      * 
                      */
                     void SetComputeResourceId(const std::string& _computeResourceId);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool ComputeResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>保留计算资源关联的TKE集群</p>
+                     * @return RetainTkeCluster <p>保留计算资源关联的TKE集群</p>
+                     * 
+                     */
+                    bool GetRetainTkeCluster() const;
+
+                    /**
+                     * 设置<p>保留计算资源关联的TKE集群</p>
+                     * @param _retainTkeCluster <p>保留计算资源关联的TKE集群</p>
+                     * 
+                     */
+                    void SetRetainTkeCluster(const bool& _retainTkeCluster);
+
+                    /**
+                     * 判断参数 RetainTkeCluster 是否已赋值
+                     * @return RetainTkeCluster 是否已赋值
+                     * 
+                     */
+                    bool RetainTkeClusterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 销毁节点ID。该参数为预留参数，用户无需配置。
+                     * <p>销毁节点ID。该参数为预留参数，用户无需配置。</p>
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * <p>类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识</p>
                      */
                     std::string m_resourceBaseType;
                     bool m_resourceBaseTypeHasBeenSet;
 
                     /**
-                     * 计算资源ID
+                     * <p>计算资源ID</p>
                      */
                     std::string m_computeResourceId;
                     bool m_computeResourceIdHasBeenSet;
+
+                    /**
+                     * <p>保留计算资源关联的TKE集群</p>
+                     */
+                    bool m_retainTkeCluster;
+                    bool m_retainTkeClusterHasBeenSet;
 
                 };
             }

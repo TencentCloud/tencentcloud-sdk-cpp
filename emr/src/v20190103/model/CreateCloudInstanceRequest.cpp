@@ -41,7 +41,8 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_zoneIdHasBeenSet(false),
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
-    m_sgIPHasBeenSet(false)
+    m_sgIPHasBeenSet(false),
+    m_containerExtraConfHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,15 @@ string CreateCloudInstanceRequest::ToJsonString() const
         string key = "SgIP";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sgIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerExtraConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerExtraConf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_containerExtraConf.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -543,6 +553,22 @@ void CreateCloudInstanceRequest::SetSgIP(const string& _sgIP)
 bool CreateCloudInstanceRequest::SgIPHasBeenSet() const
 {
     return m_sgIPHasBeenSet;
+}
+
+ContainerExtraConf CreateCloudInstanceRequest::GetContainerExtraConf() const
+{
+    return m_containerExtraConf;
+}
+
+void CreateCloudInstanceRequest::SetContainerExtraConf(const ContainerExtraConf& _containerExtraConf)
+{
+    m_containerExtraConf = _containerExtraConf;
+    m_containerExtraConfHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::ContainerExtraConfHasBeenSet() const
+{
+    return m_containerExtraConfHasBeenSet;
 }
 
 

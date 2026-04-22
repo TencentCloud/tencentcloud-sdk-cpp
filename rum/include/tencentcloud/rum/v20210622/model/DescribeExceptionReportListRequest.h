@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品Id
-                     * @return ProductId 产品Id
+                     * 获取<p>产品Id</p>
+                     * @return ProductId <p>产品Id</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品Id
-                     * @param _productId 产品Id
+                     * 设置<p>产品Id</p>
+                     * @param _productId <p>产品Id</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @return FormListString 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 获取<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @return FormListString <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     std::string GetFormListString() const;
 
                     /**
-                     * 设置接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
-                     * @param _formListString 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * 设置<p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
+                     * @param _formListString <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      * 
                      */
                     void SetFormListString(const std::string& _formListString);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FormListStringHasBeenSet() const;
 
                     /**
-                     * 获取提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @return ParamToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 获取<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @return ParamToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     std::string GetParamToken() const;
 
                     /**
-                     * 设置提供给前端使用，当填写本字段时，会覆盖 form_list 的值
-                     * @param _paramToken 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * 设置<p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
+                     * @param _paramToken <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      * 
                      */
                     void SetParamToken(const std::string& _paramToken);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ParamTokenHasBeenSet() const;
 
                     /**
-                     * 获取问题类型
-                     * @return IssueType 问题类型
+                     * 获取<p>问题类型</p>
+                     * @return IssueType <p>问题类型</p>
                      * 
                      */
                     int64_t GetIssueType() const;
 
                     /**
-                     * 设置问题类型
-                     * @param _issueType 问题类型
+                     * 设置<p>问题类型</p>
+                     * @param _issueType <p>问题类型</p>
                      * 
                      */
                     void SetIssueType(const int64_t& _issueType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IssueTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return SortField 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return SortField <p>排序字段</p>
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _sortField 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _sortField <p>排序字段</p>
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return SortType 排序方式
+                     * 获取<p>排序方式</p>
+                     * @return SortType <p>排序方式</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _sortType 排序方式
+                     * 设置<p>排序方式</p>
+                     * @param _sortType <p>排序方式</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取特征
-                     * @return Feature 特征
+                     * 获取<p>特征</p>
+                     * @return Feature <p>特征</p>
                      * 
                      */
                     std::string GetFeature() const;
 
                     /**
-                     * 设置特征
-                     * @param _feature 特征
+                     * 设置<p>特征</p>
+                     * @param _feature <p>特征</p>
                      * 
                      */
                     void SetFeature(const std::string& _feature);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool FeatureHasBeenSet() const;
 
                     /**
-                     * 获取每页数目
-                     * @return PageSize 每页数目
+                     * 获取<p>每页数目</p>
+                     * @return PageSize <p>每页数目</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数目
-                     * @param _pageSize 每页数目
+                     * 设置<p>每页数目</p>
+                     * @param _pageSize <p>每页数目</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取<p>页码</p>
+                     * @return PageNumber <p>页码</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置<p>页码</p>
+                     * @param _pageNumber <p>页码</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取拓展字段
-                     * @return ExtraData 拓展字段
+                     * 获取<p>拓展字段</p>
+                     * @return ExtraData <p>拓展字段</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展字段
-                     * @param _extraData 拓展字段
+                     * 设置<p>拓展字段</p>
+                     * @param _extraData <p>拓展字段</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -276,67 +276,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品Id
+                     * <p>产品Id</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息
+                     * <p>接口调试专用，当 token 为空时，以这里的 value 作为筛选表单信息</p>
                      */
                     std::string m_formListString;
                     bool m_formListStringHasBeenSet;
 
                     /**
-                     * 提供给前端使用，当填写本字段时，会覆盖 form_list 的值
+                     * <p>提供给前端使用，当填写本字段时，会覆盖 form_list 的值</p>
                      */
                     std::string m_paramToken;
                     bool m_paramTokenHasBeenSet;
 
                     /**
-                     * 问题类型
+                     * <p>问题类型</p>
                      */
                     int64_t m_issueType;
                     bool m_issueTypeHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 特征
+                     * <p>特征</p>
                      */
                     std::string m_feature;
                     bool m_featureHasBeenSet;
 
                     /**
-                     * 每页数目
+                     * <p>每页数目</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 拓展字段
+                     * <p>拓展字段</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

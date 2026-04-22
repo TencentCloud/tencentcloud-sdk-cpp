@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询到的日志数量，最大值为10000条。
-                     * @return TotalCount 查询到的日志数量，最大值为10000条。
+                     * 获取<p>查询到的日志数量，最大值为10000条。</p>
+                     * @return TotalCount <p>查询到的日志数量，最大值为10000条。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取错误日志详细信息集合。
-                     * @return Details 错误日志详细信息集合。
+                     * 获取<p>错误日志详细信息集合。</p>
+                     * @return Details <p>错误日志详细信息集合。</p>
                      * 
                      */
                     std::vector<ErrLogDetail> GetDetails() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询到的日志数量，最大值为10000条。
+                     * <p>查询到的日志数量，最大值为10000条。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 错误日志详细信息集合。
+                     * <p>错误日志详细信息集合。</p>
                      */
                     std::vector<ErrLogDetail> m_details;
                     bool m_detailsHasBeenSet;

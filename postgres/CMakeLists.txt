@@ -271,6 +271,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeEncryptionKeysResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/DeleteAccountResponse.h
+  include/tencentcloud/postgres/v20170312/model/LogFilter.h
   )
 
 set(postgres_src
@@ -527,6 +528,7 @@ set(postgres_src
   src/v20170312/model/DescribeEncryptionKeysResponse.cpp
   src/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.cpp
   src/v20170312/model/DeleteAccountResponse.cpp
+  src/v20170312/model/LogFilter.cpp
   )
 
 set(postgres_include

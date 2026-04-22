@@ -33,7 +33,8 @@ InstanceConfigInfo::InstanceConfigInfo() :
     m_uinHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_valueRangeHasBeenSet(false),
-    m_abnormalParamHasBeenSet(false)
+    m_abnormalParamHasBeenSet(false),
+    m_configEffectiveHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome InstanceConfigInfo::Deserialize(const rapidjson::Value &valu
         m_abnormalParamHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigEffective") && !value["ConfigEffective"].IsNull())
+    {
+        if (!value["ConfigEffective"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigInfo.ConfigEffective` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configEffective = string(value["ConfigEffective"].GetString());
+        m_configEffectiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void InstanceConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AbnormalParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_abnormalParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configEffectiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigEffective";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configEffective.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void InstanceConfigInfo::SetAbnormalParam(const string& _abnormalParam)
 bool InstanceConfigInfo::AbnormalParamHasBeenSet() const
 {
     return m_abnormalParamHasBeenSet;
+}
+
+string InstanceConfigInfo::GetConfigEffective() const
+{
+    return m_configEffective;
+}
+
+void InstanceConfigInfo::SetConfigEffective(const string& _configEffective)
+{
+    m_configEffective = _configEffective;
+    m_configEffectiveHasBeenSet = true;
+}
+
+bool InstanceConfigInfo::ConfigEffectiveHasBeenSet() const
+{
+    return m_configEffectiveHasBeenSet;
 }
 

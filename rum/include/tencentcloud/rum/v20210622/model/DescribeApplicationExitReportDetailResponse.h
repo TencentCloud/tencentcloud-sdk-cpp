@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回值
-                     * @return Data 返回值
+                     * 获取<p>返回值</p>
+                     * @return Data <p>返回值</p>
                      * 
                      */
                     std::string GetData() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Code 状态码
+                     * 获取<p>状态码</p>
+                     * @return Code <p>状态码</p>
                      * 
                      */
                     int64_t GetCode() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取消息
-                     * @return Message 消息
+                     * 获取<p>消息</p>
+                     * @return Message <p>消息</p>
                      * 
                      */
                     std::string GetMessage() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回值
+                     * <p>返回值</p>
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 状态码
+                     * <p>状态码</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 消息
+                     * <p>消息</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

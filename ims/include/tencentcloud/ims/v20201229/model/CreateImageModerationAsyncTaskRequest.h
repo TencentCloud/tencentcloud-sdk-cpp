@@ -254,6 +254,48 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>
+                     * @return FileUrlList <p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>
+                     * 
+                     */
+                    std::vector<std::string> GetFileUrlList() const;
+
+                    /**
+                     * 设置<p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>
+                     * @param _fileUrlList <p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>
+                     * 
+                     */
+                    void SetFileUrlList(const std::vector<std::string>& _fileUrlList);
+
+                    /**
+                     * 判断参数 FileUrlList 是否已赋值
+                     * @return FileUrlList 是否已赋值
+                     * 
+                     */
+                    bool FileUrlListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>
+                     * @return TextContent <p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>
+                     * 
+                     */
+                    std::string GetTextContent() const;
+
+                    /**
+                     * 设置<p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>
+                     * @param _textContent <p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>
+                     * 
+                     */
+                    void SetTextContent(const std::string& _textContent);
+
+                    /**
+                     * 判断参数 TextContent 是否已赋值
+                     * @return TextContent 是否已赋值
+                     * 
+                     */
+                    bool TextContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +357,18 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>该字段表示待审核的图片资源链接，最多支持传入4张图片</p>
+                     */
+                    std::vector<std::string> m_fileUrlList;
+                    bool m_fileUrlListHasBeenSet;
+
+                    /**
+                     * <p>待审核的文本内容，需为UTF-8编码并以Base64格式传入，字数限制5000字内。</p>
+                     */
+                    std::string m_textContent;
+                    bool m_textContentHasBeenSet;
 
                 };
             }

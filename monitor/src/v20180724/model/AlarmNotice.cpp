@@ -34,7 +34,8 @@ AlarmNotice::AlarmNotice() :
     m_aMPConsumerIdHasBeenSet(false),
     m_cLSNoticesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_isLoginFreeHasBeenSet(false)
+    m_isLoginFreeHasBeenSet(false),
+    m_timeZoneNameHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_isLoginFreeHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeZoneName") && !value["TimeZoneName"].IsNull())
+    {
+        if (!value["TimeZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.TimeZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeZoneName = string(value["TimeZoneName"].GetString());
+        m_timeZoneNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsLoginFree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isLoginFree, allocator);
+    }
+
+    if (m_timeZoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeZoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -603,5 +622,21 @@ void AlarmNotice::SetIsLoginFree(const int64_t& _isLoginFree)
 bool AlarmNotice::IsLoginFreeHasBeenSet() const
 {
     return m_isLoginFreeHasBeenSet;
+}
+
+string AlarmNotice::GetTimeZoneName() const
+{
+    return m_timeZoneName;
+}
+
+void AlarmNotice::SetTimeZoneName(const string& _timeZoneName)
+{
+    m_timeZoneName = _timeZoneName;
+    m_timeZoneNameHasBeenSet = true;
+}
+
+bool AlarmNotice::TimeZoneNameHasBeenSet() const
+{
+    return m_timeZoneNameHasBeenSet;
 }
 

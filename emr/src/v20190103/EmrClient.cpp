@@ -3240,6 +3240,56 @@ EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpda
     return prom->get_future();
 }
 
+EmrClient::InstallSoftwareOutcome EmrClient::InstallSoftware(const InstallSoftwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallSoftware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallSoftwareResponse rsp = InstallSoftwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallSoftwareOutcome(rsp);
+        else
+            return InstallSoftwareOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallSoftwareOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::InstallSoftwareAsync(const InstallSoftwareRequest& request, const InstallSoftwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstallSoftwareRequest&;
+    using Resp = InstallSoftwareResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstallSoftware", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::InstallSoftwareOutcomeCallable EmrClient::InstallSoftwareCallable(const InstallSoftwareRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstallSoftwareOutcome>>();
+    InstallSoftwareAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const InstallSoftwareRequest&,
+        InstallSoftwareOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::ModifyAutoRenewFlagOutcome EmrClient::ModifyAutoRenewFlag(const ModifyAutoRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAutoRenewFlag");

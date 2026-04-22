@@ -30,7 +30,12 @@ CloudResource::CloudResource() :
     m_externalAccessHasBeenSet(false),
     m_affinityHasBeenSet(false),
     m_disksHasBeenSet(false),
-    m_tolerationsHasBeenSet(false)
+    m_tolerationsHasBeenSet(false),
+    m_podAffinityHasBeenSet(false),
+    m_podAntiAffinityHasBeenSet(false),
+    m_topologySpreadConstraintsHasBeenSet(false),
+    m_podLabelsHasBeenSet(false),
+    m_enableDefaultRayClusterHasBeenSet(false)
 {
 }
 
@@ -180,6 +185,90 @@ CoreInternalOutcome CloudResource::Deserialize(const rapidjson::Value &value)
         m_tolerationsHasBeenSet = true;
     }
 
+    if (value.HasMember("PodAffinity") && !value["PodAffinity"].IsNull())
+    {
+        if (!value["PodAffinity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudResource.PodAffinity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podAffinity.Deserialize(value["PodAffinity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podAffinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodAntiAffinity") && !value["PodAntiAffinity"].IsNull())
+    {
+        if (!value["PodAntiAffinity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudResource.PodAntiAffinity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podAntiAffinity.Deserialize(value["PodAntiAffinity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podAntiAffinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopologySpreadConstraints") && !value["TopologySpreadConstraints"].IsNull())
+    {
+        if (!value["TopologySpreadConstraints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudResource.TopologySpreadConstraints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TopologySpreadConstraints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TopologySpreadConstraint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_topologySpreadConstraints.push_back(item);
+        }
+        m_topologySpreadConstraintsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodLabels") && !value["PodLabels"].IsNull())
+    {
+        if (!value["PodLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudResource.PodLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PodLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StringMap item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_podLabels.push_back(item);
+        }
+        m_podLabelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableDefaultRayCluster") && !value["EnableDefaultRayCluster"].IsNull())
+    {
+        if (!value["EnableDefaultRayCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudResource.EnableDefaultRayCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDefaultRayCluster = value["EnableDefaultRayCluster"].GetBool();
+        m_enableDefaultRayClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +371,62 @@ void CloudResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_podAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podAffinity.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_podAntiAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodAntiAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podAntiAffinity.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_topologySpreadConstraintsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopologySpreadConstraints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_topologySpreadConstraints.begin(); itr != m_topologySpreadConstraints.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_podLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_podLabels.begin(); itr != m_podLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableDefaultRayClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDefaultRayCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDefaultRayCluster, allocator);
     }
 
 }
@@ -445,5 +590,85 @@ void CloudResource::SetTolerations(const vector<Toleration>& _tolerations)
 bool CloudResource::TolerationsHasBeenSet() const
 {
     return m_tolerationsHasBeenSet;
+}
+
+PodAffinitySpec CloudResource::GetPodAffinity() const
+{
+    return m_podAffinity;
+}
+
+void CloudResource::SetPodAffinity(const PodAffinitySpec& _podAffinity)
+{
+    m_podAffinity = _podAffinity;
+    m_podAffinityHasBeenSet = true;
+}
+
+bool CloudResource::PodAffinityHasBeenSet() const
+{
+    return m_podAffinityHasBeenSet;
+}
+
+PodAffinitySpec CloudResource::GetPodAntiAffinity() const
+{
+    return m_podAntiAffinity;
+}
+
+void CloudResource::SetPodAntiAffinity(const PodAffinitySpec& _podAntiAffinity)
+{
+    m_podAntiAffinity = _podAntiAffinity;
+    m_podAntiAffinityHasBeenSet = true;
+}
+
+bool CloudResource::PodAntiAffinityHasBeenSet() const
+{
+    return m_podAntiAffinityHasBeenSet;
+}
+
+vector<TopologySpreadConstraint> CloudResource::GetTopologySpreadConstraints() const
+{
+    return m_topologySpreadConstraints;
+}
+
+void CloudResource::SetTopologySpreadConstraints(const vector<TopologySpreadConstraint>& _topologySpreadConstraints)
+{
+    m_topologySpreadConstraints = _topologySpreadConstraints;
+    m_topologySpreadConstraintsHasBeenSet = true;
+}
+
+bool CloudResource::TopologySpreadConstraintsHasBeenSet() const
+{
+    return m_topologySpreadConstraintsHasBeenSet;
+}
+
+vector<StringMap> CloudResource::GetPodLabels() const
+{
+    return m_podLabels;
+}
+
+void CloudResource::SetPodLabels(const vector<StringMap>& _podLabels)
+{
+    m_podLabels = _podLabels;
+    m_podLabelsHasBeenSet = true;
+}
+
+bool CloudResource::PodLabelsHasBeenSet() const
+{
+    return m_podLabelsHasBeenSet;
+}
+
+bool CloudResource::GetEnableDefaultRayCluster() const
+{
+    return m_enableDefaultRayCluster;
+}
+
+void CloudResource::SetEnableDefaultRayCluster(const bool& _enableDefaultRayCluster)
+{
+    m_enableDefaultRayCluster = _enableDefaultRayCluster;
+    m_enableDefaultRayClusterHasBeenSet = true;
+}
+
+bool CloudResource::EnableDefaultRayClusterHasBeenSet() const
+{
+    return m_enableDefaultRayClusterHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块名，这里填“monitor”
-                     * @return Module 模块名，这里填“monitor”
+                     * 获取<p>模块名，这里填“monitor”</p>
+                     * @return Module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置模块名，这里填“monitor”
-                     * @param _module 模块名，这里填“monitor”
+                     * 设置<p>模块名，这里填“monitor”</p>
+                     * @param _module <p>模块名，这里填“monitor”</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取通知模板名称 60字符以内
-                     * @return Name 通知模板名称 60字符以内
+                     * 获取<p>通知模板名称 60字符以内</p>
+                     * @return Name <p>通知模板名称 60字符以内</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置通知模板名称 60字符以内
-                     * @param _name 通知模板名称 60字符以内
+                     * 设置<p>通知模板名称 60字符以内</p>
+                     * @param _name <p>通知模板名称 60字符以内</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知
-                     * @return NoticeType 通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知
+                     * 获取<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>
+                     * @return NoticeType <p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>
                      * 
                      */
                     std::string GetNoticeType() const;
 
                     /**
-                     * 设置通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知
-                     * @param _noticeType 通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知
+                     * 设置<p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>
+                     * @param _noticeType <p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>
                      * 
                      */
                     void SetNoticeType(const std::string& _noticeType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NoticeTypeHasBeenSet() const;
 
                     /**
-                     * 获取通知语言 zh-CN=中文 en-US=英文
-                     * @return NoticeLanguage 通知语言 zh-CN=中文 en-US=英文
+                     * 获取<p>通知语言 zh-CN=中文 en-US=英文</p>
+                     * @return NoticeLanguage <p>通知语言 zh-CN=中文 en-US=英文</p>
                      * 
                      */
                     std::string GetNoticeLanguage() const;
 
                     /**
-                     * 设置通知语言 zh-CN=中文 en-US=英文
-                     * @param _noticeLanguage 通知语言 zh-CN=中文 en-US=英文
+                     * 设置<p>通知语言 zh-CN=中文 en-US=英文</p>
+                     * @param _noticeLanguage <p>通知语言 zh-CN=中文 en-US=英文</p>
                      * 
                      */
                     void SetNoticeLanguage(const std::string& _noticeLanguage);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NoticeLanguageHasBeenSet() const;
 
                     /**
-                     * 获取用户通知 最多5个
-                     * @return UserNotices 用户通知 最多5个
+                     * 获取<p>用户通知 最多5个</p>
+                     * @return UserNotices <p>用户通知 最多5个</p>
                      * 
                      */
                     std::vector<UserNotice> GetUserNotices() const;
 
                     /**
-                     * 设置用户通知 最多5个
-                     * @param _userNotices 用户通知 最多5个
+                     * 设置<p>用户通知 最多5个</p>
+                     * @param _userNotices <p>用户通知 最多5个</p>
                      * 
                      */
                     void SetUserNotices(const std::vector<UserNotice>& _userNotices);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UserNoticesHasBeenSet() const;
 
                     /**
-                     * 获取回调通知 最多6个
-                     * @return URLNotices 回调通知 最多6个
+                     * 获取<p>回调通知 最多6个</p>
+                     * @return URLNotices <p>回调通知 最多6个</p>
                      * 
                      */
                     std::vector<URLNotice> GetURLNotices() const;
 
                     /**
-                     * 设置回调通知 最多6个
-                     * @param _uRLNotices 回调通知 最多6个
+                     * 设置<p>回调通知 最多6个</p>
+                     * @param _uRLNotices <p>回调通知 最多6个</p>
                      * 
                      */
                     void SetURLNotices(const std::vector<URLNotice>& _uRLNotices);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool URLNoticesHasBeenSet() const;
 
                     /**
-                     * 获取推送CLS日志服务的操作 最多1个
-                     * @return CLSNotices 推送CLS日志服务的操作 最多1个
+                     * 获取<p>推送CLS日志服务的操作 最多1个</p>
+                     * @return CLSNotices <p>推送CLS日志服务的操作 最多1个</p>
                      * 
                      */
                     std::vector<CLSNotice> GetCLSNotices() const;
 
                     /**
-                     * 设置推送CLS日志服务的操作 最多1个
-                     * @param _cLSNotices 推送CLS日志服务的操作 最多1个
+                     * 设置<p>推送CLS日志服务的操作 最多1个</p>
+                     * @param _cLSNotices <p>推送CLS日志服务的操作 最多1个</p>
                      * 
                      */
                     void SetCLSNotices(const std::vector<CLSNotice>& _cLSNotices);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CLSNoticesHasBeenSet() const;
 
                     /**
-                     * 获取模板绑定的标签
-                     * @return Tags 模板绑定的标签
+                     * 获取<p>模板绑定的标签</p>
+                     * @return Tags <p>模板绑定的标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置模板绑定的标签
-                     * @param _tags 模板绑定的标签
+                     * 设置<p>模板绑定的标签</p>
+                     * @param _tags <p>模板绑定的标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否免登录，0-否，1-是
-                     * @return IsLoginFree 是否免登录，0-否，1-是
+                     * 获取<p>是否免登录，0-否，1-是</p>
+                     * @return IsLoginFree <p>是否免登录，0-否，1-是</p>
                      * 
                      */
                     int64_t GetIsLoginFree() const;
 
                     /**
-                     * 设置是否免登录，0-否，1-是
-                     * @param _isLoginFree 是否免登录，0-否，1-是
+                     * 设置<p>是否免登录，0-否，1-是</p>
+                     * @param _isLoginFree <p>是否免登录，0-否，1-是</p>
                      * 
                      */
                     void SetIsLoginFree(const int64_t& _isLoginFree);
@@ -235,61 +235,88 @@ namespace TencentCloud
                      */
                     bool IsLoginFreeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IANA 时区名</p>
+                     * @return TimeZoneName <p>IANA 时区名</p>
+                     * 
+                     */
+                    std::string GetTimeZoneName() const;
+
+                    /**
+                     * 设置<p>IANA 时区名</p>
+                     * @param _timeZoneName <p>IANA 时区名</p>
+                     * 
+                     */
+                    void SetTimeZoneName(const std::string& _timeZoneName);
+
+                    /**
+                     * 判断参数 TimeZoneName 是否已赋值
+                     * @return TimeZoneName 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模块名，这里填“monitor”
+                     * <p>模块名，这里填“monitor”</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 通知模板名称 60字符以内
+                     * <p>通知模板名称 60字符以内</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知
+                     * <p>通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知</p>
                      */
                     std::string m_noticeType;
                     bool m_noticeTypeHasBeenSet;
 
                     /**
-                     * 通知语言 zh-CN=中文 en-US=英文
+                     * <p>通知语言 zh-CN=中文 en-US=英文</p>
                      */
                     std::string m_noticeLanguage;
                     bool m_noticeLanguageHasBeenSet;
 
                     /**
-                     * 用户通知 最多5个
+                     * <p>用户通知 最多5个</p>
                      */
                     std::vector<UserNotice> m_userNotices;
                     bool m_userNoticesHasBeenSet;
 
                     /**
-                     * 回调通知 最多6个
+                     * <p>回调通知 最多6个</p>
                      */
                     std::vector<URLNotice> m_uRLNotices;
                     bool m_uRLNoticesHasBeenSet;
 
                     /**
-                     * 推送CLS日志服务的操作 最多1个
+                     * <p>推送CLS日志服务的操作 最多1个</p>
                      */
                     std::vector<CLSNotice> m_cLSNotices;
                     bool m_cLSNoticesHasBeenSet;
 
                     /**
-                     * 模板绑定的标签
+                     * <p>模板绑定的标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否免登录，0-否，1-是
+                     * <p>是否免登录，0-否，1-是</p>
                      */
                     int64_t m_isLoginFree;
                     bool m_isLoginFreeHasBeenSet;
+
+                    /**
+                     * <p>IANA 时区名</p>
+                     */
+                    std::string m_timeZoneName;
+                    bool m_timeZoneNameHasBeenSet;
 
                 };
             }

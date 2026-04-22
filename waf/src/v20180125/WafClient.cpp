@@ -240,6 +240,106 @@ WafClient::AddAttackWhiteRuleOutcomeCallable WafClient::AddAttackWhiteRuleCallab
     return prom->get_future();
 }
 
+WafClient::AddBatchCustomRuleOutcome WafClient::AddBatchCustomRule(const AddBatchCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddBatchCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddBatchCustomRuleResponse rsp = AddBatchCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddBatchCustomRuleOutcome(rsp);
+        else
+            return AddBatchCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddBatchCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddBatchCustomRuleAsync(const AddBatchCustomRuleRequest& request, const AddBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddBatchCustomRuleRequest&;
+    using Resp = AddBatchCustomRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddBatchCustomRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::AddBatchCustomRuleOutcomeCallable WafClient::AddBatchCustomRuleCallable(const AddBatchCustomRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddBatchCustomRuleOutcome>>();
+    AddBatchCustomRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const AddBatchCustomRuleRequest&,
+        AddBatchCustomRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::AddBatchCustomWhiteRuleOutcome WafClient::AddBatchCustomWhiteRule(const AddBatchCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddBatchCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddBatchCustomWhiteRuleResponse rsp = AddBatchCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddBatchCustomWhiteRuleOutcome(rsp);
+        else
+            return AddBatchCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddBatchCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddBatchCustomWhiteRuleAsync(const AddBatchCustomWhiteRuleRequest& request, const AddBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddBatchCustomWhiteRuleRequest&;
+    using Resp = AddBatchCustomWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddBatchCustomWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::AddBatchCustomWhiteRuleOutcomeCallable WafClient::AddBatchCustomWhiteRuleCallable(const AddBatchCustomWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddBatchCustomWhiteRuleOutcome>>();
+    AddBatchCustomWhiteRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const AddBatchCustomWhiteRuleRequest&,
+        AddBatchCustomWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::AddBypassAllRuleOutcome WafClient::AddBypassAllRule(const AddBypassAllRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "AddBypassAllRule");
@@ -1040,6 +1140,56 @@ WafClient::CreatePostCLSFlowOutcomeCallable WafClient::CreatePostCLSFlowCallable
     return prom->get_future();
 }
 
+WafClient::CreateProtectGroupOutcome WafClient::CreateProtectGroup(const CreateProtectGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProtectGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProtectGroupResponse rsp = CreateProtectGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProtectGroupOutcome(rsp);
+        else
+            return CreateProtectGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProtectGroupOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateProtectGroupAsync(const CreateProtectGroupRequest& request, const CreateProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateProtectGroupRequest&;
+    using Resp = CreateProtectGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateProtectGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::CreateProtectGroupOutcomeCallable WafClient::CreateProtectGroupCallable(const CreateProtectGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateProtectGroupOutcome>>();
+    CreateProtectGroupAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const CreateProtectGroupRequest&,
+        CreateProtectGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::CreateRateLimitV2Outcome WafClient::CreateRateLimitV2(const CreateRateLimitV2Request &request)
 {
     auto outcome = MakeRequest(request, "CreateRateLimitV2");
@@ -1332,6 +1482,106 @@ WafClient::DeleteAttackWhiteRuleOutcomeCallable WafClient::DeleteAttackWhiteRule
         const WafClient*,
         const DeleteAttackWhiteRuleRequest&,
         DeleteAttackWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteBatchCustomRuleOutcome WafClient::DeleteBatchCustomRule(const DeleteBatchCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBatchCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBatchCustomRuleResponse rsp = DeleteBatchCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBatchCustomRuleOutcome(rsp);
+        else
+            return DeleteBatchCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBatchCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBatchCustomRuleAsync(const DeleteBatchCustomRuleRequest& request, const DeleteBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBatchCustomRuleRequest&;
+    using Resp = DeleteBatchCustomRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBatchCustomRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteBatchCustomRuleOutcomeCallable WafClient::DeleteBatchCustomRuleCallable(const DeleteBatchCustomRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBatchCustomRuleOutcome>>();
+    DeleteBatchCustomRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteBatchCustomRuleRequest&,
+        DeleteBatchCustomRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteBatchCustomWhiteRuleOutcome WafClient::DeleteBatchCustomWhiteRule(const DeleteBatchCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBatchCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBatchCustomWhiteRuleResponse rsp = DeleteBatchCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBatchCustomWhiteRuleOutcome(rsp);
+        else
+            return DeleteBatchCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBatchCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteBatchCustomWhiteRuleAsync(const DeleteBatchCustomWhiteRuleRequest& request, const DeleteBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBatchCustomWhiteRuleRequest&;
+    using Resp = DeleteBatchCustomWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBatchCustomWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteBatchCustomWhiteRuleOutcomeCallable WafClient::DeleteBatchCustomWhiteRuleCallable(const DeleteBatchCustomWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBatchCustomWhiteRuleOutcome>>();
+    DeleteBatchCustomWhiteRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteBatchCustomWhiteRuleRequest&,
+        DeleteBatchCustomWhiteRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1932,6 +2182,106 @@ WafClient::DeleteOwaspWhiteRuleOutcomeCallable WafClient::DeleteOwaspWhiteRuleCa
         const WafClient*,
         const DeleteOwaspWhiteRuleRequest&,
         DeleteOwaspWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteProtectGroupOutcome WafClient::DeleteProtectGroup(const DeleteProtectGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProtectGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProtectGroupResponse rsp = DeleteProtectGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProtectGroupOutcome(rsp);
+        else
+            return DeleteProtectGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProtectGroupOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteProtectGroupAsync(const DeleteProtectGroupRequest& request, const DeleteProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProtectGroupRequest&;
+    using Resp = DeleteProtectGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProtectGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteProtectGroupOutcomeCallable WafClient::DeleteProtectGroupCallable(const DeleteProtectGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProtectGroupOutcome>>();
+    DeleteProtectGroupAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteProtectGroupRequest&,
+        DeleteProtectGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteProtectGroupDomainOutcome WafClient::DeleteProtectGroupDomain(const DeleteProtectGroupDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProtectGroupDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProtectGroupDomainResponse rsp = DeleteProtectGroupDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProtectGroupDomainOutcome(rsp);
+        else
+            return DeleteProtectGroupDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProtectGroupDomainOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteProtectGroupDomainAsync(const DeleteProtectGroupDomainRequest& request, const DeleteProtectGroupDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProtectGroupDomainRequest&;
+    using Resp = DeleteProtectGroupDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProtectGroupDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteProtectGroupDomainOutcomeCallable WafClient::DeleteProtectGroupDomainCallable(const DeleteProtectGroupDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProtectGroupDomainOutcome>>();
+    DeleteProtectGroupDomainAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteProtectGroupDomainRequest&,
+        DeleteProtectGroupDomainOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2932,6 +3282,106 @@ WafClient::DescribeAutoDenyIPOutcomeCallable WafClient::DescribeAutoDenyIPCallab
         const WafClient*,
         const DescribeAutoDenyIPRequest&,
         DescribeAutoDenyIPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeBatchCustomRuleListOutcome WafClient::DescribeBatchCustomRuleList(const DescribeBatchCustomRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchCustomRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchCustomRuleListResponse rsp = DescribeBatchCustomRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchCustomRuleListOutcome(rsp);
+        else
+            return DescribeBatchCustomRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchCustomRuleListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBatchCustomRuleListAsync(const DescribeBatchCustomRuleListRequest& request, const DescribeBatchCustomRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBatchCustomRuleListRequest&;
+    using Resp = DescribeBatchCustomRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatchCustomRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeBatchCustomRuleListOutcomeCallable WafClient::DescribeBatchCustomRuleListCallable(const DescribeBatchCustomRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBatchCustomRuleListOutcome>>();
+    DescribeBatchCustomRuleListAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeBatchCustomRuleListRequest&,
+        DescribeBatchCustomRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeBatchCustomWhiteRulesOutcome WafClient::DescribeBatchCustomWhiteRules(const DescribeBatchCustomWhiteRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchCustomWhiteRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchCustomWhiteRulesResponse rsp = DescribeBatchCustomWhiteRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchCustomWhiteRulesOutcome(rsp);
+        else
+            return DescribeBatchCustomWhiteRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchCustomWhiteRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBatchCustomWhiteRulesAsync(const DescribeBatchCustomWhiteRulesRequest& request, const DescribeBatchCustomWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBatchCustomWhiteRulesRequest&;
+    using Resp = DescribeBatchCustomWhiteRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBatchCustomWhiteRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeBatchCustomWhiteRulesOutcomeCallable WafClient::DescribeBatchCustomWhiteRulesCallable(const DescribeBatchCustomWhiteRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBatchCustomWhiteRulesOutcome>>();
+    DescribeBatchCustomWhiteRulesAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeBatchCustomWhiteRulesRequest&,
+        DescribeBatchCustomWhiteRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5032,6 +5482,56 @@ WafClient::DescribePostCLSFlowsOutcomeCallable WafClient::DescribePostCLSFlowsCa
         const WafClient*,
         const DescribePostCLSFlowsRequest&,
         DescribePostCLSFlowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeProtectGroupOutcome WafClient::DescribeProtectGroup(const DescribeProtectGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProtectGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProtectGroupResponse rsp = DescribeProtectGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProtectGroupOutcome(rsp);
+        else
+            return DescribeProtectGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProtectGroupOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeProtectGroupAsync(const DescribeProtectGroupRequest& request, const DescribeProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProtectGroupRequest&;
+    using Resp = DescribeProtectGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProtectGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeProtectGroupOutcomeCallable WafClient::DescribeProtectGroupCallable(const DescribeProtectGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProtectGroupOutcome>>();
+    DescribeProtectGroupAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeProtectGroupRequest&,
+        DescribeProtectGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7190,6 +7690,206 @@ WafClient::ModifyAttackWhiteRuleOutcomeCallable WafClient::ModifyAttackWhiteRule
     return prom->get_future();
 }
 
+WafClient::ModifyBatchCustomRuleOutcome WafClient::ModifyBatchCustomRule(const ModifyBatchCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchCustomRuleResponse rsp = ModifyBatchCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchCustomRuleOutcome(rsp);
+        else
+            return ModifyBatchCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchCustomRuleAsync(const ModifyBatchCustomRuleRequest& request, const ModifyBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBatchCustomRuleRequest&;
+    using Resp = ModifyBatchCustomRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBatchCustomRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyBatchCustomRuleOutcomeCallable WafClient::ModifyBatchCustomRuleCallable(const ModifyBatchCustomRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBatchCustomRuleOutcome>>();
+    ModifyBatchCustomRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyBatchCustomRuleRequest&,
+        ModifyBatchCustomRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyBatchCustomRuleStatusOutcome WafClient::ModifyBatchCustomRuleStatus(const ModifyBatchCustomRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchCustomRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchCustomRuleStatusResponse rsp = ModifyBatchCustomRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchCustomRuleStatusOutcome(rsp);
+        else
+            return ModifyBatchCustomRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchCustomRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchCustomRuleStatusAsync(const ModifyBatchCustomRuleStatusRequest& request, const ModifyBatchCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBatchCustomRuleStatusRequest&;
+    using Resp = ModifyBatchCustomRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBatchCustomRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyBatchCustomRuleStatusOutcomeCallable WafClient::ModifyBatchCustomRuleStatusCallable(const ModifyBatchCustomRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBatchCustomRuleStatusOutcome>>();
+    ModifyBatchCustomRuleStatusAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyBatchCustomRuleStatusRequest&,
+        ModifyBatchCustomRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyBatchCustomWhiteRuleOutcome WafClient::ModifyBatchCustomWhiteRule(const ModifyBatchCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchCustomWhiteRuleResponse rsp = ModifyBatchCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchCustomWhiteRuleOutcome(rsp);
+        else
+            return ModifyBatchCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchCustomWhiteRuleAsync(const ModifyBatchCustomWhiteRuleRequest& request, const ModifyBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBatchCustomWhiteRuleRequest&;
+    using Resp = ModifyBatchCustomWhiteRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBatchCustomWhiteRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyBatchCustomWhiteRuleOutcomeCallable WafClient::ModifyBatchCustomWhiteRuleCallable(const ModifyBatchCustomWhiteRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBatchCustomWhiteRuleOutcome>>();
+    ModifyBatchCustomWhiteRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyBatchCustomWhiteRuleRequest&,
+        ModifyBatchCustomWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyBatchCustomWhiteRuleStatusOutcome WafClient::ModifyBatchCustomWhiteRuleStatus(const ModifyBatchCustomWhiteRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBatchCustomWhiteRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBatchCustomWhiteRuleStatusResponse rsp = ModifyBatchCustomWhiteRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBatchCustomWhiteRuleStatusOutcome(rsp);
+        else
+            return ModifyBatchCustomWhiteRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBatchCustomWhiteRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyBatchCustomWhiteRuleStatusAsync(const ModifyBatchCustomWhiteRuleStatusRequest& request, const ModifyBatchCustomWhiteRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBatchCustomWhiteRuleStatusRequest&;
+    using Resp = ModifyBatchCustomWhiteRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBatchCustomWhiteRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyBatchCustomWhiteRuleStatusOutcomeCallable WafClient::ModifyBatchCustomWhiteRuleStatusCallable(const ModifyBatchCustomWhiteRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBatchCustomWhiteRuleStatusOutcome>>();
+    ModifyBatchCustomWhiteRuleStatusAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyBatchCustomWhiteRuleStatusRequest&,
+        ModifyBatchCustomWhiteRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::ModifyBatchIpAccessControlOutcome WafClient::ModifyBatchIpAccessControl(const ModifyBatchIpAccessControlRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBatchIpAccessControl");
@@ -8782,6 +9482,56 @@ WafClient::ModifyOwaspWhiteRuleOutcomeCallable WafClient::ModifyOwaspWhiteRuleCa
         const WafClient*,
         const ModifyOwaspWhiteRuleRequest&,
         ModifyOwaspWhiteRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyProtectGroupOutcome WafClient::ModifyProtectGroup(const ModifyProtectGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProtectGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProtectGroupResponse rsp = ModifyProtectGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProtectGroupOutcome(rsp);
+        else
+            return ModifyProtectGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProtectGroupOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyProtectGroupAsync(const ModifyProtectGroupRequest& request, const ModifyProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyProtectGroupRequest&;
+    using Resp = ModifyProtectGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyProtectGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyProtectGroupOutcomeCallable WafClient::ModifyProtectGroupCallable(const ModifyProtectGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyProtectGroupOutcome>>();
+    ModifyProtectGroupAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyProtectGroupRequest&,
+        ModifyProtectGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

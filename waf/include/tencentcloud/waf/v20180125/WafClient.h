@@ -31,6 +31,10 @@
 #include <tencentcloud/waf/v20180125/model/AddAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddBatchCustomRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddBatchCustomRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddBatchCustomWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddBatchCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddBypassAllRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddBypassAllRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/waf/v20180125/model/CreatePostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateProtectGroupRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateProtectGroupResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateRateLimitV2Request.h>
 #include <tencentcloud/waf/v20180125/model/CreateRateLimitV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
@@ -75,6 +81,10 @@
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchCustomRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchCustomRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchCustomWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteBatchCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteBotSceneUCBRuleRequest.h>
@@ -99,6 +109,10 @@
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteProtectGroupRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteProtectGroupResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteProtectGroupDomainRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteProtectGroupDomainResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteRateLimitsV2Request.h>
 #include <tencentcloud/waf/v20180125/model/DeleteRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
@@ -139,6 +153,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBatchCustomRuleListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBatchCustomRuleListResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBatchCustomWhiteRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBatchCustomWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBotIdRuleRequest.h>
@@ -223,6 +241,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeProtectGroupRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeProtectGroupResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRateLimitsV2Request.h>
@@ -309,6 +329,14 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomWhiteRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyBatchCustomWhiteRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyBotIdRuleRequest.h>
@@ -373,6 +401,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyProtectGroupRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyProtectGroupResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionLevelRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionLevelResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyProtectionStatusRequest.h>
@@ -451,6 +481,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAttackWhiteRuleResponse> AddAttackWhiteRuleOutcome;
                 typedef std::future<AddAttackWhiteRuleOutcome> AddAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddAttackWhiteRuleRequest&, AddAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddBatchCustomRuleResponse> AddBatchCustomRuleOutcome;
+                typedef std::future<AddBatchCustomRuleOutcome> AddBatchCustomRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddBatchCustomRuleRequest&, AddBatchCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddBatchCustomRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddBatchCustomWhiteRuleResponse> AddBatchCustomWhiteRuleOutcome;
+                typedef std::future<AddBatchCustomWhiteRuleOutcome> AddBatchCustomWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddBatchCustomWhiteRuleRequest&, AddBatchCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddBatchCustomWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddBypassAllRuleResponse> AddBypassAllRuleOutcome;
                 typedef std::future<AddBypassAllRuleOutcome> AddBypassAllRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddBypassAllRuleRequest&, AddBypassAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddBypassAllRuleAsyncHandler;
@@ -499,6 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePostCLSFlowResponse> CreatePostCLSFlowOutcome;
                 typedef std::future<CreatePostCLSFlowOutcome> CreatePostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreatePostCLSFlowRequest&, CreatePostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostCLSFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProtectGroupResponse> CreateProtectGroupOutcome;
+                typedef std::future<CreateProtectGroupOutcome> CreateProtectGroupOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateProtectGroupRequest&, CreateProtectGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRateLimitV2Response> CreateRateLimitV2Outcome;
                 typedef std::future<CreateRateLimitV2Outcome> CreateRateLimitV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateRateLimitV2Request&, CreateRateLimitV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRateLimitV2AsyncHandler;
@@ -517,6 +556,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAttackWhiteRuleResponse> DeleteAttackWhiteRuleOutcome;
                 typedef std::future<DeleteAttackWhiteRuleOutcome> DeleteAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackWhiteRuleRequest&, DeleteAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBatchCustomRuleResponse> DeleteBatchCustomRuleOutcome;
+                typedef std::future<DeleteBatchCustomRuleOutcome> DeleteBatchCustomRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteBatchCustomRuleRequest&, DeleteBatchCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchCustomRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBatchCustomWhiteRuleResponse> DeleteBatchCustomWhiteRuleOutcome;
+                typedef std::future<DeleteBatchCustomWhiteRuleOutcome> DeleteBatchCustomWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteBatchCustomWhiteRuleRequest&, DeleteBatchCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchCustomWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBatchIpAccessControlResponse> DeleteBatchIpAccessControlOutcome;
                 typedef std::future<DeleteBatchIpAccessControlOutcome> DeleteBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteBatchIpAccessControlRequest&, DeleteBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchIpAccessControlAsyncHandler;
@@ -553,6 +598,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOwaspWhiteRuleResponse> DeleteOwaspWhiteRuleOutcome;
                 typedef std::future<DeleteOwaspWhiteRuleOutcome> DeleteOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteOwaspWhiteRuleRequest&, DeleteOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProtectGroupResponse> DeleteProtectGroupOutcome;
+                typedef std::future<DeleteProtectGroupOutcome> DeleteProtectGroupOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteProtectGroupRequest&, DeleteProtectGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtectGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProtectGroupDomainResponse> DeleteProtectGroupDomainOutcome;
+                typedef std::future<DeleteProtectGroupDomainOutcome> DeleteProtectGroupDomainOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteProtectGroupDomainRequest&, DeleteProtectGroupDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtectGroupDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRateLimitsV2Response> DeleteRateLimitsV2Outcome;
                 typedef std::future<DeleteRateLimitsV2Outcome> DeleteRateLimitsV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteRateLimitsV2Request&, DeleteRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRateLimitsV2AsyncHandler;
@@ -613,6 +664,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoDenyIPResponse> DescribeAutoDenyIPOutcome;
                 typedef std::future<DescribeAutoDenyIPOutcome> DescribeAutoDenyIPOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAutoDenyIPRequest&, DescribeAutoDenyIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoDenyIPAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchCustomRuleListResponse> DescribeBatchCustomRuleListOutcome;
+                typedef std::future<DescribeBatchCustomRuleListOutcome> DescribeBatchCustomRuleListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBatchCustomRuleListRequest&, DescribeBatchCustomRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchCustomRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchCustomWhiteRulesResponse> DescribeBatchCustomWhiteRulesOutcome;
+                typedef std::future<DescribeBatchCustomWhiteRulesOutcome> DescribeBatchCustomWhiteRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBatchCustomWhiteRulesRequest&, DescribeBatchCustomWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchCustomWhiteRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchIpAccessControlResponse> DescribeBatchIpAccessControlOutcome;
                 typedef std::future<DescribeBatchIpAccessControlOutcome> DescribeBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeBatchIpAccessControlRequest&, DescribeBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchIpAccessControlAsyncHandler;
@@ -739,6 +796,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePostCLSFlowsResponse> DescribePostCLSFlowsOutcome;
                 typedef std::future<DescribePostCLSFlowsOutcome> DescribePostCLSFlowsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePostCLSFlowsRequest&, DescribePostCLSFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostCLSFlowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProtectGroupResponse> DescribeProtectGroupOutcome;
+                typedef std::future<DescribeProtectGroupOutcome> DescribeProtectGroupOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeProtectGroupRequest&, DescribeProtectGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProtectionModesResponse> DescribeProtectionModesOutcome;
                 typedef std::future<DescribeProtectionModesOutcome> DescribeProtectionModesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeProtectionModesRequest&, DescribeProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModesAsyncHandler;
@@ -868,6 +928,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAttackWhiteRuleResponse> ModifyAttackWhiteRuleOutcome;
                 typedef std::future<ModifyAttackWhiteRuleOutcome> ModifyAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAttackWhiteRuleRequest&, ModifyAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAttackWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBatchCustomRuleResponse> ModifyBatchCustomRuleOutcome;
+                typedef std::future<ModifyBatchCustomRuleOutcome> ModifyBatchCustomRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBatchCustomRuleRequest&, ModifyBatchCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchCustomRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBatchCustomRuleStatusResponse> ModifyBatchCustomRuleStatusOutcome;
+                typedef std::future<ModifyBatchCustomRuleStatusOutcome> ModifyBatchCustomRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBatchCustomRuleStatusRequest&, ModifyBatchCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchCustomRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBatchCustomWhiteRuleResponse> ModifyBatchCustomWhiteRuleOutcome;
+                typedef std::future<ModifyBatchCustomWhiteRuleOutcome> ModifyBatchCustomWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBatchCustomWhiteRuleRequest&, ModifyBatchCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchCustomWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBatchCustomWhiteRuleStatusResponse> ModifyBatchCustomWhiteRuleStatusOutcome;
+                typedef std::future<ModifyBatchCustomWhiteRuleStatusOutcome> ModifyBatchCustomWhiteRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyBatchCustomWhiteRuleStatusRequest&, ModifyBatchCustomWhiteRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchCustomWhiteRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBatchIpAccessControlResponse> ModifyBatchIpAccessControlOutcome;
                 typedef std::future<ModifyBatchIpAccessControlOutcome> ModifyBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyBatchIpAccessControlRequest&, ModifyBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBatchIpAccessControlAsyncHandler;
@@ -964,6 +1036,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOwaspWhiteRuleResponse> ModifyOwaspWhiteRuleOutcome;
                 typedef std::future<ModifyOwaspWhiteRuleOutcome> ModifyOwaspWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyOwaspWhiteRuleRequest&, ModifyOwaspWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProtectGroupResponse> ModifyProtectGroupOutcome;
+                typedef std::future<ModifyProtectGroupOutcome> ModifyProtectGroupOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyProtectGroupRequest&, ModifyProtectGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProtectionLevelResponse> ModifyProtectionLevelOutcome;
                 typedef std::future<ModifyProtectionLevelOutcome> ModifyProtectionLevelOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyProtectionLevelRequest&, ModifyProtectionLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectionLevelAsyncHandler;
@@ -1080,6 +1155,24 @@ namespace TencentCloud
                 AddAttackWhiteRuleOutcome AddAttackWhiteRule(const Model::AddAttackWhiteRuleRequest &request);
                 void AddAttackWhiteRuleAsync(const Model::AddAttackWhiteRuleRequest& request, const AddAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddAttackWhiteRuleOutcomeCallable AddAttackWhiteRuleCallable(const Model::AddAttackWhiteRuleRequest& request);
+
+                /**
+                 *批量新增自定义规则接口
+                 * @param req AddBatchCustomRuleRequest
+                 * @return AddBatchCustomRuleOutcome
+                 */
+                AddBatchCustomRuleOutcome AddBatchCustomRule(const Model::AddBatchCustomRuleRequest &request);
+                void AddBatchCustomRuleAsync(const Model::AddBatchCustomRuleRequest& request, const AddBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddBatchCustomRuleOutcomeCallable AddBatchCustomRuleCallable(const Model::AddBatchCustomRuleRequest& request);
+
+                /**
+                 *增加批量精准白名单规则
+                 * @param req AddBatchCustomWhiteRuleRequest
+                 * @return AddBatchCustomWhiteRuleOutcome
+                 */
+                AddBatchCustomWhiteRuleOutcome AddBatchCustomWhiteRule(const Model::AddBatchCustomWhiteRuleRequest &request);
+                void AddBatchCustomWhiteRuleAsync(const Model::AddBatchCustomWhiteRuleRequest& request, const AddBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddBatchCustomWhiteRuleOutcomeCallable AddBatchCustomWhiteRuleCallable(const Model::AddBatchCustomWhiteRuleRequest& request);
 
                 /**
                  *添加一键bypass能力支持,直接添加APPID
@@ -1226,6 +1319,15 @@ namespace TencentCloud
                 CreatePostCLSFlowOutcomeCallable CreatePostCLSFlowCallable(const Model::CreatePostCLSFlowRequest& request);
 
                 /**
+                 *新建防护对象组
+                 * @param req CreateProtectGroupRequest
+                 * @return CreateProtectGroupOutcome
+                 */
+                CreateProtectGroupOutcome CreateProtectGroup(const Model::CreateProtectGroupRequest &request);
+                void CreateProtectGroupAsync(const Model::CreateProtectGroupRequest& request, const CreateProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProtectGroupOutcomeCallable CreateProtectGroupCallable(const Model::CreateProtectGroupRequest& request);
+
+                /**
                  *创建限流规则
                  * @param req CreateRateLimitV2Request
                  * @return CreateRateLimitV2Outcome
@@ -1278,6 +1380,24 @@ namespace TencentCloud
                 DeleteAttackWhiteRuleOutcome DeleteAttackWhiteRule(const Model::DeleteAttackWhiteRuleRequest &request);
                 void DeleteAttackWhiteRuleAsync(const Model::DeleteAttackWhiteRuleRequest& request, const DeleteAttackWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAttackWhiteRuleOutcomeCallable DeleteAttackWhiteRuleCallable(const Model::DeleteAttackWhiteRuleRequest& request);
+
+                /**
+                 *[自定义规则]-批量删除接口
+                 * @param req DeleteBatchCustomRuleRequest
+                 * @return DeleteBatchCustomRuleOutcome
+                 */
+                DeleteBatchCustomRuleOutcome DeleteBatchCustomRule(const Model::DeleteBatchCustomRuleRequest &request);
+                void DeleteBatchCustomRuleAsync(const Model::DeleteBatchCustomRuleRequest& request, const DeleteBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBatchCustomRuleOutcomeCallable DeleteBatchCustomRuleCallable(const Model::DeleteBatchCustomRuleRequest& request);
+
+                /**
+                 *删除批量精准白名单规则
+                 * @param req DeleteBatchCustomWhiteRuleRequest
+                 * @return DeleteBatchCustomWhiteRuleOutcome
+                 */
+                DeleteBatchCustomWhiteRuleOutcome DeleteBatchCustomWhiteRule(const Model::DeleteBatchCustomWhiteRuleRequest &request);
+                void DeleteBatchCustomWhiteRuleAsync(const Model::DeleteBatchCustomWhiteRuleRequest& request, const DeleteBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBatchCustomWhiteRuleOutcomeCallable DeleteBatchCustomWhiteRuleCallable(const Model::DeleteBatchCustomWhiteRuleRequest& request);
 
                 /**
                  *批量黑白名单删除接口
@@ -1386,6 +1506,24 @@ namespace TencentCloud
                 DeleteOwaspWhiteRuleOutcome DeleteOwaspWhiteRule(const Model::DeleteOwaspWhiteRuleRequest &request);
                 void DeleteOwaspWhiteRuleAsync(const Model::DeleteOwaspWhiteRuleRequest& request, const DeleteOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteOwaspWhiteRuleOutcomeCallable DeleteOwaspWhiteRuleCallable(const Model::DeleteOwaspWhiteRuleRequest& request);
+
+                /**
+                 *删除防护对象组
+                 * @param req DeleteProtectGroupRequest
+                 * @return DeleteProtectGroupOutcome
+                 */
+                DeleteProtectGroupOutcome DeleteProtectGroup(const Model::DeleteProtectGroupRequest &request);
+                void DeleteProtectGroupAsync(const Model::DeleteProtectGroupRequest& request, const DeleteProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProtectGroupOutcomeCallable DeleteProtectGroupCallable(const Model::DeleteProtectGroupRequest& request);
+
+                /**
+                 *解除防护对象组中的域名绑定
+                 * @param req DeleteProtectGroupDomainRequest
+                 * @return DeleteProtectGroupDomainOutcome
+                 */
+                DeleteProtectGroupDomainOutcome DeleteProtectGroupDomain(const Model::DeleteProtectGroupDomainRequest &request);
+                void DeleteProtectGroupDomainAsync(const Model::DeleteProtectGroupDomainRequest& request, const DeleteProtectGroupDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProtectGroupDomainOutcomeCallable DeleteProtectGroupDomainCallable(const Model::DeleteProtectGroupDomainRequest& request);
 
                 /**
                  *删除自研版限流规则
@@ -1566,6 +1704,24 @@ namespace TencentCloud
                 DescribeAutoDenyIPOutcome DescribeAutoDenyIP(const Model::DescribeAutoDenyIPRequest &request);
                 void DescribeAutoDenyIPAsync(const Model::DescribeAutoDenyIPRequest& request, const DescribeAutoDenyIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoDenyIPOutcomeCallable DescribeAutoDenyIPCallable(const Model::DescribeAutoDenyIPRequest& request);
+
+                /**
+                 *批量自定义规则列表接口
+                 * @param req DescribeBatchCustomRuleListRequest
+                 * @return DescribeBatchCustomRuleListOutcome
+                 */
+                DescribeBatchCustomRuleListOutcome DescribeBatchCustomRuleList(const Model::DescribeBatchCustomRuleListRequest &request);
+                void DescribeBatchCustomRuleListAsync(const Model::DescribeBatchCustomRuleListRequest& request, const DescribeBatchCustomRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchCustomRuleListOutcomeCallable DescribeBatchCustomRuleListCallable(const Model::DescribeBatchCustomRuleListRequest& request);
+
+                /**
+                 *获取批量精准白名单的规则列表
+                 * @param req DescribeBatchCustomWhiteRulesRequest
+                 * @return DescribeBatchCustomWhiteRulesOutcome
+                 */
+                DescribeBatchCustomWhiteRulesOutcome DescribeBatchCustomWhiteRules(const Model::DescribeBatchCustomWhiteRulesRequest &request);
+                void DescribeBatchCustomWhiteRulesAsync(const Model::DescribeBatchCustomWhiteRulesRequest& request, const DescribeBatchCustomWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchCustomWhiteRulesOutcomeCallable DescribeBatchCustomWhiteRulesCallable(const Model::DescribeBatchCustomWhiteRulesRequest& request);
 
                 /**
                  *Waf 批量防护IP黑白名单查询
@@ -1944,6 +2100,15 @@ namespace TencentCloud
                 DescribePostCLSFlowsOutcome DescribePostCLSFlows(const Model::DescribePostCLSFlowsRequest &request);
                 void DescribePostCLSFlowsAsync(const Model::DescribePostCLSFlowsRequest& request, const DescribePostCLSFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePostCLSFlowsOutcomeCallable DescribePostCLSFlowsCallable(const Model::DescribePostCLSFlowsRequest& request);
+
+                /**
+                 *获取防护对象组详情
+                 * @param req DescribeProtectGroupRequest
+                 * @return DescribeProtectGroupOutcome
+                 */
+                DescribeProtectGroupOutcome DescribeProtectGroup(const Model::DescribeProtectGroupRequest &request);
+                void DescribeProtectGroupAsync(const Model::DescribeProtectGroupRequest& request, const DescribeProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProtectGroupOutcomeCallable DescribeProtectGroupCallable(const Model::DescribeProtectGroupRequest& request);
 
                 /**
                  *查询Tiga引擎大类规则及其防护模式
@@ -2335,6 +2500,42 @@ namespace TencentCloud
                 ModifyAttackWhiteRuleOutcomeCallable ModifyAttackWhiteRuleCallable(const Model::ModifyAttackWhiteRuleRequest& request);
 
                 /**
+                 *批量编辑自定义规则接口
+                 * @param req ModifyBatchCustomRuleRequest
+                 * @return ModifyBatchCustomRuleOutcome
+                 */
+                ModifyBatchCustomRuleOutcome ModifyBatchCustomRule(const Model::ModifyBatchCustomRuleRequest &request);
+                void ModifyBatchCustomRuleAsync(const Model::ModifyBatchCustomRuleRequest& request, const ModifyBatchCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBatchCustomRuleOutcomeCallable ModifyBatchCustomRuleCallable(const Model::ModifyBatchCustomRuleRequest& request);
+
+                /**
+                 *批量自定义规则开关接口
+                 * @param req ModifyBatchCustomRuleStatusRequest
+                 * @return ModifyBatchCustomRuleStatusOutcome
+                 */
+                ModifyBatchCustomRuleStatusOutcome ModifyBatchCustomRuleStatus(const Model::ModifyBatchCustomRuleStatusRequest &request);
+                void ModifyBatchCustomRuleStatusAsync(const Model::ModifyBatchCustomRuleStatusRequest& request, const ModifyBatchCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBatchCustomRuleStatusOutcomeCallable ModifyBatchCustomRuleStatusCallable(const Model::ModifyBatchCustomRuleStatusRequest& request);
+
+                /**
+                 *修改批量精准白名单规则
+                 * @param req ModifyBatchCustomWhiteRuleRequest
+                 * @return ModifyBatchCustomWhiteRuleOutcome
+                 */
+                ModifyBatchCustomWhiteRuleOutcome ModifyBatchCustomWhiteRule(const Model::ModifyBatchCustomWhiteRuleRequest &request);
+                void ModifyBatchCustomWhiteRuleAsync(const Model::ModifyBatchCustomWhiteRuleRequest& request, const ModifyBatchCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBatchCustomWhiteRuleOutcomeCallable ModifyBatchCustomWhiteRuleCallable(const Model::ModifyBatchCustomWhiteRuleRequest& request);
+
+                /**
+                 *更新批量精准白名单规则
+                 * @param req ModifyBatchCustomWhiteRuleStatusRequest
+                 * @return ModifyBatchCustomWhiteRuleStatusOutcome
+                 */
+                ModifyBatchCustomWhiteRuleStatusOutcome ModifyBatchCustomWhiteRuleStatus(const Model::ModifyBatchCustomWhiteRuleStatusRequest &request);
+                void ModifyBatchCustomWhiteRuleStatusAsync(const Model::ModifyBatchCustomWhiteRuleStatusRequest& request, const ModifyBatchCustomWhiteRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBatchCustomWhiteRuleStatusOutcomeCallable ModifyBatchCustomWhiteRuleStatusCallable(const Model::ModifyBatchCustomWhiteRuleStatusRequest& request);
+
+                /**
                  *批量IP黑白名单新增接口
                  * @param req ModifyBatchIpAccessControlRequest
                  * @return ModifyBatchIpAccessControlOutcome
@@ -2622,6 +2823,15 @@ namespace TencentCloud
                 ModifyOwaspWhiteRuleOutcome ModifyOwaspWhiteRule(const Model::ModifyOwaspWhiteRuleRequest &request);
                 void ModifyOwaspWhiteRuleAsync(const Model::ModifyOwaspWhiteRuleRequest& request, const ModifyOwaspWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyOwaspWhiteRuleOutcomeCallable ModifyOwaspWhiteRuleCallable(const Model::ModifyOwaspWhiteRuleRequest& request);
+
+                /**
+                 *编辑防护对象组
+                 * @param req ModifyProtectGroupRequest
+                 * @return ModifyProtectGroupOutcome
+                 */
+                ModifyProtectGroupOutcome ModifyProtectGroup(const Model::ModifyProtectGroupRequest &request);
+                void ModifyProtectGroupAsync(const Model::ModifyProtectGroupRequest& request, const ModifyProtectGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProtectGroupOutcomeCallable ModifyProtectGroupCallable(const Model::ModifyProtectGroupRequest& request);
 
                 /**
                  *更改防护等级

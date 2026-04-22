@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）
-                     * @return QueryID 查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）
+                     * 获取<p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>
+                     * @return QueryID <p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>
                      * 
                      */
                     std::string GetQueryID() const;
 
                     /**
-                     * 设置查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）
-                     * @param _queryID 查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）
+                     * 设置<p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>
+                     * @param _queryID <p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>
                      * 
                      */
                     void SetQueryID(const std::string& _queryID);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_domainInstanceIdHasBeenSet;
 
                     /**
-                     * 查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）
+                     * <p>查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）</p>
                      */
                     std::string m_queryID;
                     bool m_queryIDHasBeenSet;

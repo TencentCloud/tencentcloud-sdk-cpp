@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件
-                     * @return FormListString 筛选条件
+                     * 获取<p>筛选条件</p>
+                     * @return FormListString <p>筛选条件</p>
                      * 
                      */
                     std::string GetFormListString() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param _formListString 筛选条件
+                     * 设置<p>筛选条件</p>
+                     * @param _formListString <p>筛选条件</p>
                      * 
                      */
                     void SetFormListString(const std::string& _formListString);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FormListStringHasBeenSet() const;
 
                     /**
-                     * 获取仅对比模式下填写，筛选条件A
-                     * @return FormListAString 仅对比模式下填写，筛选条件A
+                     * 获取<p>仅对比模式下填写，筛选条件A</p>
+                     * @return FormListAString <p>仅对比模式下填写，筛选条件A</p>
                      * 
                      */
                     std::string GetFormListAString() const;
 
                     /**
-                     * 设置仅对比模式下填写，筛选条件A
-                     * @param _formListAString 仅对比模式下填写，筛选条件A
+                     * 设置<p>仅对比模式下填写，筛选条件A</p>
+                     * @param _formListAString <p>仅对比模式下填写，筛选条件A</p>
                      * 
                      */
                     void SetFormListAString(const std::string& _formListAString);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FormListAStringHasBeenSet() const;
 
                     /**
-                     * 获取仅对比模式下填写，筛选条件B
-                     * @return FormListBString 仅对比模式下填写，筛选条件B
+                     * 获取<p>仅对比模式下填写，筛选条件B</p>
+                     * @return FormListBString <p>仅对比模式下填写，筛选条件B</p>
                      * 
                      */
                     std::string GetFormListBString() const;
 
                     /**
-                     * 设置仅对比模式下填写，筛选条件B
-                     * @param _formListBString 仅对比模式下填写，筛选条件B
+                     * 设置<p>仅对比模式下填写，筛选条件B</p>
+                     * @param _formListBString <p>仅对比模式下填写，筛选条件B</p>
                      * 
                      */
                     void SetFormListBString(const std::string& _formListBString);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FormListBStringHasBeenSet() const;
 
                     /**
-                     * 获取请求头
-                     * @return RequestHeader 请求头
+                     * 获取<p>请求头</p>
+                     * @return RequestHeader <p>请求头</p>
                      * 
                      */
                     std::string GetRequestHeader() const;
 
                     /**
-                     * 设置请求头
-                     * @param _requestHeader 请求头
+                     * 设置<p>请求头</p>
+                     * @param _requestHeader <p>请求头</p>
                      * 
                      */
                     void SetRequestHeader(const std::string& _requestHeader);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RequestHeaderHasBeenSet() const;
 
                     /**
-                     * 获取拓展字段
-                     * @return ExtraData 拓展字段
+                     * 获取<p>拓展字段</p>
+                     * @return ExtraData <p>拓展字段</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置拓展字段
-                     * @param _extraData 拓展字段
+                     * 设置<p>拓展字段</p>
+                     * @param _extraData <p>拓展字段</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选条件
+                     * <p>筛选条件</p>
                      */
                     std::string m_formListString;
                     bool m_formListStringHasBeenSet;
 
                     /**
-                     * 仅对比模式下填写，筛选条件A
+                     * <p>仅对比模式下填写，筛选条件A</p>
                      */
                     std::string m_formListAString;
                     bool m_formListAStringHasBeenSet;
 
                     /**
-                     * 仅对比模式下填写，筛选条件B
+                     * <p>仅对比模式下填写，筛选条件B</p>
                      */
                     std::string m_formListBString;
                     bool m_formListBStringHasBeenSet;
 
                     /**
-                     * 请求头
+                     * <p>请求头</p>
                      */
                     std::string m_requestHeader;
                     bool m_requestHeaderHasBeenSet;
 
                     /**
-                     * 拓展字段
+                     * <p>拓展字段</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
