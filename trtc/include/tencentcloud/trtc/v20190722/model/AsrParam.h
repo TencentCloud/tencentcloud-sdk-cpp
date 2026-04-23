@@ -319,6 +319,81 @@ namespace TencentCloud
                      */
                     bool VadLevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤脏词；1：过滤脏词；2：将脏词替换为 " * "。
+                     * @return FilterDirty 是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤脏词；1：过滤脏词；2：将脏词替换为 " * "。
+                     * 
+                     */
+                    uint64_t GetFilterDirty() const;
+
+                    /**
+                     * 设置是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤脏词；1：过滤脏词；2：将脏词替换为 " * "。
+                     * @param _filterDirty 是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤脏词；1：过滤脏词；2：将脏词替换为 " * "。
+                     * 
+                     */
+                    void SetFilterDirty(const uint64_t& _filterDirty);
+
+                    /**
+                     * 判断参数 FilterDirty 是否已赋值
+                     * @return FilterDirty 是否已赋值
+                     * 
+                     */
+                    bool FilterDirtyHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤语气词；1：部分过滤；2：严格过滤。
+                     * @return FilterModal 是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤语气词；1：部分过滤；2：严格过滤。
+                     * 
+                     */
+                    uint64_t GetFilterModal() const;
+
+                    /**
+                     * 设置是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤语气词；1：部分过滤；2：严格过滤。
+                     * @param _filterModal 是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤语气词；1：部分过滤；2：严格过滤。
+                     * 
+                     */
+                    void SetFilterModal(const uint64_t& _filterModal);
+
+                    /**
+                     * 判断参数 FilterModal 是否已赋值
+                     * @return FilterModal 是否已赋值
+                     * 
+                     */
+                    bool FilterModalHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。
+0：不过滤句末的句号；1：过滤句末的句号。
+                     * @return FilterPunc 是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。
+0：不过滤句末的句号；1：过滤句末的句号。
+                     * 
+                     */
+                    uint64_t GetFilterPunc() const;
+
+                    /**
+                     * 设置是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。
+0：不过滤句末的句号；1：过滤句末的句号。
+                     * @param _filterPunc 是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。
+0：不过滤句末的句号；1：过滤句末的句号。
+                     * 
+                     */
+                    void SetFilterPunc(const uint64_t& _filterPunc);
+
+                    /**
+                     * 判断参数 FilterPunc 是否已赋值
+                     * @return FilterPunc 是否已赋值
+                     * 
+                     */
+                    bool FilterPuncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,6 +467,27 @@ namespace TencentCloud
                      */
                     uint64_t m_vadLevel;
                     bool m_vadLevelHasBeenSet;
+
+                    /**
+                     * 是否过滤脏词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤脏词；1：过滤脏词；2：将脏词替换为 " * "。
+                     */
+                    uint64_t m_filterDirty;
+                    bool m_filterDirtyHasBeenSet;
+
+                    /**
+                     * 是否过滤语气词（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 2]，默认值为 0。
+0：不过滤语气词；1：部分过滤；2：严格过滤。
+                     */
+                    uint64_t m_filterModal;
+                    bool m_filterModalHasBeenSet;
+
+                    /**
+                     * 是否过滤句末的句号（目前仅支持填写基础语言引擎和标准语言引擎），范围为[0, 1]，默认值为 0。
+0：不过滤句末的句号；1：过滤句末的句号。
+                     */
+                    uint64_t m_filterPunc;
+                    bool m_filterPuncHasBeenSet;
 
                 };
             }

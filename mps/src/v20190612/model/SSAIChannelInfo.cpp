@@ -25,6 +25,8 @@ SSAIChannelInfo::SSAIChannelInfo() :
     m_nameHasBeenSet(false),
     m_contentSourceHasBeenSet(false),
     m_playbackPrefixHasBeenSet(false),
+    m_hlsPlaybackPrefixHasBeenSet(false),
+    m_dashPlaybackPrefixHasBeenSet(false),
     m_sSAIInfoHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_sessionInitPrefixHasBeenSet(false)
@@ -74,6 +76,26 @@ CoreInternalOutcome SSAIChannelInfo::Deserialize(const rapidjson::Value &value)
         }
         m_playbackPrefix = string(value["PlaybackPrefix"].GetString());
         m_playbackPrefixHasBeenSet = true;
+    }
+
+    if (value.HasMember("HlsPlaybackPrefix") && !value["HlsPlaybackPrefix"].IsNull())
+    {
+        if (!value["HlsPlaybackPrefix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIChannelInfo.HlsPlaybackPrefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hlsPlaybackPrefix = string(value["HlsPlaybackPrefix"].GetString());
+        m_hlsPlaybackPrefixHasBeenSet = true;
+    }
+
+    if (value.HasMember("DashPlaybackPrefix") && !value["DashPlaybackPrefix"].IsNull())
+    {
+        if (!value["DashPlaybackPrefix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIChannelInfo.DashPlaybackPrefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dashPlaybackPrefix = string(value["DashPlaybackPrefix"].GetString());
+        m_dashPlaybackPrefixHasBeenSet = true;
     }
 
     if (value.HasMember("SSAIInfo") && !value["SSAIInfo"].IsNull())
@@ -150,6 +172,22 @@ void SSAIChannelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "PlaybackPrefix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_playbackPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hlsPlaybackPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HlsPlaybackPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hlsPlaybackPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dashPlaybackPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DashPlaybackPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dashPlaybackPrefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sSAIInfoHasBeenSet)
@@ -242,6 +280,38 @@ void SSAIChannelInfo::SetPlaybackPrefix(const string& _playbackPrefix)
 bool SSAIChannelInfo::PlaybackPrefixHasBeenSet() const
 {
     return m_playbackPrefixHasBeenSet;
+}
+
+string SSAIChannelInfo::GetHlsPlaybackPrefix() const
+{
+    return m_hlsPlaybackPrefix;
+}
+
+void SSAIChannelInfo::SetHlsPlaybackPrefix(const string& _hlsPlaybackPrefix)
+{
+    m_hlsPlaybackPrefix = _hlsPlaybackPrefix;
+    m_hlsPlaybackPrefixHasBeenSet = true;
+}
+
+bool SSAIChannelInfo::HlsPlaybackPrefixHasBeenSet() const
+{
+    return m_hlsPlaybackPrefixHasBeenSet;
+}
+
+string SSAIChannelInfo::GetDashPlaybackPrefix() const
+{
+    return m_dashPlaybackPrefix;
+}
+
+void SSAIChannelInfo::SetDashPlaybackPrefix(const string& _dashPlaybackPrefix)
+{
+    m_dashPlaybackPrefix = _dashPlaybackPrefix;
+    m_dashPlaybackPrefixHasBeenSet = true;
+}
+
+bool SSAIChannelInfo::DashPlaybackPrefixHasBeenSet() const
+{
+    return m_dashPlaybackPrefixHasBeenSet;
 }
 
 SSAIConf SSAIChannelInfo::GetSSAIInfo() const

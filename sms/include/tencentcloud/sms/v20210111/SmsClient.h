@@ -53,6 +53,8 @@
 #include <tencentcloud/sms/v20210111/model/PullSmsSendStatusByPhoneNumberResponse.h>
 #include <tencentcloud/sms/v20210111/model/ReportConversionRequest.h>
 #include <tencentcloud/sms/v20210111/model/ReportConversionResponse.h>
+#include <tencentcloud/sms/v20210111/model/SendMultiGlobalSmsRequest.h>
+#include <tencentcloud/sms/v20210111/model/SendMultiGlobalSmsResponse.h>
 #include <tencentcloud/sms/v20210111/model/SendSmsRequest.h>
 #include <tencentcloud/sms/v20210111/model/SendSmsResponse.h>
 #include <tencentcloud/sms/v20210111/model/SendStatusStatisticsRequest.h>
@@ -118,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReportConversionResponse> ReportConversionOutcome;
                 typedef std::future<ReportConversionOutcome> ReportConversionOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::ReportConversionRequest&, ReportConversionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportConversionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendMultiGlobalSmsResponse> SendMultiGlobalSmsOutcome;
+                typedef std::future<SendMultiGlobalSmsOutcome> SendMultiGlobalSmsOutcomeCallable;
+                typedef std::function<void(const SmsClient*, const Model::SendMultiGlobalSmsRequest&, SendMultiGlobalSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMultiGlobalSmsAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendSmsResponse> SendSmsOutcome;
                 typedef std::future<SendSmsOutcome> SendSmsOutcomeCallable;
                 typedef std::function<void(const SmsClient*, const Model::SendSmsRequest&, SendSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendSmsAsyncHandler;
@@ -278,6 +283,15 @@ namespace TencentCloud
                 ReportConversionOutcome ReportConversion(const Model::ReportConversionRequest &request);
                 void ReportConversionAsync(const Model::ReportConversionRequest& request, const ReportConversionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportConversionOutcomeCallable ReportConversionCallable(const Model::ReportConversionRequest& request);
+
+                /**
+                 *本接口 (SendMultiGlobalSms) 用于批量发送国际/港澳台短信，相比 SendSms 接口，支持在单次请求中向多个手机号发送不同内容的短信，并支持指定不同的SenderId。
+                 * @param req SendMultiGlobalSmsRequest
+                 * @return SendMultiGlobalSmsOutcome
+                 */
+                SendMultiGlobalSmsOutcome SendMultiGlobalSms(const Model::SendMultiGlobalSmsRequest &request);
+                void SendMultiGlobalSmsAsync(const Model::SendMultiGlobalSmsRequest& request, const SendMultiGlobalSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendMultiGlobalSmsOutcomeCallable SendMultiGlobalSmsCallable(const Model::SendMultiGlobalSmsRequest& request);
 
                 /**
                  *本接口 (SendSms) 用于发送验证码、通知类短信和营销短信。支持国内短信与国际/港澳台短信。

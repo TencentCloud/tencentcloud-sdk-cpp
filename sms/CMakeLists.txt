@@ -96,19 +96,22 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/DescribeSmsSignListRequest.h
   include/tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoResponse.h
   include/tencentcloud/sms/v20210111/model/DescribeTemplateListStatus.h
+  include/tencentcloud/sms/v20210111/model/SendMultiStatus.h
   include/tencentcloud/sms/v20210111/model/AddSmsTemplateResponse.h
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatus.h
   include/tencentcloud/sms/v20210111/model/DescribeSmsSignListResponse.h
+  include/tencentcloud/sms/v20210111/model/SendMultiGlobalSmsResponse.h
   include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListRequest.h
   include/tencentcloud/sms/v20210111/model/CallbackStatusStatistics.h
   include/tencentcloud/sms/v20210111/model/PhoneNumberInfo.h
   include/tencentcloud/sms/v20210111/model/SendStatusStatisticsRequest.h
   include/tencentcloud/sms/v20210111/model/DeleteSmsTemplateRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusByPhoneNumberResponse.h
-  include/tencentcloud/sms/v20210111/model/SendStatus.h
+  include/tencentcloud/sms/v20210111/model/MultiSmsInfo.h
   include/tencentcloud/sms/v20210111/model/DeleteSmsSignResponse.h
   include/tencentcloud/sms/v20210111/model/AddSmsSignResponse.h
   include/tencentcloud/sms/v20210111/model/DeleteSmsSignRequest.h
+  include/tencentcloud/sms/v20210111/model/SendMultiGlobalSmsRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.h
   include/tencentcloud/sms/v20210111/model/ModifySmsSignResponse.h
   include/tencentcloud/sms/v20210111/model/ReportConversionRequest.h
@@ -118,6 +121,7 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/SmsPackagesStatisticsResponse.h
   include/tencentcloud/sms/v20210111/model/DeleteSignStatus.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusResponse.h
+  include/tencentcloud/sms/v20210111/model/SendStatus.h
   )
 
 set(sms_src
@@ -199,19 +203,22 @@ set(sms_src
   src/v20210111/model/DescribeSmsSignListRequest.cpp
   src/v20210111/model/DescribePhoneNumberInfoResponse.cpp
   src/v20210111/model/DescribeTemplateListStatus.cpp
+  src/v20210111/model/SendMultiStatus.cpp
   src/v20210111/model/AddSmsTemplateResponse.cpp
   src/v20210111/model/PullSmsSendStatus.cpp
   src/v20210111/model/DescribeSmsSignListResponse.cpp
+  src/v20210111/model/SendMultiGlobalSmsResponse.cpp
   src/v20210111/model/DescribeSmsTemplateListRequest.cpp
   src/v20210111/model/CallbackStatusStatistics.cpp
   src/v20210111/model/PhoneNumberInfo.cpp
   src/v20210111/model/SendStatusStatisticsRequest.cpp
   src/v20210111/model/DeleteSmsTemplateRequest.cpp
   src/v20210111/model/PullSmsReplyStatusByPhoneNumberResponse.cpp
-  src/v20210111/model/SendStatus.cpp
+  src/v20210111/model/MultiSmsInfo.cpp
   src/v20210111/model/DeleteSmsSignResponse.cpp
   src/v20210111/model/AddSmsSignResponse.cpp
   src/v20210111/model/DeleteSmsSignRequest.cpp
+  src/v20210111/model/SendMultiGlobalSmsRequest.cpp
   src/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.cpp
   src/v20210111/model/ModifySmsSignResponse.cpp
   src/v20210111/model/ReportConversionRequest.cpp
@@ -221,6 +228,7 @@ set(sms_src
   src/v20210111/model/SmsPackagesStatisticsResponse.cpp
   src/v20210111/model/DeleteSignStatus.cpp
   src/v20210111/model/PullSmsReplyStatusResponse.cpp
+  src/v20210111/model/SendStatus.cpp
   )
 
 set(sms_include

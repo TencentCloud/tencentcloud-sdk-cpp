@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return TaskId <p>任务Id</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

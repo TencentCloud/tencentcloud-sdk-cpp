@@ -24,6 +24,7 @@ JobView::JobView() :
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobDescriptionHasBeenSet(false),
+    m_creatorHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_jobStateHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome JobView::Deserialize(const rapidjson::Value &value)
         }
         m_jobDescription = string(value["JobDescription"].GetString());
         m_jobDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobView.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
     }
 
     if (value.HasMember("Priority") && !value["Priority"].IsNull())
@@ -168,6 +179,14 @@ void JobView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "JobDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priorityHasBeenSet)
@@ -275,6 +294,22 @@ void JobView::SetJobDescription(const string& _jobDescription)
 bool JobView::JobDescriptionHasBeenSet() const
 {
     return m_jobDescriptionHasBeenSet;
+}
+
+string JobView::GetCreator() const
+{
+    return m_creator;
+}
+
+void JobView::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool JobView::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 
 uint64_t JobView::GetPriority() const

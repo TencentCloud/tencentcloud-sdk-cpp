@@ -27,7 +27,8 @@ WorkflowInfo::WorkflowInfo() :
     m_optionCardsHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_workflowReleaseTimeHasBeenSet(false),
-    m_contentsHasBeenSet(false)
+    m_contentsHasBeenSet(false),
+    m_optionModeHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,16 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
         m_contentsHasBeenSet = true;
     }
 
+    if (value.HasMember("OptionMode") && !value["OptionMode"].IsNull())
+    {
+        if (!value["OptionMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.OptionMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_optionMode = value["OptionMode"].GetInt64();
+        m_optionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ void WorkflowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_optionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_optionMode, allocator);
     }
 
 }
@@ -315,5 +334,21 @@ void WorkflowInfo::SetContents(const vector<Content>& _contents)
 bool WorkflowInfo::ContentsHasBeenSet() const
 {
     return m_contentsHasBeenSet;
+}
+
+int64_t WorkflowInfo::GetOptionMode() const
+{
+    return m_optionMode;
+}
+
+void WorkflowInfo::SetOptionMode(const int64_t& _optionMode)
+{
+    m_optionMode = _optionMode;
+    m_optionModeHasBeenSet = true;
+}
+
+bool WorkflowInfo::OptionModeHasBeenSet() const
+{
+    return m_optionModeHasBeenSet;
 }
 

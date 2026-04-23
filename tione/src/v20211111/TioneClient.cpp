@@ -1190,6 +1190,56 @@ TioneClient::DescribeBillingResourceGroupOutcomeCallable TioneClient::DescribeBi
     return prom->get_future();
 }
 
+TioneClient::DescribeBillingResourceGroupAttachedWorkspacesOutcome TioneClient::DescribeBillingResourceGroupAttachedWorkspaces(const DescribeBillingResourceGroupAttachedWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingResourceGroupAttachedWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingResourceGroupAttachedWorkspacesResponse rsp = DescribeBillingResourceGroupAttachedWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingResourceGroupAttachedWorkspacesOutcome(rsp);
+        else
+            return DescribeBillingResourceGroupAttachedWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingResourceGroupAttachedWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingResourceGroupAttachedWorkspacesAsync(const DescribeBillingResourceGroupAttachedWorkspacesRequest& request, const DescribeBillingResourceGroupAttachedWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBillingResourceGroupAttachedWorkspacesRequest&;
+    using Resp = DescribeBillingResourceGroupAttachedWorkspacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillingResourceGroupAttachedWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeBillingResourceGroupAttachedWorkspacesOutcomeCallable TioneClient::DescribeBillingResourceGroupAttachedWorkspacesCallable(const DescribeBillingResourceGroupAttachedWorkspacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBillingResourceGroupAttachedWorkspacesOutcome>>();
+    DescribeBillingResourceGroupAttachedWorkspacesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeBillingResourceGroupAttachedWorkspacesRequest&,
+        DescribeBillingResourceGroupAttachedWorkspacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeBillingResourceGroupsOutcome TioneClient::DescribeBillingResourceGroups(const DescribeBillingResourceGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingResourceGroups");

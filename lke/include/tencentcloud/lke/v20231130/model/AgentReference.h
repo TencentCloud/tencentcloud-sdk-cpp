@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取来源文档ID
+                     * 获取<p>来源文档ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DocId 来源文档ID
+                     * @return DocId <p>来源文档ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocId() const;
 
                     /**
-                     * 设置来源文档ID
+                     * 设置<p>来源文档ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _docId 来源文档ID
+                     * @param _docId <p>来源文档ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DocIdHasBeenSet() const;
 
                     /**
-                     * 获取id
+                     * 获取<p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id id
+                     * @return Id <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置id
+                     * 设置<p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id id
+                     * @param _id <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取名称
+                     * 获取<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名称
+                     * @return Name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
+                     * 设置<p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名称
+                     * @param _name <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取类型
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置类型
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 类型
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取链接
+                     * 获取<p>链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 链接
+                     * @return Url <p>链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置链接
+                     * 设置<p>链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _url 链接
+                     * @param _url <p>链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取文档业务ID
+                     * 获取<p>文档业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DocBizId 文档业务ID
+                     * @return DocBizId <p>文档业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocBizId() const;
 
                     /**
-                     * 设置文档业务ID
+                     * 设置<p>文档业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _docBizId 文档业务ID
+                     * @param _docBizId <p>文档业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool DocBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档名称
+                     * 获取<p>文档名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DocName 文档名称
+                     * @return DocName <p>文档名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocName() const;
 
                     /**
-                     * 设置文档名称
+                     * 设置<p>文档名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _docName 文档名称
+                     * @param _docName <p>文档名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool DocNameHasBeenSet() const;
 
                     /**
-                     * 获取问答业务ID
+                     * 获取<p>问答业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QaBizId 问答业务ID
+                     * @return QaBizId <p>问答业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQaBizId() const;
 
                     /**
-                     * 设置问答业务ID
+                     * 设置<p>问答业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qaBizId 问答业务ID
+                     * @param _qaBizId <p>问答业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool QaBizIdHasBeenSet() const;
 
                     /**
-                     * 获取搜索引擎索引
+                     * 获取<p>搜索引擎索引</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Index 搜索引擎索引
+                     * @return Index <p>搜索引擎索引</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIndex() const;
 
                     /**
-                     * 设置搜索引擎索引
+                     * 设置<p>搜索引擎索引</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _index 搜索引擎索引
+                     * @param _index <p>搜索引擎索引</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取标题
+                     * 获取<p>标题</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Title 标题
+                     * @return Title <p>标题</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置标题
+                     * 设置<p>标题</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _title 标题
+                     * @param _title <p>标题</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取知识库名称
+                     * 获取<p>知识库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KnowledgeName 知识库名称
+                     * @return KnowledgeName <p>知识库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKnowledgeName() const;
 
                     /**
-                     * 设置知识库名称
+                     * 设置<p>知识库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _knowledgeName 知识库名称
+                     * @param _knowledgeName <p>知识库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool KnowledgeNameHasBeenSet() const;
 
                     /**
-                     * 获取知识库标识
+                     * 获取<p>知识库标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KnowledgeBizId 知识库标识
+                     * @return KnowledgeBizId <p>知识库标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKnowledgeBizId() const;
 
                     /**
-                     * 设置知识库标识
+                     * 设置<p>知识库标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _knowledgeBizId 知识库标识
+                     * @param _knowledgeBizId <p>知识库标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,84 +349,84 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 来源文档ID
+                     * <p>来源文档ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_docId;
                     bool m_docIdHasBeenSet;
 
                     /**
-                     * id
+                     * <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 链接
+                     * <p>链接</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 文档业务ID
+                     * <p>文档业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;
 
                     /**
-                     * 文档名称
+                     * <p>文档名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_docName;
                     bool m_docNameHasBeenSet;
 
                     /**
-                     * 问答业务ID
+                     * <p>问答业务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qaBizId;
                     bool m_qaBizIdHasBeenSet;
 
                     /**
-                     * 搜索引擎索引
+                     * <p>搜索引擎索引</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * 标题
+                     * <p>标题</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 知识库名称
+                     * <p>知识库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_knowledgeName;
                     bool m_knowledgeNameHasBeenSet;
 
                     /**
-                     * 知识库标识
+                     * <p>知识库标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_knowledgeBizId;

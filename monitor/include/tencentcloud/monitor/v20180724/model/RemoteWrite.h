@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取多写url
-                     * @return URL 多写url
+                     * 获取<p>多写url</p>
+                     * @return URL <p>多写url</p>
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
-                     * 设置多写url
-                     * @param _uRL 多写url
+                     * 设置<p>多写url</p>
+                     * @param _uRL <p>多写url</p>
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool URLHasBeenSet() const;
 
                     /**
-                     * 获取RelabelConfig
+                     * 获取<p>RelabelConfig</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return URLRelabelConfig RelabelConfig
+                     * @return URLRelabelConfig <p>RelabelConfig</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetURLRelabelConfig() const;
 
                     /**
-                     * 设置RelabelConfig
+                     * 设置<p>RelabelConfig</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uRLRelabelConfig RelabelConfig
+                     * @param _uRLRelabelConfig <p>RelabelConfig</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,18 +95,18 @@ namespace TencentCloud
                     bool URLRelabelConfigHasBeenSet() const;
 
                     /**
-                     * 获取鉴权
+                     * 获取<p>鉴权</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BasicAuth 鉴权
+                     * @return BasicAuth <p>鉴权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BasicAuth GetBasicAuth() const;
 
                     /**
-                     * 设置鉴权
+                     * 设置<p>鉴权</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _basicAuth 鉴权
+                     * @param _basicAuth <p>鉴权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,18 +120,18 @@ namespace TencentCloud
                     bool BasicAuthHasBeenSet() const;
 
                     /**
-                     * 获取最大block
+                     * 获取<p>最大block</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxBlockSize 最大block
+                     * @return MaxBlockSize <p>最大block</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetMaxBlockSize() const;
 
                     /**
-                     * 设置最大block
+                     * 设置<p>最大block</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxBlockSize 最大block
+                     * @param _maxBlockSize <p>最大block</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -145,18 +145,18 @@ namespace TencentCloud
                     bool MaxBlockSizeHasBeenSet() const;
 
                     /**
-                     * 获取Label
+                     * 获取<p>Label</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label Label
+                     * @return Label <p>Label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置Label
+                     * 设置<p>Label</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _label Label
+                     * @param _label <p>Label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -170,18 +170,18 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 额外添加的头
+                     * 获取<p>HTTP 额外添加的头</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Headers HTTP 额外添加的头
+                     * @return Headers <p>HTTP 额外添加的头</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RemoteWriteHeader> GetHeaders() const;
 
                     /**
-                     * 设置HTTP 额外添加的头
+                     * 设置<p>HTTP 额外添加的头</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headers HTTP 额外添加的头
+                     * @param _headers <p>HTTP 额外添加的头</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,48 +194,80 @@ namespace TencentCloud
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoteWriteType <p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRemoteWriteType() const;
+
+                    /**
+                     * 设置<p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _remoteWriteType <p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRemoteWriteType(const int64_t& _remoteWriteType);
+
+                    /**
+                     * 判断参数 RemoteWriteType 是否已赋值
+                     * @return RemoteWriteType 是否已赋值
+                     * 
+                     */
+                    bool RemoteWriteTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 多写url
+                     * <p>多写url</p>
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;
 
                     /**
-                     * RelabelConfig
+                     * <p>RelabelConfig</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRLRelabelConfig;
                     bool m_uRLRelabelConfigHasBeenSet;
 
                     /**
-                     * 鉴权
+                     * <p>鉴权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BasicAuth m_basicAuth;
                     bool m_basicAuthHasBeenSet;
 
                     /**
-                     * 最大block
+                     * <p>最大block</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxBlockSize;
                     bool m_maxBlockSizeHasBeenSet;
 
                     /**
-                     * Label
+                     * <p>Label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * HTTP 额外添加的头
+                     * <p>HTTP 额外添加的头</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RemoteWriteHeader> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * <p>数据多写类型:<br>1- 只多写采集指标<br>2- 只多写预聚合指标<br>3- 同时多写采集和预聚合指标</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remoteWriteType;
+                    bool m_remoteWriteTypeHasBeenSet;
 
                 };
             }

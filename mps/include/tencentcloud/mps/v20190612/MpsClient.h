@@ -299,6 +299,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTasksRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTasksResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeTextToSpeechAsyncTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeTextToSpeechAsyncTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeUsageDataRequest.h>
@@ -425,6 +427,8 @@
 #include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelResponse.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingRequest.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
+#include <tencentcloud/mps/v20190612/model/TextToSpeechAsyncRequest.h>
+#include <tencentcloud/mps/v20190612/model/TextToSpeechAsyncResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationRequest.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationResponse.h>
 #include <tencentcloud/mps/v20190612/model/UpdateProjectRequest.h>
@@ -859,6 +863,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTextToSpeechAsyncTaskResponse> DescribeTextToSpeechAsyncTaskOutcome;
+                typedef std::future<DescribeTextToSpeechAsyncTaskOutcome> DescribeTextToSpeechAsyncTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeTextToSpeechAsyncTaskRequest&, DescribeTextToSpeechAsyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTextToSpeechAsyncTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
@@ -1048,6 +1055,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncDubbingResponse> SyncDubbingOutcome;
                 typedef std::future<SyncDubbingOutcome> SyncDubbingOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::SyncDubbingRequest&, SyncDubbingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDubbingAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToSpeechAsyncResponse> TextToSpeechAsyncOutcome;
+                typedef std::future<TextToSpeechAsyncOutcome> TextToSpeechAsyncOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::TextToSpeechAsyncRequest&, TextToSpeechAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToSpeechAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextTranslationResponse> TextTranslationOutcome;
                 typedef std::future<TextTranslationOutcome> TextTranslationOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::TextTranslationRequest&, TextTranslationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslationAsyncHandler;
@@ -2337,6 +2347,15 @@ namespace TencentCloud
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
 
                 /**
+                 *查询异步语音合成任务结果
+                 * @param req DescribeTextToSpeechAsyncTaskRequest
+                 * @return DescribeTextToSpeechAsyncTaskOutcome
+                 */
+                DescribeTextToSpeechAsyncTaskOutcome DescribeTextToSpeechAsyncTask(const Model::DescribeTextToSpeechAsyncTaskRequest &request);
+                void DescribeTextToSpeechAsyncTaskAsync(const Model::DescribeTextToSpeechAsyncTaskRequest& request, const DescribeTextToSpeechAsyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTextToSpeechAsyncTaskOutcomeCallable DescribeTextToSpeechAsyncTaskCallable(const Model::DescribeTextToSpeechAsyncTaskRequest& request);
+
+                /**
                  *根据转码模板唯一标识，获取转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置转码模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)。
                  * @param req DescribeTranscodeTemplatesRequest
                  * @return DescribeTranscodeTemplatesOutcome
@@ -2943,6 +2962,15 @@ namespace TencentCloud
                 SyncDubbingOutcome SyncDubbing(const Model::SyncDubbingRequest &request);
                 void SyncDubbingAsync(const Model::SyncDubbingRequest& request, const SyncDubbingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncDubbingOutcomeCallable SyncDubbingCallable(const Model::SyncDubbingRequest& request);
+
+                /**
+                 *异步语音合成接口，支持长文本转语音
+                 * @param req TextToSpeechAsyncRequest
+                 * @return TextToSpeechAsyncOutcome
+                 */
+                TextToSpeechAsyncOutcome TextToSpeechAsync(const Model::TextToSpeechAsyncRequest &request);
+                void TextToSpeechAsyncAsync(const Model::TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToSpeechAsyncOutcomeCallable TextToSpeechAsyncCallable(const Model::TextToSpeechAsyncRequest& request);
 
                 /**
                  *文本翻译，使用 翻译字幕（附加语种）计费项，按1100字符（按照 Unicode 码点数 统计，hello 算5个字符，你好 算2个字符）/分钟折算到时长计费

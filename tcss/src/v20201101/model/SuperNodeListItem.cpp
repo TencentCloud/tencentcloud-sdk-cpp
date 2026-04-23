@@ -38,7 +38,9 @@ SuperNodeListItem::SuperNodeListItem() :
     m_nodeUniqueIDHasBeenSet(false),
     m_clusterAccessedStatusHasBeenSet(false),
     m_chargeCoresCntHasBeenSet(false),
-    m_defendStatusHasBeenSet(false)
+    m_defendStatusHasBeenSet(false),
+    m_clusterAccessedSubStatusHasBeenSet(false),
+    m_clusterAccessedErrorReasonHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,26 @@ CoreInternalOutcome SuperNodeListItem::Deserialize(const rapidjson::Value &value
         m_defendStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterAccessedSubStatus") && !value["ClusterAccessedSubStatus"].IsNull())
+    {
+        if (!value["ClusterAccessedSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeListItem.ClusterAccessedSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterAccessedSubStatus = string(value["ClusterAccessedSubStatus"].GetString());
+        m_clusterAccessedSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterAccessedErrorReason") && !value["ClusterAccessedErrorReason"].IsNull())
+    {
+        if (!value["ClusterAccessedErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeListItem.ClusterAccessedErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterAccessedErrorReason = string(value["ClusterAccessedErrorReason"].GetString());
+        m_clusterAccessedErrorReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void SuperNodeListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DefendStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defendStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterAccessedSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAccessedSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterAccessedSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterAccessedErrorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAccessedErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterAccessedErrorReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +705,37 @@ void SuperNodeListItem::SetDefendStatus(const string& _defendStatus)
 bool SuperNodeListItem::DefendStatusHasBeenSet() const
 {
     return m_defendStatusHasBeenSet;
+}
+
+string SuperNodeListItem::GetClusterAccessedSubStatus() const
+{
+    return m_clusterAccessedSubStatus;
+}
+
+void SuperNodeListItem::SetClusterAccessedSubStatus(const string& _clusterAccessedSubStatus)
+{
+    m_clusterAccessedSubStatus = _clusterAccessedSubStatus;
+    m_clusterAccessedSubStatusHasBeenSet = true;
+}
+
+bool SuperNodeListItem::ClusterAccessedSubStatusHasBeenSet() const
+{
+    return m_clusterAccessedSubStatusHasBeenSet;
+}
+
+string SuperNodeListItem::GetClusterAccessedErrorReason() const
+{
+    return m_clusterAccessedErrorReason;
+}
+
+void SuperNodeListItem::SetClusterAccessedErrorReason(const string& _clusterAccessedErrorReason)
+{
+    m_clusterAccessedErrorReason = _clusterAccessedErrorReason;
+    m_clusterAccessedErrorReasonHasBeenSet = true;
+}
+
+bool SuperNodeListItem::ClusterAccessedErrorReasonHasBeenSet() const
+{
+    return m_clusterAccessedErrorReasonHasBeenSet;
 }
 

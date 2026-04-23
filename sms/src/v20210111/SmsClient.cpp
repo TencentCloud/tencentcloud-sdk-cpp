@@ -790,6 +790,56 @@ SmsClient::ReportConversionOutcomeCallable SmsClient::ReportConversionCallable(c
     return prom->get_future();
 }
 
+SmsClient::SendMultiGlobalSmsOutcome SmsClient::SendMultiGlobalSms(const SendMultiGlobalSmsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendMultiGlobalSms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendMultiGlobalSmsResponse rsp = SendMultiGlobalSmsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendMultiGlobalSmsOutcome(rsp);
+        else
+            return SendMultiGlobalSmsOutcome(o.GetError());
+    }
+    else
+    {
+        return SendMultiGlobalSmsOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::SendMultiGlobalSmsAsync(const SendMultiGlobalSmsRequest& request, const SendMultiGlobalSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SendMultiGlobalSmsRequest&;
+    using Resp = SendMultiGlobalSmsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SendMultiGlobalSms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SmsClient::SendMultiGlobalSmsOutcomeCallable SmsClient::SendMultiGlobalSmsCallable(const SendMultiGlobalSmsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SendMultiGlobalSmsOutcome>>();
+    SendMultiGlobalSmsAsync(
+    request,
+    [prom](
+        const SmsClient*,
+        const SendMultiGlobalSmsRequest&,
+        SendMultiGlobalSmsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SmsClient::SendSmsOutcome SmsClient::SendSms(const SendSmsRequest &request)
 {
     auto outcome = MakeRequest(request, "SendSms");

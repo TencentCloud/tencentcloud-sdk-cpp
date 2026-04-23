@@ -840,6 +840,106 @@ TcssClient::AddNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::AddNet
     return prom->get_future();
 }
 
+TcssClient::AddOrModifyMaliciousConnectionWhiteListOutcome TcssClient::AddOrModifyMaliciousConnectionWhiteList(const AddOrModifyMaliciousConnectionWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddOrModifyMaliciousConnectionWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddOrModifyMaliciousConnectionWhiteListResponse rsp = AddOrModifyMaliciousConnectionWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddOrModifyMaliciousConnectionWhiteListOutcome(rsp);
+        else
+            return AddOrModifyMaliciousConnectionWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return AddOrModifyMaliciousConnectionWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddOrModifyMaliciousConnectionWhiteListAsync(const AddOrModifyMaliciousConnectionWhiteListRequest& request, const AddOrModifyMaliciousConnectionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddOrModifyMaliciousConnectionWhiteListRequest&;
+    using Resp = AddOrModifyMaliciousConnectionWhiteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddOrModifyMaliciousConnectionWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::AddOrModifyMaliciousConnectionWhiteListOutcomeCallable TcssClient::AddOrModifyMaliciousConnectionWhiteListCallable(const AddOrModifyMaliciousConnectionWhiteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddOrModifyMaliciousConnectionWhiteListOutcome>>();
+    AddOrModifyMaliciousConnectionWhiteListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const AddOrModifyMaliciousConnectionWhiteListRequest&,
+        AddOrModifyMaliciousConnectionWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::AddOrModifyVirusWhiteListRuleOutcome TcssClient::AddOrModifyVirusWhiteListRule(const AddOrModifyVirusWhiteListRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddOrModifyVirusWhiteListRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddOrModifyVirusWhiteListRuleResponse rsp = AddOrModifyVirusWhiteListRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddOrModifyVirusWhiteListRuleOutcome(rsp);
+        else
+            return AddOrModifyVirusWhiteListRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddOrModifyVirusWhiteListRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddOrModifyVirusWhiteListRuleAsync(const AddOrModifyVirusWhiteListRuleRequest& request, const AddOrModifyVirusWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddOrModifyVirusWhiteListRuleRequest&;
+    using Resp = AddOrModifyVirusWhiteListRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddOrModifyVirusWhiteListRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::AddOrModifyVirusWhiteListRuleOutcomeCallable TcssClient::AddOrModifyVirusWhiteListRuleCallable(const AddOrModifyVirusWhiteListRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddOrModifyVirusWhiteListRuleOutcome>>();
+    AddOrModifyVirusWhiteListRuleAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const AddOrModifyVirusWhiteListRuleRequest&,
+        AddOrModifyVirusWhiteListRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcssClient::CheckNetworkFirewallPolicyYamlOutcome TcssClient::CheckNetworkFirewallPolicyYaml(const CheckNetworkFirewallPolicyYamlRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckNetworkFirewallPolicyYaml");
@@ -3832,6 +3932,56 @@ TcssClient::DeleteSearchTemplateOutcomeCallable TcssClient::DeleteSearchTemplate
         const TcssClient*,
         const DeleteSearchTemplateRequest&,
         DeleteSearchTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DeleteVirusWhiteListRuleOutcome TcssClient::DeleteVirusWhiteListRule(const DeleteVirusWhiteListRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVirusWhiteListRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVirusWhiteListRuleResponse rsp = DeleteVirusWhiteListRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVirusWhiteListRuleOutcome(rsp);
+        else
+            return DeleteVirusWhiteListRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVirusWhiteListRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteVirusWhiteListRuleAsync(const DeleteVirusWhiteListRuleRequest& request, const DeleteVirusWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVirusWhiteListRuleRequest&;
+    using Resp = DeleteVirusWhiteListRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVirusWhiteListRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DeleteVirusWhiteListRuleOutcomeCallable TcssClient::DeleteVirusWhiteListRuleCallable(const DeleteVirusWhiteListRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVirusWhiteListRuleOutcome>>();
+    DeleteVirusWhiteListRuleAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DeleteVirusWhiteListRuleRequest&,
+        DeleteVirusWhiteListRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13190,6 +13340,56 @@ TcssClient::DescribeVirusManualScanEstimateTimeoutOutcomeCallable TcssClient::De
     return prom->get_future();
 }
 
+TcssClient::DescribeVirusMonitorConfigOutcome TcssClient::DescribeVirusMonitorConfig(const DescribeVirusMonitorConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusMonitorConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusMonitorConfigResponse rsp = DescribeVirusMonitorConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusMonitorConfigOutcome(rsp);
+        else
+            return DescribeVirusMonitorConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusMonitorConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusMonitorConfigAsync(const DescribeVirusMonitorConfigRequest& request, const DescribeVirusMonitorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVirusMonitorConfigRequest&;
+    using Resp = DescribeVirusMonitorConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVirusMonitorConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeVirusMonitorConfigOutcomeCallable TcssClient::DescribeVirusMonitorConfigCallable(const DescribeVirusMonitorConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVirusMonitorConfigOutcome>>();
+    DescribeVirusMonitorConfigAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeVirusMonitorConfigRequest&,
+        DescribeVirusMonitorConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcssClient::DescribeVirusMonitorSettingOutcome TcssClient::DescribeVirusMonitorSetting(const DescribeVirusMonitorSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVirusMonitorSetting");
@@ -13282,6 +13482,56 @@ TcssClient::DescribeVirusSampleDownloadUrlOutcomeCallable TcssClient::DescribeVi
         const TcssClient*,
         const DescribeVirusSampleDownloadUrlRequest&,
         DescribeVirusSampleDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeVirusScanConfigOutcome TcssClient::DescribeVirusScanConfig(const DescribeVirusScanConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusScanConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusScanConfigResponse rsp = DescribeVirusScanConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusScanConfigOutcome(rsp);
+        else
+            return DescribeVirusScanConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusScanConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusScanConfigAsync(const DescribeVirusScanConfigRequest& request, const DescribeVirusScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVirusScanConfigRequest&;
+    using Resp = DescribeVirusScanConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVirusScanConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeVirusScanConfigOutcomeCallable TcssClient::DescribeVirusScanConfigCallable(const DescribeVirusScanConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVirusScanConfigOutcome>>();
+    DescribeVirusScanConfigAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeVirusScanConfigRequest&,
+        DescribeVirusScanConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13532,6 +13782,56 @@ TcssClient::DescribeVirusTaskListOutcomeCallable TcssClient::DescribeVirusTaskLi
         const TcssClient*,
         const DescribeVirusTaskListRequest&,
         DescribeVirusTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeVirusWhiteListRulesOutcome TcssClient::DescribeVirusWhiteListRules(const DescribeVirusWhiteListRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusWhiteListRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusWhiteListRulesResponse rsp = DescribeVirusWhiteListRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusWhiteListRulesOutcome(rsp);
+        else
+            return DescribeVirusWhiteListRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusWhiteListRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusWhiteListRulesAsync(const DescribeVirusWhiteListRulesRequest& request, const DescribeVirusWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVirusWhiteListRulesRequest&;
+    using Resp = DescribeVirusWhiteListRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVirusWhiteListRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeVirusWhiteListRulesOutcomeCallable TcssClient::DescribeVirusWhiteListRulesCallable(const DescribeVirusWhiteListRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVirusWhiteListRulesOutcome>>();
+    DescribeVirusWhiteListRulesAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeVirusWhiteListRulesRequest&,
+        DescribeVirusWhiteListRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

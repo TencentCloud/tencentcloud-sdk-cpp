@@ -399,6 +399,90 @@ namespace TencentCloud
                      */
                     bool MultiRequestHasBeenSet() const;
 
+                    /**
+                     * 获取<p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>
+                     * @return DashOriginManifestType <p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>
+                     * 
+                     */
+                    std::string GetDashOriginManifestType() const;
+
+                    /**
+                     * 设置<p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>
+                     * @param _dashOriginManifestType <p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>
+                     * 
+                     */
+                    void SetDashOriginManifestType(const std::string& _dashOriginManifestType);
+
+                    /**
+                     * 判断参数 DashOriginManifestType 是否已赋值
+                     * @return DashOriginManifestType 是否已赋值
+                     * 
+                     */
+                    bool DashOriginManifestTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * @return SlateOnEmptyVast <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * 
+                     */
+                    bool GetSlateOnEmptyVast() const;
+
+                    /**
+                     * 设置<p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * @param _slateOnEmptyVast <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * 
+                     */
+                    void SetSlateOnEmptyVast(const bool& _slateOnEmptyVast);
+
+                    /**
+                     * 判断参数 SlateOnEmptyVast 是否已赋值
+                     * @return SlateOnEmptyVast 是否已赋值
+                     * 
+                     */
+                    bool SlateOnEmptyVastHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SCTE marker duration，默认180，范围0-3600</p>
+                     * @return SCTEMarkerDuration <p>SCTE marker duration，默认180，范围0-3600</p>
+                     * 
+                     */
+                    int64_t GetSCTEMarkerDuration() const;
+
+                    /**
+                     * 设置<p>SCTE marker duration，默认180，范围0-3600</p>
+                     * @param _sCTEMarkerDuration <p>SCTE marker duration，默认180，范围0-3600</p>
+                     * 
+                     */
+                    void SetSCTEMarkerDuration(const int64_t& _sCTEMarkerDuration);
+
+                    /**
+                     * 判断参数 SCTEMarkerDuration 是否已赋值
+                     * @return SCTEMarkerDuration 是否已赋值
+                     * 
+                     */
+                    bool SCTEMarkerDurationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全组Id</p>
+                     * @return SecurityGroupId <p>安全组Id</p>
+                     * 
+                     */
+                    std::string GetSecurityGroupId() const;
+
+                    /**
+                     * 设置<p>安全组Id</p>
+                     * @param _securityGroupId <p>安全组Id</p>
+                     * 
+                     */
+                    void SetSecurityGroupId(const std::string& _securityGroupId);
+
+                    /**
+                     * 判断参数 SecurityGroupId 是否已赋值
+                     * @return SecurityGroupId 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -500,6 +584,30 @@ namespace TencentCloud
                      */
                     bool m_multiRequest;
                     bool m_multiRequestHasBeenSet;
+
+                    /**
+                     * <p>dash周期类型：SinglePeriod 或 MultiPeriod，默认 MultiPeriod</p>
+                     */
+                    std::string m_dashOriginManifestType;
+                    bool m_dashOriginManifestTypeHasBeenSet;
+
+                    /**
+                     * <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     */
+                    bool m_slateOnEmptyVast;
+                    bool m_slateOnEmptyVastHasBeenSet;
+
+                    /**
+                     * <p>SCTE marker duration，默认180，范围0-3600</p>
+                     */
+                    int64_t m_sCTEMarkerDuration;
+                    bool m_sCTEMarkerDurationHasBeenSet;
+
+                    /**
+                     * <p>安全组Id</p>
+                     */
+                    std::string m_securityGroupId;
+                    bool m_securityGroupIdHasBeenSet;
 
                 };
             }

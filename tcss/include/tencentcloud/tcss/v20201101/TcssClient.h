@@ -55,6 +55,10 @@
 #include <tencentcloud/tcss/v20201101/model/AddNetworkFirewallPolicyDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/AddNetworkFirewallPolicyYamlDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/AddNetworkFirewallPolicyYamlDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/AddOrModifyMaliciousConnectionWhiteListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/AddOrModifyMaliciousConnectionWhiteListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/AddOrModifyVirusWhiteListRuleRequest.h>
+#include <tencentcloud/tcss/v20201101/model/AddOrModifyVirusWhiteListRuleResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CheckNetworkFirewallPolicyYamlRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CheckNetworkFirewallPolicyYamlResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CheckRepeatAssetImageRegistryRequest.h>
@@ -175,6 +179,8 @@
 #include <tencentcloud/tcss/v20201101/model/DeleteRiskSyscallWhiteListsResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteSearchTemplateRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteSearchTemplateResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteVirusWhiteListRuleRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteVirusWhiteListRuleResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeABTestConfigRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeABTestConfigResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessDetailRequest.h>
@@ -549,10 +555,14 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusManualScanEstimateTimeoutRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusManualScanEstimateTimeoutResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusMonitorConfigRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusMonitorConfigResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusMonitorSettingRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusMonitorSettingResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusSampleDownloadUrlRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusSampleDownloadUrlResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusScanConfigRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusScanConfigResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusScanSettingRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusScanSettingResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusScanTaskStatusRequest.h>
@@ -563,6 +573,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusTaskListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVirusTaskListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusWhiteListRulesRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeVirusWhiteListRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulContainerListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulContainerListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeVulDefenceEventRequest.h>
@@ -787,6 +799,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddNetworkFirewallPolicyYamlDetailResponse> AddNetworkFirewallPolicyYamlDetailOutcome;
                 typedef std::future<AddNetworkFirewallPolicyYamlDetailOutcome> AddNetworkFirewallPolicyYamlDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::AddNetworkFirewallPolicyYamlDetailRequest&, AddNetworkFirewallPolicyYamlDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNetworkFirewallPolicyYamlDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddOrModifyMaliciousConnectionWhiteListResponse> AddOrModifyMaliciousConnectionWhiteListOutcome;
+                typedef std::future<AddOrModifyMaliciousConnectionWhiteListOutcome> AddOrModifyMaliciousConnectionWhiteListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::AddOrModifyMaliciousConnectionWhiteListRequest&, AddOrModifyMaliciousConnectionWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrModifyMaliciousConnectionWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddOrModifyVirusWhiteListRuleResponse> AddOrModifyVirusWhiteListRuleOutcome;
+                typedef std::future<AddOrModifyVirusWhiteListRuleOutcome> AddOrModifyVirusWhiteListRuleOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::AddOrModifyVirusWhiteListRuleRequest&, AddOrModifyVirusWhiteListRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrModifyVirusWhiteListRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckNetworkFirewallPolicyYamlResponse> CheckNetworkFirewallPolicyYamlOutcome;
                 typedef std::future<CheckNetworkFirewallPolicyYamlOutcome> CheckNetworkFirewallPolicyYamlOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CheckNetworkFirewallPolicyYamlRequest&, CheckNetworkFirewallPolicyYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetworkFirewallPolicyYamlAsyncHandler;
@@ -967,6 +985,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSearchTemplateResponse> DeleteSearchTemplateOutcome;
                 typedef std::future<DeleteSearchTemplateOutcome> DeleteSearchTemplateOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteSearchTemplateRequest&, DeleteSearchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSearchTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVirusWhiteListRuleResponse> DeleteVirusWhiteListRuleOutcome;
+                typedef std::future<DeleteVirusWhiteListRuleOutcome> DeleteVirusWhiteListRuleOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DeleteVirusWhiteListRuleRequest&, DeleteVirusWhiteListRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVirusWhiteListRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeABTestConfigResponse> DescribeABTestConfigOutcome;
                 typedef std::future<DescribeABTestConfigOutcome> DescribeABTestConfigOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeABTestConfigRequest&, DescribeABTestConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeABTestConfigAsyncHandler;
@@ -1528,12 +1549,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVirusManualScanEstimateTimeoutResponse> DescribeVirusManualScanEstimateTimeoutOutcome;
                 typedef std::future<DescribeVirusManualScanEstimateTimeoutOutcome> DescribeVirusManualScanEstimateTimeoutOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVirusManualScanEstimateTimeoutRequest&, DescribeVirusManualScanEstimateTimeoutOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusManualScanEstimateTimeoutAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVirusMonitorConfigResponse> DescribeVirusMonitorConfigOutcome;
+                typedef std::future<DescribeVirusMonitorConfigOutcome> DescribeVirusMonitorConfigOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeVirusMonitorConfigRequest&, DescribeVirusMonitorConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusMonitorConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVirusMonitorSettingResponse> DescribeVirusMonitorSettingOutcome;
                 typedef std::future<DescribeVirusMonitorSettingOutcome> DescribeVirusMonitorSettingOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVirusMonitorSettingRequest&, DescribeVirusMonitorSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusMonitorSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVirusSampleDownloadUrlResponse> DescribeVirusSampleDownloadUrlOutcome;
                 typedef std::future<DescribeVirusSampleDownloadUrlOutcome> DescribeVirusSampleDownloadUrlOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVirusSampleDownloadUrlRequest&, DescribeVirusSampleDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusSampleDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVirusScanConfigResponse> DescribeVirusScanConfigOutcome;
+                typedef std::future<DescribeVirusScanConfigOutcome> DescribeVirusScanConfigOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeVirusScanConfigRequest&, DescribeVirusScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusScanConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVirusScanSettingResponse> DescribeVirusScanSettingOutcome;
                 typedef std::future<DescribeVirusScanSettingOutcome> DescribeVirusScanSettingOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVirusScanSettingRequest&, DescribeVirusScanSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusScanSettingAsyncHandler;
@@ -1549,6 +1576,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVirusTaskListResponse> DescribeVirusTaskListOutcome;
                 typedef std::future<DescribeVirusTaskListOutcome> DescribeVirusTaskListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVirusTaskListRequest&, DescribeVirusTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVirusWhiteListRulesResponse> DescribeVirusWhiteListRulesOutcome;
+                typedef std::future<DescribeVirusWhiteListRulesOutcome> DescribeVirusWhiteListRulesOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeVirusWhiteListRulesRequest&, DescribeVirusWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirusWhiteListRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulContainerListResponse> DescribeVulContainerListOutcome;
                 typedef std::future<DescribeVulContainerListOutcome> DescribeVulContainerListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeVulContainerListRequest&, DescribeVulContainerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulContainerListAsyncHandler;
@@ -1948,6 +1978,24 @@ namespace TencentCloud
                 AddNetworkFirewallPolicyYamlDetailOutcome AddNetworkFirewallPolicyYamlDetail(const Model::AddNetworkFirewallPolicyYamlDetailRequest &request);
                 void AddNetworkFirewallPolicyYamlDetailAsync(const Model::AddNetworkFirewallPolicyYamlDetailRequest& request, const AddNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddNetworkFirewallPolicyYamlDetailOutcomeCallable AddNetworkFirewallPolicyYamlDetailCallable(const Model::AddNetworkFirewallPolicyYamlDetailRequest& request);
+
+                /**
+                 *增加或修改恶意外连的白名单
+                 * @param req AddOrModifyMaliciousConnectionWhiteListRequest
+                 * @return AddOrModifyMaliciousConnectionWhiteListOutcome
+                 */
+                AddOrModifyMaliciousConnectionWhiteListOutcome AddOrModifyMaliciousConnectionWhiteList(const Model::AddOrModifyMaliciousConnectionWhiteListRequest &request);
+                void AddOrModifyMaliciousConnectionWhiteListAsync(const Model::AddOrModifyMaliciousConnectionWhiteListRequest& request, const AddOrModifyMaliciousConnectionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddOrModifyMaliciousConnectionWhiteListOutcomeCallable AddOrModifyMaliciousConnectionWhiteListCallable(const Model::AddOrModifyMaliciousConnectionWhiteListRequest& request);
+
+                /**
+                 *新增或修改木马白名单规则
+                 * @param req AddOrModifyVirusWhiteListRuleRequest
+                 * @return AddOrModifyVirusWhiteListRuleOutcome
+                 */
+                AddOrModifyVirusWhiteListRuleOutcome AddOrModifyVirusWhiteListRule(const Model::AddOrModifyVirusWhiteListRuleRequest &request);
+                void AddOrModifyVirusWhiteListRuleAsync(const Model::AddOrModifyVirusWhiteListRuleRequest& request, const AddOrModifyVirusWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddOrModifyVirusWhiteListRuleOutcomeCallable AddOrModifyVirusWhiteListRuleCallable(const Model::AddOrModifyVirusWhiteListRuleRequest& request);
 
                 /**
                  *功能已下线待三合一重构
@@ -2505,6 +2553,15 @@ namespace TencentCloud
                 DeleteSearchTemplateOutcome DeleteSearchTemplate(const Model::DeleteSearchTemplateRequest &request);
                 void DeleteSearchTemplateAsync(const Model::DeleteSearchTemplateRequest& request, const DeleteSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSearchTemplateOutcomeCallable DeleteSearchTemplateCallable(const Model::DeleteSearchTemplateRequest& request);
+
+                /**
+                 *删除木马白名单规则
+                 * @param req DeleteVirusWhiteListRuleRequest
+                 * @return DeleteVirusWhiteListRuleOutcome
+                 */
+                DeleteVirusWhiteListRuleOutcome DeleteVirusWhiteListRule(const Model::DeleteVirusWhiteListRuleRequest &request);
+                void DeleteVirusWhiteListRuleAsync(const Model::DeleteVirusWhiteListRuleRequest& request, const DeleteVirusWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVirusWhiteListRuleOutcomeCallable DeleteVirusWhiteListRuleCallable(const Model::DeleteVirusWhiteListRuleRequest& request);
 
                 /**
                  *获取用户当前灰度配置
@@ -4212,6 +4269,15 @@ namespace TencentCloud
                 DescribeVirusManualScanEstimateTimeoutOutcomeCallable DescribeVirusManualScanEstimateTimeoutCallable(const Model::DescribeVirusManualScanEstimateTimeoutRequest& request);
 
                 /**
+                 *运行时查询文件查杀实时监控设置信息
+                 * @param req DescribeVirusMonitorConfigRequest
+                 * @return DescribeVirusMonitorConfigOutcome
+                 */
+                DescribeVirusMonitorConfigOutcome DescribeVirusMonitorConfig(const Model::DescribeVirusMonitorConfigRequest &request);
+                void DescribeVirusMonitorConfigAsync(const Model::DescribeVirusMonitorConfigRequest& request, const DescribeVirusMonitorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVirusMonitorConfigOutcomeCallable DescribeVirusMonitorConfigCallable(const Model::DescribeVirusMonitorConfigRequest& request);
+
+                /**
                  *运行时查询文件查杀实时监控设置
                  * @param req DescribeVirusMonitorSettingRequest
                  * @return DescribeVirusMonitorSettingOutcome
@@ -4228,6 +4294,15 @@ namespace TencentCloud
                 DescribeVirusSampleDownloadUrlOutcome DescribeVirusSampleDownloadUrl(const Model::DescribeVirusSampleDownloadUrlRequest &request);
                 void DescribeVirusSampleDownloadUrlAsync(const Model::DescribeVirusSampleDownloadUrlRequest& request, const DescribeVirusSampleDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVirusSampleDownloadUrlOutcomeCallable DescribeVirusSampleDownloadUrlCallable(const Model::DescribeVirusSampleDownloadUrlRequest& request);
+
+                /**
+                 *运行时查询文件查杀新设置
+                 * @param req DescribeVirusScanConfigRequest
+                 * @return DescribeVirusScanConfigOutcome
+                 */
+                DescribeVirusScanConfigOutcome DescribeVirusScanConfig(const Model::DescribeVirusScanConfigRequest &request);
+                void DescribeVirusScanConfigAsync(const Model::DescribeVirusScanConfigRequest& request, const DescribeVirusScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVirusScanConfigOutcomeCallable DescribeVirusScanConfigCallable(const Model::DescribeVirusScanConfigRequest& request);
 
                 /**
                  *运行时查询文件查杀设置
@@ -4273,6 +4348,15 @@ namespace TencentCloud
                 DescribeVirusTaskListOutcome DescribeVirusTaskList(const Model::DescribeVirusTaskListRequest &request);
                 void DescribeVirusTaskListAsync(const Model::DescribeVirusTaskListRequest& request, const DescribeVirusTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVirusTaskListOutcomeCallable DescribeVirusTaskListCallable(const Model::DescribeVirusTaskListRequest& request);
+
+                /**
+                 *查询木马白名单规则列表
+                 * @param req DescribeVirusWhiteListRulesRequest
+                 * @return DescribeVirusWhiteListRulesOutcome
+                 */
+                DescribeVirusWhiteListRulesOutcome DescribeVirusWhiteListRules(const Model::DescribeVirusWhiteListRulesRequest &request);
+                void DescribeVirusWhiteListRulesAsync(const Model::DescribeVirusWhiteListRulesRequest& request, const DescribeVirusWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVirusWhiteListRulesOutcomeCallable DescribeVirusWhiteListRulesCallable(const Model::DescribeVirusWhiteListRulesRequest& request);
 
                 /**
                  *查询受漏洞的容器列表

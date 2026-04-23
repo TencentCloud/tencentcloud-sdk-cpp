@@ -49,7 +49,8 @@ MsgRecord::MsgRecord() :
     m_workFlowHasBeenSet(false),
     m_widgetsHasBeenSet(false),
     m_widgetActionHasBeenSet(false),
-    m_audiosHasBeenSet(false)
+    m_audiosHasBeenSet(false),
+    m_optionModeHasBeenSet(false)
 {
 }
 
@@ -449,6 +450,16 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_audiosHasBeenSet = true;
     }
 
+    if (value.HasMember("OptionMode") && !value["OptionMode"].IsNull())
+    {
+        if (!value["OptionMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.OptionMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_optionMode = value["OptionMode"].GetInt64();
+        m_optionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -742,6 +753,14 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_optionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_optionMode, allocator);
     }
 
 }
@@ -1209,5 +1228,21 @@ void MsgRecord::SetAudios(const vector<Audio>& _audios)
 bool MsgRecord::AudiosHasBeenSet() const
 {
     return m_audiosHasBeenSet;
+}
+
+int64_t MsgRecord::GetOptionMode() const
+{
+    return m_optionMode;
+}
+
+void MsgRecord::SetOptionMode(const int64_t& _optionMode)
+{
+    m_optionMode = _optionMode;
+    m_optionModeHasBeenSet = true;
+}
+
+bool MsgRecord::OptionModeHasBeenSet() const
+{
+    return m_optionModeHasBeenSet;
 }
 

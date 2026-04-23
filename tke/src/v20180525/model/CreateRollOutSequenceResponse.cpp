@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreateRollOutSequenceResponse::CreateRollOutSequenceResponse()
+CreateRollOutSequenceResponse::CreateRollOutSequenceResponse() :
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateRollOutSequenceResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("ID") && !rsp["ID"].IsNull())
+    {
+        if (!rsp["ID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iD = rsp["ID"].GetInt64();
+        m_iDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateRollOutSequenceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_iDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iD, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateRollOutSequenceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CreateRollOutSequenceResponse::GetID() const
+{
+    return m_iD;
+}
+
+bool CreateRollOutSequenceResponse::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
+}
 
 

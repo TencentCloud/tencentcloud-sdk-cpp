@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID
-                     * @return JobId 作业ID
+                     * 获取<p>作业ID</p>
+                     * @return JobId <p>作业ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID
-                     * @param _jobId 作业ID
+                     * 设置<p>作业ID</p>
+                     * @param _jobId <p>作业ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取作业名称
-                     * @return JobName 作业名称
+                     * 获取<p>作业名称</p>
+                     * @return JobName <p>作业名称</p>
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置作业名称
-                     * @param _jobName 作业名称
+                     * 设置<p>作业名称</p>
+                     * @param _jobName <p>作业名称</p>
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取作业描述
-                     * @return JobDescription 作业描述
+                     * 获取<p>作业描述</p>
+                     * @return JobDescription <p>作业描述</p>
                      * 
                      */
                     std::string GetJobDescription() const;
 
                     /**
-                     * 设置作业描述
-                     * @param _jobDescription 作业描述
+                     * 设置<p>作业描述</p>
+                     * @param _jobDescription <p>作业描述</p>
                      * 
                      */
                     void SetJobDescription(const std::string& _jobDescription);
@@ -110,15 +110,36 @@ namespace TencentCloud
                     bool JobDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取作业优先级
-                     * @return Priority 作业优先级
+                     * 获取<p>作业创建者</p>
+                     * @return Creator <p>作业创建者</p>
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置<p>作业创建者</p>
+                     * @param _creator <p>作业创建者</p>
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作业优先级</p>
+                     * @return Priority <p>作业优先级</p>
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
-                     * 设置作业优先级
-                     * @param _priority 作业优先级
+                     * 设置<p>作业优先级</p>
+                     * @param _priority <p>作业优先级</p>
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -131,23 +152,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, 
-FAILED
-
-                     * @return JobState 作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, 
-FAILED
-
+                     * 获取<p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>
+                     * @return JobState <p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>
                      * 
                      */
                     std::string GetJobState() const;
 
                     /**
-                     * 设置作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, 
-FAILED
-
-                     * @param _jobState 作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, 
-FAILED
-
+                     * 设置<p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>
+                     * @param _jobState <p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>
                      * 
                      */
                     void SetJobState(const std::string& _jobState);
@@ -160,15 +173,15 @@ FAILED
                     bool JobStateHasBeenSet() const;
 
                     /**
-                     * 获取作业所属集群ID
-                     * @return ClusterId 作业所属集群ID
+                     * 获取<p>作业所属集群ID</p>
+                     * @return ClusterId <p>作业所属集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置作业所属集群ID
-                     * @param _clusterId 作业所属集群ID
+                     * 设置<p>作业所属集群ID</p>
+                     * @param _clusterId <p>作业所属集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -181,15 +194,15 @@ FAILED
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取作业所属队列名称
-                     * @return QueueName 作业所属队列名称
+                     * 获取<p>作业所属队列名称</p>
+                     * @return QueueName <p>作业所属队列名称</p>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置作业所属队列名称
-                     * @param _queueName 作业所属队列名称
+                     * 设置<p>作业所属队列名称</p>
+                     * @param _queueName <p>作业所属队列名称</p>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -202,15 +215,15 @@ FAILED
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取完成作业任务所需资源
-                     * @return OccupyResources 完成作业任务所需资源
+                     * 获取<p>完成作业任务所需资源</p>
+                     * @return OccupyResources <p>完成作业任务所需资源</p>
                      * 
                      */
                     std::string GetOccupyResources() const;
 
                     /**
-                     * 设置完成作业任务所需资源
-                     * @param _occupyResources 完成作业任务所需资源
+                     * 设置<p>完成作业任务所需资源</p>
+                     * @param _occupyResources <p>完成作业任务所需资源</p>
                      * 
                      */
                     void SetOccupyResources(const std::string& _occupyResources);
@@ -223,15 +236,15 @@ FAILED
                     bool OccupyResourcesHasBeenSet() const;
 
                     /**
-                     * 获取作业任务创建时间
-                     * @return CreateTime 作业任务创建时间
+                     * 获取<p>作业任务创建时间</p>
+                     * @return CreateTime <p>作业任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置作业任务创建时间
-                     * @param _createTime 作业任务创建时间
+                     * 设置<p>作业任务创建时间</p>
+                     * @param _createTime <p>作业任务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -244,15 +257,15 @@ FAILED
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业任务结束时间
-                     * @return EndTime 作业任务结束时间
+                     * 获取<p>作业任务结束时间</p>
+                     * @return EndTime <p>作业任务结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置作业任务结束时间
-                     * @param _endTime 作业任务结束时间
+                     * 设置<p>作业任务结束时间</p>
+                     * @param _endTime <p>作业任务结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -267,63 +280,67 @@ FAILED
                 private:
 
                     /**
-                     * 作业ID
+                     * <p>作业ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 作业名称
+                     * <p>作业名称</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 作业描述
+                     * <p>作业描述</p>
                      */
                     std::string m_jobDescription;
                     bool m_jobDescriptionHasBeenSet;
 
                     /**
-                     * 作业优先级
+                     * <p>作业创建者</p>
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
+
+                    /**
+                     * <p>作业优先级</p>
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, 
-FAILED
-
+                     * <p>作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS,<br>FAILED</p>
                      */
                     std::string m_jobState;
                     bool m_jobStateHasBeenSet;
 
                     /**
-                     * 作业所属集群ID
+                     * <p>作业所属集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 作业所属队列名称
+                     * <p>作业所属队列名称</p>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 完成作业任务所需资源
+                     * <p>完成作业任务所需资源</p>
                      */
                     std::string m_occupyResources;
                     bool m_occupyResourcesHasBeenSet;
 
                     /**
-                     * 作业任务创建时间
+                     * <p>作业任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 作业任务结束时间
+                     * <p>作业任务结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

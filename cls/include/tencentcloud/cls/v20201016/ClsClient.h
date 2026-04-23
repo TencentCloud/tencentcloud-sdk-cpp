@@ -97,6 +97,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateSearchViewRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateSearchViewResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateShipperRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateSplunkDeliverRequest.h>
@@ -163,6 +165,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteSearchViewRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteSearchViewResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteShipperRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteSplunkDeliverRequest.h>
@@ -267,6 +271,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeRebuildIndexTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeSearchViewsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeSearchViewsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShipperTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShippersRequest.h>
@@ -347,6 +353,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifySearchViewRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifySearchViewResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyShipperRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifySplunkDeliverRequest.h>
@@ -504,6 +512,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateScheduledSqlResponse> CreateScheduledSqlOutcome;
                 typedef std::future<CreateScheduledSqlOutcome> CreateScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateScheduledSqlRequest&, CreateScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSearchViewResponse> CreateSearchViewOutcome;
+                typedef std::future<CreateSearchViewOutcome> CreateSearchViewOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateSearchViewRequest&, CreateSearchViewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchViewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateShipperResponse> CreateShipperOutcome;
                 typedef std::future<CreateShipperOutcome> CreateShipperOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateShipperRequest&, CreateShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateShipperAsyncHandler;
@@ -603,6 +614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteScheduledSqlResponse> DeleteScheduledSqlOutcome;
                 typedef std::future<DeleteScheduledSqlOutcome> DeleteScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteScheduledSqlRequest&, DeleteScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSearchViewResponse> DeleteSearchViewOutcome;
+                typedef std::future<DeleteSearchViewOutcome> DeleteSearchViewOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteSearchViewRequest&, DeleteSearchViewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSearchViewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShipperResponse> DeleteShipperOutcome;
                 typedef std::future<DeleteShipperOutcome> DeleteShipperOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteShipperRequest&, DeleteShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShipperAsyncHandler;
@@ -759,6 +773,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScheduledSqlInfoResponse> DescribeScheduledSqlInfoOutcome;
                 typedef std::future<DescribeScheduledSqlInfoOutcome> DescribeScheduledSqlInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeScheduledSqlInfoRequest&, DescribeScheduledSqlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledSqlInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSearchViewsResponse> DescribeSearchViewsOutcome;
+                typedef std::future<DescribeSearchViewsOutcome> DescribeSearchViewsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeSearchViewsRequest&, DescribeSearchViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchViewsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShipperTasksResponse> DescribeShipperTasksOutcome;
                 typedef std::future<DescribeShipperTasksOutcome> DescribeShipperTasksOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeShipperTasksRequest&, DescribeShipperTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShipperTasksAsyncHandler;
@@ -879,6 +896,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyScheduledSqlResponse> ModifyScheduledSqlOutcome;
                 typedef std::future<ModifyScheduledSqlOutcome> ModifyScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyScheduledSqlRequest&, ModifyScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySearchViewResponse> ModifySearchViewOutcome;
+                typedef std::future<ModifySearchViewOutcome> ModifySearchViewOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifySearchViewRequest&, ModifySearchViewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySearchViewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyShipperResponse> ModifyShipperOutcome;
                 typedef std::future<ModifyShipperOutcome> ModifyShipperOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyShipperRequest&, ModifyShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShipperAsyncHandler;
@@ -1279,6 +1299,15 @@ namespace TencentCloud
                 CreateScheduledSqlOutcomeCallable CreateScheduledSqlCallable(const Model::CreateScheduledSqlRequest& request);
 
                 /**
+                 *新建查询视图
+                 * @param req CreateSearchViewRequest
+                 * @return CreateSearchViewOutcome
+                 */
+                CreateSearchViewOutcome CreateSearchView(const Model::CreateSearchViewRequest &request);
+                void CreateSearchViewAsync(const Model::CreateSearchViewRequest& request, const CreateSearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSearchViewOutcomeCallable CreateSearchViewCallable(const Model::CreateSearchViewRequest& request);
+
+                /**
                  *新建投递到COS的任务，【！！！注意】使用此接口，需要检查是否配置了投递COS的角色和权限。如果没有配置，请参考文档投递权限查看和配置https://cloud.tencent.com/document/product/614/71623。
                  * @param req CreateShipperRequest
                  * @return CreateShipperOutcome
@@ -1574,6 +1603,15 @@ namespace TencentCloud
                 DeleteScheduledSqlOutcome DeleteScheduledSql(const Model::DeleteScheduledSqlRequest &request);
                 void DeleteScheduledSqlAsync(const Model::DeleteScheduledSqlRequest& request, const DeleteScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteScheduledSqlOutcomeCallable DeleteScheduledSqlCallable(const Model::DeleteScheduledSqlRequest& request);
+
+                /**
+                 *删除查询视图
+                 * @param req DeleteSearchViewRequest
+                 * @return DeleteSearchViewOutcome
+                 */
+                DeleteSearchViewOutcome DeleteSearchView(const Model::DeleteSearchViewRequest &request);
+                void DeleteSearchViewAsync(const Model::DeleteSearchViewRequest& request, const DeleteSearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSearchViewOutcomeCallable DeleteSearchViewCallable(const Model::DeleteSearchViewRequest& request);
 
                 /**
                  *删除投递COS任务
@@ -2045,6 +2083,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeScheduledSqlInfoOutcomeCallable DescribeScheduledSqlInfoCallable(const Model::DescribeScheduledSqlInfoRequest& request);
 
                 /**
+                 *获取查询视图列表
+                 * @param req DescribeSearchViewsRequest
+                 * @return DescribeSearchViewsOutcome
+                 */
+                DescribeSearchViewsOutcome DescribeSearchViews(const Model::DescribeSearchViewsRequest &request);
+                void DescribeSearchViewsAsync(const Model::DescribeSearchViewsRequest& request, const DescribeSearchViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSearchViewsOutcomeCallable DescribeSearchViewsCallable(const Model::DescribeSearchViewsRequest& request);
+
+                /**
                  *获取投递任务列表
                  * @param req DescribeShipperTasksRequest
                  * @return DescribeShipperTasksOutcome
@@ -2404,6 +2451,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyScheduledSqlOutcome ModifyScheduledSql(const Model::ModifyScheduledSqlRequest &request);
                 void ModifyScheduledSqlAsync(const Model::ModifyScheduledSqlRequest& request, const ModifyScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyScheduledSqlOutcomeCallable ModifyScheduledSqlCallable(const Model::ModifyScheduledSqlRequest& request);
+
+                /**
+                 *修改查询视图
+                 * @param req ModifySearchViewRequest
+                 * @return ModifySearchViewOutcome
+                 */
+                ModifySearchViewOutcome ModifySearchView(const Model::ModifySearchViewRequest &request);
+                void ModifySearchViewAsync(const Model::ModifySearchViewRequest& request, const ModifySearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySearchViewOutcomeCallable ModifySearchViewCallable(const Model::ModifySearchViewRequest& request);
 
                 /**
                  *修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。

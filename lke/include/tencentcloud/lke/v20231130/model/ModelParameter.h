@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取超参名称
+                     * 获取<p>超参名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 超参名称
+                     * @return Name <p>超参名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置超参名称
+                     * 设置<p>超参名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 超参名称
+                     * @param _name <p>超参名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取默认值
-                     * @return DefaultValue 默认值
+                     * 获取<p>默认值</p>
+                     * @return DefaultValue <p>默认值</p>
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置默认值
-                     * @param _defaultValue 默认值
+                     * 设置<p>默认值</p>
+                     * @param _defaultValue <p>默认值</p>
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取枚举值
-                     * @return EnumValues 枚举值
+                     * 获取<p>枚举值</p>
+                     * @return EnumValues <p>枚举值</p>
                      * 
                      */
                     std::vector<std::string> GetEnumValues() const;
 
                     /**
-                     * 设置枚举值
-                     * @param _enumValues 枚举值
+                     * 设置<p>枚举值</p>
+                     * @param _enumValues <p>枚举值</p>
                      * 
                      */
                     void SetEnumValues(const std::vector<std::string>& _enumValues);
@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool EnumValuesHasBeenSet() const;
 
                     /**
-                     * 获取默认值
+                     * 获取<p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Default 默认值
+                     * @return Default <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDefault() const;
 
                     /**
-                     * 设置默认值
+                     * 设置<p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _default 默认值
+                     * @param _default <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool DefaultHasBeenSet() const;
 
                     /**
-                     * 获取最小值
+                     * 获取<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Min 最小值
+                     * @return Min <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMin() const;
 
                     /**
-                     * 设置最小值
+                     * 设置<p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _min 最小值
+                     * @param _min <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,18 +185,18 @@ namespace TencentCloud
                     bool MinHasBeenSet() const;
 
                     /**
-                     * 获取最大值
+                     * 获取<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Max 最大值
+                     * @return Max <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMax() const;
 
                     /**
-                     * 设置最大值
+                     * 设置<p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _max 最大值
+                     * @param _max <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -212,46 +212,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 超参名称
+                     * <p>超参名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p><p>枚举值：</p><ul><li>string： 字符类型</li><li>int： 整数类型</li><li>float： 浮点数类型</li><li>array： 数组类型</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 枚举值
+                     * <p>枚举值</p>
                      */
                     std::vector<std::string> m_enumValues;
                     bool m_enumValuesHasBeenSet;
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
-                     * 最小值
+                     * <p>最小值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_min;
                     bool m_minHasBeenSet;
 
                     /**
-                     * 最大值
+                     * <p>最大值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_max;

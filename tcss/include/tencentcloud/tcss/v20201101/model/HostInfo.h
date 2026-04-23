@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机id
-                     * @return HostID 主机id
+                     * 获取<p>主机id</p>
+                     * @return HostID <p>主机id</p>
                      * 
                      */
                     std::string GetHostID() const;
 
                     /**
-                     * 设置主机id
-                     * @param _hostID 主机id
+                     * 设置<p>主机id</p>
+                     * @param _hostID <p>主机id</p>
                      * 
                      */
                     void SetHostID(const std::string& _hostID);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool HostIDHasBeenSet() const;
 
                     /**
-                     * 获取主机ip即内网ip
-                     * @return HostIP 主机ip即内网ip
+                     * 获取<p>主机ip即内网ip</p>
+                     * @return HostIP <p>主机ip即内网ip</p>
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
-                     * 设置主机ip即内网ip
-                     * @param _hostIP 主机ip即内网ip
+                     * 设置<p>主机ip即内网ip</p>
+                     * @param _hostIP <p>主机ip即内网ip</p>
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool HostIPHasBeenSet() const;
 
                     /**
-                     * 获取主机名称
-                     * @return HostName 主机名称
+                     * 获取<p>主机名称</p>
+                     * @return HostName <p>主机名称</p>
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置主机名称
-                     * @param _hostName 主机名称
+                     * 设置<p>主机名称</p>
+                     * @param _hostName <p>主机名称</p>
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
-                     * 获取业务组
-                     * @return Group 业务组
+                     * 获取<p>业务组</p>
+                     * @return Group <p>业务组</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置业务组
-                     * @param _group 业务组
+                     * 设置<p>业务组</p>
+                     * @param _group <p>业务组</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取docker 版本
-                     * @return DockerVersion docker 版本
+                     * 获取<p>docker 版本</p>
+                     * @return DockerVersion <p>docker 版本</p>
                      * 
                      */
                     std::string GetDockerVersion() const;
 
                     /**
-                     * 设置docker 版本
-                     * @param _dockerVersion docker 版本
+                     * 设置<p>docker 版本</p>
+                     * @param _dockerVersion <p>docker 版本</p>
                      * 
                      */
                     void SetDockerVersion(const std::string& _dockerVersion);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool DockerVersionHasBeenSet() const;
 
                     /**
-                     * 获取docker 文件系统类型
-                     * @return DockerFileSystemDriver docker 文件系统类型
+                     * 获取<p>docker 文件系统类型</p>
+                     * @return DockerFileSystemDriver <p>docker 文件系统类型</p>
                      * 
                      */
                     std::string GetDockerFileSystemDriver() const;
 
                     /**
-                     * 设置docker 文件系统类型
-                     * @param _dockerFileSystemDriver docker 文件系统类型
+                     * 设置<p>docker 文件系统类型</p>
+                     * @param _dockerFileSystemDriver <p>docker 文件系统类型</p>
                      * 
                      */
                     void SetDockerFileSystemDriver(const std::string& _dockerFileSystemDriver);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DockerFileSystemDriverHasBeenSet() const;
 
                     /**
-                     * 获取镜像个数
-                     * @return ImageCnt 镜像个数
+                     * 获取<p>镜像个数</p>
+                     * @return ImageCnt <p>镜像个数</p>
                      * 
                      */
                     uint64_t GetImageCnt() const;
 
                     /**
-                     * 设置镜像个数
-                     * @param _imageCnt 镜像个数
+                     * 设置<p>镜像个数</p>
+                     * @param _imageCnt <p>镜像个数</p>
                      * 
                      */
                     void SetImageCnt(const uint64_t& _imageCnt);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool ImageCntHasBeenSet() const;
 
                     /**
-                     * 获取容器个数
-                     * @return ContainerCnt 容器个数
+                     * 获取<p>容器个数</p>
+                     * @return ContainerCnt <p>容器个数</p>
                      * 
                      */
                     uint64_t GetContainerCnt() const;
 
                     /**
-                     * 设置容器个数
-                     * @param _containerCnt 容器个数
+                     * 设置<p>容器个数</p>
+                     * @param _containerCnt <p>容器个数</p>
                      * 
                      */
                     void SetContainerCnt(const uint64_t& _containerCnt);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool ContainerCntHasBeenSet() const;
 
                     /**
-                     * 获取agent运行状态
-                     * @return Status agent运行状态
+                     * 获取<p>agent运行状态</p>
+                     * @return Status <p>agent运行状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置agent运行状态
-                     * @param _status agent运行状态
+                     * 设置<p>agent运行状态</p>
+                     * @param _status <p>agent运行状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否是Containerd
-                     * @return IsContainerd 是否是Containerd
+                     * 获取<p>是否是Containerd</p>
+                     * @return IsContainerd <p>是否是Containerd</p>
                      * 
                      */
                     bool GetIsContainerd() const;
 
                     /**
-                     * 设置是否是Containerd
-                     * @param _isContainerd 是否是Containerd
+                     * 设置<p>是否是Containerd</p>
+                     * @param _isContainerd <p>是否是Containerd</p>
                      * 
                      */
                     void SetIsContainerd(const bool& _isContainerd);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool IsContainerdHasBeenSet() const;
 
                     /**
-                     * 获取主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
-                     * @return MachineType 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
+                     * 获取<p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>
+                     * @return MachineType <p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
-                     * @param _machineType 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
+                     * 设置<p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>
+                     * @param _machineType <p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取外网ip
-                     * @return PublicIp 外网ip
+                     * 获取<p>外网ip</p>
+                     * @return PublicIp <p>外网ip</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置外网ip
-                     * @param _publicIp 外网ip
+                     * 设置<p>外网ip</p>
+                     * @param _publicIp <p>外网ip</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取主机uuid
-                     * @return Uuid 主机uuid
+                     * 获取<p>主机uuid</p>
+                     * @return Uuid <p>主机uuid</p>
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置主机uuid
-                     * @param _uuid 主机uuid
+                     * 设置<p>主机uuid</p>
+                     * @param _uuid <p>主机uuid</p>
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取主机实例ID
-                     * @return InstanceID 主机实例ID
+                     * 获取<p>主机实例ID</p>
+                     * @return InstanceID <p>主机实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置主机实例ID
-                     * @param _instanceID 主机实例ID
+                     * 设置<p>主机实例ID</p>
+                     * @param _instanceID <p>主机实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取地域ID
-                     * @return RegionID 地域ID
+                     * 获取<p>地域ID</p>
+                     * @return RegionID <p>地域ID</p>
                      * 
                      */
                     int64_t GetRegionID() const;
 
                     /**
-                     * 设置地域ID
-                     * @param _regionID 地域ID
+                     * 设置<p>地域ID</p>
+                     * @param _regionID <p>地域ID</p>
                      * 
                      */
                     void SetRegionID(const int64_t& _regionID);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool RegionIDHasBeenSet() const;
 
                     /**
-                     * 获取所属项目
-                     * @return Project 所属项目
+                     * 获取<p>所属项目</p>
+                     * @return Project <p>所属项目</p>
                      * 
                      */
                     ProjectInfo GetProject() const;
 
                     /**
-                     * 设置所属项目
-                     * @param _project 所属项目
+                     * 设置<p>所属项目</p>
+                     * @param _project <p>所属项目</p>
                      * 
                      */
                     void SetProject(const ProjectInfo& _project);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterID 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterID <p>集群id</p>
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterID 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterID <p>集群id</p>
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群接入状态
-                     * @return ClusterAccessedStatus 集群接入状态
+                     * 获取<p>集群接入状态</p>
+                     * @return ClusterAccessedStatus <p>集群接入状态</p>
                      * 
                      */
                     std::string GetClusterAccessedStatus() const;
 
                     /**
-                     * 设置集群接入状态
-                     * @param _clusterAccessedStatus 集群接入状态
+                     * 设置<p>集群接入状态</p>
+                     * @param _clusterAccessedStatus <p>集群接入状态</p>
                      * 
                      */
                     void SetClusterAccessedStatus(const std::string& _clusterAccessedStatus);
@@ -469,15 +469,57 @@ namespace TencentCloud
                     bool ClusterAccessedStatusHasBeenSet() const;
 
                     /**
-                     * 获取计费核数
-                     * @return ChargeCoresCnt 计费核数
+                     * 获取<p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>
+                     * @return ClusterAccessedSubStatus <p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>
+                     * 
+                     */
+                    std::string GetClusterAccessedSubStatus() const;
+
+                    /**
+                     * 设置<p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>
+                     * @param _clusterAccessedSubStatus <p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>
+                     * 
+                     */
+                    void SetClusterAccessedSubStatus(const std::string& _clusterAccessedSubStatus);
+
+                    /**
+                     * 判断参数 ClusterAccessedSubStatus 是否已赋值
+                     * @return ClusterAccessedSubStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterAccessedSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>失败具体原因描述</p>
+                     * @return ClusterAccessedErrorReason <p>失败具体原因描述</p>
+                     * 
+                     */
+                    std::string GetClusterAccessedErrorReason() const;
+
+                    /**
+                     * 设置<p>失败具体原因描述</p>
+                     * @param _clusterAccessedErrorReason <p>失败具体原因描述</p>
+                     * 
+                     */
+                    void SetClusterAccessedErrorReason(const std::string& _clusterAccessedErrorReason);
+
+                    /**
+                     * 判断参数 ClusterAccessedErrorReason 是否已赋值
+                     * @return ClusterAccessedErrorReason 是否已赋值
+                     * 
+                     */
+                    bool ClusterAccessedErrorReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费核数</p>
+                     * @return ChargeCoresCnt <p>计费核数</p>
                      * 
                      */
                     uint64_t GetChargeCoresCnt() const;
 
                     /**
-                     * 设置计费核数
-                     * @param _chargeCoresCnt 计费核数
+                     * 设置<p>计费核数</p>
+                     * @param _chargeCoresCnt <p>计费核数</p>
                      * 
                      */
                     void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
@@ -490,23 +532,15 @@ namespace TencentCloud
                     bool ChargeCoresCntHasBeenSet() const;
 
                     /**
-                     * 获取防护状态:
-已防护: Defended
-未防护: UnDefended
-                     * @return DefendStatus 防护状态:
-已防护: Defended
-未防护: UnDefended
+                     * 获取<p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>
+                     * @return DefendStatus <p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>
                      * 
                      */
                     std::string GetDefendStatus() const;
 
                     /**
-                     * 设置防护状态:
-已防护: Defended
-未防护: UnDefended
-                     * @param _defendStatus 防护状态:
-已防护: Defended
-未防护: UnDefended
+                     * 设置<p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>
+                     * @param _defendStatus <p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>
                      * 
                      */
                     void SetDefendStatus(const std::string& _defendStatus);
@@ -519,15 +553,15 @@ namespace TencentCloud
                     bool DefendStatusHasBeenSet() const;
 
                     /**
-                     * 获取核数
-                     * @return CoresCnt 核数
+                     * 获取<p>核数</p>
+                     * @return CoresCnt <p>核数</p>
                      * 
                      */
                     uint64_t GetCoresCnt() const;
 
                     /**
-                     * 设置核数
-                     * @param _coresCnt 核数
+                     * 设置<p>核数</p>
+                     * @param _coresCnt <p>核数</p>
                      * 
                      */
                     void SetCoresCnt(const uint64_t& _coresCnt);
@@ -540,15 +574,15 @@ namespace TencentCloud
                     bool CoresCntHasBeenSet() const;
 
                     /**
-                     * 获取最近在线时间
-                     * @return LastOnlineTime 最近在线时间
+                     * 获取<p>最近在线时间</p>
+                     * @return LastOnlineTime <p>最近在线时间</p>
                      * 
                      */
                     std::string GetLastOnlineTime() const;
 
                     /**
-                     * 设置最近在线时间
-                     * @param _lastOnlineTime 最近在线时间
+                     * 设置<p>最近在线时间</p>
+                     * @param _lastOnlineTime <p>最近在线时间</p>
                      * 
                      */
                     void SetLastOnlineTime(const std::string& _lastOnlineTime);
@@ -563,147 +597,157 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机id
+                     * <p>主机id</p>
                      */
                     std::string m_hostID;
                     bool m_hostIDHasBeenSet;
 
                     /**
-                     * 主机ip即内网ip
+                     * <p>主机ip即内网ip</p>
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
-                     * 主机名称
+                     * <p>主机名称</p>
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
-                     * 业务组
+                     * <p>业务组</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * docker 版本
+                     * <p>docker 版本</p>
                      */
                     std::string m_dockerVersion;
                     bool m_dockerVersionHasBeenSet;
 
                     /**
-                     * docker 文件系统类型
+                     * <p>docker 文件系统类型</p>
                      */
                     std::string m_dockerFileSystemDriver;
                     bool m_dockerFileSystemDriverHasBeenSet;
 
                     /**
-                     * 镜像个数
+                     * <p>镜像个数</p>
                      */
                     uint64_t m_imageCnt;
                     bool m_imageCntHasBeenSet;
 
                     /**
-                     * 容器个数
+                     * <p>容器个数</p>
                      */
                     uint64_t m_containerCnt;
                     bool m_containerCntHasBeenSet;
 
                     /**
-                     * agent运行状态
+                     * <p>agent运行状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否是Containerd
+                     * <p>是否是Containerd</p>
                      */
                     bool m_isContainerd;
                     bool m_isContainerdHasBeenSet;
 
                     /**
-                     * 主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；
+                     * <p>主机来源：[&quot;CVM&quot;, &quot;ECM&quot;, &quot;LH&quot;, &quot;BM&quot;]  中的之一为腾讯云服务器；[&quot;Other&quot;]之一非腾讯云服务器；</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 外网ip
+                     * <p>外网ip</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 主机uuid
+                     * <p>主机uuid</p>
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 主机实例ID
+                     * <p>主机实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 地域ID
+                     * <p>地域ID</p>
                      */
                     int64_t m_regionID;
                     bool m_regionIDHasBeenSet;
 
                     /**
-                     * 所属项目
+                     * <p>所属项目</p>
                      */
                     ProjectInfo m_project;
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群接入状态
+                     * <p>集群接入状态</p>
                      */
                     std::string m_clusterAccessedStatus;
                     bool m_clusterAccessedStatusHasBeenSet;
 
                     /**
-                     * 计费核数
+                     * <p>集群接入子状态</p><p>枚举值：</p><ul><li>AccessedSubNone： 无</li><li>AccessedSubUninstallException： 卸载异常</li><li>AccessedSubTimeout： 接入超时</li><li>AccessedSubUninstallTimeout： 卸载超时</li><li>AccessedSubResourceException： 集群组件检查异常-Deployment/DaemonSet等异常</li><li>AccessedSubCAMPermissionDenied： CAM权限不够</li></ul>
+                     */
+                    std::string m_clusterAccessedSubStatus;
+                    bool m_clusterAccessedSubStatusHasBeenSet;
+
+                    /**
+                     * <p>失败具体原因描述</p>
+                     */
+                    std::string m_clusterAccessedErrorReason;
+                    bool m_clusterAccessedErrorReasonHasBeenSet;
+
+                    /**
+                     * <p>计费核数</p>
                      */
                     uint64_t m_chargeCoresCnt;
                     bool m_chargeCoresCntHasBeenSet;
 
                     /**
-                     * 防护状态:
-已防护: Defended
-未防护: UnDefended
+                     * <p>防护状态:<br>已防护: Defended<br>未防护: UnDefended</p>
                      */
                     std::string m_defendStatus;
                     bool m_defendStatusHasBeenSet;
 
                     /**
-                     * 核数
+                     * <p>核数</p>
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
 
                     /**
-                     * 最近在线时间
+                     * <p>最近在线时间</p>
                      */
                     std::string m_lastOnlineTime;
                     bool m_lastOnlineTimeHasBeenSet;

@@ -24,6 +24,9 @@
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
 #include <tencentcloud/ccc/v20200210/model/TimeRange.h>
+#include <tencentcloud/ccc/v20200210/model/RetryTagItem.h>
+#include <tencentcloud/ccc/v20200210/model/AvailableTimeConfig.h>
+#include <tencentcloud/ccc/v20200210/model/TriggerStrategyItem.h>
 
 
 namespace TencentCloud
@@ -46,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -67,15 +70,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取任务起始时间戳，Unix 秒级时间戳
-                     * @return NotBefore 任务起始时间戳，Unix 秒级时间戳
+                     * 获取<p>任务起始时间戳，Unix 秒级时间戳</p>
+                     * @return NotBefore <p>任务起始时间戳，Unix 秒级时间戳</p>
                      * 
                      */
                     int64_t GetNotBefore() const;
 
                     /**
-                     * 设置任务起始时间戳，Unix 秒级时间戳
-                     * @param _notBefore 任务起始时间戳，Unix 秒级时间戳
+                     * 设置<p>任务起始时间戳，Unix 秒级时间戳</p>
+                     * @param _notBefore <p>任务起始时间戳，Unix 秒级时间戳</p>
                      * 
                      */
                     void SetNotBefore(const int64_t& _notBefore);
@@ -88,15 +91,15 @@ namespace TencentCloud
                     bool NotBeforeHasBeenSet() const;
 
                     /**
-                     * 获取被叫号码列表
-                     * @return Callees 被叫号码列表
+                     * 获取<p>被叫号码列表</p>
+                     * @return Callees <p>被叫号码列表</p>
                      * 
                      */
                     std::vector<std::string> GetCallees() const;
 
                     /**
-                     * 设置被叫号码列表
-                     * @param _callees 被叫号码列表
+                     * 设置<p>被叫号码列表</p>
+                     * @param _callees <p>被叫号码列表</p>
                      * 
                      */
                     void SetCallees(const std::vector<std::string>& _callees);
@@ -109,15 +112,15 @@ namespace TencentCloud
                     bool CalleesHasBeenSet() const;
 
                     /**
-                     * 获取主叫号码列表
-                     * @return Callers 主叫号码列表
+                     * 获取<p>主叫号码列表</p>
+                     * @return Callers <p>主叫号码列表</p>
                      * 
                      */
                     std::vector<std::string> GetCallers() const;
 
                     /**
-                     * 设置主叫号码列表
-                     * @param _callers 主叫号码列表
+                     * 设置<p>主叫号码列表</p>
+                     * @param _callers <p>主叫号码列表</p>
                      * 
                      */
                     void SetCallers(const std::vector<std::string>& _callers);
@@ -130,15 +133,15 @@ namespace TencentCloud
                     bool CallersHasBeenSet() const;
 
                     /**
-                     * 获取呼叫使用的 IVR Id，不填时需要填写 AIAgentId
-                     * @return IvrId 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
+                     * 获取<p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>
+                     * @return IvrId <p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>
                      * 
                      */
                     uint64_t GetIvrId() const;
 
                     /**
-                     * 设置呼叫使用的 IVR Id，不填时需要填写 AIAgentId
-                     * @param _ivrId 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
+                     * 设置<p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>
+                     * @param _ivrId <p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>
                      * 
                      */
                     void SetIvrId(const uint64_t& _ivrId);
@@ -151,15 +154,15 @@ namespace TencentCloud
                     bool IvrIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名
-                     * @return Name 任务名
+                     * 获取<p>任务名</p>
+                     * @return Name <p>任务名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名
-                     * @param _name 任务名
+                     * 设置<p>任务名</p>
+                     * @param _name <p>任务名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -172,15 +175,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务描述
-                     * @return Description 任务描述
+                     * 获取<p>任务描述</p>
+                     * @return Description <p>任务描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述
-                     * @param _description 任务描述
+                     * 设置<p>任务描述</p>
+                     * @param _description <p>任务描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -193,15 +196,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取任务停止时间戳，Unix 秒级时间戳
-                     * @return NotAfter 任务停止时间戳，Unix 秒级时间戳
+                     * 获取<p>任务停止时间戳，Unix 秒级时间戳</p>
+                     * @return NotAfter <p>任务停止时间戳，Unix 秒级时间戳</p>
                      * 
                      */
                     int64_t GetNotAfter() const;
 
                     /**
-                     * 设置任务停止时间戳，Unix 秒级时间戳
-                     * @param _notAfter 任务停止时间戳，Unix 秒级时间戳
+                     * 设置<p>任务停止时间戳，Unix 秒级时间戳</p>
+                     * @param _notAfter <p>任务停止时间戳，Unix 秒级时间戳</p>
                      * 
                      */
                     void SetNotAfter(const int64_t& _notAfter);
@@ -214,15 +217,15 @@ namespace TencentCloud
                     bool NotAfterHasBeenSet() const;
 
                     /**
-                     * 获取最大尝试次数，1-3 次
-                     * @return Tries 最大尝试次数，1-3 次
+                     * 获取<p>最大尝试次数，1-3 次</p>
+                     * @return Tries <p>最大尝试次数，1-3 次</p>
                      * 
                      */
                     uint64_t GetTries() const;
 
                     /**
-                     * 设置最大尝试次数，1-3 次
-                     * @param _tries 最大尝试次数，1-3 次
+                     * 设置<p>最大尝试次数，1-3 次</p>
+                     * @param _tries <p>最大尝试次数，1-3 次</p>
                      * 
                      */
                     void SetTries(const uint64_t& _tries);
@@ -235,15 +238,15 @@ namespace TencentCloud
                     bool TriesHasBeenSet() const;
 
                     /**
-                     * 获取自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
-                     * @return Variables 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
+                     * 获取<p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>
+                     * @return Variables <p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>
                      * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
-                     * 设置自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
-                     * @param _variables 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
+                     * 设置<p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>
+                     * @param _variables <p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>
                      * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
@@ -256,15 +259,15 @@ namespace TencentCloud
                     bool VariablesHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
-                     * @return UUI 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
+                     * 获取<p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>
+                     * @return UUI <p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>
                      * 
                      */
                     std::string GetUUI() const;
 
                     /**
-                     * 设置用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
-                     * @param _uUI 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
+                     * 设置<p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>
+                     * @param _uUI <p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>
                      * 
                      */
                     void SetUUI(const std::string& _uUI);
@@ -277,15 +280,15 @@ namespace TencentCloud
                     bool UUIHasBeenSet() const;
 
                     /**
-                     * 获取被叫属性
-                     * @return CalleeAttributes 被叫属性
+                     * 获取<p>被叫属性</p>
+                     * @return CalleeAttributes <p>被叫属性</p>
                      * 
                      */
                     std::vector<CalleeAttribute> GetCalleeAttributes() const;
 
                     /**
-                     * 设置被叫属性
-                     * @param _calleeAttributes 被叫属性
+                     * 设置<p>被叫属性</p>
+                     * @param _calleeAttributes <p>被叫属性</p>
                      * 
                      */
                     void SetCalleeAttributes(const std::vector<CalleeAttribute>& _calleeAttributes);
@@ -298,15 +301,15 @@ namespace TencentCloud
                     bool CalleeAttributesHasBeenSet() const;
 
                     /**
-                     * 获取IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
-                     * @return TimeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 获取<p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>
+                     * @return TimeZone <p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>
                      * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
-                     * 设置IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
-                     * @param _timeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 设置<p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>
+                     * @param _timeZone <p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>
                      * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
@@ -319,15 +322,15 @@ namespace TencentCloud
                     bool TimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取可用时间段
-                     * @return AvailableTime 可用时间段
+                     * 获取<p>可用时间段</p>
+                     * @return AvailableTime <p>可用时间段</p>
                      * 
                      */
                     std::vector<TimeRange> GetAvailableTime() const;
 
                     /**
-                     * 设置可用时间段
-                     * @param _availableTime 可用时间段
+                     * 设置<p>可用时间段</p>
+                     * @param _availableTime <p>可用时间段</p>
                      * 
                      */
                     void SetAvailableTime(const std::vector<TimeRange>& _availableTime);
@@ -340,15 +343,15 @@ namespace TencentCloud
                     bool AvailableTimeHasBeenSet() const;
 
                     /**
-                     * 获取智能体 ID，不填写时需要填写 IvrId
-                     * @return AIAgentId 智能体 ID，不填写时需要填写 IvrId
+                     * 获取<p>智能体 ID，不填写时需要填写 IvrId</p>
+                     * @return AIAgentId <p>智能体 ID，不填写时需要填写 IvrId</p>
                      * 
                      */
                     int64_t GetAIAgentId() const;
 
                     /**
-                     * 设置智能体 ID，不填写时需要填写 IvrId
-                     * @param _aIAgentId 智能体 ID，不填写时需要填写 IvrId
+                     * 设置<p>智能体 ID，不填写时需要填写 IvrId</p>
+                     * @param _aIAgentId <p>智能体 ID，不填写时需要填写 IvrId</p>
                      * 
                      */
                     void SetAIAgentId(const int64_t& _aIAgentId);
@@ -361,15 +364,15 @@ namespace TencentCloud
                     bool AIAgentIdHasBeenSet() const;
 
                     /**
-                     * 获取任务失败重试时间间隔，重试间隔 600秒～86400 秒
-                     * @return RetryInterval 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * 获取<p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>
+                     * @return RetryInterval <p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>
                      * 
                      */
                     int64_t GetRetryInterval() const;
 
                     /**
-                     * 设置任务失败重试时间间隔，重试间隔 600秒～86400 秒
-                     * @param _retryInterval 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * 设置<p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>
+                     * @param _retryInterval <p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>
                      * 
                      */
                     void SetRetryInterval(const int64_t& _retryInterval);
@@ -382,15 +385,15 @@ namespace TencentCloud
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
-                     * @return MaxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 获取<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
+                     * @return MaxRingTimeoutSecond <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      * 
                      */
                     int64_t GetMaxRingTimeoutSecond() const;
 
                     /**
-                     * 设置最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
-                     * @param _maxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 设置<p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
+                     * @param _maxRingTimeoutSecond <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      * 
                      */
                     void SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond);
@@ -402,109 +405,217 @@ namespace TencentCloud
                      */
                     bool MaxRingTimeoutSecondHasBeenSet() const;
 
+                    /**
+                     * 获取<p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * @return RetryHangupTypes <p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * 
+                     */
+                    std::vector<std::string> GetRetryHangupTypes() const;
+
+                    /**
+                     * 设置<p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * @param _retryHangupTypes <p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * 
+                     */
+                    void SetRetryHangupTypes(const std::vector<std::string>& _retryHangupTypes);
+
+                    /**
+                     * 判断参数 RetryHangupTypes 是否已赋值
+                     * @return RetryHangupTypes 是否已赋值
+                     * 
+                     */
+                    bool RetryHangupTypesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>
+                     * @return RetryTags <p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>
+                     * 
+                     */
+                    std::vector<RetryTagItem> GetRetryTags() const;
+
+                    /**
+                     * 设置<p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>
+                     * @param _retryTags <p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>
+                     * 
+                     */
+                    void SetRetryTags(const std::vector<RetryTagItem>& _retryTags);
+
+                    /**
+                     * 判断参数 RetryTags 是否已赋值
+                     * @return RetryTags 是否已赋值
+                     * 
+                     */
+                    bool RetryTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>
+                     * @return AvailableWorkTimeConfig <p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>
+                     * 
+                     */
+                    std::vector<AvailableTimeConfig> GetAvailableWorkTimeConfig() const;
+
+                    /**
+                     * 设置<p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>
+                     * @param _availableWorkTimeConfig <p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>
+                     * 
+                     */
+                    void SetAvailableWorkTimeConfig(const std::vector<AvailableTimeConfig>& _availableWorkTimeConfig);
+
+                    /**
+                     * 判断参数 AvailableWorkTimeConfig 是否已赋值
+                     * @return AvailableWorkTimeConfig 是否已赋值
+                     * 
+                     */
+                    bool AvailableWorkTimeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>触发策略</p>
+                     * @return TriggerStrategy <p>触发策略</p>
+                     * 
+                     */
+                    std::vector<TriggerStrategyItem> GetTriggerStrategy() const;
+
+                    /**
+                     * 设置<p>触发策略</p>
+                     * @param _triggerStrategy <p>触发策略</p>
+                     * 
+                     */
+                    void SetTriggerStrategy(const std::vector<TriggerStrategyItem>& _triggerStrategy);
+
+                    /**
+                     * 判断参数 TriggerStrategy 是否已赋值
+                     * @return TriggerStrategy 是否已赋值
+                     * 
+                     */
+                    bool TriggerStrategyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 任务起始时间戳，Unix 秒级时间戳
+                     * <p>任务起始时间戳，Unix 秒级时间戳</p>
                      */
                     int64_t m_notBefore;
                     bool m_notBeforeHasBeenSet;
 
                     /**
-                     * 被叫号码列表
+                     * <p>被叫号码列表</p>
                      */
                     std::vector<std::string> m_callees;
                     bool m_calleesHasBeenSet;
 
                     /**
-                     * 主叫号码列表
+                     * <p>主叫号码列表</p>
                      */
                     std::vector<std::string> m_callers;
                     bool m_callersHasBeenSet;
 
                     /**
-                     * 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
+                     * <p>呼叫使用的 IVR Id，不填时需要填写 AIAgentId</p>
                      */
                     uint64_t m_ivrId;
                     bool m_ivrIdHasBeenSet;
 
                     /**
-                     * 任务名
+                     * <p>任务名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务描述
+                     * <p>任务描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 任务停止时间戳，Unix 秒级时间戳
+                     * <p>任务停止时间戳，Unix 秒级时间戳</p>
                      */
                     int64_t m_notAfter;
                     bool m_notAfterHasBeenSet;
 
                     /**
-                     * 最大尝试次数，1-3 次
+                     * <p>最大尝试次数，1-3 次</p>
                      */
                     uint64_t m_tries;
                     bool m_triesHasBeenSet;
 
                     /**
-                     * 自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处
+                     * <p>自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处</p>
                      */
                     std::vector<Variable> m_variables;
                     bool m_variablesHasBeenSet;
 
                     /**
-                     * 用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处
+                     * <p>用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处</p>
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;
 
                     /**
-                     * 被叫属性
+                     * <p>被叫属性</p>
                      */
                     std::vector<CalleeAttribute> m_calleeAttributes;
                     bool m_calleeAttributesHasBeenSet;
 
                     /**
-                     * IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * <p>IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones</p>
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
 
                     /**
-                     * 可用时间段
+                     * <p>可用时间段</p>
                      */
                     std::vector<TimeRange> m_availableTime;
                     bool m_availableTimeHasBeenSet;
 
                     /**
-                     * 智能体 ID，不填写时需要填写 IvrId
+                     * <p>智能体 ID，不填写时需要填写 IvrId</p>
                      */
                     int64_t m_aIAgentId;
                     bool m_aIAgentIdHasBeenSet;
 
                     /**
-                     * 任务失败重试时间间隔，重试间隔 600秒～86400 秒
+                     * <p>任务失败重试时间间隔，重试间隔 600秒～86400 秒</p>
                      */
                     int64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
 
                     /**
-                     * 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * <p>最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数</p>
                      */
                     int64_t m_maxRingTimeoutSecond;
                     bool m_maxRingTimeoutSecondHasBeenSet;
+
+                    /**
+                     * <p>根据限定的挂断原因(可选挂断状态码:202,203,204,205,206,207,208,210,212,213,215,216,217,218,219,221,222,234)进行重试，只对使用AIAgentID的任务有效，挂断状态码说明</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     */
+                    std::vector<std::string> m_retryHangupTypes;
+                    bool m_retryHangupTypesHasBeenSet;
+
+                    /**
+                     * <p>根据限定的话后标签进行重试，只对使用对话模型的AIAgentID任务有效，标签信息可在智能体配置中查询</p>
+                     */
+                    std::vector<RetryTagItem> m_retryTags;
+                    bool m_retryTagsHasBeenSet;
+
+                    /**
+                     * <p>生效的工作时间配置。建议使用此字段代替AvailableTime 字段，当同时使用时，优先生效AvailableTime。</p>
+                     */
+                    std::vector<AvailableTimeConfig> m_availableWorkTimeConfig;
+                    bool m_availableWorkTimeConfigHasBeenSet;
+
+                    /**
+                     * <p>触发策略</p>
+                     */
+                    std::vector<TriggerStrategyItem> m_triggerStrategy;
+                    bool m_triggerStrategyHasBeenSet;
 
                 };
             }

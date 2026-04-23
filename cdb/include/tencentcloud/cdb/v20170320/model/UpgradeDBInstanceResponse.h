@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单 ID。
-                     * @return DealIds 订单 ID。
+                     * 获取<p>订单 ID。</p>
+                     * @return DealIds <p>订单 ID。</p>
                      * 
                      */
                     std::vector<std::string> GetDealIds() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealIdsHasBeenSet() const;
 
                     /**
-                     * 获取异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
-                     * @return AsyncRequestId 异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
+                     * 获取<p>异步任务的请求 ID，可使用此 ID <a href="https://cloud.tencent.com/document/product/236/20410">查询异步任务的执行结果</a>。</p>
+                     * @return AsyncRequestId <p>异步任务的请求 ID，可使用此 ID <a href="https://cloud.tencent.com/document/product/236/20410">查询异步任务的执行结果</a>。</p>
                      * 
                      */
                     std::string GetAsyncRequestId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单 ID。
+                     * <p>订单 ID。</p>
                      */
                     std::vector<std::string> m_dealIds;
                     bool m_dealIdsHasBeenSet;
 
                     /**
-                     * 异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。
+                     * <p>异步任务的请求 ID，可使用此 ID <a href="https://cloud.tencent.com/document/product/236/20410">查询异步任务的执行结果</a>。</p>
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

@@ -1890,6 +1890,56 @@ ClsClient::CreateScheduledSqlOutcomeCallable ClsClient::CreateScheduledSqlCallab
     return prom->get_future();
 }
 
+ClsClient::CreateSearchViewOutcome ClsClient::CreateSearchView(const CreateSearchViewRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSearchView");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSearchViewResponse rsp = CreateSearchViewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSearchViewOutcome(rsp);
+        else
+            return CreateSearchViewOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSearchViewOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateSearchViewAsync(const CreateSearchViewRequest& request, const CreateSearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSearchViewRequest&;
+    using Resp = CreateSearchViewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSearchView", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateSearchViewOutcomeCallable ClsClient::CreateSearchViewCallable(const CreateSearchViewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSearchViewOutcome>>();
+    CreateSearchViewAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateSearchViewRequest&,
+        CreateSearchViewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateShipperOutcome ClsClient::CreateShipper(const CreateShipperRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateShipper");
@@ -3532,6 +3582,56 @@ ClsClient::DeleteScheduledSqlOutcomeCallable ClsClient::DeleteScheduledSqlCallab
         const ClsClient*,
         const DeleteScheduledSqlRequest&,
         DeleteScheduledSqlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteSearchViewOutcome ClsClient::DeleteSearchView(const DeleteSearchViewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSearchView");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSearchViewResponse rsp = DeleteSearchViewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSearchViewOutcome(rsp);
+        else
+            return DeleteSearchViewOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSearchViewOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteSearchViewAsync(const DeleteSearchViewRequest& request, const DeleteSearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSearchViewRequest&;
+    using Resp = DeleteSearchViewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSearchView", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteSearchViewOutcomeCallable ClsClient::DeleteSearchViewCallable(const DeleteSearchViewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSearchViewOutcome>>();
+    DeleteSearchViewAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteSearchViewRequest&,
+        DeleteSearchViewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6140,6 +6240,56 @@ ClsClient::DescribeScheduledSqlInfoOutcomeCallable ClsClient::DescribeScheduledS
     return prom->get_future();
 }
 
+ClsClient::DescribeSearchViewsOutcome ClsClient::DescribeSearchViews(const DescribeSearchViewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchViews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchViewsResponse rsp = DescribeSearchViewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchViewsOutcome(rsp);
+        else
+            return DescribeSearchViewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchViewsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeSearchViewsAsync(const DescribeSearchViewsRequest& request, const DescribeSearchViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSearchViewsRequest&;
+    using Resp = DescribeSearchViewsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSearchViews", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeSearchViewsOutcomeCallable ClsClient::DescribeSearchViewsCallable(const DescribeSearchViewsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSearchViewsOutcome>>();
+    DescribeSearchViewsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeSearchViewsRequest&,
+        DescribeSearchViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeShipperTasksOutcome ClsClient::DescribeShipperTasks(const DescribeShipperTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeShipperTasks");
@@ -8132,6 +8282,56 @@ ClsClient::ModifyScheduledSqlOutcomeCallable ClsClient::ModifyScheduledSqlCallab
         const ClsClient*,
         const ModifyScheduledSqlRequest&,
         ModifyScheduledSqlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifySearchViewOutcome ClsClient::ModifySearchView(const ModifySearchViewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySearchView");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySearchViewResponse rsp = ModifySearchViewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySearchViewOutcome(rsp);
+        else
+            return ModifySearchViewOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySearchViewOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifySearchViewAsync(const ModifySearchViewRequest& request, const ModifySearchViewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySearchViewRequest&;
+    using Resp = ModifySearchViewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySearchView", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifySearchViewOutcomeCallable ClsClient::ModifySearchViewCallable(const ModifySearchViewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySearchViewOutcome>>();
+    ModifySearchViewAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifySearchViewRequest&,
+        ModifySearchViewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

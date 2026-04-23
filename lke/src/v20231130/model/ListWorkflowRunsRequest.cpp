@@ -28,7 +28,8 @@ ListWorkflowRunsRequest::ListWorkflowRunsRequest() :
     m_runEnvHasBeenSet(false),
     m_pageHasBeenSet(false),
     m_loginUinHasBeenSet(false),
-    m_loginSubAccountUinHasBeenSet(false)
+    m_loginSubAccountUinHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ListWorkflowRunsRequest::ToJsonString() const
         string key = "LoginSubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ListWorkflowRunsRequest::SetLoginSubAccountUin(const string& _loginSubAccou
 bool ListWorkflowRunsRequest::LoginSubAccountUinHasBeenSet() const
 {
     return m_loginSubAccountUinHasBeenSet;
+}
+
+string ListWorkflowRunsRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void ListWorkflowRunsRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool ListWorkflowRunsRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
 }
 
 

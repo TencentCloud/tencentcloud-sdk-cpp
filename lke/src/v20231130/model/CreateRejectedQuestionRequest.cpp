@@ -26,7 +26,8 @@ CreateRejectedQuestionRequest::CreateRejectedQuestionRequest() :
     m_botBizIdHasBeenSet(false),
     m_questionHasBeenSet(false),
     m_businessSourceHasBeenSet(false),
-    m_businessIdHasBeenSet(false)
+    m_businessIdHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateRejectedQuestionRequest::ToJsonString() const
         string key = "BusinessId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_businessId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateRejectedQuestionRequest::SetBusinessId(const string& _businessId)
 bool CreateRejectedQuestionRequest::BusinessIdHasBeenSet() const
 {
     return m_businessIdHasBeenSet;
+}
+
+int64_t CreateRejectedQuestionRequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void CreateRejectedQuestionRequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool CreateRejectedQuestionRequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

@@ -41,6 +41,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DeleteQARequest.h
   include/tencentcloud/lke/v20231130/model/CreateDocCateRequest.h
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionPreviewResponse.h
+  include/tencentcloud/lke/v20231130/model/ESConfig.h
   include/tencentcloud/lke/v20231130/model/DeleteAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyResponse.h
   include/tencentcloud/lke/v20231130/model/ListDocCateRequest.h
@@ -191,13 +192,14 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DeleteAppRequest.h
   include/tencentcloud/lke/v20231130/model/GetVarListResponse.h
   include/tencentcloud/lke/v20231130/model/WorkFlowSummary.h
+  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeNodeRunResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyQAResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteQAResponse.h
   include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h
   include/tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h
   include/tencentcloud/lke/v20231130/model/AudioTranscript.h
-  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h
+  include/tencentcloud/lke/v20231130/model/FilterItem.h
   include/tencentcloud/lke/v20231130/model/InputBoxConfig.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
   include/tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h
@@ -418,6 +420,7 @@ set(lke_src
   src/v20231130/model/DeleteQARequest.cpp
   src/v20231130/model/CreateDocCateRequest.cpp
   src/v20231130/model/ListRejectedQuestionPreviewResponse.cpp
+  src/v20231130/model/ESConfig.cpp
   src/v20231130/model/DeleteAttributeLabelRequest.cpp
   src/v20231130/model/DescribeRobotBizIDByAppKeyResponse.cpp
   src/v20231130/model/ListDocCateRequest.cpp
@@ -568,13 +571,14 @@ set(lke_src
   src/v20231130/model/DeleteAppRequest.cpp
   src/v20231130/model/GetVarListResponse.cpp
   src/v20231130/model/WorkFlowSummary.cpp
+  src/v20231130/model/UpdateSharedKnowledgeResponse.cpp
   src/v20231130/model/DescribeNodeRunResponse.cpp
   src/v20231130/model/ModifyQAResponse.cpp
   src/v20231130/model/DeleteQAResponse.cpp
   src/v20231130/model/UpdateSharedKnowledgeRequest.cpp
   src/v20231130/model/GetMsgRecordRequest.cpp
   src/v20231130/model/AudioTranscript.cpp
-  src/v20231130/model/UpdateSharedKnowledgeResponse.cpp
+  src/v20231130/model/FilterItem.cpp
   src/v20231130/model/InputBoxConfig.cpp
   src/v20231130/model/ReleaseConfigs.cpp
   src/v20231130/model/DescribeSearchStatsGraphResponse.cpp

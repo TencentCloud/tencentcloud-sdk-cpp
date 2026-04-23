@@ -93,12 +93,12 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ServiceEIP.h
   include/tencentcloud/tione/v20211111/model/DescribeExportResponse.h
   include/tencentcloud/tione/v20211111/model/NotebookSetItem.h
-  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupAttachedWorkspacesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDataSourcesResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h
   include/tencentcloud/tione/v20211111/model/Usage.h
   include/tencentcloud/tione/v20211111/model/GatewayConfig.h
-  include/tencentcloud/tione/v20211111/model/Choice.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
@@ -120,7 +120,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h
   include/tencentcloud/tione/v20211111/model/UpdateDataSourceRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupResponse.h
-  include/tencentcloud/tione/v20211111/model/SpecUnit.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
   include/tencentcloud/tione/v20211111/model/ServiceCallInfo.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h
@@ -158,6 +158,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/SchemaInfo.h
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/Event.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupAttachedWorkspacesRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/DescribeDataSourceRequest.h
@@ -174,7 +175,6 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/PublicDataSourceFS.h
   include/tencentcloud/tione/v20211111/model/ExposePortConfig.h
-  include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/Option.h
   include/tencentcloud/tione/v20211111/model/DescribeMountLimitsRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteExportResponse.h
@@ -295,6 +295,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h
   include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
+  include/tencentcloud/tione/v20211111/model/HealthProbe.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
   include/tencentcloud/tione/v20211111/model/ResourceSpec.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
@@ -322,9 +323,10 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h
   include/tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h
-  include/tencentcloud/tione/v20211111/model/HealthProbe.h
+  include/tencentcloud/tione/v20211111/model/Choice.h
   include/tencentcloud/tione/v20211111/model/HDFSConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h
+  include/tencentcloud/tione/v20211111/model/SpecUnit.h
   include/tencentcloud/tione/v20211111/model/DeleteDataSourceResponse.h
   include/tencentcloud/tione/v20211111/model/ModelAccelerateTask.h
   include/tencentcloud/tione/v20211111/model/Pod.h
@@ -425,12 +427,12 @@ set(tione_src
   src/v20211111/model/ServiceEIP.cpp
   src/v20211111/model/DescribeExportResponse.cpp
   src/v20211111/model/NotebookSetItem.cpp
-  src/v20211111/model/ModifyNotebookTagsRequest.cpp
+  src/v20211111/model/DescribeBillingResourceGroupAttachedWorkspacesResponse.cpp
   src/v20211111/model/DescribeDataSourcesResponse.cpp
   src/v20211111/model/ModifyServiceGroupWeightsResponse.cpp
   src/v20211111/model/Usage.cpp
   src/v20211111/model/GatewayConfig.cpp
-  src/v20211111/model/Choice.cpp
+  src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
   src/v20211111/model/DeleteNotebookRequest.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/Filter.cpp
@@ -452,7 +454,7 @@ set(tione_src
   src/v20211111/model/ModifyNotebookTagsResponse.cpp
   src/v20211111/model/UpdateDataSourceRequest.cpp
   src/v20211111/model/DescribeBillingResourceGroupResponse.cpp
-  src/v20211111/model/SpecUnit.cpp
+  src/v20211111/model/ModifyNotebookTagsRequest.cpp
   src/v20211111/model/ServiceCallInfo.cpp
   src/v20211111/model/CosPathInfo.cpp
   src/v20211111/model/DescribeBillingResourceGroupsResponse.cpp
@@ -490,6 +492,7 @@ set(tione_src
   src/v20211111/model/SchemaInfo.cpp
   src/v20211111/model/StartCmdInfo.cpp
   src/v20211111/model/Event.cpp
+  src/v20211111/model/DescribeBillingResourceGroupAttachedWorkspacesRequest.cpp
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
   src/v20211111/model/Spec.cpp
   src/v20211111/model/DescribeDataSourceRequest.cpp
@@ -506,7 +509,6 @@ set(tione_src
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/PublicDataSourceFS.cpp
   src/v20211111/model/ExposePortConfig.cpp
-  src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
   src/v20211111/model/Option.cpp
   src/v20211111/model/DescribeMountLimitsRequest.cpp
   src/v20211111/model/DeleteExportResponse.cpp
@@ -627,6 +629,7 @@ set(tione_src
   src/v20211111/model/DescribeNotebookRequest.cpp
   src/v20211111/model/DescribePublicAlgoVersionListRequest.cpp
   src/v20211111/model/StorageExtraConf.cpp
+  src/v20211111/model/HealthProbe.cpp
   src/v20211111/model/LocalDisk.cpp
   src/v20211111/model/ResourceSpec.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
@@ -654,9 +657,10 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceGroupRequest.cpp
   src/v20211111/model/PushTrainingMetricsResponse.cpp
   src/v20211111/model/StopTrainingTaskResponse.cpp
-  src/v20211111/model/HealthProbe.cpp
+  src/v20211111/model/Choice.cpp
   src/v20211111/model/HDFSConfig.cpp
   src/v20211111/model/DescribeTrainingTaskPodsResponse.cpp
+  src/v20211111/model/SpecUnit.cpp
   src/v20211111/model/DeleteDataSourceResponse.cpp
   src/v20211111/model/ModelAccelerateTask.cpp
   src/v20211111/model/Pod.cpp

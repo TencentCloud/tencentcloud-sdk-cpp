@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流ID
+                     * 获取<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流ID
+                     * @return WorkflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
+                     * 设置<p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流ID
+                     * @param _workflowId <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
+                     * 获取<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowName 工作流名称
+                     * @return WorkflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
+                     * 设置<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowName 工作流名称
+                     * @param _workflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取工作流运行ID
+                     * 获取<p>工作流运行ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowRunId 工作流运行ID
+                     * @return WorkflowRunId <p>工作流运行ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowRunId() const;
 
                     /**
-                     * 设置工作流运行ID
+                     * 设置<p>工作流运行ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowRunId 工作流运行ID
+                     * @param _workflowRunId <p>工作流运行ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,18 +125,18 @@ namespace TencentCloud
                     bool WorkflowRunIdHasBeenSet() const;
 
                     /**
-                     * 获取节点信息
+                     * 获取<p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunNodes 节点信息
+                     * @return RunNodes <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkflowRunNodeInfo> GetRunNodes() const;
 
                     /**
-                     * 设置节点信息
+                     * 设置<p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runNodes 节点信息
+                     * @param _runNodes <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,18 +150,18 @@ namespace TencentCloud
                     bool RunNodesHasBeenSet() const;
 
                     /**
-                     * 获取选项卡
+                     * 获取<p>选项卡</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OptionCards 选项卡
+                     * @return OptionCards <p>选项卡</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOptionCards() const;
 
                     /**
-                     * 设置选项卡
+                     * 设置<p>选项卡</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _optionCards 选项卡
+                     * @param _optionCards <p>选项卡</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +175,18 @@ namespace TencentCloud
                     bool OptionCardsHasBeenSet() const;
 
                     /**
-                     * 获取多气泡的输出结果
+                     * 获取<p>多气泡的输出结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Outputs 多气泡的输出结果
+                     * @return Outputs <p>多气泡的输出结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOutputs() const;
 
                     /**
-                     * 设置多气泡的输出结果
+                     * 设置<p>多气泡的输出结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputs 多气泡的输出结果
+                     * @param _outputs <p>多气泡的输出结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,18 +200,18 @@ namespace TencentCloud
                     bool OutputsHasBeenSet() const;
 
                     /**
-                     * 获取工作流发布时间，unix时间戳
+                     * 获取<p>工作流发布时间，unix时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowReleaseTime 工作流发布时间，unix时间戳
+                     * @return WorkflowReleaseTime <p>工作流发布时间，unix时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowReleaseTime() const;
 
                     /**
-                     * 设置工作流发布时间，unix时间戳
+                     * 设置<p>工作流发布时间，unix时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowReleaseTime 工作流发布时间，unix时间戳
+                     * @param _workflowReleaseTime <p>工作流发布时间，unix时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool WorkflowReleaseTimeHasBeenSet() const;
 
                     /**
-                     * 获取中间消息
-                     * @return PendingMessages 中间消息
+                     * 获取<p>中间消息</p>
+                     * @return PendingMessages <p>中间消息</p>
                      * 
                      */
                     std::vector<std::string> GetPendingMessages() const;
 
                     /**
-                     * 设置中间消息
-                     * @param _pendingMessages 中间消息
+                     * 设置<p>中间消息</p>
+                     * @param _pendingMessages <p>中间消息</p>
                      * 
                      */
                     void SetPendingMessages(const std::vector<std::string>& _pendingMessages);
@@ -246,15 +246,15 @@ namespace TencentCloud
                     bool PendingMessagesHasBeenSet() const;
 
                     /**
-                     * 获取选项卡索引
-                     * @return OptionCardIndex 选项卡索引
+                     * 获取<p>选项卡索引</p>
+                     * @return OptionCardIndex <p>选项卡索引</p>
                      * 
                      */
                     OptionCardIndex GetOptionCardIndex() const;
 
                     /**
-                     * 设置选项卡索引
-                     * @param _optionCardIndex 选项卡索引
+                     * 设置<p>选项卡索引</p>
+                     * @param _optionCardIndex <p>选项卡索引</p>
                      * 
                      */
                     void SetOptionCardIndex(const OptionCardIndex& _optionCardIndex);
@@ -267,18 +267,18 @@ namespace TencentCloud
                     bool OptionCardIndexHasBeenSet() const;
 
                     /**
-                     * 获取工作流多气泡输出
+                     * 获取<p>工作流多气泡输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Contents 工作流多气泡输出
+                     * @return Contents <p>工作流多气泡输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Content> GetContents() const;
 
                     /**
-                     * 设置工作流多气泡输出
+                     * 设置<p>工作流多气泡输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _contents 工作流多气泡输出
+                     * @param _contents <p>工作流多气泡输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -291,75 +291,102 @@ namespace TencentCloud
                      */
                     bool ContentsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>
+                     * @return OptionMode <p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>
+                     * 
+                     */
+                    int64_t GetOptionMode() const;
+
+                    /**
+                     * 设置<p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>
+                     * @param _optionMode <p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>
+                     * 
+                     */
+                    void SetOptionMode(const int64_t& _optionMode);
+
+                    /**
+                     * 判断参数 OptionMode 是否已赋值
+                     * @return OptionMode 是否已赋值
+                     * 
+                     */
+                    bool OptionModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 工作流运行ID
+                     * <p>工作流运行ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowRunId;
                     bool m_workflowRunIdHasBeenSet;
 
                     /**
-                     * 节点信息
+                     * <p>节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkflowRunNodeInfo> m_runNodes;
                     bool m_runNodesHasBeenSet;
 
                     /**
-                     * 选项卡
+                     * <p>选项卡</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_optionCards;
                     bool m_optionCardsHasBeenSet;
 
                     /**
-                     * 多气泡的输出结果
+                     * <p>多气泡的输出结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_outputs;
                     bool m_outputsHasBeenSet;
 
                     /**
-                     * 工作流发布时间，unix时间戳
+                     * <p>工作流发布时间，unix时间戳</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowReleaseTime;
                     bool m_workflowReleaseTimeHasBeenSet;
 
                     /**
-                     * 中间消息
+                     * <p>中间消息</p>
                      */
                     std::vector<std::string> m_pendingMessages;
                     bool m_pendingMessagesHasBeenSet;
 
                     /**
-                     * 选项卡索引
+                     * <p>选项卡索引</p>
                      */
                     OptionCardIndex m_optionCardIndex;
                     bool m_optionCardIndexHasBeenSet;
 
                     /**
-                     * 工作流多气泡输出
+                     * <p>工作流多气泡输出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Content> m_contents;
                     bool m_contentsHasBeenSet;
+
+                    /**
+                     * <p>标识选项卡为单选还是双选</p><p>枚举值：</p><ul><li>0： 单选</li><li>1： 多选</li></ul>
+                     */
+                    int64_t m_optionMode;
+                    bool m_optionModeHasBeenSet;
 
                 };
             }

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
+                     * 获取<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelName 模型名称
+                     * @return ModelName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
+                     * 设置<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelName 模型名称
+                     * @param _modelName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取首Token耗时
+                     * 获取<p>首Token耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstTokenCost 首Token耗时
+                     * @return FirstTokenCost <p>首Token耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFirstTokenCost() const;
 
                     /**
-                     * 设置首Token耗时
+                     * 设置<p>首Token耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _firstTokenCost 首Token耗时
+                     * @param _firstTokenCost <p>首Token耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool FirstTokenCostHasBeenSet() const;
 
                     /**
-                     * 获取总耗时
+                     * 获取<p>总耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCost 总耗时
+                     * @return TotalCost <p>总耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCost() const;
 
                     /**
-                     * 设置总耗时
+                     * 设置<p>总耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalCost 总耗时
+                     * @param _totalCost <p>总耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TotalCostHasBeenSet() const;
 
                     /**
-                     * 获取输入Token数量
+                     * 获取<p>输入Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputTokens 输入Token数量
+                     * @return InputTokens <p>输入Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInputTokens() const;
 
                     /**
-                     * 设置输入Token数量
+                     * 设置<p>输入Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputTokens 输入Token数量
+                     * @param _inputTokens <p>输入Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool InputTokensHasBeenSet() const;
 
                     /**
-                     * 获取输出Token数量
+                     * 获取<p>输出Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputTokens 输出Token数量
+                     * @return OutputTokens <p>输出Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputTokens() const;
 
                     /**
-                     * 设置输出Token数量
+                     * 设置<p>输出Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputTokens 输出Token数量
+                     * @param _outputTokens <p>输出Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool OutputTokensHasBeenSet() const;
 
                     /**
-                     * 获取总Token数量
+                     * 获取<p>总Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalTokens 总Token数量
+                     * @return TotalTokens <p>总Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalTokens() const;
 
                     /**
-                     * 设置总Token数量
+                     * 设置<p>总Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalTokens 总Token数量
+                     * @param _totalTokens <p>总Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,42 +199,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 首Token耗时
+                     * <p>首Token耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_firstTokenCost;
                     bool m_firstTokenCostHasBeenSet;
 
                     /**
-                     * 总耗时
+                     * <p>总耗时</p><p>单位：ms</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
-                     * 输入Token数量
+                     * <p>输入Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_inputTokens;
                     bool m_inputTokensHasBeenSet;
 
                     /**
-                     * 输出Token数量
+                     * <p>输出Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputTokens;
                     bool m_outputTokensHasBeenSet;
 
                     /**
-                     * 总Token数量
+                     * <p>总Token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalTokens;

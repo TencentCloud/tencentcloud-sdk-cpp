@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ESConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享知识库名称，字符数量范围：[1, 50]
-                     * @return KnowledgeName 共享知识库名称，字符数量范围：[1, 50]
+                     * 获取<p>共享知识库名称，字符数量范围：[1, 50]</p>
+                     * @return KnowledgeName <p>共享知识库名称，字符数量范围：[1, 50]</p>
                      * 
                      */
                     std::string GetKnowledgeName() const;
 
                     /**
-                     * 设置共享知识库名称，字符数量范围：[1, 50]
-                     * @param _knowledgeName 共享知识库名称，字符数量范围：[1, 50]
+                     * 设置<p>共享知识库名称，字符数量范围：[1, 50]</p>
+                     * @param _knowledgeName <p>共享知识库名称，字符数量范围：[1, 50]</p>
                      * 
                      */
                     void SetKnowledgeName(const std::string& _knowledgeName);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool KnowledgeNameHasBeenSet() const;
 
                     /**
-                     * 获取共享知识库描述，字符数量上限2000
-                     * @return KnowledgeDescription 共享知识库描述，字符数量上限2000
+                     * 获取<p>共享知识库描述，字符数量上限2000</p>
+                     * @return KnowledgeDescription <p>共享知识库描述，字符数量上限2000</p>
                      * 
                      */
                     std::string GetKnowledgeDescription() const;
 
                     /**
-                     * 设置共享知识库描述，字符数量上限2000
-                     * @param _knowledgeDescription 共享知识库描述，字符数量上限2000
+                     * 设置<p>共享知识库描述，字符数量上限2000</p>
+                     * @param _knowledgeDescription <p>共享知识库描述，字符数量上限2000</p>
                      * 
                      */
                     void SetKnowledgeDescription(const std::string& _knowledgeDescription);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool KnowledgeDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Embedding模型，字符数量上限128
-                     * @return EmbeddingModel Embedding模型，字符数量上限128
+                     * 获取<p>Embedding模型，字符数量上限128</p>
+                     * @return EmbeddingModel <p>Embedding模型，字符数量上限128</p>
                      * @deprecated
                      */
                     std::string GetEmbeddingModel() const;
 
                     /**
-                     * 设置Embedding模型，字符数量上限128
-                     * @param _embeddingModel Embedding模型，字符数量上限128
+                     * 设置<p>Embedding模型，字符数量上限128</p>
+                     * @param _embeddingModel <p>Embedding模型，字符数量上限128</p>
                      * @deprecated
                      */
                     void SetEmbeddingModel(const std::string& _embeddingModel);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool EmbeddingModelHasBeenSet() const;
 
                     /**
-                     * 获取共享知识库类型，0普通，1公众号
-                     * @return KnowledgeType 共享知识库类型，0普通，1公众号
+                     * 获取<p>共享知识库类型，0普通，1公众号</p>
+                     * @return KnowledgeType <p>共享知识库类型，0普通，1公众号</p>
                      * 
                      */
                     int64_t GetKnowledgeType() const;
 
                     /**
-                     * 设置共享知识库类型，0普通，1公众号
-                     * @param _knowledgeType 共享知识库类型，0普通，1公众号
+                     * 设置<p>共享知识库类型，0普通，1公众号</p>
+                     * @param _knowledgeType <p>共享知识库类型，0普通，1公众号</p>
                      * 
                      */
                     void SetKnowledgeType(const int64_t& _knowledgeType);
@@ -126,31 +127,58 @@ namespace TencentCloud
                      */
                     bool KnowledgeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ES存储配置</p>
+                     * @return EsConfig <p>ES存储配置</p>
+                     * 
+                     */
+                    ESConfig GetEsConfig() const;
+
+                    /**
+                     * 设置<p>ES存储配置</p>
+                     * @param _esConfig <p>ES存储配置</p>
+                     * 
+                     */
+                    void SetEsConfig(const ESConfig& _esConfig);
+
+                    /**
+                     * 判断参数 EsConfig 是否已赋值
+                     * @return EsConfig 是否已赋值
+                     * 
+                     */
+                    bool EsConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 共享知识库名称，字符数量范围：[1, 50]
+                     * <p>共享知识库名称，字符数量范围：[1, 50]</p>
                      */
                     std::string m_knowledgeName;
                     bool m_knowledgeNameHasBeenSet;
 
                     /**
-                     * 共享知识库描述，字符数量上限2000
+                     * <p>共享知识库描述，字符数量上限2000</p>
                      */
                     std::string m_knowledgeDescription;
                     bool m_knowledgeDescriptionHasBeenSet;
 
                     /**
-                     * Embedding模型，字符数量上限128
+                     * <p>Embedding模型，字符数量上限128</p>
                      */
                     std::string m_embeddingModel;
                     bool m_embeddingModelHasBeenSet;
 
                     /**
-                     * 共享知识库类型，0普通，1公众号
+                     * <p>共享知识库类型，0普通，1公众号</p>
                      */
                     int64_t m_knowledgeType;
                     bool m_knowledgeTypeHasBeenSet;
+
+                    /**
+                     * <p>ES存储配置</p>
+                     */
+                    ESConfig m_esConfig;
+                    bool m_esConfigHasBeenSet;
 
                 };
             }

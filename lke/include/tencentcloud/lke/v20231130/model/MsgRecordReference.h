@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取id
-                     * @return Id id
+                     * 获取<p>id</p>
+                     * @return Id <p>id</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置id
-                     * @param _id id
+                     * 设置<p>id</p>
+                     * @param _id <p>id</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取链接
-                     * @return Url 链接
+                     * 获取<p>链接</p>
+                     * @return Url <p>链接</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置链接
-                     * @param _url 链接
+                     * 设置<p>链接</p>
+                     * @param _url <p>链接</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取来源文档ID
-                     * @return DocId 来源文档ID
+                     * 获取<p>来源文档ID</p>
+                     * @return DocId <p>来源文档ID</p>
                      * 
                      */
                     std::string GetDocId() const;
 
                     /**
-                     * 设置来源文档ID
-                     * @param _docId 来源文档ID
+                     * 设置<p>来源文档ID</p>
+                     * @param _docId <p>来源文档ID</p>
                      * 
                      */
                     void SetDocId(const std::string& _docId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DocIdHasBeenSet() const;
 
                     /**
-                     * 获取知识库名称
-                     * @return KnowledgeName 知识库名称
+                     * 获取<p>知识库名称</p>
+                     * @return KnowledgeName <p>知识库名称</p>
                      * 
                      */
                     std::string GetKnowledgeName() const;
 
                     /**
-                     * 设置知识库名称
-                     * @param _knowledgeName 知识库名称
+                     * 设置<p>知识库名称</p>
+                     * @param _knowledgeName <p>知识库名称</p>
                      * 
                      */
                     void SetKnowledgeName(const std::string& _knowledgeName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool KnowledgeNameHasBeenSet() const;
 
                     /**
-                     * 获取知识库业务id
-                     * @return KnowledgeBizId 知识库业务id
+                     * 获取<p>知识库业务id</p>
+                     * @return KnowledgeBizId <p>知识库业务id</p>
                      * 
                      */
                     std::string GetKnowledgeBizId() const;
 
                     /**
-                     * 设置知识库业务id
-                     * @param _knowledgeBizId 知识库业务id
+                     * 设置<p>知识库业务id</p>
+                     * @param _knowledgeBizId <p>知识库业务id</p>
                      * 
                      */
                     void SetKnowledgeBizId(const std::string& _knowledgeBizId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool KnowledgeBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档业务id
-                     * @return DocBizId 文档业务id
+                     * 获取<p>文档业务id</p>
+                     * @return DocBizId <p>文档业务id</p>
                      * 
                      */
                     std::string GetDocBizId() const;
 
                     /**
-                     * 设置文档业务id
-                     * @param _docBizId 文档业务id
+                     * 设置<p>文档业务id</p>
+                     * @param _docBizId <p>文档业务id</p>
                      * 
                      */
                     void SetDocBizId(const std::string& _docBizId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool DocBizIdHasBeenSet() const;
 
                     /**
-                     * 获取问答业务id
-                     * @return QaBizId 问答业务id
+                     * 获取<p>问答业务id</p>
+                     * @return QaBizId <p>问答业务id</p>
                      * 
                      */
                     std::string GetQaBizId() const;
 
                     /**
-                     * 设置问答业务id
-                     * @param _qaBizId 问答业务id
+                     * 设置<p>问答业务id</p>
+                     * @param _qaBizId <p>问答业务id</p>
                      * 
                      */
                     void SetQaBizId(const std::string& _qaBizId);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool QaBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文档索引id
-                     * @return Index 文档索引id
+                     * 获取<p>文档索引id</p>
+                     * @return Index <p>文档索引id</p>
                      * 
                      */
                     uint64_t GetIndex() const;
 
                     /**
-                     * 设置文档索引id
-                     * @param _index 文档索引id
+                     * 设置<p>文档索引id</p>
+                     * @param _index <p>文档索引id</p>
                      * 
                      */
                     void SetIndex(const uint64_t& _index);
@@ -259,61 +259,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * id
+                     * <p>id</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 链接
+                     * <p>链接</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p><p>枚举值：</p><ul><li>1： 问答</li><li>2： 文档片段</li><li>4： 联网检索到的内容</li></ul>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 来源文档ID
+                     * <p>来源文档ID</p>
                      */
                     std::string m_docId;
                     bool m_docIdHasBeenSet;
 
                     /**
-                     * 知识库名称
+                     * <p>知识库名称</p>
                      */
                     std::string m_knowledgeName;
                     bool m_knowledgeNameHasBeenSet;
 
                     /**
-                     * 知识库业务id
+                     * <p>知识库业务id</p>
                      */
                     std::string m_knowledgeBizId;
                     bool m_knowledgeBizIdHasBeenSet;
 
                     /**
-                     * 文档业务id
+                     * <p>文档业务id</p>
                      */
                     std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;
 
                     /**
-                     * 问答业务id
+                     * <p>问答业务id</p>
                      */
                     std::string m_qaBizId;
                     bool m_qaBizIdHasBeenSet;
 
                     /**
-                     * 文档索引id
+                     * <p>文档索引id</p>
                      */
                     uint64_t m_index;
                     bool m_indexHasBeenSet;

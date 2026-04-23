@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool LoginSubAccountUinHasBeenSet() const;
 
+                    /**
+                     * 获取查询内容
+                     * @return Query 查询内容
+                     * 
+                     */
+                    std::string GetQuery() const;
+
+                    /**
+                     * 设置查询内容
+                     * @param _query 查询内容
+                     * 
+                     */
+                    void SetQuery(const std::string& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_loginSubAccountUin;
                     bool m_loginSubAccountUinHasBeenSet;
+
+                    /**
+                     * 查询内容
+                     */
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
 
                 };
             }

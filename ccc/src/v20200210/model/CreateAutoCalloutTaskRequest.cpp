@@ -39,7 +39,11 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_availableTimeHasBeenSet(false),
     m_aIAgentIdHasBeenSet(false),
     m_retryIntervalHasBeenSet(false),
-    m_maxRingTimeoutSecondHasBeenSet(false)
+    m_maxRingTimeoutSecondHasBeenSet(false),
+    m_retryHangupTypesHasBeenSet(false),
+    m_retryTagsHasBeenSet(false),
+    m_availableWorkTimeConfigHasBeenSet(false),
+    m_triggerStrategyHasBeenSet(false)
 {
 }
 
@@ -215,6 +219,64 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
         string key = "MaxRingTimeoutSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
+    }
+
+    if (m_retryHangupTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryHangupTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_retryHangupTypes.begin(); itr != m_retryHangupTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_retryTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_retryTags.begin(); itr != m_retryTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_availableWorkTimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableWorkTimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availableWorkTimeConfig.begin(); itr != m_availableWorkTimeConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_triggerStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_triggerStrategy.begin(); itr != m_triggerStrategy.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -495,6 +557,70 @@ void CreateAutoCalloutTaskRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRi
 bool CreateAutoCalloutTaskRequest::MaxRingTimeoutSecondHasBeenSet() const
 {
     return m_maxRingTimeoutSecondHasBeenSet;
+}
+
+vector<string> CreateAutoCalloutTaskRequest::GetRetryHangupTypes() const
+{
+    return m_retryHangupTypes;
+}
+
+void CreateAutoCalloutTaskRequest::SetRetryHangupTypes(const vector<string>& _retryHangupTypes)
+{
+    m_retryHangupTypes = _retryHangupTypes;
+    m_retryHangupTypesHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::RetryHangupTypesHasBeenSet() const
+{
+    return m_retryHangupTypesHasBeenSet;
+}
+
+vector<RetryTagItem> CreateAutoCalloutTaskRequest::GetRetryTags() const
+{
+    return m_retryTags;
+}
+
+void CreateAutoCalloutTaskRequest::SetRetryTags(const vector<RetryTagItem>& _retryTags)
+{
+    m_retryTags = _retryTags;
+    m_retryTagsHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::RetryTagsHasBeenSet() const
+{
+    return m_retryTagsHasBeenSet;
+}
+
+vector<AvailableTimeConfig> CreateAutoCalloutTaskRequest::GetAvailableWorkTimeConfig() const
+{
+    return m_availableWorkTimeConfig;
+}
+
+void CreateAutoCalloutTaskRequest::SetAvailableWorkTimeConfig(const vector<AvailableTimeConfig>& _availableWorkTimeConfig)
+{
+    m_availableWorkTimeConfig = _availableWorkTimeConfig;
+    m_availableWorkTimeConfigHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::AvailableWorkTimeConfigHasBeenSet() const
+{
+    return m_availableWorkTimeConfigHasBeenSet;
+}
+
+vector<TriggerStrategyItem> CreateAutoCalloutTaskRequest::GetTriggerStrategy() const
+{
+    return m_triggerStrategy;
+}
+
+void CreateAutoCalloutTaskRequest::SetTriggerStrategy(const vector<TriggerStrategyItem>& _triggerStrategy)
+{
+    m_triggerStrategy = _triggerStrategy;
+    m_triggerStrategyHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::TriggerStrategyHasBeenSet() const
+{
+    return m_triggerStrategyHasBeenSet;
 }
 
 

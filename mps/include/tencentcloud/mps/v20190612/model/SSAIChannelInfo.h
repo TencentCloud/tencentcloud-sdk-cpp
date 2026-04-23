@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取频道ID，全局唯一标识。
-                     * @return ID 频道ID，全局唯一标识。
+                     * 获取<p>频道ID，全局唯一标识。</p>
+                     * @return ID <p>频道ID，全局唯一标识。</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置频道ID，全局唯一标识。
-                     * @param _iD 频道ID，全局唯一标识。
+                     * 设置<p>频道ID，全局唯一标识。</p>
+                     * @param _iD <p>频道ID，全局唯一标识。</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取频道名称。
-                     * @return Name 频道名称。
+                     * 获取<p>频道名称。</p>
+                     * @return Name <p>频道名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置频道名称。
-                     * @param _name 频道名称。
+                     * 设置<p>频道名称。</p>
+                     * @param _name <p>频道名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取广告源信息。
-                     * @return ContentSource 广告源信息。
+                     * 获取<p>广告源信息。</p>
+                     * @return ContentSource <p>广告源信息。</p>
                      * 
                      */
                     std::string GetContentSource() const;
 
                     /**
-                     * 设置广告源信息。
-                     * @param _contentSource 广告源信息。
+                     * 设置<p>广告源信息。</p>
+                     * @param _contentSource <p>广告源信息。</p>
                      * 
                      */
                     void SetContentSource(const std::string& _contentSource);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ContentSourceHasBeenSet() const;
 
                     /**
-                     * 获取播放地址。
-                     * @return PlaybackPrefix 播放地址。
+                     * 获取<p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>
+                     * @return PlaybackPrefix <p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>
                      * 
                      */
                     std::string GetPlaybackPrefix() const;
 
                     /**
-                     * 设置播放地址。
-                     * @param _playbackPrefix 播放地址。
+                     * 设置<p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>
+                     * @param _playbackPrefix <p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>
                      * 
                      */
                     void SetPlaybackPrefix(const std::string& _playbackPrefix);
@@ -132,15 +132,57 @@ namespace TencentCloud
                     bool PlaybackPrefixHasBeenSet() const;
 
                     /**
-                     * 获取广告插入SSAI配置信息。
-                     * @return SSAIInfo 广告插入SSAI配置信息。
+                     * 获取<p>hls播放地址</p>
+                     * @return HlsPlaybackPrefix <p>hls播放地址</p>
+                     * 
+                     */
+                    std::string GetHlsPlaybackPrefix() const;
+
+                    /**
+                     * 设置<p>hls播放地址</p>
+                     * @param _hlsPlaybackPrefix <p>hls播放地址</p>
+                     * 
+                     */
+                    void SetHlsPlaybackPrefix(const std::string& _hlsPlaybackPrefix);
+
+                    /**
+                     * 判断参数 HlsPlaybackPrefix 是否已赋值
+                     * @return HlsPlaybackPrefix 是否已赋值
+                     * 
+                     */
+                    bool HlsPlaybackPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取<p>dash播放地址</p>
+                     * @return DashPlaybackPrefix <p>dash播放地址</p>
+                     * 
+                     */
+                    std::string GetDashPlaybackPrefix() const;
+
+                    /**
+                     * 设置<p>dash播放地址</p>
+                     * @param _dashPlaybackPrefix <p>dash播放地址</p>
+                     * 
+                     */
+                    void SetDashPlaybackPrefix(const std::string& _dashPlaybackPrefix);
+
+                    /**
+                     * 判断参数 DashPlaybackPrefix 是否已赋值
+                     * @return DashPlaybackPrefix 是否已赋值
+                     * 
+                     */
+                    bool DashPlaybackPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取<p>广告插入SSAI配置信息。</p>
+                     * @return SSAIInfo <p>广告插入SSAI配置信息。</p>
                      * 
                      */
                     SSAIConf GetSSAIInfo() const;
 
                     /**
-                     * 设置广告插入SSAI配置信息。
-                     * @param _sSAIInfo 广告插入SSAI配置信息。
+                     * 设置<p>广告插入SSAI配置信息。</p>
+                     * @param _sSAIInfo <p>广告插入SSAI配置信息。</p>
                      * 
                      */
                     void SetSSAIInfo(const SSAIConf& _sSAIInfo);
@@ -153,15 +195,15 @@ namespace TencentCloud
                     bool SSAIInfoHasBeenSet() const;
 
                     /**
-                     * 获取地域信息。
-                     * @return Region 地域信息。
+                     * 获取<p>地域信息。</p>
+                     * @return Region <p>地域信息。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域信息。
-                     * @param _region 地域信息。
+                     * 设置<p>地域信息。</p>
+                     * @param _region <p>地域信息。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -174,15 +216,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取用于clickthrough地址
-                     * @return SessionInitPrefix 用于clickthrough地址
+                     * 获取<p>用于clickthrough地址</p>
+                     * @return SessionInitPrefix <p>用于clickthrough地址</p>
                      * 
                      */
                     std::string GetSessionInitPrefix() const;
 
                     /**
-                     * 设置用于clickthrough地址
-                     * @param _sessionInitPrefix 用于clickthrough地址
+                     * 设置<p>用于clickthrough地址</p>
+                     * @param _sessionInitPrefix <p>用于clickthrough地址</p>
                      * 
                      */
                     void SetSessionInitPrefix(const std::string& _sessionInitPrefix);
@@ -197,43 +239,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 频道ID，全局唯一标识。
+                     * <p>频道ID，全局唯一标识。</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 频道名称。
+                     * <p>频道名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 广告源信息。
+                     * <p>广告源信息。</p>
                      */
                     std::string m_contentSource;
                     bool m_contentSourceHasBeenSet;
 
                     /**
-                     * 播放地址。
+                     * <p>播放地址。兼容旧版本参数，推荐使用HlsPlaybackPrefix或DashPlaybackPrefix</p>
                      */
                     std::string m_playbackPrefix;
                     bool m_playbackPrefixHasBeenSet;
 
                     /**
-                     * 广告插入SSAI配置信息。
+                     * <p>hls播放地址</p>
+                     */
+                    std::string m_hlsPlaybackPrefix;
+                    bool m_hlsPlaybackPrefixHasBeenSet;
+
+                    /**
+                     * <p>dash播放地址</p>
+                     */
+                    std::string m_dashPlaybackPrefix;
+                    bool m_dashPlaybackPrefixHasBeenSet;
+
+                    /**
+                     * <p>广告插入SSAI配置信息。</p>
                      */
                     SSAIConf m_sSAIInfo;
                     bool m_sSAIInfoHasBeenSet;
 
                     /**
-                     * 地域信息。
+                     * <p>地域信息。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 用于clickthrough地址
+                     * <p>用于clickthrough地址</p>
                      */
                     std::string m_sessionInitPrefix;
                     bool m_sessionInitPrefixHasBeenSet;

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
+                     * 获取<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelName 模型名称
+                     * @return ModelName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
+                     * 设置<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelName 模型名称
+                     * @param _modelName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型描述
+                     * 获取<p>模型描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelDesc 模型描述
+                     * @return ModelDesc <p>模型描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelDesc() const;
 
                     /**
-                     * 设置模型描述
+                     * 设置<p>模型描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelDesc 模型描述
+                     * @param _modelDesc <p>模型描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool ModelDescHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
+                     * 获取<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AliasName 模型名称
+                     * @return AliasName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasName() const;
 
                     /**
-                     * 设置模型名称
+                     * 设置<p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aliasName 模型名称
+                     * @param _aliasName <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool AliasNameHasBeenSet() const;
 
                     /**
-                     * 获取资源状态 1：资源可用；2：资源已用尽
+                     * 获取<p>资源状态 1：资源可用；2：资源已用尽</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceStatus 资源状态 1：资源可用；2：资源已用尽
+                     * @return ResourceStatus <p>资源状态 1：资源可用；2：资源已用尽</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResourceStatus() const;
 
                     /**
-                     * 设置资源状态 1：资源可用；2：资源已用尽
+                     * 设置<p>资源状态 1：资源可用；2：资源已用尽</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceStatus 资源状态 1：资源可用；2：资源已用尽
+                     * @param _resourceStatus <p>资源状态 1：资源可用；2：资源已用尽</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool ResourceStatusHasBeenSet() const;
 
                     /**
-                     * 获取提示词内容字符限制
+                     * 获取<p>提示词内容字符限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PromptWordsLimit 提示词内容字符限制
+                     * @return PromptWordsLimit <p>提示词内容字符限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPromptWordsLimit() const;
 
                     /**
-                     * 设置提示词内容字符限制
+                     * 设置<p>提示词内容字符限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _promptWordsLimit 提示词内容字符限制
+                     * @param _promptWordsLimit <p>提示词内容字符限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool PromptWordsLimitHasBeenSet() const;
 
                     /**
-                     * 获取通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+                     * 获取<p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopP 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+                     * @return TopP <p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelParameter GetTopP() const;
 
                     /**
-                     * 设置通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+                     * 设置<p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topP 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+                     * @param _topP <p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool TopPHasBeenSet() const;
 
                     /**
-                     * 获取温度控制随机性
+                     * 获取<p>温度控制随机性</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Temperature 温度控制随机性
+                     * @return Temperature <p>温度控制随机性</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelParameter GetTemperature() const;
 
                     /**
-                     * 设置温度控制随机性
+                     * 设置<p>温度控制随机性</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _temperature 温度控制随机性
+                     * @param _temperature <p>温度控制随机性</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool TemperatureHasBeenSet() const;
 
                     /**
-                     * 获取最多能生成的token数量
+                     * 获取<p>最多能生成的token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxTokens 最多能生成的token数量
+                     * @return MaxTokens <p>最多能生成的token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelParameter GetMaxTokens() const;
 
                     /**
-                     * 设置最多能生成的token数量
+                     * 设置<p>最多能生成的token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxTokens 最多能生成的token数量
+                     * @param _maxTokens <p>最多能生成的token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,15 +248,15 @@ namespace TencentCloud
                     bool MaxTokensHasBeenSet() const;
 
                     /**
-                     * 获取模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
-                     * @return Source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
+                     * 获取<p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>
+                     * @return Source <p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
-                     * @param _source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
+                     * 设置<p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>
+                     * @param _source <p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -269,15 +269,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取模型图标
-                     * @return Icon 模型图标
+                     * 获取<p>模型图标</p>
+                     * @return Icon <p>模型图标</p>
                      * 
                      */
                     std::string GetIcon() const;
 
                     /**
-                     * 设置模型图标
-                     * @param _icon 模型图标
+                     * 设置<p>模型图标</p>
+                     * @param _icon <p>模型图标</p>
                      * 
                      */
                     void SetIcon(const std::string& _icon);
@@ -290,15 +290,15 @@ namespace TencentCloud
                     bool IconHasBeenSet() const;
 
                     /**
-                     * 获取是否免费
-                     * @return IsFree 是否免费
+                     * 获取<p>是否免费</p>
+                     * @return IsFree <p>是否免费</p>
                      * 
                      */
                     bool GetIsFree() const;
 
                     /**
-                     * 设置是否免费
-                     * @param _isFree 是否免费
+                     * 设置<p>是否免费</p>
+                     * @param _isFree <p>是否免费</p>
                      * 
                      */
                     void SetIsFree(const bool& _isFree);
@@ -311,18 +311,18 @@ namespace TencentCloud
                     bool IsFreeHasBeenSet() const;
 
                     /**
-                     * 获取模型对话框可输入的上限
+                     * 获取<p>模型对话框可输入的上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputLenLimit 模型对话框可输入的上限
+                     * @return InputLenLimit <p>模型对话框可输入的上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInputLenLimit() const;
 
                     /**
-                     * 设置模型对话框可输入的上限
+                     * 设置<p>模型对话框可输入的上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputLenLimit 模型对话框可输入的上限
+                     * @param _inputLenLimit <p>模型对话框可输入的上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,18 +336,18 @@ namespace TencentCloud
                     bool InputLenLimitHasBeenSet() const;
 
                     /**
-                     * 获取支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+                     * 获取<p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SupportWorkflowStatus 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+                     * @return SupportWorkflowStatus <p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSupportWorkflowStatus() const;
 
                     /**
-                     * 设置支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+                     * 设置<p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _supportWorkflowStatus 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+                     * @param _supportWorkflowStatus <p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -361,15 +361,15 @@ namespace TencentCloud
                     bool SupportWorkflowStatusHasBeenSet() const;
 
                     /**
-                     * 获取模型类别 generate：生成模型，thought：思考模型
-                     * @return ModelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 获取<p>模型类别 generate：生成模型，thought：思考模型</p>
+                     * @return ModelCategory <p>模型类别 generate：生成模型，thought：思考模型</p>
                      * 
                      */
                     std::string GetModelCategory() const;
 
                     /**
-                     * 设置模型类别 generate：生成模型，thought：思考模型
-                     * @param _modelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 设置<p>模型类别 generate：生成模型，thought：思考模型</p>
+                     * @param _modelCategory <p>模型类别 generate：生成模型，thought：思考模型</p>
                      * 
                      */
                     void SetModelCategory(const std::string& _modelCategory);
@@ -382,15 +382,15 @@ namespace TencentCloud
                     bool ModelCategoryHasBeenSet() const;
 
                     /**
-                     * 获取是否默认模型
-                     * @return IsDefault 是否默认模型
+                     * 获取<p>是否默认模型</p>
+                     * @return IsDefault <p>是否默认模型</p>
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
-                     * 设置是否默认模型
-                     * @param _isDefault 是否默认模型
+                     * 设置<p>是否默认模型</p>
+                     * @param _isDefault <p>是否默认模型</p>
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -403,15 +403,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取角色提示词输入长度限制
-                     * @return RoleLenLimit 角色提示词输入长度限制
+                     * 获取<p>角色提示词输入长度限制</p>
+                     * @return RoleLenLimit <p>角色提示词输入长度限制</p>
                      * 
                      */
                     uint64_t GetRoleLenLimit() const;
 
                     /**
-                     * 设置角色提示词输入长度限制
-                     * @param _roleLenLimit 角色提示词输入长度限制
+                     * 设置<p>角色提示词输入长度限制</p>
+                     * @param _roleLenLimit <p>角色提示词输入长度限制</p>
                      * 
                      */
                     void SetRoleLenLimit(const uint64_t& _roleLenLimit);
@@ -424,15 +424,15 @@ namespace TencentCloud
                     bool RoleLenLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否专属并发模型
-                     * @return IsExclusive 是否专属并发模型
+                     * 获取<p>是否专属并发模型</p>
+                     * @return IsExclusive <p>是否专属并发模型</p>
                      * 
                      */
                     bool GetIsExclusive() const;
 
                     /**
-                     * 设置是否专属并发模型
-                     * @param _isExclusive 是否专属并发模型
+                     * 设置<p>是否专属并发模型</p>
+                     * @param _isExclusive <p>是否专属并发模型</p>
                      * 
                      */
                     void SetIsExclusive(const bool& _isExclusive);
@@ -445,15 +445,15 @@ namespace TencentCloud
                     bool IsExclusiveHasBeenSet() const;
 
                     /**
-                     * 获取模型支持智能通话效果
-                     * @return SupportAiCallStatus 模型支持智能通话效果
+                     * 获取<p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>
+                     * @return SupportAiCallStatus <p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>
                      * 
                      */
                     uint64_t GetSupportAiCallStatus() const;
 
                     /**
-                     * 设置模型支持智能通话效果
-                     * @param _supportAiCallStatus 模型支持智能通话效果
+                     * 设置<p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>
+                     * @param _supportAiCallStatus <p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>
                      * 
                      */
                     void SetSupportAiCallStatus(const uint64_t& _supportAiCallStatus);
@@ -466,15 +466,15 @@ namespace TencentCloud
                     bool SupportAiCallStatusHasBeenSet() const;
 
                     /**
-                     * 获取专属并发数
-                     * @return Concurrency 专属并发数
+                     * 获取<p>专属并发数</p>
+                     * @return Concurrency <p>专属并发数</p>
                      * 
                      */
                     uint64_t GetConcurrency() const;
 
                     /**
-                     * 设置专属并发数
-                     * @param _concurrency 专属并发数
+                     * 设置<p>专属并发数</p>
+                     * @param _concurrency <p>专属并发数</p>
                      * 
                      */
                     void SetConcurrency(const uint64_t& _concurrency);
@@ -487,18 +487,18 @@ namespace TencentCloud
                     bool ConcurrencyHasBeenSet() const;
 
                     /**
-                     * 获取模型标签
+                     * 获取<p>模型标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelTags 模型标签
+                     * @return ModelTags <p>模型标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetModelTags() const;
 
                     /**
-                     * 设置模型标签
+                     * 设置<p>模型标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelTags 模型标签
+                     * @param _modelTags <p>模型标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -512,18 +512,18 @@ namespace TencentCloud
                     bool ModelTagsHasBeenSet() const;
 
                     /**
-                     * 获取模型超参定义
+                     * 获取<p>模型超参定义</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelParams 模型超参定义
+                     * @return ModelParams <p>模型超参定义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModelParameter> GetModelParams() const;
 
                     /**
-                     * 设置模型超参定义
+                     * 设置<p>模型超参定义</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelParams 模型超参定义
+                     * @param _modelParams <p>模型超参定义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -537,15 +537,15 @@ namespace TencentCloud
                     bool ModelParamsHasBeenSet() const;
 
                     /**
-                     * 获取提供商名称
-                     * @return ProviderName 提供商名称
+                     * 获取<p>提供商名称</p>
+                     * @return ProviderName <p>提供商名称</p>
                      * 
                      */
                     std::string GetProviderName() const;
 
                     /**
-                     * 设置提供商名称
-                     * @param _providerName 提供商名称
+                     * 设置<p>提供商名称</p>
+                     * @param _providerName <p>提供商名称</p>
                      * 
                      */
                     void SetProviderName(const std::string& _providerName);
@@ -558,15 +558,15 @@ namespace TencentCloud
                     bool ProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取提供商别名
-                     * @return ProviderAliasName 提供商别名
+                     * 获取<p>提供商别名</p>
+                     * @return ProviderAliasName <p>提供商别名</p>
                      * 
                      */
                     std::string GetProviderAliasName() const;
 
                     /**
-                     * 设置提供商别名
-                     * @param _providerAliasName 提供商别名
+                     * 设置<p>提供商别名</p>
+                     * @param _providerAliasName <p>提供商别名</p>
                      * 
                      */
                     void SetProviderAliasName(const std::string& _providerAliasName);
@@ -579,15 +579,15 @@ namespace TencentCloud
                     bool ProviderAliasNameHasBeenSet() const;
 
                     /**
-                     * 获取提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
-                     * @return ProviderType 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * 获取<p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>
+                     * @return ProviderType <p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>
                      * 
                      */
                     std::string GetProviderType() const;
 
                     /**
-                     * 设置提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
-                     * @param _providerType 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * 设置<p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>
+                     * @param _providerType <p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>
                      * 
                      */
                     void SetProviderType(const std::string& _providerType);
@@ -600,15 +600,15 @@ namespace TencentCloud
                     bool ProviderTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否关闭模型超参
-                     * @return IsCloseModelParams 是否关闭模型超参
+                     * 获取<p>是否关闭模型超参</p>
+                     * @return IsCloseModelParams <p>是否关闭模型超参</p>
                      * 
                      */
                     bool GetIsCloseModelParams() const;
 
                     /**
-                     * 设置是否关闭模型超参
-                     * @param _isCloseModelParams 是否关闭模型超参
+                     * 设置<p>是否关闭模型超参</p>
+                     * @param _isCloseModelParams <p>是否关闭模型超参</p>
                      * 
                      */
                     void SetIsCloseModelParams(const bool& _isCloseModelParams);
@@ -621,15 +621,15 @@ namespace TencentCloud
                     bool IsCloseModelParamsHasBeenSet() const;
 
                     /**
-                     * 获取是否支持深度思考
-                     * @return IsDeepThinking 是否支持深度思考
+                     * 获取<p>是否支持深度思考</p>
+                     * @return IsDeepThinking <p>是否支持深度思考</p>
                      * 
                      */
                     bool GetIsDeepThinking() const;
 
                     /**
-                     * 设置是否支持深度思考
-                     * @param _isDeepThinking 是否支持深度思考
+                     * 设置<p>是否支持深度思考</p>
+                     * @param _isDeepThinking <p>是否支持深度思考</p>
                      * 
                      */
                     void SetIsDeepThinking(const bool& _isDeepThinking);
@@ -644,169 +644,169 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型描述
+                     * <p>模型描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelDesc;
                     bool m_modelDescHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
 
                     /**
-                     * 资源状态 1：资源可用；2：资源已用尽
+                     * <p>资源状态 1：资源可用；2：资源已用尽</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceStatus;
                     bool m_resourceStatusHasBeenSet;
 
                     /**
-                     * 提示词内容字符限制
+                     * <p>提示词内容字符限制</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_promptWordsLimit;
                     bool m_promptWordsLimitHasBeenSet;
 
                     /**
-                     * 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+                     * <p>通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelParameter m_topP;
                     bool m_topPHasBeenSet;
 
                     /**
-                     * 温度控制随机性
+                     * <p>温度控制随机性</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelParameter m_temperature;
                     bool m_temperatureHasBeenSet;
 
                     /**
-                     * 最多能生成的token数量
+                     * <p>最多能生成的token数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelParameter m_maxTokens;
                     bool m_maxTokensHasBeenSet;
 
                     /**
-                     * 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
+                     * <p>模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 模型图标
+                     * <p>模型图标</p>
                      */
                     std::string m_icon;
                     bool m_iconHasBeenSet;
 
                     /**
-                     * 是否免费
+                     * <p>是否免费</p>
                      */
                     bool m_isFree;
                     bool m_isFreeHasBeenSet;
 
                     /**
-                     * 模型对话框可输入的上限
+                     * <p>模型对话框可输入的上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_inputLenLimit;
                     bool m_inputLenLimitHasBeenSet;
 
                     /**
-                     * 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+                     * <p>支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_supportWorkflowStatus;
                     bool m_supportWorkflowStatusHasBeenSet;
 
                     /**
-                     * 模型类别 generate：生成模型，thought：思考模型
+                     * <p>模型类别 generate：生成模型，thought：思考模型</p>
                      */
                     std::string m_modelCategory;
                     bool m_modelCategoryHasBeenSet;
 
                     /**
-                     * 是否默认模型
+                     * <p>是否默认模型</p>
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 角色提示词输入长度限制
+                     * <p>角色提示词输入长度限制</p>
                      */
                     uint64_t m_roleLenLimit;
                     bool m_roleLenLimitHasBeenSet;
 
                     /**
-                     * 是否专属并发模型
+                     * <p>是否专属并发模型</p>
                      */
                     bool m_isExclusive;
                     bool m_isExclusiveHasBeenSet;
 
                     /**
-                     * 模型支持智能通话效果
+                     * <p>模型支持智能通话效果</p><p>枚举值：</p><ul><li>0： 模型不支持</li><li>1： 模型支持ai通话</li><li>2： 模型ai通话支持效果不佳</li></ul>
                      */
                     uint64_t m_supportAiCallStatus;
                     bool m_supportAiCallStatusHasBeenSet;
 
                     /**
-                     * 专属并发数
+                     * <p>专属并发数</p>
                      */
                     uint64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;
 
                     /**
-                     * 模型标签
+                     * <p>模型标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_modelTags;
                     bool m_modelTagsHasBeenSet;
 
                     /**
-                     * 模型超参定义
+                     * <p>模型超参定义</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModelParameter> m_modelParams;
                     bool m_modelParamsHasBeenSet;
 
                     /**
-                     * 提供商名称
+                     * <p>提供商名称</p>
                      */
                     std::string m_providerName;
                     bool m_providerNameHasBeenSet;
 
                     /**
-                     * 提供商别名
+                     * <p>提供商别名</p>
                      */
                     std::string m_providerAliasName;
                     bool m_providerAliasNameHasBeenSet;
 
                     /**
-                     * 提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商
+                     * <p>提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商</p>
                      */
                     std::string m_providerType;
                     bool m_providerTypeHasBeenSet;
 
                     /**
-                     * 是否关闭模型超参
+                     * <p>是否关闭模型超参</p>
                      */
                     bool m_isCloseModelParams;
                     bool m_isCloseModelParamsHasBeenSet;
 
                     /**
-                     * 是否支持深度思考
+                     * <p>是否支持深度思考</p>
                      */
                     bool m_isDeepThinking;
                     bool m_isDeepThinkingHasBeenSet;

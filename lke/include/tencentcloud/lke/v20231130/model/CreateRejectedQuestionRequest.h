@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @return BotBizId 应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 获取<p>应用ID, 获取方式参看如何获取<a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a></p>
+                     * @return BotBizId <p>应用ID, 获取方式参看如何获取<a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a></p>
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @param _botBizId 应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 设置<p>应用ID, 获取方式参看如何获取<a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a></p>
+                     * @param _botBizId <p>应用ID, 获取方式参看如何获取<a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a></p>
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取拒答问题
-
-
-                     * @return Question 拒答问题
-
-
+                     * 获取<p>拒答问题</p>
+                     * @return Question <p>拒答问题</p>
                      * 
                      */
                     std::string GetQuestion() const;
 
                     /**
-                     * 设置拒答问题
-
-
-                     * @param _question 拒答问题
-
-
+                     * 设置<p>拒答问题</p>
+                     * @param _question <p>拒答问题</p>
                      * 
                      */
                     void SetQuestion(const std::string& _question);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加
-                     * @return BusinessSource 拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加
+                     * 获取<p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>
+                     * @return BusinessSource <p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>
                      * 
                      */
                     uint64_t GetBusinessSource() const;
 
                     /**
-                     * 设置拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加
-                     * @param _businessSource 拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加
+                     * 设置<p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>
+                     * @param _businessSource <p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>
                      * 
                      */
                     void SetBusinessSource(const uint64_t& _businessSource);
@@ -114,23 +106,15 @@ namespace TencentCloud
                     bool BusinessSourceHasBeenSet() const;
 
                     /**
-                     * 获取拒答问题来源的数据源唯一id
-
-
-                     * @return BusinessId 拒答问题来源的数据源唯一id
-
-
+                     * 获取<p>拒答问题来源的数据源唯一id</p>
+                     * @return BusinessId <p>拒答问题来源的数据源唯一id</p>
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
-                     * 设置拒答问题来源的数据源唯一id
-
-
-                     * @param _businessId 拒答问题来源的数据源唯一id
-
-
+                     * 设置<p>拒答问题来源的数据源唯一id</p>
+                     * @param _businessId <p>拒答问题来源的数据源唯一id</p>
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -142,35 +126,58 @@ namespace TencentCloud
                      */
                     bool BusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>
+                     * @return EnableScope <p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置<p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>
+                     * @param _enableScope <p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * <p>应用ID, 获取方式参看如何获取<a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a></p>
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 拒答问题
-
-
+                     * <p>拒答问题</p>
                      */
                     std::string m_question;
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加
+                     * <p>拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加</p>
                      */
                     uint64_t m_businessSource;
                     bool m_businessSourceHasBeenSet;
 
                     /**
-                     * 拒答问题来源的数据源唯一id
-
-
+                     * <p>拒答问题来源的数据源唯一id</p>
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
+
+                    /**
+                     * <p>拒答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效 默认值：2。</p>
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

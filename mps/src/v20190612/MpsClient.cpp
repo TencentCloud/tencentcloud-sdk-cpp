@@ -6940,6 +6940,56 @@ MpsClient::DescribeTasksOutcomeCallable MpsClient::DescribeTasksCallable(const D
     return prom->get_future();
 }
 
+MpsClient::DescribeTextToSpeechAsyncTaskOutcome MpsClient::DescribeTextToSpeechAsyncTask(const DescribeTextToSpeechAsyncTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTextToSpeechAsyncTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTextToSpeechAsyncTaskResponse rsp = DescribeTextToSpeechAsyncTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTextToSpeechAsyncTaskOutcome(rsp);
+        else
+            return DescribeTextToSpeechAsyncTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTextToSpeechAsyncTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeTextToSpeechAsyncTaskAsync(const DescribeTextToSpeechAsyncTaskRequest& request, const DescribeTextToSpeechAsyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTextToSpeechAsyncTaskRequest&;
+    using Resp = DescribeTextToSpeechAsyncTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTextToSpeechAsyncTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeTextToSpeechAsyncTaskOutcomeCallable MpsClient::DescribeTextToSpeechAsyncTaskCallable(const DescribeTextToSpeechAsyncTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTextToSpeechAsyncTaskOutcome>>();
+    DescribeTextToSpeechAsyncTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeTextToSpeechAsyncTaskRequest&,
+        DescribeTextToSpeechAsyncTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeTranscodeTemplatesOutcome MpsClient::DescribeTranscodeTemplates(const DescribeTranscodeTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTranscodeTemplates");
@@ -10082,6 +10132,56 @@ MpsClient::SyncDubbingOutcomeCallable MpsClient::SyncDubbingCallable(const SyncD
         const MpsClient*,
         const SyncDubbingRequest&,
         SyncDubbingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::TextToSpeechAsyncOutcome MpsClient::TextToSpeechAsync(const TextToSpeechAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToSpeechAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToSpeechAsyncResponse rsp = TextToSpeechAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToSpeechAsyncOutcome(rsp);
+        else
+            return TextToSpeechAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToSpeechAsyncOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::TextToSpeechAsyncAsync(const TextToSpeechAsyncRequest& request, const TextToSpeechAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TextToSpeechAsyncRequest&;
+    using Resp = TextToSpeechAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TextToSpeechAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::TextToSpeechAsyncOutcomeCallable MpsClient::TextToSpeechAsyncCallable(const TextToSpeechAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TextToSpeechAsyncOutcome>>();
+    TextToSpeechAsyncAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const TextToSpeechAsyncRequest&,
+        TextToSpeechAsyncOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -36,7 +36,11 @@ SSAIConf::SSAIConf() :
     m_preRollAdsUrlHasBeenSet(false),
     m_preRollAdsUrlsHasBeenSet(false),
     m_preRollMaxAllowedDurationHasBeenSet(false),
-    m_multiRequestHasBeenSet(false)
+    m_multiRequestHasBeenSet(false),
+    m_dashOriginManifestTypeHasBeenSet(false),
+    m_slateOnEmptyVastHasBeenSet(false),
+    m_sCTEMarkerDurationHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false)
 {
 }
 
@@ -224,6 +228,46 @@ CoreInternalOutcome SSAIConf::Deserialize(const rapidjson::Value &value)
         m_multiRequestHasBeenSet = true;
     }
 
+    if (value.HasMember("DashOriginManifestType") && !value["DashOriginManifestType"].IsNull())
+    {
+        if (!value["DashOriginManifestType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.DashOriginManifestType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dashOriginManifestType = string(value["DashOriginManifestType"].GetString());
+        m_dashOriginManifestTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlateOnEmptyVast") && !value["SlateOnEmptyVast"].IsNull())
+    {
+        if (!value["SlateOnEmptyVast"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.SlateOnEmptyVast` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_slateOnEmptyVast = value["SlateOnEmptyVast"].GetBool();
+        m_slateOnEmptyVastHasBeenSet = true;
+    }
+
+    if (value.HasMember("SCTEMarkerDuration") && !value["SCTEMarkerDuration"].IsNull())
+    {
+        if (!value["SCTEMarkerDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.SCTEMarkerDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sCTEMarkerDuration = value["SCTEMarkerDuration"].GetInt64();
+        m_sCTEMarkerDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupId") && !value["SecurityGroupId"].IsNull())
+    {
+        if (!value["SecurityGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSAIConf.SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupId = string(value["SecurityGroupId"].GetString());
+        m_securityGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +423,38 @@ void SSAIConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "MultiRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_multiRequest, allocator);
+    }
+
+    if (m_dashOriginManifestTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DashOriginManifestType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dashOriginManifestType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slateOnEmptyVastHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlateOnEmptyVast";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_slateOnEmptyVast, allocator);
+    }
+
+    if (m_sCTEMarkerDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SCTEMarkerDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sCTEMarkerDuration, allocator);
+    }
+
+    if (m_securityGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -638,5 +714,69 @@ void SSAIConf::SetMultiRequest(const bool& _multiRequest)
 bool SSAIConf::MultiRequestHasBeenSet() const
 {
     return m_multiRequestHasBeenSet;
+}
+
+string SSAIConf::GetDashOriginManifestType() const
+{
+    return m_dashOriginManifestType;
+}
+
+void SSAIConf::SetDashOriginManifestType(const string& _dashOriginManifestType)
+{
+    m_dashOriginManifestType = _dashOriginManifestType;
+    m_dashOriginManifestTypeHasBeenSet = true;
+}
+
+bool SSAIConf::DashOriginManifestTypeHasBeenSet() const
+{
+    return m_dashOriginManifestTypeHasBeenSet;
+}
+
+bool SSAIConf::GetSlateOnEmptyVast() const
+{
+    return m_slateOnEmptyVast;
+}
+
+void SSAIConf::SetSlateOnEmptyVast(const bool& _slateOnEmptyVast)
+{
+    m_slateOnEmptyVast = _slateOnEmptyVast;
+    m_slateOnEmptyVastHasBeenSet = true;
+}
+
+bool SSAIConf::SlateOnEmptyVastHasBeenSet() const
+{
+    return m_slateOnEmptyVastHasBeenSet;
+}
+
+int64_t SSAIConf::GetSCTEMarkerDuration() const
+{
+    return m_sCTEMarkerDuration;
+}
+
+void SSAIConf::SetSCTEMarkerDuration(const int64_t& _sCTEMarkerDuration)
+{
+    m_sCTEMarkerDuration = _sCTEMarkerDuration;
+    m_sCTEMarkerDurationHasBeenSet = true;
+}
+
+bool SSAIConf::SCTEMarkerDurationHasBeenSet() const
+{
+    return m_sCTEMarkerDurationHasBeenSet;
+}
+
+string SSAIConf::GetSecurityGroupId() const
+{
+    return m_securityGroupId;
+}
+
+void SSAIConf::SetSecurityGroupId(const string& _securityGroupId)
+{
+    m_securityGroupId = _securityGroupId;
+    m_securityGroupIdHasBeenSet = true;
+}
+
+bool SSAIConf::SecurityGroupIdHasBeenSet() const
+{
+    return m_securityGroupIdHasBeenSet;
 }
 

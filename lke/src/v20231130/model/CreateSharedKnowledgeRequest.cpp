@@ -26,7 +26,8 @@ CreateSharedKnowledgeRequest::CreateSharedKnowledgeRequest() :
     m_knowledgeNameHasBeenSet(false),
     m_knowledgeDescriptionHasBeenSet(false),
     m_embeddingModelHasBeenSet(false),
-    m_knowledgeTypeHasBeenSet(false)
+    m_knowledgeTypeHasBeenSet(false),
+    m_esConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string CreateSharedKnowledgeRequest::ToJsonString() const
         string key = "KnowledgeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_knowledgeType, allocator);
+    }
+
+    if (m_esConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_esConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void CreateSharedKnowledgeRequest::SetKnowledgeType(const int64_t& _knowledgeTyp
 bool CreateSharedKnowledgeRequest::KnowledgeTypeHasBeenSet() const
 {
     return m_knowledgeTypeHasBeenSet;
+}
+
+ESConfig CreateSharedKnowledgeRequest::GetEsConfig() const
+{
+    return m_esConfig;
+}
+
+void CreateSharedKnowledgeRequest::SetEsConfig(const ESConfig& _esConfig)
+{
+    m_esConfig = _esConfig;
+    m_esConfigHasBeenSet = true;
+}
+
+bool CreateSharedKnowledgeRequest::EsConfigHasBeenSet() const
+{
+    return m_esConfigHasBeenSet;
 }
 
 

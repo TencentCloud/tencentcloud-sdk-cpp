@@ -21,10 +21,10 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 AppModelDetailInfo::AppModelDetailInfo() :
-    m_modelNameHasBeenSet(false),
-    m_modelParamsHasBeenSet(false),
+    m_aliasNameHasBeenSet(false),
     m_historyLimitHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
+    m_modelNameHasBeenSet(false),
+    m_modelParamsHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,26 @@ CoreInternalOutcome AppModelDetailInfo::Deserialize(const rapidjson::Value &valu
 {
     string requestId = "";
 
+
+    if (value.HasMember("AliasName") && !value["AliasName"].IsNull())
+    {
+        if (!value["AliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModelDetailInfo.AliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasName = string(value["AliasName"].GetString());
+        m_aliasNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("HistoryLimit") && !value["HistoryLimit"].IsNull())
+    {
+        if (!value["HistoryLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModelDetailInfo.HistoryLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_historyLimit = value["HistoryLimit"].GetUint64();
+        m_historyLimitHasBeenSet = true;
+    }
 
     if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
     {
@@ -60,32 +80,28 @@ CoreInternalOutcome AppModelDetailInfo::Deserialize(const rapidjson::Value &valu
         m_modelParamsHasBeenSet = true;
     }
 
-    if (value.HasMember("HistoryLimit") && !value["HistoryLimit"].IsNull())
-    {
-        if (!value["HistoryLimit"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppModelDetailInfo.HistoryLimit` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_historyLimit = value["HistoryLimit"].GetUint64();
-        m_historyLimitHasBeenSet = true;
-    }
-
-    if (value.HasMember("AliasName") && !value["AliasName"].IsNull())
-    {
-        if (!value["AliasName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppModelDetailInfo.AliasName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_aliasName = string(value["AliasName"].GetString());
-        m_aliasNameHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void AppModelDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_aliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_historyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HistoryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_historyLimit, allocator);
+    }
 
     if (m_modelNameHasBeenSet)
     {
@@ -104,24 +120,40 @@ void AppModelDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         m_modelParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_historyLimitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HistoryLimit";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_historyLimit, allocator);
-    }
-
-    if (m_aliasNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AliasName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string AppModelDetailInfo::GetAliasName() const
+{
+    return m_aliasName;
+}
+
+void AppModelDetailInfo::SetAliasName(const string& _aliasName)
+{
+    m_aliasName = _aliasName;
+    m_aliasNameHasBeenSet = true;
+}
+
+bool AppModelDetailInfo::AliasNameHasBeenSet() const
+{
+    return m_aliasNameHasBeenSet;
+}
+
+uint64_t AppModelDetailInfo::GetHistoryLimit() const
+{
+    return m_historyLimit;
+}
+
+void AppModelDetailInfo::SetHistoryLimit(const uint64_t& _historyLimit)
+{
+    m_historyLimit = _historyLimit;
+    m_historyLimitHasBeenSet = true;
+}
+
+bool AppModelDetailInfo::HistoryLimitHasBeenSet() const
+{
+    return m_historyLimitHasBeenSet;
+}
 
 string AppModelDetailInfo::GetModelName() const
 {
@@ -153,37 +185,5 @@ void AppModelDetailInfo::SetModelParams(const ModelParams& _modelParams)
 bool AppModelDetailInfo::ModelParamsHasBeenSet() const
 {
     return m_modelParamsHasBeenSet;
-}
-
-uint64_t AppModelDetailInfo::GetHistoryLimit() const
-{
-    return m_historyLimit;
-}
-
-void AppModelDetailInfo::SetHistoryLimit(const uint64_t& _historyLimit)
-{
-    m_historyLimit = _historyLimit;
-    m_historyLimitHasBeenSet = true;
-}
-
-bool AppModelDetailInfo::HistoryLimitHasBeenSet() const
-{
-    return m_historyLimitHasBeenSet;
-}
-
-string AppModelDetailInfo::GetAliasName() const
-{
-    return m_aliasName;
-}
-
-void AppModelDetailInfo::SetAliasName(const string& _aliasName)
-{
-    m_aliasName = _aliasName;
-    m_aliasNameHasBeenSet = true;
-}
-
-bool AppModelDetailInfo::AliasNameHasBeenSet() const
-{
-    return m_aliasNameHasBeenSet;
 }
 
