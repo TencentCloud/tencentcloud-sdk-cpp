@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul>
-                     * @return ViewType <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul>
+                     * 获取<p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul><p>Topics字段中配置的主题信息应该与ViewType类型匹配</p>
+                     * @return ViewType <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul><p>Topics字段中配置的主题信息应该与ViewType类型匹配</p>
                      * 
                      */
                     std::string GetViewType() const;
 
                     /**
-                     * 设置<p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul>
-                     * @param _viewType <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul>
+                     * 设置<p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul><p>Topics字段中配置的主题信息应该与ViewType类型匹配</p>
+                     * @param _viewType <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul><p>Topics字段中配置的主题信息应该与ViewType类型匹配</p>
                      * 
                      */
                     void SetViewType(const std::string& _viewType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ViewTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>视图主题配置信息</p>
-                     * @return Topics <p>视图主题配置信息</p>
+                     * 获取<p>查询视图中包含的主题，最大可包含10个主题</p>
+                     * @return Topics <p>查询视图中包含的主题，最大可包含10个主题</p>
                      * 
                      */
                     std::vector<ViewSearchTopic> GetTopics() const;
 
                     /**
-                     * 设置<p>视图主题配置信息</p>
-                     * @param _topics <p>视图主题配置信息</p>
+                     * 设置<p>查询视图中包含的主题，最大可包含10个主题</p>
+                     * @param _topics <p>查询视图中包含的主题，最大可包含10个主题</p>
                      * 
                      */
                     void SetTopics(const std::vector<ViewSearchTopic>& _topics);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TopicsHasBeenSet() const;
 
                     /**
-                     * 获取<p>配置描述信息</p>
-                     * @return Description <p>配置描述信息</p>
+                     * 获取<p>描述信息</p>
+                     * @return Description <p>描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>配置描述信息</p>
-                     * @param _description <p>配置描述信息</p>
+                     * 设置<p>描述信息</p>
+                     * @param _description <p>描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -163,19 +163,19 @@ namespace TencentCloud
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul>
+                     * <p>视图类型</p><p>枚举值：</p><ul><li>log： 日志主题</li><li>metric： 指标主题</li></ul><p>Topics字段中配置的主题信息应该与ViewType类型匹配</p>
                      */
                     std::string m_viewType;
                     bool m_viewTypeHasBeenSet;
 
                     /**
-                     * <p>视图主题配置信息</p>
+                     * <p>查询视图中包含的主题，最大可包含10个主题</p>
                      */
                     std::vector<ViewSearchTopic> m_topics;
                     bool m_topicsHasBeenSet;
 
                     /**
-                     * <p>配置描述信息</p>
+                     * <p>描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

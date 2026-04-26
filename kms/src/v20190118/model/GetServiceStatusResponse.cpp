@@ -41,7 +41,10 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_freeDataKeyLimitHasBeenSet(false),
     m_dataKeyUsedCountHasBeenSet(false),
     m_syncTaskListHasBeenSet(false),
-    m_isAllowedSyncHasBeenSet(false)
+    m_isAllowedSyncHasBeenSet(false),
+    m_qpsLimitHasBeenSet(false),
+    m_qpsTotalLimitHasBeenSet(false),
+    m_regionsQpsHasBeenSet(false)
 {
 }
 
@@ -279,6 +282,46 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_isAllowedSyncHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QpsLimit") && !rsp["QpsLimit"].IsNull())
+    {
+        if (!rsp["QpsLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QpsLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qpsLimit = rsp["QpsLimit"].GetUint64();
+        m_qpsLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QpsTotalLimit") && !rsp["QpsTotalLimit"].IsNull())
+    {
+        if (!rsp["QpsTotalLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QpsTotalLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qpsTotalLimit = rsp["QpsTotalLimit"].GetUint64();
+        m_qpsTotalLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegionsQps") && !rsp["RegionsQps"].IsNull())
+    {
+        if (!rsp["RegionsQps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegionsQps` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RegionsQps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionQps item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_regionsQps.push_back(item);
+        }
+        m_regionsQpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -445,6 +488,37 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "IsAllowedSync";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAllowedSync, allocator);
+    }
+
+    if (m_qpsLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QpsLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qpsLimit, allocator);
+    }
+
+    if (m_qpsTotalLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QpsTotalLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qpsTotalLimit, allocator);
+    }
+
+    if (m_regionsQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionsQps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionsQps.begin(); itr != m_regionsQps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -637,6 +711,36 @@ bool GetServiceStatusResponse::GetIsAllowedSync() const
 bool GetServiceStatusResponse::IsAllowedSyncHasBeenSet() const
 {
     return m_isAllowedSyncHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetQpsLimit() const
+{
+    return m_qpsLimit;
+}
+
+bool GetServiceStatusResponse::QpsLimitHasBeenSet() const
+{
+    return m_qpsLimitHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetQpsTotalLimit() const
+{
+    return m_qpsTotalLimit;
+}
+
+bool GetServiceStatusResponse::QpsTotalLimitHasBeenSet() const
+{
+    return m_qpsTotalLimitHasBeenSet;
+}
+
+vector<RegionQps> GetServiceStatusResponse::GetRegionsQps() const
+{
+    return m_regionsQps;
+}
+
+bool GetServiceStatusResponse::RegionsQpsHasBeenSet() const
+{
+    return m_regionsQpsHasBeenSet;
 }
 
 

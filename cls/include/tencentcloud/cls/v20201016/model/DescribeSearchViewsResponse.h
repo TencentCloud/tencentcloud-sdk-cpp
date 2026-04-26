@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>Splunk投递任务信息列表</p>
-                     * @return Infos <p>Splunk投递任务信息列表</p>
+                     * 获取<p>查询视图详细信息</p>
+                     * @return Infos <p>查询视图详细信息</p>
                      * 
                      */
                     std::vector<SearchViewInfo> GetInfos() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>Splunk投递任务信息列表</p>
+                     * <p>查询视图详细信息</p>
                      */
                     std::vector<SearchViewInfo> m_infos;
                     bool m_infosHasBeenSet;

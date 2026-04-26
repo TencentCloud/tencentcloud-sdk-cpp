@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例
-                     * @return InstanceId 沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例
+                     * 获取<p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>
+                     * @return InstanceId <p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例
-                     * @param _instanceId 沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例
+                     * 设置<p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>
+                     * @param _instanceId <p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例
+                     * <p>沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

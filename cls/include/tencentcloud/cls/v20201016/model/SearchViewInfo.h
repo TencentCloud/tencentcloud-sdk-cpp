@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 检索视图信息
+                * 查询视图信息
                 */
                 class SearchViewInfo : public AbstractModel
                 {

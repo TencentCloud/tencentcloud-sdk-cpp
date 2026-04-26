@@ -25,7 +25,8 @@ using namespace std;
 ModifyRejectedQuestionRequest::ModifyRejectedQuestionRequest() :
     m_botBizIdHasBeenSet(false),
     m_questionHasBeenSet(false),
-    m_rejectedBizIdHasBeenSet(false)
+    m_rejectedBizIdHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyRejectedQuestionRequest::ToJsonString() const
         string key = "RejectedBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rejectedBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyRejectedQuestionRequest::SetRejectedBizId(const string& _rejectedBizI
 bool ModifyRejectedQuestionRequest::RejectedBizIdHasBeenSet() const
 {
     return m_rejectedBizIdHasBeenSet;
+}
+
+int64_t ModifyRejectedQuestionRequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ModifyRejectedQuestionRequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ModifyRejectedQuestionRequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

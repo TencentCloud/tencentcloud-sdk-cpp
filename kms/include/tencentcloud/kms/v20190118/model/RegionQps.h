@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_DETECTEDWORDS_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_DETECTEDWORDS_H_
+#ifndef TENCENTCLOUD_KMS_V20190118_MODEL_REGIONQPS_H_
+#define TENCENTCLOUD_KMS_V20190118_MODEL_REGIONQPS_H_
 
 #include <string>
 #include <vector>
@@ -28,79 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Ocr
+    namespace Kms
     {
-        namespace V20181119
+        namespace V20190118
         {
             namespace Model
             {
                 /**
-                * 识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）
+                * 地域的QPS扩展包
                 */
-                class DetectedWords : public AbstractModel
+                class RegionQps : public AbstractModel
                 {
                 public:
-                    DetectedWords();
-                    ~DetectedWords() = default;
+                    RegionQps();
+                    ~RegionQps() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取<p>置信度 0 ~100。</p>
-                     * @return Confidence <p>置信度 0 ~100。</p>
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
-                    int64_t GetConfidence() const;
+                    std::string GetRegion() const;
 
                     /**
-                     * 设置<p>置信度 0 ~100。</p>
-                     * @param _confidence <p>置信度 0 ~100。</p>
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
-                    void SetConfidence(const int64_t& _confidence);
+                    void SetRegion(const std::string& _region);
 
                     /**
-                     * 判断参数 Confidence 是否已赋值
-                     * @return Confidence 是否已赋值
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
                      * 
                      */
-                    bool ConfidenceHasBeenSet() const;
+                    bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>候选字Character。</p>
-                     * @return Character <p>候选字Character。</p>
+                     * 获取<p>qps的大小</p>
+                     * @return Qps <p>qps的大小</p>
                      * 
                      */
-                    std::string GetCharacter() const;
+                    uint64_t GetQps() const;
 
                     /**
-                     * 设置<p>候选字Character。</p>
-                     * @param _character <p>候选字Character。</p>
+                     * 设置<p>qps的大小</p>
+                     * @param _qps <p>qps的大小</p>
                      * 
                      */
-                    void SetCharacter(const std::string& _character);
+                    void SetQps(const uint64_t& _qps);
 
                     /**
-                     * 判断参数 Character 是否已赋值
-                     * @return Character 是否已赋值
+                     * 判断参数 Qps 是否已赋值
+                     * @return Qps 是否已赋值
                      * 
                      */
-                    bool CharacterHasBeenSet() const;
+                    bool QpsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>置信度 0 ~100。</p>
+                     * <p>地域</p>
                      */
-                    int64_t m_confidence;
-                    bool m_confidenceHasBeenSet;
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                     /**
-                     * <p>候选字Character。</p>
+                     * <p>qps的大小</p>
                      */
-                    std::string m_character;
-                    bool m_characterHasBeenSet;
+                    uint64_t m_qps;
+                    bool m_qpsHasBeenSet;
 
                 };
             }
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_DETECTEDWORDS_H_
+#endif // !TENCENTCLOUD_KMS_V20190118_MODEL_REGIONQPS_H_

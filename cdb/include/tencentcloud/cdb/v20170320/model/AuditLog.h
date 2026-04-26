@@ -467,6 +467,31 @@ namespace TencentCloud
                      */
                     bool TrxIdHasBeenSet() const;
 
+                    /**
+                     * 获取端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientPort 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetClientPort() const;
+
+                    /**
+                     * 设置端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clientPort 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClientPort(const int64_t& _clientPort);
+
+                    /**
+                     * 判断参数 ClientPort 是否已赋值
+                     * @return ClientPort 是否已赋值
+                     * 
+                     */
+                    bool ClientPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +613,13 @@ namespace TencentCloud
                      */
                     int64_t m_trxId;
                     bool m_trxIdHasBeenSet;
+
+                    /**
+                     * 端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clientPort;
+                    bool m_clientPortHasBeenSet;
 
                 };
             }

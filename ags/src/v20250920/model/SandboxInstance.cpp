@@ -34,7 +34,8 @@ SandboxInstance::SandboxInstance() :
     m_mountOptionsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
     m_networkModeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_authModeHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,16 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         m_metadataHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthMode") && !value["AuthMode"].IsNull())
+    {
+        if (!value["AuthMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.AuthMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authMode = string(value["AuthMode"].GetString());
+        m_authModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -342,6 +353,14 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_authModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -569,5 +588,21 @@ void SandboxInstance::SetMetadata(const vector<MetadataVar>& _metadata)
 bool SandboxInstance::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+string SandboxInstance::GetAuthMode() const
+{
+    return m_authMode;
+}
+
+void SandboxInstance::SetAuthMode(const string& _authMode)
+{
+    m_authMode = _authMode;
+    m_authModeHasBeenSet = true;
+}
+
+bool SandboxInstance::AuthModeHasBeenSet() const
+{
+    return m_authModeHasBeenSet;
 }
 

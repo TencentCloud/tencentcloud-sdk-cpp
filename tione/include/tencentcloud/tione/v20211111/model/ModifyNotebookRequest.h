@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取notebook id
-                     * @return Id notebook id
+                     * 获取<p>notebook id</p>
+                     * @return Id <p>notebook id</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置notebook id
-                     * @param _id notebook id
+                     * 设置<p>notebook id</p>
+                     * @param _id <p>notebook id</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @return Name 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 获取<p>名称。不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @return Name <p>名称。不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @param _name 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 设置<p>名称。不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @param _name <p>名称。不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -93,23 +93,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取（不允许修改）计算资源付费模式 ，可选值为：
-PREPAID：预付费，即包年包月
-POSTPAID_BY_HOUR：按小时后付费
-                     * @return ChargeType （不允许修改）计算资源付费模式 ，可选值为：
-PREPAID：预付费，即包年包月
-POSTPAID_BY_HOUR：按小时后付费
+                     * 获取<p>（不允许修改）计算资源付费模式 ，可选值为：<br>PREPAID：预付费，即包年包月<br>POSTPAID_BY_HOUR：按小时后付费</p>
+                     * @return ChargeType <p>（不允许修改）计算资源付费模式 ，可选值为：<br>PREPAID：预付费，即包年包月<br>POSTPAID_BY_HOUR：按小时后付费</p>
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置（不允许修改）计算资源付费模式 ，可选值为：
-PREPAID：预付费，即包年包月
-POSTPAID_BY_HOUR：按小时后付费
-                     * @param _chargeType （不允许修改）计算资源付费模式 ，可选值为：
-PREPAID：预付费，即包年包月
-POSTPAID_BY_HOUR：按小时后付费
+                     * 设置<p>（不允许修改）计算资源付费模式 ，可选值为：<br>PREPAID：预付费，即包年包月<br>POSTPAID_BY_HOUR：按小时后付费</p>
+                     * @param _chargeType <p>（不允许修改）计算资源付费模式 ，可选值为：<br>PREPAID：预付费，即包年包月<br>POSTPAID_BY_HOUR：按小时后付费</p>
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -122,15 +114,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取计算资源配置
-                     * @return ResourceConf 计算资源配置
+                     * 获取<p>计算资源配置</p>
+                     * @return ResourceConf <p>计算资源配置</p>
                      * 
                      */
                     ResourceConf GetResourceConf() const;
 
                     /**
-                     * 设置计算资源配置
-                     * @param _resourceConf 计算资源配置
+                     * 设置<p>计算资源配置</p>
+                     * @param _resourceConf <p>计算资源配置</p>
                      * 
                      */
                     void SetResourceConf(const ResourceConf& _resourceConf);
@@ -143,15 +135,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ResourceConfHasBeenSet() const;
 
                     /**
-                     * 获取是否自动停止
-                     * @return AutoStopping 是否自动停止
+                     * 获取<p>是否自动停止</p>
+                     * @return AutoStopping <p>是否自动停止</p>
                      * 
                      */
                     bool GetAutoStopping() const;
 
                     /**
-                     * 设置是否自动停止
-                     * @param _autoStopping 是否自动停止
+                     * 设置<p>是否自动停止</p>
+                     * @param _autoStopping <p>是否自动停止</p>
                      * 
                      */
                     void SetAutoStopping(const bool& _autoStopping);
@@ -164,15 +156,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool AutoStoppingHasBeenSet() const;
 
                     /**
-                     * 获取是否访问公网
-                     * @return DirectInternetAccess 是否访问公网
+                     * 获取<p>是否访问公网</p>
+                     * @return DirectInternetAccess <p>是否访问公网</p>
                      * 
                      */
                     bool GetDirectInternetAccess() const;
 
                     /**
-                     * 设置是否访问公网
-                     * @param _directInternetAccess 是否访问公网
+                     * 设置<p>是否访问公网</p>
+                     * @param _directInternetAccess <p>是否访问公网</p>
                      * 
                      */
                     void SetDirectInternetAccess(const bool& _directInternetAccess);
@@ -185,15 +177,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool DirectInternetAccessHasBeenSet() const;
 
                     /**
-                     * 获取是否ROOT权限
-                     * @return RootAccess 是否ROOT权限
+                     * 获取<p>是否ROOT权限</p>
+                     * @return RootAccess <p>是否ROOT权限</p>
                      * 
                      */
                     bool GetRootAccess() const;
 
                     /**
-                     * 设置是否ROOT权限
-                     * @param _rootAccess 是否ROOT权限
+                     * 设置<p>是否ROOT权限</p>
+                     * @param _rootAccess <p>是否ROOT权限</p>
                      * 
                      */
                     void SetRootAccess(const bool& _rootAccess);
@@ -206,15 +198,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool RootAccessHasBeenSet() const;
 
                     /**
-                     * 获取是否上报日志
-                     * @return LogEnable 是否上报日志
+                     * 获取<p>是否上报日志</p>
+                     * @return LogEnable <p>是否上报日志</p>
                      * 
                      */
                     bool GetLogEnable() const;
 
                     /**
-                     * 设置是否上报日志
-                     * @param _logEnable 是否上报日志
+                     * 设置<p>是否上报日志</p>
+                     * @param _logEnable <p>是否上报日志</p>
                      * 
                      */
                     void SetLogEnable(const bool& _logEnable);
@@ -227,15 +219,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool LogEnableHasBeenSet() const;
 
                     /**
-                     * 获取资源组ID(for预付费)
-                     * @return ResourceGroupId 资源组ID(for预付费)
+                     * 获取<p>资源组ID(for预付费)</p>
+                     * @return ResourceGroupId <p>资源组ID(for预付费)</p>
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置资源组ID(for预付费)
-                     * @param _resourceGroupId 资源组ID(for预付费)
+                     * 设置<p>资源组ID(for预付费)</p>
+                     * @param _resourceGroupId <p>资源组ID(for预付费)</p>
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -248,15 +240,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取（不允许修改）Vpc-Id
-                     * @return VpcId （不允许修改）Vpc-Id
+                     * 获取<p>（不允许修改）Vpc-Id</p>
+                     * @return VpcId <p>（不允许修改）Vpc-Id</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置（不允许修改）Vpc-Id
-                     * @param _vpcId （不允许修改）Vpc-Id
+                     * 设置<p>（不允许修改）Vpc-Id</p>
+                     * @param _vpcId <p>（不允许修改）Vpc-Id</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -269,15 +261,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取（不允许修改）子网Id
-                     * @return SubnetId （不允许修改）子网Id
+                     * 获取<p>（不允许修改）子网Id</p>
+                     * @return SubnetId <p>（不允许修改）子网Id</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置（不允许修改）子网Id
-                     * @param _subnetId （不允许修改）子网Id
+                     * 设置<p>（不允许修改）子网Id</p>
+                     * @param _subnetId <p>（不允许修改）子网Id</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -290,15 +282,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取存储卷大小，单位GB
-                     * @return VolumeSizeInGB 存储卷大小，单位GB
+                     * 获取<p>存储卷大小，单位GB</p>
+                     * @return VolumeSizeInGB <p>存储卷大小，单位GB</p>
                      * 
                      */
                     uint64_t GetVolumeSizeInGB() const;
 
                     /**
-                     * 设置存储卷大小，单位GB
-                     * @param _volumeSizeInGB 存储卷大小，单位GB
+                     * 设置<p>存储卷大小，单位GB</p>
+                     * @param _volumeSizeInGB <p>存储卷大小，单位GB</p>
                      * 
                      */
                     void SetVolumeSizeInGB(const uint64_t& _volumeSizeInGB);
@@ -311,31 +303,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSizeInGBHasBeenSet() const;
 
                     /**
-                     * 获取（不允许修改）存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
-                     * @return VolumeSourceType （不允许修改）存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+                     * 获取<p>（不允许修改）存储的类型。取值包含：<br>    FREE:    预付费的免费存储<br>    CLOUD_PREMIUM： 高性能云硬盘<br>    CLOUD_SSD： SSD云硬盘<br>    CFS:     CFS存储，包含NFS和turbo</p>
+                     * @return VolumeSourceType <p>（不允许修改）存储的类型。取值包含：<br>    FREE:    预付费的免费存储<br>    CLOUD_PREMIUM： 高性能云硬盘<br>    CLOUD_SSD： SSD云硬盘<br>    CFS:     CFS存储，包含NFS和turbo</p>
                      * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
-                     * 设置（不允许修改）存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
-                     * @param _volumeSourceType （不允许修改）存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+                     * 设置<p>（不允许修改）存储的类型。取值包含：<br>    FREE:    预付费的免费存储<br>    CLOUD_PREMIUM： 高性能云硬盘<br>    CLOUD_SSD： SSD云硬盘<br>    CFS:     CFS存储，包含NFS和turbo</p>
+                     * @param _volumeSourceType <p>（不允许修改）存储的类型。取值包含：<br>    FREE:    预付费的免费存储<br>    CLOUD_PREMIUM： 高性能云硬盘<br>    CLOUD_SSD： SSD云硬盘<br>    CFS:     CFS存储，包含NFS和turbo</p>
                      * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
@@ -348,15 +324,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取（不允许修改）CFS存储的配置
-                     * @return VolumeSourceCFS （不允许修改）CFS存储的配置
+                     * 获取<p>（不允许修改）CFS存储的配置</p>
+                     * @return VolumeSourceCFS <p>（不允许修改）CFS存储的配置</p>
                      * 
                      */
                     CFSConfig GetVolumeSourceCFS() const;
 
                     /**
-                     * 设置（不允许修改）CFS存储的配置
-                     * @param _volumeSourceCFS （不允许修改）CFS存储的配置
+                     * 设置<p>（不允许修改）CFS存储的配置</p>
+                     * @param _volumeSourceCFS <p>（不允许修改）CFS存储的配置</p>
                      * 
                      */
                     void SetVolumeSourceCFS(const CFSConfig& _volumeSourceCFS);
@@ -369,15 +345,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSourceCFSHasBeenSet() const;
 
                     /**
-                     * 获取日志配置
-                     * @return LogConfig 日志配置
+                     * 获取<p>日志配置</p>
+                     * @return LogConfig <p>日志配置</p>
                      * 
                      */
                     LogConfig GetLogConfig() const;
 
                     /**
-                     * 设置日志配置
-                     * @param _logConfig 日志配置
+                     * 设置<p>日志配置</p>
+                     * @param _logConfig <p>日志配置</p>
                      * 
                      */
                     void SetLogConfig(const LogConfig& _logConfig);
@@ -390,15 +366,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取生命周期脚本的ID
-                     * @return LifecycleScriptId 生命周期脚本的ID
+                     * 获取<p>生命周期脚本的ID</p>
+                     * @return LifecycleScriptId <p>生命周期脚本的ID</p>
                      * 
                      */
                     std::string GetLifecycleScriptId() const;
 
                     /**
-                     * 设置生命周期脚本的ID
-                     * @param _lifecycleScriptId 生命周期脚本的ID
+                     * 设置<p>生命周期脚本的ID</p>
+                     * @param _lifecycleScriptId <p>生命周期脚本的ID</p>
                      * 
                      */
                     void SetLifecycleScriptId(const std::string& _lifecycleScriptId);
@@ -411,15 +387,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool LifecycleScriptIdHasBeenSet() const;
 
                     /**
-                     * 获取默认GIT存储库的ID
-                     * @return DefaultCodeRepoId 默认GIT存储库的ID
+                     * 获取<p>默认GIT存储库的ID</p>
+                     * @return DefaultCodeRepoId <p>默认GIT存储库的ID</p>
                      * 
                      */
                     std::string GetDefaultCodeRepoId() const;
 
                     /**
-                     * 设置默认GIT存储库的ID
-                     * @param _defaultCodeRepoId 默认GIT存储库的ID
+                     * 设置<p>默认GIT存储库的ID</p>
+                     * @param _defaultCodeRepoId <p>默认GIT存储库的ID</p>
                      * 
                      */
                     void SetDefaultCodeRepoId(const std::string& _defaultCodeRepoId);
@@ -432,15 +408,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool DefaultCodeRepoIdHasBeenSet() const;
 
                     /**
-                     * 获取其他GIT存储库的ID，最多3个
-                     * @return AdditionalCodeRepoIds 其他GIT存储库的ID，最多3个
+                     * 获取<p>其他GIT存储库的ID，最多3个</p>
+                     * @return AdditionalCodeRepoIds <p>其他GIT存储库的ID，最多3个</p>
                      * 
                      */
                     std::vector<std::string> GetAdditionalCodeRepoIds() const;
 
                     /**
-                     * 设置其他GIT存储库的ID，最多3个
-                     * @param _additionalCodeRepoIds 其他GIT存储库的ID，最多3个
+                     * 设置<p>其他GIT存储库的ID，最多3个</p>
+                     * @param _additionalCodeRepoIds <p>其他GIT存储库的ID，最多3个</p>
                      * 
                      */
                     void SetAdditionalCodeRepoIds(const std::vector<std::string>& _additionalCodeRepoIds);
@@ -453,15 +429,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool AdditionalCodeRepoIdsHasBeenSet() const;
 
                     /**
-                     * 获取自动停止时间，单位小时
-                     * @return AutomaticStopTime 自动停止时间，单位小时
+                     * 获取<p>自动停止时间，单位小时</p>
+                     * @return AutomaticStopTime <p>自动停止时间，单位小时</p>
                      * 
                      */
                     int64_t GetAutomaticStopTime() const;
 
                     /**
-                     * 设置自动停止时间，单位小时
-                     * @param _automaticStopTime 自动停止时间，单位小时
+                     * 设置<p>自动停止时间，单位小时</p>
+                     * @param _automaticStopTime <p>自动停止时间，单位小时</p>
                      * 
                      */
                     void SetAutomaticStopTime(const int64_t& _automaticStopTime);
@@ -474,15 +450,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool AutomaticStopTimeHasBeenSet() const;
 
                     /**
-                     * 获取标签配置
-                     * @return Tags 标签配置
+                     * 获取<p>标签配置</p>
+                     * @return Tags <p>标签配置</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签配置
-                     * @param _tags 标签配置
+                     * 设置<p>标签配置</p>
+                     * @param _tags <p>标签配置</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -495,15 +471,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取数据配置，只支持WEDATA_HDFS
-                     * @return DataConfigs 数据配置，只支持WEDATA_HDFS
+                     * 获取<p>数据配置，只支持WEDATA_HDFS</p>
+                     * @return DataConfigs <p>数据配置，只支持WEDATA_HDFS</p>
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置，只支持WEDATA_HDFS
-                     * @param _dataConfigs 数据配置，只支持WEDATA_HDFS
+                     * 设置<p>数据配置，只支持WEDATA_HDFS</p>
+                     * @param _dataConfigs <p>数据配置，只支持WEDATA_HDFS</p>
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -516,15 +492,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool DataConfigsHasBeenSet() const;
 
                     /**
-                     * 获取镜像信息
-                     * @return ImageInfo 镜像信息
+                     * 获取<p>镜像信息</p>
+                     * @return ImageInfo <p>镜像信息</p>
                      * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
-                     * 设置镜像信息
-                     * @param _imageInfo 镜像信息
+                     * 设置<p>镜像信息</p>
+                     * @param _imageInfo <p>镜像信息</p>
                      * 
                      */
                     void SetImageInfo(const ImageInfo& _imageInfo);
@@ -537,15 +513,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型，包括SYSTEM、TCR、CCR
-                     * @return ImageType 镜像类型，包括SYSTEM、TCR、CCR
+                     * 获取<p>镜像类型，包括SYSTEM、TCR、CCR</p>
+                     * @return ImageType <p>镜像类型，包括SYSTEM、TCR、CCR</p>
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型，包括SYSTEM、TCR、CCR
-                     * @param _imageType 镜像类型，包括SYSTEM、TCR、CCR
+                     * 设置<p>镜像类型，包括SYSTEM、TCR、CCR</p>
+                     * @param _imageType <p>镜像类型，包括SYSTEM、TCR、CCR</p>
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -558,15 +534,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ImageTypeHasBeenSet() const;
 
                     /**
-                     * 获取SSH配置
-                     * @return SSHConfig SSH配置
+                     * 获取<p>SSH配置</p>
+                     * @return SSHConfig <p>SSH配置</p>
                      * 
                      */
                     SSHConfig GetSSHConfig() const;
 
                     /**
-                     * 设置SSH配置
-                     * @param _sSHConfig SSH配置
+                     * 设置<p>SSH配置</p>
+                     * @param _sSHConfig <p>SSH配置</p>
                      * 
                      */
                     void SetSSHConfig(const SSHConfig& _sSHConfig);
@@ -579,15 +555,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool SSHConfigHasBeenSet() const;
 
                     /**
-                     * 获取自定义环境变量
-                     * @return Envs 自定义环境变量
+                     * 获取<p>自定义环境变量</p>
+                     * @return Envs <p>自定义环境变量</p>
                      * 
                      */
                     std::vector<EnvVar> GetEnvs() const;
 
                     /**
-                     * 设置自定义环境变量
-                     * @param _envs 自定义环境变量
+                     * 设置<p>自定义环境变量</p>
+                     * @param _envs <p>自定义环境变量</p>
                      * 
                      */
                     void SetEnvs(const std::vector<EnvVar>& _envs);
@@ -600,15 +576,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -623,163 +599,157 @@ POSTPAID_BY_HOUR：按小时后付费
                 private:
 
                     /**
-                     * notebook id
+                     * <p>notebook id</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * <p>名称。不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * （不允许修改）计算资源付费模式 ，可选值为：
-PREPAID：预付费，即包年包月
-POSTPAID_BY_HOUR：按小时后付费
+                     * <p>（不允许修改）计算资源付费模式 ，可选值为：<br>PREPAID：预付费，即包年包月<br>POSTPAID_BY_HOUR：按小时后付费</p>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 计算资源配置
+                     * <p>计算资源配置</p>
                      */
                     ResourceConf m_resourceConf;
                     bool m_resourceConfHasBeenSet;
 
                     /**
-                     * 是否自动停止
+                     * <p>是否自动停止</p>
                      */
                     bool m_autoStopping;
                     bool m_autoStoppingHasBeenSet;
 
                     /**
-                     * 是否访问公网
+                     * <p>是否访问公网</p>
                      */
                     bool m_directInternetAccess;
                     bool m_directInternetAccessHasBeenSet;
 
                     /**
-                     * 是否ROOT权限
+                     * <p>是否ROOT权限</p>
                      */
                     bool m_rootAccess;
                     bool m_rootAccessHasBeenSet;
 
                     /**
-                     * 是否上报日志
+                     * <p>是否上报日志</p>
                      */
                     bool m_logEnable;
                     bool m_logEnableHasBeenSet;
 
                     /**
-                     * 资源组ID(for预付费)
+                     * <p>资源组ID(for预付费)</p>
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * （不允许修改）Vpc-Id
+                     * <p>（不允许修改）Vpc-Id</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * （不允许修改）子网Id
+                     * <p>（不允许修改）子网Id</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 存储卷大小，单位GB
+                     * <p>存储卷大小，单位GB</p>
                      */
                     uint64_t m_volumeSizeInGB;
                     bool m_volumeSizeInGBHasBeenSet;
 
                     /**
-                     * （不允许修改）存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+                     * <p>（不允许修改）存储的类型。取值包含：<br>    FREE:    预付费的免费存储<br>    CLOUD_PREMIUM： 高性能云硬盘<br>    CLOUD_SSD： SSD云硬盘<br>    CFS:     CFS存储，包含NFS和turbo</p>
                      */
                     std::string m_volumeSourceType;
                     bool m_volumeSourceTypeHasBeenSet;
 
                     /**
-                     * （不允许修改）CFS存储的配置
+                     * <p>（不允许修改）CFS存储的配置</p>
                      */
                     CFSConfig m_volumeSourceCFS;
                     bool m_volumeSourceCFSHasBeenSet;
 
                     /**
-                     * 日志配置
+                     * <p>日志配置</p>
                      */
                     LogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 生命周期脚本的ID
+                     * <p>生命周期脚本的ID</p>
                      */
                     std::string m_lifecycleScriptId;
                     bool m_lifecycleScriptIdHasBeenSet;
 
                     /**
-                     * 默认GIT存储库的ID
+                     * <p>默认GIT存储库的ID</p>
                      */
                     std::string m_defaultCodeRepoId;
                     bool m_defaultCodeRepoIdHasBeenSet;
 
                     /**
-                     * 其他GIT存储库的ID，最多3个
+                     * <p>其他GIT存储库的ID，最多3个</p>
                      */
                     std::vector<std::string> m_additionalCodeRepoIds;
                     bool m_additionalCodeRepoIdsHasBeenSet;
 
                     /**
-                     * 自动停止时间，单位小时
+                     * <p>自动停止时间，单位小时</p>
                      */
                     int64_t m_automaticStopTime;
                     bool m_automaticStopTimeHasBeenSet;
 
                     /**
-                     * 标签配置
+                     * <p>标签配置</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 数据配置，只支持WEDATA_HDFS
+                     * <p>数据配置，只支持WEDATA_HDFS</p>
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;
 
                     /**
-                     * 镜像信息
+                     * <p>镜像信息</p>
                      */
                     ImageInfo m_imageInfo;
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * 镜像类型，包括SYSTEM、TCR、CCR
+                     * <p>镜像类型，包括SYSTEM、TCR、CCR</p>
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
 
                     /**
-                     * SSH配置
+                     * <p>SSH配置</p>
                      */
                     SSHConfig m_sSHConfig;
                     bool m_sSHConfigHasBeenSet;
 
                     /**
-                     * 自定义环境变量
+                     * <p>自定义环境变量</p>
                      */
                     std::vector<EnvVar> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

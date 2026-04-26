@@ -48,7 +48,8 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_subUinHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_envsHasBeenSet(false)
+    m_envsHasBeenSet(false),
+    m_latestOperatorInfoHasBeenSet(false)
 {
 }
 
@@ -381,6 +382,23 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_envsHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestOperatorInfo") && !value["LatestOperatorInfo"].IsNull())
+    {
+        if (!value["LatestOperatorInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.LatestOperatorInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_latestOperatorInfo.Deserialize(value["LatestOperatorInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_latestOperatorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -633,6 +651,15 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_latestOperatorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperatorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_latestOperatorInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1084,5 +1111,21 @@ void TrainingTaskSetItem::SetEnvs(const vector<EnvVar>& _envs)
 bool TrainingTaskSetItem::EnvsHasBeenSet() const
 {
     return m_envsHasBeenSet;
+}
+
+OperatorInfo TrainingTaskSetItem::GetLatestOperatorInfo() const
+{
+    return m_latestOperatorInfo;
+}
+
+void TrainingTaskSetItem::SetLatestOperatorInfo(const OperatorInfo& _latestOperatorInfo)
+{
+    m_latestOperatorInfo = _latestOperatorInfo;
+    m_latestOperatorInfoHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::LatestOperatorInfoHasBeenSet() const
+{
+    return m_latestOperatorInfoHasBeenSet;
 }
 

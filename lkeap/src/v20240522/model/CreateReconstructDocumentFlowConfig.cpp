@@ -23,7 +23,9 @@ using namespace std;
 CreateReconstructDocumentFlowConfig::CreateReconstructDocumentFlowConfig() :
     m_tableResultTypeHasBeenSet(false),
     m_resultTypeHasBeenSet(false),
-    m_ignoreFailedPageHasBeenSet(false)
+    m_ignoreFailedPageHasBeenSet(false),
+    m_returnPageFormatHasBeenSet(false),
+    m_pageFormatHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome CreateReconstructDocumentFlowConfig::Deserialize(const rapid
         m_ignoreFailedPageHasBeenSet = true;
     }
 
+    if (value.HasMember("ReturnPageFormat") && !value["ReturnPageFormat"].IsNull())
+    {
+        if (!value["ReturnPageFormat"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateReconstructDocumentFlowConfig.ReturnPageFormat` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_returnPageFormat = value["ReturnPageFormat"].GetBool();
+        m_returnPageFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("PageFormat") && !value["PageFormat"].IsNull())
+    {
+        if (!value["PageFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateReconstructDocumentFlowConfig.PageFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageFormat = string(value["PageFormat"].GetString());
+        m_pageFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void CreateReconstructDocumentFlowConfig::ToJsonObject(rapidjson::Value &value, 
         string key = "IgnoreFailedPage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreFailedPage, allocator);
+    }
+
+    if (m_returnPageFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnPageFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_returnPageFormat, allocator);
+    }
+
+    if (m_pageFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void CreateReconstructDocumentFlowConfig::SetIgnoreFailedPage(const bool& _ignor
 bool CreateReconstructDocumentFlowConfig::IgnoreFailedPageHasBeenSet() const
 {
     return m_ignoreFailedPageHasBeenSet;
+}
+
+bool CreateReconstructDocumentFlowConfig::GetReturnPageFormat() const
+{
+    return m_returnPageFormat;
+}
+
+void CreateReconstructDocumentFlowConfig::SetReturnPageFormat(const bool& _returnPageFormat)
+{
+    m_returnPageFormat = _returnPageFormat;
+    m_returnPageFormatHasBeenSet = true;
+}
+
+bool CreateReconstructDocumentFlowConfig::ReturnPageFormatHasBeenSet() const
+{
+    return m_returnPageFormatHasBeenSet;
+}
+
+string CreateReconstructDocumentFlowConfig::GetPageFormat() const
+{
+    return m_pageFormat;
+}
+
+void CreateReconstructDocumentFlowConfig::SetPageFormat(const string& _pageFormat)
+{
+    m_pageFormat = _pageFormat;
+    m_pageFormatHasBeenSet = true;
+}
+
+bool CreateReconstructDocumentFlowConfig::PageFormatHasBeenSet() const
+{
+    return m_pageFormatHasBeenSet;
 }
 

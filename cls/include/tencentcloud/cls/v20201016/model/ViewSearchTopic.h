@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视图检索日志主题配置
+                * 查询视图主题配置
                 */
                 class ViewSearchTopic : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志集与日志主题所属地域</p><p>参数格式：ap-guangzhou</p>
-                     * @return Region <p>日志集与日志主题所属地域</p><p>参数格式：ap-guangzhou</p>
+                     * 获取<p>日志集与主题所属地域</p><p>参数格式：ap-guangzhou</p><p>同一查询视图内，包含的各个主题需为相同地域</p>
+                     * @return Region <p>日志集与主题所属地域</p><p>参数格式：ap-guangzhou</p><p>同一查询视图内，包含的各个主题需为相同地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置<p>日志集与日志主题所属地域</p><p>参数格式：ap-guangzhou</p>
-                     * @param _region <p>日志集与日志主题所属地域</p><p>参数格式：ap-guangzhou</p>
+                     * 设置<p>日志集与主题所属地域</p><p>参数格式：ap-guangzhou</p><p>同一查询视图内，包含的各个主题需为相同地域</p>
+                     * @param _region <p>日志集与主题所属地域</p><p>参数格式：ap-guangzhou</p><p>同一查询视图内，包含的各个主题需为相同地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志集与日志主题所属地域</p><p>参数格式：ap-guangzhou</p>
+                     * <p>日志集与主题所属地域</p><p>参数格式：ap-guangzhou</p><p>同一查询视图内，包含的各个主题需为相同地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

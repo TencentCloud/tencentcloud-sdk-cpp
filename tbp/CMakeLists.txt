@@ -15,18 +15,11 @@
 #
 
 set(tbp_public_header
-  include/tencentcloud/tbp/v20190627/TbpClient.h
   include/tencentcloud/tbp/v20190311/TbpClient.h
+  include/tencentcloud/tbp/v20190627/TbpClient.h
   )
 
 set(tbp_public_header_model
-  include/tencentcloud/tbp/v20190627/model/TextProcessResponse.h
-  include/tencentcloud/tbp/v20190627/model/Group.h
-  include/tencentcloud/tbp/v20190627/model/SlotInfo.h
-  include/tencentcloud/tbp/v20190627/model/TextResetRequest.h
-  include/tencentcloud/tbp/v20190627/model/TextResetResponse.h
-  include/tencentcloud/tbp/v20190627/model/ResponseMessage.h
-  include/tencentcloud/tbp/v20190627/model/TextProcessRequest.h
   include/tencentcloud/tbp/v20190311/model/TextProcessResponse.h
   include/tencentcloud/tbp/v20190311/model/Group.h
   include/tencentcloud/tbp/v20190311/model/SlotInfo.h
@@ -38,18 +31,18 @@ set(tbp_public_header_model
   include/tencentcloud/tbp/v20190311/model/ResetResponse.h
   include/tencentcloud/tbp/v20190311/model/CreateBotRequest.h
   include/tencentcloud/tbp/v20190311/model/TextProcessRequest.h
+  include/tencentcloud/tbp/v20190627/model/TextProcessResponse.h
+  include/tencentcloud/tbp/v20190627/model/Group.h
+  include/tencentcloud/tbp/v20190627/model/SlotInfo.h
+  include/tencentcloud/tbp/v20190627/model/TextResetRequest.h
+  include/tencentcloud/tbp/v20190627/model/TextResetResponse.h
+  include/tencentcloud/tbp/v20190627/model/ResponseMessage.h
+  include/tencentcloud/tbp/v20190627/model/TextProcessRequest.h
   )
 
 set(tbp_src
-  src/v20190627/TbpClient.cpp
   src/v20190311/TbpClient.cpp
-  src/v20190627/model/TextProcessResponse.cpp
-  src/v20190627/model/Group.cpp
-  src/v20190627/model/SlotInfo.cpp
-  src/v20190627/model/TextResetRequest.cpp
-  src/v20190627/model/TextResetResponse.cpp
-  src/v20190627/model/ResponseMessage.cpp
-  src/v20190627/model/TextProcessRequest.cpp
+  src/v20190627/TbpClient.cpp
   src/v20190311/model/TextProcessResponse.cpp
   src/v20190311/model/Group.cpp
   src/v20190311/model/SlotInfo.cpp
@@ -61,6 +54,13 @@ set(tbp_src
   src/v20190311/model/ResetResponse.cpp
   src/v20190311/model/CreateBotRequest.cpp
   src/v20190311/model/TextProcessRequest.cpp
+  src/v20190627/model/TextProcessResponse.cpp
+  src/v20190627/model/Group.cpp
+  src/v20190627/model/SlotInfo.cpp
+  src/v20190627/model/TextResetRequest.cpp
+  src/v20190627/model/TextResetResponse.cpp
+  src/v20190627/model/ResponseMessage.cpp
+  src/v20190627/model/TextProcessRequest.cpp
   )
 
 set(tbp_include
@@ -89,9 +89,9 @@ target_link_libraries(tbp
   core)
 
 #install(FILES ${tbp_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tbp/v20190311)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tbp/v20190627)
 #install(FILES ${tbp_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tbp/v20190311/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tbp/v20190627/model)
 install(DIRECTORY ${tbp_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

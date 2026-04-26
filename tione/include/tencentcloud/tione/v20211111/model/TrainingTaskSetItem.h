@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/EnvVar.h>
+#include <tencentcloud/tione/v20211111/model/OperatorInfo.h>
 
 
 namespace TencentCloud
@@ -699,6 +700,27 @@ namespace TencentCloud
                      */
                     bool EnvsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>操作者信息</p>
+                     * @return LatestOperatorInfo <p>操作者信息</p>
+                     * 
+                     */
+                    OperatorInfo GetLatestOperatorInfo() const;
+
+                    /**
+                     * 设置<p>操作者信息</p>
+                     * @param _latestOperatorInfo <p>操作者信息</p>
+                     * 
+                     */
+                    void SetLatestOperatorInfo(const OperatorInfo& _latestOperatorInfo);
+
+                    /**
+                     * 判断参数 LatestOperatorInfo 是否已赋值
+                     * @return LatestOperatorInfo 是否已赋值
+                     * 
+                     */
+                    bool LatestOperatorInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -883,6 +905,12 @@ namespace TencentCloud
                      */
                     std::vector<EnvVar> m_envs;
                     bool m_envsHasBeenSet;
+
+                    /**
+                     * <p>操作者信息</p>
+                     */
+                    OperatorInfo m_latestOperatorInfo;
+                    bool m_latestOperatorInfoHasBeenSet;
 
                 };
             }

@@ -350,6 +350,31 @@ namespace TencentCloud
                      */
                     bool AllowDownstreamDependencyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleType <p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScheduleType() const;
+
+                    /**
+                     * 设置<p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleType <p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleType(const int64_t& _scheduleType);
+
+                    /**
+                     * 判断参数 ScheduleType 是否已赋值
+                     * @return ScheduleType 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +460,13 @@ namespace TencentCloud
                      */
                     int64_t m_allowDownstreamDependency;
                     bool m_allowDownstreamDependencyHasBeenSet;
+
+                    /**
+                     * <p>调度类型: 0 正常调度 1 空跑调度</p><p>枚举值：</p><ul><li>0： 正常调度</li><li>1： 空跑调度</li></ul><p>默认值：0</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scheduleType;
+                    bool m_scheduleTypeHasBeenSet;
 
                 };
             }

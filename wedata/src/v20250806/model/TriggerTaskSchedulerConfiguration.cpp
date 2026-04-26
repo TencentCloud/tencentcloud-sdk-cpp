@@ -32,7 +32,8 @@ TriggerTaskSchedulerConfiguration::TriggerTaskSchedulerConfiguration() :
     m_paramTaskInListHasBeenSet(false),
     m_taskOutputRegistryListHasBeenSet(false),
     m_dependencyTriggerPolicyHasBeenSet(false),
-    m_allowDownstreamDependencyHasBeenSet(false)
+    m_allowDownstreamDependencyHasBeenSet(false),
+    m_scheduleTypeHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,16 @@ CoreInternalOutcome TriggerTaskSchedulerConfiguration::Deserialize(const rapidjs
         m_allowDownstreamDependencyHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleType") && !value["ScheduleType"].IsNull())
+    {
+        if (!value["ScheduleType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskSchedulerConfiguration.ScheduleType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleType = value["ScheduleType"].GetInt64();
+        m_scheduleTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -330,6 +341,14 @@ void TriggerTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, ra
         string key = "AllowDownstreamDependency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowDownstreamDependency, allocator);
+    }
+
+    if (m_scheduleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scheduleType, allocator);
     }
 
 }
@@ -525,5 +544,21 @@ void TriggerTaskSchedulerConfiguration::SetAllowDownstreamDependency(const int64
 bool TriggerTaskSchedulerConfiguration::AllowDownstreamDependencyHasBeenSet() const
 {
     return m_allowDownstreamDependencyHasBeenSet;
+}
+
+int64_t TriggerTaskSchedulerConfiguration::GetScheduleType() const
+{
+    return m_scheduleType;
+}
+
+void TriggerTaskSchedulerConfiguration::SetScheduleType(const int64_t& _scheduleType)
+{
+    m_scheduleType = _scheduleType;
+    m_scheduleTypeHasBeenSet = true;
+}
+
+bool TriggerTaskSchedulerConfiguration::ScheduleTypeHasBeenSet() const
+{
+    return m_scheduleTypeHasBeenSet;
 }
 

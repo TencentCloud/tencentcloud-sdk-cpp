@@ -57,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取映射路径
-                     * @return MappingPath 映射路径
+                     * 获取<p>映射路径</p>
+                     * @return MappingPath <p>映射路径</p>
                      * 
                      */
                     std::string GetMappingPath() const;
 
                     /**
-                     * 设置映射路径
-                     * @param _mappingPath 映射路径
+                     * 设置<p>映射路径</p>
+                     * @param _mappingPath <p>映射路径</p>
                      * 
                      */
                     void SetMappingPath(const std::string& _mappingPath);
@@ -78,22 +78,18 @@ namespace TencentCloud
                     bool MappingPathHasBeenSet() const;
 
                     /**
-                     * 获取存储用途
-可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+                     * 获取<p>存储用途<br>可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSourceUsage 存储用途
-可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+                     * @return DataSourceUsage <p>存储用途<br>可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceUsage() const;
 
                     /**
-                     * 设置存储用途
-可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+                     * 设置<p>存储用途<br>可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSourceUsage 存储用途
-可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+                     * @param _dataSourceUsage <p>存储用途<br>可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,18 +103,18 @@ namespace TencentCloud
                     bool DataSourceUsageHasBeenSet() const;
 
                     /**
-                     * 获取DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
+                     * 获取<p>DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSourceType DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
+                     * @return DataSourceType <p>DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
-                     * 设置DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
+                     * 设置<p>DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSourceType DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
+                     * @param _dataSourceType <p>DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,18 +128,18 @@ namespace TencentCloud
                     bool DataSourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取来自数据集的数据
+                     * 获取<p>来自数据集的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSetSource 来自数据集的数据
+                     * @return DataSetSource <p>来自数据集的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DataSetConfig GetDataSetSource() const;
 
                     /**
-                     * 设置来自数据集的数据
+                     * 设置<p>来自数据集的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSetSource 来自数据集的数据
+                     * @param _dataSetSource <p>来自数据集的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,18 +153,18 @@ namespace TencentCloud
                     bool DataSetSourceHasBeenSet() const;
 
                     /**
-                     * 获取来自cos的数据
+                     * 获取<p>来自cos的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return COSSource 来自cos的数据
+                     * @return COSSource <p>来自cos的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CosPathInfo GetCOSSource() const;
 
                     /**
-                     * 设置来自cos的数据
+                     * 设置<p>来自cos的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cOSSource 来自cos的数据
+                     * @param _cOSSource <p>来自cos的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -182,18 +178,18 @@ namespace TencentCloud
                     bool COSSourceHasBeenSet() const;
 
                     /**
-                     * 获取来自CFS的数据
+                     * 获取<p>来自CFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CFSSource 来自CFS的数据
+                     * @return CFSSource <p>来自CFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CFSConfig GetCFSSource() const;
 
                     /**
-                     * 设置来自CFS的数据
+                     * 设置<p>来自CFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cFSSource 来自CFS的数据
+                     * @param _cFSSource <p>来自CFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -207,18 +203,18 @@ namespace TencentCloud
                     bool CFSSourceHasBeenSet() const;
 
                     /**
-                     * 获取来自HDFS的数据
+                     * 获取<p>来自HDFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HDFSSource 来自HDFS的数据
+                     * @return HDFSSource <p>来自HDFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HDFSConfig GetHDFSSource() const;
 
                     /**
-                     * 设置来自HDFS的数据
+                     * 设置<p>来自HDFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hDFSSource 来自HDFS的数据
+                     * @param _hDFSSource <p>来自HDFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,18 +228,18 @@ namespace TencentCloud
                     bool HDFSSourceHasBeenSet() const;
 
                     /**
-                     * 获取配置GooseFS的数据
+                     * 获取<p>配置GooseFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GooseFSSource 配置GooseFS的数据
+                     * @return GooseFSSource <p>配置GooseFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GooseFS GetGooseFSSource() const;
 
                     /**
-                     * 设置配置GooseFS的数据
+                     * 设置<p>配置GooseFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gooseFSSource 配置GooseFS的数据
+                     * @param _gooseFSSource <p>配置GooseFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -257,18 +253,18 @@ namespace TencentCloud
                     bool GooseFSSourceHasBeenSet() const;
 
                     /**
-                     * 获取配置TurboFS的数据
+                     * 获取<p>配置TurboFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CFSTurboSource 配置TurboFS的数据
+                     * @return CFSTurboSource <p>配置TurboFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CFSTurbo GetCFSTurboSource() const;
 
                     /**
-                     * 设置配置TurboFS的数据
+                     * 设置<p>配置TurboFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cFSTurboSource 配置TurboFS的数据
+                     * @param _cFSTurboSource <p>配置TurboFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,18 +278,18 @@ namespace TencentCloud
                     bool CFSTurboSourceHasBeenSet() const;
 
                     /**
-                     * 获取来自本地磁盘的信息
+                     * 获取<p>来自本地磁盘的信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalDiskSource 来自本地磁盘的信息
+                     * @return LocalDiskSource <p>来自本地磁盘的信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LocalDisk GetLocalDiskSource() const;
 
                     /**
-                     * 设置来自本地磁盘的信息
+                     * 设置<p>来自本地磁盘的信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _localDiskSource 来自本地磁盘的信息
+                     * @param _localDiskSource <p>来自本地磁盘的信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -307,18 +303,18 @@ namespace TencentCloud
                     bool LocalDiskSourceHasBeenSet() const;
 
                     /**
-                     * 获取CBS配置信息
+                     * 获取<p>CBS配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CBSSource CBS配置信息
+                     * @return CBSSource <p>CBS配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CBSConfig GetCBSSource() const;
 
                     /**
-                     * 设置CBS配置信息
+                     * 设置<p>CBS配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cBSSource CBS配置信息
+                     * @param _cBSSource <p>CBS配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -332,15 +328,15 @@ namespace TencentCloud
                     bool CBSSourceHasBeenSet() const;
 
                     /**
-                     * 获取主机路径信息
-                     * @return HostPathSource 主机路径信息
+                     * 获取<p>主机路径信息</p>
+                     * @return HostPathSource <p>主机路径信息</p>
                      * 
                      */
                     HostPath GetHostPathSource() const;
 
                     /**
-                     * 设置主机路径信息
-                     * @param _hostPathSource 主机路径信息
+                     * 设置<p>主机路径信息</p>
+                     * @param _hostPathSource <p>主机路径信息</p>
                      * 
                      */
                     void SetHostPathSource(const HostPath& _hostPathSource);
@@ -353,18 +349,18 @@ namespace TencentCloud
                     bool HostPathSourceHasBeenSet() const;
 
                     /**
-                     * 获取公有云数据源
+                     * 获取<p>公有云数据源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicDataSource 公有云数据源
+                     * @return PublicDataSource <p>公有云数据源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PublicDataSourceFS GetPublicDataSource() const;
 
                     /**
-                     * 设置公有云数据源
+                     * 设置<p>公有云数据源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicDataSource 公有云数据源
+                     * @param _publicDataSource <p>公有云数据源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -380,90 +376,89 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 映射路径
+                     * <p>映射路径</p>
                      */
                     std::string m_mappingPath;
                     bool m_mappingPathHasBeenSet;
 
                     /**
-                     * 存储用途
-可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+                     * <p>存储用途<br>可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceUsage;
                     bool m_dataSourceUsageHasBeenSet;
 
                     /**
-                     * DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
+                     * <p>DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
 
                     /**
-                     * 来自数据集的数据
+                     * <p>来自数据集的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DataSetConfig m_dataSetSource;
                     bool m_dataSetSourceHasBeenSet;
 
                     /**
-                     * 来自cos的数据
+                     * <p>来自cos的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosPathInfo m_cOSSource;
                     bool m_cOSSourceHasBeenSet;
 
                     /**
-                     * 来自CFS的数据
+                     * <p>来自CFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CFSConfig m_cFSSource;
                     bool m_cFSSourceHasBeenSet;
 
                     /**
-                     * 来自HDFS的数据
+                     * <p>来自HDFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HDFSConfig m_hDFSSource;
                     bool m_hDFSSourceHasBeenSet;
 
                     /**
-                     * 配置GooseFS的数据
+                     * <p>配置GooseFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GooseFS m_gooseFSSource;
                     bool m_gooseFSSourceHasBeenSet;
 
                     /**
-                     * 配置TurboFS的数据
+                     * <p>配置TurboFS的数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CFSTurbo m_cFSTurboSource;
                     bool m_cFSTurboSourceHasBeenSet;
 
                     /**
-                     * 来自本地磁盘的信息
+                     * <p>来自本地磁盘的信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LocalDisk m_localDiskSource;
                     bool m_localDiskSourceHasBeenSet;
 
                     /**
-                     * CBS配置信息
+                     * <p>CBS配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CBSConfig m_cBSSource;
                     bool m_cBSSourceHasBeenSet;
 
                     /**
-                     * 主机路径信息
+                     * <p>主机路径信息</p>
                      */
                     HostPath m_hostPathSource;
                     bool m_hostPathSourceHasBeenSet;
 
                     /**
-                     * 公有云数据源
+                     * <p>公有云数据源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PublicDataSourceFS m_publicDataSource;

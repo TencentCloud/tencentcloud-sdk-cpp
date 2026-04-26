@@ -131,6 +131,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInstanceRunningJobInfo.h
   include/tencentcloud/tione/v20211111/model/ImageFIlter.h
+  include/tencentcloud/tione/v20211111/model/OperatorInfo.h
   include/tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/CFSConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeMountInstanceRequest.h
@@ -465,6 +466,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingModelVersionRequest.cpp
   src/v20211111/model/ResourceInstanceRunningJobInfo.cpp
   src/v20211111/model/ImageFIlter.cpp
+  src/v20211111/model/OperatorInfo.cpp
   src/v20211111/model/DefaultNginxGatewayCallInfo.cpp
   src/v20211111/model/CFSConfig.cpp
   src/v20211111/model/DescribeMountInstanceRequest.cpp

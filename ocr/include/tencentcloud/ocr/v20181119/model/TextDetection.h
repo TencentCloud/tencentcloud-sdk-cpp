@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>识别出的文本行内容</p>
-                     * @return DetectedText <p>识别出的文本行内容</p>
+                     * 获取<p>识别出的文本行内容。</p>
+                     * @return DetectedText <p>识别出的文本行内容。</p>
                      * 
                      */
                     std::string GetDetectedText() const;
 
                     /**
-                     * 设置<p>识别出的文本行内容</p>
-                     * @param _detectedText <p>识别出的文本行内容</p>
+                     * 设置<p>识别出的文本行内容。</p>
+                     * @param _detectedText <p>识别出的文本行内容。</p>
                      * 
                      */
                     void SetDetectedText(const std::string& _detectedText);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool DetectedTextHasBeenSet() const;
 
                     /**
-                     * 获取<p>置信度 0 ~100</p>
-                     * @return Confidence <p>置信度 0 ~100</p>
+                     * 获取<p>置信度 0 ~100。</p>
+                     * @return Confidence <p>置信度 0 ~100。</p>
                      * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
-                     * 设置<p>置信度 0 ~100</p>
-                     * @param _confidence <p>置信度 0 ~100</p>
+                     * 设置<p>置信度 0 ~100。</p>
+                     * @param _confidence <p>置信度 0 ~100。</p>
                      * 
                      */
                     void SetConfidence(const int64_t& _confidence);
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取<p>文本行坐标，以四个顶点坐标表示</p>
+                     * 获取<p>文本行坐标，以四个顶点坐标表示。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon <p>文本行坐标，以四个顶点坐标表示</p>
+                     * @return Polygon <p>文本行坐标，以四个顶点坐标表示。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
-                     * 设置<p>文本行坐标，以四个顶点坐标表示</p>
+                     * 设置<p>文本行坐标，以四个顶点坐标表示。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _polygon <p>文本行坐标，以四个顶点坐标表示</p>
+                     * @param _polygon <p>文本行坐标，以四个顶点坐标表示。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool PolygonHasBeenSet() const;
 
                     /**
-                     * 获取<p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
-                     * @return AdvancedInfo <p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
+                     * 获取<p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
+                     * @return AdvancedInfo <p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
                      * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
-                     * 设置<p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
-                     * @param _advancedInfo <p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
+                     * 设置<p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
+                     * @param _advancedInfo <p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
                      * 
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
-                     * 获取<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>
-                     * @return ItemPolygon <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>
+                     * 获取<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>
+                     * @return ItemPolygon <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>
                      * 
                      */
                     ItemCoord GetItemPolygon() const;
 
                     /**
-                     * 设置<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>
-                     * @param _itemPolygon <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>
+                     * 设置<p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>
+                     * @param _itemPolygon <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>
                      * 
                      */
                     void SetItemPolygon(const ItemCoord& _itemPolygon);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool ItemPolygonHasBeenSet() const;
 
                     /**
-                     * 获取<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
-                     * @return Words <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * 获取<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
+                     * @return Words <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      * 
                      */
                     std::vector<DetectedWords> GetWords() const;
 
                     /**
-                     * 设置<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
-                     * @param _words <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * 设置<p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
+                     * @param _words <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      * 
                      */
                     void SetWords(const std::vector<DetectedWords>& _words);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool WordsHasBeenSet() const;
 
                     /**
-                     * 获取<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
-                     * @return WordCoordPoint <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * 获取<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
+                     * @return WordCoordPoint <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      * 
                      */
                     std::vector<DetectedWordCoordPoint> GetWordCoordPoint() const;
 
                     /**
-                     * 设置<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
-                     * @param _wordCoordPoint <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * 设置<p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
+                     * @param _wordCoordPoint <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      * 
                      */
                     void SetWordCoordPoint(const std::vector<DetectedWordCoordPoint>& _wordCoordPoint);
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool WordCoordPointHasBeenSet() const;
 
                     /**
-                     * 获取<p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>
-                     * @return Language <p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>
+                     * 获取<p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>
+                     * @return Language <p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置<p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>
-                     * @param _language <p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>
+                     * 设置<p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>
+                     * @param _language <p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -225,50 +225,50 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>识别出的文本行内容</p>
+                     * <p>识别出的文本行内容。</p>
                      */
                     std::string m_detectedText;
                     bool m_detectedTextHasBeenSet;
 
                     /**
-                     * <p>置信度 0 ~100</p>
+                     * <p>置信度 0 ~100。</p>
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * <p>文本行坐标，以四个顶点坐标表示</p>
+                     * <p>文本行坐标，以四个顶点坐标表示。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_polygon;
                     bool m_polygonHasBeenSet;
 
                     /**
-                     * <p>此字段为扩展字段。<br>GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
+                     * <p>此字段为扩展字段。GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。</p>
                      */
                     std::string m_advancedInfo;
                     bool m_advancedInfoHasBeenSet;
 
                     /**
-                     * <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）</p>
+                     * <p>文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）。</p>
                      */
                     ItemCoord m_itemPolygon;
                     bool m_itemPolygonHasBeenSet;
 
                     /**
-                     * <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * <p>识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      */
                     std::vector<DetectedWords> m_words;
                     bool m_wordsHasBeenSet;
 
                     /**
-                     * <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR</p>
+                     * <p>单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR。</p>
                      */
                     std::vector<DetectedWordCoordPoint> m_wordCoordPoint;
                     bool m_wordCoordPointHasBeenSet;
 
                     /**
-                     * <p>语种信息。zh:中文; en:英文; th:泰语; id:印尼语; ja:日语; ko:韩语; es:西班牙语; fr:法语; de:德语; pt:葡萄牙语; vi:越南语; ms:马来语; ru:俄语; it:意大利语; nl:荷兰语; sv:瑞典语; fi:芬兰语; no:挪威语; hu:匈牙利语; ar:阿拉伯语; hi:印地语</p>
+                     * <p>语种信息。注：仅ConfigID配置为MulOCR时支持。zh:中文; en:英文; tha:泰语; may:印尼语; jap:日语; kor:韩语; spa:西班牙语; fre:法语; ger:德语; por:葡萄牙语; vie:越南语; may:马来语; rus:俄语; ita:意大利语; hol:荷兰语; swe:瑞典语; fin:芬兰语; nor:挪威语; hun:匈牙利语; ara:阿拉伯语; hi:印地语。</p>
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

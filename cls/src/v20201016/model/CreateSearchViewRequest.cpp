@@ -28,8 +28,8 @@ CreateSearchViewRequest::CreateSearchViewRequest() :
     m_viewNameHasBeenSet(false),
     m_viewTypeHasBeenSet(false),
     m_topicsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_viewIdPrefixHasBeenSet(false)
+    m_viewIdPrefixHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -87,20 +87,20 @@ string CreateSearchViewRequest::ToJsonString() const
         }
     }
 
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_viewIdPrefixHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ViewIdPrefix";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_viewIdPrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,22 +191,6 @@ bool CreateSearchViewRequest::TopicsHasBeenSet() const
     return m_topicsHasBeenSet;
 }
 
-string CreateSearchViewRequest::GetDescription() const
-{
-    return m_description;
-}
-
-void CreateSearchViewRequest::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool CreateSearchViewRequest::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
 string CreateSearchViewRequest::GetViewIdPrefix() const
 {
     return m_viewIdPrefix;
@@ -221,6 +205,22 @@ void CreateSearchViewRequest::SetViewIdPrefix(const string& _viewIdPrefix)
 bool CreateSearchViewRequest::ViewIdPrefixHasBeenSet() const
 {
     return m_viewIdPrefixHasBeenSet;
+}
+
+string CreateSearchViewRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateSearchViewRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateSearchViewRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

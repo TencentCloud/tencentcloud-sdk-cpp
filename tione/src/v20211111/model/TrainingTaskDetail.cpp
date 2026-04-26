@@ -62,7 +62,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_statusHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_codeReposHasBeenSet(false),
-    m_exposeNetworkConfigHasBeenSet(false)
+    m_exposeNetworkConfigHasBeenSet(false),
+    m_operatorInfoHasBeenSet(false)
 {
 }
 
@@ -573,6 +574,23 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_exposeNetworkConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("OperatorInfo") && !value["OperatorInfo"].IsNull())
+    {
+        if (!value["OperatorInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.OperatorInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operatorInfo.Deserialize(value["OperatorInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operatorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -948,6 +966,15 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_exposeNetworkConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_operatorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operatorInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1623,5 +1650,21 @@ void TrainingTaskDetail::SetExposeNetworkConfig(const ExposeNetworkConfig& _expo
 bool TrainingTaskDetail::ExposeNetworkConfigHasBeenSet() const
 {
     return m_exposeNetworkConfigHasBeenSet;
+}
+
+OperatorInfo TrainingTaskDetail::GetOperatorInfo() const
+{
+    return m_operatorInfo;
+}
+
+void TrainingTaskDetail::SetOperatorInfo(const OperatorInfo& _operatorInfo)
+{
+    m_operatorInfo = _operatorInfo;
+    m_operatorInfoHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::OperatorInfoHasBeenSet() const
+{
+    return m_operatorInfoHasBeenSet;
 }
 

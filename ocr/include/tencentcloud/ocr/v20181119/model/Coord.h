@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取横坐标
-                     * @return X 横坐标
+                     * 获取<p>横坐标。</p>
+                     * @return X <p>横坐标。</p>
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
-                     * 设置横坐标
-                     * @param _x 横坐标
+                     * 设置<p>横坐标。</p>
+                     * @param _x <p>横坐标。</p>
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取纵坐标
-                     * @return Y 纵坐标
+                     * 获取<p>纵坐标。</p>
+                     * @return Y <p>纵坐标。</p>
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
-                     * 设置纵坐标
-                     * @param _y 纵坐标
+                     * 设置<p>纵坐标。</p>
+                     * @param _y <p>纵坐标。</p>
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 横坐标
+                     * <p>横坐标。</p>
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * 纵坐标
+                     * <p>纵坐标。</p>
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
