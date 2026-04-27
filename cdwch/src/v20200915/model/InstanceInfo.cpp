@@ -77,7 +77,8 @@ InstanceInfo::InstanceInfo() :
     m_upgradeZkVersionsHasBeenSet(false),
     m_showRipHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_enableConfigKeyValueHasBeenSet(false)
+    m_enableConfigKeyValueHasBeenSet(false),
+    m_httpsEnabledHasBeenSet(false)
 {
 }
 
@@ -707,6 +708,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_enableConfigKeyValueHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpsEnabled") && !value["HttpsEnabled"].IsNull())
+    {
+        if (!value["HttpsEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HttpsEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpsEnabled = value["HttpsEnabled"].GetBool();
+        m_httpsEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1191,6 +1202,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableConfigKeyValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enableConfigKeyValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpsEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_httpsEnabled, allocator);
     }
 
 }
@@ -2106,5 +2125,21 @@ void InstanceInfo::SetEnableConfigKeyValue(const string& _enableConfigKeyValue)
 bool InstanceInfo::EnableConfigKeyValueHasBeenSet() const
 {
     return m_enableConfigKeyValueHasBeenSet;
+}
+
+bool InstanceInfo::GetHttpsEnabled() const
+{
+    return m_httpsEnabled;
+}
+
+void InstanceInfo::SetHttpsEnabled(const bool& _httpsEnabled)
+{
+    m_httpsEnabled = _httpsEnabled;
+    m_httpsEnabledHasBeenSet = true;
+}
+
+bool InstanceInfo::HttpsEnabledHasBeenSet() const
+{
+    return m_httpsEnabledHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取价格
-                     * @return Price 价格
+                     * 获取<p>价格</p>
+                     * @return Price <p>价格</p>
                      * 
                      */
                     DBInstancePrice GetPrice() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 价格
+                     * <p>价格</p>
                      */
                     DBInstancePrice m_price;
                     bool m_priceHasBeenSet;

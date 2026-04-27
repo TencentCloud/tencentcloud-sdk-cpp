@@ -24,12 +24,13 @@ using namespace std;
 
 DescribeLLMContentSecCheckRequest::DescribeLLMContentSecCheckRequest() :
     m_serviceIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_contentHasBeenSet(false),
     m_chatIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_tokenUsageHasBeenSet(false)
+    m_tokenUsageHasBeenSet(false),
+    m_imageEncodeHasBeenSet(false)
 {
 }
 
@@ -48,14 +49,6 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_contentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Content";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,6 +63,14 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Content";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chatIdHasBeenSet)
@@ -96,6 +97,14 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         d.AddMember(iKey, m_tokenUsage, allocator);
     }
 
+    if (m_imageEncodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageEncode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageEncode.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -118,22 +127,6 @@ void DescribeLLMContentSecCheckRequest::SetServiceId(const string& _serviceId)
 bool DescribeLLMContentSecCheckRequest::ServiceIdHasBeenSet() const
 {
     return m_serviceIdHasBeenSet;
-}
-
-string DescribeLLMContentSecCheckRequest::GetContent() const
-{
-    return m_content;
-}
-
-void DescribeLLMContentSecCheckRequest::SetContent(const string& _content)
-{
-    m_content = _content;
-    m_contentHasBeenSet = true;
-}
-
-bool DescribeLLMContentSecCheckRequest::ContentHasBeenSet() const
-{
-    return m_contentHasBeenSet;
 }
 
 uint64_t DescribeLLMContentSecCheckRequest::GetType() const
@@ -166,6 +159,22 @@ void DescribeLLMContentSecCheckRequest::SetInstanceId(const string& _instanceId)
 bool DescribeLLMContentSecCheckRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetContent() const
+{
+    return m_content;
+}
+
+void DescribeLLMContentSecCheckRequest::SetContent(const string& _content)
+{
+    m_content = _content;
+    m_contentHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::ContentHasBeenSet() const
+{
+    return m_contentHasBeenSet;
 }
 
 string DescribeLLMContentSecCheckRequest::GetChatId() const
@@ -214,6 +223,22 @@ void DescribeLLMContentSecCheckRequest::SetTokenUsage(const uint64_t& _tokenUsag
 bool DescribeLLMContentSecCheckRequest::TokenUsageHasBeenSet() const
 {
     return m_tokenUsageHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetImageEncode() const
+{
+    return m_imageEncode;
+}
+
+void DescribeLLMContentSecCheckRequest::SetImageEncode(const string& _imageEncode)
+{
+    m_imageEncode = _imageEncode;
+    m_imageEncodeHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::ImageEncodeHasBeenSet() const
+{
+    return m_imageEncodeHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ ImageSpriteTaskInput::ImageSpriteTaskInput() :
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_webVttObjectNameHasBeenSet(false),
-    m_objectNumberFormatHasBeenSet(false)
+    m_objectNumberFormatHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &va
         m_objectNumberFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTaskInput.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void ImageSpriteTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objectNumberFormat.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void ImageSpriteTaskInput::SetObjectNumberFormat(const NumberFormat& _objectNumb
 bool ImageSpriteTaskInput::ObjectNumberFormatHasBeenSet() const
 {
     return m_objectNumberFormatHasBeenSet;
+}
+
+string ImageSpriteTaskInput::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void ImageSpriteTaskInput::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool ImageSpriteTaskInput::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

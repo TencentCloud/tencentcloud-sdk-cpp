@@ -23,6 +23,7 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeDataSourceRequest::DescribeDataSourceRequest() :
+    m_tiProjectIdHasBeenSet(false),
     m_idHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string DescribeDataSourceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_idHasBeenSet)
     {
@@ -49,6 +58,22 @@ string DescribeDataSourceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDataSourceRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeDataSourceRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeDataSourceRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
+}
 
 string DescribeDataSourceRequest::GetId() const
 {

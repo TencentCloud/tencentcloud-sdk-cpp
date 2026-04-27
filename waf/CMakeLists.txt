@@ -113,6 +113,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/HybridPkg.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlData.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
+  include/tencentcloud/waf/v20180125/model/SSEClientMessage.h
   include/tencentcloud/waf/v20180125/model/DeleteBatchCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/ApiSecSceneRule.h
   include/tencentcloud/waf/v20180125/model/DescribeHostResponse.h
@@ -205,7 +206,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesResponse.h
   include/tencentcloud/waf/v20180125/model/TopicInfo.h
   include/tencentcloud/waf/v20180125/model/ModifyAreaBanAreasResponse.h
-  include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/GenerateLLMSecAnswerRequest.h
   include/tencentcloud/waf/v20180125/model/ApiAsset.h
   include/tencentcloud/waf/v20180125/model/DescribeOwaspRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h
@@ -289,6 +290,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeUserSignatureRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyProtectionStatusResponse.h
+  include/tencentcloud/waf/v20180125/model/GenerateLLMSecAnswerResponse.h
   include/tencentcloud/waf/v20180125/model/CreateExportResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsRequest.h
@@ -537,6 +539,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h
   include/tencentcloud/waf/v20180125/model/RuleList.h
   include/tencentcloud/waf/v20180125/model/SecretInfo.h
+  include/tencentcloud/waf/v20180125/model/ImageResult.h
   include/tencentcloud/waf/v20180125/model/DescribeAttackTypeRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleRequest.h
@@ -577,6 +580,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AccessFieldValueRatioInfo.h
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlData.h
+  include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueRequest.h
   include/tencentcloud/waf/v20180125/model/BotQPS.h
   include/tencentcloud/waf/v20180125/model/DestroyPostCLSFlowRequest.h
@@ -743,6 +747,7 @@ set(waf_src
   src/v20180125/model/HybridPkg.cpp
   src/v20180125/model/IpAccessControlData.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
+  src/v20180125/model/SSEClientMessage.cpp
   src/v20180125/model/DeleteBatchCustomWhiteRuleRequest.cpp
   src/v20180125/model/ApiSecSceneRule.cpp
   src/v20180125/model/DescribeHostResponse.cpp
@@ -835,7 +840,7 @@ set(waf_src
   src/v20180125/model/BatchOperateUserSignatureRulesResponse.cpp
   src/v20180125/model/TopicInfo.cpp
   src/v20180125/model/ModifyAreaBanAreasResponse.cpp
-  src/v20180125/model/ModifyAntiFakeUrlStatusRequest.cpp
+  src/v20180125/model/GenerateLLMSecAnswerRequest.cpp
   src/v20180125/model/ApiAsset.cpp
   src/v20180125/model/DescribeOwaspRulesRequest.cpp
   src/v20180125/model/DescribeCCRuleListRequest.cpp
@@ -919,6 +924,7 @@ set(waf_src
   src/v20180125/model/DescribeUserSignatureRuleRequest.cpp
   src/v20180125/model/DeleteOwaspRuleStatusResponse.cpp
   src/v20180125/model/ModifyProtectionStatusResponse.cpp
+  src/v20180125/model/GenerateLLMSecAnswerResponse.cpp
   src/v20180125/model/CreateExportResponse.cpp
   src/v20180125/model/DescribeUserClbWafRegionsRequest.cpp
   src/v20180125/model/DescribePostCKafkaFlowsRequest.cpp
@@ -1167,6 +1173,7 @@ set(waf_src
   src/v20180125/model/GetAttackHistogramRequest.cpp
   src/v20180125/model/RuleList.cpp
   src/v20180125/model/SecretInfo.cpp
+  src/v20180125/model/ImageResult.cpp
   src/v20180125/model/DescribeAttackTypeRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleRequest.cpp
   src/v20180125/model/DeleteCustomWhiteRuleRequest.cpp
@@ -1207,6 +1214,7 @@ set(waf_src
   src/v20180125/model/ModifyCustomWhiteRuleStatusResponse.cpp
   src/v20180125/model/AccessFieldValueRatioInfo.cpp
   src/v20180125/model/BatchIpAccessControlData.cpp
+  src/v20180125/model/ModifyAntiFakeUrlStatusRequest.cpp
   src/v20180125/model/DescribePeakValueRequest.cpp
   src/v20180125/model/BotQPS.cpp
   src/v20180125/model/DestroyPostCLSFlowRequest.cpp

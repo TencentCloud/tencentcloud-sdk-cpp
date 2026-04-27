@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeBillingResourceGroupRequest::DescribeBillingResourceGroupRequest() :
     m_resourceGroupIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
@@ -45,6 +46,14 @@ string DescribeBillingResourceGroupRequest::ToJsonString() const
         string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -116,6 +125,22 @@ void DescribeBillingResourceGroupRequest::SetResourceGroupId(const string& _reso
 bool DescribeBillingResourceGroupRequest::ResourceGroupIdHasBeenSet() const
 {
     return m_resourceGroupIdHasBeenSet;
+}
+
+string DescribeBillingResourceGroupRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeBillingResourceGroupRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeBillingResourceGroupRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 vector<Filter> DescribeBillingResourceGroupRequest::GetFilters() const

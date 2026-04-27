@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeModelServiceGroupsResponse::DescribeModelServiceGroupsResponse() :
     m_totalCountHasBeenSet(false),
-    m_serviceGroupsHasBeenSet(false)
+    m_serviceGroupsHasBeenSet(false),
+    m_globalTotalCountHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeModelServiceGroupsResponse::Deserialize(const string
         m_serviceGroupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GlobalTotalCount") && !rsp["GlobalTotalCount"].IsNull())
+    {
+        if (!rsp["GlobalTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GlobalTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_globalTotalCount = rsp["GlobalTotalCount"].GetInt64();
+        m_globalTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeModelServiceGroupsResponse::ToJsonString() const
         }
     }
 
+    if (m_globalTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_globalTotalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<ServiceGroup> DescribeModelServiceGroupsResponse::GetServiceGroups() cons
 bool DescribeModelServiceGroupsResponse::ServiceGroupsHasBeenSet() const
 {
     return m_serviceGroupsHasBeenSet;
+}
+
+int64_t DescribeModelServiceGroupsResponse::GetGlobalTotalCount() const
+{
+    return m_globalTotalCount;
+}
+
+bool DescribeModelServiceGroupsResponse::GlobalTotalCountHasBeenSet() const
+{
+    return m_globalTotalCountHasBeenSet;
 }
 
 

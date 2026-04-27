@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/SnapshotBackupConfig.h>
+#include <tencentcloud/cynosdb/v20190107/model/SparseBackupConfig.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeBeg <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeBeg() const;
 
                     /**
-                     * 设置表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @param _backupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 设置<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @param _backupTimeBeg <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     void SetBackupTimeBeg(const uint64_t& _backupTimeBeg);
@@ -87,15 +88,15 @@ namespace TencentCloud
                     bool BackupTimeBegHasBeenSet() const;
 
                     /**
-                     * 获取表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeEnd 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeEnd <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeEnd() const;
 
                     /**
-                     * 设置表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @param _backupTimeEnd 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 设置<p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @param _backupTimeEnd <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     void SetBackupTimeEnd(const uint64_t& _backupTimeEnd);
@@ -108,15 +109,15 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * 获取<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>
+                     * @return ReserveDuration <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>
                      * 
                      */
                     uint64_t GetReserveDuration() const;
 
                     /**
-                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @param _reserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * 设置<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>
+                     * @param _reserveDuration <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>
                      * 
                      */
                     void SetReserveDuration(const uint64_t& _reserveDuration);
@@ -129,15 +130,15 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-                     * @return BackupFreq 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 获取<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
+                     * @return BackupFreq <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
                      * 
                      */
                     std::vector<std::string> GetBackupFreq() const;
 
                     /**
-                     * 设置该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-                     * @param _backupFreq 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 设置<p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
+                     * @param _backupFreq <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
                      * 
                      */
                     void SetBackupFreq(const std::vector<std::string>& _backupFreq);
@@ -150,15 +151,15 @@ namespace TencentCloud
                     bool BackupFreqHasBeenSet() const;
 
                     /**
-                     * 获取该参数目前不支持修改，无需填写。
-                     * @return BackupType 该参数目前不支持修改，无需填写。
+                     * 获取<p>该参数目前不支持修改，无需填写。</p>
+                     * @return BackupType <p>该参数目前不支持修改，无需填写。</p>
                      * 
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置该参数目前不支持修改，无需填写。
-                     * @param _backupType 该参数目前不支持修改，无需填写。
+                     * 设置<p>该参数目前不支持修改，无需填写。</p>
+                     * @param _backupType <p>该参数目前不支持修改，无需填写。</p>
                      * 
                      */
                     void SetBackupType(const std::string& _backupType);
@@ -171,15 +172,15 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取逻辑备份配置
-                     * @return LogicBackupConfig 逻辑备份配置
+                     * 获取<p>逻辑备份配置</p>
+                     * @return LogicBackupConfig <p>逻辑备份配置</p>
                      * 
                      */
                     LogicBackupConfigInfo GetLogicBackupConfig() const;
 
                     /**
-                     * 设置逻辑备份配置
-                     * @param _logicBackupConfig 逻辑备份配置
+                     * 设置<p>逻辑备份配置</p>
+                     * @param _logicBackupConfig <p>逻辑备份配置</p>
                      * 
                      */
                     void SetLogicBackupConfig(const LogicBackupConfigInfo& _logicBackupConfig);
@@ -192,15 +193,15 @@ namespace TencentCloud
                     bool LogicBackupConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否删除自动逻辑备份
-                     * @return DeleteAutoLogicBackup 是否删除自动逻辑备份
+                     * 获取<p>是否删除自动逻辑备份</p>
+                     * @return DeleteAutoLogicBackup <p>是否删除自动逻辑备份</p>
                      * 
                      */
                     bool GetDeleteAutoLogicBackup() const;
 
                     /**
-                     * 设置是否删除自动逻辑备份
-                     * @param _deleteAutoLogicBackup 是否删除自动逻辑备份
+                     * 设置<p>是否删除自动逻辑备份</p>
+                     * @param _deleteAutoLogicBackup <p>是否删除自动逻辑备份</p>
                      * 
                      */
                     void SetDeleteAutoLogicBackup(const bool& _deleteAutoLogicBackup);
@@ -213,15 +214,15 @@ namespace TencentCloud
                     bool DeleteAutoLogicBackupHasBeenSet() const;
 
                     /**
-                     * 获取二级快照备份参数
-                     * @return SnapshotSecondaryBackupConfig 二级快照备份参数
+                     * 获取<p>二级快照备份参数</p>
+                     * @return SnapshotSecondaryBackupConfig <p>二级快照备份参数</p>
                      * 
                      */
                     SnapshotBackupConfig GetSnapshotSecondaryBackupConfig() const;
 
                     /**
-                     * 设置二级快照备份参数
-                     * @param _snapshotSecondaryBackupConfig 二级快照备份参数
+                     * 设置<p>二级快照备份参数</p>
+                     * @param _snapshotSecondaryBackupConfig <p>二级快照备份参数</p>
                      * 
                      */
                     void SetSnapshotSecondaryBackupConfig(const SnapshotBackupConfig& _snapshotSecondaryBackupConfig);
@@ -233,61 +234,88 @@ namespace TencentCloud
                      */
                     bool SnapshotSecondaryBackupConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>稀疏备份配置</p>
+                     * @return SparseBackupConfig <p>稀疏备份配置</p>
+                     * 
+                     */
+                    SparseBackupConfig GetSparseBackupConfig() const;
+
+                    /**
+                     * 设置<p>稀疏备份配置</p>
+                     * @param _sparseBackupConfig <p>稀疏备份配置</p>
+                     * 
+                     */
+                    void SetSparseBackupConfig(const SparseBackupConfig& _sparseBackupConfig);
+
+                    /**
+                     * 判断参数 SparseBackupConfig 是否已赋值
+                     * @return SparseBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool SparseBackupConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeBeg;
                     bool m_backupTimeBegHasBeenSet;
 
                     /**
-                     * 表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeEnd;
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800，最大为158112000</p>
                      */
                     uint64_t m_reserveDuration;
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * <p>该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
                      */
                     std::vector<std::string> m_backupFreq;
                     bool m_backupFreqHasBeenSet;
 
                     /**
-                     * 该参数目前不支持修改，无需填写。
+                     * <p>该参数目前不支持修改，无需填写。</p>
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 逻辑备份配置
+                     * <p>逻辑备份配置</p>
                      */
                     LogicBackupConfigInfo m_logicBackupConfig;
                     bool m_logicBackupConfigHasBeenSet;
 
                     /**
-                     * 是否删除自动逻辑备份
+                     * <p>是否删除自动逻辑备份</p>
                      */
                     bool m_deleteAutoLogicBackup;
                     bool m_deleteAutoLogicBackupHasBeenSet;
 
                     /**
-                     * 二级快照备份参数
+                     * <p>二级快照备份参数</p>
                      */
                     SnapshotBackupConfig m_snapshotSecondaryBackupConfig;
                     bool m_snapshotSecondaryBackupConfigHasBeenSet;
+
+                    /**
+                     * <p>稀疏备份配置</p>
+                     */
+                    SparseBackupConfig m_sparseBackupConfig;
+                    bool m_sparseBackupConfigHasBeenSet;
 
                 };
             }

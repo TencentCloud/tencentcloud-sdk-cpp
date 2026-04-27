@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测结果
-                     * @return Data 检测结果
+                     * 获取<p>检测结果</p>
+                     * @return Data <p>检测结果</p>
                      * 
                      */
                     LLMDetectResult GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检测结果
+                     * <p>检测结果</p>
                      */
                     LLMDetectResult m_data;
                     bool m_dataHasBeenSet;

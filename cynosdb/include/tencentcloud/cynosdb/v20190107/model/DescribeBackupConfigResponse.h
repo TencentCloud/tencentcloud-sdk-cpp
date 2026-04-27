@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/BackupConfigInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/SparseBackupConfigRsp.h>
 
 
 namespace TencentCloud
@@ -46,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeBeg <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeBeg() const;
@@ -60,8 +61,8 @@ namespace TencentCloud
                     bool BackupTimeBegHasBeenSet() const;
 
                     /**
-                     * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
-                     * @return BackupTimeEnd 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * 获取<p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
+                     * @return BackupTimeEnd <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      * 
                      */
                     uint64_t GetBackupTimeEnd() const;
@@ -74,8 +75,8 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
+                     * 获取<p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800</p>
+                     * @return ReserveDuration <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800</p>
                      * 
                      */
                     uint64_t GetReserveDuration() const;
@@ -88,8 +89,8 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-                     * @return BackupFreq 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 获取<p>备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
+                     * @return BackupFreq <p>备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
                      * 
                      */
                     std::vector<std::string> GetBackupFreq() const;
@@ -102,8 +103,8 @@ namespace TencentCloud
                     bool BackupFreqHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，logic-逻辑备份，snapshot-快照备份
-                     * @return BackupType 备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 获取<p>备份方式，logic-逻辑备份，snapshot-快照备份</p>
+                     * @return BackupType <p>备份方式，logic-逻辑备份，snapshot-快照备份</p>
                      * 
                      */
                     std::string GetBackupType() const;
@@ -116,8 +117,8 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取跨地域逻辑备份配置修改时间
-                     * @return LogicCrossRegionsConfigUpdateTime 跨地域逻辑备份配置修改时间
+                     * 获取<p>跨地域逻辑备份配置修改时间</p>
+                     * @return LogicCrossRegionsConfigUpdateTime <p>跨地域逻辑备份配置修改时间</p>
                      * 
                      */
                     std::string GetLogicCrossRegionsConfigUpdateTime() const;
@@ -130,8 +131,8 @@ namespace TencentCloud
                     bool LogicCrossRegionsConfigUpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动逻辑备份配置
-                     * @return LogicBackupConfig 自动逻辑备份配置
+                     * 获取<p>自动逻辑备份配置</p>
+                     * @return LogicBackupConfig <p>自动逻辑备份配置</p>
                      * 
                      */
                     LogicBackupConfigInfo GetLogicBackupConfig() const;
@@ -144,9 +145,9 @@ namespace TencentCloud
                     bool LogicBackupConfigHasBeenSet() const;
 
                     /**
-                     * 获取二级快照备份配置信息
+                     * 获取<p>二级快照备份配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotSecondaryBackupConfig 二级快照备份配置信息
+                     * @return SnapshotSecondaryBackupConfig <p>二级快照备份配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,56 +160,76 @@ namespace TencentCloud
                      */
                     bool SnapshotSecondaryBackupConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>稀疏备份配置</p>
+                     * @return SparseBackupConfig <p>稀疏备份配置</p>
+                     * 
+                     */
+                    SparseBackupConfigRsp GetSparseBackupConfig() const;
+
+                    /**
+                     * 判断参数 SparseBackupConfig 是否已赋值
+                     * @return SparseBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool SparseBackupConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeBeg;
                     bool m_backupTimeBegHasBeenSet;
 
                     /**
-                     * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
+                     * <p>表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200</p>
                      */
                     uint64_t m_backupTimeEnd;
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
+                     * <p>表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600<em>24</em>7=604800</p>
                      */
                     uint64_t m_reserveDuration;
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * <p>备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份</p>
                      */
                     std::vector<std::string> m_backupFreq;
                     bool m_backupFreqHasBeenSet;
 
                     /**
-                     * 备份方式，logic-逻辑备份，snapshot-快照备份
+                     * <p>备份方式，logic-逻辑备份，snapshot-快照备份</p>
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 跨地域逻辑备份配置修改时间
+                     * <p>跨地域逻辑备份配置修改时间</p>
                      */
                     std::string m_logicCrossRegionsConfigUpdateTime;
                     bool m_logicCrossRegionsConfigUpdateTimeHasBeenSet;
 
                     /**
-                     * 自动逻辑备份配置
+                     * <p>自动逻辑备份配置</p>
                      */
                     LogicBackupConfigInfo m_logicBackupConfig;
                     bool m_logicBackupConfigHasBeenSet;
 
                     /**
-                     * 二级快照备份配置信息
+                     * <p>二级快照备份配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupConfigInfo m_snapshotSecondaryBackupConfig;
                     bool m_snapshotSecondaryBackupConfigHasBeenSet;
+
+                    /**
+                     * <p>稀疏备份配置</p>
+                     */
+                    SparseBackupConfigRsp m_sparseBackupConfig;
+                    bool m_sparseBackupConfigHasBeenSet;
 
                 };
             }

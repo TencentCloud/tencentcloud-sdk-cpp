@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeTrainingTaskRequest::DescribeTrainingTaskRequest() :
     m_idHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DescribeTrainingTaskRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
@@ -73,6 +82,22 @@ void DescribeTrainingTaskRequest::SetId(const string& _id)
 bool DescribeTrainingTaskRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DescribeTrainingTaskRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeTrainingTaskRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeTrainingTaskRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DescribeTrainingTaskRequest::GetInstanceId() const

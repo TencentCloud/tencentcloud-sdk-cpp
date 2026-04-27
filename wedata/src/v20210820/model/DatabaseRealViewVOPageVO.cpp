@@ -25,7 +25,8 @@ DatabaseRealViewVOPageVO::DatabaseRealViewVOPageVO() :
     m_pageSizeHasBeenSet(false),
     m_totalCountHasBeenSet(false),
     m_totalPageNumberHasBeenSet(false),
-    m_rowsHasBeenSet(false)
+    m_rowsHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DatabaseRealViewVOPageVO::Deserialize(const rapidjson::Value
         m_rowsHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotId") && !value["SnapshotId"].IsNull())
+    {
+        if (!value["SnapshotId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseRealViewVOPageVO.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotId = string(value["SnapshotId"].GetString());
+        m_snapshotIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void DatabaseRealViewVOPageVO::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void DatabaseRealViewVOPageVO::SetRows(const vector<DatabaseRealViewVO>& _rows)
 bool DatabaseRealViewVOPageVO::RowsHasBeenSet() const
 {
     return m_rowsHasBeenSet;
+}
+
+string DatabaseRealViewVOPageVO::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void DatabaseRealViewVOPageVO::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool DatabaseRealViewVOPageVO::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
 }
 

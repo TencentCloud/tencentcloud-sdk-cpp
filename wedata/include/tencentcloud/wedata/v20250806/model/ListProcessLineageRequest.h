@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一ID
-                     * @return ProcessId 任务唯一ID
+                     * 获取<p>任务唯一ID</p>
+                     * @return ProcessId <p>任务唯一ID</p>
                      * 
                      */
                     std::string GetProcessId() const;
 
                     /**
-                     * 设置任务唯一ID
-                     * @param _processId 任务唯一ID
+                     * 设置<p>任务唯一ID</p>
+                     * @param _processId <p>任务唯一ID</p>
                      * 
                      */
                     void SetProcessId(const std::string& _processId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProcessIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE
-                     * @return ProcessType 任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE
+                     * 获取<p>任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE</p>
+                     * @return ProcessType <p>任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE</p>
                      * 
                      */
                     std::string GetProcessType() const;
 
                     /**
-                     * 设置任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE
-                     * @param _processType 任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE
+                     * 设置<p>任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE</p>
+                     * @param _processType <p>任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE</p>
                      * 
                      */
                     void SetProcessType(const std::string& _processType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProcessTypeHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取<p>页码</p>
+                     * @return PageNumber <p>页码</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置<p>页码</p>
+                     * @param _pageNumber <p>页码</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _pageSize <p>分页大小</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取来源：WEDATA|THIRD 默认WEDATA
-                     * @return Platform 来源：WEDATA|THIRD 默认WEDATA
+                     * 获取<p>来源：WEDATA|THIRD 默认WEDATA</p>
+                     * @return Platform <p>来源：WEDATA|THIRD 默认WEDATA</p>
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置来源：WEDATA|THIRD 默认WEDATA
-                     * @param _platform 来源：WEDATA|THIRD 默认WEDATA
+                     * 设置<p>来源：WEDATA|THIRD 默认WEDATA</p>
+                     * @param _platform <p>来源：WEDATA|THIRD 默认WEDATA</p>
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务唯一ID
+                     * <p>任务唯一ID</p>
                      */
                     std::string m_processId;
                     bool m_processIdHasBeenSet;
 
                     /**
-                     * 任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE
+                     * <p>任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE</p>
                      */
                     std::string m_processType;
                     bool m_processTypeHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 来源：WEDATA|THIRD 默认WEDATA
+                     * <p>来源：WEDATA|THIRD 默认WEDATA</p>
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

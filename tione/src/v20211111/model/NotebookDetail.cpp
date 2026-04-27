@@ -65,7 +65,8 @@ NotebookDetail::NotebookDetail() :
     m_subUinNameHasBeenSet(false),
     m_jobCreateTimeHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_latestOperatorInfoHasBeenSet(false)
 {
 }
 
@@ -592,6 +593,23 @@ CoreInternalOutcome NotebookDetail::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestOperatorInfo") && !value["LatestOperatorInfo"].IsNull())
+    {
+        if (!value["LatestOperatorInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.LatestOperatorInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_latestOperatorInfo.Deserialize(value["LatestOperatorInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_latestOperatorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -987,6 +1005,15 @@ void NotebookDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperatorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperatorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_latestOperatorInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1710,5 +1737,21 @@ void NotebookDetail::SetDescription(const string& _description)
 bool NotebookDetail::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+OperatorInfo NotebookDetail::GetLatestOperatorInfo() const
+{
+    return m_latestOperatorInfo;
+}
+
+void NotebookDetail::SetLatestOperatorInfo(const OperatorInfo& _latestOperatorInfo)
+{
+    m_latestOperatorInfo = _latestOperatorInfo;
+    m_latestOperatorInfoHasBeenSet = true;
+}
+
+bool NotebookDetail::LatestOperatorInfoHasBeenSet() const
+{
+    return m_latestOperatorInfoHasBeenSet;
 }
 

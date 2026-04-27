@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID
-                     * @return Id 设备ID
+                     * 获取<p>设备ID</p>
+                     * @return Id <p>设备ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _id 设备ID
+                     * 设置<p>设备ID</p>
+                     * @param _id <p>设备ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取设备唯一标识码，在ioa中每个设备有唯一标识码
-                     * @return Mid 设备唯一标识码，在ioa中每个设备有唯一标识码
+                     * 获取<p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>
+                     * @return Mid <p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置设备唯一标识码，在ioa中每个设备有唯一标识码
-                     * @param _mid 设备唯一标识码，在ioa中每个设备有唯一标识码
+                     * 设置<p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>
+                     * @param _mid <p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>
                      * 
                      */
                     void SetMid(const std::string& _mid);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MidHasBeenSet() const;
 
                     /**
-                     * 获取终端名（设备名）
-                     * @return Name 终端名（设备名）
+                     * 获取<p>终端名（设备名）</p>
+                     * @return Name <p>终端名（设备名）</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置终端名（设备名）
-                     * @param _name 终端名（设备名）
+                     * 设置<p>终端名（设备名）</p>
+                     * @param _name <p>终端名（设备名）</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备所在分组ID
-                     * @return GroupId 设备所在分组ID
+                     * 获取<p>设备所在分组ID</p>
+                     * @return GroupId <p>设备所在分组ID</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置设备所在分组ID
-                     * @param _groupId 设备所在分组ID
+                     * 设置<p>设备所在分组ID</p>
+                     * @param _groupId <p>设备所在分组ID</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-                     * @return OsType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
+                     * 获取<p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>
+                     * @return OsType <p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-                     * @param _osType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
+                     * 设置<p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>
+                     * @param _osType <p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取设备IP地址（出口IP）
-                     * @return Ip 设备IP地址（出口IP）
+                     * 获取<p>设备IP地址（出口IP）</p>
+                     * @return Ip <p>设备IP地址（出口IP）</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置设备IP地址（出口IP）
-                     * @param _ip 设备IP地址（出口IP）
+                     * 设置<p>设备IP地址（出口IP）</p>
+                     * @param _ip <p>设备IP地址（出口IP）</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取在线状态，2：在线、0或者1:离线
-                     * @return OnlineStatus 在线状态，2：在线、0或者1:离线
+                     * 获取<p>在线状态，2：在线、0或者1:离线</p>
+                     * @return OnlineStatus <p>在线状态，2：在线、0或者1:离线</p>
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
-                     * 设置在线状态，2：在线、0或者1:离线
-                     * @param _onlineStatus 在线状态，2：在线、0或者1:离线
+                     * 设置<p>在线状态，2：在线、0或者1:离线</p>
+                     * @param _onlineStatus <p>在线状态，2：在线、0或者1:离线</p>
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool OnlineStatusHasBeenSet() const;
 
                     /**
-                     * 获取客户端版本号-大整数
-                     * @return Version 客户端版本号-大整数
+                     * 获取<p>客户端版本号-大整数</p>
+                     * @return Version <p>客户端版本号-大整数</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置客户端版本号-大整数
-                     * @param _version 客户端版本号-大整数
+                     * 设置<p>客户端版本号-大整数</p>
+                     * @param _version <p>客户端版本号-大整数</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取客户端版本号-点分字符串
-                     * @return StrVersion 客户端版本号-点分字符串
+                     * 获取<p>客户端版本号-点分字符串</p>
+                     * @return StrVersion <p>客户端版本号-点分字符串</p>
                      * 
                      */
                     std::string GetStrVersion() const;
 
                     /**
-                     * 设置客户端版本号-点分字符串
-                     * @param _strVersion 客户端版本号-点分字符串
+                     * 设置<p>客户端版本号-点分字符串</p>
+                     * @param _strVersion <p>客户端版本号-点分字符串</p>
                      * 
                      */
                     void SetStrVersion(const std::string& _strVersion);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool StrVersionHasBeenSet() const;
 
                     /**
-                     * 获取首次在线时间
-                     * @return Itime 首次在线时间
+                     * 获取<p>首次在线时间</p>
+                     * @return Itime <p>首次在线时间</p>
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
-                     * 设置首次在线时间
-                     * @param _itime 首次在线时间
+                     * 设置<p>首次在线时间</p>
+                     * @param _itime <p>首次在线时间</p>
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ItimeHasBeenSet() const;
 
                     /**
-                     * 获取最后一次在线时间
-                     * @return ConnActiveTime 最后一次在线时间
+                     * 获取<p>最后一次在线时间</p>
+                     * @return ConnActiveTime <p>最后一次在线时间</p>
                      * 
                      */
                     std::string GetConnActiveTime() const;
 
                     /**
-                     * 设置最后一次在线时间
-                     * @param _connActiveTime 最后一次在线时间
+                     * 设置<p>最后一次在线时间</p>
+                     * @param _connActiveTime <p>最后一次在线时间</p>
                      * 
                      */
                     void SetConnActiveTime(const std::string& _connActiveTime);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool ConnActiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备是否加锁 ，1：锁定 0或者2：未锁定。
-                     * @return Locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
+                     * 获取<p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>
+                     * @return Locked <p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>
                      * 
                      */
                     int64_t GetLocked() const;
 
                     /**
-                     * 设置设备是否加锁 ，1：锁定 0或者2：未锁定。
-                     * @param _locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
+                     * 设置<p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>
+                     * @param _locked <p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>
                      * 
                      */
                     void SetLocked(const int64_t& _locked);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool LockedHasBeenSet() const;
 
                     /**
-                     * 获取设备本地IP列表, 包括IP
-                     * @return LocalIpList 设备本地IP列表, 包括IP
+                     * 获取<p>设备本地IP列表, 包括IP</p>
+                     * @return LocalIpList <p>设备本地IP列表, 包括IP</p>
                      * 
                      */
                     std::string GetLocalIpList() const;
 
                     /**
-                     * 设置设备本地IP列表, 包括IP
-                     * @param _localIpList 设备本地IP列表, 包括IP
+                     * 设置<p>设备本地IP列表, 包括IP</p>
+                     * @param _localIpList <p>设备本地IP列表, 包括IP</p>
                      * 
                      */
                     void SetLocalIpList(const std::string& _localIpList);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool LocalIpListHasBeenSet() const;
 
                     /**
-                     * 获取宿主机id（需要宿主机也安装iOA才能显示）
-                     * @return HostId 宿主机id（需要宿主机也安装iOA才能显示）
+                     * 获取<p>宿主机id（需要宿主机也安装iOA才能显示）</p>
+                     * @return HostId <p>宿主机id（需要宿主机也安装iOA才能显示）</p>
                      * 
                      */
                     int64_t GetHostId() const;
 
                     /**
-                     * 设置宿主机id（需要宿主机也安装iOA才能显示）
-                     * @param _hostId 宿主机id（需要宿主机也安装iOA才能显示）
+                     * 设置<p>宿主机id（需要宿主机也安装iOA才能显示）</p>
+                     * @param _hostId <p>宿主机id（需要宿主机也安装iOA才能显示）</p>
                      * 
                      */
                     void SetHostId(const int64_t& _hostId);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool HostIdHasBeenSet() const;
 
                     /**
-                     * 获取设备所属分组名
-                     * @return GroupName 设备所属分组名
+                     * 获取<p>设备所属分组名</p>
+                     * @return GroupName <p>设备所属分组名</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置设备所属分组名
-                     * @param _groupName 设备所属分组名
+                     * 设置<p>设备所属分组名</p>
+                     * @param _groupName <p>设备所属分组名</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取设备所属分组路径
-                     * @return GroupNamePath 设备所属分组路径
+                     * 获取<p>设备所属分组路径</p>
+                     * @return GroupNamePath <p>设备所属分组路径</p>
                      * 
                      */
                     std::string GetGroupNamePath() const;
 
                     /**
-                     * 设置设备所属分组路径
-                     * @param _groupNamePath 设备所属分组路径
+                     * 设置<p>设备所属分组路径</p>
+                     * @param _groupNamePath <p>设备所属分组路径</p>
                      * 
                      */
                     void SetGroupNamePath(const std::string& _groupNamePath);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool GroupNamePathHasBeenSet() const;
 
                     /**
-                     * 获取未修复高危漏洞数(只支持32位)
-                     * @return CriticalVulListCount 未修复高危漏洞数(只支持32位)
+                     * 获取<p>未修复高危漏洞数(只支持32位)</p>
+                     * @return CriticalVulListCount <p>未修复高危漏洞数(只支持32位)</p>
                      * 
                      */
                     int64_t GetCriticalVulListCount() const;
 
                     /**
-                     * 设置未修复高危漏洞数(只支持32位)
-                     * @param _criticalVulListCount 未修复高危漏洞数(只支持32位)
+                     * 设置<p>未修复高危漏洞数(只支持32位)</p>
+                     * @param _criticalVulListCount <p>未修复高危漏洞数(只支持32位)</p>
                      * 
                      */
                     void SetCriticalVulListCount(const int64_t& _criticalVulListCount);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool CriticalVulListCountHasBeenSet() const;
 
                     /**
-                     * 获取操作系统名称
-                     * @return Os 操作系统名称
+                     * 获取<p>操作系统名称</p>
+                     * @return Os <p>操作系统名称</p>
                      * 
                      */
                     std::string GetOs() const;
 
                     /**
-                     * 设置操作系统名称
-                     * @param _os 操作系统名称
+                     * 设置<p>操作系统名称</p>
+                     * @param _os <p>操作系统名称</p>
                      * 
                      */
                     void SetOs(const std::string& _os);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool OsHasBeenSet() const;
 
                     /**
-                     * 获取操作系统位数
-                     * @return OsBits 操作系统位数
+                     * 获取<p>操作系统位数</p>
+                     * @return OsBits <p>操作系统位数</p>
                      * 
                      */
                     int64_t GetOsBits() const;
 
                     /**
-                     * 设置操作系统位数
-                     * @param _osBits 操作系统位数
+                     * 设置<p>操作系统位数</p>
+                     * @param _osBits <p>操作系统位数</p>
                      * 
                      */
                     void SetOsBits(const int64_t& _osBits);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool OsBitsHasBeenSet() const;
 
                     /**
-                     * 获取操作系统版本
-                     * @return OsVersion 操作系统版本
+                     * 获取<p>操作系统版本</p>
+                     * @return OsVersion <p>操作系统版本</p>
                      * 
                      */
                     std::string GetOsVersion() const;
 
                     /**
-                     * 设置操作系统版本
-                     * @param _osVersion 操作系统版本
+                     * 设置<p>操作系统版本</p>
+                     * @param _osVersion <p>操作系统版本</p>
                      * 
                      */
                     void SetOsVersion(const std::string& _osVersion);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool OsVersionHasBeenSet() const;
 
                     /**
-                     * 获取操作系统语言
-                     * @return OsLanguage 操作系统语言
+                     * 获取<p>操作系统语言</p>
+                     * @return OsLanguage <p>操作系统语言</p>
                      * 
                      */
                     std::string GetOsLanguage() const;
 
                     /**
-                     * 设置操作系统语言
-                     * @param _osLanguage 操作系统语言
+                     * 设置<p>操作系统语言</p>
+                     * @param _osLanguage <p>操作系统语言</p>
                      * 
                      */
                     void SetOsLanguage(const std::string& _osLanguage);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool OsLanguageHasBeenSet() const;
 
                     /**
-                     * 获取操作系统安装时间
-                     * @return OsInstallDate 操作系统安装时间
+                     * 获取<p>操作系统安装时间</p>
+                     * @return OsInstallDate <p>操作系统安装时间</p>
                      * 
                      */
                     std::string GetOsInstallDate() const;
 
                     /**
-                     * 设置操作系统安装时间
-                     * @param _osInstallDate 操作系统安装时间
+                     * 设置<p>操作系统安装时间</p>
+                     * @param _osInstallDate <p>操作系统安装时间</p>
                      * 
                      */
                     void SetOsInstallDate(const std::string& _osInstallDate);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool OsInstallDateHasBeenSet() const;
 
                     /**
-                     * 获取设备名，和Name相同
-                     * @return ComputerName 设备名，和Name相同
+                     * 获取<p>设备名，和Name相同</p>
+                     * @return ComputerName <p>设备名，和Name相同</p>
                      * 
                      */
                     std::string GetComputerName() const;
 
                     /**
-                     * 设置设备名，和Name相同
-                     * @param _computerName 设备名，和Name相同
+                     * 设置<p>设备名，和Name相同</p>
+                     * @param _computerName <p>设备名，和Name相同</p>
                      * 
                      */
                     void SetComputerName(const std::string& _computerName);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool ComputerNameHasBeenSet() const;
 
                     /**
-                     * 获取登录域名
-                     * @return DomainName 登录域名
+                     * 获取<p>登录域名</p>
+                     * @return DomainName <p>登录域名</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置登录域名
-                     * @param _domainName 登录域名
+                     * 设置<p>登录域名</p>
+                     * @param _domainName <p>登录域名</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取MAC地址
-                     * @return MacAddr MAC地址
+                     * 获取<p>MAC地址</p>
+                     * @return MacAddr <p>MAC地址</p>
                      * 
                      */
                     std::string GetMacAddr() const;
 
                     /**
-                     * 设置MAC地址
-                     * @param _macAddr MAC地址
+                     * 设置<p>MAC地址</p>
+                     * @param _macAddr <p>MAC地址</p>
                      * 
                      */
                     void SetMacAddr(const std::string& _macAddr);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool MacAddrHasBeenSet() const;
 
                     /**
-                     * 获取漏洞数
-                     * @return VulCount 漏洞数
+                     * 获取<p>漏洞数</p>
+                     * @return VulCount <p>漏洞数</p>
                      * 
                      */
                     int64_t GetVulCount() const;
 
                     /**
-                     * 设置漏洞数
-                     * @param _vulCount 漏洞数
+                     * 设置<p>漏洞数</p>
+                     * @param _vulCount <p>漏洞数</p>
                      * 
                      */
                     void SetVulCount(const int64_t& _vulCount);
@@ -593,15 +593,15 @@ namespace TencentCloud
                     bool VulCountHasBeenSet() const;
 
                     /**
-                     * 获取病毒风险数
-                     * @return RiskCount 病毒风险数
+                     * 获取<p>病毒风险数</p>
+                     * @return RiskCount <p>病毒风险数</p>
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
-                     * 设置病毒风险数
-                     * @param _riskCount 病毒风险数
+                     * 设置<p>病毒风险数</p>
+                     * @param _riskCount <p>病毒风险数</p>
                      * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
@@ -614,15 +614,15 @@ namespace TencentCloud
                     bool RiskCountHasBeenSet() const;
 
                     /**
-                     * 获取病毒库版本
-                     * @return VirusVer 病毒库版本
+                     * 获取<p>病毒库版本</p>
+                     * @return VirusVer <p>病毒库版本</p>
                      * 
                      */
                     std::string GetVirusVer() const;
 
                     /**
-                     * 设置病毒库版本
-                     * @param _virusVer 病毒库版本
+                     * 设置<p>病毒库版本</p>
+                     * @param _virusVer <p>病毒库版本</p>
                      * 
                      */
                     void SetVirusVer(const std::string& _virusVer);
@@ -635,15 +635,15 @@ namespace TencentCloud
                     bool VirusVerHasBeenSet() const;
 
                     /**
-                     * 获取漏洞库版本
-                     * @return VulVersion 漏洞库版本
+                     * 获取<p>漏洞库版本</p>
+                     * @return VulVersion <p>漏洞库版本</p>
                      * 
                      */
                     std::string GetVulVersion() const;
 
                     /**
-                     * 设置漏洞库版本
-                     * @param _vulVersion 漏洞库版本
+                     * 设置<p>漏洞库版本</p>
+                     * @param _vulVersion <p>漏洞库版本</p>
                      * 
                      */
                     void SetVulVersion(const std::string& _vulVersion);
@@ -656,15 +656,15 @@ namespace TencentCloud
                     bool VulVersionHasBeenSet() const;
 
                     /**
-                     * 获取系统修复引擎版本
-                     * @return SysRepVersion 系统修复引擎版本
+                     * 获取<p>系统修复引擎版本</p>
+                     * @return SysRepVersion <p>系统修复引擎版本</p>
                      * 
                      */
                     std::string GetSysRepVersion() const;
 
                     /**
-                     * 设置系统修复引擎版本
-                     * @param _sysRepVersion 系统修复引擎版本
+                     * 设置<p>系统修复引擎版本</p>
+                     * @param _sysRepVersion <p>系统修复引擎版本</p>
                      * 
                      */
                     void SetSysRepVersion(const std::string& _sysRepVersion);
@@ -677,15 +677,15 @@ namespace TencentCloud
                     bool SysRepVersionHasBeenSet() const;
 
                     /**
-                     * 获取高危补丁列表
-                     * @return VulCriticalList 高危补丁列表
+                     * 获取<p>高危补丁列表</p>
+                     * @return VulCriticalList <p>高危补丁列表</p>
                      * 
                      */
                     std::vector<std::string> GetVulCriticalList() const;
 
                     /**
-                     * 设置高危补丁列表
-                     * @param _vulCriticalList 高危补丁列表
+                     * 设置<p>高危补丁列表</p>
+                     * @param _vulCriticalList <p>高危补丁列表</p>
                      * 
                      */
                     void SetVulCriticalList(const std::vector<std::string>& _vulCriticalList);
@@ -698,15 +698,15 @@ namespace TencentCloud
                     bool VulCriticalListHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::string GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::string& _tags);
@@ -719,15 +719,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取终端用户名
-                     * @return UserName 终端用户名
+                     * 获取<p>终端用户名</p>
+                     * @return UserName <p>终端用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置终端用户名
-                     * @param _userName 终端用户名
+                     * 设置<p>终端用户名</p>
+                     * @param _userName <p>终端用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -740,15 +740,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取防火墙状态，不等于0表示开启
-                     * @return FirewallStatus 防火墙状态，不等于0表示开启
+                     * 获取<p>防火墙状态，不等于0表示开启</p>
+                     * @return FirewallStatus <p>防火墙状态，不等于0表示开启</p>
                      * 
                      */
                     int64_t GetFirewallStatus() const;
 
                     /**
-                     * 设置防火墙状态，不等于0表示开启
-                     * @param _firewallStatus 防火墙状态，不等于0表示开启
+                     * 设置<p>防火墙状态，不等于0表示开启</p>
+                     * @param _firewallStatus <p>防火墙状态，不等于0表示开启</p>
                      * 
                      */
                     void SetFirewallStatus(const int64_t& _firewallStatus);
@@ -761,15 +761,15 @@ namespace TencentCloud
                     bool FirewallStatusHasBeenSet() const;
 
                     /**
-                     * 获取SN序列号
-                     * @return SerialNum SN序列号
+                     * 获取<p>SN序列号</p>
+                     * @return SerialNum <p>SN序列号</p>
                      * 
                      */
                     std::string GetSerialNum() const;
 
                     /**
-                     * 设置SN序列号
-                     * @param _serialNum SN序列号
+                     * 设置<p>SN序列号</p>
+                     * @param _serialNum <p>SN序列号</p>
                      * 
                      */
                     void SetSerialNum(const std::string& _serialNum);
@@ -782,15 +782,15 @@ namespace TencentCloud
                     bool SerialNumHasBeenSet() const;
 
                     /**
-                     * 获取设备管控策略版本
-                     * @return DeviceStrategyVer 设备管控策略版本
+                     * 获取<p>设备管控策略版本</p>
+                     * @return DeviceStrategyVer <p>设备管控策略版本</p>
                      * 
                      */
                     std::string GetDeviceStrategyVer() const;
 
                     /**
-                     * 设置设备管控策略版本
-                     * @param _deviceStrategyVer 设备管控策略版本
+                     * 设置<p>设备管控策略版本</p>
+                     * @param _deviceStrategyVer <p>设备管控策略版本</p>
                      * 
                      */
                     void SetDeviceStrategyVer(const std::string& _deviceStrategyVer);
@@ -803,15 +803,15 @@ namespace TencentCloud
                     bool DeviceStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取NGN策略版本
-                     * @return NGNStrategyVer NGN策略版本
+                     * 获取<p>NGN策略版本</p>
+                     * @return NGNStrategyVer <p>NGN策略版本</p>
                      * 
                      */
                     std::string GetNGNStrategyVer() const;
 
                     /**
-                     * 设置NGN策略版本
-                     * @param _nGNStrategyVer NGN策略版本
+                     * 设置<p>NGN策略版本</p>
+                     * @param _nGNStrategyVer <p>NGN策略版本</p>
                      * 
                      */
                     void SetNGNStrategyVer(const std::string& _nGNStrategyVer);
@@ -824,15 +824,15 @@ namespace TencentCloud
                     bool NGNStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的账号(账号系统用户账号)
-                     * @return IOAUserName 最近登录账户的账号(账号系统用户账号)
+                     * 获取<p>最近登录账户的账号(账号系统用户账号)</p>
+                     * @return IOAUserName <p>最近登录账户的账号(账号系统用户账号)</p>
                      * 
                      */
                     std::string GetIOAUserName() const;
 
                     /**
-                     * 设置最近登录账户的账号(账号系统用户账号)
-                     * @param _iOAUserName 最近登录账户的账号(账号系统用户账号)
+                     * 设置<p>最近登录账户的账号(账号系统用户账号)</p>
+                     * @param _iOAUserName <p>最近登录账户的账号(账号系统用户账号)</p>
                      * 
                      */
                     void SetIOAUserName(const std::string& _iOAUserName);
@@ -845,15 +845,15 @@ namespace TencentCloud
                     bool IOAUserNameHasBeenSet() const;
 
                     /**
-                     * 获取设备管控新策略
-                     * @return DeviceNewStrategyVer 设备管控新策略
+                     * 获取<p>设备管控新策略</p>
+                     * @return DeviceNewStrategyVer <p>设备管控新策略</p>
                      * 
                      */
                     std::string GetDeviceNewStrategyVer() const;
 
                     /**
-                     * 设置设备管控新策略
-                     * @param _deviceNewStrategyVer 设备管控新策略
+                     * 设置<p>设备管控新策略</p>
+                     * @param _deviceNewStrategyVer <p>设备管控新策略</p>
                      * 
                      */
                     void SetDeviceNewStrategyVer(const std::string& _deviceNewStrategyVer);
@@ -866,15 +866,15 @@ namespace TencentCloud
                     bool DeviceNewStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取NGN策略新版本
-                     * @return NGNNewStrategyVer NGN策略新版本
+                     * 获取<p>NGN策略新版本</p>
+                     * @return NGNNewStrategyVer <p>NGN策略新版本</p>
                      * 
                      */
                     std::string GetNGNNewStrategyVer() const;
 
                     /**
-                     * 设置NGN策略新版本
-                     * @param _nGNNewStrategyVer NGN策略新版本
+                     * 设置<p>NGN策略新版本</p>
+                     * @param _nGNNewStrategyVer <p>NGN策略新版本</p>
                      * 
                      */
                     void SetNGNNewStrategyVer(const std::string& _nGNNewStrategyVer);
@@ -887,15 +887,15 @@ namespace TencentCloud
                     bool NGNNewStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取宿主机名称（需要宿主机也安装iOA才能显示）
-                     * @return HostName 宿主机名称（需要宿主机也安装iOA才能显示）
+                     * 获取<p>宿主机名称（需要宿主机也安装iOA才能显示）</p>
+                     * @return HostName <p>宿主机名称（需要宿主机也安装iOA才能显示）</p>
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置宿主机名称（需要宿主机也安装iOA才能显示）
-                     * @param _hostName 宿主机名称（需要宿主机也安装iOA才能显示）
+                     * 设置<p>宿主机名称（需要宿主机也安装iOA才能显示）</p>
+                     * @param _hostName <p>宿主机名称（需要宿主机也安装iOA才能显示）</p>
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -908,15 +908,15 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
-                     * 获取主板序列号
-                     * @return BaseBoardSn 主板序列号
+                     * 获取<p>主板序列号</p>
+                     * @return BaseBoardSn <p>主板序列号</p>
                      * 
                      */
                     std::string GetBaseBoardSn() const;
 
                     /**
-                     * 设置主板序列号
-                     * @param _baseBoardSn 主板序列号
+                     * 设置<p>主板序列号</p>
+                     * @param _baseBoardSn <p>主板序列号</p>
                      * 
                      */
                     void SetBaseBoardSn(const std::string& _baseBoardSn);
@@ -929,15 +929,15 @@ namespace TencentCloud
                     bool BaseBoardSnHasBeenSet() const;
 
                     /**
-                     * 获取绑定账户名称
-                     * @return AccountUsers 绑定账户名称
+                     * 获取<p>绑定账户名称</p>
+                     * @return AccountUsers <p>绑定账户名称</p>
                      * 
                      */
                     std::string GetAccountUsers() const;
 
                     /**
-                     * 设置绑定账户名称
-                     * @param _accountUsers 绑定账户名称
+                     * 设置<p>绑定账户名称</p>
+                     * @param _accountUsers <p>绑定账户名称</p>
                      * 
                      */
                     void SetAccountUsers(const std::string& _accountUsers);
@@ -950,15 +950,15 @@ namespace TencentCloud
                     bool AccountUsersHasBeenSet() const;
 
                     /**
-                     * 获取身份策略版本
-                     * @return IdentityStrategyVer 身份策略版本
+                     * 获取<p>身份策略版本</p>
+                     * @return IdentityStrategyVer <p>身份策略版本</p>
                      * 
                      */
                     std::string GetIdentityStrategyVer() const;
 
                     /**
-                     * 设置身份策略版本
-                     * @param _identityStrategyVer 身份策略版本
+                     * 设置<p>身份策略版本</p>
+                     * @param _identityStrategyVer <p>身份策略版本</p>
                      * 
                      */
                     void SetIdentityStrategyVer(const std::string& _identityStrategyVer);
@@ -971,15 +971,15 @@ namespace TencentCloud
                     bool IdentityStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取身份策略新版本
-                     * @return IdentityNewStrategyVer 身份策略新版本
+                     * 获取<p>身份策略新版本</p>
+                     * @return IdentityNewStrategyVer <p>身份策略新版本</p>
                      * 
                      */
                     std::string GetIdentityNewStrategyVer() const;
 
                     /**
-                     * 设置身份策略新版本
-                     * @param _identityNewStrategyVer 身份策略新版本
+                     * 设置<p>身份策略新版本</p>
+                     * @param _identityNewStrategyVer <p>身份策略新版本</p>
                      * 
                      */
                     void SetIdentityNewStrategyVer(const std::string& _identityNewStrategyVer);
@@ -992,15 +992,15 @@ namespace TencentCloud
                     bool IdentityNewStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账号部门
-                     * @return AccountGroupName 最近登录账号部门
+                     * 获取<p>最近登录账号部门</p>
+                     * @return AccountGroupName <p>最近登录账号部门</p>
                      * 
                      */
                     std::string GetAccountGroupName() const;
 
                     /**
-                     * 设置最近登录账号部门
-                     * @param _accountGroupName 最近登录账号部门
+                     * 设置<p>最近登录账号部门</p>
+                     * @param _accountGroupName <p>最近登录账号部门</p>
                      * 
                      */
                     void SetAccountGroupName(const std::string& _accountGroupName);
@@ -1013,15 +1013,15 @@ namespace TencentCloud
                     bool AccountGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账户的姓名(账号系统用户姓名)
-                     * @return AccountName 最近登录账户的姓名(账号系统用户姓名)
+                     * 获取<p>最近登录账户的姓名(账号系统用户姓名)</p>
+                     * @return AccountName <p>最近登录账户的姓名(账号系统用户姓名)</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置最近登录账户的姓名(账号系统用户姓名)
-                     * @param _accountName 最近登录账户的姓名(账号系统用户姓名)
+                     * 设置<p>最近登录账户的姓名(账号系统用户姓名)</p>
+                     * @param _accountName <p>最近登录账户的姓名(账号系统用户姓名)</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -1034,15 +1034,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取账号组id
-                     * @return AccountGroupId 账号组id
+                     * 获取<p>账号组id</p>
+                     * @return AccountGroupId <p>账号组id</p>
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
-                     * 设置账号组id
-                     * @param _accountGroupId 账号组id
+                     * 设置<p>账号组id</p>
+                     * @param _accountGroupId <p>账号组id</p>
                      * 
                      */
                     void SetAccountGroupId(const int64_t& _accountGroupId);
@@ -1055,15 +1055,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
-                     * @return ScreenRecordingPermission 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * 获取<p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>
+                     * @return ScreenRecordingPermission <p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>
                      * 
                      */
                     int64_t GetScreenRecordingPermission() const;
 
                     /**
-                     * 设置是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
-                     * @param _screenRecordingPermission 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * 设置<p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>
+                     * @param _screenRecordingPermission <p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>
                      * 
                      */
                     void SetScreenRecordingPermission(const int64_t& _screenRecordingPermission);
@@ -1076,15 +1076,15 @@ namespace TencentCloud
                     bool ScreenRecordingPermissionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
-                     * @return DiskAccessPermission 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * 获取<p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>
+                     * @return DiskAccessPermission <p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>
                      * 
                      */
                     int64_t GetDiskAccessPermission() const;
 
                     /**
-                     * 设置是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
-                     * @param _diskAccessPermission 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * 设置<p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>
+                     * @param _diskAccessPermission <p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>
                      * 
                      */
                     void SetDiskAccessPermission(const int64_t& _diskAccessPermission);
@@ -1097,15 +1097,15 @@ namespace TencentCloud
                     bool DiskAccessPermissionHasBeenSet() const;
 
                     /**
-                     * 获取终端备注名
-                     * @return RemarkName 终端备注名
+                     * 获取<p>终端备注名</p>
+                     * @return RemarkName <p>终端备注名</p>
                      * 
                      */
                     std::string GetRemarkName() const;
 
                     /**
-                     * 设置终端备注名
-                     * @param _remarkName 终端备注名
+                     * 设置<p>终端备注名</p>
+                     * @param _remarkName <p>终端备注名</p>
                      * 
                      */
                     void SetRemarkName(const std::string& _remarkName);
@@ -1120,307 +1120,307 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 设备唯一标识码，在ioa中每个设备有唯一标识码
+                     * <p>设备唯一标识码，在ioa中每个设备有唯一标识码</p>
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
-                     * 终端名（设备名）
+                     * <p>终端名（设备名）</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备所在分组ID
+                     * <p>设备所在分组ID</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
+                     * <p>OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0</p>
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 设备IP地址（出口IP）
+                     * <p>设备IP地址（出口IP）</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 在线状态，2：在线、0或者1:离线
+                     * <p>在线状态，2：在线、0或者1:离线</p>
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
 
                     /**
-                     * 客户端版本号-大整数
+                     * <p>客户端版本号-大整数</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 客户端版本号-点分字符串
+                     * <p>客户端版本号-点分字符串</p>
                      */
                     std::string m_strVersion;
                     bool m_strVersionHasBeenSet;
 
                     /**
-                     * 首次在线时间
+                     * <p>首次在线时间</p>
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
-                     * 最后一次在线时间
+                     * <p>最后一次在线时间</p>
                      */
                     std::string m_connActiveTime;
                     bool m_connActiveTimeHasBeenSet;
 
                     /**
-                     * 设备是否加锁 ，1：锁定 0或者2：未锁定。
+                     * <p>设备是否加锁 ，1：锁定 0或者2：未锁定。</p>
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
 
                     /**
-                     * 设备本地IP列表, 包括IP
+                     * <p>设备本地IP列表, 包括IP</p>
                      */
                     std::string m_localIpList;
                     bool m_localIpListHasBeenSet;
 
                     /**
-                     * 宿主机id（需要宿主机也安装iOA才能显示）
+                     * <p>宿主机id（需要宿主机也安装iOA才能显示）</p>
                      */
                     int64_t m_hostId;
                     bool m_hostIdHasBeenSet;
 
                     /**
-                     * 设备所属分组名
+                     * <p>设备所属分组名</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 设备所属分组路径
+                     * <p>设备所属分组路径</p>
                      */
                     std::string m_groupNamePath;
                     bool m_groupNamePathHasBeenSet;
 
                     /**
-                     * 未修复高危漏洞数(只支持32位)
+                     * <p>未修复高危漏洞数(只支持32位)</p>
                      */
                     int64_t m_criticalVulListCount;
                     bool m_criticalVulListCountHasBeenSet;
 
                     /**
-                     * 操作系统名称
+                     * <p>操作系统名称</p>
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
 
                     /**
-                     * 操作系统位数
+                     * <p>操作系统位数</p>
                      */
                     int64_t m_osBits;
                     bool m_osBitsHasBeenSet;
 
                     /**
-                     * 操作系统版本
+                     * <p>操作系统版本</p>
                      */
                     std::string m_osVersion;
                     bool m_osVersionHasBeenSet;
 
                     /**
-                     * 操作系统语言
+                     * <p>操作系统语言</p>
                      */
                     std::string m_osLanguage;
                     bool m_osLanguageHasBeenSet;
 
                     /**
-                     * 操作系统安装时间
+                     * <p>操作系统安装时间</p>
                      */
                     std::string m_osInstallDate;
                     bool m_osInstallDateHasBeenSet;
 
                     /**
-                     * 设备名，和Name相同
+                     * <p>设备名，和Name相同</p>
                      */
                     std::string m_computerName;
                     bool m_computerNameHasBeenSet;
 
                     /**
-                     * 登录域名
+                     * <p>登录域名</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * MAC地址
+                     * <p>MAC地址</p>
                      */
                     std::string m_macAddr;
                     bool m_macAddrHasBeenSet;
 
                     /**
-                     * 漏洞数
+                     * <p>漏洞数</p>
                      */
                     int64_t m_vulCount;
                     bool m_vulCountHasBeenSet;
 
                     /**
-                     * 病毒风险数
+                     * <p>病毒风险数</p>
                      */
                     int64_t m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
-                     * 病毒库版本
+                     * <p>病毒库版本</p>
                      */
                     std::string m_virusVer;
                     bool m_virusVerHasBeenSet;
 
                     /**
-                     * 漏洞库版本
+                     * <p>漏洞库版本</p>
                      */
                     std::string m_vulVersion;
                     bool m_vulVersionHasBeenSet;
 
                     /**
-                     * 系统修复引擎版本
+                     * <p>系统修复引擎版本</p>
                      */
                     std::string m_sysRepVersion;
                     bool m_sysRepVersionHasBeenSet;
 
                     /**
-                     * 高危补丁列表
+                     * <p>高危补丁列表</p>
                      */
                     std::vector<std::string> m_vulCriticalList;
                     bool m_vulCriticalListHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::string m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 终端用户名
+                     * <p>终端用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 防火墙状态，不等于0表示开启
+                     * <p>防火墙状态，不等于0表示开启</p>
                      */
                     int64_t m_firewallStatus;
                     bool m_firewallStatusHasBeenSet;
 
                     /**
-                     * SN序列号
+                     * <p>SN序列号</p>
                      */
                     std::string m_serialNum;
                     bool m_serialNumHasBeenSet;
 
                     /**
-                     * 设备管控策略版本
+                     * <p>设备管控策略版本</p>
                      */
                     std::string m_deviceStrategyVer;
                     bool m_deviceStrategyVerHasBeenSet;
 
                     /**
-                     * NGN策略版本
+                     * <p>NGN策略版本</p>
                      */
                     std::string m_nGNStrategyVer;
                     bool m_nGNStrategyVerHasBeenSet;
 
                     /**
-                     * 最近登录账户的账号(账号系统用户账号)
+                     * <p>最近登录账户的账号(账号系统用户账号)</p>
                      */
                     std::string m_iOAUserName;
                     bool m_iOAUserNameHasBeenSet;
 
                     /**
-                     * 设备管控新策略
+                     * <p>设备管控新策略</p>
                      */
                     std::string m_deviceNewStrategyVer;
                     bool m_deviceNewStrategyVerHasBeenSet;
 
                     /**
-                     * NGN策略新版本
+                     * <p>NGN策略新版本</p>
                      */
                     std::string m_nGNNewStrategyVer;
                     bool m_nGNNewStrategyVerHasBeenSet;
 
                     /**
-                     * 宿主机名称（需要宿主机也安装iOA才能显示）
+                     * <p>宿主机名称（需要宿主机也安装iOA才能显示）</p>
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
-                     * 主板序列号
+                     * <p>主板序列号</p>
                      */
                     std::string m_baseBoardSn;
                     bool m_baseBoardSnHasBeenSet;
 
                     /**
-                     * 绑定账户名称
+                     * <p>绑定账户名称</p>
                      */
                     std::string m_accountUsers;
                     bool m_accountUsersHasBeenSet;
 
                     /**
-                     * 身份策略版本
+                     * <p>身份策略版本</p>
                      */
                     std::string m_identityStrategyVer;
                     bool m_identityStrategyVerHasBeenSet;
 
                     /**
-                     * 身份策略新版本
+                     * <p>身份策略新版本</p>
                      */
                     std::string m_identityNewStrategyVer;
                     bool m_identityNewStrategyVerHasBeenSet;
 
                     /**
-                     * 最近登录账号部门
+                     * <p>最近登录账号部门</p>
                      */
                     std::string m_accountGroupName;
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
-                     * 最近登录账户的姓名(账号系统用户姓名)
+                     * <p>最近登录账户的姓名(账号系统用户姓名)</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 账号组id
+                     * <p>账号组id</p>
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * <p>是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启</p>
                      */
                     int64_t m_screenRecordingPermission;
                     bool m_screenRecordingPermissionHasBeenSet;
 
                     /**
-                     * 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * <p>是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启</p>
                      */
                     int64_t m_diskAccessPermission;
                     bool m_diskAccessPermissionHasBeenSet;
 
                     /**
-                     * 终端备注名
+                     * <p>终端备注名</p>
                      */
                     std::string m_remarkName;
                     bool m_remarkNameHasBeenSet;

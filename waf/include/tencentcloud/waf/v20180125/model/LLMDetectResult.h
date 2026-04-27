@@ -27,6 +27,7 @@
 #include <tencentcloud/waf/v20180125/model/LLMSensitiveValueLevel.h>
 #include <tencentcloud/waf/v20180125/model/KeyWordInfo.h>
 #include <tencentcloud/waf/v20180125/model/PromptDetectResult.h>
+#include <tencentcloud/waf/v20180125/model/ImageResult.h>
 
 
 namespace TencentCloud
@@ -217,6 +218,27 @@ namespace TencentCloud
                      */
                     bool PayloadHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图片检测结果</p>
+                     * @return ImageResult <p>图片检测结果</p>
+                     * 
+                     */
+                    std::vector<ImageResult> GetImageResult() const;
+
+                    /**
+                     * 设置<p>图片检测结果</p>
+                     * @param _imageResult <p>图片检测结果</p>
+                     * 
+                     */
+                    void SetImageResult(const std::vector<ImageResult>& _imageResult);
+
+                    /**
+                     * 判断参数 ImageResult 是否已赋值
+                     * @return ImageResult 是否已赋值
+                     * 
+                     */
+                    bool ImageResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +288,12 @@ namespace TencentCloud
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
+
+                    /**
+                     * <p>图片检测结果</p>
+                     */
+                    std::vector<ImageResult> m_imageResult;
+                    bool m_imageResultHasBeenSet;
 
                 };
             }

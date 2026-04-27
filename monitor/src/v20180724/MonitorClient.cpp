@@ -190,6 +190,56 @@ MonitorClient::BindingPolicyTagOutcomeCallable MonitorClient::BindingPolicyTagCa
     return prom->get_future();
 }
 
+MonitorClient::CheckAddressByPrometheusOutcome MonitorClient::CheckAddressByPrometheus(const CheckAddressByPrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckAddressByPrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckAddressByPrometheusResponse rsp = CheckAddressByPrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckAddressByPrometheusOutcome(rsp);
+        else
+            return CheckAddressByPrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckAddressByPrometheusOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CheckAddressByPrometheusAsync(const CheckAddressByPrometheusRequest& request, const CheckAddressByPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckAddressByPrometheusRequest&;
+    using Resp = CheckAddressByPrometheusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckAddressByPrometheus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CheckAddressByPrometheusOutcomeCallable MonitorClient::CheckAddressByPrometheusCallable(const CheckAddressByPrometheusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckAddressByPrometheusOutcome>>();
+    CheckAddressByPrometheusAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CheckAddressByPrometheusRequest&,
+        CheckAddressByPrometheusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::CleanGrafanaInstanceOutcome MonitorClient::CleanGrafanaInstance(const CleanGrafanaInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CleanGrafanaInstance");

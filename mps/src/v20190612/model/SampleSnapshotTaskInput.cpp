@@ -25,7 +25,8 @@ SampleSnapshotTaskInput::SampleSnapshotTaskInput() :
     m_watermarkSetHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
-    m_objectNumberFormatHasBeenSet(false)
+    m_objectNumberFormatHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,16 @@ CoreInternalOutcome SampleSnapshotTaskInput::Deserialize(const rapidjson::Value 
         m_objectNumberFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SampleSnapshotTaskInput.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ void SampleSnapshotTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objectNumberFormat.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -245,5 +264,21 @@ void SampleSnapshotTaskInput::SetObjectNumberFormat(const NumberFormat& _objectN
 bool SampleSnapshotTaskInput::ObjectNumberFormatHasBeenSet() const
 {
     return m_objectNumberFormatHasBeenSet;
+}
+
+string SampleSnapshotTaskInput::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void SampleSnapshotTaskInput::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool SampleSnapshotTaskInput::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ AnimatedGraphicTaskInput::AnimatedGraphicTaskInput() :
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
-    m_outputObjectPathHasBeenSet(false)
+    m_outputObjectPathHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome AnimatedGraphicTaskInput::Deserialize(const rapidjson::Value
         m_outputObjectPathHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AnimatedGraphicTaskInput.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void AnimatedGraphicTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "OutputObjectPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void AnimatedGraphicTaskInput::SetOutputObjectPath(const string& _outputObjectPa
 bool AnimatedGraphicTaskInput::OutputObjectPathHasBeenSet() const
 {
     return m_outputObjectPathHasBeenSet;
+}
+
+string AnimatedGraphicTaskInput::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void AnimatedGraphicTaskInput::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool AnimatedGraphicTaskInput::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 

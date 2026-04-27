@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
 
                 };
             }

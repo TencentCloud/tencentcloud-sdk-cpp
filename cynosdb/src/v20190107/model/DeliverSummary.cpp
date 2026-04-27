@@ -24,7 +24,8 @@ DeliverSummary::DeliverSummary() :
     m_deliverTypeHasBeenSet(false),
     m_deliverSubTypeHasBeenSet(false),
     m_deliverConsumerHasBeenSet(false),
-    m_deliverConsumerNameHasBeenSet(false)
+    m_deliverConsumerNameHasBeenSet(false),
+    m_deliverErrorHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DeliverSummary::Deserialize(const rapidjson::Value &value)
         m_deliverConsumerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DeliverError") && !value["DeliverError"].IsNull())
+    {
+        if (!value["DeliverError"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverSummary.DeliverError` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverError = string(value["DeliverError"].GetString());
+        m_deliverErrorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void DeliverSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DeliverConsumerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deliverConsumerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverError.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void DeliverSummary::SetDeliverConsumerName(const string& _deliverConsumerName)
 bool DeliverSummary::DeliverConsumerNameHasBeenSet() const
 {
     return m_deliverConsumerNameHasBeenSet;
+}
+
+string DeliverSummary::GetDeliverError() const
+{
+    return m_deliverError;
+}
+
+void DeliverSummary::SetDeliverError(const string& _deliverError)
+{
+    m_deliverError = _deliverError;
+    m_deliverErrorHasBeenSet = true;
+}
+
+bool DeliverSummary::DeliverErrorHasBeenSet() const
+{
+    return m_deliverErrorHasBeenSet;
 }
 

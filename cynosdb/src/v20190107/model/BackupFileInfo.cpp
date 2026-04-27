@@ -36,7 +36,8 @@ BackupFileInfo::BackupFileInfo() :
     m_copyStatusHasBeenSet(false),
     m_encryptKeyIdHasBeenSet(false),
     m_encryptRegionHasBeenSet(false),
-    m_vaultInfosHasBeenSet(false)
+    m_vaultInfosHasBeenSet(false),
+    m_backupPeriodStrategyHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome BackupFileInfo::Deserialize(const rapidjson::Value &value)
         m_vaultInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupPeriodStrategy") && !value["BackupPeriodStrategy"].IsNull())
+    {
+        if (!value["BackupPeriodStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.BackupPeriodStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupPeriodStrategy = string(value["BackupPeriodStrategy"].GetString());
+        m_backupPeriodStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void BackupFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_backupPeriodStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupPeriodStrategy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void BackupFileInfo::SetVaultInfos(const vector<VaultInfo>& _vaultInfos)
 bool BackupFileInfo::VaultInfosHasBeenSet() const
 {
     return m_vaultInfosHasBeenSet;
+}
+
+string BackupFileInfo::GetBackupPeriodStrategy() const
+{
+    return m_backupPeriodStrategy;
+}
+
+void BackupFileInfo::SetBackupPeriodStrategy(const string& _backupPeriodStrategy)
+{
+    m_backupPeriodStrategy = _backupPeriodStrategy;
+    m_backupPeriodStrategyHasBeenSet = true;
+}
+
+bool BackupFileInfo::BackupPeriodStrategyHasBeenSet() const
+{
+    return m_backupPeriodStrategyHasBeenSet;
 }
 

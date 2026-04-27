@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppBizId 应用ID
+                     * 获取<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @return AppBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appBizId 应用ID
+                     * 设置<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @param _appBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取变量ID数组
-                     * @return VarIds 变量ID数组
+                     * 获取<p>变量ID数组</p>
+                     * @return VarIds <p>变量ID数组</p>
                      * 
                      */
                     std::vector<std::string> GetVarIds() const;
 
                     /**
-                     * 设置变量ID数组
-                     * @param _varIds 变量ID数组
+                     * 设置<p>变量ID数组</p>
+                     * @param _varIds <p>变量ID数组</p>
                      * 
                      */
                     void SetVarIds(const std::vector<std::string>& _varIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VarIdsHasBeenSet() const;
 
                     /**
-                     * 获取按变量名称关键词搜索
-                     * @return Keyword 按变量名称关键词搜索
+                     * 获取<p>按变量名称关键词搜索</p>
+                     * @return Keyword <p>按变量名称关键词搜索</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置按变量名称关键词搜索
-                     * @param _keyword 按变量名称关键词搜索
+                     * 设置<p>按变量名称关键词搜索</p>
+                     * @param _keyword <p>按变量名称关键词搜索</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取起始偏移量（默认0）
-                     * @return Offset 起始偏移量（默认0）
+                     * 获取<p>起始偏移量（默认0），取值范围 &gt; 0</p>
+                     * @return Offset <p>起始偏移量（默认0），取值范围 &gt; 0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置起始偏移量（默认0）
-                     * @param _offset 起始偏移量（默认0）
+                     * 设置<p>起始偏移量（默认0），取值范围 &gt; 0</p>
+                     * @param _offset <p>起始偏移量（默认0），取值范围 &gt; 0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限定数量（默认15）
-                     * @return Limit 限定数量（默认15）
+                     * 获取<p>限定数量（默认15），取值范围 1-200</p>
+                     * @return Limit <p>限定数量（默认15），取值范围 1-200</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限定数量（默认15）
-                     * @param _limit 限定数量（默认15）
+                     * 设置<p>限定数量（默认15），取值范围 1-200</p>
+                     * @param _limit <p>限定数量（默认15），取值范围 1-200</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)
-                     * @return VarType 按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)
+                     * 获取<p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>
+                     * @return VarType <p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>
                      * 
                      */
                     std::string GetVarType() const;
 
                     /**
-                     * 设置按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)
-                     * @param _varType 按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)
+                     * 设置<p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>
+                     * @param _varType <p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>
                      * 
                      */
                     void SetVarType(const std::string& _varType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool VarTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否需要内部变量(默认false)
-                     * @return NeedInternalVar 是否需要内部变量(默认false)
+                     * 获取<p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>
+                     * @return NeedInternalVar <p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>
                      * 
                      */
                     bool GetNeedInternalVar() const;
 
                     /**
-                     * 设置是否需要内部变量(默认false)
-                     * @param _needInternalVar 是否需要内部变量(默认false)
+                     * 设置<p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>
+                     * @param _needInternalVar <p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>
                      * 
                      */
                     void SetNeedInternalVar(const bool& _needInternalVar);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool NeedInternalVarHasBeenSet() const;
 
                     /**
-                     * 获取变量类型
-                     * @return VarModuleType 变量类型
+                     * 获取<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
+                     * @return VarModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetVarModuleType() const;
 
                     /**
-                     * 设置变量类型
-                     * @param _varModuleType 变量类型
+                     * 设置<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
+                     * @param _varModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetVarModuleType(const int64_t& _varModuleType);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 变量ID数组
+                     * <p>变量ID数组</p>
                      */
                     std::vector<std::string> m_varIds;
                     bool m_varIdsHasBeenSet;
 
                     /**
-                     * 按变量名称关键词搜索
+                     * <p>按变量名称关键词搜索</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 起始偏移量（默认0）
+                     * <p>起始偏移量（默认0），取值范围 &gt; 0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限定数量（默认15）
+                     * <p>限定数量（默认15），取值范围 1-200</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)
+                     * <p>按变量类型过滤，默认查询所有类型(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO)</p>
                      */
                     std::string m_varType;
                     bool m_varTypeHasBeenSet;
 
                     /**
-                     * 是否需要内部变量(默认false)
+                     * <p>是否需要内部变量, 在结果中包含平台预置的“内置自定义变量” (默认false)。</p><ul><li>当&nbsp;<code>NeedInternalVar = true</code>&nbsp;且&nbsp;<code>VarModuleType</code>&nbsp;为&nbsp;<code>AllVar</code>&nbsp;或&nbsp;<code>ApiVar</code>&nbsp;时，返回列表会在用户变量之前拼入内置变量，并同样支持&nbsp;<code>Keyword</code>&nbsp;<code>VarType</code>&nbsp;<code>VarIds</code>&nbsp;过滤。</li><li>其他<code>VarModuleType</code>下，该开关不生效。</li></ul>
                      */
                     bool m_needInternalVar;
                     bool m_needInternalVarHasBeenSet;
 
                     /**
-                     * 变量类型
+                     * <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      */
                     int64_t m_varModuleType;
                     bool m_varModuleTypeHasBeenSet;

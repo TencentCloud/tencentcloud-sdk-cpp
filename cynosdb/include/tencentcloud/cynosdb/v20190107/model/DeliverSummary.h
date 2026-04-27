@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool DeliverConsumerNameHasBeenSet() const;
 
+                    /**
+                     * 获取投递异常错误
+                     * @return DeliverError 投递异常错误
+                     * 
+                     */
+                    std::string GetDeliverError() const;
+
+                    /**
+                     * 设置投递异常错误
+                     * @param _deliverError 投递异常错误
+                     * 
+                     */
+                    void SetDeliverError(const std::string& _deliverError);
+
+                    /**
+                     * 判断参数 DeliverError 是否已赋值
+                     * @return DeliverError 是否已赋值
+                     * 
+                     */
+                    bool DeliverErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_deliverConsumerName;
                     bool m_deliverConsumerNameHasBeenSet;
+
+                    /**
+                     * 投递异常错误
+                     */
+                    std::string m_deliverError;
+                    bool m_deliverErrorHasBeenSet;
 
                 };
             }

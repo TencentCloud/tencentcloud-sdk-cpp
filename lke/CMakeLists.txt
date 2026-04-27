@@ -364,6 +364,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/AICallConfig.h
   include/tencentcloud/lke/v20231130/model/Credentials.h
   include/tencentcloud/lke/v20231130/model/AppInfo.h
+  include/tencentcloud/lke/v20231130/model/TimeRange.h
   include/tencentcloud/lke/v20231130/model/DescribeSharedKnowledgeResponse.h
   include/tencentcloud/lke/v20231130/model/NL2SQLModelConfig.h
   include/tencentcloud/lke/v20231130/model/ListReleaseItem.h
@@ -743,6 +744,7 @@ set(lke_src
   src/v20231130/model/AICallConfig.cpp
   src/v20231130/model/Credentials.cpp
   src/v20231130/model/AppInfo.cpp
+  src/v20231130/model/TimeRange.cpp
   src/v20231130/model/DescribeSharedKnowledgeResponse.cpp
   src/v20231130/model/NL2SQLModelConfig.cpp
   src/v20231130/model/ListReleaseItem.cpp

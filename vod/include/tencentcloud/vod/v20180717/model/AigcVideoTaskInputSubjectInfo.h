@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * AIGC 固定主体输入信息。
+                * AIGC 主体输入信息。
                 */
                 class AigcVideoTaskInputSubjectInfo : public AbstractModel
                 {

@@ -27,7 +27,8 @@ InquirePriceModifyDBInstanceSpecRequest::InquirePriceModifyDBInstanceSpecRequest
     m_memoryHasBeenSet(false),
     m_volumeHasBeenSet(false),
     m_nodeNumHasBeenSet(false),
-    m_replicateSetNumHasBeenSet(false)
+    m_replicateSetNumHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string InquirePriceModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "ReplicateSetNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicateSetNum, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void InquirePriceModifyDBInstanceSpecRequest::SetReplicateSetNum(const int64_t& 
 bool InquirePriceModifyDBInstanceSpecRequest::ReplicateSetNumHasBeenSet() const
 {
     return m_replicateSetNumHasBeenSet;
+}
+
+int64_t InquirePriceModifyDBInstanceSpecRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void InquirePriceModifyDBInstanceSpecRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool InquirePriceModifyDBInstanceSpecRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

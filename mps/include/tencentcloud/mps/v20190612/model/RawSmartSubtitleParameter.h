@@ -278,6 +278,48 @@ namespace TencentCloud
                      */
                     bool SubtitleEmbedIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * @return SpeakerMode <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetSpeakerMode() const;
+
+                    /**
+                     * 设置<p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * @param _speakerMode <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     * 
+                     */
+                    void SetSpeakerMode(const int64_t& _speakerMode);
+
+                    /**
+                     * 判断参数 SpeakerMode 是否已赋值
+                     * @return SpeakerMode 是否已赋值
+                     * 
+                     */
+                    bool SpeakerModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * @return SpeakerLabel <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetSpeakerLabel() const;
+
+                    /**
+                     * 设置<p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * @param _speakerLabel <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     * 
+                     */
+                    void SetSpeakerLabel(const int64_t& _speakerLabel);
+
+                    /**
+                     * 判断参数 SpeakerLabel 是否已赋值
+                     * @return SpeakerLabel 是否已赋值
+                     * 
+                     */
+                    bool SpeakerLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,18 @@ namespace TencentCloud
                      */
                     int64_t m_subtitleEmbedId;
                     bool m_subtitleEmbedIdHasBeenSet;
+
+                    /**
+                     * <p>说话人识别模式，可选值：<br>0：表示不开启说话人识别；<br>1：表示开启说话人识别；<br>默认值：0</p>
+                     */
+                    int64_t m_speakerMode;
+                    bool m_speakerModeHasBeenSet;
+
+                    /**
+                     * <p>说话人识别输出到字幕文件，可选值：<br>0：表示不输出到字幕文件；<br>1：表示输出到vtt字幕文件<br>注意：使用此参数SpeakerMode的值不能为0；<br>默认值：0</p>
+                     */
+                    int64_t m_speakerLabel;
+                    bool m_speakerLabelHasBeenSet;
 
                 };
             }

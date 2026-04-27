@@ -27,6 +27,8 @@
 #include <tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h>
 #include <tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h>
 #include <tencentcloud/bi/v20220105/model/ClearEmbedTokenResponse.h>
+#include <tencentcloud/bi/v20220105/model/CreateAuthApiKeyRequest.h>
+#include <tencentcloud/bi/v20220105/model/CreateAuthApiKeyResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/bi/v20220105/model/CreateUserRoleResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateUserRoleProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateUserRoleProjectResponse.h>
+#include <tencentcloud/bi/v20220105/model/DeleteAuthApiKeyRequest.h>
+#include <tencentcloud/bi/v20220105/model/DeleteAuthApiKeyResponse.h>
 #include <tencentcloud/bi/v20220105/model/DeleteDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/DeleteDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/DeleteProjectRequest.h>
@@ -57,6 +61,10 @@
 #include <tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h>
 #include <tencentcloud/bi/v20220105/model/DeleteUserRoleProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/DeleteUserRoleProjectResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribeAuthApiKeyInfoRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribeAuthApiKeyInfoResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribeAuthApiKeyListRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribeAuthApiKeyListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeDatasourceListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribePageWidgetListRequest.h>
@@ -87,6 +95,8 @@
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h>
 #include <tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h>
 #include <tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h>
+#include <tencentcloud/bi/v20220105/model/ModifyAuthApiKeyRequest.h>
+#include <tencentcloud/bi/v20220105/model/ModifyAuthApiKeyResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h>
@@ -127,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClearEmbedTokenResponse> ClearEmbedTokenOutcome;
                 typedef std::future<ClearEmbedTokenOutcome> ClearEmbedTokenOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ClearEmbedTokenRequest&, ClearEmbedTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearEmbedTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuthApiKeyResponse> CreateAuthApiKeyOutcome;
+                typedef std::future<CreateAuthApiKeyOutcome> CreateAuthApiKeyOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::CreateAuthApiKeyRequest&, CreateAuthApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatasourceResponse> CreateDatasourceOutcome;
                 typedef std::future<CreateDatasourceOutcome> CreateDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateDatasourceRequest&, CreateDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceAsyncHandler;
@@ -154,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserRoleProjectResponse> CreateUserRoleProjectOutcome;
                 typedef std::future<CreateUserRoleProjectOutcome> CreateUserRoleProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateUserRoleProjectRequest&, CreateUserRoleProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserRoleProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuthApiKeyResponse> DeleteAuthApiKeyOutcome;
+                typedef std::future<DeleteAuthApiKeyOutcome> DeleteAuthApiKeyOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DeleteAuthApiKeyRequest&, DeleteAuthApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDatasourceResponse> DeleteDatasourceOutcome;
                 typedef std::future<DeleteDatasourceOutcome> DeleteDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DeleteDatasourceRequest&, DeleteDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatasourceAsyncHandler;
@@ -172,6 +188,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserRoleProjectResponse> DeleteUserRoleProjectOutcome;
                 typedef std::future<DeleteUserRoleProjectOutcome> DeleteUserRoleProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DeleteUserRoleProjectRequest&, DeleteUserRoleProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserRoleProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuthApiKeyInfoResponse> DescribeAuthApiKeyInfoOutcome;
+                typedef std::future<DescribeAuthApiKeyInfoOutcome> DescribeAuthApiKeyInfoOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribeAuthApiKeyInfoRequest&, DescribeAuthApiKeyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthApiKeyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuthApiKeyListResponse> DescribeAuthApiKeyListOutcome;
+                typedef std::future<DescribeAuthApiKeyListOutcome> DescribeAuthApiKeyListOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribeAuthApiKeyListRequest&, DescribeAuthApiKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthApiKeyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatasourceListResponse> DescribeDatasourceListOutcome;
                 typedef std::future<DescribeDatasourceListOutcome> DescribeDatasourceListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeDatasourceListRequest&, DescribeDatasourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceListAsyncHandler;
@@ -217,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportScreenPageResponse> ExportScreenPageOutcome;
                 typedef std::future<ExportScreenPageOutcome> ExportScreenPageOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ExportScreenPageRequest&, ExportScreenPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportScreenPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuthApiKeyResponse> ModifyAuthApiKeyOutcome;
+                typedef std::future<ModifyAuthApiKeyOutcome> ModifyAuthApiKeyOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ModifyAuthApiKeyRequest&, ModifyAuthApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatasourceResponse> ModifyDatasourceOutcome;
                 typedef std::future<ModifyDatasourceOutcome> ModifyDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyDatasourceRequest&, ModifyDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatasourceAsyncHandler;
@@ -267,6 +292,15 @@ namespace TencentCloud
                 ClearEmbedTokenOutcome ClearEmbedToken(const Model::ClearEmbedTokenRequest &request);
                 void ClearEmbedTokenAsync(const Model::ClearEmbedTokenRequest& request, const ClearEmbedTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClearEmbedTokenOutcomeCallable ClearEmbedTokenCallable(const Model::ClearEmbedTokenRequest& request);
+
+                /**
+                 *创建ApiKey
+                 * @param req CreateAuthApiKeyRequest
+                 * @return CreateAuthApiKeyOutcome
+                 */
+                CreateAuthApiKeyOutcome CreateAuthApiKey(const Model::CreateAuthApiKeyRequest &request);
+                void CreateAuthApiKeyAsync(const Model::CreateAuthApiKeyRequest& request, const CreateAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuthApiKeyOutcomeCallable CreateAuthApiKeyCallable(const Model::CreateAuthApiKeyRequest& request);
 
                 /**
                  *创建数据源
@@ -350,6 +384,15 @@ namespace TencentCloud
                 CreateUserRoleProjectOutcomeCallable CreateUserRoleProjectCallable(const Model::CreateUserRoleProjectRequest& request);
 
                 /**
+                 *删除ApiKey
+                 * @param req DeleteAuthApiKeyRequest
+                 * @return DeleteAuthApiKeyOutcome
+                 */
+                DeleteAuthApiKeyOutcome DeleteAuthApiKey(const Model::DeleteAuthApiKeyRequest &request);
+                void DeleteAuthApiKeyAsync(const Model::DeleteAuthApiKeyRequest& request, const DeleteAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuthApiKeyOutcomeCallable DeleteAuthApiKeyCallable(const Model::DeleteAuthApiKeyRequest& request);
+
+                /**
                  *删除数据源
                  * @param req DeleteDatasourceRequest
                  * @return DeleteDatasourceOutcome
@@ -402,6 +445,24 @@ namespace TencentCloud
                 DeleteUserRoleProjectOutcome DeleteUserRoleProject(const Model::DeleteUserRoleProjectRequest &request);
                 void DeleteUserRoleProjectAsync(const Model::DeleteUserRoleProjectRequest& request, const DeleteUserRoleProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserRoleProjectOutcomeCallable DeleteUserRoleProjectCallable(const Model::DeleteUserRoleProjectRequest& request);
+
+                /**
+                 *ApiKey信息
+                 * @param req DescribeAuthApiKeyInfoRequest
+                 * @return DescribeAuthApiKeyInfoOutcome
+                 */
+                DescribeAuthApiKeyInfoOutcome DescribeAuthApiKeyInfo(const Model::DescribeAuthApiKeyInfoRequest &request);
+                void DescribeAuthApiKeyInfoAsync(const Model::DescribeAuthApiKeyInfoRequest& request, const DescribeAuthApiKeyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuthApiKeyInfoOutcomeCallable DescribeAuthApiKeyInfoCallable(const Model::DescribeAuthApiKeyInfoRequest& request);
+
+                /**
+                 *ApiKey列表
+                 * @param req DescribeAuthApiKeyListRequest
+                 * @return DescribeAuthApiKeyListOutcome
+                 */
+                DescribeAuthApiKeyListOutcome DescribeAuthApiKeyList(const Model::DescribeAuthApiKeyListRequest &request);
+                void DescribeAuthApiKeyListAsync(const Model::DescribeAuthApiKeyListRequest& request, const DescribeAuthApiKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuthApiKeyListOutcomeCallable DescribeAuthApiKeyListCallable(const Model::DescribeAuthApiKeyListRequest& request);
 
                 /**
                  *查询数据源列表
@@ -537,6 +598,15 @@ namespace TencentCloud
                 ExportScreenPageOutcome ExportScreenPage(const Model::ExportScreenPageRequest &request);
                 void ExportScreenPageAsync(const Model::ExportScreenPageRequest& request, const ExportScreenPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportScreenPageOutcomeCallable ExportScreenPageCallable(const Model::ExportScreenPageRequest& request);
+
+                /**
+                 *更新ApiKey
+                 * @param req ModifyAuthApiKeyRequest
+                 * @return ModifyAuthApiKeyOutcome
+                 */
+                ModifyAuthApiKeyOutcome ModifyAuthApiKey(const Model::ModifyAuthApiKeyRequest &request);
+                void ModifyAuthApiKeyAsync(const Model::ModifyAuthApiKeyRequest& request, const ModifyAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuthApiKeyOutcomeCallable ModifyAuthApiKeyCallable(const Model::ModifyAuthApiKeyRequest& request);
 
                 /**
                  *更新数据源

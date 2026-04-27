@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取子域名
-                     * @return SubDomain 子域名
+                     * 获取<p>子域名</p>
+                     * @return SubDomain <p>子域名</p>
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
-                     * 设置子域名
-                     * @param _subDomain 子域名
+                     * 设置<p>子域名</p>
+                     * @param _subDomain <p>子域名</p>
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取Ip
-                     * @return Ip Ip
+                     * 获取<p>Ip</p>
+                     * @return Ip <p>Ip</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置Ip
-                     * @param _ip Ip
+                     * 设置<p>Ip</p>
+                     * @param _ip <p>Ip</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取国家
-                     * @return Country 国家
+                     * 获取<p>国家</p>
+                     * @return Country <p>国家</p>
                      * 
                      */
                     std::string GetCountry() const;
 
                     /**
-                     * 设置国家
-                     * @param _country 国家
+                     * 设置<p>国家</p>
+                     * @param _country <p>国家</p>
                      * 
                      */
                     void SetCountry(const std::string& _country);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CountryHasBeenSet() const;
 
                     /**
-                     * 获取省份
-                     * @return Province 省份
+                     * 获取<p>省份</p>
+                     * @return Province <p>省份</p>
                      * 
                      */
                     std::string GetProvince() const;
 
                     /**
-                     * 设置省份
-                     * @param _province 省份
+                     * 设置<p>省份</p>
+                     * @param _province <p>省份</p>
                      * 
                      */
                     void SetProvince(const std::string& _province);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ProvinceHasBeenSet() const;
 
                     /**
-                     * 获取城市
-                     * @return City 城市
+                     * 获取<p>城市</p>
+                     * @return City <p>城市</p>
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
-                     * 设置城市
-                     * @param _city 城市
+                     * 设置<p>城市</p>
+                     * @param _city <p>城市</p>
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取互联网服务提供商
-                     * @return Isp 互联网服务提供商
+                     * 获取<p>互联网服务提供商</p>
+                     * @return Isp <p>互联网服务提供商</p>
                      * 
                      */
                     std::string GetIsp() const;
 
                     /**
-                     * 设置互联网服务提供商
-                     * @param _isp 互联网服务提供商
+                     * 设置<p>互联网服务提供商</p>
+                     * @param _isp <p>互联网服务提供商</p>
                      * 
                      */
                     void SetIsp(const std::string& _isp);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool IspHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取是否为云资产：0-非云资产 1-是云资产
-                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 获取<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @return IsCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     int64_t GetIsCloudAsset() const;
 
                     /**
-                     * 设置是否为云资产：0-非云资产 1-是云资产
-                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 设置<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @param _isCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     void SetIsCloudAsset(const int64_t& _isCloudAsset);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool IsCloudAssetHasBeenSet() const;
 
                     /**
-                     * 获取云资产是否下线：-1-已下线 0-正常
-                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 获取<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @return CloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     int64_t GetCloudAssetStatus() const;
 
                     /**
-                     * 设置云资产是否下线：-1-已下线 0-正常
-                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 设置<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @param _cloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool CloudAssetStatusHasBeenSet() const;
 
                     /**
-                     * 获取可用率（百分比）
-                     * @return AvailabilityRate 可用率（百分比）
+                     * 获取<p>可用率（百分比）</p>
+                     * @return AvailabilityRate <p>可用率（百分比）</p>
                      * 
                      */
                     int64_t GetAvailabilityRate() const;
 
                     /**
-                     * 设置可用率（百分比）
-                     * @param _availabilityRate 可用率（百分比）
+                     * 设置<p>可用率（百分比）</p>
+                     * @param _availabilityRate <p>可用率（百分比）</p>
                      * 
                      */
                     void SetAvailabilityRate(const int64_t& _availabilityRate);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool AvailabilityRateHasBeenSet() const;
 
                     /**
-                     * 获取可用状态 1:异常 0:正常
-                     * @return AvailabilityState 可用状态 1:异常 0:正常
+                     * 获取<p>可用状态 1:异常 0:正常</p>
+                     * @return AvailabilityState <p>可用状态 1:异常 0:正常</p>
                      * 
                      */
                     int64_t GetAvailabilityState() const;
 
                     /**
-                     * 设置可用状态 1:异常 0:正常
-                     * @param _availabilityState 可用状态 1:异常 0:正常
+                     * 设置<p>可用状态 1:异常 0:正常</p>
+                     * @param _availabilityState <p>可用状态 1:异常 0:正常</p>
                      * 
                      */
                     void SetAvailabilityState(const int64_t& _availabilityState);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool AvailabilityStateHasBeenSet() const;
 
                     /**
-                     * 获取域名解析状态 1:异常 0:正常
-                     * @return AnalysisState 域名解析状态 1:异常 0:正常
+                     * 获取<p>域名解析状态 1:异常 0:正常</p>
+                     * @return AnalysisState <p>域名解析状态 1:异常 0:正常</p>
                      * 
                      */
                     int64_t GetAnalysisState() const;
 
                     /**
-                     * 设置域名解析状态 1:异常 0:正常
-                     * @param _analysisState 域名解析状态 1:异常 0:正常
+                     * 设置<p>域名解析状态 1:异常 0:正常</p>
+                     * @param _analysisState <p>域名解析状态 1:异常 0:正常</p>
                      * 
                      */
                     void SetAnalysisState(const int64_t& _analysisState);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool AnalysisStateHasBeenSet() const;
 
                     /**
-                     * 获取平均时延：单位ms
-                     * @return AverageDelay 平均时延：单位ms
+                     * 获取<p>平均时延：单位ms</p>
+                     * @return AverageDelay <p>平均时延：单位ms</p>
                      * 
                      */
                     int64_t GetAverageDelay() const;
 
                     /**
-                     * 设置平均时延：单位ms
-                     * @param _averageDelay 平均时延：单位ms
+                     * 设置<p>平均时延：单位ms</p>
+                     * @param _averageDelay <p>平均时延：单位ms</p>
                      * 
                      */
                     void SetAverageDelay(const int64_t& _averageDelay);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool AverageDelayHasBeenSet() const;
 
                     /**
-                     * 获取丢包率（百分比）
-                     * @return LossRate 丢包率（百分比）
+                     * 获取<p>丢包率（百分比）</p>
+                     * @return LossRate <p>丢包率（百分比）</p>
                      * 
                      */
                     int64_t GetLossRate() const;
 
                     /**
-                     * 设置丢包率（百分比）
-                     * @param _lossRate 丢包率（百分比）
+                     * 设置<p>丢包率（百分比）</p>
+                     * @param _lossRate <p>丢包率（百分比）</p>
                      * 
                      */
                     void SetLossRate(const int64_t& _lossRate);
@@ -362,97 +362,151 @@ namespace TencentCloud
                      */
                     bool LossRateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>
+                     * @return DnsType <p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>
+                     * 
+                     */
+                    std::string GetDnsType() const;
+
+                    /**
+                     * 设置<p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>
+                     * @param _dnsType <p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>
+                     * 
+                     */
+                    void SetDnsType(const std::string& _dnsType);
+
+                    /**
+                     * 判断参数 DnsType 是否已赋值
+                     * @return DnsType 是否已赋值
+                     * 
+                     */
+                    bool DnsTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>DNS解析值</p>
+                     * @return DnsValue <p>DNS解析值</p>
+                     * 
+                     */
+                    std::string GetDnsValue() const;
+
+                    /**
+                     * 设置<p>DNS解析值</p>
+                     * @param _dnsValue <p>DNS解析值</p>
+                     * 
+                     */
+                    void SetDnsValue(const std::string& _dnsValue);
+
+                    /**
+                     * 判断参数 DnsValue 是否已赋值
+                     * @return DnsValue 是否已赋值
+                     * 
+                     */
+                    bool DnsValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 子域名
+                     * <p>子域名</p>
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * Ip
+                     * <p>Ip</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 国家
+                     * <p>国家</p>
                      */
                     std::string m_country;
                     bool m_countryHasBeenSet;
 
                     /**
-                     * 省份
+                     * <p>省份</p>
                      */
                     std::string m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
-                     * 城市
+                     * <p>城市</p>
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * 互联网服务提供商
+                     * <p>互联网服务提供商</p>
                      */
                     std::string m_isp;
                     bool m_ispHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * 是否为云资产：0-非云资产 1-是云资产
+                     * <p>是否为云资产：0-非云资产 1-是云资产</p>
                      */
                     int64_t m_isCloudAsset;
                     bool m_isCloudAssetHasBeenSet;
 
                     /**
-                     * 云资产是否下线：-1-已下线 0-正常
+                     * <p>云资产是否下线：-1-已下线 0-正常</p>
                      */
                     int64_t m_cloudAssetStatus;
                     bool m_cloudAssetStatusHasBeenSet;
 
                     /**
-                     * 可用率（百分比）
+                     * <p>可用率（百分比）</p>
                      */
                     int64_t m_availabilityRate;
                     bool m_availabilityRateHasBeenSet;
 
                     /**
-                     * 可用状态 1:异常 0:正常
+                     * <p>可用状态 1:异常 0:正常</p>
                      */
                     int64_t m_availabilityState;
                     bool m_availabilityStateHasBeenSet;
 
                     /**
-                     * 域名解析状态 1:异常 0:正常
+                     * <p>域名解析状态 1:异常 0:正常</p>
                      */
                     int64_t m_analysisState;
                     bool m_analysisStateHasBeenSet;
 
                     /**
-                     * 平均时延：单位ms
+                     * <p>平均时延：单位ms</p>
                      */
                     int64_t m_averageDelay;
                     bool m_averageDelayHasBeenSet;
 
                     /**
-                     * 丢包率（百分比）
+                     * <p>丢包率（百分比）</p>
                      */
                     int64_t m_lossRate;
                     bool m_lossRateHasBeenSet;
+
+                    /**
+                     * <p>DNS解析类型</p><p>A、AAAA、MX、CNAME、NX</p>
+                     */
+                    std::string m_dnsType;
+                    bool m_dnsTypeHasBeenSet;
+
+                    /**
+                     * <p>DNS解析值</p>
+                     */
+                    std::string m_dnsValue;
+                    bool m_dnsValueHasBeenSet;
 
                 };
             }

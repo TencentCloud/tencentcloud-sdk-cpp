@@ -30,7 +30,9 @@ RawSmartSubtitleParameter::RawSmartSubtitleParameter() :
     m_extInfoHasBeenSet(false),
     m_processTypeHasBeenSet(false),
     m_selectingSubtitleAreasConfigHasBeenSet(false),
-    m_subtitleEmbedIdHasBeenSet(false)
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_speakerModeHasBeenSet(false),
+    m_speakerLabelHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,26 @@ CoreInternalOutcome RawSmartSubtitleParameter::Deserialize(const rapidjson::Valu
         m_subtitleEmbedIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerMode") && !value["SpeakerMode"].IsNull())
+    {
+        if (!value["SpeakerMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartSubtitleParameter.SpeakerMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerMode = value["SpeakerMode"].GetInt64();
+        m_speakerModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpeakerLabel") && !value["SpeakerLabel"].IsNull())
+    {
+        if (!value["SpeakerLabel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartSubtitleParameter.SpeakerLabel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerLabel = value["SpeakerLabel"].GetInt64();
+        m_speakerLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ void RawSmartSubtitleParameter::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "SubtitleEmbedId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_speakerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speakerMode, allocator);
+    }
+
+    if (m_speakerLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speakerLabel, allocator);
     }
 
 }
@@ -403,5 +441,37 @@ void RawSmartSubtitleParameter::SetSubtitleEmbedId(const int64_t& _subtitleEmbed
 bool RawSmartSubtitleParameter::SubtitleEmbedIdHasBeenSet() const
 {
     return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t RawSmartSubtitleParameter::GetSpeakerMode() const
+{
+    return m_speakerMode;
+}
+
+void RawSmartSubtitleParameter::SetSpeakerMode(const int64_t& _speakerMode)
+{
+    m_speakerMode = _speakerMode;
+    m_speakerModeHasBeenSet = true;
+}
+
+bool RawSmartSubtitleParameter::SpeakerModeHasBeenSet() const
+{
+    return m_speakerModeHasBeenSet;
+}
+
+int64_t RawSmartSubtitleParameter::GetSpeakerLabel() const
+{
+    return m_speakerLabel;
+}
+
+void RawSmartSubtitleParameter::SetSpeakerLabel(const int64_t& _speakerLabel)
+{
+    m_speakerLabel = _speakerLabel;
+    m_speakerLabelHasBeenSet = true;
+}
+
+bool RawSmartSubtitleParameter::SpeakerLabelHasBeenSet() const
+{
+    return m_speakerLabelHasBeenSet;
 }
 

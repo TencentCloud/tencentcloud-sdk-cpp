@@ -45,6 +45,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
                      * 获取Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量） Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
                      * @return Filters Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量） Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100
                      * 
@@ -179,6 +200,12 @@ true: 不展示，false 展示；
                     bool DontShowInstanceSetHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
 
                     /**
                      * Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量） Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100

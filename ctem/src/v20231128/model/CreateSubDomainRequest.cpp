@@ -30,7 +30,9 @@ CreateSubDomainRequest::CreateSubDomainRequest() :
     m_provinceHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_ispHasBeenSet(false),
-    m_enterpriseUidHasBeenSet(false)
+    m_enterpriseUidHasBeenSet(false),
+    m_dnsTypeHasBeenSet(false),
+    m_dnsValueHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string CreateSubDomainRequest::ToJsonString() const
         string key = "EnterpriseUid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_enterpriseUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dnsType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dnsValue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +257,38 @@ void CreateSubDomainRequest::SetEnterpriseUid(const string& _enterpriseUid)
 bool CreateSubDomainRequest::EnterpriseUidHasBeenSet() const
 {
     return m_enterpriseUidHasBeenSet;
+}
+
+string CreateSubDomainRequest::GetDnsType() const
+{
+    return m_dnsType;
+}
+
+void CreateSubDomainRequest::SetDnsType(const string& _dnsType)
+{
+    m_dnsType = _dnsType;
+    m_dnsTypeHasBeenSet = true;
+}
+
+bool CreateSubDomainRequest::DnsTypeHasBeenSet() const
+{
+    return m_dnsTypeHasBeenSet;
+}
+
+string CreateSubDomainRequest::GetDnsValue() const
+{
+    return m_dnsValue;
+}
+
+void CreateSubDomainRequest::SetDnsValue(const string& _dnsValue)
+{
+    m_dnsValue = _dnsValue;
+    m_dnsValueHasBeenSet = true;
+}
+
+bool CreateSubDomainRequest::DnsValueHasBeenSet() const
+{
+    return m_dnsValueHasBeenSet;
 }
 
 

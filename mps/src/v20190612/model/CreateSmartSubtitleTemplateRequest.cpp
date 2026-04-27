@@ -33,7 +33,9 @@ CreateSmartSubtitleTemplateRequest::CreateSmartSubtitleTemplateRequest() :
     m_translateDstLanguageHasBeenSet(false),
     m_processTypeHasBeenSet(false),
     m_selectingSubtitleAreasConfigHasBeenSet(false),
-    m_subtitleEmbedIdHasBeenSet(false)
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_speakerModeHasBeenSet(false),
+    m_speakerLabelHasBeenSet(false)
 {
 }
 
@@ -132,6 +134,22 @@ string CreateSmartSubtitleTemplateRequest::ToJsonString() const
         string key = "SubtitleEmbedId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_speakerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerMode, allocator);
+    }
+
+    if (m_speakerLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerLabel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_speakerLabel, allocator);
     }
 
 
@@ -316,6 +334,38 @@ void CreateSmartSubtitleTemplateRequest::SetSubtitleEmbedId(const int64_t& _subt
 bool CreateSmartSubtitleTemplateRequest::SubtitleEmbedIdHasBeenSet() const
 {
     return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t CreateSmartSubtitleTemplateRequest::GetSpeakerMode() const
+{
+    return m_speakerMode;
+}
+
+void CreateSmartSubtitleTemplateRequest::SetSpeakerMode(const int64_t& _speakerMode)
+{
+    m_speakerMode = _speakerMode;
+    m_speakerModeHasBeenSet = true;
+}
+
+bool CreateSmartSubtitleTemplateRequest::SpeakerModeHasBeenSet() const
+{
+    return m_speakerModeHasBeenSet;
+}
+
+int64_t CreateSmartSubtitleTemplateRequest::GetSpeakerLabel() const
+{
+    return m_speakerLabel;
+}
+
+void CreateSmartSubtitleTemplateRequest::SetSpeakerLabel(const int64_t& _speakerLabel)
+{
+    m_speakerLabel = _speakerLabel;
+    m_speakerLabelHasBeenSet = true;
+}
+
+bool CreateSmartSubtitleTemplateRequest::SpeakerLabelHasBeenSet() const
+{
+    return m_speakerLabelHasBeenSet;
 }
 
 

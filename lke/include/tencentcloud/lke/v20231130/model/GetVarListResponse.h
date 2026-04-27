@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取变量总数
-                     * @return Total 变量总数
+                     * 获取<p>变量总数</p>
+                     * @return Total <p>变量总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取变量信息列表
-                     * @return List 变量信息列表
+                     * 获取<p>变量信息列表</p>
+                     * @return List <p>变量信息列表</p>
                      * 
                      */
                     std::vector<TaskFLowVar> GetList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 变量总数
+                     * <p>变量总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 变量信息列表
+                     * <p>变量信息列表</p>
                      */
                     std::vector<TaskFLowVar> m_list;
                     bool m_listHasBeenSet;

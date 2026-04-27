@@ -40,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例描述信息
+                * 实例的描述信息
                 */
                 class InstanceInfo : public AbstractModel
                 {
@@ -1248,6 +1248,27 @@ namespace TencentCloud
                      */
                     bool EnableConfigKeyValueHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>
+                     * @return HttpsEnabled <p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>
+                     * 
+                     */
+                    bool GetHttpsEnabled() const;
+
+                    /**
+                     * 设置<p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>
+                     * @param _httpsEnabled <p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>
+                     * 
+                     */
+                    void SetHttpsEnabled(const bool& _httpsEnabled);
+
+                    /**
+                     * 判断参数 HttpsEnabled 是否已赋值
+                     * @return HttpsEnabled 是否已赋值
+                     * 
+                     */
+                    bool HttpsEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1591,6 +1612,12 @@ namespace TencentCloud
                      */
                     std::string m_enableConfigKeyValue;
                     bool m_enableConfigKeyValueHasBeenSet;
+
+                    /**
+                     * <p>实例是否开启HTTPS</p><p>枚举值：</p><ul><li>true： 已开启HTTPS</li><li>false： 未开启HTTPS</li></ul>
+                     */
+                    bool m_httpsEnabled;
+                    bool m_httpsEnabledHasBeenSet;
 
                 };
             }

@@ -61,7 +61,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_extractBlindWatermarkTaskHasBeenSet(false),
     m_createAigcAdvancedCustomElementTaskHasBeenSet(false),
     m_createAigcCustomVoiceTaskHasBeenSet(false),
-    m_createAigcSubjectTaskHasBeenSet(false)
+    m_createAigcSubjectTaskHasBeenSet(false),
+    m_aigcVideoRedrawTaskHasBeenSet(false)
 {
 }
 
@@ -710,6 +711,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_createAigcSubjectTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AigcVideoRedrawTask") && !rsp["AigcVideoRedrawTask"].IsNull())
+    {
+        if (!rsp["AigcVideoRedrawTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoRedrawTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcVideoRedrawTask.Deserialize(rsp["AigcVideoRedrawTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcVideoRedrawTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1055,6 +1073,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_createAigcSubjectTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcVideoRedrawTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcVideoRedrawTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcVideoRedrawTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1447,6 +1474,16 @@ CreateAigcSubjectTask DescribeTaskDetailResponse::GetCreateAigcSubjectTask() con
 bool DescribeTaskDetailResponse::CreateAigcSubjectTaskHasBeenSet() const
 {
     return m_createAigcSubjectTaskHasBeenSet;
+}
+
+AigcVideoRedrawTask DescribeTaskDetailResponse::GetAigcVideoRedrawTask() const
+{
+    return m_aigcVideoRedrawTask;
+}
+
+bool DescribeTaskDetailResponse::AigcVideoRedrawTaskHasBeenSet() const
+{
+    return m_aigcVideoRedrawTaskHasBeenSet;
 }
 
 

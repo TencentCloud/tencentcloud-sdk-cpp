@@ -29,6 +29,8 @@
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CheckAddressByPrometheusRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CheckAddressByPrometheusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
@@ -386,6 +388,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindingPolicyTagResponse> BindingPolicyTagOutcome;
                 typedef std::future<BindingPolicyTagOutcome> BindingPolicyTagOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyTagRequest&, BindingPolicyTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckAddressByPrometheusResponse> CheckAddressByPrometheusOutcome;
+                typedef std::future<CheckAddressByPrometheusOutcome> CheckAddressByPrometheusOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CheckAddressByPrometheusRequest&, CheckAddressByPrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAddressByPrometheusAsyncHandler;
                 typedef Outcome<Core::Error, Model::CleanGrafanaInstanceResponse> CleanGrafanaInstanceOutcome;
                 typedef std::future<CleanGrafanaInstanceOutcome> CleanGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CleanGrafanaInstanceRequest&, CleanGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanGrafanaInstanceAsyncHandler;
@@ -916,6 +921,15 @@ namespace TencentCloud
                 BindingPolicyTagOutcome BindingPolicyTag(const Model::BindingPolicyTagRequest &request);
                 void BindingPolicyTagAsync(const Model::BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindingPolicyTagOutcomeCallable BindingPolicyTagCallable(const Model::BindingPolicyTagRequest& request);
+
+                /**
+                 *检查用户地址联通性
+                 * @param req CheckAddressByPrometheusRequest
+                 * @return CheckAddressByPrometheusOutcome
+                 */
+                CheckAddressByPrometheusOutcome CheckAddressByPrometheus(const Model::CheckAddressByPrometheusRequest &request);
+                void CheckAddressByPrometheusAsync(const Model::CheckAddressByPrometheusRequest& request, const CheckAddressByPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckAddressByPrometheusOutcomeCallable CheckAddressByPrometheusCallable(const Model::CheckAddressByPrometheusRequest& request);
 
                 /**
                  *强制销毁 Grafana 实例

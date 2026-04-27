@@ -36,7 +36,9 @@ ListQARequest::ListQARequest() :
     m_qaBizIdsHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
     m_showCurrCateHasBeenSet(false),
-    m_enableScopeHasBeenSet(false)
+    m_enableScopeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,24 @@ string ListQARequest::ToJsonString() const
         string key = "EnableScope";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableScope, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updateTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -404,6 +424,38 @@ void ListQARequest::SetEnableScope(const int64_t& _enableScope)
 bool ListQARequest::EnableScopeHasBeenSet() const
 {
     return m_enableScopeHasBeenSet;
+}
+
+TimeRange ListQARequest::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ListQARequest::SetCreateTime(const TimeRange& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ListQARequest::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+TimeRange ListQARequest::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void ListQARequest::SetUpdateTime(const TimeRange& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool ListQARequest::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 

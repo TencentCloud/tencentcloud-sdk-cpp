@@ -6840,6 +6840,56 @@ WafClient::GenerateDealsAndPayNewOutcomeCallable WafClient::GenerateDealsAndPayN
     return prom->get_future();
 }
 
+WafClient::GenerateLLMSecAnswerOutcome WafClient::GenerateLLMSecAnswer(const GenerateLLMSecAnswerRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateLLMSecAnswer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateLLMSecAnswerResponse rsp = GenerateLLMSecAnswerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateLLMSecAnswerOutcome(rsp);
+        else
+            return GenerateLLMSecAnswerOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateLLMSecAnswerOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GenerateLLMSecAnswerAsync(const GenerateLLMSecAnswerRequest& request, const GenerateLLMSecAnswerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateLLMSecAnswerRequest&;
+    using Resp = GenerateLLMSecAnswerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateLLMSecAnswer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::GenerateLLMSecAnswerOutcomeCallable WafClient::GenerateLLMSecAnswerCallable(const GenerateLLMSecAnswerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateLLMSecAnswerOutcome>>();
+    GenerateLLMSecAnswerAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const GenerateLLMSecAnswerRequest&,
+        GenerateLLMSecAnswerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::GetAttackDownloadRecordsOutcome WafClient::GetAttackDownloadRecords(const GetAttackDownloadRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAttackDownloadRecords");

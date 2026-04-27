@@ -163,6 +163,31 @@ namespace TencentCloud
                      */
                     bool ReplicateSetNumHasBeenSet() const;
 
+                    /**
+                     * 获取变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小
+                     * @return Cpu 变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小
+                     * 
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小
+                     * @param _cpu 变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小
+                     * 
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     * 
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +223,13 @@ namespace TencentCloud
                      */
                     int64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
+
+                    /**
+                     * 变更配置后实例CPU大小，单位：C。具体售卖的CPU规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+注意：通用 I 型实例询价时必须传入与内存对应的 CPU 核数大小
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

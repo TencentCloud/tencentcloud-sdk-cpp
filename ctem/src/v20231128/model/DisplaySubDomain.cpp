@@ -35,7 +35,9 @@ DisplaySubDomain::DisplaySubDomain() :
     m_availabilityStateHasBeenSet(false),
     m_analysisStateHasBeenSet(false),
     m_averageDelayHasBeenSet(false),
-    m_lossRateHasBeenSet(false)
+    m_lossRateHasBeenSet(false),
+    m_dnsTypeHasBeenSet(false),
+    m_dnsValueHasBeenSet(false)
 {
 }
 
@@ -201,6 +203,26 @@ CoreInternalOutcome DisplaySubDomain::Deserialize(const rapidjson::Value &value)
         m_lossRateHasBeenSet = true;
     }
 
+    if (value.HasMember("DnsType") && !value["DnsType"].IsNull())
+    {
+        if (!value["DnsType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.DnsType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsType = string(value["DnsType"].GetString());
+        m_dnsTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DnsValue") && !value["DnsValue"].IsNull())
+    {
+        if (!value["DnsValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.DnsValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsValue = string(value["DnsValue"].GetString());
+        m_dnsValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +349,22 @@ void DisplaySubDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LossRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lossRate, allocator);
+    }
+
+    if (m_dnsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +608,37 @@ void DisplaySubDomain::SetLossRate(const int64_t& _lossRate)
 bool DisplaySubDomain::LossRateHasBeenSet() const
 {
     return m_lossRateHasBeenSet;
+}
+
+string DisplaySubDomain::GetDnsType() const
+{
+    return m_dnsType;
+}
+
+void DisplaySubDomain::SetDnsType(const string& _dnsType)
+{
+    m_dnsType = _dnsType;
+    m_dnsTypeHasBeenSet = true;
+}
+
+bool DisplaySubDomain::DnsTypeHasBeenSet() const
+{
+    return m_dnsTypeHasBeenSet;
+}
+
+string DisplaySubDomain::GetDnsValue() const
+{
+    return m_dnsValue;
+}
+
+void DisplaySubDomain::SetDnsValue(const string& _dnsValue)
+{
+    m_dnsValue = _dnsValue;
+    m_dnsValueHasBeenSet = true;
+}
+
+bool DisplaySubDomain::DnsValueHasBeenSet() const
+{
+    return m_dnsValueHasBeenSet;
 }
 

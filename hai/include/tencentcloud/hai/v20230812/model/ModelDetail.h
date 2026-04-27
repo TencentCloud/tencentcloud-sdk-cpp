@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称
-                     * @return ModelName 模型名称
+                     * 获取<p>模型名称</p>
+                     * @return ModelName <p>模型名称</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _modelName 模型名称
+                     * 设置<p>模型名称</p>
+                     * @param _modelName <p>模型名称</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型ID
-                     * @return ModelId 模型ID
+                     * 获取<p>模型ID</p>
+                     * @return ModelId <p>模型ID</p>
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置模型ID
-                     * @param _modelId 模型ID
+                     * 设置<p>模型ID</p>
+                     * @param _modelId <p>模型ID</p>
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
-                     * 获取应用描述	
-                     * @return Description 应用描述	
+                     * 获取<p>应用描述</p>
+                     * @return Description <p>应用描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置应用描述	
-                     * @param _description 应用描述	
+                     * 设置<p>应用描述</p>
+                     * @param _description <p>应用描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取官方社区链接	
-                     * @return CommunityUrl 官方社区链接	
+                     * 获取<p>官方社区链接</p>
+                     * @return CommunityUrl <p>官方社区链接</p>
                      * 
                      */
                     std::string GetCommunityUrl() const;
 
                     /**
-                     * 设置官方社区链接	
-                     * @param _communityUrl 官方社区链接	
+                     * 设置<p>官方社区链接</p>
+                     * @param _communityUrl <p>官方社区链接</p>
                      * 
                      */
                     void SetCommunityUrl(const std::string& _communityUrl);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CommunityUrlHasBeenSet() const;
 
                     /**
-                     * 获取最佳实践链接
-                     * @return GuideUrl 最佳实践链接
+                     * 获取<p>最佳实践链接</p>
+                     * @return GuideUrl <p>最佳实践链接</p>
                      * 
                      */
                     std::string GetGuideUrl() const;
 
                     /**
-                     * 设置最佳实践链接
-                     * @param _guideUrl 最佳实践链接
+                     * 设置<p>最佳实践链接</p>
+                     * @param _guideUrl <p>最佳实践链接</p>
                      * 
                      */
                     void SetGuideUrl(const std::string& _guideUrl);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool GuideUrlHasBeenSet() const;
 
                     /**
-                     * 获取模型状态
-                     * @return ModelState 模型状态
+                     * 获取<p>模型状态</p>
+                     * @return ModelState <p>模型状态</p>
                      * 
                      */
                     std::string GetModelState() const;
 
                     /**
-                     * 设置模型状态
-                     * @param _modelState 模型状态
+                     * 设置<p>模型状态</p>
+                     * @param _modelState <p>模型状态</p>
                      * 
                      */
                     void SetModelState(const std::string& _modelState);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ModelStateHasBeenSet() const;
 
                     /**
-                     * 获取应用对应的标签，如机器学习
-                     * @return Tags 应用对应的标签，如机器学习
+                     * 获取<p>应用对应的标签，如机器学习</p>
+                     * @return Tags <p>应用对应的标签，如机器学习</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置应用对应的标签，如机器学习
-                     * @param _tags 应用对应的标签，如机器学习
+                     * 设置<p>应用对应的标签，如机器学习</p>
+                     * @param _tags <p>应用对应的标签，如机器学习</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取配置环境
-                     * @return ConfigEnvironment 配置环境
+                     * 获取<p>配置环境</p>
+                     * @return ConfigEnvironment <p>配置环境</p>
                      * 
                      */
                     std::string GetConfigEnvironment() const;
 
                     /**
-                     * 设置配置环境
-                     * @param _configEnvironment 配置环境
+                     * 设置<p>配置环境</p>
+                     * @param _configEnvironment <p>配置环境</p>
                      * 
                      */
                     void SetConfigEnvironment(const std::string& _configEnvironment);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型ID
+                     * <p>模型ID</p>
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
-                     * 应用描述	
+                     * <p>应用描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 官方社区链接	
+                     * <p>官方社区链接</p>
                      */
                     std::string m_communityUrl;
                     bool m_communityUrlHasBeenSet;
 
                     /**
-                     * 最佳实践链接
+                     * <p>最佳实践链接</p>
                      */
                     std::string m_guideUrl;
                     bool m_guideUrlHasBeenSet;
 
                     /**
-                     * 模型状态
+                     * <p>模型状态</p>
                      */
                     std::string m_modelState;
                     bool m_modelStateHasBeenSet;
 
                     /**
-                     * 应用对应的标签，如机器学习
+                     * <p>应用对应的标签，如机器学习</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 配置环境
+                     * <p>配置环境</p>
                      */
                     std::string m_configEnvironment;
                     bool m_configEnvironmentHasBeenSet;

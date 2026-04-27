@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppBizId 应用ID
+                     * 获取<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @return AppBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appBizId 应用ID
+                     * 设置<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @param _appBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取变量名称，不允许重复，最大支持50个字符
-                     * @return VarName 变量名称，不允许重复，最大支持50个字符
+                     * 获取<p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>
+                     * @return VarName <p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>
                      * 
                      */
                     std::string GetVarName() const;
 
                     /**
-                     * 设置变量名称，不允许重复，最大支持50个字符
-                     * @param _varName 变量名称，不允许重复，最大支持50个字符
+                     * 设置<p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>
+                     * @param _varName <p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>
                      * 
                      */
                     void SetVarName(const std::string& _varName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VarNameHasBeenSet() const;
 
                     /**
-                     * 获取变量描述，最大支持120个字符
-                     * @return VarDesc 变量描述，最大支持120个字符
+                     * 获取<p>变量描述，最大支持120个字符</p>
+                     * @return VarDesc <p>变量描述，最大支持120个字符</p>
                      * 
                      */
                     std::string GetVarDesc() const;
 
                     /**
-                     * 设置变量描述，最大支持120个字符
-                     * @param _varDesc 变量描述，最大支持120个字符
+                     * 设置<p>变量描述，最大支持120个字符</p>
+                     * @param _varDesc <p>变量描述，最大支持120个字符</p>
                      * 
                      */
                     void SetVarDesc(const std::string& _varDesc);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VarDescHasBeenSet() const;
 
                     /**
-                     * 获取变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持"STRING"类型使用
-                     * @return VarType 变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持"STRING"类型使用
+                     * 获取<p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>
+                     * @return VarType <p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>
                      * 
                      */
                     std::string GetVarType() const;
 
                     /**
-                     * 设置变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持"STRING"类型使用
-                     * @param _varType 变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持"STRING"类型使用
+                     * 设置<p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>
+                     * @param _varType <p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>
                      * 
                      */
                     void SetVarType(const std::string& _varType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool VarTypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义变量默认值
-                     * @return VarDefaultValue 自定义变量默认值
+                     * 获取<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>
+                     * @return VarDefaultValue <p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>
                      * 
                      */
                     std::string GetVarDefaultValue() const;
 
                     /**
-                     * 设置自定义变量默认值
-                     * @param _varDefaultValue 自定义变量默认值
+                     * 设置<p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>
+                     * @param _varDefaultValue <p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>
                      * 
                      */
                     void SetVarDefaultValue(const std::string& _varDefaultValue);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool VarDefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取自定义变量文件默认名称
-                     * @return VarDefaultFileName 自定义变量文件默认名称
+                     * 获取<p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>
+                     * @return VarDefaultFileName <p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>
                      * 
                      */
                     std::string GetVarDefaultFileName() const;
 
                     /**
-                     * 设置自定义变量文件默认名称
-                     * @param _varDefaultFileName 自定义变量文件默认名称
+                     * 设置<p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>
+                     * @param _varDefaultFileName <p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>
                      * 
                      */
                     void SetVarDefaultFileName(const std::string& _varDefaultFileName);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool VarDefaultFileNameHasBeenSet() const;
 
                     /**
-                     * 获取参数类型
-                     * @return VarModuleType 参数类型
+                     * 获取<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
+                     * @return VarModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      * 
                      */
                     uint64_t GetVarModuleType() const;
 
                     /**
-                     * 设置参数类型
-                     * @param _varModuleType 参数类型
+                     * 设置<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
+                     * @param _varModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      * 
                      */
                     void SetVarModuleType(const uint64_t& _varModuleType);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 变量名称，不允许重复，最大支持50个字符
+                     * <p>变量名称，不允许重复，最大支持50个字符，英文字母开头，支持英文数字与下划线”_”。</p>
                      */
                     std::string m_varName;
                     bool m_varNameHasBeenSet;
 
                     /**
-                     * 变量描述，最大支持120个字符
+                     * <p>变量描述，最大支持120个字符</p>
                      */
                     std::string m_varDesc;
                     bool m_varDescHasBeenSet;
 
                     /**
-                     * 变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持"STRING"类型使用
+                     * <p>变量类型定义，支持类型如下：(STRING,INT,FLOAT,BOOL,OBJECT,ARRAY_STRING,ARRAY_INT,ARRAY_FLOAT,ARRAY_BOOL,ARRAY_OBJECT,FILE,DOCUMENT,IMAGE,AUDIO);传输过程是json字符串，标签中仅支持&quot;STRING&quot;类型使用</p>
                      */
                     std::string m_varType;
                     bool m_varTypeHasBeenSet;
 
                     /**
-                     * 自定义变量默认值
+                     * <p>自定义变量默认值，<code>VarDefaultValue</code>xa0默认为空</p>
                      */
                     std::string m_varDefaultValue;
                     bool m_varDefaultValueHasBeenSet;
 
                     /**
-                     * 自定义变量文件默认名称
+                     * <p>自定义变量文件默认名称，<code>VarDefaultFileName</code>默认为空</p>
                      */
                     std::string m_varDefaultFileName;
                     bool m_varDefaultFileNameHasBeenSet;
 
                     /**
-                     * 参数类型
+                     * <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>
                      */
                     uint64_t m_varModuleType;
                     bool m_varModuleTypeHasBeenSet;

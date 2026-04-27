@@ -29,7 +29,8 @@ ModifyLivePadTemplateRequest::ModifyLivePadTemplateRequest() :
     m_maxDurationHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_triggerConditionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string ModifyLivePadTemplateRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_triggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_triggerCondition, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void ModifyLivePadTemplateRequest::SetType(const uint64_t& _type)
 bool ModifyLivePadTemplateRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t ModifyLivePadTemplateRequest::GetTriggerCondition() const
+{
+    return m_triggerCondition;
+}
+
+void ModifyLivePadTemplateRequest::SetTriggerCondition(const uint64_t& _triggerCondition)
+{
+    m_triggerCondition = _triggerCondition;
+    m_triggerConditionHasBeenSet = true;
+}
+
+bool ModifyLivePadTemplateRequest::TriggerConditionHasBeenSet() const
+{
+    return m_triggerConditionHasBeenSet;
 }
 
 

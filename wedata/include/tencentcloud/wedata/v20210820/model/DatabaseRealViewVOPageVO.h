@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool RowsHasBeenSet() const;
 
+                    /**
+                     * 获取分页快照id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotId 分页快照id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置分页快照id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _snapshotId 分页快照id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     * 
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +233,13 @@ namespace TencentCloud
                      */
                     std::vector<DatabaseRealViewVO> m_rows;
                     bool m_rowsHasBeenSet;
+
+                    /**
+                     * 分页快照id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                 };
             }

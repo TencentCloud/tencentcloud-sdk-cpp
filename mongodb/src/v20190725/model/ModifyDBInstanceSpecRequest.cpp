@@ -32,7 +32,9 @@ ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
     m_inMaintenanceHasBeenSet(false),
     m_mongosMemoryHasBeenSet(false),
     m_addNodeListHasBeenSet(false),
-    m_removeNodeListHasBeenSet(false)
+    m_removeNodeListHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_machineCodeHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,22 @@ string ModifyDBInstanceSpecRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_machineCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_machineCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -303,6 +321,38 @@ void ModifyDBInstanceSpecRequest::SetRemoveNodeList(const vector<RemoveNodeList>
 bool ModifyDBInstanceSpecRequest::RemoveNodeListHasBeenSet() const
 {
     return m_removeNodeListHasBeenSet;
+}
+
+int64_t ModifyDBInstanceSpecRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void ModifyDBInstanceSpecRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+string ModifyDBInstanceSpecRequest::GetMachineCode() const
+{
+    return m_machineCode;
+}
+
+void ModifyDBInstanceSpecRequest::SetMachineCode(const string& _machineCode)
+{
+    m_machineCode = _machineCode;
+    m_machineCodeHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::MachineCodeHasBeenSet() const
+{
+    return m_machineCodeHasBeenSet;
 }
 
 

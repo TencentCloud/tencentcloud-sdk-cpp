@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppBizId 应用ID
+                     * 获取<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @return AppBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appBizId 应用ID
+                     * 设置<p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
+                     * @param _appBizId <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取变量ID
-                     * @return VarId 变量ID
+                     * 获取<p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>
+                     * @return VarId <p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>
                      * 
                      */
                     std::string GetVarId() const;
 
                     /**
-                     * 设置变量ID
-                     * @param _varId 变量ID
+                     * 设置<p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>
+                     * @param _varId <p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>
                      * 
                      */
                     void SetVarId(const std::string& _varId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VarIdHasBeenSet() const;
 
                     /**
-                     * 获取参数类型
-                     * @return VarModuleType 参数类型
+                     * 获取<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
+                     * @return VarModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      * 
                      */
                     uint64_t GetVarModuleType() const;
 
                     /**
-                     * 设置参数类型
-                     * @param _varModuleType 参数类型
+                     * 设置<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
+                     * @param _varModuleType <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetVarModuleType(const uint64_t& _varModuleType);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID，获取方法参看如何获取   <a href="https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa">BotBizId</a>。</p>
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 变量ID
+                     * <p>变量 ID，可通过 CreateVar；DescribeVar；DescribeVarList 接口返回结果中获取。DeleteVar</p>
                      */
                     std::string m_varId;
                     bool m_varIdHasBeenSet;
 
                     /**
-                     * 参数类型
+                     * <p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul><p>默认值：0</p>
                      */
                     uint64_t m_varModuleType;
                     bool m_varModuleTypeHasBeenSet;

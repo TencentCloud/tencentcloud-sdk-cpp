@@ -45,15 +45,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -66,15 +87,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100
-                     * @return Limit 返回数量，默认为20，最大值为100
+                     * 获取<p>返回数量，默认为20，最大值为100</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100
-                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 设置<p>返回数量，默认为20，最大值为100</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -87,15 +108,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列
-                     * @return Order 输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列
+                     * 获取<p>输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列</p>
+                     * @return Order <p>输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列
-                     * @param _order 输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列
+                     * 设置<p>输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列</p>
+                     * @param _order <p>输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -108,15 +129,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
-                     * @return OrderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 获取<p>排序的依据字段， 取值范围 &quot;CreateTime&quot; &quot;UpdateTime&quot;</p>
+                     * @return OrderField <p>排序的依据字段， 取值范围 &quot;CreateTime&quot; &quot;UpdateTime&quot;</p>
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
-                     * @param _orderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 设置<p>排序的依据字段， 取值范围 &quot;CreateTime&quot; &quot;UpdateTime&quot;</p>
+                     * @param _orderField <p>排序的依据字段， 取值范围 &quot;CreateTime&quot; &quot;UpdateTime&quot;</p>
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -129,19 +150,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，支持的分页过滤Name包括：
-["ClusterId", "ServiceId", "ServiceGroupName", "ServiceGroupId","Status","CreatedBy","ModelVersionId"]
-                     * @return Filters 分页参数，支持的分页过滤Name包括：
-["ClusterId", "ServiceId", "ServiceGroupName", "ServiceGroupId","Status","CreatedBy","ModelVersionId"]
+                     * 获取<p>分页参数，支持的分页过滤Name包括：<br>[&quot;ClusterId&quot;, &quot;ServiceId&quot;, &quot;ServiceGroupName&quot;, &quot;ServiceGroupId&quot;,&quot;Status&quot;,&quot;CreatedBy&quot;,&quot;ModelVersionId&quot;]</p>
+                     * @return Filters <p>分页参数，支持的分页过滤Name包括：<br>[&quot;ClusterId&quot;, &quot;ServiceId&quot;, &quot;ServiceGroupName&quot;, &quot;ServiceGroupId&quot;,&quot;Status&quot;,&quot;CreatedBy&quot;,&quot;ModelVersionId&quot;]</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置分页参数，支持的分页过滤Name包括：
-["ClusterId", "ServiceId", "ServiceGroupName", "ServiceGroupId","Status","CreatedBy","ModelVersionId"]
-                     * @param _filters 分页参数，支持的分页过滤Name包括：
-["ClusterId", "ServiceId", "ServiceGroupName", "ServiceGroupId","Status","CreatedBy","ModelVersionId"]
+                     * 设置<p>分页参数，支持的分页过滤Name包括：<br>[&quot;ClusterId&quot;, &quot;ServiceId&quot;, &quot;ServiceGroupName&quot;, &quot;ServiceGroupId&quot;,&quot;Status&quot;,&quot;CreatedBy&quot;,&quot;ModelVersionId&quot;]</p>
+                     * @param _filters <p>分页参数，支持的分页过滤Name包括：<br>[&quot;ClusterId&quot;, &quot;ServiceId&quot;, &quot;ServiceGroupName&quot;, &quot;ServiceGroupId&quot;,&quot;Status&quot;,&quot;CreatedBy&quot;,&quot;ModelVersionId&quot;]</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -154,15 +171,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤参数
-                     * @return TagFilters 标签过滤参数
+                     * 获取<p>标签过滤参数</p>
+                     * @return TagFilters <p>标签过滤参数</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤参数
-                     * @param _tagFilters 标签过滤参数
+                     * 设置<p>标签过滤参数</p>
+                     * @param _tagFilters <p>标签过滤参数</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -175,15 +192,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取服务分类
-                     * @return ServiceCategory 服务分类
+                     * 获取<p>服务分类</p>
+                     * @return ServiceCategory <p>服务分类</p>
                      * @deprecated
                      */
                     std::string GetServiceCategory() const;
 
                     /**
-                     * 设置服务分类
-                     * @param _serviceCategory 服务分类
+                     * 设置<p>服务分类</p>
+                     * @param _serviceCategory <p>服务分类</p>
                      * @deprecated
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -198,44 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100
+                     * <p>返回数量，默认为20，最大值为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列
+                     * <p>输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * <p>排序的依据字段， 取值范围 &quot;CreateTime&quot; &quot;UpdateTime&quot;</p>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 分页参数，支持的分页过滤Name包括：
-["ClusterId", "ServiceId", "ServiceGroupName", "ServiceGroupId","Status","CreatedBy","ModelVersionId"]
+                     * <p>分页参数，支持的分页过滤Name包括：<br>[&quot;ClusterId&quot;, &quot;ServiceId&quot;, &quot;ServiceGroupName&quot;, &quot;ServiceGroupId&quot;,&quot;Status&quot;,&quot;CreatedBy&quot;,&quot;ModelVersionId&quot;]</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 标签过滤参数
+                     * <p>标签过滤参数</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 服务分类
+                     * <p>服务分类</p>
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;

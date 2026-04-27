@@ -28,7 +28,8 @@ LLMDetectResult::LLMDetectResult() :
     m_ruleIdHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_payloadHasBeenSet(false)
+    m_payloadHasBeenSet(false),
+    m_imageResultHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,26 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         m_payloadHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageResult") && !value["ImageResult"].IsNull())
+    {
+        if (!value["ImageResult"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.ImageResult` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ImageResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageResult.push_back(item);
+        }
+        m_imageResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +257,21 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Payload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageResult.begin(); itr != m_imageResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -367,5 +403,21 @@ void LLMDetectResult::SetPayload(const string& _payload)
 bool LLMDetectResult::PayloadHasBeenSet() const
 {
     return m_payloadHasBeenSet;
+}
+
+vector<ImageResult> LLMDetectResult::GetImageResult() const
+{
+    return m_imageResult;
+}
+
+void LLMDetectResult::SetImageResult(const vector<ImageResult>& _imageResult)
+{
+    m_imageResult = _imageResult;
+    m_imageResultHasBeenSet = true;
+}
+
+bool LLMDetectResult::ImageResultHasBeenSet() const
+{
+    return m_imageResultHasBeenSet;
 }
 

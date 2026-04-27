@@ -37,7 +37,8 @@ AnalysisTaskResults::AnalysisTaskResults() :
     m_shuffleReadRecordsSumHasBeenSet(false),
     m_analysisStatusHasBeenSet(false),
     m_outputFilesNumHasBeenSet(false),
-    m_outputSmallFilesNumHasBeenSet(false)
+    m_outputSmallFilesNumHasBeenSet(false),
+    m_shuffleWriteBytesSumHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome AnalysisTaskResults::Deserialize(const rapidjson::Value &val
         m_outputSmallFilesNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ShuffleWriteBytesSum") && !value["ShuffleWriteBytesSum"].IsNull())
+    {
+        if (!value["ShuffleWriteBytesSum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AnalysisTaskResults.ShuffleWriteBytesSum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shuffleWriteBytesSum = value["ShuffleWriteBytesSum"].GetInt64();
+        m_shuffleWriteBytesSumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void AnalysisTaskResults::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OutputSmallFilesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputSmallFilesNum, allocator);
+    }
+
+    if (m_shuffleWriteBytesSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShuffleWriteBytesSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shuffleWriteBytesSum, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void AnalysisTaskResults::SetOutputSmallFilesNum(const int64_t& _outputSmallFile
 bool AnalysisTaskResults::OutputSmallFilesNumHasBeenSet() const
 {
     return m_outputSmallFilesNumHasBeenSet;
+}
+
+int64_t AnalysisTaskResults::GetShuffleWriteBytesSum() const
+{
+    return m_shuffleWriteBytesSum;
+}
+
+void AnalysisTaskResults::SetShuffleWriteBytesSum(const int64_t& _shuffleWriteBytesSum)
+{
+    m_shuffleWriteBytesSum = _shuffleWriteBytesSum;
+    m_shuffleWriteBytesSumHasBeenSet = true;
+}
+
+bool AnalysisTaskResults::ShuffleWriteBytesSumHasBeenSet() const
+{
+    return m_shuffleWriteBytesSumHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AIGC统计数据。
-                     * @return AigcUsageDataSet AIGC统计数据。
+                     * 获取<p>AIGC统计数据。</p>
+                     * @return AigcUsageDataSet <p>AIGC统计数据。</p>
                      * 
                      */
                     std::vector<AigcUsageDataItem> GetAigcUsageDataSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * AIGC统计数据。
+                     * <p>AIGC统计数据。</p>
                      */
                     std::vector<AigcUsageDataItem> m_aigcUsageDataSet;
                     bool m_aigcUsageDataSetHasBeenSet;

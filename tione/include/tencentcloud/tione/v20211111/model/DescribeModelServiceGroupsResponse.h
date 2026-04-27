@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推理服务组数量。
+                     * 获取<p>推理服务组数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 推理服务组数量。
+                     * @return TotalCount <p>推理服务组数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取服务组信息
+                     * 获取<p>服务组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceGroups 服务组信息
+                     * @return ServiceGroups <p>服务组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,21 +76,41 @@ namespace TencentCloud
                      */
                     bool ServiceGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前uin和region下全量服务组数量</p>
+                     * @return GlobalTotalCount <p>当前uin和region下全量服务组数量</p>
+                     * 
+                     */
+                    int64_t GetGlobalTotalCount() const;
+
+                    /**
+                     * 判断参数 GlobalTotalCount 是否已赋值
+                     * @return GlobalTotalCount 是否已赋值
+                     * 
+                     */
+                    bool GlobalTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 推理服务组数量。
+                     * <p>推理服务组数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 服务组信息
+                     * <p>服务组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceGroup> m_serviceGroups;
                     bool m_serviceGroupsHasBeenSet;
+
+                    /**
+                     * <p>当前uin和region下全量服务组数量</p>
+                     */
+                    int64_t m_globalTotalCount;
+                    bool m_globalTotalCountHasBeenSet;
 
                 };
             }

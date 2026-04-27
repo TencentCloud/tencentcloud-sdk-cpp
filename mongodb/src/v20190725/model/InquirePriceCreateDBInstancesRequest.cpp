@@ -39,7 +39,9 @@ InquirePriceCreateDBInstancesRequest::InquirePriceCreateDBInstancesRequest() :
     m_mongosNumHasBeenSet(false),
     m_configServerCpuHasBeenSet(false),
     m_configServerMemoryHasBeenSet(false),
-    m_configServerVolumeHasBeenSet(false)
+    m_configServerVolumeHasBeenSet(false),
+    m_readonlyNodeNumHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,22 @@ string InquirePriceCreateDBInstancesRequest::ToJsonString() const
         string key = "ConfigServerVolume";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_configServerVolume, allocator);
+    }
+
+    if (m_readonlyNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadonlyNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readonlyNodeNum, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -464,6 +482,38 @@ void InquirePriceCreateDBInstancesRequest::SetConfigServerVolume(const uint64_t&
 bool InquirePriceCreateDBInstancesRequest::ConfigServerVolumeHasBeenSet() const
 {
     return m_configServerVolumeHasBeenSet;
+}
+
+int64_t InquirePriceCreateDBInstancesRequest::GetReadonlyNodeNum() const
+{
+    return m_readonlyNodeNum;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetReadonlyNodeNum(const int64_t& _readonlyNodeNum)
+{
+    m_readonlyNodeNum = _readonlyNodeNum;
+    m_readonlyNodeNumHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::ReadonlyNodeNumHasBeenSet() const
+{
+    return m_readonlyNodeNumHasBeenSet;
+}
+
+int64_t InquirePriceCreateDBInstancesRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

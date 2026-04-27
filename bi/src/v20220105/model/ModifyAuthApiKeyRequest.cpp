@@ -1,0 +1,94 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/bi/v20220105/model/ModifyAuthApiKeyRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Bi::V20220105::Model;
+using namespace std;
+
+ModifyAuthApiKeyRequest::ModifyAuthApiKeyRequest() :
+    m_apiKeyHasBeenSet(false),
+    m_defaultUserHasBeenSet(false)
+{
+}
+
+string ModifyAuthApiKeyRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_apiKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultUser.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string ModifyAuthApiKeyRequest::GetApiKey() const
+{
+    return m_apiKey;
+}
+
+void ModifyAuthApiKeyRequest::SetApiKey(const string& _apiKey)
+{
+    m_apiKey = _apiKey;
+    m_apiKeyHasBeenSet = true;
+}
+
+bool ModifyAuthApiKeyRequest::ApiKeyHasBeenSet() const
+{
+    return m_apiKeyHasBeenSet;
+}
+
+string ModifyAuthApiKeyRequest::GetDefaultUser() const
+{
+    return m_defaultUser;
+}
+
+void ModifyAuthApiKeyRequest::SetDefaultUser(const string& _defaultUser)
+{
+    m_defaultUser = _defaultUser;
+    m_defaultUserHasBeenSet = true;
+}
+
+bool ModifyAuthApiKeyRequest::DefaultUserHasBeenSet() const
+{
+    return m_defaultUserHasBeenSet;
+}
+
+

@@ -33,7 +33,8 @@ ListDocRequest::ListDocRequest() :
     m_fileTypesHasBeenSet(false),
     m_filterFlagHasBeenSet(false),
     m_showCurrCateHasBeenSet(false),
-    m_enableScopeHasBeenSet(false)
+    m_enableScopeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,15 @@ string ListDocRequest::ToJsonString() const
         string key = "EnableScope";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableScope, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updateTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -331,6 +341,22 @@ void ListDocRequest::SetEnableScope(const int64_t& _enableScope)
 bool ListDocRequest::EnableScopeHasBeenSet() const
 {
     return m_enableScopeHasBeenSet;
+}
+
+TimeRange ListDocRequest::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void ListDocRequest::SetUpdateTime(const TimeRange& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool ListDocRequest::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 

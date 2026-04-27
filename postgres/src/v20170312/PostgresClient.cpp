@@ -190,6 +190,56 @@ PostgresClient::CloseAccountCAMOutcomeCallable PostgresClient::CloseAccountCAMCa
     return prom->get_future();
 }
 
+PostgresClient::CloseAuditServiceOutcome PostgresClient::CloseAuditService(const CloseAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAuditServiceResponse rsp = CloseAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAuditServiceOutcome(rsp);
+        else
+            return CloseAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseAuditServiceRequest&;
+    using Resp = CloseAuditServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::CloseAuditServiceOutcomeCallable PostgresClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseAuditServiceOutcome>>();
+    CloseAuditServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const CloseAuditServiceRequest&,
+        CloseAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::CloseDBExtranetAccessOutcome PostgresClient::CloseDBExtranetAccess(const CloseDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseDBExtranetAccess");
@@ -282,6 +332,56 @@ PostgresClient::CreateAccountOutcomeCallable PostgresClient::CreateAccountCallab
         const PostgresClient*,
         const CreateAccountRequest&,
         CreateAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::CreateAuditLogFileOutcome PostgresClient::CreateAuditLogFile(const CreateAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditLogFileResponse rsp = CreateAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditLogFileOutcome(rsp);
+        else
+            return CreateAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateAuditLogFileAsync(const CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuditLogFileRequest&;
+    using Resp = CreateAuditLogFileResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditLogFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::CreateAuditLogFileOutcomeCallable PostgresClient::CreateAuditLogFileCallable(const CreateAuditLogFileRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuditLogFileOutcome>>();
+    CreateAuditLogFileAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const CreateAuditLogFileRequest&,
+        CreateAuditLogFileOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -790,6 +890,56 @@ PostgresClient::DeleteAccountOutcomeCallable PostgresClient::DeleteAccountCallab
     return prom->get_future();
 }
 
+PostgresClient::DeleteAuditLogFileOutcome PostgresClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditLogFileResponse rsp = DeleteAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditLogFileOutcome(rsp);
+        else
+            return DeleteAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteAuditLogFileAsync(const DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuditLogFileRequest&;
+    using Resp = DeleteAuditLogFileResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuditLogFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DeleteAuditLogFileOutcomeCallable PostgresClient::DeleteAuditLogFileCallable(const DeleteAuditLogFileRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuditLogFileOutcome>>();
+    DeleteAuditLogFileAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DeleteAuditLogFileRequest&,
+        DeleteAuditLogFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::DeleteBackupPlanOutcome PostgresClient::DeleteBackupPlan(const DeleteBackupPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBackupPlan");
@@ -1232,6 +1382,156 @@ PostgresClient::DescribeAccountsOutcomeCallable PostgresClient::DescribeAccounts
         const PostgresClient*,
         const DescribeAccountsRequest&,
         DescribeAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::DescribeAuditInstanceListOutcome PostgresClient::DescribeAuditInstanceList(const DescribeAuditInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditInstanceListResponse rsp = DescribeAuditInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditInstanceListOutcome(rsp);
+        else
+            return DescribeAuditInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeAuditInstanceListAsync(const DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditInstanceListRequest&;
+    using Resp = DescribeAuditInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribeAuditInstanceListOutcomeCallable PostgresClient::DescribeAuditInstanceListCallable(const DescribeAuditInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditInstanceListOutcome>>();
+    DescribeAuditInstanceListAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribeAuditInstanceListRequest&,
+        DescribeAuditInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::DescribeAuditLogFilesOutcome PostgresClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogFilesResponse rsp = DescribeAuditLogFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogFilesOutcome(rsp);
+        else
+            return DescribeAuditLogFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogFilesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeAuditLogFilesAsync(const DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogFilesRequest&;
+    using Resp = DescribeAuditLogFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribeAuditLogFilesOutcomeCallable PostgresClient::DescribeAuditLogFilesCallable(const DescribeAuditLogFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogFilesOutcome>>();
+    DescribeAuditLogFilesAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribeAuditLogFilesRequest&,
+        DescribeAuditLogFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::DescribeAuditLogsOutcome PostgresClient::DescribeAuditLogs(const DescribeAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogsResponse rsp = DescribeAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogsOutcome(rsp);
+        else
+            return DescribeAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuditLogsRequest&;
+    using Resp = DescribeAuditLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuditLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::DescribeAuditLogsOutcomeCallable PostgresClient::DescribeAuditLogsCallable(const DescribeAuditLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuditLogsOutcome>>();
+    DescribeAuditLogsAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const DescribeAuditLogsRequest&,
+        DescribeAuditLogsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3540,6 +3840,56 @@ PostgresClient::ModifyAccountRemarkOutcomeCallable PostgresClient::ModifyAccount
     return prom->get_future();
 }
 
+PostgresClient::ModifyAuditServiceOutcome PostgresClient::ModifyAuditService(const ModifyAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditServiceResponse rsp = ModifyAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditServiceOutcome(rsp);
+        else
+            return ModifyAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyAuditServiceAsync(const ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAuditServiceRequest&;
+    using Resp = ModifyAuditServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::ModifyAuditServiceOutcomeCallable PostgresClient::ModifyAuditServiceCallable(const ModifyAuditServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAuditServiceOutcome>>();
+    ModifyAuditServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const ModifyAuditServiceRequest&,
+        ModifyAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 PostgresClient::ModifyBackupDownloadRestrictionOutcome PostgresClient::ModifyBackupDownloadRestriction(const ModifyBackupDownloadRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBackupDownloadRestriction");
@@ -4582,6 +4932,56 @@ PostgresClient::OpenAccountCAMOutcomeCallable PostgresClient::OpenAccountCAMCall
         const PostgresClient*,
         const OpenAccountCAMRequest&,
         OpenAccountCAMOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+PostgresClient::OpenAuditServiceOutcome PostgresClient::OpenAuditService(const OpenAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAuditServiceResponse rsp = OpenAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAuditServiceOutcome(rsp);
+        else
+            return OpenAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::OpenAuditServiceAsync(const OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenAuditServiceRequest&;
+    using Resp = OpenAuditServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenAuditService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+PostgresClient::OpenAuditServiceOutcomeCallable PostgresClient::OpenAuditServiceCallable(const OpenAuditServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenAuditServiceOutcome>>();
+    OpenAuditServiceAsync(
+    request,
+    [prom](
+        const PostgresClient*,
+        const OpenAuditServiceRequest&,
+        OpenAuditServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

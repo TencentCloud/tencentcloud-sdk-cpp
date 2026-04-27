@@ -140,6 +140,56 @@ BiClient::ClearEmbedTokenOutcomeCallable BiClient::ClearEmbedTokenCallable(const
     return prom->get_future();
 }
 
+BiClient::CreateAuthApiKeyOutcome BiClient::CreateAuthApiKey(const CreateAuthApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuthApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuthApiKeyResponse rsp = CreateAuthApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuthApiKeyOutcome(rsp);
+        else
+            return CreateAuthApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuthApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateAuthApiKeyAsync(const CreateAuthApiKeyRequest& request, const CreateAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuthApiKeyRequest&;
+    using Resp = CreateAuthApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuthApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateAuthApiKeyOutcomeCallable BiClient::CreateAuthApiKeyCallable(const CreateAuthApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuthApiKeyOutcome>>();
+    CreateAuthApiKeyAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateAuthApiKeyRequest&,
+        CreateAuthApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::CreateDatasourceOutcome BiClient::CreateDatasource(const CreateDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDatasource");
@@ -590,6 +640,56 @@ BiClient::CreateUserRoleProjectOutcomeCallable BiClient::CreateUserRoleProjectCa
     return prom->get_future();
 }
 
+BiClient::DeleteAuthApiKeyOutcome BiClient::DeleteAuthApiKey(const DeleteAuthApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuthApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuthApiKeyResponse rsp = DeleteAuthApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuthApiKeyOutcome(rsp);
+        else
+            return DeleteAuthApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuthApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DeleteAuthApiKeyAsync(const DeleteAuthApiKeyRequest& request, const DeleteAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAuthApiKeyRequest&;
+    using Resp = DeleteAuthApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAuthApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DeleteAuthApiKeyOutcomeCallable BiClient::DeleteAuthApiKeyCallable(const DeleteAuthApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAuthApiKeyOutcome>>();
+    DeleteAuthApiKeyAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DeleteAuthApiKeyRequest&,
+        DeleteAuthApiKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::DeleteDatasourceOutcome BiClient::DeleteDatasource(const DeleteDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDatasource");
@@ -882,6 +982,106 @@ BiClient::DeleteUserRoleProjectOutcomeCallable BiClient::DeleteUserRoleProjectCa
         const BiClient*,
         const DeleteUserRoleProjectRequest&,
         DeleteUserRoleProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeAuthApiKeyInfoOutcome BiClient::DescribeAuthApiKeyInfo(const DescribeAuthApiKeyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuthApiKeyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuthApiKeyInfoResponse rsp = DescribeAuthApiKeyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuthApiKeyInfoOutcome(rsp);
+        else
+            return DescribeAuthApiKeyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuthApiKeyInfoOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeAuthApiKeyInfoAsync(const DescribeAuthApiKeyInfoRequest& request, const DescribeAuthApiKeyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuthApiKeyInfoRequest&;
+    using Resp = DescribeAuthApiKeyInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuthApiKeyInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeAuthApiKeyInfoOutcomeCallable BiClient::DescribeAuthApiKeyInfoCallable(const DescribeAuthApiKeyInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuthApiKeyInfoOutcome>>();
+    DescribeAuthApiKeyInfoAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeAuthApiKeyInfoRequest&,
+        DescribeAuthApiKeyInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeAuthApiKeyListOutcome BiClient::DescribeAuthApiKeyList(const DescribeAuthApiKeyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuthApiKeyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuthApiKeyListResponse rsp = DescribeAuthApiKeyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuthApiKeyListOutcome(rsp);
+        else
+            return DescribeAuthApiKeyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuthApiKeyListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeAuthApiKeyListAsync(const DescribeAuthApiKeyListRequest& request, const DescribeAuthApiKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAuthApiKeyListRequest&;
+    using Resp = DescribeAuthApiKeyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAuthApiKeyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeAuthApiKeyListOutcomeCallable BiClient::DescribeAuthApiKeyListCallable(const DescribeAuthApiKeyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAuthApiKeyListOutcome>>();
+    DescribeAuthApiKeyListAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeAuthApiKeyListRequest&,
+        DescribeAuthApiKeyListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1632,6 +1832,56 @@ BiClient::ExportScreenPageOutcomeCallable BiClient::ExportScreenPageCallable(con
         const BiClient*,
         const ExportScreenPageRequest&,
         ExportScreenPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::ModifyAuthApiKeyOutcome BiClient::ModifyAuthApiKey(const ModifyAuthApiKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuthApiKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuthApiKeyResponse rsp = ModifyAuthApiKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuthApiKeyOutcome(rsp);
+        else
+            return ModifyAuthApiKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuthApiKeyOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyAuthApiKeyAsync(const ModifyAuthApiKeyRequest& request, const ModifyAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAuthApiKeyRequest&;
+    using Resp = ModifyAuthApiKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAuthApiKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyAuthApiKeyOutcomeCallable BiClient::ModifyAuthApiKeyCallable(const ModifyAuthApiKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAuthApiKeyOutcome>>();
+    ModifyAuthApiKeyAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyAuthApiKeyRequest&,
+        ModifyAuthApiKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

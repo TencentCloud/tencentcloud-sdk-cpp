@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBillingResourceInstanceRunningJobsRequest::DescribeBillingResourceInstanceRunningJobsRequest() :
     m_resourceGroupIdHasBeenSet(false),
-    m_resourceInstanceIdHasBeenSet(false)
+    m_resourceInstanceIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeBillingResourceInstanceRunningJobsRequest::ToJsonString() const
         string key = "ResourceInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeBillingResourceInstanceRunningJobsRequest::SetResourceInstanceId(co
 bool DescribeBillingResourceInstanceRunningJobsRequest::ResourceInstanceIdHasBeenSet() const
 {
     return m_resourceInstanceIdHasBeenSet;
+}
+
+string DescribeBillingResourceInstanceRunningJobsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeBillingResourceInstanceRunningJobsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeBillingResourceInstanceRunningJobsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

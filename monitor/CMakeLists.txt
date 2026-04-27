@@ -119,7 +119,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/PrometheusRuleSet.h
   include/tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h
   include/tencentcloud/monitor/v20180724/model/CreateAlarmShieldRequest.h
-  include/tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesRequest.h
+  include/tencentcloud/monitor/v20180724/model/CheckAddressByPrometheusRequest.h
   include/tencentcloud/monitor/v20180724/model/InstallPluginsResponse.h
   include/tencentcloud/monitor/v20180724/model/ProductSimple.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyRule.h
@@ -356,6 +356,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DeleteGrafanaIntegrationRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusAlertPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePhoneAlarmFlowTotalCountResponse.h
+  include/tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h
   include/tencentcloud/monitor/v20180724/model/PeriodsSt.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h
@@ -389,6 +390,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusNotificationItem.h
   include/tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h
+  include/tencentcloud/monitor/v20180724/model/DimensionsDesc.h
   include/tencentcloud/monitor/v20180724/model/UpgradeGrafanaInstanceRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeAccidentEventListAlarms.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusGlobalNotificationResponse.h
@@ -540,7 +542,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/IntegrationConfiguration.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusGlobalNotificationResponse.h
-  include/tencentcloud/monitor/v20180724/model/DimensionsDesc.h
+  include/tencentcloud/monitor/v20180724/model/CheckAddressByPrometheusResponse.h
   include/tencentcloud/monitor/v20180724/model/CreateAlertRuleRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusRecordRuleYamlResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusMetricScrapeStatistics.h
@@ -672,7 +674,7 @@ set(monitor_src
   src/v20180724/model/PrometheusRuleSet.cpp
   src/v20180724/model/DescribeAllNamespacesResponse.cpp
   src/v20180724/model/CreateAlarmShieldRequest.cpp
-  src/v20180724/model/TerminatePrometheusInstancesRequest.cpp
+  src/v20180724/model/CheckAddressByPrometheusRequest.cpp
   src/v20180724/model/InstallPluginsResponse.cpp
   src/v20180724/model/ProductSimple.cpp
   src/v20180724/model/AlarmPolicyRule.cpp
@@ -909,6 +911,7 @@ set(monitor_src
   src/v20180724/model/DeleteGrafanaIntegrationRequest.cpp
   src/v20180724/model/ModifyPrometheusAlertPolicyResponse.cpp
   src/v20180724/model/DescribePhoneAlarmFlowTotalCountResponse.cpp
+  src/v20180724/model/TerminatePrometheusInstancesRequest.cpp
   src/v20180724/model/CreateServiceDiscoveryRequest.cpp
   src/v20180724/model/PeriodsSt.cpp
   src/v20180724/model/ModifyAlarmReceiversResponse.cpp
@@ -942,6 +945,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmPolicyResponse.cpp
   src/v20180724/model/PrometheusNotificationItem.cpp
   src/v20180724/model/DescribeMonitorTypesResponse.cpp
+  src/v20180724/model/DimensionsDesc.cpp
   src/v20180724/model/UpgradeGrafanaInstanceRequest.cpp
   src/v20180724/model/DescribeAccidentEventListAlarms.cpp
   src/v20180724/model/CreatePrometheusGlobalNotificationResponse.cpp
@@ -1093,7 +1097,7 @@ set(monitor_src
   src/v20180724/model/IntegrationConfiguration.cpp
   src/v20180724/model/DescribePrometheusAgentsResponse.cpp
   src/v20180724/model/ModifyPrometheusGlobalNotificationResponse.cpp
-  src/v20180724/model/DimensionsDesc.cpp
+  src/v20180724/model/CheckAddressByPrometheusResponse.cpp
   src/v20180724/model/CreateAlertRuleRequest.cpp
   src/v20180724/model/ModifyPrometheusRecordRuleYamlResponse.cpp
   src/v20180724/model/PrometheusMetricScrapeStatistics.cpp

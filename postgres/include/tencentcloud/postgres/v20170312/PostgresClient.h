@@ -29,10 +29,14 @@
 #include <tencentcloud/postgres/v20170312/model/CloneDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloseAccountCAMRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseAccountCAMResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CloseAuditServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateAuditLogFileRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateAuditLogFileResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateBackupPlanRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateBackupPlanResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateBaseBackupRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteAccountResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteAuditLogFileRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteBackupPlanRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteBackupPlanResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteBaseBackupRequest.h>
@@ -71,6 +77,12 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeAccountPrivilegesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAccountsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditInstanceListRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditInstanceListResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditLogFilesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditLogsRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAvailableRecoveryTimeRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeAvailableRecoveryTimeResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeBackupDownloadRestrictionRequest.h>
@@ -163,6 +175,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountPrivilegesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountRemarkRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyAccountRemarkResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyAuditServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyAuditServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyBackupPlanRequest.h>
@@ -205,6 +219,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenAccountCAMRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenAccountCAMResponse.h>
+#include <tencentcloud/postgres/v20170312/model/OpenAuditServiceRequest.h>
+#include <tencentcloud/postgres/v20170312/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupRequest.h>
@@ -254,12 +270,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseAccountCAMResponse> CloseAccountCAMOutcome;
                 typedef std::future<CloseAccountCAMOutcome> CloseAccountCAMOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseAccountCAMRequest&, CloseAccountCAMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAccountCAMAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
+                typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
                 typedef std::future<CloseDBExtranetAccessOutcome> CloseDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBExtranetAccessRequest&, CloseDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBExtranetAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccountResponse> CreateAccountOutcome;
                 typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateAccountRequest&, CreateAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditLogFileResponse> CreateAuditLogFileOutcome;
+                typedef std::future<CreateAuditLogFileOutcome> CreateAuditLogFileOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateAuditLogFileRequest&, CreateAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBackupPlanResponse> CreateBackupPlanOutcome;
                 typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateBackupPlanRequest&, CreateBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPlanAsyncHandler;
@@ -290,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
+                typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBackupPlanResponse> DeleteBackupPlanOutcome;
                 typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteBackupPlanRequest&, DeleteBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupPlanAsyncHandler;
@@ -317,6 +342,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditInstanceListResponse> DescribeAuditInstanceListOutcome;
+                typedef std::future<DescribeAuditInstanceListOutcome> DescribeAuditInstanceListOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeAuditInstanceListRequest&, DescribeAuditInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
+                typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogsResponse> DescribeAuditLogsOutcome;
+                typedef std::future<DescribeAuditLogsOutcome> DescribeAuditLogsOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeAuditLogsRequest&, DescribeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailableRecoveryTimeResponse> DescribeAvailableRecoveryTimeOutcome;
                 typedef std::future<DescribeAvailableRecoveryTimeOutcome> DescribeAvailableRecoveryTimeOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeAvailableRecoveryTimeRequest&, DescribeAvailableRecoveryTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableRecoveryTimeAsyncHandler;
@@ -455,6 +489,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAccountRemarkResponse> ModifyAccountRemarkOutcome;
                 typedef std::future<ModifyAccountRemarkOutcome> ModifyAccountRemarkOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyAccountRemarkRequest&, ModifyAccountRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountRemarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuditServiceResponse> ModifyAuditServiceOutcome;
+                typedef std::future<ModifyAuditServiceOutcome> ModifyAuditServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyAuditServiceRequest&, ModifyAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
@@ -518,6 +555,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenAccountCAMResponse> OpenAccountCAMOutcome;
                 typedef std::future<OpenAccountCAMOutcome> OpenAccountCAMOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenAccountCAMRequest&, OpenAccountCAMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAccountCAMAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
+                typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
@@ -588,6 +628,15 @@ namespace TencentCloud
                 CloseAccountCAMOutcomeCallable CloseAccountCAMCallable(const Model::CloseAccountCAMRequest& request);
 
                 /**
+                 *关闭数据库实例的审计功能
+                 * @param req CloseAuditServiceRequest
+                 * @return CloseAuditServiceOutcome
+                 */
+                CloseAuditServiceOutcome CloseAuditService(const Model::CloseAuditServiceRequest &request);
+                void CloseAuditServiceAsync(const Model::CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseAuditServiceOutcomeCallable CloseAuditServiceCallable(const Model::CloseAuditServiceRequest& request);
+
+                /**
                  *本接口（CloseDBExtranetAccess）用于关闭实例公网地址。
                  * @param req CloseDBExtranetAccessRequest
                  * @return CloseDBExtranetAccessOutcome
@@ -604,6 +653,15 @@ namespace TencentCloud
                 CreateAccountOutcome CreateAccount(const Model::CreateAccountRequest &request);
                 void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccountOutcomeCallable CreateAccountCallable(const Model::CreateAccountRequest& request);
+
+                /**
+                 *创建审计日志文件
+                 * @param req CreateAuditLogFileRequest
+                 * @return CreateAuditLogFileOutcome
+                 */
+                CreateAuditLogFileOutcome CreateAuditLogFile(const Model::CreateAuditLogFileRequest &request);
+                void CreateAuditLogFileAsync(const Model::CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditLogFileOutcomeCallable CreateAuditLogFileCallable(const Model::CreateAuditLogFileRequest& request);
 
                 /**
                  *此接口用于创建备份策略。
@@ -698,6 +756,15 @@ namespace TencentCloud
                 DeleteAccountOutcomeCallable DeleteAccountCallable(const Model::DeleteAccountRequest& request);
 
                 /**
+                 *删除审计日志文件
+                 * @param req DeleteAuditLogFileRequest
+                 * @return DeleteAuditLogFileOutcome
+                 */
+                DeleteAuditLogFileOutcome DeleteAuditLogFile(const Model::DeleteAuditLogFileRequest &request);
+                void DeleteAuditLogFileAsync(const Model::DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
+
+                /**
                  *删除备份策略
                  * @param req DeleteBackupPlanRequest
                  * @return DeleteBackupPlanOutcome
@@ -777,6 +844,33 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *查询审计实例列表
+                 * @param req DescribeAuditInstanceListRequest
+                 * @return DescribeAuditInstanceListOutcome
+                 */
+                DescribeAuditInstanceListOutcome DescribeAuditInstanceList(const Model::DescribeAuditInstanceListRequest &request);
+                void DescribeAuditInstanceListAsync(const Model::DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditInstanceListOutcomeCallable DescribeAuditInstanceListCallable(const Model::DescribeAuditInstanceListRequest& request);
+
+                /**
+                 *查询审计日志文件
+                 * @param req DescribeAuditLogFilesRequest
+                 * @return DescribeAuditLogFilesOutcome
+                 */
+                DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
+                void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *查询数据库审计日志
+                 * @param req DescribeAuditLogsRequest
+                 * @return DescribeAuditLogsOutcome
+                 */
+                DescribeAuditLogsOutcome DescribeAuditLogs(const Model::DescribeAuditLogsRequest &request);
+                void DescribeAuditLogsAsync(const Model::DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
 
                 /**
                  *本接口（DescribeAvailableRecoveryTime）用于查询实例可恢复的时间范围。
@@ -1196,6 +1290,15 @@ namespace TencentCloud
                 ModifyAccountRemarkOutcomeCallable ModifyAccountRemarkCallable(const Model::ModifyAccountRemarkRequest& request);
 
                 /**
+                 *修改数据库实例的审计功能
+                 * @param req ModifyAuditServiceRequest
+                 * @return ModifyAuditServiceOutcome
+                 */
+                ModifyAuditServiceOutcome ModifyAuditService(const Model::ModifyAuditServiceRequest &request);
+                void ModifyAuditServiceAsync(const Model::ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuditServiceOutcomeCallable ModifyAuditServiceCallable(const Model::ModifyAuditServiceRequest& request);
+
+                /**
                  *本接口（ModifyBackupDownloadRestriction）用于修改备份文件下载限制。
                  * @param req ModifyBackupDownloadRestrictionRequest
                  * @return ModifyBackupDownloadRestrictionOutcome
@@ -1385,6 +1488,15 @@ namespace TencentCloud
                 OpenAccountCAMOutcome OpenAccountCAM(const Model::OpenAccountCAMRequest &request);
                 void OpenAccountCAMAsync(const Model::OpenAccountCAMRequest& request, const OpenAccountCAMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenAccountCAMOutcomeCallable OpenAccountCAMCallable(const Model::OpenAccountCAMRequest& request);
+
+                /**
+                 *开启数据库实例的审计功能
+                 * @param req OpenAuditServiceRequest
+                 * @return OpenAuditServiceOutcome
+                 */
+                OpenAuditServiceOutcome OpenAuditService(const Model::OpenAuditServiceRequest &request);
+                void OpenAuditServiceAsync(const Model::OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
 
                 /**
                  *本接口（OpenDBExtranetAccess）用于开通实例公网地址。

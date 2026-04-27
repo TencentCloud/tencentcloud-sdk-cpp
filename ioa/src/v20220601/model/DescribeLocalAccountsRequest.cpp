@@ -23,6 +23,7 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeLocalAccountsRequest::DescribeLocalAccountsRequest() :
+    m_domainInstanceIdHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_accountGroupIdHasBeenSet(false),
     m_showFlagHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeLocalAccountsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_conditionHasBeenSet)
     {
@@ -68,6 +77,22 @@ string DescribeLocalAccountsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeLocalAccountsRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void DescribeLocalAccountsRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool DescribeLocalAccountsRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
+}
 
 Condition DescribeLocalAccountsRequest::GetCondition() const
 {

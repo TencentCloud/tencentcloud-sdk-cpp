@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-DescribeBillingResourceGroupAttachedWorkspacesRequest::DescribeBillingResourceGroupAttachedWorkspacesRequest()
+DescribeBillingResourceGroupAttachedWorkspacesRequest::DescribeBillingResourceGroupAttachedWorkspacesRequest() :
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeBillingResourceGroupAttachedWorkspacesRequest::ToJsonString() con
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeBillingResourceGroupAttachedWorkspacesRequest::ToJsonString() con
     return buffer.GetString();
 }
 
+
+string DescribeBillingResourceGroupAttachedWorkspacesRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeBillingResourceGroupAttachedWorkspacesRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeBillingResourceGroupAttachedWorkspacesRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
+}
 
 

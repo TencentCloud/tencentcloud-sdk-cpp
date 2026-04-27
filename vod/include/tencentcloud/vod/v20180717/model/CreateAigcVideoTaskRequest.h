@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取<p>固定主体输入信息。</p>
-                     * @return SubjectInfos <p>固定主体输入信息。</p>
+                     * 获取<p>主体输入信息。</p>
+                     * @return SubjectInfos <p>主体输入信息。</p>
                      * 
                      */
                     std::vector<AigcVideoTaskInputSubjectInfo> GetSubjectInfos() const;
 
                     /**
-                     * 设置<p>固定主体输入信息。</p>
-                     * @param _subjectInfos <p>固定主体输入信息。</p>
+                     * 设置<p>主体输入信息。</p>
+                     * @param _subjectInfos <p>主体输入信息。</p>
                      * 
                      */
                     void SetSubjectInfos(const std::vector<AigcVideoTaskInputSubjectInfo>& _subjectInfos);
@@ -450,7 +450,7 @@ namespace TencentCloud
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * <p>固定主体输入信息。</p>
+                     * <p>主体输入信息。</p>
                      */
                     std::vector<AigcVideoTaskInputSubjectInfo> m_subjectInfos;
                     bool m_subjectInfosHasBeenSet;
