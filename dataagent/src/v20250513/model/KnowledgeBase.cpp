@@ -27,7 +27,8 @@ KnowledgeBase::KnowledgeBase() :
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_fileNumHasBeenSet(false),
-    m_datasourceIdsHasBeenSet(false)
+    m_datasourceIdsHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,23 @@ CoreInternalOutcome KnowledgeBase::Deserialize(const rapidjson::Value &value)
         m_datasourceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Config") && !value["Config"].IsNull())
+    {
+        if (!value["Config"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBase.Config` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_config.Deserialize(value["Config"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +193,15 @@ void KnowledgeBase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_config.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -290,5 +317,21 @@ void KnowledgeBase::SetDatasourceIds(const vector<string>& _datasourceIds)
 bool KnowledgeBase::DatasourceIdsHasBeenSet() const
 {
     return m_datasourceIdsHasBeenSet;
+}
+
+KnowledgeTaskConfig KnowledgeBase::GetConfig() const
+{
+    return m_config;
+}
+
+void KnowledgeBase::SetConfig(const KnowledgeTaskConfig& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool KnowledgeBase::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 

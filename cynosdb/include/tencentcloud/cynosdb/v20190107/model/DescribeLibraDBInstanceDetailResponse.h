@@ -24,6 +24,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/LibraDBNodeInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/UpgradeAnalysisInstanceVersionInfo.h>
 
 
 namespace TencentCloud
@@ -47,9 +48,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主账号
+                     * 获取<p>主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uin 主账号
+                     * @return Uin <p>主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +64,9 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取账号唯一ID
+                     * 获取<p>账号唯一ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 账号唯一ID
+                     * @return AppId <p>账号唯一ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,9 +80,9 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
+                     * 获取<p>集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterId 集群ID
+                     * @return ClusterId <p>集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,9 +96,9 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
+                     * 获取<p>集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterName 集群名称
+                     * @return ClusterName <p>集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,9 +112,9 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID
+                     * @return InstanceId <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,9 +128,9 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
+                     * 获取<p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 实例名称
+                     * @return InstanceName <p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,9 +144,9 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
+                     * 获取<p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目ID
+                     * @return ProjectId <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,9 +160,9 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,9 +176,9 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区
+                     * 获取<p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zone 可用区
+                     * @return Zone <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,9 +192,9 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
+                     * 获取<p>实例状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 实例状态
+                     * @return Status <p>实例状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -207,9 +208,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
+                     * 获取<p>状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusDesc 状态描述
+                     * @return StatusDesc <p>状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,9 +224,9 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取Libra分析引擎版本
+                     * 获取<p>Libra分析引擎版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LibraDBVersion Libra分析引擎版本
+                     * @return LibraDBVersion <p>Libra分析引擎版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -239,9 +240,9 @@ namespace TencentCloud
                     bool LibraDBVersionHasBeenSet() const;
 
                     /**
-                     * 获取cpu核数
+                     * 获取<p>cpu核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cpu cpu核数
+                     * @return Cpu <p>cpu核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -255,9 +256,9 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存大小
+                     * 获取<p>内存大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Memory 内存大小
+                     * @return Memory <p>内存大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,9 +272,9 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取存储大小
+                     * 获取<p>存储大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Storage 存储大小
+                     * @return Storage <p>存储大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -287,9 +288,9 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取存储类型
+                     * 获取<p>存储类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageType 存储类型
+                     * @return StorageType <p>存储类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -303,9 +304,9 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
+                     * 获取<p>实例类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType 实例类型
+                     * @return InstanceType <p>实例类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -319,9 +320,9 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例角色
+                     * 获取<p>实例角色</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceRole 实例角色
+                     * @return InstanceRole <p>实例角色</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -335,9 +336,9 @@ namespace TencentCloud
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,9 +352,9 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -367,9 +368,9 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取售卖方式
+                     * 获取<p>售卖方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayMode 售卖方式
+                     * @return PayMode <p>售卖方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -383,9 +384,9 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取售卖开始时间
+                     * 获取<p>售卖开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeriodStartTime 售卖开始时间
+                     * @return PeriodStartTime <p>售卖开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,9 +400,9 @@ namespace TencentCloud
                     bool PeriodStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取售卖结束时间
+                     * 获取<p>售卖结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PeriodEndTime 售卖结束时间
+                     * @return PeriodEndTime <p>售卖结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -415,9 +416,9 @@ namespace TencentCloud
                     bool PeriodEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取续费标识
+                     * 获取<p>续费标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewFlag 续费标识
+                     * @return RenewFlag <p>续费标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -431,9 +432,9 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
+                     * 获取<p>网络类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetType 网络类型
+                     * @return NetType <p>网络类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,9 +448,9 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
+                     * 获取<p>私有网络ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId 私有网络ID
+                     * @return VpcId <p>私有网络ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -463,9 +464,9 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
+                     * 获取<p>子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetId 子网ID
+                     * @return SubnetId <p>子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -479,9 +480,9 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟IP
+                     * 获取<p>虚拟IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip 虚拟IP
+                     * @return Vip <p>虚拟IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -495,9 +496,9 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取端口
+                     * 获取<p>端口</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vport 端口
+                     * @return Vport <p>端口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -511,9 +512,9 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取实例网络信息
+                     * 获取<p>实例网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceNetInfo 实例网络信息
+                     * @return InstanceNetInfo <p>实例网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -527,9 +528,9 @@ namespace TencentCloud
                     bool InstanceNetInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例标签信息
+                     * 获取<p>实例标签信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceTags 实例标签信息
+                     * @return ResourceTags <p>实例标签信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -543,8 +544,8 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取实例节点信息
-                     * @return NodeInfo 实例节点信息
+                     * 获取<p>实例节点信息</p>
+                     * @return NodeInfo <p>实例节点信息</p>
                      * 
                      */
                     std::vector<LibraDBNodeInfo> GetNodeInfo() const;
@@ -557,8 +558,8 @@ namespace TencentCloud
                     bool NodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例节点个数
-                     * @return NodeCount 实例节点个数
+                     * 获取<p>实例节点个数</p>
+                     * @return NodeCount <p>实例节点个数</p>
                      * 
                      */
                     uint64_t GetNodeCount() const;
@@ -570,236 +571,259 @@ namespace TencentCloud
                      */
                     bool NodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分析实例升级版本之后信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnalysisUpgradeVersionInfo <p>分析实例升级版本之后信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UpgradeAnalysisInstanceVersionInfo GetAnalysisUpgradeVersionInfo() const;
+
+                    /**
+                     * 判断参数 AnalysisUpgradeVersionInfo 是否已赋值
+                     * @return AnalysisUpgradeVersionInfo 是否已赋值
+                     * 
+                     */
+                    bool AnalysisUpgradeVersionInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主账号
+                     * <p>主账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 账号唯一ID
+                     * <p>账号唯一ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * <p>实例状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * <p>状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * Libra分析引擎版本
+                     * <p>Libra分析引擎版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libraDBVersion;
                     bool m_libraDBVersionHasBeenSet;
 
                     /**
-                     * cpu核数
+                     * <p>cpu核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存大小
+                     * <p>内存大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 存储大小
+                     * <p>存储大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 存储类型
+                     * <p>存储类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * <p>实例类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例角色
+                     * <p>实例角色</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 售卖方式
+                     * <p>售卖方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 售卖开始时间
+                     * <p>售卖开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_periodStartTime;
                     bool m_periodStartTimeHasBeenSet;
 
                     /**
-                     * 售卖结束时间
+                     * <p>售卖结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_periodEndTime;
                     bool m_periodEndTimeHasBeenSet;
 
                     /**
-                     * 续费标识
+                     * <p>续费标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * <p>网络类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * <p>私有网络ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 虚拟IP
+                     * <p>虚拟IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 实例网络信息
+                     * <p>实例网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceNetInfo m_instanceNetInfo;
                     bool m_instanceNetInfoHasBeenSet;
 
                     /**
-                     * 实例标签信息
+                     * <p>实例标签信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 实例节点信息
+                     * <p>实例节点信息</p>
                      */
                     std::vector<LibraDBNodeInfo> m_nodeInfo;
                     bool m_nodeInfoHasBeenSet;
 
                     /**
-                     * 实例节点个数
+                     * <p>实例节点个数</p>
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * <p>分析实例升级版本之后信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UpgradeAnalysisInstanceVersionInfo m_analysisUpgradeVersionInfo;
+                    bool m_analysisUpgradeVersionInfoHasBeenSet;
 
                 };
             }

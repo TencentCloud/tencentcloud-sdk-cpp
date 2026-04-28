@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原始查询词
-                     * @return Query 原始查询词
+                     * 获取<p>原始查询词</p>
+                     * @return Query <p>原始查询词</p>
                      * 
                      */
                     std::string GetQuery() const;
@@ -58,28 +58,8 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取搜索结果图片列表，格式为json字符串。
-
-- thumbnailUrl：缩略图地址。
-- thumbnailWidth：缩略图宽度。
-- thumbnailHeight：缩略图高度。
-- origPicUrl：原图地址。
--  origPicWidth：原图宽度。
-- siteUrl：站点地址，原图来源网页URL。
-- siteName：站点名称。
-- title：标题，原图标题或原图来源网页标题。
-- date：内容发布时间。
-                     * @return Images 搜索结果图片列表，格式为json字符串。
-
-- thumbnailUrl：缩略图地址。
-- thumbnailWidth：缩略图宽度。
-- thumbnailHeight：缩略图高度。
-- origPicUrl：原图地址。
--  origPicWidth：原图宽度。
-- siteUrl：站点地址，原图来源网页URL。
-- siteName：站点名称。
-- title：标题，原图标题或原图来源网页标题。
-- date：内容发布时间。
+                     * 获取<p>搜索结果图片列表，格式为json字符串。</p><ul><li>thumbnailUrl：缩略图地址。</li><li>thumbnailWidth：缩略图宽度。</li><li>thumbnailHeight：缩略图高度。</li><li>origPicUrl：原图地址。</li><li>origPicWidth：原图宽度。</li><li>origPicHeight：原图高度。</li><li>siteUrl：站点地址，原图来源网页URL。</li><li>siteName：站点名称。</li><li>title：标题，原图标题或原图来源网页标题。</li><li>date：内容发布时间。</li></ul>
+                     * @return Images <p>搜索结果图片列表，格式为json字符串。</p><ul><li>thumbnailUrl：缩略图地址。</li><li>thumbnailWidth：缩略图宽度。</li><li>thumbnailHeight：缩略图高度。</li><li>origPicUrl：原图地址。</li><li>origPicWidth：原图宽度。</li><li>origPicHeight：原图高度。</li><li>siteUrl：站点地址，原图来源网页URL。</li><li>siteName：站点名称。</li><li>title：标题，原图标题或原图来源网页标题。</li><li>date：内容发布时间。</li></ul>
                      * 
                      */
                     std::vector<std::string> GetImages() const;
@@ -94,23 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原始查询词
+                     * <p>原始查询词</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 搜索结果图片列表，格式为json字符串。
-
-- thumbnailUrl：缩略图地址。
-- thumbnailWidth：缩略图宽度。
-- thumbnailHeight：缩略图高度。
-- origPicUrl：原图地址。
--  origPicWidth：原图宽度。
-- siteUrl：站点地址，原图来源网页URL。
-- siteName：站点名称。
-- title：标题，原图标题或原图来源网页标题。
-- date：内容发布时间。
+                     * <p>搜索结果图片列表，格式为json字符串。</p><ul><li>thumbnailUrl：缩略图地址。</li><li>thumbnailWidth：缩略图宽度。</li><li>thumbnailHeight：缩略图高度。</li><li>origPicUrl：原图地址。</li><li>origPicWidth：原图宽度。</li><li>origPicHeight：原图高度。</li><li>siteUrl：站点地址，原图来源网页URL。</li><li>siteName：站点名称。</li><li>title：标题，原图标题或原图来源网页标题。</li><li>date：内容发布时间。</li></ul>
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;

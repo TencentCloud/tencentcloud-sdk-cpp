@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
-                     * @return DatabaseType 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
+                     * 获取<p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>
+                     * @return DatabaseType <p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>
                      * 
                      */
                     std::string GetDatabaseType() const;
 
                     /**
-                     * 设置数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
-                     * @param _databaseType 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
+                     * 设置<p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>
+                     * @param _databaseType <p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>
                      * 
                      */
                     void SetDatabaseType(const std::string& _databaseType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
-                     * @return MigrateRole 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * 获取<p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>
+                     * @return MigrateRole <p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>
                      * 
                      */
                     std::string GetMigrateRole() const;
 
                     /**
-                     * 设置实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
-                     * @param _migrateRole 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * 设置<p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>
+                     * @param _migrateRole <p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>
                      * 
                      */
                     void SetMigrateRole(const std::string& _migrateRole);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MigrateRoleHasBeenSet() const;
 
                     /**
-                     * 获取云数据库实例ID，可通过对应业务实例列表获取实例信息。
-                     * @return InstanceId 云数据库实例ID，可通过对应业务实例列表获取实例信息。
+                     * 获取<p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>
+                     * @return InstanceId <p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置云数据库实例ID，可通过对应业务实例列表获取实例信息。
-                     * @param _instanceId 云数据库实例ID，可通过对应业务实例列表获取实例信息。
+                     * 设置<p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>
+                     * @param _instanceId <p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取云数据库名称，可通过对应业务实例列表获取实例信息。
-                     * @return InstanceName 云数据库名称，可通过对应业务实例列表获取实例信息。
+                     * 获取<p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>
+                     * @return InstanceName <p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置云数据库名称，可通过对应业务实例列表获取实例信息。
-                     * @param _instanceName 云数据库名称，可通过对应业务实例列表获取实例信息。
+                     * 设置<p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>
+                     * @param _instanceName <p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取返回数量限制
-                     * @return Limit 返回数量限制
+                     * 获取<p>返回数量限制</p>
+                     * @return Limit <p>返回数量限制</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量限制
-                     * @param _limit 返回数量限制
+                     * 设置<p>返回数量限制</p>
+                     * @param _limit <p>返回数量限制</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
-                     * @return AccountMode 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * 获取<p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>
+                     * @return AccountMode <p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>
                      * 
                      */
                     std::string GetAccountMode() const;
 
                     /**
-                     * 设置资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
-                     * @param _accountMode 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * 设置<p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>
+                     * @param _accountMode <p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>
                      * 
                      */
                     void SetAccountMode(const std::string& _accountMode);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool AccountModeHasBeenSet() const;
 
                     /**
-                     * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @return TmpSecretId 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 获取<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @return TmpSecretId <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @param _tmpSecretId 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 设置<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @param _tmpSecretId <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @return TmpSecretKey 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 获取<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @return TmpSecretKey <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @param _tmpSecretKey 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 设置<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @param _tmpSecretKey <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @return TmpToken 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 获取<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @return TmpToken <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     std::string GetTmpToken() const;
 
                     /**
-                     * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
-                     * @param _tmpToken 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * 设置<p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
+                     * @param _tmpToken <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      * 
                      */
                     void SetTmpToken(const std::string& _tmpToken);
@@ -255,61 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。
+                     * <p>数据库类型，如mysql,percona,mariadb,tdsqlmysql,mariadb,postgresql,cynosdbmysql,redis,tendis,keewidb,tdstore,mongodb,clickhouse,sqlserver等。</p>
                      */
                     std::string m_databaseType;
                     bool m_databaseTypeHasBeenSet;
 
                     /**
-                     * 实例作为迁移的源还是目标,src(表示源)，dst(表示目标)
+                     * <p>实例作为迁移的源还是目标,src(表示源)，dst(表示目标)</p>
                      */
                     std::string m_migrateRole;
                     bool m_migrateRoleHasBeenSet;
 
                     /**
-                     * 云数据库实例ID，可通过对应业务实例列表获取实例信息。
+                     * <p>云数据库实例ID，可通过对应业务实例列表获取实例信息。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 云数据库名称，可通过对应业务实例列表获取实例信息。
+                     * <p>云数据库名称，可通过对应业务实例列表获取实例信息。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 返回数量限制
+                     * <p>返回数量限制</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)
+                     * <p>资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)</p>
                      */
                     std::string m_accountMode;
                     bool m_accountModeHasBeenSet;
 
                     /**
-                     * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
 
                     /**
-                     * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。
+                     * <p>临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号迁移文档(https://cloud.tencent.com/document/product/571/54117)第4节中关于角色的定义。</p>
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;

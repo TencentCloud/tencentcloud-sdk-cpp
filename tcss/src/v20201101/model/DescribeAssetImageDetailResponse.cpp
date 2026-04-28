@@ -55,7 +55,8 @@ DescribeAssetImageDetailResponse::DescribeAssetImageDetailResponse() :
     m_remainScanTimeHasBeenSet(false),
     m_isAuthorizedHasBeenSet(false),
     m_solutionHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_repoDigestsHasBeenSet(false)
 {
 }
 
@@ -413,6 +414,19 @@ CoreInternalOutcome DescribeAssetImageDetailResponse::Deserialize(const string &
         m_reasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RepoDigests") && !rsp["RepoDigests"].IsNull())
+    {
+        if (!rsp["RepoDigests"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RepoDigests` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RepoDigests"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_repoDigests.push_back((*itr).GetString());
+        }
+        m_repoDigestsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +691,19 @@ string DescribeAssetImageDetailResponse::ToJsonString() const
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoDigestsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoDigests";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_repoDigests.begin(); itr != m_repoDigests.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1009,6 +1036,16 @@ string DescribeAssetImageDetailResponse::GetReason() const
 bool DescribeAssetImageDetailResponse::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+vector<string> DescribeAssetImageDetailResponse::GetRepoDigests() const
+{
+    return m_repoDigests;
+}
+
+bool DescribeAssetImageDetailResponse::RepoDigestsHasBeenSet() const
+{
+    return m_repoDigestsHasBeenSet;
 }
 
 

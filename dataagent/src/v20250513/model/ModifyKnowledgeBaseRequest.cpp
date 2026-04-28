@@ -29,7 +29,8 @@ ModifyKnowledgeBaseRequest::ModifyKnowledgeBaseRequest() :
     m_knowledgeBaseNameHasBeenSet(false),
     m_knowledgeBaseDescHasBeenSet(false),
     m_useScopeHasBeenSet(false),
-    m_authorityUinsHasBeenSet(false)
+    m_authorityUinsHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,15 @@ string ModifyKnowledgeBaseRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_config.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -219,6 +229,22 @@ void ModifyKnowledgeBaseRequest::SetAuthorityUins(const vector<string>& _authori
 bool ModifyKnowledgeBaseRequest::AuthorityUinsHasBeenSet() const
 {
     return m_authorityUinsHasBeenSet;
+}
+
+KnowledgeTaskConfig ModifyKnowledgeBaseRequest::GetConfig() const
+{
+    return m_config;
+}
+
+void ModifyKnowledgeBaseRequest::SetConfig(const KnowledgeTaskConfig& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool ModifyKnowledgeBaseRequest::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 
 

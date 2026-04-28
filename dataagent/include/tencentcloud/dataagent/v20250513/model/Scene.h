@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取场景ID
-                     * @return SceneId 场景ID
+                     * 获取<p>场景ID</p>
+                     * @return SceneId <p>场景ID</p>
                      * 
                      */
                     std::string GetSceneId() const;
 
                     /**
-                     * 设置场景ID
-                     * @param _sceneId 场景ID
+                     * 设置<p>场景ID</p>
+                     * @param _sceneId <p>场景ID</p>
                      * 
                      */
                     void SetSceneId(const std::string& _sceneId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool SceneIdHasBeenSet() const;
 
                     /**
-                     * 获取场景名称
-                     * @return SceneName 场景名称
+                     * 获取<p>场景名称</p>
+                     * @return SceneName <p>场景名称</p>
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
-                     * 设置场景名称
-                     * @param _sceneName 场景名称
+                     * 设置<p>场景名称</p>
+                     * @param _sceneName <p>场景名称</p>
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool SceneNameHasBeenSet() const;
 
                     /**
-                     * 获取技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）
-                     * @return Skills 技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）
+                     * 获取<p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>
+                     * @return Skills <p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>
                      * 
                      */
                     std::vector<std::string> GetSkills() const;
 
                     /**
-                     * 设置技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）
-                     * @param _skills 技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）
+                     * 设置<p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>
+                     * @param _skills <p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>
                      * 
                      */
                     void SetSkills(const std::vector<std::string>& _skills);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SkillsHasBeenSet() const;
 
                     /**
-                     * 获取提示词文本
-                     * @return Prompt 提示词文本
+                     * 获取<p>提示词文本</p>
+                     * @return Prompt <p>提示词文本</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置提示词文本
-                     * @param _prompt 提示词文本
+                     * 设置<p>提示词文本</p>
+                     * @param _prompt <p>提示词文本</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取检索配置
-                     * @return SearchConfig 检索配置
+                     * 获取<p>检索配置</p>
+                     * @return SearchConfig <p>检索配置</p>
                      * 
                      */
                     SearchConfig GetSearchConfig() const;
 
                     /**
-                     * 设置检索配置
-                     * @param _searchConfig 检索配置
+                     * 设置<p>检索配置</p>
+                     * @param _searchConfig <p>检索配置</p>
                      * 
                      */
                     void SetSearchConfig(const SearchConfig& _searchConfig);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool SearchConfigHasBeenSet() const;
 
                     /**
-                     * 获取示例问答列表
-                     * @return ExampleQAList 示例问答列表
+                     * 获取<p>示例问答列表</p>
+                     * @return ExampleQAList <p>示例问答列表</p>
                      * 
                      */
                     std::vector<ExampleQA> GetExampleQAList() const;
 
                     /**
-                     * 设置示例问答列表
-                     * @param _exampleQAList 示例问答列表
+                     * 设置<p>示例问答列表</p>
+                     * @param _exampleQAList <p>示例问答列表</p>
                      * 
                      */
                     void SetExampleQAList(const std::vector<ExampleQA>& _exampleQAList);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool ExampleQAListHasBeenSet() const;
 
                     /**
-                     * 获取记录的创建时间
-                     * @return CreateTime 记录的创建时间
+                     * 获取<p>记录的创建时间</p>
+                     * @return CreateTime <p>记录的创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置记录的创建时间
-                     * @param _createTime 记录的创建时间
+                     * 设置<p>记录的创建时间</p>
+                     * @param _createTime <p>记录的创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取记录的最后更新时间
-                     * @return UpdateTime 记录的最后更新时间
+                     * 获取<p>记录的最后更新时间</p>
+                     * @return UpdateTime <p>记录的最后更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置记录的最后更新时间
-                     * @param _updateTime 记录的最后更新时间
+                     * 设置<p>记录的最后更新时间</p>
+                     * @param _updateTime <p>记录的最后更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建者Uin
-                     * @return CreatorUin 创建者Uin
+                     * 获取<p>创建者Uin</p>
+                     * @return CreatorUin <p>创建者Uin</p>
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建者Uin
-                     * @param _creatorUin 创建者Uin
+                     * 设置<p>创建者Uin</p>
+                     * @param _creatorUin <p>创建者Uin</p>
                      * 
                      */
                     void SetCreatorUin(const std::string& _creatorUin);
@@ -258,67 +258,94 @@ namespace TencentCloud
                      */
                     bool CreatorUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>知识</p>
+                     * @return Knowledge <p>知识</p>
+                     * 
+                     */
+                    std::string GetKnowledge() const;
+
+                    /**
+                     * 设置<p>知识</p>
+                     * @param _knowledge <p>知识</p>
+                     * 
+                     */
+                    void SetKnowledge(const std::string& _knowledge);
+
+                    /**
+                     * 判断参数 Knowledge 是否已赋值
+                     * @return Knowledge 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 场景ID
+                     * <p>场景ID</p>
                      */
                     std::string m_sceneId;
                     bool m_sceneIdHasBeenSet;
 
                     /**
-                     * 场景名称
+                     * <p>场景名称</p>
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
-                     * 技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）
+                     * <p>技能列表，包含：rag（知识检索）、data_analytics（数据分析）、data_prediction（数据预测）</p>
                      */
                     std::vector<std::string> m_skills;
                     bool m_skillsHasBeenSet;
 
                     /**
-                     * 提示词文本
+                     * <p>提示词文本</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 检索配置
+                     * <p>检索配置</p>
                      */
                     SearchConfig m_searchConfig;
                     bool m_searchConfigHasBeenSet;
 
                     /**
-                     * 示例问答列表
+                     * <p>示例问答列表</p>
                      */
                     std::vector<ExampleQA> m_exampleQAList;
                     bool m_exampleQAListHasBeenSet;
 
                     /**
-                     * 记录的创建时间
+                     * <p>记录的创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 记录的最后更新时间
+                     * <p>记录的最后更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建者Uin
+                     * <p>创建者Uin</p>
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
+
+                    /**
+                     * <p>知识</p>
+                     */
+                    std::string m_knowledge;
+                    bool m_knowledgeHasBeenSet;
 
                 };
             }

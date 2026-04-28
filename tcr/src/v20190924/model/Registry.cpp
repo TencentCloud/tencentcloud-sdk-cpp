@@ -37,7 +37,9 @@ Registry::Registry() :
     m_payModHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
-    m_aIFeatureHasBeenSet(false)
+    m_aIFeatureHasBeenSet(false),
+    m_enableCosMAZHasBeenSet(false),
+    m_enableCosVersioningHasBeenSet(false)
 {
 }
 
@@ -223,6 +225,26 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
         m_aIFeatureHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableCosMAZ") && !value["EnableCosMAZ"].IsNull())
+    {
+        if (!value["EnableCosMAZ"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Registry.EnableCosMAZ` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCosMAZ = value["EnableCosMAZ"].GetBool();
+        m_enableCosMAZHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableCosVersioning") && !value["EnableCosVersioning"].IsNull())
+    {
+        if (!value["EnableCosVersioning"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Registry.EnableCosVersioning` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCosVersioning = value["EnableCosVersioning"].GetBool();
+        m_enableCosVersioningHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +387,22 @@ void Registry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AIFeature";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aIFeature, allocator);
+    }
+
+    if (m_enableCosMAZHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosMAZ";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCosMAZ, allocator);
+    }
+
+    if (m_enableCosVersioningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosVersioning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCosVersioning, allocator);
     }
 
 }
@@ -640,5 +678,37 @@ void Registry::SetAIFeature(const bool& _aIFeature)
 bool Registry::AIFeatureHasBeenSet() const
 {
     return m_aIFeatureHasBeenSet;
+}
+
+bool Registry::GetEnableCosMAZ() const
+{
+    return m_enableCosMAZ;
+}
+
+void Registry::SetEnableCosMAZ(const bool& _enableCosMAZ)
+{
+    m_enableCosMAZ = _enableCosMAZ;
+    m_enableCosMAZHasBeenSet = true;
+}
+
+bool Registry::EnableCosMAZHasBeenSet() const
+{
+    return m_enableCosMAZHasBeenSet;
+}
+
+bool Registry::GetEnableCosVersioning() const
+{
+    return m_enableCosVersioning;
+}
+
+void Registry::SetEnableCosVersioning(const bool& _enableCosVersioning)
+{
+    m_enableCosVersioning = _enableCosVersioning;
+    m_enableCosVersioningHasBeenSet = true;
+}
+
+bool Registry::EnableCosVersioningHasBeenSet() const
+{
+    return m_enableCosVersioningHasBeenSet;
 }
 

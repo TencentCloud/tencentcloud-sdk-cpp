@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像ID
-                     * @return ImageID 镜像ID
+                     * 获取<p>镜像ID</p>
+                     * @return ImageID <p>镜像ID</p>
                      * 
                      */
                     std::string GetImageID() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ImageIDHasBeenSet() const;
 
                     /**
-                     * 获取镜像名称
-                     * @return ImageName 镜像名称
+                     * 获取<p>镜像名称</p>
+                     * @return ImageName <p>镜像名称</p>
                      * 
                      */
                     std::string GetImageName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像摘要
-                     * @return ImageDigest 镜像摘要
+                     * 获取<p>镜像摘要</p>
+                     * @return ImageDigest <p>镜像摘要</p>
                      * 
                      */
                     std::string GetImageDigest() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ImageDigestHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取镜像大小
-                     * @return Size 镜像大小
+                     * 获取<p>镜像大小</p>
+                     * @return Size <p>镜像大小</p>
                      * 
                      */
                     uint64_t GetSize() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取关联主机个数(包含普通节点数和超级节点数)
-                     * @return HostCnt 关联主机个数(包含普通节点数和超级节点数)
+                     * 获取<p>关联主机个数(包含普通节点数和超级节点数)</p>
+                     * @return HostCnt <p>关联主机个数(包含普通节点数和超级节点数)</p>
                      * 
                      */
                     uint64_t GetHostCnt() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool HostCntHasBeenSet() const;
 
                     /**
-                     * 获取关联容器个数
-                     * @return ContainerCnt 关联容器个数
+                     * 获取<p>关联容器个数</p>
+                     * @return ContainerCnt <p>关联容器个数</p>
                      * 
                      */
                     uint64_t GetContainerCnt() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool ContainerCntHasBeenSet() const;
 
                     /**
-                     * 获取超级节点数
-                     * @return SuperNodeCnt 超级节点数
+                     * 获取<p>超级节点数</p>
+                     * @return SuperNodeCnt <p>超级节点数</p>
                      * 
                      */
                     uint64_t GetSuperNodeCnt() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool SuperNodeCntHasBeenSet() const;
 
                     /**
-                     * 获取最近扫描时间
-                     * @return ScanTime 最近扫描时间
+                     * 获取<p>最近扫描时间</p>
+                     * @return ScanTime <p>最近扫描时间</p>
                      * 
                      */
                     std::string GetScanTime() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool ScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取漏洞个数
-                     * @return VulCnt 漏洞个数
+                     * 获取<p>漏洞个数</p>
+                     * @return VulCnt <p>漏洞个数</p>
                      * 
                      */
                     uint64_t GetVulCnt() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool VulCntHasBeenSet() const;
 
                     /**
-                     * 获取风险行为数
-                     * @return RiskCnt 风险行为数
+                     * 获取<p>风险行为数</p>
+                     * @return RiskCnt <p>风险行为数</p>
                      * 
                      */
                     uint64_t GetRiskCnt() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool RiskCntHasBeenSet() const;
 
                     /**
-                     * 获取敏感信息数
-                     * @return SensitiveInfoCnt 敏感信息数
+                     * 获取<p>敏感信息数</p>
+                     * @return SensitiveInfoCnt <p>敏感信息数</p>
                      * 
                      */
                     uint64_t GetSensitiveInfoCnt() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool SensitiveInfoCntHasBeenSet() const;
 
                     /**
-                     * 获取是否信任镜像
-                     * @return IsTrustImage 是否信任镜像
+                     * 获取<p>是否信任镜像</p>
+                     * @return IsTrustImage <p>是否信任镜像</p>
                      * 
                      */
                     bool GetIsTrustImage() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool IsTrustImageHasBeenSet() const;
 
                     /**
-                     * 获取镜像系统
-                     * @return OsName 镜像系统
+                     * 获取<p>镜像系统</p>
+                     * @return OsName <p>镜像系统</p>
                      * 
                      */
                     std::string GetOsName() const;
@@ -240,8 +240,8 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取agent镜像扫描错误
-                     * @return AgentError agent镜像扫描错误
+                     * 获取<p>agent镜像扫描错误</p>
+                     * @return AgentError <p>agent镜像扫描错误</p>
                      * 
                      */
                     std::string GetAgentError() const;
@@ -254,8 +254,8 @@ namespace TencentCloud
                     bool AgentErrorHasBeenSet() const;
 
                     /**
-                     * 获取后端镜像扫描错误
-                     * @return ScanError 后端镜像扫描错误
+                     * 获取<p>后端镜像扫描错误</p>
+                     * @return ScanError <p>后端镜像扫描错误</p>
                      * 
                      */
                     std::string GetScanError() const;
@@ -268,8 +268,8 @@ namespace TencentCloud
                     bool ScanErrorHasBeenSet() const;
 
                     /**
-                     * 获取系统架构
-                     * @return Architecture 系统架构
+                     * 获取<p>系统架构</p>
+                     * @return Architecture <p>系统架构</p>
                      * 
                      */
                     std::string GetArchitecture() const;
@@ -282,8 +282,8 @@ namespace TencentCloud
                     bool ArchitectureHasBeenSet() const;
 
                     /**
-                     * 获取作者
-                     * @return Author 作者
+                     * 获取<p>作者</p>
+                     * @return Author <p>作者</p>
                      * 
                      */
                     std::string GetAuthor() const;
@@ -296,8 +296,8 @@ namespace TencentCloud
                     bool AuthorHasBeenSet() const;
 
                     /**
-                     * 获取构建历史
-                     * @return BuildHistory 构建历史
+                     * 获取<p>构建历史</p>
+                     * @return BuildHistory <p>构建历史</p>
                      * 
                      */
                     std::string GetBuildHistory() const;
@@ -310,8 +310,8 @@ namespace TencentCloud
                     bool BuildHistoryHasBeenSet() const;
 
                     /**
-                     * 获取木马扫描进度
-                     * @return ScanVirusProgress 木马扫描进度
+                     * 获取<p>木马扫描进度</p>
+                     * @return ScanVirusProgress <p>木马扫描进度</p>
                      * 
                      */
                     uint64_t GetScanVirusProgress() const;
@@ -324,8 +324,8 @@ namespace TencentCloud
                     bool ScanVirusProgressHasBeenSet() const;
 
                     /**
-                     * 获取漏洞扫进度
-                     * @return ScanVulProgress 漏洞扫进度
+                     * 获取<p>漏洞扫进度</p>
+                     * @return ScanVulProgress <p>漏洞扫进度</p>
                      * 
                      */
                     uint64_t GetScanVulProgress() const;
@@ -338,8 +338,8 @@ namespace TencentCloud
                     bool ScanVulProgressHasBeenSet() const;
 
                     /**
-                     * 获取敏感信息扫描进度
-                     * @return ScanRiskProgress 敏感信息扫描进度
+                     * 获取<p>敏感信息扫描进度</p>
+                     * @return ScanRiskProgress <p>敏感信息扫描进度</p>
                      * 
                      */
                     uint64_t GetScanRiskProgress() const;
@@ -352,8 +352,8 @@ namespace TencentCloud
                     bool ScanRiskProgressHasBeenSet() const;
 
                     /**
-                     * 获取木马扫描错误
-                     * @return ScanVirusError 木马扫描错误
+                     * 获取<p>木马扫描错误</p>
+                     * @return ScanVirusError <p>木马扫描错误</p>
                      * 
                      */
                     std::string GetScanVirusError() const;
@@ -366,8 +366,8 @@ namespace TencentCloud
                     bool ScanVirusErrorHasBeenSet() const;
 
                     /**
-                     * 获取漏洞扫描错误
-                     * @return ScanVulError 漏洞扫描错误
+                     * 获取<p>漏洞扫描错误</p>
+                     * @return ScanVulError <p>漏洞扫描错误</p>
                      * 
                      */
                     std::string GetScanVulError() const;
@@ -380,8 +380,8 @@ namespace TencentCloud
                     bool ScanVulErrorHasBeenSet() const;
 
                     /**
-                     * 获取敏感信息错误
-                     * @return ScanRiskError 敏感信息错误
+                     * 获取<p>敏感信息错误</p>
+                     * @return ScanRiskError <p>敏感信息错误</p>
                      * 
                      */
                     std::string GetScanRiskError() const;
@@ -394,8 +394,8 @@ namespace TencentCloud
                     bool ScanRiskErrorHasBeenSet() const;
 
                     /**
-                     * 获取镜像扫描状态
-                     * @return ScanStatus 镜像扫描状态
+                     * 获取<p>镜像扫描状态</p>
+                     * @return ScanStatus <p>镜像扫描状态</p>
                      * 
                      */
                     std::string GetScanStatus() const;
@@ -408,8 +408,8 @@ namespace TencentCloud
                     bool ScanStatusHasBeenSet() const;
 
                     /**
-                     * 获取木马病毒数
-                     * @return VirusCnt 木马病毒数
+                     * 获取<p>木马病毒数</p>
+                     * @return VirusCnt <p>木马病毒数</p>
                      * 
                      */
                     uint64_t GetVirusCnt() const;
@@ -422,8 +422,8 @@ namespace TencentCloud
                     bool VirusCntHasBeenSet() const;
 
                     /**
-                     * 获取镜像扫描状态
-                     * @return Status 镜像扫描状态
+                     * 获取<p>镜像扫描状态</p>
+                     * @return Status <p>镜像扫描状态</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -436,8 +436,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取剩余扫描时间
-                     * @return RemainScanTime 剩余扫描时间
+                     * 获取<p>剩余扫描时间</p>
+                     * @return RemainScanTime <p>剩余扫描时间</p>
                      * 
                      */
                     uint64_t GetRemainScanTime() const;
@@ -450,8 +450,8 @@ namespace TencentCloud
                     bool RemainScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取授权为：1，未授权为：0
-                     * @return IsAuthorized 授权为：1，未授权为：0
+                     * 获取<p>授权为：1，未授权为：0</p>
+                     * @return IsAuthorized <p>授权为：1，未授权为：0</p>
                      * 
                      */
                     int64_t GetIsAuthorized() const;
@@ -464,8 +464,8 @@ namespace TencentCloud
                     bool IsAuthorizedHasBeenSet() const;
 
                     /**
-                     * 获取解决方案
-                     * @return Solution 解决方案
+                     * 获取<p>解决方案</p>
+                     * @return Solution <p>解决方案</p>
                      * 
                      */
                     std::string GetSolution() const;
@@ -478,8 +478,8 @@ namespace TencentCloud
                     bool SolutionHasBeenSet() const;
 
                     /**
-                     * 获取原因
-                     * @return Reason 原因
+                     * 获取<p>原因</p>
+                     * @return Reason <p>原因</p>
                      * 
                      */
                     std::string GetReason() const;
@@ -491,199 +491,219 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>仓库Digests</p>
+                     * @return RepoDigests <p>仓库Digests</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRepoDigests() const;
+
+                    /**
+                     * 判断参数 RepoDigests 是否已赋值
+                     * @return RepoDigests 是否已赋值
+                     * 
+                     */
+                    bool RepoDigestsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像ID
+                     * <p>镜像ID</p>
                      */
                     std::string m_imageID;
                     bool m_imageIDHasBeenSet;
 
                     /**
-                     * 镜像名称
+                     * <p>镜像名称</p>
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 镜像摘要
+                     * <p>镜像摘要</p>
                      */
                     std::string m_imageDigest;
                     bool m_imageDigestHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 镜像大小
+                     * <p>镜像大小</p>
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 关联主机个数(包含普通节点数和超级节点数)
+                     * <p>关联主机个数(包含普通节点数和超级节点数)</p>
                      */
                     uint64_t m_hostCnt;
                     bool m_hostCntHasBeenSet;
 
                     /**
-                     * 关联容器个数
+                     * <p>关联容器个数</p>
                      */
                     uint64_t m_containerCnt;
                     bool m_containerCntHasBeenSet;
 
                     /**
-                     * 超级节点数
+                     * <p>超级节点数</p>
                      */
                     uint64_t m_superNodeCnt;
                     bool m_superNodeCntHasBeenSet;
 
                     /**
-                     * 最近扫描时间
+                     * <p>最近扫描时间</p>
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;
 
                     /**
-                     * 漏洞个数
+                     * <p>漏洞个数</p>
                      */
                     uint64_t m_vulCnt;
                     bool m_vulCntHasBeenSet;
 
                     /**
-                     * 风险行为数
+                     * <p>风险行为数</p>
                      */
                     uint64_t m_riskCnt;
                     bool m_riskCntHasBeenSet;
 
                     /**
-                     * 敏感信息数
+                     * <p>敏感信息数</p>
                      */
                     uint64_t m_sensitiveInfoCnt;
                     bool m_sensitiveInfoCntHasBeenSet;
 
                     /**
-                     * 是否信任镜像
+                     * <p>是否信任镜像</p>
                      */
                     bool m_isTrustImage;
                     bool m_isTrustImageHasBeenSet;
 
                     /**
-                     * 镜像系统
+                     * <p>镜像系统</p>
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * agent镜像扫描错误
+                     * <p>agent镜像扫描错误</p>
                      */
                     std::string m_agentError;
                     bool m_agentErrorHasBeenSet;
 
                     /**
-                     * 后端镜像扫描错误
+                     * <p>后端镜像扫描错误</p>
                      */
                     std::string m_scanError;
                     bool m_scanErrorHasBeenSet;
 
                     /**
-                     * 系统架构
+                     * <p>系统架构</p>
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
 
                     /**
-                     * 作者
+                     * <p>作者</p>
                      */
                     std::string m_author;
                     bool m_authorHasBeenSet;
 
                     /**
-                     * 构建历史
+                     * <p>构建历史</p>
                      */
                     std::string m_buildHistory;
                     bool m_buildHistoryHasBeenSet;
 
                     /**
-                     * 木马扫描进度
+                     * <p>木马扫描进度</p>
                      */
                     uint64_t m_scanVirusProgress;
                     bool m_scanVirusProgressHasBeenSet;
 
                     /**
-                     * 漏洞扫进度
+                     * <p>漏洞扫进度</p>
                      */
                     uint64_t m_scanVulProgress;
                     bool m_scanVulProgressHasBeenSet;
 
                     /**
-                     * 敏感信息扫描进度
+                     * <p>敏感信息扫描进度</p>
                      */
                     uint64_t m_scanRiskProgress;
                     bool m_scanRiskProgressHasBeenSet;
 
                     /**
-                     * 木马扫描错误
+                     * <p>木马扫描错误</p>
                      */
                     std::string m_scanVirusError;
                     bool m_scanVirusErrorHasBeenSet;
 
                     /**
-                     * 漏洞扫描错误
+                     * <p>漏洞扫描错误</p>
                      */
                     std::string m_scanVulError;
                     bool m_scanVulErrorHasBeenSet;
 
                     /**
-                     * 敏感信息错误
+                     * <p>敏感信息错误</p>
                      */
                     std::string m_scanRiskError;
                     bool m_scanRiskErrorHasBeenSet;
 
                     /**
-                     * 镜像扫描状态
+                     * <p>镜像扫描状态</p>
                      */
                     std::string m_scanStatus;
                     bool m_scanStatusHasBeenSet;
 
                     /**
-                     * 木马病毒数
+                     * <p>木马病毒数</p>
                      */
                     uint64_t m_virusCnt;
                     bool m_virusCntHasBeenSet;
 
                     /**
-                     * 镜像扫描状态
+                     * <p>镜像扫描状态</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 剩余扫描时间
+                     * <p>剩余扫描时间</p>
                      */
                     uint64_t m_remainScanTime;
                     bool m_remainScanTimeHasBeenSet;
 
                     /**
-                     * 授权为：1，未授权为：0
+                     * <p>授权为：1，未授权为：0</p>
                      */
                     int64_t m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
 
                     /**
-                     * 解决方案
+                     * <p>解决方案</p>
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
 
                     /**
-                     * 原因
+                     * <p>原因</p>
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * <p>仓库Digests</p>
+                     */
+                    std::vector<std::string> m_repoDigests;
+                    bool m_repoDigestsHasBeenSet;
 
                 };
             }

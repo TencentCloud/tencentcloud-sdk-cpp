@@ -33,7 +33,8 @@ FileInfo::FileInfo() :
     m_fileUrlHasBeenSet(false),
     m_isShowCaseHasBeenSet(false),
     m_documentSummaryHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
+    m_webUrlHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,19 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         m_webUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Capabilities") && !value["Capabilities"].IsNull())
+    {
+        if (!value["Capabilities"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileInfo.Capabilities` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Capabilities"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_capabilities.push_back((*itr).GetString());
+        }
+        m_capabilitiesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +303,19 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "WebUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_webUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilitiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capabilities";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_capabilities.begin(); itr != m_capabilities.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -500,5 +527,21 @@ void FileInfo::SetWebUrl(const string& _webUrl)
 bool FileInfo::WebUrlHasBeenSet() const
 {
     return m_webUrlHasBeenSet;
+}
+
+vector<string> FileInfo::GetCapabilities() const
+{
+    return m_capabilities;
+}
+
+void FileInfo::SetCapabilities(const vector<string>& _capabilities)
+{
+    m_capabilities = _capabilities;
+    m_capabilitiesHasBeenSet = true;
+}
+
+bool FileInfo::CapabilitiesHasBeenSet() const
+{
+    return m_capabilitiesHasBeenSet;
 }
 

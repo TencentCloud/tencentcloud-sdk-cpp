@@ -740,6 +740,131 @@ namespace TencentCloud
                      */
                     bool SensitiveDataCheckConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetSelect <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetSelect() const;
+
+                    /**
+                     * 设置<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetSelect <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetSelect(const std::string& _targetSelect);
+
+                    /**
+                     * 判断参数 TargetSelect 是否已赋值
+                     * @return TargetSelect 是否已赋值
+                     * 
+                     */
+                    bool TargetSelectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FindHostKeyMethod <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFindHostKeyMethod() const;
+
+                    /**
+                     * 设置<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _findHostKeyMethod <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFindHostKeyMethod(const std::string& _findHostKeyMethod);
+
+                    /**
+                     * 判断参数 FindHostKeyMethod 是否已赋值
+                     * @return FindHostKeyMethod 是否已赋值
+                     * 
+                     */
+                    bool FindHostKeyMethodHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话判断header名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostKeyHeaderName <p>会话判断header名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHostKeyHeaderName() const;
+
+                    /**
+                     * 设置<p>会话判断header名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostKeyHeaderName <p>会话判断header名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostKeyHeaderName(const std::string& _hostKeyHeaderName);
+
+                    /**
+                     * 判断参数 HostKeyHeaderName 是否已赋值
+                     * @return HostKeyHeaderName 是否已赋值
+                     * 
+                     */
+                    bool HostKeyHeaderNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FallbackStatus <p>是否开启备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetFallbackStatus() const;
+
+                    /**
+                     * 设置<p>是否开启备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fallbackStatus <p>是否开启备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFallbackStatus(const bool& _fallbackStatus);
+
+                    /**
+                     * 判断参数 FallbackStatus 是否已赋值
+                     * @return FallbackStatus 是否已赋值
+                     * 
+                     */
+                    bool FallbackStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FallbackModels <p>备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TargetModelDTO> GetFallbackModels() const;
+
+                    /**
+                     * 设置<p>备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fallbackModels <p>备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFallbackModels(const std::vector<TargetModelDTO>& _fallbackModels);
+
+                    /**
+                     * 判断参数 FallbackModels 是否已赋值
+                     * @return FallbackModels 是否已赋值
+                     * 
+                     */
+                    bool FallbackModelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -936,6 +1061,41 @@ namespace TencentCloud
                      */
                     SensitiveDataCheckConfigDTO m_sensitiveDataCheckConfig;
                     bool m_sensitiveDataCheckConfigHasBeenSet;
+
+                    /**
+                     * <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetSelect;
+                    bool m_targetSelectHasBeenSet;
+
+                    /**
+                     * <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 从客户端IP判断</li><li>fromHeader： 从请求header判断</li><li>autoDetect： 自动探测</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_findHostKeyMethod;
+                    bool m_findHostKeyMethodHasBeenSet;
+
+                    /**
+                     * <p>会话判断header名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostKeyHeaderName;
+                    bool m_hostKeyHeaderNameHasBeenSet;
+
+                    /**
+                     * <p>是否开启备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_fallbackStatus;
+                    bool m_fallbackStatusHasBeenSet;
+
+                    /**
+                     * <p>备份模型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TargetModelDTO> m_fallbackModels;
+                    bool m_fallbackModelsHasBeenSet;
 
                 };
             }

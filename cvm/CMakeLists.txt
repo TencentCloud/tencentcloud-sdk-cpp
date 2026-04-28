@@ -83,6 +83,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ImportInstancesActionTimerResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeKeyPairsResponse.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyChcNetworkModeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInternetChargeTypeConfigsResponse.h
   include/tencentcloud/cvm/v20170312/model/InternetChargeTypeConfig.h
   include/tencentcloud/cvm/v20170312/model/DescribeImagesResponse.h
@@ -192,6 +193,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/CreateLaunchTemplateResponse.h
   include/tencentcloud/cvm/v20170312/model/CreateKeyPairRequest.h
   include/tencentcloud/cvm/v20170312/model/InstanceStatus.h
+  include/tencentcloud/cvm/v20170312/model/SharePermission.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/AllocateHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionRequest.h
@@ -234,7 +236,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesStatusRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResizeInstanceDisksResponse.h
   include/tencentcloud/cvm/v20170312/model/TerminateInstancesRequest.h
-  include/tencentcloud/cvm/v20170312/model/SharePermission.h
+  include/tencentcloud/cvm/v20170312/model/ModifyChcNetworkModeRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
   include/tencentcloud/cvm/v20170312/model/ImportImageResponse.h
@@ -370,6 +372,7 @@ set(cvm_src
   src/v20170312/model/ImportInstancesActionTimerResponse.cpp
   src/v20170312/model/DescribeKeyPairsResponse.cpp
   src/v20170312/model/ResetInstancesPasswordRequest.cpp
+  src/v20170312/model/ModifyChcNetworkModeResponse.cpp
   src/v20170312/model/DescribeInternetChargeTypeConfigsResponse.cpp
   src/v20170312/model/InternetChargeTypeConfig.cpp
   src/v20170312/model/DescribeImagesResponse.cpp
@@ -479,6 +482,7 @@ set(cvm_src
   src/v20170312/model/CreateLaunchTemplateResponse.cpp
   src/v20170312/model/CreateKeyPairRequest.cpp
   src/v20170312/model/InstanceStatus.cpp
+  src/v20170312/model/SharePermission.cpp
   src/v20170312/model/InquiryPriceRenewInstancesResponse.cpp
   src/v20170312/model/AllocateHostsResponse.cpp
   src/v20170312/model/DescribeImageSharePermissionRequest.cpp
@@ -521,7 +525,7 @@ set(cvm_src
   src/v20170312/model/DescribeInstancesStatusRequest.cpp
   src/v20170312/model/InquiryPriceResizeInstanceDisksResponse.cpp
   src/v20170312/model/TerminateInstancesRequest.cpp
-  src/v20170312/model/SharePermission.cpp
+  src/v20170312/model/ModifyChcNetworkModeRequest.cpp
   src/v20170312/model/DeleteImagesResponse.cpp
   src/v20170312/model/ResetInstanceRequest.cpp
   src/v20170312/model/ImportImageResponse.cpp

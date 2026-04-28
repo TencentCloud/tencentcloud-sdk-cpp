@@ -408,6 +408,48 @@ namespace TencentCloud
                      */
                     bool AIFeatureHasBeenSet() const;
 
+                    /**
+                     * 获取<p>cos桶是否开启多AZ特性</p>
+                     * @return EnableCosMAZ <p>cos桶是否开启多AZ特性</p>
+                     * 
+                     */
+                    bool GetEnableCosMAZ() const;
+
+                    /**
+                     * 设置<p>cos桶是否开启多AZ特性</p>
+                     * @param _enableCosMAZ <p>cos桶是否开启多AZ特性</p>
+                     * 
+                     */
+                    void SetEnableCosMAZ(const bool& _enableCosMAZ);
+
+                    /**
+                     * 判断参数 EnableCosMAZ 是否已赋值
+                     * @return EnableCosMAZ 是否已赋值
+                     * 
+                     */
+                    bool EnableCosMAZHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cos桶是否开启版本控制</p>
+                     * @return EnableCosVersioning <p>cos桶是否开启版本控制</p>
+                     * 
+                     */
+                    bool GetEnableCosVersioning() const;
+
+                    /**
+                     * 设置<p>cos桶是否开启版本控制</p>
+                     * @param _enableCosVersioning <p>cos桶是否开启版本控制</p>
+                     * 
+                     */
+                    void SetEnableCosVersioning(const bool& _enableCosVersioning);
+
+                    /**
+                     * 判断参数 EnableCosVersioning 是否已赋值
+                     * @return EnableCosVersioning 是否已赋值
+                     * 
+                     */
+                    bool EnableCosVersioningHasBeenSet() const;
+
                 private:
 
                     /**
@@ -512,6 +554,18 @@ namespace TencentCloud
                      */
                     bool m_aIFeature;
                     bool m_aIFeatureHasBeenSet;
+
+                    /**
+                     * <p>cos桶是否开启多AZ特性</p>
+                     */
+                    bool m_enableCosMAZ;
+                    bool m_enableCosMAZHasBeenSet;
+
+                    /**
+                     * <p>cos桶是否开启版本控制</p>
+                     */
+                    bool m_enableCosVersioning;
+                    bool m_enableCosVersioningHasBeenSet;
 
                 };
             }

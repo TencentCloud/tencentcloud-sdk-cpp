@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询词
-                     * @return Query 查询词
+                     * 获取<p>查询词</p>
+                     * @return Query <p>查询词</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询词
-                     * @param _query 查询词
+                     * 设置<p>查询词</p>
+                     * @param _query <p>查询词</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询词
+                     * <p>查询词</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

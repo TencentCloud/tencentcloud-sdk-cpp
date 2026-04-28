@@ -457,6 +457,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/UpgradeAnalysisInstanceVersionInfo.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterReadOnlyRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h
@@ -1085,6 +1086,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeMaintainPeriodResponse.cpp
   src/v20190107/model/DescribeBackupListResponse.cpp
   src/v20190107/model/DescribeServerlessStrategyResponse.cpp
+  src/v20190107/model/UpgradeAnalysisInstanceVersionInfo.cpp
   src/v20190107/model/ModifyClusterParamRequest.cpp
   src/v20190107/model/ModifyClusterReadOnlyRequest.cpp
   src/v20190107/model/OfflineInstanceResponse.cpp

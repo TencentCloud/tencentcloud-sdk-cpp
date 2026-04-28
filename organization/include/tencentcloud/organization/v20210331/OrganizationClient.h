@@ -179,6 +179,8 @@
 #include <tencentcloud/organization/v20210331/model/GetExternalSAMLIdentityProviderResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetGroupRequest.h>
 #include <tencentcloud/organization/v20210331/model/GetGroupResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetIPWhitelistRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetIPWhitelistResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetProvisioningTaskStatusRequest.h>
 #include <tencentcloud/organization/v20210331/model/GetProvisioningTaskStatusResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetRoleConfigurationRequest.h>
@@ -537,6 +539,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetGroupResponse> GetGroupOutcome;
                 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::GetGroupRequest&, GetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetIPWhitelistResponse> GetIPWhitelistOutcome;
+                typedef std::future<GetIPWhitelistOutcome> GetIPWhitelistOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetIPWhitelistRequest&, GetIPWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetIPWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProvisioningTaskStatusResponse> GetProvisioningTaskStatusOutcome;
                 typedef std::future<GetProvisioningTaskStatusOutcome> GetProvisioningTaskStatusOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::GetProvisioningTaskStatusRequest&, GetProvisioningTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvisioningTaskStatusAsyncHandler;
@@ -1406,6 +1411,15 @@ namespace TencentCloud
                 GetGroupOutcome GetGroup(const Model::GetGroupRequest &request);
                 void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request);
+
+                /**
+                 *获取CIC的ip白名单
+                 * @param req GetIPWhitelistRequest
+                 * @return GetIPWhitelistOutcome
+                 */
+                GetIPWhitelistOutcome GetIPWhitelist(const Model::GetIPWhitelistRequest &request);
+                void GetIPWhitelistAsync(const Model::GetIPWhitelistRequest& request, const GetIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetIPWhitelistOutcomeCallable GetIPWhitelistCallable(const Model::GetIPWhitelistRequest& request);
 
                 /**
                  *查询用户同步异步任务的状态

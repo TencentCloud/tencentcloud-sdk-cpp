@@ -51,7 +51,12 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_promptModerateStatusHasBeenSet(false),
     m_promptModerateConfigHasBeenSet(false),
     m_sensitiveDataCheckStatusHasBeenSet(false),
-    m_sensitiveDataCheckConfigHasBeenSet(false)
+    m_sensitiveDataCheckConfigHasBeenSet(false),
+    m_targetSelectHasBeenSet(false),
+    m_findHostKeyMethodHasBeenSet(false),
+    m_hostKeyHeaderNameHasBeenSet(false),
+    m_fallbackStatusHasBeenSet(false),
+    m_fallbackModelsHasBeenSet(false)
 {
 }
 
@@ -434,6 +439,66 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_sensitiveDataCheckConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetSelect") && !value["TargetSelect"].IsNull())
+    {
+        if (!value["TargetSelect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.TargetSelect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetSelect = string(value["TargetSelect"].GetString());
+        m_targetSelectHasBeenSet = true;
+    }
+
+    if (value.HasMember("FindHostKeyMethod") && !value["FindHostKeyMethod"].IsNull())
+    {
+        if (!value["FindHostKeyMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.FindHostKeyMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_findHostKeyMethod = string(value["FindHostKeyMethod"].GetString());
+        m_findHostKeyMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostKeyHeaderName") && !value["HostKeyHeaderName"].IsNull())
+    {
+        if (!value["HostKeyHeaderName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.HostKeyHeaderName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostKeyHeaderName = string(value["HostKeyHeaderName"].GetString());
+        m_hostKeyHeaderNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FallbackStatus") && !value["FallbackStatus"].IsNull())
+    {
+        if (!value["FallbackStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.FallbackStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fallbackStatus = value["FallbackStatus"].GetBool();
+        m_fallbackStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FallbackModels") && !value["FallbackModels"].IsNull())
+    {
+        if (!value["FallbackModels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.FallbackModels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FallbackModels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TargetModelDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fallbackModels.push_back(item);
+        }
+        m_fallbackModelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -721,6 +786,53 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sensitiveDataCheckConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_targetSelectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetSelect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetSelect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_findHostKeyMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FindHostKeyMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_findHostKeyMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostKeyHeaderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostKeyHeaderName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostKeyHeaderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fallbackStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FallbackStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fallbackStatus, allocator);
+    }
+
+    if (m_fallbackModelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FallbackModels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fallbackModels.begin(); itr != m_fallbackModels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1220,5 +1332,85 @@ void DescribeModelServiceResponseVO::SetSensitiveDataCheckConfig(const Sensitive
 bool DescribeModelServiceResponseVO::SensitiveDataCheckConfigHasBeenSet() const
 {
     return m_sensitiveDataCheckConfigHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetTargetSelect() const
+{
+    return m_targetSelect;
+}
+
+void DescribeModelServiceResponseVO::SetTargetSelect(const string& _targetSelect)
+{
+    m_targetSelect = _targetSelect;
+    m_targetSelectHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::TargetSelectHasBeenSet() const
+{
+    return m_targetSelectHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetFindHostKeyMethod() const
+{
+    return m_findHostKeyMethod;
+}
+
+void DescribeModelServiceResponseVO::SetFindHostKeyMethod(const string& _findHostKeyMethod)
+{
+    m_findHostKeyMethod = _findHostKeyMethod;
+    m_findHostKeyMethodHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::FindHostKeyMethodHasBeenSet() const
+{
+    return m_findHostKeyMethodHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetHostKeyHeaderName() const
+{
+    return m_hostKeyHeaderName;
+}
+
+void DescribeModelServiceResponseVO::SetHostKeyHeaderName(const string& _hostKeyHeaderName)
+{
+    m_hostKeyHeaderName = _hostKeyHeaderName;
+    m_hostKeyHeaderNameHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::HostKeyHeaderNameHasBeenSet() const
+{
+    return m_hostKeyHeaderNameHasBeenSet;
+}
+
+bool DescribeModelServiceResponseVO::GetFallbackStatus() const
+{
+    return m_fallbackStatus;
+}
+
+void DescribeModelServiceResponseVO::SetFallbackStatus(const bool& _fallbackStatus)
+{
+    m_fallbackStatus = _fallbackStatus;
+    m_fallbackStatusHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::FallbackStatusHasBeenSet() const
+{
+    return m_fallbackStatusHasBeenSet;
+}
+
+vector<TargetModelDTO> DescribeModelServiceResponseVO::GetFallbackModels() const
+{
+    return m_fallbackModels;
+}
+
+void DescribeModelServiceResponseVO::SetFallbackModels(const vector<TargetModelDTO>& _fallbackModels)
+{
+    m_fallbackModels = _fallbackModels;
+    m_fallbackModelsHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::FallbackModelsHasBeenSet() const
+{
+    return m_fallbackModelsHasBeenSet;
 }
 

@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool DashOriginManifestTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>Empty VAST时是否播放Slate，默认开启(true)</p>
-                     * @return SlateOnEmptyVast <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * 获取<p>广告为空时是否插入Slate，默认开启(true)</p>
+                     * @return SlateOnEmptyVast <p>广告为空时是否插入Slate，默认开启(true)</p>
                      * 
                      */
                     bool GetSlateOnEmptyVast() const;
 
                     /**
-                     * 设置<p>Empty VAST时是否播放Slate，默认开启(true)</p>
-                     * @param _slateOnEmptyVast <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * 设置<p>广告为空时是否插入Slate，默认开启(true)</p>
+                     * @param _slateOnEmptyVast <p>广告为空时是否插入Slate，默认开启(true)</p>
                      * 
                      */
                     void SetSlateOnEmptyVast(const bool& _slateOnEmptyVast);
@@ -592,7 +592,7 @@ namespace TencentCloud
                     bool m_dashOriginManifestTypeHasBeenSet;
 
                     /**
-                     * <p>Empty VAST时是否播放Slate，默认开启(true)</p>
+                     * <p>广告为空时是否插入Slate，默认开启(true)</p>
                      */
                     bool m_slateOnEmptyVast;
                     bool m_slateOnEmptyVastHasBeenSet;

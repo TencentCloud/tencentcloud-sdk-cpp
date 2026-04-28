@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库
-                     * @return Type 实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库
+                     * 获取<p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>
+                     * @return Type <p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库
-                     * @param _type 实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库
+                     * 设置<p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>
+                     * @param _type <p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取<p>私有网络ID</p>
+                     * @return VpcId <p>私有网络ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置<p>私有网络ID</p>
+                     * @param _vpcId <p>私有网络ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络名称
-                     * @return VpcName 私有网络名称
+                     * 获取<p>私有网络名称</p>
+                     * @return VpcName <p>私有网络名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置私有网络名称
-                     * @param _vpcName 私有网络名称
+                     * 设置<p>私有网络名称</p>
+                     * @param _vpcName <p>私有网络名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取公网IP
-                     * @return PublicIp 公网IP
+                     * 获取<p>公网IP</p>
+                     * @return PublicIp <p>公网IP</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置公网IP
-                     * @param _publicIp 公网IP
+                     * 设置<p>公网IP</p>
+                     * @param _publicIp <p>公网IP</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取内网IP
-                     * @return Ip 内网IP
+                     * 获取<p>内网IP</p>
+                     * @return Ip <p>内网IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置内网IP
-                     * @param _ip 内网IP
+                     * 设置<p>内网IP</p>
+                     * @param _ip <p>内网IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取关联安全组数量
-                     * @return SecurityGroupCount 关联安全组数量
+                     * 获取<p>关联安全组数量</p>
+                     * @return SecurityGroupCount <p>关联安全组数量</p>
                      * 
                      */
                     uint64_t GetSecurityGroupCount() const;
 
                     /**
-                     * 设置关联安全组数量
-                     * @param _securityGroupCount 关联安全组数量
+                     * 设置<p>关联安全组数量</p>
+                     * @param _securityGroupCount <p>关联安全组数量</p>
                      * 
                      */
                     void SetSecurityGroupCount(const uint64_t& _securityGroupCount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SecurityGroupCountHasBeenSet() const;
 
                     /**
-                     * 获取关联安全组规则数量
-                     * @return SecurityGroupRuleCount 关联安全组规则数量
+                     * 获取<p>关联安全组规则数量</p>
+                     * @return SecurityGroupRuleCount <p>关联安全组规则数量</p>
                      * 
                      */
                     uint64_t GetSecurityGroupRuleCount() const;
 
                     /**
-                     * 设置关联安全组规则数量
-                     * @param _securityGroupRuleCount 关联安全组规则数量
+                     * 设置<p>关联安全组规则数量</p>
+                     * @param _securityGroupRuleCount <p>关联安全组规则数量</p>
                      * 
                      */
                     void SetSecurityGroupRuleCount(const uint64_t& _securityGroupRuleCount);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool SecurityGroupRuleCountHasBeenSet() const;
 
                     /**
-                     * 获取关联数据库代理Id
-                     * @return CdbId 关联数据库代理Id
+                     * 获取<p>关联数据库代理Id</p>
+                     * @return CdbId <p>关联数据库代理Id</p>
                      * 
                      */
                     std::string GetCdbId() const;
 
                     /**
-                     * 设置关联数据库代理Id
-                     * @param _cdbId 关联数据库代理Id
+                     * 设置<p>关联数据库代理Id</p>
+                     * @param _cdbId <p>关联数据库代理Id</p>
                      * 
                      */
                     void SetCdbId(const std::string& _cdbId);
@@ -256,67 +256,94 @@ namespace TencentCloud
                      */
                     bool CdbIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容器服务集群ID</p>
+                     * @return TkeClusterId <p>容器服务集群ID</p>
+                     * 
+                     */
+                    std::string GetTkeClusterId() const;
+
+                    /**
+                     * 设置<p>容器服务集群ID</p>
+                     * @param _tkeClusterId <p>容器服务集群ID</p>
+                     * 
+                     */
+                    void SetTkeClusterId(const std::string& _tkeClusterId);
+
+                    /**
+                     * 判断参数 TkeClusterId 是否已赋值
+                     * @return TkeClusterId 是否已赋值
+                     * 
+                     */
+                    bool TkeClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库
+                     * <p>实例类型，3是cvm实例,4是clb实例,5是eni实例,6是云数据库</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * <p>私有网络ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络名称
+                     * <p>私有网络名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 公网IP
+                     * <p>公网IP</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 内网IP
+                     * <p>内网IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 关联安全组数量
+                     * <p>关联安全组数量</p>
                      */
                     uint64_t m_securityGroupCount;
                     bool m_securityGroupCountHasBeenSet;
 
                     /**
-                     * 关联安全组规则数量
+                     * <p>关联安全组规则数量</p>
                      */
                     uint64_t m_securityGroupRuleCount;
                     bool m_securityGroupRuleCountHasBeenSet;
 
                     /**
-                     * 关联数据库代理Id
+                     * <p>关联数据库代理Id</p>
                      */
                     std::string m_cdbId;
                     bool m_cdbIdHasBeenSet;
+
+                    /**
+                     * <p>容器服务集群ID</p>
+                     */
+                    std::string m_tkeClusterId;
+                    bool m_tkeClusterIdHasBeenSet;
 
                 };
             }

@@ -67,6 +67,8 @@
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeAnnotatedTaskListRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeAnnotatedTaskListResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupAttachedWorkspacesRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspacesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenRequest.h>
@@ -245,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTrainingTaskResponse> DeleteTrainingTaskOutcome;
                 typedef std::future<DeleteTrainingTaskOutcome> DeleteTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteTrainingTaskRequest&, DeleteTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAnnotatedTaskListResponse> DescribeAnnotatedTaskListOutcome;
+                typedef std::future<DescribeAnnotatedTaskListOutcome> DescribeAnnotatedTaskListOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeAnnotatedTaskListRequest&, DescribeAnnotatedTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnnotatedTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillingResourceGroupResponse> DescribeBillingResourceGroupOutcome;
                 typedef std::future<DescribeBillingResourceGroupOutcome> DescribeBillingResourceGroupOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingResourceGroupRequest&, DescribeBillingResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingResourceGroupAsyncHandler;
@@ -347,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrainingTasksResponse> DescribeTrainingTasksOutcome;
                 typedef std::future<DescribeTrainingTasksOutcome> DescribeTrainingTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTasksRequest&, DescribeTrainingTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspacesResponse> DescribeWorkspacesOutcome;
+                typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeWorkspacesRequest&, DescribeWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
                 typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
@@ -595,6 +605,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DeleteTrainingTaskOutcome DeleteTrainingTask(const Model::DeleteTrainingTaskRequest &request);
                 void DeleteTrainingTaskAsync(const Model::DeleteTrainingTaskRequest& request, const DeleteTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTrainingTaskOutcomeCallable DeleteTrainingTaskCallable(const Model::DeleteTrainingTaskRequest& request);
+
+                /**
+                 *本接口（DescribeAnnotatedTaskList）用于查询用户标注任务详细信息列表；支持各种过滤条件；
+                 * @param req DescribeAnnotatedTaskListRequest
+                 * @return DescribeAnnotatedTaskListOutcome
+                 */
+                DescribeAnnotatedTaskListOutcome DescribeAnnotatedTaskList(const Model::DescribeAnnotatedTaskListRequest &request);
+                void DescribeAnnotatedTaskListAsync(const Model::DescribeAnnotatedTaskListRequest& request, const DescribeAnnotatedTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAnnotatedTaskListOutcomeCallable DescribeAnnotatedTaskListCallable(const Model::DescribeAnnotatedTaskListRequest& request);
 
                 /**
                  *查询资源组节点列表
@@ -903,6 +922,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeTrainingTasksOutcome DescribeTrainingTasks(const Model::DescribeTrainingTasksRequest &request);
                 void DescribeTrainingTasksAsync(const Model::DescribeTrainingTasksRequest& request, const DescribeTrainingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingTasksOutcomeCallable DescribeTrainingTasksCallable(const Model::DescribeTrainingTasksRequest& request);
+
+                /**
+                 *查询工作空间列表
+                 * @param req DescribeWorkspacesRequest
+                 * @return DescribeWorkspacesOutcome
+                 */
+                DescribeWorkspacesOutcome DescribeWorkspaces(const Model::DescribeWorkspacesRequest &request);
+                void DescribeWorkspacesAsync(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspacesOutcomeCallable DescribeWorkspacesCallable(const Model::DescribeWorkspacesRequest& request);
 
                 /**
                  *用于更新模型服务

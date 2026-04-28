@@ -30,7 +30,8 @@ Scene::Scene() :
     m_exampleQAListHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_creatorUinHasBeenSet(false)
+    m_creatorUinHasBeenSet(false),
+    m_knowledgeHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome Scene::Deserialize(const rapidjson::Value &value)
         m_creatorUinHasBeenSet = true;
     }
 
+    if (value.HasMember("Knowledge") && !value["Knowledge"].IsNull())
+    {
+        if (!value["Knowledge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Scene.Knowledge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_knowledge = string(value["Knowledge"].GetString());
+        m_knowledgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +268,14 @@ void Scene::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "CreatorUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Knowledge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_knowledge.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -420,5 +439,21 @@ void Scene::SetCreatorUin(const string& _creatorUin)
 bool Scene::CreatorUinHasBeenSet() const
 {
     return m_creatorUinHasBeenSet;
+}
+
+string Scene::GetKnowledge() const
+{
+    return m_knowledge;
+}
+
+void Scene::SetKnowledge(const string& _knowledge)
+{
+    m_knowledge = _knowledge;
+    m_knowledgeHasBeenSet = true;
+}
+
+bool Scene::KnowledgeHasBeenSet() const
+{
+    return m_knowledgeHasBeenSet;
 }
 

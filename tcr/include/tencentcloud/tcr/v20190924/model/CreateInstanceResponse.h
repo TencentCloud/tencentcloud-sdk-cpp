@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业版实例Id
-                     * @return RegistryId 企业版实例Id
+                     * 获取<p>企业版实例Id</p>
+                     * @return RegistryId <p>企业版实例Id</p>
                      * 
                      */
                     std::string GetRegistryId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 企业版实例Id
+                     * <p>企业版实例Id</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;

@@ -43,7 +43,12 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_promptModerateStatusHasBeenSet(false),
     m_promptModerateConfigHasBeenSet(false),
     m_sensitiveDataCheckStatusHasBeenSet(false),
-    m_sensitiveDataCheckConfigHasBeenSet(false)
+    m_sensitiveDataCheckConfigHasBeenSet(false),
+    m_targetSelectHasBeenSet(false),
+    m_findHostKeyMethodHasBeenSet(false),
+    m_hostKeyHeaderNameHasBeenSet(false),
+    m_fallbackStatusHasBeenSet(false),
+    m_fallbackModelsHasBeenSet(false)
 {
 }
 
@@ -249,6 +254,53 @@ string ModifyModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sensitiveDataCheckConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_targetSelectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetSelect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetSelect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_findHostKeyMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FindHostKeyMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_findHostKeyMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostKeyHeaderNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostKeyHeaderName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostKeyHeaderName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fallbackStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FallbackStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fallbackStatus, allocator);
+    }
+
+    if (m_fallbackModelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FallbackModels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fallbackModels.begin(); itr != m_fallbackModels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -593,6 +645,86 @@ void ModifyModelServiceRequest::SetSensitiveDataCheckConfig(const SensitiveDataC
 bool ModifyModelServiceRequest::SensitiveDataCheckConfigHasBeenSet() const
 {
     return m_sensitiveDataCheckConfigHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetTargetSelect() const
+{
+    return m_targetSelect;
+}
+
+void ModifyModelServiceRequest::SetTargetSelect(const string& _targetSelect)
+{
+    m_targetSelect = _targetSelect;
+    m_targetSelectHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::TargetSelectHasBeenSet() const
+{
+    return m_targetSelectHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetFindHostKeyMethod() const
+{
+    return m_findHostKeyMethod;
+}
+
+void ModifyModelServiceRequest::SetFindHostKeyMethod(const string& _findHostKeyMethod)
+{
+    m_findHostKeyMethod = _findHostKeyMethod;
+    m_findHostKeyMethodHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::FindHostKeyMethodHasBeenSet() const
+{
+    return m_findHostKeyMethodHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetHostKeyHeaderName() const
+{
+    return m_hostKeyHeaderName;
+}
+
+void ModifyModelServiceRequest::SetHostKeyHeaderName(const string& _hostKeyHeaderName)
+{
+    m_hostKeyHeaderName = _hostKeyHeaderName;
+    m_hostKeyHeaderNameHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::HostKeyHeaderNameHasBeenSet() const
+{
+    return m_hostKeyHeaderNameHasBeenSet;
+}
+
+bool ModifyModelServiceRequest::GetFallbackStatus() const
+{
+    return m_fallbackStatus;
+}
+
+void ModifyModelServiceRequest::SetFallbackStatus(const bool& _fallbackStatus)
+{
+    m_fallbackStatus = _fallbackStatus;
+    m_fallbackStatusHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::FallbackStatusHasBeenSet() const
+{
+    return m_fallbackStatusHasBeenSet;
+}
+
+vector<TargetModelDTO> ModifyModelServiceRequest::GetFallbackModels() const
+{
+    return m_fallbackModels;
+}
+
+void ModifyModelServiceRequest::SetFallbackModels(const vector<TargetModelDTO>& _fallbackModels)
+{
+    m_fallbackModels = _fallbackModels;
+    m_fallbackModelsHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::FallbackModelsHasBeenSet() const
+{
+    return m_fallbackModelsHasBeenSet;
 }
 
 

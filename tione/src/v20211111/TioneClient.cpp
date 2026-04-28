@@ -1140,6 +1140,56 @@ TioneClient::DeleteTrainingTaskOutcomeCallable TioneClient::DeleteTrainingTaskCa
     return prom->get_future();
 }
 
+TioneClient::DescribeAnnotatedTaskListOutcome TioneClient::DescribeAnnotatedTaskList(const DescribeAnnotatedTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAnnotatedTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAnnotatedTaskListResponse rsp = DescribeAnnotatedTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAnnotatedTaskListOutcome(rsp);
+        else
+            return DescribeAnnotatedTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAnnotatedTaskListOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeAnnotatedTaskListAsync(const DescribeAnnotatedTaskListRequest& request, const DescribeAnnotatedTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAnnotatedTaskListRequest&;
+    using Resp = DescribeAnnotatedTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAnnotatedTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeAnnotatedTaskListOutcomeCallable TioneClient::DescribeAnnotatedTaskListCallable(const DescribeAnnotatedTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAnnotatedTaskListOutcome>>();
+    DescribeAnnotatedTaskListAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeAnnotatedTaskListRequest&,
+        DescribeAnnotatedTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeBillingResourceGroupOutcome TioneClient::DescribeBillingResourceGroup(const DescribeBillingResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingResourceGroup");
@@ -2832,6 +2882,56 @@ TioneClient::DescribeTrainingTasksOutcomeCallable TioneClient::DescribeTrainingT
         const TioneClient*,
         const DescribeTrainingTasksRequest&,
         DescribeTrainingTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeWorkspacesOutcome TioneClient::DescribeWorkspaces(const DescribeWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspacesResponse rsp = DescribeWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspacesOutcome(rsp);
+        else
+            return DescribeWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeWorkspacesAsync(const DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkspacesRequest&;
+    using Resp = DescribeWorkspacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeWorkspacesOutcomeCallable TioneClient::DescribeWorkspacesCallable(const DescribeWorkspacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkspacesOutcome>>();
+    DescribeWorkspacesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeWorkspacesRequest&,
+        DescribeWorkspacesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

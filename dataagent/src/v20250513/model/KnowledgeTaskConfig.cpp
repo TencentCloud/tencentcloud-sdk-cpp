@@ -28,7 +28,8 @@ KnowledgeTaskConfig::KnowledgeTaskConfig() :
     m_columnsHasBeenSet(false),
     m_indexesHasBeenSet(false),
     m_genDocSummaryHasBeenSet(false),
-    m_genParaSummaryHasBeenSet(false)
+    m_genParaSummaryHasBeenSet(false),
+    m_enableImageUnderstandingHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,16 @@ CoreInternalOutcome KnowledgeTaskConfig::Deserialize(const rapidjson::Value &val
         m_genParaSummaryHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableImageUnderstanding") && !value["EnableImageUnderstanding"].IsNull())
+    {
+        if (!value["EnableImageUnderstanding"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeTaskConfig.EnableImageUnderstanding` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableImageUnderstanding = value["EnableImageUnderstanding"].GetInt64();
+        m_enableImageUnderstandingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +230,14 @@ void KnowledgeTaskConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "GenParaSummary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_genParaSummary, allocator);
+    }
+
+    if (m_enableImageUnderstandingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableImageUnderstanding";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableImageUnderstanding, allocator);
     }
 
 }
@@ -350,5 +369,21 @@ void KnowledgeTaskConfig::SetGenParaSummary(const int64_t& _genParaSummary)
 bool KnowledgeTaskConfig::GenParaSummaryHasBeenSet() const
 {
     return m_genParaSummaryHasBeenSet;
+}
+
+int64_t KnowledgeTaskConfig::GetEnableImageUnderstanding() const
+{
+    return m_enableImageUnderstanding;
+}
+
+void KnowledgeTaskConfig::SetEnableImageUnderstanding(const int64_t& _enableImageUnderstanding)
+{
+    m_enableImageUnderstanding = _enableImageUnderstanding;
+    m_enableImageUnderstandingHasBeenSet = true;
+}
+
+bool KnowledgeTaskConfig::EnableImageUnderstandingHasBeenSet() const
+{
+    return m_enableImageUnderstandingHasBeenSet;
 }
 

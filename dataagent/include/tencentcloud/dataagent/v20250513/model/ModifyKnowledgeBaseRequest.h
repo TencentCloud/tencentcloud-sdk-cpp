@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/KnowledgeTaskConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取操作类型：Create，Update，Delete
-                     * @return OperateType 操作类型：Create，Update，Delete
+                     * 获取<p>操作类型：Create，Update，Delete</p>
+                     * @return OperateType <p>操作类型：Create，Update，Delete</p>
                      * 
                      */
                     std::string GetOperateType() const;
 
                     /**
-                     * 设置操作类型：Create，Update，Delete
-                     * @param _operateType 操作类型：Create，Update，Delete
+                     * 设置<p>操作类型：Create，Update，Delete</p>
+                     * @param _operateType <p>操作类型：Create，Update，Delete</p>
                      * 
                      */
                     void SetOperateType(const std::string& _operateType);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取知识库id，update和delete时必填
-                     * @return KnowledgeBaseId 知识库id，update和delete时必填
+                     * 获取<p>知识库id，update和delete时必填</p>
+                     * @return KnowledgeBaseId <p>知识库id，update和delete时必填</p>
                      * 
                      */
                     std::string GetKnowledgeBaseId() const;
 
                     /**
-                     * 设置知识库id，update和delete时必填
-                     * @param _knowledgeBaseId 知识库id，update和delete时必填
+                     * 设置<p>知识库id，update和delete时必填</p>
+                     * @param _knowledgeBaseId <p>知识库id，update和delete时必填</p>
                      * 
                      */
                     void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool KnowledgeBaseIdHasBeenSet() const;
 
                     /**
-                     * 获取知识库名称，create和update时必填。只允许字母、数字、汉字、下划线
-                     * @return KnowledgeBaseName 知识库名称，create和update时必填。只允许字母、数字、汉字、下划线
+                     * 获取<p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>
+                     * @return KnowledgeBaseName <p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>
                      * 
                      */
                     std::string GetKnowledgeBaseName() const;
 
                     /**
-                     * 设置知识库名称，create和update时必填。只允许字母、数字、汉字、下划线
-                     * @param _knowledgeBaseName 知识库名称，create和update时必填。只允许字母、数字、汉字、下划线
+                     * 设置<p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>
+                     * @param _knowledgeBaseName <p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>
                      * 
                      */
                     void SetKnowledgeBaseName(const std::string& _knowledgeBaseName);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool KnowledgeBaseNameHasBeenSet() const;
 
                     /**
-                     * 获取知识库描述，create和update时必填
-                     * @return KnowledgeBaseDesc 知识库描述，create和update时必填
+                     * 获取<p>知识库描述，create和update时必填</p>
+                     * @return KnowledgeBaseDesc <p>知识库描述，create和update时必填</p>
                      * 
                      */
                     std::string GetKnowledgeBaseDesc() const;
 
                     /**
-                     * 设置知识库描述，create和update时必填
-                     * @param _knowledgeBaseDesc 知识库描述，create和update时必填
+                     * 设置<p>知识库描述，create和update时必填</p>
+                     * @param _knowledgeBaseDesc <p>知识库描述，create和update时必填</p>
                      * 
                      */
                     void SetKnowledgeBaseDesc(const std::string& _knowledgeBaseDesc);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool KnowledgeBaseDescHasBeenSet() const;
 
                     /**
-                     * 获取1仅自己使用，2指定用户，0全员
-                     * @return UseScope 1仅自己使用，2指定用户，0全员
+                     * 获取<p>1仅自己使用，2指定用户，0全员</p>
+                     * @return UseScope <p>1仅自己使用，2指定用户，0全员</p>
                      * 
                      */
                     int64_t GetUseScope() const;
 
                     /**
-                     * 设置1仅自己使用，2指定用户，0全员
-                     * @param _useScope 1仅自己使用，2指定用户，0全员
+                     * 设置<p>1仅自己使用，2指定用户，0全员</p>
+                     * @param _useScope <p>1仅自己使用，2指定用户，0全员</p>
                      * 
                      */
                     void SetUseScope(const int64_t& _useScope);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool UseScopeHasBeenSet() const;
 
                     /**
-                     * 获取可使用用户列表
-                     * @return AuthorityUins 可使用用户列表
+                     * 获取<p>可使用用户列表</p>
+                     * @return AuthorityUins <p>可使用用户列表</p>
                      * 
                      */
                     std::vector<std::string> GetAuthorityUins() const;
 
                     /**
-                     * 设置可使用用户列表
-                     * @param _authorityUins 可使用用户列表
+                     * 设置<p>可使用用户列表</p>
+                     * @param _authorityUins <p>可使用用户列表</p>
                      * 
                      */
                     void SetAuthorityUins(const std::vector<std::string>& _authorityUins);
@@ -189,49 +190,76 @@ namespace TencentCloud
                      */
                     bool AuthorityUinsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>知识库任务配置</p>
+                     * @return Config <p>知识库任务配置</p>
+                     * 
+                     */
+                    KnowledgeTaskConfig GetConfig() const;
+
+                    /**
+                     * 设置<p>知识库任务配置</p>
+                     * @param _config <p>知识库任务配置</p>
+                     * 
+                     */
+                    void SetConfig(const KnowledgeTaskConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 操作类型：Create，Update，Delete
+                     * <p>操作类型：Create，Update，Delete</p>
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 知识库id，update和delete时必填
+                     * <p>知识库id，update和delete时必填</p>
                      */
                     std::string m_knowledgeBaseId;
                     bool m_knowledgeBaseIdHasBeenSet;
 
                     /**
-                     * 知识库名称，create和update时必填。只允许字母、数字、汉字、下划线
+                     * <p>知识库名称，create和update时必填。只允许字母、数字、汉字、下划线</p>
                      */
                     std::string m_knowledgeBaseName;
                     bool m_knowledgeBaseNameHasBeenSet;
 
                     /**
-                     * 知识库描述，create和update时必填
+                     * <p>知识库描述，create和update时必填</p>
                      */
                     std::string m_knowledgeBaseDesc;
                     bool m_knowledgeBaseDescHasBeenSet;
 
                     /**
-                     * 1仅自己使用，2指定用户，0全员
+                     * <p>1仅自己使用，2指定用户，0全员</p>
                      */
                     int64_t m_useScope;
                     bool m_useScopeHasBeenSet;
 
                     /**
-                     * 可使用用户列表
+                     * <p>可使用用户列表</p>
                      */
                     std::vector<std::string> m_authorityUins;
                     bool m_authorityUinsHasBeenSet;
+
+                    /**
+                     * <p>知识库任务配置</p>
+                     */
+                    KnowledgeTaskConfig m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

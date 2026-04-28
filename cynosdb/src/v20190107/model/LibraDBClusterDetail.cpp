@@ -49,7 +49,8 @@ LibraDBClusterDetail::LibraDBClusterDetail() :
     m_cynosVersionTagHasBeenSet(false),
     m_noSupportAddRoHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_physicalZoneHasBeenSet(false)
+    m_physicalZoneHasBeenSet(false),
+    m_analysisUpgradeVersionInfoHasBeenSet(false)
 {
 }
 
@@ -378,6 +379,23 @@ CoreInternalOutcome LibraDBClusterDetail::Deserialize(const rapidjson::Value &va
         m_physicalZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisUpgradeVersionInfo") && !value["AnalysisUpgradeVersionInfo"].IsNull())
+    {
+        if (!value["AnalysisUpgradeVersionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LibraDBClusterDetail.AnalysisUpgradeVersionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_analysisUpgradeVersionInfo.Deserialize(value["AnalysisUpgradeVersionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_analysisUpgradeVersionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -636,6 +654,15 @@ void LibraDBClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "PhysicalZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_physicalZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_analysisUpgradeVersionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisUpgradeVersionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_analysisUpgradeVersionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1103,5 +1130,21 @@ void LibraDBClusterDetail::SetPhysicalZone(const string& _physicalZone)
 bool LibraDBClusterDetail::PhysicalZoneHasBeenSet() const
 {
     return m_physicalZoneHasBeenSet;
+}
+
+UpgradeAnalysisInstanceVersionInfo LibraDBClusterDetail::GetAnalysisUpgradeVersionInfo() const
+{
+    return m_analysisUpgradeVersionInfo;
+}
+
+void LibraDBClusterDetail::SetAnalysisUpgradeVersionInfo(const UpgradeAnalysisInstanceVersionInfo& _analysisUpgradeVersionInfo)
+{
+    m_analysisUpgradeVersionInfo = _analysisUpgradeVersionInfo;
+    m_analysisUpgradeVersionInfoHasBeenSet = true;
+}
+
+bool LibraDBClusterDetail::AnalysisUpgradeVersionInfoHasBeenSet() const
+{
+    return m_analysisUpgradeVersionInfoHasBeenSet;
 }
 

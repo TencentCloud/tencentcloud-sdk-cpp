@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
-                     * @return DBInstanceIdSet 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
+                     * 获取<p>实例ID列表。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>
+                     * @return DBInstanceIdSet <p>实例ID列表。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>
                      * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
-                     * @param _dBInstanceIdSet 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
+                     * 设置<p>实例ID列表。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>
+                     * @param _dBInstanceIdSet <p>实例ID列表。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>
                      * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：该参数不生效</li>
-                     * @return Period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：该参数不生效</li>
+                     * 获取<p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>
+                     * @return Period <p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：该参数不生效</li>
-                     * @param _period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：该参数不生效</li>
+                     * 设置<p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>
+                     * @param _period <p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -93,27 +85,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否使用代金券：
-<li>true：使用</li>
-<li>false：不使用</li>
-默认值：false
-                     * @return AutoVoucher 是否使用代金券：
-<li>true：使用</li>
-<li>false：不使用</li>
-默认值：false
+                     * 获取<p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false
+                     * @return AutoVoucher <p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false
                      * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
-                     * 设置是否使用代金券：
-<li>true：使用</li>
-<li>false：不使用</li>
-默认值：false
-                     * @param _autoVoucher 是否使用代金券：
-<li>true：使用</li>
-<li>false：不使用</li>
-默认值：false
+                     * 设置<p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false
+                     * @param _autoVoucher <p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false
                      * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
@@ -126,15 +106,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取代金券id列表。
-                     * @return VoucherIds 代金券id列表。
+                     * 获取<p>代金券id列表。</p>
+                     * @return VoucherIds <p>代金券id列表。</p>
                      * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
-                     * 设置代金券id列表。
-                     * @param _voucherIds 代金券id列表。
+                     * 设置<p>代金券id列表。</p>
+                     * @param _voucherIds <p>代金券id列表。</p>
                      * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
@@ -149,30 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时解隔离多个实例。
+                     * <p>实例ID列表。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取。支持同时解隔离多个实例。</p>
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
-<li>后付费：该参数不生效</li>
+                     * <p>购买时长，单位：月。</p><li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li><li>后付费：该参数不生效</li>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否使用代金券：
-<li>true：使用</li>
-<li>false：不使用</li>
-默认值：false
+                     * <p>是否使用代金券：</p><li>true：使用</li><li>false：不使用</li>默认值：false
                      */
                     bool m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 代金券id列表。
+                     * <p>代金券id列表。</p>
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;

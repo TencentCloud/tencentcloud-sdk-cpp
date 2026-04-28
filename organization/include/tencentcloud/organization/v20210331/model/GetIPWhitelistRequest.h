@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_ERASEHANDWRITTENIMAGEOCRRESPONSE_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_ERASEHANDWRITTENIMAGEOCRRESPONSE_H_
+#ifndef TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_GETIPWHITELISTREQUEST_H_
+#define TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_GETIPWHITELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Ocr
+    namespace Organization
     {
-        namespace V20181119
+        namespace V20210331
         {
             namespace Model
             {
                 /**
-                * EraseHandwrittenImageOCR返回参数结构体
+                * GetIPWhitelist请求参数结构体
                 */
-                class EraseHandwrittenImageOCRResponse : public AbstractModel
+                class GetIPWhitelistRequest : public AbstractModel
                 {
                 public:
-                    EraseHandwrittenImageOCRResponse();
-                    ~EraseHandwrittenImageOCRResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    GetIPWhitelistRequest();
+                    ~GetIPWhitelistRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取图像处理后的jpg图片，base64格式
-                     * @return Image 图像处理后的jpg图片，base64格式
+                     * 获取空间ID
+                     * @return ZoneId 空间ID
                      * 
                      */
-                    std::string GetImage() const;
+                    std::string GetZoneId() const;
 
                     /**
-                     * 判断参数 Image 是否已赋值
-                     * @return Image 是否已赋值
+                     * 设置空间ID
+                     * @param _zoneId 空间ID
                      * 
                      */
-                    bool ImageHasBeenSet() const;
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 图像处理后的jpg图片，base64格式
+                     * 空间ID
                      */
-                    std::string m_image;
-                    bool m_imageHasBeenSet;
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }
@@ -71,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_ERASEHANDWRITTENIMAGEOCRRESPONSE_H_
+#endif // !TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_GETIPWHITELISTREQUEST_H_

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待下线实例ID
-                     * @return DBInstanceId 待下线实例ID
+                     * 获取<p>待下线实例ID</p>
+                     * @return DBInstanceId <p>待下线实例ID</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置待下线实例ID
-                     * @param _dBInstanceId 待下线实例ID
+                     * 设置<p>待下线实例ID</p>
+                     * @param _dBInstanceId <p>待下线实例ID</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待下线实例ID
+                     * <p>待下线实例ID</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;

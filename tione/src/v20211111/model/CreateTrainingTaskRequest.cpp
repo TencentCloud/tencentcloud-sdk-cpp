@@ -26,6 +26,7 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_nameHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceConfigInfosHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
     m_frameworkEnvironmentHasBeenSet(false),
@@ -88,6 +89,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frameworkNameHasBeenSet)
@@ -363,6 +372,22 @@ void CreateTrainingTaskRequest::SetResourceConfigInfos(const vector<ResourceConf
 bool CreateTrainingTaskRequest::ResourceConfigInfosHasBeenSet() const
 {
     return m_resourceConfigInfosHasBeenSet;
+}
+
+string CreateTrainingTaskRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateTrainingTaskRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string CreateTrainingTaskRequest::GetFrameworkName() const

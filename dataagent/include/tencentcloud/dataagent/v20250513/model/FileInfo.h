@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool WebUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件能力标识列表</p>
+                     * @return Capabilities <p>文件能力标识列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetCapabilities() const;
+
+                    /**
+                     * 设置<p>文件能力标识列表</p>
+                     * @param _capabilities <p>文件能力标识列表</p>
+                     * 
+                     */
+                    void SetCapabilities(const std::vector<std::string>& _capabilities);
+
+                    /**
+                     * 判断参数 Capabilities 是否已赋值
+                     * @return Capabilities 是否已赋值
+                     * 
+                     */
+                    bool CapabilitiesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;
+
+                    /**
+                     * <p>文件能力标识列表</p>
+                     */
+                    std::vector<std::string> m_capabilities;
+                    bool m_capabilitiesHasBeenSet;
 
                 };
             }

@@ -490,6 +490,111 @@ namespace TencentCloud
                      */
                     bool SensitiveDataCheckConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+                     * @return TargetSelect <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+                     * 
+                     */
+                    std::string GetTargetSelect() const;
+
+                    /**
+                     * 设置<p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+                     * @param _targetSelect <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+                     * 
+                     */
+                    void SetTargetSelect(const std::string& _targetSelect);
+
+                    /**
+                     * 判断参数 TargetSelect 是否已赋值
+                     * @return TargetSelect 是否已赋值
+                     * 
+                     */
+                    bool TargetSelectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 客户端IP</li><li>fromHeader： 通过header值</li><li>autoDetect： 自动探测</li></ul>
+                     * @return FindHostKeyMethod <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 客户端IP</li><li>fromHeader： 通过header值</li><li>autoDetect： 自动探测</li></ul>
+                     * 
+                     */
+                    std::string GetFindHostKeyMethod() const;
+
+                    /**
+                     * 设置<p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 客户端IP</li><li>fromHeader： 通过header值</li><li>autoDetect： 自动探测</li></ul>
+                     * @param _findHostKeyMethod <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 客户端IP</li><li>fromHeader： 通过header值</li><li>autoDetect： 自动探测</li></ul>
+                     * 
+                     */
+                    void SetFindHostKeyMethod(const std::string& _findHostKeyMethod);
+
+                    /**
+                     * 判断参数 FindHostKeyMethod 是否已赋值
+                     * @return FindHostKeyMethod 是否已赋值
+                     * 
+                     */
+                    bool FindHostKeyMethodHasBeenSet() const;
+
+                    /**
+                     * 获取<p>会话判定方式为fromHeader时会话的header名称</p>
+                     * @return HostKeyHeaderName <p>会话判定方式为fromHeader时会话的header名称</p>
+                     * 
+                     */
+                    std::string GetHostKeyHeaderName() const;
+
+                    /**
+                     * 设置<p>会话判定方式为fromHeader时会话的header名称</p>
+                     * @param _hostKeyHeaderName <p>会话判定方式为fromHeader时会话的header名称</p>
+                     * 
+                     */
+                    void SetHostKeyHeaderName(const std::string& _hostKeyHeaderName);
+
+                    /**
+                     * 判断参数 HostKeyHeaderName 是否已赋值
+                     * @return HostKeyHeaderName 是否已赋值
+                     * 
+                     */
+                    bool HostKeyHeaderNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否启用Fallback模型</p>
+                     * @return FallbackStatus <p>是否启用Fallback模型</p>
+                     * 
+                     */
+                    bool GetFallbackStatus() const;
+
+                    /**
+                     * 设置<p>是否启用Fallback模型</p>
+                     * @param _fallbackStatus <p>是否启用Fallback模型</p>
+                     * 
+                     */
+                    void SetFallbackStatus(const bool& _fallbackStatus);
+
+                    /**
+                     * 判断参数 FallbackStatus 是否已赋值
+                     * @return FallbackStatus 是否已赋值
+                     * 
+                     */
+                    bool FallbackStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Fallback模型配置</p>
+                     * @return FallbackModels <p>Fallback模型配置</p>
+                     * 
+                     */
+                    std::vector<TargetModelDTO> GetFallbackModels() const;
+
+                    /**
+                     * 设置<p>Fallback模型配置</p>
+                     * @param _fallbackModels <p>Fallback模型配置</p>
+                     * 
+                     */
+                    void SetFallbackModels(const std::vector<TargetModelDTO>& _fallbackModels);
+
+                    /**
+                     * 判断参数 FallbackModels 是否已赋值
+                     * @return FallbackModels 是否已赋值
+                     * 
+                     */
+                    bool FallbackModelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +722,36 @@ namespace TencentCloud
                      */
                     SensitiveDataCheckConfigDTO m_sensitiveDataCheckConfig;
                     bool m_sensitiveDataCheckConfigHasBeenSet;
+
+                    /**
+                     * <p>负载方式</p><p>枚举值：</p><ul><li>random： 随机</li><li>consistentHash： 会话保持</li></ul>
+                     */
+                    std::string m_targetSelect;
+                    bool m_targetSelectHasBeenSet;
+
+                    /**
+                     * <p>会话判断方式</p><p>枚举值：</p><ul><li>fromClientIP： 客户端IP</li><li>fromHeader： 通过header值</li><li>autoDetect： 自动探测</li></ul>
+                     */
+                    std::string m_findHostKeyMethod;
+                    bool m_findHostKeyMethodHasBeenSet;
+
+                    /**
+                     * <p>会话判定方式为fromHeader时会话的header名称</p>
+                     */
+                    std::string m_hostKeyHeaderName;
+                    bool m_hostKeyHeaderNameHasBeenSet;
+
+                    /**
+                     * <p>是否启用Fallback模型</p>
+                     */
+                    bool m_fallbackStatus;
+                    bool m_fallbackStatusHasBeenSet;
+
+                    /**
+                     * <p>Fallback模型配置</p>
+                     */
+                    std::vector<TargetModelDTO> m_fallbackModels;
+                    bool m_fallbackModelsHasBeenSet;
 
                 };
             }

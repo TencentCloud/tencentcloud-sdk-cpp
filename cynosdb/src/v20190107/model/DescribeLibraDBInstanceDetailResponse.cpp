@@ -56,7 +56,8 @@ DescribeLibraDBInstanceDetailResponse::DescribeLibraDBInstanceDetailResponse() :
     m_instanceNetInfoHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_nodeInfoHasBeenSet(false),
-    m_nodeCountHasBeenSet(false)
+    m_nodeCountHasBeenSet(false),
+    m_analysisUpgradeVersionInfoHasBeenSet(false)
 {
 }
 
@@ -451,6 +452,23 @@ CoreInternalOutcome DescribeLibraDBInstanceDetailResponse::Deserialize(const str
         m_nodeCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AnalysisUpgradeVersionInfo") && !rsp["AnalysisUpgradeVersionInfo"].IsNull())
+    {
+        if (!rsp["AnalysisUpgradeVersionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AnalysisUpgradeVersionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_analysisUpgradeVersionInfo.Deserialize(rsp["AnalysisUpgradeVersionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_analysisUpgradeVersionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -738,6 +756,15 @@ string DescribeLibraDBInstanceDetailResponse::ToJsonString() const
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_analysisUpgradeVersionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisUpgradeVersionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_analysisUpgradeVersionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1080,6 +1107,16 @@ uint64_t DescribeLibraDBInstanceDetailResponse::GetNodeCount() const
 bool DescribeLibraDBInstanceDetailResponse::NodeCountHasBeenSet() const
 {
     return m_nodeCountHasBeenSet;
+}
+
+UpgradeAnalysisInstanceVersionInfo DescribeLibraDBInstanceDetailResponse::GetAnalysisUpgradeVersionInfo() const
+{
+    return m_analysisUpgradeVersionInfo;
+}
+
+bool DescribeLibraDBInstanceDetailResponse::AnalysisUpgradeVersionInfoHasBeenSet() const
+{
+    return m_analysisUpgradeVersionInfoHasBeenSet;
 }
 
 

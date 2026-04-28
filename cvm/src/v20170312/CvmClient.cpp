@@ -3640,6 +3640,56 @@ CvmClient::ModifyChcAttributeOutcomeCallable CvmClient::ModifyChcAttributeCallab
     return prom->get_future();
 }
 
+CvmClient::ModifyChcNetworkModeOutcome CvmClient::ModifyChcNetworkMode(const ModifyChcNetworkModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyChcNetworkMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyChcNetworkModeResponse rsp = ModifyChcNetworkModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyChcNetworkModeOutcome(rsp);
+        else
+            return ModifyChcNetworkModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyChcNetworkModeOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ModifyChcNetworkModeAsync(const ModifyChcNetworkModeRequest& request, const ModifyChcNetworkModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyChcNetworkModeRequest&;
+    using Resp = ModifyChcNetworkModeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyChcNetworkMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::ModifyChcNetworkModeOutcomeCallable CvmClient::ModifyChcNetworkModeCallable(const ModifyChcNetworkModeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyChcNetworkModeOutcome>>();
+    ModifyChcNetworkModeAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const ModifyChcNetworkModeRequest&,
+        ModifyChcNetworkModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CvmClient::ModifyDisasterRecoverGroupAttributeOutcome CvmClient::ModifyDisasterRecoverGroupAttribute(const ModifyDisasterRecoverGroupAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDisasterRecoverGroupAttribute");

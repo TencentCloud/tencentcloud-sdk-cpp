@@ -167,6 +167,8 @@
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyChcAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyChcAttributeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyChcNetworkModeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyChcNetworkModeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h>
@@ -463,6 +465,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyChcAttributeResponse> ModifyChcAttributeOutcome;
                 typedef std::future<ModifyChcAttributeOutcome> ModifyChcAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyChcAttributeRequest&, ModifyChcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChcAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyChcNetworkModeResponse> ModifyChcNetworkModeOutcome;
+                typedef std::future<ModifyChcNetworkModeOutcome> ModifyChcNetworkModeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyChcNetworkModeRequest&, ModifyChcNetworkModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChcNetworkModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDisasterRecoverGroupAttributeResponse> ModifyDisasterRecoverGroupAttributeOutcome;
                 typedef std::future<ModifyDisasterRecoverGroupAttributeOutcome> ModifyDisasterRecoverGroupAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyDisasterRecoverGroupAttributeRequest&, ModifyDisasterRecoverGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisasterRecoverGroupAttributeAsyncHandler;
@@ -1325,6 +1330,21 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyChcAttributeOutcome ModifyChcAttribute(const Model::ModifyChcAttributeRequest &request);
                 void ModifyChcAttributeAsync(const Model::ModifyChcAttributeRequest& request, const ModifyChcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyChcAttributeOutcomeCallable ModifyChcAttributeCallable(const Model::ModifyChcAttributeRequest& request);
+
+                /**
+                 *ModifyChcNetworkMode接口用于切换CHC物理服务器的网络模式，适用于客户使用自建pxe环境装机，调用此接口切换部署网络和业务网络。**调用此接口会影响到业务网络，请明确使用方法后再调用**。
+- 切换部署网络：传入参数NetworkMode=DEPLOY。只有当CHC服务器状态为“可生产”或“已生产”，并且配置了部署网络才可以切换，否则API直接报错。
+- 切换业务网络：传入参数NetworkMode=BUSINESS。只有当CHC服务器状态为“已生产”时才可以切换，否则API直接报错。
+
+切换网络模式是一个异步操作，可以通过DescribeChcHosts轮询查询设备的NetworkMode和操作状态来判断是否切换成功
+- 切换部署网络：chc物理服务器如下参数值为以下值是判断切换成功：NetworkMode=DEPLOY，LatestOperation=SwitchChcDeployNetwork, LatestOperationState=SUCCESS。
+- 切换业务网络：chc物理服务器如下参数值为以下值是判断切换成功：NetworkMode=BUSINESS，LatestOperation=SwitchChcBusinessNetwork, LatestOperationState=SUCCESS。
+                 * @param req ModifyChcNetworkModeRequest
+                 * @return ModifyChcNetworkModeOutcome
+                 */
+                ModifyChcNetworkModeOutcome ModifyChcNetworkMode(const Model::ModifyChcNetworkModeRequest &request);
+                void ModifyChcNetworkModeAsync(const Model::ModifyChcNetworkModeRequest& request, const ModifyChcNetworkModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyChcNetworkModeOutcomeCallable ModifyChcNetworkModeCallable(const Model::ModifyChcNetworkModeRequest& request);
 
                 /**
                  *本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。

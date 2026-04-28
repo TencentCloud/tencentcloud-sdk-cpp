@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/EraseHandwrittenImageOCRResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-EraseHandwrittenImageOCRResponse::EraseHandwrittenImageOCRResponse() :
-    m_imageHasBeenSet(false)
+DescribeWorkspacesResponse::DescribeWorkspacesResponse() :
+    m_totalCountHasBeenSet(false),
+    m_workspacesHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome EraseHandwrittenImageOCRResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeWorkspacesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome EraseHandwrittenImageOCRResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Image") && !rsp["Image"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Image"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Image` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_image = string(rsp["Image"].GetString());
-        m_imageHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Workspaces") && !rsp["Workspaces"].IsNull())
+    {
+        if (!rsp["Workspaces"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Workspaces` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Workspaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Workspace item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workspaces.push_back(item);
+        }
+        m_workspacesHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string EraseHandwrittenImageOCRResponse::ToJsonString() const
+string DescribeWorkspacesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_imageHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Image";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_workspacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workspaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workspaces.begin(); itr != m_workspaces.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string EraseHandwrittenImageOCRResponse::ToJsonString() const
 }
 
 
-string EraseHandwrittenImageOCRResponse::GetImage() const
+int64_t DescribeWorkspacesResponse::GetTotalCount() const
 {
-    return m_image;
+    return m_totalCount;
 }
 
-bool EraseHandwrittenImageOCRResponse::ImageHasBeenSet() const
+bool DescribeWorkspacesResponse::TotalCountHasBeenSet() const
 {
-    return m_imageHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<Workspace> DescribeWorkspacesResponse::GetWorkspaces() const
+{
+    return m_workspaces;
+}
+
+bool DescribeWorkspacesResponse::WorkspacesHasBeenSet() const
+{
+    return m_workspacesHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_enableDetectTextHasBeenSet(false),
-    m_configIDHasBeenSet(false)
+    m_configIDHasBeenSet(false),
+    m_wordsTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "ConfigID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_configID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_wordsType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void GeneralAccurateOCRRequest::SetConfigID(const string& _configID)
 bool GeneralAccurateOCRRequest::ConfigIDHasBeenSet() const
 {
     return m_configIDHasBeenSet;
+}
+
+string GeneralAccurateOCRRequest::GetWordsType() const
+{
+    return m_wordsType;
+}
+
+void GeneralAccurateOCRRequest::SetWordsType(const string& _wordsType)
+{
+    m_wordsType = _wordsType;
+    m_wordsTypeHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::WordsTypeHasBeenSet() const
+{
+    return m_wordsTypeHasBeenSet;
 }
 
 

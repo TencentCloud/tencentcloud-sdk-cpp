@@ -30,7 +30,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_registryChargePrepaidHasBeenSet(false),
     m_syncTagHasBeenSet(false),
     m_enableCosMAZHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableCosVersioningHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_enableCosVersioningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosVersioning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCosVersioning, allocator);
     }
 
 
@@ -241,6 +250,22 @@ void CreateInstanceRequest::SetDeletionProtection(const bool& _deletionProtectio
 bool CreateInstanceRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableCosVersioning() const
+{
+    return m_enableCosVersioning;
+}
+
+void CreateInstanceRequest::SetEnableCosVersioning(const bool& _enableCosVersioning)
+{
+    m_enableCosVersioning = _enableCosVersioning;
+    m_enableCosVersioningHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableCosVersioningHasBeenSet() const
+{
+    return m_enableCosVersioningHasBeenSet;
 }
 
 

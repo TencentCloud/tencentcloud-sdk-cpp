@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool ConfigIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>
+                     * @return WordsType <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>
+                     * 
+                     */
+                    std::string GetWordsType() const;
+
+                    /**
+                     * 设置<p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>
+                     * @param _wordsType <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>
+                     * 
+                     */
+                    void SetWordsType(const std::string& _wordsType);
+
+                    /**
+                     * 判断参数 WordsType 是否已赋值
+                     * @return WordsType 是否已赋值
+                     * 
+                     */
+                    bool WordsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_configID;
                     bool m_configIDHasBeenSet;
+
+                    /**
+                     * <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p><p>当config id=OCR 且 iswords 是false 时 才生效</p>
+                     */
+                    std::string m_wordsType;
+                    bool m_wordsTypeHasBeenSet;
 
                 };
             }
