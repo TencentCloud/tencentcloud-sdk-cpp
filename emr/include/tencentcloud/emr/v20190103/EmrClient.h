@@ -37,6 +37,8 @@
 #include <tencentcloud/emr/v20190103/model/CreateCloudInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateDynamicInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateDynamicInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateGroupsSTDRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceListRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEMREventListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEMREventListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
@@ -159,6 +163,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyBootScriptRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyBootScriptResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyDynamicInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyDynamicInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsRequest.h>
@@ -209,6 +215,8 @@
 #include <tencentcloud/emr/v20190103/model/SyncPodStateResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateClusterNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/TerminateClusterNodesResponse.h>
+#include <tencentcloud/emr/v20190103/model/TerminateDynamicInstancesRequest.h>
+#include <tencentcloud/emr/v20190103/model/TerminateDynamicInstancesResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateSLInstanceRequest.h>
@@ -250,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDynamicInstanceResponse> CreateDynamicInstanceOutcome;
+                typedef std::future<CreateDynamicInstanceOutcome> CreateDynamicInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateDynamicInstanceRequest&, CreateDynamicInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGroupsSTDResponse> CreateGroupsSTDOutcome;
                 typedef std::future<CreateGroupsSTDOutcome> CreateGroupsSTDOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateGroupsSTDRequest&, CreateGroupsSTDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupsSTDAsyncHandler;
@@ -298,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDAGInfoResponse> DescribeDAGInfoOutcome;
                 typedef std::future<DescribeDAGInfoOutcome> DescribeDAGInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeDAGInfoRequest&, DescribeDAGInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDAGInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDynamicInstanceListResponse> DescribeDynamicInstanceListOutcome;
+                typedef std::future<DescribeDynamicInstanceListOutcome> DescribeDynamicInstanceListOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeDynamicInstanceListRequest&, DescribeDynamicInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDynamicInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEMREventListResponse> DescribeEMREventListOutcome;
                 typedef std::future<DescribeEMREventListOutcome> DescribeEMREventListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEMREventListRequest&, DescribeEMREventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEMREventListAsyncHandler;
@@ -433,6 +447,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBootScriptResponse> ModifyBootScriptOutcome;
                 typedef std::future<ModifyBootScriptOutcome> ModifyBootScriptOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyBootScriptRequest&, ModifyBootScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBootScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDynamicInstanceResponse> ModifyDynamicInstanceOutcome;
+                typedef std::future<ModifyDynamicInstanceOutcome> ModifyDynamicInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyDynamicInstanceRequest&, ModifyDynamicInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDynamicInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
                 typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
@@ -508,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TerminateClusterNodesResponse> TerminateClusterNodesOutcome;
                 typedef std::future<TerminateClusterNodesOutcome> TerminateClusterNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::TerminateClusterNodesRequest&, TerminateClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateClusterNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDynamicInstancesResponse> TerminateDynamicInstancesOutcome;
+                typedef std::future<TerminateDynamicInstancesOutcome> TerminateDynamicInstancesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::TerminateDynamicInstancesRequest&, TerminateDynamicInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDynamicInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateInstanceResponse> TerminateInstanceOutcome;
                 typedef std::future<TerminateInstanceOutcome> TerminateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::TerminateInstanceRequest&, TerminateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstanceAsyncHandler;
@@ -583,6 +603,15 @@ namespace TencentCloud
                 CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
                 void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
+
+                /**
+                 *创建容器EMR-TKE集群DynamicInstance
+                 * @param req CreateDynamicInstanceRequest
+                 * @return CreateDynamicInstanceOutcome
+                 */
+                CreateDynamicInstanceOutcome CreateDynamicInstance(const Model::CreateDynamicInstanceRequest &request);
+                void CreateDynamicInstanceAsync(const Model::CreateDynamicInstanceRequest& request, const CreateDynamicInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDynamicInstanceOutcomeCallable CreateDynamicInstanceCallable(const Model::CreateDynamicInstanceRequest& request);
 
                 /**
                  *用户管理-批量创建用户组
@@ -729,6 +758,15 @@ namespace TencentCloud
                 DescribeDAGInfoOutcome DescribeDAGInfo(const Model::DescribeDAGInfoRequest &request);
                 void DescribeDAGInfoAsync(const Model::DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDAGInfoOutcomeCallable DescribeDAGInfoCallable(const Model::DescribeDAGInfoRequest& request);
+
+                /**
+                 *描述容器EMR-TKE集群DynamicInstance列表
+                 * @param req DescribeDynamicInstanceListRequest
+                 * @return DescribeDynamicInstanceListOutcome
+                 */
+                DescribeDynamicInstanceListOutcome DescribeDynamicInstanceList(const Model::DescribeDynamicInstanceListRequest &request);
+                void DescribeDynamicInstanceListAsync(const Model::DescribeDynamicInstanceListRequest& request, const DescribeDynamicInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDynamicInstanceListOutcomeCallable DescribeDynamicInstanceListCallable(const Model::DescribeDynamicInstanceListRequest& request);
 
                 /**
                  *查询EMR事件监控数据
@@ -1138,6 +1176,15 @@ namespace TencentCloud
                 ModifyBootScriptOutcomeCallable ModifyBootScriptCallable(const Model::ModifyBootScriptRequest& request);
 
                 /**
+                 *更新容器EMR-TKE集群DynamicInstance
+                 * @param req ModifyDynamicInstanceRequest
+                 * @return ModifyDynamicInstanceOutcome
+                 */
+                ModifyDynamicInstanceOutcome ModifyDynamicInstance(const Model::ModifyDynamicInstanceRequest &request);
+                void ModifyDynamicInstanceAsync(const Model::ModifyDynamicInstanceRequest& request, const ModifyDynamicInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDynamicInstanceOutcomeCallable ModifyDynamicInstanceCallable(const Model::ModifyDynamicInstanceRequest& request);
+
+                /**
                  *修改YARN资源调度的全局配置
                  * @param req ModifyGlobalConfigRequest
                  * @return ModifyGlobalConfigOutcome
@@ -1369,6 +1416,15 @@ namespace TencentCloud
                 TerminateClusterNodesOutcome TerminateClusterNodes(const Model::TerminateClusterNodesRequest &request);
                 void TerminateClusterNodesAsync(const Model::TerminateClusterNodesRequest& request, const TerminateClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateClusterNodesOutcomeCallable TerminateClusterNodesCallable(const Model::TerminateClusterNodesRequest& request);
+
+                /**
+                 *销毁容器EMR-TKE集群DynamicInstance
+                 * @param req TerminateDynamicInstancesRequest
+                 * @return TerminateDynamicInstancesOutcome
+                 */
+                TerminateDynamicInstancesOutcome TerminateDynamicInstances(const Model::TerminateDynamicInstancesRequest &request);
+                void TerminateDynamicInstancesAsync(const Model::TerminateDynamicInstancesRequest& request, const TerminateDynamicInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDynamicInstancesOutcomeCallable TerminateDynamicInstancesCallable(const Model::TerminateDynamicInstancesRequest& request);
 
                 /**
                  *销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。

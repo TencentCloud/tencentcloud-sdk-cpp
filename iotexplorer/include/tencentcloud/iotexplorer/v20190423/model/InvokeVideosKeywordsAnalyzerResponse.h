@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基于搜索结果的总结
-                     * @return Keywords 基于搜索结果的总结
+                     * 获取根据视频内容生成的关键词
+                     * @return Keywords 根据视频内容生成的关键词
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基于搜索结果的总结
+                     * 根据视频内容生成的关键词
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;

@@ -371,6 +371,43 @@ namespace TencentCloud
                      */
                     bool VectorSearchTopKHasBeenSet() const;
 
+                    /**
+                     * 获取搜索结果的排序方式，可选值：
+
+- `CORRELATION`：按相关性（默认）
+- `TIME_ASC`：按时间升序
+- `TIME_DESC`：按时间降序
+                     * @return Order 搜索结果的排序方式，可选值：
+
+- `CORRELATION`：按相关性（默认）
+- `TIME_ASC`：按时间升序
+- `TIME_DESC`：按时间降序
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置搜索结果的排序方式，可选值：
+
+- `CORRELATION`：按相关性（默认）
+- `TIME_ASC`：按时间升序
+- `TIME_DESC`：按时间降序
+                     * @param _order 搜索结果的排序方式，可选值：
+
+- `CORRELATION`：按相关性（默认）
+- `TIME_ASC`：按时间升序
+- `TIME_DESC`：按时间降序
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +501,16 @@ namespace TencentCloud
                      */
                     int64_t m_vectorSearchTopK;
                     bool m_vectorSearchTopKHasBeenSet;
+
+                    /**
+                     * 搜索结果的排序方式，可选值：
+
+- `CORRELATION`：按相关性（默认）
+- `TIME_ASC`：按时间升序
+- `TIME_DESC`：按时间降序
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

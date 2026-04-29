@@ -159,15 +159,15 @@ namespace TencentCloud
                     bool EndTimeMsHasBeenSet() const;
 
                     /**
-                     * 获取返回的关键字最大数量，默认为5；最大不能超过10
-                     * @return KeywordsMaxNum 返回的关键字最大数量，默认为5；最大不能超过10
+                     * 获取返回的关键词的最大数量，默认为5；最大不能超过10
+                     * @return KeywordsMaxNum 返回的关键词的最大数量，默认为5；最大不能超过10
                      * 
                      */
                     uint64_t GetKeywordsMaxNum() const;
 
                     /**
-                     * 设置返回的关键字最大数量，默认为5；最大不能超过10
-                     * @param _keywordsMaxNum 返回的关键字最大数量，默认为5；最大不能超过10
+                     * 设置返回的关键词的最大数量，默认为5；最大不能超过10
+                     * @param _keywordsMaxNum 返回的关键词的最大数量，默认为5；最大不能超过10
                      * 
                      */
                     void SetKeywordsMaxNum(const uint64_t& _keywordsMaxNum);
@@ -178,6 +178,27 @@ namespace TencentCloud
                      * 
                      */
                     bool KeywordsMaxNumHasBeenSet() const;
+
+                    /**
+                     * 获取返回的关键词的语言类型，支持的类型有：en-US、zh-CN
+                     * @return KeywordsLang 返回的关键词的语言类型，支持的类型有：en-US、zh-CN
+                     * 
+                     */
+                    std::string GetKeywordsLang() const;
+
+                    /**
+                     * 设置返回的关键词的语言类型，支持的类型有：en-US、zh-CN
+                     * @param _keywordsLang 返回的关键词的语言类型，支持的类型有：en-US、zh-CN
+                     * 
+                     */
+                    void SetKeywordsLang(const std::string& _keywordsLang);
+
+                    /**
+                     * 判断参数 KeywordsLang 是否已赋值
+                     * @return KeywordsLang 是否已赋值
+                     * 
+                     */
+                    bool KeywordsLangHasBeenSet() const;
 
                 private:
 
@@ -214,10 +235,16 @@ namespace TencentCloud
                     bool m_endTimeMsHasBeenSet;
 
                     /**
-                     * 返回的关键字最大数量，默认为5；最大不能超过10
+                     * 返回的关键词的最大数量，默认为5；最大不能超过10
                      */
                     uint64_t m_keywordsMaxNum;
                     bool m_keywordsMaxNumHasBeenSet;
+
+                    /**
+                     * 返回的关键词的语言类型，支持的类型有：en-US、zh-CN
+                     */
+                    std::string m_keywordsLang;
+                    bool m_keywordsLangHasBeenSet;
 
                 };
             }

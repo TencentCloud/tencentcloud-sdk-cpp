@@ -131,6 +131,8 @@
 #include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeAgentRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeAgentResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRRequest.h>
@@ -201,6 +203,8 @@
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyScenePhotoRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyScenePhotoResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h>
@@ -381,6 +385,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeAgentResponse> RecognizeAgentOutcome;
+                typedef std::future<RecognizeAgentOutcome> RecognizeAgentOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeAgentRequest&, RecognizeAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeContainerOCRResponse> RecognizeContainerOCROutcome;
                 typedef std::future<RecognizeContainerOCROutcome> RecognizeContainerOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeContainerOCRRequest&, RecognizeContainerOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeContainerOCRAsyncHandler;
@@ -486,6 +493,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyOfdVatInvoiceOCRResponse> VerifyOfdVatInvoiceOCROutcome;
                 typedef std::future<VerifyOfdVatInvoiceOCROutcome> VerifyOfdVatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyOfdVatInvoiceOCRRequest&, VerifyOfdVatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOfdVatInvoiceOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyScenePhotoResponse> VerifyScenePhotoOutcome;
+                typedef std::future<VerifyScenePhotoOutcome> VerifyScenePhotoOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyScenePhotoRequest&, VerifyScenePhotoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyScenePhotoAsyncHandler;
                 typedef Outcome<Core::Error, Model::VinOCRResponse> VinOCROutcome;
                 typedef std::future<VinOCROutcome> VinOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VinOCRRequest&, VinOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VinOCRAsyncHandler;
@@ -1320,6 +1330,15 @@ namespace TencentCloud
                 QuotaInvoiceOCROutcomeCallable QuotaInvoiceOCRCallable(const Model::QuotaInvoiceOCRRequest& request);
 
                 /**
+                 *支持对输入图的内容进行判断、分类以及总结；支持用户对通用文字识别输出结构进行自定义。
+                 * @param req RecognizeAgentRequest
+                 * @return RecognizeAgentOutcome
+                 */
+                RecognizeAgentOutcome RecognizeAgent(const Model::RecognizeAgentRequest &request);
+                void RecognizeAgentAsync(const Model::RecognizeAgentRequest& request, const RecognizeAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeAgentOutcomeCallable RecognizeAgentCallable(const Model::RecognizeAgentRequest& request);
+
+                /**
                  *本接口支持集装箱箱门信息识别，识别字段包括集装箱箱号、类型、总重量、有效承重、容量、自身重量，具备集装箱箱号、类型不完整或者不清晰的告警功能。
 默认接口请求频率限制：5次/秒。
                  * @param req RecognizeContainerOCRRequest
@@ -1974,6 +1993,15 @@ namespace TencentCloud
                 VerifyOfdVatInvoiceOCROutcome VerifyOfdVatInvoiceOCR(const Model::VerifyOfdVatInvoiceOCRRequest &request);
                 void VerifyOfdVatInvoiceOCRAsync(const Model::VerifyOfdVatInvoiceOCRRequest& request, const VerifyOfdVatInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyOfdVatInvoiceOCROutcomeCallable VerifyOfdVatInvoiceOCRCallable(const Model::VerifyOfdVatInvoiceOCRRequest& request);
+
+                /**
+                 *提供针对特定场景（如商户门头照、车牌等）图片的PS篡改、AIGC合成、图片质量检测能力，可应用于业务流程中对特定场景图片真实性、有效性校验的场景。
+                 * @param req VerifyScenePhotoRequest
+                 * @return VerifyScenePhotoOutcome
+                 */
+                VerifyScenePhotoOutcome VerifyScenePhoto(const Model::VerifyScenePhotoRequest &request);
+                void VerifyScenePhotoAsync(const Model::VerifyScenePhotoRequest& request, const VerifyScenePhotoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyScenePhotoOutcomeCallable VerifyScenePhotoCallable(const Model::VerifyScenePhotoRequest& request);
 
                 /**
                  *本接口支持图片内车辆识别代号（VIN）的检测和识别。

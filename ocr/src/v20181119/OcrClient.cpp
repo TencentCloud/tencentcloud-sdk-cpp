@@ -2740,6 +2740,56 @@ OcrClient::QuotaInvoiceOCROutcomeCallable OcrClient::QuotaInvoiceOCRCallable(con
     return prom->get_future();
 }
 
+OcrClient::RecognizeAgentOutcome OcrClient::RecognizeAgent(const RecognizeAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeAgentResponse rsp = RecognizeAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeAgentOutcome(rsp);
+        else
+            return RecognizeAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeAgentOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeAgentAsync(const RecognizeAgentRequest& request, const RecognizeAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RecognizeAgentRequest&;
+    using Resp = RecognizeAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RecognizeAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::RecognizeAgentOutcomeCallable OcrClient::RecognizeAgentCallable(const RecognizeAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RecognizeAgentOutcome>>();
+    RecognizeAgentAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const RecognizeAgentRequest&,
+        RecognizeAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::RecognizeContainerOCROutcome OcrClient::RecognizeContainerOCR(const RecognizeContainerOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeContainerOCR");
@@ -4482,6 +4532,56 @@ OcrClient::VerifyOfdVatInvoiceOCROutcomeCallable OcrClient::VerifyOfdVatInvoiceO
         const OcrClient*,
         const VerifyOfdVatInvoiceOCRRequest&,
         VerifyOfdVatInvoiceOCROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::VerifyScenePhotoOutcome OcrClient::VerifyScenePhoto(const VerifyScenePhotoRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyScenePhoto");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyScenePhotoResponse rsp = VerifyScenePhotoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyScenePhotoOutcome(rsp);
+        else
+            return VerifyScenePhotoOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyScenePhotoOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyScenePhotoAsync(const VerifyScenePhotoRequest& request, const VerifyScenePhotoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyScenePhotoRequest&;
+    using Resp = VerifyScenePhotoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyScenePhoto", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::VerifyScenePhotoOutcomeCallable OcrClient::VerifyScenePhotoCallable(const VerifyScenePhotoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyScenePhotoOutcome>>();
+    VerifyScenePhotoAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const VerifyScenePhotoRequest&,
+        VerifyScenePhotoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

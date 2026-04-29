@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的查询数据，大部分情况是list，也可能是bool
-                     * @return ReturnData 返回的查询数据，大部分情况是list，也可能是bool
+                     * 获取<p>返回的查询数据，大部分情况是list，也可能是bool</p>
+                     * @return ReturnData <p>返回的查询数据，大部分情况是list，也可能是bool</p>
                      * 
                      */
                     std::string GetReturnData() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的查询数据，大部分情况是list，也可能是bool
+                     * <p>返回的查询数据，大部分情况是list，也可能是bool</p>
                      */
                     std::string m_returnData;
                     bool m_returnDataHasBeenSet;

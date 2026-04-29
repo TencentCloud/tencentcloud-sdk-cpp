@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/VoiceProfile.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,27 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取<p>音色属性</p>
+                     * @return VoiceProfile <p>音色属性</p>
+                     * 
+                     */
+                    VoiceProfile GetVoiceProfile() const;
+
+                    /**
+                     * 设置<p>音色属性</p>
+                     * @param _voiceProfile <p>音色属性</p>
+                     * 
+                     */
+                    void SetVoiceProfile(const VoiceProfile& _voiceProfile);
+
+                    /**
+                     * 判断参数 VoiceProfile 是否已赋值
+                     * @return VoiceProfile 是否已赋值
+                     * 
+                     */
+                    bool VoiceProfileHasBeenSet() const;
+
+                    /**
                      * 获取<p>扩展参数，json字符串</p>
                      * @return ExtParam <p>扩展参数，json字符串</p>
                      * 
@@ -91,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * <p>音色属性</p>
+                     */
+                    VoiceProfile m_voiceProfile;
+                    bool m_voiceProfileHasBeenSet;
 
                     /**
                      * <p>扩展参数，json字符串</p>

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件的唯一标识。
-                     * @return FileId 媒体文件的唯一标识。
+                     * 获取<p>媒体文件的唯一标识。</p>
+                     * @return FileId <p>媒体文件的唯一标识。</p>
                      * 
                      */
                     std::string GetFileId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体播放地址。
-                     * @return MediaUrl 媒体播放地址。
+                     * 获取<p>媒体播放地址。</p>
+                     * @return MediaUrl <p>媒体播放地址。</p>
                      * 
                      */
                     std::string GetMediaUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool MediaUrlHasBeenSet() const;
 
                     /**
-                     * 获取媒体封面地址。
-                     * @return CoverUrl 媒体封面地址。
+                     * 获取<p>媒体封面地址。</p>
+                     * @return CoverUrl <p>媒体封面地址。</p>
                      * 
                      */
                     std::string GetCoverUrl() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件的唯一标识。
+                     * <p>媒体文件的唯一标识。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 媒体播放地址。
+                     * <p>媒体播放地址。</p>
                      */
                     std::string m_mediaUrl;
                     bool m_mediaUrlHasBeenSet;
 
                     /**
-                     * 媒体封面地址。
+                     * <p>媒体封面地址。</p>
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;

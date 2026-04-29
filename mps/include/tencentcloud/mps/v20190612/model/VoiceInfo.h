@@ -152,6 +152,27 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
+                     * 获取<p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>
+                     * @return Age <p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>
+                     * 
+                     */
+                    std::string GetAge() const;
+
+                    /**
+                     * 设置<p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>
+                     * @param _age <p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>
+                     * 
+                     */
+                    void SetAge(const std::string& _age);
+
+                    /**
+                     * 判断参数 Age 是否已赋值
+                     * @return Age 是否已赋值
+                     * 
+                     */
+                    bool AgeHasBeenSet() const;
+
+                    /**
                      * 获取<p>支持语种列表</p><p>如：en</p>
                      * @return Languages <p>支持语种列表</p><p>如：en</p>
                      * 
@@ -266,6 +287,12 @@ namespace TencentCloud
                      */
                     std::string m_gender;
                     bool m_genderHasBeenSet;
+
+                    /**
+                     * <p>年龄</p><p>枚举值：</p><ul><li>child： 儿童</li><li>teenager： 少年</li><li>youth： 青年</li><li>middle_aged： 中年</li><li>senior： 老年</li><li>unknown： 未知</li></ul>
+                     */
+                    std::string m_age;
+                    bool m_ageHasBeenSet;
 
                     /**
                      * <p>支持语种列表</p><p>如：en</p>

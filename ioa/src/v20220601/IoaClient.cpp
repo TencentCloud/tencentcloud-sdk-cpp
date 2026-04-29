@@ -40,6 +40,56 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::CreateBusinessResourceOutcome IoaClient::CreateBusinessResource(const CreateBusinessResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBusinessResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBusinessResourceResponse rsp = CreateBusinessResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBusinessResourceOutcome(rsp);
+        else
+            return CreateBusinessResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBusinessResourceOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateBusinessResourceAsync(const CreateBusinessResourceRequest& request, const CreateBusinessResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBusinessResourceRequest&;
+    using Resp = CreateBusinessResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBusinessResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::CreateBusinessResourceOutcomeCallable IoaClient::CreateBusinessResourceCallable(const CreateBusinessResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBusinessResourceOutcome>>();
+    CreateBusinessResourceAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateBusinessResourceRequest&,
+        CreateBusinessResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::CreateDLPFileDetectTaskOutcome IoaClient::CreateDLPFileDetectTask(const CreateDLPFileDetectTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDLPFileDetectTask");
@@ -482,6 +532,56 @@ IoaClient::DescribeAggrSoftDeviceListOutcomeCallable IoaClient::DescribeAggrSoft
         const IoaClient*,
         const DescribeAggrSoftDeviceListRequest&,
         DescribeAggrSoftDeviceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeBusinessResourcesOutcome IoaClient::DescribeBusinessResources(const DescribeBusinessResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBusinessResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBusinessResourcesResponse rsp = DescribeBusinessResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBusinessResourcesOutcome(rsp);
+        else
+            return DescribeBusinessResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBusinessResourcesOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeBusinessResourcesAsync(const DescribeBusinessResourcesRequest& request, const DescribeBusinessResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBusinessResourcesRequest&;
+    using Resp = DescribeBusinessResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBusinessResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeBusinessResourcesOutcomeCallable IoaClient::DescribeBusinessResourcesCallable(const DescribeBusinessResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBusinessResourcesOutcome>>();
+    DescribeBusinessResourcesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeBusinessResourcesRequest&,
+        DescribeBusinessResourcesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -990,6 +1090,56 @@ IoaClient::DescribeDevicesOutcomeCallable IoaClient::DescribeDevicesCallable(con
     return prom->get_future();
 }
 
+IoaClient::DescribeDirectAccountGroupResourcesOutcome IoaClient::DescribeDirectAccountGroupResources(const DescribeDirectAccountGroupResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDirectAccountGroupResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDirectAccountGroupResourcesResponse rsp = DescribeDirectAccountGroupResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDirectAccountGroupResourcesOutcome(rsp);
+        else
+            return DescribeDirectAccountGroupResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDirectAccountGroupResourcesOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDirectAccountGroupResourcesAsync(const DescribeDirectAccountGroupResourcesRequest& request, const DescribeDirectAccountGroupResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDirectAccountGroupResourcesRequest&;
+    using Resp = DescribeDirectAccountGroupResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDirectAccountGroupResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeDirectAccountGroupResourcesOutcomeCallable IoaClient::DescribeDirectAccountGroupResourcesCallable(const DescribeDirectAccountGroupResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDirectAccountGroupResourcesOutcome>>();
+    DescribeDirectAccountGroupResourcesAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDirectAccountGroupResourcesRequest&,
+        DescribeDirectAccountGroupResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DescribeLocalAccountsOutcome IoaClient::DescribeLocalAccounts(const DescribeLocalAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLocalAccounts");
@@ -1032,6 +1182,156 @@ IoaClient::DescribeLocalAccountsOutcomeCallable IoaClient::DescribeLocalAccounts
         const IoaClient*,
         const DescribeLocalAccountsRequest&,
         DescribeLocalAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeResourceGrantedAccountGroupsOutcome IoaClient::DescribeResourceGrantedAccountGroups(const DescribeResourceGrantedAccountGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGrantedAccountGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGrantedAccountGroupsResponse rsp = DescribeResourceGrantedAccountGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGrantedAccountGroupsOutcome(rsp);
+        else
+            return DescribeResourceGrantedAccountGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGrantedAccountGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeResourceGrantedAccountGroupsAsync(const DescribeResourceGrantedAccountGroupsRequest& request, const DescribeResourceGrantedAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGrantedAccountGroupsRequest&;
+    using Resp = DescribeResourceGrantedAccountGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGrantedAccountGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeResourceGrantedAccountGroupsOutcomeCallable IoaClient::DescribeResourceGrantedAccountGroupsCallable(const DescribeResourceGrantedAccountGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGrantedAccountGroupsOutcome>>();
+    DescribeResourceGrantedAccountGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeResourceGrantedAccountGroupsRequest&,
+        DescribeResourceGrantedAccountGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeResourceGrantedAccountsOutcome IoaClient::DescribeResourceGrantedAccounts(const DescribeResourceGrantedAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGrantedAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGrantedAccountsResponse rsp = DescribeResourceGrantedAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGrantedAccountsOutcome(rsp);
+        else
+            return DescribeResourceGrantedAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGrantedAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeResourceGrantedAccountsAsync(const DescribeResourceGrantedAccountsRequest& request, const DescribeResourceGrantedAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGrantedAccountsRequest&;
+    using Resp = DescribeResourceGrantedAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGrantedAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeResourceGrantedAccountsOutcomeCallable IoaClient::DescribeResourceGrantedAccountsCallable(const DescribeResourceGrantedAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGrantedAccountsOutcome>>();
+    DescribeResourceGrantedAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeResourceGrantedAccountsRequest&,
+        DescribeResourceGrantedAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeResourceGrantedVirtualGroupsOutcome IoaClient::DescribeResourceGrantedVirtualGroups(const DescribeResourceGrantedVirtualGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGrantedVirtualGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGrantedVirtualGroupsResponse rsp = DescribeResourceGrantedVirtualGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGrantedVirtualGroupsOutcome(rsp);
+        else
+            return DescribeResourceGrantedVirtualGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGrantedVirtualGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeResourceGrantedVirtualGroupsAsync(const DescribeResourceGrantedVirtualGroupsRequest& request, const DescribeResourceGrantedVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGrantedVirtualGroupsRequest&;
+    using Resp = DescribeResourceGrantedVirtualGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGrantedVirtualGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeResourceGrantedVirtualGroupsOutcomeCallable IoaClient::DescribeResourceGrantedVirtualGroupsCallable(const DescribeResourceGrantedVirtualGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGrantedVirtualGroupsOutcome>>();
+    DescribeResourceGrantedVirtualGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeResourceGrantedVirtualGroupsRequest&,
+        DescribeResourceGrantedVirtualGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1332,6 +1632,206 @@ IoaClient::ExportSoftwareInformationListOutcomeCallable IoaClient::ExportSoftwar
         const IoaClient*,
         const ExportSoftwareInformationListRequest&,
         ExportSoftwareInformationListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::GrantResourcesByAccountGroupsOutcome IoaClient::GrantResourcesByAccountGroups(const GrantResourcesByAccountGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantResourcesByAccountGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantResourcesByAccountGroupsResponse rsp = GrantResourcesByAccountGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantResourcesByAccountGroupsOutcome(rsp);
+        else
+            return GrantResourcesByAccountGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantResourcesByAccountGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::GrantResourcesByAccountGroupsAsync(const GrantResourcesByAccountGroupsRequest& request, const GrantResourcesByAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GrantResourcesByAccountGroupsRequest&;
+    using Resp = GrantResourcesByAccountGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GrantResourcesByAccountGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::GrantResourcesByAccountGroupsOutcomeCallable IoaClient::GrantResourcesByAccountGroupsCallable(const GrantResourcesByAccountGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GrantResourcesByAccountGroupsOutcome>>();
+    GrantResourcesByAccountGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const GrantResourcesByAccountGroupsRequest&,
+        GrantResourcesByAccountGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::GrantResourcesByAccountsOutcome IoaClient::GrantResourcesByAccounts(const GrantResourcesByAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantResourcesByAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantResourcesByAccountsResponse rsp = GrantResourcesByAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantResourcesByAccountsOutcome(rsp);
+        else
+            return GrantResourcesByAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantResourcesByAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::GrantResourcesByAccountsAsync(const GrantResourcesByAccountsRequest& request, const GrantResourcesByAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GrantResourcesByAccountsRequest&;
+    using Resp = GrantResourcesByAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GrantResourcesByAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::GrantResourcesByAccountsOutcomeCallable IoaClient::GrantResourcesByAccountsCallable(const GrantResourcesByAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GrantResourcesByAccountsOutcome>>();
+    GrantResourcesByAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const GrantResourcesByAccountsRequest&,
+        GrantResourcesByAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::GrantResourcesByVirtualGroupsOutcome IoaClient::GrantResourcesByVirtualGroups(const GrantResourcesByVirtualGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantResourcesByVirtualGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantResourcesByVirtualGroupsResponse rsp = GrantResourcesByVirtualGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantResourcesByVirtualGroupsOutcome(rsp);
+        else
+            return GrantResourcesByVirtualGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantResourcesByVirtualGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::GrantResourcesByVirtualGroupsAsync(const GrantResourcesByVirtualGroupsRequest& request, const GrantResourcesByVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GrantResourcesByVirtualGroupsRequest&;
+    using Resp = GrantResourcesByVirtualGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GrantResourcesByVirtualGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::GrantResourcesByVirtualGroupsOutcomeCallable IoaClient::GrantResourcesByVirtualGroupsCallable(const GrantResourcesByVirtualGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GrantResourcesByVirtualGroupsOutcome>>();
+    GrantResourcesByVirtualGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const GrantResourcesByVirtualGroupsRequest&,
+        GrantResourcesByVirtualGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::ModifyDeviceTrustStatusOutcome IoaClient::ModifyDeviceTrustStatus(const ModifyDeviceTrustStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceTrustStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceTrustStatusResponse rsp = ModifyDeviceTrustStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceTrustStatusOutcome(rsp);
+        else
+            return ModifyDeviceTrustStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceTrustStatusOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyDeviceTrustStatusAsync(const ModifyDeviceTrustStatusRequest& request, const ModifyDeviceTrustStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeviceTrustStatusRequest&;
+    using Resp = ModifyDeviceTrustStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceTrustStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::ModifyDeviceTrustStatusOutcomeCallable IoaClient::ModifyDeviceTrustStatusCallable(const ModifyDeviceTrustStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeviceTrustStatusOutcome>>();
+    ModifyDeviceTrustStatusAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyDeviceTrustStatusRequest&,
+        ModifyDeviceTrustStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

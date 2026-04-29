@@ -27,7 +27,8 @@ InvokeVideosKeywordsAnalyzerRequest::InvokeVideosKeywordsAnalyzerRequest() :
     m_deviceNameHasBeenSet(false),
     m_startTimeMsHasBeenSet(false),
     m_endTimeMsHasBeenSet(false),
-    m_keywordsMaxNumHasBeenSet(false)
+    m_keywordsMaxNumHasBeenSet(false),
+    m_keywordsLangHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string InvokeVideosKeywordsAnalyzerRequest::ToJsonString() const
         string key = "KeywordsMaxNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_keywordsMaxNum, allocator);
+    }
+
+    if (m_keywordsLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordsLang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keywordsLang.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void InvokeVideosKeywordsAnalyzerRequest::SetKeywordsMaxNum(const uint64_t& _key
 bool InvokeVideosKeywordsAnalyzerRequest::KeywordsMaxNumHasBeenSet() const
 {
     return m_keywordsMaxNumHasBeenSet;
+}
+
+string InvokeVideosKeywordsAnalyzerRequest::GetKeywordsLang() const
+{
+    return m_keywordsLang;
+}
+
+void InvokeVideosKeywordsAnalyzerRequest::SetKeywordsLang(const string& _keywordsLang)
+{
+    m_keywordsLang = _keywordsLang;
+    m_keywordsLangHasBeenSet = true;
+}
+
+bool InvokeVideosKeywordsAnalyzerRequest::KeywordsLangHasBeenSet() const
+{
+    return m_keywordsLangHasBeenSet;
 }
 
 

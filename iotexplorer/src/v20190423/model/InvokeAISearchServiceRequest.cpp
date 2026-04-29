@@ -35,7 +35,8 @@ InvokeAISearchServiceRequest::InvokeAISearchServiceRequest() :
     m_searchModeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_vectorSearchRadiusHasBeenSet(false),
-    m_vectorSearchTopKHasBeenSet(false)
+    m_vectorSearchTopKHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string InvokeAISearchServiceRequest::ToJsonString() const
         string key = "VectorSearchTopK";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vectorSearchTopK, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void InvokeAISearchServiceRequest::SetVectorSearchTopK(const int64_t& _vectorSea
 bool InvokeAISearchServiceRequest::VectorSearchTopKHasBeenSet() const
 {
     return m_vectorSearchTopKHasBeenSet;
+}
+
+string InvokeAISearchServiceRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void InvokeAISearchServiceRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool InvokeAISearchServiceRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 

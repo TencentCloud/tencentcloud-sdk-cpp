@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取cluster名称
-                     * @return Cluster cluster名称
+                     * 获取<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>
+                     * @return Cluster <p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>
                      * 
                      */
                     std::string GetCluster() const;
 
                     /**
-                     * 设置cluster名称
-                     * @param _cluster cluster名称
+                     * 设置<p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>
+                     * @param _cluster <p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>
                      * 
                      */
                     void SetCluster(const std::string& _cluster);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ClusterHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取是否所有数据库表
-                     * @return AllDatabase 是否所有数据库表
+                     * 获取<p>是否所有数据库表</p>
+                     * @return AllDatabase <p>是否所有数据库表</p>
                      * 
                      */
                     bool GetAllDatabase() const;
 
                     /**
-                     * 设置是否所有数据库表
-                     * @param _allDatabase 是否所有数据库表
+                     * 设置<p>是否所有数据库表</p>
+                     * @param _allDatabase <p>是否所有数据库表</p>
                      * 
                      */
                     void SetAllDatabase(const bool& _allDatabase);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AllDatabaseHasBeenSet() const;
 
                     /**
-                     * 获取全局权限
-                     * @return GlobalPrivileges 全局权限
+                     * 获取<p>全局权限</p>
+                     * @return GlobalPrivileges <p>全局权限</p>
                      * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
 
                     /**
-                     * 设置全局权限
-                     * @param _globalPrivileges 全局权限
+                     * 设置<p>全局权限</p>
+                     * @param _globalPrivileges <p>全局权限</p>
                      * 
                      */
                     void SetGlobalPrivileges(const std::vector<std::string>& _globalPrivileges);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool GlobalPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库表权限
-                     * @return DatabasePrivilegeList 数据库表权限
+                     * 获取<p>数据库表权限</p>
+                     * @return DatabasePrivilegeList <p>数据库表权限</p>
                      * 
                      */
                     std::vector<DatabasePrivilegeInfo> GetDatabasePrivilegeList() const;
 
                     /**
-                     * 设置数据库表权限
-                     * @param _databasePrivilegeList 数据库表权限
+                     * 设置<p>数据库表权限</p>
+                     * @param _databasePrivilegeList <p>数据库表权限</p>
                      * 
                      */
                     void SetDatabasePrivilegeList(const std::vector<DatabasePrivilegeInfo>& _databasePrivilegeList);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * cluster名称
+                     * <p>clickhouse逻辑集群名称，可通过连接集群执行 <code>SHOW CLUSTERS</code> 查询获得</p>
                      */
                     std::string m_cluster;
                     bool m_clusterHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 是否所有数据库表
+                     * <p>是否所有数据库表</p>
                      */
                     bool m_allDatabase;
                     bool m_allDatabaseHasBeenSet;
 
                     /**
-                     * 全局权限
+                     * <p>全局权限</p>
                      */
                     std::vector<std::string> m_globalPrivileges;
                     bool m_globalPrivilegesHasBeenSet;
 
                     /**
-                     * 数据库表权限
+                     * <p>数据库表权限</p>
                      */
                     std::vector<DatabasePrivilegeInfo> m_databasePrivilegeList;
                     bool m_databasePrivilegeListHasBeenSet;

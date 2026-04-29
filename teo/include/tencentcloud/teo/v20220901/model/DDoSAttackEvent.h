@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AttackStatusHasBeenSet() const;
 
                     /**
-                     * 获取攻击最大带宽。
-                     * @return AttackMaxBandWidth 攻击最大带宽。
+                     * 获取攻击最大带宽，单位为 bps。
+                     * @return AttackMaxBandWidth 攻击最大带宽，单位为 bps。
                      * 
                      */
                     int64_t GetAttackMaxBandWidth() const;
 
                     /**
-                     * 设置攻击最大带宽。
-                     * @param _attackMaxBandWidth 攻击最大带宽。
+                     * 设置攻击最大带宽，单位为 bps。
+                     * @param _attackMaxBandWidth 攻击最大带宽，单位为 bps。
                      * 
                      */
                     void SetAttackMaxBandWidth(const int64_t& _attackMaxBandWidth);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AttackMaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取攻击包速率峰值。
-                     * @return AttackPacketMaxRate 攻击包速率峰值。
+                     * 获取攻击包速率峰值，单位为 pps。
+                     * @return AttackPacketMaxRate 攻击包速率峰值，单位为 pps。
                      * 
                      */
                     int64_t GetAttackPacketMaxRate() const;
 
                     /**
-                     * 设置攻击包速率峰值。
-                     * @param _attackPacketMaxRate 攻击包速率峰值。
+                     * 设置攻击包速率峰值，单位为 pps。
+                     * @param _attackPacketMaxRate 攻击包速率峰值，单位为 pps。
                      * 
                      */
                     void SetAttackPacketMaxRate(const int64_t& _attackPacketMaxRate);
@@ -323,13 +323,13 @@ namespace TencentCloud
                     bool m_attackStatusHasBeenSet;
 
                     /**
-                     * 攻击最大带宽。
+                     * 攻击最大带宽，单位为 bps。
                      */
                     int64_t m_attackMaxBandWidth;
                     bool m_attackMaxBandWidthHasBeenSet;
 
                     /**
-                     * 攻击包速率峰值。
+                     * 攻击包速率峰值，单位为 pps。
                      */
                     int64_t m_attackPacketMaxRate;
                     bool m_attackPacketMaxRateHasBeenSet;

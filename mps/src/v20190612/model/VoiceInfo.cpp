@@ -26,6 +26,7 @@ VoiceInfo::VoiceInfo() :
     m_descriptionHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_genderHasBeenSet(false),
+    m_ageHasBeenSet(false),
     m_languagesHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
@@ -86,6 +87,16 @@ CoreInternalOutcome VoiceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_gender = string(value["Gender"].GetString());
         m_genderHasBeenSet = true;
+    }
+
+    if (value.HasMember("Age") && !value["Age"].IsNull())
+    {
+        if (!value["Age"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceInfo.Age` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_age = string(value["Age"].GetString());
+        m_ageHasBeenSet = true;
     }
 
     if (value.HasMember("Languages") && !value["Languages"].IsNull())
@@ -182,6 +193,14 @@ void VoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gender.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Age";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_age.c_str(), allocator).Move(), allocator);
     }
 
     if (m_languagesHasBeenSet)
@@ -312,6 +331,22 @@ void VoiceInfo::SetGender(const string& _gender)
 bool VoiceInfo::GenderHasBeenSet() const
 {
     return m_genderHasBeenSet;
+}
+
+string VoiceInfo::GetAge() const
+{
+    return m_age;
+}
+
+void VoiceInfo::SetAge(const string& _age)
+{
+    m_age = _age;
+    m_ageHasBeenSet = true;
+}
+
+bool VoiceInfo::AgeHasBeenSet() const
+{
+    return m_ageHasBeenSet;
 }
 
 vector<string> VoiceInfo::GetLanguages() const

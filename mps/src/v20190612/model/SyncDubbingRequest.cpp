@@ -29,7 +29,9 @@ SyncDubbingRequest::SyncDubbingRequest() :
     m_audioDataHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
     m_audioLangHasBeenSet(false),
+    m_voiceProfileHasBeenSet(false),
     m_outputHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
     m_extParamHasBeenSet(false)
 {
 }
@@ -89,6 +91,15 @@ string SyncDubbingRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_audioLang.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_voiceProfileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceProfile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voiceProfile.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_outputHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -96,6 +107,14 @@ string SyncDubbingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extParamHasBeenSet)
@@ -210,6 +229,22 @@ bool SyncDubbingRequest::AudioLangHasBeenSet() const
     return m_audioLangHasBeenSet;
 }
 
+VoiceProfile SyncDubbingRequest::GetVoiceProfile() const
+{
+    return m_voiceProfile;
+}
+
+void SyncDubbingRequest::SetVoiceProfile(const VoiceProfile& _voiceProfile)
+{
+    m_voiceProfile = _voiceProfile;
+    m_voiceProfileHasBeenSet = true;
+}
+
+bool SyncDubbingRequest::VoiceProfileHasBeenSet() const
+{
+    return m_voiceProfileHasBeenSet;
+}
+
 SyncDubbingOutputOption SyncDubbingRequest::GetOutput() const
 {
     return m_output;
@@ -224,6 +259,22 @@ void SyncDubbingRequest::SetOutput(const SyncDubbingOutputOption& _output)
 bool SyncDubbingRequest::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+string SyncDubbingRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void SyncDubbingRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool SyncDubbingRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 string SyncDubbingRequest::GetExtParam() const

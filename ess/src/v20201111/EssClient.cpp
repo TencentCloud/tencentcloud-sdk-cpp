@@ -4490,6 +4490,56 @@ EssClient::DescribeContractDiffTaskWebUrlOutcomeCallable EssClient::DescribeCont
     return prom->get_future();
 }
 
+EssClient::DescribeContractReviewChecklistOutcome EssClient::DescribeContractReviewChecklist(const DescribeContractReviewChecklistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractReviewChecklist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractReviewChecklistResponse rsp = DescribeContractReviewChecklistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractReviewChecklistOutcome(rsp);
+        else
+            return DescribeContractReviewChecklistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractReviewChecklistOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractReviewChecklistAsync(const DescribeContractReviewChecklistRequest& request, const DescribeContractReviewChecklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeContractReviewChecklistRequest&;
+    using Resp = DescribeContractReviewChecklistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeContractReviewChecklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeContractReviewChecklistOutcomeCallable EssClient::DescribeContractReviewChecklistCallable(const DescribeContractReviewChecklistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeContractReviewChecklistOutcome>>();
+    DescribeContractReviewChecklistAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeContractReviewChecklistRequest&,
+        DescribeContractReviewChecklistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::DescribeContractReviewChecklistWebUrlOutcome EssClient::DescribeContractReviewChecklistWebUrl(const DescribeContractReviewChecklistWebUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContractReviewChecklistWebUrl");
@@ -6482,6 +6532,56 @@ EssClient::GetTaskResultApiOutcomeCallable EssClient::GetTaskResultApiCallable(c
         const EssClient*,
         const GetTaskResultApiRequest&,
         GetTaskResultApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::ImportContractReviewChecklistOutcome EssClient::ImportContractReviewChecklist(const ImportContractReviewChecklistRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportContractReviewChecklist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportContractReviewChecklistResponse rsp = ImportContractReviewChecklistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportContractReviewChecklistOutcome(rsp);
+        else
+            return ImportContractReviewChecklistOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportContractReviewChecklistOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ImportContractReviewChecklistAsync(const ImportContractReviewChecklistRequest& request, const ImportContractReviewChecklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportContractReviewChecklistRequest&;
+    using Resp = ImportContractReviewChecklistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportContractReviewChecklist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::ImportContractReviewChecklistOutcomeCallable EssClient::ImportContractReviewChecklistCallable(const ImportContractReviewChecklistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportContractReviewChecklistOutcome>>();
+    ImportContractReviewChecklistAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const ImportContractReviewChecklistRequest&,
+        ImportContractReviewChecklistOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

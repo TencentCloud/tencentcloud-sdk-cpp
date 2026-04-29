@@ -201,6 +201,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractDiffTaskWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistsWebUrlRequest.h>
@@ -281,6 +283,8 @@
 #include <tencentcloud/ess/v20201111/model/ExportContractReviewResultResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
+#include <tencentcloud/ess/v20201111/model/ImportContractReviewChecklistRequest.h>
+#include <tencentcloud/ess/v20201111/model/ImportContractReviewChecklistResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h>
@@ -600,6 +604,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContractDiffTaskWebUrlResponse> DescribeContractDiffTaskWebUrlOutcome;
                 typedef std::future<DescribeContractDiffTaskWebUrlOutcome> DescribeContractDiffTaskWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractDiffTaskWebUrlRequest&, DescribeContractDiffTaskWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractDiffTaskWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractReviewChecklistResponse> DescribeContractReviewChecklistOutcome;
+                typedef std::future<DescribeContractReviewChecklistOutcome> DescribeContractReviewChecklistOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractReviewChecklistRequest&, DescribeContractReviewChecklistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewChecklistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContractReviewChecklistWebUrlResponse> DescribeContractReviewChecklistWebUrlOutcome;
                 typedef std::future<DescribeContractReviewChecklistWebUrlOutcome> DescribeContractReviewChecklistWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractReviewChecklistWebUrlRequest&, DescribeContractReviewChecklistWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewChecklistWebUrlAsyncHandler;
@@ -720,6 +727,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTaskResultApiResponse> GetTaskResultApiOutcome;
                 typedef std::future<GetTaskResultApiOutcome> GetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::GetTaskResultApiRequest&, GetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskResultApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportContractReviewChecklistResponse> ImportContractReviewChecklistOutcome;
+                typedef std::future<ImportContractReviewChecklistOutcome> ImportContractReviewChecklistOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ImportContractReviewChecklistRequest&, ImportContractReviewChecklistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportContractReviewChecklistAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApplicationCallbackInfoResponse> ModifyApplicationCallbackInfoOutcome;
                 typedef std::future<ModifyApplicationCallbackInfoOutcome> ModifyApplicationCallbackInfoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyApplicationCallbackInfoRequest&, ModifyApplicationCallbackInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationCallbackInfoAsyncHandler;
@@ -2386,6 +2396,15 @@ namespace TencentCloud
                 DescribeContractDiffTaskWebUrlOutcomeCallable DescribeContractDiffTaskWebUrlCallable(const Model::DescribeContractDiffTaskWebUrlRequest& request);
 
                 /**
+                 *此接口（DescribeContractReviewChecklist）用于获取已有的合同风险审查清单详情。
+                 * @param req DescribeContractReviewChecklistRequest
+                 * @return DescribeContractReviewChecklistOutcome
+                 */
+                DescribeContractReviewChecklistOutcome DescribeContractReviewChecklist(const Model::DescribeContractReviewChecklistRequest &request);
+                void DescribeContractReviewChecklistAsync(const Model::DescribeContractReviewChecklistRequest& request, const DescribeContractReviewChecklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractReviewChecklistOutcomeCallable DescribeContractReviewChecklistCallable(const Model::DescribeContractReviewChecklistRequest& request);
+
+                /**
                  *此接口（DescribeContractReviewChecklistWebUrl）用来创建查看审查要点清单web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。
 
 适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。
@@ -2912,6 +2931,15 @@ namespace TencentCloud
                 GetTaskResultApiOutcome GetTaskResultApi(const Model::GetTaskResultApiRequest &request);
                 void GetTaskResultApiAsync(const Model::GetTaskResultApiRequest& request, const GetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTaskResultApiOutcomeCallable GetTaskResultApiCallable(const Model::GetTaskResultApiRequest& request);
+
+                /**
+                 *此接口（ImportRiskIdentificationChecklist）用于创建或更新合同审查清单。
+                 * @param req ImportContractReviewChecklistRequest
+                 * @return ImportContractReviewChecklistOutcome
+                 */
+                ImportContractReviewChecklistOutcome ImportContractReviewChecklist(const Model::ImportContractReviewChecklistRequest &request);
+                void ImportContractReviewChecklistAsync(const Model::ImportContractReviewChecklistRequest& request, const ImportContractReviewChecklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportContractReviewChecklistOutcomeCallable ImportContractReviewChecklistCallable(const Model::ImportContractReviewChecklistRequest& request);
 
                 /**
                  *新增/删除企业应用集成中的回调配置。
