@@ -239,6 +239,27 @@ namespace TencentCloud
                      */
                     bool ImageResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>要代答的消息id，此消息id用于作为GenerateLLMSecAnswer接口的入参</p>
+                     * @return MsgID <p>要代答的消息id，此消息id用于作为GenerateLLMSecAnswer接口的入参</p>
+                     * 
+                     */
+                    std::string GetMsgID() const;
+
+                    /**
+                     * 设置<p>要代答的消息id，此消息id用于作为GenerateLLMSecAnswer接口的入参</p>
+                     * @param _msgID <p>要代答的消息id，此消息id用于作为GenerateLLMSecAnswer接口的入参</p>
+                     * 
+                     */
+                    void SetMsgID(const std::string& _msgID);
+
+                    /**
+                     * 判断参数 MsgID 是否已赋值
+                     * @return MsgID 是否已赋值
+                     * 
+                     */
+                    bool MsgIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +315,12 @@ namespace TencentCloud
                      */
                     std::vector<ImageResult> m_imageResult;
                     bool m_imageResultHasBeenSet;
+
+                    /**
+                     * <p>要代答的消息id，此消息id用于作为GenerateLLMSecAnswer接口的入参</p>
+                     */
+                    std::string m_msgID;
+                    bool m_msgIDHasBeenSet;
 
                 };
             }

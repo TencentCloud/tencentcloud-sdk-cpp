@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool UserIPHasBeenSet() const;
 
+                    /**
+                     * 获取有效期，默认为 12 小时，最长为 7 天，建议设置不要过长，否则泄漏风险越大。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 1d、24h、86400s 都表示一天，1h2m3s 表示一小时两分三秒
+                     * @return ExpirationDuration 有效期，默认为 12 小时，最长为 7 天，建议设置不要过长，否则泄漏风险越大。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 1d、24h、86400s 都表示一天，1h2m3s 表示一小时两分三秒
+                     * 
+                     */
+                    std::string GetExpirationDuration() const;
+
+                    /**
+                     * 设置有效期，默认为 12 小时，最长为 7 天，建议设置不要过长，否则泄漏风险越大。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 1d、24h、86400s 都表示一天，1h2m3s 表示一小时两分三秒
+                     * @param _expirationDuration 有效期，默认为 12 小时，最长为 7 天，建议设置不要过长，否则泄漏风险越大。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 1d、24h、86400s 都表示一天，1h2m3s 表示一小时两分三秒
+                     * 
+                     */
+                    void SetExpirationDuration(const std::string& _expirationDuration);
+
+                    /**
+                     * 判断参数 ExpirationDuration 是否已赋值
+                     * @return ExpirationDuration 是否已赋值
+                     * 
+                     */
+                    bool ExpirationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_userIP;
                     bool m_userIPHasBeenSet;
+
+                    /**
+                     * 有效期，默认为 12 小时，最长为 7 天，建议设置不要过长，否则泄漏风险越大。支持 s（秒）、m（分）、h（小时）、d（天）等单位，比如 1d、24h、86400s 都表示一天，1h2m3s 表示一小时两分三秒
+                     */
+                    std::string m_expirationDuration;
+                    bool m_expirationDurationHasBeenSet;
 
                 };
             }

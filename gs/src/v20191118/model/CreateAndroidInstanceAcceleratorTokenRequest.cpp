@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAndroidInstanceAcceleratorTokenRequest::CreateAndroidInstanceAcceleratorTokenRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_userIPHasBeenSet(false)
+    m_userIPHasBeenSet(false),
+    m_expirationDurationHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string CreateAndroidInstanceAcceleratorTokenRequest::ToJsonString() const
         string key = "UserIP";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expirationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpirationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expirationDuration.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void CreateAndroidInstanceAcceleratorTokenRequest::SetUserIP(const string& _user
 bool CreateAndroidInstanceAcceleratorTokenRequest::UserIPHasBeenSet() const
 {
     return m_userIPHasBeenSet;
+}
+
+string CreateAndroidInstanceAcceleratorTokenRequest::GetExpirationDuration() const
+{
+    return m_expirationDuration;
+}
+
+void CreateAndroidInstanceAcceleratorTokenRequest::SetExpirationDuration(const string& _expirationDuration)
+{
+    m_expirationDuration = _expirationDuration;
+    m_expirationDurationHasBeenSet = true;
+}
+
+bool CreateAndroidInstanceAcceleratorTokenRequest::ExpirationDurationHasBeenSet() const
+{
+    return m_expirationDurationHasBeenSet;
 }
 
 

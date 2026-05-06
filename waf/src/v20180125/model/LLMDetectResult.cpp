@@ -29,7 +29,8 @@ LLMDetectResult::LLMDetectResult() :
     m_ruleNameHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_payloadHasBeenSet(false),
-    m_imageResultHasBeenSet(false)
+    m_imageResultHasBeenSet(false),
+    m_msgIDHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         m_imageResultHasBeenSet = true;
     }
 
+    if (value.HasMember("MsgID") && !value["MsgID"].IsNull())
+    {
+        if (!value["MsgID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.MsgID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgID = string(value["MsgID"].GetString());
+        m_msgIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -272,6 +283,14 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_msgIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -419,5 +438,21 @@ void LLMDetectResult::SetImageResult(const vector<ImageResult>& _imageResult)
 bool LLMDetectResult::ImageResultHasBeenSet() const
 {
     return m_imageResultHasBeenSet;
+}
+
+string LLMDetectResult::GetMsgID() const
+{
+    return m_msgID;
+}
+
+void LLMDetectResult::SetMsgID(const string& _msgID)
+{
+    m_msgID = _msgID;
+    m_msgIDHasBeenSet = true;
+}
+
+bool LLMDetectResult::MsgIDHasBeenSet() const
+{
+    return m_msgIDHasBeenSet;
 }
 

@@ -287,15 +287,15 @@ namespace TencentCloud
                     bool AccelerateTypeHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间。
-                     * @return SessionPersistTime 会话保持时间。
+                     * 获取会话保持时间，单位为秒。
+                     * @return SessionPersistTime 会话保持时间，单位为秒。
                      * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
-                     * 设置会话保持时间。
-                     * @param _sessionPersistTime 会话保持时间。
+                     * 设置会话保持时间，单位为秒。
+                     * @param _sessionPersistTime 会话保持时间，单位为秒。
                      * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
@@ -584,7 +584,7 @@ namespace TencentCloud
                     bool m_accelerateTypeHasBeenSet;
 
                     /**
-                     * 会话保持时间。
+                     * 会话保持时间，单位为秒。
                      */
                     uint64_t m_sessionPersistTime;
                     bool m_sessionPersistTimeHasBeenSet;

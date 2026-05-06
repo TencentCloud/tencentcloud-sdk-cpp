@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ai3d/v20250513/model/Convert3DFormatRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/Convert3DFormatResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeProfileTo3DJobRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DMotionJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DMotionJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DProJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DProJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.h>
@@ -70,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::Convert3DFormatResponse> Convert3DFormatOutcome;
                 typedef std::future<Convert3DFormatOutcome> Convert3DFormatOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::Convert3DFormatRequest&, Convert3DFormatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> Convert3DFormatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHunyuanTo3DMotionJobResponse> DescribeHunyuanTo3DMotionJobOutcome;
+                typedef std::future<DescribeHunyuanTo3DMotionJobOutcome> DescribeHunyuanTo3DMotionJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::DescribeHunyuanTo3DMotionJobRequest&, DescribeHunyuanTo3DMotionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHunyuanTo3DMotionJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHunyuanTo3DUVJobResponse> DescribeHunyuanTo3DUVJobOutcome;
                 typedef std::future<DescribeHunyuanTo3DUVJobOutcome> DescribeHunyuanTo3DUVJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::DescribeHunyuanTo3DUVJobRequest&, DescribeHunyuanTo3DUVJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHunyuanTo3DUVJobAsyncHandler;
@@ -94,6 +101,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitHunyuan3DPartJobResponse> SubmitHunyuan3DPartJobOutcome;
                 typedef std::future<SubmitHunyuan3DPartJobOutcome> SubmitHunyuan3DPartJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::SubmitHunyuan3DPartJobRequest&, SubmitHunyuan3DPartJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuan3DPartJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitHunyuanTo3DMotionJobResponse> SubmitHunyuanTo3DMotionJobOutcome;
+                typedef std::future<SubmitHunyuanTo3DMotionJobOutcome> SubmitHunyuanTo3DMotionJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::SubmitHunyuanTo3DMotionJobRequest&, SubmitHunyuanTo3DMotionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanTo3DMotionJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHunyuanTo3DProJobResponse> SubmitHunyuanTo3DProJobOutcome;
                 typedef std::future<SubmitHunyuanTo3DProJobOutcome> SubmitHunyuanTo3DProJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::SubmitHunyuanTo3DProJobRequest&, SubmitHunyuanTo3DProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanTo3DProJobAsyncHandler;
@@ -123,6 +133,15 @@ namespace TencentCloud
                 Convert3DFormatOutcome Convert3DFormat(const Model::Convert3DFormatRequest &request);
                 void Convert3DFormatAsync(const Model::Convert3DFormatRequest& request, const Convert3DFormatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 Convert3DFormatOutcomeCallable Convert3DFormatCallable(const Model::Convert3DFormatRequest& request);
+
+                /**
+                 *查询组件生成任务。
+                 * @param req DescribeHunyuanTo3DMotionJobRequest
+                 * @return DescribeHunyuanTo3DMotionJobOutcome
+                 */
+                DescribeHunyuanTo3DMotionJobOutcome DescribeHunyuanTo3DMotionJob(const Model::DescribeHunyuanTo3DMotionJobRequest &request);
+                void DescribeHunyuanTo3DMotionJobAsync(const Model::DescribeHunyuanTo3DMotionJobRequest& request, const DescribeHunyuanTo3DMotionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHunyuanTo3DMotionJobOutcomeCallable DescribeHunyuanTo3DMotionJobCallable(const Model::DescribeHunyuanTo3DMotionJobRequest& request);
 
                 /**
                  *查询组件拆分任务。
@@ -200,6 +219,16 @@ namespace TencentCloud
                 SubmitHunyuan3DPartJobOutcome SubmitHunyuan3DPartJob(const Model::SubmitHunyuan3DPartJobRequest &request);
                 void SubmitHunyuan3DPartJobAsync(const Model::SubmitHunyuan3DPartJobRequest& request, const SubmitHunyuan3DPartJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitHunyuan3DPartJobOutcomeCallable SubmitHunyuan3DPartJobCallable(const Model::SubmitHunyuan3DPartJobRequest& request);
+
+                /**
+                 *输入文本后，可根据文本描述生成对应的 3D人物 动作数据，输出带动画数据的FBX文件。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req SubmitHunyuanTo3DMotionJobRequest
+                 * @return SubmitHunyuanTo3DMotionJobOutcome
+                 */
+                SubmitHunyuanTo3DMotionJobOutcome SubmitHunyuanTo3DMotionJob(const Model::SubmitHunyuanTo3DMotionJobRequest &request);
+                void SubmitHunyuanTo3DMotionJobAsync(const Model::SubmitHunyuanTo3DMotionJobRequest& request, const SubmitHunyuanTo3DMotionJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitHunyuanTo3DMotionJobOutcomeCallable SubmitHunyuanTo3DMotionJobCallable(const Model::SubmitHunyuanTo3DMotionJobRequest& request);
 
                 /**
                  *混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。

@@ -144,11 +144,11 @@ namespace TencentCloud
                     /**
                      * 获取源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
-<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-3pbiw4d9iqz0"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @return OriginValue 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
-<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-3pbiw4d9iqz0"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * 
                      */
@@ -157,11 +157,11 @@ namespace TencentCloud
                     /**
                      * 设置源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
-<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-3pbiw4d9iqz0"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @param _originValue 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
-<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-3pbiw4d9iqz0"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * 
                      */
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool SessionPersistHasBeenSet() const;
 
                     /**
-                     * 获取会话保持的时间，只有当SessionPersist为true时，该值才会生效。
-                     * @return SessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 获取会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
+                     * @return SessionPersistTime 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
-                     * 设置会话保持的时间，只有当SessionPersist为true时，该值才会生效。
-                     * @param _sessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 设置会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
+                     * @param _sessionPersistTime 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
@@ -404,7 +404,7 @@ namespace TencentCloud
                     /**
                      * 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
-<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-3pbiw4d9iqz0"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      */
                     std::vector<std::string> m_originValue;
@@ -446,7 +446,7 @@ namespace TencentCloud
                     bool m_sessionPersistHasBeenSet;
 
                     /**
-                     * 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      */
                     uint64_t m_sessionPersistTime;
                     bool m_sessionPersistTimeHasBeenSet;
