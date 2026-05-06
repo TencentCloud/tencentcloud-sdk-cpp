@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
+                     * 获取<p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppBizId 应用ID
+                     * @return AppBizId <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取判断账户应用列表权限是否是自定义的，用户交互提示
+                     * 获取<p>判断账户应用列表权限是否是自定义的，用户交互提示</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsCustomList 判断账户应用列表权限是否是自定义的，用户交互提示
+                     * @return IsCustomList <p>判断账户应用列表权限是否是自定义的，用户交互提示</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +78,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 判断账户应用列表权限是否是自定义的，用户交互提示
+                     * <p>判断账户应用列表权限是否是自定义的，用户交互提示</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCustomList;

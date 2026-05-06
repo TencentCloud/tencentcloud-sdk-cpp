@@ -27,8 +27,10 @@ AigcVideoTaskOutputFileInfo::AigcVideoTaskOutputFileInfo() :
     m_expireTimeHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
+    m_fileContentHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+    m_metaDataHasBeenSet(false),
+    m_usageTypeHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,16 @@ CoreInternalOutcome AigcVideoTaskOutputFileInfo::Deserialize(const rapidjson::Va
         m_fileUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("FileContent") && !value["FileContent"].IsNull())
+    {
+        if (!value["FileContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskOutputFileInfo.FileContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileContent = string(value["FileContent"].GetString());
+        m_fileContentHasBeenSet = true;
+    }
+
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
     {
         if (!value["FileId"].IsString())
@@ -122,6 +134,16 @@ CoreInternalOutcome AigcVideoTaskOutputFileInfo::Deserialize(const rapidjson::Va
         }
 
         m_metaDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsageType") && !value["UsageType"].IsNull())
+    {
+        if (!value["UsageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskOutputFileInfo.UsageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_usageType = string(value["UsageType"].GetString());
+        m_usageTypeHasBeenSet = true;
     }
 
 
@@ -179,6 +201,14 @@ void AigcVideoTaskOutputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         value.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileContent.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -194,6 +224,14 @@ void AigcVideoTaskOutputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -295,6 +333,22 @@ bool AigcVideoTaskOutputFileInfo::FileUrlHasBeenSet() const
     return m_fileUrlHasBeenSet;
 }
 
+string AigcVideoTaskOutputFileInfo::GetFileContent() const
+{
+    return m_fileContent;
+}
+
+void AigcVideoTaskOutputFileInfo::SetFileContent(const string& _fileContent)
+{
+    m_fileContent = _fileContent;
+    m_fileContentHasBeenSet = true;
+}
+
+bool AigcVideoTaskOutputFileInfo::FileContentHasBeenSet() const
+{
+    return m_fileContentHasBeenSet;
+}
+
 string AigcVideoTaskOutputFileInfo::GetFileId() const
 {
     return m_fileId;
@@ -325,5 +379,21 @@ void AigcVideoTaskOutputFileInfo::SetMetaData(const MediaMetaData& _metaData)
 bool AigcVideoTaskOutputFileInfo::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
+}
+
+string AigcVideoTaskOutputFileInfo::GetUsageType() const
+{
+    return m_usageType;
+}
+
+void AigcVideoTaskOutputFileInfo::SetUsageType(const string& _usageType)
+{
+    m_usageType = _usageType;
+    m_usageTypeHasBeenSet = true;
+}
+
+bool AigcVideoTaskOutputFileInfo::UsageTypeHasBeenSet() const
+{
+    return m_usageTypeHasBeenSet;
 }
 

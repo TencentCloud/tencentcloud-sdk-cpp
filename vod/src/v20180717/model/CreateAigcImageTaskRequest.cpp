@@ -32,6 +32,7 @@ CreateAigcImageTaskRequest::CreateAigcImageTaskRequest() :
     m_enhancePromptHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_inputRegionHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
@@ -125,6 +126,14 @@ string CreateAigcImageTaskRequest::ToJsonString() const
         string key = "InputRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seedHasBeenSet)
@@ -317,6 +326,22 @@ void CreateAigcImageTaskRequest::SetInputRegion(const string& _inputRegion)
 bool CreateAigcImageTaskRequest::InputRegionHasBeenSet() const
 {
     return m_inputRegionHasBeenSet;
+}
+
+string CreateAigcImageTaskRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void CreateAigcImageTaskRequest::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool CreateAigcImageTaskRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 int64_t CreateAigcImageTaskRequest::GetSeed() const

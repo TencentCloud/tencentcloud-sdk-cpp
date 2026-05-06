@@ -29,7 +29,8 @@ AigcImageTaskInput::AigcImageTaskInput() :
     m_enhancePromptHasBeenSet(false),
     m_generationModeHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
-    m_seedHasBeenSet(false)
+    m_seedHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome AigcImageTaskInput::Deserialize(const rapidjson::Value &valu
         m_seedHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneType") && !value["SceneType"].IsNull())
+    {
+        if (!value["SceneType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTaskInput.SceneType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneType = string(value["SceneType"].GetString());
+        m_sceneTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void AigcImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Seed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_seed, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void AigcImageTaskInput::SetSeed(const int64_t& _seed)
 bool AigcImageTaskInput::SeedHasBeenSet() const
 {
     return m_seedHasBeenSet;
+}
+
+string AigcImageTaskInput::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void AigcImageTaskInput::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool AigcImageTaskInput::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 

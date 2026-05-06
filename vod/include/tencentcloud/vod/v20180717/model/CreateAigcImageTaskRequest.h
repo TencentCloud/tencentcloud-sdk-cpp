@@ -234,6 +234,27 @@ namespace TencentCloud
                     bool InputRegionHasBeenSet() const;
 
                     /**
+                     * 获取<p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>
+                     * @return SceneType <p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 设置<p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>
+                     * @param _sceneType <p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>
+                     * 
+                     */
+                    void SetSceneType(const std::string& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型随机种子。</p>
                      * @return Seed <p>模型随机种子。</p>
                      * 
@@ -393,6 +414,12 @@ namespace TencentCloud
                      */
                     std::string m_inputRegion;
                     bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * <p>场景类型。取值如下：<li>当 ModelName 为 Hunyuan 时：   3d_panorama 表示全景图；</li><li>其他 ModelName 暂不支持。</li></p>
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                     /**
                      * <p>模型随机种子。</p>

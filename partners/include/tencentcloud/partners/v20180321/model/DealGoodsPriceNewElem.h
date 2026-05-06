@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实付金额（单位：分）
-                     * @return RealTotalCost 实付金额（单位：分）
+                     * 获取<p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>
+                     * @return RealTotalCost <p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>
                      * 
                      */
                     int64_t GetRealTotalCost() const;
 
                     /**
-                     * 设置实付金额（单位：分）
-                     * @param _realTotalCost 实付金额（单位：分）
+                     * 设置<p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>
+                     * @param _realTotalCost <p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>
                      * 
                      */
                     void SetRealTotalCost(const int64_t& _realTotalCost);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
-                     * 获取原始金额（不含折扣，单位：分）
-                     * @return OriginalTotalCost 原始金额（不含折扣，单位：分）
+                     * 获取<p>原始金额（不含折扣）</p><p>单位：分</p>
+                     * @return OriginalTotalCost <p>原始金额（不含折扣）</p><p>单位：分</p>
                      * 
                      */
                     int64_t GetOriginalTotalCost() const;
 
                     /**
-                     * 设置原始金额（不含折扣，单位：分）
-                     * @param _originalTotalCost 原始金额（不含折扣，单位：分）
+                     * 设置<p>原始金额（不含折扣）</p><p>单位：分</p>
+                     * @param _originalTotalCost <p>原始金额（不含折扣）</p><p>单位：分</p>
                      * 
                      */
                     void SetOriginalTotalCost(const int64_t& _originalTotalCost);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实付金额（单位：分）
+                     * <p>实付金额</p><p>单位：分</p><p>该金额与控制台展示金额一致，为订单实付价 - 代金券之后的结果</p>
                      */
                     int64_t m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
-                     * 原始金额（不含折扣，单位：分）
+                     * <p>原始金额（不含折扣）</p><p>单位：分</p>
                      */
                     int64_t m_originalTotalCost;
                     bool m_originalTotalCostHasBeenSet;
