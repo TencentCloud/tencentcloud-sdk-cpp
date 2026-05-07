@@ -22,7 +22,8 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeOriginStreamInfoRequest::DescribeOriginStreamInfoRequest()
+DescribeOriginStreamInfoRequest::DescribeOriginStreamInfoRequest() :
+    m_domainNameHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeOriginStreamInfoRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeOriginStreamInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeOriginStreamInfoRequest::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void DescribeOriginStreamInfoRequest::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool DescribeOriginStreamInfoRequest::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
+}
 
 

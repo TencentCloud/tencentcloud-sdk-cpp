@@ -190,6 +190,56 @@ BhClient::AddUserGroupMembersOutcomeCallable BhClient::AddUserGroupMembersCallab
     return prom->get_future();
 }
 
+BhClient::BindDeviceAccountKubeconfigOutcome BhClient::BindDeviceAccountKubeconfig(const BindDeviceAccountKubeconfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindDeviceAccountKubeconfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindDeviceAccountKubeconfigResponse rsp = BindDeviceAccountKubeconfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindDeviceAccountKubeconfigOutcome(rsp);
+        else
+            return BindDeviceAccountKubeconfigOutcome(o.GetError());
+    }
+    else
+    {
+        return BindDeviceAccountKubeconfigOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::BindDeviceAccountKubeconfigAsync(const BindDeviceAccountKubeconfigRequest& request, const BindDeviceAccountKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindDeviceAccountKubeconfigRequest&;
+    using Resp = BindDeviceAccountKubeconfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindDeviceAccountKubeconfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::BindDeviceAccountKubeconfigOutcomeCallable BhClient::BindDeviceAccountKubeconfigCallable(const BindDeviceAccountKubeconfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindDeviceAccountKubeconfigOutcome>>();
+    BindDeviceAccountKubeconfigAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const BindDeviceAccountKubeconfigRequest&,
+        BindDeviceAccountKubeconfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::BindDeviceAccountPasswordOutcome BhClient::BindDeviceAccountPassword(const BindDeviceAccountPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDeviceAccountPassword");

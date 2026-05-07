@@ -140,6 +140,56 @@ TcbClient::CheckTcbServiceOutcomeCallable TcbClient::CheckTcbServiceCallable(con
     return prom->get_future();
 }
 
+TcbClient::CreateAIModelOutcome TcbClient::CreateAIModel(const CreateAIModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIModelResponse rsp = CreateAIModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIModelOutcome(rsp);
+        else
+            return CreateAIModelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIModelOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateAIModelAsync(const CreateAIModelRequest& request, const CreateAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAIModelRequest&;
+    using Resp = CreateAIModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAIModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateAIModelOutcomeCallable TcbClient::CreateAIModelCallable(const CreateAIModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAIModelOutcome>>();
+    CreateAIModelAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateAIModelRequest&,
+        CreateAIModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateApiKeyOutcome TcbClient::CreateApiKey(const CreateApiKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApiKey");
@@ -790,6 +840,56 @@ TcbClient::CreateVmInstanceOutcomeCallable TcbClient::CreateVmInstanceCallable(c
     return prom->get_future();
 }
 
+TcbClient::DeleteAIModelOutcome TcbClient::DeleteAIModel(const DeleteAIModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIModelResponse rsp = DeleteAIModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIModelOutcome(rsp);
+        else
+            return DeleteAIModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIModelOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteAIModelAsync(const DeleteAIModelRequest& request, const DeleteAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIModelRequest&;
+    using Resp = DeleteAIModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteAIModelOutcomeCallable TcbClient::DeleteAIModelCallable(const DeleteAIModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIModelOutcome>>();
+    DeleteAIModelAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteAIModelRequest&,
+        DeleteAIModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DeleteApiKeyOutcome TcbClient::DeleteApiKey(const DeleteApiKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApiKey");
@@ -1132,6 +1232,56 @@ TcbClient::DeleteVmInstanceOutcomeCallable TcbClient::DeleteVmInstanceCallable(c
         const TcbClient*,
         const DeleteVmInstanceRequest&,
         DeleteVmInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeAIModelsOutcome TcbClient::DescribeAIModels(const DescribeAIModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelsResponse rsp = DescribeAIModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelsOutcome(rsp);
+        else
+            return DescribeAIModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeAIModelsAsync(const DescribeAIModelsRequest& request, const DescribeAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIModelsRequest&;
+    using Resp = DescribeAIModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeAIModelsOutcomeCallable TcbClient::DescribeAIModelsCallable(const DescribeAIModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIModelsOutcome>>();
+    DescribeAIModelsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeAIModelsRequest&,
+        DescribeAIModelsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1982,6 +2132,56 @@ TcbClient::DescribeLoginConfigOutcomeCallable TcbClient::DescribeLoginConfigCall
         const TcbClient*,
         const DescribeLoginConfigRequest&,
         DescribeLoginConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeManagedAIModelListOutcome TcbClient::DescribeManagedAIModelList(const DescribeManagedAIModelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeManagedAIModelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeManagedAIModelListResponse rsp = DescribeManagedAIModelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeManagedAIModelListOutcome(rsp);
+        else
+            return DescribeManagedAIModelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeManagedAIModelListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeManagedAIModelListAsync(const DescribeManagedAIModelListRequest& request, const DescribeManagedAIModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeManagedAIModelListRequest&;
+    using Resp = DescribeManagedAIModelListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeManagedAIModelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeManagedAIModelListOutcomeCallable TcbClient::DescribeManagedAIModelListCallable(const DescribeManagedAIModelListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeManagedAIModelListOutcome>>();
+    DescribeManagedAIModelListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeManagedAIModelListRequest&,
+        DescribeManagedAIModelListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3532,6 +3732,56 @@ TcbClient::SearchClsLogOutcomeCallable TcbClient::SearchClsLogCallable(const Sea
         const TcbClient*,
         const SearchClsLogRequest&,
         SearchClsLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpdateAIModelOutcome TcbClient::UpdateAIModel(const UpdateAIModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAIModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAIModelResponse rsp = UpdateAIModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAIModelOutcome(rsp);
+        else
+            return UpdateAIModelOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAIModelOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpdateAIModelAsync(const UpdateAIModelRequest& request, const UpdateAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAIModelRequest&;
+    using Resp = UpdateAIModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAIModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpdateAIModelOutcomeCallable TcbClient::UpdateAIModelCallable(const UpdateAIModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAIModelOutcome>>();
+    UpdateAIModelAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpdateAIModelRequest&,
+        UpdateAIModelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

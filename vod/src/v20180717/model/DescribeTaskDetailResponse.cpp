@@ -62,7 +62,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createAigcAdvancedCustomElementTaskHasBeenSet(false),
     m_createAigcCustomVoiceTaskHasBeenSet(false),
     m_createAigcSubjectTaskHasBeenSet(false),
-    m_aigcVideoRedrawTaskHasBeenSet(false)
+    m_aigcVideoRedrawTaskHasBeenSet(false),
+    m_aigcAudioTaskHasBeenSet(false)
 {
 }
 
@@ -728,6 +729,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_aigcVideoRedrawTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AigcAudioTask") && !rsp["AigcAudioTask"].IsNull())
+    {
+        if (!rsp["AigcAudioTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcAudioTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aigcAudioTask.Deserialize(rsp["AigcAudioTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aigcAudioTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1082,6 +1100,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aigcVideoRedrawTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aigcAudioTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcAudioTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aigcAudioTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1484,6 +1511,16 @@ AigcVideoRedrawTask DescribeTaskDetailResponse::GetAigcVideoRedrawTask() const
 bool DescribeTaskDetailResponse::AigcVideoRedrawTaskHasBeenSet() const
 {
     return m_aigcVideoRedrawTaskHasBeenSet;
+}
+
+AigcAudioTask DescribeTaskDetailResponse::GetAigcAudioTask() const
+{
+    return m_aigcAudioTask;
+}
+
+bool DescribeTaskDetailResponse::AigcAudioTaskHasBeenSet() const
+{
+    return m_aigcAudioTaskHasBeenSet;
 }
 
 

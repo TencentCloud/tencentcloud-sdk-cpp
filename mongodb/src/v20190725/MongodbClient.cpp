@@ -2340,6 +2340,56 @@ MongodbClient::EnableTransparentDataEncryptionOutcomeCallable MongodbClient::Ena
     return prom->get_future();
 }
 
+MongodbClient::EnableWanServiceOutcome MongodbClient::EnableWanService(const EnableWanServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableWanService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableWanServiceResponse rsp = EnableWanServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableWanServiceOutcome(rsp);
+        else
+            return EnableWanServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableWanServiceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnableWanServiceAsync(const EnableWanServiceRequest& request, const EnableWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableWanServiceRequest&;
+    using Resp = EnableWanServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableWanService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnableWanServiceOutcomeCallable MongodbClient::EnableWanServiceCallable(const EnableWanServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableWanServiceOutcome>>();
+    EnableWanServiceAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnableWanServiceRequest&,
+        EnableWanServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::FlashBackDBInstanceOutcome MongodbClient::FlashBackDBInstance(const FlashBackDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "FlashBackDBInstance");

@@ -1790,6 +1790,56 @@ IoaClient::GrantResourcesByVirtualGroupsOutcomeCallable IoaClient::GrantResource
     return prom->get_future();
 }
 
+IoaClient::ModifyBusinessResourceOutcome IoaClient::ModifyBusinessResource(const ModifyBusinessResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBusinessResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBusinessResourceResponse rsp = ModifyBusinessResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBusinessResourceOutcome(rsp);
+        else
+            return ModifyBusinessResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBusinessResourceOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyBusinessResourceAsync(const ModifyBusinessResourceRequest& request, const ModifyBusinessResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBusinessResourceRequest&;
+    using Resp = ModifyBusinessResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBusinessResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::ModifyBusinessResourceOutcomeCallable IoaClient::ModifyBusinessResourceCallable(const ModifyBusinessResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBusinessResourceOutcome>>();
+    ModifyBusinessResourceAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyBusinessResourceRequest&,
+        ModifyBusinessResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::ModifyDeviceTrustStatusOutcome IoaClient::ModifyDeviceTrustStatus(const ModifyDeviceTrustStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDeviceTrustStatus");

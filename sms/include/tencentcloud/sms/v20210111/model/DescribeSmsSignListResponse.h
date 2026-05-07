@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取签名信息响应
-                     * @return DescribeSignListStatusSet 获取签名信息响应
+                     * 获取<p>获取签名信息响应</p>
+                     * @return DescribeSignListStatusSet <p>获取签名信息响应</p>
                      * 
                      */
                     std::vector<DescribeSignListStatus> GetDescribeSignListStatusSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取签名信息响应
+                     * <p>获取签名信息响应</p>
                      */
                     std::vector<DescribeSignListStatus> m_describeSignListStatusSet;
                     bool m_describeSignListStatusSetHasBeenSet;

@@ -93,6 +93,8 @@
 #include <tencentcloud/ioa/v20220601/model/GrantResourcesByAccountsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/GrantResourcesByVirtualGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/GrantResourcesByVirtualGroupsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyBusinessResourceRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyBusinessResourceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
@@ -216,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GrantResourcesByVirtualGroupsResponse> GrantResourcesByVirtualGroupsOutcome;
                 typedef std::future<GrantResourcesByVirtualGroupsOutcome> GrantResourcesByVirtualGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::GrantResourcesByVirtualGroupsRequest&, GrantResourcesByVirtualGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantResourcesByVirtualGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBusinessResourceResponse> ModifyBusinessResourceOutcome;
+                typedef std::future<ModifyBusinessResourceOutcome> ModifyBusinessResourceOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ModifyBusinessResourceRequest&, ModifyBusinessResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBusinessResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceTrustStatusResponse> ModifyDeviceTrustStatusOutcome;
                 typedef std::future<ModifyDeviceTrustStatusOutcome> ModifyDeviceTrustStatusOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyDeviceTrustStatusRequest&, ModifyDeviceTrustStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceTrustStatusAsyncHandler;
@@ -539,6 +544,15 @@ namespace TencentCloud
                 GrantResourcesByVirtualGroupsOutcome GrantResourcesByVirtualGroups(const Model::GrantResourcesByVirtualGroupsRequest &request);
                 void GrantResourcesByVirtualGroupsAsync(const Model::GrantResourcesByVirtualGroupsRequest& request, const GrantResourcesByVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GrantResourcesByVirtualGroupsOutcomeCallable GrantResourcesByVirtualGroupsCallable(const Model::GrantResourcesByVirtualGroupsRequest& request);
+
+                /**
+                 *修改业务资源，会对一些必填参数进行校验和参数合法性校验，修改业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。修改时也会做校验，但没有返回对应的异常信息,私有化调用path为：capi/GatewayResource/ModifyBusinessResource
+                 * @param req ModifyBusinessResourceRequest
+                 * @return ModifyBusinessResourceOutcome
+                 */
+                ModifyBusinessResourceOutcome ModifyBusinessResource(const Model::ModifyBusinessResourceRequest &request);
+                void ModifyBusinessResourceAsync(const Model::ModifyBusinessResourceRequest& request, const ModifyBusinessResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBusinessResourceOutcomeCallable ModifyBusinessResourceCallable(const Model::ModifyBusinessResourceRequest& request);
 
                 /**
                  *给接入设备加黑加白,私有化调用path为：capi/NGN/ModifyDeviceTrustStatus

@@ -113,9 +113,11 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmAssociation.h
   include/tencentcloud/apm/v20210622/model/Resource.h
   include/tencentcloud/apm/v20210622/model/Selectors.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmServiceResponse.h
   include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigRequest.h
   include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h
   include/tencentcloud/apm/v20210622/model/CVMMeta.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmServiceRequest.h
   include/tencentcloud/apm/v20210622/model/SpanReference.h
   include/tencentcloud/apm/v20210622/model/SpanProcess.h
   include/tencentcloud/apm/v20210622/model/GeneralFilter.h
@@ -218,9 +220,11 @@ set(apm_src
   src/v20210622/model/ApmAssociation.cpp
   src/v20210622/model/Resource.cpp
   src/v20210622/model/Selectors.cpp
+  src/v20210622/model/ModifyApmServiceResponse.cpp
   src/v20210622/model/ModifyApmApplicationConfigRequest.cpp
   src/v20210622/model/ModifyGeneralApmApplicationConfigResponse.cpp
   src/v20210622/model/CVMMeta.cpp
+  src/v20210622/model/ModifyApmServiceRequest.cpp
   src/v20210622/model/SpanReference.cpp
   src/v20210622/model/SpanProcess.cpp
   src/v20210622/model/GeneralFilter.cpp

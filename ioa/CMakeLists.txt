@@ -60,6 +60,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h
   include/tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceData.h
+  include/tencentcloud/ioa/v20220601/model/ModifyBusinessResourceResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateBusinessResourceRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h
   include/tencentcloud/ioa/v20220601/model/CreateBusinessResourceData.h
@@ -138,6 +139,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h
   include/tencentcloud/ioa/v20220601/model/GetAccountGroupData.h
   include/tencentcloud/ioa/v20220601/model/Sort.h
+  include/tencentcloud/ioa/v20220601/model/ModifyBusinessResourceRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsRspData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDirectAccountGroupResourcesRequest.h
   include/tencentcloud/ioa/v20220601/model/DeviceProcessInfo.h
@@ -207,6 +209,7 @@ set(ioa_src
   src/v20220601/model/CreateDLPFileDetectionTaskRequest.cpp
   src/v20220601/model/ExportDeviceDownloadTaskRequest.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceData.cpp
+  src/v20220601/model/ModifyBusinessResourceResponse.cpp
   src/v20220601/model/CreateBusinessResourceRequest.cpp
   src/v20220601/model/DescribeDeviceInfoRequest.cpp
   src/v20220601/model/CreateBusinessResourceData.cpp
@@ -285,6 +288,7 @@ set(ioa_src
   src/v20220601/model/ModifyVirtualDeviceGroupsRequest.cpp
   src/v20220601/model/GetAccountGroupData.cpp
   src/v20220601/model/Sort.cpp
+  src/v20220601/model/ModifyBusinessResourceRequest.cpp
   src/v20220601/model/DescribeDLPEdgeNodeGroupsRspData.cpp
   src/v20220601/model/DescribeDirectAccountGroupResourcesRequest.cpp
   src/v20220601/model/DeviceProcessInfo.cpp

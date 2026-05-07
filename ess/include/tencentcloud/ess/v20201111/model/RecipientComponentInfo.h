@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-                     * @return RecipientId 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
+                     * 获取<p>签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方</p>
+                     * @return RecipientId <p>签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方</p>
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
-                     * @param _recipientId 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
+                     * 设置<p>签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方</p>
+                     * @param _recipientId <p>签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方</p>
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -69,35 +69,15 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取参与方填写状态
-<ul>
-<li>**空值** : 此参与方没有填写控件</li>
-<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
-<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
-
-                     * @return RecipientFillStatus 参与方填写状态
-<ul>
-<li>**空值** : 此参与方没有填写控件</li>
-<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
-<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
-
+                     * 获取<p>参与方填写状态</p><ul><li>**空值** : 此参与方没有填写控件</li><li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li><li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
+                     * @return RecipientFillStatus <p>参与方填写状态</p><ul><li>**空值** : 此参与方没有填写控件</li><li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li><li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
                      * 
                      */
                     std::string GetRecipientFillStatus() const;
 
                     /**
-                     * 设置参与方填写状态
-<ul>
-<li>**空值** : 此参与方没有填写控件</li>
-<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
-<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
-
-                     * @param _recipientFillStatus 参与方填写状态
-<ul>
-<li>**空值** : 此参与方没有填写控件</li>
-<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
-<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
-
+                     * 设置<p>参与方填写状态</p><ul><li>**空值** : 此参与方没有填写控件</li><li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li><li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
+                     * @param _recipientFillStatus <p>参与方填写状态</p><ul><li>**空值** : 此参与方没有填写控件</li><li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li><li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
                      * 
                      */
                     void SetRecipientFillStatus(const std::string& _recipientFillStatus);
@@ -110,23 +90,15 @@ namespace TencentCloud
                     bool RecipientFillStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否为发起方
-<ul><li>true-发起方</li>
-<li>false-参与方</li></ul>
-                     * @return IsPromoter 是否为发起方
-<ul><li>true-发起方</li>
-<li>false-参与方</li></ul>
+                     * 获取<p>是否为发起方</p><ul><li>true-发起方</li><li>false-参与方</li></ul>
+                     * @return IsPromoter <p>是否为发起方</p><ul><li>true-发起方</li><li>false-参与方</li></ul>
                      * 
                      */
                     bool GetIsPromoter() const;
 
                     /**
-                     * 设置是否为发起方
-<ul><li>true-发起方</li>
-<li>false-参与方</li></ul>
-                     * @param _isPromoter 是否为发起方
-<ul><li>true-发起方</li>
-<li>false-参与方</li></ul>
+                     * 设置<p>是否为发起方</p><ul><li>true-发起方</li><li>false-参与方</li></ul>
+                     * @param _isPromoter <p>是否为发起方</p><ul><li>true-发起方</li><li>false-参与方</li></ul>
                      * 
                      */
                     void SetIsPromoter(const bool& _isPromoter);
@@ -139,15 +111,15 @@ namespace TencentCloud
                     bool IsPromoterHasBeenSet() const;
 
                     /**
-                     * 获取改参与方填写控件信息列表
-                     * @return Components 改参与方填写控件信息列表
+                     * 获取<p>该参与方填写控件信息列表</p>
+                     * @return Components <p>该参与方填写控件信息列表</p>
                      * 
                      */
                     std::vector<FilledComponent> GetComponents() const;
 
                     /**
-                     * 设置改参与方填写控件信息列表
-                     * @param _components 改参与方填写控件信息列表
+                     * 设置<p>该参与方填写控件信息列表</p>
+                     * @param _components <p>该参与方填写控件信息列表</p>
                      * 
                      */
                     void SetComponents(const std::vector<FilledComponent>& _components);
@@ -159,38 +131,58 @@ namespace TencentCloud
                      */
                     bool ComponentsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该参与方签批控件信息</p>
+                     * @return SignComponents <p>该参与方签批控件信息</p>
+                     * 
+                     */
+                    std::vector<FilledComponent> GetSignComponents() const;
+
+                    /**
+                     * 设置<p>该参与方签批控件信息</p>
+                     * @param _signComponents <p>该参与方签批控件信息</p>
+                     * 
+                     */
+                    void SetSignComponents(const std::vector<FilledComponent>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     * 
+                     */
+                    bool SignComponentsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方
+                     * <p>签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方</p>
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 参与方填写状态
-<ul>
-<li>**空值** : 此参与方没有填写控件</li>
-<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>
-<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
-
+                     * <p>参与方填写状态</p><ul><li>**空值** : 此参与方没有填写控件</li><li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li><li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>
                      */
                     std::string m_recipientFillStatus;
                     bool m_recipientFillStatusHasBeenSet;
 
                     /**
-                     * 是否为发起方
-<ul><li>true-发起方</li>
-<li>false-参与方</li></ul>
+                     * <p>是否为发起方</p><ul><li>true-发起方</li><li>false-参与方</li></ul>
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;
 
                     /**
-                     * 改参与方填写控件信息列表
+                     * <p>该参与方填写控件信息列表</p>
                      */
                     std::vector<FilledComponent> m_components;
                     bool m_componentsHasBeenSet;
+
+                    /**
+                     * <p>该参与方签批控件信息</p>
+                     */
+                    std::vector<FilledComponent> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                 };
             }

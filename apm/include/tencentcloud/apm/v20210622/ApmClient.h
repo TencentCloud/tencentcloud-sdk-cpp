@@ -83,6 +83,8 @@
 #include <tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmSampleConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmSampleConfigResponse.h>
+#include <tencentcloud/apm/v20210622/model/ModifyApmServiceRequest.h>
+#include <tencentcloud/apm/v20210622/model/ModifyApmServiceResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApmSampleConfigResponse> ModifyApmSampleConfigOutcome;
                 typedef std::future<ModifyApmSampleConfigOutcome> ModifyApmSampleConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::ModifyApmSampleConfigRequest&, ModifyApmSampleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApmSampleConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApmServiceResponse> ModifyApmServiceOutcome;
+                typedef std::future<ModifyApmServiceOutcome> ModifyApmServiceOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::ModifyApmServiceRequest&, ModifyApmServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApmServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGeneralApmApplicationConfigResponse> ModifyGeneralApmApplicationConfigOutcome;
                 typedef std::future<ModifyGeneralApmApplicationConfigOutcome> ModifyGeneralApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::ModifyGeneralApmApplicationConfigRequest&, ModifyGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGeneralApmApplicationConfigAsyncHandler;
@@ -490,6 +495,15 @@ namespace TencentCloud
                 ModifyApmSampleConfigOutcome ModifyApmSampleConfig(const Model::ModifyApmSampleConfigRequest &request);
                 void ModifyApmSampleConfigAsync(const Model::ModifyApmSampleConfigRequest& request, const ModifyApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApmSampleConfigOutcomeCallable ModifyApmSampleConfigCallable(const Model::ModifyApmSampleConfigRequest& request);
+
+                /**
+                 *修改apm应用信息
+                 * @param req ModifyApmServiceRequest
+                 * @return ModifyApmServiceOutcome
+                 */
+                ModifyApmServiceOutcome ModifyApmService(const Model::ModifyApmServiceRequest &request);
+                void ModifyApmServiceAsync(const Model::ModifyApmServiceRequest& request, const ModifyApmServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApmServiceOutcomeCallable ModifyApmServiceCallable(const Model::ModifyApmServiceRequest& request);
 
                 /**
                  *对外开放的openApi，客户可以灵活的指定需要修改的字段，再加入需要修改的服务列表.

@@ -115,6 +115,8 @@
 #include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableWanServiceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableWanServiceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
@@ -327,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableTransparentDataEncryptionResponse> EnableTransparentDataEncryptionOutcome;
                 typedef std::future<EnableTransparentDataEncryptionOutcome> EnableTransparentDataEncryptionOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::EnableTransparentDataEncryptionRequest&, EnableTransparentDataEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransparentDataEncryptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableWanServiceResponse> EnableWanServiceOutcome;
+                typedef std::future<EnableWanServiceOutcome> EnableWanServiceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableWanServiceRequest&, EnableWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWanServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::FlashBackDBInstanceResponse> FlashBackDBInstanceOutcome;
                 typedef std::future<FlashBackDBInstanceOutcome> FlashBackDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::FlashBackDBInstanceRequest&, FlashBackDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlashBackDBInstanceAsyncHandler;
@@ -837,6 +842,15 @@ namespace TencentCloud
                 EnableTransparentDataEncryptionOutcome EnableTransparentDataEncryption(const Model::EnableTransparentDataEncryptionRequest &request);
                 void EnableTransparentDataEncryptionAsync(const Model::EnableTransparentDataEncryptionRequest& request, const EnableTransparentDataEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTransparentDataEncryptionOutcomeCallable EnableTransparentDataEncryptionCallable(const Model::EnableTransparentDataEncryptionRequest& request);
+
+                /**
+                 *本接口(OpenWanService)用于开启当前实例的外网访问地址。
+                 * @param req EnableWanServiceRequest
+                 * @return EnableWanServiceOutcome
+                 */
+                EnableWanServiceOutcome EnableWanService(const Model::EnableWanServiceRequest &request);
+                void EnableWanServiceAsync(const Model::EnableWanServiceRequest& request, const EnableWanServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableWanServiceOutcomeCallable EnableWanServiceCallable(const Model::EnableWanServiceRequest& request);
 
                 /**
                  *该接口用于发起按 Key 闪回任务，依据数据的闪回 Key（默认为 id）对数据进行极速回档，快速恢复业务。

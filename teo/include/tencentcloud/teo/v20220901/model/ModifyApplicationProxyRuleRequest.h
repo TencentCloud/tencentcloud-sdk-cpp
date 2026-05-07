@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool SessionPersistHasBeenSet() const;
 
                     /**
-                     * 获取会话保持的时间，只有当SessionPersist为true时，该值才会生效。
-                     * @return SessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 获取会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
+                     * @return SessionPersistTime 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
-                     * 设置会话保持的时间，只有当SessionPersist为true时，该值才会生效。
-                     * @param _sessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 设置会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
+                     * @param _sessionPersistTime 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_sessionPersistHasBeenSet;
 
                     /**
-                     * 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+                     * 会话保持的时间，单位为秒，只有当SessionPersist为true时，该值才会生效。
                      */
                     uint64_t m_sessionPersistTime;
                     bool m_sessionPersistTimeHasBeenSet;

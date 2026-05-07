@@ -65,6 +65,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/ParamType.h
   include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h
+  include/tencentcloud/mongodb/v20190725/model/WanServiceNodeList.h
   include/tencentcloud/mongodb/v20190725/model/FlashbackDatabase.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h
@@ -126,6 +127,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h
   include/tencentcloud/mongodb/v20190725/model/SecurityGroup.h
+  include/tencentcloud/mongodb/v20190725/model/EnableWanServiceRequest.h
   include/tencentcloud/mongodb/v20190725/model/ReplicaSetInfo.h
   include/tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h
   include/tencentcloud/mongodb/v20190725/model/ClientConnection.h
@@ -209,6 +211,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksResponse.h
   include/tencentcloud/mongodb/v20190725/model/SlowLogItem.h
   include/tencentcloud/mongodb/v20190725/model/RestartNodesRequest.h
+  include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
   include/tencentcloud/mongodb/v20190725/model/ModifyMongoDBParamType.h
   include/tencentcloud/mongodb/v20190725/model/ModifyAuditServiceResponse.h
   include/tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h
@@ -220,7 +223,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/Filters.h
   include/tencentcloud/mongodb/v20190725/model/RestoreCollection.h
   include/tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h
-  include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
+  include/tencentcloud/mongodb/v20190725/model/EnableWanServiceResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditLogsResponse.h
@@ -307,6 +310,7 @@ set(mongodb_src
   src/v20190725/model/DBInstanceInfo.cpp
   src/v20190725/model/ParamType.cpp
   src/v20190725/model/SetAccountUserPrivilegeResponse.cpp
+  src/v20190725/model/WanServiceNodeList.cpp
   src/v20190725/model/FlashbackDatabase.cpp
   src/v20190725/model/ModifyDBInstanceNetworkAddressRequest.cpp
   src/v20190725/model/CreateDBInstanceHourResponse.cpp
@@ -368,6 +372,7 @@ set(mongodb_src
   src/v20190725/model/DescribeSecurityGroupResponse.cpp
   src/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.cpp
   src/v20190725/model/SecurityGroup.cpp
+  src/v20190725/model/EnableWanServiceRequest.cpp
   src/v20190725/model/ReplicaSetInfo.cpp
   src/v20190725/model/ResetDBInstancePasswordResponse.cpp
   src/v20190725/model/ClientConnection.cpp
@@ -451,6 +456,7 @@ set(mongodb_src
   src/v20190725/model/DescribeLogDownloadTasksResponse.cpp
   src/v20190725/model/SlowLogItem.cpp
   src/v20190725/model/RestartNodesRequest.cpp
+  src/v20190725/model/InstanceChargePrepaid.cpp
   src/v20190725/model/ModifyMongoDBParamType.cpp
   src/v20190725/model/ModifyAuditServiceResponse.cpp
   src/v20190725/model/SetInstanceMaintenanceRequest.cpp
@@ -462,7 +468,7 @@ set(mongodb_src
   src/v20190725/model/Filters.cpp
   src/v20190725/model/RestoreCollection.cpp
   src/v20190725/model/RestoreDBInstanceRequest.cpp
-  src/v20190725/model/InstanceChargePrepaid.cpp
+  src/v20190725/model/EnableWanServiceResponse.cpp
   src/v20190725/model/RenewDBInstancesRequest.cpp
   src/v20190725/model/UpgradeDBInstanceKernelVersionRequest.cpp
   src/v20190725/model/DescribeAuditLogsResponse.cpp

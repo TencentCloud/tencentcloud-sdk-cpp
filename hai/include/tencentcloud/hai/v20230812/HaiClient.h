@@ -384,7 +384,7 @@ namespace TencentCloud
                 TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
 
                 /**
-                 *本接口(UpdateServiceConfigs)用于更新服务配置
+                 *本接口(UpdateServiceConfigs)用于更新服务配置。
                  * @param req UpdateServiceConfigsRequest
                  * @return UpdateServiceConfigsOutcome
                  */

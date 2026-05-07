@@ -23,8 +23,10 @@ using namespace TencentCloud::Sms::V20210111::Model;
 using namespace std;
 
 DescribeSmsSignListRequest::DescribeSmsSignListRequest() :
+    m_internationalHasBeenSet(false),
     m_signIdSetHasBeenSet(false),
-    m_internationalHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,14 @@ string DescribeSmsSignListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_internationalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "International";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_international, allocator);
+    }
 
     if (m_signIdSetHasBeenSet)
     {
@@ -48,12 +58,20 @@ string DescribeSmsSignListRequest::ToJsonString() const
         }
     }
 
-    if (m_internationalHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "International";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_international, allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -63,6 +81,22 @@ string DescribeSmsSignListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeSmsSignListRequest::GetInternational() const
+{
+    return m_international;
+}
+
+void DescribeSmsSignListRequest::SetInternational(const uint64_t& _international)
+{
+    m_international = _international;
+    m_internationalHasBeenSet = true;
+}
+
+bool DescribeSmsSignListRequest::InternationalHasBeenSet() const
+{
+    return m_internationalHasBeenSet;
+}
 
 vector<uint64_t> DescribeSmsSignListRequest::GetSignIdSet() const
 {
@@ -80,20 +114,36 @@ bool DescribeSmsSignListRequest::SignIdSetHasBeenSet() const
     return m_signIdSetHasBeenSet;
 }
 
-uint64_t DescribeSmsSignListRequest::GetInternational() const
+uint64_t DescribeSmsSignListRequest::GetLimit() const
 {
-    return m_international;
+    return m_limit;
 }
 
-void DescribeSmsSignListRequest::SetInternational(const uint64_t& _international)
+void DescribeSmsSignListRequest::SetLimit(const uint64_t& _limit)
 {
-    m_international = _international;
-    m_internationalHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeSmsSignListRequest::InternationalHasBeenSet() const
+bool DescribeSmsSignListRequest::LimitHasBeenSet() const
 {
-    return m_internationalHasBeenSet;
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeSmsSignListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSmsSignListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSmsSignListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

@@ -29,6 +29,8 @@
 #include <tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/AddUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/AddUserGroupMembersResponse.h>
+#include <tencentcloud/bh/v20230418/model/BindDeviceAccountKubeconfigRequest.h>
+#include <tencentcloud/bh/v20230418/model/BindDeviceAccountKubeconfigResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPasswordRequest.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPasswordResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyRequest.h>
@@ -262,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserGroupMembersResponse> AddUserGroupMembersOutcome;
                 typedef std::future<AddUserGroupMembersOutcome> AddUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::AddUserGroupMembersRequest&, AddUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserGroupMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindDeviceAccountKubeconfigResponse> BindDeviceAccountKubeconfigOutcome;
+                typedef std::future<BindDeviceAccountKubeconfigOutcome> BindDeviceAccountKubeconfigOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::BindDeviceAccountKubeconfigRequest&, BindDeviceAccountKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAccountKubeconfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindDeviceAccountPasswordResponse> BindDeviceAccountPasswordOutcome;
                 typedef std::future<BindDeviceAccountPasswordOutcome> BindDeviceAccountPasswordOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::BindDeviceAccountPasswordRequest&, BindDeviceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAccountPasswordAsyncHandler;
@@ -606,6 +611,15 @@ namespace TencentCloud
                 AddUserGroupMembersOutcome AddUserGroupMembers(const Model::AddUserGroupMembersRequest &request);
                 void AddUserGroupMembersAsync(const Model::AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUserGroupMembersOutcomeCallable AddUserGroupMembersCallable(const Model::AddUserGroupMembersRequest& request);
+
+                /**
+                 *绑定容器账号凭据
+                 * @param req BindDeviceAccountKubeconfigRequest
+                 * @return BindDeviceAccountKubeconfigOutcome
+                 */
+                BindDeviceAccountKubeconfigOutcome BindDeviceAccountKubeconfig(const Model::BindDeviceAccountKubeconfigRequest &request);
+                void BindDeviceAccountKubeconfigAsync(const Model::BindDeviceAccountKubeconfigRequest& request, const BindDeviceAccountKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindDeviceAccountKubeconfigOutcomeCallable BindDeviceAccountKubeconfigCallable(const Model::BindDeviceAccountKubeconfigRequest& request);
 
                 /**
                  *绑定主机账号密码

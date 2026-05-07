@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取必填。固定值"monitor"
-                     * @return Module 必填。固定值"monitor"
+                     * 获取<p>必填。固定值&quot;monitor&quot;</p>
+                     * @return Module <p>必填。固定值&quot;monitor&quot;</p>
                      * 
                      */
                     std::string GetModule() const;
 
                     /**
-                     * 设置必填。固定值"monitor"
-                     * @param _module 必填。固定值"monitor"
+                     * 设置<p>必填。固定值&quot;monitor&quot;</p>
+                     * @param _module <p>必填。固定值&quot;monitor&quot;</p>
                      * 
                      */
                     void SetModule(const std::string& _module);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
-                     * @return GroupId 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
+                     * 获取<p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>
+                     * @return GroupId <p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
-                     * @param _groupId 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
+                     * 设置<p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>
+                     * @param _groupId <p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
-                     * @return PolicyId 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
+                     * 获取<p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>
+                     * @return PolicyId <p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
-                     * @param _policyId 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
+                     * 设置<p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>
+                     * @param _policyId <p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取实例分组ID
-                     * @return InstanceGroupId 实例分组ID
+                     * 获取<p>实例分组ID</p>
+                     * @return InstanceGroupId <p>实例分组ID</p>
                      * 
                      */
                     int64_t GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例分组ID
-                     * @param _instanceGroupId 实例分组ID
+                     * 设置<p>实例分组ID</p>
+                     * @param _instanceGroupId <p>实例分组ID</p>
                      * 
                      */
                     void SetInstanceGroupId(const int64_t& _instanceGroupId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
-                     * @return Dimensions 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
+                     * 获取<p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>
+                     * @return Dimensions <p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>
                      * 
                      */
                     std::vector<BindingPolicyObjectDimension> GetDimensions() const;
 
                     /**
-                     * 设置需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
-                     * @param _dimensions 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
+                     * 设置<p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>
+                     * @param _dimensions <p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>
                      * 
                      */
                     void SetDimensions(const std::vector<BindingPolicyObjectDimension>& _dimensions);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取事件配置的告警
-                     * @return EbSubject 事件配置的告警
+                     * 获取<p>事件配置的告警</p>
+                     * @return EbSubject <p>事件配置的告警</p>
                      * 
                      */
                     std::string GetEbSubject() const;
 
                     /**
-                     * 设置事件配置的告警
-                     * @param _ebSubject 事件配置的告警
+                     * 设置<p>事件配置的告警</p>
+                     * @param _ebSubject <p>事件配置的告警</p>
                      * 
                      */
                     void SetEbSubject(const std::string& _ebSubject);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool EbSubjectHasBeenSet() const;
 
                     /**
-                     * 获取是否配置了事件告警
-                     * @return EbEventFlag 是否配置了事件告警
+                     * 获取<p>是否配置了事件告警</p>
+                     * @return EbEventFlag <p>是否配置了事件告警</p>
                      * 
                      */
                     int64_t GetEbEventFlag() const;
 
                     /**
-                     * 设置是否配置了事件告警
-                     * @param _ebEventFlag 是否配置了事件告警
+                     * 设置<p>是否配置了事件告警</p>
+                     * @param _ebEventFlag <p>是否配置了事件告警</p>
                      * 
                      */
                     void SetEbEventFlag(const int64_t& _ebEventFlag);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 必填。固定值"monitor"
+                     * <p>必填。固定值&quot;monitor&quot;</p>
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数
+                     * <p>策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数</p>
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准
+                     * <p>告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 实例分组ID
+                     * <p>实例分组ID</p>
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息
+                     * <p>需要绑定的对象维度信息。当告警对象选择为实例绑定方式时，该参数为必填参数；当告警对象选择为标签绑定、实例分组方式时，该参数为选填参数。</p>
                      */
                     std::vector<BindingPolicyObjectDimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 事件配置的告警
+                     * <p>事件配置的告警</p>
                      */
                     std::string m_ebSubject;
                     bool m_ebSubjectHasBeenSet;
 
                     /**
-                     * 是否配置了事件告警
+                     * <p>是否配置了事件告警</p>
                      */
                     int64_t m_ebEventFlag;
                     bool m_ebEventFlagHasBeenSet;

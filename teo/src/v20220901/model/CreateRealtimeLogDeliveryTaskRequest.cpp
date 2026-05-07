@@ -24,11 +24,11 @@ using namespace std;
 
 CreateRealtimeLogDeliveryTaskRequest::CreateRealtimeLogDeliveryTaskRequest() :
     m_zoneIdHasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_entityListHasBeenSet(false),
-    m_logTypeHasBeenSet(false),
-    m_areaHasBeenSet(false),
     m_fieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
@@ -53,6 +53,22 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskNameHasBeenSet)
@@ -82,22 +98,6 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_logTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_areaHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Area";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fieldsHasBeenSet)
@@ -211,6 +211,38 @@ bool CreateRealtimeLogDeliveryTaskRequest::ZoneIdHasBeenSet() const
     return m_zoneIdHasBeenSet;
 }
 
+string CreateRealtimeLogDeliveryTaskRequest::GetArea() const
+{
+    return m_area;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+string CreateRealtimeLogDeliveryTaskRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
+}
+
 string CreateRealtimeLogDeliveryTaskRequest::GetTaskName() const
 {
     return m_taskName;
@@ -257,38 +289,6 @@ void CreateRealtimeLogDeliveryTaskRequest::SetEntityList(const vector<string>& _
 bool CreateRealtimeLogDeliveryTaskRequest::EntityListHasBeenSet() const
 {
     return m_entityListHasBeenSet;
-}
-
-string CreateRealtimeLogDeliveryTaskRequest::GetLogType() const
-{
-    return m_logType;
-}
-
-void CreateRealtimeLogDeliveryTaskRequest::SetLogType(const string& _logType)
-{
-    m_logType = _logType;
-    m_logTypeHasBeenSet = true;
-}
-
-bool CreateRealtimeLogDeliveryTaskRequest::LogTypeHasBeenSet() const
-{
-    return m_logTypeHasBeenSet;
-}
-
-string CreateRealtimeLogDeliveryTaskRequest::GetArea() const
-{
-    return m_area;
-}
-
-void CreateRealtimeLogDeliveryTaskRequest::SetArea(const string& _area)
-{
-    m_area = _area;
-    m_areaHasBeenSet = true;
-}
-
-bool CreateRealtimeLogDeliveryTaskRequest::AreaHasBeenSet() const
-{
-    return m_areaHasBeenSet;
 }
 
 vector<string> CreateRealtimeLogDeliveryTaskRequest::GetFields() const

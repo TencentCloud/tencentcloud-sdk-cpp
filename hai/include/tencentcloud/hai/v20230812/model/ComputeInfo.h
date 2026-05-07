@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型及数量
-                     * @return ComputeResources 资源类型及数量
+                     * 获取<p>资源类型及数量</p>
+                     * @return ComputeResources <p>资源类型及数量</p>
                      * 
                      */
                     std::vector<ComputeResource> GetComputeResources() const;
 
                     /**
-                     * 设置资源类型及数量
-                     * @param _computeResources 资源类型及数量
+                     * 设置<p>资源类型及数量</p>
+                     * @param _computeResources <p>资源类型及数量</p>
                      * 
                      */
                     void SetComputeResources(const std::vector<ComputeResource>& _computeResources);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ComputeResourcesHasBeenSet() const;
 
                     /**
-                     * 获取副本数
-                     * @return Replicas 副本数
+                     * 获取<p>副本数</p>
+                     * @return Replicas <p>副本数</p>
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
-                     * 设置副本数
-                     * @param _replicas 副本数
+                     * 设置<p>副本数</p>
+                     * @param _replicas <p>副本数</p>
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型及数量
+                     * <p>资源类型及数量</p>
                      */
                     std::vector<ComputeResource> m_computeResources;
                     bool m_computeResourcesHasBeenSet;
 
                     /**
-                     * 副本数
+                     * <p>副本数</p>
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;

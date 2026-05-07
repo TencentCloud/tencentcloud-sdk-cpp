@@ -24,7 +24,8 @@ RecipientComponentInfo::RecipientComponentInfo() :
     m_recipientIdHasBeenSet(false),
     m_recipientFillStatusHasBeenSet(false),
     m_isPromoterHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_signComponentsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome RecipientComponentInfo::Deserialize(const rapidjson::Value &
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
+    {
+        if (!value["SignComponents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecipientComponentInfo.SignComponents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilledComponent item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponents.push_back(item);
+        }
+        m_signComponentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ void RecipientComponentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
 
         int i=0;
         for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_signComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -194,5 +230,21 @@ void RecipientComponentInfo::SetComponents(const vector<FilledComponent>& _compo
 bool RecipientComponentInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+vector<FilledComponent> RecipientComponentInfo::GetSignComponents() const
+{
+    return m_signComponents;
+}
+
+void RecipientComponentInfo::SetSignComponents(const vector<FilledComponent>& _signComponents)
+{
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
+}
+
+bool RecipientComponentInfo::SignComponentsHasBeenSet() const
+{
+    return m_signComponentsHasBeenSet;
 }
 

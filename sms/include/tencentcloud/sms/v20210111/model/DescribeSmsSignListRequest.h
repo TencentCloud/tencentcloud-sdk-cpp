@@ -43,19 +43,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签名 ID 数组。
-注：默认数组最大长度100。
-                     * @return SignIdSet 签名 ID 数组。
-注：默认数组最大长度100。
+                     * 获取<p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>
+                     * @return International <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>
+                     * 
+                     */
+                    uint64_t GetInternational() const;
+
+                    /**
+                     * 设置<p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>
+                     * @param _international <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>
+                     * 
+                     */
+                    void SetInternational(const uint64_t& _international);
+
+                    /**
+                     * 判断参数 International 是否已赋值
+                     * @return International 是否已赋值
+                     * 
+                     */
+                    bool InternationalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>签名 ID 数组。<br>注：默认数组最大长度100。</p>
+                     * @return SignIdSet <p>签名 ID 数组。<br>注：默认数组最大长度100。</p>
                      * 
                      */
                     std::vector<uint64_t> GetSignIdSet() const;
 
                     /**
-                     * 设置签名 ID 数组。
-注：默认数组最大长度100。
-                     * @param _signIdSet 签名 ID 数组。
-注：默认数组最大长度100。
+                     * 设置<p>签名 ID 数组。<br>注：默认数组最大长度100。</p>
+                     * @param _signIdSet <p>签名 ID 数组。<br>注：默认数组最大长度100。</p>
                      * 
                      */
                     void SetSignIdSet(const std::vector<uint64_t>& _signIdSet);
@@ -68,50 +85,72 @@ namespace TencentCloud
                     bool SignIdSetHasBeenSet() const;
 
                     /**
-                     * 获取是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-                     * @return International 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
+                     * 获取<p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>
+                     * @return Limit <p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>
                      * 
                      */
-                    uint64_t GetInternational() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-                     * @param _international 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
+                     * 设置<p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>
+                     * @param _limit <p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>
                      * 
                      */
-                    void SetInternational(const uint64_t& _international);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 International 是否已赋值
-                     * @return International 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      * 
                      */
-                    bool InternationalHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>
+                     * @return Offset <p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>
+                     * @param _offset <p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 签名 ID 数组。
-注：默认数组最大长度100。
+                     * <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。</p>
+                     */
+                    uint64_t m_international;
+                    bool m_internationalHasBeenSet;
+
+                    /**
+                     * <p>签名 ID 数组。<br>注：默认数组最大长度100。</p>
                      */
                     std::vector<uint64_t> m_signIdSet;
                     bool m_signIdSetHasBeenSet;
 
                     /**
-                     * 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
+                     * <p>最大上限，最多100。注：默认为10，SignIdSet 为空时启用。</p>
                      */
-                    uint64_t m_international;
-                    bool m_internationalHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>偏移量。注：默认为0，SignIdSet 为空时启用。</p>
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

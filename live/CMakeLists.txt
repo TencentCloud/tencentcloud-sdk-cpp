@@ -506,6 +506,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveTimeShiftRulesRequest.h
   include/tencentcloud/live/v20180801/model/DescribeOriginStreamInfoRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTimeShiftBillInfoListRequest.h
+  include/tencentcloud/live/v20180801/model/RecordTask.h
   include/tencentcloud/live/v20180801/model/ModifyCasterRequest.h
   include/tencentcloud/live/v20180801/model/DescribeCasterEmergencyStatusRequest.h
   include/tencentcloud/live/v20180801/model/PushQualityData.h
@@ -586,7 +587,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/GroupProIspDataInfo.h
   include/tencentcloud/live/v20180801/model/VideoRedrawCosInfo.h
   include/tencentcloud/live/v20180801/model/DeleteCasterOutputInfoRequest.h
-  include/tencentcloud/live/v20180801/model/RecordTask.h
+  include/tencentcloud/live/v20180801/model/OriginStreamCustomizationRule.h
   include/tencentcloud/live/v20180801/model/DescribeTimeShiftRecordDetailResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLiveDomainResponse.h
   include/tencentcloud/live/v20180801/model/AddCasterMarkPicInfoRequest.h
@@ -1083,6 +1084,7 @@ set(live_src
   src/v20180801/model/DescribeLiveTimeShiftRulesRequest.cpp
   src/v20180801/model/DescribeOriginStreamInfoRequest.cpp
   src/v20180801/model/DescribeLiveTimeShiftBillInfoListRequest.cpp
+  src/v20180801/model/RecordTask.cpp
   src/v20180801/model/ModifyCasterRequest.cpp
   src/v20180801/model/DescribeCasterEmergencyStatusRequest.cpp
   src/v20180801/model/PushQualityData.cpp
@@ -1163,7 +1165,7 @@ set(live_src
   src/v20180801/model/GroupProIspDataInfo.cpp
   src/v20180801/model/VideoRedrawCosInfo.cpp
   src/v20180801/model/DeleteCasterOutputInfoRequest.cpp
-  src/v20180801/model/RecordTask.cpp
+  src/v20180801/model/OriginStreamCustomizationRule.cpp
   src/v20180801/model/DescribeTimeShiftRecordDetailResponse.cpp
   src/v20180801/model/DeleteLiveDomainResponse.cpp
   src/v20180801/model/AddCasterMarkPicInfoRequest.cpp
