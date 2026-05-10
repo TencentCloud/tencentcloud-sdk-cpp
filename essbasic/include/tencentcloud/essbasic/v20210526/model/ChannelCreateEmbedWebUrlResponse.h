@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取嵌入的web链接，5分钟有效
-                     * @return WebUrl 嵌入的web链接，5分钟有效
+                     * 获取<p>嵌入的web链接，5分钟有效</p>
+                     * @return WebUrl <p>嵌入的web链接，5分钟有效</p>
                      * 
                      */
                     std::string GetWebUrl() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 嵌入的web链接，5分钟有效
+                     * <p>嵌入的web链接，5分钟有效</p>
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;

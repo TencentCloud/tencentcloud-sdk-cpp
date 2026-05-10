@@ -19,704 +19,652 @@ set(ocr_public_header
   )
 
 set(ocr_public_header_model
-  include/tencentcloud/ocr/v20181119/model/BankSlipOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TableOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/StoreInfo.h
+  include/tencentcloud/ocr/v20181119/model/NonTaxItem.h
+  include/tencentcloud/ocr/v20181119/model/FieldsInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/InvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BankSlipOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ResidencePermitInfo.h
+  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TollInvoice.h
+  include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h
   include/tencentcloud/ocr/v20181119/model/CoordList.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/Words.h
-  include/tencentcloud/ocr/v20181119/model/TextDetectionEn.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceGoodsInfo.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/FlightItem.h
-  include/tencentcloud/ocr/v20181119/model/SealInfo.h
-  include/tencentcloud/ocr/v20181119/model/TextArithmetic.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/StructuralItem.h
-  include/tencentcloud/ocr/v20181119/model/BankSlipInfo.h
-  include/tencentcloud/ocr/v20181119/model/TableCellInfo.h
-  include/tencentcloud/ocr/v20181119/model/BizLicenseOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ShippingInvoice.h
-  include/tencentcloud/ocr/v20181119/model/BusInvoice.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h
-  include/tencentcloud/ocr/v20181119/model/OtherInvoice.h
-  include/tencentcloud/ocr/v20181119/model/CellContent.h
-  include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/OCRResult.h
-  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VerifyScenePhotoRequest.h
-  include/tencentcloud/ocr/v20181119/model/BusinessCardInfo.h
-  include/tencentcloud/ocr/v20181119/model/MotorVehicleSaleInvoice.h
-  include/tencentcloud/ocr/v20181119/model/FinancialBillItem.h
-  include/tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h
-  include/tencentcloud/ocr/v20181119/model/TaxiTicket.h
-  include/tencentcloud/ocr/v20181119/model/CardWarnInfo.h
-  include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h
-  include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/OtherInvoiceList.h
-  include/tencentcloud/ocr/v20181119/model/Polygon.h
-  include/tencentcloud/ocr/v20181119/model/FlightInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummaryItem.h
-  include/tencentcloud/ocr/v20181119/model/Positions.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummary.h
-  include/tencentcloud/ocr/v20181119/model/HandwritingEssayOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ConfigAdvanced.h
-  include/tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h
-  include/tencentcloud/ocr/v20181119/model/AnswerInfo.h
-  include/tencentcloud/ocr/v20181119/model/ReflectDetailInfo.h
-  include/tencentcloud/ocr/v20181119/model/TollInvoice.h
-  include/tencentcloud/ocr/v20181119/model/TemporaryIDCardInfo.h
-  include/tencentcloud/ocr/v20181119/model/NonTaxItem.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ImageCoordinates.h
-  include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/WordPolygon.h
-  include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
-  include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/TableCell.h
-  include/tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobRequest.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocAgentRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatRollInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GetOCRTokenRequest.h
-  include/tencentcloud/ocr/v20181119/model/BizLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/BusinessCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h
-  include/tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/RequestIdInfo.h
-  include/tencentcloud/ocr/v20181119/model/ResidencePermitInfo.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocMultiRequest.h
   include/tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobResponse.h
+  include/tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiProRequest.h
+  include/tencentcloud/ocr/v20181119/model/WordItem.h
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OverseasInvoice.h
   include/tencentcloud/ocr/v20181119/model/ItemInfo.h
+  include/tencentcloud/ocr/v20181119/model/TextDetectResponse.h
   include/tencentcloud/ocr/v20181119/model/TaxPayment.h
+  include/tencentcloud/ocr/v20181119/model/GetOCRTokenResponse.h
   include/tencentcloud/ocr/v20181119/model/IDCardInfoResult.h
-  include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/OtherInvoiceList.h
+  include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/WaybillOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/Words.h
+  include/tencentcloud/ocr/v20181119/model/TextDetectionEn.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h
+  include/tencentcloud/ocr/v20181119/model/Rect.h
+  include/tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h
+  include/tencentcloud/ocr/v20181119/model/QuestionSplitOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TextFormula.h
+  include/tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/VehicleRegCertInfo.h
+  include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/FlightItem.h
+  include/tencentcloud/ocr/v20181119/model/Value.h
+  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/BankSlip.h
   include/tencentcloud/ocr/v20181119/model/QuestionOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/SealInfo.h
+  include/tencentcloud/ocr/v20181119/model/TextArithmetic.h
+  include/tencentcloud/ocr/v20181119/model/TextVatInvoice.h
+  include/tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/TextDetection.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextEduPaper.h
+  include/tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CustomsDeclaration.h
   include/tencentcloud/ocr/v20181119/model/WaybillObj.h
-  include/tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/OnlineTaxiItineraryInfo.h
-  include/tencentcloud/ocr/v20181119/model/FlightItemInfo.h
-  include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/DetectedWords.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h
-  include/tencentcloud/ocr/v20181119/model/TextVatInvoice.h
-  include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GeneralMachineItem.h
-  include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/Key.h
-  include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GroupInfo.h
-  include/tencentcloud/ocr/v20181119/model/MachinePrintedInvoice.h
-  include/tencentcloud/ocr/v20181119/model/VerifyScenePhotoResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
-  include/tencentcloud/ocr/v20181119/model/FinancialBillItemDetails.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransportDetail.h
-  include/tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobRequest.h
-  include/tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h
+  include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
+  include/tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatElectronicItemInfo.h
+  include/tencentcloud/ocr/v20181119/model/WordPolygon.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TableOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h
+  include/tencentcloud/ocr/v20181119/model/StructuralItem.h
+  include/tencentcloud/ocr/v20181119/model/InvoiceDetectInfo.h
+  include/tencentcloud/ocr/v20181119/model/VerifyScenePhotoResponse.h
+  include/tencentcloud/ocr/v20181119/model/FlightItemInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeAgentResponse.h
+  include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TextFormulaInfo.h
+  include/tencentcloud/ocr/v20181119/model/BankSlipInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/FormulaOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h
+  include/tencentcloud/ocr/v20181119/model/Encryption.h
+  include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiProResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BizLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h
+  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ShoppingReceipt.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceUserInfo.h
+  include/tencentcloud/ocr/v20181119/model/GeneralMachineItem.h
+  include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicketFull.h
+  include/tencentcloud/ocr/v20181119/model/BusInvoice.h
+  include/tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h
+  include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/MainlandTravelPermitBackInfos.h
+  include/tencentcloud/ocr/v20181119/model/OtherInvoice.h
+  include/tencentcloud/ocr/v20181119/model/CellContent.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocAgentResponse.h
+  include/tencentcloud/ocr/v20181119/model/OCRResult.h
+  include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummaryList.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocBasicRequest.h
+  include/tencentcloud/ocr/v20181119/model/ReflectDetailInfo.h
   include/tencentcloud/ocr/v20181119/model/MedicalInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceGoodsInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/GroupInfo.h
+  include/tencentcloud/ocr/v20181119/model/QuotaInvoice.h
+  include/tencentcloud/ocr/v20181119/model/ItemNames.h
+  include/tencentcloud/ocr/v20181119/model/SingleInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/OnlineTaxiItineraryInfo.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h
+  include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MachinePrintedInvoice.h
+  include/tencentcloud/ocr/v20181119/model/FinancialBillItem.h
+  include/tencentcloud/ocr/v20181119/model/SingleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TrainTicket.h
+  include/tencentcloud/ocr/v20181119/model/TextDetectRequest.h
+  include/tencentcloud/ocr/v20181119/model/EduPaperOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/IDCardConfig.h
+  include/tencentcloud/ocr/v20181119/model/BusinessCardInfo.h
+  include/tencentcloud/ocr/v20181119/model/MotorVehicleSaleInvoice.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/PassportRecognizeInfos.h
+  include/tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h
+  include/tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h
+  include/tencentcloud/ocr/v20181119/model/PortraitImageInfo.h
+  include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
+  include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/FinancialBillItemDetails.h
+  include/tencentcloud/ocr/v20181119/model/CardWarnInfo.h
+  include/tencentcloud/ocr/v20181119/model/TextWaybill.h
+  include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransportDetail.h
+  include/tencentcloud/ocr/v20181119/model/FinancialBill.h
+  include/tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
+  include/tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h
+  include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/AirTicketInfo.h
+  include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h
+  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h
+  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceItemInfo.h
+  include/tencentcloud/ocr/v20181119/model/VatElectronicInfo.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/DetectedWords.h
+  include/tencentcloud/ocr/v20181119/model/IDCardInfo.h
+  include/tencentcloud/ocr/v20181119/model/MedicalInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RailwayTicketInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TemporaryIDCardInfo.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
+  include/tencentcloud/ocr/v20181119/model/CarInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/SchemaList.h
+  include/tencentcloud/ocr/v20181119/model/TableCellInfo.h
+  include/tencentcloud/ocr/v20181119/model/FlightInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DetailInformationOfAirTicketTupleList.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleFront.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillSliceInfo.h
+  include/tencentcloud/ocr/v20181119/model/AdvertiseTextDetection.h
+  include/tencentcloud/ocr/v20181119/model/TextTable.h
+  include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/SceneWarnInfo.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h
   include/tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/NonTaxIncomeBill.h
-  include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GetOCRTokenRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h
   include/tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobRequest.h
-  include/tencentcloud/ocr/v20181119/model/AirTransport.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummaryItem.h
+  include/tencentcloud/ocr/v20181119/model/ContentInfo.h
+  include/tencentcloud/ocr/v20181119/model/MarkEssaySuggestions.h
+  include/tencentcloud/ocr/v20181119/model/TableTitle.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/Coord.h
   include/tencentcloud/ocr/v20181119/model/SealOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TextWaybill.h
+  include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h
+  include/tencentcloud/ocr/v20181119/model/HandwritingEssayOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BankSlipOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/OnlineTaxiItinerary.h
-  include/tencentcloud/ocr/v20181119/model/SingleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/Polygon.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/QuestionObj.h
   include/tencentcloud/ocr/v20181119/model/TableInfo.h
+  include/tencentcloud/ocr/v20181119/model/RequestIdInfo.h
   include/tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ShipInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ConfigAdvanced.h
+  include/tencentcloud/ocr/v20181119/model/VerifyScenePhotoRequest.h
+  include/tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/LineInfo.h
+  include/tencentcloud/ocr/v20181119/model/GeneralCardWarnInfo.h
+  include/tencentcloud/ocr/v20181119/model/ListInfo.h
+  include/tencentcloud/ocr/v20181119/model/ItemCoord.h
+  include/tencentcloud/ocr/v20181119/model/ItemPolygonInfo.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h
+  include/tencentcloud/ocr/v20181119/model/ShippingInvoice.h
+  include/tencentcloud/ocr/v20181119/model/TableDetectInfo.h
+  include/tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h
+  include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceRoll.h
+  include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/GeneralFastOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/ImageSize.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h
   include/tencentcloud/ocr/v20181119/model/HandwritingEssayOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Request.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/MarkInfo.h
-  include/tencentcloud/ocr/v20181119/model/ContentInfo.h
+  include/tencentcloud/ocr/v20181119/model/AnswerInfo.h
   include/tencentcloud/ocr/v20181119/model/QuestionOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TextTractorVehicleBack.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectInfo.h
+  include/tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/MedicalInvoice.h
+  include/tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/GetOCRResultRequest.h
+  include/tencentcloud/ocr/v20181119/model/TableCell.h
+  include/tencentcloud/ocr/v20181119/model/SubItemGroup.h
   include/tencentcloud/ocr/v20181119/model/QrcodeResultsInfo.h
   include/tencentcloud/ocr/v20181119/model/GetOCRResultResponse.h
   include/tencentcloud/ocr/v20181119/model/MainlandPermitOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoice.h
-  include/tencentcloud/ocr/v20181119/model/PortraitImageInfo.h
-  include/tencentcloud/ocr/v20181119/model/BusInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TableOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/DetectedWordCoordPoint.h
-  include/tencentcloud/ocr/v20181119/model/AdvertiseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ShoppingReceipt.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/BusinessCertificateInfo.h
-  include/tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceSealInfo.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h
-  include/tencentcloud/ocr/v20181119/model/QrcodePositionObj.h
-  include/tencentcloud/ocr/v20181119/model/FieldsInfo.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/WordItem.h
-  include/tencentcloud/ocr/v20181119/model/SingleInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/TextDetectResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
-  include/tencentcloud/ocr/v20181119/model/Rect.h
-  include/tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h
-  include/tencentcloud/ocr/v20181119/model/QuestionObj.h
-  include/tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h
-  include/tencentcloud/ocr/v20181119/model/Value.h
-  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillInfo.h
-  include/tencentcloud/ocr/v20181119/model/TollInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/FormulaOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobRequest.h
-  include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocAgentResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummaryList.h
-  include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
-  include/tencentcloud/ocr/v20181119/model/LicensePlateOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocBasicRequest.h
-  include/tencentcloud/ocr/v20181119/model/QuotaInvoice.h
-  include/tencentcloud/ocr/v20181119/model/ItemNames.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiResponse.h
-  include/tencentcloud/ocr/v20181119/model/TrainTicket.h
-  include/tencentcloud/ocr/v20181119/model/TextDetectRequest.h
-  include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
-  include/tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/PassportRecognizeInfos.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceItemInfo.h
-  include/tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/FinancialBill.h
-  include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
-  include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/AirTicketInfo.h
-  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceUserInfo.h
-  include/tencentcloud/ocr/v20181119/model/IDCardInfo.h
-  include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/SceneWarnInfo.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/TableTitle.h
-  include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/PermitOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GeneralCardWarnInfo.h
-  include/tencentcloud/ocr/v20181119/model/ItemCoord.h
-  include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/GeneralFastOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/MedicalInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/TextTractorVehicleBack.h
-  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/MedicalInvoice.h
-  include/tencentcloud/ocr/v20181119/model/BusInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiProRequest.h
+  include/tencentcloud/ocr/v20181119/model/AirTransport.h
+  include/tencentcloud/ocr/v20181119/model/QuestionInfo.h
+  include/tencentcloud/ocr/v20181119/model/TaxiTicket.h
+  include/tencentcloud/ocr/v20181119/model/UsedCarPurchaseInvoice.h
+  include/tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ImageCoordinates.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/Positions.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CandWord.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
+  include/tencentcloud/ocr/v20181119/model/PermitOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/LicensePlateInfo.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeAgentRequest.h
-  include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h
-  include/tencentcloud/ocr/v20181119/model/PermanentResidencePermitInfo.h
-  include/tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/StoreInfo.h
-  include/tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/GetOCRTokenResponse.h
-  include/tencentcloud/ocr/v20181119/model/RailwayTicketInfo.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h
-  include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h
-  include/tencentcloud/ocr/v20181119/model/TextFormula.h
-  include/tencentcloud/ocr/v20181119/model/VehicleRegCertInfo.h
-  include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceDetectInfo.h
-  include/tencentcloud/ocr/v20181119/model/MainlandPermitOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/TextFormulaInfo.h
-  include/tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/BusInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/ExtractDocMultiProResponse.h
-  include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
-  include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeAgentResponse.h
-  include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicketFull.h
-  include/tencentcloud/ocr/v20181119/model/GetOCRResultRequest.h
   include/tencentcloud/ocr/v20181119/model/IDCardResult.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/SubItemGroup.h
-  include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/WaybillOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatRollItem.h
-  include/tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/EduPaperOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TableOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatElectronicInfo.h
-  include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/UsedCarPurchaseInvoice.h
-  include/tencentcloud/ocr/v20181119/model/CarInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/AdvertiseTextDetection.h
-  include/tencentcloud/ocr/v20181119/model/Encryption.h
-  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h
-  include/tencentcloud/ocr/v20181119/model/MarkEssaySuggestions.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/DutyPaidProofInfo.h
-  include/tencentcloud/ocr/v20181119/model/FinanBillOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/BankSlipOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/QuestionSplitOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VatElectronicItemInfo.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/LineInfo.h
-  include/tencentcloud/ocr/v20181119/model/ListInfo.h
-  include/tencentcloud/ocr/v20181119/model/ItemPolygonInfo.h
-  include/tencentcloud/ocr/v20181119/model/TableDetectInfo.h
-  include/tencentcloud/ocr/v20181119/model/IDCardConfig.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h
-  include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h
-  include/tencentcloud/ocr/v20181119/model/TextTable.h
-  include/tencentcloud/ocr/v20181119/model/QuestionInfo.h
-  include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/MainlandTravelPermitBackInfos.h
+  include/tencentcloud/ocr/v20181119/model/LicensePlateInfo.h
+  include/tencentcloud/ocr/v20181119/model/DetectedWordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/QuestionBlockObj.h
   include/tencentcloud/ocr/v20181119/model/Element.h
-  include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/ExtractDocAgentRequest.h
+  include/tencentcloud/ocr/v20181119/model/AdvertiseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ElectronicTollSummary.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeAgentRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatRollItem.h
   include/tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h
+  include/tencentcloud/ocr/v20181119/model/BusinessCertificateInfo.h
+  include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/SaleInventory.h
+  include/tencentcloud/ocr/v20181119/model/PermanentResidencePermitInfo.h
+  include/tencentcloud/ocr/v20181119/model/BizLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ResultList.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/InvoiceSealInfo.h
+  include/tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/BusinessCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h
+  include/tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/Key.h
+  include/tencentcloud/ocr/v20181119/model/QrcodePositionObj.h
   )
 
 set(ocr_src
   src/v20181119/OcrClient.cpp
-  src/v20181119/model/BankSlipOCRRequest.cpp
+  src/v20181119/model/TableOCRRequest.cpp
+  src/v20181119/model/StoreInfo.cpp
+  src/v20181119/model/NonTaxItem.cpp
+  src/v20181119/model/FieldsInfo.cpp
+  src/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.cpp
+  src/v20181119/model/InvoiceItem.cpp
   src/v20181119/model/HKIDCardOCRRequest.cpp
+  src/v20181119/model/BankSlipOCRRequest.cpp
+  src/v20181119/model/BusinessCardOCRResponse.cpp
+  src/v20181119/model/VinOCRResponse.cpp
+  src/v20181119/model/ResidencePermitInfo.cpp
+  src/v20181119/model/BankCardOCRRequest.cpp
+  src/v20181119/model/TollInvoice.cpp
+  src/v20181119/model/CarInvoiceOCRRequest.cpp
   src/v20181119/model/DescribeQuestionMarkAgentJobResponse.cpp
   src/v20181119/model/CoordList.cpp
-  src/v20181119/model/RecognizeTravelCardOCRRequest.cpp
-  src/v20181119/model/EstateCertOCRResponse.cpp
-  src/v20181119/model/RecognizeTableOCRRequest.cpp
-  src/v20181119/model/FinanBillSliceOCRResponse.cpp
-  src/v20181119/model/DriverLicenseOCRResponse.cpp
-  src/v20181119/model/Words.cpp
-  src/v20181119/model/TextDetectionEn.cpp
-  src/v20181119/model/VatInvoiceGoodsInfo.cpp
-  src/v20181119/model/InvoiceGeneralOCRRequest.cpp
-  src/v20181119/model/VatInvoiceItem.cpp
-  src/v20181119/model/FlightItem.cpp
-  src/v20181119/model/SealInfo.cpp
-  src/v20181119/model/TextArithmetic.cpp
-  src/v20181119/model/RecognizeFormulaOCRRequest.cpp
-  src/v20181119/model/RecognizeTableOCRResponse.cpp
-  src/v20181119/model/QrcodeOCRResponse.cpp
-  src/v20181119/model/StructuralItem.cpp
-  src/v20181119/model/BankSlipInfo.cpp
-  src/v20181119/model/TableCellInfo.cpp
-  src/v20181119/model/BizLicenseOCRRequest.cpp
-  src/v20181119/model/ShippingInvoice.cpp
-  src/v20181119/model/BusInvoice.cpp
-  src/v20181119/model/RecognizeGeneralInvoiceRequest.cpp
-  src/v20181119/model/OtherInvoice.cpp
-  src/v20181119/model/CellContent.cpp
-  src/v20181119/model/MixedInvoiceOCRResponse.cpp
-  src/v20181119/model/OCRResult.cpp
-  src/v20181119/model/ClassifyDetectOCRRequest.cpp
-  src/v20181119/model/DutyPaidProofOCRResponse.cpp
-  src/v20181119/model/TaxiInvoiceOCRRequest.cpp
-  src/v20181119/model/VerifyScenePhotoRequest.cpp
-  src/v20181119/model/BusinessCardInfo.cpp
-  src/v20181119/model/MotorVehicleSaleInvoice.cpp
-  src/v20181119/model/FinancialBillItem.cpp
-  src/v20181119/model/ImageEnhancementResponse.cpp
-  src/v20181119/model/TaxiTicket.cpp
-  src/v20181119/model/CardWarnInfo.cpp
-  src/v20181119/model/LicensePlateOCRRequest.cpp
-  src/v20181119/model/SubmitMarkEssayAgentJobResponse.cpp
-  src/v20181119/model/GeneralEfficientOCRRequest.cpp
-  src/v20181119/model/OtherInvoiceList.cpp
-  src/v20181119/model/Polygon.cpp
-  src/v20181119/model/FlightInvoiceInfo.cpp
-  src/v20181119/model/ClassifyStoreNameResponse.cpp
-  src/v20181119/model/ElectronicTollSummaryItem.cpp
-  src/v20181119/model/Positions.cpp
-  src/v20181119/model/ElectronicTollSummary.cpp
-  src/v20181119/model/HandwritingEssayOCRRequest.cpp
-  src/v20181119/model/PassInvoiceInfo.cpp
-  src/v20181119/model/VinOCRResponse.cpp
-  src/v20181119/model/ConfigAdvanced.cpp
-  src/v20181119/model/MLIDCardOCRRequest.cpp
-  src/v20181119/model/DescribeExtractDocAgentJobResponse.cpp
-  src/v20181119/model/AnswerInfo.cpp
-  src/v20181119/model/ReflectDetailInfo.cpp
-  src/v20181119/model/TollInvoice.cpp
-  src/v20181119/model/TemporaryIDCardInfo.cpp
-  src/v20181119/model/NonTaxItem.cpp
-  src/v20181119/model/RecognizeFormulaOCRResponse.cpp
-  src/v20181119/model/ImageCoordinates.cpp
-  src/v20181119/model/QuotaInvoiceOCRResponse.cpp
-  src/v20181119/model/WordPolygon.cpp
-  src/v20181119/model/ResidenceBookletOCRRequest.cpp
-  src/v20181119/model/EnterpriseLicenseInfo.cpp
-  src/v20181119/model/InsuranceBillOCRRequest.cpp
-  src/v20181119/model/QrcodeOCRRequest.cpp
-  src/v20181119/model/TableCell.cpp
-  src/v20181119/model/SubmitExtractDocAgentJobRequest.cpp
-  src/v20181119/model/ExtractDocAgentRequest.cpp
-  src/v20181119/model/VatRollInvoiceInfo.cpp
-  src/v20181119/model/SmartStructuralOCRResponse.cpp
-  src/v20181119/model/IDCardOCRRequest.cpp
-  src/v20181119/model/GetOCRTokenRequest.cpp
-  src/v20181119/model/BizLicenseOCRResponse.cpp
-  src/v20181119/model/VatInvoiceOCRResponse.cpp
-  src/v20181119/model/ShipInvoiceOCRRequest.cpp
-  src/v20181119/model/BusinessCardOCRRequest.cpp
-  src/v20181119/model/VerifyBizLicenseEnterprise4Response.cpp
-  src/v20181119/model/GeneralFastOCRResponse.cpp
-  src/v20181119/model/InvoiceItem.cpp
-  src/v20181119/model/RequestIdInfo.cpp
-  src/v20181119/model/ResidencePermitInfo.cpp
   src/v20181119/model/ExtractDocMultiRequest.cpp
   src/v20181119/model/QuestionSplitLayoutOCRRequest.cpp
   src/v20181119/model/DescribeMarkEssayAgentJobResponse.cpp
+  src/v20181119/model/EstateCertOCRResponse.cpp
+  src/v20181119/model/ExtractDocMultiProRequest.cpp
+  src/v20181119/model/WordItem.cpp
   src/v20181119/model/MLIDPassportOCRRequest.cpp
   src/v20181119/model/OverseasInvoice.cpp
   src/v20181119/model/ItemInfo.cpp
+  src/v20181119/model/TextDetectResponse.cpp
   src/v20181119/model/TaxPayment.cpp
+  src/v20181119/model/GetOCRTokenResponse.cpp
   src/v20181119/model/IDCardInfoResult.cpp
-  src/v20181119/model/VehicleLicenseOCRRequest.cpp
+  src/v20181119/model/OtherInvoiceList.cpp
+  src/v20181119/model/DriverLicenseOCRResponse.cpp
+  src/v20181119/model/WaybillOCRResponse.cpp
+  src/v20181119/model/Words.cpp
+  src/v20181119/model/TextDetectionEn.cpp
+  src/v20181119/model/ElectronicFlightTicketFull.cpp
+  src/v20181119/model/ClassifyStoreNameRequest.cpp
+  src/v20181119/model/Rect.cpp
+  src/v20181119/model/CustomsPaymentReceipt.cpp
+  src/v20181119/model/QuestionSplitOCRRequest.cpp
+  src/v20181119/model/FlightInvoiceOCRRequest.cpp
+  src/v20181119/model/TextFormula.cpp
+  src/v20181119/model/HmtResidentPermitOCRResponse.cpp
+  src/v20181119/model/VatInvoiceItem.cpp
+  src/v20181119/model/VehicleRegCertInfo.cpp
+  src/v20181119/model/IDCardOCRResponse.cpp
+  src/v20181119/model/FlightItem.cpp
+  src/v20181119/model/Value.cpp
+  src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
   src/v20181119/model/BankSlip.cpp
   src/v20181119/model/QuestionOCRResponse.cpp
-  src/v20181119/model/SubmitQuestionMarkAgentJobRequest.cpp
+  src/v20181119/model/SealInfo.cpp
+  src/v20181119/model/TextArithmetic.cpp
+  src/v20181119/model/TextVatInvoice.cpp
+  src/v20181119/model/VehicleInvoiceInfo.cpp
+  src/v20181119/model/DriverLicenseOCRRequest.cpp
+  src/v20181119/model/OtherInvoiceItem.cpp
   src/v20181119/model/TextDetection.cpp
+  src/v20181119/model/RecognizeTableOCRResponse.cpp
   src/v20181119/model/TextEduPaper.cpp
+  src/v20181119/model/QrcodeOCRResponse.cpp
   src/v20181119/model/CustomsDeclaration.cpp
   src/v20181119/model/WaybillObj.cpp
-  src/v20181119/model/QuestionSplitOCRResponse.cpp
-  src/v20181119/model/OnlineTaxiItineraryInfo.cpp
-  src/v20181119/model/FlightItemInfo.cpp
-  src/v20181119/model/TrainTicketOCRResponse.cpp
-  src/v20181119/model/DetectedWords.cpp
-  src/v20181119/model/RecognizeGeneralCardWarnRequest.cpp
-  src/v20181119/model/ElectronicTrainTicket.cpp
-  src/v20181119/model/TextVatInvoice.cpp
-  src/v20181119/model/GeneralHandwritingOCRRequest.cpp
-  src/v20181119/model/GeneralMachineItem.cpp
-  src/v20181119/model/TaxiInvoiceOCRResponse.cpp
-  src/v20181119/model/VinOCRRequest.cpp
-  src/v20181119/model/QuotaInvoiceOCRRequest.cpp
-  src/v20181119/model/Key.cpp
-  src/v20181119/model/TollInvoiceOCRRequest.cpp
-  src/v20181119/model/GroupInfo.cpp
-  src/v20181119/model/MachinePrintedInvoice.cpp
-  src/v20181119/model/VerifyScenePhotoResponse.cpp
-  src/v20181119/model/VatRollInvoiceOCRResponse.cpp
-  src/v20181119/model/RecognizeThaiIDCardOCRRequest.cpp
-  src/v20181119/model/RecognizeEncryptedIDCardOCRRequest.cpp
-  src/v20181119/model/QrcodeImgSize.cpp
-  src/v20181119/model/FinancialBillItemDetails.cpp
-  src/v20181119/model/ElectronicAirTransportDetail.cpp
-  src/v20181119/model/SubmitMarkEssayAgentJobRequest.cpp
-  src/v20181119/model/TrainTicketOCRRequest.cpp
-  src/v20181119/model/ExtractDocBasicResponse.cpp
+  src/v20181119/model/WordCoordPoint.cpp
+  src/v20181119/model/HKIDCardOCRResponse.cpp
+  src/v20181119/model/MainlandPermitOCRRequest.cpp
+  src/v20181119/model/VatElectronicItemInfo.cpp
+  src/v20181119/model/WordPolygon.cpp
   src/v20181119/model/EnglishOCRRequest.cpp
+  src/v20181119/model/VehicleLicenseOCRRequest.cpp
+  src/v20181119/model/QuestionSplitOCRResponse.cpp
+  src/v20181119/model/TableOCRResponse.cpp
+  src/v20181119/model/RecognizeStoreNameRequest.cpp
+  src/v20181119/model/StructuralItem.cpp
+  src/v20181119/model/InvoiceDetectInfo.cpp
+  src/v20181119/model/VerifyScenePhotoResponse.cpp
+  src/v20181119/model/FlightItemInfo.cpp
+  src/v20181119/model/RecognizeAgentResponse.cpp
+  src/v20181119/model/TrainTicketOCRResponse.cpp
+  src/v20181119/model/TextFormulaInfo.cpp
+  src/v20181119/model/BankSlipInfo.cpp
+  src/v20181119/model/RecognizeFormulaOCRResponse.cpp
+  src/v20181119/model/ArithmeticOCRResponse.cpp
+  src/v20181119/model/FormulaOCRResponse.cpp
+  src/v20181119/model/RecognizeGeneralCardWarnRequest.cpp
+  src/v20181119/model/Encryption.cpp
+  src/v20181119/model/MixedInvoiceItem.cpp
+  src/v20181119/model/SmartStructuralOCRRequest.cpp
+  src/v20181119/model/ExtractDocMultiProResponse.cpp
+  src/v20181119/model/RecognizeTravelCardOCRRequest.cpp
+  src/v20181119/model/GeneralHandwritingOCRRequest.cpp
+  src/v20181119/model/BizLicenseOCRRequest.cpp
+  src/v20181119/model/MixedInvoiceDetectResponse.cpp
+  src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
+  src/v20181119/model/ShoppingReceipt.cpp
+  src/v20181119/model/VatInvoiceUserInfo.cpp
+  src/v20181119/model/GeneralMachineItem.cpp
+  src/v20181119/model/GeneralAccurateOCRResponse.cpp
+  src/v20181119/model/ElectronicTrainTicketFull.cpp
+  src/v20181119/model/BusInvoice.cpp
+  src/v20181119/model/QrcodeOCRRequest.cpp
+  src/v20181119/model/TaxiInvoiceOCRResponse.cpp
+  src/v20181119/model/RecognizeGeneralInvoiceRequest.cpp
+  src/v20181119/model/GeneralBasicOCRResponse.cpp
+  src/v20181119/model/MainlandTravelPermitBackInfos.cpp
+  src/v20181119/model/OtherInvoice.cpp
+  src/v20181119/model/CellContent.cpp
+  src/v20181119/model/RecognizeMedicalInvoiceOCRResponse.cpp
+  src/v20181119/model/RecognizeValidIDCardOCRRequest.cpp
+  src/v20181119/model/MixedInvoiceOCRResponse.cpp
+  src/v20181119/model/ClassifyDetectOCRResponse.cpp
+  src/v20181119/model/VinOCRRequest.cpp
+  src/v20181119/model/ExtractDocAgentResponse.cpp
+  src/v20181119/model/OCRResult.cpp
+  src/v20181119/model/VehicleLicenseOCRResponse.cpp
+  src/v20181119/model/VatInvoiceOCRRequest.cpp
+  src/v20181119/model/ElectronicTollSummaryList.cpp
+  src/v20181119/model/ElectronicAirTransport.cpp
+  src/v20181119/model/ClassifyDetectOCRRequest.cpp
+  src/v20181119/model/MLIDCardOCRRequest.cpp
+  src/v20181119/model/LicensePlateOCRResponse.cpp
+  src/v20181119/model/ExtractDocBasicRequest.cpp
+  src/v20181119/model/ReflectDetailInfo.cpp
   src/v20181119/model/MedicalInvoiceInfo.cpp
+  src/v20181119/model/VatInvoiceGoodsInfo.cpp
+  src/v20181119/model/RecognizeThaiIDCardOCRResponse.cpp
+  src/v20181119/model/GroupInfo.cpp
+  src/v20181119/model/QuotaInvoice.cpp
+  src/v20181119/model/ItemNames.cpp
+  src/v20181119/model/SingleInvoiceItem.cpp
+  src/v20181119/model/VatInvoiceInfo.cpp
+  src/v20181119/model/OnlineTaxiItineraryInfo.cpp
+  src/v20181119/model/ExtractDocMultiResponse.cpp
+  src/v20181119/model/TaxiInvoiceOCRRequest.cpp
+  src/v20181119/model/MachinePrintedInvoice.cpp
+  src/v20181119/model/FinancialBillItem.cpp
+  src/v20181119/model/SingleInvoiceInfo.cpp
+  src/v20181119/model/RecognizeContainerOCRRequest.cpp
+  src/v20181119/model/TrainTicket.cpp
+  src/v20181119/model/TextDetectRequest.cpp
+  src/v20181119/model/EduPaperOCRResponse.cpp
+  src/v20181119/model/RecognizeThaiIDCardOCRRequest.cpp
+  src/v20181119/model/IDCardConfig.cpp
+  src/v20181119/model/BusinessCardInfo.cpp
+  src/v20181119/model/MotorVehicleSaleInvoice.cpp
+  src/v20181119/model/RecognizeEncryptedIDCardOCRRequest.cpp
+  src/v20181119/model/RecognizeHealthCodeOCRResponse.cpp
+  src/v20181119/model/PassportRecognizeInfos.cpp
+  src/v20181119/model/SubmitExtractDocAgentJobResponse.cpp
+  src/v20181119/model/ImageEnhancementResponse.cpp
+  src/v20181119/model/PortraitImageInfo.cpp
+  src/v20181119/model/QrcodeImgSize.cpp
+  src/v20181119/model/PassportOCRResponse.cpp
+  src/v20181119/model/FinancialBillItemDetails.cpp
+  src/v20181119/model/CardWarnInfo.cpp
+  src/v20181119/model/TextWaybill.cpp
+  src/v20181119/model/VehicleRegCertOCRRequest.cpp
+  src/v20181119/model/QuestionSplitLayoutOCRResponse.cpp
+  src/v20181119/model/ElectronicAirTransportDetail.cpp
+  src/v20181119/model/FinancialBill.cpp
+  src/v20181119/model/SubmitMarkEssayAgentJobRequest.cpp
+  src/v20181119/model/LicensePlateOCRRequest.cpp
+  src/v20181119/model/GeneralBasicOCRRequest.cpp
+  src/v20181119/model/UsedVehicleInvoiceInfo.cpp
+  src/v20181119/model/TextVehicleBack.cpp
+  src/v20181119/model/SubmitMarkEssayAgentJobResponse.cpp
+  src/v20181119/model/GeneralEfficientOCRRequest.cpp
+  src/v20181119/model/AdvertiseOCRRequest.cpp
+  src/v20181119/model/AirTicketInfo.cpp
+  src/v20181119/model/SubmitQuestionMarkAgentJobResponse.cpp
+  src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
+  src/v20181119/model/ImageEnhancementRequest.cpp
+  src/v20181119/model/ExtractDocBasicResponse.cpp
+  src/v20181119/model/EnterpriseLicenseOCRRequest.cpp
+  src/v20181119/model/VatInvoiceItemInfo.cpp
+  src/v20181119/model/VatElectronicInfo.cpp
+  src/v20181119/model/SmartStructuralOCRResponse.cpp
+  src/v20181119/model/DetectedWords.cpp
+  src/v20181119/model/IDCardInfo.cpp
+  src/v20181119/model/MedicalInvoiceItem.cpp
+  src/v20181119/model/GeneralAccurateOCRRequest.cpp
+  src/v20181119/model/RailwayTicketInfo.cpp
+  src/v20181119/model/RecognizeFormulaOCRRequest.cpp
   src/v20181119/model/FlightInvoiceOCRResponse.cpp
+  src/v20181119/model/TemporaryIDCardInfo.cpp
+  src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
+  src/v20181119/model/CarInvoiceInfo.cpp
   src/v20181119/model/SchemaList.cpp
+  src/v20181119/model/TableCellInfo.cpp
+  src/v20181119/model/FlightInvoiceInfo.cpp
   src/v20181119/model/DetailInformationOfAirTicketTupleList.cpp
   src/v20181119/model/TextVehicleFront.cpp
-  src/v20181119/model/FinanBillSliceInfo.cpp
+  src/v20181119/model/AdvertiseTextDetection.cpp
+  src/v20181119/model/TextTable.cpp
+  src/v20181119/model/SubmitQuestionMarkAgentJobRequest.cpp
+  src/v20181119/model/SceneWarnInfo.cpp
+  src/v20181119/model/ElectronicTrainTicket.cpp
   src/v20181119/model/ArithmeticOCRRequest.cpp
   src/v20181119/model/NonTaxIncomeBill.cpp
-  src/v20181119/model/MLIDPassportOCRResponse.cpp
+  src/v20181119/model/VerifyOfdVatInvoiceOCRRequest.cpp
+  src/v20181119/model/GetOCRTokenRequest.cpp
+  src/v20181119/model/RecognizeGeneralCardWarnResponse.cpp
+  src/v20181119/model/ClassifyStoreNameResponse.cpp
   src/v20181119/model/DescribeExtractDocAgentJobRequest.cpp
-  src/v20181119/model/AirTransport.cpp
+  src/v20181119/model/ElectronicTollSummaryItem.cpp
+  src/v20181119/model/ContentInfo.cpp
+  src/v20181119/model/MarkEssaySuggestions.cpp
+  src/v20181119/model/TableTitle.cpp
+  src/v20181119/model/RecognizeTableAccurateOCRRequest.cpp
   src/v20181119/model/Coord.cpp
   src/v20181119/model/SealOCRResponse.cpp
-  src/v20181119/model/TextWaybill.cpp
+  src/v20181119/model/VerifyBizLicenseEnterprise4Response.cpp
+  src/v20181119/model/HandwritingEssayOCRRequest.cpp
+  src/v20181119/model/BankSlipOCRResponse.cpp
   src/v20181119/model/OnlineTaxiItinerary.cpp
-  src/v20181119/model/SingleInvoiceInfo.cpp
+  src/v20181119/model/Polygon.cpp
+  src/v20181119/model/RecognizeTravelCardOCRResponse.cpp
+  src/v20181119/model/PassInvoiceInfo.cpp
+  src/v20181119/model/QuestionObj.cpp
   src/v20181119/model/TableInfo.cpp
+  src/v20181119/model/RequestIdInfo.cpp
   src/v20181119/model/EduPaperOCRRequest.cpp
-  src/v20181119/model/ShipInvoiceInfo.cpp
+  src/v20181119/model/FormulaOCRRequest.cpp
+  src/v20181119/model/TextGeneralHandwriting.cpp
   src/v20181119/model/PassportOCRRequest.cpp
-  src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
+  src/v20181119/model/ConfigAdvanced.cpp
+  src/v20181119/model/VerifyScenePhotoRequest.cpp
+  src/v20181119/model/DescribeQuestionMarkAgentJobRequest.cpp
+  src/v20181119/model/LineInfo.cpp
+  src/v20181119/model/GeneralCardWarnInfo.cpp
+  src/v20181119/model/ListInfo.cpp
+  src/v20181119/model/ItemCoord.cpp
+  src/v20181119/model/ItemPolygonInfo.cpp
   src/v20181119/model/MixedInvoiceOCRRequest.cpp
-  src/v20181119/model/UsedVehicleInvoiceInfo.cpp
+  src/v20181119/model/ShippingInvoice.cpp
+  src/v20181119/model/TableDetectInfo.cpp
+  src/v20181119/model/DescribeExtractDocAgentJobResponse.cpp
+  src/v20181119/model/ResidenceBookletOCRResponse.cpp
   src/v20181119/model/VatInvoiceRoll.cpp
+  src/v20181119/model/CarInvoiceOCRResponse.cpp
+  src/v20181119/model/VehicleRegCertOCRResponse.cpp
+  src/v20181119/model/GeneralFastOCRRequest.cpp
   src/v20181119/model/ImageSize.cpp
+  src/v20181119/model/RecognizeGeneralInvoiceResponse.cpp
   src/v20181119/model/HandwritingEssayOCRResponse.cpp
   src/v20181119/model/VerifyBizLicenseEnterprise4Request.cpp
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/MarkInfo.cpp
-  src/v20181119/model/ContentInfo.cpp
+  src/v20181119/model/AnswerInfo.cpp
   src/v20181119/model/QuestionOCRRequest.cpp
-  src/v20181119/model/VehicleRegCertOCRResponse.cpp
+  src/v20181119/model/TextTractorVehicleBack.cpp
+  src/v20181119/model/RecognizeMedicalInvoiceOCRRequest.cpp
+  src/v20181119/model/InsuranceBillOCRResponse.cpp
   src/v20181119/model/ClassifyDetectInfo.cpp
+  src/v20181119/model/TrainTicketOCRRequest.cpp
+  src/v20181119/model/GeneralEfficientOCRResponse.cpp
+  src/v20181119/model/MLIDPassportOCRResponse.cpp
+  src/v20181119/model/SealOCRRequest.cpp
+  src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
+  src/v20181119/model/MedicalInvoice.cpp
+  src/v20181119/model/HmtResidentPermitOCRRequest.cpp
   src/v20181119/model/RecognizeTableAccurateOCRResponse.cpp
+  src/v20181119/model/ResidenceBookletOCRRequest.cpp
+  src/v20181119/model/GetOCRResultRequest.cpp
+  src/v20181119/model/TableCell.cpp
+  src/v20181119/model/SubItemGroup.cpp
   src/v20181119/model/QrcodeResultsInfo.cpp
   src/v20181119/model/GetOCRResultResponse.cpp
   src/v20181119/model/MainlandPermitOCRResponse.cpp
   src/v20181119/model/VatInvoice.cpp
-  src/v20181119/model/PortraitImageInfo.cpp
-  src/v20181119/model/BusInvoiceOCRRequest.cpp
-  src/v20181119/model/RecognizeContainerOCRResponse.cpp
-  src/v20181119/model/TableOCRResponse.cpp
-  src/v20181119/model/DetectedWordCoordPoint.cpp
-  src/v20181119/model/AdvertiseOCRResponse.cpp
-  src/v20181119/model/ShoppingReceipt.cpp
-  src/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.cpp
-  src/v20181119/model/BusinessCertificateInfo.cpp
-  src/v20181119/model/EstateCertOCRRequest.cpp
-  src/v20181119/model/InvoiceSealInfo.cpp
-  src/v20181119/model/FinanBillOCRRequest.cpp
-  src/v20181119/model/DescribeMarkEssayAgentJobRequest.cpp
-  src/v20181119/model/QrcodePositionObj.cpp
-  src/v20181119/model/FieldsInfo.cpp
-  src/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.cpp
-  src/v20181119/model/ClassifyDetectOCRResponse.cpp
-  src/v20181119/model/CarInvoiceOCRRequest.cpp
-  src/v20181119/model/MixedInvoiceItem.cpp
-  src/v20181119/model/WordItem.cpp
-  src/v20181119/model/SingleInvoiceItem.cpp
-  src/v20181119/model/TextDetectResponse.cpp
-  src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
-  src/v20181119/model/Rect.cpp
-  src/v20181119/model/CustomsPaymentReceipt.cpp
-  src/v20181119/model/QuestionObj.cpp
-  src/v20181119/model/HmtResidentPermitOCRResponse.cpp
-  src/v20181119/model/ElectronicAirTransport.cpp
-  src/v20181119/model/Value.cpp
-  src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
-  src/v20181119/model/OtherInvoiceItem.cpp
-  src/v20181119/model/RecognizeStoreNameRequest.cpp
-  src/v20181119/model/FinanBillInfo.cpp
-  src/v20181119/model/TollInvoiceInfo.cpp
-  src/v20181119/model/FormulaOCRResponse.cpp
-  src/v20181119/model/DescribeQuestionMarkAgentJobRequest.cpp
-  src/v20181119/model/GeneralEfficientOCRResponse.cpp
-  src/v20181119/model/HmtResidentPermitOCRRequest.cpp
-  src/v20181119/model/GeneralBasicOCRResponse.cpp
   src/v20181119/model/PermitOCRRequest.cpp
-  src/v20181119/model/BankCardOCRRequest.cpp
-  src/v20181119/model/ExtractDocAgentResponse.cpp
-  src/v20181119/model/VatInvoiceOCRRequest.cpp
-  src/v20181119/model/ElectronicTollSummaryList.cpp
-  src/v20181119/model/IDCardOCRResponse.cpp
-  src/v20181119/model/InvoiceGeneralInfo.cpp
-  src/v20181119/model/LicensePlateOCRResponse.cpp
-  src/v20181119/model/ExtractDocBasicRequest.cpp
-  src/v20181119/model/QuotaInvoice.cpp
-  src/v20181119/model/ItemNames.cpp
-  src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
-  src/v20181119/model/ExtractDocMultiResponse.cpp
-  src/v20181119/model/TrainTicket.cpp
-  src/v20181119/model/TextDetectRequest.cpp
-  src/v20181119/model/TextGeneralHandwriting.cpp
-  src/v20181119/model/ResidenceBookletOCRResponse.cpp
-  src/v20181119/model/PassportRecognizeInfos.cpp
-  src/v20181119/model/VatInvoiceItemInfo.cpp
-  src/v20181119/model/QuestionSplitLayoutOCRResponse.cpp
-  src/v20181119/model/FinancialBill.cpp
-  src/v20181119/model/GeneralBasicOCRRequest.cpp
-  src/v20181119/model/TextVehicleBack.cpp
-  src/v20181119/model/TollInvoiceOCRResponse.cpp
-  src/v20181119/model/AirTicketInfo.cpp
-  src/v20181119/model/EnterpriseLicenseOCRRequest.cpp
-  src/v20181119/model/VatInvoiceUserInfo.cpp
-  src/v20181119/model/IDCardInfo.cpp
-  src/v20181119/model/GeneralAccurateOCRRequest.cpp
-  src/v20181119/model/SceneWarnInfo.cpp
-  src/v20181119/model/FinanBillSliceOCRRequest.cpp
-  src/v20181119/model/VatRollInvoiceOCRRequest.cpp
-  src/v20181119/model/TableTitle.cpp
-  src/v20181119/model/SmartStructuralOCRRequest.cpp
-  src/v20181119/model/RecognizeMedicalInvoiceOCRRequest.cpp
-  src/v20181119/model/PermitOCRResponse.cpp
-  src/v20181119/model/FormulaOCRRequest.cpp
-  src/v20181119/model/DutyPaidProofOCRRequest.cpp
-  src/v20181119/model/GeneralCardWarnInfo.cpp
-  src/v20181119/model/ItemCoord.cpp
-  src/v20181119/model/CarInvoiceOCRResponse.cpp
-  src/v20181119/model/GeneralFastOCRRequest.cpp
-  src/v20181119/model/MedicalInvoiceItem.cpp
-  src/v20181119/model/TextTractorVehicleBack.cpp
-  src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
-  src/v20181119/model/MedicalInvoice.cpp
-  src/v20181119/model/BusInvoiceOCRResponse.cpp
-  src/v20181119/model/ExtractDocMultiProRequest.cpp
+  src/v20181119/model/AirTransport.cpp
+  src/v20181119/model/QuestionInfo.cpp
+  src/v20181119/model/TaxiTicket.cpp
+  src/v20181119/model/UsedCarPurchaseInvoice.cpp
+  src/v20181119/model/EnglishOCRResponse.cpp
+  src/v20181119/model/ImageCoordinates.cpp
+  src/v20181119/model/RecognizeEncryptedIDCardOCRResponse.cpp
+  src/v20181119/model/Positions.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRResponse.cpp
   src/v20181119/model/CandWord.cpp
+  src/v20181119/model/RecognizeContainerOCRResponse.cpp
+  src/v20181119/model/EnterpriseLicenseInfo.cpp
+  src/v20181119/model/PermitOCRResponse.cpp
+  src/v20181119/model/InsuranceBillOCRRequest.cpp
   src/v20181119/model/GeneralHandwritingOCRResponse.cpp
-  src/v20181119/model/LicensePlateInfo.cpp
-  src/v20181119/model/RecognizeAgentRequest.cpp
-  src/v20181119/model/MixedInvoiceDetectRequest.cpp
-  src/v20181119/model/PermanentResidencePermitInfo.cpp
-  src/v20181119/model/BankCardOCRResponse.cpp
-  src/v20181119/model/RecognizeValidIDCardOCRResponse.cpp
-  src/v20181119/model/BusinessCardOCRResponse.cpp
-  src/v20181119/model/VehicleRegCertOCRRequest.cpp
-  src/v20181119/model/StoreInfo.cpp
-  src/v20181119/model/EnglishOCRResponse.cpp
-  src/v20181119/model/AdvertiseOCRRequest.cpp
-  src/v20181119/model/GetOCRTokenResponse.cpp
-  src/v20181119/model/RailwayTicketInfo.cpp
-  src/v20181119/model/ElectronicFlightTicketFull.cpp
-  src/v20181119/model/ClassifyStoreNameRequest.cpp
-  src/v20181119/model/TextFormula.cpp
-  src/v20181119/model/VehicleRegCertInfo.cpp
-  src/v20181119/model/DriverLicenseOCRRequest.cpp
-  src/v20181119/model/VehicleInvoiceInfo.cpp
-  src/v20181119/model/InvoiceDetectInfo.cpp
-  src/v20181119/model/MainlandPermitOCRRequest.cpp
-  src/v20181119/model/TextFormulaInfo.cpp
-  src/v20181119/model/ArithmeticOCRResponse.cpp
-  src/v20181119/model/BusInvoiceInfo.cpp
-  src/v20181119/model/ExtractDocMultiProResponse.cpp
-  src/v20181119/model/WordCoordPoint.cpp
-  src/v20181119/model/MixedInvoiceDetectResponse.cpp
-  src/v20181119/model/RecognizeAgentResponse.cpp
-  src/v20181119/model/GeneralAccurateOCRResponse.cpp
-  src/v20181119/model/ElectronicTrainTicketFull.cpp
-  src/v20181119/model/GetOCRResultRequest.cpp
   src/v20181119/model/IDCardResult.cpp
-  src/v20181119/model/RecognizeMedicalInvoiceOCRResponse.cpp
-  src/v20181119/model/RecognizeValidIDCardOCRRequest.cpp
-  src/v20181119/model/SubItemGroup.cpp
-  src/v20181119/model/VehicleLicenseOCRResponse.cpp
-  src/v20181119/model/WaybillOCRResponse.cpp
-  src/v20181119/model/VatRollItem.cpp
-  src/v20181119/model/HKIDCardOCRResponse.cpp
-  src/v20181119/model/RecognizeThaiIDCardOCRResponse.cpp
-  src/v20181119/model/InvoiceGeneralOCRResponse.cpp
-  src/v20181119/model/VatInvoiceInfo.cpp
-  src/v20181119/model/SubmitExtractDocAgentJobResponse.cpp
-  src/v20181119/model/RecognizeContainerOCRRequest.cpp
-  src/v20181119/model/EduPaperOCRResponse.cpp
-  src/v20181119/model/TableOCRRequest.cpp
-  src/v20181119/model/RecognizeTravelCardOCRResponse.cpp
-  src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
-  src/v20181119/model/ImageEnhancementRequest.cpp
-  src/v20181119/model/VatElectronicInfo.cpp
-  src/v20181119/model/PassportOCRResponse.cpp
-  src/v20181119/model/UsedCarPurchaseInvoice.cpp
-  src/v20181119/model/CarInvoiceInfo.cpp
-  src/v20181119/model/AdvertiseTextDetection.cpp
-  src/v20181119/model/Encryption.cpp
-  src/v20181119/model/VerifyOfdVatInvoiceOCRRequest.cpp
-  src/v20181119/model/RecognizeGeneralCardWarnResponse.cpp
-  src/v20181119/model/MarkEssaySuggestions.cpp
-  src/v20181119/model/RecognizeTableAccurateOCRRequest.cpp
-  src/v20181119/model/DutyPaidProofInfo.cpp
-  src/v20181119/model/FinanBillOCRResponse.cpp
-  src/v20181119/model/RecognizeHealthCodeOCRRequest.cpp
-  src/v20181119/model/BankSlipOCRResponse.cpp
-  src/v20181119/model/QuestionSplitOCRRequest.cpp
-  src/v20181119/model/VatElectronicItemInfo.cpp
-  src/v20181119/model/RecognizeHealthCodeOCRResponse.cpp
-  src/v20181119/model/LineInfo.cpp
-  src/v20181119/model/ListInfo.cpp
-  src/v20181119/model/ItemPolygonInfo.cpp
-  src/v20181119/model/TableDetectInfo.cpp
-  src/v20181119/model/IDCardConfig.cpp
-  src/v20181119/model/RecognizeEncryptedIDCardOCRResponse.cpp
-  src/v20181119/model/ShipInvoiceOCRResponse.cpp
-  src/v20181119/model/RecognizeGeneralInvoiceResponse.cpp
-  src/v20181119/model/InsuranceBillOCRResponse.cpp
-  src/v20181119/model/SealOCRRequest.cpp
-  src/v20181119/model/SubmitQuestionMarkAgentJobResponse.cpp
-  src/v20181119/model/TextTable.cpp
-  src/v20181119/model/QuestionInfo.cpp
-  src/v20181119/model/FlightInvoiceOCRRequest.cpp
-  src/v20181119/model/MainlandTravelPermitBackInfos.cpp
+  src/v20181119/model/LicensePlateInfo.cpp
+  src/v20181119/model/DetectedWordCoordPoint.cpp
   src/v20181119/model/QuestionBlockObj.cpp
   src/v20181119/model/Element.cpp
-  src/v20181119/model/WaybillOCRRequest.cpp
+  src/v20181119/model/SubmitExtractDocAgentJobRequest.cpp
+  src/v20181119/model/ExtractDocAgentRequest.cpp
+  src/v20181119/model/AdvertiseOCRResponse.cpp
+  src/v20181119/model/ElectronicTollSummary.cpp
+  src/v20181119/model/RecognizeAgentRequest.cpp
+  src/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.cpp
+  src/v20181119/model/IDCardOCRRequest.cpp
+  src/v20181119/model/MixedInvoiceDetectRequest.cpp
+  src/v20181119/model/VatRollItem.cpp
   src/v20181119/model/RecognizeStoreNameResponse.cpp
+  src/v20181119/model/BusinessCertificateInfo.cpp
+  src/v20181119/model/WaybillOCRRequest.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRRequest.cpp
+  src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
   src/v20181119/model/MLIDCardOCRResponse.cpp
+  src/v20181119/model/RecognizeTableOCRRequest.cpp
+  src/v20181119/model/EstateCertOCRRequest.cpp
   src/v20181119/model/SaleInventory.cpp
+  src/v20181119/model/PermanentResidencePermitInfo.cpp
+  src/v20181119/model/BizLicenseOCRResponse.cpp
   src/v20181119/model/ResultList.cpp
+  src/v20181119/model/VatInvoiceOCRResponse.cpp
+  src/v20181119/model/InvoiceSealInfo.cpp
+  src/v20181119/model/BankCardOCRResponse.cpp
+  src/v20181119/model/RecognizeHealthCodeOCRRequest.cpp
+  src/v20181119/model/BusinessCardOCRRequest.cpp
+  src/v20181119/model/RecognizeValidIDCardOCRResponse.cpp
+  src/v20181119/model/DescribeMarkEssayAgentJobRequest.cpp
+  src/v20181119/model/GeneralFastOCRResponse.cpp
+  src/v20181119/model/Key.cpp
+  src/v20181119/model/QrcodePositionObj.cpp
   )
 
 set(ocr_include

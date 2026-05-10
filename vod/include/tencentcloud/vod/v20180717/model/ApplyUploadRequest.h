@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ProcedureHasBeenSet() const;
 
                     /**
-                     * 获取<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式说明</a>。</p>
-                     * @return ExpireTime <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式说明</a>。</p>
+                     * 获取<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @return ExpireTime <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式说明</a>。</p>
-                     * @param _expireTime <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式说明</a>。</p>
+                     * 设置<p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @param _expireTime <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -327,7 +327,7 @@ namespace TencentCloud
                     bool m_procedureHasBeenSet;
 
                     /**
-                     * <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式说明</a>。</p>
+                     * <p>媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 <a href="/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

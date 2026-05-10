@@ -25,7 +25,10 @@ using namespace std;
 CreateMPSTemplateRequest::CreateMPSTemplateRequest() :
     m_subAppIdHasBeenSet(false),
     m_templateTypeHasBeenSet(false),
-    m_mPSCreateTemplateParamsHasBeenSet(false)
+    m_mPSCreateTemplateParamsHasBeenSet(false),
+    m_aIAnalysisTemplateHasBeenSet(false),
+    m_smartSubtitleTemplateHasBeenSet(false),
+    m_smartEraseTemplateHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,33 @@ string CreateMPSTemplateRequest::ToJsonString() const
         string key = "MPSCreateTemplateParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mPSCreateTemplateParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aIAnalysisTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIAnalysisTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIAnalysisTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartSubtitleTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitleTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitleTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartEraseTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTemplate.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +144,54 @@ void CreateMPSTemplateRequest::SetMPSCreateTemplateParams(const string& _mPSCrea
 bool CreateMPSTemplateRequest::MPSCreateTemplateParamsHasBeenSet() const
 {
     return m_mPSCreateTemplateParamsHasBeenSet;
+}
+
+MPSAIAnalysisTemplate CreateMPSTemplateRequest::GetAIAnalysisTemplate() const
+{
+    return m_aIAnalysisTemplate;
+}
+
+void CreateMPSTemplateRequest::SetAIAnalysisTemplate(const MPSAIAnalysisTemplate& _aIAnalysisTemplate)
+{
+    m_aIAnalysisTemplate = _aIAnalysisTemplate;
+    m_aIAnalysisTemplateHasBeenSet = true;
+}
+
+bool CreateMPSTemplateRequest::AIAnalysisTemplateHasBeenSet() const
+{
+    return m_aIAnalysisTemplateHasBeenSet;
+}
+
+MPSSmartSubtitleTemplate CreateMPSTemplateRequest::GetSmartSubtitleTemplate() const
+{
+    return m_smartSubtitleTemplate;
+}
+
+void CreateMPSTemplateRequest::SetSmartSubtitleTemplate(const MPSSmartSubtitleTemplate& _smartSubtitleTemplate)
+{
+    m_smartSubtitleTemplate = _smartSubtitleTemplate;
+    m_smartSubtitleTemplateHasBeenSet = true;
+}
+
+bool CreateMPSTemplateRequest::SmartSubtitleTemplateHasBeenSet() const
+{
+    return m_smartSubtitleTemplateHasBeenSet;
+}
+
+MPSSmartEraseTemplate CreateMPSTemplateRequest::GetSmartEraseTemplate() const
+{
+    return m_smartEraseTemplate;
+}
+
+void CreateMPSTemplateRequest::SetSmartEraseTemplate(const MPSSmartEraseTemplate& _smartEraseTemplate)
+{
+    m_smartEraseTemplate = _smartEraseTemplate;
+    m_smartEraseTemplateHasBeenSet = true;
+}
+
+bool CreateMPSTemplateRequest::SmartEraseTemplateHasBeenSet() const
+{
+    return m_smartEraseTemplateHasBeenSet;
 }
 
 

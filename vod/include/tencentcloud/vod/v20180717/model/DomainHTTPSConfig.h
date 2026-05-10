@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书过期时间。
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
-                     * @return CertExpireTime 证书过期时间。
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+                     * 获取<p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>
+                     * @return CertExpireTime <p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>
                      * 
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
-                     * 设置证书过期时间。
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
-                     * @param _certExpireTime 证书过期时间。
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+                     * 设置<p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>
+                     * @param _certExpireTime <p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>
                      * 
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool CertExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云 SSL 产品中的证书 ID。
-                     * @return CloudCertId 腾讯云 SSL 产品中的证书 ID。
+                     * 获取<p>腾讯云 SSL 产品中的证书 ID。</p>
+                     * @return CloudCertId <p>腾讯云 SSL 产品中的证书 ID。</p>
                      * 
                      */
                     std::string GetCloudCertId() const;
 
                     /**
-                     * 设置腾讯云 SSL 产品中的证书 ID。
-                     * @param _cloudCertId 腾讯云 SSL 产品中的证书 ID。
+                     * 设置<p>腾讯云 SSL 产品中的证书 ID。</p>
+                     * @param _cloudCertId <p>腾讯云 SSL 产品中的证书 ID。</p>
                      * 
                      */
                     void SetCloudCertId(const std::string& _cloudCertId);
@@ -95,14 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书过期时间。
-<li>格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。</li>
+                     * <p>证书过期时间。<li>格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</li></p><p>参数格式：YYYY-MM-DDThh:mm:ss+08:00</p>
                      */
                     std::string m_certExpireTime;
                     bool m_certExpireTimeHasBeenSet;
 
                     /**
-                     * 腾讯云 SSL 产品中的证书 ID。
+                     * <p>腾讯云 SSL 产品中的证书 ID。</p>
                      */
                     std::string m_cloudCertId;
                     bool m_cloudCertIdHasBeenSet;

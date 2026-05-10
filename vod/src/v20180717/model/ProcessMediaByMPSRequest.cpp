@@ -26,6 +26,9 @@ ProcessMediaByMPSRequest::ProcessMediaByMPSRequest() :
     m_fileIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_mPSProcessMediaParamsHasBeenSet(false),
+    m_aiAnalysisTaskHasBeenSet(false),
+    m_smartSubtitlesTaskHasBeenSet(false),
+    m_smartEraseTaskHasBeenSet(false),
     m_extInfoHasBeenSet(false)
 {
 }
@@ -59,6 +62,33 @@ string ProcessMediaByMPSRequest::ToJsonString() const
         string key = "MPSProcessMediaParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mPSProcessMediaParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aiAnalysisTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiAnalysisTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiAnalysisTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartSubtitlesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitlesTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartEraseTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEraseTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartEraseTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_extInfoHasBeenSet)
@@ -123,6 +153,54 @@ void ProcessMediaByMPSRequest::SetMPSProcessMediaParams(const string& _mPSProces
 bool ProcessMediaByMPSRequest::MPSProcessMediaParamsHasBeenSet() const
 {
     return m_mPSProcessMediaParamsHasBeenSet;
+}
+
+MPSAiAnalysisTaskInput ProcessMediaByMPSRequest::GetAiAnalysisTask() const
+{
+    return m_aiAnalysisTask;
+}
+
+void ProcessMediaByMPSRequest::SetAiAnalysisTask(const MPSAiAnalysisTaskInput& _aiAnalysisTask)
+{
+    m_aiAnalysisTask = _aiAnalysisTask;
+    m_aiAnalysisTaskHasBeenSet = true;
+}
+
+bool ProcessMediaByMPSRequest::AiAnalysisTaskHasBeenSet() const
+{
+    return m_aiAnalysisTaskHasBeenSet;
+}
+
+MPSSmartSubtitlesTaskInput ProcessMediaByMPSRequest::GetSmartSubtitlesTask() const
+{
+    return m_smartSubtitlesTask;
+}
+
+void ProcessMediaByMPSRequest::SetSmartSubtitlesTask(const MPSSmartSubtitlesTaskInput& _smartSubtitlesTask)
+{
+    m_smartSubtitlesTask = _smartSubtitlesTask;
+    m_smartSubtitlesTaskHasBeenSet = true;
+}
+
+bool ProcessMediaByMPSRequest::SmartSubtitlesTaskHasBeenSet() const
+{
+    return m_smartSubtitlesTaskHasBeenSet;
+}
+
+MPSSmartEraseTaskInput ProcessMediaByMPSRequest::GetSmartEraseTask() const
+{
+    return m_smartEraseTask;
+}
+
+void ProcessMediaByMPSRequest::SetSmartEraseTask(const MPSSmartEraseTaskInput& _smartEraseTask)
+{
+    m_smartEraseTask = _smartEraseTask;
+    m_smartEraseTaskHasBeenSet = true;
+}
+
+bool ProcessMediaByMPSRequest::SmartEraseTaskHasBeenSet() const
+{
+    return m_smartEraseTaskHasBeenSet;
 }
 
 string ProcessMediaByMPSRequest::GetExtInfo() const

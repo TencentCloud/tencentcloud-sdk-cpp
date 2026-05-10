@@ -62,7 +62,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
-    m_webUiVersionHasBeenSet(false)
+    m_webUiVersionHasBeenSet(false),
+    m_cbsSysEncryptHasBeenSet(false)
 {
 }
 
@@ -442,6 +443,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "WebUiVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_webUiVersion, allocator);
+    }
+
+    if (m_cbsSysEncryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CbsSysEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cbsSysEncrypt, allocator);
     }
 
 
@@ -1090,6 +1099,22 @@ void CreateInstanceRequest::SetWebUiVersion(const int64_t& _webUiVersion)
 bool CreateInstanceRequest::WebUiVersionHasBeenSet() const
 {
     return m_webUiVersionHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetCbsSysEncrypt() const
+{
+    return m_cbsSysEncrypt;
+}
+
+void CreateInstanceRequest::SetCbsSysEncrypt(const int64_t& _cbsSysEncrypt)
+{
+    m_cbsSysEncrypt = _cbsSysEncrypt;
+    m_cbsSysEncryptHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::CbsSysEncryptHasBeenSet() const
+{
+    return m_cbsSysEncryptHasBeenSet;
 }
 
 

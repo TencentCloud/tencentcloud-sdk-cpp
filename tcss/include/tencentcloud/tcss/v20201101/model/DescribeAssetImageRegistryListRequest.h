@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 获取<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @return Limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 设置<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @param _limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段
-IsAuthorized是否授权，取值全部all，未授权0，已授权1
-                     * @return Filters 过滤字段
-IsAuthorized是否授权，取值全部all，未授权0，已授权1
+                     * 获取<p>过滤字段<br>IsAuthorized是否授权，取值全部all，未授权0，已授权1</p>
+                     * @return Filters <p>过滤字段<br>IsAuthorized是否授权，取值全部all，未授权0，已授权1</p>
                      * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤字段
-IsAuthorized是否授权，取值全部all，未授权0，已授权1
-                     * @param _filters 过滤字段
-IsAuthorized是否授权，取值全部all，未授权0，已授权1
+                     * 设置<p>过滤字段<br>IsAuthorized是否授权，取值全部all，未授权0，已授权1</p>
+                     * @param _filters <p>过滤字段<br>IsAuthorized是否授权，取值全部all，未授权0，已授权1</p>
                      * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
@@ -111,15 +107,15 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return By <p>排序字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _by <p>排序字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -132,15 +128,15 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，asc，desc
-                     * @return Order 排序方式，asc，desc
+                     * 获取<p>排序方式，asc，desc</p>
+                     * @return Order <p>排序方式，asc，desc</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式，asc，desc
-                     * @param _order 排序方式，asc，desc
+                     * 设置<p>排序方式，asc，desc</p>
+                     * @param _order <p>排序方式，asc，desc</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -153,15 +149,15 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取是否仅展示各repository最新的镜像, 默认为false
-                     * @return OnlyShowLatest 是否仅展示各repository最新的镜像, 默认为false
+                     * 获取<p>是否仅展示各repository最新的镜像, 默认为false</p>
+                     * @return OnlyShowLatest <p>是否仅展示各repository最新的镜像, 默认为false</p>
                      * 
                      */
                     bool GetOnlyShowLatest() const;
 
                     /**
-                     * 设置是否仅展示各repository最新的镜像, 默认为false
-                     * @param _onlyShowLatest 是否仅展示各repository最新的镜像, 默认为false
+                     * 设置<p>是否仅展示各repository最新的镜像, 默认为false</p>
+                     * @param _onlyShowLatest <p>是否仅展示各repository最新的镜像, 默认为false</p>
                      * 
                      */
                     void SetOnlyShowLatest(const bool& _onlyShowLatest);
@@ -174,15 +170,15 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                     bool OnlyShowLatestHasBeenSet() const;
 
                     /**
-                     * 获取是否仅展示运行中容器镜像
-                     * @return IsRunning 是否仅展示运行中容器镜像
+                     * 获取<p>是否仅展示运行中容器镜像</p>
+                     * @return IsRunning <p>是否仅展示运行中容器镜像</p>
                      * 
                      */
                     bool GetIsRunning() const;
 
                     /**
-                     * 设置是否仅展示运行中容器镜像
-                     * @param _isRunning 是否仅展示运行中容器镜像
+                     * 设置<p>是否仅展示运行中容器镜像</p>
+                     * @param _isRunning <p>是否仅展示运行中容器镜像</p>
                      * 
                      */
                     void SetIsRunning(const bool& _isRunning);
@@ -197,44 +193,43 @@ IsAuthorized是否授权，取值全部all，未授权0，已授权1
                 private:
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
+                     * <p>需要返回的数量，默认为10，最大值为100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>偏移量，默认为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤字段
-IsAuthorized是否授权，取值全部all，未授权0，已授权1
+                     * <p>过滤字段<br>IsAuthorized是否授权，取值全部all，未授权0，已授权1</p>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序方式，asc，desc
+                     * <p>排序方式，asc，desc</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 是否仅展示各repository最新的镜像, 默认为false
+                     * <p>是否仅展示各repository最新的镜像, 默认为false</p>
                      */
                     bool m_onlyShowLatest;
                     bool m_onlyShowLatestHasBeenSet;
 
                     /**
-                     * 是否仅展示运行中容器镜像
+                     * <p>是否仅展示运行中容器镜像</p>
                      */
                     bool m_isRunning;
                     bool m_isRunningHasBeenSet;

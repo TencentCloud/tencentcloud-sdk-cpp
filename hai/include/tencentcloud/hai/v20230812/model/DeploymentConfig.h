@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取容器配置
-                     * @return Container 容器配置
+                     * 获取<p>容器配置</p>
+                     * @return Container <p>容器配置</p>
                      * 
                      */
                     ContainerInfo GetContainer() const;
 
                     /**
-                     * 设置容器配置
-                     * @param _container 容器配置
+                     * 设置<p>容器配置</p>
+                     * @param _container <p>容器配置</p>
                      * 
                      */
                     void SetContainer(const ContainerInfo& _container);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取容器数量
-                     * @return ContainerCount 容器数量
+                     * 获取<p>容器数量</p>
+                     * @return ContainerCount <p>容器数量</p>
                      * 
                      */
                     int64_t GetContainerCount() const;
 
                     /**
-                     * 设置容器数量
-                     * @param _containerCount 容器数量
+                     * 设置<p>容器数量</p>
+                     * @param _containerCount <p>容器数量</p>
                      * 
                      */
                     void SetContainerCount(const int64_t& _containerCount);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 容器配置
+                     * <p>容器配置</p>
                      */
                     ContainerInfo m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 容器数量
+                     * <p>容器数量</p>
                      */
                     int64_t m_containerCount;
                     bool m_containerCountHasBeenSet;

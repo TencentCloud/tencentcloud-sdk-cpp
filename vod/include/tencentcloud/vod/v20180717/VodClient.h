@@ -43,6 +43,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceRequest.h>
@@ -127,6 +129,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcAdvancedCustomElementRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAigcApiTokenResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateRequest.h>
@@ -189,6 +193,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcAdvancedCustomElementsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcAdvancedCustomElementsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcApiTokensRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcApiTokensResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoRequest.h>
@@ -501,6 +507,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAigcApiTokenResponse> CreateAigcApiTokenOutcome;
                 typedef std::future<CreateAigcApiTokenOutcome> CreateAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcApiTokenRequest&, CreateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAudioTaskResponse> CreateAigcAudioTaskOutcome;
+                typedef std::future<CreateAigcAudioTaskOutcome> CreateAigcAudioTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAudioTaskRequest&, CreateAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcCustomElementResponse> CreateAigcCustomElementOutcome;
                 typedef std::future<CreateAigcCustomElementOutcome> CreateAigcCustomElementOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcCustomElementRequest&, CreateAigcCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomElementAsyncHandler;
@@ -627,6 +636,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAdaptiveDynamicStreamingTemplateResponse> DeleteAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<DeleteAdaptiveDynamicStreamingTemplateOutcome> DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAdaptiveDynamicStreamingTemplateRequest&, DeleteAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAigcAdvancedCustomElementResponse> DeleteAigcAdvancedCustomElementOutcome;
+                typedef std::future<DeleteAigcAdvancedCustomElementOutcome> DeleteAigcAdvancedCustomElementOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteAigcAdvancedCustomElementRequest&, DeleteAigcAdvancedCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcAdvancedCustomElementAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAigcApiTokenResponse> DeleteAigcApiTokenOutcome;
                 typedef std::future<DeleteAigcApiTokenOutcome> DeleteAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAigcApiTokenRequest&, DeleteAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAigcApiTokenAsyncHandler;
@@ -720,6 +732,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
                 typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcAdvancedCustomElementsResponse> DescribeAigcAdvancedCustomElementsOutcome;
+                typedef std::future<DescribeAigcAdvancedCustomElementsOutcome> DescribeAigcAdvancedCustomElementsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcAdvancedCustomElementsRequest&, DescribeAigcAdvancedCustomElementsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcAdvancedCustomElementsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcApiTokensResponse> DescribeAigcApiTokensOutcome;
                 typedef std::future<DescribeAigcApiTokensOutcome> DescribeAigcApiTokensOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcApiTokensRequest&, DescribeAigcApiTokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcApiTokensAsyncHandler;
@@ -1231,6 +1246,15 @@ namespace TencentCloud
                 CreateAigcApiTokenOutcomeCallable CreateAigcApiTokenCallable(const Model::CreateAigcApiTokenRequest& request);
 
                 /**
+                 *调用该接口，用于创建AI生音频任务。
+                 * @param req CreateAigcAudioTaskRequest
+                 * @return CreateAigcAudioTaskOutcome
+                 */
+                CreateAigcAudioTaskOutcome CreateAigcAudioTask(const Model::CreateAigcAudioTaskRequest &request);
+                void CreateAigcAudioTaskAsync(const Model::CreateAigcAudioTaskRequest& request, const CreateAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAudioTaskOutcomeCallable CreateAigcAudioTaskCallable(const Model::CreateAigcAudioTaskRequest& request);
+
+                /**
                  *调用该接口，针对指定模型进行主体创建。
                  * @param req CreateAigcCustomElementRequest
                  * @return CreateAigcCustomElementOutcome
@@ -1249,7 +1273,7 @@ namespace TencentCloud
                 CreateAigcCustomVoiceOutcomeCallable CreateAigcCustomVoiceCallable(const Model::CreateAigcCustomVoiceRequest& request);
 
                 /**
-                 *该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用，</b>请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。
+                 *该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。默认限制1个并发处理，接口调用会产生实际费用，请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。
                  * @param req CreateAigcImageTaskRequest
                  * @return CreateAigcImageTaskOutcome
                  */
@@ -1276,7 +1300,7 @@ namespace TencentCloud
                 CreateAigcVideoRedrawTaskOutcomeCallable CreateAigcVideoRedrawTaskCallable(const Model::CreateAigcVideoRedrawTaskRequest& request);
 
                 /**
-                 *该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。
+                 *该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。默认限制1个并发处理，接口调用会产生实际费用，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。
                  * @param req CreateAigcVideoTaskRequest
                  * @return CreateAigcVideoTaskOutcome
                  */
@@ -1644,6 +1668,15 @@ namespace TencentCloud
                 DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable DeleteAdaptiveDynamicStreamingTemplateCallable(const Model::DeleteAdaptiveDynamicStreamingTemplateRequest& request);
 
                 /**
+                 *该接口用于删除 AIGC 高级自定义主体。
+                 * @param req DeleteAigcAdvancedCustomElementRequest
+                 * @return DeleteAigcAdvancedCustomElementOutcome
+                 */
+                DeleteAigcAdvancedCustomElementOutcome DeleteAigcAdvancedCustomElement(const Model::DeleteAigcAdvancedCustomElementRequest &request);
+                void DeleteAigcAdvancedCustomElementAsync(const Model::DeleteAigcAdvancedCustomElementRequest& request, const DeleteAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAigcAdvancedCustomElementOutcomeCallable DeleteAigcAdvancedCustomElementCallable(const Model::DeleteAigcAdvancedCustomElementRequest& request);
+
+                /**
                  *删除 AIGC API Token
                  * @param req DeleteAigcApiTokenRequest
                  * @return DeleteAigcApiTokenOutcome
@@ -1937,6 +1970,15 @@ namespace TencentCloud
                 DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
 
                 /**
+                 *该接口用于获取 AIGC 高级自定义主体。
+                 * @param req DescribeAigcAdvancedCustomElementsRequest
+                 * @return DescribeAigcAdvancedCustomElementsOutcome
+                 */
+                DescribeAigcAdvancedCustomElementsOutcome DescribeAigcAdvancedCustomElements(const Model::DescribeAigcAdvancedCustomElementsRequest &request);
+                void DescribeAigcAdvancedCustomElementsAsync(const Model::DescribeAigcAdvancedCustomElementsRequest& request, const DescribeAigcAdvancedCustomElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcAdvancedCustomElementsOutcomeCallable DescribeAigcAdvancedCustomElementsCallable(const Model::DescribeAigcAdvancedCustomElementsRequest& request);
+
+                /**
                  *查询 AIGC API Token 列表。创建或删除后数据同步有延时，约30秒后可查询最新数据。
                  * @param req DescribeAigcApiTokensRequest
                  * @return DescribeAigcApiTokensOutcome
@@ -2095,6 +2137,7 @@ namespace TencentCloud
 * 可以查询最近一年的播放统计数据。
 * 结束日期和起始日期的时间跨度最大为90天。
 * 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。
+* 因数据存在延迟，建议您于第二天中午12点后查询前一天的用量数据。
                  * @param req DescribeDailyMediaPlayStatRequest
                  * @return DescribeDailyMediaPlayStatOutcome
                  */
@@ -3126,18 +3169,16 @@ namespace TencentCloud
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
 
                 /**
-                 *使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 
+                 *使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理。
 当前支持的 MPS 功能：
-1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。
-2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。
-3. [智能字幕](https://cloud.tencent.com/document/product/862/89091)：该功能支持处理离线音频文件、视频文件及直播流，可通过 ASR 语音识别或 OCR 文本识别提取视频源语言字幕，并实现多语言翻译。
-4. [智能分析](https://cloud.tencent.com/document/product/862/113756)：该功能支持智能封面、智能高光、智能摘要、视频理解等功能。
+1.智能字幕：该功能支持处理离线音频文件、视频文件及直播流，可通过 ASR 语音识别或 OCR 文本识别提取视频源语言字幕，并实现多语言翻译。详情查看[接入指南](https://cloud.tencent.com/document/product/266/131210)。
+2.智能擦除：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。详情查看[接入指南](https://cloud.tencent.com/document/product/266/131211)。
+3.智能分析：该功能支持[一站式译制](https://cloud.tencent.com/document/product/266/131212)、[精彩集锦](https://cloud.tencent.com/document/product/266/131213)、[大模型视频摘要](https://cloud.tencent.com/document/product/266/131214)、[大模型音视频理解](https://cloud.tencent.com/document/product/266/131215)、[智能拆条](https://cloud.tencent.com/document/product/266/131216)、[智能横转竖](https://cloud.tencent.com/document/product/266/131217)、[视频去重](https://cloud.tencent.com/document/product/266/131218)等功能。
 
 
 > 以该种方式发起的视频处理任务：
 > 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。
-> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。
-> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。
+> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要在控制台开通 MPS 服务。开通方式见接入文档的前置操作部分。
                  * @param req ProcessMediaByMPSRequest
                  * @return ProcessMediaByMPSOutcome
                  */
@@ -3423,7 +3464,7 @@ namespace TencentCloud
 
                 /**
                  *将点播视频发布到微信小程序，供微信小程序播放器播放。
-本接口支持发布原始视频和转码后视频，暂不支持发布自适应码流。
+本接口支持发布原始视频和转码后视频。
                  * @param req WeChatMiniProgramPublishRequest
                  * @return WeChatMiniProgramPublishOutcome
                  */

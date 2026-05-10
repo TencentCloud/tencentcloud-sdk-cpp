@@ -26,7 +26,10 @@ VolumeConf::VolumeConf() :
     m_endpointHasBeenSet(false),
     m_keyIDHasBeenSet(false),
     m_dstPathHasBeenSet(false),
-    m_srcPathHasBeenSet(false)
+    m_srcPathHasBeenSet(false),
+    m_mountIPHasBeenSet(false),
+    m_readOnlyHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome VolumeConf::Deserialize(const rapidjson::Value &value)
         m_srcPathHasBeenSet = true;
     }
 
+    if (value.HasMember("MountIP") && !value["MountIP"].IsNull())
+    {
+        if (!value["MountIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeConf.MountIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountIP = string(value["MountIP"].GetString());
+        m_mountIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
+    {
+        if (!value["ReadOnly"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeConf.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnly = value["ReadOnly"].GetBool();
+        m_readOnlyHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeConf.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void VolumeConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SrcPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_srcPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readOnlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadOnly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void VolumeConf::SetSrcPath(const string& _srcPath)
 bool VolumeConf::SrcPathHasBeenSet() const
 {
     return m_srcPathHasBeenSet;
+}
+
+string VolumeConf::GetMountIP() const
+{
+    return m_mountIP;
+}
+
+void VolumeConf::SetMountIP(const string& _mountIP)
+{
+    m_mountIP = _mountIP;
+    m_mountIPHasBeenSet = true;
+}
+
+bool VolumeConf::MountIPHasBeenSet() const
+{
+    return m_mountIPHasBeenSet;
+}
+
+bool VolumeConf::GetReadOnly() const
+{
+    return m_readOnly;
+}
+
+void VolumeConf::SetReadOnly(const bool& _readOnly)
+{
+    m_readOnly = _readOnly;
+    m_readOnlyHasBeenSet = true;
+}
+
+bool VolumeConf::ReadOnlyHasBeenSet() const
+{
+    return m_readOnlyHasBeenSet;
+}
+
+string VolumeConf::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void VolumeConf::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool VolumeConf::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

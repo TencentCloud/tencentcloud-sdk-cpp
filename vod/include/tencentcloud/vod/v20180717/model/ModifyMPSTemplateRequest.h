@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MPSAIAnalysisTemplateForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartSubtitleTemplateForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartEraseTemplateForUpdate.h>
 
 
 namespace TencentCloud
@@ -64,15 +67,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
-                     * @return TemplateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * 获取<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * @return TemplateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
-                     * @param _templateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * 设置<p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * @param _templateType <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -105,6 +108,69 @@ namespace TencentCloud
                      */
                     bool MPSModifyTemplateParamsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @return AIAnalysisTemplate <p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSAIAnalysisTemplateForUpdate GetAIAnalysisTemplate() const;
+
+                    /**
+                     * 设置<p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @param _aIAnalysisTemplate <p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetAIAnalysisTemplate(const MPSAIAnalysisTemplateForUpdate& _aIAnalysisTemplate);
+
+                    /**
+                     * 判断参数 AIAnalysisTemplate 是否已赋值
+                     * @return AIAnalysisTemplate 是否已赋值
+                     * 
+                     */
+                    bool AIAnalysisTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @return SmartSubtitleTemplate <p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartSubtitleTemplateForUpdate GetSmartSubtitleTemplate() const;
+
+                    /**
+                     * 设置<p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @param _smartSubtitleTemplate <p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartSubtitleTemplate(const MPSSmartSubtitleTemplateForUpdate& _smartSubtitleTemplate);
+
+                    /**
+                     * 判断参数 SmartSubtitleTemplate 是否已赋值
+                     * @return SmartSubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitleTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @return SmartEraseTemplate <p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartEraseTemplateForUpdate GetSmartEraseTemplate() const;
+
+                    /**
+                     * 设置<p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * @param _smartEraseTemplate <p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartEraseTemplate(const MPSSmartEraseTemplateForUpdate& _smartEraseTemplate);
+
+                    /**
+                     * 判断参数 SmartEraseTemplate 是否已赋值
+                     * @return SmartEraseTemplate 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,7 +180,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>Transcode： 转码模板，目前仅支持修改增强参数</li><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
+                     * <p>需要修改的 MPS 模板的类型。</p><p>枚举值：</p><ul><li>AIAnalysis： 智能分析模板</li><li>SmartSubtitle： 智能字幕模板</li><li>SmartErase： 智能擦除模板</li></ul>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
@@ -124,6 +190,24 @@ namespace TencentCloud
                      */
                     std::string m_mPSModifyTemplateParams;
                     bool m_mPSModifyTemplateParamsHasBeenSet;
+
+                    /**
+                     * <p>智能分析模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     */
+                    MPSAIAnalysisTemplateForUpdate m_aIAnalysisTemplate;
+                    bool m_aIAnalysisTemplateHasBeenSet;
+
+                    /**
+                     * <p>智能字幕模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     */
+                    MPSSmartSubtitleTemplateForUpdate m_smartSubtitleTemplate;
+                    bool m_smartSubtitleTemplateHasBeenSet;
+
+                    /**
+                     * <p>智能擦除模板参数，MPSModifyTemplateParams为空时有效。</p>
+                     */
+                    MPSSmartEraseTemplateForUpdate m_smartEraseTemplate;
+                    bool m_smartEraseTemplateHasBeenSet;
 
                 };
             }

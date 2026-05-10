@@ -27,6 +27,7 @@
 #include <tencentcloud/tdai/v20250717/model/Parameter.h>
 #include <tencentcloud/tdai/v20250717/model/TagItem.h>
 #include <tencentcloud/tdai/v20250717/model/ClawConfigInfo.h>
+#include <tencentcloud/tdai/v20250717/model/CreatingProgress.h>
 
 
 namespace TencentCloud
@@ -448,6 +449,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>发货进度详情</p>
+                     * @return CreatingProgress <p>发货进度详情</p>
+                     * 
+                     */
+                    CreatingProgress GetCreatingProgress() const;
+
+                    /**
+                     * 设置<p>发货进度详情</p>
+                     * @param _creatingProgress <p>发货进度详情</p>
+                     * 
+                     */
+                    void SetCreatingProgress(const CreatingProgress& _creatingProgress);
+
+                    /**
+                     * 判断参数 CreatingProgress 是否已赋值
+                     * @return CreatingProgress 是否已赋值
+                     * 
+                     */
+                    bool CreatingProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +585,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>发货进度详情</p>
+                     */
+                    CreatingProgress m_creatingProgress;
+                    bool m_creatingProgressHasBeenSet;
 
                 };
             }

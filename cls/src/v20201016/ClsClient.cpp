@@ -1840,6 +1840,106 @@ ClsClient::CreateRebuildIndexTaskOutcomeCallable ClsClient::CreateRebuildIndexTa
     return prom->get_future();
 }
 
+ClsClient::CreateRecordingRuleTaskOutcome ClsClient::CreateRecordingRuleTask(const CreateRecordingRuleTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecordingRuleTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecordingRuleTaskResponse rsp = CreateRecordingRuleTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecordingRuleTaskOutcome(rsp);
+        else
+            return CreateRecordingRuleTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecordingRuleTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateRecordingRuleTaskAsync(const CreateRecordingRuleTaskRequest& request, const CreateRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRecordingRuleTaskRequest&;
+    using Resp = CreateRecordingRuleTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRecordingRuleTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateRecordingRuleTaskOutcomeCallable ClsClient::CreateRecordingRuleTaskCallable(const CreateRecordingRuleTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRecordingRuleTaskOutcome>>();
+    CreateRecordingRuleTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateRecordingRuleTaskRequest&,
+        CreateRecordingRuleTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::CreateRecordingRuleYamlTaskOutcome ClsClient::CreateRecordingRuleYamlTask(const CreateRecordingRuleYamlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecordingRuleYamlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecordingRuleYamlTaskResponse rsp = CreateRecordingRuleYamlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecordingRuleYamlTaskOutcome(rsp);
+        else
+            return CreateRecordingRuleYamlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecordingRuleYamlTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateRecordingRuleYamlTaskAsync(const CreateRecordingRuleYamlTaskRequest& request, const CreateRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRecordingRuleYamlTaskRequest&;
+    using Resp = CreateRecordingRuleYamlTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRecordingRuleYamlTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateRecordingRuleYamlTaskOutcomeCallable ClsClient::CreateRecordingRuleYamlTaskCallable(const CreateRecordingRuleYamlTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRecordingRuleYamlTaskOutcome>>();
+    CreateRecordingRuleYamlTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateRecordingRuleYamlTaskRequest&,
+        CreateRecordingRuleYamlTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateScheduledSqlOutcome ClsClient::CreateScheduledSql(const CreateScheduledSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScheduledSql");
@@ -3532,6 +3632,106 @@ ClsClient::DeleteNoticeContentOutcomeCallable ClsClient::DeleteNoticeContentCall
         const ClsClient*,
         const DeleteNoticeContentRequest&,
         DeleteNoticeContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteRecordingRuleTaskOutcome ClsClient::DeleteRecordingRuleTask(const DeleteRecordingRuleTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordingRuleTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordingRuleTaskResponse rsp = DeleteRecordingRuleTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordingRuleTaskOutcome(rsp);
+        else
+            return DeleteRecordingRuleTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordingRuleTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteRecordingRuleTaskAsync(const DeleteRecordingRuleTaskRequest& request, const DeleteRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRecordingRuleTaskRequest&;
+    using Resp = DeleteRecordingRuleTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecordingRuleTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteRecordingRuleTaskOutcomeCallable ClsClient::DeleteRecordingRuleTaskCallable(const DeleteRecordingRuleTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRecordingRuleTaskOutcome>>();
+    DeleteRecordingRuleTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteRecordingRuleTaskRequest&,
+        DeleteRecordingRuleTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteRecordingRuleYamlTaskOutcome ClsClient::DeleteRecordingRuleYamlTask(const DeleteRecordingRuleYamlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordingRuleYamlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordingRuleYamlTaskResponse rsp = DeleteRecordingRuleYamlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordingRuleYamlTaskOutcome(rsp);
+        else
+            return DeleteRecordingRuleYamlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordingRuleYamlTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteRecordingRuleYamlTaskAsync(const DeleteRecordingRuleYamlTaskRequest& request, const DeleteRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRecordingRuleYamlTaskRequest&;
+    using Resp = DeleteRecordingRuleYamlTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRecordingRuleYamlTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteRecordingRuleYamlTaskOutcomeCallable ClsClient::DeleteRecordingRuleYamlTaskCallable(const DeleteRecordingRuleYamlTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRecordingRuleYamlTaskOutcome>>();
+    DeleteRecordingRuleYamlTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteRecordingRuleYamlTaskRequest&,
+        DeleteRecordingRuleYamlTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6190,6 +6390,106 @@ ClsClient::DescribeRebuildIndexTasksOutcomeCallable ClsClient::DescribeRebuildIn
     return prom->get_future();
 }
 
+ClsClient::DescribeRecordingRuleTaskOutcome ClsClient::DescribeRecordingRuleTask(const DescribeRecordingRuleTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordingRuleTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordingRuleTaskResponse rsp = DescribeRecordingRuleTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordingRuleTaskOutcome(rsp);
+        else
+            return DescribeRecordingRuleTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordingRuleTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeRecordingRuleTaskAsync(const DescribeRecordingRuleTaskRequest& request, const DescribeRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRecordingRuleTaskRequest&;
+    using Resp = DescribeRecordingRuleTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordingRuleTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeRecordingRuleTaskOutcomeCallable ClsClient::DescribeRecordingRuleTaskCallable(const DescribeRecordingRuleTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRecordingRuleTaskOutcome>>();
+    DescribeRecordingRuleTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeRecordingRuleTaskRequest&,
+        DescribeRecordingRuleTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeRecordingRuleYamlTaskOutcome ClsClient::DescribeRecordingRuleYamlTask(const DescribeRecordingRuleYamlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordingRuleYamlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordingRuleYamlTaskResponse rsp = DescribeRecordingRuleYamlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordingRuleYamlTaskOutcome(rsp);
+        else
+            return DescribeRecordingRuleYamlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordingRuleYamlTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeRecordingRuleYamlTaskAsync(const DescribeRecordingRuleYamlTaskRequest& request, const DescribeRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRecordingRuleYamlTaskRequest&;
+    using Resp = DescribeRecordingRuleYamlTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRecordingRuleYamlTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeRecordingRuleYamlTaskOutcomeCallable ClsClient::DescribeRecordingRuleYamlTaskCallable(const DescribeRecordingRuleYamlTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRecordingRuleYamlTaskOutcome>>();
+    DescribeRecordingRuleYamlTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeRecordingRuleYamlTaskRequest&,
+        DescribeRecordingRuleYamlTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeScheduledSqlInfoOutcome ClsClient::DescribeScheduledSqlInfo(const DescribeScheduledSqlInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScheduledSqlInfo");
@@ -8232,6 +8532,106 @@ ClsClient::ModifyNoticeContentOutcomeCallable ClsClient::ModifyNoticeContentCall
         const ClsClient*,
         const ModifyNoticeContentRequest&,
         ModifyNoticeContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyRecordingRuleTaskOutcome ClsClient::ModifyRecordingRuleTask(const ModifyRecordingRuleTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordingRuleTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordingRuleTaskResponse rsp = ModifyRecordingRuleTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordingRuleTaskOutcome(rsp);
+        else
+            return ModifyRecordingRuleTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordingRuleTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyRecordingRuleTaskAsync(const ModifyRecordingRuleTaskRequest& request, const ModifyRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRecordingRuleTaskRequest&;
+    using Resp = ModifyRecordingRuleTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordingRuleTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyRecordingRuleTaskOutcomeCallable ClsClient::ModifyRecordingRuleTaskCallable(const ModifyRecordingRuleTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRecordingRuleTaskOutcome>>();
+    ModifyRecordingRuleTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyRecordingRuleTaskRequest&,
+        ModifyRecordingRuleTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyRecordingRuleYamlTaskOutcome ClsClient::ModifyRecordingRuleYamlTask(const ModifyRecordingRuleYamlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordingRuleYamlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordingRuleYamlTaskResponse rsp = ModifyRecordingRuleYamlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordingRuleYamlTaskOutcome(rsp);
+        else
+            return ModifyRecordingRuleYamlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordingRuleYamlTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyRecordingRuleYamlTaskAsync(const ModifyRecordingRuleYamlTaskRequest& request, const ModifyRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRecordingRuleYamlTaskRequest&;
+    using Resp = ModifyRecordingRuleYamlTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordingRuleYamlTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyRecordingRuleYamlTaskOutcomeCallable ClsClient::ModifyRecordingRuleYamlTaskCallable(const ModifyRecordingRuleYamlTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRecordingRuleYamlTaskOutcome>>();
+    ModifyRecordingRuleYamlTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyRecordingRuleYamlTaskRequest&,
+        ModifyRecordingRuleYamlTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

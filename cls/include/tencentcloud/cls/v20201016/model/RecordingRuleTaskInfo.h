@@ -1,0 +1,527 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_RECORDINGRULETASKINFO_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_RECORDINGRULETASKINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/MetricLabel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cls
+    {
+        namespace V20201016
+        {
+            namespace Model
+            {
+                /**
+                * 预聚合任务详情
+                */
+                class RecordingRuleTaskInfo : public AbstractModel
+                {
+                public:
+                    RecordingRuleTaskInfo();
+                    ~RecordingRuleTaskInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取预聚合任务id
+                     * @return TaskId 预聚合任务id
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置预聚合任务id
+                     * @param _taskId 预聚合任务id
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取源日志主题id
+                     * @return TopicId 源日志主题id
+                     * 
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置源日志主题id
+                     * @param _topicId 源日志主题id
+                     * 
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     * 
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取预聚合任务名称
+                     * @return Name 预聚合任务名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置预聚合任务名称
+                     * @param _name 预聚合任务名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建时间
+                     * @return CreateTime 任务创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务更新时间
+                     * @return UpdateTime 任务更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置任务更新时间
+                     * @param _updateTime 任务更新时间
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题
+
+5: 访问权限问题 6:内部故障 7:其他故障
+                     * @return Status 任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题
+
+5: 访问权限问题 6:内部故障 7:其他故障
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题
+
+5: 访问权限问题 6:内部故障 7:其他故障
+                     * @param _status 任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题
+
+5: 访问权限问题 6:内部故障 7:其他故障
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务启用状态，1开启,  2关闭
+                     * @return EnableFlag 任务启用状态，1开启,  2关闭
+                     * 
+                     */
+                    int64_t GetEnableFlag() const;
+
+                    /**
+                     * 设置任务启用状态，1开启,  2关闭
+                     * @param _enableFlag 任务启用状态，1开启,  2关闭
+                     * 
+                     */
+                    void SetEnableFlag(const int64_t& _enableFlag);
+
+                    /**
+                     * 判断参数 EnableFlag 是否已赋值
+                     * @return EnableFlag 是否已赋值
+                     * 
+                     */
+                    bool EnableFlagHasBeenSet() const;
+
+                    /**
+                     * 获取调度开始时间
+                     * @return ProcessStartTime 调度开始时间
+                     * 
+                     */
+                    uint64_t GetProcessStartTime() const;
+
+                    /**
+                     * 设置调度开始时间
+                     * @param _processStartTime 调度开始时间
+                     * 
+                     */
+                    void SetProcessStartTime(const uint64_t& _processStartTime);
+
+                    /**
+                     * 判断参数 ProcessStartTime 是否已赋值
+                     * @return ProcessStartTime 是否已赋值
+                     * 
+                     */
+                    bool ProcessStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取调度周期(分钟)
+                     * @return ProcessPeriod 调度周期(分钟)
+                     * 
+                     */
+                    int64_t GetProcessPeriod() const;
+
+                    /**
+                     * 设置调度周期(分钟)
+                     * @param _processPeriod 调度周期(分钟)
+                     * 
+                     */
+                    void SetProcessPeriod(const int64_t& _processPeriod);
+
+                    /**
+                     * 判断参数 ProcessPeriod 是否已赋值
+                     * @return ProcessPeriod 是否已赋值
+                     * 
+                     */
+                    bool ProcessPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取执行延迟(秒)
+                     * @return ProcessDelay 执行延迟(秒)
+                     * 
+                     */
+                    int64_t GetProcessDelay() const;
+
+                    /**
+                     * 设置执行延迟(秒)
+                     * @param _processDelay 执行延迟(秒)
+                     * 
+                     */
+                    void SetProcessDelay(const int64_t& _processDelay);
+
+                    /**
+                     * 判断参数 ProcessDelay 是否已赋值
+                     * @return ProcessDelay 是否已赋值
+                     * 
+                     */
+                    bool ProcessDelayHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启投递服务日志。1：关闭，2：开启。
+                     * @return HasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置是否开启投递服务日志。1：关闭，2：开启。
+                     * @param _hasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取预聚合检索语句
+                     * @return RecordingRuleContent 预聚合检索语句
+                     * 
+                     */
+                    std::string GetRecordingRuleContent() const;
+
+                    /**
+                     * 设置预聚合检索语句
+                     * @param _recordingRuleContent 预聚合检索语句
+                     * 
+                     */
+                    void SetRecordingRuleContent(const std::string& _recordingRuleContent);
+
+                    /**
+                     * 判断参数 RecordingRuleContent 是否已赋值
+                     * @return RecordingRuleContent 是否已赋值
+                     * 
+                     */
+                    bool RecordingRuleContentHasBeenSet() const;
+
+                    /**
+                     * 获取指标名称
+                     * @return MetricName 指标名称
+                     * 
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置指标名称
+                     * @param _metricName 指标名称
+                     * 
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     * 
+                     */
+                    bool MetricNameHasBeenSet() const;
+
+                    /**
+                     * 获取自定义指标名称
+                     * @return CustomMetricLabels 自定义指标名称
+                     * 
+                     */
+                    std::vector<MetricLabel> GetCustomMetricLabels() const;
+
+                    /**
+                     * 设置自定义指标名称
+                     * @param _customMetricLabels 自定义指标名称
+                     * 
+                     */
+                    void SetCustomMetricLabels(const std::vector<MetricLabel>& _customMetricLabels);
+
+                    /**
+                     * 判断参数 CustomMetricLabels 是否已赋值
+                     * @return CustomMetricLabels 是否已赋值
+                     * 
+                     */
+                    bool CustomMetricLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取yaml配置文件id
+                     * @return YamlId yaml配置文件id
+                     * 
+                     */
+                    std::string GetYamlId() const;
+
+                    /**
+                     * 设置yaml配置文件id
+                     * @param _yamlId yaml配置文件id
+                     * 
+                     */
+                    void SetYamlId(const std::string& _yamlId);
+
+                    /**
+                     * 判断参数 YamlId 是否已赋值
+                     * @return YamlId 是否已赋值
+                     * 
+                     */
+                    bool YamlIdHasBeenSet() const;
+
+                    /**
+                     * 获取yaml配置文件名称
+                     * @return YamlConfigName yaml配置文件名称
+                     * 
+                     */
+                    std::string GetYamlConfigName() const;
+
+                    /**
+                     * 设置yaml配置文件名称
+                     * @param _yamlConfigName yaml配置文件名称
+                     * 
+                     */
+                    void SetYamlConfigName(const std::string& _yamlConfigName);
+
+                    /**
+                     * 判断参数 YamlConfigName 是否已赋值
+                     * @return YamlConfigName 是否已赋值
+                     * 
+                     */
+                    bool YamlConfigNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标日志主题id
+                     * @return DstTopicId 目标日志主题id
+                     * 
+                     */
+                    std::string GetDstTopicId() const;
+
+                    /**
+                     * 设置目标日志主题id
+                     * @param _dstTopicId 目标日志主题id
+                     * 
+                     */
+                    void SetDstTopicId(const std::string& _dstTopicId);
+
+                    /**
+                     * 判断参数 DstTopicId 是否已赋值
+                     * @return DstTopicId 是否已赋值
+                     * 
+                     */
+                    bool DstTopicIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 预聚合任务id
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 源日志主题id
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
+
+                    /**
+                     * 预聚合任务名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 任务创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 任务更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题
+
+5: 访问权限问题 6:内部故障 7:其他故障
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 任务启用状态，1开启,  2关闭
+                     */
+                    int64_t m_enableFlag;
+                    bool m_enableFlagHasBeenSet;
+
+                    /**
+                     * 调度开始时间
+                     */
+                    uint64_t m_processStartTime;
+                    bool m_processStartTimeHasBeenSet;
+
+                    /**
+                     * 调度周期(分钟)
+                     */
+                    int64_t m_processPeriod;
+                    bool m_processPeriodHasBeenSet;
+
+                    /**
+                     * 执行延迟(秒)
+                     */
+                    int64_t m_processDelay;
+                    bool m_processDelayHasBeenSet;
+
+                    /**
+                     * 是否开启投递服务日志。1：关闭，2：开启。
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * 预聚合检索语句
+                     */
+                    std::string m_recordingRuleContent;
+                    bool m_recordingRuleContentHasBeenSet;
+
+                    /**
+                     * 指标名称
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 自定义指标名称
+                     */
+                    std::vector<MetricLabel> m_customMetricLabels;
+                    bool m_customMetricLabelsHasBeenSet;
+
+                    /**
+                     * yaml配置文件id
+                     */
+                    std::string m_yamlId;
+                    bool m_yamlIdHasBeenSet;
+
+                    /**
+                     * yaml配置文件名称
+                     */
+                    std::string m_yamlConfigName;
+                    bool m_yamlConfigNameHasBeenSet;
+
+                    /**
+                     * 目标日志主题id
+                     */
+                    std::string m_dstTopicId;
+                    bool m_dstTopicIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_RECORDINGRULETASKINFO_H_

@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool LogoAddHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定图片的输出格式，支持jpeg, png。</p>
+                     * @return OutputFormat <p>指定图片的输出格式，支持jpeg, png。</p>
+                     * 
+                     */
+                    std::string GetOutputFormat() const;
+
+                    /**
+                     * 设置<p>指定图片的输出格式，支持jpeg, png。</p>
+                     * @param _outputFormat <p>指定图片的输出格式，支持jpeg, png。</p>
+                     * 
+                     */
+                    void SetOutputFormat(const std::string& _outputFormat);
+
+                    /**
+                     * 判断参数 OutputFormat 是否已赋值
+                     * @return OutputFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
+
+                    /**
+                     * <p>指定图片的输出格式，支持jpeg, png。</p>
+                     */
+                    std::string m_outputFormat;
+                    bool m_outputFormatHasBeenSet;
 
                 };
             }

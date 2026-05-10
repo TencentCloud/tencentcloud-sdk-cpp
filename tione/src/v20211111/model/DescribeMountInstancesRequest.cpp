@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeMountInstancesRequest::DescribeMountInstancesRequest() :
     m_typeHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -42,6 +43,14 @@ string DescribeMountInstancesRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -82,6 +91,22 @@ void DescribeMountInstancesRequest::SetType(const string& _type)
 bool DescribeMountInstancesRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeMountInstancesRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeMountInstancesRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeMountInstancesRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 int64_t DescribeMountInstancesRequest::GetOffset() const

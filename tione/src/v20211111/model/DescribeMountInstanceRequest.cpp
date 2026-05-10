@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeMountInstanceRequest::DescribeMountInstanceRequest() :
     m_typeHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_storageIdHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DescribeMountInstanceRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageIdHasBeenSet)
@@ -73,6 +82,22 @@ void DescribeMountInstanceRequest::SetType(const string& _type)
 bool DescribeMountInstanceRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeMountInstanceRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeMountInstanceRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeMountInstanceRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DescribeMountInstanceRequest::GetStorageId() const

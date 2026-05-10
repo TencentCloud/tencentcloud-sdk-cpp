@@ -28,7 +28,12 @@ AgentPluginInfo::AgentPluginInfo() :
     m_knowledgeQaHasBeenSet(false),
     m_enableRoleAuthHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_mcpTypeHasBeenSet(false)
+    m_mcpTypeHasBeenSet(false),
+    m_authModeHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
+    m_authConfigStatusHasBeenSet(false),
+    m_pluginClassHasBeenSet(false),
+    m_pluginStatusHasBeenSet(false)
 {
 }
 
@@ -151,6 +156,56 @@ CoreInternalOutcome AgentPluginInfo::Deserialize(const rapidjson::Value &value)
         m_mcpTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthMode") && !value["AuthMode"].IsNull())
+    {
+        if (!value["AuthMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.AuthMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authMode = value["AuthMode"].GetInt64();
+        m_authModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthType") && !value["AuthType"].IsNull())
+    {
+        if (!value["AuthType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.AuthType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authType = value["AuthType"].GetInt64();
+        m_authTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthConfigStatus") && !value["AuthConfigStatus"].IsNull())
+    {
+        if (!value["AuthConfigStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.AuthConfigStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authConfigStatus = value["AuthConfigStatus"].GetInt64();
+        m_authConfigStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PluginClass") && !value["PluginClass"].IsNull())
+    {
+        if (!value["PluginClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.PluginClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pluginClass = value["PluginClass"].GetInt64();
+        m_pluginClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("PluginStatus") && !value["PluginStatus"].IsNull())
+    {
+        if (!value["PluginStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginInfo.PluginStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pluginStatus = value["PluginStatus"].GetInt64();
+        m_pluginStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +291,46 @@ void AgentPluginInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "McpType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mcpType, allocator);
+    }
+
+    if (m_authModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authMode, allocator);
+    }
+
+    if (m_authTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authType, allocator);
+    }
+
+    if (m_authConfigStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthConfigStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authConfigStatus, allocator);
+    }
+
+    if (m_pluginClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pluginClass, allocator);
+    }
+
+    if (m_pluginStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pluginStatus, allocator);
     }
 
 }
@@ -367,5 +462,85 @@ void AgentPluginInfo::SetMcpType(const uint64_t& _mcpType)
 bool AgentPluginInfo::McpTypeHasBeenSet() const
 {
     return m_mcpTypeHasBeenSet;
+}
+
+int64_t AgentPluginInfo::GetAuthMode() const
+{
+    return m_authMode;
+}
+
+void AgentPluginInfo::SetAuthMode(const int64_t& _authMode)
+{
+    m_authMode = _authMode;
+    m_authModeHasBeenSet = true;
+}
+
+bool AgentPluginInfo::AuthModeHasBeenSet() const
+{
+    return m_authModeHasBeenSet;
+}
+
+int64_t AgentPluginInfo::GetAuthType() const
+{
+    return m_authType;
+}
+
+void AgentPluginInfo::SetAuthType(const int64_t& _authType)
+{
+    m_authType = _authType;
+    m_authTypeHasBeenSet = true;
+}
+
+bool AgentPluginInfo::AuthTypeHasBeenSet() const
+{
+    return m_authTypeHasBeenSet;
+}
+
+int64_t AgentPluginInfo::GetAuthConfigStatus() const
+{
+    return m_authConfigStatus;
+}
+
+void AgentPluginInfo::SetAuthConfigStatus(const int64_t& _authConfigStatus)
+{
+    m_authConfigStatus = _authConfigStatus;
+    m_authConfigStatusHasBeenSet = true;
+}
+
+bool AgentPluginInfo::AuthConfigStatusHasBeenSet() const
+{
+    return m_authConfigStatusHasBeenSet;
+}
+
+int64_t AgentPluginInfo::GetPluginClass() const
+{
+    return m_pluginClass;
+}
+
+void AgentPluginInfo::SetPluginClass(const int64_t& _pluginClass)
+{
+    m_pluginClass = _pluginClass;
+    m_pluginClassHasBeenSet = true;
+}
+
+bool AgentPluginInfo::PluginClassHasBeenSet() const
+{
+    return m_pluginClassHasBeenSet;
+}
+
+int64_t AgentPluginInfo::GetPluginStatus() const
+{
+    return m_pluginStatus;
+}
+
+void AgentPluginInfo::SetPluginStatus(const int64_t& _pluginStatus)
+{
+    m_pluginStatus = _pluginStatus;
+    m_pluginStatusHasBeenSet = true;
+}
+
+bool AgentPluginInfo::PluginStatusHasBeenSet() const
+{
+    return m_pluginStatusHasBeenSet;
 }
 

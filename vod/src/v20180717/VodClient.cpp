@@ -540,6 +540,56 @@ VodClient::CreateAigcApiTokenOutcomeCallable VodClient::CreateAigcApiTokenCallab
     return prom->get_future();
 }
 
+VodClient::CreateAigcAudioTaskOutcome VodClient::CreateAigcAudioTask(const CreateAigcAudioTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAudioTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAudioTaskResponse rsp = CreateAigcAudioTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAudioTaskOutcome(rsp);
+        else
+            return CreateAigcAudioTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAudioTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAudioTaskAsync(const CreateAigcAudioTaskRequest& request, const CreateAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAudioTaskRequest&;
+    using Resp = CreateAigcAudioTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAudioTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAudioTaskOutcomeCallable VodClient::CreateAigcAudioTaskCallable(const CreateAigcAudioTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAudioTaskOutcome>>();
+    CreateAigcAudioTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAudioTaskRequest&,
+        CreateAigcAudioTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcCustomElementOutcome VodClient::CreateAigcCustomElement(const CreateAigcCustomElementRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcCustomElement");
@@ -2640,6 +2690,56 @@ VodClient::DeleteAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::Dele
     return prom->get_future();
 }
 
+VodClient::DeleteAigcAdvancedCustomElementOutcome VodClient::DeleteAigcAdvancedCustomElement(const DeleteAigcAdvancedCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAigcAdvancedCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAigcAdvancedCustomElementResponse rsp = DeleteAigcAdvancedCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAigcAdvancedCustomElementOutcome(rsp);
+        else
+            return DeleteAigcAdvancedCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAigcAdvancedCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteAigcAdvancedCustomElementAsync(const DeleteAigcAdvancedCustomElementRequest& request, const DeleteAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAigcAdvancedCustomElementRequest&;
+    using Resp = DeleteAigcAdvancedCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAigcAdvancedCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteAigcAdvancedCustomElementOutcomeCallable VodClient::DeleteAigcAdvancedCustomElementCallable(const DeleteAigcAdvancedCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAigcAdvancedCustomElementOutcome>>();
+    DeleteAigcAdvancedCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteAigcAdvancedCustomElementRequest&,
+        DeleteAigcAdvancedCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DeleteAigcApiTokenOutcome VodClient::DeleteAigcApiToken(const DeleteAigcApiTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAigcApiToken");
@@ -4182,6 +4282,56 @@ VodClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable VodClient::D
         const VodClient*,
         const DescribeAdaptiveDynamicStreamingTemplatesRequest&,
         DescribeAdaptiveDynamicStreamingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeAigcAdvancedCustomElementsOutcome VodClient::DescribeAigcAdvancedCustomElements(const DescribeAigcAdvancedCustomElementsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcAdvancedCustomElements");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcAdvancedCustomElementsResponse rsp = DescribeAigcAdvancedCustomElementsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcAdvancedCustomElementsOutcome(rsp);
+        else
+            return DescribeAigcAdvancedCustomElementsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcAdvancedCustomElementsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcAdvancedCustomElementsAsync(const DescribeAigcAdvancedCustomElementsRequest& request, const DescribeAigcAdvancedCustomElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcAdvancedCustomElementsRequest&;
+    using Resp = DescribeAigcAdvancedCustomElementsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcAdvancedCustomElements", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcAdvancedCustomElementsOutcomeCallable VodClient::DescribeAigcAdvancedCustomElementsCallable(const DescribeAigcAdvancedCustomElementsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcAdvancedCustomElementsOutcome>>();
+    DescribeAigcAdvancedCustomElementsAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcAdvancedCustomElementsRequest&,
+        DescribeAigcAdvancedCustomElementsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

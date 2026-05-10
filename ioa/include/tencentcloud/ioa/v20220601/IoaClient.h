@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupRequest.h>
+#include <tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskRequest.h>
@@ -113,6 +115,9 @@ namespace TencentCloud
                 IoaClient(const Credential &credential, const std::string &region);
                 IoaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindBusinessResourceConnectorGroupResponse> BindBusinessResourceConnectorGroupOutcome;
+                typedef std::future<BindBusinessResourceConnectorGroupOutcome> BindBusinessResourceConnectorGroupOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::BindBusinessResourceConnectorGroupRequest&, BindBusinessResourceConnectorGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindBusinessResourceConnectorGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBusinessResourceResponse> CreateBusinessResourceOutcome;
                 typedef std::future<CreateBusinessResourceOutcome> CreateBusinessResourceOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateBusinessResourceRequest&, CreateBusinessResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBusinessResourceAsyncHandler;
@@ -229,6 +234,15 @@ namespace TencentCloud
                 typedef std::function<void(const IoaClient*, const Model::ModifyVirtualDeviceGroupsRequest&, ModifyVirtualDeviceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVirtualDeviceGroupsAsyncHandler;
 
 
+
+                /**
+                 *saas版本，创建/修改业务资源后，调用绑定连接器接口,私有化调用path为：capi/GatewayResource/BindBusinessResourceConnectorGroup
+                 * @param req BindBusinessResourceConnectorGroupRequest
+                 * @return BindBusinessResourceConnectorGroupOutcome
+                 */
+                BindBusinessResourceConnectorGroupOutcome BindBusinessResourceConnectorGroup(const Model::BindBusinessResourceConnectorGroupRequest &request);
+                void BindBusinessResourceConnectorGroupAsync(const Model::BindBusinessResourceConnectorGroupRequest& request, const BindBusinessResourceConnectorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindBusinessResourceConnectorGroupOutcomeCallable BindBusinessResourceConnectorGroupCallable(const Model::BindBusinessResourceConnectorGroupRequest& request);
 
                 /**
                  *创建业务资源，会对一些必填参数进行校验和参数合法性校验，创建业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。创建时也会做校验，但没有返回对应的异常信息，私有化调用path为：capi/GatewayResource/CreateBusinessResource

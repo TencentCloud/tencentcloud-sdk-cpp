@@ -113,10 +113,14 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeMessageListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListRequest.h>
@@ -308,12 +312,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductSKUListResponse> DescribeProductSKUListOutcome;
                 typedef std::future<DescribeProductSKUListOutcome> DescribeProductSKUListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeProductSKUListRequest&, DescribeProductSKUListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionClientResponse> DescribeSharedSubscriptionClientOutcome;
+                typedef std::future<DescribeSharedSubscriptionClientOutcome> DescribeSharedSubscriptionClientOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionClientRequest&, DescribeSharedSubscriptionClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionClientAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionGroupsResponse> DescribeSharedSubscriptionGroupsOutcome;
                 typedef std::future<DescribeSharedSubscriptionGroupsOutcome> DescribeSharedSubscriptionGroupsOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionGroupsRequest&, DescribeSharedSubscriptionGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionLagResponse> DescribeSharedSubscriptionLagOutcome;
                 typedef std::future<DescribeSharedSubscriptionLagOutcome> DescribeSharedSubscriptionLagOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionLagRequest&, DescribeSharedSubscriptionLagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionLagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionsResponse> DescribeSharedSubscriptionsOutcome;
+                typedef std::future<DescribeSharedSubscriptionsOutcome> DescribeSharedSubscriptionsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionsRequest&, DescribeSharedSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
@@ -791,6 +801,15 @@ namespace TencentCloud
                 DescribeProductSKUListOutcomeCallable DescribeProductSKUListCallable(const Model::DescribeProductSKUListRequest& request);
 
                 /**
+                 *查询共享订阅组详情信息
+                 * @param req DescribeSharedSubscriptionClientRequest
+                 * @return DescribeSharedSubscriptionClientOutcome
+                 */
+                DescribeSharedSubscriptionClientOutcome DescribeSharedSubscriptionClient(const Model::DescribeSharedSubscriptionClientRequest &request);
+                void DescribeSharedSubscriptionClientAsync(const Model::DescribeSharedSubscriptionClientRequest& request, const DescribeSharedSubscriptionClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedSubscriptionClientOutcomeCallable DescribeSharedSubscriptionClientCallable(const Model::DescribeSharedSubscriptionClientRequest& request);
+
+                /**
                  *查询集群下共享订阅组列表
                  * @param req DescribeSharedSubscriptionGroupsRequest
                  * @return DescribeSharedSubscriptionGroupsOutcome
@@ -807,6 +826,15 @@ namespace TencentCloud
                 DescribeSharedSubscriptionLagOutcome DescribeSharedSubscriptionLag(const Model::DescribeSharedSubscriptionLagRequest &request);
                 void DescribeSharedSubscriptionLagAsync(const Model::DescribeSharedSubscriptionLagRequest& request, const DescribeSharedSubscriptionLagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSharedSubscriptionLagOutcomeCallable DescribeSharedSubscriptionLagCallable(const Model::DescribeSharedSubscriptionLagRequest& request);
+
+                /**
+                 *查询共享订阅组订阅列表
+                 * @param req DescribeSharedSubscriptionsRequest
+                 * @return DescribeSharedSubscriptionsOutcome
+                 */
+                DescribeSharedSubscriptionsOutcome DescribeSharedSubscriptions(const Model::DescribeSharedSubscriptionsRequest &request);
+                void DescribeSharedSubscriptionsAsync(const Model::DescribeSharedSubscriptionsRequest& request, const DescribeSharedSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedSubscriptionsOutcomeCallable DescribeSharedSubscriptionsCallable(const Model::DescribeSharedSubscriptionsRequest& request);
 
                 /**
                  *查询mqtt主题详情

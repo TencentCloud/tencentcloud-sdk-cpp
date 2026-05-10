@@ -46,7 +46,9 @@ TopicInfo::TopicInfo() :
     m_topicAsyncTaskIDHasBeenSet(false),
     m_migrationStatusHasBeenSet(false),
     m_effectiveDateHasBeenSet(false),
-    m_isSourceFromHasBeenSet(false)
+    m_isSourceFromHasBeenSet(false),
+    m_billingModeHasBeenSet(false),
+    m_newBillingModeHasBeenSet(false)
 {
 }
 
@@ -332,6 +334,26 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_isSourceFromHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingMode") && !value["BillingMode"].IsNull())
+    {
+        if (!value["BillingMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.BillingMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingMode = value["BillingMode"].GetUint64();
+        m_billingModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewBillingMode") && !value["NewBillingMode"].IsNull())
+    {
+        if (!value["NewBillingMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.NewBillingMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newBillingMode = value["NewBillingMode"].GetUint64();
+        m_newBillingModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +575,22 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsSourceFrom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSourceFrom, allocator);
+    }
+
+    if (m_billingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingMode, allocator);
+    }
+
+    if (m_newBillingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewBillingMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newBillingMode, allocator);
     }
 
 }
@@ -972,5 +1010,37 @@ void TopicInfo::SetIsSourceFrom(const bool& _isSourceFrom)
 bool TopicInfo::IsSourceFromHasBeenSet() const
 {
     return m_isSourceFromHasBeenSet;
+}
+
+uint64_t TopicInfo::GetBillingMode() const
+{
+    return m_billingMode;
+}
+
+void TopicInfo::SetBillingMode(const uint64_t& _billingMode)
+{
+    m_billingMode = _billingMode;
+    m_billingModeHasBeenSet = true;
+}
+
+bool TopicInfo::BillingModeHasBeenSet() const
+{
+    return m_billingModeHasBeenSet;
+}
+
+uint64_t TopicInfo::GetNewBillingMode() const
+{
+    return m_newBillingMode;
+}
+
+void TopicInfo::SetNewBillingMode(const uint64_t& _newBillingMode)
+{
+    m_newBillingMode = _newBillingMode;
+    m_newBillingModeHasBeenSet = true;
+}
+
+bool TopicInfo::NewBillingModeHasBeenSet() const
+{
+    return m_newBillingModeHasBeenSet;
 }
 

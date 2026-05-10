@@ -344,6 +344,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateBackupRequest.h
   include/tencentcloud/cdb/v20170320/model/AccountInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeTimeWindowRequest.h
+  include/tencentcloud/cdb/v20170320/model/UpgradeAnalysisInstanceVersionInfo.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeSSLStatusResponse.h
@@ -818,6 +819,7 @@ set(cdb_src
   src/v20170320/model/CreateBackupRequest.cpp
   src/v20170320/model/AccountInfo.cpp
   src/v20170320/model/DescribeTimeWindowRequest.cpp
+  src/v20170320/model/UpgradeAnalysisInstanceVersionInfo.cpp
   src/v20170320/model/AdjustCdbProxyAddressResponse.cpp
   src/v20170320/model/ModifyDBInstanceVipVportRequest.cpp
   src/v20170320/model/DescribeSSLStatusResponse.cpp

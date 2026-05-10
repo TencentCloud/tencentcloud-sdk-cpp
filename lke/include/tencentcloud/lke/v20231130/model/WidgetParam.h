@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数名称
-                     * @return Name 参数名称
+                     * 获取<p>参数名称</p>
+                     * @return Name <p>参数名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置参数名称
-                     * @param _name 参数名称
+                     * 设置<p>参数名称</p>
+                     * @param _name <p>参数名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参数类型
-                     * @return Type 参数类型
+                     * 获取<p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>
+                     * @return Type <p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置参数类型
-                     * @param _type 参数类型
+                     * 设置<p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>
+                     * @param _type <p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取子参数
-                     * @return SubParams 子参数
+                     * 获取<p>子参数</p>
+                     * @return SubParams <p>子参数</p>
                      * 
                      */
                     std::vector<WidgetParam> GetSubParams() const;
 
                     /**
-                     * 设置子参数
-                     * @param _subParams 子参数
+                     * 设置<p>子参数</p>
+                     * @param _subParams <p>子参数</p>
                      * 
                      */
                     void SetSubParams(const std::vector<WidgetParam>& _subParams);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SubParamsHasBeenSet() const;
 
                     /**
-                     * 获取默认值, Input未指定时，使用该值
-                     * @return DefaultValue 默认值, Input未指定时，使用该值
+                     * 获取<p>默认值, Input未指定时，使用该值</p>
+                     * @return DefaultValue <p>默认值, Input未指定时，使用该值</p>
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置默认值, Input未指定时，使用该值
-                     * @param _defaultValue 默认值, Input未指定时，使用该值
+                     * 设置<p>默认值, Input未指定时，使用该值</p>
+                     * @param _defaultValue <p>默认值, Input未指定时，使用该值</p>
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取输入的值
-                     * @return Input 输入的值
+                     * 获取<p>输入的值</p>
+                     * @return Input <p>输入的值</p>
                      * 
                      */
                     AgentInput GetInput() const;
 
                     /**
-                     * 设置输入的值
-                     * @param _input 输入的值
+                     * 设置<p>输入的值</p>
+                     * @param _input <p>输入的值</p>
                      * 
                      */
                     void SetInput(const AgentInput& _input);
@@ -156,31 +156,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数名称
+                     * <p>参数名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参数类型
+                     * <p>参数类型</p><p>枚举值：</p><ul><li>0： string</li><li>1： int</li><li>2： float</li><li>3： bool</li><li>4： object</li><li>5： array_string</li><li>6： array_int</li><li>7： array_float</li><li>8： array_bool</li><li>9： array_object</li><li>20： array_array</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 子参数
+                     * <p>子参数</p>
                      */
                     std::vector<WidgetParam> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**
-                     * 默认值, Input未指定时，使用该值
+                     * <p>默认值, Input未指定时，使用该值</p>
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 输入的值
+                     * <p>输入的值</p>
                      */
                     AgentInput m_input;
                     bool m_inputHasBeenSet;

@@ -49,27 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预付费商品实例类型，取值有：
-<li>StarterPackage：点播新手包。</li>
-<li>MiniProgramPlugin：点播小程序插件。</li>
-<li>ResourcePackage：点播资源包。</li>
-                     * @return ProductType 预付费商品实例类型，取值有：
-<li>StarterPackage：点播新手包。</li>
-<li>MiniProgramPlugin：点播小程序插件。</li>
-<li>ResourcePackage：点播资源包。</li>
+                     * 获取<p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>
+                     * @return ProductType <p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置预付费商品实例类型，取值有：
-<li>StarterPackage：点播新手包。</li>
-<li>MiniProgramPlugin：点播小程序插件。</li>
-<li>ResourcePackage：点播资源包。</li>
-                     * @param _productType 预付费商品实例类型，取值有：
-<li>StarterPackage：点播新手包。</li>
-<li>MiniProgramPlugin：点播小程序插件。</li>
-<li>ResourcePackage：点播资源包。</li>
+                     * 设置<p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>
+                     * @param _productType <p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -82,15 +70,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return StartTime 资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取<p>资源包实例起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return StartTime <p>资源包实例起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param _startTime 资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置<p>资源包实例起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _startTime <p>资源包实例起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -103,15 +91,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return ExpireTime 资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取<p>资源包实例过期日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return ExpireTime <p>资源包实例过期日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param _expireTime 资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置<p>资源包实例过期日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _expireTime <p>资源包实例过期日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -124,15 +112,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。
-                     * @return ProductInstanceId 资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。
+                     * 获取<p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>
+                     * @return ProductInstanceId <p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>
                      * 
                      */
                     std::string GetProductInstanceId() const;
 
                     /**
-                     * 设置资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。
-                     * @param _productInstanceId 资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。
+                     * 设置<p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>
+                     * @param _productInstanceId <p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>
                      * 
                      */
                     void SetProductInstanceId(const std::string& _productInstanceId);
@@ -145,15 +133,15 @@ namespace TencentCloud
                     bool ProductInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return LastConsumeDate 系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取<p>系统最近一次扣除资源包的日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return LastConsumeDate <p>系统最近一次扣除资源包的日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetLastConsumeDate() const;
 
                     /**
-                     * 设置系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param _lastConsumeDate 系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置<p>系统最近一次扣除资源包的日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _lastConsumeDate <p>系统最近一次扣除资源包的日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetLastConsumeDate(const std::string& _lastConsumeDate);
@@ -166,23 +154,15 @@ namespace TencentCloud
                     bool LastConsumeDateHasBeenSet() const;
 
                     /**
-                     * 获取资源包绑定 License 状态，取值有：
-<li>0：未绑定。</li>
-<li>1：已绑定。</li>
-                     * @return BindStatus 资源包绑定 License 状态，取值有：
-<li>0：未绑定。</li>
-<li>1：已绑定。</li>
+                     * 获取<p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>
+                     * @return BindStatus <p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>
                      * 
                      */
                     int64_t GetBindStatus() const;
 
                     /**
-                     * 设置资源包绑定 License 状态，取值有：
-<li>0：未绑定。</li>
-<li>1：已绑定。</li>
-                     * @param _bindStatus 资源包绑定 License 状态，取值有：
-<li>0：未绑定。</li>
-<li>1：已绑定。</li>
+                     * 设置<p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>
+                     * @param _bindStatus <p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>
                      * 
                      */
                     void SetBindStatus(const int64_t& _bindStatus);
@@ -195,15 +175,15 @@ namespace TencentCloud
                     bool BindStatusHasBeenSet() const;
 
                     /**
-                     * 获取预付费资源包实例中包含的资源包列表。
-                     * @return ProductInstanceResourceSet 预付费资源包实例中包含的资源包列表。
+                     * 获取<p>预付费资源包实例中包含的资源包列表。</p>
+                     * @return ProductInstanceResourceSet <p>预付费资源包实例中包含的资源包列表。</p>
                      * @deprecated
                      */
                     std::vector<ProductInstanceRecource> GetProductInstanceResourceSet() const;
 
                     /**
-                     * 设置预付费资源包实例中包含的资源包列表。
-                     * @param _productInstanceResourceSet 预付费资源包实例中包含的资源包列表。
+                     * 设置<p>预付费资源包实例中包含的资源包列表。</p>
+                     * @param _productInstanceResourceSet <p>预付费资源包实例中包含的资源包列表。</p>
                      * @deprecated
                      */
                     void SetProductInstanceResourceSet(const std::vector<ProductInstanceRecource>& _productInstanceResourceSet);
@@ -216,15 +196,15 @@ namespace TencentCloud
                     bool ProductInstanceResourceSetHasBeenSet() const;
 
                     /**
-                     * 获取预付费资源包实例中包含的资源包列表。
-                     * @return ResourceSet 预付费资源包实例中包含的资源包列表。
+                     * 获取<p>预付费资源包实例中包含的资源包列表。</p>
+                     * @return ResourceSet <p>预付费资源包实例中包含的资源包列表。</p>
                      * 
                      */
                     std::vector<ProductInstanceResource> GetResourceSet() const;
 
                     /**
-                     * 设置预付费资源包实例中包含的资源包列表。
-                     * @param _resourceSet 预付费资源包实例中包含的资源包列表。
+                     * 设置<p>预付费资源包实例中包含的资源包列表。</p>
+                     * @param _resourceSet <p>预付费资源包实例中包含的资源包列表。</p>
                      * 
                      */
                     void SetResourceSet(const std::vector<ProductInstanceResource>& _resourceSet);
@@ -237,23 +217,15 @@ namespace TencentCloud
                     bool ResourceSetHasBeenSet() const;
 
                     /**
-                     * 获取资源包实例的状态，取值有：
-<li>Effective：生效，可用于计费抵扣。</li>
-<li>Isolated：隔离，不可用于计费抵扣。</li>
-                     * @return ProductInstanceStatus 资源包实例的状态，取值有：
-<li>Effective：生效，可用于计费抵扣。</li>
-<li>Isolated：隔离，不可用于计费抵扣。</li>
+                     * 获取<p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>
+                     * @return ProductInstanceStatus <p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>
                      * 
                      */
                     std::string GetProductInstanceStatus() const;
 
                     /**
-                     * 设置资源包实例的状态，取值有：
-<li>Effective：生效，可用于计费抵扣。</li>
-<li>Isolated：隔离，不可用于计费抵扣。</li>
-                     * @param _productInstanceStatus 资源包实例的状态，取值有：
-<li>Effective：生效，可用于计费抵扣。</li>
-<li>Isolated：隔离，不可用于计费抵扣。</li>
+                     * 设置<p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>
+                     * @param _productInstanceStatus <p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>
                      * 
                      */
                     void SetProductInstanceStatus(const std::string& _productInstanceStatus);
@@ -266,23 +238,15 @@ namespace TencentCloud
                     bool ProductInstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取资源包实例的可退还状态，取值有：
-<li>FullRefund：可全额退款。</li>
-<li>Denied：不可退款。</li>
-                     * @return RefundStatus 资源包实例的可退还状态，取值有：
-<li>FullRefund：可全额退款。</li>
-<li>Denied：不可退款。</li>
+                     * 获取<p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>
+                     * @return RefundStatus <p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>
                      * 
                      */
                     std::string GetRefundStatus() const;
 
                     /**
-                     * 设置资源包实例的可退还状态，取值有：
-<li>FullRefund：可全额退款。</li>
-<li>Denied：不可退款。</li>
-                     * @param _refundStatus 资源包实例的可退还状态，取值有：
-<li>FullRefund：可全额退款。</li>
-<li>Denied：不可退款。</li>
+                     * 设置<p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>
+                     * @param _refundStatus <p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>
                      * 
                      */
                     void SetRefundStatus(const std::string& _refundStatus);
@@ -295,31 +259,15 @@ namespace TencentCloud
                     bool RefundStatusHasBeenSet() const;
 
                     /**
-                     * 获取自动续费状态，取值有：
-<li>Never：不自动续费。</li>
-<li>Expire：到期自动续费。</li>
-<li>ExpireOrUseOut：到期或用完自动续费。</li>
-<li>NotSupport：不支持。</li>
-                     * @return RenewStatus 自动续费状态，取值有：
-<li>Never：不自动续费。</li>
-<li>Expire：到期自动续费。</li>
-<li>ExpireOrUseOut：到期或用完自动续费。</li>
-<li>NotSupport：不支持。</li>
+                     * 获取<p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>
+                     * @return RenewStatus <p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>
                      * 
                      */
                     std::string GetRenewStatus() const;
 
                     /**
-                     * 设置自动续费状态，取值有：
-<li>Never：不自动续费。</li>
-<li>Expire：到期自动续费。</li>
-<li>ExpireOrUseOut：到期或用完自动续费。</li>
-<li>NotSupport：不支持。</li>
-                     * @param _renewStatus 自动续费状态，取值有：
-<li>Never：不自动续费。</li>
-<li>Expire：到期自动续费。</li>
-<li>ExpireOrUseOut：到期或用完自动续费。</li>
-<li>NotSupport：不支持。</li>
+                     * 设置<p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>
+                     * @param _renewStatus <p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>
                      * 
                      */
                     void SetRenewStatus(const std::string& _renewStatus);
@@ -334,80 +282,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预付费商品实例类型，取值有：
-<li>StarterPackage：点播新手包。</li>
-<li>MiniProgramPlugin：点播小程序插件。</li>
-<li>ResourcePackage：点播资源包。</li>
+                     * <p>预付费商品实例类型，取值有：</p><li>StarterPackage：点播新手包。</li><li>MiniProgramPlugin：点播小程序插件。</li><li>ResourcePackage：点播资源包。</li>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 资源包实例起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * <p>资源包实例起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 资源包实例过期日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * <p>资源包实例过期日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。
+                     * <p>资源包实例ID。对应每个资源包，系统会分配相应的资源。续费或者升级资源包时，需要带上这个资源ID。</p>
                      */
                     std::string m_productInstanceId;
                     bool m_productInstanceIdHasBeenSet;
 
                     /**
-                     * 系统最近一次扣除资源包的日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * <p>系统最近一次扣除资源包的日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_lastConsumeDate;
                     bool m_lastConsumeDateHasBeenSet;
 
                     /**
-                     * 资源包绑定 License 状态，取值有：
-<li>0：未绑定。</li>
-<li>1：已绑定。</li>
+                     * <p>资源包绑定 License 状态，取值有：</p><li>0：未绑定。</li><li>1：已绑定。</li>
                      */
                     int64_t m_bindStatus;
                     bool m_bindStatusHasBeenSet;
 
                     /**
-                     * 预付费资源包实例中包含的资源包列表。
+                     * <p>预付费资源包实例中包含的资源包列表。</p>
                      */
                     std::vector<ProductInstanceRecource> m_productInstanceResourceSet;
                     bool m_productInstanceResourceSetHasBeenSet;
 
                     /**
-                     * 预付费资源包实例中包含的资源包列表。
+                     * <p>预付费资源包实例中包含的资源包列表。</p>
                      */
                     std::vector<ProductInstanceResource> m_resourceSet;
                     bool m_resourceSetHasBeenSet;
 
                     /**
-                     * 资源包实例的状态，取值有：
-<li>Effective：生效，可用于计费抵扣。</li>
-<li>Isolated：隔离，不可用于计费抵扣。</li>
+                     * <p>资源包实例的状态，取值有：</p><li>Effective：生效，可用于计费抵扣。</li><li>Isolated：隔离，不可用于计费抵扣。</li>
                      */
                     std::string m_productInstanceStatus;
                     bool m_productInstanceStatusHasBeenSet;
 
                     /**
-                     * 资源包实例的可退还状态，取值有：
-<li>FullRefund：可全额退款。</li>
-<li>Denied：不可退款。</li>
+                     * <p>资源包实例的可退还状态，取值有：</p><li>FullRefund：可全额退款。</li><li>Denied：不可退款。</li>
                      */
                     std::string m_refundStatus;
                     bool m_refundStatusHasBeenSet;
 
                     /**
-                     * 自动续费状态，取值有：
-<li>Never：不自动续费。</li>
-<li>Expire：到期自动续费。</li>
-<li>ExpireOrUseOut：到期或用完自动续费。</li>
-<li>NotSupport：不支持。</li>
+                     * <p>自动续费状态，取值有：</p><li>Never：不自动续费。</li><li>Expire：到期自动续费。</li><li>ExpireOrUseOut：到期或用完自动续费。</li><li>NotSupport：不支持。</li>
                      */
                     std::string m_renewStatus;
                     bool m_renewStatusHasBeenSet;

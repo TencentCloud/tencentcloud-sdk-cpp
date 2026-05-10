@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool AlignmentsHasBeenSet() const;
 
+                    /**
+                     * 获取音频时长
+                     * @return TotalDurationMs 音频时长
+                     * 
+                     */
+                    uint64_t GetTotalDurationMs() const;
+
+                    /**
+                     * 判断参数 TotalDurationMs 是否已赋值
+                     * @return TotalDurationMs 是否已赋值
+                     * 
+                     */
+                    bool TotalDurationMsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     std::vector<AlignmentItem> m_alignments;
                     bool m_alignmentsHasBeenSet;
+
+                    /**
+                     * 音频时长
+                     */
+                    uint64_t m_totalDurationMs;
+                    bool m_totalDurationMsHasBeenSet;
 
                 };
             }

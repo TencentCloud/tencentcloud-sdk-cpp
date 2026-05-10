@@ -72,7 +72,8 @@ InstanceInfo::InstanceInfo() :
     m_analysisNodeInfosHasBeenSet(false),
     m_deviceBandwidthHasBeenSet(false),
     m_destroyProtectHasBeenSet(false),
-    m_cpuModelHasBeenSet(false)
+    m_cpuModelHasBeenSet(false),
+    m_analysisUpgradeVersionInfoHasBeenSet(false)
 {
 }
 
@@ -672,6 +673,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_cpuModelHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisUpgradeVersionInfo") && !value["AnalysisUpgradeVersionInfo"].IsNull())
+    {
+        if (!value["AnalysisUpgradeVersionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AnalysisUpgradeVersionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_analysisUpgradeVersionInfo.Deserialize(value["AnalysisUpgradeVersionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_analysisUpgradeVersionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1131,6 +1149,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CpuModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_analysisUpgradeVersionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisUpgradeVersionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_analysisUpgradeVersionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1966,5 +1993,21 @@ void InstanceInfo::SetCpuModel(const string& _cpuModel)
 bool InstanceInfo::CpuModelHasBeenSet() const
 {
     return m_cpuModelHasBeenSet;
+}
+
+UpgradeAnalysisInstanceVersionInfo InstanceInfo::GetAnalysisUpgradeVersionInfo() const
+{
+    return m_analysisUpgradeVersionInfo;
+}
+
+void InstanceInfo::SetAnalysisUpgradeVersionInfo(const UpgradeAnalysisInstanceVersionInfo& _analysisUpgradeVersionInfo)
+{
+    m_analysisUpgradeVersionInfo = _analysisUpgradeVersionInfo;
+    m_analysisUpgradeVersionInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::AnalysisUpgradeVersionInfoHasBeenSet() const
+{
+    return m_analysisUpgradeVersionInfoHasBeenSet;
 }
 

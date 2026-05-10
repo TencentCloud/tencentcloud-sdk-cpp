@@ -639,6 +639,27 @@ namespace TencentCloud
                      */
                     bool WebUiVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>系统盘是否加密</p>
+                     * @return EnableCbsSysEncryptFlag <p>系统盘是否加密</p>
+                     * 
+                     */
+                    bool GetEnableCbsSysEncryptFlag() const;
+
+                    /**
+                     * 设置<p>系统盘是否加密</p>
+                     * @param _enableCbsSysEncryptFlag <p>系统盘是否加密</p>
+                     * 
+                     */
+                    void SetEnableCbsSysEncryptFlag(const bool& _enableCbsSysEncryptFlag);
+
+                    /**
+                     * 判断参数 EnableCbsSysEncryptFlag 是否已赋值
+                     * @return EnableCbsSysEncryptFlag 是否已赋值
+                     * 
+                     */
+                    bool EnableCbsSysEncryptFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -808,6 +829,12 @@ namespace TencentCloud
                      */
                     int64_t m_webUiVersion;
                     bool m_webUiVersionHasBeenSet;
+
+                    /**
+                     * <p>系统盘是否加密</p>
+                     */
+                    bool m_enableCbsSysEncryptFlag;
+                    bool m_enableCbsSysEncryptFlagHasBeenSet;
 
                 };
             }

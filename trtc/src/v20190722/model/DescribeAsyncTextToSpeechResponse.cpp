@@ -26,7 +26,8 @@ using namespace std;
 DescribeAsyncTextToSpeechResponse::DescribeAsyncTextToSpeechResponse() :
     m_statusHasBeenSet(false),
     m_audioDownloadUrlHasBeenSet(false),
-    m_subtitleDownloadUrlHasBeenSet(false)
+    m_subtitleDownloadUrlHasBeenSet(false),
+    m_totalDurationMsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeAsyncTextToSpeechResponse::Deserialize(const string 
         m_subtitleDownloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalDurationMs") && !rsp["TotalDurationMs"].IsNull())
+    {
+        if (!rsp["TotalDurationMs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalDurationMs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalDurationMs = rsp["TotalDurationMs"].GetUint64();
+        m_totalDurationMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeAsyncTextToSpeechResponse::ToJsonString() const
         string key = "SubtitleDownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleDownloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalDurationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalDurationMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalDurationMs, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string DescribeAsyncTextToSpeechResponse::GetSubtitleDownloadUrl() const
 bool DescribeAsyncTextToSpeechResponse::SubtitleDownloadUrlHasBeenSet() const
 {
     return m_subtitleDownloadUrlHasBeenSet;
+}
+
+uint64_t DescribeAsyncTextToSpeechResponse::GetTotalDurationMs() const
+{
+    return m_totalDurationMs;
+}
+
+bool DescribeAsyncTextToSpeechResponse::TotalDurationMsHasBeenSet() const
+{
+    return m_totalDurationMsHasBeenSet;
 }
 
 

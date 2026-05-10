@@ -63,6 +63,8 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRouterRuleRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRouterRuleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicV2Request.h>
@@ -399,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRocketMQRoleResponse> CreateRocketMQRoleOutcome;
                 typedef std::future<CreateRocketMQRoleOutcome> CreateRocketMQRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQRoleRequest&, CreateRocketMQRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQRouterRuleResponse> CreateRocketMQRouterRuleOutcome;
+                typedef std::future<CreateRocketMQRouterRuleOutcome> CreateRocketMQRouterRuleOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQRouterRuleRequest&, CreateRocketMQRouterRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQRouterRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRocketMQTopicResponse> CreateRocketMQTopicOutcome;
                 typedef std::future<CreateRocketMQTopicOutcome> CreateRocketMQTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQTopicRequest&, CreateRocketMQTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQTopicAsyncHandler;
@@ -980,6 +985,15 @@ namespace TencentCloud
                 CreateRocketMQRoleOutcome CreateRocketMQRole(const Model::CreateRocketMQRoleRequest &request);
                 void CreateRocketMQRoleAsync(const Model::CreateRocketMQRoleRequest& request, const CreateRocketMQRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRocketMQRoleOutcomeCallable CreateRocketMQRoleCallable(const Model::CreateRocketMQRoleRequest& request);
+
+                /**
+                 *创建RocketMQ Router规则
+                 * @param req CreateRocketMQRouterRuleRequest
+                 * @return CreateRocketMQRouterRuleOutcome
+                 */
+                CreateRocketMQRouterRuleOutcome CreateRocketMQRouterRule(const Model::CreateRocketMQRouterRuleRequest &request);
+                void CreateRocketMQRouterRuleAsync(const Model::CreateRocketMQRouterRuleRequest& request, const CreateRocketMQRouterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQRouterRuleOutcomeCallable CreateRocketMQRouterRuleCallable(const Model::CreateRocketMQRouterRuleRequest& request);
 
                 /**
                  *批量创建 RocketMQ 主题。

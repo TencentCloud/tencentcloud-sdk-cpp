@@ -34,7 +34,8 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_tasksNotifyModeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_extInfoHasBeenSet(false)
+    m_extInfoHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,14 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -343,6 +352,22 @@ void ProcessMediaRequest::SetExtInfo(const string& _extInfo)
 bool ProcessMediaRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
+}
+
+string ProcessMediaRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void ProcessMediaRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 

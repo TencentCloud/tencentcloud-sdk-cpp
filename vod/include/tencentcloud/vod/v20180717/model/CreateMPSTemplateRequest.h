@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MPSAIAnalysisTemplate.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartSubtitleTemplate.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartEraseTemplate.h>
 
 
 namespace TencentCloud
@@ -43,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,31 +67,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要创建的 MPS 模板的类型。取值：
-<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
-                     * @return TemplateType 需要创建的 MPS 模板的类型。取值：
-<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * 获取<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
+                     * @return TemplateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置需要创建的 MPS 模板的类型。取值：
-<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
-                     * @param _templateType 需要创建的 MPS 模板的类型。取值：
-<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * 设置<p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
+                     * @param _templateType <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -101,47 +88,15 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。
-目前仅支持通过此方式创建以下任务类型的模板：
-1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。
-2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-
-目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。
-
-                     * @return MPSCreateTemplateParams MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。
-目前仅支持通过此方式创建以下任务类型的模板：
-1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。
-2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-
-目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。
-
+                     * 获取<p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/40249">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/117004">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/123735">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>
+                     * @return MPSCreateTemplateParams <p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/40249">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/117004">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/123735">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>
                      * 
                      */
                     std::string GetMPSCreateTemplateParams() const;
 
                     /**
-                     * 设置MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。
-目前仅支持通过此方式创建以下任务类型的模板：
-1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。
-2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-
-目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。
-
-                     * @param _mPSCreateTemplateParams MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。
-目前仅支持通过此方式创建以下任务类型的模板：
-1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。
-2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-
-目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。
-
+                     * 设置<p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/40249">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/117004">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/123735">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>
+                     * @param _mPSCreateTemplateParams <p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/40249">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/117004">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/123735">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>
                      * 
                      */
                     void SetMPSCreateTemplateParams(const std::string& _mPSCreateTemplateParams);
@@ -153,37 +108,106 @@ namespace TencentCloud
                      */
                     bool MPSCreateTemplateParamsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @return AIAnalysisTemplate <p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSAIAnalysisTemplate GetAIAnalysisTemplate() const;
+
+                    /**
+                     * 设置<p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @param _aIAnalysisTemplate <p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetAIAnalysisTemplate(const MPSAIAnalysisTemplate& _aIAnalysisTemplate);
+
+                    /**
+                     * 判断参数 AIAnalysisTemplate 是否已赋值
+                     * @return AIAnalysisTemplate 是否已赋值
+                     * 
+                     */
+                    bool AIAnalysisTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @return SmartSubtitleTemplate <p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartSubtitleTemplate GetSmartSubtitleTemplate() const;
+
+                    /**
+                     * 设置<p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @param _smartSubtitleTemplate <p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartSubtitleTemplate(const MPSSmartSubtitleTemplate& _smartSubtitleTemplate);
+
+                    /**
+                     * 判断参数 SmartSubtitleTemplate 是否已赋值
+                     * @return SmartSubtitleTemplate 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitleTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @return SmartEraseTemplate <p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartEraseTemplate GetSmartEraseTemplate() const;
+
+                    /**
+                     * 设置<p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * @param _smartEraseTemplate <p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartEraseTemplate(const MPSSmartEraseTemplate& _smartEraseTemplate);
+
+                    /**
+                     * 判断参数 SmartEraseTemplate 是否已赋值
+                     * @return SmartEraseTemplate 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTemplateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 需要创建的 MPS 模板的类型。取值：
-<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>
-<li>AIAnalysis: 创建智能分析模板。</li>
-<li>SmartSubtitle: 创建智能字幕模板。</li>
-<li>SmartErase: 创建智能擦除模板。</li>
+                     * <p>需要创建的 MPS 模板的类型。取值：</p><li>AIAnalysis: 创建智能分析模板。</li><li>SmartSubtitle: 创建智能字幕模板。</li><li>SmartErase: 创建智能擦除模板。</li>
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。
-目前仅支持通过此方式创建以下任务类型的模板：
-1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填，且 Container 目前暂不支持 hls。
-2. 智能分析：仅支持填写“[创建内容分析模板](https://cloud.tencent.com/document/api/862/40249)”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-3. 智能字幕：仅支持填写“[创建智能字幕模板](https://cloud.tencent.com/document/api/862/117004)”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-4. 智能擦除：仅支持填写“[创建智能擦除模板](https://cloud.tencent.com/document/api/862/123735)”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。
-
-目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。
-
+                     * <p>MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。<br>目前仅支持通过此方式创建以下任务类型的模板：</p><ol><li>智能分析：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/40249">创建内容分析模板</a>”接口中的Name、Comment、ClassificationConfigure、TagConfigure、CoverConfigure、FrameTagConfigure几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能字幕：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/117004">创建智能字幕模板</a>”接口中的Name、Comment、TranslateSwitch、VideoSrcLanguage、SubtitleFormat、SubtitleType、AsrHotWordsConfigure、TranslateDstLanguage、ProcessType几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li><li>智能擦除：仅支持填写“<a href="https://cloud.tencent.com/document/api/862/123735">创建智能擦除模板</a>”接口中的Name、Comment、EraseType、EraseSubtitleConfig、EraseWatermarkConfig、ErasePrivacyConfig几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。</li></ol><p>目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。</p>
                      */
                     std::string m_mPSCreateTemplateParams;
                     bool m_mPSCreateTemplateParamsHasBeenSet;
+
+                    /**
+                     * <p>智能分析模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     */
+                    MPSAIAnalysisTemplate m_aIAnalysisTemplate;
+                    bool m_aIAnalysisTemplateHasBeenSet;
+
+                    /**
+                     * <p>智能字幕模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     */
+                    MPSSmartSubtitleTemplate m_smartSubtitleTemplate;
+                    bool m_smartSubtitleTemplateHasBeenSet;
+
+                    /**
+                     * <p>智能擦除模板参数，MPSCreateTemplateParams为空时有效。</p>
+                     */
+                    MPSSmartEraseTemplate m_smartEraseTemplate;
+                    bool m_smartEraseTemplateHasBeenSet;
 
                 };
             }

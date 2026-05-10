@@ -50,7 +50,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_needCdbAuditHasBeenSet(false),
     m_sgIPHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
-    m_webUiVersionHasBeenSet(false)
+    m_webUiVersionHasBeenSet(false),
+    m_enableCbsSysEncryptFlagHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "WebUiVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_webUiVersion, allocator);
+    }
+
+    if (m_enableCbsSysEncryptFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCbsSysEncryptFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCbsSysEncryptFlag, allocator);
     }
 
 
@@ -788,6 +797,22 @@ void CreateClusterRequest::SetWebUiVersion(const int64_t& _webUiVersion)
 bool CreateClusterRequest::WebUiVersionHasBeenSet() const
 {
     return m_webUiVersionHasBeenSet;
+}
+
+bool CreateClusterRequest::GetEnableCbsSysEncryptFlag() const
+{
+    return m_enableCbsSysEncryptFlag;
+}
+
+void CreateClusterRequest::SetEnableCbsSysEncryptFlag(const bool& _enableCbsSysEncryptFlag)
+{
+    m_enableCbsSysEncryptFlag = _enableCbsSysEncryptFlag;
+    m_enableCbsSysEncryptFlagHasBeenSet = true;
+}
+
+bool CreateClusterRequest::EnableCbsSysEncryptFlagHasBeenSet() const
+{
+    return m_enableCbsSysEncryptFlagHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测结果
-                     * @return Result 检测结果
+                     * 获取<p>检测结果</p>
+                     * @return Result <p>检测结果</p>
                      * 
                      */
                     std::string GetResult() const;
 
                     /**
-                     * 设置检测结果
-                     * @param _result 检测结果
+                     * 设置<p>检测结果</p>
+                     * @param _result <p>检测结果</p>
                      * 
                      */
                     void SetResult(const std::string& _result);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取置信度
-                     * @return Confidence 置信度
+                     * 获取<p>置信度</p>
+                     * @return Confidence <p>置信度</p>
                      * 
                      */
                     uint64_t GetConfidence() const;
 
                     /**
-                     * 设置置信度
-                     * @param _confidence 置信度
+                     * 设置<p>置信度</p>
+                     * @param _confidence <p>置信度</p>
                      * 
                      */
                     void SetConfidence(const uint64_t& _confidence);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检出类别</p>
+                     * @return Category <p>检出类别</p>
+                     * 
+                     */
+                    std::vector<std::string> GetCategory() const;
+
+                    /**
+                     * 设置<p>检出类别</p>
+                     * @param _category <p>检出类别</p>
+                     * 
+                     */
+                    void SetCategory(const std::vector<std::string>& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 检测结果
+                     * <p>检测结果</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 置信度
+                     * <p>置信度</p>
                      */
                     uint64_t m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * <p>检出类别</p>
+                     */
+                    std::vector<std::string> m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

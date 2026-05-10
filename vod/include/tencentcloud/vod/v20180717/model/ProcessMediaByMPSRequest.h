@@ -21,6 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MPSAiAnalysisTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartSubtitlesTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/MPSSmartEraseTaskInput.h>
 
 
 namespace TencentCloud
@@ -85,15 +88,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href="https://cloud.tencent.com/document/api/862/37578">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>
-                     * @return MPSProcessMediaParams <p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href="https://cloud.tencent.com/document/api/862/37578">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>
+                     * 获取<p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href="https://cloud.tencent.com/document/product/266/131209">使用MPS 媒体 AI 能力</a>，可通过<a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</p>
+                     * @return MPSProcessMediaParams <p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href="https://cloud.tencent.com/document/product/266/131209">使用MPS 媒体 AI 能力</a>，可通过<a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</p>
                      * 
                      */
                     std::string GetMPSProcessMediaParams() const;
 
                     /**
-                     * 设置<p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href="https://cloud.tencent.com/document/api/862/37578">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>
-                     * @param _mPSProcessMediaParams <p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href="https://cloud.tencent.com/document/api/862/37578">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>
+                     * 设置<p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href="https://cloud.tencent.com/document/product/266/131209">使用MPS 媒体 AI 能力</a>，可通过<a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</p>
+                     * @param _mPSProcessMediaParams <p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href="https://cloud.tencent.com/document/product/266/131209">使用MPS 媒体 AI 能力</a>，可通过<a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</p>
                      * 
                      */
                     void SetMPSProcessMediaParams(const std::string& _mPSProcessMediaParams);
@@ -104,6 +107,69 @@ namespace TencentCloud
                      * 
                      */
                     bool MPSProcessMediaParamsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @return AiAnalysisTask <p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    MPSAiAnalysisTaskInput GetAiAnalysisTask() const;
+
+                    /**
+                     * 设置<p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @param _aiAnalysisTask <p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    void SetAiAnalysisTask(const MPSAiAnalysisTaskInput& _aiAnalysisTask);
+
+                    /**
+                     * 判断参数 AiAnalysisTask 是否已赋值
+                     * @return AiAnalysisTask 是否已赋值
+                     * 
+                     */
+                    bool AiAnalysisTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @return SmartSubtitlesTask <p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
+
+                    /**
+                     * 设置<p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @param _smartSubtitlesTask <p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartSubtitlesTask(const MPSSmartSubtitlesTaskInput& _smartSubtitlesTask);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTask 是否已赋值
+                     * @return SmartSubtitlesTask 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @return SmartEraseTask <p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    MPSSmartEraseTaskInput GetSmartEraseTask() const;
+
+                    /**
+                     * 设置<p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * @param _smartEraseTask <p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     * 
+                     */
+                    void SetSmartEraseTask(const MPSSmartEraseTaskInput& _smartEraseTask);
+
+                    /**
+                     * 判断参数 SmartEraseTask 是否已赋值
+                     * @return SmartEraseTask 是否已赋值
+                     * 
+                     */
+                    bool SmartEraseTaskHasBeenSet() const;
 
                     /**
                      * 获取<p>保留字段，特殊用途时使用。</p>
@@ -141,10 +207,28 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。<br>视频处理参数详情请参考：<a href="https://cloud.tencent.com/document/api/862/37578">MPS 发起媒体处理</a>。<br>填写说明：</p><ol><li>目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；</li><li>当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；</li><li>音视频增强任务目前不支持使用预置模板发起，可通过 <a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</li></ol>
+                     * <p>可选参数，该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。不同类型的视频处理参数详情请参考 <a href="https://cloud.tencent.com/document/product/266/131209">使用MPS 媒体 AI 能力</a>，可通过<a href="https://cloud.tencent.com/document/product/266/122580">CreateMPSTemplate</a> 接口创建自定义模板。</p>
                      */
                     std::string m_mPSProcessMediaParams;
                     bool m_mPSProcessMediaParamsHasBeenSet;
+
+                    /**
+                     * <p>视频内容分析类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     */
+                    MPSAiAnalysisTaskInput m_aiAnalysisTask;
+                    bool m_aiAnalysisTaskHasBeenSet;
+
+                    /**
+                     * <p>智能字幕类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     */
+                    MPSSmartSubtitlesTaskInput m_smartSubtitlesTask;
+                    bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
+                     * <p>智能擦除类型任务参数，MPSProcessMediaParams为空时有效。</p>
+                     */
+                    MPSSmartEraseTaskInput m_smartEraseTask;
+                    bool m_smartEraseTaskHasBeenSet;
 
                     /**
                      * <p>保留字段，特殊用途时使用。</p>

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目 ID。
-                     * @return ProjectId 项目 ID。
+                     * 获取<p>项目 ID。</p>
+                     * @return ProjectId <p>项目 ID。</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID。
-                     * @param _projectId 项目 ID。
+                     * 设置<p>项目 ID。</p>
+                     * @param _projectId <p>项目 ID。</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。
-                     * @return InstanceTypes 实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。
+                     * 获取<p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>
+                     * @return InstanceTypes <p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>
                      * 
                      */
                     std::vector<uint64_t> GetInstanceTypes() const;
 
                     /**
-                     * 设置实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。
-                     * @param _instanceTypes 实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。
+                     * 设置<p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>
+                     * @param _instanceTypes <p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>
                      * 
                      */
                     void SetInstanceTypes(const std::vector<uint64_t>& _instanceTypes);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
-                     * 获取实例的内网 IP 地址。
-                     * @return Vips 实例的内网 IP 地址。
+                     * 获取<p>实例的内网 IP 地址。</p>
+                     * @return Vips <p>实例的内网 IP 地址。</p>
                      * 
                      */
                     std::vector<std::string> GetVips() const;
 
                     /**
-                     * 设置实例的内网 IP 地址。
-                     * @param _vips 实例的内网 IP 地址。
+                     * 设置<p>实例的内网 IP 地址。</p>
+                     * @param _vips <p>实例的内网 IP 地址。</p>
                      * 
                      */
                     void SetVips(const std::vector<std::string>& _vips);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool VipsHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）
-                     * @return Status 实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）
+                     * 获取<p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>
+                     * @return Status <p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>
                      * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
-                     * 设置实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）
-                     * @param _status 实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）
+                     * 设置<p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>
+                     * @param _status <p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>
                      * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为 0。
-                     * @return Offset 偏移量，默认值为 0。
+                     * 获取<p>偏移量，默认值为 0。</p>
+                     * @return Offset <p>偏移量，默认值为 0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为 0。
-                     * @param _offset 偏移量，默认值为 0。
+                     * 设置<p>偏移量，默认值为 0。</p>
+                     * @param _offset <p>偏移量，默认值为 0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量，默认值为 20，最大值为 2000。
-                     * @return Limit 单次请求返回的数量，默认值为 20，最大值为 2000。
+                     * 获取<p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>
+                     * @return Limit <p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量，默认值为 20，最大值为 2000。
-                     * @param _limit 单次请求返回的数量，默认值为 20，最大值为 2000。
+                     * 设置<p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>
+                     * @param _limit <p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。
-                     * @return SecurityGroupId 安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。
+                     * 获取<p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>
+                     * @return SecurityGroupId <p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。
-                     * @param _securityGroupId 安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。
+                     * 设置<p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>
+                     * @param _securityGroupId <p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，可取值：0 - 包年包月，1 - 小时计费。
-                     * @return PayTypes 付费类型，可取值：0 - 包年包月，1 - 小时计费。
+                     * 获取<p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>
+                     * @return PayTypes <p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>
                      * 
                      */
                     std::vector<uint64_t> GetPayTypes() const;
 
                     /**
-                     * 设置付费类型，可取值：0 - 包年包月，1 - 小时计费。
-                     * @param _payTypes 付费类型，可取值：0 - 包年包月，1 - 小时计费。
+                     * 设置<p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>
+                     * @param _payTypes <p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>
                      * 
                      */
                     void SetPayTypes(const std::vector<uint64_t>& _payTypes);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool PayTypesHasBeenSet() const;
 
                     /**
-                     * 获取实例名称。
-                     * @return InstanceNames 实例名称。
+                     * 获取<p>实例名称。</p>
+                     * @return InstanceNames <p>实例名称。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置实例名称。
-                     * @param _instanceNames 实例名称。
+                     * 设置<p>实例名称。</p>
+                     * @param _instanceNames <p>实例名称。</p>
                      * 
                      */
                     void SetInstanceNames(const std::vector<std::string>& _instanceNames);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool InstanceNamesHasBeenSet() const;
 
                     /**
-                     * 获取实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
-                     * @return TaskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
+                     * 获取<p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>
+                     * @return TaskStatus <p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>
                      * 
                      */
                     std::vector<uint64_t> GetTaskStatus() const;
 
                     /**
-                     * 设置实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
-                     * @param _taskStatus 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
+                     * 设置<p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>
+                     * @param _taskStatus <p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>
                      * 
                      */
                     void SetTaskStatus(const std::vector<uint64_t>& _taskStatus);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。
-                     * @return EngineVersions 实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。
+                     * 获取<p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>
+                     * @return EngineVersions <p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>
                      * 
                      */
                     std::vector<std::string> GetEngineVersions() const;
 
                     /**
-                     * 设置实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。
-                     * @param _engineVersions 实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。
+                     * 设置<p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>
+                     * @param _engineVersions <p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>
                      * 
                      */
                     void SetEngineVersions(const std::vector<std::string>& _engineVersions);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
-                     * 获取私有网络的 ID。
-                     * @return VpcIds 私有网络的 ID。
+                     * 获取<p>私有网络的 ID。</p>
+                     * @return VpcIds <p>私有网络的 ID。</p>
                      * 
                      */
                     std::vector<uint64_t> GetVpcIds() const;
 
                     /**
-                     * 设置私有网络的 ID。
-                     * @param _vpcIds 私有网络的 ID。
+                     * 设置<p>私有网络的 ID。</p>
+                     * @param _vpcIds <p>私有网络的 ID。</p>
                      * 
                      */
                     void SetVpcIds(const std::vector<uint64_t>& _vpcIds);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区的 ID。
-                     * @return ZoneIds 可用区的 ID。
+                     * 获取<p>可用区的 ID。</p>
+                     * @return ZoneIds <p>可用区的 ID。</p>
                      * 
                      */
                     std::vector<uint64_t> GetZoneIds() const;
 
                     /**
-                     * 设置可用区的 ID。
-                     * @param _zoneIds 可用区的 ID。
+                     * 设置<p>可用区的 ID。</p>
+                     * @param _zoneIds <p>可用区的 ID。</p>
                      * 
                      */
                     void SetZoneIds(const std::vector<uint64_t>& _zoneIds);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID。
-                     * @return SubnetIds 子网 ID。
+                     * 获取<p>子网 ID。</p>
+                     * @return SubnetIds <p>子网 ID。</p>
                      * 
                      */
                     std::vector<uint64_t> GetSubnetIds() const;
 
                     /**
-                     * 设置子网 ID。
-                     * @param _subnetIds 子网 ID。
+                     * 设置<p>子网 ID。</p>
+                     * @param _subnetIds <p>子网 ID。</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<uint64_t>& _subnetIds);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
-                     * @return CdbErrors 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
+                     * 获取<p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>
+                     * @return CdbErrors <p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>
                      * 
                      */
                     std::vector<int64_t> GetCdbErrors() const;
 
                     /**
-                     * 设置是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
-                     * @param _cdbErrors 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
+                     * 设置<p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>
+                     * @param _cdbErrors <p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>
                      * 
                      */
                     void SetCdbErrors(const std::vector<int64_t>& _cdbErrors);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool CdbErrorsHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
-                     * @return OrderBy 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
+                     * 获取<p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>
+                     * @return OrderBy <p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
-                     * @param _orderBy 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
+                     * 设置<p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>
+                     * @param _orderBy <p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
-                     * @return OrderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * 获取<p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>
+                     * @return OrderDirection <p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
-                     * @param _orderDirection 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * 设置<p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>
+                     * @param _orderDirection <p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -401,19 +401,15 @@ namespace TencentCloud
                     bool OrderDirectionHasBeenSet() const;
 
                     /**
-                     * 获取是否以安全组 ID 为过滤条件。
-说明：0表示否，1表示是。
-                     * @return WithSecurityGroup 是否以安全组 ID 为过滤条件。
-说明：0表示否，1表示是。
+                     * 获取<p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>
+                     * @return WithSecurityGroup <p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>
                      * 
                      */
                     int64_t GetWithSecurityGroup() const;
 
                     /**
-                     * 设置是否以安全组 ID 为过滤条件。
-说明：0表示否，1表示是。
-                     * @param _withSecurityGroup 是否以安全组 ID 为过滤条件。
-说明：0表示否，1表示是。
+                     * 设置<p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>
+                     * @param _withSecurityGroup <p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>
                      * 
                      */
                     void SetWithSecurityGroup(const int64_t& _withSecurityGroup);
@@ -426,15 +422,15 @@ namespace TencentCloud
                     bool WithSecurityGroupHasBeenSet() const;
 
                     /**
-                     * 获取是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。
-                     * @return WithExCluster 是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。
+                     * 获取<p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>
+                     * @return WithExCluster <p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>
                      * 
                      */
                     int64_t GetWithExCluster() const;
 
                     /**
-                     * 设置是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。
-                     * @param _withExCluster 是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。
+                     * 设置<p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>
+                     * @param _withExCluster <p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>
                      * 
                      */
                     void SetWithExCluster(const int64_t& _withExCluster);
@@ -447,15 +443,15 @@ namespace TencentCloud
                     bool WithExClusterHasBeenSet() const;
 
                     /**
-                     * 获取独享集群 ID。
-                     * @return ExClusterId 独享集群 ID。
+                     * 获取<p>独享集群 ID。</p>
+                     * @return ExClusterId <p>独享集群 ID。</p>
                      * 
                      */
                     std::string GetExClusterId() const;
 
                     /**
-                     * 设置独享集群 ID。
-                     * @param _exClusterId 独享集群 ID。
+                     * 设置<p>独享集群 ID。</p>
+                     * @param _exClusterId <p>独享集群 ID。</p>
                      * 
                      */
                     void SetExClusterId(const std::string& _exClusterId);
@@ -468,15 +464,15 @@ namespace TencentCloud
                     bool ExClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceIds 实例 ID。
+                     * 获取<p>实例 ID。</p>
+                     * @return InstanceIds <p>实例 ID。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceIds 实例 ID。
+                     * 设置<p>实例 ID。</p>
+                     * @param _instanceIds <p>实例 ID。</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -489,15 +485,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取初始化标记，可取值：0 - 未初始化，1 - 初始化。
-                     * @return InitFlag 初始化标记，可取值：0 - 未初始化，1 - 初始化。
+                     * 获取<p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>
+                     * @return InitFlag <p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>
                      * 
                      */
                     int64_t GetInitFlag() const;
 
                     /**
-                     * 设置初始化标记，可取值：0 - 未初始化，1 - 初始化。
-                     * @param _initFlag 初始化标记，可取值：0 - 未初始化，1 - 初始化。
+                     * 设置<p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>
+                     * @param _initFlag <p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>
                      * 
                      */
                     void SetInitFlag(const int64_t& _initFlag);
@@ -510,15 +506,15 @@ namespace TencentCloud
                     bool InitFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
-                     * @return WithDr 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
+                     * 获取<p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>
+                     * @return WithDr <p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>
                      * 
                      */
                     int64_t GetWithDr() const;
 
                     /**
-                     * 设置是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
-                     * @param _withDr 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
+                     * 设置<p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>
+                     * @param _withDr <p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>
                      * 
                      */
                     void SetWithDr(const int64_t& _withDr);
@@ -531,15 +527,15 @@ namespace TencentCloud
                     bool WithDrHasBeenSet() const;
 
                     /**
-                     * 获取是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
-                     * @return WithRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * 获取<p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
+                     * @return WithRo <p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      * 
                      */
                     int64_t GetWithRo() const;
 
                     /**
-                     * 设置是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
-                     * @param _withRo 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * 设置<p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
+                     * @param _withRo <p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      * 
                      */
                     void SetWithRo(const int64_t& _withRo);
@@ -552,15 +548,15 @@ namespace TencentCloud
                     bool WithRoHasBeenSet() const;
 
                     /**
-                     * 获取是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
-                     * @return WithMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * 获取<p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
+                     * @return WithMaster <p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      * 
                      */
                     int64_t GetWithMaster() const;
 
                     /**
-                     * 设置是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
-                     * @param _withMaster 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * 设置<p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
+                     * @param _withMaster <p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      * 
                      */
                     void SetWithMaster(const int64_t& _withMaster);
@@ -573,15 +569,15 @@ namespace TencentCloud
                     bool WithMasterHasBeenSet() const;
 
                     /**
-                     * 获取置放群组ID列表。
-                     * @return DeployGroupIds 置放群组ID列表。
+                     * 获取<p>置放群组ID列表。</p>
+                     * @return DeployGroupIds <p>置放群组ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetDeployGroupIds() const;
 
                     /**
-                     * 设置置放群组ID列表。
-                     * @param _deployGroupIds 置放群组ID列表。
+                     * 设置<p>置放群组ID列表。</p>
+                     * @param _deployGroupIds <p>置放群组ID列表。</p>
                      * 
                      */
                     void SetDeployGroupIds(const std::vector<std::string>& _deployGroupIds);
@@ -594,15 +590,15 @@ namespace TencentCloud
                     bool DeployGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否以标签键为过滤条件。
-                     * @return TagKeysForSearch 是否以标签键为过滤条件。
+                     * 获取<p>是否以标签键为过滤条件。</p>
+                     * @return TagKeysForSearch <p>是否以标签键为过滤条件。</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeysForSearch() const;
 
                     /**
-                     * 设置是否以标签键为过滤条件。
-                     * @param _tagKeysForSearch 是否以标签键为过滤条件。
+                     * 设置<p>是否以标签键为过滤条件。</p>
+                     * @param _tagKeysForSearch <p>是否以标签键为过滤条件。</p>
                      * 
                      */
                     void SetTagKeysForSearch(const std::vector<std::string>& _tagKeysForSearch);
@@ -615,15 +611,15 @@ namespace TencentCloud
                     bool TagKeysForSearchHasBeenSet() const;
 
                     /**
-                     * 获取金融围拢 ID 。
-                     * @return CageIds 金融围拢 ID 。
+                     * 获取<p>金融围拢 ID 。</p>
+                     * @return CageIds <p>金融围拢 ID 。</p>
                      * 
                      */
                     std::vector<std::string> GetCageIds() const;
 
                     /**
-                     * 设置金融围拢 ID 。
-                     * @param _cageIds 金融围拢 ID 。
+                     * 设置<p>金融围拢 ID 。</p>
+                     * @param _cageIds <p>金融围拢 ID 。</p>
                      * 
                      */
                     void SetCageIds(const std::vector<std::string>& _cageIds);
@@ -636,15 +632,15 @@ namespace TencentCloud
                     bool CageIdsHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return TagValues 标签值
+                     * 获取<p>标签值</p>
+                     * @return TagValues <p>标签值</p>
                      * 
                      */
                     std::vector<std::string> GetTagValues() const;
 
                     /**
-                     * 设置标签值
-                     * @param _tagValues 标签值
+                     * 设置<p>标签值</p>
+                     * @param _tagValues <p>标签值</p>
                      * 
                      */
                     void SetTagValues(const std::vector<std::string>& _tagValues);
@@ -657,15 +653,15 @@ namespace TencentCloud
                     bool TagValuesHasBeenSet() const;
 
                     /**
-                     * 获取私有网络字符型vpcId
-                     * @return UniqueVpcIds 私有网络字符型vpcId
+                     * 获取<p>私有网络字符型vpcId</p>
+                     * @return UniqueVpcIds <p>私有网络字符型vpcId</p>
                      * 
                      */
                     std::vector<std::string> GetUniqueVpcIds() const;
 
                     /**
-                     * 设置私有网络字符型vpcId
-                     * @param _uniqueVpcIds 私有网络字符型vpcId
+                     * 设置<p>私有网络字符型vpcId</p>
+                     * @param _uniqueVpcIds <p>私有网络字符型vpcId</p>
                      * 
                      */
                     void SetUniqueVpcIds(const std::vector<std::string>& _uniqueVpcIds);
@@ -678,15 +674,15 @@ namespace TencentCloud
                     bool UniqueVpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取私有网络字符型subnetId
-                     * @return UniqSubnetIds 私有网络字符型subnetId
+                     * 获取<p>私有网络字符型subnetId</p>
+                     * @return UniqSubnetIds <p>私有网络字符型subnetId</p>
                      * 
                      */
                     std::vector<std::string> GetUniqSubnetIds() const;
 
                     /**
-                     * 设置私有网络字符型subnetId
-                     * @param _uniqSubnetIds 私有网络字符型subnetId
+                     * 设置<p>私有网络字符型subnetId</p>
+                     * @param _uniqSubnetIds <p>私有网络字符型subnetId</p>
                      * 
                      */
                     void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
@@ -699,19 +695,15 @@ namespace TencentCloud
                     bool UniqSubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取标签键值
-请注意，创建中的实例无法查询到标签。
-                     * @return Tags 标签键值
-请注意，创建中的实例无法查询到标签。
+                     * 获取<p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>
+                     * @return Tags <p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签键值
-请注意，创建中的实例无法查询到标签。
-                     * @param _tags 标签键值
-请注意，创建中的实例无法查询到标签。
+                     * 设置<p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>
+                     * @param _tags <p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -724,15 +716,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理 IP 。
-                     * @return ProxyVips 数据库代理 IP 。
+                     * 获取<p>数据库代理 IP 。</p>
+                     * @return ProxyVips <p>数据库代理 IP 。</p>
                      * 
                      */
                     std::vector<std::string> GetProxyVips() const;
 
                     /**
-                     * 设置数据库代理 IP 。
-                     * @param _proxyVips 数据库代理 IP 。
+                     * 设置<p>数据库代理 IP 。</p>
+                     * @param _proxyVips <p>数据库代理 IP 。</p>
                      * 
                      */
                     void SetProxyVips(const std::vector<std::string>& _proxyVips);
@@ -745,15 +737,15 @@ namespace TencentCloud
                     bool ProxyVipsHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理 ID 。
-                     * @return ProxyIds 数据库代理 ID 。
+                     * 获取<p>数据库代理 ID 。</p>
+                     * @return ProxyIds <p>数据库代理 ID 。</p>
                      * 
                      */
                     std::vector<std::string> GetProxyIds() const;
 
                     /**
-                     * 设置数据库代理 ID 。
-                     * @param _proxyIds 数据库代理 ID 。
+                     * 设置<p>数据库代理 ID 。</p>
+                     * @param _proxyIds <p>数据库代理 ID 。</p>
                      * 
                      */
                     void SetProxyIds(const std::vector<std::string>& _proxyIds);
@@ -766,15 +758,15 @@ namespace TencentCloud
                     bool ProxyIdsHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎类型。可选值为：InnoDB、RocksDB。
-                     * @return EngineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * 获取<p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>
+                     * @return EngineTypes <p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>
                      * 
                      */
                     std::vector<std::string> GetEngineTypes() const;
 
                     /**
-                     * 设置数据库引擎类型。可选值为：InnoDB、RocksDB。
-                     * @param _engineTypes 数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * 设置<p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>
+                     * @param _engineTypes <p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>
                      * 
                      */
                     void SetEngineTypes(const std::vector<std::string>& _engineTypes);
@@ -787,15 +779,15 @@ namespace TencentCloud
                     bool EngineTypesHasBeenSet() const;
 
                     /**
-                     * 获取是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
-                     * @return QueryClusterInfo 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
+                     * 获取<p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>
+                     * @return QueryClusterInfo <p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>
                      * 
                      */
                     bool GetQueryClusterInfo() const;
 
                     /**
-                     * 设置是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
-                     * @param _queryClusterInfo 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
+                     * 设置<p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>
+                     * @param _queryClusterInfo <p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>
                      * 
                      */
                     void SetQueryClusterInfo(const bool& _queryClusterInfo);
@@ -810,219 +802,217 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目 ID。
+                     * <p>项目 ID。</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。
+                     * <p>实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。</p>
                      */
                     std::vector<uint64_t> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
 
                     /**
-                     * 实例的内网 IP 地址。
+                     * <p>实例的内网 IP 地址。</p>
                      */
                     std::vector<std::string> m_vips;
                     bool m_vipsHasBeenSet;
 
                     /**
-                     * 实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）
+                     * <p>实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）</p>
                      */
                     std::vector<uint64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为 0。
+                     * <p>偏移量，默认值为 0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量，默认值为 20，最大值为 2000。
+                     * <p>单次请求返回的数量，默认值为 20，最大值为 2000。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。
+                     * <p>安全组 ID。当使用安全组 ID 为过滤条件时，需指定 WithSecurityGroup 参数为 1。</p>
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 付费类型，可取值：0 - 包年包月，1 - 小时计费。
+                     * <p>付费类型，可取值：0 - 包年包月，1 - 小时计费。</p>
                      */
                     std::vector<uint64_t> m_payTypes;
                     bool m_payTypesHasBeenSet;
 
                     /**
-                     * 实例名称。
+                     * <p>实例名称。</p>
                      */
                     std::vector<std::string> m_instanceNames;
                     bool m_instanceNamesHasBeenSet;
 
                     /**
-                     * 实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行
+                     * <p>实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行</p>
                      */
                     std::vector<uint64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。
+                     * <p>实例数据库引擎版本，可能取值：5.1、5.5、5.6 和 5.7。</p>
                      */
                     std::vector<std::string> m_engineVersions;
                     bool m_engineVersionsHasBeenSet;
 
                     /**
-                     * 私有网络的 ID。
+                     * <p>私有网络的 ID。</p>
                      */
                     std::vector<uint64_t> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * 可用区的 ID。
+                     * <p>可用区的 ID。</p>
                      */
                     std::vector<uint64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 子网 ID。
+                     * <p>子网 ID。</p>
                      */
                     std::vector<uint64_t> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
+                     * <p>是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。</p>
                      */
                     std::vector<int64_t> m_cdbErrors;
                     bool m_cdbErrorsHasBeenSet;
 
                     /**
-                     * 返回结果集排序的字段，目前支持："instanceId"，"instanceName"，"createTime"，"deadlineTime"。
+                     * <p>返回结果集排序的字段，目前支持：&quot;instanceId&quot;，&quot;instanceName&quot;，&quot;createTime&quot;，&quot;deadlineTime&quot;。</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回结果集排序方式。目前支持值："ASC" - 表示升序，"DESC" - 表示降序，默认为 "DESC"。
+                     * <p>返回结果集排序方式。目前支持值：&quot;ASC&quot; - 表示升序，&quot;DESC&quot; - 表示降序，默认为 &quot;DESC&quot;。</p>
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
 
                     /**
-                     * 是否以安全组 ID 为过滤条件。
-说明：0表示否，1表示是。
+                     * <p>是否以安全组 ID 为过滤条件。<br>说明：0表示否，1表示是。</p>
                      */
                     int64_t m_withSecurityGroup;
                     bool m_withSecurityGroupHasBeenSet;
 
                     /**
-                     * 是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。
+                     * <p>是否包含独享集群详细信息，可取值：0 - 不包含，1 - 包含。</p>
                      */
                     int64_t m_withExCluster;
                     bool m_withExClusterHasBeenSet;
 
                     /**
-                     * 独享集群 ID。
+                     * <p>独享集群 ID。</p>
                      */
                     std::string m_exClusterId;
                     bool m_exClusterIdHasBeenSet;
 
                     /**
-                     * 实例 ID。
+                     * <p>实例 ID。</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 初始化标记，可取值：0 - 未初始化，1 - 初始化。
+                     * <p>初始化标记，可取值：0 - 未初始化，1 - 初始化。</p>
                      */
                     int64_t m_initFlag;
                     bool m_initFlagHasBeenSet;
 
                     /**
-                     * 是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。
+                     * <p>是否包含灾备关系对应的实例，可取值：0 - 不包含，1 - 包含。默认取值为1。如果拉取主实例，则灾备关系的数据在DrInfo字段中， 如果拉取灾备实例， 则灾备关系的数据在MasterInfo字段中。灾备关系中只包含部分基本的数据，详细的数据需要自行调接口拉取。</p>
                      */
                     int64_t m_withDr;
                     bool m_withDrHasBeenSet;
 
                     /**
-                     * 是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * <p>是否包含只读实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      */
                     int64_t m_withRo;
                     bool m_withRoHasBeenSet;
 
                     /**
-                     * 是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。
+                     * <p>是否包含主实例，可取值：0 - 不包含，1 - 包含。默认取值为1。</p>
                      */
                     int64_t m_withMaster;
                     bool m_withMasterHasBeenSet;
 
                     /**
-                     * 置放群组ID列表。
+                     * <p>置放群组ID列表。</p>
                      */
                     std::vector<std::string> m_deployGroupIds;
                     bool m_deployGroupIdsHasBeenSet;
 
                     /**
-                     * 是否以标签键为过滤条件。
+                     * <p>是否以标签键为过滤条件。</p>
                      */
                     std::vector<std::string> m_tagKeysForSearch;
                     bool m_tagKeysForSearchHasBeenSet;
 
                     /**
-                     * 金融围拢 ID 。
+                     * <p>金融围拢 ID 。</p>
                      */
                     std::vector<std::string> m_cageIds;
                     bool m_cageIdsHasBeenSet;
 
                     /**
-                     * 标签值
+                     * <p>标签值</p>
                      */
                     std::vector<std::string> m_tagValues;
                     bool m_tagValuesHasBeenSet;
 
                     /**
-                     * 私有网络字符型vpcId
+                     * <p>私有网络字符型vpcId</p>
                      */
                     std::vector<std::string> m_uniqueVpcIds;
                     bool m_uniqueVpcIdsHasBeenSet;
 
                     /**
-                     * 私有网络字符型subnetId
+                     * <p>私有网络字符型subnetId</p>
                      */
                     std::vector<std::string> m_uniqSubnetIds;
                     bool m_uniqSubnetIdsHasBeenSet;
 
                     /**
-                     * 标签键值
-请注意，创建中的实例无法查询到标签。
+                     * <p>标签键值<br>请注意，创建中的实例无法查询到标签。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 数据库代理 IP 。
+                     * <p>数据库代理 IP 。</p>
                      */
                     std::vector<std::string> m_proxyVips;
                     bool m_proxyVipsHasBeenSet;
 
                     /**
-                     * 数据库代理 ID 。
+                     * <p>数据库代理 ID 。</p>
                      */
                     std::vector<std::string> m_proxyIds;
                     bool m_proxyIdsHasBeenSet;
 
                     /**
-                     * 数据库引擎类型。可选值为：InnoDB、RocksDB。
+                     * <p>数据库引擎类型。可选值为：InnoDB、RocksDB。</p>
                      */
                     std::vector<std::string> m_engineTypes;
                     bool m_engineTypesHasBeenSet;
 
                     /**
-                     * 是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。
+                     * <p>是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。</p>
                      */
                     bool m_queryClusterInfo;
                     bool m_queryClusterInfoHasBeenSet;

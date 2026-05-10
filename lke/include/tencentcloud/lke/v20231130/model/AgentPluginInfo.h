@@ -230,6 +230,111 @@ namespace TencentCloud
                      */
                     bool McpTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>
+                     * @return AuthMode <p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>
+                     * 
+                     */
+                    int64_t GetAuthMode() const;
+
+                    /**
+                     * 设置<p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>
+                     * @param _authMode <p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>
+                     * 
+                     */
+                    void SetAuthMode(const int64_t& _authMode);
+
+                    /**
+                     * 判断参数 AuthMode 是否已赋值
+                     * @return AuthMode 是否已赋值
+                     * 
+                     */
+                    bool AuthModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>
+                     * @return AuthType <p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>
+                     * 
+                     */
+                    int64_t GetAuthType() const;
+
+                    /**
+                     * 设置<p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>
+                     * @param _authType <p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>
+                     * 
+                     */
+                    void SetAuthType(const int64_t& _authType);
+
+                    /**
+                     * 判断参数 AuthType 是否已赋值
+                     * @return AuthType 是否已赋值
+                     * 
+                     */
+                    bool AuthTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>
+                     * @return AuthConfigStatus <p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>
+                     * 
+                     */
+                    int64_t GetAuthConfigStatus() const;
+
+                    /**
+                     * 设置<p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>
+                     * @param _authConfigStatus <p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>
+                     * 
+                     */
+                    void SetAuthConfigStatus(const int64_t& _authConfigStatus);
+
+                    /**
+                     * 判断参数 AuthConfigStatus 是否已赋值
+                     * @return AuthConfigStatus 是否已赋值
+                     * 
+                     */
+                    bool AuthConfigStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>
+                     * @return PluginClass <p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>
+                     * 
+                     */
+                    int64_t GetPluginClass() const;
+
+                    /**
+                     * 设置<p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>
+                     * @param _pluginClass <p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>
+                     * 
+                     */
+                    void SetPluginClass(const int64_t& _pluginClass);
+
+                    /**
+                     * 判断参数 PluginClass 是否已赋值
+                     * @return PluginClass 是否已赋值
+                     * 
+                     */
+                    bool PluginClassHasBeenSet() const;
+
+                    /**
+                     * 获取<p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>
+                     * @return PluginStatus <p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>
+                     * 
+                     */
+                    int64_t GetPluginStatus() const;
+
+                    /**
+                     * 设置<p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>
+                     * @param _pluginStatus <p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>
+                     * 
+                     */
+                    void SetPluginStatus(const int64_t& _pluginStatus);
+
+                    /**
+                     * 判断参数 PluginStatus 是否已赋值
+                     * @return PluginStatus 是否已赋值
+                     * 
+                     */
+                    bool PluginStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -282,6 +387,36 @@ namespace TencentCloud
                      */
                     uint64_t m_mcpType;
                     bool m_mcpTypeHasBeenSet;
+
+                    /**
+                     * <p>OAuth授权主体</p><p>枚举值：</p><ul><li>0： 开发者授权</li><li>1： 使用者授权</li></ul>
+                     */
+                    int64_t m_authMode;
+                    bool m_authModeHasBeenSet;
+
+                    /**
+                     * <p>授权方式</p><p>枚举值：</p><ul><li>0： 无鉴权</li><li>1： api key鉴权</li><li>2： 支持CAM授权</li><li>3： 支持Oauth2.0授权</li></ul>
+                     */
+                    int64_t m_authType;
+                    bool m_authTypeHasBeenSet;
+
+                    /**
+                     * <p>授权配置状态</p><p>枚举值：</p><ul><li>0： 不需要授权</li><li>1： 未配置</li><li>2： 已配置</li></ul>
+                     */
+                    int64_t m_authConfigStatus;
+                    bool m_authConfigStatusHasBeenSet;
+
+                    /**
+                     * <p>插件用途类型</p><p>枚举值：</p><ul><li>0： 工具类</li><li>1： 连接器类</li></ul>
+                     */
+                    int64_t m_pluginClass;
+                    bool m_pluginClassHasBeenSet;
+
+                    /**
+                     * <p>插件状态</p><p>枚举值：</p><ul><li>1： 成功</li><li>2： 不可用</li></ul>
+                     */
+                    int64_t m_pluginStatus;
+                    bool m_pluginStatusHasBeenSet;
 
                 };
             }

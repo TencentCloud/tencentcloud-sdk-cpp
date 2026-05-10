@@ -53,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件id
-                     * @return PluginId 插件id
+                     * 获取<p>插件id</p>
+                     * @return PluginId <p>插件id</p>
                      * 
                      */
                     std::string GetPluginId() const;
 
                     /**
-                     * 设置插件id
-                     * @param _pluginId 插件id
+                     * 设置<p>插件id</p>
+                     * @param _pluginId <p>插件id</p>
                      * 
                      */
                     void SetPluginId(const std::string& _pluginId);
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool PluginIdHasBeenSet() const;
 
                     /**
-                     * 获取插件名称
-                     * @return PluginName 插件名称
+                     * 获取<p>插件名称</p>
+                     * @return PluginName <p>插件名称</p>
                      * 
                      */
                     std::string GetPluginName() const;
 
                     /**
-                     * 设置插件名称
-                     * @param _pluginName 插件名称
+                     * 设置<p>插件名称</p>
+                     * @param _pluginName <p>插件名称</p>
                      * 
                      */
                     void SetPluginName(const std::string& _pluginName);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool PluginNameHasBeenSet() const;
 
                     /**
-                     * 获取插件图标url
-                     * @return IconUrl 插件图标url
+                     * 获取<p>插件图标url</p>
+                     * @return IconUrl <p>插件图标url</p>
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置插件图标url
-                     * @param _iconUrl 插件图标url
+                     * 设置<p>插件图标url</p>
+                     * @param _iconUrl <p>插件图标url</p>
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -116,23 +116,15 @@ namespace TencentCloud
                     bool IconUrlHasBeenSet() const;
 
                     /**
-                     * 获取0 自定义插件
-1 官方插件
-2 第三方插件 目前用于第三方实现的mcp server
-                     * @return PluginType 0 自定义插件
-1 官方插件
-2 第三方插件 目前用于第三方实现的mcp server
+                     * 获取<p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>
+                     * @return PluginType <p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>
                      * 
                      */
                     uint64_t GetPluginType() const;
 
                     /**
-                     * 设置0 自定义插件
-1 官方插件
-2 第三方插件 目前用于第三方实现的mcp server
-                     * @param _pluginType 0 自定义插件
-1 官方插件
-2 第三方插件 目前用于第三方实现的mcp server
+                     * 设置<p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>
+                     * @param _pluginType <p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>
                      * 
                      */
                     void SetPluginType(const uint64_t& _pluginType);
@@ -145,15 +137,15 @@ namespace TencentCloud
                     bool PluginTypeHasBeenSet() const;
 
                     /**
-                     * 获取工具id
-                     * @return ToolId 工具id
+                     * 获取<p>工具id</p>
+                     * @return ToolId <p>工具id</p>
                      * 
                      */
                     std::string GetToolId() const;
 
                     /**
-                     * 设置工具id
-                     * @param _toolId 工具id
+                     * 设置<p>工具id</p>
+                     * @param _toolId <p>工具id</p>
                      * 
                      */
                     void SetToolId(const std::string& _toolId);
@@ -166,15 +158,15 @@ namespace TencentCloud
                     bool ToolIdHasBeenSet() const;
 
                     /**
-                     * 获取工具名称
-                     * @return ToolName 工具名称
+                     * 获取<p>工具名称</p>
+                     * @return ToolName <p>工具名称</p>
                      * 
                      */
                     std::string GetToolName() const;
 
                     /**
-                     * 设置工具名称
-                     * @param _toolName 工具名称
+                     * 设置<p>工具名称</p>
+                     * @param _toolName <p>工具名称</p>
                      * 
                      */
                     void SetToolName(const std::string& _toolName);
@@ -187,15 +179,15 @@ namespace TencentCloud
                     bool ToolNameHasBeenSet() const;
 
                     /**
-                     * 获取工具描述
-                     * @return ToolDesc 工具描述
+                     * 获取<p>工具描述</p>
+                     * @return ToolDesc <p>工具描述</p>
                      * 
                      */
                     std::string GetToolDesc() const;
 
                     /**
-                     * 设置工具描述
-                     * @param _toolDesc 工具描述
+                     * 设置<p>工具描述</p>
+                     * @param _toolDesc <p>工具描述</p>
                      * 
                      */
                     void SetToolDesc(const std::string& _toolDesc);
@@ -208,15 +200,15 @@ namespace TencentCloud
                     bool ToolDescHasBeenSet() const;
 
                     /**
-                     * 获取输入参数
-                     * @return Inputs 输入参数
+                     * 获取<p>输入参数</p>
+                     * @return Inputs <p>输入参数</p>
                      * 
                      */
                     std::vector<AgentToolReqParam> GetInputs() const;
 
                     /**
-                     * 设置输入参数
-                     * @param _inputs 输入参数
+                     * 设置<p>输入参数</p>
+                     * @param _inputs <p>输入参数</p>
                      * 
                      */
                     void SetInputs(const std::vector<AgentToolReqParam>& _inputs);
@@ -229,15 +221,15 @@ namespace TencentCloud
                     bool InputsHasBeenSet() const;
 
                     /**
-                     * 获取输出参数
-                     * @return Outputs 输出参数
+                     * 获取<p>输出参数</p>
+                     * @return Outputs <p>输出参数</p>
                      * 
                      */
                     std::vector<AgentToolRspParam> GetOutputs() const;
 
                     /**
-                     * 设置输出参数
-                     * @param _outputs 输出参数
+                     * 设置<p>输出参数</p>
+                     * @param _outputs <p>输出参数</p>
                      * 
                      */
                     void SetOutputs(const std::vector<AgentToolRspParam>& _outputs);
@@ -250,15 +242,15 @@ namespace TencentCloud
                     bool OutputsHasBeenSet() const;
 
                     /**
-                     * 获取创建方式，0:服务创建，1:代码创建，2:MCP创建	
-                     * @return CreateType 创建方式，0:服务创建，1:代码创建，2:MCP创建	
+                     * 获取<p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>
+                     * @return CreateType <p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>
                      * 
                      */
                     int64_t GetCreateType() const;
 
                     /**
-                     * 设置创建方式，0:服务创建，1:代码创建，2:MCP创建	
-                     * @param _createType 创建方式，0:服务创建，1:代码创建，2:MCP创建	
+                     * 设置<p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>
+                     * @param _createType <p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>
                      * 
                      */
                     void SetCreateType(const int64_t& _createType);
@@ -271,15 +263,15 @@ namespace TencentCloud
                     bool CreateTypeHasBeenSet() const;
 
                     /**
-                     * 获取MCP插件的配置信息
-                     * @return McpServer MCP插件的配置信息
+                     * 获取<p>MCP插件的配置信息</p>
+                     * @return McpServer <p>MCP插件的配置信息</p>
                      * 
                      */
                     AgentMCPServerInfo GetMcpServer() const;
 
                     /**
-                     * 设置MCP插件的配置信息
-                     * @param _mcpServer MCP插件的配置信息
+                     * 设置<p>MCP插件的配置信息</p>
+                     * @param _mcpServer <p>MCP插件的配置信息</p>
                      * 
                      */
                     void SetMcpServer(const AgentMCPServerInfo& _mcpServer);
@@ -292,15 +284,15 @@ namespace TencentCloud
                     bool McpServerHasBeenSet() const;
 
                     /**
-                     * 获取该工具是否和知识库绑定
-                     * @return IsBindingKnowledge 该工具是否和知识库绑定
+                     * 获取<p>该工具是否和知识库绑定</p>
+                     * @return IsBindingKnowledge <p>该工具是否和知识库绑定</p>
                      * 
                      */
                     bool GetIsBindingKnowledge() const;
 
                     /**
-                     * 设置该工具是否和知识库绑定
-                     * @param _isBindingKnowledge 该工具是否和知识库绑定
+                     * 设置<p>该工具是否和知识库绑定</p>
+                     * @param _isBindingKnowledge <p>该工具是否和知识库绑定</p>
                      * 
                      */
                     void SetIsBindingKnowledge(const bool& _isBindingKnowledge);
@@ -313,15 +305,15 @@ namespace TencentCloud
                     bool IsBindingKnowledgeHasBeenSet() const;
 
                     /**
-                     * 获取插件状态，1:可用，2:不可用	
-                     * @return Status 插件状态，1:可用，2:不可用	
+                     * 获取<p>插件状态，1:可用，2:不可用</p>
+                     * @return Status <p>插件状态，1:可用，2:不可用</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置插件状态，1:可用，2:不可用	
-                     * @param _status 插件状态，1:可用，2:不可用	
+                     * 设置<p>插件状态，1:可用，2:不可用</p>
+                     * @param _status <p>插件状态，1:可用，2:不可用</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -334,15 +326,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取header信息
-                     * @return Headers header信息
+                     * 获取<p>header信息</p>
+                     * @return Headers <p>header信息</p>
                      * 
                      */
                     std::vector<AgentPluginHeader> GetHeaders() const;
 
                     /**
-                     * 设置header信息
-                     * @param _headers header信息
+                     * 设置<p>header信息</p>
+                     * @param _headers <p>header信息</p>
                      * 
                      */
                     void SetHeaders(const std::vector<AgentPluginHeader>& _headers);
@@ -355,18 +347,18 @@ namespace TencentCloud
                     bool HeadersHasBeenSet() const;
 
                     /**
-                     * 获取NON_STREAMING: 非流式  STREAMIN: 流式
+                     * 获取<p>NON_STREAMING: 非流式  STREAMIN: 流式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CallingMethod NON_STREAMING: 非流式  STREAMIN: 流式
+                     * @return CallingMethod <p>NON_STREAMING: 非流式  STREAMIN: 流式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallingMethod() const;
 
                     /**
-                     * 设置NON_STREAMING: 非流式  STREAMIN: 流式
+                     * 设置<p>NON_STREAMING: 非流式  STREAMIN: 流式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _callingMethod NON_STREAMING: 非流式  STREAMIN: 流式
+                     * @param _callingMethod <p>NON_STREAMING: 非流式  STREAMIN: 流式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -380,15 +372,15 @@ namespace TencentCloud
                     bool CallingMethodHasBeenSet() const;
 
                     /**
-                     * 获取query信息
-                     * @return Query query信息
+                     * 获取<p>query信息</p>
+                     * @return Query <p>query信息</p>
                      * 
                      */
                     std::vector<AgentPluginQuery> GetQuery() const;
 
                     /**
-                     * 设置query信息
-                     * @param _query query信息
+                     * 设置<p>query信息</p>
+                     * @param _query <p>query信息</p>
                      * 
                      */
                     void SetQuery(const std::vector<AgentPluginQuery>& _query);
@@ -401,15 +393,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
-                     * @return FinanceStatus 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * 获取<p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>
+                     * @return FinanceStatus <p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>
                      * 
                      */
                     int64_t GetFinanceStatus() const;
 
                     /**
-                     * 设置工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
-                     * @param _financeStatus 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * 设置<p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>
+                     * @param _financeStatus <p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>
                      * 
                      */
                     void SetFinanceStatus(const int64_t& _financeStatus);
@@ -422,15 +414,15 @@ namespace TencentCloud
                     bool FinanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取工具来源: 0-来自插件，1-来自工作流
-                     * @return ToolSource 工具来源: 0-来自插件，1-来自工作流
+                     * 获取<p>工具来源: 0-来自插件，1-来自工作流</p>
+                     * @return ToolSource <p>工具来源: 0-来自插件，1-来自工作流</p>
                      * 
                      */
                     uint64_t GetToolSource() const;
 
                     /**
-                     * 设置工具来源: 0-来自插件，1-来自工作流
-                     * @param _toolSource 工具来源: 0-来自插件，1-来自工作流
+                     * 设置<p>工具来源: 0-来自插件，1-来自工作流</p>
+                     * @param _toolSource <p>工具来源: 0-来自插件，1-来自工作流</p>
                      * 
                      */
                     void SetToolSource(const uint64_t& _toolSource);
@@ -443,15 +435,15 @@ namespace TencentCloud
                     bool ToolSourceHasBeenSet() const;
 
                     /**
-                     * 获取计费状态；0-不计费，1-限时免费，2-官方收费
-                     * @return FinanceType 计费状态；0-不计费，1-限时免费，2-官方收费
+                     * 获取<p>计费状态；0-不计费，1-限时免费，2-官方收费</p>
+                     * @return FinanceType <p>计费状态；0-不计费，1-限时免费，2-官方收费</p>
                      * 
                      */
                     int64_t GetFinanceType() const;
 
                     /**
-                     * 设置计费状态；0-不计费，1-限时免费，2-官方收费
-                     * @param _financeType 计费状态；0-不计费，1-限时免费，2-官方收费
+                     * 设置<p>计费状态；0-不计费，1-限时免费，2-官方收费</p>
+                     * @param _financeType <p>计费状态；0-不计费，1-限时免费，2-官方收费</p>
                      * 
                      */
                     void SetFinanceType(const int64_t& _financeType);
@@ -464,15 +456,15 @@ namespace TencentCloud
                     bool FinanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取工具高级设置
-                     * @return ToolAdvanceConfig 工具高级设置
+                     * 获取<p>工具高级设置</p>
+                     * @return ToolAdvanceConfig <p>工具高级设置</p>
                      * 
                      */
                     ToolAdvanceConfig GetToolAdvanceConfig() const;
 
                     /**
-                     * 设置工具高级设置
-                     * @param _toolAdvanceConfig 工具高级设置
+                     * 设置<p>工具高级设置</p>
+                     * @param _toolAdvanceConfig <p>工具高级设置</p>
                      * 
                      */
                     void SetToolAdvanceConfig(const ToolAdvanceConfig& _toolAdvanceConfig);
@@ -485,15 +477,15 @@ namespace TencentCloud
                     bool ToolAdvanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取授权模式； 0-开发者授权；1-使用者授权
-                     * @return AuthMode 授权模式； 0-开发者授权；1-使用者授权
+                     * 获取<p>授权模式； 0-开发者授权；1-使用者授权</p>
+                     * @return AuthMode <p>授权模式； 0-开发者授权；1-使用者授权</p>
                      * 
                      */
                     int64_t GetAuthMode() const;
 
                     /**
-                     * 设置授权模式； 0-开发者授权；1-使用者授权
-                     * @param _authMode 授权模式； 0-开发者授权；1-使用者授权
+                     * 设置<p>授权模式； 0-开发者授权；1-使用者授权</p>
+                     * @param _authMode <p>授权模式； 0-开发者授权；1-使用者授权</p>
                      * 
                      */
                     void SetAuthMode(const int64_t& _authMode);
@@ -506,15 +498,15 @@ namespace TencentCloud
                     bool AuthModeHasBeenSet() const;
 
                     /**
-                     * 获取授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
-                     * @return AuthType 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * 获取<p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>
+                     * @return AuthType <p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>
                      * 
                      */
                     int64_t GetAuthType() const;
 
                     /**
-                     * 设置授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
-                     * @param _authType 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * 设置<p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>
+                     * @param _authType <p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>
                      * 
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -527,15 +519,15 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
-                     * @return AuthConfigStatus 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * 获取<p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>
+                     * @return AuthConfigStatus <p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>
                      * 
                      */
                     int64_t GetAuthConfigStatus() const;
 
                     /**
-                     * 设置工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
-                     * @param _authConfigStatus 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * 设置<p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>
+                     * @param _authConfigStatus <p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>
                      * 
                      */
                     void SetAuthConfigStatus(const int64_t& _authConfigStatus);
@@ -547,148 +539,200 @@ namespace TencentCloud
                      */
                     bool AuthConfigStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>
+                     * @return ToolAccessMode <p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>
+                     * 
+                     */
+                    int64_t GetToolAccessMode() const;
+
+                    /**
+                     * 设置<p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>
+                     * @param _toolAccessMode <p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>
+                     * 
+                     */
+                    void SetToolAccessMode(const int64_t& _toolAccessMode);
+
+                    /**
+                     * 判断参数 ToolAccessMode 是否已赋值
+                     * @return ToolAccessMode 是否已赋值
+                     * 
+                     */
+                    bool ToolAccessModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否禁用该工具</p>
+                     * @return IsDisabled <p>是否禁用该工具</p>
+                     * 
+                     */
+                    bool GetIsDisabled() const;
+
+                    /**
+                     * 设置<p>是否禁用该工具</p>
+                     * @param _isDisabled <p>是否禁用该工具</p>
+                     * 
+                     */
+                    void SetIsDisabled(const bool& _isDisabled);
+
+                    /**
+                     * 判断参数 IsDisabled 是否已赋值
+                     * @return IsDisabled 是否已赋值
+                     * 
+                     */
+                    bool IsDisabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 插件id
+                     * <p>插件id</p>
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;
 
                     /**
-                     * 插件名称
+                     * <p>插件名称</p>
                      */
                     std::string m_pluginName;
                     bool m_pluginNameHasBeenSet;
 
                     /**
-                     * 插件图标url
+                     * <p>插件图标url</p>
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
 
                     /**
-                     * 0 自定义插件
-1 官方插件
-2 第三方插件 目前用于第三方实现的mcp server
+                     * <p>0 自定义插件<br>1 官方插件<br>2 第三方插件 目前用于第三方实现的mcp server</p>
                      */
                     uint64_t m_pluginType;
                     bool m_pluginTypeHasBeenSet;
 
                     /**
-                     * 工具id
+                     * <p>工具id</p>
                      */
                     std::string m_toolId;
                     bool m_toolIdHasBeenSet;
 
                     /**
-                     * 工具名称
+                     * <p>工具名称</p>
                      */
                     std::string m_toolName;
                     bool m_toolNameHasBeenSet;
 
                     /**
-                     * 工具描述
+                     * <p>工具描述</p>
                      */
                     std::string m_toolDesc;
                     bool m_toolDescHasBeenSet;
 
                     /**
-                     * 输入参数
+                     * <p>输入参数</p>
                      */
                     std::vector<AgentToolReqParam> m_inputs;
                     bool m_inputsHasBeenSet;
 
                     /**
-                     * 输出参数
+                     * <p>输出参数</p>
                      */
                     std::vector<AgentToolRspParam> m_outputs;
                     bool m_outputsHasBeenSet;
 
                     /**
-                     * 创建方式，0:服务创建，1:代码创建，2:MCP创建	
+                     * <p>创建方式，0:服务创建，1:代码创建，2:MCP创建</p>
                      */
                     int64_t m_createType;
                     bool m_createTypeHasBeenSet;
 
                     /**
-                     * MCP插件的配置信息
+                     * <p>MCP插件的配置信息</p>
                      */
                     AgentMCPServerInfo m_mcpServer;
                     bool m_mcpServerHasBeenSet;
 
                     /**
-                     * 该工具是否和知识库绑定
+                     * <p>该工具是否和知识库绑定</p>
                      */
                     bool m_isBindingKnowledge;
                     bool m_isBindingKnowledgeHasBeenSet;
 
                     /**
-                     * 插件状态，1:可用，2:不可用	
+                     * <p>插件状态，1:可用，2:不可用</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * header信息
+                     * <p>header信息</p>
                      */
                     std::vector<AgentPluginHeader> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
-                     * NON_STREAMING: 非流式  STREAMIN: 流式
+                     * <p>NON_STREAMING: 非流式  STREAMIN: 流式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callingMethod;
                     bool m_callingMethodHasBeenSet;
 
                     /**
-                     * query信息
+                     * <p>query信息</p>
                      */
                     std::vector<AgentPluginQuery> m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）
+                     * <p>工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）</p>
                      */
                     int64_t m_financeStatus;
                     bool m_financeStatusHasBeenSet;
 
                     /**
-                     * 工具来源: 0-来自插件，1-来自工作流
+                     * <p>工具来源: 0-来自插件，1-来自工作流</p>
                      */
                     uint64_t m_toolSource;
                     bool m_toolSourceHasBeenSet;
 
                     /**
-                     * 计费状态；0-不计费，1-限时免费，2-官方收费
+                     * <p>计费状态；0-不计费，1-限时免费，2-官方收费</p>
                      */
                     int64_t m_financeType;
                     bool m_financeTypeHasBeenSet;
 
                     /**
-                     * 工具高级设置
+                     * <p>工具高级设置</p>
                      */
                     ToolAdvanceConfig m_toolAdvanceConfig;
                     bool m_toolAdvanceConfigHasBeenSet;
 
                     /**
-                     * 授权模式； 0-开发者授权；1-使用者授权
+                     * <p>授权模式； 0-开发者授权；1-使用者授权</p>
                      */
                     int64_t m_authMode;
                     bool m_authModeHasBeenSet;
 
                     /**
-                     * 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * <p>授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；</p>
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * <p>工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置</p>
                      */
                     int64_t m_authConfigStatus;
                     bool m_authConfigStatusHasBeenSet;
+
+                    /**
+                     * <p>连接器工具 API 类型</p><p>枚举值：</p><ul><li>1： 只读</li><li>2： 写/删除</li></ul>
+                     */
+                    int64_t m_toolAccessMode;
+                    bool m_toolAccessModeHasBeenSet;
+
+                    /**
+                     * <p>是否禁用该工具</p>
+                     */
+                    bool m_isDisabled;
+                    bool m_isDisabledHasBeenSet;
 
                 };
             }

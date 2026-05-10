@@ -25,7 +25,8 @@ using namespace std;
 
 TextToSpeechResponse::TextToSpeechResponse() :
     m_audioHasBeenSet(false),
-    m_alignmentsHasBeenSet(false)
+    m_alignmentsHasBeenSet(false),
+    m_totalDurationMsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome TextToSpeechResponse::Deserialize(const string &payload)
         m_alignmentsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalDurationMs") && !rsp["TotalDurationMs"].IsNull())
+    {
+        if (!rsp["TotalDurationMs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalDurationMs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalDurationMs = rsp["TotalDurationMs"].GetUint64();
+        m_totalDurationMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string TextToSpeechResponse::ToJsonString() const
         }
     }
 
+    if (m_totalDurationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalDurationMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalDurationMs, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<AlignmentItem> TextToSpeechResponse::GetAlignments() const
 bool TextToSpeechResponse::AlignmentsHasBeenSet() const
 {
     return m_alignmentsHasBeenSet;
+}
+
+uint64_t TextToSpeechResponse::GetTotalDurationMs() const
+{
+    return m_totalDurationMs;
+}
+
+bool TextToSpeechResponse::TotalDurationMsHasBeenSet() const
+{
+    return m_totalDurationMsHasBeenSet;
 }
 
 

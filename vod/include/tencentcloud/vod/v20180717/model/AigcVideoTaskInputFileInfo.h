@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool KeepOriginalSoundHasBeenSet() const;
 
                     /**
-                     * 获取<p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
-                     * @return Usage <p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
+                     * 获取<p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
+                     * @return Usage <p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
                      * 
                      */
                     std::string GetUsage() const;
 
                     /**
-                     * 设置<p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
-                     * @param _usage <p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
+                     * 设置<p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
+                     * @param _usage <p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
                      * 
                      */
                     void SetUsage(const std::string& _usage);
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_keepOriginalSoundHasBeenSet;
 
                     /**
-                     * <p>用于区分输入是首帧或参考帧。可选值：</p><ul><li>FirstFrame：首帧；</li><li>Reference：参考帧；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
+                     * <p>用于区分输入图像用于<strong>首（尾）帧生视频</strong>、<strong>图生视频</strong>或<strong>参考生视频</strong>。可选值：</p><ul><li>FirstFrame：用于首（尾）帧生视频 或 图生视频；</li><li>Reference：用于参考生视频；</li></ul><p><strong>注意，默认是FirstFrame</strong></p>
                      */
                     std::string m_usage;
                     bool m_usageHasBeenSet;

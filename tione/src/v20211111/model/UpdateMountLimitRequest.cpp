@@ -25,7 +25,8 @@ using namespace std;
 UpdateMountLimitRequest::UpdateMountLimitRequest() :
     m_typeHasBeenSet(false),
     m_storageIdHasBeenSet(false),
-    m_limitMountHasBeenSet(false)
+    m_limitMountHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string UpdateMountLimitRequest::ToJsonString() const
         string key = "LimitMount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limitMount, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void UpdateMountLimitRequest::SetLimitMount(const bool& _limitMount)
 bool UpdateMountLimitRequest::LimitMountHasBeenSet() const
 {
     return m_limitMountHasBeenSet;
+}
+
+string UpdateMountLimitRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void UpdateMountLimitRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool UpdateMountLimitRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

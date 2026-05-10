@@ -38,7 +38,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_partitionCountHasBeenSet(false),
     m_cancelTopicAsyncTaskIDHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_isSourceFromHasBeenSet(false)
+    m_isSourceFromHasBeenSet(false),
+    m_billingModeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "IsSourceFrom";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSourceFrom, allocator);
+    }
+
+    if (m_billingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingMode, allocator);
     }
 
 
@@ -447,6 +456,22 @@ void ModifyTopicRequest::SetIsSourceFrom(const bool& _isSourceFrom)
 bool ModifyTopicRequest::IsSourceFromHasBeenSet() const
 {
     return m_isSourceFromHasBeenSet;
+}
+
+uint64_t ModifyTopicRequest::GetBillingMode() const
+{
+    return m_billingMode;
+}
+
+void ModifyTopicRequest::SetBillingMode(const uint64_t& _billingMode)
+{
+    m_billingMode = _billingMode;
+    m_billingModeHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::BillingModeHasBeenSet() const
+{
+    return m_billingModeHasBeenSet;
 }
 
 

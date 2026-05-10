@@ -22,7 +22,8 @@ using namespace std;
 
 PromptDetectResult::PromptDetectResult() :
     m_resultHasBeenSet(false),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome PromptDetectResult::Deserialize(const rapidjson::Value &valu
         m_confidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PromptDetectResult.Category` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Category"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_category.push_back((*itr).GetString());
+        }
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void PromptDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_category.begin(); itr != m_category.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void PromptDetectResult::SetConfidence(const uint64_t& _confidence)
 bool PromptDetectResult::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+vector<string> PromptDetectResult::GetCategory() const
+{
+    return m_category;
+}
+
+void PromptDetectResult::SetCategory(const vector<string>& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool PromptDetectResult::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 

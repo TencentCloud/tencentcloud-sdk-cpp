@@ -25,6 +25,7 @@ using namespace std;
 CreateMountLimitRequest::CreateMountLimitRequest() :
     m_typeHasBeenSet(false),
     m_storageIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_limitMountHasBeenSet(false)
 {
 }
@@ -50,6 +51,14 @@ string CreateMountLimitRequest::ToJsonString() const
         string key = "StorageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitMountHasBeenSet)
@@ -98,6 +107,22 @@ void CreateMountLimitRequest::SetStorageId(const string& _storageId)
 bool CreateMountLimitRequest::StorageIdHasBeenSet() const
 {
     return m_storageIdHasBeenSet;
+}
+
+string CreateMountLimitRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateMountLimitRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateMountLimitRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 bool CreateMountLimitRequest::GetLimitMount() const

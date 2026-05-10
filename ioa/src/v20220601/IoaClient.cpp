@@ -40,6 +40,56 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::BindBusinessResourceConnectorGroupOutcome IoaClient::BindBusinessResourceConnectorGroup(const BindBusinessResourceConnectorGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindBusinessResourceConnectorGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindBusinessResourceConnectorGroupResponse rsp = BindBusinessResourceConnectorGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindBusinessResourceConnectorGroupOutcome(rsp);
+        else
+            return BindBusinessResourceConnectorGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return BindBusinessResourceConnectorGroupOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::BindBusinessResourceConnectorGroupAsync(const BindBusinessResourceConnectorGroupRequest& request, const BindBusinessResourceConnectorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindBusinessResourceConnectorGroupRequest&;
+    using Resp = BindBusinessResourceConnectorGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindBusinessResourceConnectorGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::BindBusinessResourceConnectorGroupOutcomeCallable IoaClient::BindBusinessResourceConnectorGroupCallable(const BindBusinessResourceConnectorGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindBusinessResourceConnectorGroupOutcome>>();
+    BindBusinessResourceConnectorGroupAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const BindBusinessResourceConnectorGroupRequest&,
+        BindBusinessResourceConnectorGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::CreateBusinessResourceOutcome IoaClient::CreateBusinessResource(const CreateBusinessResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBusinessResource");

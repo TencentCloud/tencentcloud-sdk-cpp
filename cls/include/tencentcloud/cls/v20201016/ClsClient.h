@@ -95,6 +95,10 @@
 #include <tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateRecordingRuleTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateRecordingRuleTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateRecordingRuleYamlTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateSearchViewRequest.h>
@@ -163,6 +167,10 @@
 #include <tencentcloud/cls/v20201016/model/DeleteNetworkApplicationResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteNoticeContentResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteRecordingRuleTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteRecordingRuleTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteRecordingRuleYamlTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteSearchViewRequest.h>
@@ -269,6 +277,10 @@
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeRebuildIndexTasksRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeRebuildIndexTasksResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRecordingRuleTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRecordingRuleTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRecordingRuleYamlTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeSearchViewsRequest.h>
@@ -351,6 +363,10 @@
 #include <tencentcloud/cls/v20201016/model/ModifyNetworkApplicationResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyNoticeContentResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyRecordingRuleTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyRecordingRuleTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyRecordingRuleYamlTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyRecordingRuleYamlTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifySearchViewRequest.h>
@@ -509,6 +525,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRebuildIndexTaskResponse> CreateRebuildIndexTaskOutcome;
                 typedef std::future<CreateRebuildIndexTaskOutcome> CreateRebuildIndexTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateRebuildIndexTaskRequest&, CreateRebuildIndexTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRebuildIndexTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecordingRuleTaskResponse> CreateRecordingRuleTaskOutcome;
+                typedef std::future<CreateRecordingRuleTaskOutcome> CreateRecordingRuleTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateRecordingRuleTaskRequest&, CreateRecordingRuleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingRuleTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecordingRuleYamlTaskResponse> CreateRecordingRuleYamlTaskOutcome;
+                typedef std::future<CreateRecordingRuleYamlTaskOutcome> CreateRecordingRuleYamlTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateRecordingRuleYamlTaskRequest&, CreateRecordingRuleYamlTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingRuleYamlTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScheduledSqlResponse> CreateScheduledSqlOutcome;
                 typedef std::future<CreateScheduledSqlOutcome> CreateScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateScheduledSqlRequest&, CreateScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledSqlAsyncHandler;
@@ -611,6 +633,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNoticeContentResponse> DeleteNoticeContentOutcome;
                 typedef std::future<DeleteNoticeContentOutcome> DeleteNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteNoticeContentRequest&, DeleteNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNoticeContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordingRuleTaskResponse> DeleteRecordingRuleTaskOutcome;
+                typedef std::future<DeleteRecordingRuleTaskOutcome> DeleteRecordingRuleTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteRecordingRuleTaskRequest&, DeleteRecordingRuleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingRuleTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordingRuleYamlTaskResponse> DeleteRecordingRuleYamlTaskOutcome;
+                typedef std::future<DeleteRecordingRuleYamlTaskOutcome> DeleteRecordingRuleYamlTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteRecordingRuleYamlTaskRequest&, DeleteRecordingRuleYamlTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingRuleYamlTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteScheduledSqlResponse> DeleteScheduledSqlOutcome;
                 typedef std::future<DeleteScheduledSqlOutcome> DeleteScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteScheduledSqlRequest&, DeleteScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledSqlAsyncHandler;
@@ -770,6 +798,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRebuildIndexTasksResponse> DescribeRebuildIndexTasksOutcome;
                 typedef std::future<DescribeRebuildIndexTasksOutcome> DescribeRebuildIndexTasksOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeRebuildIndexTasksRequest&, DescribeRebuildIndexTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebuildIndexTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingRuleTaskResponse> DescribeRecordingRuleTaskOutcome;
+                typedef std::future<DescribeRecordingRuleTaskOutcome> DescribeRecordingRuleTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeRecordingRuleTaskRequest&, DescribeRecordingRuleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingRuleTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingRuleYamlTaskResponse> DescribeRecordingRuleYamlTaskOutcome;
+                typedef std::future<DescribeRecordingRuleYamlTaskOutcome> DescribeRecordingRuleYamlTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeRecordingRuleYamlTaskRequest&, DescribeRecordingRuleYamlTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingRuleYamlTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScheduledSqlInfoResponse> DescribeScheduledSqlInfoOutcome;
                 typedef std::future<DescribeScheduledSqlInfoOutcome> DescribeScheduledSqlInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeScheduledSqlInfoRequest&, DescribeScheduledSqlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledSqlInfoAsyncHandler;
@@ -893,6 +927,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNoticeContentResponse> ModifyNoticeContentOutcome;
                 typedef std::future<ModifyNoticeContentOutcome> ModifyNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyNoticeContentRequest&, ModifyNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNoticeContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordingRuleTaskResponse> ModifyRecordingRuleTaskOutcome;
+                typedef std::future<ModifyRecordingRuleTaskOutcome> ModifyRecordingRuleTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyRecordingRuleTaskRequest&, ModifyRecordingRuleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordingRuleTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordingRuleYamlTaskResponse> ModifyRecordingRuleYamlTaskOutcome;
+                typedef std::future<ModifyRecordingRuleYamlTaskOutcome> ModifyRecordingRuleYamlTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyRecordingRuleYamlTaskRequest&, ModifyRecordingRuleYamlTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordingRuleYamlTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyScheduledSqlResponse> ModifyScheduledSqlOutcome;
                 typedef std::future<ModifyScheduledSqlOutcome> ModifyScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyScheduledSqlRequest&, ModifyScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledSqlAsyncHandler;
@@ -1290,6 +1330,24 @@ namespace TencentCloud
                 CreateRebuildIndexTaskOutcomeCallable CreateRebuildIndexTaskCallable(const Model::CreateRebuildIndexTaskRequest& request);
 
                 /**
+                 *创建指标预聚合任务
+                 * @param req CreateRecordingRuleTaskRequest
+                 * @return CreateRecordingRuleTaskOutcome
+                 */
+                CreateRecordingRuleTaskOutcome CreateRecordingRuleTask(const Model::CreateRecordingRuleTaskRequest &request);
+                void CreateRecordingRuleTaskAsync(const Model::CreateRecordingRuleTaskRequest& request, const CreateRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordingRuleTaskOutcomeCallable CreateRecordingRuleTaskCallable(const Model::CreateRecordingRuleTaskRequest& request);
+
+                /**
+                 *通过yaml文件创建指标预聚合任务
+                 * @param req CreateRecordingRuleYamlTaskRequest
+                 * @return CreateRecordingRuleYamlTaskOutcome
+                 */
+                CreateRecordingRuleYamlTaskOutcome CreateRecordingRuleYamlTask(const Model::CreateRecordingRuleYamlTaskRequest &request);
+                void CreateRecordingRuleYamlTaskAsync(const Model::CreateRecordingRuleYamlTaskRequest& request, const CreateRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordingRuleYamlTaskOutcomeCallable CreateRecordingRuleYamlTaskCallable(const Model::CreateRecordingRuleYamlTaskRequest& request);
+
+                /**
                  *本接口用于创建定时SQL分析任务
                  * @param req CreateScheduledSqlRequest
                  * @return CreateScheduledSqlOutcome
@@ -1594,6 +1652,24 @@ namespace TencentCloud
                 DeleteNoticeContentOutcome DeleteNoticeContent(const Model::DeleteNoticeContentRequest &request);
                 void DeleteNoticeContentAsync(const Model::DeleteNoticeContentRequest& request, const DeleteNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNoticeContentOutcomeCallable DeleteNoticeContentCallable(const Model::DeleteNoticeContentRequest& request);
+
+                /**
+                 *本接口用于删除预聚合分析任务
+                 * @param req DeleteRecordingRuleTaskRequest
+                 * @return DeleteRecordingRuleTaskOutcome
+                 */
+                DeleteRecordingRuleTaskOutcome DeleteRecordingRuleTask(const Model::DeleteRecordingRuleTaskRequest &request);
+                void DeleteRecordingRuleTaskAsync(const Model::DeleteRecordingRuleTaskRequest& request, const DeleteRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordingRuleTaskOutcomeCallable DeleteRecordingRuleTaskCallable(const Model::DeleteRecordingRuleTaskRequest& request);
+
+                /**
+                 *本接口用于删除yaml预聚合任务
+                 * @param req DeleteRecordingRuleYamlTaskRequest
+                 * @return DeleteRecordingRuleYamlTaskOutcome
+                 */
+                DeleteRecordingRuleYamlTaskOutcome DeleteRecordingRuleYamlTask(const Model::DeleteRecordingRuleYamlTaskRequest &request);
+                void DeleteRecordingRuleYamlTaskAsync(const Model::DeleteRecordingRuleYamlTaskRequest& request, const DeleteRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordingRuleYamlTaskOutcomeCallable DeleteRecordingRuleYamlTaskCallable(const Model::DeleteRecordingRuleYamlTaskRequest& request);
 
                 /**
                  *本接口用于删除定时SQL分析任务
@@ -2074,6 +2150,24 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeRebuildIndexTasksOutcomeCallable DescribeRebuildIndexTasksCallable(const Model::DescribeRebuildIndexTasksRequest& request);
 
                 /**
+                 *本接口用于获取预聚合任务列表
+                 * @param req DescribeRecordingRuleTaskRequest
+                 * @return DescribeRecordingRuleTaskOutcome
+                 */
+                DescribeRecordingRuleTaskOutcome DescribeRecordingRuleTask(const Model::DescribeRecordingRuleTaskRequest &request);
+                void DescribeRecordingRuleTaskAsync(const Model::DescribeRecordingRuleTaskRequest& request, const DescribeRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingRuleTaskOutcomeCallable DescribeRecordingRuleTaskCallable(const Model::DescribeRecordingRuleTaskRequest& request);
+
+                /**
+                 *本接口用于获取yaml预聚合任务列表
+                 * @param req DescribeRecordingRuleYamlTaskRequest
+                 * @return DescribeRecordingRuleYamlTaskOutcome
+                 */
+                DescribeRecordingRuleYamlTaskOutcome DescribeRecordingRuleYamlTask(const Model::DescribeRecordingRuleYamlTaskRequest &request);
+                void DescribeRecordingRuleYamlTaskAsync(const Model::DescribeRecordingRuleYamlTaskRequest& request, const DescribeRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingRuleYamlTaskOutcomeCallable DescribeRecordingRuleYamlTaskCallable(const Model::DescribeRecordingRuleYamlTaskRequest& request);
+
+                /**
                  *本接口用于获取定时SQL分析任务列表
                  * @param req DescribeScheduledSqlInfoRequest
                  * @return DescribeScheduledSqlInfoOutcome
@@ -2442,6 +2536,24 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyNoticeContentOutcome ModifyNoticeContent(const Model::ModifyNoticeContentRequest &request);
                 void ModifyNoticeContentAsync(const Model::ModifyNoticeContentRequest& request, const ModifyNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNoticeContentOutcomeCallable ModifyNoticeContentCallable(const Model::ModifyNoticeContentRequest& request);
+
+                /**
+                 *本接口用于修改定时预聚合任务
+                 * @param req ModifyRecordingRuleTaskRequest
+                 * @return ModifyRecordingRuleTaskOutcome
+                 */
+                ModifyRecordingRuleTaskOutcome ModifyRecordingRuleTask(const Model::ModifyRecordingRuleTaskRequest &request);
+                void ModifyRecordingRuleTaskAsync(const Model::ModifyRecordingRuleTaskRequest& request, const ModifyRecordingRuleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordingRuleTaskOutcomeCallable ModifyRecordingRuleTaskCallable(const Model::ModifyRecordingRuleTaskRequest& request);
+
+                /**
+                 *通过yaml文件修改指标预聚合任务
+                 * @param req ModifyRecordingRuleYamlTaskRequest
+                 * @return ModifyRecordingRuleYamlTaskOutcome
+                 */
+                ModifyRecordingRuleYamlTaskOutcome ModifyRecordingRuleYamlTask(const Model::ModifyRecordingRuleYamlTaskRequest &request);
+                void ModifyRecordingRuleYamlTaskAsync(const Model::ModifyRecordingRuleYamlTaskRequest& request, const ModifyRecordingRuleYamlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordingRuleYamlTaskOutcomeCallable ModifyRecordingRuleYamlTaskCallable(const Model::ModifyRecordingRuleYamlTaskRequest& request);
 
                 /**
                  *本接口用于修改定时SQL分析任务

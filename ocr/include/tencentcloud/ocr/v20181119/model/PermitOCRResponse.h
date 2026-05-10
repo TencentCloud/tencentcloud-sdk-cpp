@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取<p>姓名</p>
+                     * @return Name <p>姓名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取英文姓名
-                     * @return EnglishName 英文姓名
+                     * 获取<p>英文姓名</p>
+                     * @return EnglishName <p>英文姓名</p>
                      * 
                      */
                     std::string GetEnglishName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool EnglishNameHasBeenSet() const;
 
                     /**
-                     * 获取证件号
-                     * @return Number 证件号
+                     * 获取<p>证件号</p>
+                     * @return Number <p>证件号</p>
                      * 
                      */
                     std::string GetNumber() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool NumberHasBeenSet() const;
 
                     /**
-                     * 获取性别
-                     * @return Sex 性别
+                     * 获取<p>性别</p>
+                     * @return Sex <p>性别</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取有效期限
-                     * @return ValidDate 有效期限
+                     * 获取<p>有效期限</p>
+                     * @return ValidDate <p>有效期限</p>
                      * 
                      */
                     std::string GetValidDate() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ValidDateHasBeenSet() const;
 
                     /**
-                     * 获取签发机关
-                     * @return IssueAuthority 签发机关
+                     * 获取<p>签发机关</p>
+                     * @return IssueAuthority <p>签发机关</p>
                      * 
                      */
                     std::string GetIssueAuthority() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool IssueAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取签发地点
-                     * @return IssueAddress 签发地点
+                     * 获取<p>签发地点</p>
+                     * @return IssueAddress <p>签发地点</p>
                      * 
                      */
                     std::string GetIssueAddress() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool IssueAddressHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
-                     * @return Birthday 出生日期
+                     * 获取<p>出生日期</p>
+                     * @return Birthday <p>出生日期</p>
                      * 
                      */
                     std::string GetBirthday() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool BirthdayHasBeenSet() const;
 
                     /**
-                     * 获取头像照片的base64
-                     * @return PortraitImage 头像照片的base64
+                     * 获取<p>头像照片的base64</p>
+                     * @return PortraitImage <p>头像照片的base64</p>
                      * 
                      */
                     std::string GetPortraitImage() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool PortraitImageHasBeenSet() const;
 
                     /**
-                     * 获取返回类型
-                     * @return Type 返回类型
+                     * 获取<p>返回类型</p>
+                     * @return Type <p>返回类型</p>
                      * 
                      */
                     std::string GetType() const;
@@ -186,61 +186,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 姓名
+                     * <p>姓名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * <p>英文姓名</p>
                      */
                     std::string m_englishName;
                     bool m_englishNameHasBeenSet;
 
                     /**
-                     * 证件号
+                     * <p>证件号</p>
                      */
                     std::string m_number;
                     bool m_numberHasBeenSet;
 
                     /**
-                     * 性别
+                     * <p>性别</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 有效期限
+                     * <p>有效期限</p>
                      */
                     std::string m_validDate;
                     bool m_validDateHasBeenSet;
 
                     /**
-                     * 签发机关
+                     * <p>签发机关</p>
                      */
                     std::string m_issueAuthority;
                     bool m_issueAuthorityHasBeenSet;
 
                     /**
-                     * 签发地点
+                     * <p>签发地点</p>
                      */
                     std::string m_issueAddress;
                     bool m_issueAddressHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * <p>出生日期</p>
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
 
                     /**
-                     * 头像照片的base64
+                     * <p>头像照片的base64</p>
                      */
                     std::string m_portraitImage;
                     bool m_portraitImageHasBeenSet;
 
                     /**
-                     * 返回类型
+                     * <p>返回类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

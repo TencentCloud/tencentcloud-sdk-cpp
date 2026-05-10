@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。
-                     * @return FileId 音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。
+                     * 获取<p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>
+                     * @return FileId <p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。
-                     * @param _fileId 音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。
+                     * 设置<p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>
+                     * @param _fileId <p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取输出的自适应码流中的音频流名称，长度限制为16个字符。
-                     * @return Name 输出的自适应码流中的音频流名称，长度限制为16个字符。
+                     * 获取<p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>
+                     * @return Name <p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置输出的自适应码流中的音频流名称，长度限制为16个字符。
-                     * @param _name 输出的自适应码流中的音频流名称，长度限制为16个字符。
+                     * 设置<p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>
+                     * @param _name <p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。
-                     * @return Language 输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。
+                     * 获取<p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>
+                     * @return Language <p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。
-                     * @param _language 输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。
+                     * 设置<p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>
+                     * @param _language <p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -110,27 +110,15 @@ namespace TencentCloud
                     bool LanguageHasBeenSet() const;
 
                     /**
-                     * 获取是否设置为自适应码流的默认音频。取值：
-<li>YES：设置为默认音频；</li>
-<li>NO：不设置为默认音频（默认值）。</li>
-
-                     * @return Default 是否设置为自适应码流的默认音频。取值：
-<li>YES：设置为默认音频；</li>
-<li>NO：不设置为默认音频（默认值）。</li>
-
+                     * 获取<p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>
+                     * @return Default <p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>
                      * 
                      */
                     std::string GetDefault() const;
 
                     /**
-                     * 设置是否设置为自适应码流的默认音频。取值：
-<li>YES：设置为默认音频；</li>
-<li>NO：不设置为默认音频（默认值）。</li>
-
-                     * @param _default 是否设置为自适应码流的默认音频。取值：
-<li>YES：设置为默认音频；</li>
-<li>NO：不设置为默认音频（默认值）。</li>
-
+                     * 设置<p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>
+                     * @param _default <p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>
                      * 
                      */
                     void SetDefault(const std::string& _default);
@@ -143,15 +131,15 @@ namespace TencentCloud
                     bool DefaultHasBeenSet() const;
 
                     /**
-                     * 获取音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
-                     * @return AudioTrackIdx 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * 获取<p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>
+                     * @return AudioTrackIdx <p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>
                      * 
                      */
                     uint64_t GetAudioTrackIdx() const;
 
                     /**
-                     * 设置音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
-                     * @param _audioTrackIdx 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * 设置<p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>
+                     * @param _audioTrackIdx <p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>
                      * 
                      */
                     void SetAudioTrackIdx(const uint64_t& _audioTrackIdx);
@@ -166,34 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。
+                     * <p>音频源的媒体 ID。固定取该媒体源文件中的首个音频流，视频流和其它音频流（如有）将被忽略。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 输出的自适应码流中的音频流名称，长度限制为16个字符。
+                     * <p>输出的自适应码流中的音频流名称，长度限制为16个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。
+                     * <p>输出的自适应码流中的音频流语言，长度限制为16个字符。要求符合 RFC5646 规范。</p>
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
 
                     /**
-                     * 是否设置为自适应码流的默认音频。取值：
-<li>YES：设置为默认音频；</li>
-<li>NO：不设置为默认音频（默认值）。</li>
-
+                     * <p>是否设置为自适应码流的默认音频。取值：</p><li>YES：设置为默认音频；</li><li>NO：不设置为默认音频（默认值）。</li>
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
-                     * 音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。
+                     * <p>音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。</p>
                      */
                     uint64_t m_audioTrackIdx;
                     bool m_audioTrackIdxHasBeenSet;

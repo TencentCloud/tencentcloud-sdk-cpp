@@ -893,6 +893,27 @@ namespace TencentCloud
                      */
                     bool WebUiVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>
+                     * @return CbsSysEncrypt <p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>
+                     * 
+                     */
+                    int64_t GetCbsSysEncrypt() const;
+
+                    /**
+                     * 设置<p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>
+                     * @param _cbsSysEncrypt <p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>
+                     * 
+                     */
+                    void SetCbsSysEncrypt(const int64_t& _cbsSysEncrypt);
+
+                    /**
+                     * 判断参数 CbsSysEncrypt 是否已赋值
+                     * @return CbsSysEncrypt 是否已赋值
+                     * 
+                     */
+                    bool CbsSysEncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1134,6 +1155,12 @@ namespace TencentCloud
                      */
                     int64_t m_webUiVersion;
                     bool m_webUiVersionHasBeenSet;
+
+                    /**
+                     * <p>是否开启集群维度cbs系统盘加密,0关闭1开启</p>
+                     */
+                    int64_t m_cbsSysEncrypt;
+                    bool m_cbsSysEncryptHasBeenSet;
 
                 };
             }

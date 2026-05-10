@@ -43,7 +43,9 @@ AgentToolInfo::AgentToolInfo() :
     m_toolAdvanceConfigHasBeenSet(false),
     m_authModeHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_authConfigStatusHasBeenSet(false)
+    m_authConfigStatusHasBeenSet(false),
+    m_toolAccessModeHasBeenSet(false),
+    m_isDisabledHasBeenSet(false)
 {
 }
 
@@ -336,6 +338,26 @@ CoreInternalOutcome AgentToolInfo::Deserialize(const rapidjson::Value &value)
         m_authConfigStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolAccessMode") && !value["ToolAccessMode"].IsNull())
+    {
+        if (!value["ToolAccessMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.ToolAccessMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_toolAccessMode = value["ToolAccessMode"].GetInt64();
+        m_toolAccessModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDisabled") && !value["IsDisabled"].IsNull())
+    {
+        if (!value["IsDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.IsDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDisabled = value["IsDisabled"].GetBool();
+        m_isDisabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +577,22 @@ void AgentToolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AuthConfigStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authConfigStatus, allocator);
+    }
+
+    if (m_toolAccessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolAccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toolAccessMode, allocator);
+    }
+
+    if (m_isDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDisabled, allocator);
     }
 
 }
@@ -926,5 +964,37 @@ void AgentToolInfo::SetAuthConfigStatus(const int64_t& _authConfigStatus)
 bool AgentToolInfo::AuthConfigStatusHasBeenSet() const
 {
     return m_authConfigStatusHasBeenSet;
+}
+
+int64_t AgentToolInfo::GetToolAccessMode() const
+{
+    return m_toolAccessMode;
+}
+
+void AgentToolInfo::SetToolAccessMode(const int64_t& _toolAccessMode)
+{
+    m_toolAccessMode = _toolAccessMode;
+    m_toolAccessModeHasBeenSet = true;
+}
+
+bool AgentToolInfo::ToolAccessModeHasBeenSet() const
+{
+    return m_toolAccessModeHasBeenSet;
+}
+
+bool AgentToolInfo::GetIsDisabled() const
+{
+    return m_isDisabled;
+}
+
+void AgentToolInfo::SetIsDisabled(const bool& _isDisabled)
+{
+    m_isDisabled = _isDisabled;
+    m_isDisabledHasBeenSet = true;
+}
+
+bool AgentToolInfo::IsDisabledHasBeenSet() const
+{
+    return m_isDisabledHasBeenSet;
 }
 

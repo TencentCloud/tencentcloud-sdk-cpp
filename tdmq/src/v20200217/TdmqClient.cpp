@@ -1040,6 +1040,56 @@ TdmqClient::CreateRocketMQRoleOutcomeCallable TdmqClient::CreateRocketMQRoleCall
     return prom->get_future();
 }
 
+TdmqClient::CreateRocketMQRouterRuleOutcome TdmqClient::CreateRocketMQRouterRule(const CreateRocketMQRouterRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQRouterRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQRouterRuleResponse rsp = CreateRocketMQRouterRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQRouterRuleOutcome(rsp);
+        else
+            return CreateRocketMQRouterRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQRouterRuleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQRouterRuleAsync(const CreateRocketMQRouterRuleRequest& request, const CreateRocketMQRouterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRocketMQRouterRuleRequest&;
+    using Resp = CreateRocketMQRouterRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRocketMQRouterRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmqClient::CreateRocketMQRouterRuleOutcomeCallable TdmqClient::CreateRocketMQRouterRuleCallable(const CreateRocketMQRouterRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRocketMQRouterRuleOutcome>>();
+    CreateRocketMQRouterRuleAsync(
+    request,
+    [prom](
+        const TdmqClient*,
+        const CreateRocketMQRouterRuleRequest&,
+        CreateRocketMQRouterRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmqClient::CreateRocketMQTopicOutcome TdmqClient::CreateRocketMQTopic(const CreateRocketMQTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRocketMQTopic");

@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LibraryIdHasBeenSet() const;
 
                     /**
-                     * 获取
-                     * @return AccessDomain 
+                     * 获取<p>用于访问 SMH 的域名</p>
+                     * @return AccessDomain <p>用于访问 SMH 的域名</p>
                      * 
                      */
                     std::string GetAccessDomain() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_libraryIdHasBeenSet;
 
                     /**
-                     * 
+                     * <p>用于访问 SMH 的域名</p>
                      */
                     std::string m_accessDomain;
                     bool m_accessDomainHasBeenSet;

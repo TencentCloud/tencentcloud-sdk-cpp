@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志下载链接总数量。
-                     * @return TotalCount 日志下载链接总数量。
+                     * 获取<p>日志下载链接总数量。</p>
+                     * @return TotalCount <p>日志下载链接总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
-                     * @return OverseaCdnLogs 海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
+                     * 获取<p>海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。</p>
+                     * @return OverseaCdnLogs <p>海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。</p>
                      * 
                      */
                     std::vector<CdnLogInfo> GetOverseaCdnLogs() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool OverseaCdnLogsHasBeenSet() const;
 
                     /**
-                     * 获取国内CDN节点的日志下载列表。
-                     * @return DomesticCdnLogs 国内CDN节点的日志下载列表。
+                     * 获取<p>国内CDN节点的日志下载列表。</p>
+                     * @return DomesticCdnLogs <p>国内CDN节点的日志下载列表。</p>
                      * 
                      */
                     std::vector<CdnLogInfo> GetDomesticCdnLogs() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志下载链接总数量。
+                     * <p>日志下载链接总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。
+                     * <p>海外CDN节点的日志下载列表。如果域名没有开启海外加速，忽略该参数。</p>
                      */
                     std::vector<CdnLogInfo> m_overseaCdnLogs;
                     bool m_overseaCdnLogsHasBeenSet;
 
                     /**
-                     * 国内CDN节点的日志下载列表。
+                     * <p>国内CDN节点的日志下载列表。</p>
                      */
                     std::vector<CdnLogInfo> m_domesticCdnLogs;
                     bool m_domesticCdnLogsHasBeenSet;

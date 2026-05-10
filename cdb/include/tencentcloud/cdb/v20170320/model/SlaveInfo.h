@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第一备机信息
-                     * @return First 第一备机信息
+                     * 获取<p>第一备机信息</p>
+                     * @return First <p>第一备机信息</p>
                      * 
                      */
                     SlaveInstanceInfo GetFirst() const;
 
                     /**
-                     * 设置第一备机信息
-                     * @param _first 第一备机信息
+                     * 设置<p>第一备机信息</p>
+                     * @param _first <p>第一备机信息</p>
                      * 
                      */
                     void SetFirst(const SlaveInstanceInfo& _first);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FirstHasBeenSet() const;
 
                     /**
-                     * 获取第二备机信息
-                     * @return Second 第二备机信息
+                     * 获取<p>第二备机信息</p>
+                     * @return Second <p>第二备机信息</p>
                      * 
                      */
                     SlaveInstanceInfo GetSecond() const;
 
                     /**
-                     * 设置第二备机信息
-                     * @param _second 第二备机信息
+                     * 设置<p>第二备机信息</p>
+                     * @param _second <p>第二备机信息</p>
                      * 
                      */
                     void SetSecond(const SlaveInstanceInfo& _second);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第一备机信息
+                     * <p>第一备机信息</p>
                      */
                     SlaveInstanceInfo m_first;
                     bool m_firstHasBeenSet;
 
                     /**
-                     * 第二备机信息
+                     * <p>第二备机信息</p>
                      */
                     SlaveInstanceInfo m_second;
                     bool m_secondHasBeenSet;
