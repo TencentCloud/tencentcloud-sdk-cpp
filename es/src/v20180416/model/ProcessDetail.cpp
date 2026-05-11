@@ -24,7 +24,8 @@ ProcessDetail::ProcessDetail() :
     m_completedHasBeenSet(false),
     m_remainHasBeenSet(false),
     m_totalHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_estimatedTimeRemainingHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ProcessDetail::Deserialize(const rapidjson::Value &value)
         m_taskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EstimatedTimeRemaining") && !value["EstimatedTimeRemaining"].IsNull())
+    {
+        if (!value["EstimatedTimeRemaining"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessDetail.EstimatedTimeRemaining` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_estimatedTimeRemaining = value["EstimatedTimeRemaining"].GetInt64();
+        m_estimatedTimeRemainingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ProcessDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_estimatedTimeRemainingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EstimatedTimeRemaining";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_estimatedTimeRemaining, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ProcessDetail::SetTaskType(const int64_t& _taskType)
 bool ProcessDetail::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+int64_t ProcessDetail::GetEstimatedTimeRemaining() const
+{
+    return m_estimatedTimeRemaining;
+}
+
+void ProcessDetail::SetEstimatedTimeRemaining(const int64_t& _estimatedTimeRemaining)
+{
+    m_estimatedTimeRemaining = _estimatedTimeRemaining;
+    m_estimatedTimeRemainingHasBeenSet = true;
+}
+
+bool ProcessDetail::EstimatedTimeRemainingHasBeenSet() const
+{
+    return m_estimatedTimeRemainingHasBeenSet;
 }
 

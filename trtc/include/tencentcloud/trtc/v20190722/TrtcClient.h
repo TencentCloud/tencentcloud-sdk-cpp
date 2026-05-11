@@ -85,6 +85,10 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeStreamIngestRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeStreamIngestResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCAIRecognitionUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCAIRecognitionUsageResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCDedicatedCloudAccUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCDedicatedCloudAccUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataRequest.h>
@@ -95,6 +99,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCSegmentModerationUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTRTCSegmentModerationUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcRoomUsageRequest.h>
@@ -278,6 +284,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamIngestResponse> DescribeStreamIngestOutcome;
                 typedef std::future<DescribeStreamIngestOutcome> DescribeStreamIngestOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeStreamIngestRequest&, DescribeStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamIngestAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTRTCAIRecognitionUsageResponse> DescribeTRTCAIRecognitionUsageOutcome;
+                typedef std::future<DescribeTRTCAIRecognitionUsageOutcome> DescribeTRTCAIRecognitionUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCAIRecognitionUsageRequest&, DescribeTRTCAIRecognitionUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCAIRecognitionUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTRTCDedicatedCloudAccUsageResponse> DescribeTRTCDedicatedCloudAccUsageOutcome;
+                typedef std::future<DescribeTRTCDedicatedCloudAccUsageOutcome> DescribeTRTCDedicatedCloudAccUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCDedicatedCloudAccUsageRequest&, DescribeTRTCDedicatedCloudAccUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCDedicatedCloudAccUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTRTCMarketQualityDataResponse> DescribeTRTCMarketQualityDataOutcome;
                 typedef std::future<DescribeTRTCMarketQualityDataOutcome> DescribeTRTCMarketQualityDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCMarketQualityDataRequest&, DescribeTRTCMarketQualityDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCMarketQualityDataAsyncHandler;
@@ -293,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeScaleDataResponse> DescribeTRTCRealTimeScaleDataOutcome;
                 typedef std::future<DescribeTRTCRealTimeScaleDataOutcome> DescribeTRTCRealTimeScaleDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeScaleDataRequest&, DescribeTRTCRealTimeScaleDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeScaleDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTRTCSegmentModerationUsageResponse> DescribeTRTCSegmentModerationUsageOutcome;
+                typedef std::future<DescribeTRTCSegmentModerationUsageOutcome> DescribeTRTCSegmentModerationUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCSegmentModerationUsageRequest&, DescribeTRTCSegmentModerationUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCSegmentModerationUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
                 typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
@@ -745,6 +760,30 @@ namespace TencentCloud
                 DescribeStreamIngestOutcomeCallable DescribeStreamIngestCallable(const Model::DescribeStreamIngestRequest& request);
 
                 /**
+                 *AI 智能识别与对话用量查询（AI对话/语音转文本/实时翻译/实时语音合成）
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+                 * @param req DescribeTRTCAIRecognitionUsageRequest
+                 * @return DescribeTRTCAIRecognitionUsageOutcome
+                 */
+                DescribeTRTCAIRecognitionUsageOutcome DescribeTRTCAIRecognitionUsage(const Model::DescribeTRTCAIRecognitionUsageRequest &request);
+                void DescribeTRTCAIRecognitionUsageAsync(const Model::DescribeTRTCAIRecognitionUsageRequest& request, const DescribeTRTCAIRecognitionUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTRTCAIRecognitionUsageOutcomeCallable DescribeTRTCAIRecognitionUsageCallable(const Model::DescribeTRTCAIRecognitionUsageRequest& request);
+
+                /**
+                 *TRTC专属云网络加速用量查询
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+                 * @param req DescribeTRTCDedicatedCloudAccUsageRequest
+                 * @return DescribeTRTCDedicatedCloudAccUsageOutcome
+                 */
+                DescribeTRTCDedicatedCloudAccUsageOutcome DescribeTRTCDedicatedCloudAccUsage(const Model::DescribeTRTCDedicatedCloudAccUsageRequest &request);
+                void DescribeTRTCDedicatedCloudAccUsageAsync(const Model::DescribeTRTCDedicatedCloudAccUsageRequest& request, const DescribeTRTCDedicatedCloudAccUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTRTCDedicatedCloudAccUsageOutcomeCallable DescribeTRTCDedicatedCloudAccUsageCallable(const Model::DescribeTRTCDedicatedCloudAccUsageRequest& request);
+
+                /**
                  *查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）
 joinSuccessRate：加入频道成功率。
 joinSuccessIn5sRate：5s内加入频道成功率。
@@ -822,6 +861,18 @@ peakCurrentUsers：峰值同时在线人数。
                 DescribeTRTCRealTimeScaleDataOutcome DescribeTRTCRealTimeScaleData(const Model::DescribeTRTCRealTimeScaleDataRequest &request);
                 void DescribeTRTCRealTimeScaleDataAsync(const Model::DescribeTRTCRealTimeScaleDataRequest& request, const DescribeTRTCRealTimeScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTRTCRealTimeScaleDataOutcomeCallable DescribeTRTCRealTimeScaleDataCallable(const Model::DescribeTRTCRealTimeScaleDataRequest& request);
+
+                /**
+                 *切片截图与内容理解用量查询，支持查询音视频切片（云端切片场景）和 AI 内容理解（审核场景）两种业务类型
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+                 * @param req DescribeTRTCSegmentModerationUsageRequest
+                 * @return DescribeTRTCSegmentModerationUsageOutcome
+                 */
+                DescribeTRTCSegmentModerationUsageOutcome DescribeTRTCSegmentModerationUsage(const Model::DescribeTRTCSegmentModerationUsageRequest &request);
+                void DescribeTRTCSegmentModerationUsageAsync(const Model::DescribeTRTCSegmentModerationUsageRequest& request, const DescribeTRTCSegmentModerationUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTRTCSegmentModerationUsageOutcomeCallable DescribeTRTCSegmentModerationUsageCallable(const Model::DescribeTRTCSegmentModerationUsageRequest& request);
 
                 /**
                  *查询旁路转码计费时长。

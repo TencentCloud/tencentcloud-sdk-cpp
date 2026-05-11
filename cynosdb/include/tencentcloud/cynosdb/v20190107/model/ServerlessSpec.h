@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cpu最小值
-                     * @return MinCpu cpu最小值
+                     * 获取<p>cpu最小值</p>
+                     * @return MinCpu <p>cpu最小值</p>
                      * 
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置cpu最小值
-                     * @param _minCpu cpu最小值
+                     * 设置<p>cpu最小值</p>
+                     * @param _minCpu <p>cpu最小值</p>
                      * 
                      */
                     void SetMinCpu(const double& _minCpu);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取cpu最大值
-                     * @return MaxCpu cpu最大值
+                     * 获取<p>cpu最大值</p>
+                     * @return MaxCpu <p>cpu最大值</p>
                      * 
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置cpu最大值
-                     * @param _maxCpu cpu最大值
+                     * 设置<p>cpu最大值</p>
+                     * @param _maxCpu <p>cpu最大值</p>
                      * 
                      */
                     void SetMaxCpu(const double& _maxCpu);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool MaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取最大存储空间
-                     * @return MaxStorageSize 最大存储空间
+                     * 获取<p>最大存储空间</p>
+                     * @return MaxStorageSize <p>最大存储空间</p>
                      * 
                      */
                     int64_t GetMaxStorageSize() const;
 
                     /**
-                     * 设置最大存储空间
-                     * @param _maxStorageSize 最大存储空间
+                     * 设置<p>最大存储空间</p>
+                     * @param _maxStorageSize <p>最大存储空间</p>
                      * 
                      */
                     void SetMaxStorageSize(const int64_t& _maxStorageSize);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MaxStorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认规格
-                     * @return IsDefault 是否为默认规格
+                     * 获取<p>是否为默认规格</p>
+                     * @return IsDefault <p>是否为默认规格</p>
                      * 
                      */
                     int64_t GetIsDefault() const;
 
                     /**
-                     * 设置是否为默认规格
-                     * @param _isDefault 是否为默认规格
+                     * 设置<p>是否为默认规格</p>
+                     * @param _isDefault <p>是否为默认规格</p>
                      * 
                      */
                     void SetIsDefault(const int64_t& _isDefault);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取是否有库存
-                     * @return HasStock 是否有库存
+                     * 获取<p>是否有库存</p>
+                     * @return HasStock <p>是否有库存</p>
                      * 
                      */
                     bool GetHasStock() const;
 
                     /**
-                     * 设置是否有库存
-                     * @param _hasStock 是否有库存
+                     * 设置<p>是否有库存</p>
+                     * @param _hasStock <p>是否有库存</p>
                      * 
                      */
                     void SetHasStock(const bool& _hasStock);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool HasStockHasBeenSet() const;
 
                     /**
-                     * 获取库存数量
-                     * @return StockCount 库存数量
+                     * 获取<p>库存数量</p>
+                     * @return StockCount <p>库存数量</p>
                      * 
                      */
                     int64_t GetStockCount() const;
 
                     /**
-                     * 设置库存数量
-                     * @param _stockCount 库存数量
+                     * 设置<p>库存数量</p>
+                     * @param _stockCount <p>库存数量</p>
                      * 
                      */
                     void SetStockCount(const int64_t& _stockCount);
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool StockCountHasBeenSet() const;
 
                     /**
-                     * 获取可用区库存信息
+                     * 获取<p>可用区库存信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneStockInfos 可用区库存信息
+                     * @return ZoneStockInfos <p>可用区库存信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerlessZoneStockInfo> GetZoneStockInfos() const;
 
                     /**
-                     * 设置可用区库存信息
+                     * 设置<p>可用区库存信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneStockInfos 可用区库存信息
+                     * @param _zoneStockInfos <p>可用区库存信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,43 +201,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cpu最小值
+                     * <p>cpu最小值</p>
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * cpu最大值
+                     * <p>cpu最大值</p>
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
-                     * 最大存储空间
+                     * <p>最大存储空间</p>
                      */
                     int64_t m_maxStorageSize;
                     bool m_maxStorageSizeHasBeenSet;
 
                     /**
-                     * 是否为默认规格
+                     * <p>是否为默认规格</p>
                      */
                     int64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 是否有库存
+                     * <p>是否有库存</p>
                      */
                     bool m_hasStock;
                     bool m_hasStockHasBeenSet;
 
                     /**
-                     * 库存数量
+                     * <p>库存数量</p>
                      */
                     int64_t m_stockCount;
                     bool m_stockCountHasBeenSet;
 
                     /**
-                     * 可用区库存信息
+                     * <p>可用区库存信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerlessZoneStockInfo> m_zoneStockInfos;

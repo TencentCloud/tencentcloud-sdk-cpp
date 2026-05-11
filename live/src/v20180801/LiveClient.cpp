@@ -2140,6 +2140,56 @@ LiveClient::CreateRecordTaskOutcomeCallable LiveClient::CreateRecordTaskCallable
     return prom->get_future();
 }
 
+LiveClient::CreateSceneVideoTaskOutcome LiveClient::CreateSceneVideoTask(const CreateSceneVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSceneVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSceneVideoTaskResponse rsp = CreateSceneVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSceneVideoTaskOutcome(rsp);
+        else
+            return CreateSceneVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSceneVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateSceneVideoTaskAsync(const CreateSceneVideoTaskRequest& request, const CreateSceneVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSceneVideoTaskRequest&;
+    using Resp = CreateSceneVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSceneVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateSceneVideoTaskOutcomeCallable LiveClient::CreateSceneVideoTaskCallable(const CreateSceneVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSceneVideoTaskOutcome>>();
+    CreateSceneVideoTaskAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateSceneVideoTaskRequest&,
+        CreateSceneVideoTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateScreenshotTaskOutcome LiveClient::CreateScreenshotTask(const CreateScreenshotTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScreenshotTask");
@@ -8332,6 +8382,56 @@ LiveClient::DescribeRecordTaskOutcomeCallable LiveClient::DescribeRecordTaskCall
         const LiveClient*,
         const DescribeRecordTaskRequest&,
         DescribeRecordTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeSceneVideoTaskOutcome LiveClient::DescribeSceneVideoTask(const DescribeSceneVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSceneVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSceneVideoTaskResponse rsp = DescribeSceneVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSceneVideoTaskOutcome(rsp);
+        else
+            return DescribeSceneVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSceneVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeSceneVideoTaskAsync(const DescribeSceneVideoTaskRequest& request, const DescribeSceneVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSceneVideoTaskRequest&;
+    using Resp = DescribeSceneVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSceneVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeSceneVideoTaskOutcomeCallable LiveClient::DescribeSceneVideoTaskCallable(const DescribeSceneVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSceneVideoTaskOutcome>>();
+    DescribeSceneVideoTaskAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeSceneVideoTaskRequest&,
+        DescribeSceneVideoTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

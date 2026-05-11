@@ -7440,6 +7440,56 @@ MpsClient::DesignVoiceAsyncOutcomeCallable MpsClient::DesignVoiceAsyncCallable(c
     return prom->get_future();
 }
 
+MpsClient::DetectVideoSubtitleAreaOutcome MpsClient::DetectVideoSubtitleArea(const DetectVideoSubtitleAreaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectVideoSubtitleArea");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectVideoSubtitleAreaResponse rsp = DetectVideoSubtitleAreaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectVideoSubtitleAreaOutcome(rsp);
+        else
+            return DetectVideoSubtitleAreaOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectVideoSubtitleAreaOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DetectVideoSubtitleAreaAsync(const DetectVideoSubtitleAreaRequest& request, const DetectVideoSubtitleAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DetectVideoSubtitleAreaRequest&;
+    using Resp = DetectVideoSubtitleAreaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DetectVideoSubtitleArea", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DetectVideoSubtitleAreaOutcomeCallable MpsClient::DetectVideoSubtitleAreaCallable(const DetectVideoSubtitleAreaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DetectVideoSubtitleAreaOutcome>>();
+    DetectVideoSubtitleAreaAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DetectVideoSubtitleAreaRequest&,
+        DetectVideoSubtitleAreaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DisableScheduleOutcome MpsClient::DisableSchedule(const DisableScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableSchedule");

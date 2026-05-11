@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -63,13 +63,67 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>
+                     * @return LockEnabled <p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetLockEnabled() const;
+
+                    /**
+                     * 设置<p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>
+                     * @param _lockEnabled <p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetLockEnabled(const bool& _lockEnabled);
+
+                    /**
+                     * 判断参数 LockEnabled 是否已赋值
+                     * @return LockEnabled 是否已赋值
+                     * 
+                     */
+                    bool LockEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>
+                     * @return LockDuration <p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetLockDuration() const;
+
+                    /**
+                     * 设置<p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>
+                     * @param _lockDuration <p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>
+                     * 
+                     */
+                    void SetLockDuration(const int64_t& _lockDuration);
+
+                    /**
+                     * 判断参数 LockDuration 是否已赋值
+                     * @return LockDuration 是否已赋值
+                     * 
+                     */
+                    bool LockDurationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>回收站锁定设置，true时不可手动销毁，到预设时间后自动销毁</p><p>默认值：false</p>
+                     */
+                    bool m_lockEnabled;
+                    bool m_lockEnabledHasBeenSet;
+
+                    /**
+                     * <p>放入回收站的锁定时间</p><p>取值范围：[1, 7]</p><p>单位：天</p><p>默认值：1</p>
+                     */
+                    int64_t m_lockDuration;
+                    bool m_lockDurationHasBeenSet;
 
                 };
             }

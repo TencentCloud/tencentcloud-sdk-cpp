@@ -50,7 +50,9 @@ Snapshots::Snapshots() :
     m_cosEncryptionHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
     m_strategyNameHasBeenSet(false),
-    m_multiAzHasBeenSet(false)
+    m_multiAzHasBeenSet(false),
+    m_maxSnapshotPerSecHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -375,6 +377,26 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         m_multiAzHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxSnapshotPerSec") && !value["MaxSnapshotPerSec"].IsNull())
+    {
+        if (!value["MaxSnapshotPerSec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.MaxSnapshotPerSec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxSnapshotPerSec = string(value["MaxSnapshotPerSec"].GetString());
+        m_maxSnapshotPerSecHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -637,6 +659,22 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MultiAz";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_multiAz, allocator);
+    }
+
+    if (m_maxSnapshotPerSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSnapshotPerSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxSnapshotPerSec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1120,5 +1158,37 @@ void Snapshots::SetMultiAz(const uint64_t& _multiAz)
 bool Snapshots::MultiAzHasBeenSet() const
 {
     return m_multiAzHasBeenSet;
+}
+
+string Snapshots::GetMaxSnapshotPerSec() const
+{
+    return m_maxSnapshotPerSec;
+}
+
+void Snapshots::SetMaxSnapshotPerSec(const string& _maxSnapshotPerSec)
+{
+    m_maxSnapshotPerSec = _maxSnapshotPerSec;
+    m_maxSnapshotPerSecHasBeenSet = true;
+}
+
+bool Snapshots::MaxSnapshotPerSecHasBeenSet() const
+{
+    return m_maxSnapshotPerSecHasBeenSet;
+}
+
+string Snapshots::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Snapshots::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Snapshots::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

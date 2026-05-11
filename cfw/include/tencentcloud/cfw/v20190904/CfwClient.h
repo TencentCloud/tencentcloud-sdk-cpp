@@ -159,6 +159,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSerialRegionRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSerialRegionResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchErrorRequest.h>
@@ -495,6 +497,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupListResponse> DescribeSecurityGroupListOutcome;
                 typedef std::future<DescribeSecurityGroupListOutcome> DescribeSecurityGroupListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSecurityGroupListRequest&, DescribeSecurityGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSerialRegionResponse> DescribeSerialRegionOutcome;
+                typedef std::future<DescribeSerialRegionOutcome> DescribeSerialRegionOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeSerialRegionRequest&, DescribeSerialRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSerialRegionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSourceAssetResponse> DescribeSourceAssetOutcome;
                 typedef std::future<DescribeSourceAssetOutcome> DescribeSourceAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSourceAssetRequest&, DescribeSourceAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceAssetAsyncHandler;
@@ -1288,6 +1293,15 @@ namespace TencentCloud
                 DescribeSecurityGroupListOutcome DescribeSecurityGroupList(const Model::DescribeSecurityGroupListRequest &request);
                 void DescribeSecurityGroupListAsync(const Model::DescribeSecurityGroupListRequest& request, const DescribeSecurityGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityGroupListOutcomeCallable DescribeSecurityGroupListCallable(const Model::DescribeSecurityGroupListRequest& request);
+
+                /**
+                 *查询串行防火墙地域带宽分配信息
+                 * @param req DescribeSerialRegionRequest
+                 * @return DescribeSerialRegionOutcome
+                 */
+                DescribeSerialRegionOutcome DescribeSerialRegion(const Model::DescribeSerialRegionRequest &request);
+                void DescribeSerialRegionAsync(const Model::DescribeSerialRegionRequest& request, const DescribeSerialRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSerialRegionOutcomeCallable DescribeSerialRegionCallable(const Model::DescribeSerialRegionRequest& request);
 
                 /**
                  *DescribeSourceAsset-查询全部资产信息

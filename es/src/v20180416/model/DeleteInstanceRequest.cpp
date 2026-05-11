@@ -23,7 +23,9 @@ using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_lockEnabledHasBeenSet(false),
+    m_lockDurationHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DeleteInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_lockEnabled, allocator);
+    }
+
+    if (m_lockDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_lockDuration, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DeleteInstanceRequest::SetInstanceId(const string& _instanceId)
 bool DeleteInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool DeleteInstanceRequest::GetLockEnabled() const
+{
+    return m_lockEnabled;
+}
+
+void DeleteInstanceRequest::SetLockEnabled(const bool& _lockEnabled)
+{
+    m_lockEnabled = _lockEnabled;
+    m_lockEnabledHasBeenSet = true;
+}
+
+bool DeleteInstanceRequest::LockEnabledHasBeenSet() const
+{
+    return m_lockEnabledHasBeenSet;
+}
+
+int64_t DeleteInstanceRequest::GetLockDuration() const
+{
+    return m_lockDuration;
+}
+
+void DeleteInstanceRequest::SetLockDuration(const int64_t& _lockDuration)
+{
+    m_lockDuration = _lockDuration;
+    m_lockDurationHasBeenSet = true;
+}
+
+bool DeleteInstanceRequest::LockDurationHasBeenSet() const
+{
+    return m_lockDurationHasBeenSet;
 }
 
 

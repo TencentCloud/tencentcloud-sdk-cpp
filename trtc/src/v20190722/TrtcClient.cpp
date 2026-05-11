@@ -1590,6 +1590,106 @@ TrtcClient::DescribeStreamIngestOutcomeCallable TrtcClient::DescribeStreamIngest
     return prom->get_future();
 }
 
+TrtcClient::DescribeTRTCAIRecognitionUsageOutcome TrtcClient::DescribeTRTCAIRecognitionUsage(const DescribeTRTCAIRecognitionUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCAIRecognitionUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCAIRecognitionUsageResponse rsp = DescribeTRTCAIRecognitionUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCAIRecognitionUsageOutcome(rsp);
+        else
+            return DescribeTRTCAIRecognitionUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCAIRecognitionUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCAIRecognitionUsageAsync(const DescribeTRTCAIRecognitionUsageRequest& request, const DescribeTRTCAIRecognitionUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTRTCAIRecognitionUsageRequest&;
+    using Resp = DescribeTRTCAIRecognitionUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCAIRecognitionUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeTRTCAIRecognitionUsageOutcomeCallable TrtcClient::DescribeTRTCAIRecognitionUsageCallable(const DescribeTRTCAIRecognitionUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTRTCAIRecognitionUsageOutcome>>();
+    DescribeTRTCAIRecognitionUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCAIRecognitionUsageRequest&,
+        DescribeTRTCAIRecognitionUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeTRTCDedicatedCloudAccUsageOutcome TrtcClient::DescribeTRTCDedicatedCloudAccUsage(const DescribeTRTCDedicatedCloudAccUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCDedicatedCloudAccUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCDedicatedCloudAccUsageResponse rsp = DescribeTRTCDedicatedCloudAccUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCDedicatedCloudAccUsageOutcome(rsp);
+        else
+            return DescribeTRTCDedicatedCloudAccUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCDedicatedCloudAccUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCDedicatedCloudAccUsageAsync(const DescribeTRTCDedicatedCloudAccUsageRequest& request, const DescribeTRTCDedicatedCloudAccUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTRTCDedicatedCloudAccUsageRequest&;
+    using Resp = DescribeTRTCDedicatedCloudAccUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCDedicatedCloudAccUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeTRTCDedicatedCloudAccUsageOutcomeCallable TrtcClient::DescribeTRTCDedicatedCloudAccUsageCallable(const DescribeTRTCDedicatedCloudAccUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTRTCDedicatedCloudAccUsageOutcome>>();
+    DescribeTRTCDedicatedCloudAccUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCDedicatedCloudAccUsageRequest&,
+        DescribeTRTCDedicatedCloudAccUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::DescribeTRTCMarketQualityDataOutcome TrtcClient::DescribeTRTCMarketQualityData(const DescribeTRTCMarketQualityDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCMarketQualityData");
@@ -1832,6 +1932,56 @@ TrtcClient::DescribeTRTCRealTimeScaleDataOutcomeCallable TrtcClient::DescribeTRT
         const TrtcClient*,
         const DescribeTRTCRealTimeScaleDataRequest&,
         DescribeTRTCRealTimeScaleDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeTRTCSegmentModerationUsageOutcome TrtcClient::DescribeTRTCSegmentModerationUsage(const DescribeTRTCSegmentModerationUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCSegmentModerationUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCSegmentModerationUsageResponse rsp = DescribeTRTCSegmentModerationUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCSegmentModerationUsageOutcome(rsp);
+        else
+            return DescribeTRTCSegmentModerationUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCSegmentModerationUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCSegmentModerationUsageAsync(const DescribeTRTCSegmentModerationUsageRequest& request, const DescribeTRTCSegmentModerationUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTRTCSegmentModerationUsageRequest&;
+    using Resp = DescribeTRTCSegmentModerationUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCSegmentModerationUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeTRTCSegmentModerationUsageOutcomeCallable TrtcClient::DescribeTRTCSegmentModerationUsageCallable(const DescribeTRTCSegmentModerationUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTRTCSegmentModerationUsageOutcome>>();
+    DescribeTRTCSegmentModerationUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCSegmentModerationUsageRequest&,
+        DescribeTRTCSegmentModerationUsageOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

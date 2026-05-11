@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集列表
-                     * @return Result 数据集列表
+                     * 获取<p>数据集列表</p>
+                     * @return Result <p>数据集列表</p>
                      * 
                      */
                     PagedProgram GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据集列表
+                     * <p>数据集列表</p>
                      */
                     PagedProgram m_result;
                     bool m_resultHasBeenSet;

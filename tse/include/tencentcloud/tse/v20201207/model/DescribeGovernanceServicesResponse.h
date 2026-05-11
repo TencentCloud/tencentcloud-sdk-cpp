@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务数总量。
-                     * @return TotalCount 服务数总量。
+                     * 获取<p>服务数总量。</p>
+                     * @return TotalCount <p>服务数总量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取服务信息详情。
-                     * @return Content 服务信息详情。
+                     * 获取<p>服务信息详情。</p>
+                     * @return Content <p>服务信息详情。</p>
                      * 
                      */
                     std::vector<GovernanceService> GetContent() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务数总量。
+                     * <p>服务数总量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 服务信息详情。
+                     * <p>服务信息详情。</p>
                      */
                     std::vector<GovernanceService> m_content;
                     bool m_contentHasBeenSet;

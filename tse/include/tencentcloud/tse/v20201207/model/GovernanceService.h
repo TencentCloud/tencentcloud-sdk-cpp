@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务名称。
-                     * @return Name 服务名称。
+                     * 获取<p>服务名称。</p>
+                     * @return Name <p>服务名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置服务名称。
-                     * @param _name 服务名称。
+                     * 设置<p>服务名称。</p>
+                     * @param _name <p>服务名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间名称。
-                     * @return Namespace 命名空间名称。
+                     * 获取<p>命名空间名称。</p>
+                     * @return Namespace <p>命名空间名称。</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间名称。
-                     * @param _namespace 命名空间名称。
+                     * 设置<p>命名空间名称。</p>
+                     * @param _namespace <p>命名空间名称。</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取元数据信息数组。
-                     * @return Metadatas 元数据信息数组。
+                     * 获取<p>元数据信息数组。</p>
+                     * @return Metadatas <p>元数据信息数组。</p>
                      * 
                      */
                     std::vector<Metadata> GetMetadatas() const;
 
                     /**
-                     * 设置元数据信息数组。
-                     * @param _metadatas 元数据信息数组。
+                     * 设置<p>元数据信息数组。</p>
+                     * @param _metadatas <p>元数据信息数组。</p>
                      * 
                      */
                     void SetMetadatas(const std::vector<Metadata>& _metadatas);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MetadatasHasBeenSet() const;
 
                     /**
-                     * 获取描述信息。
-                     * @return Comment 描述信息。
+                     * 获取<p>描述信息。</p>
+                     * @return Comment <p>描述信息。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置描述信息。
-                     * @param _comment 描述信息。
+                     * 设置<p>描述信息。</p>
+                     * @param _comment <p>描述信息。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreateTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间。
-                     * @return ModifyTime 修改时间。
+                     * 获取<p>修改时间。</p>
+                     * @return ModifyTime <p>修改时间。</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间。
-                     * @param _modifyTime 修改时间。
+                     * 设置<p>修改时间。</p>
+                     * @param _modifyTime <p>修改时间。</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务所属部门。
-                     * @return Department 服务所属部门。
+                     * 获取<p>服务所属部门。</p>
+                     * @return Department <p>服务所属部门。</p>
                      * 
                      */
                     std::string GetDepartment() const;
 
                     /**
-                     * 设置服务所属部门。
-                     * @param _department 服务所属部门。
+                     * 设置<p>服务所属部门。</p>
+                     * @param _department <p>服务所属部门。</p>
                      * 
                      */
                     void SetDepartment(const std::string& _department);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool DepartmentHasBeenSet() const;
 
                     /**
-                     * 获取服务所属业务。
-                     * @return Business 服务所属业务。
+                     * 获取<p>服务所属业务。</p>
+                     * @return Business <p>服务所属业务。</p>
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置服务所属业务。
-                     * @param _business 服务所属业务。
+                     * 设置<p>服务所属业务。</p>
+                     * @param _business <p>服务所属业务。</p>
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取健康服务实例数
-                     * @return HealthyInstanceCount 健康服务实例数
+                     * 获取<p>健康服务实例数</p>
+                     * @return HealthyInstanceCount <p>健康服务实例数</p>
                      * 
                      */
                     uint64_t GetHealthyInstanceCount() const;
 
                     /**
-                     * 设置健康服务实例数
-                     * @param _healthyInstanceCount 健康服务实例数
+                     * 设置<p>健康服务实例数</p>
+                     * @param _healthyInstanceCount <p>健康服务实例数</p>
                      * 
                      */
                     void SetHealthyInstanceCount(const uint64_t& _healthyInstanceCount);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool HealthyInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取服务实例总数
-                     * @return TotalInstanceCount 服务实例总数
+                     * 获取<p>服务实例总数</p>
+                     * @return TotalInstanceCount <p>服务实例总数</p>
                      * 
                      */
                     uint64_t GetTotalInstanceCount() const;
 
                     /**
-                     * 设置服务实例总数
-                     * @param _totalInstanceCount 服务实例总数
+                     * 设置<p>服务实例总数</p>
+                     * @param _totalInstanceCount <p>服务实例总数</p>
                      * 
                      */
                     void SetTotalInstanceCount(const uint64_t& _totalInstanceCount);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool TotalInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取服务ID
-                     * @return Id 服务ID
+                     * 获取<p>服务ID</p>
+                     * @return Id <p>服务ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置服务ID
-                     * @param _id 服务ID
+                     * 设置<p>服务ID</p>
+                     * @param _id <p>服务ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取是否可以编辑
-                     * @return Editable 是否可以编辑
+                     * 获取<p>是否可以编辑</p>
+                     * @return Editable <p>是否可以编辑</p>
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
-                     * 设置是否可以编辑
-                     * @param _editable 是否可以编辑
+                     * 设置<p>是否可以编辑</p>
+                     * @param _editable <p>是否可以编辑</p>
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool EditableHasBeenSet() const;
 
                     /**
-                     * 获取可以编辑该资源的用户ID
-                     * @return UserIds 可以编辑该资源的用户ID
+                     * 获取<p>可以编辑该资源的用户ID</p>
+                     * @return UserIds <p>可以编辑该资源的用户ID</p>
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置可以编辑该资源的用户ID
-                     * @param _userIds 可以编辑该资源的用户ID
+                     * 设置<p>可以编辑该资源的用户ID</p>
+                     * @param _userIds <p>可以编辑该资源的用户ID</p>
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取可以编辑该资源的用户组ID
-                     * @return GroupIds 可以编辑该资源的用户组ID
+                     * 获取<p>可以编辑该资源的用户组ID</p>
+                     * @return GroupIds <p>可以编辑该资源的用户组ID</p>
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置可以编辑该资源的用户组ID
-                     * @param _groupIds 可以编辑该资源的用户组ID
+                     * 设置<p>可以编辑该资源的用户组ID</p>
+                     * @param _groupIds <p>可以编辑该资源的用户组ID</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取移除可以编辑该资源的用户ID
-                     * @return RemoveUserIds 移除可以编辑该资源的用户ID
+                     * 获取<p>移除可以编辑该资源的用户ID</p>
+                     * @return RemoveUserIds <p>移除可以编辑该资源的用户ID</p>
                      * 
                      */
                     std::vector<std::string> GetRemoveUserIds() const;
 
                     /**
-                     * 设置移除可以编辑该资源的用户ID
-                     * @param _removeUserIds 移除可以编辑该资源的用户ID
+                     * 设置<p>移除可以编辑该资源的用户ID</p>
+                     * @param _removeUserIds <p>移除可以编辑该资源的用户ID</p>
                      * 
                      */
                     void SetRemoveUserIds(const std::vector<std::string>& _removeUserIds);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool RemoveUserIdsHasBeenSet() const;
 
                     /**
-                     * 获取移除可以编辑该资源的用户组ID
-                     * @return RemoveGroupIds 移除可以编辑该资源的用户组ID
+                     * 获取<p>移除可以编辑该资源的用户组ID</p>
+                     * @return RemoveGroupIds <p>移除可以编辑该资源的用户组ID</p>
                      * 
                      */
                     std::vector<std::string> GetRemoveGroupIds() const;
 
                     /**
-                     * 设置移除可以编辑该资源的用户组ID
-                     * @param _removeGroupIds 移除可以编辑该资源的用户组ID
+                     * 设置<p>移除可以编辑该资源的用户组ID</p>
+                     * @param _removeGroupIds <p>移除可以编辑该资源的用户组ID</p>
                      * 
                      */
                     void SetRemoveGroupIds(const std::vector<std::string>& _removeGroupIds);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool RemoveGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取该服务对哪些命名空间可见	
-                     * @return ExportTo 该服务对哪些命名空间可见	
+                     * 获取<p>该服务对哪些命名空间可见</p>
+                     * @return ExportTo <p>该服务对哪些命名空间可见</p>
                      * 
                      */
                     std::vector<std::string> GetExportTo() const;
 
                     /**
-                     * 设置该服务对哪些命名空间可见	
-                     * @param _exportTo 该服务对哪些命名空间可见	
+                     * 设置<p>该服务对哪些命名空间可见</p>
+                     * @param _exportTo <p>该服务对哪些命名空间可见</p>
                      * 
                      */
                     void SetExportTo(const std::vector<std::string>& _exportTo);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool ExportToHasBeenSet() const;
 
                     /**
-                     * 获取该服务信息摘要签名
-                     * @return Revision 该服务信息摘要签名
+                     * 获取<p>该服务信息摘要签名</p>
+                     * @return Revision <p>该服务信息摘要签名</p>
                      * 
                      */
                     std::string GetRevision() const;
 
                     /**
-                     * 设置该服务信息摘要签名
-                     * @param _revision 该服务信息摘要签名
+                     * 设置<p>该服务信息摘要签名</p>
+                     * @param _revision <p>该服务信息摘要签名</p>
                      * 
                      */
                     void SetRevision(const std::string& _revision);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool RevisionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启同步到全局注册中心
-                     * @return SyncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 获取<p>是否开启同步到全局注册中心</p>
+                     * @return SyncToGlobalRegistry <p>是否开启同步到全局注册中心</p>
                      * 
                      */
                     bool GetSyncToGlobalRegistry() const;
 
                     /**
-                     * 设置是否开启同步到全局注册中心
-                     * @param _syncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 设置<p>是否开启同步到全局注册中心</p>
+                     * @param _syncToGlobalRegistry <p>是否开启同步到全局注册中心</p>
                      * 
                      */
                     void SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool SyncToGlobalRegistryHasBeenSet() const;
 
                     /**
-                     * 获取隔离实例数
-                     * @return IsolateInstanceCount 隔离实例数
+                     * 获取<p>隔离实例数</p>
+                     * @return IsolateInstanceCount <p>隔离实例数</p>
                      * 
                      */
                     uint64_t GetIsolateInstanceCount() const;
 
                     /**
-                     * 设置隔离实例数
-                     * @param _isolateInstanceCount 隔离实例数
+                     * 设置<p>隔离实例数</p>
+                     * @param _isolateInstanceCount <p>隔离实例数</p>
                      * 
                      */
                     void SetIsolateInstanceCount(const uint64_t& _isolateInstanceCount);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool IsolateInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取服务健康状态
-                     * @return ServiceStatus 服务健康状态
+                     * 获取<p>服务健康状态</p>
+                     * @return ServiceStatus <p>服务健康状态</p>
                      * 
                      */
                     int64_t GetServiceStatus() const;
 
                     /**
-                     * 设置服务健康状态
-                     * @param _serviceStatus 服务健康状态
+                     * 设置<p>服务健康状态</p>
+                     * @param _serviceStatus <p>服务健康状态</p>
                      * 
                      */
                     void SetServiceStatus(const int64_t& _serviceStatus);
@@ -488,133 +488,160 @@ namespace TencentCloud
                      */
                     bool ServiceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>
+                     * @return Type <p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>
+                     * 
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置<p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>
+                     * @param _type <p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>
+                     * 
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务名称。
+                     * <p>服务名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 命名空间名称。
+                     * <p>命名空间名称。</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 元数据信息数组。
+                     * <p>元数据信息数组。</p>
                      */
                     std::vector<Metadata> m_metadatas;
                     bool m_metadatasHasBeenSet;
 
                     /**
-                     * 描述信息。
+                     * <p>描述信息。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 修改时间。
+                     * <p>修改时间。</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 服务所属部门。
+                     * <p>服务所属部门。</p>
                      */
                     std::string m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
-                     * 服务所属业务。
+                     * <p>服务所属业务。</p>
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 健康服务实例数
+                     * <p>健康服务实例数</p>
                      */
                     uint64_t m_healthyInstanceCount;
                     bool m_healthyInstanceCountHasBeenSet;
 
                     /**
-                     * 服务实例总数
+                     * <p>服务实例总数</p>
                      */
                     uint64_t m_totalInstanceCount;
                     bool m_totalInstanceCountHasBeenSet;
 
                     /**
-                     * 服务ID
+                     * <p>服务ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 是否可以编辑
+                     * <p>是否可以编辑</p>
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
-                     * 可以编辑该资源的用户ID
+                     * <p>可以编辑该资源的用户ID</p>
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 可以编辑该资源的用户组ID
+                     * <p>可以编辑该资源的用户组ID</p>
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 移除可以编辑该资源的用户ID
+                     * <p>移除可以编辑该资源的用户ID</p>
                      */
                     std::vector<std::string> m_removeUserIds;
                     bool m_removeUserIdsHasBeenSet;
 
                     /**
-                     * 移除可以编辑该资源的用户组ID
+                     * <p>移除可以编辑该资源的用户组ID</p>
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
 
                     /**
-                     * 该服务对哪些命名空间可见	
+                     * <p>该服务对哪些命名空间可见</p>
                      */
                     std::vector<std::string> m_exportTo;
                     bool m_exportToHasBeenSet;
 
                     /**
-                     * 该服务信息摘要签名
+                     * <p>该服务信息摘要签名</p>
                      */
                     std::string m_revision;
                     bool m_revisionHasBeenSet;
 
                     /**
-                     * 是否开启同步到全局注册中心
+                     * <p>是否开启同步到全局注册中心</p>
                      */
                     bool m_syncToGlobalRegistry;
                     bool m_syncToGlobalRegistryHasBeenSet;
 
                     /**
-                     * 隔离实例数
+                     * <p>隔离实例数</p>
                      */
                     uint64_t m_isolateInstanceCount;
                     bool m_isolateInstanceCountHasBeenSet;
 
                     /**
-                     * 服务健康状态
+                     * <p>服务健康状态</p>
                      */
                     int64_t m_serviceStatus;
                     bool m_serviceStatusHasBeenSet;
+
+                    /**
+                     * <p>服务类型</p><p>枚举值：</p><ul><li>0： 微服务（默认）</li><li>1： MCP Server</li><li>2： AI Agent</li></ul>
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

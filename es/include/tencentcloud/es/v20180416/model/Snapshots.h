@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照名称
+                     * 获取<p>快照名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotName 快照名称
+                     * @return SnapshotName <p>快照名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置快照名称
+                     * 设置<p>快照名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotName 快照名称
+                     * @param _snapshotName <p>快照名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取快照Uuid
+                     * 获取<p>快照Uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uuid 快照Uuid
+                     * @return Uuid <p>快照Uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置快照Uuid
+                     * 设置<p>快照Uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uuid 快照Uuid
+                     * @param _uuid <p>快照Uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称
+                     * 获取<p>仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Repository 仓库名称
+                     * @return Repository <p>仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepository() const;
 
                     /**
-                     * 设置仓库名称
+                     * 设置<p>仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _repository 仓库名称
+                     * @param _repository <p>仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool RepositoryHasBeenSet() const;
 
                     /**
-                     * 获取该快照所属集群的版本号
+                     * 获取<p>该快照所属集群的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 该快照所属集群的版本号
+                     * @return Version <p>该快照所属集群的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置该快照所属集群的版本号
+                     * 设置<p>该快照所属集群的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 该快照所属集群的版本号
+                     * @param _version <p>该快照所属集群的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取备份的索引列表
+                     * 获取<p>备份的索引列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Indices 备份的索引列表
+                     * @return Indices <p>备份的索引列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIndices() const;
 
                     /**
-                     * 设置备份的索引列表
+                     * 设置<p>备份的索引列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indices 备份的索引列表
+                     * @param _indices <p>备份的索引列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool IndicesHasBeenSet() const;
 
                     /**
-                     * 获取备份的datastream列表
+                     * 获取<p>备份的datastream列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataStreams 备份的datastream列表
+                     * @return DataStreams <p>备份的datastream列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDataStreams() const;
 
                     /**
-                     * 设置备份的datastream列表
+                     * 设置<p>备份的datastream列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataStreams 备份的datastream列表
+                     * @param _dataStreams <p>备份的datastream列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,50 +198,18 @@ namespace TencentCloud
                     bool DataStreamsHasBeenSet() const;
 
                     /**
-                     * 获取备份的状态
-
-FAILED            备份失败
-
-IN_PROGRESS 备份执行中
-
-PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示
-
-SUCCESS     备份成功
+                     * 获取<p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 备份的状态
-
-FAILED            备份失败
-
-IN_PROGRESS 备份执行中
-
-PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示
-
-SUCCESS     备份成功
+                     * @return State <p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置备份的状态
-
-FAILED            备份失败
-
-IN_PROGRESS 备份执行中
-
-PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示
-
-SUCCESS     备份成功
+                     * 设置<p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 备份的状态
-
-FAILED            备份失败
-
-IN_PROGRESS 备份执行中
-
-PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示
-
-SUCCESS     备份成功
+                     * @param _state <p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -255,18 +223,18 @@ SUCCESS     备份成功
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取快照备份的开始时间
+                     * 获取<p>快照备份的开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 快照备份的开始时间
+                     * @return StartTime <p>快照备份的开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置快照备份的开始时间
+                     * 设置<p>快照备份的开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 快照备份的开始时间
+                     * @param _startTime <p>快照备份的开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,18 +248,18 @@ SUCCESS     备份成功
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照备份的结束时间
+                     * 获取<p>快照备份的结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 快照备份的结束时间
+                     * @return EndTime <p>快照备份的结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置快照备份的结束时间
+                     * 设置<p>快照备份的结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 快照备份的结束时间
+                     * @param _endTime <p>快照备份的结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -305,18 +273,18 @@ SUCCESS     备份成功
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照备份的耗时时间
+                     * 获取<p>快照备份的耗时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DurationInMillis 快照备份的耗时时间
+                     * @return DurationInMillis <p>快照备份的耗时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDurationInMillis() const;
 
                     /**
-                     * 设置快照备份的耗时时间
+                     * 设置<p>快照备份的耗时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _durationInMillis 快照备份的耗时时间
+                     * @param _durationInMillis <p>快照备份的耗时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,18 +298,18 @@ SUCCESS     备份成功
                     bool DurationInMillisHasBeenSet() const;
 
                     /**
-                     * 获取备份的总分片数
+                     * 获取<p>备份的总分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalShards 备份的总分片数
+                     * @return TotalShards <p>备份的总分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalShards() const;
 
                     /**
-                     * 设置备份的总分片数
+                     * 设置<p>备份的总分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalShards 备份的总分片数
+                     * @param _totalShards <p>备份的总分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,18 +323,18 @@ SUCCESS     备份成功
                     bool TotalShardsHasBeenSet() const;
 
                     /**
-                     * 获取备份失败的分片数量
+                     * 获取<p>备份失败的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedShards 备份失败的分片数量
+                     * @return FailedShards <p>备份失败的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFailedShards() const;
 
                     /**
-                     * 设置备份失败的分片数量
+                     * 设置<p>备份失败的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _failedShards 备份失败的分片数量
+                     * @param _failedShards <p>备份失败的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -380,18 +348,18 @@ SUCCESS     备份成功
                     bool FailedShardsHasBeenSet() const;
 
                     /**
-                     * 获取备份成功的分片数量
+                     * 获取<p>备份成功的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SuccessfulShards 备份成功的分片数量
+                     * @return SuccessfulShards <p>备份成功的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuccessfulShards() const;
 
                     /**
-                     * 设置备份成功的分片数量
+                     * 设置<p>备份成功的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _successfulShards 备份成功的分片数量
+                     * @param _successfulShards <p>备份成功的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -405,18 +373,18 @@ SUCCESS     备份成功
                     bool SuccessfulShardsHasBeenSet() const;
 
                     /**
-                     * 获取备份失败的索引分片和失败原因
+                     * 获取<p>备份失败的索引分片和失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Failures 备份失败的索引分片和失败原因
+                     * @return Failures <p>备份失败的索引分片和失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Failures> GetFailures() const;
 
                     /**
-                     * 设置备份失败的索引分片和失败原因
+                     * 设置<p>备份失败的索引分片和失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _failures 备份失败的索引分片和失败原因
+                     * @param _failures <p>备份失败的索引分片和失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -430,18 +398,18 @@ SUCCESS     备份成功
                     bool FailuresHasBeenSet() const;
 
                     /**
-                     * 获取是否用户备份
+                     * 获取<p>是否用户备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserBackUp 是否用户备份
+                     * @return UserBackUp <p>是否用户备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserBackUp() const;
 
                     /**
-                     * 设置是否用户备份
+                     * 设置<p>是否用户备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userBackUp 是否用户备份
+                     * @param _userBackUp <p>是否用户备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -455,18 +423,18 @@ SUCCESS     备份成功
                     bool UserBackUpHasBeenSet() const;
 
                     /**
-                     * 获取0 腾讯云仓库; 1 客户仓库
+                     * 获取<p>0 腾讯云仓库; 1 客户仓库</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * @return EsRepositoryType <p>0 腾讯云仓库; 1 客户仓库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEsRepositoryType() const;
 
                     /**
-                     * 设置0 腾讯云仓库; 1 客户仓库
+                     * 设置<p>0 腾讯云仓库; 1 客户仓库</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * @param _esRepositoryType <p>0 腾讯云仓库; 1 客户仓库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -480,18 +448,18 @@ SUCCESS     备份成功
                     bool EsRepositoryTypeHasBeenSet() const;
 
                     /**
-                     * 获取托管快照仓库名称
+                     * 获取<p>托管快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaasEsRepository 托管快照仓库名称
+                     * @return PaasEsRepository <p>托管快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPaasEsRepository() const;
 
                     /**
-                     * 设置托管快照仓库名称
+                     * 设置<p>托管快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _paasEsRepository 托管快照仓库名称
+                     * @param _paasEsRepository <p>托管快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -505,18 +473,18 @@ SUCCESS     备份成功
                     bool PaasEsRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取客户快照仓库名称
+                     * 获取<p>客户快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserEsRepository 客户快照仓库名称
+                     * @return UserEsRepository <p>客户快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserEsRepository() const;
 
                     /**
-                     * 设置客户快照仓库名称
+                     * 设置<p>客户快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userEsRepository 客户快照仓库名称
+                     * @param _userEsRepository <p>客户快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -530,18 +498,18 @@ SUCCESS     备份成功
                     bool UserEsRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * 获取<p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageDuration 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * @return StorageDuration <p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStorageDuration() const;
 
                     /**
-                     * 设置快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * 设置<p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _storageDuration 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * @param _storageDuration <p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -555,18 +523,18 @@ SUCCESS     备份成功
                     bool StorageDurationHasBeenSet() const;
 
                     /**
-                     * 获取自动备份频率, 如果是0,则等效24
+                     * 获取<p>自动备份频率, 如果是0,则等效24</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoBackupInterval 自动备份频率, 如果是0,则等效24
+                     * @return AutoBackupInterval <p>自动备份频率, 如果是0,则等效24</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoBackupInterval() const;
 
                     /**
-                     * 设置自动备份频率, 如果是0,则等效24
+                     * 设置<p>自动备份频率, 如果是0,则等效24</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoBackupInterval 自动备份频率, 如果是0,则等效24
+                     * @param _autoBackupInterval <p>自动备份频率, 如果是0,则等效24</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -580,18 +548,18 @@ SUCCESS     备份成功
                     bool AutoBackupIntervalHasBeenSet() const;
 
                     /**
-                     * 获取备份锁定 0 不锁定; 1 锁定
+                     * 获取<p>备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosRetention 备份锁定 0 不锁定; 1 锁定
+                     * @return CosRetention <p>备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCosRetention() const;
 
                     /**
-                     * 设置备份锁定 0 不锁定; 1 锁定
+                     * 设置<p>备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosRetention 备份锁定 0 不锁定; 1 锁定
+                     * @param _cosRetention <p>备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -605,18 +573,18 @@ SUCCESS     备份成功
                     bool CosRetentionHasBeenSet() const;
 
                     /**
-                     * 获取锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 获取<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RetainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @return RetainUntilDate <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRetainUntilDate() const;
 
                     /**
-                     * 设置锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 设置<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @param _retainUntilDate <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -630,18 +598,18 @@ SUCCESS     备份成功
                     bool RetainUntilDateHasBeenSet() const;
 
                     /**
-                     * 获取锁定宽限期,单位天
+                     * 获取<p>锁定宽限期,单位天</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RetentionGraceTime 锁定宽限期,单位天
+                     * @return RetentionGraceTime <p>锁定宽限期,单位天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetentionGraceTime() const;
 
                     /**
-                     * 设置锁定宽限期,单位天
+                     * 设置<p>锁定宽限期,单位天</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retentionGraceTime 锁定宽限期,单位天
+                     * @param _retentionGraceTime <p>锁定宽限期,单位天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -655,18 +623,18 @@ SUCCESS     备份成功
                     bool RetentionGraceTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否已经备份锁定 0 不锁定; 1 锁定
+                     * 获取<p>是否已经备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsLocked 是否已经备份锁定 0 不锁定; 1 锁定
+                     * @return IsLocked <p>是否已经备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsLocked() const;
 
                     /**
-                     * 设置是否已经备份锁定 0 不锁定; 1 锁定
+                     * 设置<p>是否已经备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isLocked 是否已经备份锁定 0 不锁定; 1 锁定
+                     * @param _isLocked <p>是否已经备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -680,18 +648,18 @@ SUCCESS     备份成功
                     bool IsLockedHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份 0 不跨地域; 1 跨地域
+                     * 获取<p>跨地域备份 0 不跨地域; 1 跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * @return RemoteCos <p>跨地域备份 0 不跨地域; 1 跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRemoteCos() const;
 
                     /**
-                     * 设置跨地域备份 0 不跨地域; 1 跨地域
+                     * 设置<p>跨地域备份 0 不跨地域; 1 跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * @param _remoteCos <p>跨地域备份 0 不跨地域; 1 跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -705,18 +673,18 @@ SUCCESS     备份成功
                     bool RemoteCosHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份地域名称 ap-guangzhou
+                     * 获取<p>跨地域备份地域名称 ap-guangzhou</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * @return RemoteCosRegion <p>跨地域备份地域名称 ap-guangzhou</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteCosRegion() const;
 
                     /**
-                     * 设置跨地域备份地域名称 ap-guangzhou
+                     * 设置<p>跨地域备份地域名称 ap-guangzhou</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * @param _remoteCosRegion <p>跨地域备份地域名称 ap-guangzhou</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -730,18 +698,18 @@ SUCCESS     备份成功
                     bool RemoteCosRegionHasBeenSet() const;
 
                     /**
-                     * 获取备份加密 0 不加密; 1 加密
+                     * 获取<p>备份加密 0 不加密; 1 加密</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosEncryption 备份加密 0 不加密; 1 加密
+                     * @return CosEncryption <p>备份加密 0 不加密; 1 加密</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCosEncryption() const;
 
                     /**
-                     * 设置备份加密 0 不加密; 1 加密
+                     * 设置<p>备份加密 0 不加密; 1 加密</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosEncryption 备份加密 0 不加密; 1 加密
+                     * @param _cosEncryption <p>备份加密 0 不加密; 1 加密</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -755,18 +723,18 @@ SUCCESS     备份成功
                     bool CosEncryptionHasBeenSet() const;
 
                     /**
-                     * 获取kms密钥
+                     * 获取<p>kms密钥</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KmsKey kms密钥
+                     * @return KmsKey <p>kms密钥</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKmsKey() const;
 
                     /**
-                     * 设置kms密钥
+                     * 设置<p>kms密钥</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kmsKey kms密钥
+                     * @param _kmsKey <p>kms密钥</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -780,18 +748,18 @@ SUCCESS     备份成功
                     bool KmsKeyHasBeenSet() const;
 
                     /**
-                     * 获取策略名称
+                     * 获取<p>策略名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StrategyName 策略名称
+                     * @return StrategyName <p>策略名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
-                     * 设置策略名称
+                     * 设置<p>策略名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _strategyName 策略名称
+                     * @param _strategyName <p>策略名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -805,18 +773,18 @@ SUCCESS     备份成功
                     bool StrategyNameHasBeenSet() const;
 
                     /**
-                     * 获取cos多AZ备份 0 单AZ; 1 多AZ
+                     * 获取<p>cos多AZ备份 0 单AZ; 1 多AZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MultiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * @return MultiAz <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMultiAz() const;
 
                     /**
-                     * 设置cos多AZ备份 0 单AZ; 1 多AZ
+                     * 设置<p>cos多AZ备份 0 单AZ; 1 多AZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _multiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * @param _multiAz <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -829,225 +797,281 @@ SUCCESS     备份成功
                      */
                     bool MultiAzHasBeenSet() const;
 
+                    /**
+                     * 获取<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxSnapshotPerSec <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMaxSnapshotPerSec() const;
+
+                    /**
+                     * 设置<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxSnapshotPerSec <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxSnapshotPerSec(const std::string& _maxSnapshotPerSec);
+
+                    /**
+                     * 判断参数 MaxSnapshotPerSec 是否已赋值
+                     * @return MaxSnapshotPerSec 是否已赋值
+                     * 
+                     */
+                    bool MaxSnapshotPerSecHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId <p>实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId <p>实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 快照名称
+                     * <p>快照名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 快照Uuid
+                     * <p>快照Uuid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 仓库名称
+                     * <p>仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repository;
                     bool m_repositoryHasBeenSet;
 
                     /**
-                     * 该快照所属集群的版本号
+                     * <p>该快照所属集群的版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 备份的索引列表
+                     * <p>备份的索引列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_indices;
                     bool m_indicesHasBeenSet;
 
                     /**
-                     * 备份的datastream列表
+                     * <p>备份的datastream列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dataStreams;
                     bool m_dataStreamsHasBeenSet;
 
                     /**
-                     * 备份的状态
-
-FAILED            备份失败
-
-IN_PROGRESS 备份执行中
-
-PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示
-
-SUCCESS     备份成功
+                     * <p>备份的状态</p><p>FAILED            备份失败</p><p>IN_PROGRESS 备份执行中</p><p>PARTIAL          备份部分成功，部分失败，备份失败的索引和原因会在Failures字段中展示</p><p>SUCCESS     备份成功</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 快照备份的开始时间
+                     * <p>快照备份的开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 快照备份的结束时间
+                     * <p>快照备份的结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 快照备份的耗时时间
+                     * <p>快照备份的耗时时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_durationInMillis;
                     bool m_durationInMillisHasBeenSet;
 
                     /**
-                     * 备份的总分片数
+                     * <p>备份的总分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalShards;
                     bool m_totalShardsHasBeenSet;
 
                     /**
-                     * 备份失败的分片数量
+                     * <p>备份失败的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedShards;
                     bool m_failedShardsHasBeenSet;
 
                     /**
-                     * 备份成功的分片数量
+                     * <p>备份成功的分片数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_successfulShards;
                     bool m_successfulShardsHasBeenSet;
 
                     /**
-                     * 备份失败的索引分片和失败原因
+                     * <p>备份失败的索引分片和失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Failures> m_failures;
                     bool m_failuresHasBeenSet;
 
                     /**
-                     * 是否用户备份
+                     * <p>是否用户备份</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userBackUp;
                     bool m_userBackUpHasBeenSet;
 
                     /**
-                     * 0 腾讯云仓库; 1 客户仓库
+                     * <p>0 腾讯云仓库; 1 客户仓库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_esRepositoryType;
                     bool m_esRepositoryTypeHasBeenSet;
 
                     /**
-                     * 托管快照仓库名称
+                     * <p>托管快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paasEsRepository;
                     bool m_paasEsRepositoryHasBeenSet;
 
                     /**
-                     * 客户快照仓库名称
+                     * <p>客户快照仓库名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userEsRepository;
                     bool m_userEsRepositoryHasBeenSet;
 
                     /**
-                     * 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * <p>快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_storageDuration;
                     bool m_storageDurationHasBeenSet;
 
                     /**
-                     * 自动备份频率, 如果是0,则等效24
+                     * <p>自动备份频率, 如果是0,则等效24</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoBackupInterval;
                     bool m_autoBackupIntervalHasBeenSet;
 
                     /**
-                     * 备份锁定 0 不锁定; 1 锁定
+                     * <p>备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cosRetention;
                     bool m_cosRetentionHasBeenSet;
 
                     /**
-                     * 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_retainUntilDate;
                     bool m_retainUntilDateHasBeenSet;
 
                     /**
-                     * 锁定宽限期,单位天
+                     * <p>锁定宽限期,单位天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retentionGraceTime;
                     bool m_retentionGraceTimeHasBeenSet;
 
                     /**
-                     * 是否已经备份锁定 0 不锁定; 1 锁定
+                     * <p>是否已经备份锁定 0 不锁定; 1 锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isLocked;
                     bool m_isLockedHasBeenSet;
 
                     /**
-                     * 跨地域备份 0 不跨地域; 1 跨地域
+                     * <p>跨地域备份 0 不跨地域; 1 跨地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_remoteCos;
                     bool m_remoteCosHasBeenSet;
 
                     /**
-                     * 跨地域备份地域名称 ap-guangzhou
+                     * <p>跨地域备份地域名称 ap-guangzhou</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteCosRegion;
                     bool m_remoteCosRegionHasBeenSet;
 
                     /**
-                     * 备份加密 0 不加密; 1 加密
+                     * <p>备份加密 0 不加密; 1 加密</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cosEncryption;
                     bool m_cosEncryptionHasBeenSet;
 
                     /**
-                     * kms密钥
+                     * <p>kms密钥</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kmsKey;
                     bool m_kmsKeyHasBeenSet;
 
                     /**
-                     * 策略名称
+                     * <p>策略名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
-                     * cos多AZ备份 0 单AZ; 1 多AZ
+                     * <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_multiAz;
                     bool m_multiAzHasBeenSet;
+
+                    /**
+                     * <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maxSnapshotPerSec;
+                    bool m_maxSnapshotPerSecHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

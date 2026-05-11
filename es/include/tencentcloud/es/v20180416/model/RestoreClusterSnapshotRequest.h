@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例Id，格式：es-xxxx
-                     * @return InstanceId 集群实例Id，格式：es-xxxx
+                     * 获取<p>集群实例Id，格式：es-xxxx</p>
+                     * @return InstanceId <p>集群实例Id，格式：es-xxxx</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例Id，格式：es-xxxx
-                     * @param _instanceId 集群实例Id，格式：es-xxxx
+                     * 设置<p>集群实例Id，格式：es-xxxx</p>
+                     * @param _instanceId <p>集群实例Id，格式：es-xxxx</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称
-                     * @return RepositoryName 仓库名称
+                     * 获取<p>仓库名称</p>
+                     * @return RepositoryName <p>仓库名称</p>
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _repositoryName 仓库名称
+                     * 设置<p>仓库名称</p>
+                     * @param _repositoryName <p>仓库名称</p>
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
-                     * 获取集群快照名称
-                     * @return SnapshotName 集群快照名称
+                     * 获取<p>集群快照名称</p>
+                     * @return SnapshotName <p>集群快照名称</p>
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置集群快照名称
-                     * @param _snapshotName 集群快照名称
+                     * 设置<p>集群快照名称</p>
+                     * @param _snapshotName <p>集群快照名称</p>
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致
-                     * @return TargetInstanceId 目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致
+                     * 获取<p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>
+                     * @return TargetInstanceId <p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>
                      * 
                      */
                     std::string GetTargetInstanceId() const;
 
                     /**
-                     * 设置目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致
-                     * @param _targetInstanceId 目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致
+                     * 设置<p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>
+                     * @param _targetInstanceId <p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>
                      * 
                      */
                     void SetTargetInstanceId(const std::string& _targetInstanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TargetInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取elastic用户名对应的密码信息
-                     * @return Password elastic用户名对应的密码信息
+                     * 获取<p>elastic用户名对应的密码信息</p>
+                     * @return Password <p>elastic用户名对应的密码信息</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置elastic用户名对应的密码信息
-                     * @param _password elastic用户名对应的密码信息
+                     * 设置<p>elastic用户名对应的密码信息</p>
+                     * @param _password <p>elastic用户名对应的密码信息</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。
-                     * @return IndexSettings 要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。
+                     * 获取<p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>
+                     * @return IndexSettings <p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>
                      * 
                      */
                     std::string GetIndexSettings() const;
 
                     /**
-                     * 设置要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。
-                     * @param _indexSettings 要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。
+                     * 设置<p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>
+                     * @param _indexSettings <p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>
                      * 
                      */
                     void SetIndexSettings(const std::string& _indexSettings);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IndexSettingsHasBeenSet() const;
 
                     /**
-                     * 获取不应从快照还原的以逗号分隔的索引设置列表。
-                     * @return IncludeGlobalState 不应从快照还原的以逗号分隔的索引设置列表。
+                     * 获取<p>不应从快照还原的以逗号分隔的索引设置列表。</p>
+                     * @return IncludeGlobalState <p>不应从快照还原的以逗号分隔的索引设置列表。</p>
                      * 
                      */
                     std::vector<std::string> GetIncludeGlobalState() const;
 
                     /**
-                     * 设置不应从快照还原的以逗号分隔的索引设置列表。
-                     * @param _includeGlobalState 不应从快照还原的以逗号分隔的索引设置列表。
+                     * 设置<p>不应从快照还原的以逗号分隔的索引设置列表。</p>
+                     * @param _includeGlobalState <p>不应从快照还原的以逗号分隔的索引设置列表。</p>
                      * 
                      */
                     void SetIncludeGlobalState(const std::vector<std::string>& _includeGlobalState);
@@ -190,23 +190,15 @@ namespace TencentCloud
                     bool IncludeGlobalStateHasBeenSet() const;
 
                     /**
-                     * 获取需要恢复的索引名称，非必填，为空则表示恢复所有
-
-支持传多个索引名称
-                     * @return Indices 需要恢复的索引名称，非必填，为空则表示恢复所有
-
-支持传多个索引名称
+                     * 获取<p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>
+                     * @return Indices <p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>
                      * 
                      */
                     std::string GetIndices() const;
 
                     /**
-                     * 设置需要恢复的索引名称，非必填，为空则表示恢复所有
-
-支持传多个索引名称
-                     * @param _indices 需要恢复的索引名称，非必填，为空则表示恢复所有
-
-支持传多个索引名称
+                     * 设置<p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>
+                     * @param _indices <p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>
                      * 
                      */
                     void SetIndices(const std::string& _indices);
@@ -219,23 +211,15 @@ namespace TencentCloud
                     bool IndicesHasBeenSet() const;
 
                     /**
-                     * 获取如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,
-
-如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空
-                     * @return Partial 如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,
-
-如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空
+                     * 获取<p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>
+                     * @return Partial <p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>
                      * 
                      */
                     std::string GetPartial() const;
 
                     /**
-                     * 设置如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,
-
-如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空
-                     * @param _partial 如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,
-
-如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空
+                     * 设置<p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>
+                     * @param _partial <p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>
                      * 
                      */
                     void SetPartial(const std::string& _partial);
@@ -247,65 +231,88 @@ namespace TencentCloud
                      */
                     bool PartialHasBeenSet() const;
 
+                    /**
+                     * 获取<p>快照恢复速率（单位mb）</p>
+                     * @return MaxRestorePerSec <p>快照恢复速率（单位mb）</p>
+                     * 
+                     */
+                    std::string GetMaxRestorePerSec() const;
+
+                    /**
+                     * 设置<p>快照恢复速率（单位mb）</p>
+                     * @param _maxRestorePerSec <p>快照恢复速率（单位mb）</p>
+                     * 
+                     */
+                    void SetMaxRestorePerSec(const std::string& _maxRestorePerSec);
+
+                    /**
+                     * 判断参数 MaxRestorePerSec 是否已赋值
+                     * @return MaxRestorePerSec 是否已赋值
+                     * 
+                     */
+                    bool MaxRestorePerSecHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例Id，格式：es-xxxx
+                     * <p>集群实例Id，格式：es-xxxx</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 仓库名称
+                     * <p>仓库名称</p>
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;
 
                     /**
-                     * 集群快照名称
+                     * <p>集群快照名称</p>
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致
+                     * <p>目标集群实例Id，格式：es-xxxx，如果是恢复到本地，则和InstanceId一致</p>
                      */
                     std::string m_targetInstanceId;
                     bool m_targetInstanceIdHasBeenSet;
 
                     /**
-                     * elastic用户名对应的密码信息
+                     * <p>elastic用户名对应的密码信息</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。
+                     * <p>要在所有恢复的索引中添加或更改的设置的逗号分隔列表。使用此参数可以在恢复快照时覆盖索引设置。</p>
                      */
                     std::string m_indexSettings;
                     bool m_indexSettingsHasBeenSet;
 
                     /**
-                     * 不应从快照还原的以逗号分隔的索引设置列表。
+                     * <p>不应从快照还原的以逗号分隔的索引设置列表。</p>
                      */
                     std::vector<std::string> m_includeGlobalState;
                     bool m_includeGlobalStateHasBeenSet;
 
                     /**
-                     * 需要恢复的索引名称，非必填，为空则表示恢复所有
-
-支持传多个索引名称
+                     * <p>需要恢复的索引名称，非必填，为空则表示恢复所有</p><p>支持传多个索引名称</p>
                      */
                     std::string m_indices;
                     bool m_indicesHasBeenSet;
 
                     /**
-                     * 如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,
-
-如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空
+                     * <p>如果为 false，则如果快照中包含的一个或多个索引没有所有主分片可用，则整个恢复操作将失败。默认为 false,</p><p>如果为 true，则允许恢复具有不可用分片的索引的部分快照。只有成功包含在快照中的分片才会被恢复。所有丢失的碎片将被重新创建为空</p>
                      */
                     std::string m_partial;
                     bool m_partialHasBeenSet;
+
+                    /**
+                     * <p>快照恢复速率（单位mb）</p>
+                     */
+                    std::string m_maxRestorePerSec;
+                    bool m_maxRestorePerSecHasBeenSet;
 
                 };
             }

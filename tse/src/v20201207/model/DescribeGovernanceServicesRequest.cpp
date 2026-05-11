@@ -34,7 +34,8 @@ DescribeGovernanceServicesRequest::DescribeGovernanceServicesRequest() :
     m_hostHasBeenSet(false),
     m_onlyExistHealthyInstanceHasBeenSet(false),
     m_syncToGlobalRegistryHasBeenSet(false),
-    m_statusFilterHasBeenSet(false)
+    m_statusFilterHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string DescribeGovernanceServicesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -353,6 +362,22 @@ void DescribeGovernanceServicesRequest::SetStatusFilter(const vector<Filter>& _s
 bool DescribeGovernanceServicesRequest::StatusFilterHasBeenSet() const
 {
     return m_statusFilterHasBeenSet;
+}
+
+uint64_t DescribeGovernanceServicesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeGovernanceServicesRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeGovernanceServicesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

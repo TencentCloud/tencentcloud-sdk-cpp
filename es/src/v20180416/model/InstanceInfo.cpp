@@ -117,7 +117,11 @@ InstanceInfo::InstanceInfo() :
     m_enableDestroyProtectionHasBeenSet(false),
     m_showKibanaIpPortHasBeenSet(false),
     m_isCdzLiteHasBeenSet(false),
-    m_esPrivateTcpUrlHasBeenSet(false)
+    m_esPrivateTcpUrlHasBeenSet(false),
+    m_isInRecycleBinHasBeenSet(false),
+    m_recycleLockEnabledHasBeenSet(false),
+    m_mayDestroyPointHasBeenSet(false),
+    m_delayDestroyIntervalHasBeenSet(false)
 {
 }
 
@@ -1222,6 +1226,46 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_esPrivateTcpUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInRecycleBin") && !value["IsInRecycleBin"].IsNull())
+    {
+        if (!value["IsInRecycleBin"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsInRecycleBin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInRecycleBin = value["IsInRecycleBin"].GetBool();
+        m_isInRecycleBinHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecycleLockEnabled") && !value["RecycleLockEnabled"].IsNull())
+    {
+        if (!value["RecycleLockEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RecycleLockEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_recycleLockEnabled = value["RecycleLockEnabled"].GetBool();
+        m_recycleLockEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("MayDestroyPoint") && !value["MayDestroyPoint"].IsNull())
+    {
+        if (!value["MayDestroyPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MayDestroyPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mayDestroyPoint = string(value["MayDestroyPoint"].GetString());
+        m_mayDestroyPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("DelayDestroyInterval") && !value["DelayDestroyInterval"].IsNull())
+    {
+        if (!value["DelayDestroyInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DelayDestroyInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayDestroyInterval = value["DelayDestroyInterval"].GetInt64();
+        m_delayDestroyIntervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2059,6 +2103,38 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EsPrivateTcpUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_esPrivateTcpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInRecycleBinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInRecycleBin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInRecycleBin, allocator);
+    }
+
+    if (m_recycleLockEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecycleLockEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recycleLockEnabled, allocator);
+    }
+
+    if (m_mayDestroyPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MayDestroyPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mayDestroyPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayDestroyIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayDestroyInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayDestroyInterval, allocator);
     }
 
 }
@@ -3614,5 +3690,69 @@ void InstanceInfo::SetEsPrivateTcpUrl(const string& _esPrivateTcpUrl)
 bool InstanceInfo::EsPrivateTcpUrlHasBeenSet() const
 {
     return m_esPrivateTcpUrlHasBeenSet;
+}
+
+bool InstanceInfo::GetIsInRecycleBin() const
+{
+    return m_isInRecycleBin;
+}
+
+void InstanceInfo::SetIsInRecycleBin(const bool& _isInRecycleBin)
+{
+    m_isInRecycleBin = _isInRecycleBin;
+    m_isInRecycleBinHasBeenSet = true;
+}
+
+bool InstanceInfo::IsInRecycleBinHasBeenSet() const
+{
+    return m_isInRecycleBinHasBeenSet;
+}
+
+bool InstanceInfo::GetRecycleLockEnabled() const
+{
+    return m_recycleLockEnabled;
+}
+
+void InstanceInfo::SetRecycleLockEnabled(const bool& _recycleLockEnabled)
+{
+    m_recycleLockEnabled = _recycleLockEnabled;
+    m_recycleLockEnabledHasBeenSet = true;
+}
+
+bool InstanceInfo::RecycleLockEnabledHasBeenSet() const
+{
+    return m_recycleLockEnabledHasBeenSet;
+}
+
+string InstanceInfo::GetMayDestroyPoint() const
+{
+    return m_mayDestroyPoint;
+}
+
+void InstanceInfo::SetMayDestroyPoint(const string& _mayDestroyPoint)
+{
+    m_mayDestroyPoint = _mayDestroyPoint;
+    m_mayDestroyPointHasBeenSet = true;
+}
+
+bool InstanceInfo::MayDestroyPointHasBeenSet() const
+{
+    return m_mayDestroyPointHasBeenSet;
+}
+
+int64_t InstanceInfo::GetDelayDestroyInterval() const
+{
+    return m_delayDestroyInterval;
+}
+
+void InstanceInfo::SetDelayDestroyInterval(const int64_t& _delayDestroyInterval)
+{
+    m_delayDestroyInterval = _delayDestroyInterval;
+    m_delayDestroyIntervalHasBeenSet = true;
+}
+
+bool InstanceInfo::DelayDestroyIntervalHasBeenSet() const
+{
+    return m_delayDestroyIntervalHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ Operation::Operation() :
     m_progressHasBeenSet(false),
     m_rollbackTagHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
-    m_autoScaleTagHasBeenSet(false)
+    m_autoScaleTagHasBeenSet(false),
+    m_suspendedReasonHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
         m_autoScaleTagHasBeenSet = true;
     }
 
+    if (value.HasMember("SuspendedReason") && !value["SuspendedReason"].IsNull())
+    {
+        if (!value["SuspendedReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Operation.SuspendedReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suspendedReason = string(value["SuspendedReason"].GetString());
+        m_suspendedReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +260,14 @@ void Operation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "AutoScaleTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoScaleTag, allocator);
+    }
+
+    if (m_suspendedReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuspendedReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suspendedReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -412,5 +431,21 @@ void Operation::SetAutoScaleTag(const uint64_t& _autoScaleTag)
 bool Operation::AutoScaleTagHasBeenSet() const
 {
     return m_autoScaleTagHasBeenSet;
+}
+
+string Operation::GetSuspendedReason() const
+{
+    return m_suspendedReason;
+}
+
+void Operation::SetSuspendedReason(const string& _suspendedReason)
+{
+    m_suspendedReason = _suspendedReason;
+    m_suspendedReasonHasBeenSet = true;
+}
+
+bool Operation::SuspendedReasonHasBeenSet() const
+{
+    return m_suspendedReasonHasBeenSet;
 }
 

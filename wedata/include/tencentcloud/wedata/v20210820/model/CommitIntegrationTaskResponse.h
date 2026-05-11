@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作成功与否标识
-                     * @return Data 操作成功与否标识
+                     * 获取<p>操作成功与否标识</p>
+                     * @return Data <p>操作成功与否标识</p>
                      * 
                      */
                     bool GetData() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取数据结构
+                     * 获取<p>数据结构</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataDto 数据结构
+                     * @return DataDto <p>数据结构</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作成功与否标识
+                     * <p>操作成功与否标识</p>
                      */
                     bool m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 数据结构
+                     * <p>数据结构</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommitTaskDataDto m_dataDto;

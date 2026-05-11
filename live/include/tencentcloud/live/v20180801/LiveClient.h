@@ -107,6 +107,8 @@
 #include <tencentcloud/live/v20180801/model/CreatePullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateSceneVideoTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateSceneVideoTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateVideoRedrawTaskRequest.h>
@@ -355,6 +357,8 @@
 #include <tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeSceneVideoTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeSceneVideoTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenshotTaskRequest.h>
@@ -621,6 +625,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordTaskResponse> CreateRecordTaskOutcome;
                 typedef std::future<CreateRecordTaskOutcome> CreateRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateRecordTaskRequest&, CreateRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSceneVideoTaskResponse> CreateSceneVideoTaskOutcome;
+                typedef std::future<CreateSceneVideoTaskOutcome> CreateSceneVideoTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateSceneVideoTaskRequest&, CreateSceneVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScreenshotTaskResponse> CreateScreenshotTaskOutcome;
                 typedef std::future<CreateScreenshotTaskOutcome> CreateScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateScreenshotTaskRequest&, CreateScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenshotTaskAsyncHandler;
@@ -993,6 +1000,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordTaskResponse> DescribeRecordTaskOutcome;
                 typedef std::future<DescribeRecordTaskOutcome> DescribeRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeRecordTaskRequest&, DescribeRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSceneVideoTaskResponse> DescribeSceneVideoTaskOutcome;
+                typedef std::future<DescribeSceneVideoTaskOutcome> DescribeSceneVideoTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeSceneVideoTaskRequest&, DescribeSceneVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSceneVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScreenShotSheetNumListResponse> DescribeScreenShotSheetNumListOutcome;
                 typedef std::future<DescribeScreenShotSheetNumListOutcome> DescribeScreenShotSheetNumListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeScreenShotSheetNumListRequest&, DescribeScreenShotSheetNumListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenShotSheetNumListAsyncHandler;
@@ -1615,6 +1625,15 @@ namespace TencentCloud
                 CreateRecordTaskOutcome CreateRecordTask(const Model::CreateRecordTaskRequest &request);
                 void CreateRecordTaskAsync(const Model::CreateRecordTaskRequest& request, const CreateRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRecordTaskOutcomeCallable CreateRecordTaskCallable(const Model::CreateRecordTaskRequest& request);
+
+                /**
+                 *该接口用于创建场景化视频任务。
+                 * @param req CreateSceneVideoTaskRequest
+                 * @return CreateSceneVideoTaskOutcome
+                 */
+                CreateSceneVideoTaskOutcome CreateSceneVideoTask(const Model::CreateSceneVideoTaskRequest &request);
+                void CreateSceneVideoTaskAsync(const Model::CreateSceneVideoTaskRequest& request, const CreateSceneVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSceneVideoTaskOutcomeCallable CreateSceneVideoTaskCallable(const Model::CreateSceneVideoTaskRequest& request);
 
                 /**
                  *创建一个在指定时间启动、结束的截图任务，并使用指定截图模板ID对应的配置进行截图。
@@ -2787,6 +2806,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeRecordTaskOutcome DescribeRecordTask(const Model::DescribeRecordTaskRequest &request);
                 void DescribeRecordTaskAsync(const Model::DescribeRecordTaskRequest& request, const DescribeRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordTaskOutcomeCallable DescribeRecordTaskCallable(const Model::DescribeRecordTaskRequest& request);
+
+                /**
+                 *该接口用于查询场景化视频任务进展及结果。
+                 * @param req DescribeSceneVideoTaskRequest
+                 * @return DescribeSceneVideoTaskOutcome
+                 */
+                DescribeSceneVideoTaskOutcome DescribeSceneVideoTask(const Model::DescribeSceneVideoTaskRequest &request);
+                void DescribeSceneVideoTaskAsync(const Model::DescribeSceneVideoTaskRequest& request, const DescribeSceneVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSceneVideoTaskOutcomeCallable DescribeSceneVideoTaskCallable(const Model::DescribeSceneVideoTaskRequest& request);
 
                 /**
                  *接口用来查询直播增值业务--截图的张数

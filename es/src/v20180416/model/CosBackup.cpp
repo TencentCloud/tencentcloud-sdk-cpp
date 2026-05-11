@@ -38,7 +38,10 @@ CosBackup::CosBackup() :
     m_strategyNameHasBeenSet(false),
     m_indicesHasBeenSet(false),
     m_multiAzHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_maxSnapshotPerSecHasBeenSet(false),
+    m_maxRestorePerSecHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -217,6 +220,26 @@ CoreInternalOutcome CosBackup::Deserialize(const rapidjson::Value &value)
         m_multiAzHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxSnapshotPerSec") && !value["MaxSnapshotPerSec"].IsNull())
+    {
+        if (!value["MaxSnapshotPerSec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBackup.MaxSnapshotPerSec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxSnapshotPerSec = string(value["MaxSnapshotPerSec"].GetString());
+        m_maxSnapshotPerSecHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRestorePerSec") && !value["MaxRestorePerSec"].IsNull())
+    {
+        if (!value["MaxRestorePerSec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBackup.MaxRestorePerSec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRestorePerSec = string(value["MaxRestorePerSec"].GetString());
+        m_maxRestorePerSecHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -225,6 +248,16 @@ CoreInternalOutcome CosBackup::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBackup.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
     }
 
 
@@ -370,12 +403,36 @@ void CosBackup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_multiAz, allocator);
     }
 
+    if (m_maxSnapshotPerSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSnapshotPerSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxSnapshotPerSec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRestorePerSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRestorePerSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxRestorePerSec.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -653,6 +710,38 @@ bool CosBackup::MultiAzHasBeenSet() const
     return m_multiAzHasBeenSet;
 }
 
+string CosBackup::GetMaxSnapshotPerSec() const
+{
+    return m_maxSnapshotPerSec;
+}
+
+void CosBackup::SetMaxSnapshotPerSec(const string& _maxSnapshotPerSec)
+{
+    m_maxSnapshotPerSec = _maxSnapshotPerSec;
+    m_maxSnapshotPerSecHasBeenSet = true;
+}
+
+bool CosBackup::MaxSnapshotPerSecHasBeenSet() const
+{
+    return m_maxSnapshotPerSecHasBeenSet;
+}
+
+string CosBackup::GetMaxRestorePerSec() const
+{
+    return m_maxRestorePerSec;
+}
+
+void CosBackup::SetMaxRestorePerSec(const string& _maxRestorePerSec)
+{
+    m_maxRestorePerSec = _maxRestorePerSec;
+    m_maxRestorePerSecHasBeenSet = true;
+}
+
+bool CosBackup::MaxRestorePerSecHasBeenSet() const
+{
+    return m_maxRestorePerSecHasBeenSet;
+}
+
 string CosBackup::GetCreateTime() const
 {
     return m_createTime;
@@ -667,5 +756,21 @@ void CosBackup::SetCreateTime(const string& _createTime)
 bool CosBackup::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string CosBackup::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CosBackup::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CosBackup::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

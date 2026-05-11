@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行
-                     * @return CommitType 0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行
+                     * 获取<p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>
+                     * @return CommitType <p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>
                      * 
                      */
                     int64_t GetCommitType() const;
 
                     /**
-                     * 设置0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行
-                     * @param _commitType 0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行
+                     * 设置<p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>
+                     * @param _commitType <p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>
                      * 
                      */
                     void SetCommitType(const int64_t& _commitType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CommitTypeHasBeenSet() const;
 
                     /**
-                     * 获取实时任务 201   离线任务 202  默认实时任务
-                     * @return TaskType 实时任务 201   离线任务 202  默认实时任务
+                     * 获取<p>实时任务 201   离线任务 202  默认实时任务</p>
+                     * @return TaskType <p>实时任务 201   离线任务 202  默认实时任务</p>
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置实时任务 201   离线任务 202  默认实时任务
-                     * @param _taskType 实时任务 201   离线任务 202  默认实时任务
+                     * 设置<p>实时任务 201   离线任务 202  默认实时任务</p>
+                     * @param _taskType <p>实时任务 201   离线任务 202  默认实时任务</p>
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取额外参数
-                     * @return ExtConfig 额外参数
+                     * 获取<p>额外参数</p>
+                     * @return ExtConfig <p>额外参数</p>
                      * 
                      */
                     std::vector<RecordField> GetExtConfig() const;
 
                     /**
-                     * 设置额外参数
-                     * @param _extConfig 额外参数
+                     * 设置<p>额外参数</p>
+                     * @param _extConfig <p>额外参数</p>
                      * 
                      */
                     void SetExtConfig(const std::vector<RecordField>& _extConfig);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ExtConfigHasBeenSet() const;
 
                     /**
-                     * 获取提交版本描述
-                     * @return VersionDesc 提交版本描述
+                     * 获取<p>提交版本描述</p>
+                     * @return VersionDesc <p>提交版本描述</p>
                      * 
                      */
                     std::string GetVersionDesc() const;
 
                     /**
-                     * 设置提交版本描述
-                     * @param _versionDesc 提交版本描述
+                     * 设置<p>提交版本描述</p>
+                     * @param _versionDesc <p>提交版本描述</p>
                      * 
                      */
                     void SetVersionDesc(const std::string& _versionDesc);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool VersionDescHasBeenSet() const;
 
                     /**
-                     * 获取提交版本号
-                     * @return InstanceVersion 提交版本号
+                     * 获取<p>提交版本号</p>
+                     * @return InstanceVersion <p>提交版本号</p>
                      * 
                      */
                     int64_t GetInstanceVersion() const;
 
                     /**
-                     * 设置提交版本号
-                     * @param _instanceVersion 提交版本号
+                     * 设置<p>提交版本号</p>
+                     * @param _instanceVersion <p>提交版本号</p>
                      * 
                      */
                     void SetInstanceVersion(const int64_t& _instanceVersion);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取前端操作类型描述
-                     * @return EventDesc 前端操作类型描述
+                     * 获取<p>前端操作类型描述</p>
+                     * @return EventDesc <p>前端操作类型描述</p>
                      * 
                      */
                     std::string GetEventDesc() const;
 
                     /**
-                     * 设置前端操作类型描述
-                     * @param _eventDesc 前端操作类型描述
+                     * 设置<p>前端操作类型描述</p>
+                     * @param _eventDesc <p>前端操作类型描述</p>
                      * 
                      */
                     void SetEventDesc(const std::string& _eventDesc);
@@ -211,55 +211,82 @@ namespace TencentCloud
                      */
                     bool EventDescHasBeenSet() const;
 
+                    /**
+                     * 获取<p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>
+                     * @return CurrentStatus <p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>
+                     * 
+                     */
+                    int64_t GetCurrentStatus() const;
+
+                    /**
+                     * 设置<p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>
+                     * @param _currentStatus <p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>
+                     * 
+                     */
+                    void SetCurrentStatus(const int64_t& _currentStatus);
+
+                    /**
+                     * 判断参数 CurrentStatus 是否已赋值
+                     * @return CurrentStatus 是否已赋值
+                     * 
+                     */
+                    bool CurrentStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行
+                     * <p>0.仅提交，1.立即启动，2.停止线上作业，丢弃作业状态数据，重新启动运行，3.暂停线上作业，保留作业状态数据，继续运行，4.保留作业状态数据，继续运行</p>
                      */
                     int64_t m_commitType;
                     bool m_commitTypeHasBeenSet;
 
                     /**
-                     * 实时任务 201   离线任务 202  默认实时任务
+                     * <p>实时任务 201   离线任务 202  默认实时任务</p>
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 额外参数
+                     * <p>额外参数</p>
                      */
                     std::vector<RecordField> m_extConfig;
                     bool m_extConfigHasBeenSet;
 
                     /**
-                     * 提交版本描述
+                     * <p>提交版本描述</p>
                      */
                     std::string m_versionDesc;
                     bool m_versionDescHasBeenSet;
 
                     /**
-                     * 提交版本号
+                     * <p>提交版本号</p>
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 前端操作类型描述
+                     * <p>前端操作类型描述</p>
                      */
                     std::string m_eventDesc;
                     bool m_eventDescHasBeenSet;
+
+                    /**
+                     * <p>提交时任务状态</p><p>枚举值：</p><ul><li>3： 运行中</li></ul>
+                     */
+                    int64_t m_currentStatus;
+                    bool m_currentStatusHasBeenSet;
 
                 };
             }

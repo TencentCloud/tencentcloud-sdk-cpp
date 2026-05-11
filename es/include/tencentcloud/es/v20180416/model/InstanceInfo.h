@@ -61,15 +61,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -82,15 +82,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -103,15 +103,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -124,15 +124,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -145,15 +145,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return AppId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return AppId <p>用户ID</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _appId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _appId <p>用户ID</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -166,15 +166,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户UIN
-                     * @return Uin 用户UIN
+                     * 获取<p>用户UIN</p>
+                     * @return Uin <p>用户UIN</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置用户UIN
-                     * @param _uin 用户UIN
+                     * 设置<p>用户UIN</p>
+                     * @param _uin <p>用户UIN</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -187,15 +187,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取实例所属VPC的UID
-                     * @return VpcUid 实例所属VPC的UID
+                     * 获取<p>实例所属VPC的UID</p>
+                     * @return VpcUid <p>实例所属VPC的UID</p>
                      * 
                      */
                     std::string GetVpcUid() const;
 
                     /**
-                     * 设置实例所属VPC的UID
-                     * @param _vpcUid 实例所属VPC的UID
+                     * 设置<p>实例所属VPC的UID</p>
+                     * @param _vpcUid <p>实例所属VPC的UID</p>
                      * 
                      */
                     void SetVpcUid(const std::string& _vpcUid);
@@ -208,15 +208,15 @@ namespace TencentCloud
                     bool VpcUidHasBeenSet() const;
 
                     /**
-                     * 获取实例所属子网的UID
-                     * @return SubnetUid 实例所属子网的UID
+                     * 获取<p>实例所属子网的UID</p>
+                     * @return SubnetUid <p>实例所属子网的UID</p>
                      * 
                      */
                     std::string GetSubnetUid() const;
 
                     /**
-                     * 设置实例所属子网的UID
-                     * @param _subnetUid 实例所属子网的UID
+                     * 设置<p>实例所属子网的UID</p>
+                     * @param _subnetUid <p>实例所属子网的UID</p>
                      * 
                      */
                     void SetSubnetUid(const std::string& _subnetUid);
@@ -229,15 +229,15 @@ namespace TencentCloud
                     bool SubnetUidHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
-                     * @return Status 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
+                     * 获取<p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>
+                     * @return Status <p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
-                     * @param _status 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
+                     * 设置<p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>
+                     * @param _status <p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -250,35 +250,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。取值范围：
-RENEW_FLAG_AUTO：自动续费  
-RENEW_FLAG_MANUAL：不自动续费
-默认取值：
-RENEW_FLAG_DEFAULT：不自动续费
-若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @return RenewFlag 自动续费标识。取值范围：
-RENEW_FLAG_AUTO：自动续费  
-RENEW_FLAG_MANUAL：不自动续费
-默认取值：
-RENEW_FLAG_DEFAULT：不自动续费
-若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * 获取<p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>
+                     * @return RenewFlag <p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。取值范围：
-RENEW_FLAG_AUTO：自动续费  
-RENEW_FLAG_MANUAL：不自动续费
-默认取值：
-RENEW_FLAG_DEFAULT：不自动续费
-若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @param _renewFlag 自动续费标识。取值范围：
-RENEW_FLAG_AUTO：自动续费  
-RENEW_FLAG_MANUAL：不自动续费
-默认取值：
-RENEW_FLAG_DEFAULT：不自动续费
-若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * 设置<p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>
+                     * @param _renewFlag <p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -291,15 +271,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-                     * @return ChargeType 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+                     * 获取<p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>
+                     * @return ChargeType <p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
-                     * @param _chargeType 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+                     * 设置<p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>
+                     * @param _chargeType <p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -312,15 +292,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长,单位:月
-                     * @return ChargePeriod 包年包月购买时长,单位:月
+                     * 获取<p>包年包月购买时长,单位:月</p>
+                     * @return ChargePeriod <p>包年包月购买时长,单位:月</p>
                      * 
                      */
                     uint64_t GetChargePeriod() const;
 
                     /**
-                     * 设置包年包月购买时长,单位:月
-                     * @param _chargePeriod 包年包月购买时长,单位:月
+                     * 设置<p>包年包月购买时长,单位:月</p>
+                     * @param _chargePeriod <p>包年包月购买时长,单位:月</p>
                      * 
                      */
                     void SetChargePeriod(const uint64_t& _chargePeriod);
@@ -333,15 +313,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ChargePeriodHasBeenSet() const;
 
                     /**
-                     * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return NodeType <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _nodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _nodeType <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -354,15 +334,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点个数
-                     * @return NodeNum 节点个数
+                     * 获取<p>节点个数</p>
+                     * @return NodeNum <p>节点个数</p>
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置节点个数
-                     * @param _nodeNum 节点个数
+                     * 设置<p>节点个数</p>
+                     * @param _nodeNum <p>节点个数</p>
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -375,15 +355,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取节点CPU核数
-                     * @return CpuNum 节点CPU核数
+                     * 获取<p>节点CPU核数</p>
+                     * @return CpuNum <p>节点CPU核数</p>
                      * 
                      */
                     uint64_t GetCpuNum() const;
 
                     /**
-                     * 设置节点CPU核数
-                     * @param _cpuNum 节点CPU核数
+                     * 设置<p>节点CPU核数</p>
+                     * @param _cpuNum <p>节点CPU核数</p>
                      * 
                      */
                     void SetCpuNum(const uint64_t& _cpuNum);
@@ -396,15 +376,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CpuNumHasBeenSet() const;
 
                     /**
-                     * 获取节点内存大小，单位GB
-                     * @return MemSize 节点内存大小，单位GB
+                     * 获取<p>节点内存大小，单位GB</p>
+                     * @return MemSize <p>节点内存大小，单位GB</p>
                      * 
                      */
                     uint64_t GetMemSize() const;
 
                     /**
-                     * 设置节点内存大小，单位GB
-                     * @param _memSize 节点内存大小，单位GB
+                     * 设置<p>节点内存大小，单位GB</p>
+                     * @param _memSize <p>节点内存大小，单位GB</p>
                      * 
                      */
                     void SetMemSize(const uint64_t& _memSize);
@@ -417,15 +397,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘类型
-                     * @return DiskType 节点磁盘类型
+                     * 获取<p>节点磁盘类型</p>
+                     * @return DiskType <p>节点磁盘类型</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置节点磁盘类型
-                     * @param _diskType 节点磁盘类型
+                     * 设置<p>节点磁盘类型</p>
+                     * @param _diskType <p>节点磁盘类型</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -438,15 +418,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘大小，单位GB
-                     * @return DiskSize 节点磁盘大小，单位GB
+                     * 获取<p>节点磁盘大小，单位GB</p>
+                     * @return DiskSize <p>节点磁盘大小，单位GB</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置节点磁盘大小，单位GB
-                     * @param _diskSize 节点磁盘大小，单位GB
+                     * 设置<p>节点磁盘大小，单位GB</p>
+                     * @param _diskSize <p>节点磁盘大小，单位GB</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -459,15 +439,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取ES域名
-                     * @return EsDomain ES域名
+                     * 获取<p>ES域名</p>
+                     * @return EsDomain <p>ES域名</p>
                      * 
                      */
                     std::string GetEsDomain() const;
 
                     /**
-                     * 设置ES域名
-                     * @param _esDomain ES域名
+                     * 设置<p>ES域名</p>
+                     * @param _esDomain <p>ES域名</p>
                      * 
                      */
                     void SetEsDomain(const std::string& _esDomain);
@@ -480,15 +460,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsDomainHasBeenSet() const;
 
                     /**
-                     * 获取ES VIP
-                     * @return EsVip ES VIP
+                     * 获取<p>ES VIP</p>
+                     * @return EsVip <p>ES VIP</p>
                      * 
                      */
                     std::string GetEsVip() const;
 
                     /**
-                     * 设置ES VIP
-                     * @param _esVip ES VIP
+                     * 设置<p>ES VIP</p>
+                     * @param _esVip <p>ES VIP</p>
                      * 
                      */
                     void SetEsVip(const std::string& _esVip);
@@ -501,15 +481,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsVipHasBeenSet() const;
 
                     /**
-                     * 获取ES端口
-                     * @return EsPort ES端口
+                     * 获取<p>ES端口</p>
+                     * @return EsPort <p>ES端口</p>
                      * 
                      */
                     uint64_t GetEsPort() const;
 
                     /**
-                     * 设置ES端口
-                     * @param _esPort ES端口
+                     * 设置<p>ES端口</p>
+                     * @param _esPort <p>ES端口</p>
                      * 
                      */
                     void SetEsPort(const uint64_t& _esPort);
@@ -522,15 +502,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsPortHasBeenSet() const;
 
                     /**
-                     * 获取Kibana访问url
-                     * @return KibanaUrl Kibana访问url
+                     * 获取<p>Kibana访问url</p>
+                     * @return KibanaUrl <p>Kibana访问url</p>
                      * 
                      */
                     std::string GetKibanaUrl() const;
 
                     /**
-                     * 设置Kibana访问url
-                     * @param _kibanaUrl Kibana访问url
+                     * 设置<p>Kibana访问url</p>
+                     * @param _kibanaUrl <p>Kibana访问url</p>
                      * 
                      */
                     void SetKibanaUrl(const std::string& _kibanaUrl);
@@ -543,15 +523,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaUrlHasBeenSet() const;
 
                     /**
-                     * 获取ES版本号
-                     * @return EsVersion ES版本号
+                     * 获取<p>ES版本号</p>
+                     * @return EsVersion <p>ES版本号</p>
                      * 
                      */
                     std::string GetEsVersion() const;
 
                     /**
-                     * 设置ES版本号
-                     * @param _esVersion ES版本号
+                     * 设置<p>ES版本号</p>
+                     * @param _esVersion <p>ES版本号</p>
                      * 
                      */
                     void SetEsVersion(const std::string& _esVersion);
@@ -564,15 +544,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsVersionHasBeenSet() const;
 
                     /**
-                     * 获取ES配置项
-                     * @return EsConfig ES配置项
+                     * 获取<p>ES配置项</p>
+                     * @return EsConfig <p>ES配置项</p>
                      * 
                      */
                     std::string GetEsConfig() const;
 
                     /**
-                     * 设置ES配置项
-                     * @param _esConfig ES配置项
+                     * 设置<p>ES配置项</p>
+                     * @param _esConfig <p>ES配置项</p>
                      * 
                      */
                     void SetEsConfig(const std::string& _esConfig);
@@ -585,15 +565,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsConfigHasBeenSet() const;
 
                     /**
-                     * 获取Kibana访问控制配置
-                     * @return EsAcl Kibana访问控制配置
+                     * 获取<p>Kibana访问控制配置</p>
+                     * @return EsAcl <p>Kibana访问控制配置</p>
                      * 
                      */
                     EsAcl GetEsAcl() const;
 
                     /**
-                     * 设置Kibana访问控制配置
-                     * @param _esAcl Kibana访问控制配置
+                     * 设置<p>Kibana访问控制配置</p>
+                     * @param _esAcl <p>Kibana访问控制配置</p>
                      * 
                      */
                     void SetEsAcl(const EsAcl& _esAcl);
@@ -606,15 +586,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsAclHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return CreateTime 实例创建时间
+                     * 获取<p>实例创建时间</p>
+                     * @return CreateTime <p>实例创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param _createTime 实例创建时间
+                     * 设置<p>实例创建时间</p>
+                     * @param _createTime <p>实例创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -627,15 +607,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例最后修改操作时间
-                     * @return UpdateTime 实例最后修改操作时间
+                     * 获取<p>实例最后修改操作时间</p>
+                     * @return UpdateTime <p>实例最后修改操作时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置实例最后修改操作时间
-                     * @param _updateTime 实例最后修改操作时间
+                     * 设置<p>实例最后修改操作时间</p>
+                     * @param _updateTime <p>实例最后修改操作时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -648,15 +628,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间
-                     * @return Deadline 实例到期时间
+                     * 获取<p>实例到期时间</p>
+                     * @return Deadline <p>实例到期时间</p>
                      * 
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置实例到期时间
-                     * @param _deadline 实例到期时间
+                     * 设置<p>实例到期时间</p>
+                     * @param _deadline <p>实例到期时间</p>
                      * 
                      */
                     void SetDeadline(const std::string& _deadline);
@@ -669,15 +649,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取实例类型（实例类型标识，当前只有1,2两种）
-                     * @return InstanceType 实例类型（实例类型标识，当前只有1,2两种）
+                     * 获取<p>实例类型（实例类型标识，当前只有1,2两种）</p>
+                     * @return InstanceType <p>实例类型（实例类型标识，当前只有1,2两种）</p>
                      * 
                      */
                     uint64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型（实例类型标识，当前只有1,2两种）
-                     * @param _instanceType 实例类型（实例类型标识，当前只有1,2两种）
+                     * 设置<p>实例类型（实例类型标识，当前只有1,2两种）</p>
+                     * @param _instanceType <p>实例类型（实例类型标识，当前只有1,2两种）</p>
                      * 
                      */
                     void SetInstanceType(const uint64_t& _instanceType);
@@ -690,15 +670,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取Ik分词器配置
-                     * @return IkConfig Ik分词器配置
+                     * 获取<p>Ik分词器配置</p>
+                     * @return IkConfig <p>Ik分词器配置</p>
                      * 
                      */
                     EsDictionaryInfo GetIkConfig() const;
 
                     /**
-                     * 设置Ik分词器配置
-                     * @param _ikConfig Ik分词器配置
+                     * 设置<p>Ik分词器配置</p>
+                     * @param _ikConfig <p>Ik分词器配置</p>
                      * 
                      */
                     void SetIkConfig(const EsDictionaryInfo& _ikConfig);
@@ -711,15 +691,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool IkConfigHasBeenSet() const;
 
                     /**
-                     * 获取专用主节点配置
-                     * @return MasterNodeInfo 专用主节点配置
+                     * 获取<p>专用主节点配置</p>
+                     * @return MasterNodeInfo <p>专用主节点配置</p>
                      * 
                      */
                     MasterNodeInfo GetMasterNodeInfo() const;
 
                     /**
-                     * 设置专用主节点配置
-                     * @param _masterNodeInfo 专用主节点配置
+                     * 设置<p>专用主节点配置</p>
+                     * @param _masterNodeInfo <p>专用主节点配置</p>
                      * 
                      */
                     void SetMasterNodeInfo(const MasterNodeInfo& _masterNodeInfo);
@@ -732,15 +712,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool MasterNodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取cos自动备份配置
-                     * @return CosBackup cos自动备份配置
+                     * 获取<p>cos自动备份配置</p>
+                     * @return CosBackup <p>cos自动备份配置</p>
                      * 
                      */
                     CosBackup GetCosBackup() const;
 
                     /**
-                     * 设置cos自动备份配置
-                     * @param _cosBackup cos自动备份配置
+                     * 设置<p>cos自动备份配置</p>
+                     * @param _cosBackup <p>cos自动备份配置</p>
                      * 
                      */
                     void SetCosBackup(const CosBackup& _cosBackup);
@@ -753,15 +733,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CosBackupHasBeenSet() const;
 
                     /**
-                     * 获取是否允许cos自动备份
-                     * @return AllowCosBackup 是否允许cos自动备份
+                     * 获取<p>是否允许cos自动备份</p>
+                     * @return AllowCosBackup <p>是否允许cos自动备份</p>
                      * 
                      */
                     bool GetAllowCosBackup() const;
 
                     /**
-                     * 设置是否允许cos自动备份
-                     * @param _allowCosBackup 是否允许cos自动备份
+                     * 设置<p>是否允许cos自动备份</p>
+                     * @param _allowCosBackup <p>是否允许cos自动备份</p>
                      * 
                      */
                     void SetAllowCosBackup(const bool& _allowCosBackup);
@@ -774,15 +754,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool AllowCosBackupHasBeenSet() const;
 
                     /**
-                     * 获取实例拥有的标签列表
-                     * @return TagList 实例拥有的标签列表
+                     * 获取<p>实例拥有的标签列表</p>
+                     * @return TagList <p>实例拥有的标签列表</p>
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置实例拥有的标签列表
-                     * @param _tagList 实例拥有的标签列表
+                     * 设置<p>实例拥有的标签列表</p>
+                     * @param _tagList <p>实例拥有的标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagInfo>& _tagList);
@@ -795,15 +775,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
-                     * @return LicenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 获取<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
+                     * @return LicenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
-                     * 设置License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
-                     * @param _licenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 设置<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
+                     * @param _licenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
@@ -816,18 +796,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+                     * 获取<p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableHotWarmMode 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+                     * @return EnableHotWarmMode <p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableHotWarmMode() const;
 
                     /**
-                     * 设置是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+                     * 设置<p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableHotWarmMode 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+                     * @param _enableHotWarmMode <p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -841,18 +821,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EnableHotWarmModeHasBeenSet() const;
 
                     /**
-                     * 获取温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmNodeType 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return WarmNodeType <p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWarmNodeType() const;
 
                     /**
-                     * 设置温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmNodeType 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param _warmNodeType <p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -866,18 +846,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取温节点个数
+                     * 获取<p>温节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmNodeNum 温节点个数
+                     * @return WarmNodeNum <p>温节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWarmNodeNum() const;
 
                     /**
-                     * 设置温节点个数
+                     * 设置<p>温节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmNodeNum 温节点个数
+                     * @param _warmNodeNum <p>温节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -891,18 +871,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取温节点CPU核数
+                     * 获取<p>温节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmCpuNum 温节点CPU核数
+                     * @return WarmCpuNum <p>温节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWarmCpuNum() const;
 
                     /**
-                     * 设置温节点CPU核数
+                     * 设置<p>温节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmCpuNum 温节点CPU核数
+                     * @param _warmCpuNum <p>温节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -916,18 +896,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmCpuNumHasBeenSet() const;
 
                     /**
-                     * 获取温节点内存内存大小，单位GB
+                     * 获取<p>温节点内存内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmMemSize 温节点内存内存大小，单位GB
+                     * @return WarmMemSize <p>温节点内存内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWarmMemSize() const;
 
                     /**
-                     * 设置温节点内存内存大小，单位GB
+                     * 设置<p>温节点内存内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmMemSize 温节点内存内存大小，单位GB
+                     * @param _warmMemSize <p>温节点内存内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -941,18 +921,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmMemSizeHasBeenSet() const;
 
                     /**
-                     * 获取温节点磁盘类型
+                     * 获取<p>温节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmDiskType 温节点磁盘类型
+                     * @return WarmDiskType <p>温节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWarmDiskType() const;
 
                     /**
-                     * 设置温节点磁盘类型
+                     * 设置<p>温节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmDiskType 温节点磁盘类型
+                     * @param _warmDiskType <p>温节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -966,18 +946,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取温节点磁盘大小，单位GB
+                     * 获取<p>温节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarmDiskSize 温节点磁盘大小，单位GB
+                     * @return WarmDiskSize <p>温节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWarmDiskSize() const;
 
                     /**
-                     * 设置温节点磁盘大小，单位GB
+                     * 设置<p>温节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warmDiskSize 温节点磁盘大小，单位GB
+                     * @param _warmDiskSize <p>温节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -991,18 +971,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WarmDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取集群节点信息列表
+                     * 获取<p>集群节点信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeInfoList 集群节点信息列表
+                     * @return NodeInfoList <p>集群节点信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodeInfoList() const;
 
                     /**
-                     * 设置集群节点信息列表
+                     * 设置<p>集群节点信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeInfoList 集群节点信息列表
+                     * @param _nodeInfoList <p>集群节点信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1016,18 +996,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool NodeInfoListHasBeenSet() const;
 
                     /**
-                     * 获取Es公网地址
+                     * 获取<p>Es公网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsPublicUrl Es公网地址
+                     * @return EsPublicUrl <p>Es公网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEsPublicUrl() const;
 
                     /**
-                     * 设置Es公网地址
+                     * 设置<p>Es公网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esPublicUrl Es公网地址
+                     * @param _esPublicUrl <p>Es公网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1041,18 +1021,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsPublicUrlHasBeenSet() const;
 
                     /**
-                     * 获取多可用区网络信息
+                     * 获取<p>多可用区网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MultiZoneInfo 多可用区网络信息
+                     * @return MultiZoneInfo <p>多可用区网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ZoneDetail> GetMultiZoneInfo() const;
 
                     /**
-                     * 设置多可用区网络信息
+                     * 设置<p>多可用区网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _multiZoneInfo 多可用区网络信息
+                     * @param _multiZoneInfo <p>多可用区网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1066,18 +1046,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool MultiZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
+                     * 获取<p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployMode 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
+                     * @return DeployMode <p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeployMode() const;
 
                     /**
-                     * 设置部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
+                     * 设置<p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deployMode 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
+                     * @param _deployMode <p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1091,18 +1071,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 获取<p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @return PublicAccess <p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccess() const;
 
                     /**
-                     * 设置ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 设置<p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @param _publicAccess <p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1116,15 +1096,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool PublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取ES公网访问控制配置
-                     * @return EsPublicAcl ES公网访问控制配置
+                     * 获取<p>ES公网访问控制配置</p>
+                     * @return EsPublicAcl <p>ES公网访问控制配置</p>
                      * 
                      */
                     EsAcl GetEsPublicAcl() const;
 
                     /**
-                     * 设置ES公网访问控制配置
-                     * @param _esPublicAcl ES公网访问控制配置
+                     * 设置<p>ES公网访问控制配置</p>
+                     * @param _esPublicAcl <p>ES公网访问控制配置</p>
                      * 
                      */
                     void SetEsPublicAcl(const EsAcl& _esPublicAcl);
@@ -1137,18 +1117,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsPublicAclHasBeenSet() const;
 
                     /**
-                     * 获取Kibana内网地址
+                     * 获取<p>Kibana内网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPrivateUrl Kibana内网地址
+                     * @return KibanaPrivateUrl <p>Kibana内网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPrivateUrl() const;
 
                     /**
-                     * 设置Kibana内网地址
+                     * 设置<p>Kibana内网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPrivateUrl Kibana内网地址
+                     * @param _kibanaPrivateUrl <p>Kibana内网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1162,18 +1142,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPrivateUrlHasBeenSet() const;
 
                     /**
-                     * 获取Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 获取<p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @return KibanaPublicAccess <p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPublicAccess() const;
 
                     /**
-                     * 设置Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 设置<p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @param _kibanaPublicAccess <p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1187,18 +1167,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 获取<p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @return KibanaPrivateAccess <p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPrivateAccess() const;
 
                     /**
-                     * 设置Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 设置<p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @param _kibanaPrivateAccess <p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1212,18 +1192,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 获取<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @return SecurityType <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSecurityType() const;
 
                     /**
-                     * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 设置<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * @param _securityType <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1237,18 +1217,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool SecurityTypeHasBeenSet() const;
 
                     /**
-                     * 获取场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+                     * 获取<p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SceneType 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+                     * @return SceneType <p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSceneType() const;
 
                     /**
-                     * 设置场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+                     * 设置<p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sceneType 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+                     * @param _sceneType <p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1262,18 +1242,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool SceneTypeHasBeenSet() const;
 
                     /**
-                     * 获取Kibana配置项
+                     * 获取<p>Kibana配置项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaConfig Kibana配置项
+                     * @return KibanaConfig <p>Kibana配置项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaConfig() const;
 
                     /**
-                     * 设置Kibana配置项
+                     * 设置<p>Kibana配置项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaConfig Kibana配置项
+                     * @param _kibanaConfig <p>Kibana配置项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1287,18 +1267,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaConfigHasBeenSet() const;
 
                     /**
-                     * 获取Kibana节点信息
+                     * 获取<p>Kibana节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaNodeInfo Kibana节点信息
+                     * @return KibanaNodeInfo <p>Kibana节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KibanaNodeInfo GetKibanaNodeInfo() const;
 
                     /**
-                     * 设置Kibana节点信息
+                     * 设置<p>Kibana节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaNodeInfo Kibana节点信息
+                     * @param _kibanaNodeInfo <p>Kibana节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1312,18 +1292,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaNodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取可视化节点配置
+                     * 获取<p>可视化节点配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebNodeTypeInfo 可视化节点配置
+                     * @return WebNodeTypeInfo <p>可视化节点配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WebNodeTypeInfo GetWebNodeTypeInfo() const;
 
                     /**
-                     * 设置可视化节点配置
+                     * 设置<p>可视化节点配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webNodeTypeInfo 可视化节点配置
+                     * @param _webNodeTypeInfo <p>可视化节点配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1337,18 +1317,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool WebNodeTypeInfoHasBeenSet() const;
 
                     /**
-                     * 获取JDK类型，oracle或kona
+                     * 获取<p>JDK类型，oracle或kona</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Jdk JDK类型，oracle或kona
+                     * @return Jdk <p>JDK类型，oracle或kona</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJdk() const;
 
                     /**
-                     * 设置JDK类型，oracle或kona
+                     * 设置<p>JDK类型，oracle或kona</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jdk JDK类型，oracle或kona
+                     * @param _jdk <p>JDK类型，oracle或kona</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1362,18 +1342,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool JdkHasBeenSet() const;
 
                     /**
-                     * 获取集群网络通讯协议
+                     * 获取<p>集群网络通讯协议</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 集群网络通讯协议
+                     * @return Protocol <p>集群网络通讯协议</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置集群网络通讯协议
+                     * 设置<p>集群网络通讯协议</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 集群网络通讯协议
+                     * @param _protocol <p>集群网络通讯协议</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1387,18 +1367,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取安全组id
+                     * 获取<p>安全组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroups 安全组id
+                     * @return SecurityGroups <p>安全组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
-                     * 设置安全组id
+                     * 设置<p>安全组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroups 安全组id
+                     * @param _securityGroups <p>安全组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1412,18 +1392,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool SecurityGroupsHasBeenSet() const;
 
                     /**
-                     * 获取冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return ColdNodeType <p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColdNodeType() const;
 
                     /**
-                     * 设置冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldNodeType 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param _coldNodeType <p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1437,18 +1417,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点个数
+                     * 获取<p>冷节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdNodeNum 冷节点个数
+                     * @return ColdNodeNum <p>冷节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetColdNodeNum() const;
 
                     /**
-                     * 设置冷节点个数
+                     * 设置<p>冷节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldNodeNum 冷节点个数
+                     * @param _coldNodeNum <p>冷节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1462,18 +1442,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取冷节点CPU核数
+                     * 获取<p>冷节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdCpuNum 冷节点CPU核数
+                     * @return ColdCpuNum <p>冷节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetColdCpuNum() const;
 
                     /**
-                     * 设置冷节点CPU核数
+                     * 设置<p>冷节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldCpuNum 冷节点CPU核数
+                     * @param _coldCpuNum <p>冷节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1487,18 +1467,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdCpuNumHasBeenSet() const;
 
                     /**
-                     * 获取冷节点内存大小，单位GB
+                     * 获取<p>冷节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdMemSize 冷节点内存大小，单位GB
+                     * @return ColdMemSize <p>冷节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetColdMemSize() const;
 
                     /**
-                     * 设置冷节点内存大小，单位GB
+                     * 设置<p>冷节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldMemSize 冷节点内存大小，单位GB
+                     * @param _coldMemSize <p>冷节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1512,18 +1492,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdMemSizeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点磁盘类型
+                     * 获取<p>冷节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdDiskType 冷节点磁盘类型
+                     * @return ColdDiskType <p>冷节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColdDiskType() const;
 
                     /**
-                     * 设置冷节点磁盘类型
+                     * 设置<p>冷节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldDiskType 冷节点磁盘类型
+                     * @param _coldDiskType <p>冷节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1537,18 +1517,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取冷节点磁盘大小，单位GB
+                     * 获取<p>冷节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColdDiskSize 冷节点磁盘大小，单位GB
+                     * @return ColdDiskSize <p>冷节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetColdDiskSize() const;
 
                     /**
-                     * 设置冷节点磁盘大小，单位GB
+                     * 设置<p>冷节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coldDiskSize 冷节点磁盘大小，单位GB
+                     * @param _coldDiskSize <p>冷节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1562,18 +1542,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ColdDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenNodeType 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @return FrozenNodeType <p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFrozenNodeType() const;
 
                     /**
-                     * 设置冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenNodeType 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param _frozenNodeType <p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1587,18 +1567,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取冻节点个数
+                     * 获取<p>冻节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenNodeNum 冻节点个数
+                     * @return FrozenNodeNum <p>冻节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFrozenNodeNum() const;
 
                     /**
-                     * 设置冻节点个数
+                     * 设置<p>冻节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenNodeNum 冻节点个数
+                     * @param _frozenNodeNum <p>冻节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1612,18 +1592,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取冻节点CPU核数
+                     * 获取<p>冻节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenCpuNum 冻节点CPU核数
+                     * @return FrozenCpuNum <p>冻节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFrozenCpuNum() const;
 
                     /**
-                     * 设置冻节点CPU核数
+                     * 设置<p>冻节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenCpuNum 冻节点CPU核数
+                     * @param _frozenCpuNum <p>冻节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1637,18 +1617,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenCpuNumHasBeenSet() const;
 
                     /**
-                     * 获取冻节点内存大小，单位GB
+                     * 获取<p>冻节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenMemSize 冻节点内存大小，单位GB
+                     * @return FrozenMemSize <p>冻节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFrozenMemSize() const;
 
                     /**
-                     * 设置冻节点内存大小，单位GB
+                     * 设置<p>冻节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenMemSize 冻节点内存大小，单位GB
+                     * @param _frozenMemSize <p>冻节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1662,18 +1642,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenMemSizeHasBeenSet() const;
 
                     /**
-                     * 获取冻节点磁盘类型
+                     * 获取<p>冻节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenDiskType 冻节点磁盘类型
+                     * @return FrozenDiskType <p>冻节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFrozenDiskType() const;
 
                     /**
-                     * 设置冻节点磁盘类型
+                     * 设置<p>冻节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenDiskType 冻节点磁盘类型
+                     * @param _frozenDiskType <p>冻节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1687,18 +1667,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取冻节点磁盘大小，单位GB
+                     * 获取<p>冻节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrozenDiskSize 冻节点磁盘大小，单位GB
+                     * @return FrozenDiskSize <p>冻节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFrozenDiskSize() const;
 
                     /**
-                     * 设置冻节点磁盘大小，单位GB
+                     * 设置<p>冻节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frozenDiskSize 冻节点磁盘大小，单位GB
+                     * @param _frozenDiskSize <p>冻节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1712,18 +1692,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool FrozenDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+                     * 获取<p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HealthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+                     * @return HealthStatus <p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHealthStatus() const;
 
                     /**
-                     * 设置集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+                     * 设置<p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _healthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+                     * @param _healthStatus <p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1737,18 +1717,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool HealthStatusHasBeenSet() const;
 
                     /**
-                     * 获取https集群内网url
+                     * 获取<p>https集群内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsPrivateUrl https集群内网url
+                     * @return EsPrivateUrl <p>https集群内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEsPrivateUrl() const;
 
                     /**
-                     * 设置https集群内网url
+                     * 设置<p>https集群内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esPrivateUrl https集群内网url
+                     * @param _esPrivateUrl <p>https集群内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1762,18 +1742,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsPrivateUrlHasBeenSet() const;
 
                     /**
-                     * 获取https集群内网域名
+                     * 获取<p>https集群内网域名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsPrivateDomain https集群内网域名
+                     * @return EsPrivateDomain <p>https集群内网域名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEsPrivateDomain() const;
 
                     /**
-                     * 设置https集群内网域名
+                     * 设置<p>https集群内网域名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esPrivateDomain https集群内网域名
+                     * @param _esPrivateDomain <p>https集群内网域名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1787,18 +1767,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsPrivateDomainHasBeenSet() const;
 
                     /**
-                     * 获取集群的配置组信息
+                     * 获取<p>集群的配置组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EsConfigSets 集群的配置组信息
+                     * @return EsConfigSets <p>集群的配置组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EsConfigSetInfo> GetEsConfigSets() const;
 
                     /**
-                     * 设置集群的配置组信息
+                     * 设置<p>集群的配置组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _esConfigSets 集群的配置组信息
+                     * @param _esConfigSets <p>集群的配置组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1812,18 +1792,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EsConfigSetsHasBeenSet() const;
 
                     /**
-                     * 获取集群可维护时间段
+                     * 获取<p>集群可维护时间段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperationDuration 集群可维护时间段
+                     * @return OperationDuration <p>集群可维护时间段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OperationDuration GetOperationDuration() const;
 
                     /**
-                     * 设置集群可维护时间段
+                     * 设置<p>集群可维护时间段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operationDuration 集群可维护时间段
+                     * @param _operationDuration <p>集群可维护时间段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1837,18 +1817,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool OperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取web节点列表
+                     * 获取<p>web节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OptionalWebServiceInfos web节点列表
+                     * @return OptionalWebServiceInfos <p>web节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OptionalWebServiceInfo> GetOptionalWebServiceInfos() const;
 
                     /**
-                     * 设置web节点列表
+                     * 设置<p>web节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _optionalWebServiceInfos web节点列表
+                     * @param _optionalWebServiceInfos <p>web节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1862,18 +1842,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool OptionalWebServiceInfosHasBeenSet() const;
 
                     /**
-                     * 获取自治索引开关
+                     * 获取<p>自治索引开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoIndexEnabled 自治索引开关
+                     * @return AutoIndexEnabled <p>自治索引开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoIndexEnabled() const;
 
                     /**
-                     * 设置自治索引开关
+                     * 设置<p>自治索引开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoIndexEnabled 自治索引开关
+                     * @param _autoIndexEnabled <p>自治索引开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1887,18 +1867,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool AutoIndexEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否支持存储计算分离
+                     * 获取<p>是否支持存储计算分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableHybridStorage 是否支持存储计算分离
+                     * @return EnableHybridStorage <p>是否支持存储计算分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableHybridStorage() const;
 
                     /**
-                     * 设置是否支持存储计算分离
+                     * 设置<p>是否支持存储计算分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableHybridStorage 是否支持存储计算分离
+                     * @param _enableHybridStorage <p>是否支持存储计算分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1912,18 +1892,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EnableHybridStorageHasBeenSet() const;
 
                     /**
-                     * 获取流程进度
+                     * 获取<p>流程进度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProcessPercent 流程进度
+                     * @return ProcessPercent <p>流程进度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProcessPercent() const;
 
                     /**
-                     * 设置流程进度
+                     * 设置<p>流程进度</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _processPercent 流程进度
+                     * @param _processPercent <p>流程进度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1937,18 +1917,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ProcessPercentHasBeenSet() const;
 
                     /**
-                     * 获取Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 获取<p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @return KibanaAlteringPublicAccess <p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaAlteringPublicAccess() const;
 
                     /**
-                     * 设置Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * 设置<p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * @param _kibanaAlteringPublicAccess <p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1962,18 +1942,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaAlteringPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取本月是否有内核可以更新：false-无，true-有
+                     * 获取<p>本月是否有内核可以更新：false-无，true-有</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HasKernelUpgrade 本月是否有内核可以更新：false-无，true-有
+                     * @return HasKernelUpgrade <p>本月是否有内核可以更新：false-无，true-有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasKernelUpgrade() const;
 
                     /**
-                     * 设置本月是否有内核可以更新：false-无，true-有
+                     * 设置<p>本月是否有内核可以更新：false-无，true-有</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hasKernelUpgrade 本月是否有内核可以更新：false-无，true-有
+                     * @param _hasKernelUpgrade <p>本月是否有内核可以更新：false-无，true-有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1987,18 +1967,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool HasKernelUpgradeHasBeenSet() const;
 
                     /**
-                     * 获取cdcId，使用cdc子网时传递
+                     * 获取<p>cdcId，使用cdc子网时传递</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcId cdcId，使用cdc子网时传递
+                     * @return CdcId <p>cdcId，使用cdc子网时传递</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置cdcId，使用cdc子网时传递
+                     * 设置<p>cdcId，使用cdc子网时传递</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcId cdcId，使用cdc子网时传递
+                     * @param _cdcId <p>cdcId，使用cdc子网时传递</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2012,18 +1992,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取kibana内网vip
+                     * 获取<p>kibana内网vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPrivateVip kibana内网vip
+                     * @return KibanaPrivateVip <p>kibana内网vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPrivateVip() const;
 
                     /**
-                     * 设置kibana内网vip
+                     * 设置<p>kibana内网vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPrivateVip kibana内网vip
+                     * @param _kibanaPrivateVip <p>kibana内网vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2037,18 +2017,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPrivateVipHasBeenSet() const;
 
                     /**
-                     * 获取自定义kibana内网url
+                     * 获取<p>自定义kibana内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomKibanaPrivateUrl 自定义kibana内网url
+                     * @return CustomKibanaPrivateUrl <p>自定义kibana内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomKibanaPrivateUrl() const;
 
                     /**
-                     * 设置自定义kibana内网url
+                     * 设置<p>自定义kibana内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customKibanaPrivateUrl 自定义kibana内网url
+                     * @param _customKibanaPrivateUrl <p>自定义kibana内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2062,18 +2042,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CustomKibanaPrivateUrlHasBeenSet() const;
 
                     /**
-                     * 获取节点出站访问详细信息
+                     * 获取<p>节点出站访问详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutboundPublicAcls 节点出站访问详细信息
+                     * @return OutboundPublicAcls <p>节点出站访问详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OutboundPublicAcl> GetOutboundPublicAcls() const;
 
                     /**
-                     * 设置节点出站访问详细信息
+                     * 设置<p>节点出站访问详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outboundPublicAcls 节点出站访问详细信息
+                     * @param _outboundPublicAcls <p>节点出站访问详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2087,18 +2067,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool OutboundPublicAclsHasBeenSet() const;
 
                     /**
-                     * 获取网络连接方案
+                     * 获取<p>网络连接方案</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetConnectScheme 网络连接方案
+                     * @return NetConnectScheme <p>网络连接方案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetConnectScheme() const;
 
                     /**
-                     * 设置网络连接方案
+                     * 设置<p>网络连接方案</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _netConnectScheme 网络连接方案
+                     * @param _netConnectScheme <p>网络连接方案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2112,18 +2092,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool NetConnectSchemeHasBeenSet() const;
 
                     /**
-                     * 获取置放群组相关参数
+                     * 获取<p>置放群组相关参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisasterRecoverGroupAffinity 置放群组相关参数
+                     * @return DisasterRecoverGroupAffinity <p>置放群组相关参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDisasterRecoverGroupAffinity() const;
 
                     /**
-                     * 设置置放群组相关参数
+                     * 设置<p>置放群组相关参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _disasterRecoverGroupAffinity 置放群组相关参数
+                     * @param _disasterRecoverGroupAffinity <p>置放群组相关参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2137,18 +2117,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DisasterRecoverGroupAffinityHasBeenSet() const;
 
                     /**
-                     * 获取子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * 获取<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubProductCode 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * @return SubProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
-                     * 设置子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * 设置<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subProductCode 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * @param _subProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2162,18 +2142,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool SubProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取存算分离cos用量，单位M
+                     * 获取<p>存算分离cos用量，单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosBucketStorageSize 存算分离cos用量，单位M
+                     * @return CosBucketStorageSize <p>存算分离cos用量，单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCosBucketStorageSize() const;
 
                     /**
-                     * 设置存算分离cos用量，单位M
+                     * 设置<p>存算分离cos用量，单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosBucketStorageSize 存算分离cos用量，单位M
+                     * @param _cosBucketStorageSize <p>存算分离cos用量，单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2187,18 +2167,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool CosBucketStorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * 获取<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * @return ReadWriteMode <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadWriteMode() const;
 
                     /**
-                     * 设置读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * 设置<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * @param _readWriteMode <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2212,18 +2192,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ReadWriteModeHasBeenSet() const;
 
                     /**
-                     * 获取是否有置放群组异步调度任务
+                     * 获取<p>是否有置放群组异步调度任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableScheduleRecoverGroup 是否有置放群组异步调度任务
+                     * @return EnableScheduleRecoverGroup <p>是否有置放群组异步调度任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableScheduleRecoverGroup() const;
 
                     /**
-                     * 设置是否有置放群组异步调度任务
+                     * 设置<p>是否有置放群组异步调度任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableScheduleRecoverGroup 是否有置放群组异步调度任务
+                     * @param _enableScheduleRecoverGroup <p>是否有置放群组异步调度任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2237,18 +2217,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EnableScheduleRecoverGroupHasBeenSet() const;
 
                     /**
-                     * 获取异步调度任务的时间
+                     * 获取<p>异步调度任务的时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableScheduleOperationDuration 异步调度任务的时间
+                     * @return EnableScheduleOperationDuration <p>异步调度任务的时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
 
                     /**
-                     * 设置异步调度任务的时间
+                     * 设置<p>异步调度任务的时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableScheduleOperationDuration 异步调度任务的时间
+                     * @param _enableScheduleOperationDuration <p>异步调度任务的时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2262,18 +2242,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 获取<p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * @return EnableDestroyProtection <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnableDestroyProtection() const;
 
                     /**
-                     * 设置开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 设置<p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * @param _enableDestroyProtection <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2287,15 +2267,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool EnableDestroyProtectionHasBeenSet() const;
 
                     /**
-                     * 获取kibana内网访问地址
-                     * @return ShowKibanaIpPort kibana内网访问地址
+                     * 获取<p>kibana内网访问地址</p>
+                     * @return ShowKibanaIpPort <p>kibana内网访问地址</p>
                      * 
                      */
                     std::string GetShowKibanaIpPort() const;
 
                     /**
-                     * 设置kibana内网访问地址
-                     * @param _showKibanaIpPort kibana内网访问地址
+                     * 设置<p>kibana内网访问地址</p>
+                     * @param _showKibanaIpPort <p>kibana内网访问地址</p>
                      * 
                      */
                     void SetShowKibanaIpPort(const std::string& _showKibanaIpPort);
@@ -2308,15 +2288,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ShowKibanaIpPortHasBeenSet() const;
 
                     /**
-                     * 获取是否为CDZLite可用区
-                     * @return IsCdzLite 是否为CDZLite可用区
+                     * 获取<p>是否为CDZLite可用区</p>
+                     * @return IsCdzLite <p>是否为CDZLite可用区</p>
                      * 
                      */
                     bool GetIsCdzLite() const;
 
                     /**
-                     * 设置是否为CDZLite可用区
-                     * @param _isCdzLite 是否为CDZLite可用区
+                     * 设置<p>是否为CDZLite可用区</p>
+                     * @param _isCdzLite <p>是否为CDZLite可用区</p>
                      * 
                      */
                     void SetIsCdzLite(const bool& _isCdzLite);
@@ -2329,15 +2309,15 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool IsCdzLiteHasBeenSet() const;
 
                     /**
-                     * 获取集群内网tcp地址
-                     * @return EsPrivateTcpUrl 集群内网tcp地址
+                     * 获取<p>集群内网tcp地址</p>
+                     * @return EsPrivateTcpUrl <p>集群内网tcp地址</p>
                      * 
                      */
                     std::string GetEsPrivateTcpUrl() const;
 
                     /**
-                     * 设置集群内网tcp地址
-                     * @param _esPrivateTcpUrl 集群内网tcp地址
+                     * 设置<p>集群内网tcp地址</p>
+                     * @param _esPrivateTcpUrl <p>集群内网tcp地址</p>
                      * 
                      */
                     void SetEsPrivateTcpUrl(const std::string& _esPrivateTcpUrl);
@@ -2349,652 +2329,755 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool EsPrivateTcpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否在回收站内</p><p>默认值：false</p>
+                     * @return IsInRecycleBin <p>是否在回收站内</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetIsInRecycleBin() const;
+
+                    /**
+                     * 设置<p>是否在回收站内</p><p>默认值：false</p>
+                     * @param _isInRecycleBin <p>是否在回收站内</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetIsInRecycleBin(const bool& _isInRecycleBin);
+
+                    /**
+                     * 判断参数 IsInRecycleBin 是否已赋值
+                     * @return IsInRecycleBin 是否已赋值
+                     * 
+                     */
+                    bool IsInRecycleBinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>回收站内是否锁定</p><p>默认值：false</p>
+                     * @return RecycleLockEnabled <p>回收站内是否锁定</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetRecycleLockEnabled() const;
+
+                    /**
+                     * 设置<p>回收站内是否锁定</p><p>默认值：false</p>
+                     * @param _recycleLockEnabled <p>回收站内是否锁定</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetRecycleLockEnabled(const bool& _recycleLockEnabled);
+
+                    /**
+                     * 判断参数 RecycleLockEnabled 是否已赋值
+                     * @return RecycleLockEnabled 是否已赋值
+                     * 
+                     */
+                    bool RecycleLockEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>
+                     * @return MayDestroyPoint <p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>
+                     * 
+                     */
+                    std::string GetMayDestroyPoint() const;
+
+                    /**
+                     * 设置<p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>
+                     * @param _mayDestroyPoint <p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>
+                     * 
+                     */
+                    void SetMayDestroyPoint(const std::string& _mayDestroyPoint);
+
+                    /**
+                     * 判断参数 MayDestroyPoint 是否已赋值
+                     * @return MayDestroyPoint 是否已赋值
+                     * 
+                     */
+                    bool MayDestroyPointHasBeenSet() const;
+
+                    /**
+                     * 获取<p>延迟销毁的时间</p><p>单位：天</p>
+                     * @return DelayDestroyInterval <p>延迟销毁的时间</p><p>单位：天</p>
+                     * 
+                     */
+                    int64_t GetDelayDestroyInterval() const;
+
+                    /**
+                     * 设置<p>延迟销毁的时间</p><p>单位：天</p>
+                     * @param _delayDestroyInterval <p>延迟销毁的时间</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetDelayDestroyInterval(const int64_t& _delayDestroyInterval);
+
+                    /**
+                     * 判断参数 DelayDestroyInterval 是否已赋值
+                     * @return DelayDestroyInterval 是否已赋值
+                     * 
+                     */
+                    bool DelayDestroyIntervalHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 用户UIN
+                     * <p>用户UIN</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 实例所属VPC的UID
+                     * <p>实例所属VPC的UID</p>
                      */
                     std::string m_vpcUid;
                     bool m_vpcUidHasBeenSet;
 
                     /**
-                     * 实例所属子网的UID
+                     * <p>实例所属子网的UID</p>
                      */
                     std::string m_subnetUid;
                     bool m_subnetUidHasBeenSet;
 
                     /**
-                     * 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
+                     * <p>实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 自动续费标识。取值范围：
-RENEW_FLAG_AUTO：自动续费  
-RENEW_FLAG_MANUAL：不自动续费
-默认取值：
-RENEW_FLAG_DEFAULT：不自动续费
-若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * <p>自动续费标识。取值范围：<br>RENEW_FLAG_AUTO：自动续费<br>RENEW_FLAG_MANUAL：不自动续费<br>默认取值：<br>RENEW_FLAG_DEFAULT：不自动续费<br>若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。</p>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
+                     * <p>实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。</p>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 包年包月购买时长,单位:月
+                     * <p>包年包月购买时长,单位:月</p>
                      */
                     uint64_t m_chargePeriod;
                     bool m_chargePeriodHasBeenSet;
 
                     /**
-                     * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 节点个数
+                     * <p>节点个数</p>
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 节点CPU核数
+                     * <p>节点CPU核数</p>
                      */
                     uint64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
-                     * 节点内存大小，单位GB
+                     * <p>节点内存大小，单位GB</p>
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 节点磁盘类型
+                     * <p>节点磁盘类型</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 节点磁盘大小，单位GB
+                     * <p>节点磁盘大小，单位GB</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * ES域名
+                     * <p>ES域名</p>
                      */
                     std::string m_esDomain;
                     bool m_esDomainHasBeenSet;
 
                     /**
-                     * ES VIP
+                     * <p>ES VIP</p>
                      */
                     std::string m_esVip;
                     bool m_esVipHasBeenSet;
 
                     /**
-                     * ES端口
+                     * <p>ES端口</p>
                      */
                     uint64_t m_esPort;
                     bool m_esPortHasBeenSet;
 
                     /**
-                     * Kibana访问url
+                     * <p>Kibana访问url</p>
                      */
                     std::string m_kibanaUrl;
                     bool m_kibanaUrlHasBeenSet;
 
                     /**
-                     * ES版本号
+                     * <p>ES版本号</p>
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;
 
                     /**
-                     * ES配置项
+                     * <p>ES配置项</p>
                      */
                     std::string m_esConfig;
                     bool m_esConfigHasBeenSet;
 
                     /**
-                     * Kibana访问控制配置
+                     * <p>Kibana访问控制配置</p>
                      */
                     EsAcl m_esAcl;
                     bool m_esAclHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * <p>实例创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例最后修改操作时间
+                     * <p>实例最后修改操作时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 实例到期时间
+                     * <p>实例到期时间</p>
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 实例类型（实例类型标识，当前只有1,2两种）
+                     * <p>实例类型（实例类型标识，当前只有1,2两种）</p>
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * Ik分词器配置
+                     * <p>Ik分词器配置</p>
                      */
                     EsDictionaryInfo m_ikConfig;
                     bool m_ikConfigHasBeenSet;
 
                     /**
-                     * 专用主节点配置
+                     * <p>专用主节点配置</p>
                      */
                     MasterNodeInfo m_masterNodeInfo;
                     bool m_masterNodeInfoHasBeenSet;
 
                     /**
-                     * cos自动备份配置
+                     * <p>cos自动备份配置</p>
                      */
                     CosBackup m_cosBackup;
                     bool m_cosBackupHasBeenSet;
 
                     /**
-                     * 是否允许cos自动备份
+                     * <p>是否允许cos自动备份</p>
                      */
                     bool m_allowCosBackup;
                     bool m_allowCosBackupHasBeenSet;
 
                     /**
-                     * 实例拥有的标签列表
+                     * <p>实例拥有的标签列表</p>
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>
+                     * <p>是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableHotWarmMode;
                     bool m_enableHotWarmModeHasBeenSet;
 
                     /**
-                     * 温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warmNodeType;
                     bool m_warmNodeTypeHasBeenSet;
 
                     /**
-                     * 温节点个数
+                     * <p>温节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmNodeNum;
                     bool m_warmNodeNumHasBeenSet;
 
                     /**
-                     * 温节点CPU核数
+                     * <p>温节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmCpuNum;
                     bool m_warmCpuNumHasBeenSet;
 
                     /**
-                     * 温节点内存内存大小，单位GB
+                     * <p>温节点内存内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmMemSize;
                     bool m_warmMemSizeHasBeenSet;
 
                     /**
-                     * 温节点磁盘类型
+                     * <p>温节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warmDiskType;
                     bool m_warmDiskTypeHasBeenSet;
 
                     /**
-                     * 温节点磁盘大小，单位GB
+                     * <p>温节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_warmDiskSize;
                     bool m_warmDiskSizeHasBeenSet;
 
                     /**
-                     * 集群节点信息列表
+                     * <p>集群节点信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodeInfoList;
                     bool m_nodeInfoListHasBeenSet;
 
                     /**
-                     * Es公网地址
+                     * <p>Es公网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_esPublicUrl;
                     bool m_esPublicUrlHasBeenSet;
 
                     /**
-                     * 多可用区网络信息
+                     * <p>多可用区网络信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZoneDetail> m_multiZoneInfo;
                     bool m_multiZoneInfoHasBeenSet;
 
                     /**
-                     * 部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>
+                     * <p>部署模式<li>0：单可用区</li><li>1：多可用区，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * <p>ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccess;
                     bool m_publicAccessHasBeenSet;
 
                     /**
-                     * ES公网访问控制配置
+                     * <p>ES公网访问控制配置</p>
                      */
                     EsAcl m_esPublicAcl;
                     bool m_esPublicAclHasBeenSet;
 
                     /**
-                     * Kibana内网地址
+                     * <p>Kibana内网地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPrivateUrl;
                     bool m_kibanaPrivateUrlHasBeenSet;
 
                     /**
-                     * Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * <p>Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPublicAccess;
                     bool m_kibanaPublicAccessHasBeenSet;
 
                     /**
-                     * Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * <p>Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPrivateAccess;
                     bool m_kibanaPrivateAccessHasBeenSet;
 
                     /**
-                     * 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_securityType;
                     bool m_securityTypeHasBeenSet;
 
                     /**
-                     * 场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景
+                     * <p>场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
 
                     /**
-                     * Kibana配置项
+                     * <p>Kibana配置项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaConfig;
                     bool m_kibanaConfigHasBeenSet;
 
                     /**
-                     * Kibana节点信息
+                     * <p>Kibana节点信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KibanaNodeInfo m_kibanaNodeInfo;
                     bool m_kibanaNodeInfoHasBeenSet;
 
                     /**
-                     * 可视化节点配置
+                     * <p>可视化节点配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebNodeTypeInfo m_webNodeTypeInfo;
                     bool m_webNodeTypeInfoHasBeenSet;
 
                     /**
-                     * JDK类型，oracle或kona
+                     * <p>JDK类型，oracle或kona</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jdk;
                     bool m_jdkHasBeenSet;
 
                     /**
-                     * 集群网络通讯协议
+                     * <p>集群网络通讯协议</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 安全组id
+                     * <p>安全组id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
 
                     /**
-                     * 冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coldNodeType;
                     bool m_coldNodeTypeHasBeenSet;
 
                     /**
-                     * 冷节点个数
+                     * <p>冷节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coldNodeNum;
                     bool m_coldNodeNumHasBeenSet;
 
                     /**
-                     * 冷节点CPU核数
+                     * <p>冷节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coldCpuNum;
                     bool m_coldCpuNumHasBeenSet;
 
                     /**
-                     * 冷节点内存大小，单位GB
+                     * <p>冷节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coldMemSize;
                     bool m_coldMemSizeHasBeenSet;
 
                     /**
-                     * 冷节点磁盘类型
+                     * <p>冷节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coldDiskType;
                     bool m_coldDiskTypeHasBeenSet;
 
                     /**
-                     * 冷节点磁盘大小，单位GB
+                     * <p>冷节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coldDiskSize;
                     bool m_coldDiskSizeHasBeenSet;
 
                     /**
-                     * 冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_frozenNodeType;
                     bool m_frozenNodeTypeHasBeenSet;
 
                     /**
-                     * 冻节点个数
+                     * <p>冻节点个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_frozenNodeNum;
                     bool m_frozenNodeNumHasBeenSet;
 
                     /**
-                     * 冻节点CPU核数
+                     * <p>冻节点CPU核数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_frozenCpuNum;
                     bool m_frozenCpuNumHasBeenSet;
 
                     /**
-                     * 冻节点内存大小，单位GB
+                     * <p>冻节点内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_frozenMemSize;
                     bool m_frozenMemSizeHasBeenSet;
 
                     /**
-                     * 冻节点磁盘类型
+                     * <p>冻节点磁盘类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_frozenDiskType;
                     bool m_frozenDiskTypeHasBeenSet;
 
                     /**
-                     * 冻节点磁盘大小，单位GB
+                     * <p>冻节点磁盘大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_frozenDiskSize;
                     bool m_frozenDiskSizeHasBeenSet;
 
                     /**
-                     * 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+                     * <p>集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_healthStatus;
                     bool m_healthStatusHasBeenSet;
 
                     /**
-                     * https集群内网url
+                     * <p>https集群内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_esPrivateUrl;
                     bool m_esPrivateUrlHasBeenSet;
 
                     /**
-                     * https集群内网域名
+                     * <p>https集群内网域名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_esPrivateDomain;
                     bool m_esPrivateDomainHasBeenSet;
 
                     /**
-                     * 集群的配置组信息
+                     * <p>集群的配置组信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EsConfigSetInfo> m_esConfigSets;
                     bool m_esConfigSetsHasBeenSet;
 
                     /**
-                     * 集群可维护时间段
+                     * <p>集群可维护时间段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OperationDuration m_operationDuration;
                     bool m_operationDurationHasBeenSet;
 
                     /**
-                     * web节点列表
+                     * <p>web节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OptionalWebServiceInfo> m_optionalWebServiceInfos;
                     bool m_optionalWebServiceInfosHasBeenSet;
 
                     /**
-                     * 自治索引开关
+                     * <p>自治索引开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoIndexEnabled;
                     bool m_autoIndexEnabledHasBeenSet;
 
                     /**
-                     * 是否支持存储计算分离
+                     * <p>是否支持存储计算分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableHybridStorage;
                     bool m_enableHybridStorageHasBeenSet;
 
                     /**
-                     * 流程进度
+                     * <p>流程进度</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_processPercent;
                     bool m_processPercentHasBeenSet;
 
                     /**
-                     * Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
+                     * <p>Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li></p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaAlteringPublicAccess;
                     bool m_kibanaAlteringPublicAccessHasBeenSet;
 
                     /**
-                     * 本月是否有内核可以更新：false-无，true-有
+                     * <p>本月是否有内核可以更新：false-无，true-有</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasKernelUpgrade;
                     bool m_hasKernelUpgradeHasBeenSet;
 
                     /**
-                     * cdcId，使用cdc子网时传递
+                     * <p>cdcId，使用cdc子网时传递</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * kibana内网vip
+                     * <p>kibana内网vip</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPrivateVip;
                     bool m_kibanaPrivateVipHasBeenSet;
 
                     /**
-                     * 自定义kibana内网url
+                     * <p>自定义kibana内网url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customKibanaPrivateUrl;
                     bool m_customKibanaPrivateUrlHasBeenSet;
 
                     /**
-                     * 节点出站访问详细信息
+                     * <p>节点出站访问详细信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OutboundPublicAcl> m_outboundPublicAcls;
                     bool m_outboundPublicAclsHasBeenSet;
 
                     /**
-                     * 网络连接方案
+                     * <p>网络连接方案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netConnectScheme;
                     bool m_netConnectSchemeHasBeenSet;
 
                     /**
-                     * 置放群组相关参数
+                     * <p>置放群组相关参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_disasterRecoverGroupAffinity;
                     bool m_disasterRecoverGroupAffinityHasBeenSet;
 
                     /**
-                     * 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
 
                     /**
-                     * 存算分离cos用量，单位M
+                     * <p>存算分离cos用量，单位M</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cosBucketStorageSize;
                     bool m_cosBucketStorageSizeHasBeenSet;
 
                     /**
-                     * 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readWriteMode;
                     bool m_readWriteModeHasBeenSet;
 
                     /**
-                     * 是否有置放群组异步调度任务
+                     * <p>是否有置放群组异步调度任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableScheduleRecoverGroup;
                     bool m_enableScheduleRecoverGroupHasBeenSet;
 
                     /**
-                     * 异步调度任务的时间
+                     * <p>异步调度任务的时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
 
                     /**
-                     * 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enableDestroyProtection;
                     bool m_enableDestroyProtectionHasBeenSet;
 
                     /**
-                     * kibana内网访问地址
+                     * <p>kibana内网访问地址</p>
                      */
                     std::string m_showKibanaIpPort;
                     bool m_showKibanaIpPortHasBeenSet;
 
                     /**
-                     * 是否为CDZLite可用区
+                     * <p>是否为CDZLite可用区</p>
                      */
                     bool m_isCdzLite;
                     bool m_isCdzLiteHasBeenSet;
 
                     /**
-                     * 集群内网tcp地址
+                     * <p>集群内网tcp地址</p>
                      */
                     std::string m_esPrivateTcpUrl;
                     bool m_esPrivateTcpUrlHasBeenSet;
+
+                    /**
+                     * <p>是否在回收站内</p><p>默认值：false</p>
+                     */
+                    bool m_isInRecycleBin;
+                    bool m_isInRecycleBinHasBeenSet;
+
+                    /**
+                     * <p>回收站内是否锁定</p><p>默认值：false</p>
+                     */
+                    bool m_recycleLockEnabled;
+                    bool m_recycleLockEnabledHasBeenSet;
+
+                    /**
+                     * <p>预计销毁的时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>
+                     */
+                    std::string m_mayDestroyPoint;
+                    bool m_mayDestroyPointHasBeenSet;
+
+                    /**
+                     * <p>延迟销毁的时间</p><p>单位：天</p>
+                     */
+                    int64_t m_delayDestroyInterval;
+                    bool m_delayDestroyIntervalHasBeenSet;
 
                 };
             }

@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool VoiceProfileHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出相关参数</p><p>可以指定输出形式等</p>
-                     * @return Output <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * 获取<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
+                     * @return Output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
                      * 
                      */
                     SyncDubbingOutputOption GetOutput() const;
 
                     /**
-                     * 设置<p>输出相关参数</p><p>可以指定输出形式等</p>
-                     * @param _output <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * 设置<p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
+                     * @param _output <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
                      * 
                      */
                     void SetOutput(const SyncDubbingOutputOption& _output);
@@ -299,7 +299,7 @@ namespace TencentCloud
                     bool m_voiceProfileHasBeenSet;
 
                     /**
-                     * <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * <p>输出相关参数</p><p>可以指定输出形式等。默认输出音频base64。</p>
                      */
                     SyncDubbingOutputOption m_output;
                     bool m_outputHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启cos自动备份
-                     * @return IsAutoBackup 是否开启cos自动备份
+                     * 获取<p>是否开启cos自动备份</p>
+                     * @return IsAutoBackup <p>是否开启cos自动备份</p>
                      * 
                      */
                     bool GetIsAutoBackup() const;
 
                     /**
-                     * 设置是否开启cos自动备份
-                     * @param _isAutoBackup 是否开启cos自动备份
+                     * 设置<p>是否开启cos自动备份</p>
+                     * @param _isAutoBackup <p>是否开启cos自动备份</p>
                      * 
                      */
                     void SetIsAutoBackup(const bool& _isAutoBackup);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IsAutoBackupHasBeenSet() const;
 
                     /**
-                     * 获取自动备份执行时间（精确到小时）, e.g. "22:00"
-                     * @return BackupTime 自动备份执行时间（精确到小时）, e.g. "22:00"
+                     * 获取<p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>
+                     * @return BackupTime <p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>
                      * 
                      */
                     std::string GetBackupTime() const;
 
                     /**
-                     * 设置自动备份执行时间（精确到小时）, e.g. "22:00"
-                     * @param _backupTime 自动备份执行时间（精确到小时）, e.g. "22:00"
+                     * 设置<p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>
+                     * @param _backupTime <p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>
                      * 
                      */
                     void SetBackupTime(const std::string& _backupTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BackupTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份快照前缀
-                     * @return SnapshotName 备份快照前缀
+                     * 获取<p>备份快照前缀</p>
+                     * @return SnapshotName <p>备份快照前缀</p>
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置备份快照前缀
-                     * @param _snapshotName 备份快照前缀
+                     * 设置<p>备份快照前缀</p>
+                     * @param _snapshotName <p>备份快照前缀</p>
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取0 腾讯云仓库; 1 客户仓库
-                     * @return EsRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * 获取<p>0 腾讯云仓库; 1 客户仓库</p>
+                     * @return EsRepositoryType <p>0 腾讯云仓库; 1 客户仓库</p>
                      * 
                      */
                     uint64_t GetEsRepositoryType() const;
 
                     /**
-                     * 设置0 腾讯云仓库; 1 客户仓库
-                     * @param _esRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * 设置<p>0 腾讯云仓库; 1 客户仓库</p>
+                     * @param _esRepositoryType <p>0 腾讯云仓库; 1 客户仓库</p>
                      * 
                      */
                     void SetEsRepositoryType(const uint64_t& _esRepositoryType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EsRepositoryTypeHasBeenSet() const;
 
                     /**
-                     * 获取托管快照仓库名称
-                     * @return PaasEsRepository 托管快照仓库名称
+                     * 获取<p>托管快照仓库名称</p>
+                     * @return PaasEsRepository <p>托管快照仓库名称</p>
                      * 
                      */
                     std::string GetPaasEsRepository() const;
 
                     /**
-                     * 设置托管快照仓库名称
-                     * @param _paasEsRepository 托管快照仓库名称
+                     * 设置<p>托管快照仓库名称</p>
+                     * @param _paasEsRepository <p>托管快照仓库名称</p>
                      * 
                      */
                     void SetPaasEsRepository(const std::string& _paasEsRepository);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool PaasEsRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取客户快照仓库名称
-                     * @return UserEsRepository 客户快照仓库名称
+                     * 获取<p>客户快照仓库名称</p>
+                     * @return UserEsRepository <p>客户快照仓库名称</p>
                      * 
                      */
                     std::string GetUserEsRepository() const;
 
                     /**
-                     * 设置客户快照仓库名称
-                     * @param _userEsRepository 客户快照仓库名称
+                     * 设置<p>客户快照仓库名称</p>
+                     * @param _userEsRepository <p>客户快照仓库名称</p>
                      * 
                      */
                     void SetUserEsRepository(const std::string& _userEsRepository);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UserEsRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取cos存储文件夹目录
-                     * @return CosBasePath cos存储文件夹目录
+                     * 获取<p>cos存储文件夹目录</p>
+                     * @return CosBasePath <p>cos存储文件夹目录</p>
                      * 
                      */
                     std::string GetCosBasePath() const;
 
                     /**
-                     * 设置cos存储文件夹目录
-                     * @param _cosBasePath cos存储文件夹目录
+                     * 设置<p>cos存储文件夹目录</p>
+                     * @param _cosBasePath <p>cos存储文件夹目录</p>
                      * 
                      */
                     void SetCosBasePath(const std::string& _cosBasePath);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CosBasePathHasBeenSet() const;
 
                     /**
-                     * 获取快照存储周期 单位天
-                     * @return StorageDuration 快照存储周期 单位天
+                     * 获取<p>快照存储周期 单位天</p>
+                     * @return StorageDuration <p>快照存储周期 单位天</p>
                      * 
                      */
                     uint64_t GetStorageDuration() const;
 
                     /**
-                     * 设置快照存储周期 单位天
-                     * @param _storageDuration 快照存储周期 单位天
+                     * 设置<p>快照存储周期 单位天</p>
+                     * @param _storageDuration <p>快照存储周期 单位天</p>
                      * 
                      */
                     void SetStorageDuration(const uint64_t& _storageDuration);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StorageDurationHasBeenSet() const;
 
                     /**
-                     * 获取自动备份频率单位小时
-                     * @return AutoBackupInterval 自动备份频率单位小时
+                     * 获取<p>自动备份频率单位小时</p>
+                     * @return AutoBackupInterval <p>自动备份频率单位小时</p>
                      * 
                      */
                     uint64_t GetAutoBackupInterval() const;
 
                     /**
-                     * 设置自动备份频率单位小时
-                     * @param _autoBackupInterval 自动备份频率单位小时
+                     * 设置<p>自动备份频率单位小时</p>
+                     * @param _autoBackupInterval <p>自动备份频率单位小时</p>
                      * 
                      */
                     void SetAutoBackupInterval(const uint64_t& _autoBackupInterval);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool AutoBackupIntervalHasBeenSet() const;
 
                     /**
-                     * 获取备份锁定 0 不锁定; 1 锁定
-                     * @return CosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 获取<p>备份锁定 0 不锁定; 1 锁定</p>
+                     * @return CosRetention <p>备份锁定 0 不锁定; 1 锁定</p>
                      * 
                      */
                     uint64_t GetCosRetention() const;
 
                     /**
-                     * 设置备份锁定 0 不锁定; 1 锁定
-                     * @param _cosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 设置<p>备份锁定 0 不锁定; 1 锁定</p>
+                     * @param _cosRetention <p>备份锁定 0 不锁定; 1 锁定</p>
                      * 
                      */
                     void SetCosRetention(const uint64_t& _cosRetention);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CosRetentionHasBeenSet() const;
 
                     /**
-                     * 获取锁定截止日期 2022-12-10T08:34:48.000Z
-                     * @return RetainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 获取<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
+                     * @return RetainUntilDate <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
                      * 
                      */
                     std::string GetRetainUntilDate() const;
 
                     /**
-                     * 设置锁定截止日期 2022-12-10T08:34:48.000Z
-                     * @param _retainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 设置<p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
+                     * @param _retainUntilDate <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
                      * 
                      */
                     void SetRetainUntilDate(const std::string& _retainUntilDate);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool RetainUntilDateHasBeenSet() const;
 
                     /**
-                     * 获取锁定宽限期
-                     * @return RetentionGraceTime 锁定宽限期
+                     * 获取<p>锁定宽限期</p>
+                     * @return RetentionGraceTime <p>锁定宽限期</p>
                      * 
                      */
                     uint64_t GetRetentionGraceTime() const;
 
                     /**
-                     * 设置锁定宽限期
-                     * @param _retentionGraceTime 锁定宽限期
+                     * 设置<p>锁定宽限期</p>
+                     * @param _retentionGraceTime <p>锁定宽限期</p>
                      * 
                      */
                     void SetRetentionGraceTime(const uint64_t& _retentionGraceTime);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool RetentionGraceTimeHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份 0 不跨地域; 1 跨地域
-                     * @return RemoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 获取<p>跨地域备份 0 不跨地域; 1 跨地域</p>
+                     * @return RemoteCos <p>跨地域备份 0 不跨地域; 1 跨地域</p>
                      * 
                      */
                     uint64_t GetRemoteCos() const;
 
                     /**
-                     * 设置跨地域备份 0 不跨地域; 1 跨地域
-                     * @param _remoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 设置<p>跨地域备份 0 不跨地域; 1 跨地域</p>
+                     * @param _remoteCos <p>跨地域备份 0 不跨地域; 1 跨地域</p>
                      * 
                      */
                     void SetRemoteCos(const uint64_t& _remoteCos);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool RemoteCosHasBeenSet() const;
 
                     /**
-                     * 获取跨地域备份地域名称 ap-guangzhou
-                     * @return RemoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 获取<p>跨地域备份地域名称 ap-guangzhou</p>
+                     * @return RemoteCosRegion <p>跨地域备份地域名称 ap-guangzhou</p>
                      * 
                      */
                     std::string GetRemoteCosRegion() const;
 
                     /**
-                     * 设置跨地域备份地域名称 ap-guangzhou
-                     * @param _remoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 设置<p>跨地域备份地域名称 ap-guangzhou</p>
+                     * @param _remoteCosRegion <p>跨地域备份地域名称 ap-guangzhou</p>
                      * 
                      */
                     void SetRemoteCosRegion(const std::string& _remoteCosRegion);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool RemoteCosRegionHasBeenSet() const;
 
                     /**
-                     * 获取策略名称
-                     * @return StrategyName 策略名称
+                     * 获取<p>策略名称</p>
+                     * @return StrategyName <p>策略名称</p>
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
-                     * 设置策略名称
-                     * @param _strategyName 策略名称
+                     * 设置<p>策略名称</p>
+                     * @param _strategyName <p>策略名称</p>
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool StrategyNameHasBeenSet() const;
 
                     /**
-                     * 获取备份索引列表，如果不填表示备份所有索引
-                     * @return Indices 备份索引列表，如果不填表示备份所有索引
+                     * 获取<p>备份索引列表，如果不填表示备份所有索引</p>
+                     * @return Indices <p>备份索引列表，如果不填表示备份所有索引</p>
                      * 
                      */
                     std::string GetIndices() const;
 
                     /**
-                     * 设置备份索引列表，如果不填表示备份所有索引
-                     * @param _indices 备份索引列表，如果不填表示备份所有索引
+                     * 设置<p>备份索引列表，如果不填表示备份所有索引</p>
+                     * @param _indices <p>备份索引列表，如果不填表示备份所有索引</p>
                      * 
                      */
                     void SetIndices(const std::string& _indices);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool IndicesHasBeenSet() const;
 
                     /**
-                     * 获取cos多AZ备份 0 单AZ; 1 多AZ
-                     * @return MultiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * 获取<p>cos多AZ备份 0 单AZ; 1 多AZ</p>
+                     * @return MultiAz <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
                      * 
                      */
                     uint64_t GetMultiAz() const;
 
                     /**
-                     * 设置cos多AZ备份 0 单AZ; 1 多AZ
-                     * @param _multiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * 设置<p>cos多AZ备份 0 单AZ; 1 多AZ</p>
+                     * @param _multiAz <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
                      * 
                      */
                     void SetMultiAz(const uint64_t& _multiAz);
@@ -404,15 +404,57 @@ namespace TencentCloud
                     bool MultiAzHasBeenSet() const;
 
                     /**
-                     * 获取策略创建时间
-                     * @return CreateTime 策略创建时间
+                     * 获取<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+                     * @return MaxSnapshotPerSec <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+                     * 
+                     */
+                    std::string GetMaxSnapshotPerSec() const;
+
+                    /**
+                     * 设置<p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+                     * @param _maxSnapshotPerSec <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+                     * 
+                     */
+                    void SetMaxSnapshotPerSec(const std::string& _maxSnapshotPerSec);
+
+                    /**
+                     * 判断参数 MaxSnapshotPerSec 是否已赋值
+                     * @return MaxSnapshotPerSec 是否已赋值
+                     * 
+                     */
+                    bool MaxSnapshotPerSecHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>
+                     * @return MaxRestorePerSec <p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>
+                     * 
+                     */
+                    std::string GetMaxRestorePerSec() const;
+
+                    /**
+                     * 设置<p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>
+                     * @param _maxRestorePerSec <p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>
+                     * 
+                     */
+                    void SetMaxRestorePerSec(const std::string& _maxRestorePerSec);
+
+                    /**
+                     * 判断参数 MaxRestorePerSec 是否已赋值
+                     * @return MaxRestorePerSec 是否已赋值
+                     * 
+                     */
+                    bool MaxRestorePerSecHasBeenSet() const;
+
+                    /**
+                     * 获取<p>策略创建时间</p>
+                     * @return CreateTime <p>策略创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置策略创建时间
-                     * @param _createTime 策略创建时间
+                     * 设置<p>策略创建时间</p>
+                     * @param _createTime <p>策略创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -424,115 +466,154 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否开启cos自动备份
+                     * <p>是否开启cos自动备份</p>
                      */
                     bool m_isAutoBackup;
                     bool m_isAutoBackupHasBeenSet;
 
                     /**
-                     * 自动备份执行时间（精确到小时）, e.g. "22:00"
+                     * <p>自动备份执行时间（精确到小时）, e.g. &quot;22:00&quot;</p>
                      */
                     std::string m_backupTime;
                     bool m_backupTimeHasBeenSet;
 
                     /**
-                     * 备份快照前缀
+                     * <p>备份快照前缀</p>
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 0 腾讯云仓库; 1 客户仓库
+                     * <p>0 腾讯云仓库; 1 客户仓库</p>
                      */
                     uint64_t m_esRepositoryType;
                     bool m_esRepositoryTypeHasBeenSet;
 
                     /**
-                     * 托管快照仓库名称
+                     * <p>托管快照仓库名称</p>
                      */
                     std::string m_paasEsRepository;
                     bool m_paasEsRepositoryHasBeenSet;
 
                     /**
-                     * 客户快照仓库名称
+                     * <p>客户快照仓库名称</p>
                      */
                     std::string m_userEsRepository;
                     bool m_userEsRepositoryHasBeenSet;
 
                     /**
-                     * cos存储文件夹目录
+                     * <p>cos存储文件夹目录</p>
                      */
                     std::string m_cosBasePath;
                     bool m_cosBasePathHasBeenSet;
 
                     /**
-                     * 快照存储周期 单位天
+                     * <p>快照存储周期 单位天</p>
                      */
                     uint64_t m_storageDuration;
                     bool m_storageDurationHasBeenSet;
 
                     /**
-                     * 自动备份频率单位小时
+                     * <p>自动备份频率单位小时</p>
                      */
                     uint64_t m_autoBackupInterval;
                     bool m_autoBackupIntervalHasBeenSet;
 
                     /**
-                     * 备份锁定 0 不锁定; 1 锁定
+                     * <p>备份锁定 0 不锁定; 1 锁定</p>
                      */
                     uint64_t m_cosRetention;
                     bool m_cosRetentionHasBeenSet;
 
                     /**
-                     * 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * <p>锁定截止日期 2022-12-10T08:34:48.000Z</p>
                      */
                     std::string m_retainUntilDate;
                     bool m_retainUntilDateHasBeenSet;
 
                     /**
-                     * 锁定宽限期
+                     * <p>锁定宽限期</p>
                      */
                     uint64_t m_retentionGraceTime;
                     bool m_retentionGraceTimeHasBeenSet;
 
                     /**
-                     * 跨地域备份 0 不跨地域; 1 跨地域
+                     * <p>跨地域备份 0 不跨地域; 1 跨地域</p>
                      */
                     uint64_t m_remoteCos;
                     bool m_remoteCosHasBeenSet;
 
                     /**
-                     * 跨地域备份地域名称 ap-guangzhou
+                     * <p>跨地域备份地域名称 ap-guangzhou</p>
                      */
                     std::string m_remoteCosRegion;
                     bool m_remoteCosRegionHasBeenSet;
 
                     /**
-                     * 策略名称
+                     * <p>策略名称</p>
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
-                     * 备份索引列表，如果不填表示备份所有索引
+                     * <p>备份索引列表，如果不填表示备份所有索引</p>
                      */
                     std::string m_indices;
                     bool m_indicesHasBeenSet;
 
                     /**
-                     * cos多AZ备份 0 单AZ; 1 多AZ
+                     * <p>cos多AZ备份 0 单AZ; 1 多AZ</p>
                      */
                     uint64_t m_multiAz;
                     bool m_multiAzHasBeenSet;
 
                     /**
-                     * 策略创建时间
+                     * <p>每节点写入仓库的最大速度 max_snapshot_bytes_per_sec, 默认40m</p>
+                     */
+                    std::string m_maxSnapshotPerSec;
+                    bool m_maxSnapshotPerSecHasBeenSet;
+
+                    /**
+                     * <p>每节点读取仓库的最大速度 max_restore_bytes_per_sec, 710前默认40m, 710及以后默认无限制</p>
+                     */
+                    std::string m_maxRestorePerSec;
+                    bool m_maxRestorePerSecHasBeenSet;
+
+                    /**
+                     * <p>策略创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

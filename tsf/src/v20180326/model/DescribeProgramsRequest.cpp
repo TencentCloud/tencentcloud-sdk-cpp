@@ -25,7 +25,8 @@ using namespace std;
 DescribeProgramsRequest::DescribeProgramsRequest() :
     m_searchWordHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_searchFiltersHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,15 @@ string DescribeProgramsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_searchFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchFilters.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +124,22 @@ void DescribeProgramsRequest::SetOffset(const int64_t& _offset)
 bool DescribeProgramsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+SearchFiltersProgram DescribeProgramsRequest::GetSearchFilters() const
+{
+    return m_searchFilters;
+}
+
+void DescribeProgramsRequest::SetSearchFilters(const SearchFiltersProgram& _searchFilters)
+{
+    m_searchFilters = _searchFilters;
+    m_searchFiltersHasBeenSet = true;
+}
+
+bool DescribeProgramsRequest::SearchFiltersHasBeenSet() const
+{
+    return m_searchFiltersHasBeenSet;
 }
 
 

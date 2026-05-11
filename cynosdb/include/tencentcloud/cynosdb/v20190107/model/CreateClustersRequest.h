@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取所属VPC网络ID
-                     * @return VpcId 所属VPC网络ID
+                     * 获取<p>所属VPC网络ID</p>
+                     * @return VpcId <p>所属VPC网络ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属VPC网络ID
-                     * @param _vpcId 所属VPC网络ID
+                     * 设置<p>所属VPC网络ID</p>
+                     * @param _vpcId <p>所属VPC网络ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取所属子网ID
-                     * @return SubnetId 所属子网ID
+                     * 获取<p>所属子网ID</p>
+                     * @return SubnetId <p>所属子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置所属子网ID
-                     * @param _subnetId 所属子网ID
+                     * 设置<p>所属子网ID</p>
+                     * @param _subnetId <p>所属子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @return DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 获取<p>数据库类型</p><p>枚举值：</p><ul><li>MYSQL： MYSQL</li></ul>
+                     * @return DbType <p>数据库类型</p><p>枚举值：</p><ul><li>MYSQL： MYSQL</li></ul>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @param _dbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 设置<p>数据库类型</p><p>枚举值：</p><ul><li>MYSQL： MYSQL</li></ul>
+                     * @param _dbType <p>数据库类型</p><p>枚举值：</p><ul><li>MYSQL： MYSQL</li></ul>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -135,19 +131,15 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库版本，取值范围: 
-<li> MYSQL可选值：5.7，8.0 </li>
-                     * @return DbVersion 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7，8.0 </li>
+                     * 获取<p>数据库版本</p><p>枚举值：</p><ul><li>5.7： MySQL5.7版本</li><li>8.0： MySQL8.0版本</li></ul>
+                     * @return DbVersion <p>数据库版本</p><p>枚举值：</p><ul><li>5.7： MySQL5.7版本</li><li>8.0： MySQL8.0版本</li></ul>
                      * 
                      */
                     std::string GetDbVersion() const;
 
                     /**
-                     * 设置数据库版本，取值范围: 
-<li> MYSQL可选值：5.7，8.0 </li>
-                     * @param _dbVersion 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7，8.0 </li>
+                     * 设置<p>数据库版本</p><p>枚举值：</p><ul><li>5.7： MySQL5.7版本</li><li>8.0： MySQL8.0版本</li></ul>
+                     * @param _dbVersion <p>数据库版本</p><p>枚举值：</p><ul><li>5.7： MySQL5.7版本</li><li>8.0： MySQL8.0版本</li></ul>
                      * 
                      */
                     void SetDbVersion(const std::string& _dbVersion);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool DbVersionHasBeenSet() const;
 
                     /**
-                     * 获取所属项目ID
-                     * @return ProjectId 所属项目ID
+                     * 获取<p>所属项目ID</p>
+                     * @return ProjectId <p>所属项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置所属项目ID
-                     * @param _projectId 所属项目ID
+                     * 设置<p>所属项目ID</p>
+                     * @param _projectId <p>所属项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -181,19 +173,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为NORMAL或不填时必选
-普通实例Cpu核数
-                     * @return Cpu 当DbMode为NORMAL或不填时必选
-普通实例Cpu核数
+                     * 获取<p>当DbMode为NORMAL或不填时必选<br>普通实例Cpu核数</p>
+                     * @return Cpu <p>当DbMode为NORMAL或不填时必选<br>普通实例Cpu核数</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置当DbMode为NORMAL或不填时必选
-普通实例Cpu核数
-                     * @param _cpu 当DbMode为NORMAL或不填时必选
-普通实例Cpu核数
+                     * 设置<p>当DbMode为NORMAL或不填时必选<br>普通实例Cpu核数</p>
+                     * @param _cpu <p>当DbMode为NORMAL或不填时必选<br>普通实例Cpu核数</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -206,19 +194,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为NORMAL或不填时必选
-普通实例内存,单位GB
-                     * @return Memory 当DbMode为NORMAL或不填时必选
-普通实例内存,单位GB
+                     * 获取<p>当DbMode为NORMAL或不填时必选<br>普通实例内存,单位GB</p>
+                     * @return Memory <p>当DbMode为NORMAL或不填时必选<br>普通实例内存,单位GB</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置当DbMode为NORMAL或不填时必选
-普通实例内存,单位GB
-                     * @param _memory 当DbMode为NORMAL或不填时必选
-普通实例内存,单位GB
+                     * 设置<p>当DbMode为NORMAL或不填时必选<br>普通实例内存,单位GB</p>
+                     * @param _memory <p>当DbMode为NORMAL或不填时必选<br>普通实例内存,单位GB</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -231,15 +215,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
-                     * @return InstanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 获取<p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>
+                     * @return InstanceCount <p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
-                     * @param _instanceCount 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * 设置<p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>
+                     * @param _instanceCount <p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -252,19 +236,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取该参数无实际意义，已废弃。
-存储大小，单位GB。
-                     * @return Storage 该参数无实际意义，已废弃。
-存储大小，单位GB。
+                     * 获取<p>该参数无实际意义，已废弃。<br>存储大小，单位GB。</p>
+                     * @return Storage <p>该参数无实际意义，已废弃。<br>存储大小，单位GB。</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置该参数无实际意义，已废弃。
-存储大小，单位GB。
-                     * @param _storage 该参数无实际意义，已废弃。
-存储大小，单位GB。
+                     * 设置<p>该参数无实际意义，已废弃。<br>存储大小，单位GB。</p>
+                     * @param _storage <p>该参数无实际意义，已废弃。<br>存储大小，单位GB。</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -277,15 +257,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * @return ClusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * 获取<p>集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（&#39;-&#39;,&#39;_&#39;,&#39;.&#39;）</p>
+                     * @return ClusterName <p>集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（&#39;-&#39;,&#39;_&#39;,&#39;.&#39;）</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * @param _clusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * 设置<p>集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（&#39;-&#39;,&#39;_&#39;,&#39;.&#39;）</p>
+                     * @param _clusterName <p>集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（&#39;-&#39;,&#39;_&#39;,&#39;.&#39;）</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -298,15 +278,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
-                     * @return AdminPassword 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
+                     * 获取<p>账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/中的任意三种)</p>
+                     * @return AdminPassword <p>账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/中的任意三种)</p>
                      * 
                      */
                     std::string GetAdminPassword() const;
 
                     /**
-                     * 设置账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
-                     * @param _adminPassword 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
+                     * 设置<p>账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/中的任意三种)</p>
+                     * @param _adminPassword <p>账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/中的任意三种)</p>
                      * 
                      */
                     void SetAdminPassword(const std::string& _adminPassword);
@@ -319,15 +299,15 @@ namespace TencentCloud
                     bool AdminPasswordHasBeenSet() const;
 
                     /**
-                     * 获取端口，默认3306，取值范围[0, 65535)
-                     * @return Port 端口，默认3306，取值范围[0, 65535)
+                     * 获取<p>端口，默认3306，取值范围[0, 65535)</p>
+                     * @return Port <p>端口，默认3306，取值范围[0, 65535)</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口，默认3306，取值范围[0, 65535)
-                     * @param _port 端口，默认3306，取值范围[0, 65535)
+                     * 设置<p>端口，默认3306，取值范围[0, 65535)</p>
+                     * @param _port <p>端口，默认3306，取值范围[0, 65535)</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -340,23 +320,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，支持值为0和1，默认值为0。
-取值为0，表示按量计费。
-取值为1，表示包年包月。
-                     * @return PayMode 计费模式，支持值为0和1，默认值为0。
-取值为0，表示按量计费。
-取值为1，表示包年包月。
+                     * 获取<p>计费模式</p><p>枚举值：</p><ul><li>0： 表示按量计费</li><li>1： 表示包年包月</li></ul><p>默认值：0</p>
+                     * @return PayMode <p>计费模式</p><p>枚举值：</p><ul><li>0： 表示按量计费</li><li>1： 表示包年包月</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式，支持值为0和1，默认值为0。
-取值为0，表示按量计费。
-取值为1，表示包年包月。
-                     * @param _payMode 计费模式，支持值为0和1，默认值为0。
-取值为0，表示按量计费。
-取值为1，表示包年包月。
+                     * 设置<p>计费模式</p><p>枚举值：</p><ul><li>0： 表示按量计费</li><li>1： 表示包年包月</li></ul><p>默认值：0</p>
+                     * @param _payMode <p>计费模式</p><p>枚举值：</p><ul><li>0： 表示按量计费</li><li>1： 表示包年包月</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -369,15 +341,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取购买集群数，可选值范围[1,50]，默认为1
-                     * @return Count 购买集群数，可选值范围[1,50]，默认为1
+                     * 获取<p>购买集群数，可选值范围[1,50]，默认为1</p>
+                     * @return Count <p>购买集群数，可选值范围[1,50]，默认为1</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置购买集群数，可选值范围[1,50]，默认为1
-                     * @param _count 购买集群数，可选值范围[1,50]，默认为1
+                     * 设置<p>购买集群数，可选值范围[1,50]，默认为1</p>
+                     * @param _count <p>购买集群数，可选值范围[1,50]，默认为1</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -390,27 +362,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取回档类型：
-noneRollback：不回档；
-snapRollback，快照回档；
-timeRollback，时间点回档
-                     * @return RollbackStrategy 回档类型：
-noneRollback：不回档；
-snapRollback，快照回档；
-timeRollback，时间点回档
+                     * 获取<p>回档类型</p><p>枚举值：</p><ul><li>noneRollback： 不回档</li><li>snapRollback： 快照回档</li><li>timeRollback： 时间点回档</li></ul>
+                     * @return RollbackStrategy <p>回档类型</p><p>枚举值：</p><ul><li>noneRollback： 不回档</li><li>snapRollback： 快照回档</li><li>timeRollback： 时间点回档</li></ul>
                      * 
                      */
                     std::string GetRollbackStrategy() const;
 
                     /**
-                     * 设置回档类型：
-noneRollback：不回档；
-snapRollback，快照回档；
-timeRollback，时间点回档
-                     * @param _rollbackStrategy 回档类型：
-noneRollback：不回档；
-snapRollback，快照回档；
-timeRollback，时间点回档
+                     * 设置<p>回档类型</p><p>枚举值：</p><ul><li>noneRollback： 不回档</li><li>snapRollback： 快照回档</li><li>timeRollback： 时间点回档</li></ul>
+                     * @param _rollbackStrategy <p>回档类型</p><p>枚举值：</p><ul><li>noneRollback： 不回档</li><li>snapRollback： 快照回档</li><li>timeRollback： 时间点回档</li></ul>
                      * 
                      */
                     void SetRollbackStrategy(const std::string& _rollbackStrategy);
@@ -423,15 +383,15 @@ timeRollback，时间点回档
                     bool RollbackStrategyHasBeenSet() const;
 
                     /**
-                     * 获取快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
-                     * @return RollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 获取<p>快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效</p>
+                     * @return RollbackId <p>快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效</p>
                      * 
                      */
                     uint64_t GetRollbackId() const;
 
                     /**
-                     * 设置快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
-                     * @param _rollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 设置<p>快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效</p>
+                     * @param _rollbackId <p>快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效</p>
                      * 
                      */
                     void SetRollbackId(const uint64_t& _rollbackId);
@@ -444,15 +404,15 @@ timeRollback，时间点回档
                     bool RollbackIdHasBeenSet() const;
 
                     /**
-                     * 获取回档时，传入源集群ID，用于查找源poolId
-                     * @return OriginalClusterId 回档时，传入源集群ID，用于查找源poolId
+                     * 获取<p>回档时，传入源集群ID，用于查找源poolId</p>
+                     * @return OriginalClusterId <p>回档时，传入源集群ID，用于查找源poolId</p>
                      * 
                      */
                     std::string GetOriginalClusterId() const;
 
                     /**
-                     * 设置回档时，传入源集群ID，用于查找源poolId
-                     * @param _originalClusterId 回档时，传入源集群ID，用于查找源poolId
+                     * 设置<p>回档时，传入源集群ID，用于查找源poolId</p>
+                     * @param _originalClusterId <p>回档时，传入源集群ID，用于查找源poolId</p>
                      * 
                      */
                     void SetOriginalClusterId(const std::string& _originalClusterId);
@@ -465,15 +425,15 @@ timeRollback，时间点回档
                     bool OriginalClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取时间点回档，指定时间；快照回档，快照时间
-                     * @return ExpectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 获取<p>时间点回档，指定时间；快照回档，快照时间</p>
+                     * @return ExpectTime <p>时间点回档，指定时间；快照回档，快照时间</p>
                      * 
                      */
                     std::string GetExpectTime() const;
 
                     /**
-                     * 设置时间点回档，指定时间；快照回档，快照时间
-                     * @param _expectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 设置<p>时间点回档，指定时间；快照回档，快照时间</p>
+                     * @param _expectTime <p>时间点回档，指定时间；快照回档，快照时间</p>
                      * 
                      */
                     void SetExpectTime(const std::string& _expectTime);
@@ -486,19 +446,15 @@ timeRollback，时间点回档
                     bool ExpectTimeHasBeenSet() const;
 
                     /**
-                     * 获取该参数无实际意义，已废弃。
-时间点回档，指定时间允许范围
-                     * @return ExpectTimeThresh 该参数无实际意义，已废弃。
-时间点回档，指定时间允许范围
+                     * 获取<p>该参数无实际意义，已废弃。<br>时间点回档，指定时间允许范围</p>
+                     * @return ExpectTimeThresh <p>该参数无实际意义，已废弃。<br>时间点回档，指定时间允许范围</p>
                      * 
                      */
                     uint64_t GetExpectTimeThresh() const;
 
                     /**
-                     * 设置该参数无实际意义，已废弃。
-时间点回档，指定时间允许范围
-                     * @param _expectTimeThresh 该参数无实际意义，已废弃。
-时间点回档，指定时间允许范围
+                     * 设置<p>该参数无实际意义，已废弃。<br>时间点回档，指定时间允许范围</p>
+                     * @param _expectTimeThresh <p>该参数无实际意义，已废弃。<br>时间点回档，指定时间允许范围</p>
                      * 
                      */
                     void SetExpectTimeThresh(const uint64_t& _expectTimeThresh);
@@ -511,19 +467,15 @@ timeRollback，时间点回档
                     bool ExpectTimeThreshHasBeenSet() const;
 
                     /**
-                     * 获取普通实例存储上限，单位GB
-当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
-                     * @return StorageLimit 普通实例存储上限，单位GB
-当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
+                     * 获取<p>普通实例存储上限，单位GB<br>当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限</p>
+                     * @return StorageLimit <p>普通实例存储上限，单位GB<br>当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限</p>
                      * 
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
-                     * 设置普通实例存储上限，单位GB
-当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
-                     * @param _storageLimit 普通实例存储上限，单位GB
-当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
+                     * 设置<p>普通实例存储上限，单位GB<br>当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限</p>
+                     * @param _storageLimit <p>普通实例存储上限，单位GB<br>当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限</p>
                      * 
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
@@ -536,15 +488,15 @@ timeRollback，时间点回档
                     bool StorageLimitHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长
-                     * @return TimeSpan 包年包月购买时长
+                     * 获取<p>包年包月购买时长</p>
+                     * @return TimeSpan <p>包年包月购买时长</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置包年包月购买时长
-                     * @param _timeSpan 包年包月购买时长
+                     * 设置<p>包年包月购买时长</p>
+                     * @param _timeSpan <p>包年包月购买时长</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -557,15 +509,15 @@ timeRollback，时间点回档
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长单位，['s','d','m','y']
-                     * @return TimeUnit 包年包月购买时长单位，['s','d','m','y']
+                     * 获取<p>包年包月购买时长单位，[&#39;s&#39;,&#39;d&#39;,&#39;m&#39;,&#39;y&#39;]</p>
+                     * @return TimeUnit <p>包年包月购买时长单位，[&#39;s&#39;,&#39;d&#39;,&#39;m&#39;,&#39;y&#39;]</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置包年包月购买时长单位，['s','d','m','y']
-                     * @param _timeUnit 包年包月购买时长单位，['s','d','m','y']
+                     * 设置<p>包年包月购买时长单位，[&#39;s&#39;,&#39;d&#39;,&#39;m&#39;,&#39;y&#39;]</p>
+                     * @param _timeUnit <p>包年包月购买时长单位，[&#39;s&#39;,&#39;d&#39;,&#39;m&#39;,&#39;y&#39;]</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -578,19 +530,15 @@ timeRollback，时间点回档
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买是否自动续费，默认为0。
-0标识默认续费方式，1表示自动续费，2表示不自动续费。
-                     * @return AutoRenewFlag 包年包月购买是否自动续费，默认为0。
-0标识默认续费方式，1表示自动续费，2表示不自动续费。
+                     * 获取<p>包年包月购买是否自动续费</p><p>枚举值：</p><ul><li>0： 默认续费方式</li><li>1： 自动续费</li><li>2： 不自动续费</li></ul><p>默认值：0</p>
+                     * @return AutoRenewFlag <p>包年包月购买是否自动续费</p><p>枚举值：</p><ul><li>0： 默认续费方式</li><li>1： 自动续费</li><li>2： 不自动续费</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置包年包月购买是否自动续费，默认为0。
-0标识默认续费方式，1表示自动续费，2表示不自动续费。
-                     * @param _autoRenewFlag 包年包月购买是否自动续费，默认为0。
-0标识默认续费方式，1表示自动续费，2表示不自动续费。
+                     * 设置<p>包年包月购买是否自动续费</p><p>枚举值：</p><ul><li>0： 默认续费方式</li><li>1： 自动续费</li><li>2： 不自动续费</li></ul><p>默认值：0</p>
+                     * @param _autoRenewFlag <p>包年包月购买是否自动续费</p><p>枚举值：</p><ul><li>0： 默认续费方式</li><li>1： 自动续费</li><li>2： 不自动续费</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -603,15 +551,15 @@ timeRollback，时间点回档
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否自动选择代金券 1是 0否 默认为0
-                     * @return AutoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 获取<p>是否自动选择代金券 1是 0否 默认为0</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p>
+                     * @return AutoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动选择代金券 1是 0否 默认为0
-                     * @param _autoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 设置<p>是否自动选择代金券 1是 0否 默认为0</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p>
+                     * @param _autoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -624,15 +572,15 @@ timeRollback，时间点回档
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取实例数量（该参数已不再使用，只做存量兼容处理）
-                     * @return HaCount 实例数量（该参数已不再使用，只做存量兼容处理）
+                     * 获取<p>实例数量（该参数已不再使用，只做存量兼容处理）</p>
+                     * @return HaCount <p>实例数量（该参数已不再使用，只做存量兼容处理）</p>
                      * 
                      */
                     int64_t GetHaCount() const;
 
                     /**
-                     * 设置实例数量（该参数已不再使用，只做存量兼容处理）
-                     * @param _haCount 实例数量（该参数已不再使用，只做存量兼容处理）
+                     * 设置<p>实例数量（该参数已不再使用，只做存量兼容处理）</p>
+                     * @param _haCount <p>实例数量（该参数已不再使用，只做存量兼容处理）</p>
                      * 
                      */
                     void SetHaCount(const int64_t& _haCount);
@@ -645,15 +593,15 @@ timeRollback，时间点回档
                     bool HaCountHasBeenSet() const;
 
                     /**
-                     * 获取订单来源
-                     * @return OrderSource 订单来源
+                     * 获取<p>订单来源</p>
+                     * @return OrderSource <p>订单来源</p>
                      * 
                      */
                     std::string GetOrderSource() const;
 
                     /**
-                     * 设置订单来源
-                     * @param _orderSource 订单来源
+                     * 设置<p>订单来源</p>
+                     * @param _orderSource <p>订单来源</p>
                      * 
                      */
                     void SetOrderSource(const std::string& _orderSource);
@@ -666,15 +614,15 @@ timeRollback，时间点回档
                     bool OrderSourceHasBeenSet() const;
 
                     /**
-                     * 获取集群创建需要绑定的tag数组信息
-                     * @return ResourceTags 集群创建需要绑定的tag数组信息
+                     * 获取<p>集群创建需要绑定的tag数组信息</p>
+                     * @return ResourceTags <p>集群创建需要绑定的tag数组信息</p>
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
-                     * 设置集群创建需要绑定的tag数组信息
-                     * @param _resourceTags 集群创建需要绑定的tag数组信息
+                     * 设置<p>集群创建需要绑定的tag数组信息</p>
+                     * @param _resourceTags <p>集群创建需要绑定的tag数组信息</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -687,27 +635,15 @@ timeRollback，时间点回档
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取Db类型
-当DbType为MYSQL时可选(默认NORMAL)：
-<li>NORMAL</li>
-<li>SERVERLESS</li>
-                     * @return DbMode Db类型
-当DbType为MYSQL时可选(默认NORMAL)：
-<li>NORMAL</li>
-<li>SERVERLESS</li>
+                     * 获取<p>Db类型</p><p>枚举值：</p><ul><li>NORMAL： 普通实例</li><li>SERVERLESS： serverless实例</li></ul><p>默认值：NORMAL</p><p>当DbType为MYSQL时可选(默认NORMAL)</p>
+                     * @return DbMode <p>Db类型</p><p>枚举值：</p><ul><li>NORMAL： 普通实例</li><li>SERVERLESS： serverless实例</li></ul><p>默认值：NORMAL</p><p>当DbType为MYSQL时可选(默认NORMAL)</p>
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
-                     * 设置Db类型
-当DbType为MYSQL时可选(默认NORMAL)：
-<li>NORMAL</li>
-<li>SERVERLESS</li>
-                     * @param _dbMode Db类型
-当DbType为MYSQL时可选(默认NORMAL)：
-<li>NORMAL</li>
-<li>SERVERLESS</li>
+                     * 设置<p>Db类型</p><p>枚举值：</p><ul><li>NORMAL： 普通实例</li><li>SERVERLESS： serverless实例</li></ul><p>默认值：NORMAL</p><p>当DbType为MYSQL时可选(默认NORMAL)</p>
+                     * @param _dbMode <p>Db类型</p><p>枚举值：</p><ul><li>NORMAL： 普通实例</li><li>SERVERLESS： serverless实例</li></ul><p>默认值：NORMAL</p><p>当DbType为MYSQL时可选(默认NORMAL)</p>
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -720,19 +656,15 @@ timeRollback，时间点回档
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SERVERLESS时必填
-cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MinCpu 当DbMode为SERVERLESS时必填
-cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>当DbMode为SERVERLESS时必填<br>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MinCpu <p>当DbMode为SERVERLESS时必填<br>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置当DbMode为SERVERLESS时必填
-cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _minCpu 当DbMode为SERVERLESS时必填
-cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>当DbMode为SERVERLESS时必填<br>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _minCpu <p>当DbMode为SERVERLESS时必填<br>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMinCpu(const double& _minCpu);
@@ -745,19 +677,15 @@ cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SERVERLESS时必填：
-cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MaxCpu 当DbMode为SERVERLESS时必填：
-cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>当DbMode为SERVERLESS时必填：<br>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MaxCpu <p>当DbMode为SERVERLESS时必填：<br>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置当DbMode为SERVERLESS时必填：
-cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _maxCpu 当DbMode为SERVERLESS时必填：
-cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>当DbMode为SERVERLESS时必填：<br>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _maxCpu <p>当DbMode为SERVERLESS时必填：<br>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMaxCpu(const double& _maxCpu);
@@ -770,27 +698,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool MaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-默认值:yes
-                     * @return AutoPause 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-默认值:yes
+                     * 获取<p>否自动暂停</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：yes</p><p>DbMode为SERVERLESS生效</p>
+                     * @return AutoPause <p>否自动暂停</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：yes</p><p>DbMode为SERVERLESS生效</p>
                      * 
                      */
                     std::string GetAutoPause() const;
 
                     /**
-                     * 设置当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-默认值:yes
-                     * @param _autoPause 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-默认值:yes
+                     * 设置<p>否自动暂停</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：yes</p><p>DbMode为SERVERLESS生效</p>
+                     * @param _autoPause <p>否自动暂停</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：yes</p><p>DbMode为SERVERLESS生效</p>
                      * 
                      */
                     void SetAutoPause(const std::string& _autoPause);
@@ -803,19 +719,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AutoPauseHasBeenSet() const;
 
                     /**
-                     * 获取当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
-默认值:600
-                     * @return AutoPauseDelay 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
-默认值:600
+                     * 获取<p>当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]<br>默认值:600</p>
+                     * @return AutoPauseDelay <p>当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]<br>默认值:600</p>
                      * 
                      */
                     int64_t GetAutoPauseDelay() const;
 
                     /**
-                     * 设置当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
-默认值:600
-                     * @param _autoPauseDelay 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
-默认值:600
+                     * 设置<p>当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]<br>默认值:600</p>
+                     * @param _autoPauseDelay <p>当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]<br>默认值:600</p>
                      * 
                      */
                     void SetAutoPauseDelay(const int64_t& _autoPauseDelay);
@@ -828,23 +740,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AutoPauseDelayHasBeenSet() const;
 
                     /**
-                     * 获取集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
-当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
-回档与克隆均不支持包年包月存储
-                     * @return StoragePayMode 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
-当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
-回档与克隆均不支持包年包月存储
+                     * 获取<p>集群存储计费模式，按量计费：0，包年包月：1。默认按量计费<br>当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费<br>回档与克隆均不支持包年包月存储</p>
+                     * @return StoragePayMode <p>集群存储计费模式，按量计费：0，包年包月：1。默认按量计费<br>当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费<br>回档与克隆均不支持包年包月存储</p>
                      * 
                      */
                     int64_t GetStoragePayMode() const;
 
                     /**
-                     * 设置集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
-当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
-回档与克隆均不支持包年包月存储
-                     * @param _storagePayMode 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
-当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
-回档与克隆均不支持包年包月存储
+                     * 设置<p>集群存储计费模式，按量计费：0，包年包月：1。默认按量计费<br>当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费<br>回档与克隆均不支持包年包月存储</p>
+                     * @param _storagePayMode <p>集群存储计费模式，按量计费：0，包年包月：1。默认按量计费<br>当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费<br>回档与克隆均不支持包年包月存储</p>
                      * 
                      */
                     void SetStoragePayMode(const int64_t& _storagePayMode);
@@ -857,15 +761,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool StoragePayModeHasBeenSet() const;
 
                     /**
-                     * 获取安全组id数组
-                     * @return SecurityGroupIds 安全组id数组
+                     * 获取<p>安全组id数组</p>
+                     * @return SecurityGroupIds <p>安全组id数组</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组id数组
-                     * @param _securityGroupIds 安全组id数组
+                     * 设置<p>安全组id数组</p>
+                     * @param _securityGroupIds <p>安全组id数组</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -878,15 +782,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警策略Id数组
-                     * @return AlarmPolicyIds 告警策略Id数组
+                     * 获取<p>告警策略Id数组</p>
+                     * @return AlarmPolicyIds <p>告警策略Id数组</p>
                      * 
                      */
                     std::vector<std::string> GetAlarmPolicyIds() const;
 
                     /**
-                     * 设置告警策略Id数组
-                     * @param _alarmPolicyIds 告警策略Id数组
+                     * 设置<p>告警策略Id数组</p>
+                     * @param _alarmPolicyIds <p>告警策略Id数组</p>
                      * 
                      */
                     void SetAlarmPolicyIds(const std::vector<std::string>& _alarmPolicyIds);
@@ -899,15 +803,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AlarmPolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
-                     * @return ClusterParams 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
+                     * 获取<p>参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感</p>
+                     * @return ClusterParams <p>参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感</p>
                      * 
                      */
                     std::vector<ParamItem> GetClusterParams() const;
 
                     /**
-                     * 设置参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
-                     * @param _clusterParams 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
+                     * 设置<p>参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感</p>
+                     * @param _clusterParams <p>参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感</p>
                      * 
                      */
                     void SetClusterParams(const std::vector<ParamItem>& _clusterParams);
@@ -920,15 +824,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool ClusterParamsHasBeenSet() const;
 
                     /**
-                     * 获取交易模式，0-下单且支付，1-下单
-                     * @return DealMode 交易模式，0-下单且支付，1-下单
+                     * 获取<p>交易模式</p><p>枚举值：</p><ul><li>0： 下单且支付</li><li>1： 下单</li></ul><p>默认值：0</p>
+                     * @return DealMode <p>交易模式</p><p>枚举值：</p><ul><li>0： 下单且支付</li><li>1： 下单</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetDealMode() const;
 
                     /**
-                     * 设置交易模式，0-下单且支付，1-下单
-                     * @param _dealMode 交易模式，0-下单且支付，1-下单
+                     * 设置<p>交易模式</p><p>枚举值：</p><ul><li>0： 下单且支付</li><li>1： 下单</li></ul><p>默认值：0</p>
+                     * @param _dealMode <p>交易模式</p><p>枚举值：</p><ul><li>0： 下单且支付</li><li>1： 下单</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetDealMode(const int64_t& _dealMode);
@@ -941,15 +845,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
-                     * @return ParamTemplateId 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * 获取<p>参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID</p>
+                     * @return ParamTemplateId <p>参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID</p>
                      * 
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
-                     * @param _paramTemplateId 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * 设置<p>参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID</p>
+                     * @param _paramTemplateId <p>参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID</p>
                      * 
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
@@ -962,15 +866,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取多可用区地址
-                     * @return SlaveZone 多可用区地址
+                     * 获取<p>多可用区地址</p>
+                     * @return SlaveZone <p>多可用区地址</p>
                      * 
                      */
                     std::string GetSlaveZone() const;
 
                     /**
-                     * 设置多可用区地址
-                     * @param _slaveZone 多可用区地址
+                     * 设置<p>多可用区地址</p>
+                     * @param _slaveZone <p>多可用区地址</p>
                      * 
                      */
                     void SetSlaveZone(const std::string& _slaveZone);
@@ -983,15 +887,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool SlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例初始化配置信息，主要用于购买集群时选不同规格实例
-                     * @return InstanceInitInfos 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     * 获取<p>实例初始化配置信息，主要用于购买集群时选不同规格实例</p>
+                     * @return InstanceInitInfos <p>实例初始化配置信息，主要用于购买集群时选不同规格实例</p>
                      * 
                      */
                     std::vector<InstanceInitInfo> GetInstanceInitInfos() const;
 
                     /**
-                     * 设置实例初始化配置信息，主要用于购买集群时选不同规格实例
-                     * @param _instanceInitInfos 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     * 设置<p>实例初始化配置信息，主要用于购买集群时选不同规格实例</p>
+                     * @param _instanceInitInfos <p>实例初始化配置信息，主要用于购买集群时选不同规格实例</p>
                      * 
                      */
                     void SetInstanceInitInfos(const std::vector<InstanceInitInfo>& _instanceInitInfos);
@@ -1004,15 +908,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool InstanceInitInfosHasBeenSet() const;
 
                     /**
-                     * 获取全球数据库唯一标识
-                     * @return GdnId 全球数据库唯一标识
+                     * 获取<p>全球数据库唯一标识</p>
+                     * @return GdnId <p>全球数据库唯一标识</p>
                      * 
                      */
                     std::string GetGdnId() const;
 
                     /**
-                     * 设置全球数据库唯一标识
-                     * @param _gdnId 全球数据库唯一标识
+                     * 设置<p>全球数据库唯一标识</p>
+                     * @param _gdnId <p>全球数据库唯一标识</p>
                      * 
                      */
                     void SetGdnId(const std::string& _gdnId);
@@ -1025,15 +929,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool GdnIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理配置
-                     * @return ProxyConfig 数据库代理配置
+                     * 获取<p>数据库代理配置</p>
+                     * @return ProxyConfig <p>数据库代理配置</p>
                      * 
                      */
                     ProxyConfig GetProxyConfig() const;
 
                     /**
-                     * 设置数据库代理配置
-                     * @param _proxyConfig 数据库代理配置
+                     * 设置<p>数据库代理配置</p>
+                     * @param _proxyConfig <p>数据库代理配置</p>
                      * 
                      */
                     void SetProxyConfig(const ProxyConfig& _proxyConfig);
@@ -1046,15 +950,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool ProxyConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否自动归档
-                     * @return AutoArchive 是否自动归档
+                     * 获取<p>是否自动归档</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：no</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
+                     * @return AutoArchive <p>是否自动归档</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：no</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      * 
                      */
                     std::string GetAutoArchive() const;
 
                     /**
-                     * 设置是否自动归档
-                     * @param _autoArchive 是否自动归档
+                     * 设置<p>是否自动归档</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：no</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
+                     * @param _autoArchive <p>是否自动归档</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：no</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      * 
                      */
                     void SetAutoArchive(const std::string& _autoArchive);
@@ -1067,15 +971,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AutoArchiveHasBeenSet() const;
 
                     /**
-                     * 获取暂停后的归档处理时间
-                     * @return AutoArchiveDelayHours 暂停后的归档处理时间
+                     * 获取<p>暂停后的归档处理时间</p><p>单位：时</p><p>默认值：12</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
+                     * @return AutoArchiveDelayHours <p>暂停后的归档处理时间</p><p>单位：时</p><p>默认值：12</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      * 
                      */
                     int64_t GetAutoArchiveDelayHours() const;
 
                     /**
-                     * 设置暂停后的归档处理时间
-                     * @param _autoArchiveDelayHours 暂停后的归档处理时间
+                     * 设置<p>暂停后的归档处理时间</p><p>单位：时</p><p>默认值：12</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
+                     * @param _autoArchiveDelayHours <p>暂停后的归档处理时间</p><p>单位：时</p><p>默认值：12</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      * 
                      */
                     void SetAutoArchiveDelayHours(const int64_t& _autoArchiveDelayHours);
@@ -1088,15 +992,15 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AutoArchiveDelayHoursHasBeenSet() const;
 
                     /**
-                     * 获取内核小版本号
-                     * @return CynosVersion 内核小版本号
+                     * 获取<p>内核小版本号</p>
+                     * @return CynosVersion <p>内核小版本号</p>
                      * 
                      */
                     std::string GetCynosVersion() const;
 
                     /**
-                     * 设置内核小版本号
-                     * @param _cynosVersion 内核小版本号
+                     * 设置<p>内核小版本号</p>
+                     * @param _cynosVersion <p>内核小版本号</p>
                      * 
                      */
                     void SetCynosVersion(const std::string& _cynosVersion);
@@ -1111,301 +1015,277 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 所属VPC网络ID
+                     * <p>所属VPC网络ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 所属子网ID
+                     * <p>所属子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * <p>数据库类型</p><p>枚举值：</p><ul><li>MYSQL： MYSQL</li></ul>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 数据库版本，取值范围: 
-<li> MYSQL可选值：5.7，8.0 </li>
+                     * <p>数据库版本</p><p>枚举值：</p><ul><li>5.7： MySQL5.7版本</li><li>8.0： MySQL8.0版本</li></ul>
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
 
                     /**
-                     * 所属项目ID
+                     * <p>所属项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 当DbMode为NORMAL或不填时必选
-普通实例Cpu核数
+                     * <p>当DbMode为NORMAL或不填时必选<br>普通实例Cpu核数</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 当DbMode为NORMAL或不填时必选
-普通实例内存,单位GB
+                     * <p>当DbMode为NORMAL或不填时必选<br>普通实例内存,单位GB</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos
+                     * <p>实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos</p>
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 该参数无实际意义，已废弃。
-存储大小，单位GB。
+                     * <p>该参数无实际意义，已废弃。<br>存储大小，单位GB。</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * <p>集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（&#39;-&#39;,&#39;_&#39;,&#39;.&#39;）</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
+                     * <p>账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/中的任意三种)</p>
                      */
                     std::string m_adminPassword;
                     bool m_adminPasswordHasBeenSet;
 
                     /**
-                     * 端口，默认3306，取值范围[0, 65535)
+                     * <p>端口，默认3306，取值范围[0, 65535)</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 计费模式，支持值为0和1，默认值为0。
-取值为0，表示按量计费。
-取值为1，表示包年包月。
+                     * <p>计费模式</p><p>枚举值：</p><ul><li>0： 表示按量计费</li><li>1： 表示包年包月</li></ul><p>默认值：0</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 购买集群数，可选值范围[1,50]，默认为1
+                     * <p>购买集群数，可选值范围[1,50]，默认为1</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 回档类型：
-noneRollback：不回档；
-snapRollback，快照回档；
-timeRollback，时间点回档
+                     * <p>回档类型</p><p>枚举值：</p><ul><li>noneRollback： 不回档</li><li>snapRollback： 快照回档</li><li>timeRollback： 时间点回档</li></ul>
                      */
                     std::string m_rollbackStrategy;
                     bool m_rollbackStrategyHasBeenSet;
 
                     /**
-                     * 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * <p>快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效</p>
                      */
                     uint64_t m_rollbackId;
                     bool m_rollbackIdHasBeenSet;
 
                     /**
-                     * 回档时，传入源集群ID，用于查找源poolId
+                     * <p>回档时，传入源集群ID，用于查找源poolId</p>
                      */
                     std::string m_originalClusterId;
                     bool m_originalClusterIdHasBeenSet;
 
                     /**
-                     * 时间点回档，指定时间；快照回档，快照时间
+                     * <p>时间点回档，指定时间；快照回档，快照时间</p>
                      */
                     std::string m_expectTime;
                     bool m_expectTimeHasBeenSet;
 
                     /**
-                     * 该参数无实际意义，已废弃。
-时间点回档，指定时间允许范围
+                     * <p>该参数无实际意义，已废弃。<br>时间点回档，指定时间允许范围</p>
                      */
                     uint64_t m_expectTimeThresh;
                     bool m_expectTimeThreshHasBeenSet;
 
                     /**
-                     * 普通实例存储上限，单位GB
-当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
+                     * <p>普通实例存储上限，单位GB<br>当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限</p>
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
 
                     /**
-                     * 包年包月购买时长
+                     * <p>包年包月购买时长</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 包年包月购买时长单位，['s','d','m','y']
+                     * <p>包年包月购买时长单位，[&#39;s&#39;,&#39;d&#39;,&#39;m&#39;,&#39;y&#39;]</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 包年包月购买是否自动续费，默认为0。
-0标识默认续费方式，1表示自动续费，2表示不自动续费。
+                     * <p>包年包月购买是否自动续费</p><p>枚举值：</p><ul><li>0： 默认续费方式</li><li>1： 自动续费</li><li>2： 不自动续费</li></ul><p>默认值：0</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 是否自动选择代金券 1是 0否 默认为0
+                     * <p>是否自动选择代金券 1是 0否 默认为0</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p>
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 实例数量（该参数已不再使用，只做存量兼容处理）
+                     * <p>实例数量（该参数已不再使用，只做存量兼容处理）</p>
                      */
                     int64_t m_haCount;
                     bool m_haCountHasBeenSet;
 
                     /**
-                     * 订单来源
+                     * <p>订单来源</p>
                      */
                     std::string m_orderSource;
                     bool m_orderSourceHasBeenSet;
 
                     /**
-                     * 集群创建需要绑定的tag数组信息
+                     * <p>集群创建需要绑定的tag数组信息</p>
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * Db类型
-当DbType为MYSQL时可选(默认NORMAL)：
-<li>NORMAL</li>
-<li>SERVERLESS</li>
+                     * <p>Db类型</p><p>枚举值：</p><ul><li>NORMAL： 普通实例</li><li>SERVERLESS： serverless实例</li></ul><p>默认值：NORMAL</p><p>当DbType为MYSQL时可选(默认NORMAL)</p>
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 当DbMode为SERVERLESS时必填
-cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>当DbMode为SERVERLESS时必填<br>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * 当DbMode为SERVERLESS时必填：
-cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>当DbMode为SERVERLESS时必填：<br>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
-                     * 当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-默认值:yes
+                     * <p>否自动暂停</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：yes</p><p>DbMode为SERVERLESS生效</p>
                      */
                     std::string m_autoPause;
                     bool m_autoPauseHasBeenSet;
 
                     /**
-                     * 当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]
-默认值:600
+                     * <p>当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]<br>默认值:600</p>
                      */
                     int64_t m_autoPauseDelay;
                     bool m_autoPauseDelayHasBeenSet;
 
                     /**
-                     * 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
-当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
-回档与克隆均不支持包年包月存储
+                     * <p>集群存储计费模式，按量计费：0，包年包月：1。默认按量计费<br>当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费<br>回档与克隆均不支持包年包月存储</p>
                      */
                     int64_t m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
 
                     /**
-                     * 安全组id数组
+                     * <p>安全组id数组</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 告警策略Id数组
+                     * <p>告警策略Id数组</p>
                      */
                     std::vector<std::string> m_alarmPolicyIds;
                     bool m_alarmPolicyIdsHasBeenSet;
 
                     /**
-                     * 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
+                     * <p>参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感</p>
                      */
                     std::vector<ParamItem> m_clusterParams;
                     bool m_clusterParamsHasBeenSet;
 
                     /**
-                     * 交易模式，0-下单且支付，1-下单
+                     * <p>交易模式</p><p>枚举值：</p><ul><li>0： 下单且支付</li><li>1： 下单</li></ul><p>默认值：0</p>
                      */
                     int64_t m_dealMode;
                     bool m_dealModeHasBeenSet;
 
                     /**
-                     * 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * <p>参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID</p>
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 多可用区地址
+                     * <p>多可用区地址</p>
                      */
                     std::string m_slaveZone;
                     bool m_slaveZoneHasBeenSet;
 
                     /**
-                     * 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     * <p>实例初始化配置信息，主要用于购买集群时选不同规格实例</p>
                      */
                     std::vector<InstanceInitInfo> m_instanceInitInfos;
                     bool m_instanceInitInfosHasBeenSet;
 
                     /**
-                     * 全球数据库唯一标识
+                     * <p>全球数据库唯一标识</p>
                      */
                     std::string m_gdnId;
                     bool m_gdnIdHasBeenSet;
 
                     /**
-                     * 数据库代理配置
+                     * <p>数据库代理配置</p>
                      */
                     ProxyConfig m_proxyConfig;
                     bool m_proxyConfigHasBeenSet;
 
                     /**
-                     * 是否自动归档
+                     * <p>是否自动归档</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul><p>默认值：no</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      */
                     std::string m_autoArchive;
                     bool m_autoArchiveHasBeenSet;
 
                     /**
-                     * 暂停后的归档处理时间
+                     * <p>暂停后的归档处理时间</p><p>单位：时</p><p>默认值：12</p><p>仅当前集群主实例为SERVERLESS时，该参数生效</p>
                      */
                     int64_t m_autoArchiveDelayHours;
                     bool m_autoArchiveDelayHoursHasBeenSet;
 
                     /**
-                     * 内核小版本号
+                     * <p>内核小版本号</p>
                      */
                     std::string m_cynosVersion;
                     bool m_cynosVersionHasBeenSet;

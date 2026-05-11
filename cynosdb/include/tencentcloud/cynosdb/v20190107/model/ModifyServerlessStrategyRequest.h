@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取serverless集群id
-                     * @return ClusterId serverless集群id
+                     * 获取<p>serverless集群id</p>
+                     * @return ClusterId <p>serverless集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置serverless集群id
-                     * @param _clusterId serverless集群id
+                     * 设置<p>serverless集群id</p>
+                     * @param _clusterId <p>serverless集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-                     * @return AutoPause 集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
+                     * 获取<p>集群是否自动暂停，可选范围</p><li>yes</li><li>no</li>
+                     * @return AutoPause <p>集群是否自动暂停，可选范围</p><li>yes</li><li>no</li>
                      * 
                      */
                     std::string GetAutoPause() const;
 
                     /**
-                     * 设置集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
-                     * @param _autoPause 集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
+                     * 设置<p>集群是否自动暂停，可选范围</p><li>yes</li><li>no</li>
+                     * @param _autoPause <p>集群是否自动暂停，可选范围</p><li>yes</li><li>no</li>
                      * 
                      */
                     void SetAutoPause(const std::string& _autoPause);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool AutoPauseHasBeenSet() const;
 
                     /**
-                     * 获取集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600
-                     * @return AutoPauseDelay 集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600
+                     * 获取<p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>
+                     * @return AutoPauseDelay <p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>
                      * 
                      */
                     int64_t GetAutoPauseDelay() const;
 
                     /**
-                     * 设置集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600
-                     * @param _autoPauseDelay 集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600
+                     * 设置<p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>
+                     * @param _autoPauseDelay <p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>
                      * 
                      */
                     void SetAutoPauseDelay(const int64_t& _autoPauseDelay);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool AutoPauseDelayHasBeenSet() const;
 
                     /**
-                     * 获取该参数暂时无效
-                     * @return AutoScaleUpDelay 该参数暂时无效
+                     * 获取<p>该参数暂时无效</p>
+                     * @return AutoScaleUpDelay <p>该参数暂时无效</p>
                      * 
                      */
                     int64_t GetAutoScaleUpDelay() const;
 
                     /**
-                     * 设置该参数暂时无效
-                     * @param _autoScaleUpDelay 该参数暂时无效
+                     * 设置<p>该参数暂时无效</p>
+                     * @param _autoScaleUpDelay <p>该参数暂时无效</p>
                      * 
                      */
                     void SetAutoScaleUpDelay(const int64_t& _autoScaleUpDelay);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool AutoScaleUpDelayHasBeenSet() const;
 
                     /**
-                     * 获取该参数暂时无效
-                     * @return AutoScaleDownDelay 该参数暂时无效
+                     * 获取<p>该参数暂时无效</p>
+                     * @return AutoScaleDownDelay <p>该参数暂时无效</p>
                      * 
                      */
                     int64_t GetAutoScaleDownDelay() const;
 
                     /**
-                     * 设置该参数暂时无效
-                     * @param _autoScaleDownDelay 该参数暂时无效
+                     * 设置<p>该参数暂时无效</p>
+                     * @param _autoScaleDownDelay <p>该参数暂时无效</p>
                      * 
                      */
                     void SetAutoScaleDownDelay(const int64_t& _autoScaleDownDelay);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool AutoScaleDownDelayHasBeenSet() const;
 
                     /**
-                     * 获取cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MinCpu cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MinCpu <p>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMinCpu() const;
 
                     /**
-                     * 设置cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _minCpu cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _minCpu <p>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMinCpu(const double& _minCpu);
@@ -177,15 +169,15 @@ namespace TencentCloud
                     bool MinCpuHasBeenSet() const;
 
                     /**
-                     * 获取cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MaxCpu cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MaxCpu <p>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMaxCpu() const;
 
                     /**
-                     * 设置cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _maxCpu cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _maxCpu <p>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMaxCpu(const double& _maxCpu);
@@ -198,15 +190,15 @@ namespace TencentCloud
                     bool MaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MinRoCpu 只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MinRoCpu <p>只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMinRoCpu() const;
 
                     /**
-                     * 设置只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _minRoCpu 只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _minRoCpu <p>只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMinRoCpu(const double& _minRoCpu);
@@ -219,15 +211,15 @@ namespace TencentCloud
                     bool MinRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @return MaxRoCpu 只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 获取<p>只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @return MaxRoCpu <p>只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     double GetMaxRoCpu() const;
 
                     /**
-                     * 设置只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
-                     * @param _maxRoCpu 只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * 设置<p>只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
+                     * @param _maxRoCpu <p>只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      * 
                      */
                     void SetMaxRoCpu(const double& _maxRoCpu);
@@ -240,15 +232,15 @@ namespace TencentCloud
                     bool MaxRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取只读节点最小个数
-                     * @return MinRoCount 只读节点最小个数
+                     * 获取<p>只读节点最小个数</p>
+                     * @return MinRoCount <p>只读节点最小个数</p>
                      * 
                      */
                     int64_t GetMinRoCount() const;
 
                     /**
-                     * 设置只读节点最小个数
-                     * @param _minRoCount 只读节点最小个数
+                     * 设置<p>只读节点最小个数</p>
+                     * @param _minRoCount <p>只读节点最小个数</p>
                      * 
                      */
                     void SetMinRoCount(const int64_t& _minRoCount);
@@ -261,15 +253,15 @@ namespace TencentCloud
                     bool MinRoCountHasBeenSet() const;
 
                     /**
-                     * 获取只读节点最大个数
-                     * @return MaxRoCount 只读节点最大个数
+                     * 获取<p>只读节点最大个数</p>
+                     * @return MaxRoCount <p>只读节点最大个数</p>
                      * 
                      */
                     int64_t GetMaxRoCount() const;
 
                     /**
-                     * 设置只读节点最大个数
-                     * @param _maxRoCount 只读节点最大个数
+                     * 设置<p>只读节点最大个数</p>
+                     * @param _maxRoCount <p>只读节点最大个数</p>
                      * 
                      */
                     void SetMaxRoCount(const int64_t& _maxRoCount);
@@ -282,15 +274,15 @@ namespace TencentCloud
                     bool MaxRoCountHasBeenSet() const;
 
                     /**
-                     * 获取是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
-                     * @return AutoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 获取<p>是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes</p>
+                     * @return AutoArchive <p>是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes</p>
                      * 
                      */
                     std::string GetAutoArchive() const;
 
                     /**
-                     * 设置是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
-                     * @param _autoArchive 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * 设置<p>是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes</p>
+                     * @param _autoArchive <p>是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes</p>
                      * 
                      */
                     void SetAutoArchive(const std::string& _autoArchive);
@@ -303,15 +295,15 @@ namespace TencentCloud
                     bool AutoArchiveHasBeenSet() const;
 
                     /**
-                     * 获取升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
-                     * @return UpgradeType 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * 获取<p>升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改</p>
+                     * @return UpgradeType <p>升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改</p>
                      * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
-                     * 设置升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
-                     * @param _upgradeType 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * 设置<p>升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改</p>
+                     * @param _upgradeType <p>升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改</p>
                      * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
@@ -324,15 +316,15 @@ namespace TencentCloud
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
-                     * @return SecurityGroupIdsForNewRo 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * 获取<p>新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。</p>
+                     * @return SecurityGroupIdsForNewRo <p>新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdsForNewRo() const;
 
                     /**
-                     * 设置新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
-                     * @param _securityGroupIdsForNewRo 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * 设置<p>新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。</p>
+                     * @param _securityGroupIdsForNewRo <p>新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。</p>
                      * 
                      */
                     void SetSecurityGroupIdsForNewRo(const std::vector<std::string>& _securityGroupIdsForNewRo);
@@ -347,87 +339,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * serverless集群id
+                     * <p>serverless集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群是否自动暂停，可选范围
-<li>yes</li>
-<li>no</li>
+                     * <p>集群是否自动暂停，可选范围</p><li>yes</li><li>no</li>
                      */
                     std::string m_autoPause;
                     bool m_autoPauseHasBeenSet;
 
                     /**
-                     * 集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600
+                     * <p>集群自动暂停的延迟，单位秒，可选范围[600,691200]，默认600</p>
                      */
                     int64_t m_autoPauseDelay;
                     bool m_autoPauseDelayHasBeenSet;
 
                     /**
-                     * 该参数暂时无效
+                     * <p>该参数暂时无效</p>
                      */
                     int64_t m_autoScaleUpDelay;
                     bool m_autoScaleUpDelayHasBeenSet;
 
                     /**
-                     * 该参数暂时无效
+                     * <p>该参数暂时无效</p>
                      */
                     int64_t m_autoScaleDownDelay;
                     bool m_autoScaleDownDelayHasBeenSet;
 
                     /**
-                     * cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
-                     * cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
-                     * 只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>只读实例cpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_minRoCpu;
                     bool m_minRoCpuHasBeenSet;
 
                     /**
-                     * 只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
+                     * <p>只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回</p>
                      */
                     double m_maxRoCpu;
                     bool m_maxRoCpuHasBeenSet;
 
                     /**
-                     * 只读节点最小个数
+                     * <p>只读节点最小个数</p>
                      */
                     int64_t m_minRoCount;
                     bool m_minRoCountHasBeenSet;
 
                     /**
-                     * 只读节点最大个数
+                     * <p>只读节点最大个数</p>
                      */
                     int64_t m_maxRoCount;
                     bool m_maxRoCountHasBeenSet;
 
                     /**
-                     * 是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes
+                     * <p>是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes</p>
                      */
                     std::string m_autoArchive;
                     bool m_autoArchiveHasBeenSet;
 
                     /**
-                     * 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * <p>升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改</p>
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * <p>新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。</p>
                      */
                     std::vector<std::string> m_securityGroupIdsForNewRo;
                     bool m_securityGroupIdsForNewRoHasBeenSet;

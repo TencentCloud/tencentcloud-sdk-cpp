@@ -41,7 +41,8 @@ GovernanceService::GovernanceService() :
     m_revisionHasBeenSet(false),
     m_syncToGlobalRegistryHasBeenSet(false),
     m_isolateInstanceCountHasBeenSet(false),
-    m_serviceStatusHasBeenSet(false)
+    m_serviceStatusHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -285,6 +286,16 @@ CoreInternalOutcome GovernanceService::Deserialize(const rapidjson::Value &value
         m_serviceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceService.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void GovernanceService::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ServiceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceStatus, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -829,5 +848,21 @@ void GovernanceService::SetServiceStatus(const int64_t& _serviceStatus)
 bool GovernanceService::ServiceStatusHasBeenSet() const
 {
     return m_serviceStatusHasBeenSet;
+}
+
+uint64_t GovernanceService::GetType() const
+{
+    return m_type;
+}
+
+void GovernanceService::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GovernanceService::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

@@ -40,6 +40,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DeletePathRewritesRequest.h
   include/tencentcloud/tsf/v20180326/model/DeleteLaneResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupReleaseRequest.h
+  include/tencentcloud/tsf/v20180326/model/SearchFiltersProgram.h
   include/tencentcloud/tsf/v20180326/model/DescribeConfigTemplateResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageContainerEvent.h
   include/tencentcloud/tsf/v20180326/model/DescribeLicensesRequest.h
@@ -714,6 +715,7 @@ set(tsf_src
   src/v20180326/model/DeletePathRewritesRequest.cpp
   src/v20180326/model/DeleteLaneResponse.cpp
   src/v20180326/model/DescribeGroupReleaseRequest.cpp
+  src/v20180326/model/SearchFiltersProgram.cpp
   src/v20180326/model/DescribeConfigTemplateResponse.cpp
   src/v20180326/model/TsfPageContainerEvent.cpp
   src/v20180326/model/DescribeLicensesRequest.cpp

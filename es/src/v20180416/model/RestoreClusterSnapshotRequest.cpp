@@ -31,7 +31,8 @@ RestoreClusterSnapshotRequest::RestoreClusterSnapshotRequest() :
     m_indexSettingsHasBeenSet(false),
     m_includeGlobalStateHasBeenSet(false),
     m_indicesHasBeenSet(false),
-    m_partialHasBeenSet(false)
+    m_partialHasBeenSet(false),
+    m_maxRestorePerSecHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string RestoreClusterSnapshotRequest::ToJsonString() const
         string key = "Partial";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_partial.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRestorePerSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRestorePerSec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxRestorePerSec.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void RestoreClusterSnapshotRequest::SetPartial(const string& _partial)
 bool RestoreClusterSnapshotRequest::PartialHasBeenSet() const
 {
     return m_partialHasBeenSet;
+}
+
+string RestoreClusterSnapshotRequest::GetMaxRestorePerSec() const
+{
+    return m_maxRestorePerSec;
+}
+
+void RestoreClusterSnapshotRequest::SetMaxRestorePerSec(const string& _maxRestorePerSec)
+{
+    m_maxRestorePerSec = _maxRestorePerSec;
+    m_maxRestorePerSecHasBeenSet = true;
+}
+
+bool RestoreClusterSnapshotRequest::MaxRestorePerSecHasBeenSet() const
+{
+    return m_maxRestorePerSecHasBeenSet;
 }
 
 

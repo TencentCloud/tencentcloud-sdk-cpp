@@ -32,7 +32,8 @@ GovernanceServiceInput::GovernanceServiceInput() :
     m_removeUserIdsHasBeenSet(false),
     m_removeGroupIdsHasBeenSet(false),
     m_exportToHasBeenSet(false),
-    m_syncToGlobalRegistryHasBeenSet(false)
+    m_syncToGlobalRegistryHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome GovernanceServiceInput::Deserialize(const rapidjson::Value &
         m_syncToGlobalRegistryHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceServiceInput.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void GovernanceServiceInput::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SyncToGlobalRegistry";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -514,5 +533,21 @@ void GovernanceServiceInput::SetSyncToGlobalRegistry(const bool& _syncToGlobalRe
 bool GovernanceServiceInput::SyncToGlobalRegistryHasBeenSet() const
 {
     return m_syncToGlobalRegistryHasBeenSet;
+}
+
+uint64_t GovernanceServiceInput::GetType() const
+{
+    return m_type;
+}
+
+void GovernanceServiceInput::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GovernanceServiceInput::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

@@ -34,7 +34,8 @@ CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() :
     m_retentionGraceTimeHasBeenSet(false),
     m_remoteCosHasBeenSet(false),
     m_remoteCosRegionHasBeenSet(false),
-    m_multiAzHasBeenSet(false)
+    m_multiAzHasBeenSet(false),
+    m_maxSnapshotPerSecHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string CreateClusterSnapshotRequest::ToJsonString() const
         string key = "MultiAz";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_multiAz, allocator);
+    }
+
+    if (m_maxSnapshotPerSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSnapshotPerSec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxSnapshotPerSec.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void CreateClusterSnapshotRequest::SetMultiAz(const uint64_t& _multiAz)
 bool CreateClusterSnapshotRequest::MultiAzHasBeenSet() const
 {
     return m_multiAzHasBeenSet;
+}
+
+string CreateClusterSnapshotRequest::GetMaxSnapshotPerSec() const
+{
+    return m_maxSnapshotPerSec;
+}
+
+void CreateClusterSnapshotRequest::SetMaxSnapshotPerSec(const string& _maxSnapshotPerSec)
+{
+    m_maxSnapshotPerSec = _maxSnapshotPerSec;
+    m_maxSnapshotPerSecHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::MaxSnapshotPerSecHasBeenSet() const
+{
+    return m_maxSnapshotPerSecHasBeenSet;
 }
 
 

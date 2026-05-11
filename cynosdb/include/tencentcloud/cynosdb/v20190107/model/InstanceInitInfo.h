@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例cpu
-                     * @return Cpu 实例cpu
+                     * 获取<p>实例cpu</p>
+                     * @return Cpu <p>实例cpu</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例cpu
-                     * @param _cpu 实例cpu
+                     * 设置<p>实例cpu</p>
+                     * @param _cpu <p>实例cpu</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取实例内存
-                     * @return Memory 实例内存
+                     * 获取<p>实例内存</p>
+                     * @return Memory <p>实例内存</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存
-                     * @param _memory 实例内存
+                     * 设置<p>实例内存</p>
+                     * @param _memory <p>实例内存</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例类型 rw/ro
-                     * @return InstanceType 实例类型 rw/ro
+                     * 获取<p>实例类型 rw/ro</p>
+                     * @return InstanceType <p>实例类型 rw/ro</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型 rw/ro
-                     * @param _instanceType 实例类型 rw/ro
+                     * 设置<p>实例类型 rw/ro</p>
+                     * @param _instanceType <p>实例类型 rw/ro</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例个数,范围[1,15]
-                     * @return InstanceCount 实例个数,范围[1,15]
+                     * 获取<p>实例个数,范围[1,15]</p>
+                     * @return InstanceCount <p>实例个数,范围[1,15]</p>
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置实例个数,范围[1,15]
-                     * @param _instanceCount 实例个数,范围[1,15]
+                     * 设置<p>实例个数,范围[1,15]</p>
+                     * @param _instanceCount <p>实例个数,范围[1,15]</p>
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取Serverless实例个数最小值，范围[1,15]
-                     * @return MinRoCount Serverless实例个数最小值，范围[1,15]
+                     * 获取<p>Serverless实例个数最小值，范围[1,15]</p>
+                     * @return MinRoCount <p>Serverless实例个数最小值，范围[1,15]</p>
                      * 
                      */
                     int64_t GetMinRoCount() const;
 
                     /**
-                     * 设置Serverless实例个数最小值，范围[1,15]
-                     * @param _minRoCount Serverless实例个数最小值，范围[1,15]
+                     * 设置<p>Serverless实例个数最小值，范围[1,15]</p>
+                     * @param _minRoCount <p>Serverless实例个数最小值，范围[1,15]</p>
                      * 
                      */
                     void SetMinRoCount(const int64_t& _minRoCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MinRoCountHasBeenSet() const;
 
                     /**
-                     * 获取Serverless实例个数最大值，范围[1,15]
-                     * @return MaxRoCount Serverless实例个数最大值，范围[1,15]
+                     * 获取<p>Serverless实例个数最大值，范围[1,15]</p>
+                     * @return MaxRoCount <p>Serverless实例个数最大值，范围[1,15]</p>
                      * 
                      */
                     int64_t GetMaxRoCount() const;
 
                     /**
-                     * 设置Serverless实例个数最大值，范围[1,15]
-                     * @param _maxRoCount Serverless实例个数最大值，范围[1,15]
+                     * 设置<p>Serverless实例个数最大值，范围[1,15]</p>
+                     * @param _maxRoCount <p>Serverless实例个数最大值，范围[1,15]</p>
                      * 
                      */
                     void SetMaxRoCount(const int64_t& _maxRoCount);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MaxRoCountHasBeenSet() const;
 
                     /**
-                     * 获取Serverless实例最小规格
-                     * @return MinRoCpu Serverless实例最小规格
+                     * 获取<p>Serverless实例最小规格</p>
+                     * @return MinRoCpu <p>Serverless实例最小规格</p>
                      * 
                      */
                     double GetMinRoCpu() const;
 
                     /**
-                     * 设置Serverless实例最小规格
-                     * @param _minRoCpu Serverless实例最小规格
+                     * 设置<p>Serverless实例最小规格</p>
+                     * @param _minRoCpu <p>Serverless实例最小规格</p>
                      * 
                      */
                     void SetMinRoCpu(const double& _minRoCpu);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MinRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取Serverless实例最大规格
-                     * @return MaxRoCpu Serverless实例最大规格
+                     * 获取<p>Serverless实例最大规格</p>
+                     * @return MaxRoCpu <p>Serverless实例最大规格</p>
                      * 
                      */
                     double GetMaxRoCpu() const;
 
                     /**
-                     * 设置Serverless实例最大规格
-                     * @param _maxRoCpu Serverless实例最大规格
+                     * 设置<p>Serverless实例最大规格</p>
+                     * @param _maxRoCpu <p>Serverless实例最大规格</p>
                      * 
                      */
                     void SetMaxRoCpu(const double& _maxRoCpu);
@@ -215,23 +215,15 @@ namespace TencentCloud
                     bool MaxRoCpuHasBeenSet() const;
 
                     /**
-                     * 获取实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
-                     * @return DeviceType 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * 获取<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
+                     * @return DeviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
-                     * @param _deviceType 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * 设置<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
+                     * @param _deviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -246,57 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例cpu
+                     * <p>实例cpu</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 实例内存
+                     * <p>实例内存</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例类型 rw/ro
+                     * <p>实例类型 rw/ro</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例个数,范围[1,15]
+                     * <p>实例个数,范围[1,15]</p>
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * Serverless实例个数最小值，范围[1,15]
+                     * <p>Serverless实例个数最小值，范围[1,15]</p>
                      */
                     int64_t m_minRoCount;
                     bool m_minRoCountHasBeenSet;
 
                     /**
-                     * Serverless实例个数最大值，范围[1,15]
+                     * <p>Serverless实例个数最大值，范围[1,15]</p>
                      */
                     int64_t m_maxRoCount;
                     bool m_maxRoCountHasBeenSet;
 
                     /**
-                     * Serverless实例最小规格
+                     * <p>Serverless实例最小规格</p>
                      */
                     double m_minRoCpu;
                     bool m_minRoCpuHasBeenSet;
 
                     /**
-                     * Serverless实例最大规格
+                     * <p>Serverless实例最大规格</p>
                      */
                     double m_maxRoCpu;
                     bool m_maxRoCpuHasBeenSet;
 
                     /**
-                     * 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

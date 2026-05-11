@@ -3440,6 +3440,56 @@ CfwClient::DescribeSecurityGroupListOutcomeCallable CfwClient::DescribeSecurityG
     return prom->get_future();
 }
 
+CfwClient::DescribeSerialRegionOutcome CfwClient::DescribeSerialRegion(const DescribeSerialRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSerialRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSerialRegionResponse rsp = DescribeSerialRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSerialRegionOutcome(rsp);
+        else
+            return DescribeSerialRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSerialRegionOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeSerialRegionAsync(const DescribeSerialRegionRequest& request, const DescribeSerialRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSerialRegionRequest&;
+    using Resp = DescribeSerialRegionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSerialRegion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeSerialRegionOutcomeCallable CfwClient::DescribeSerialRegionCallable(const DescribeSerialRegionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSerialRegionOutcome>>();
+    DescribeSerialRegionAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeSerialRegionRequest&,
+        DescribeSerialRegionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeSourceAssetOutcome CfwClient::DescribeSourceAsset(const DescribeSourceAssetRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSourceAsset");

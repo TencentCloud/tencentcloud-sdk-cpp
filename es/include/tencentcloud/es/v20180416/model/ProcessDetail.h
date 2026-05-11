@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已完成数量
+                     * 获取<p>已完成数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Completed 已完成数量
+                     * @return Completed <p>已完成数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompleted() const;
 
                     /**
-                     * 设置已完成数量
+                     * 设置<p>已完成数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _completed 已完成数量
+                     * @param _completed <p>已完成数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CompletedHasBeenSet() const;
 
                     /**
-                     * 获取剩余数量
+                     * 获取<p>剩余数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remain 剩余数量
+                     * @return Remain <p>剩余数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemain() const;
 
                     /**
-                     * 设置剩余数量
+                     * 设置<p>剩余数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remain 剩余数量
+                     * @param _remain <p>剩余数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RemainHasBeenSet() const;
 
                     /**
-                     * 获取总数量
+                     * 获取<p>总数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 总数量
+                     * @return Total <p>总数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
-                     * 设置总数量
+                     * 设置<p>总数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _total 总数量
+                     * @param _total <p>总数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,30 +122,18 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取任务类型：
-60：重启型任务
-70：分片迁移型任务
-80：节点变配任务
+                     * 获取<p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型：
-60：重启型任务
-70：分片迁移型任务
-80：节点变配任务
+                     * @return TaskType <p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型：
-60：重启型任务
-70：分片迁移型任务
-80：节点变配任务
+                     * 设置<p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskType 任务类型：
-60：重启型任务
-70：分片迁移型任务
-80：节点变配任务
+                     * @param _taskType <p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,38 +146,62 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预估剩余时间</p><p>单位：秒</p>
+                     * @return EstimatedTimeRemaining <p>预估剩余时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetEstimatedTimeRemaining() const;
+
+                    /**
+                     * 设置<p>预估剩余时间</p><p>单位：秒</p>
+                     * @param _estimatedTimeRemaining <p>预估剩余时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetEstimatedTimeRemaining(const int64_t& _estimatedTimeRemaining);
+
+                    /**
+                     * 判断参数 EstimatedTimeRemaining 是否已赋值
+                     * @return EstimatedTimeRemaining 是否已赋值
+                     * 
+                     */
+                    bool EstimatedTimeRemainingHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 已完成数量
+                     * <p>已完成数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_completed;
                     bool m_completedHasBeenSet;
 
                     /**
-                     * 剩余数量
+                     * <p>剩余数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remain;
                     bool m_remainHasBeenSet;
 
                     /**
-                     * 总数量
+                     * <p>总数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 任务类型：
-60：重启型任务
-70：分片迁移型任务
-80：节点变配任务
+                     * <p>任务类型：<br>60：重启型任务<br>70：分片迁移型任务<br>80：节点变配任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * <p>预估剩余时间</p><p>单位：秒</p>
+                     */
+                    int64_t m_estimatedTimeRemaining;
+                    bool m_estimatedTimeRemainingHasBeenSet;
 
                 };
             }

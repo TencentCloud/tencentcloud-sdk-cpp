@@ -319,6 +319,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DesignVoiceAsyncRequest.h>
 #include <tencentcloud/mps/v20190612/model/DesignVoiceAsyncResponse.h>
+#include <tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaRequest.h>
+#include <tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
@@ -893,6 +895,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DesignVoiceAsyncResponse> DesignVoiceAsyncOutcome;
                 typedef std::future<DesignVoiceAsyncOutcome> DesignVoiceAsyncOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DesignVoiceAsyncRequest&, DesignVoiceAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DesignVoiceAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectVideoSubtitleAreaResponse> DetectVideoSubtitleAreaOutcome;
+                typedef std::future<DetectVideoSubtitleAreaOutcome> DetectVideoSubtitleAreaOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DetectVideoSubtitleAreaRequest&, DetectVideoSubtitleAreaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoSubtitleAreaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableScheduleResponse> DisableScheduleOutcome;
                 typedef std::future<DisableScheduleOutcome> DisableScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableScheduleRequest&, DisableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableScheduleAsyncHandler;
@@ -2430,13 +2435,22 @@ namespace TencentCloud
                 DescribeWorkflowsOutcomeCallable DescribeWorkflowsCallable(const Model::DescribeWorkflowsRequest& request);
 
                 /**
-                 *音色设计，根据prompt生成音色ID
+                 *音色设计，根据prompt生成音色ID。克隆/设计音色数量上限默认100
                  * @param req DesignVoiceAsyncRequest
                  * @return DesignVoiceAsyncOutcome
                  */
                 DesignVoiceAsyncOutcome DesignVoiceAsync(const Model::DesignVoiceAsyncRequest &request);
                 void DesignVoiceAsyncAsync(const Model::DesignVoiceAsyncRequest& request, const DesignVoiceAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DesignVoiceAsyncOutcomeCallable DesignVoiceAsyncCallable(const Model::DesignVoiceAsyncRequest& request);
+
+                /**
+                 *快速探测视频文件的硬字幕区域
+                 * @param req DetectVideoSubtitleAreaRequest
+                 * @return DetectVideoSubtitleAreaOutcome
+                 */
+                DetectVideoSubtitleAreaOutcome DetectVideoSubtitleArea(const Model::DetectVideoSubtitleAreaRequest &request);
+                void DetectVideoSubtitleAreaAsync(const Model::DetectVideoSubtitleAreaRequest& request, const DetectVideoSubtitleAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectVideoSubtitleAreaOutcomeCallable DetectVideoSubtitleAreaCallable(const Model::DetectVideoSubtitleAreaRequest& request);
 
                 /**
                  *禁用自动化触发编排任务。
@@ -2955,7 +2969,7 @@ namespace TencentCloud
                 StopStreamPackageLinearAssemblyChannelOutcomeCallable StopStreamPackageLinearAssemblyChannelCallable(const Model::StopStreamPackageLinearAssemblyChannelRequest& request);
 
                 /**
-                 *同步接口，返回克隆音色Id或合成音频结果
+                 *同步接口，返回克隆音色ID或合成音频结果。克隆/设计音色数量上限默认100
                  * @param req SyncDubbingRequest
                  * @return SyncDubbingOutcome
                  */

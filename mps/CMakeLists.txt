@@ -69,7 +69,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeOutputRTMPPullSettings.h
   include/tencentcloud/mps/v20190612/model/AwsS3FileUploadTrigger.h
   include/tencentcloud/mps/v20190612/model/AdBreakInfo.h
-  include/tencentcloud/mps/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.h
+  include/tencentcloud/mps/v20190612/model/SubtitleArea.h
   include/tencentcloud/mps/v20190612/model/ScheduleAnalysisTaskResult.h
   include/tencentcloud/mps/v20190612/model/ModifyOutputInfo.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimeOffsetItem.h
@@ -506,7 +506,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AdvancedSuperResolutionConfig.h
   include/tencentcloud/mps/v20190612/model/CreateMediaEvaluationRequest.h
   include/tencentcloud/mps/v20190612/model/BlindWatermarkTemplate.h
-  include/tencentcloud/mps/v20190612/model/TerrorismConfigureInfoForUpdate.h
+  include/tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaRequest.h
   include/tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h
   include/tencentcloud/mps/v20190612/model/EnableScheduleResponse.h
   include/tencentcloud/mps/v20190612/model/Project.h
@@ -645,6 +645,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextResultOutput.h
   include/tencentcloud/mps/v20190612/model/TerrorismOcrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/ExtractBlindWatermarkTaskConfig.h
+  include/tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaResponse.h
   include/tencentcloud/mps/v20190612/model/EraseTimeArea.h
   include/tencentcloud/mps/v20190612/model/DescribeSSAIActivateStateRequest.h
   include/tencentcloud/mps/v20190612/model/ImageEncodeConfig.h
@@ -930,6 +931,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPornAsrResult.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyChannelResponse.h
+  include/tencentcloud/mps/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/UrlInputInfo.h
@@ -959,6 +961,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/FlowAudio.h
+  include/tencentcloud/mps/v20190612/model/TerrorismConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/BeautyFilterItemConfig.h
   include/tencentcloud/mps/v20190612/model/ActivityResItem.h
   include/tencentcloud/mps/v20190612/model/LiveActivityResItem.h
@@ -1080,7 +1083,7 @@ set(mps_src
   src/v20190612/model/DescribeOutputRTMPPullSettings.cpp
   src/v20190612/model/AwsS3FileUploadTrigger.cpp
   src/v20190612/model/AdBreakInfo.cpp
-  src/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.cpp
+  src/v20190612/model/SubtitleArea.cpp
   src/v20190612/model/ScheduleAnalysisTaskResult.cpp
   src/v20190612/model/ModifyOutputInfo.cpp
   src/v20190612/model/MediaSnapshotByTimeOffsetItem.cpp
@@ -1517,7 +1520,7 @@ set(mps_src
   src/v20190612/model/AdvancedSuperResolutionConfig.cpp
   src/v20190612/model/CreateMediaEvaluationRequest.cpp
   src/v20190612/model/BlindWatermarkTemplate.cpp
-  src/v20190612/model/TerrorismConfigureInfoForUpdate.cpp
+  src/v20190612/model/DetectVideoSubtitleAreaRequest.cpp
   src/v20190612/model/DescribePersonSamplesRequest.cpp
   src/v20190612/model/EnableScheduleResponse.cpp
   src/v20190612/model/Project.cpp
@@ -1656,6 +1659,7 @@ set(mps_src
   src/v20190612/model/SmartSubtitleTaskAsrFullTextResultOutput.cpp
   src/v20190612/model/TerrorismOcrReviewTemplateInfo.cpp
   src/v20190612/model/ExtractBlindWatermarkTaskConfig.cpp
+  src/v20190612/model/DetectVideoSubtitleAreaResponse.cpp
   src/v20190612/model/EraseTimeArea.cpp
   src/v20190612/model/DescribeSSAIActivateStateRequest.cpp
   src/v20190612/model/ImageEncodeConfig.cpp
@@ -1941,6 +1945,7 @@ set(mps_src
   src/v20190612/model/DeleteSmartEraseTemplateResponse.cpp
   src/v20190612/model/AiReviewTaskPornAsrResult.cpp
   src/v20190612/model/ModifyStreamPackageLinearAssemblyChannelResponse.cpp
+  src/v20190612/model/UserDefineOcrTextReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/ModifyBlindWatermarkTemplateRequest.cpp
   src/v20190612/model/DescribeStreamLinkFlowRequest.cpp
   src/v20190612/model/UrlInputInfo.cpp
@@ -1970,6 +1975,7 @@ set(mps_src
   src/v20190612/model/DeleteSnapshotByTimeOffsetTemplateRequest.cpp
   src/v20190612/model/DescribeAnimatedGraphicsTemplatesResponse.cpp
   src/v20190612/model/FlowAudio.cpp
+  src/v20190612/model/TerrorismConfigureInfoForUpdate.cpp
   src/v20190612/model/BeautyFilterItemConfig.cpp
   src/v20190612/model/ActivityResItem.cpp
   src/v20190612/model/LiveActivityResItem.cpp

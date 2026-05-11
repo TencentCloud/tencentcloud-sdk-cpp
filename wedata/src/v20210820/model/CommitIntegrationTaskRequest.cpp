@@ -30,7 +30,8 @@ CommitIntegrationTaskRequest::CommitIntegrationTaskRequest() :
     m_extConfigHasBeenSet(false),
     m_versionDescHasBeenSet(false),
     m_instanceVersionHasBeenSet(false),
-    m_eventDescHasBeenSet(false)
+    m_eventDescHasBeenSet(false),
+    m_currentStatusHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string CommitIntegrationTaskRequest::ToJsonString() const
         string key = "EventDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_currentStatus, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void CommitIntegrationTaskRequest::SetEventDesc(const string& _eventDesc)
 bool CommitIntegrationTaskRequest::EventDescHasBeenSet() const
 {
     return m_eventDescHasBeenSet;
+}
+
+int64_t CommitIntegrationTaskRequest::GetCurrentStatus() const
+{
+    return m_currentStatus;
+}
+
+void CommitIntegrationTaskRequest::SetCurrentStatus(const int64_t& _currentStatus)
+{
+    m_currentStatus = _currentStatus;
+    m_currentStatusHasBeenSet = true;
+}
+
+bool CommitIntegrationTaskRequest::CurrentStatusHasBeenSet() const
+{
+    return m_currentStatusHasBeenSet;
 }
 
 
