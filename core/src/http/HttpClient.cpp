@@ -263,7 +263,28 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
 
         return HttpResponseOutcome(response);
     }
+    case CURLE_COULDNT_RESOLVE_HOST:
+        return HttpResponseOutcome(Core::Error("DnsError", std::string(errbuf)));
+    case CURLE_COULDNT_CONNECT:
+        return HttpResponseOutcome(Core::Error("ConnectionError", std::string(errbuf)));
+    case CURLE_PEER_FAILED_VERIFICATION:
+        // Server certificate verification failed (SAN/CN mismatch, expired,
+        // untrusted CA, etc.). This strongly indicates a server-side issue
+        // and is a high-confidence signal of DNS hijacking when the target
+        // is a TencentCloud domain.
+        return HttpResponseOutcome(Core::Error("SSLError", std::string(errbuf)));
     default:
+        // The following errors fall here and are intentionally not treated
+        // as ConnectionError / SSLError, because they are most likely
+        // caused by the client itself and cannot be fixed by switching
+        // region or TLD:
+        //   - CURLE_OPERATION_TIMEDOUT (28): spans DNS/TCP/TLS/req/resp
+        //     stages, cannot be reliably attributed.
+        //   - CURLE_SSL_CONNECT_ERROR (35): TLS handshake failure due to
+        //     protocol/cipher mismatch, usually a client build issue.
+        //   - CURLE_SSL_CERTPROBLEM (58): local client certificate problem.
+        //   - CURLE_SSL_CIPHER (59): requested cipher not supported by
+        //     the local libcurl/OpenSSL build.
         return HttpResponseOutcome(Core::Error("NetworkError", std::string(errbuf)));
     }
 }
@@ -442,7 +463,39 @@ void HttpClient::AsyncReqHandler()
             {
                 AsyncReqContext* ctx;
                 curl_easy_getinfo(msg->easy_handle, CURLINFO_PRIVATE, &ctx);
+                CURLcode result = msg->data.result;
 
+                if (result != CURLE_OK)
+                {
+                    // Classify curl errors the same way as synchronous SendRequest
+                    std::string err_msg(ctx->curl_err_buffer);
+                    switch (result) {
+                    case CURLE_COULDNT_RESOLVE_HOST:
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("DnsError", err_msg)));
+                        break;
+                    case CURLE_COULDNT_CONNECT:
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("ConnectionError", err_msg)));
+                        break;
+                    case CURLE_PEER_FAILED_VERIFICATION:
+                        // Server certificate verification failed.
+                        // High-confidence signal of DNS hijacking for
+                        // TencentCloud domains.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("SSLError", err_msg)));
+                        break;
+                    default:
+                        // CURLE_OPERATION_TIMEDOUT, CURLE_SSL_CONNECT_ERROR,
+                        // CURLE_SSL_CERTPROBLEM, CURLE_SSL_CIPHER and other
+                        // errors fall here. They are mostly client-side
+                        // issues and cannot be fixed by region/TLD switch.
+                        ctx->completion_handler(
+                            HttpResponseOutcome(Core::Error("NetworkError", err_msg)));
+                        break;
+                    }
+                }
+                else
                 {
                     int64_t response_code = 0;
                     curl_easy_getinfo(msg->easy_handle, CURLINFO_RESPONSE_CODE, &response_code);
