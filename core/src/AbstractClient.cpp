@@ -344,12 +344,7 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     else
     {
         const auto &error_code = outcome.GetError().GetErrorCode();
-        // ClientError here is raised by DoRequestWithEndpoint when the
-        // resolved endpoint is syntactically invalid. That endpoint is
-        // unusable, so release the HalfOpen probe slot Allow() reserved
-        // for this request -- otherwise repeated invalid-endpoint paths
-        // would leak probe capacity.
-        if (IsFailoverTriggering(error_code) || error_code == "ClientError")
+        if (IsFailoverTriggering(error_code))
         {
             ReportResult(allowed_breaker_idx, /*success=*/false);
         }

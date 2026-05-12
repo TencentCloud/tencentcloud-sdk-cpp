@@ -410,6 +410,10 @@ void HttpClient::AsyncReqHandler()
 
             if (!m_pendingReqs.empty())
             {
+                // Collect failed requests; clean them up after the loop
+                // to avoid modifying m_pendingReqs during iteration.
+                std::vector<AsyncReqContext*> failed_reqs;
+
                 for (const auto& async_req : m_pendingReqs)
                 {
                     err = curl_multi_add_handle(m_curlm, async_req->curl_handle);
@@ -418,9 +422,20 @@ void HttpClient::AsyncReqHandler()
                         std::cerr << "curl_multi_add_handle:" << curl_multi_strerror(err) << std::endl;
                         async_req->completion_handler(
                             HttpResponseOutcome(Core::Error("ClientError", curl_multi_strerror(err))));
+                        failed_reqs.push_back(async_req);
                     }
                 }
                 m_pendingReqs.clear();
+
+                // Release resources for requests that failed to add.
+                // Their curl handles were never added to m_curlm, so
+                // curl_multi_remove_handle is not needed.
+                for (auto* ctx : failed_reqs)
+                {
+                    curl_slist_free_all(ctx->curl_header_buffer);
+                    curl_easy_cleanup(ctx->curl_handle);
+                    delete ctx;
+                }
 
                 int running_handles = 1;
                 err = curl_multi_perform(m_curlm, &running_handles);
@@ -548,7 +563,7 @@ size_t HttpClient::CurlReadHeader(char* ptr, size_t size, size_t nitems, void* u
     if (colon_pos == std::string::npos)
     {
         // invalid format
-        return nitems * size;;
+        return nitems * size;
     }
 
     const auto key = line.substr(0, colon_pos);
