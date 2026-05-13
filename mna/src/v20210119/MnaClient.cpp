@@ -1340,6 +1340,56 @@ MnaClient::GetGroupListOutcomeCallable MnaClient::GetGroupListCallable(const Get
     return prom->get_future();
 }
 
+MnaClient::GetHardwareInfoOutcome MnaClient::GetHardwareInfo(const GetHardwareInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetHardwareInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetHardwareInfoResponse rsp = GetHardwareInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetHardwareInfoOutcome(rsp);
+        else
+            return GetHardwareInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetHardwareInfoOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetHardwareInfoAsync(const GetHardwareInfoRequest& request, const GetHardwareInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetHardwareInfoRequest&;
+    using Resp = GetHardwareInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetHardwareInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::GetHardwareInfoOutcomeCallable MnaClient::GetHardwareInfoCallable(const GetHardwareInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetHardwareInfoOutcome>>();
+    GetHardwareInfoAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const GetHardwareInfoRequest&,
+        GetHardwareInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::GetHardwareListOutcome MnaClient::GetHardwareList(const GetHardwareListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetHardwareList");

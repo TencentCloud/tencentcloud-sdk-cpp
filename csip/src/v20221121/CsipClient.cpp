@@ -840,6 +840,56 @@ CsipClient::CreateRiskCenterScanTaskOutcomeCallable CsipClient::CreateRiskCenter
     return prom->get_future();
 }
 
+CsipClient::CreateSkillScanOutcome CsipClient::CreateSkillScan(const CreateSkillScanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSkillScan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSkillScanResponse rsp = CreateSkillScanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSkillScanOutcome(rsp);
+        else
+            return CreateSkillScanOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSkillScanOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateSkillScanAsync(const CreateSkillScanRequest& request, const CreateSkillScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSkillScanRequest&;
+    using Resp = CreateSkillScanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSkillScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::CreateSkillScanOutcomeCallable CsipClient::CreateSkillScanCallable(const CreateSkillScanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSkillScanOutcome>>();
+    CreateSkillScanAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const CreateSkillScanRequest&,
+        CreateSkillScanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DeleteDomainAndIpOutcome CsipClient::DeleteDomainAndIp(const DeleteDomainAndIpRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDomainAndIp");
@@ -6332,6 +6382,56 @@ CsipClient::DescribeSearchBugInfoOutcomeCallable CsipClient::DescribeSearchBugIn
         const CsipClient*,
         const DescribeSearchBugInfoRequest&,
         DescribeSearchBugInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeSkillScanResultOutcome CsipClient::DescribeSkillScanResult(const DescribeSkillScanResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillScanResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillScanResultResponse rsp = DescribeSkillScanResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillScanResultOutcome(rsp);
+        else
+            return DescribeSkillScanResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillScanResultOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSkillScanResultAsync(const DescribeSkillScanResultRequest& request, const DescribeSkillScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillScanResultRequest&;
+    using Resp = DescribeSkillScanResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillScanResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSkillScanResultOutcomeCallable CsipClient::DescribeSkillScanResultCallable(const DescribeSkillScanResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillScanResultOutcome>>();
+    DescribeSkillScanResultAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSkillScanResultRequest&,
+        DescribeSkillScanResultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

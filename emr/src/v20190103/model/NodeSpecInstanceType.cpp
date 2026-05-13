@@ -41,7 +41,9 @@ NodeSpecInstanceType::NodeSpecInstanceType() :
     m_remarkHasBeenSet(false),
     m_originPriceHasBeenSet(false),
     m_prepaidUnderwritePeriodsHasBeenSet(false),
-    m_gpuDescHasBeenSet(false)
+    m_gpuDescHasBeenSet(false),
+    m_quotaNumHasBeenSet(false),
+    m_quotaUnitHasBeenSet(false)
 {
 }
 
@@ -293,6 +295,26 @@ CoreInternalOutcome NodeSpecInstanceType::Deserialize(const rapidjson::Value &va
         m_gpuDescHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaNum") && !value["QuotaNum"].IsNull())
+    {
+        if (!value["QuotaNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSpecInstanceType.QuotaNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaNum = value["QuotaNum"].GetInt64();
+        m_quotaNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuotaUnit") && !value["QuotaUnit"].IsNull())
+    {
+        if (!value["QuotaUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSpecInstanceType.QuotaUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaUnit = string(value["QuotaUnit"].GetString());
+        m_quotaUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -492,6 +514,22 @@ void NodeSpecInstanceType::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "GpuDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gpuDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quotaNum, allocator);
+    }
+
+    if (m_quotaUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaUnit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -831,5 +869,37 @@ void NodeSpecInstanceType::SetGpuDesc(const string& _gpuDesc)
 bool NodeSpecInstanceType::GpuDescHasBeenSet() const
 {
     return m_gpuDescHasBeenSet;
+}
+
+int64_t NodeSpecInstanceType::GetQuotaNum() const
+{
+    return m_quotaNum;
+}
+
+void NodeSpecInstanceType::SetQuotaNum(const int64_t& _quotaNum)
+{
+    m_quotaNum = _quotaNum;
+    m_quotaNumHasBeenSet = true;
+}
+
+bool NodeSpecInstanceType::QuotaNumHasBeenSet() const
+{
+    return m_quotaNumHasBeenSet;
+}
+
+string NodeSpecInstanceType::GetQuotaUnit() const
+{
+    return m_quotaUnit;
+}
+
+void NodeSpecInstanceType::SetQuotaUnit(const string& _quotaUnit)
+{
+    m_quotaUnit = _quotaUnit;
+    m_quotaUnitHasBeenSet = true;
+}
+
+bool NodeSpecInstanceType::QuotaUnitHasBeenSet() const
+{
+    return m_quotaUnitHasBeenSet;
 }
 

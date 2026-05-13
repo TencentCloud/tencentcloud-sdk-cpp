@@ -146,6 +146,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchErrorRequest.h
   include/tencentcloud/cfw/v20190904/model/CommonFilter.h
   include/tencentcloud/cfw/v20190904/model/AddVpcAcRuleRequest.h
+  include/tencentcloud/cfw/v20190904/model/EdgeIpInfoSimple.h
   include/tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeCcnAssociatedInstancesRequest.h
@@ -267,6 +268,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/NDRAssetServiceStats.h
   include/tencentcloud/cfw/v20190904/model/SearchLogInfos.h
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeEdgeIpSimpleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockStaticListRequest.h
   include/tencentcloud/cfw/v20190904/model/FwGateway.h
@@ -309,6 +311,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/AccessInstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogIpListRequest.h
   include/tencentcloud/cfw/v20190904/model/VpcFwJoinInstanceType.h
+  include/tencentcloud/cfw/v20190904/model/DescribeEdgeIpSimpleRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h
   include/tencentcloud/cfw/v20190904/model/ModeInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwPolicyLimitRequest.h
@@ -504,6 +507,7 @@ set(cfw_src
   src/v20190904/model/DescribeSwitchErrorRequest.cpp
   src/v20190904/model/CommonFilter.cpp
   src/v20190904/model/AddVpcAcRuleRequest.cpp
+  src/v20190904/model/EdgeIpInfoSimple.cpp
   src/v20190904/model/ModifyResourceGroupRequest.cpp
   src/v20190904/model/UpdateClusterVpcFwResponse.cpp
   src/v20190904/model/DescribeCcnAssociatedInstancesRequest.cpp
@@ -625,6 +629,7 @@ set(cfw_src
   src/v20190904/model/NDRAssetServiceStats.cpp
   src/v20190904/model/SearchLogInfos.cpp
   src/v20190904/model/ModifyStorageSettingRequest.cpp
+  src/v20190904/model/DescribeEdgeIpSimpleResponse.cpp
   src/v20190904/model/DescribeNatFwDnatRuleRequest.cpp
   src/v20190904/model/DescribeBlockStaticListRequest.cpp
   src/v20190904/model/FwGateway.cpp
@@ -667,6 +672,7 @@ set(cfw_src
   src/v20190904/model/AccessInstanceInfo.cpp
   src/v20190904/model/DescribeTLogIpListRequest.cpp
   src/v20190904/model/VpcFwJoinInstanceType.cpp
+  src/v20190904/model/DescribeEdgeIpSimpleRequest.cpp
   src/v20190904/model/CreateNatFwInstanceResponse.cpp
   src/v20190904/model/ModeInfo.cpp
   src/v20190904/model/DescribeCcnVpcFwPolicyLimitRequest.cpp

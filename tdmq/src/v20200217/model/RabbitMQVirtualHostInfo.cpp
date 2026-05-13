@@ -35,7 +35,8 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_messageRateOutHasBeenSet(false),
     m_mirrorQueuePolicyFlagHasBeenSet(false),
     m_createTsHasBeenSet(false),
-    m_modifyTsHasBeenSet(false)
+    m_modifyTsHasBeenSet(false),
+    m_quotaHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,23 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         m_modifyTsHasBeenSet = true;
     }
 
+    if (value.HasMember("Quota") && !value["Quota"].IsNull())
+    {
+        if (!value["Quota"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.Quota` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quota.Deserialize(value["Quota"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +353,15 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ModifyTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyTs, allocator);
+    }
+
+    if (m_quotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quota.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -578,5 +605,21 @@ void RabbitMQVirtualHostInfo::SetModifyTs(const uint64_t& _modifyTs)
 bool RabbitMQVirtualHostInfo::ModifyTsHasBeenSet() const
 {
     return m_modifyTsHasBeenSet;
+}
+
+RabbitMQVHostBaseQuota RabbitMQVirtualHostInfo::GetQuota() const
+{
+    return m_quota;
+}
+
+void RabbitMQVirtualHostInfo::SetQuota(const RabbitMQVHostBaseQuota& _quota)
+{
+    m_quota = _quota;
+    m_quotaHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::QuotaHasBeenSet() const
+{
+    return m_quotaHasBeenSet;
 }
 

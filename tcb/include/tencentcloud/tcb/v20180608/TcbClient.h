@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tcb/v20180608/model/AddProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/AddProviderResponse.h>
+#include <tencentcloud/tcb/v20180608/model/AllocateEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/AllocateEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAIModelRequest.h>
@@ -163,6 +167,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsRequest.h>
@@ -192,6 +198,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddProviderResponse> AddProviderOutcome;
                 typedef std::future<AddProviderOutcome> AddProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::AddProviderRequest&, AddProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddProviderAsyncHandler;
+                typedef Outcome<Core::Error, Model::AllocateEnvResponse> AllocateEnvOutcome;
+                typedef std::future<AllocateEnvOutcome> AllocateEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::AllocateEnvRequest&, AllocateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssumeRoleForAllocatedEnvResponse> AssumeRoleForAllocatedEnvOutcome;
+                typedef std::future<AssumeRoleForAllocatedEnvOutcome> AssumeRoleForAllocatedEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::AssumeRoleForAllocatedEnvRequest&, AssumeRoleForAllocatedEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleForAllocatedEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckTcbServiceResponse> CheckTcbServiceOutcome;
                 typedef std::future<CheckTcbServiceOutcome> CheckTcbServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CheckTcbServiceRequest&, CheckTcbServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTcbServiceAsyncHandler;
@@ -399,6 +411,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseEnvResponse> ReleaseEnvOutcome;
+                typedef std::future<ReleaseEnvOutcome> ReleaseEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ReleaseEnvRequest&, ReleaseEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewEnvResponse> RenewEnvOutcome;
                 typedef std::future<RenewEnvOutcome> RenewEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RenewEnvRequest&, RenewEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewEnvAsyncHandler;
@@ -430,6 +445,24 @@ namespace TencentCloud
                 AddProviderOutcome AddProvider(const Model::AddProviderRequest &request);
                 void AddProviderAsync(const Model::AddProviderRequest& request, const AddProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddProviderOutcomeCallable AddProviderCallable(const Model::AddProviderRequest& request);
+
+                /**
+                 *从环境池里立即取出1个环境
+                 * @param req AllocateEnvRequest
+                 * @return AllocateEnvOutcome
+                 */
+                AllocateEnvOutcome AllocateEnv(const Model::AllocateEnvRequest &request);
+                void AllocateEnvAsync(const Model::AllocateEnvRequest& request, const AllocateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AllocateEnvOutcomeCallable AllocateEnvCallable(const Model::AllocateEnvRequest& request);
+
+                /**
+                 *白名单接口，申请Tcb角色临时凭证
+                 * @param req AssumeRoleForAllocatedEnvRequest
+                 * @return AssumeRoleForAllocatedEnvOutcome
+                 */
+                AssumeRoleForAllocatedEnvOutcome AssumeRoleForAllocatedEnv(const Model::AssumeRoleForAllocatedEnvRequest &request);
+                void AssumeRoleForAllocatedEnvAsync(const Model::AssumeRoleForAllocatedEnvRequest& request, const AssumeRoleForAllocatedEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssumeRoleForAllocatedEnvOutcomeCallable AssumeRoleForAllocatedEnvCallable(const Model::AssumeRoleForAllocatedEnvRequest& request);
 
                 /**
                  *检查是否开通Tcb服务
@@ -1160,6 +1193,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
+                 *从环境池里立即取出1个环境
+                 * @param req ReleaseEnvRequest
+                 * @return ReleaseEnvOutcome
+                 */
+                ReleaseEnvOutcome ReleaseEnv(const Model::ReleaseEnvRequest &request);
+                void ReleaseEnvAsync(const Model::ReleaseEnvRequest& request, const ReleaseEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseEnvOutcomeCallable ReleaseEnvCallable(const Model::ReleaseEnvRequest& request);
 
                 /**
                  *本接口用于云开发环境套餐续费。

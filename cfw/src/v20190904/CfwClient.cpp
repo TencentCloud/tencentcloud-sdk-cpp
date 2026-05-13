@@ -2240,6 +2240,56 @@ CfwClient::DescribeDefenseSwitchOutcomeCallable CfwClient::DescribeDefenseSwitch
     return prom->get_future();
 }
 
+CfwClient::DescribeEdgeIpSimpleOutcome CfwClient::DescribeEdgeIpSimple(const DescribeEdgeIpSimpleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeIpSimple");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeIpSimpleResponse rsp = DescribeEdgeIpSimpleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeIpSimpleOutcome(rsp);
+        else
+            return DescribeEdgeIpSimpleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeIpSimpleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeEdgeIpSimpleAsync(const DescribeEdgeIpSimpleRequest& request, const DescribeEdgeIpSimpleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEdgeIpSimpleRequest&;
+    using Resp = DescribeEdgeIpSimpleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeIpSimple", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeEdgeIpSimpleOutcomeCallable CfwClient::DescribeEdgeIpSimpleCallable(const DescribeEdgeIpSimpleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEdgeIpSimpleOutcome>>();
+    DescribeEdgeIpSimpleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeEdgeIpSimpleRequest&,
+        DescribeEdgeIpSimpleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeEnterpriseSGRuleProgressOutcome CfwClient::DescribeEnterpriseSGRuleProgress(const DescribeEnterpriseSGRuleProgressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnterpriseSGRuleProgress");

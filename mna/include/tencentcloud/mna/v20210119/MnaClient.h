@@ -75,6 +75,8 @@
 #include <tencentcloud/mna/v20210119/model/GetGroupDetailResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupListResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetHardwareInfoRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetHardwareInfoResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetL3ConnListRequest.h>
@@ -217,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetGroupListResponse> GetGroupListOutcome;
                 typedef std::future<GetGroupListOutcome> GetGroupListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetGroupListRequest&, GetGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetHardwareInfoResponse> GetHardwareInfoOutcome;
+                typedef std::future<GetHardwareInfoOutcome> GetHardwareInfoOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetHardwareInfoRequest&, GetHardwareInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetHardwareListResponse> GetHardwareListOutcome;
                 typedef std::future<GetHardwareListOutcome> GetHardwareListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetHardwareListRequest&, GetHardwareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareListAsyncHandler;
@@ -528,6 +533,15 @@ namespace TencentCloud
                 GetGroupListOutcome GetGroupList(const Model::GetGroupListRequest &request);
                 void GetGroupListAsync(const Model::GetGroupListRequest& request, const GetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetGroupListOutcomeCallable GetGroupListCallable(const Model::GetGroupListRequest& request);
+
+                /**
+                 *获取硬件设备信息
+                 * @param req GetHardwareInfoRequest
+                 * @return GetHardwareInfoOutcome
+                 */
+                GetHardwareInfoOutcome GetHardwareInfo(const Model::GetHardwareInfoRequest &request);
+                void GetHardwareInfoAsync(const Model::GetHardwareInfoRequest& request, const GetHardwareInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetHardwareInfoOutcomeCallable GetHardwareInfoCallable(const Model::GetHardwareInfoRequest& request);
 
                 /**
                  *获取厂商硬件列表

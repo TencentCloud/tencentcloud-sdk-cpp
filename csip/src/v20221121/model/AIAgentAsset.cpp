@@ -32,7 +32,10 @@ AIAgentAsset::AIAgentAsset() :
     m_identityMethodHasBeenSet(false),
     m_exposureStatusHasBeenSet(false),
     m_metadataRiskURLHasBeenSet(false),
-    m_skillStateHasBeenSet(false)
+    m_skillStateHasBeenSet(false),
+    m_trafficPluginStateHasBeenSet(false),
+    m_trafficRuleStateHasBeenSet(false),
+    m_commandPluginStateHasBeenSet(false)
 {
 }
 
@@ -174,6 +177,60 @@ CoreInternalOutcome AIAgentAsset::Deserialize(const rapidjson::Value &value)
         m_skillStateHasBeenSet = true;
     }
 
+    if (value.HasMember("TrafficPluginState") && !value["TrafficPluginState"].IsNull())
+    {
+        if (!value["TrafficPluginState"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIAgentAsset.TrafficPluginState` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trafficPluginState.Deserialize(value["TrafficPluginState"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_trafficPluginStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrafficRuleState") && !value["TrafficRuleState"].IsNull())
+    {
+        if (!value["TrafficRuleState"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AIAgentAsset.TrafficRuleState` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TrafficRuleState"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TrafficRuleState item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_trafficRuleState.push_back(item);
+        }
+        m_trafficRuleStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommandPluginState") && !value["CommandPluginState"].IsNull())
+    {
+        if (!value["CommandPluginState"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIAgentAsset.CommandPluginState` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_commandPluginState.Deserialize(value["CommandPluginState"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_commandPluginStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +343,39 @@ void AIAgentAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_skillState.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_trafficPluginStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficPluginState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trafficPluginState.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_trafficRuleStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficRuleState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_trafficRuleState.begin(); itr != m_trafficRuleState.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_commandPluginStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandPluginState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_commandPluginState.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -481,5 +571,53 @@ void AIAgentAsset::SetSkillState(const SkillState& _skillState)
 bool AIAgentAsset::SkillStateHasBeenSet() const
 {
     return m_skillStateHasBeenSet;
+}
+
+TrafficPluginState AIAgentAsset::GetTrafficPluginState() const
+{
+    return m_trafficPluginState;
+}
+
+void AIAgentAsset::SetTrafficPluginState(const TrafficPluginState& _trafficPluginState)
+{
+    m_trafficPluginState = _trafficPluginState;
+    m_trafficPluginStateHasBeenSet = true;
+}
+
+bool AIAgentAsset::TrafficPluginStateHasBeenSet() const
+{
+    return m_trafficPluginStateHasBeenSet;
+}
+
+vector<TrafficRuleState> AIAgentAsset::GetTrafficRuleState() const
+{
+    return m_trafficRuleState;
+}
+
+void AIAgentAsset::SetTrafficRuleState(const vector<TrafficRuleState>& _trafficRuleState)
+{
+    m_trafficRuleState = _trafficRuleState;
+    m_trafficRuleStateHasBeenSet = true;
+}
+
+bool AIAgentAsset::TrafficRuleStateHasBeenSet() const
+{
+    return m_trafficRuleStateHasBeenSet;
+}
+
+CommandPluginState AIAgentAsset::GetCommandPluginState() const
+{
+    return m_commandPluginState;
+}
+
+void AIAgentAsset::SetCommandPluginState(const CommandPluginState& _commandPluginState)
+{
+    m_commandPluginState = _commandPluginState;
+    m_commandPluginStateHasBeenSet = true;
+}
+
+bool AIAgentAsset::CommandPluginStateHasBeenSet() const
+{
+    return m_commandPluginStateHasBeenSet;
 }
 

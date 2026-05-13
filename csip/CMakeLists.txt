@@ -104,7 +104,9 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DspmRiskTendency.h
   include/tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmRiskDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/SkillScanRuleHit.h
   include/tencentcloud/csip/v20221121/model/RelatedEvent.h
+  include/tencentcloud/csip/v20221121/model/SkillCapabilityTag.h
   include/tencentcloud/csip/v20221121/model/VerifyDspmAssetLoginCodeResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeScanStatisticResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmRequest.h
@@ -163,10 +165,12 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmApproveHistoryRequest.h
   include/tencentcloud/csip/v20221121/model/VerifyDspmAssetLoginCodeRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSkillScanResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmPayInfoRequest.h
   include/tencentcloud/csip/v20221121/model/TableField.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountPrivilegesResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeSkillScanResultRequest.h
   include/tencentcloud/csip/v20221121/model/GateWayAsset.h
   include/tencentcloud/csip/v20221121/model/DescribeSourceIPAssetResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountResponse.h
@@ -279,6 +283,8 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AssetViewCFGRisk.h
   include/tencentcloud/csip/v20221121/model/DspmUinUser.h
   include/tencentcloud/csip/v20221121/model/DataSearchBug.h
+  include/tencentcloud/csip/v20221121/model/DspmAssetInstance.h
+  include/tencentcloud/csip/v20221121/model/CommandPluginState.h
   include/tencentcloud/csip/v20221121/model/DspmAssetSecurityAnalyseStatus.h
   include/tencentcloud/csip/v20221121/model/BackupLog.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterAssetsRequest.h
@@ -313,6 +319,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/StandardTerm.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListRequest.h
   include/tencentcloud/csip/v20221121/model/UpdateAlertStatusListResponse.h
+  include/tencentcloud/csip/v20221121/model/SkillScanEngineResult.h
   include/tencentcloud/csip/v20221121/model/FilterDataObject.h
   include/tencentcloud/csip/v20221121/model/ServerRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsRequest.h
@@ -333,11 +340,12 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeAssetRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h
   include/tencentcloud/csip/v20221121/model/AccessCredentialOutput.h
-  include/tencentcloud/csip/v20221121/model/DspmAssetInstance.h
+  include/tencentcloud/csip/v20221121/model/CreateDspmExportTaskResponse.h
   include/tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.h
   include/tencentcloud/csip/v20221121/model/TaskCenterVulRiskInputParam.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmIpInfoRequest.h
   include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
+  include/tencentcloud/csip/v20221121/model/TrafficPluginState.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListResponse.h
   include/tencentcloud/csip/v20221121/model/Tags.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmRiskInfoRequest.h
@@ -414,6 +422,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyResponse.h
   include/tencentcloud/csip/v20221121/model/StatisticalFilter.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskDetailRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSkillScanResultResponse.h
   include/tencentcloud/csip/v20221121/model/DspmDbAssetId.h
   include/tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordRequest.h
@@ -422,12 +431,13 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetLoginCredentialResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskDetailResponse.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h
+  include/tencentcloud/csip/v20221121/model/TrafficRuleState.h
   include/tencentcloud/csip/v20221121/model/AccessKeyAlarmCount.h
   include/tencentcloud/csip/v20221121/model/RiskRuleItem.h
   include/tencentcloud/csip/v20221121/model/DescribeAbnormalCallRecordRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/AssetRiskItem.h
-  include/tencentcloud/csip/v20221121/model/CreateDspmExportTaskResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskDetailListRequest.h
   include/tencentcloud/csip/v20221121/model/DspmAccessRecordId.h
   include/tencentcloud/csip/v20221121/model/RoleInfo.h
   include/tencentcloud/csip/v20221121/model/RegionConfig.h
@@ -455,6 +465,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AssetClusterPod.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAccessRecordRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialResponse.h
+  include/tencentcloud/csip/v20221121/model/SkillScanItem.h
   include/tencentcloud/csip/v20221121/model/DescribeVULListRequest.h
   include/tencentcloud/csip/v20221121/model/AssetViewWeakPassRisk.h
   include/tencentcloud/csip/v20221121/model/CFGViewCFGRisk.h
@@ -464,13 +475,14 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/SensitiveDetail.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterVULViewVULRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/CreateDspmExportTaskRequest.h
+  include/tencentcloud/csip/v20221121/model/SkillRuleCatalogItem.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterVULViewVULRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAssetsRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeRiskDetailListRequest.h
   include/tencentcloud/csip/v20221121/model/VULRiskInfo.h
   include/tencentcloud/csip/v20221121/model/CreateDspmApplyOrderRequest.h
   include/tencentcloud/csip/v20221121/model/RiskDetailItem.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListResponse.h
+  include/tencentcloud/csip/v20221121/model/CreateSkillScanRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeVulRiskListRequest.h
@@ -617,7 +629,9 @@ set(csip_src
   src/v20221121/model/DspmRiskTendency.cpp
   src/v20221121/model/DeleteDomainAndIpResponse.cpp
   src/v20221121/model/DescribeDspmRiskDetailRequest.cpp
+  src/v20221121/model/SkillScanRuleHit.cpp
   src/v20221121/model/RelatedEvent.cpp
+  src/v20221121/model/SkillCapabilityTag.cpp
   src/v20221121/model/VerifyDspmAssetLoginCodeResponse.cpp
   src/v20221121/model/DescribeScanStatisticResponse.cpp
   src/v20221121/model/DescribeAccessKeyAlarmRequest.cpp
@@ -676,10 +690,12 @@ set(csip_src
   src/v20221121/model/DescribeDspmApproveHistoryRequest.cpp
   src/v20221121/model/VerifyDspmAssetLoginCodeRequest.cpp
   src/v20221121/model/DescribeDspmBackupSettingResponse.cpp
+  src/v20221121/model/CreateSkillScanResponse.cpp
   src/v20221121/model/DescribeDspmPayInfoRequest.cpp
   src/v20221121/model/TableField.cpp
   src/v20221121/model/ModifyDspmAssetAccountPrivilegesResponse.cpp
   src/v20221121/model/DescribeUebaRuleResponse.cpp
+  src/v20221121/model/DescribeSkillScanResultRequest.cpp
   src/v20221121/model/GateWayAsset.cpp
   src/v20221121/model/DescribeSourceIPAssetResponse.cpp
   src/v20221121/model/DeleteDspmAssetAccountResponse.cpp
@@ -792,6 +808,8 @@ set(csip_src
   src/v20221121/model/AssetViewCFGRisk.cpp
   src/v20221121/model/DspmUinUser.cpp
   src/v20221121/model/DataSearchBug.cpp
+  src/v20221121/model/DspmAssetInstance.cpp
+  src/v20221121/model/CommandPluginState.cpp
   src/v20221121/model/DspmAssetSecurityAnalyseStatus.cpp
   src/v20221121/model/BackupLog.cpp
   src/v20221121/model/DescribeClusterAssetsRequest.cpp
@@ -826,6 +844,7 @@ set(csip_src
   src/v20221121/model/StandardTerm.cpp
   src/v20221121/model/DescribeDspmAssetDatabaseListRequest.cpp
   src/v20221121/model/UpdateAlertStatusListResponse.cpp
+  src/v20221121/model/SkillScanEngineResult.cpp
   src/v20221121/model/FilterDataObject.cpp
   src/v20221121/model/ServerRisk.cpp
   src/v20221121/model/DescribeDspmAssetIdsRequest.cpp
@@ -846,11 +865,12 @@ set(csip_src
   src/v20221121/model/DescribeAssetRiskListResponse.cpp
   src/v20221121/model/DeleteDspmRestoreLogListResponse.cpp
   src/v20221121/model/AccessCredentialOutput.cpp
-  src/v20221121/model/DspmAssetInstance.cpp
+  src/v20221121/model/CreateDspmExportTaskResponse.cpp
   src/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.cpp
   src/v20221121/model/TaskCenterVulRiskInputParam.cpp
   src/v20221121/model/ModifyDspmIpInfoRequest.cpp
   src/v20221121/model/ScanTaskInfo.cpp
+  src/v20221121/model/TrafficPluginState.cpp
   src/v20221121/model/DescribeDspmAssetTableListResponse.cpp
   src/v20221121/model/Tags.cpp
   src/v20221121/model/ModifyDspmRiskInfoRequest.cpp
@@ -927,6 +947,7 @@ set(csip_src
   src/v20221121/model/DeleteDspmPersonalIdentifyResponse.cpp
   src/v20221121/model/StatisticalFilter.cpp
   src/v20221121/model/DescribeVULRiskDetailRequest.cpp
+  src/v20221121/model/DescribeSkillScanResultResponse.cpp
   src/v20221121/model/DspmDbAssetId.cpp
   src/v20221121/model/DescribeConfigCheckRulesRequest.cpp
   src/v20221121/model/ModifyDspmAccessRecordRequest.cpp
@@ -935,12 +956,13 @@ set(csip_src
   src/v20221121/model/DescribeDspmAssetLoginCredentialResponse.cpp
   src/v20221121/model/DescribeVULRiskDetailResponse.cpp
   src/v20221121/model/ModifyRiskCenterScanTaskResponse.cpp
+  src/v20221121/model/TrafficRuleState.cpp
   src/v20221121/model/AccessKeyAlarmCount.cpp
   src/v20221121/model/RiskRuleItem.cpp
   src/v20221121/model/DescribeAbnormalCallRecordRequest.cpp
   src/v20221121/model/ModifyDspmAssetDataScanTaskRequest.cpp
   src/v20221121/model/AssetRiskItem.cpp
-  src/v20221121/model/CreateDspmExportTaskResponse.cpp
+  src/v20221121/model/DescribeRiskDetailListRequest.cpp
   src/v20221121/model/DspmAccessRecordId.cpp
   src/v20221121/model/RoleInfo.cpp
   src/v20221121/model/RegionConfig.cpp
@@ -968,6 +990,7 @@ set(csip_src
   src/v20221121/model/AssetClusterPod.cpp
   src/v20221121/model/DescribeDspmAccessRecordRequest.cpp
   src/v20221121/model/DescribeKeySandboxCredentialResponse.cpp
+  src/v20221121/model/SkillScanItem.cpp
   src/v20221121/model/DescribeVULListRequest.cpp
   src/v20221121/model/AssetViewWeakPassRisk.cpp
   src/v20221121/model/CFGViewCFGRisk.cpp
@@ -977,13 +1000,14 @@ set(csip_src
   src/v20221121/model/SensitiveDetail.cpp
   src/v20221121/model/DescribeRiskCenterVULViewVULRiskListResponse.cpp
   src/v20221121/model/CreateDspmExportTaskRequest.cpp
+  src/v20221121/model/SkillRuleCatalogItem.cpp
   src/v20221121/model/DescribeRiskCenterVULViewVULRiskListRequest.cpp
   src/v20221121/model/DescribeDspmAccessTopologyAssetsRequest.cpp
-  src/v20221121/model/DescribeRiskDetailListRequest.cpp
   src/v20221121/model/VULRiskInfo.cpp
   src/v20221121/model/CreateDspmApplyOrderRequest.cpp
   src/v20221121/model/RiskDetailItem.cpp
   src/v20221121/model/DescribeDspmAssetDatabaseListResponse.cpp
+  src/v20221121/model/CreateSkillScanRequest.cpp
   src/v20221121/model/ModifyDspmAccessRecordResponse.cpp
   src/v20221121/model/DescribeVulViewVulRiskListRequest.cpp
   src/v20221121/model/DescribeVulRiskListRequest.cpp

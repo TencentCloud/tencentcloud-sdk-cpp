@@ -24,7 +24,8 @@ OcrHitInfo::OcrHitInfo() :
     m_typeHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_libNameHasBeenSet(false),
-    m_positionsHasBeenSet(false)
+    m_positionsHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome OcrHitInfo::Deserialize(const rapidjson::Value &value)
         m_positionsHasBeenSet = true;
     }
 
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OcrHitInfo.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void OcrHitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void OcrHitInfo::SetPositions(const vector<Positions>& _positions)
 bool OcrHitInfo::PositionsHasBeenSet() const
 {
     return m_positionsHasBeenSet;
+}
+
+string OcrHitInfo::GetLabel() const
+{
+    return m_label;
+}
+
+void OcrHitInfo::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool OcrHitInfo::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 

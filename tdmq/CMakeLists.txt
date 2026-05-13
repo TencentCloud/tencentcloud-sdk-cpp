@@ -380,6 +380,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CmqTopic.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQExchangeListInfo.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindVpcsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/RabbitMQVHostBaseQuota.h
   include/tencentcloud/tdmq/v20200217/model/TopicRecord.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/GeneralSKU.h
@@ -795,6 +796,7 @@ set(tdmq_src
   src/v20200217/model/CmqTopic.cpp
   src/v20200217/model/RabbitMQExchangeListInfo.cpp
   src/v20200217/model/DescribeBindVpcsRequest.cpp
+  src/v20200217/model/RabbitMQVHostBaseQuota.cpp
   src/v20200217/model/TopicRecord.cpp
   src/v20200217/model/DescribeEnvironmentRolesRequest.cpp
   src/v20200217/model/GeneralSKU.cpp

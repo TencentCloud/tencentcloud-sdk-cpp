@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/SkillState.h>
+#include <tencentcloud/csip/v20221121/model/TrafficPluginState.h>
+#include <tencentcloud/csip/v20221121/model/TrafficRuleState.h>
+#include <tencentcloud/csip/v20221121/model/CommandPluginState.h>
 
 
 namespace TencentCloud
@@ -299,6 +302,69 @@ namespace TencentCloud
                      */
                     bool SkillStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>流量沙箱插件状态</p>
+                     * @return TrafficPluginState <p>流量沙箱插件状态</p>
+                     * 
+                     */
+                    TrafficPluginState GetTrafficPluginState() const;
+
+                    /**
+                     * 设置<p>流量沙箱插件状态</p>
+                     * @param _trafficPluginState <p>流量沙箱插件状态</p>
+                     * 
+                     */
+                    void SetTrafficPluginState(const TrafficPluginState& _trafficPluginState);
+
+                    /**
+                     * 判断参数 TrafficPluginState 是否已赋值
+                     * @return TrafficPluginState 是否已赋值
+                     * 
+                     */
+                    bool TrafficPluginStateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>流量沙箱规则状态</p>
+                     * @return TrafficRuleState <p>流量沙箱规则状态</p>
+                     * 
+                     */
+                    std::vector<TrafficRuleState> GetTrafficRuleState() const;
+
+                    /**
+                     * 设置<p>流量沙箱规则状态</p>
+                     * @param _trafficRuleState <p>流量沙箱规则状态</p>
+                     * 
+                     */
+                    void SetTrafficRuleState(const std::vector<TrafficRuleState>& _trafficRuleState);
+
+                    /**
+                     * 判断参数 TrafficRuleState 是否已赋值
+                     * @return TrafficRuleState 是否已赋值
+                     * 
+                     */
+                    bool TrafficRuleStateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>命令沙箱插件状态</p>
+                     * @return CommandPluginState <p>命令沙箱插件状态</p>
+                     * 
+                     */
+                    CommandPluginState GetCommandPluginState() const;
+
+                    /**
+                     * 设置<p>命令沙箱插件状态</p>
+                     * @param _commandPluginState <p>命令沙箱插件状态</p>
+                     * 
+                     */
+                    void SetCommandPluginState(const CommandPluginState& _commandPluginState);
+
+                    /**
+                     * 判断参数 CommandPluginState 是否已赋值
+                     * @return CommandPluginState 是否已赋值
+                     * 
+                     */
+                    bool CommandPluginStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,6 +438,24 @@ namespace TencentCloud
                      */
                     SkillState m_skillState;
                     bool m_skillStateHasBeenSet;
+
+                    /**
+                     * <p>流量沙箱插件状态</p>
+                     */
+                    TrafficPluginState m_trafficPluginState;
+                    bool m_trafficPluginStateHasBeenSet;
+
+                    /**
+                     * <p>流量沙箱规则状态</p>
+                     */
+                    std::vector<TrafficRuleState> m_trafficRuleState;
+                    bool m_trafficRuleStateHasBeenSet;
+
+                    /**
+                     * <p>命令沙箱插件状态</p>
+                     */
+                    CommandPluginState m_commandPluginState;
+                    bool m_commandPluginStateHasBeenSet;
 
                 };
             }

@@ -90,6 +90,106 @@ TcbClient::AddProviderOutcomeCallable TcbClient::AddProviderCallable(const AddPr
     return prom->get_future();
 }
 
+TcbClient::AllocateEnvOutcome TcbClient::AllocateEnv(const AllocateEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "AllocateEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AllocateEnvResponse rsp = AllocateEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AllocateEnvOutcome(rsp);
+        else
+            return AllocateEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return AllocateEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::AllocateEnvAsync(const AllocateEnvRequest& request, const AllocateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AllocateEnvRequest&;
+    using Resp = AllocateEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AllocateEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::AllocateEnvOutcomeCallable TcbClient::AllocateEnvCallable(const AllocateEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AllocateEnvOutcome>>();
+    AllocateEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const AllocateEnvRequest&,
+        AllocateEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::AssumeRoleForAllocatedEnvOutcome TcbClient::AssumeRoleForAllocatedEnv(const AssumeRoleForAllocatedEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssumeRoleForAllocatedEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssumeRoleForAllocatedEnvResponse rsp = AssumeRoleForAllocatedEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssumeRoleForAllocatedEnvOutcome(rsp);
+        else
+            return AssumeRoleForAllocatedEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return AssumeRoleForAllocatedEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::AssumeRoleForAllocatedEnvAsync(const AssumeRoleForAllocatedEnvRequest& request, const AssumeRoleForAllocatedEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AssumeRoleForAllocatedEnvRequest&;
+    using Resp = AssumeRoleForAllocatedEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AssumeRoleForAllocatedEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::AssumeRoleForAllocatedEnvOutcomeCallable TcbClient::AssumeRoleForAllocatedEnvCallable(const AssumeRoleForAllocatedEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AssumeRoleForAllocatedEnvOutcome>>();
+    AssumeRoleForAllocatedEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const AssumeRoleForAllocatedEnvRequest&,
+        AssumeRoleForAllocatedEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckTcbService");
@@ -3532,6 +3632,56 @@ TcbClient::ModifyUserOutcomeCallable TcbClient::ModifyUserCallable(const ModifyU
         const TcbClient*,
         const ModifyUserRequest&,
         ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::ReleaseEnvOutcome TcbClient::ReleaseEnv(const ReleaseEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseEnvResponse rsp = ReleaseEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseEnvOutcome(rsp);
+        else
+            return ReleaseEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ReleaseEnvAsync(const ReleaseEnvRequest& request, const ReleaseEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReleaseEnvRequest&;
+    using Resp = ReleaseEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReleaseEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ReleaseEnvOutcomeCallable TcbClient::ReleaseEnvCallable(const ReleaseEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReleaseEnvOutcome>>();
+    ReleaseEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ReleaseEnvRequest&,
+        ReleaseEnvOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

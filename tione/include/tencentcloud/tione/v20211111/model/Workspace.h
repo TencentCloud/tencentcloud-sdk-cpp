@@ -134,21 +134,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>绑定的资源组信息</p>
                      * @return ResourceGroups <p>绑定的资源组信息</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<ResourceGroupInWorkspace> GetResourceGroups() const;
 
                     /**
                      * 设置<p>绑定的资源组信息</p>
                      * @param _resourceGroups <p>绑定的资源组信息</p>
-                     * 
+                     * @deprecated
                      */
                     void SetResourceGroups(const std::vector<ResourceGroupInWorkspace>& _resourceGroups);
 
                     /**
                      * 判断参数 ResourceGroups 是否已赋值
                      * @return ResourceGroups 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceGroupsHasBeenSet() const;
 

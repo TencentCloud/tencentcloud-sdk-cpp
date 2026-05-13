@@ -111,6 +111,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterVpcFwSwitchsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEdgeIpSimpleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEdgeIpSimpleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.h>
@@ -425,6 +427,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefenseSwitchResponse> DescribeDefenseSwitchOutcome;
                 typedef std::future<DescribeDefenseSwitchOutcome> DescribeDefenseSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeDefenseSwitchRequest&, DescribeDefenseSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefenseSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeIpSimpleResponse> DescribeEdgeIpSimpleOutcome;
+                typedef std::future<DescribeEdgeIpSimpleOutcome> DescribeEdgeIpSimpleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeEdgeIpSimpleRequest&, DescribeEdgeIpSimpleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeIpSimpleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnterpriseSGRuleProgressResponse> DescribeEnterpriseSGRuleProgressOutcome;
                 typedef std::future<DescribeEnterpriseSGRuleProgressOutcome> DescribeEnterpriseSGRuleProgressOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSGRuleProgressRequest&, DescribeEnterpriseSGRuleProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSGRuleProgressAsyncHandler;
@@ -1077,6 +1082,15 @@ namespace TencentCloud
                 DescribeDefenseSwitchOutcome DescribeDefenseSwitch(const Model::DescribeDefenseSwitchRequest &request);
                 void DescribeDefenseSwitchAsync(const Model::DescribeDefenseSwitchRequest& request, const DescribeDefenseSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefenseSwitchOutcomeCallable DescribeDefenseSwitchCallable(const Model::DescribeDefenseSwitchRequest& request);
+
+                /**
+                 *互联网边界防火墙开关列表(轻量)
+                 * @param req DescribeEdgeIpSimpleRequest
+                 * @return DescribeEdgeIpSimpleOutcome
+                 */
+                DescribeEdgeIpSimpleOutcome DescribeEdgeIpSimple(const Model::DescribeEdgeIpSimpleRequest &request);
+                void DescribeEdgeIpSimpleAsync(const Model::DescribeEdgeIpSimpleRequest& request, const DescribeEdgeIpSimpleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeIpSimpleOutcomeCallable DescribeEdgeIpSimpleCallable(const Model::DescribeEdgeIpSimpleRequest& request);
 
                 /**
                  *查询新版安全组下发进度

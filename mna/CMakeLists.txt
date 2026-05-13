@@ -51,11 +51,12 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/HardwareInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteApplicationResponse.h
   include/tencentcloud/mna/v20210119/model/GetGroupDetailRequest.h
-  include/tencentcloud/mna/v20210119/model/GroupAddDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GroupDeleteDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/GroupAddDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateApplicationInfoRequest.h
   include/tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h
+  include/tencentcloud/mna/v20210119/model/GetHardwareInfoRequest.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByNameResponse.h
@@ -91,8 +92,9 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountResponse.h
   include/tencentcloud/mna/v20210119/model/GetHardwareListRequest.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByNameRequest.h
-  include/tencentcloud/mna/v20210119/model/GroupDeleteDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/DeviceDetails.h
+  include/tencentcloud/mna/v20210119/model/GroupDeleteDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/GetHardwareInfoResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionResponse.h
   include/tencentcloud/mna/v20210119/model/ActiveDeviceList.h
   include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h
@@ -177,11 +179,12 @@ set(mna_src
   src/v20210119/model/HardwareInfo.cpp
   src/v20210119/model/DeleteApplicationResponse.cpp
   src/v20210119/model/GetGroupDetailRequest.cpp
-  src/v20210119/model/GroupAddDeviceRequest.cpp
   src/v20210119/model/GroupDeleteDeviceResponse.cpp
+  src/v20210119/model/GroupAddDeviceRequest.cpp
   src/v20210119/model/GetStatisticDataResponse.cpp
   src/v20210119/model/UpdateApplicationInfoRequest.cpp
   src/v20210119/model/GetPublicKeyRequest.cpp
+  src/v20210119/model/GetHardwareInfoRequest.cpp
   src/v20210119/model/GetFlowStatisticByGroupResponse.cpp
   src/v20210119/model/GetNetMonitorResponse.cpp
   src/v20210119/model/GetFlowStatisticByNameResponse.cpp
@@ -217,8 +220,9 @@ set(mna_src
   src/v20210119/model/DownloadActiveDeviceCountResponse.cpp
   src/v20210119/model/GetHardwareListRequest.cpp
   src/v20210119/model/GetFlowStatisticByNameRequest.cpp
-  src/v20210119/model/GroupDeleteDeviceRequest.cpp
   src/v20210119/model/DeviceDetails.cpp
+  src/v20210119/model/GroupDeleteDeviceRequest.cpp
+  src/v20210119/model/GetHardwareInfoResponse.cpp
   src/v20210119/model/GetFlowStatisticByRegionResponse.cpp
   src/v20210119/model/ActiveDeviceList.cpp
   src/v20210119/model/GetMultiFlowStatisticRequest.cpp

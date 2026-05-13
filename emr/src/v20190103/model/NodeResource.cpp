@@ -27,7 +27,9 @@ NodeResource::NodeResource() :
     m_updateTimeHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
     m_maxResourceNumHasBeenSet(false),
-    m_prepaidUnderwritePeriodsHasBeenSet(false)
+    m_prepaidUnderwritePeriodsHasBeenSet(false),
+    m_quotaNumHasBeenSet(false),
+    m_quotaUnitHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome NodeResource::Deserialize(const rapidjson::Value &value)
         m_prepaidUnderwritePeriodsHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaNum") && !value["QuotaNum"].IsNull())
+    {
+        if (!value["QuotaNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeResource.QuotaNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaNum = value["QuotaNum"].GetInt64();
+        m_quotaNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuotaUnit") && !value["QuotaUnit"].IsNull())
+    {
+        if (!value["QuotaUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeResource.QuotaUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaUnit = string(value["QuotaUnit"].GetString());
+        m_quotaUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ void NodeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_quotaNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quotaNum, allocator);
+    }
+
+    if (m_quotaUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaUnit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +336,37 @@ void NodeResource::SetPrepaidUnderwritePeriods(const vector<int64_t>& _prepaidUn
 bool NodeResource::PrepaidUnderwritePeriodsHasBeenSet() const
 {
     return m_prepaidUnderwritePeriodsHasBeenSet;
+}
+
+int64_t NodeResource::GetQuotaNum() const
+{
+    return m_quotaNum;
+}
+
+void NodeResource::SetQuotaNum(const int64_t& _quotaNum)
+{
+    m_quotaNum = _quotaNum;
+    m_quotaNumHasBeenSet = true;
+}
+
+bool NodeResource::QuotaNumHasBeenSet() const
+{
+    return m_quotaNumHasBeenSet;
+}
+
+string NodeResource::GetQuotaUnit() const
+{
+    return m_quotaUnit;
+}
+
+void NodeResource::SetQuotaUnit(const string& _quotaUnit)
+{
+    m_quotaUnit = _quotaUnit;
+    m_quotaUnitHasBeenSet = true;
+}
+
+bool NodeResource::QuotaUnitHasBeenSet() const
+{
+    return m_quotaUnitHasBeenSet;
 }
 

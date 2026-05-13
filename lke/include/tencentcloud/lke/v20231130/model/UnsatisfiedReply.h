@@ -280,6 +280,27 @@ namespace TencentCloud
                      */
                     bool FeedbackContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户</p>
+                     * @return Visitor <p>用户</p>
+                     * 
+                     */
+                    std::string GetVisitor() const;
+
+                    /**
+                     * 设置<p>用户</p>
+                     * @param _visitor <p>用户</p>
+                     * 
+                     */
+                    void SetVisitor(const std::string& _visitor);
+
+                    /**
+                     * 判断参数 Visitor 是否已赋值
+                     * @return Visitor 是否已赋值
+                     * 
+                     */
+                    bool VisitorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     std::string m_feedbackContent;
                     bool m_feedbackContentHasBeenSet;
+
+                    /**
+                     * <p>用户</p>
+                     */
+                    std::string m_visitor;
+                    bool m_visitorHasBeenSet;
 
                 };
             }

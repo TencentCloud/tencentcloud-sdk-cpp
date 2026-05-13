@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识模型命中还是关键词命中
-                     * @return Type 标识模型命中还是关键词命中
+                     * 获取<p>标识模型命中还是关键词命中</p>
+                     * @return Type <p>标识模型命中还是关键词命中</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置标识模型命中还是关键词命中
-                     * @param _type 标识模型命中还是关键词命中
+                     * 设置<p>标识模型命中还是关键词命中</p>
+                     * @param _type <p>标识模型命中还是关键词命中</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取命中关键词
-                     * @return Keyword 命中关键词
+                     * 获取<p>命中关键词</p>
+                     * @return Keyword <p>命中关键词</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置命中关键词
-                     * @param _keyword 命中关键词
+                     * 设置<p>命中关键词</p>
+                     * @param _keyword <p>命中关键词</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取自定义词库名称
-                     * @return LibName 自定义词库名称
+                     * 获取<p>自定义词库名称</p>
+                     * @return LibName <p>自定义词库名称</p>
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
-                     * 设置自定义词库名称
-                     * @param _libName 自定义词库名称
+                     * 设置<p>自定义词库名称</p>
+                     * @param _libName <p>自定义词库名称</p>
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool LibNameHasBeenSet() const;
 
                     /**
-                     * 获取位置信息
-                     * @return Positions 位置信息
+                     * 获取<p>位置信息</p>
+                     * @return Positions <p>位置信息</p>
                      * 
                      */
                     std::vector<Positions> GetPositions() const;
 
                     /**
-                     * 设置位置信息
-                     * @param _positions 位置信息
+                     * 设置<p>位置信息</p>
+                     * @param _positions <p>位置信息</p>
                      * 
                      */
                     void SetPositions(const std::vector<Positions>& _positions);
@@ -131,31 +131,58 @@ namespace TencentCloud
                      */
                     bool PositionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>命中标签</p>
+                     * @return Label <p>命中标签</p>
+                     * 
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置<p>命中标签</p>
+                     * @param _label <p>命中标签</p>
+                     * 
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     * 
+                     */
+                    bool LabelHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 标识模型命中还是关键词命中
+                     * <p>标识模型命中还是关键词命中</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 命中关键词
+                     * <p>命中关键词</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 自定义词库名称
+                     * <p>自定义词库名称</p>
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
 
                     /**
-                     * 位置信息
+                     * <p>位置信息</p>
                      */
                     std::vector<Positions> m_positions;
                     bool m_positionsHasBeenSet;
+
+                    /**
+                     * <p>命中标签</p>
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }
