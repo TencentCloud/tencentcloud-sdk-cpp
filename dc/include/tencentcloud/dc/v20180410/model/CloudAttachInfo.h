@@ -565,6 +565,48 @@ cross-region：跨地域
                      */
                     bool BIapLinkProtectedHasBeenSet() const;
 
+                    /**
+                     * 获取服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * @return ServiceType 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * @param _serviceType 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取VLAN范围
+                     * @return VlanRange VLAN范围
+                     * 
+                     */
+                    std::string GetVlanRange() const;
+
+                    /**
+                     * 设置VLAN范围
+                     * @param _vlanRange VLAN范围
+                     * 
+                     */
+                    void SetVlanRange(const std::string& _vlanRange);
+
+                    /**
+                     * 判断参数 VlanRange 是否已赋值
+                     * @return VlanRange 是否已赋值
+                     * 
+                     */
+                    bool VlanRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -713,6 +755,18 @@ cross-region：跨地域
                      */
                     bool m_bIapLinkProtected;
                     bool m_bIapLinkProtectedHasBeenSet;
+
+                    /**
+                     * 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * VLAN范围
+                     */
+                    std::string m_vlanRange;
+                    bool m_vlanRangeHasBeenSet;
 
                 };
             }

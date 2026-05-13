@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取<p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>
-                     * @return ReferenceType <p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>
+                     * 获取<p>参考类型，GV、Kling、PixVerse模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频；<br>当使用 PixVerse 模型时，可用于多图（主体）参考生模式，可选值：subject 表示主体、background 表示背景；</p>
+                     * @return ReferenceType <p>参考类型，GV、Kling、PixVerse模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频；<br>当使用 PixVerse 模型时，可用于多图（主体）参考生模式，可选值：subject 表示主体、background 表示背景；</p>
                      * 
                      */
                     std::string GetReferenceType() const;
 
                     /**
-                     * 设置<p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>
-                     * @param _referenceType <p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>
+                     * 设置<p>参考类型，GV、Kling、PixVerse模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频；<br>当使用 PixVerse 模型时，可用于多图（主体）参考生模式，可选值：subject 表示主体、background 表示背景；</p>
+                     * @param _referenceType <p>参考类型，GV、Kling、PixVerse模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频；<br>当使用 PixVerse 模型时，可用于多图（主体）参考生模式，可选值：subject 表示主体、background 表示背景；</p>
                      * 
                      */
                     void SetReferenceType(const std::string& _referenceType);
@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool UsageHasBeenSet() const;
 
+                    /**
+                     * 获取<p><strong>仅 PixVerse 模型的多图（主体）参考生模式生效</strong>，针对图片指定名字, 用来更精准效果。用法：当本字段值为“小猫”，在 Prompt 中使用 @小猫 精确描述场景。@Text 后必须有空格，如 @小猫 跑步。Prompt 中引用的名称必须与本字段完全一致。</p>
+                     * @return Text <p><strong>仅 PixVerse 模型的多图（主体）参考生模式生效</strong>，针对图片指定名字, 用来更精准效果。用法：当本字段值为“小猫”，在 Prompt 中使用 @小猫 精确描述场景。@Text 后必须有空格，如 @小猫 跑步。Prompt 中引用的名称必须与本字段完全一致。</p>
+                     * 
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置<p><strong>仅 PixVerse 模型的多图（主体）参考生模式生效</strong>，针对图片指定名字, 用来更精准效果。用法：当本字段值为“小猫”，在 Prompt 中使用 @小猫 精确描述场景。@Text 后必须有空格，如 @小猫 跑步。Prompt 中引用的名称必须与本字段完全一致。</p>
+                     * @param _text <p><strong>仅 PixVerse 模型的多图（主体）参考生模式生效</strong>，针对图片指定名字, 用来更精准效果。用法：当本字段值为“小猫”，在 Prompt 中使用 @小猫 精确描述场景。@Text 后必须有空格，如 @小猫 跑步。Prompt 中引用的名称必须与本字段完全一致。</p>
+                     * 
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     * 
+                     */
+                    bool TextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,7 +283,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * <p>参考类型，GV模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。</p>
+                     * <p>参考类型，GV、Kling、PixVerse模型适用。<br>注意：<br>当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；<br>当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频；<br>当使用 PixVerse 模型时，可用于多图（主体）参考生模式，可选值：subject 表示主体、background 表示背景；</p>
                      */
                     std::string m_referenceType;
                     bool m_referenceTypeHasBeenSet;
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_usage;
                     bool m_usageHasBeenSet;
+
+                    /**
+                     * <p><strong>仅 PixVerse 模型的多图（主体）参考生模式生效</strong>，针对图片指定名字, 用来更精准效果。用法：当本字段值为“小猫”，在 Prompt 中使用 @小猫 精确描述场景。@Text 后必须有空格，如 @小猫 跑步。Prompt 中引用的名称必须与本字段完全一致。</p>
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
 
                 };
             }

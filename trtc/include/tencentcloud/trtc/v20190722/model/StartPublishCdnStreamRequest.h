@@ -135,19 +135,31 @@ namespace TencentCloud
                     bool AgentParamsHasBeenSet() const;
 
                     /**
-                     * 获取是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-注：混流是必须转码，这个参数需设置为1。
-                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-注：混流是必须转码，这个参数需设置为1。
+                     * 获取是否转码，0表示无需转码，1表示需要转码。
+WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
+注：
+1，混流是必须转码的，这个参数需设置为1。
+2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。
+WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
+注：
+1，混流是必须转码的，这个参数需设置为1。
+2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
                      * 
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
-                     * 设置是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-注：混流是必须转码，这个参数需设置为1。
-                     * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-注：混流是必须转码，这个参数需设置为1。
+                     * 设置是否转码，0表示无需转码，1表示需要转码。
+WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
+注：
+1，混流是必须转码的，这个参数需设置为1。
+2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
+                     * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。
+WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
+注：
+1，混流是必须转码的，这个参数需设置为1。
+2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
                      * 
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
@@ -333,8 +345,11 @@ namespace TencentCloud
                     bool m_agentParamsHasBeenSet;
 
                     /**
-                     * 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
-注：混流是必须转码，这个参数需设置为1。
+                     * 是否转码，0表示无需转码，1表示需要转码。
+WithTranscoding为0，表示旁路转推，默认不转码；WithTranscoding为1，表示混流转推，此时一定会转码，并收取转码费用。
+注：
+1，混流是必须转码的，这个参数需设置为1。
+2，WithTranscoding=0时，视频输出Codec默认跟随上行视频Codec，如果上行视频Codec发生变化，CDN会断流重推。
                      */
                     uint64_t m_withTranscoding;
                     bool m_withTranscodingHasBeenSet;

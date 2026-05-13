@@ -245,6 +245,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTCLakeMetaInstanceRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTCLakeMetaInstanceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablePartitionsRequest.h>
@@ -313,6 +315,8 @@
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessResponse.h>
+#include <tencentcloud/dlc/v20210125/model/InitializeTCLakeRequest.h>
+#include <tencentcloud/dlc/v20210125/model/InitializeTCLakeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/LaunchStandardEngineResourceGroupsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
@@ -742,6 +746,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSubUserAccessPolicyResponse> DescribeSubUserAccessPolicyOutcome;
                 typedef std::future<DescribeSubUserAccessPolicyOutcome> DescribeSubUserAccessPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSubUserAccessPolicyRequest&, DescribeSubUserAccessPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubUserAccessPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTCLakeMetaInstanceResponse> DescribeTCLakeMetaInstanceOutcome;
+                typedef std::future<DescribeTCLakeMetaInstanceOutcome> DescribeTCLakeMetaInstanceOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTCLakeMetaInstanceRequest&, DescribeTCLakeMetaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTCLakeMetaInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableResponse> DescribeTableOutcome;
                 typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTableRequest&, DescribeTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableAsyncHandler;
@@ -844,6 +851,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GrantDLCCatalogAccessResponse> GrantDLCCatalogAccessOutcome;
                 typedef std::future<GrantDLCCatalogAccessOutcome> GrantDLCCatalogAccessOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GrantDLCCatalogAccessRequest&, GrantDLCCatalogAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantDLCCatalogAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::InitializeTCLakeResponse> InitializeTCLakeOutcome;
+                typedef std::future<InitializeTCLakeOutcome> InitializeTCLakeOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::InitializeTCLakeRequest&, InitializeTCLakeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeTCLakeAsyncHandler;
                 typedef Outcome<Core::Error, Model::LaunchStandardEngineResourceGroupsResponse> LaunchStandardEngineResourceGroupsOutcome;
                 typedef std::future<LaunchStandardEngineResourceGroupsOutcome> LaunchStandardEngineResourceGroupsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::LaunchStandardEngineResourceGroupsRequest&, LaunchStandardEngineResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LaunchStandardEngineResourceGroupsAsyncHandler;
@@ -1972,6 +1982,15 @@ namespace TencentCloud
                 DescribeSubUserAccessPolicyOutcomeCallable DescribeSubUserAccessPolicyCallable(const Model::DescribeSubUserAccessPolicyRequest& request);
 
                 /**
+                 *是否成功开通TCLake
+                 * @param req DescribeTCLakeMetaInstanceRequest
+                 * @return DescribeTCLakeMetaInstanceOutcome
+                 */
+                DescribeTCLakeMetaInstanceOutcome DescribeTCLakeMetaInstance(const Model::DescribeTCLakeMetaInstanceRequest &request);
+                void DescribeTCLakeMetaInstanceAsync(const Model::DescribeTCLakeMetaInstanceRequest& request, const DescribeTCLakeMetaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTCLakeMetaInstanceOutcomeCallable DescribeTCLakeMetaInstanceCallable(const Model::DescribeTCLakeMetaInstanceRequest& request);
+
+                /**
                  *本接口（DescribeTable），用于查询单个表的详细信息。
                  * @param req DescribeTableRequest
                  * @return DescribeTableOutcome
@@ -2276,6 +2295,15 @@ namespace TencentCloud
                 GrantDLCCatalogAccessOutcome GrantDLCCatalogAccess(const Model::GrantDLCCatalogAccessRequest &request);
                 void GrantDLCCatalogAccessAsync(const Model::GrantDLCCatalogAccessRequest& request, const GrantDLCCatalogAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GrantDLCCatalogAccessOutcomeCallable GrantDLCCatalogAccessCallable(const Model::GrantDLCCatalogAccessRequest& request);
+
+                /**
+                 *开通TCLake
+                 * @param req InitializeTCLakeRequest
+                 * @return InitializeTCLakeOutcome
+                 */
+                InitializeTCLakeOutcome InitializeTCLake(const Model::InitializeTCLakeRequest &request);
+                void InitializeTCLakeAsync(const Model::InitializeTCLakeRequest& request, const InitializeTCLakeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InitializeTCLakeOutcomeCallable InitializeTCLakeCallable(const Model::InitializeTCLakeRequest& request);
 
                 /**
                  *启动标准引擎资源组

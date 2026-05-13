@@ -23,7 +23,8 @@ using namespace TencentCloud::Dc::V20180410::Model;
 using namespace std;
 
 CreateCloudAttachServiceRequest::CreateCloudAttachServiceRequest() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,21 @@ string CreateCloudAttachServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -65,6 +81,22 @@ void CreateCloudAttachServiceRequest::SetData(const CreateCasInput& _data)
 bool CreateCloudAttachServiceRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<Tag> CreateCloudAttachServiceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCloudAttachServiceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCloudAttachServiceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -1690,6 +1690,56 @@ OceanusClient::DescribeVariablesOutcomeCallable OceanusClient::DescribeVariables
     return prom->get_future();
 }
 
+OceanusClient::DescribeWorkSpaceUsersOutcome OceanusClient::DescribeWorkSpaceUsers(const DescribeWorkSpaceUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkSpaceUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkSpaceUsersResponse rsp = DescribeWorkSpaceUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkSpaceUsersOutcome(rsp);
+        else
+            return DescribeWorkSpaceUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkSpaceUsersOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeWorkSpaceUsersAsync(const DescribeWorkSpaceUsersRequest& request, const DescribeWorkSpaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkSpaceUsersRequest&;
+    using Resp = DescribeWorkSpaceUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkSpaceUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OceanusClient::DescribeWorkSpaceUsersOutcomeCallable OceanusClient::DescribeWorkSpaceUsersCallable(const DescribeWorkSpaceUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkSpaceUsersOutcome>>();
+    DescribeWorkSpaceUsersAsync(
+    request,
+    [prom](
+        const OceanusClient*,
+        const DescribeWorkSpaceUsersRequest&,
+        DescribeWorkSpaceUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OceanusClient::DescribeWorkSpacesOutcome OceanusClient::DescribeWorkSpaces(const DescribeWorkSpacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWorkSpaces");

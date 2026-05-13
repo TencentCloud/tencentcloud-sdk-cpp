@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取敏捷上云服务详情
-                     * @return CloudAttach 敏捷上云服务详情
+                     * 获取<p>敏捷上云服务详情</p>
+                     * @return CloudAttach <p>敏捷上云服务详情</p>
                      * 
                      */
                     CloudAttachInfo GetCloudAttach() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 敏捷上云服务详情
+                     * <p>敏捷上云服务详情</p>
                      */
                     CloudAttachInfo m_cloudAttach;
                     bool m_cloudAttachHasBeenSet;

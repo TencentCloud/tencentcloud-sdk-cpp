@@ -5590,6 +5590,56 @@ DlcClient::DescribeSubUserAccessPolicyOutcomeCallable DlcClient::DescribeSubUser
     return prom->get_future();
 }
 
+DlcClient::DescribeTCLakeMetaInstanceOutcome DlcClient::DescribeTCLakeMetaInstance(const DescribeTCLakeMetaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTCLakeMetaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTCLakeMetaInstanceResponse rsp = DescribeTCLakeMetaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTCLakeMetaInstanceOutcome(rsp);
+        else
+            return DescribeTCLakeMetaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTCLakeMetaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTCLakeMetaInstanceAsync(const DescribeTCLakeMetaInstanceRequest& request, const DescribeTCLakeMetaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTCLakeMetaInstanceRequest&;
+    using Resp = DescribeTCLakeMetaInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTCLakeMetaInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeTCLakeMetaInstanceOutcomeCallable DlcClient::DescribeTCLakeMetaInstanceCallable(const DescribeTCLakeMetaInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTCLakeMetaInstanceOutcome>>();
+    DescribeTCLakeMetaInstanceAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeTCLakeMetaInstanceRequest&,
+        DescribeTCLakeMetaInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeTableOutcome DlcClient::DescribeTable(const DescribeTableRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTable");
@@ -7282,6 +7332,56 @@ DlcClient::GrantDLCCatalogAccessOutcomeCallable DlcClient::GrantDLCCatalogAccess
         const DlcClient*,
         const GrantDLCCatalogAccessRequest&,
         GrantDLCCatalogAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::InitializeTCLakeOutcome DlcClient::InitializeTCLake(const InitializeTCLakeRequest &request)
+{
+    auto outcome = MakeRequest(request, "InitializeTCLake");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InitializeTCLakeResponse rsp = InitializeTCLakeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InitializeTCLakeOutcome(rsp);
+        else
+            return InitializeTCLakeOutcome(o.GetError());
+    }
+    else
+    {
+        return InitializeTCLakeOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::InitializeTCLakeAsync(const InitializeTCLakeRequest& request, const InitializeTCLakeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InitializeTCLakeRequest&;
+    using Resp = InitializeTCLakeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InitializeTCLake", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::InitializeTCLakeOutcomeCallable DlcClient::InitializeTCLakeCallable(const InitializeTCLakeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InitializeTCLakeOutcome>>();
+    InitializeTCLakeAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const InitializeTCLakeRequest&,
+        InitializeTCLakeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

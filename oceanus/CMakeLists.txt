@@ -39,7 +39,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/LogContent.h
   include/tencentcloud/oceanus/v20190422/model/JobRuntimeInfo.h
   include/tencentcloud/oceanus/v20190422/model/JobEventInfo.h
-  include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpaceUsersResponse.h
   include/tencentcloud/oceanus/v20190422/model/NodeConfig.h
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
@@ -116,6 +116,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
   include/tencentcloud/oceanus/v20190422/model/Savepoint.h
+  include/tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h
   include/tencentcloud/oceanus/v20190422/model/SystemResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceConfigItem.h
@@ -146,10 +147,11 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ModifyFolderResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlotSharingGroup.h
   include/tencentcloud/oceanus/v20190422/model/ModifyWorkSpaceResponse.h
-  include/tencentcloud/oceanus/v20190422/model/RunSqlGatewayStatementResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/JobInstanceForSubmissionLog.h
   include/tencentcloud/oceanus/v20190422/model/DescribeFolderRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpaceUsersRequest.h
   include/tencentcloud/oceanus/v20190422/model/Warehouse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteFoldersResponse.h
   include/tencentcloud/oceanus/v20190422/model/SubFolderInfo.h
@@ -198,7 +200,7 @@ set(oceanus_src
   src/v20190422/model/LogContent.cpp
   src/v20190422/model/JobRuntimeInfo.cpp
   src/v20190422/model/JobEventInfo.cpp
-  src/v20190422/model/ResourceLocParam.cpp
+  src/v20190422/model/DescribeWorkSpaceUsersResponse.cpp
   src/v20190422/model/NodeConfig.cpp
   src/v20190422/model/WorkSpaceSetItem.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp
@@ -275,6 +277,7 @@ set(oceanus_src
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp
   src/v20190422/model/Savepoint.cpp
+  src/v20190422/model/RunSqlGatewayStatementResponse.cpp
   src/v20190422/model/SystemResourceItem.cpp
   src/v20190422/model/DescribeResourceRelatedJobsRequest.cpp
   src/v20190422/model/ResourceConfigItem.cpp
@@ -305,10 +308,11 @@ set(oceanus_src
   src/v20190422/model/ModifyFolderResponse.cpp
   src/v20190422/model/SlotSharingGroup.cpp
   src/v20190422/model/ModifyWorkSpaceResponse.cpp
-  src/v20190422/model/RunSqlGatewayStatementResponse.cpp
+  src/v20190422/model/ResourceLocParam.cpp
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/JobInstanceForSubmissionLog.cpp
   src/v20190422/model/DescribeFolderRequest.cpp
+  src/v20190422/model/DescribeWorkSpaceUsersRequest.cpp
   src/v20190422/model/Warehouse.cpp
   src/v20190422/model/DeleteFoldersResponse.cpp
   src/v20190422/model/SubFolderInfo.cpp

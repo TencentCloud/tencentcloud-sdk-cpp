@@ -2190,6 +2190,56 @@ CfsClient::ModifyLifecyclePolicyOutcomeCallable CfsClient::ModifyLifecyclePolicy
     return prom->get_future();
 }
 
+CfsClient::OverrideCfsRulesOutcome CfsClient::OverrideCfsRules(const OverrideCfsRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "OverrideCfsRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OverrideCfsRulesResponse rsp = OverrideCfsRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OverrideCfsRulesOutcome(rsp);
+        else
+            return OverrideCfsRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return OverrideCfsRulesOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::OverrideCfsRulesAsync(const OverrideCfsRulesRequest& request, const OverrideCfsRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OverrideCfsRulesRequest&;
+    using Resp = OverrideCfsRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OverrideCfsRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::OverrideCfsRulesOutcomeCallable CfsClient::OverrideCfsRulesCallable(const OverrideCfsRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OverrideCfsRulesOutcome>>();
+    OverrideCfsRulesAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const OverrideCfsRulesRequest&,
+        OverrideCfsRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::ScaleUpFileSystemOutcome CfsClient::ScaleUpFileSystem(const ScaleUpFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "ScaleUpFileSystem");

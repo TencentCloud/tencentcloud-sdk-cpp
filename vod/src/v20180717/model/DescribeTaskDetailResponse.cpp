@@ -63,7 +63,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createAigcCustomVoiceTaskHasBeenSet(false),
     m_createAigcSubjectTaskHasBeenSet(false),
     m_aigcVideoRedrawTaskHasBeenSet(false),
-    m_aigcAudioTaskHasBeenSet(false)
+    m_aigcAudioTaskHasBeenSet(false),
+    m_createAigcAudioCloneTaskHasBeenSet(false)
 {
 }
 
@@ -746,6 +747,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_aigcAudioTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateAigcAudioCloneTask") && !rsp["CreateAigcAudioCloneTask"].IsNull())
+    {
+        if (!rsp["CreateAigcAudioCloneTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateAigcAudioCloneTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcAudioCloneTask.Deserialize(rsp["CreateAigcAudioCloneTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcAudioCloneTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1109,6 +1127,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aigcAudioTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcAudioCloneTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcAudioCloneTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcAudioCloneTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1521,6 +1548,16 @@ AigcAudioTask DescribeTaskDetailResponse::GetAigcAudioTask() const
 bool DescribeTaskDetailResponse::AigcAudioTaskHasBeenSet() const
 {
     return m_aigcAudioTaskHasBeenSet;
+}
+
+CreateAigcAudioCloneTask DescribeTaskDetailResponse::GetCreateAigcAudioCloneTask() const
+{
+    return m_createAigcAudioCloneTask;
+}
+
+bool DescribeTaskDetailResponse::CreateAigcAudioCloneTaskHasBeenSet() const
+{
+    return m_createAigcAudioCloneTaskHasBeenSet;
 }
 
 

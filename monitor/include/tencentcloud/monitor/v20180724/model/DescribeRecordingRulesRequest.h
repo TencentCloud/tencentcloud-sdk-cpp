@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 实例 ID
-                     * @return InstanceId Prometheus 实例 ID
+                     * 获取<p>Prometheus 实例 ID</p>
+                     * @return InstanceId <p>Prometheus 实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID
-                     * @param _instanceId Prometheus 实例 ID
+                     * 设置<p>Prometheus 实例 ID</p>
+                     * @param _instanceId <p>Prometheus 实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为 20，最大值为 100
-                     * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 获取<p>返回数量，默认为 20，最大值为 100</p>
+                     * @return Limit <p>返回数量，默认为 20，最大值为 100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 20，最大值为 100
-                     * @param _limit 返回数量，默认为 20，最大值为 100
+                     * 设置<p>返回数量，默认为 20，最大值为 100</p>
+                     * @param _limit <p>返回数量，默认为 20，最大值为 100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为 0
-                     * @return Offset 偏移量，默认为 0
+                     * 获取<p>偏移量，默认为 0</p>
+                     * @return Offset <p>偏移量，默认为 0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0
-                     * @param _offset 偏移量，默认为 0
+                     * 设置<p>偏移量，默认为 0</p>
+                     * @param _offset <p>偏移量，默认为 0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取规则 ID
-                     * @return RuleId 规则 ID
+                     * 获取<p>规则 ID</p>
+                     * @return RuleId <p>规则 ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID
-                     * @param _ruleId 规则 ID
+                     * 设置<p>规则 ID</p>
+                     * @param _ruleId <p>规则 ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -127,27 +127,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则状态码，取值如下：
-<li>1=RuleDeleted</li>
-<li>2=RuleEnabled</li>
-<li>3=RuleDisabled</li>
-                     * @return RuleState 规则状态码，取值如下：
-<li>1=RuleDeleted</li>
-<li>2=RuleEnabled</li>
-<li>3=RuleDisabled</li>
+                     * 获取<p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>
+                     * @return RuleState <p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>
                      * 
                      */
                     int64_t GetRuleState() const;
 
                     /**
-                     * 设置规则状态码，取值如下：
-<li>1=RuleDeleted</li>
-<li>2=RuleEnabled</li>
-<li>3=RuleDisabled</li>
-                     * @param _ruleState 规则状态码，取值如下：
-<li>1=RuleDeleted</li>
-<li>2=RuleEnabled</li>
-<li>3=RuleDisabled</li>
+                     * 设置<p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>
+                     * @param _ruleState <p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>
                      * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
@@ -160,15 +148,15 @@ namespace TencentCloud
                     bool RuleStateHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return Name 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return Name <p>规则名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _name 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _name <p>规则名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -183,40 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 实例 ID
+                     * <p>Prometheus 实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认为 20，最大值为 100
+                     * <p>返回数量，默认为 20，最大值为 100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为 0
+                     * <p>偏移量，默认为 0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 规则 ID
+                     * <p>规则 ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则状态码，取值如下：
-<li>1=RuleDeleted</li>
-<li>2=RuleEnabled</li>
-<li>3=RuleDisabled</li>
+                     * <p>规则状态码，取值如下：</p><li>1=RuleDeleted</li><li>2=RuleEnabled</li><li>3=RuleDisabled</li>
                      */
                     int64_t m_ruleState;
                     bool m_ruleStateHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

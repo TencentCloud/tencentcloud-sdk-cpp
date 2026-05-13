@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取<p>资源ID</p>
+                     * @return ResourceId <p>资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置<p>资源ID</p>
+                     * @param _resourceId <p>资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源版本数组
-                     * @return ResourceConfigVersions 资源版本数组
+                     * 获取<p>资源版本数组</p>
+                     * @return ResourceConfigVersions <p>资源版本数组</p>
                      * 
                      */
                     std::vector<int64_t> GetResourceConfigVersions() const;
 
                     /**
-                     * 设置资源版本数组
-                     * @param _resourceConfigVersions 资源版本数组
+                     * 设置<p>资源版本数组</p>
+                     * @param _resourceConfigVersions <p>资源版本数组</p>
                      * 
                      */
                     void SetResourceConfigVersions(const std::vector<int64_t>& _resourceConfigVersions);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ResourceConfigVersionsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID
+                     * <p>资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源版本数组
+                     * <p>资源版本数组</p>
                      */
                     std::vector<int64_t> m_resourceConfigVersions;
                     bool m_resourceConfigVersionsHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;

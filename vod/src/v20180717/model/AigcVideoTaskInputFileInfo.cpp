@@ -29,7 +29,8 @@ AigcVideoTaskInputFileInfo::AigcVideoTaskInputFileInfo() :
     m_objectIdHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
     m_keepOriginalSoundHasBeenSet(false),
-    m_usageHasBeenSet(false)
+    m_usageHasBeenSet(false),
+    m_textHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AigcVideoTaskInputFileInfo::Deserialize(const rapidjson::Val
         m_usageHasBeenSet = true;
     }
 
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void AigcVideoTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Usage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_usage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void AigcVideoTaskInputFileInfo::SetUsage(const string& _usage)
 bool AigcVideoTaskInputFileInfo::UsageHasBeenSet() const
 {
     return m_usageHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetText() const
+{
+    return m_text;
+}
+
+void AigcVideoTaskInputFileInfo::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
 }
 

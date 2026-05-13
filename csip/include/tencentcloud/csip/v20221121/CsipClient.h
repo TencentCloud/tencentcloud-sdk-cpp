@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/csip/v20221121/model/AddDspmAssetManagerRequest.h>
+#include <tencentcloud/csip/v20221121/model/AddDspmAssetManagerResponse.h>
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserRequest.h>
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskRequest.h>
@@ -31,10 +33,44 @@
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAccessExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAccessExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmApplyOrderRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmApplyOrderResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmApproveHistoryExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmApproveHistoryExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetAccessTopologyExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetAccessTopologyExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmAssetsExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmIdentifyInfoListExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmPersonalIdentifyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmAssetAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmBackupLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmPersonalIdentifyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
@@ -65,6 +101,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAssetRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h>
@@ -89,6 +127,92 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessRecordRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAccountsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAccountsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAssetsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyIpsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyIpsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApplyOrderListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApplyOrderListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApproveHistoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApproveHistoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApproveOrderListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmApproveOrderListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccessTopologyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccessTopologyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountIdentifyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountPresetPrivilegesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountPresetPrivilegesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountRecycledPrivilegesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountRecycledPrivilegesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabaseListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabasesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetDatabasesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetFieldListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetIdsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetLoginCredentialRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetLoginCredentialResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetSecurityAnalyseStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetSecurityAnalyseStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetSupportedPrivilegesRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetSupportedPrivilegesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetTableListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmBackupLogListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmBackupLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmBackupSettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmDictionaryListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmExportTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmExportTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyIdListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmIdentifyInfoListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmLogListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPayInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPayInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPersonApplyHistoryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPersonApplyHistoryResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPersonalIdentifyListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmPersonalIdentifyListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskDetailResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyGroupRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskStrategyGroupResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskTendencyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmRiskTendencyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmStatisticsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmStatisticsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSyncAssetsStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSyncAssetsStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmSyncUsersStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExposePathRequest.h>
@@ -167,6 +291,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUserCallRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeUserCallRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUserDspmInfoListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUserDspmInfoListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.h>
@@ -179,6 +305,38 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogRequest.h>
+#include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountPrivilegesRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetAccountPrivilegesResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetDataScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetLogDeliverySwitchRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetLogDeliverySwitchResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmAssetSecurityAnalysisSwitchResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmBackupSettingResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIdentifyInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmIpInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmPersonalIdentifyResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRestoreLogTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRestoreLogTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRiskInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRiskInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRiskStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmRiskStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusRequest.h>
@@ -187,14 +345,28 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchResponse.h>
+#include <tencentcloud/csip/v20221121/model/ResetDspmAssetAccountPasswordRequest.h>
+#include <tencentcloud/csip/v20221121/model/ResetDspmAssetAccountPasswordResponse.h>
+#include <tencentcloud/csip/v20221121/model/RetryDspmExportLogRequest.h>
+#include <tencentcloud/csip/v20221121/model/RetryDspmExportLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/RevertDspmAssetAccountRequest.h>
+#include <tencentcloud/csip/v20221121/model/RevertDspmAssetAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeRequest.h>
+#include <tencentcloud/csip/v20221121/model/SendDspmAssetLoginSmsCodeResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/SyncDspmAssetsRequest.h>
+#include <tencentcloud/csip/v20221121/model/SyncDspmAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/SyncDspmUsersRequest.h>
+#include <tencentcloud/csip/v20221121/model/SyncDspmUsersResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyAlarmStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyAlarmStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyRemarkRequest.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAccessKeyRemarkResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAlertStatusListRequest.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAlertStatusListResponse.h>
+#include <tencentcloud/csip/v20221121/model/VerifyDspmAssetLoginCodeRequest.h>
+#include <tencentcloud/csip/v20221121/model/VerifyDspmAssetLoginCodeResponse.h>
 
 
 namespace TencentCloud
@@ -209,6 +381,9 @@ namespace TencentCloud
                 CsipClient(const Credential &credential, const std::string &region);
                 CsipClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddDspmAssetManagerResponse> AddDspmAssetManagerOutcome;
+                typedef std::future<AddDspmAssetManagerOutcome> AddDspmAssetManagerOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::AddDspmAssetManagerRequest&, AddDspmAssetManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDspmAssetManagerAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddNewBindRoleUserResponse> AddNewBindRoleUserOutcome;
                 typedef std::future<AddNewBindRoleUserOutcome> AddNewBindRoleUserOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::AddNewBindRoleUserRequest&, AddNewBindRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNewBindRoleUserAsyncHandler;
@@ -221,12 +396,63 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainAndIpResponse> CreateDomainAndIpOutcome;
                 typedef std::future<CreateDomainAndIpOutcome> CreateDomainAndIpOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDomainAndIpRequest&, CreateDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAndIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmAccessExportJobResponse> CreateDspmAccessExportJobOutcome;
+                typedef std::future<CreateDspmAccessExportJobOutcome> CreateDspmAccessExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmAccessExportJobRequest&, CreateDspmAccessExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAccessExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmApplyOrderResponse> CreateDspmApplyOrderOutcome;
+                typedef std::future<CreateDspmApplyOrderOutcome> CreateDspmApplyOrderOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmApplyOrderRequest&, CreateDspmApplyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmApplyOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmApproveHistoryExportJobResponse> CreateDspmApproveHistoryExportJobOutcome;
+                typedef std::future<CreateDspmApproveHistoryExportJobOutcome> CreateDspmApproveHistoryExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmApproveHistoryExportJobRequest&, CreateDspmApproveHistoryExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmApproveHistoryExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmAssetAccessTopologyExportJobResponse> CreateDspmAssetAccessTopologyExportJobOutcome;
+                typedef std::future<CreateDspmAssetAccessTopologyExportJobOutcome> CreateDspmAssetAccessTopologyExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetAccessTopologyExportJobRequest&, CreateDspmAssetAccessTopologyExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetAccessTopologyExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmAssetsExportJobResponse> CreateDspmAssetsExportJobOutcome;
+                typedef std::future<CreateDspmAssetsExportJobOutcome> CreateDspmAssetsExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmAssetsExportJobRequest&, CreateDspmAssetsExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmAssetsExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmExportTaskResponse> CreateDspmExportTaskOutcome;
+                typedef std::future<CreateDspmExportTaskOutcome> CreateDspmExportTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmExportTaskRequest&, CreateDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmIdentifyInfoListExportJobResponse> CreateDspmIdentifyInfoListExportJobOutcome;
+                typedef std::future<CreateDspmIdentifyInfoListExportJobOutcome> CreateDspmIdentifyInfoListExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmIdentifyInfoListExportJobRequest&, CreateDspmIdentifyInfoListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmIdentifyInfoListExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmPersonalIdentifyResponse> CreateDspmPersonalIdentifyOutcome;
+                typedef std::future<CreateDspmPersonalIdentifyOutcome> CreateDspmPersonalIdentifyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmPersonalIdentifyRequest&, CreateDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmPersonalIdentifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmRiskExportJobResponse> CreateDspmRiskExportJobOutcome;
+                typedef std::future<CreateDspmRiskExportJobOutcome> CreateDspmRiskExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmRiskExportJobRequest&, CreateDspmRiskExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmRiskExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDspmWhitelistStrategyResponse> CreateDspmWhitelistStrategyOutcome;
+                typedef std::future<CreateDspmWhitelistStrategyOutcome> CreateDspmWhitelistStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateDspmWhitelistStrategyRequest&, CreateDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmWhitelistStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRiskCenterScanTaskResponse> CreateRiskCenterScanTaskOutcome;
                 typedef std::future<CreateRiskCenterScanTaskOutcome> CreateRiskCenterScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateRiskCenterScanTaskRequest&, CreateRiskCenterScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskCenterScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainAndIpResponse> DeleteDomainAndIpOutcome;
                 typedef std::future<DeleteDomainAndIpOutcome> DeleteDomainAndIpOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDomainAndIpRequest&, DeleteDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAndIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmApplyOrderResponse> DeleteDspmApplyOrderOutcome;
+                typedef std::future<DeleteDspmApplyOrderOutcome> DeleteDspmApplyOrderOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmApplyOrderRequest&, DeleteDspmApplyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmApplyOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmAssetAccountResponse> DeleteDspmAssetAccountOutcome;
+                typedef std::future<DeleteDspmAssetAccountOutcome> DeleteDspmAssetAccountOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmAssetAccountRequest&, DeleteDspmAssetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmAssetAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmBackupLogListResponse> DeleteDspmBackupLogListOutcome;
+                typedef std::future<DeleteDspmBackupLogListOutcome> DeleteDspmBackupLogListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmBackupLogListRequest&, DeleteDspmBackupLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmBackupLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmExportTaskResponse> DeleteDspmExportTaskOutcome;
+                typedef std::future<DeleteDspmExportTaskOutcome> DeleteDspmExportTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmExportTaskRequest&, DeleteDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmPersonalIdentifyResponse> DeleteDspmPersonalIdentifyOutcome;
+                typedef std::future<DeleteDspmPersonalIdentifyOutcome> DeleteDspmPersonalIdentifyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmPersonalIdentifyRequest&, DeleteDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmPersonalIdentifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmRestoreLogListResponse> DeleteDspmRestoreLogListOutcome;
+                typedef std::future<DeleteDspmRestoreLogListOutcome> DeleteDspmRestoreLogListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmRestoreLogListRequest&, DeleteDspmRestoreLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmRestoreLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDspmWhitelistStrategyResponse> DeleteDspmWhitelistStrategyOutcome;
+                typedef std::future<DeleteDspmWhitelistStrategyOutcome> DeleteDspmWhitelistStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteDspmWhitelistStrategyRequest&, DeleteDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmWhitelistStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
@@ -272,6 +498,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetViewVulRiskListResponse> DescribeAssetViewVulRiskListOutcome;
                 typedef std::future<DescribeAssetViewVulRiskListOutcome> DescribeAssetViewVulRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAssetViewVulRiskListRequest&, DescribeAssetViewVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetViewVulRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssumeRoleResponse> DescribeAssumeRoleOutcome;
+                typedef std::future<DescribeAssumeRoleOutcome> DescribeAssumeRoleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAssumeRoleRequest&, DescribeAssumeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssumeRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCFWAssetStatisticsResponse> DescribeCFWAssetStatisticsOutcome;
                 typedef std::future<DescribeCFWAssetStatisticsOutcome> DescribeCFWAssetStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCFWAssetStatisticsRequest&, DescribeCFWAssetStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCFWAssetStatisticsAsyncHandler;
@@ -308,6 +537,135 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainAssetsResponse> DescribeDomainAssetsOutcome;
                 typedef std::future<DescribeDomainAssetsOutcome> DescribeDomainAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDomainAssetsRequest&, DescribeDomainAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAccessRecordResponse> DescribeDspmAccessRecordOutcome;
+                typedef std::future<DescribeDspmAccessRecordOutcome> DescribeDspmAccessRecordOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessRecordRequest&, DescribeDspmAccessRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAccessTopologyAccountsResponse> DescribeDspmAccessTopologyAccountsOutcome;
+                typedef std::future<DescribeDspmAccessTopologyAccountsOutcome> DescribeDspmAccessTopologyAccountsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessTopologyAccountsRequest&, DescribeDspmAccessTopologyAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessTopologyAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAccessTopologyAssetsResponse> DescribeDspmAccessTopologyAssetsOutcome;
+                typedef std::future<DescribeDspmAccessTopologyAssetsOutcome> DescribeDspmAccessTopologyAssetsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessTopologyAssetsRequest&, DescribeDspmAccessTopologyAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessTopologyAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAccessTopologyIpsResponse> DescribeDspmAccessTopologyIpsOutcome;
+                typedef std::future<DescribeDspmAccessTopologyIpsOutcome> DescribeDspmAccessTopologyIpsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessTopologyIpsRequest&, DescribeDspmAccessTopologyIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessTopologyIpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmApplyHistoryResponse> DescribeDspmApplyHistoryOutcome;
+                typedef std::future<DescribeDspmApplyHistoryOutcome> DescribeDspmApplyHistoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmApplyHistoryRequest&, DescribeDspmApplyHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmApplyHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmApplyOrderListResponse> DescribeDspmApplyOrderListOutcome;
+                typedef std::future<DescribeDspmApplyOrderListOutcome> DescribeDspmApplyOrderListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmApplyOrderListRequest&, DescribeDspmApplyOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmApplyOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmApproveHistoryResponse> DescribeDspmApproveHistoryOutcome;
+                typedef std::future<DescribeDspmApproveHistoryOutcome> DescribeDspmApproveHistoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmApproveHistoryRequest&, DescribeDspmApproveHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmApproveHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmApproveOrderListResponse> DescribeDspmApproveOrderListOutcome;
+                typedef std::future<DescribeDspmApproveOrderListOutcome> DescribeDspmApproveOrderListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmApproveOrderListRequest&, DescribeDspmApproveOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmApproveOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetAccessTopologyResponse> DescribeDspmAssetAccessTopologyOutcome;
+                typedef std::future<DescribeDspmAssetAccessTopologyOutcome> DescribeDspmAssetAccessTopologyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetAccessTopologyRequest&, DescribeDspmAssetAccessTopologyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetAccessTopologyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetAccountIdentifyResponse> DescribeDspmAssetAccountIdentifyOutcome;
+                typedef std::future<DescribeDspmAssetAccountIdentifyOutcome> DescribeDspmAssetAccountIdentifyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetAccountIdentifyRequest&, DescribeDspmAssetAccountIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetAccountIdentifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetAccountPresetPrivilegesResponse> DescribeDspmAssetAccountPresetPrivilegesOutcome;
+                typedef std::future<DescribeDspmAssetAccountPresetPrivilegesOutcome> DescribeDspmAssetAccountPresetPrivilegesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetAccountPresetPrivilegesRequest&, DescribeDspmAssetAccountPresetPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetAccountPresetPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetAccountRecycledPrivilegesResponse> DescribeDspmAssetAccountRecycledPrivilegesOutcome;
+                typedef std::future<DescribeDspmAssetAccountRecycledPrivilegesOutcome> DescribeDspmAssetAccountRecycledPrivilegesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetAccountRecycledPrivilegesRequest&, DescribeDspmAssetAccountRecycledPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetAccountRecycledPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetAccountsResponse> DescribeDspmAssetAccountsOutcome;
+                typedef std::future<DescribeDspmAssetAccountsOutcome> DescribeDspmAssetAccountsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetAccountsRequest&, DescribeDspmAssetAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetDatabaseListResponse> DescribeDspmAssetDatabaseListOutcome;
+                typedef std::future<DescribeDspmAssetDatabaseListOutcome> DescribeDspmAssetDatabaseListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetDatabaseListRequest&, DescribeDspmAssetDatabaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetDatabaseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetDatabasesResponse> DescribeDspmAssetDatabasesOutcome;
+                typedef std::future<DescribeDspmAssetDatabasesOutcome> DescribeDspmAssetDatabasesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetDatabasesRequest&, DescribeDspmAssetDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetFieldListResponse> DescribeDspmAssetFieldListOutcome;
+                typedef std::future<DescribeDspmAssetFieldListOutcome> DescribeDspmAssetFieldListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetFieldListRequest&, DescribeDspmAssetFieldListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetFieldListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetIdsResponse> DescribeDspmAssetIdsOutcome;
+                typedef std::future<DescribeDspmAssetIdsOutcome> DescribeDspmAssetIdsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetIdsRequest&, DescribeDspmAssetIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetIdsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetLoginCredentialResponse> DescribeDspmAssetLoginCredentialOutcome;
+                typedef std::future<DescribeDspmAssetLoginCredentialOutcome> DescribeDspmAssetLoginCredentialOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetLoginCredentialRequest&, DescribeDspmAssetLoginCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetLoginCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetSecurityAnalyseStatusResponse> DescribeDspmAssetSecurityAnalyseStatusOutcome;
+                typedef std::future<DescribeDspmAssetSecurityAnalyseStatusOutcome> DescribeDspmAssetSecurityAnalyseStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetSecurityAnalyseStatusRequest&, DescribeDspmAssetSecurityAnalyseStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetSecurityAnalyseStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetSupportedPrivilegesResponse> DescribeDspmAssetSupportedPrivilegesOutcome;
+                typedef std::future<DescribeDspmAssetSupportedPrivilegesOutcome> DescribeDspmAssetSupportedPrivilegesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetSupportedPrivilegesRequest&, DescribeDspmAssetSupportedPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetSupportedPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetTableListResponse> DescribeDspmAssetTableListOutcome;
+                typedef std::future<DescribeDspmAssetTableListOutcome> DescribeDspmAssetTableListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetTableListRequest&, DescribeDspmAssetTableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetTableListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAssetsResponse> DescribeDspmAssetsOutcome;
+                typedef std::future<DescribeDspmAssetsOutcome> DescribeDspmAssetsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAssetsRequest&, DescribeDspmAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmBackupLogListResponse> DescribeDspmBackupLogListOutcome;
+                typedef std::future<DescribeDspmBackupLogListOutcome> DescribeDspmBackupLogListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmBackupLogListRequest&, DescribeDspmBackupLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmBackupLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmBackupSettingResponse> DescribeDspmBackupSettingOutcome;
+                typedef std::future<DescribeDspmBackupSettingOutcome> DescribeDspmBackupSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmBackupSettingRequest&, DescribeDspmBackupSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmBackupSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmDictionaryListResponse> DescribeDspmDictionaryListOutcome;
+                typedef std::future<DescribeDspmDictionaryListOutcome> DescribeDspmDictionaryListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmDictionaryListRequest&, DescribeDspmDictionaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmDictionaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmExportTaskResponse> DescribeDspmExportTaskOutcome;
+                typedef std::future<DescribeDspmExportTaskOutcome> DescribeDspmExportTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmExportTaskRequest&, DescribeDspmExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyIdListResponse> DescribeDspmIdentifyIdListOutcome;
+                typedef std::future<DescribeDspmIdentifyIdListOutcome> DescribeDspmIdentifyIdListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyIdListRequest&, DescribeDspmIdentifyIdListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyIdListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyInfoResponse> DescribeDspmIdentifyInfoOutcome;
+                typedef std::future<DescribeDspmIdentifyInfoOutcome> DescribeDspmIdentifyInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyInfoRequest&, DescribeDspmIdentifyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmIdentifyInfoListResponse> DescribeDspmIdentifyInfoListOutcome;
+                typedef std::future<DescribeDspmIdentifyInfoListOutcome> DescribeDspmIdentifyInfoListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmIdentifyInfoListRequest&, DescribeDspmIdentifyInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmIdentifyInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmLogListResponse> DescribeDspmLogListOutcome;
+                typedef std::future<DescribeDspmLogListOutcome> DescribeDspmLogListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmLogListRequest&, DescribeDspmLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmPayInfoResponse> DescribeDspmPayInfoOutcome;
+                typedef std::future<DescribeDspmPayInfoOutcome> DescribeDspmPayInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmPayInfoRequest&, DescribeDspmPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmPayInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmPersonApplyHistoryResponse> DescribeDspmPersonApplyHistoryOutcome;
+                typedef std::future<DescribeDspmPersonApplyHistoryOutcome> DescribeDspmPersonApplyHistoryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmPersonApplyHistoryRequest&, DescribeDspmPersonApplyHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmPersonApplyHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmPersonalIdentifyListResponse> DescribeDspmPersonalIdentifyListOutcome;
+                typedef std::future<DescribeDspmPersonalIdentifyListOutcome> DescribeDspmPersonalIdentifyListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmPersonalIdentifyListRequest&, DescribeDspmPersonalIdentifyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmPersonalIdentifyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmRiskResponse> DescribeDspmRiskOutcome;
+                typedef std::future<DescribeDspmRiskOutcome> DescribeDspmRiskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskRequest&, DescribeDspmRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmRiskDetailResponse> DescribeDspmRiskDetailOutcome;
+                typedef std::future<DescribeDspmRiskDetailOutcome> DescribeDspmRiskDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskDetailRequest&, DescribeDspmRiskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmRiskStrategyResponse> DescribeDspmRiskStrategyOutcome;
+                typedef std::future<DescribeDspmRiskStrategyOutcome> DescribeDspmRiskStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskStrategyRequest&, DescribeDspmRiskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmRiskStrategyGroupResponse> DescribeDspmRiskStrategyGroupOutcome;
+                typedef std::future<DescribeDspmRiskStrategyGroupOutcome> DescribeDspmRiskStrategyGroupOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskStrategyGroupRequest&, DescribeDspmRiskStrategyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskStrategyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmRiskTendencyResponse> DescribeDspmRiskTendencyOutcome;
+                typedef std::future<DescribeDspmRiskTendencyOutcome> DescribeDspmRiskTendencyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmRiskTendencyRequest&, DescribeDspmRiskTendencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmRiskTendencyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmStatisticsResponse> DescribeDspmStatisticsOutcome;
+                typedef std::future<DescribeDspmStatisticsOutcome> DescribeDspmStatisticsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmStatisticsRequest&, DescribeDspmStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmSupportedAssetTypeResponse> DescribeDspmSupportedAssetTypeOutcome;
+                typedef std::future<DescribeDspmSupportedAssetTypeOutcome> DescribeDspmSupportedAssetTypeOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmSupportedAssetTypeRequest&, DescribeDspmSupportedAssetTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmSupportedAssetTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmSyncAssetsStatusResponse> DescribeDspmSyncAssetsStatusOutcome;
+                typedef std::future<DescribeDspmSyncAssetsStatusOutcome> DescribeDspmSyncAssetsStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmSyncAssetsStatusRequest&, DescribeDspmSyncAssetsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmSyncAssetsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmSyncUsersStatusResponse> DescribeDspmSyncUsersStatusOutcome;
+                typedef std::future<DescribeDspmSyncUsersStatusOutcome> DescribeDspmSyncUsersStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmSyncUsersStatusRequest&, DescribeDspmSyncUsersStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmSyncUsersStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmWhitelistStrategyResponse> DescribeDspmWhitelistStrategyOutcome;
+                typedef std::future<DescribeDspmWhitelistStrategyOutcome> DescribeDspmWhitelistStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmWhitelistStrategyRequest&, DescribeDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmWhitelistStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExposeAssetCategoryResponse> DescribeExposeAssetCategoryOutcome;
                 typedef std::future<DescribeExposeAssetCategoryOutcome> DescribeExposeAssetCategoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeExposeAssetCategoryRequest&, DescribeExposeAssetCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExposeAssetCategoryAsyncHandler;
@@ -425,6 +783,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserCallRecordResponse> DescribeUserCallRecordOutcome;
                 typedef std::future<DescribeUserCallRecordOutcome> DescribeUserCallRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeUserCallRecordRequest&, DescribeUserCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCallRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDspmInfoListResponse> DescribeUserDspmInfoListOutcome;
+                typedef std::future<DescribeUserDspmInfoListOutcome> DescribeUserDspmInfoListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeUserDspmInfoListRequest&, DescribeUserDspmInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDspmInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVULListResponse> DescribeVULListOutcome;
                 typedef std::future<DescribeVULListOutcome> DescribeVULListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVULListRequest&, DescribeVULListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVULListAsyncHandler;
@@ -443,6 +804,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulViewVulRiskListResponse> DescribeVulViewVulRiskListOutcome;
                 typedef std::future<DescribeVulViewVulRiskListOutcome> DescribeVulViewVulRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVulViewVulRiskListRequest&, DescribeVulViewVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulViewVulRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadDspmExportLogResponse> DownloadDspmExportLogOutcome;
+                typedef std::future<DownloadDspmExportLogOutcome> DownloadDspmExportLogOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DownloadDspmExportLogRequest&, DownloadDspmExportLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDspmExportLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAccessRecordResponse> ModifyDspmAccessRecordOutcome;
+                typedef std::future<ModifyDspmAccessRecordOutcome> ModifyDspmAccessRecordOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAccessRecordRequest&, ModifyDspmAccessRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAccessRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmApproveStatusResponse> ModifyDspmApproveStatusOutcome;
+                typedef std::future<ModifyDspmApproveStatusOutcome> ModifyDspmApproveStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmApproveStatusRequest&, ModifyDspmApproveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmApproveStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetAccountResponse> ModifyDspmAssetAccountOutcome;
+                typedef std::future<ModifyDspmAssetAccountOutcome> ModifyDspmAssetAccountOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetAccountRequest&, ModifyDspmAssetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetAccountPrivilegesResponse> ModifyDspmAssetAccountPrivilegesOutcome;
+                typedef std::future<ModifyDspmAssetAccountPrivilegesOutcome> ModifyDspmAssetAccountPrivilegesOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetAccountPrivilegesRequest&, ModifyDspmAssetAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetAccountPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetDataScanTaskResponse> ModifyDspmAssetDataScanTaskOutcome;
+                typedef std::future<ModifyDspmAssetDataScanTaskOutcome> ModifyDspmAssetDataScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetDataScanTaskRequest&, ModifyDspmAssetDataScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetDataScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetLogDeliverySwitchResponse> ModifyDspmAssetLogDeliverySwitchOutcome;
+                typedef std::future<ModifyDspmAssetLogDeliverySwitchOutcome> ModifyDspmAssetLogDeliverySwitchOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetLogDeliverySwitchRequest&, ModifyDspmAssetLogDeliverySwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetLogDeliverySwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmAssetSecurityAnalysisSwitchResponse> ModifyDspmAssetSecurityAnalysisSwitchOutcome;
+                typedef std::future<ModifyDspmAssetSecurityAnalysisSwitchOutcome> ModifyDspmAssetSecurityAnalysisSwitchOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest&, ModifyDspmAssetSecurityAnalysisSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAssetSecurityAnalysisSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmBackupSettingResponse> ModifyDspmBackupSettingOutcome;
+                typedef std::future<ModifyDspmBackupSettingOutcome> ModifyDspmBackupSettingOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmBackupSettingRequest&, ModifyDspmBackupSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmBackupSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIdentifyInfoResponse> ModifyDspmIdentifyInfoOutcome;
+                typedef std::future<ModifyDspmIdentifyInfoOutcome> ModifyDspmIdentifyInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIdentifyInfoRequest&, ModifyDspmIdentifyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIdentifyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmIpInfoResponse> ModifyDspmIpInfoOutcome;
+                typedef std::future<ModifyDspmIpInfoOutcome> ModifyDspmIpInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmIpInfoRequest&, ModifyDspmIpInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmIpInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmPersonalIdentifyResponse> ModifyDspmPersonalIdentifyOutcome;
+                typedef std::future<ModifyDspmPersonalIdentifyOutcome> ModifyDspmPersonalIdentifyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmPersonalIdentifyRequest&, ModifyDspmPersonalIdentifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmPersonalIdentifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmRestoreLogTaskResponse> ModifyDspmRestoreLogTaskOutcome;
+                typedef std::future<ModifyDspmRestoreLogTaskOutcome> ModifyDspmRestoreLogTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmRestoreLogTaskRequest&, ModifyDspmRestoreLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmRestoreLogTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmRiskInfoResponse> ModifyDspmRiskInfoOutcome;
+                typedef std::future<ModifyDspmRiskInfoOutcome> ModifyDspmRiskInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmRiskInfoRequest&, ModifyDspmRiskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmRiskInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmRiskStrategyResponse> ModifyDspmRiskStrategyOutcome;
+                typedef std::future<ModifyDspmRiskStrategyOutcome> ModifyDspmRiskStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmRiskStrategyRequest&, ModifyDspmRiskStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmRiskStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDspmWhitelistStrategyResponse> ModifyDspmWhitelistStrategyOutcome;
+                typedef std::future<ModifyDspmWhitelistStrategyOutcome> ModifyDspmWhitelistStrategyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyDspmWhitelistStrategyRequest&, ModifyDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmWhitelistStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOrganizationAccountStatusResponse> ModifyOrganizationAccountStatusOutcome;
                 typedef std::future<ModifyOrganizationAccountStatusOutcome> ModifyOrganizationAccountStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyOrganizationAccountStatusRequest&, ModifyOrganizationAccountStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrganizationAccountStatusAsyncHandler;
@@ -455,9 +864,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUebaRuleSwitchResponse> ModifyUebaRuleSwitchOutcome;
                 typedef std::future<ModifyUebaRuleSwitchOutcome> ModifyUebaRuleSwitchOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyUebaRuleSwitchRequest&, ModifyUebaRuleSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUebaRuleSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetDspmAssetAccountPasswordResponse> ResetDspmAssetAccountPasswordOutcome;
+                typedef std::future<ResetDspmAssetAccountPasswordOutcome> ResetDspmAssetAccountPasswordOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ResetDspmAssetAccountPasswordRequest&, ResetDspmAssetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDspmAssetAccountPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryDspmExportLogResponse> RetryDspmExportLogOutcome;
+                typedef std::future<RetryDspmExportLogOutcome> RetryDspmExportLogOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::RetryDspmExportLogRequest&, RetryDspmExportLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDspmExportLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevertDspmAssetAccountResponse> RevertDspmAssetAccountOutcome;
+                typedef std::future<RevertDspmAssetAccountOutcome> RevertDspmAssetAccountOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::RevertDspmAssetAccountRequest&, RevertDspmAssetAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevertDspmAssetAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendDspmAssetLoginSmsCodeResponse> SendDspmAssetLoginSmsCodeOutcome;
+                typedef std::future<SendDspmAssetLoginSmsCodeOutcome> SendDspmAssetLoginSmsCodeOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::SendDspmAssetLoginSmsCodeRequest&, SendDspmAssetLoginSmsCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendDspmAssetLoginSmsCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
                 typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncDspmAssetsResponse> SyncDspmAssetsOutcome;
+                typedef std::future<SyncDspmAssetsOutcome> SyncDspmAssetsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::SyncDspmAssetsRequest&, SyncDspmAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDspmAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncDspmUsersResponse> SyncDspmUsersOutcome;
+                typedef std::future<SyncDspmUsersOutcome> SyncDspmUsersOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::SyncDspmUsersRequest&, SyncDspmUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDspmUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAccessKeyAlarmStatusResponse> UpdateAccessKeyAlarmStatusOutcome;
                 typedef std::future<UpdateAccessKeyAlarmStatusOutcome> UpdateAccessKeyAlarmStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::UpdateAccessKeyAlarmStatusRequest&, UpdateAccessKeyAlarmStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccessKeyAlarmStatusAsyncHandler;
@@ -467,8 +894,20 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAlertStatusListResponse> UpdateAlertStatusListOutcome;
                 typedef std::future<UpdateAlertStatusListOutcome> UpdateAlertStatusListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::UpdateAlertStatusListRequest&, UpdateAlertStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertStatusListAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyDspmAssetLoginCodeResponse> VerifyDspmAssetLoginCodeOutcome;
+                typedef std::future<VerifyDspmAssetLoginCodeOutcome> VerifyDspmAssetLoginCodeOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::VerifyDspmAssetLoginCodeRequest&, VerifyDspmAssetLoginCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDspmAssetLoginCodeAsyncHandler;
 
 
+
+                /**
+                 *添加资产管理员
+                 * @param req AddDspmAssetManagerRequest
+                 * @return AddDspmAssetManagerOutcome
+                 */
+                AddDspmAssetManagerOutcome AddDspmAssetManager(const Model::AddDspmAssetManagerRequest &request);
+                void AddDspmAssetManagerAsync(const Model::AddDspmAssetManagerRequest& request, const AddDspmAssetManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddDspmAssetManagerOutcomeCallable AddDspmAssetManagerCallable(const Model::AddDspmAssetManagerRequest& request);
 
                 /**
                  *csip角色授权绑定接口
@@ -507,6 +946,96 @@ namespace TencentCloud
                 CreateDomainAndIpOutcomeCallable CreateDomainAndIpCallable(const Model::CreateDomainAndIpRequest& request);
 
                 /**
+                 *创建Dspm访问记录导出任务
+                 * @param req CreateDspmAccessExportJobRequest
+                 * @return CreateDspmAccessExportJobOutcome
+                 */
+                CreateDspmAccessExportJobOutcome CreateDspmAccessExportJob(const Model::CreateDspmAccessExportJobRequest &request);
+                void CreateDspmAccessExportJobAsync(const Model::CreateDspmAccessExportJobRequest& request, const CreateDspmAccessExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmAccessExportJobOutcomeCallable CreateDspmAccessExportJobCallable(const Model::CreateDspmAccessExportJobRequest& request);
+
+                /**
+                 *创建Dspm申请单
+                 * @param req CreateDspmApplyOrderRequest
+                 * @return CreateDspmApplyOrderOutcome
+                 */
+                CreateDspmApplyOrderOutcome CreateDspmApplyOrder(const Model::CreateDspmApplyOrderRequest &request);
+                void CreateDspmApplyOrderAsync(const Model::CreateDspmApplyOrderRequest& request, const CreateDspmApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmApplyOrderOutcomeCallable CreateDspmApplyOrderCallable(const Model::CreateDspmApplyOrderRequest& request);
+
+                /**
+                 *创建Dspm审批历史导出任务
+                 * @param req CreateDspmApproveHistoryExportJobRequest
+                 * @return CreateDspmApproveHistoryExportJobOutcome
+                 */
+                CreateDspmApproveHistoryExportJobOutcome CreateDspmApproveHistoryExportJob(const Model::CreateDspmApproveHistoryExportJobRequest &request);
+                void CreateDspmApproveHistoryExportJobAsync(const Model::CreateDspmApproveHistoryExportJobRequest& request, const CreateDspmApproveHistoryExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmApproveHistoryExportJobOutcomeCallable CreateDspmApproveHistoryExportJobCallable(const Model::CreateDspmApproveHistoryExportJobRequest& request);
+
+                /**
+                 *创建Dspm资产访问拓扑导出任务
+                 * @param req CreateDspmAssetAccessTopologyExportJobRequest
+                 * @return CreateDspmAssetAccessTopologyExportJobOutcome
+                 */
+                CreateDspmAssetAccessTopologyExportJobOutcome CreateDspmAssetAccessTopologyExportJob(const Model::CreateDspmAssetAccessTopologyExportJobRequest &request);
+                void CreateDspmAssetAccessTopologyExportJobAsync(const Model::CreateDspmAssetAccessTopologyExportJobRequest& request, const CreateDspmAssetAccessTopologyExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmAssetAccessTopologyExportJobOutcomeCallable CreateDspmAssetAccessTopologyExportJobCallable(const Model::CreateDspmAssetAccessTopologyExportJobRequest& request);
+
+                /**
+                 *创建Dspm资产列表导出任务
+                 * @param req CreateDspmAssetsExportJobRequest
+                 * @return CreateDspmAssetsExportJobOutcome
+                 */
+                CreateDspmAssetsExportJobOutcome CreateDspmAssetsExportJob(const Model::CreateDspmAssetsExportJobRequest &request);
+                void CreateDspmAssetsExportJobAsync(const Model::CreateDspmAssetsExportJobRequest& request, const CreateDspmAssetsExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmAssetsExportJobOutcomeCallable CreateDspmAssetsExportJobCallable(const Model::CreateDspmAssetsExportJobRequest& request);
+
+                /**
+                 *创建日志导出任务
+                 * @param req CreateDspmExportTaskRequest
+                 * @return CreateDspmExportTaskOutcome
+                 */
+                CreateDspmExportTaskOutcome CreateDspmExportTask(const Model::CreateDspmExportTaskRequest &request);
+                void CreateDspmExportTaskAsync(const Model::CreateDspmExportTaskRequest& request, const CreateDspmExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmExportTaskOutcomeCallable CreateDspmExportTaskCallable(const Model::CreateDspmExportTaskRequest& request);
+
+                /**
+                 *创建Dspm身份列表导出任务
+                 * @param req CreateDspmIdentifyInfoListExportJobRequest
+                 * @return CreateDspmIdentifyInfoListExportJobOutcome
+                 */
+                CreateDspmIdentifyInfoListExportJobOutcome CreateDspmIdentifyInfoListExportJob(const Model::CreateDspmIdentifyInfoListExportJobRequest &request);
+                void CreateDspmIdentifyInfoListExportJobAsync(const Model::CreateDspmIdentifyInfoListExportJobRequest& request, const CreateDspmIdentifyInfoListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmIdentifyInfoListExportJobOutcomeCallable CreateDspmIdentifyInfoListExportJobCallable(const Model::CreateDspmIdentifyInfoListExportJobRequest& request);
+
+                /**
+                 *创建Dspm个人身份id
+                 * @param req CreateDspmPersonalIdentifyRequest
+                 * @return CreateDspmPersonalIdentifyOutcome
+                 */
+                CreateDspmPersonalIdentifyOutcome CreateDspmPersonalIdentify(const Model::CreateDspmPersonalIdentifyRequest &request);
+                void CreateDspmPersonalIdentifyAsync(const Model::CreateDspmPersonalIdentifyRequest& request, const CreateDspmPersonalIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmPersonalIdentifyOutcomeCallable CreateDspmPersonalIdentifyCallable(const Model::CreateDspmPersonalIdentifyRequest& request);
+
+                /**
+                 *创建Dspm风险导出任务
+                 * @param req CreateDspmRiskExportJobRequest
+                 * @return CreateDspmRiskExportJobOutcome
+                 */
+                CreateDspmRiskExportJobOutcome CreateDspmRiskExportJob(const Model::CreateDspmRiskExportJobRequest &request);
+                void CreateDspmRiskExportJobAsync(const Model::CreateDspmRiskExportJobRequest& request, const CreateDspmRiskExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmRiskExportJobOutcomeCallable CreateDspmRiskExportJobCallable(const Model::CreateDspmRiskExportJobRequest& request);
+
+                /**
+                 *创建Dspm白名单策略
+                 * @param req CreateDspmWhitelistStrategyRequest
+                 * @return CreateDspmWhitelistStrategyOutcome
+                 */
+                CreateDspmWhitelistStrategyOutcome CreateDspmWhitelistStrategy(const Model::CreateDspmWhitelistStrategyRequest &request);
+                void CreateDspmWhitelistStrategyAsync(const Model::CreateDspmWhitelistStrategyRequest& request, const CreateDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDspmWhitelistStrategyOutcomeCallable CreateDspmWhitelistStrategyCallable(const Model::CreateDspmWhitelistStrategyRequest& request);
+
+                /**
                  *创建风险中心扫描任务
                  * @param req CreateRiskCenterScanTaskRequest
                  * @return CreateRiskCenterScanTaskOutcome
@@ -523,6 +1052,69 @@ namespace TencentCloud
                 DeleteDomainAndIpOutcome DeleteDomainAndIp(const Model::DeleteDomainAndIpRequest &request);
                 void DeleteDomainAndIpAsync(const Model::DeleteDomainAndIpRequest& request, const DeleteDomainAndIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainAndIpOutcomeCallable DeleteDomainAndIpCallable(const Model::DeleteDomainAndIpRequest& request);
+
+                /**
+                 *删除Dspm申请单
+                 * @param req DeleteDspmApplyOrderRequest
+                 * @return DeleteDspmApplyOrderOutcome
+                 */
+                DeleteDspmApplyOrderOutcome DeleteDspmApplyOrder(const Model::DeleteDspmApplyOrderRequest &request);
+                void DeleteDspmApplyOrderAsync(const Model::DeleteDspmApplyOrderRequest& request, const DeleteDspmApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmApplyOrderOutcomeCallable DeleteDspmApplyOrderCallable(const Model::DeleteDspmApplyOrderRequest& request);
+
+                /**
+                 *删除Dspm资产账号
+                 * @param req DeleteDspmAssetAccountRequest
+                 * @return DeleteDspmAssetAccountOutcome
+                 */
+                DeleteDspmAssetAccountOutcome DeleteDspmAssetAccount(const Model::DeleteDspmAssetAccountRequest &request);
+                void DeleteDspmAssetAccountAsync(const Model::DeleteDspmAssetAccountRequest& request, const DeleteDspmAssetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmAssetAccountOutcomeCallable DeleteDspmAssetAccountCallable(const Model::DeleteDspmAssetAccountRequest& request);
+
+                /**
+                 *删除备份日志
+                 * @param req DeleteDspmBackupLogListRequest
+                 * @return DeleteDspmBackupLogListOutcome
+                 */
+                DeleteDspmBackupLogListOutcome DeleteDspmBackupLogList(const Model::DeleteDspmBackupLogListRequest &request);
+                void DeleteDspmBackupLogListAsync(const Model::DeleteDspmBackupLogListRequest& request, const DeleteDspmBackupLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmBackupLogListOutcomeCallable DeleteDspmBackupLogListCallable(const Model::DeleteDspmBackupLogListRequest& request);
+
+                /**
+                 *删除导出任务
+                 * @param req DeleteDspmExportTaskRequest
+                 * @return DeleteDspmExportTaskOutcome
+                 */
+                DeleteDspmExportTaskOutcome DeleteDspmExportTask(const Model::DeleteDspmExportTaskRequest &request);
+                void DeleteDspmExportTaskAsync(const Model::DeleteDspmExportTaskRequest& request, const DeleteDspmExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmExportTaskOutcomeCallable DeleteDspmExportTaskCallable(const Model::DeleteDspmExportTaskRequest& request);
+
+                /**
+                 *删除Dspm个人身份id
+                 * @param req DeleteDspmPersonalIdentifyRequest
+                 * @return DeleteDspmPersonalIdentifyOutcome
+                 */
+                DeleteDspmPersonalIdentifyOutcome DeleteDspmPersonalIdentify(const Model::DeleteDspmPersonalIdentifyRequest &request);
+                void DeleteDspmPersonalIdentifyAsync(const Model::DeleteDspmPersonalIdentifyRequest& request, const DeleteDspmPersonalIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmPersonalIdentifyOutcomeCallable DeleteDspmPersonalIdentifyCallable(const Model::DeleteDspmPersonalIdentifyRequest& request);
+
+                /**
+                 *删除恢复日志
+                 * @param req DeleteDspmRestoreLogListRequest
+                 * @return DeleteDspmRestoreLogListOutcome
+                 */
+                DeleteDspmRestoreLogListOutcome DeleteDspmRestoreLogList(const Model::DeleteDspmRestoreLogListRequest &request);
+                void DeleteDspmRestoreLogListAsync(const Model::DeleteDspmRestoreLogListRequest& request, const DeleteDspmRestoreLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmRestoreLogListOutcomeCallable DeleteDspmRestoreLogListCallable(const Model::DeleteDspmRestoreLogListRequest& request);
+
+                /**
+                 *删除Dspm白名单策略
+                 * @param req DeleteDspmWhitelistStrategyRequest
+                 * @return DeleteDspmWhitelistStrategyOutcome
+                 */
+                DeleteDspmWhitelistStrategyOutcome DeleteDspmWhitelistStrategy(const Model::DeleteDspmWhitelistStrategyRequest &request);
+                void DeleteDspmWhitelistStrategyAsync(const Model::DeleteDspmWhitelistStrategyRequest& request, const DeleteDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDspmWhitelistStrategyOutcomeCallable DeleteDspmWhitelistStrategyCallable(const Model::DeleteDspmWhitelistStrategyRequest& request);
 
                 /**
                  *删除风险中心扫描任务
@@ -660,6 +1252,15 @@ namespace TencentCloud
                 DescribeAssetViewVulRiskListOutcomeCallable DescribeAssetViewVulRiskListCallable(const Model::DescribeAssetViewVulRiskListRequest& request);
 
                 /**
+                 *查询是否绑定角色
+                 * @param req DescribeAssumeRoleRequest
+                 * @return DescribeAssumeRoleOutcome
+                 */
+                DescribeAssumeRoleOutcome DescribeAssumeRole(const Model::DescribeAssumeRoleRequest &request);
+                void DescribeAssumeRoleAsync(const Model::DescribeAssumeRoleRequest& request, const DescribeAssumeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssumeRoleOutcomeCallable DescribeAssumeRoleCallable(const Model::DescribeAssumeRoleRequest& request);
+
+                /**
                  *云防资产中心统计数据
                  * @param req DescribeCFWAssetStatisticsRequest
                  * @return DescribeCFWAssetStatisticsOutcome
@@ -766,6 +1367,393 @@ namespace TencentCloud
                 DescribeDomainAssetsOutcome DescribeDomainAssets(const Model::DescribeDomainAssetsRequest &request);
                 void DescribeDomainAssetsAsync(const Model::DescribeDomainAssetsRequest& request, const DescribeDomainAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainAssetsOutcomeCallable DescribeDomainAssetsCallable(const Model::DescribeDomainAssetsRequest& request);
+
+                /**
+                 *查询Dspm访问记录
+                 * @param req DescribeDspmAccessRecordRequest
+                 * @return DescribeDspmAccessRecordOutcome
+                 */
+                DescribeDspmAccessRecordOutcome DescribeDspmAccessRecord(const Model::DescribeDspmAccessRecordRequest &request);
+                void DescribeDspmAccessRecordAsync(const Model::DescribeDspmAccessRecordRequest& request, const DescribeDspmAccessRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAccessRecordOutcomeCallable DescribeDspmAccessRecordCallable(const Model::DescribeDspmAccessRecordRequest& request);
+
+                /**
+                 *查询Dspm访问拓扑账号列表
+                 * @param req DescribeDspmAccessTopologyAccountsRequest
+                 * @return DescribeDspmAccessTopologyAccountsOutcome
+                 */
+                DescribeDspmAccessTopologyAccountsOutcome DescribeDspmAccessTopologyAccounts(const Model::DescribeDspmAccessTopologyAccountsRequest &request);
+                void DescribeDspmAccessTopologyAccountsAsync(const Model::DescribeDspmAccessTopologyAccountsRequest& request, const DescribeDspmAccessTopologyAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAccessTopologyAccountsOutcomeCallable DescribeDspmAccessTopologyAccountsCallable(const Model::DescribeDspmAccessTopologyAccountsRequest& request);
+
+                /**
+                 *查询Dspm访问拓扑资产列表
+                 * @param req DescribeDspmAccessTopologyAssetsRequest
+                 * @return DescribeDspmAccessTopologyAssetsOutcome
+                 */
+                DescribeDspmAccessTopologyAssetsOutcome DescribeDspmAccessTopologyAssets(const Model::DescribeDspmAccessTopologyAssetsRequest &request);
+                void DescribeDspmAccessTopologyAssetsAsync(const Model::DescribeDspmAccessTopologyAssetsRequest& request, const DescribeDspmAccessTopologyAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAccessTopologyAssetsOutcomeCallable DescribeDspmAccessTopologyAssetsCallable(const Model::DescribeDspmAccessTopologyAssetsRequest& request);
+
+                /**
+                 *查询Dspm访问拓扑ip列表
+                 * @param req DescribeDspmAccessTopologyIpsRequest
+                 * @return DescribeDspmAccessTopologyIpsOutcome
+                 */
+                DescribeDspmAccessTopologyIpsOutcome DescribeDspmAccessTopologyIps(const Model::DescribeDspmAccessTopologyIpsRequest &request);
+                void DescribeDspmAccessTopologyIpsAsync(const Model::DescribeDspmAccessTopologyIpsRequest& request, const DescribeDspmAccessTopologyIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAccessTopologyIpsOutcomeCallable DescribeDspmAccessTopologyIpsCallable(const Model::DescribeDspmAccessTopologyIpsRequest& request);
+
+                /**
+                 *查询Dspm申请历史
+                 * @param req DescribeDspmApplyHistoryRequest
+                 * @return DescribeDspmApplyHistoryOutcome
+                 */
+                DescribeDspmApplyHistoryOutcome DescribeDspmApplyHistory(const Model::DescribeDspmApplyHistoryRequest &request);
+                void DescribeDspmApplyHistoryAsync(const Model::DescribeDspmApplyHistoryRequest& request, const DescribeDspmApplyHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmApplyHistoryOutcomeCallable DescribeDspmApplyHistoryCallable(const Model::DescribeDspmApplyHistoryRequest& request);
+
+                /**
+                 *查询Dspm申请单列表
+                 * @param req DescribeDspmApplyOrderListRequest
+                 * @return DescribeDspmApplyOrderListOutcome
+                 */
+                DescribeDspmApplyOrderListOutcome DescribeDspmApplyOrderList(const Model::DescribeDspmApplyOrderListRequest &request);
+                void DescribeDspmApplyOrderListAsync(const Model::DescribeDspmApplyOrderListRequest& request, const DescribeDspmApplyOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmApplyOrderListOutcomeCallable DescribeDspmApplyOrderListCallable(const Model::DescribeDspmApplyOrderListRequest& request);
+
+                /**
+                 *查询Dspm审批历史
+                 * @param req DescribeDspmApproveHistoryRequest
+                 * @return DescribeDspmApproveHistoryOutcome
+                 */
+                DescribeDspmApproveHistoryOutcome DescribeDspmApproveHistory(const Model::DescribeDspmApproveHistoryRequest &request);
+                void DescribeDspmApproveHistoryAsync(const Model::DescribeDspmApproveHistoryRequest& request, const DescribeDspmApproveHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmApproveHistoryOutcomeCallable DescribeDspmApproveHistoryCallable(const Model::DescribeDspmApproveHistoryRequest& request);
+
+                /**
+                 *查询Dspm审批单列表
+                 * @param req DescribeDspmApproveOrderListRequest
+                 * @return DescribeDspmApproveOrderListOutcome
+                 */
+                DescribeDspmApproveOrderListOutcome DescribeDspmApproveOrderList(const Model::DescribeDspmApproveOrderListRequest &request);
+                void DescribeDspmApproveOrderListAsync(const Model::DescribeDspmApproveOrderListRequest& request, const DescribeDspmApproveOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmApproveOrderListOutcomeCallable DescribeDspmApproveOrderListCallable(const Model::DescribeDspmApproveOrderListRequest& request);
+
+                /**
+                 *查询Dspm资产访问拓扑
+                 * @param req DescribeDspmAssetAccessTopologyRequest
+                 * @return DescribeDspmAssetAccessTopologyOutcome
+                 */
+                DescribeDspmAssetAccessTopologyOutcome DescribeDspmAssetAccessTopology(const Model::DescribeDspmAssetAccessTopologyRequest &request);
+                void DescribeDspmAssetAccessTopologyAsync(const Model::DescribeDspmAssetAccessTopologyRequest& request, const DescribeDspmAssetAccessTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetAccessTopologyOutcomeCallable DescribeDspmAssetAccessTopologyCallable(const Model::DescribeDspmAssetAccessTopologyRequest& request);
+
+                /**
+                 *查询Dspm资产账号身份信息
+                 * @param req DescribeDspmAssetAccountIdentifyRequest
+                 * @return DescribeDspmAssetAccountIdentifyOutcome
+                 */
+                DescribeDspmAssetAccountIdentifyOutcome DescribeDspmAssetAccountIdentify(const Model::DescribeDspmAssetAccountIdentifyRequest &request);
+                void DescribeDspmAssetAccountIdentifyAsync(const Model::DescribeDspmAssetAccountIdentifyRequest& request, const DescribeDspmAssetAccountIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetAccountIdentifyOutcomeCallable DescribeDspmAssetAccountIdentifyCallable(const Model::DescribeDspmAssetAccountIdentifyRequest& request);
+
+                /**
+                 *查询Dspm资产账号预设特权信息
+                 * @param req DescribeDspmAssetAccountPresetPrivilegesRequest
+                 * @return DescribeDspmAssetAccountPresetPrivilegesOutcome
+                 */
+                DescribeDspmAssetAccountPresetPrivilegesOutcome DescribeDspmAssetAccountPresetPrivileges(const Model::DescribeDspmAssetAccountPresetPrivilegesRequest &request);
+                void DescribeDspmAssetAccountPresetPrivilegesAsync(const Model::DescribeDspmAssetAccountPresetPrivilegesRequest& request, const DescribeDspmAssetAccountPresetPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetAccountPresetPrivilegesOutcomeCallable DescribeDspmAssetAccountPresetPrivilegesCallable(const Model::DescribeDspmAssetAccountPresetPrivilegesRequest& request);
+
+                /**
+                 *查询Dspm资产账号回收后特权信息
+                 * @param req DescribeDspmAssetAccountRecycledPrivilegesRequest
+                 * @return DescribeDspmAssetAccountRecycledPrivilegesOutcome
+                 */
+                DescribeDspmAssetAccountRecycledPrivilegesOutcome DescribeDspmAssetAccountRecycledPrivileges(const Model::DescribeDspmAssetAccountRecycledPrivilegesRequest &request);
+                void DescribeDspmAssetAccountRecycledPrivilegesAsync(const Model::DescribeDspmAssetAccountRecycledPrivilegesRequest& request, const DescribeDspmAssetAccountRecycledPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetAccountRecycledPrivilegesOutcomeCallable DescribeDspmAssetAccountRecycledPrivilegesCallable(const Model::DescribeDspmAssetAccountRecycledPrivilegesRequest& request);
+
+                /**
+                 *查询Dspm资产账号列表
+                 * @param req DescribeDspmAssetAccountsRequest
+                 * @return DescribeDspmAssetAccountsOutcome
+                 */
+                DescribeDspmAssetAccountsOutcome DescribeDspmAssetAccounts(const Model::DescribeDspmAssetAccountsRequest &request);
+                void DescribeDspmAssetAccountsAsync(const Model::DescribeDspmAssetAccountsRequest& request, const DescribeDspmAssetAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetAccountsOutcomeCallable DescribeDspmAssetAccountsCallable(const Model::DescribeDspmAssetAccountsRequest& request);
+
+                /**
+                 *查询资产数据库信息
+                 * @param req DescribeDspmAssetDatabaseListRequest
+                 * @return DescribeDspmAssetDatabaseListOutcome
+                 */
+                DescribeDspmAssetDatabaseListOutcome DescribeDspmAssetDatabaseList(const Model::DescribeDspmAssetDatabaseListRequest &request);
+                void DescribeDspmAssetDatabaseListAsync(const Model::DescribeDspmAssetDatabaseListRequest& request, const DescribeDspmAssetDatabaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetDatabaseListOutcomeCallable DescribeDspmAssetDatabaseListCallable(const Model::DescribeDspmAssetDatabaseListRequest& request);
+
+                /**
+                 *查询Dspm资产数据库列表
+                 * @param req DescribeDspmAssetDatabasesRequest
+                 * @return DescribeDspmAssetDatabasesOutcome
+                 */
+                DescribeDspmAssetDatabasesOutcome DescribeDspmAssetDatabases(const Model::DescribeDspmAssetDatabasesRequest &request);
+                void DescribeDspmAssetDatabasesAsync(const Model::DescribeDspmAssetDatabasesRequest& request, const DescribeDspmAssetDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetDatabasesOutcomeCallable DescribeDspmAssetDatabasesCallable(const Model::DescribeDspmAssetDatabasesRequest& request);
+
+                /**
+                 *查询dspm资产字段信息
+                 * @param req DescribeDspmAssetFieldListRequest
+                 * @return DescribeDspmAssetFieldListOutcome
+                 */
+                DescribeDspmAssetFieldListOutcome DescribeDspmAssetFieldList(const Model::DescribeDspmAssetFieldListRequest &request);
+                void DescribeDspmAssetFieldListAsync(const Model::DescribeDspmAssetFieldListRequest& request, const DescribeDspmAssetFieldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetFieldListOutcomeCallable DescribeDspmAssetFieldListCallable(const Model::DescribeDspmAssetFieldListRequest& request);
+
+                /**
+                 *查询Dspm资产id列表
+                 * @param req DescribeDspmAssetIdsRequest
+                 * @return DescribeDspmAssetIdsOutcome
+                 */
+                DescribeDspmAssetIdsOutcome DescribeDspmAssetIds(const Model::DescribeDspmAssetIdsRequest &request);
+                void DescribeDspmAssetIdsAsync(const Model::DescribeDspmAssetIdsRequest& request, const DescribeDspmAssetIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetIdsOutcomeCallable DescribeDspmAssetIdsCallable(const Model::DescribeDspmAssetIdsRequest& request);
+
+                /**
+                 *查询Dspm资产登录凭据
+                 * @param req DescribeDspmAssetLoginCredentialRequest
+                 * @return DescribeDspmAssetLoginCredentialOutcome
+                 */
+                DescribeDspmAssetLoginCredentialOutcome DescribeDspmAssetLoginCredential(const Model::DescribeDspmAssetLoginCredentialRequest &request);
+                void DescribeDspmAssetLoginCredentialAsync(const Model::DescribeDspmAssetLoginCredentialRequest& request, const DescribeDspmAssetLoginCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetLoginCredentialOutcomeCallable DescribeDspmAssetLoginCredentialCallable(const Model::DescribeDspmAssetLoginCredentialRequest& request);
+
+                /**
+                 *查询Dspm资产安全分析状态
+                 * @param req DescribeDspmAssetSecurityAnalyseStatusRequest
+                 * @return DescribeDspmAssetSecurityAnalyseStatusOutcome
+                 */
+                DescribeDspmAssetSecurityAnalyseStatusOutcome DescribeDspmAssetSecurityAnalyseStatus(const Model::DescribeDspmAssetSecurityAnalyseStatusRequest &request);
+                void DescribeDspmAssetSecurityAnalyseStatusAsync(const Model::DescribeDspmAssetSecurityAnalyseStatusRequest& request, const DescribeDspmAssetSecurityAnalyseStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetSecurityAnalyseStatusOutcomeCallable DescribeDspmAssetSecurityAnalyseStatusCallable(const Model::DescribeDspmAssetSecurityAnalyseStatusRequest& request);
+
+                /**
+                 *查询Dspm资产支持的权限
+                 * @param req DescribeDspmAssetSupportedPrivilegesRequest
+                 * @return DescribeDspmAssetSupportedPrivilegesOutcome
+                 */
+                DescribeDspmAssetSupportedPrivilegesOutcome DescribeDspmAssetSupportedPrivileges(const Model::DescribeDspmAssetSupportedPrivilegesRequest &request);
+                void DescribeDspmAssetSupportedPrivilegesAsync(const Model::DescribeDspmAssetSupportedPrivilegesRequest& request, const DescribeDspmAssetSupportedPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetSupportedPrivilegesOutcomeCallable DescribeDspmAssetSupportedPrivilegesCallable(const Model::DescribeDspmAssetSupportedPrivilegesRequest& request);
+
+                /**
+                 *查询资产表信息
+                 * @param req DescribeDspmAssetTableListRequest
+                 * @return DescribeDspmAssetTableListOutcome
+                 */
+                DescribeDspmAssetTableListOutcome DescribeDspmAssetTableList(const Model::DescribeDspmAssetTableListRequest &request);
+                void DescribeDspmAssetTableListAsync(const Model::DescribeDspmAssetTableListRequest& request, const DescribeDspmAssetTableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetTableListOutcomeCallable DescribeDspmAssetTableListCallable(const Model::DescribeDspmAssetTableListRequest& request);
+
+                /**
+                 *查询Dspm资产列表
+                 * @param req DescribeDspmAssetsRequest
+                 * @return DescribeDspmAssetsOutcome
+                 */
+                DescribeDspmAssetsOutcome DescribeDspmAssets(const Model::DescribeDspmAssetsRequest &request);
+                void DescribeDspmAssetsAsync(const Model::DescribeDspmAssetsRequest& request, const DescribeDspmAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAssetsOutcomeCallable DescribeDspmAssetsCallable(const Model::DescribeDspmAssetsRequest& request);
+
+                /**
+                 *查询备份日志列表
+                 * @param req DescribeDspmBackupLogListRequest
+                 * @return DescribeDspmBackupLogListOutcome
+                 */
+                DescribeDspmBackupLogListOutcome DescribeDspmBackupLogList(const Model::DescribeDspmBackupLogListRequest &request);
+                void DescribeDspmBackupLogListAsync(const Model::DescribeDspmBackupLogListRequest& request, const DescribeDspmBackupLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmBackupLogListOutcomeCallable DescribeDspmBackupLogListCallable(const Model::DescribeDspmBackupLogListRequest& request);
+
+                /**
+                 *查询日志备份配置
+                 * @param req DescribeDspmBackupSettingRequest
+                 * @return DescribeDspmBackupSettingOutcome
+                 */
+                DescribeDspmBackupSettingOutcome DescribeDspmBackupSetting(const Model::DescribeDspmBackupSettingRequest &request);
+                void DescribeDspmBackupSettingAsync(const Model::DescribeDspmBackupSettingRequest& request, const DescribeDspmBackupSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmBackupSettingOutcomeCallable DescribeDspmBackupSettingCallable(const Model::DescribeDspmBackupSettingRequest& request);
+
+                /**
+                 *查询dspm字典信息列表
+                 * @param req DescribeDspmDictionaryListRequest
+                 * @return DescribeDspmDictionaryListOutcome
+                 */
+                DescribeDspmDictionaryListOutcome DescribeDspmDictionaryList(const Model::DescribeDspmDictionaryListRequest &request);
+                void DescribeDspmDictionaryListAsync(const Model::DescribeDspmDictionaryListRequest& request, const DescribeDspmDictionaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmDictionaryListOutcomeCallable DescribeDspmDictionaryListCallable(const Model::DescribeDspmDictionaryListRequest& request);
+
+                /**
+                 *查询导出任务
+                 * @param req DescribeDspmExportTaskRequest
+                 * @return DescribeDspmExportTaskOutcome
+                 */
+                DescribeDspmExportTaskOutcome DescribeDspmExportTask(const Model::DescribeDspmExportTaskRequest &request);
+                void DescribeDspmExportTaskAsync(const Model::DescribeDspmExportTaskRequest& request, const DescribeDspmExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmExportTaskOutcomeCallable DescribeDspmExportTaskCallable(const Model::DescribeDspmExportTaskRequest& request);
+
+                /**
+                 *查询Dspm身份id列表
+                 * @param req DescribeDspmIdentifyIdListRequest
+                 * @return DescribeDspmIdentifyIdListOutcome
+                 */
+                DescribeDspmIdentifyIdListOutcome DescribeDspmIdentifyIdList(const Model::DescribeDspmIdentifyIdListRequest &request);
+                void DescribeDspmIdentifyIdListAsync(const Model::DescribeDspmIdentifyIdListRequest& request, const DescribeDspmIdentifyIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyIdListOutcomeCallable DescribeDspmIdentifyIdListCallable(const Model::DescribeDspmIdentifyIdListRequest& request);
+
+                /**
+                 *查询Dspm身份信息
+                 * @param req DescribeDspmIdentifyInfoRequest
+                 * @return DescribeDspmIdentifyInfoOutcome
+                 */
+                DescribeDspmIdentifyInfoOutcome DescribeDspmIdentifyInfo(const Model::DescribeDspmIdentifyInfoRequest &request);
+                void DescribeDspmIdentifyInfoAsync(const Model::DescribeDspmIdentifyInfoRequest& request, const DescribeDspmIdentifyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyInfoOutcomeCallable DescribeDspmIdentifyInfoCallable(const Model::DescribeDspmIdentifyInfoRequest& request);
+
+                /**
+                 *查询Dspm身份信息列表
+                 * @param req DescribeDspmIdentifyInfoListRequest
+                 * @return DescribeDspmIdentifyInfoListOutcome
+                 */
+                DescribeDspmIdentifyInfoListOutcome DescribeDspmIdentifyInfoList(const Model::DescribeDspmIdentifyInfoListRequest &request);
+                void DescribeDspmIdentifyInfoListAsync(const Model::DescribeDspmIdentifyInfoListRequest& request, const DescribeDspmIdentifyInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmIdentifyInfoListOutcomeCallable DescribeDspmIdentifyInfoListCallable(const Model::DescribeDspmIdentifyInfoListRequest& request);
+
+                /**
+                 *查询日志列表信息
+                 * @param req DescribeDspmLogListRequest
+                 * @return DescribeDspmLogListOutcome
+                 */
+                DescribeDspmLogListOutcome DescribeDspmLogList(const Model::DescribeDspmLogListRequest &request);
+                void DescribeDspmLogListAsync(const Model::DescribeDspmLogListRequest& request, const DescribeDspmLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmLogListOutcomeCallable DescribeDspmLogListCallable(const Model::DescribeDspmLogListRequest& request);
+
+                /**
+                 *获取已购Dspm订单信息
+                 * @param req DescribeDspmPayInfoRequest
+                 * @return DescribeDspmPayInfoOutcome
+                 */
+                DescribeDspmPayInfoOutcome DescribeDspmPayInfo(const Model::DescribeDspmPayInfoRequest &request);
+                void DescribeDspmPayInfoAsync(const Model::DescribeDspmPayInfoRequest& request, const DescribeDspmPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmPayInfoOutcomeCallable DescribeDspmPayInfoCallable(const Model::DescribeDspmPayInfoRequest& request);
+
+                /**
+                 *查询Dspm访客申请记录
+                 * @param req DescribeDspmPersonApplyHistoryRequest
+                 * @return DescribeDspmPersonApplyHistoryOutcome
+                 */
+                DescribeDspmPersonApplyHistoryOutcome DescribeDspmPersonApplyHistory(const Model::DescribeDspmPersonApplyHistoryRequest &request);
+                void DescribeDspmPersonApplyHistoryAsync(const Model::DescribeDspmPersonApplyHistoryRequest& request, const DescribeDspmPersonApplyHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmPersonApplyHistoryOutcomeCallable DescribeDspmPersonApplyHistoryCallable(const Model::DescribeDspmPersonApplyHistoryRequest& request);
+
+                /**
+                 *查询Dspm个人身份信息列表
+                 * @param req DescribeDspmPersonalIdentifyListRequest
+                 * @return DescribeDspmPersonalIdentifyListOutcome
+                 */
+                DescribeDspmPersonalIdentifyListOutcome DescribeDspmPersonalIdentifyList(const Model::DescribeDspmPersonalIdentifyListRequest &request);
+                void DescribeDspmPersonalIdentifyListAsync(const Model::DescribeDspmPersonalIdentifyListRequest& request, const DescribeDspmPersonalIdentifyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmPersonalIdentifyListOutcomeCallable DescribeDspmPersonalIdentifyListCallable(const Model::DescribeDspmPersonalIdentifyListRequest& request);
+
+                /**
+                 *查询Dspm风险记录
+                 * @param req DescribeDspmRiskRequest
+                 * @return DescribeDspmRiskOutcome
+                 */
+                DescribeDspmRiskOutcome DescribeDspmRisk(const Model::DescribeDspmRiskRequest &request);
+                void DescribeDspmRiskAsync(const Model::DescribeDspmRiskRequest& request, const DescribeDspmRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmRiskOutcomeCallable DescribeDspmRiskCallable(const Model::DescribeDspmRiskRequest& request);
+
+                /**
+                 *查询Dspm风险详情
+                 * @param req DescribeDspmRiskDetailRequest
+                 * @return DescribeDspmRiskDetailOutcome
+                 */
+                DescribeDspmRiskDetailOutcome DescribeDspmRiskDetail(const Model::DescribeDspmRiskDetailRequest &request);
+                void DescribeDspmRiskDetailAsync(const Model::DescribeDspmRiskDetailRequest& request, const DescribeDspmRiskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmRiskDetailOutcomeCallable DescribeDspmRiskDetailCallable(const Model::DescribeDspmRiskDetailRequest& request);
+
+                /**
+                 *查询Dspm风险策略
+                 * @param req DescribeDspmRiskStrategyRequest
+                 * @return DescribeDspmRiskStrategyOutcome
+                 */
+                DescribeDspmRiskStrategyOutcome DescribeDspmRiskStrategy(const Model::DescribeDspmRiskStrategyRequest &request);
+                void DescribeDspmRiskStrategyAsync(const Model::DescribeDspmRiskStrategyRequest& request, const DescribeDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmRiskStrategyOutcomeCallable DescribeDspmRiskStrategyCallable(const Model::DescribeDspmRiskStrategyRequest& request);
+
+                /**
+                 *查询Dspm风险分组策略
+                 * @param req DescribeDspmRiskStrategyGroupRequest
+                 * @return DescribeDspmRiskStrategyGroupOutcome
+                 */
+                DescribeDspmRiskStrategyGroupOutcome DescribeDspmRiskStrategyGroup(const Model::DescribeDspmRiskStrategyGroupRequest &request);
+                void DescribeDspmRiskStrategyGroupAsync(const Model::DescribeDspmRiskStrategyGroupRequest& request, const DescribeDspmRiskStrategyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmRiskStrategyGroupOutcomeCallable DescribeDspmRiskStrategyGroupCallable(const Model::DescribeDspmRiskStrategyGroupRequest& request);
+
+                /**
+                 *查询Dspm风险趋势
+                 * @param req DescribeDspmRiskTendencyRequest
+                 * @return DescribeDspmRiskTendencyOutcome
+                 */
+                DescribeDspmRiskTendencyOutcome DescribeDspmRiskTendency(const Model::DescribeDspmRiskTendencyRequest &request);
+                void DescribeDspmRiskTendencyAsync(const Model::DescribeDspmRiskTendencyRequest& request, const DescribeDspmRiskTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmRiskTendencyOutcomeCallable DescribeDspmRiskTendencyCallable(const Model::DescribeDspmRiskTendencyRequest& request);
+
+                /**
+                 *查询Dspm统计信息
+                 * @param req DescribeDspmStatisticsRequest
+                 * @return DescribeDspmStatisticsOutcome
+                 */
+                DescribeDspmStatisticsOutcome DescribeDspmStatistics(const Model::DescribeDspmStatisticsRequest &request);
+                void DescribeDspmStatisticsAsync(const Model::DescribeDspmStatisticsRequest& request, const DescribeDspmStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmStatisticsOutcomeCallable DescribeDspmStatisticsCallable(const Model::DescribeDspmStatisticsRequest& request);
+
+                /**
+                 *查询Dspm支持的资产类型信息
+                 * @param req DescribeDspmSupportedAssetTypeRequest
+                 * @return DescribeDspmSupportedAssetTypeOutcome
+                 */
+                DescribeDspmSupportedAssetTypeOutcome DescribeDspmSupportedAssetType(const Model::DescribeDspmSupportedAssetTypeRequest &request);
+                void DescribeDspmSupportedAssetTypeAsync(const Model::DescribeDspmSupportedAssetTypeRequest& request, const DescribeDspmSupportedAssetTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmSupportedAssetTypeOutcomeCallable DescribeDspmSupportedAssetTypeCallable(const Model::DescribeDspmSupportedAssetTypeRequest& request);
+
+                /**
+                 *查询Dspm同步资产状态
+                 * @param req DescribeDspmSyncAssetsStatusRequest
+                 * @return DescribeDspmSyncAssetsStatusOutcome
+                 */
+                DescribeDspmSyncAssetsStatusOutcome DescribeDspmSyncAssetsStatus(const Model::DescribeDspmSyncAssetsStatusRequest &request);
+                void DescribeDspmSyncAssetsStatusAsync(const Model::DescribeDspmSyncAssetsStatusRequest& request, const DescribeDspmSyncAssetsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmSyncAssetsStatusOutcomeCallable DescribeDspmSyncAssetsStatusCallable(const Model::DescribeDspmSyncAssetsStatusRequest& request);
+
+                /**
+                 *查询Dspm同步用户状态
+                 * @param req DescribeDspmSyncUsersStatusRequest
+                 * @return DescribeDspmSyncUsersStatusOutcome
+                 */
+                DescribeDspmSyncUsersStatusOutcome DescribeDspmSyncUsersStatus(const Model::DescribeDspmSyncUsersStatusRequest &request);
+                void DescribeDspmSyncUsersStatusAsync(const Model::DescribeDspmSyncUsersStatusRequest& request, const DescribeDspmSyncUsersStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmSyncUsersStatusOutcomeCallable DescribeDspmSyncUsersStatusCallable(const Model::DescribeDspmSyncUsersStatusRequest& request);
+
+                /**
+                 *查询Dspm白名单策略
+                 * @param req DescribeDspmWhitelistStrategyRequest
+                 * @return DescribeDspmWhitelistStrategyOutcome
+                 */
+                DescribeDspmWhitelistStrategyOutcome DescribeDspmWhitelistStrategy(const Model::DescribeDspmWhitelistStrategyRequest &request);
+                void DescribeDspmWhitelistStrategyAsync(const Model::DescribeDspmWhitelistStrategyRequest& request, const DescribeDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmWhitelistStrategyOutcomeCallable DescribeDspmWhitelistStrategyCallable(const Model::DescribeDspmWhitelistStrategyRequest& request);
 
                 /**
                  *云边界分析资产分类
@@ -1119,6 +2107,15 @@ namespace TencentCloud
                 DescribeUserCallRecordOutcomeCallable DescribeUserCallRecordCallable(const Model::DescribeUserCallRecordRequest& request);
 
                 /**
+                 *获取账号dspm信息列表
+                 * @param req DescribeUserDspmInfoListRequest
+                 * @return DescribeUserDspmInfoListOutcome
+                 */
+                DescribeUserDspmInfoListOutcome DescribeUserDspmInfoList(const Model::DescribeUserDspmInfoListRequest &request);
+                void DescribeUserDspmInfoListAsync(const Model::DescribeUserDspmInfoListRequest& request, const DescribeUserDspmInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDspmInfoListOutcomeCallable DescribeUserDspmInfoListCallable(const Model::DescribeUserDspmInfoListRequest& request);
+
+                /**
                  *新安全中心风险中心-漏洞列表
                  * @param req DescribeVULListRequest
                  * @return DescribeVULListOutcome
@@ -1173,6 +2170,150 @@ namespace TencentCloud
                 DescribeVulViewVulRiskListOutcomeCallable DescribeVulViewVulRiskListCallable(const Model::DescribeVulViewVulRiskListRequest& request);
 
                 /**
+                 *下载导出日志
+                 * @param req DownloadDspmExportLogRequest
+                 * @return DownloadDspmExportLogOutcome
+                 */
+                DownloadDspmExportLogOutcome DownloadDspmExportLog(const Model::DownloadDspmExportLogRequest &request);
+                void DownloadDspmExportLogAsync(const Model::DownloadDspmExportLogRequest& request, const DownloadDspmExportLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadDspmExportLogOutcomeCallable DownloadDspmExportLogCallable(const Model::DownloadDspmExportLogRequest& request);
+
+                /**
+                 *修改Dspm访问管理信息
+                 * @param req ModifyDspmAccessRecordRequest
+                 * @return ModifyDspmAccessRecordOutcome
+                 */
+                ModifyDspmAccessRecordOutcome ModifyDspmAccessRecord(const Model::ModifyDspmAccessRecordRequest &request);
+                void ModifyDspmAccessRecordAsync(const Model::ModifyDspmAccessRecordRequest& request, const ModifyDspmAccessRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAccessRecordOutcomeCallable ModifyDspmAccessRecordCallable(const Model::ModifyDspmAccessRecordRequest& request);
+
+                /**
+                 *修改Dspm审批单状态
+                 * @param req ModifyDspmApproveStatusRequest
+                 * @return ModifyDspmApproveStatusOutcome
+                 */
+                ModifyDspmApproveStatusOutcome ModifyDspmApproveStatus(const Model::ModifyDspmApproveStatusRequest &request);
+                void ModifyDspmApproveStatusAsync(const Model::ModifyDspmApproveStatusRequest& request, const ModifyDspmApproveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmApproveStatusOutcomeCallable ModifyDspmApproveStatusCallable(const Model::ModifyDspmApproveStatusRequest& request);
+
+                /**
+                 *修改Dspm资产账号信息
+                 * @param req ModifyDspmAssetAccountRequest
+                 * @return ModifyDspmAssetAccountOutcome
+                 */
+                ModifyDspmAssetAccountOutcome ModifyDspmAssetAccount(const Model::ModifyDspmAssetAccountRequest &request);
+                void ModifyDspmAssetAccountAsync(const Model::ModifyDspmAssetAccountRequest& request, const ModifyDspmAssetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetAccountOutcomeCallable ModifyDspmAssetAccountCallable(const Model::ModifyDspmAssetAccountRequest& request);
+
+                /**
+                 *修改Dspm资产账号权限
+                 * @param req ModifyDspmAssetAccountPrivilegesRequest
+                 * @return ModifyDspmAssetAccountPrivilegesOutcome
+                 */
+                ModifyDspmAssetAccountPrivilegesOutcome ModifyDspmAssetAccountPrivileges(const Model::ModifyDspmAssetAccountPrivilegesRequest &request);
+                void ModifyDspmAssetAccountPrivilegesAsync(const Model::ModifyDspmAssetAccountPrivilegesRequest& request, const ModifyDspmAssetAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetAccountPrivilegesOutcomeCallable ModifyDspmAssetAccountPrivilegesCallable(const Model::ModifyDspmAssetAccountPrivilegesRequest& request);
+
+                /**
+                 *修改Dspm资产数据扫描任务
+                 * @param req ModifyDspmAssetDataScanTaskRequest
+                 * @return ModifyDspmAssetDataScanTaskOutcome
+                 */
+                ModifyDspmAssetDataScanTaskOutcome ModifyDspmAssetDataScanTask(const Model::ModifyDspmAssetDataScanTaskRequest &request);
+                void ModifyDspmAssetDataScanTaskAsync(const Model::ModifyDspmAssetDataScanTaskRequest& request, const ModifyDspmAssetDataScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetDataScanTaskOutcomeCallable ModifyDspmAssetDataScanTaskCallable(const Model::ModifyDspmAssetDataScanTaskRequest& request);
+
+                /**
+                 *修改Dspm资产日志投递开关
+                 * @param req ModifyDspmAssetLogDeliverySwitchRequest
+                 * @return ModifyDspmAssetLogDeliverySwitchOutcome
+                 */
+                ModifyDspmAssetLogDeliverySwitchOutcome ModifyDspmAssetLogDeliverySwitch(const Model::ModifyDspmAssetLogDeliverySwitchRequest &request);
+                void ModifyDspmAssetLogDeliverySwitchAsync(const Model::ModifyDspmAssetLogDeliverySwitchRequest& request, const ModifyDspmAssetLogDeliverySwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetLogDeliverySwitchOutcomeCallable ModifyDspmAssetLogDeliverySwitchCallable(const Model::ModifyDspmAssetLogDeliverySwitchRequest& request);
+
+                /**
+                 *修改Dspm资产日志投递开关
+                 * @param req ModifyDspmAssetSecurityAnalysisSwitchRequest
+                 * @return ModifyDspmAssetSecurityAnalysisSwitchOutcome
+                 */
+                ModifyDspmAssetSecurityAnalysisSwitchOutcome ModifyDspmAssetSecurityAnalysisSwitch(const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest &request);
+                void ModifyDspmAssetSecurityAnalysisSwitchAsync(const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest& request, const ModifyDspmAssetSecurityAnalysisSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmAssetSecurityAnalysisSwitchOutcomeCallable ModifyDspmAssetSecurityAnalysisSwitchCallable(const Model::ModifyDspmAssetSecurityAnalysisSwitchRequest& request);
+
+                /**
+                 *修改日志备份设置
+                 * @param req ModifyDspmBackupSettingRequest
+                 * @return ModifyDspmBackupSettingOutcome
+                 */
+                ModifyDspmBackupSettingOutcome ModifyDspmBackupSetting(const Model::ModifyDspmBackupSettingRequest &request);
+                void ModifyDspmBackupSettingAsync(const Model::ModifyDspmBackupSettingRequest& request, const ModifyDspmBackupSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmBackupSettingOutcomeCallable ModifyDspmBackupSettingCallable(const Model::ModifyDspmBackupSettingRequest& request);
+
+                /**
+                 *修改Dspm身份信息
+                 * @param req ModifyDspmIdentifyInfoRequest
+                 * @return ModifyDspmIdentifyInfoOutcome
+                 */
+                ModifyDspmIdentifyInfoOutcome ModifyDspmIdentifyInfo(const Model::ModifyDspmIdentifyInfoRequest &request);
+                void ModifyDspmIdentifyInfoAsync(const Model::ModifyDspmIdentifyInfoRequest& request, const ModifyDspmIdentifyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIdentifyInfoOutcomeCallable ModifyDspmIdentifyInfoCallable(const Model::ModifyDspmIdentifyInfoRequest& request);
+
+                /**
+                 *修改DspmIp信息
+                 * @param req ModifyDspmIpInfoRequest
+                 * @return ModifyDspmIpInfoOutcome
+                 */
+                ModifyDspmIpInfoOutcome ModifyDspmIpInfo(const Model::ModifyDspmIpInfoRequest &request);
+                void ModifyDspmIpInfoAsync(const Model::ModifyDspmIpInfoRequest& request, const ModifyDspmIpInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmIpInfoOutcomeCallable ModifyDspmIpInfoCallable(const Model::ModifyDspmIpInfoRequest& request);
+
+                /**
+                 *修改Dspm个人身份id
+                 * @param req ModifyDspmPersonalIdentifyRequest
+                 * @return ModifyDspmPersonalIdentifyOutcome
+                 */
+                ModifyDspmPersonalIdentifyOutcome ModifyDspmPersonalIdentify(const Model::ModifyDspmPersonalIdentifyRequest &request);
+                void ModifyDspmPersonalIdentifyAsync(const Model::ModifyDspmPersonalIdentifyRequest& request, const ModifyDspmPersonalIdentifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmPersonalIdentifyOutcomeCallable ModifyDspmPersonalIdentifyCallable(const Model::ModifyDspmPersonalIdentifyRequest& request);
+
+                /**
+                 *恢复备份日志
+                 * @param req ModifyDspmRestoreLogTaskRequest
+                 * @return ModifyDspmRestoreLogTaskOutcome
+                 */
+                ModifyDspmRestoreLogTaskOutcome ModifyDspmRestoreLogTask(const Model::ModifyDspmRestoreLogTaskRequest &request);
+                void ModifyDspmRestoreLogTaskAsync(const Model::ModifyDspmRestoreLogTaskRequest& request, const ModifyDspmRestoreLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmRestoreLogTaskOutcomeCallable ModifyDspmRestoreLogTaskCallable(const Model::ModifyDspmRestoreLogTaskRequest& request);
+
+                /**
+                 *修改Dspm风险信息
+                 * @param req ModifyDspmRiskInfoRequest
+                 * @return ModifyDspmRiskInfoOutcome
+                 */
+                ModifyDspmRiskInfoOutcome ModifyDspmRiskInfo(const Model::ModifyDspmRiskInfoRequest &request);
+                void ModifyDspmRiskInfoAsync(const Model::ModifyDspmRiskInfoRequest& request, const ModifyDspmRiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmRiskInfoOutcomeCallable ModifyDspmRiskInfoCallable(const Model::ModifyDspmRiskInfoRequest& request);
+
+                /**
+                 *修改Dspm风险策略
+                 * @param req ModifyDspmRiskStrategyRequest
+                 * @return ModifyDspmRiskStrategyOutcome
+                 */
+                ModifyDspmRiskStrategyOutcome ModifyDspmRiskStrategy(const Model::ModifyDspmRiskStrategyRequest &request);
+                void ModifyDspmRiskStrategyAsync(const Model::ModifyDspmRiskStrategyRequest& request, const ModifyDspmRiskStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmRiskStrategyOutcomeCallable ModifyDspmRiskStrategyCallable(const Model::ModifyDspmRiskStrategyRequest& request);
+
+                /**
+                 *修改Dspm白名单策略
+                 * @param req ModifyDspmWhitelistStrategyRequest
+                 * @return ModifyDspmWhitelistStrategyOutcome
+                 */
+                ModifyDspmWhitelistStrategyOutcome ModifyDspmWhitelistStrategy(const Model::ModifyDspmWhitelistStrategyRequest &request);
+                void ModifyDspmWhitelistStrategyAsync(const Model::ModifyDspmWhitelistStrategyRequest& request, const ModifyDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDspmWhitelistStrategyOutcomeCallable ModifyDspmWhitelistStrategyCallable(const Model::ModifyDspmWhitelistStrategyRequest& request);
+
+                /**
                  *修改集团账号状态
                  * @param req ModifyOrganizationAccountStatusRequest
                  * @return ModifyOrganizationAccountStatusOutcome
@@ -1209,6 +2350,42 @@ namespace TencentCloud
                 ModifyUebaRuleSwitchOutcomeCallable ModifyUebaRuleSwitchCallable(const Model::ModifyUebaRuleSwitchRequest& request);
 
                 /**
+                 *重置Dspm资产账号密码
+                 * @param req ResetDspmAssetAccountPasswordRequest
+                 * @return ResetDspmAssetAccountPasswordOutcome
+                 */
+                ResetDspmAssetAccountPasswordOutcome ResetDspmAssetAccountPassword(const Model::ResetDspmAssetAccountPasswordRequest &request);
+                void ResetDspmAssetAccountPasswordAsync(const Model::ResetDspmAssetAccountPasswordRequest& request, const ResetDspmAssetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDspmAssetAccountPasswordOutcomeCallable ResetDspmAssetAccountPasswordCallable(const Model::ResetDspmAssetAccountPasswordRequest& request);
+
+                /**
+                 *RetryExportLog
+                 * @param req RetryDspmExportLogRequest
+                 * @return RetryDspmExportLogOutcome
+                 */
+                RetryDspmExportLogOutcome RetryDspmExportLog(const Model::RetryDspmExportLogRequest &request);
+                void RetryDspmExportLogAsync(const Model::RetryDspmExportLogRequest& request, const RetryDspmExportLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryDspmExportLogOutcomeCallable RetryDspmExportLogCallable(const Model::RetryDspmExportLogRequest& request);
+
+                /**
+                 *恢复Dspm资产账号
+                 * @param req RevertDspmAssetAccountRequest
+                 * @return RevertDspmAssetAccountOutcome
+                 */
+                RevertDspmAssetAccountOutcome RevertDspmAssetAccount(const Model::RevertDspmAssetAccountRequest &request);
+                void RevertDspmAssetAccountAsync(const Model::RevertDspmAssetAccountRequest& request, const RevertDspmAssetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevertDspmAssetAccountOutcomeCallable RevertDspmAssetAccountCallable(const Model::RevertDspmAssetAccountRequest& request);
+
+                /**
+                 *发送Dspm资产访问验证码
+                 * @param req SendDspmAssetLoginSmsCodeRequest
+                 * @return SendDspmAssetLoginSmsCodeOutcome
+                 */
+                SendDspmAssetLoginSmsCodeOutcome SendDspmAssetLoginSmsCode(const Model::SendDspmAssetLoginSmsCodeRequest &request);
+                void SendDspmAssetLoginSmsCodeAsync(const Model::SendDspmAssetLoginSmsCodeRequest& request, const SendDspmAssetLoginSmsCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendDspmAssetLoginSmsCodeOutcomeCallable SendDspmAssetLoginSmsCodeCallable(const Model::SendDspmAssetLoginSmsCodeRequest& request);
+
+                /**
                  *停止扫风险中心扫描任务
                  * @param req StopRiskCenterTaskRequest
                  * @return StopRiskCenterTaskOutcome
@@ -1216,6 +2393,24 @@ namespace TencentCloud
                 StopRiskCenterTaskOutcome StopRiskCenterTask(const Model::StopRiskCenterTaskRequest &request);
                 void StopRiskCenterTaskAsync(const Model::StopRiskCenterTaskRequest& request, const StopRiskCenterTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRiskCenterTaskOutcomeCallable StopRiskCenterTaskCallable(const Model::StopRiskCenterTaskRequest& request);
+
+                /**
+                 *同步dspm支持的资产
+                 * @param req SyncDspmAssetsRequest
+                 * @return SyncDspmAssetsOutcome
+                 */
+                SyncDspmAssetsOutcome SyncDspmAssets(const Model::SyncDspmAssetsRequest &request);
+                void SyncDspmAssetsAsync(const Model::SyncDspmAssetsRequest& request, const SyncDspmAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncDspmAssetsOutcomeCallable SyncDspmAssetsCallable(const Model::SyncDspmAssetsRequest& request);
+
+                /**
+                 *同步dspm用户列表
+                 * @param req SyncDspmUsersRequest
+                 * @return SyncDspmUsersOutcome
+                 */
+                SyncDspmUsersOutcome SyncDspmUsers(const Model::SyncDspmUsersRequest &request);
+                void SyncDspmUsersAsync(const Model::SyncDspmUsersRequest& request, const SyncDspmUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncDspmUsersOutcomeCallable SyncDspmUsersCallable(const Model::SyncDspmUsersRequest& request);
 
                 /**
                  *标记风险或者告警为 已处置/已忽略
@@ -1243,6 +2438,15 @@ namespace TencentCloud
                 UpdateAlertStatusListOutcome UpdateAlertStatusList(const Model::UpdateAlertStatusListRequest &request);
                 void UpdateAlertStatusListAsync(const Model::UpdateAlertStatusListRequest& request, const UpdateAlertStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAlertStatusListOutcomeCallable UpdateAlertStatusListCallable(const Model::UpdateAlertStatusListRequest& request);
+
+                /**
+                 *验证Dspm资产登录验证码
+                 * @param req VerifyDspmAssetLoginCodeRequest
+                 * @return VerifyDspmAssetLoginCodeOutcome
+                 */
+                VerifyDspmAssetLoginCodeOutcome VerifyDspmAssetLoginCode(const Model::VerifyDspmAssetLoginCodeRequest &request);
+                void VerifyDspmAssetLoginCodeAsync(const Model::VerifyDspmAssetLoginCodeRequest& request, const VerifyDspmAssetLoginCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDspmAssetLoginCodeOutcomeCallable VerifyDspmAssetLoginCodeCallable(const Model::VerifyDspmAssetLoginCodeRequest& request);
 
             };
         }

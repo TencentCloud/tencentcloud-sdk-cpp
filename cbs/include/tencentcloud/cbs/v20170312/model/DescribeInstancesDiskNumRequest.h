@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
-                     * @return InstanceIds 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * 获取<p>云服务器实例ID，通过<a href="/document/product/213/15728">DescribeInstances</a>接口查询。</p>
+                     * @return InstanceIds <p>云服务器实例ID，通过<a href="/document/product/213/15728">DescribeInstances</a>接口查询。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
-                     * @param _instanceIds 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * 设置<p>云服务器实例ID，通过<a href="/document/product/213/15728">DescribeInstances</a>接口查询。</p>
+                     * @param _instanceIds <p>云服务器实例ID，通过<a href="/document/product/213/15728">DescribeInstances</a>接口查询。</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * <p>云服务器实例ID，通过<a href="/document/product/213/15728">DescribeInstances</a>接口查询。</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

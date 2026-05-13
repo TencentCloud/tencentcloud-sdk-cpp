@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dc/v20180410/model/CreateCasInput.h>
+#include <tencentcloud/dc/v20180410/model/Tag.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建敏捷上云入参
-                     * @return Data 创建敏捷上云入参
+                     * 获取<p>创建敏捷上云入参</p>
+                     * @return Data <p>创建敏捷上云入参</p>
                      * 
                      */
                     CreateCasInput GetData() const;
 
                     /**
-                     * 设置创建敏捷上云入参
-                     * @param _data 创建敏捷上云入参
+                     * 设置<p>创建敏捷上云入参</p>
+                     * @param _data <p>创建敏捷上云入参</p>
                      * 
                      */
                     void SetData(const CreateCasInput& _data);
@@ -64,13 +65,40 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 创建敏捷上云入参
+                     * <p>创建敏捷上云入参</p>
                      */
                     CreateCasInput m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * <p>标签</p>
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -1490,6 +1490,56 @@ CccClient::DescribeAICallExtractResultOutcomeCallable CccClient::DescribeAICallE
     return prom->get_future();
 }
 
+CccClient::DescribeAICallInteractionRecordsOutcome CccClient::DescribeAICallInteractionRecords(const DescribeAICallInteractionRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAICallInteractionRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAICallInteractionRecordsResponse rsp = DescribeAICallInteractionRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAICallInteractionRecordsOutcome(rsp);
+        else
+            return DescribeAICallInteractionRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAICallInteractionRecordsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeAICallInteractionRecordsAsync(const DescribeAICallInteractionRecordsRequest& request, const DescribeAICallInteractionRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAICallInteractionRecordsRequest&;
+    using Resp = DescribeAICallInteractionRecordsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAICallInteractionRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CccClient::DescribeAICallInteractionRecordsOutcomeCallable CccClient::DescribeAICallInteractionRecordsCallable(const DescribeAICallInteractionRecordsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAICallInteractionRecordsOutcome>>();
+    DescribeAICallInteractionRecordsAsync(
+    request,
+    [prom](
+        const CccClient*,
+        const DescribeAICallInteractionRecordsRequest&,
+        DescribeAICallInteractionRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CccClient::DescribeAILatencyOutcome CccClient::DescribeAILatency(const DescribeAILatencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAILatency");

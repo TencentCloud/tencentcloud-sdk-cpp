@@ -81,6 +81,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeAIAnalysisResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAICallInteractionRecordsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAICallInteractionRecordsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAILatencyRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAILatencyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
@@ -290,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAICallExtractResultResponse> DescribeAICallExtractResultOutcome;
                 typedef std::future<DescribeAICallExtractResultOutcome> DescribeAICallExtractResultOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAICallExtractResultRequest&, DescribeAICallExtractResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICallExtractResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAICallInteractionRecordsResponse> DescribeAICallInteractionRecordsOutcome;
+                typedef std::future<DescribeAICallInteractionRecordsOutcome> DescribeAICallInteractionRecordsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAICallInteractionRecordsRequest&, DescribeAICallInteractionRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICallInteractionRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAILatencyResponse> DescribeAILatencyOutcome;
                 typedef std::future<DescribeAILatencyOutcome> DescribeAILatencyOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAILatencyRequest&, DescribeAILatencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAILatencyAsyncHandler;
@@ -725,6 +730,15 @@ namespace TencentCloud
                 DescribeAICallExtractResultOutcome DescribeAICallExtractResult(const Model::DescribeAICallExtractResultRequest &request);
                 void DescribeAICallExtractResultAsync(const Model::DescribeAICallExtractResultRequest& request, const DescribeAICallExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAICallExtractResultOutcomeCallable DescribeAICallExtractResultCallable(const Model::DescribeAICallExtractResultRequest& request);
+
+                /**
+                 *获取AI 会话交互事件流
+                 * @param req DescribeAICallInteractionRecordsRequest
+                 * @return DescribeAICallInteractionRecordsOutcome
+                 */
+                DescribeAICallInteractionRecordsOutcome DescribeAICallInteractionRecords(const Model::DescribeAICallInteractionRecordsRequest &request);
+                void DescribeAICallInteractionRecordsAsync(const Model::DescribeAICallInteractionRecordsRequest& request, const DescribeAICallInteractionRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAICallInteractionRecordsOutcomeCallable DescribeAICallInteractionRecordsCallable(const Model::DescribeAICallInteractionRecordsRequest& request);
 
                 /**
                  *调用该接口，可以通过 Session ID 查询指定会话在特定时间段内，AI服务的处理时延明细与统计数据，时延信息包括：

@@ -89,6 +89,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeVariablesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeVariablesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpaceUsersRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpaceUsersResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVariablesResponse> DescribeVariablesOutcome;
                 typedef std::future<DescribeVariablesOutcome> DescribeVariablesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeVariablesRequest&, DescribeVariablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkSpaceUsersResponse> DescribeWorkSpaceUsersOutcome;
+                typedef std::future<DescribeWorkSpaceUsersOutcome> DescribeWorkSpaceUsersOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeWorkSpaceUsersRequest&, DescribeWorkSpaceUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkSpaceUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkSpacesResponse> DescribeWorkSpacesOutcome;
                 typedef std::future<DescribeWorkSpacesOutcome> DescribeWorkSpacesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeWorkSpacesRequest&, DescribeWorkSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkSpacesAsyncHandler;
@@ -561,6 +566,15 @@ namespace TencentCloud
                 DescribeVariablesOutcome DescribeVariables(const Model::DescribeVariablesRequest &request);
                 void DescribeVariablesAsync(const Model::DescribeVariablesRequest& request, const DescribeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVariablesOutcomeCallable DescribeVariablesCallable(const Model::DescribeVariablesRequest& request);
+
+                /**
+                 *工作空间用户列表
+                 * @param req DescribeWorkSpaceUsersRequest
+                 * @return DescribeWorkSpaceUsersOutcome
+                 */
+                DescribeWorkSpaceUsersOutcome DescribeWorkSpaceUsers(const Model::DescribeWorkSpaceUsersRequest &request);
+                void DescribeWorkSpaceUsersAsync(const Model::DescribeWorkSpaceUsersRequest& request, const DescribeWorkSpaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkSpaceUsersOutcomeCallable DescribeWorkSpaceUsersCallable(const Model::DescribeWorkSpaceUsersRequest& request);
 
                 /**
                  *授权工作空间列表

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取各个云服务器已挂载和可挂载弹性云盘的数量。
-                     * @return AttachDetail 各个云服务器已挂载和可挂载弹性云盘的数量。
+                     * 获取<p>各个云服务器已挂载和可挂载弹性云盘的数量。</p>
+                     * @return AttachDetail <p>各个云服务器已挂载和可挂载弹性云盘的数量。</p>
                      * 
                      */
                     std::vector<AttachDetail> GetAttachDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 各个云服务器已挂载和可挂载弹性云盘的数量。
+                     * <p>各个云服务器已挂载和可挂载弹性云盘的数量。</p>
                      */
                     std::vector<AttachDetail> m_attachDetail;
                     bool m_attachDetailHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则组数量
-                     * @return TotalCount 规则组数量
+                     * 获取<p>规则组数量</p>
+                     * @return TotalCount <p>规则组数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取规则组详情
+                     * 获取<p>规则组详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordingRuleSet 规则组详情
+                     * @return RecordingRuleSet <p>规则组详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,20 +74,40 @@ namespace TencentCloud
                      */
                     bool RecordingRuleSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预聚合规则数</p>
+                     * @return TotalRuleCount <p>预聚合规则数</p>
+                     * 
+                     */
+                    int64_t GetTotalRuleCount() const;
+
+                    /**
+                     * 判断参数 TotalRuleCount 是否已赋值
+                     * @return TotalRuleCount 是否已赋值
+                     * 
+                     */
+                    bool TotalRuleCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则组数量
+                     * <p>规则组数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 规则组详情
+                     * <p>规则组详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordingRuleSet> m_recordingRuleSet;
                     bool m_recordingRuleSetHasBeenSet;
+
+                    /**
+                     * <p>预聚合规则数</p>
+                     */
+                    int64_t m_totalRuleCount;
+                    bool m_totalRuleCountHasBeenSet;
 
                 };
             }

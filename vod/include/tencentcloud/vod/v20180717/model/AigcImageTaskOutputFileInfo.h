@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>
-
-                     * @return StorageMode 存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>
-
+                     * 获取<p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li></p>
+                     * @return StorageMode <p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li></p>
                      * 
                      */
                     std::string GetStorageMode() const;
 
                     /**
-                     * 设置存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>
-
-                     * @param _storageMode 存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>
-
+                     * 设置<p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li></p>
+                     * @param _storageMode <p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li></p>
                      * 
                      */
                     void SetStorageMode(const std::string& _storageMode);
@@ -73,15 +69,15 @@ namespace TencentCloud
                     bool StorageModeHasBeenSet() const;
 
                     /**
-                     * 获取输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。
-                     * @return MediaName 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。
+                     * 获取<p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>
+                     * @return MediaName <p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。
-                     * @param _mediaName 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。
+                     * 设置<p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>
+                     * @param _mediaName <p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -94,19 +90,15 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。
-
-                     * @return ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。
-
+                     * 获取<p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>
+                     * @return ClassId <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。
-
-                     * @param _classId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。
-
+                     * 设置<p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>
+                     * @param _classId <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -119,15 +111,15 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return ExpireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @return ExpireTime <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _expireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @param _expireTime <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -140,15 +132,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件类型，例如 mp4、flv 等。
-                     * @return FileType 文件类型，例如 mp4、flv 等。
+                     * 获取<p>文件类型，例如 png、jpg 等。</p>
+                     * @return FileType <p>文件类型，例如 png、jpg 等。</p>
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型，例如 mp4、flv 等。
-                     * @param _fileType 文件类型，例如 mp4、flv 等。
+                     * 设置<p>文件类型，例如 png、jpg 等。</p>
+                     * @param _fileType <p>文件类型，例如 png、jpg 等。</p>
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -161,15 +153,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件播放地址。
-                     * @return FileUrl 媒体文件播放地址。
+                     * 获取<p>媒体文件播放地址。</p>
+                     * @return FileUrl <p>媒体文件播放地址。</p>
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置媒体文件播放地址。
-                     * @param _fileUrl 媒体文件播放地址。
+                     * 设置<p>媒体文件播放地址。</p>
+                     * @param _fileUrl <p>媒体文件播放地址。</p>
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -182,15 +174,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件 ID。当 StorageMode 为 Permanent 时有效。
-                     * @return FileId 媒体文件 ID。当 StorageMode 为 Permanent 时有效。
+                     * 获取<p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>
+                     * @return FileId <p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件 ID。当 StorageMode 为 Permanent 时有效。
-                     * @param _fileId 媒体文件 ID。当 StorageMode 为 Permanent 时有效。
+                     * 设置<p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>
+                     * @param _fileId <p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -203,15 +195,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取输出视频的元信息。当 StorageMode 为 Permanent 时有效。
-                     * @return MetaData 输出视频的元信息。当 StorageMode 为 Permanent 时有效。
+                     * 获取<p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
+                     * @return MetaData <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置输出视频的元信息。当 StorageMode 为 Permanent 时有效。
-                     * @param _metaData 输出视频的元信息。当 StorageMode 为 Permanent 时有效。
+                     * 设置<p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
+                     * @param _metaData <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -226,51 +218,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>
-
+                     * <p>存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li></p>
                      */
                     std::string m_storageMode;
                     bool m_storageModeHasBeenSet;
 
                     /**
-                     * 输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。
+                     * <p>输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。</p>
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。
-
+                     * <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。</p>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 文件类型，例如 mp4、flv 等。
+                     * <p>文件类型，例如 png、jpg 等。</p>
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 媒体文件播放地址。
+                     * <p>媒体文件播放地址。</p>
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 媒体文件 ID。当 StorageMode 为 Permanent 时有效。
+                     * <p>媒体文件 ID。当 StorageMode 为 Permanent 时有效。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 输出视频的元信息。当 StorageMode 为 Permanent 时有效。
+                     * <p>输出图片的元信息。当 StorageMode 为 Permanent 时有效。</p>
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

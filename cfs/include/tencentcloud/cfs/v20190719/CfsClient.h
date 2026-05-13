@@ -109,6 +109,8 @@
 #include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h>
+#include <tencentcloud/cfs/v20190719/model/OverrideCfsRulesRequest.h>
+#include <tencentcloud/cfs/v20190719/model/OverrideCfsRulesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLifecyclePolicyResponse> ModifyLifecyclePolicyOutcome;
                 typedef std::future<ModifyLifecyclePolicyOutcome> ModifyLifecyclePolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ModifyLifecyclePolicyRequest&, ModifyLifecyclePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifecyclePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::OverrideCfsRulesResponse> OverrideCfsRulesOutcome;
+                typedef std::future<OverrideCfsRulesOutcome> OverrideCfsRulesOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::OverrideCfsRulesRequest&, OverrideCfsRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OverrideCfsRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScaleUpFileSystemResponse> ScaleUpFileSystemOutcome;
                 typedef std::future<ScaleUpFileSystemOutcome> ScaleUpFileSystemOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ScaleUpFileSystemRequest&, ScaleUpFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpFileSystemAsyncHandler;
@@ -712,6 +717,15 @@ namespace TencentCloud
                 ModifyLifecyclePolicyOutcome ModifyLifecyclePolicy(const Model::ModifyLifecyclePolicyRequest &request);
                 void ModifyLifecyclePolicyAsync(const Model::ModifyLifecyclePolicyRequest& request, const ModifyLifecyclePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLifecyclePolicyOutcomeCallable ModifyLifecyclePolicyCallable(const Model::ModifyLifecyclePolicyRequest& request);
+
+                /**
+                 *本接口（OverrideCfsRules）用于批量覆盖式创建权限组规则。
+                 * @param req OverrideCfsRulesRequest
+                 * @return OverrideCfsRulesOutcome
+                 */
+                OverrideCfsRulesOutcome OverrideCfsRules(const Model::OverrideCfsRulesRequest &request);
+                void OverrideCfsRulesAsync(const Model::OverrideCfsRulesRequest& request, const OverrideCfsRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OverrideCfsRulesOutcomeCallable OverrideCfsRulesCallable(const Model::OverrideCfsRulesRequest& request);
 
                 /**
                  *该接口用于对turbo 文件系统扩容使用,该接口只支持扩容不支持缩容。turbo标准型扩容步长是10240GIB，turbo性能型扩容步长是5120GIB

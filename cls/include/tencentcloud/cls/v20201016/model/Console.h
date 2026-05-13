@@ -435,6 +435,48 @@ namespace TencentCloud
                      */
                     bool MenusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>公网访问域名</p>
+                     * @return Domain <p>公网访问域名</p>
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置<p>公网访问域名</p>
+                     * @param _domain <p>公网访问域名</p>
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>内网访问域名</p>
+                     * @return IntranetDomain <p>内网访问域名</p>
+                     * 
+                     */
+                    std::string GetIntranetDomain() const;
+
+                    /**
+                     * 设置<p>内网访问域名</p>
+                     * @param _intranetDomain <p>内网访问域名</p>
+                     * 
+                     */
+                    void SetIntranetDomain(const std::string& _intranetDomain);
+
+                    /**
+                     * 判断参数 IntranetDomain 是否已赋值
+                     * @return IntranetDomain 是否已赋值
+                     * 
+                     */
+                    bool IntranetDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +586,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_menus;
                     bool m_menusHasBeenSet;
+
+                    /**
+                     * <p>公网访问域名</p>
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * <p>内网访问域名</p>
+                     */
+                    std::string m_intranetDomain;
+                    bool m_intranetDomainHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业 id
-                     * @return JobId 作业 id
+                     * 获取<p>作业 id</p>
+                     * @return JobId <p>作业 id</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业 id
-                     * @param _jobId 作业 id
+                     * 设置<p>作业 id</p>
+                     * @param _jobId <p>作业 id</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取快照资源 id
-                     * @return SerialId 快照资源 id
+                     * 获取<p>快照资源 id</p>
+                     * @return SerialId <p>快照资源 id</p>
                      * 
                      */
                     std::string GetSerialId() const;
 
                     /**
-                     * 设置快照资源 id
-                     * @param _serialId 快照资源 id
+                     * 设置<p>快照资源 id</p>
+                     * @param _serialId <p>快照资源 id</p>
                      * 
                      */
                     void SetSerialId(const std::string& _serialId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SerialIdHasBeenSet() const;
 
                     /**
-                     * 获取快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
-                     * @return RecordType 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * 获取<p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
+                     * @return RecordType <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
                      * 
                      */
                     int64_t GetRecordType() const;
 
                     /**
-                     * 设置快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
-                     * @param _recordType 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * 设置<p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
+                     * @param _recordType <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
                      * 
                      */
                     void SetRecordType(const int64_t& _recordType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取快照路径，目前只支持 cos 路径
-                     * @return SavepointPath 快照路径，目前只支持 cos 路径
+                     * 获取<p>快照路径，目前只支持 cos 路径</p>
+                     * @return SavepointPath <p>快照路径，目前只支持 cos 路径</p>
                      * 
                      */
                     std::string GetSavepointPath() const;
 
                     /**
-                     * 设置快照路径，目前只支持 cos 路径
-                     * @param _savepointPath 快照路径，目前只支持 cos 路径
+                     * 设置<p>快照路径，目前只支持 cos 路径</p>
+                     * @param _savepointPath <p>快照路径，目前只支持 cos 路径</p>
                      * 
                      */
                     void SetSavepointPath(const std::string& _savepointPath);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SavepointPathHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 id
-                     * @return WorkSpaceId 工作空间 id
+                     * 获取<p>工作空间 id</p>
+                     * @return WorkSpaceId <p>工作空间 id</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 id
-                     * @param _workSpaceId 工作空间 id
+                     * 设置<p>工作空间 id</p>
+                     * @param _workSpaceId <p>工作空间 id</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 作业 id
+                     * <p>作业 id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 快照资源 id
+                     * <p>快照资源 id</p>
                      */
                     std::string m_serialId;
                     bool m_serialIdHasBeenSet;
 
                     /**
-                     * 快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint
+                     * <p>快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint</p>
                      */
                     int64_t m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 快照路径，目前只支持 cos 路径
+                     * <p>快照路径，目前只支持 cos 路径</p>
                      */
                     std::string m_savepointPath;
                     bool m_savepointPathHasBeenSet;
 
                     /**
-                     * 工作空间 id
+                     * <p>工作空间 id</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;

@@ -36,7 +36,9 @@ Console::Console() :
     m_hideParamsHasBeenSet(false),
     m_accessControlRulesHasBeenSet(false),
     m_remarksHasBeenSet(false),
-    m_menusHasBeenSet(false)
+    m_menusHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_intranetDomainHasBeenSet(false)
 {
 }
 
@@ -261,6 +263,26 @@ CoreInternalOutcome Console::Deserialize(const rapidjson::Value &value)
         m_menusHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Console.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetDomain") && !value["IntranetDomain"].IsNull())
+    {
+        if (!value["IntranetDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Console.IntranetDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intranetDomain = string(value["IntranetDomain"].GetString());
+        m_intranetDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +460,22 @@ void Console::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intranetDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -697,5 +735,37 @@ void Console::SetMenus(const vector<string>& _menus)
 bool Console::MenusHasBeenSet() const
 {
     return m_menusHasBeenSet;
+}
+
+string Console::GetDomain() const
+{
+    return m_domain;
+}
+
+void Console::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool Console::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string Console::GetIntranetDomain() const
+{
+    return m_intranetDomain;
+}
+
+void Console::SetIntranetDomain(const string& _intranetDomain)
+{
+    m_intranetDomain = _intranetDomain;
+    m_intranetDomainHasBeenSet = true;
+}
+
+bool Console::IntranetDomainHasBeenSet() const
+{
+    return m_intranetDomainHasBeenSet;
 }
 

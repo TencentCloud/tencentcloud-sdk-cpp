@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型
+                     * 获取<p>类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型
+                     * @return Type <p>类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
+                     * 设置<p>类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 类型
+                     * @param _type <p>类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取是否允许为空
+                     * 获取<p>是否允许为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NullAble 是否允许为空
+                     * @return NullAble <p>是否允许为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNullAble() const;
 
                     /**
-                     * 设置是否允许为空
+                     * 设置<p>是否允许为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nullAble 是否允许为空
+                     * @param _nullAble <p>是否允许为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NullAbleHasBeenSet() const;
 
                     /**
-                     * 获取长度
+                     * 获取<p>长度</p><p>单位：字符数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Length 长度
+                     * @return Length <p>长度</p><p>单位：字符数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLength() const;
 
                     /**
-                     * 设置长度
+                     * 设置<p>长度</p><p>单位：字符数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _length 长度
+                     * @param _length <p>长度</p><p>单位：字符数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型
+                     * <p>类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 是否允许为空
+                     * <p>是否允许为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_nullAble;
                     bool m_nullAbleHasBeenSet;
 
                     /**
-                     * 长度
+                     * <p>长度</p><p>单位：字符数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_length;

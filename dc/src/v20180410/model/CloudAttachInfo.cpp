@@ -43,7 +43,9 @@ CloudAttachInfo::CloudAttachInfo() :
     m_arRegionHasBeenSet(false),
     m_iapCodeHasBeenSet(false),
     m_idcPointTypeHasBeenSet(false),
-    m_bIapLinkProtectedHasBeenSet(false)
+    m_bIapLinkProtectedHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
+    m_vlanRangeHasBeenSet(false)
 {
 }
 
@@ -282,6 +284,26 @@ CoreInternalOutcome CloudAttachInfo::Deserialize(const rapidjson::Value &value)
         m_bIapLinkProtectedHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
+    {
+        if (!value["ServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceType = string(value["ServiceType"].GetString());
+        m_serviceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VlanRange") && !value["VlanRange"].IsNull())
+    {
+        if (!value["VlanRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.VlanRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vlanRange = string(value["VlanRange"].GetString());
+        m_vlanRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +493,22 @@ void CloudAttachInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BIapLinkProtected";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bIapLinkProtected, allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vlanRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VlanRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vlanRange.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +880,37 @@ void CloudAttachInfo::SetBIapLinkProtected(const bool& _bIapLinkProtected)
 bool CloudAttachInfo::BIapLinkProtectedHasBeenSet() const
 {
     return m_bIapLinkProtectedHasBeenSet;
+}
+
+string CloudAttachInfo::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CloudAttachInfo::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CloudAttachInfo::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
+string CloudAttachInfo::GetVlanRange() const
+{
+    return m_vlanRange;
+}
+
+void CloudAttachInfo::SetVlanRange(const string& _vlanRange)
+{
+    m_vlanRange = _vlanRange;
+    m_vlanRangeHasBeenSet = true;
+}
+
+bool CloudAttachInfo::VlanRangeHasBeenSet() const
+{
+    return m_vlanRangeHasBeenSet;
 }
 

@@ -256,6 +256,48 @@ namespace TencentCloud
                      */
                     bool OutputImageCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定模型输出图片文件格式，若不指定则跟随模型默认值。可选值：</p><ul><li>jpeg</li><li>png</li></ul>
+                     * @return OutputFormat <p>指定模型输出图片文件格式，若不指定则跟随模型默认值。可选值：</p><ul><li>jpeg</li><li>png</li></ul>
+                     * 
+                     */
+                    std::string GetOutputFormat() const;
+
+                    /**
+                     * 设置<p>指定模型输出图片文件格式，若不指定则跟随模型默认值。可选值：</p><ul><li>jpeg</li><li>png</li></ul>
+                     * @param _outputFormat <p>指定模型输出图片文件格式，若不指定则跟随模型默认值。可选值：</p><ul><li>jpeg</li><li>png</li></ul>
+                     * 
+                     */
+                    void SetOutputFormat(const std::string& _outputFormat);
+
+                    /**
+                     * 判断参数 OutputFormat 是否已赋值
+                     * @return OutputFormat 是否已赋值
+                     * 
+                     */
+                    bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启图标水印，默认为Disabled。取值有：</p><ul><li>Enabled：开启；</li><li>Disabled：关闭；</li></ul>
+                     * @return LogoAdd <p>是否开启图标水印，默认为Disabled。取值有：</p><ul><li>Enabled：开启；</li><li>Disabled：关闭；</li></ul>
+                     * 
+                     */
+                    std::string GetLogoAdd() const;
+
+                    /**
+                     * 设置<p>是否开启图标水印，默认为Disabled。取值有：</p><ul><li>Enabled：开启；</li><li>Disabled：关闭；</li></ul>
+                     * @param _logoAdd <p>是否开启图标水印，默认为Disabled。取值有：</p><ul><li>Enabled：开启；</li><li>Disabled：关闭；</li></ul>
+                     * 
+                     */
+                    void SetLogoAdd(const std::string& _logoAdd);
+
+                    /**
+                     * 判断参数 LogoAdd 是否已赋值
+                     * @return LogoAdd 是否已赋值
+                     * 
+                     */
+                    bool LogoAddHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +359,18 @@ namespace TencentCloud
                      */
                     uint64_t m_outputImageCount;
                     bool m_outputImageCountHasBeenSet;
+
+                    /**
+                     * <p>指定模型输出图片文件格式，若不指定则跟随模型默认值。可选值：</p><ul><li>jpeg</li><li>png</li></ul>
+                     */
+                    std::string m_outputFormat;
+                    bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * <p>是否开启图标水印，默认为Disabled。取值有：</p><ul><li>Enabled：开启；</li><li>Disabled：关闭；</li></ul>
+                     */
+                    std::string m_logoAdd;
+                    bool m_logoAddHasBeenSet;
 
                 };
             }

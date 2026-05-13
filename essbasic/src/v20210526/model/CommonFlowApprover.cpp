@@ -39,7 +39,8 @@ CommonFlowApprover::CommonFlowApprover() :
     m_approverOptionHasBeenSet(false),
     m_signComponentsHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
-    m_approverSignTypesHasBeenSet(false)
+    m_approverSignTypesHasBeenSet(false),
+    m_componentLimitTypeHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,19 @@ CoreInternalOutcome CommonFlowApprover::Deserialize(const rapidjson::Value &valu
         m_approverSignTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentLimitType") && !value["ComponentLimitType"].IsNull())
+    {
+        if (!value["ComponentLimitType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CommonFlowApprover.ComponentLimitType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ComponentLimitType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_componentLimitType.push_back((*itr).GetString());
+        }
+        m_componentLimitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -435,6 +449,19 @@ void CommonFlowApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         for (auto itr = m_approverSignTypes.begin(); itr != m_approverSignTypes.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_componentLimitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentLimitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_componentLimitType.begin(); itr != m_componentLimitType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -743,5 +770,21 @@ void CommonFlowApprover::SetApproverSignTypes(const vector<int64_t>& _approverSi
 bool CommonFlowApprover::ApproverSignTypesHasBeenSet() const
 {
     return m_approverSignTypesHasBeenSet;
+}
+
+vector<string> CommonFlowApprover::GetComponentLimitType() const
+{
+    return m_componentLimitType;
+}
+
+void CommonFlowApprover::SetComponentLimitType(const vector<string>& _componentLimitType)
+{
+    m_componentLimitType = _componentLimitType;
+    m_componentLimitTypeHasBeenSet = true;
+}
+
+bool CommonFlowApprover::ComponentLimitTypeHasBeenSet() const
+{
+    return m_componentLimitTypeHasBeenSet;
 }
 
