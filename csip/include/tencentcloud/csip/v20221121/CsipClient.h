@@ -277,6 +277,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeScanTaskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSkillScanResultResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSourceIPAssetRequest.h>
@@ -766,6 +768,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSearchBugInfoResponse> DescribeSearchBugInfoOutcome;
                 typedef std::future<DescribeSearchBugInfoOutcome> DescribeSearchBugInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSearchBugInfoRequest&, DescribeSearchBugInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchBugInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillScanPayInfoResponse> DescribeSkillScanPayInfoOutcome;
+                typedef std::future<DescribeSkillScanPayInfoOutcome> DescribeSkillScanPayInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanPayInfoRequest&, DescribeSkillScanPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanPayInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillScanResultResponse> DescribeSkillScanResultOutcome;
                 typedef std::future<DescribeSkillScanResultOutcome> DescribeSkillScanResultOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSkillScanResultRequest&, DescribeSkillScanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillScanResultAsyncHandler;
@@ -2052,6 +2057,15 @@ namespace TencentCloud
                 DescribeSearchBugInfoOutcome DescribeSearchBugInfo(const Model::DescribeSearchBugInfoRequest &request);
                 void DescribeSearchBugInfoAsync(const Model::DescribeSearchBugInfoRequest& request, const DescribeSearchBugInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSearchBugInfoOutcomeCallable DescribeSearchBugInfoCallable(const Model::DescribeSearchBugInfoRequest& request);
+
+                /**
+                 *查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。
+                 * @param req DescribeSkillScanPayInfoRequest
+                 * @return DescribeSkillScanPayInfoOutcome
+                 */
+                DescribeSkillScanPayInfoOutcome DescribeSkillScanPayInfo(const Model::DescribeSkillScanPayInfoRequest &request);
+                void DescribeSkillScanPayInfoAsync(const Model::DescribeSkillScanPayInfoRequest& request, const DescribeSkillScanPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillScanPayInfoOutcomeCallable DescribeSkillScanPayInfoCallable(const Model::DescribeSkillScanPayInfoRequest& request);
 
                 /**
                  *查询 Skill 安全检测结果。调用 CreateSkillScan 成功后使用返回的 ContentHash + EngineVersion 轮询本接口获取结果。上传成功后建议5分钟后首次轮询，如未检测完成之后每隔1分钟轮询一次。响应通过 Status 字段区分四种状态：检测完成（SUCCESS）、检测中（SCANNING）、无记录（NOT_FOUND）、检测失败（FAILED）。注意：检测结果保留90天，超期后将返回 NOT_FOUND。

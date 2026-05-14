@@ -56,7 +56,9 @@ ExposesItem::ExposesItem() :
     m_tagHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_toGovernedRiskCountHasBeenSet(false),
-    m_toGovernedRiskContentHasBeenSet(false)
+    m_toGovernedRiskContentHasBeenSet(false),
+    m_assetTypeIconURLHasBeenSet(false),
+    m_assetTypeIconSolidURLHasBeenSet(false)
 {
 }
 
@@ -425,6 +427,26 @@ CoreInternalOutcome ExposesItem::Deserialize(const rapidjson::Value &value)
         m_toGovernedRiskContentHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetTypeIconURL") && !value["AssetTypeIconURL"].IsNull())
+    {
+        if (!value["AssetTypeIconURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.AssetTypeIconURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetTypeIconURL = string(value["AssetTypeIconURL"].GetString());
+        m_assetTypeIconURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssetTypeIconSolidURL") && !value["AssetTypeIconSolidURL"].IsNull())
+    {
+        if (!value["AssetTypeIconSolidURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposesItem.AssetTypeIconSolidURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetTypeIconSolidURL = string(value["AssetTypeIconSolidURL"].GetString());
+        m_assetTypeIconSolidURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -718,6 +740,22 @@ void ExposesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ToGovernedRiskContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_toGovernedRiskContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeIconURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypeIconURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetTypeIconURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeIconSolidURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypeIconSolidURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetTypeIconSolidURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1297,5 +1335,37 @@ void ExposesItem::SetToGovernedRiskContent(const string& _toGovernedRiskContent)
 bool ExposesItem::ToGovernedRiskContentHasBeenSet() const
 {
     return m_toGovernedRiskContentHasBeenSet;
+}
+
+string ExposesItem::GetAssetTypeIconURL() const
+{
+    return m_assetTypeIconURL;
+}
+
+void ExposesItem::SetAssetTypeIconURL(const string& _assetTypeIconURL)
+{
+    m_assetTypeIconURL = _assetTypeIconURL;
+    m_assetTypeIconURLHasBeenSet = true;
+}
+
+bool ExposesItem::AssetTypeIconURLHasBeenSet() const
+{
+    return m_assetTypeIconURLHasBeenSet;
+}
+
+string ExposesItem::GetAssetTypeIconSolidURL() const
+{
+    return m_assetTypeIconSolidURL;
+}
+
+void ExposesItem::SetAssetTypeIconSolidURL(const string& _assetTypeIconSolidURL)
+{
+    m_assetTypeIconSolidURL = _assetTypeIconSolidURL;
+    m_assetTypeIconSolidURLHasBeenSet = true;
+}
+
+bool ExposesItem::AssetTypeIconSolidURLHasBeenSet() const
+{
+    return m_assetTypeIconSolidURLHasBeenSet;
 }
 

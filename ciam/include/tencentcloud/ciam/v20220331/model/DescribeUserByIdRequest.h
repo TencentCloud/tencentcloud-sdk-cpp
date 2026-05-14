@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户目录ID
-                     * @return UserStoreId 用户目录ID
+                     * 获取<p>用户目录ID</p>
+                     * @return UserStoreId <p>用户目录ID</p>
                      * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
-                     * 设置用户目录ID
-                     * @param _userStoreId 用户目录ID
+                     * 设置<p>用户目录ID</p>
+                     * @param _userStoreId <p>用户目录ID</p>
                      * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -85,27 +85,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取返回信息是否为原文
-
-<li> **false** </li>	默认，返回信息为脱敏信息
-<li> **true** </li>	返回用户信息原文
-                     * @return Original 返回信息是否为原文
-
-<li> **false** </li>	默认，返回信息为脱敏信息
-<li> **true** </li>	返回用户信息原文
+                     * 获取<p>返回信息是否为原文</p><li> **false** </li>    默认，返回信息为脱敏信息<li> **true** </li>    返回用户信息原文
+                     * @return Original <p>返回信息是否为原文</p><li> **false** </li>    默认，返回信息为脱敏信息<li> **true** </li>    返回用户信息原文
                      * 
                      */
                     bool GetOriginal() const;
 
                     /**
-                     * 设置返回信息是否为原文
-
-<li> **false** </li>	默认，返回信息为脱敏信息
-<li> **true** </li>	返回用户信息原文
-                     * @param _original 返回信息是否为原文
-
-<li> **false** </li>	默认，返回信息为脱敏信息
-<li> **true** </li>	返回用户信息原文
+                     * 设置<p>返回信息是否为原文</p><li> **false** </li>    默认，返回信息为脱敏信息<li> **true** </li>    返回用户信息原文
+                     * @param _original <p>返回信息是否为原文</p><li> **false** </li>    默认，返回信息为脱敏信息<li> **true** </li>    返回用户信息原文
                      * 
                      */
                     void SetOriginal(const bool& _original);
@@ -120,22 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户目录ID
+                     * <p>用户目录ID</p>
                      */
                     std::string m_userStoreId;
                     bool m_userStoreIdHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 返回信息是否为原文
-
-<li> **false** </li>	默认，返回信息为脱敏信息
-<li> **true** </li>	返回用户信息原文
+                     * <p>返回信息是否为原文</p><li> **false** </li>    默认，返回信息为脱敏信息<li> **true** </li>    返回用户信息原文
                      */
                     bool m_original;
                     bool m_originalHasBeenSet;

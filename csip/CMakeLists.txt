@@ -28,6 +28,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AuditLogInfo.h
   include/tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListResponse.h
+  include/tencentcloud/csip/v20221121/model/RiskRuleInfo.h
   include/tencentcloud/csip/v20221121/model/KeyValue.h
   include/tencentcloud/csip/v20221121/model/OrganizationUserInfo.h
   include/tencentcloud/csip/v20221121/model/AssetTag.h
@@ -83,6 +84,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/UpdateAlertStatusListRequest.h
   include/tencentcloud/csip/v20221121/model/DspmIdentifyAssetStatistic.h
   include/tencentcloud/csip/v20221121/model/DescribeUserDspmInfoListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmApproveHistoryResponse.h
   include/tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesResponse.h
@@ -446,7 +448,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeDspmWhitelistStrategyResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmSupportedAssetTypeResponse.h
-  include/tencentcloud/csip/v20221121/model/RiskRuleInfo.h
+  include/tencentcloud/csip/v20221121/model/DescribeSkillScanPayInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h
   include/tencentcloud/csip/v20221121/model/TaskAdvanceCFG.h
@@ -553,6 +555,7 @@ set(csip_src
   src/v20221121/model/AuditLogInfo.cpp
   src/v20221121/model/CreateAccessKeySyncTaskRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListResponse.cpp
+  src/v20221121/model/RiskRuleInfo.cpp
   src/v20221121/model/KeyValue.cpp
   src/v20221121/model/OrganizationUserInfo.cpp
   src/v20221121/model/AssetTag.cpp
@@ -608,6 +611,7 @@ set(csip_src
   src/v20221121/model/UpdateAlertStatusListRequest.cpp
   src/v20221121/model/DspmIdentifyAssetStatistic.cpp
   src/v20221121/model/DescribeUserDspmInfoListRequest.cpp
+  src/v20221121/model/DescribeSkillScanPayInfoResponse.cpp
   src/v20221121/model/DescribeDspmApproveHistoryResponse.cpp
   src/v20221121/model/DescribePublicIpAssetsResponse.cpp
   src/v20221121/model/DescribeConfigCheckRulesResponse.cpp
@@ -971,7 +975,7 @@ set(csip_src
   src/v20221121/model/DescribeDspmWhitelistStrategyResponse.cpp
   src/v20221121/model/DescribeDspmAssetAccountIdentifyRequest.cpp
   src/v20221121/model/DescribeDspmSupportedAssetTypeResponse.cpp
-  src/v20221121/model/RiskRuleInfo.cpp
+  src/v20221121/model/DescribeSkillScanPayInfoRequest.cpp
   src/v20221121/model/DescribeDspmApplyHistoryRequest.cpp
   src/v20221121/model/DescribeListenerListResponse.cpp
   src/v20221121/model/TaskAdvanceCFG.cpp

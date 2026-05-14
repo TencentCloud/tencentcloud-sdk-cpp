@@ -90,6 +90,56 @@ Ai3dClient::Convert3DFormatOutcomeCallable Ai3dClient::Convert3DFormatCallable(c
     return prom->get_future();
 }
 
+Ai3dClient::DescribeAutoRiggingJobOutcome Ai3dClient::DescribeAutoRiggingJob(const DescribeAutoRiggingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoRiggingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoRiggingJobResponse rsp = DescribeAutoRiggingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoRiggingJobOutcome(rsp);
+        else
+            return DescribeAutoRiggingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoRiggingJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::DescribeAutoRiggingJobAsync(const DescribeAutoRiggingJobRequest& request, const DescribeAutoRiggingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAutoRiggingJobRequest&;
+    using Resp = DescribeAutoRiggingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoRiggingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ai3dClient::DescribeAutoRiggingJobOutcomeCallable Ai3dClient::DescribeAutoRiggingJobCallable(const DescribeAutoRiggingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAutoRiggingJobOutcome>>();
+    DescribeAutoRiggingJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const DescribeAutoRiggingJobRequest&,
+        DescribeAutoRiggingJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ai3dClient::DescribeHunyuanTo3DMotionJobOutcome Ai3dClient::DescribeHunyuanTo3DMotionJob(const DescribeHunyuanTo3DMotionJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHunyuanTo3DMotionJob");
@@ -482,6 +532,56 @@ Ai3dClient::QueryHunyuanTo3DRapidJobOutcomeCallable Ai3dClient::QueryHunyuanTo3D
         const Ai3dClient*,
         const QueryHunyuanTo3DRapidJobRequest&,
         QueryHunyuanTo3DRapidJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ai3dClient::SubmitAutoRiggingJobOutcome Ai3dClient::SubmitAutoRiggingJob(const SubmitAutoRiggingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitAutoRiggingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitAutoRiggingJobResponse rsp = SubmitAutoRiggingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitAutoRiggingJobOutcome(rsp);
+        else
+            return SubmitAutoRiggingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitAutoRiggingJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::SubmitAutoRiggingJobAsync(const SubmitAutoRiggingJobRequest& request, const SubmitAutoRiggingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitAutoRiggingJobRequest&;
+    using Resp = SubmitAutoRiggingJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitAutoRiggingJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ai3dClient::SubmitAutoRiggingJobOutcomeCallable Ai3dClient::SubmitAutoRiggingJobCallable(const SubmitAutoRiggingJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitAutoRiggingJobOutcome>>();
+    SubmitAutoRiggingJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const SubmitAutoRiggingJobRequest&,
+        SubmitAutoRiggingJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

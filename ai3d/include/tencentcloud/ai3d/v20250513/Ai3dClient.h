@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ai3d/v20250513/model/Convert3DFormatRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/Convert3DFormatResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeAutoRiggingJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeAutoRiggingJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DProJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitAutoRiggingJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitAutoRiggingJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DMotionJobRequest.h>
@@ -74,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::Convert3DFormatResponse> Convert3DFormatOutcome;
                 typedef std::future<Convert3DFormatOutcome> Convert3DFormatOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::Convert3DFormatRequest&, Convert3DFormatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> Convert3DFormatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoRiggingJobResponse> DescribeAutoRiggingJobOutcome;
+                typedef std::future<DescribeAutoRiggingJobOutcome> DescribeAutoRiggingJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::DescribeAutoRiggingJobRequest&, DescribeAutoRiggingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoRiggingJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHunyuanTo3DMotionJobResponse> DescribeHunyuanTo3DMotionJobOutcome;
                 typedef std::future<DescribeHunyuanTo3DMotionJobOutcome> DescribeHunyuanTo3DMotionJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::DescribeHunyuanTo3DMotionJobRequest&, DescribeHunyuanTo3DMotionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHunyuanTo3DMotionJobAsyncHandler;
@@ -98,6 +105,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryHunyuanTo3DRapidJobResponse> QueryHunyuanTo3DRapidJobOutcome;
                 typedef std::future<QueryHunyuanTo3DRapidJobOutcome> QueryHunyuanTo3DRapidJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::QueryHunyuanTo3DRapidJobRequest&, QueryHunyuanTo3DRapidJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanTo3DRapidJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitAutoRiggingJobResponse> SubmitAutoRiggingJobOutcome;
+                typedef std::future<SubmitAutoRiggingJobOutcome> SubmitAutoRiggingJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::SubmitAutoRiggingJobRequest&, SubmitAutoRiggingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAutoRiggingJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHunyuan3DPartJobResponse> SubmitHunyuan3DPartJobOutcome;
                 typedef std::future<SubmitHunyuan3DPartJobOutcome> SubmitHunyuan3DPartJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::SubmitHunyuan3DPartJobRequest&, SubmitHunyuan3DPartJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuan3DPartJobAsyncHandler;
@@ -133,6 +143,16 @@ namespace TencentCloud
                 Convert3DFormatOutcome Convert3DFormat(const Model::Convert3DFormatRequest &request);
                 void Convert3DFormatAsync(const Model::Convert3DFormatRequest& request, const Convert3DFormatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 Convert3DFormatOutcomeCallable Convert3DFormatCallable(const Model::Convert3DFormatRequest& request);
+
+                /**
+                 *3D模型绑骨蒙皮接口，基于混元大模型，根据输入的人物或动物模型进行绑骨蒙皮，输出带骨骼信息的3D模型。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req DescribeAutoRiggingJobRequest
+                 * @return DescribeAutoRiggingJobOutcome
+                 */
+                DescribeAutoRiggingJobOutcome DescribeAutoRiggingJob(const Model::DescribeAutoRiggingJobRequest &request);
+                void DescribeAutoRiggingJobAsync(const Model::DescribeAutoRiggingJobRequest& request, const DescribeAutoRiggingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoRiggingJobOutcomeCallable DescribeAutoRiggingJobCallable(const Model::DescribeAutoRiggingJobRequest& request);
 
                 /**
                  *查询组件生成任务。
@@ -210,6 +230,16 @@ namespace TencentCloud
                 QueryHunyuanTo3DRapidJobOutcome QueryHunyuanTo3DRapidJob(const Model::QueryHunyuanTo3DRapidJobRequest &request);
                 void QueryHunyuanTo3DRapidJobAsync(const Model::QueryHunyuanTo3DRapidJobRequest& request, const QueryHunyuanTo3DRapidJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryHunyuanTo3DRapidJobOutcomeCallable QueryHunyuanTo3DRapidJobCallable(const Model::QueryHunyuanTo3DRapidJobRequest& request);
+
+                /**
+                 *3D模型绑骨蒙皮接口，基于混元大模型，根据输入的人物或动物模型进行绑骨蒙皮，输出带骨骼信息的3D模型。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req SubmitAutoRiggingJobRequest
+                 * @return SubmitAutoRiggingJobOutcome
+                 */
+                SubmitAutoRiggingJobOutcome SubmitAutoRiggingJob(const Model::SubmitAutoRiggingJobRequest &request);
+                void SubmitAutoRiggingJobAsync(const Model::SubmitAutoRiggingJobRequest& request, const SubmitAutoRiggingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitAutoRiggingJobOutcomeCallable SubmitAutoRiggingJobCallable(const Model::SubmitAutoRiggingJobRequest& request);
 
                 /**
                  *输入3D模型文件后，根据模型结构自动进行组件识别生成。

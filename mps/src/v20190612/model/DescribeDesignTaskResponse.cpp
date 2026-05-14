@@ -28,6 +28,7 @@ DescribeDesignTaskResponse::DescribeDesignTaskResponse() :
     m_msgHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
+    m_audioUrlHasBeenSet(false),
     m_extInfoHasBeenSet(false)
 {
 }
@@ -106,6 +107,16 @@ CoreInternalOutcome DescribeDesignTaskResponse::Deserialize(const string &payloa
         m_voiceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AudioUrl") && !rsp["AudioUrl"].IsNull())
+    {
+        if (!rsp["AudioUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioUrl = string(rsp["AudioUrl"].GetString());
+        m_audioUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ExtInfo") && !rsp["ExtInfo"].IsNull())
     {
         if (!rsp["ExtInfo"].IsString())
@@ -156,6 +167,14 @@ string DescribeDesignTaskResponse::ToJsonString() const
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extInfoHasBeenSet)
@@ -216,6 +235,16 @@ string DescribeDesignTaskResponse::GetVoiceId() const
 bool DescribeDesignTaskResponse::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string DescribeDesignTaskResponse::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+bool DescribeDesignTaskResponse::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
 }
 
 string DescribeDesignTaskResponse::GetExtInfo() const

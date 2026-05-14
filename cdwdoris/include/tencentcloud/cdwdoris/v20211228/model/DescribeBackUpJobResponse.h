@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务列表
-                     * @return BackUpJobs 任务列表
+                     * 获取<p>任务列表</p>
+                     * @return BackUpJobs <p>任务列表</p>
                      * 
                      */
                     std::vector<BackUpJobDisplay> GetBackUpJobs() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool BackUpJobsHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMsg 错误信息
+                     * 获取<p>错误信息</p>
+                     * @return ErrorMsg <p>错误信息</p>
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取当前时间
-                     * @return CurrentTime 当前时间
+                     * 获取<p>当前时间</p>
+                     * @return CurrentTime <p>当前时间</p>
                      * 
                      */
                     std::string GetCurrentTime() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务列表
+                     * <p>任务列表</p>
                      */
                     std::vector<BackUpJobDisplay> m_backUpJobs;
                     bool m_backUpJobsHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 当前时间
+                     * <p>当前时间</p>
                      */
                     std::string m_currentTime;
                     bool m_currentTimeHasBeenSet;

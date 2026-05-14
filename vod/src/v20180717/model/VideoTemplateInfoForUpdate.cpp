@@ -35,7 +35,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_gopUnitHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_bframesHasBeenSet(false),
-    m_hlsTimeHasBeenSet(false)
+    m_hlsTimeHasBeenSet(false),
+    m_videoProfileHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
         m_hlsTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoProfile") && !value["VideoProfile"].IsNull())
+    {
+        if (!value["VideoProfile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.VideoProfile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoProfile = string(value["VideoProfile"].GetString());
+        m_videoProfileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "HlsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hlsTime, allocator);
+    }
+
+    if (m_videoProfileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoProfile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoProfile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void VideoTemplateInfoForUpdate::SetHlsTime(const int64_t& _hlsTime)
 bool VideoTemplateInfoForUpdate::HlsTimeHasBeenSet() const
 {
     return m_hlsTimeHasBeenSet;
+}
+
+string VideoTemplateInfoForUpdate::GetVideoProfile() const
+{
+    return m_videoProfile;
+}
+
+void VideoTemplateInfoForUpdate::SetVideoProfile(const string& _videoProfile)
+{
+    m_videoProfile = _videoProfile;
+    m_videoProfileHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::VideoProfileHasBeenSet() const
+{
+    return m_videoProfileHasBeenSet;
 }
 

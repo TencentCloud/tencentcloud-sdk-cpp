@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>疑似的攻击痕迹类型SuspectedSpoofingAttack：翻拍攻击SuspectedSynthesisImage：疑似合成图片SuspectedSynthesisVideo：疑似合成视频SuspectedAnomalyAttack：人脸特征疑似非真人SuspectedAdversarialAttack：疑似对抗样本攻击SuspectedBlackIndustry：疑似黑产批量模板攻击SuspectedWatermark：疑似存在水印</p>
+                     * 获取<p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type <p>疑似的攻击痕迹类型SuspectedSpoofingAttack：翻拍攻击SuspectedSynthesisImage：疑似合成图片SuspectedSynthesisVideo：疑似合成视频SuspectedAnomalyAttack：人脸特征疑似非真人SuspectedAdversarialAttack：疑似对抗样本攻击SuspectedBlackIndustry：疑似黑产批量模板攻击SuspectedWatermark：疑似存在水印</p>
+                     * @return Type <p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置<p>疑似的攻击痕迹类型SuspectedSpoofingAttack：翻拍攻击SuspectedSynthesisImage：疑似合成图片SuspectedSynthesisVideo：疑似合成视频SuspectedAnomalyAttack：人脸特征疑似非真人SuspectedAdversarialAttack：疑似对抗样本攻击SuspectedBlackIndustry：疑似黑产批量模板攻击SuspectedWatermark：疑似存在水印</p>
+                     * 设置<p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type <p>疑似的攻击痕迹类型SuspectedSpoofingAttack：翻拍攻击SuspectedSynthesisImage：疑似合成图片SuspectedSynthesisVideo：疑似合成视频SuspectedAnomalyAttack：人脸特征疑似非真人SuspectedAdversarialAttack：疑似对抗样本攻击SuspectedBlackIndustry：疑似黑产批量模板攻击SuspectedWatermark：疑似存在水印</p>
+                     * @param _type <p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>疑似的攻击痕迹类型SuspectedSpoofingAttack：翻拍攻击SuspectedSynthesisImage：疑似合成图片SuspectedSynthesisVideo：疑似合成视频SuspectedAnomalyAttack：人脸特征疑似非真人SuspectedAdversarialAttack：疑似对抗样本攻击SuspectedBlackIndustry：疑似黑产批量模板攻击SuspectedWatermark：疑似存在水印</p>
+                     * <p>疑似的攻击痕迹类型，具体类型如下：<br>SuspectedSpoofingAttack：翻拍攻击<br>SuspectedSynthesisImage：疑似合成图片<br>SuspectedSynthesisVideo：疑似合成视频<br>SuspectedAnomalyAttack：人脸特征疑似非真人<br>SuspectedAdversarialAttack：疑似对抗样本攻击<br>SuspectedBlackIndustry：疑似黑产批量模板攻击<br>SuspectedWatermark：疑似存在水印</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

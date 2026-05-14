@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回码
-                     * @return Code 返回码
+                     * 获取<p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>6000：系统内部错误</p>
+                     * @return Code <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>6000：系统内部错误</p>
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置返回码
-                     * @param _code 返回码
+                     * 设置<p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>6000：系统内部错误</p>
+                     * @param _code <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>6000：系统内部错误</p>
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取返回消息
-                     * @return Message 返回消息
+                     * 获取<p>返回消息</p>
+                     * @return Message <p>返回消息</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置返回消息
-                     * @param _message 返回消息
+                     * 设置<p>返回消息</p>
+                     * @param _message <p>返回消息</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取结果
-                     * @return Value 结果
+                     * 获取<p>结果</p>
+                     * @return Value <p>结果</p>
                      * 
                      */
                     ManageIPPortraitRiskValueOutput GetValue() const;
 
                     /**
-                     * 设置结果
-                     * @param _value 结果
+                     * 设置<p>结果</p>
+                     * @param _value <p>结果</p>
                      * 
                      */
                     void SetValue(const ManageIPPortraitRiskValueOutput& _value);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回码
+                     * <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>6000：系统内部错误</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 返回消息
+                     * <p>返回消息</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 结果
+                     * <p>结果</p>
                      */
                     ManageIPPortraitRiskValueOutput m_value;
                     bool m_valueHasBeenSet;

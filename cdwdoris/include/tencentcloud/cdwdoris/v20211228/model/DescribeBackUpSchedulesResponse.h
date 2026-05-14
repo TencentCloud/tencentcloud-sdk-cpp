@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwdoris/v20211228/model/BackupScheduleInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/BucketEncryptionInfo.h>
 
 
@@ -45,8 +46,64 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前系统时间
-                     * @return CurrentTime 当前系统时间
+                     * 获取<p>备份是否开启</p>
+                     * @return BackUpOpened <p>备份是否开启</p>
+                     * 
+                     */
+                    bool GetBackUpOpened() const;
+
+                    /**
+                     * 判断参数 BackUpOpened 是否已赋值
+                     * @return BackUpOpened 是否已赋值
+                     * 
+                     */
+                    bool BackUpOpenedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份桶</p>
+                     * @return CosBucketName <p>备份桶</p>
+                     * 
+                     */
+                    std::string GetCosBucketName() const;
+
+                    /**
+                     * 判断参数 CosBucketName 是否已赋值
+                     * @return CosBucketName 是否已赋值
+                     * 
+                     */
+                    bool CosBucketNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份的状态</p>
+                     * @return BackUpStatus <p>备份的状态</p>
+                     * 
+                     */
+                    int64_t GetBackUpStatus() const;
+
+                    /**
+                     * 判断参数 BackUpStatus 是否已赋值
+                     * @return BackUpStatus 是否已赋值
+                     * 
+                     */
+                    bool BackUpStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份、迁移任务信息</p>
+                     * @return BackupScheduleInfos <p>备份、迁移任务信息</p>
+                     * 
+                     */
+                    std::vector<BackupScheduleInfo> GetBackupScheduleInfos() const;
+
+                    /**
+                     * 判断参数 BackupScheduleInfos 是否已赋值
+                     * @return BackupScheduleInfos 是否已赋值
+                     * 
+                     */
+                    bool BackupScheduleInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前系统时间</p>
+                     * @return CurrentTime <p>当前系统时间</p>
                      * 
                      */
                     std::string GetCurrentTime() const;
@@ -59,8 +116,8 @@ namespace TencentCloud
                     bool CurrentTimeHasBeenSet() const;
 
                     /**
-                     * 获取桶加密状态信息
-                     * @return BucketEncryption 桶加密状态信息
+                     * 获取<p>桶加密状态信息</p>
+                     * @return BucketEncryption <p>桶加密状态信息</p>
                      * 
                      */
                     BucketEncryptionInfo GetBucketEncryption() const;
@@ -75,13 +132,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前系统时间
+                     * <p>备份是否开启</p>
+                     */
+                    bool m_backUpOpened;
+                    bool m_backUpOpenedHasBeenSet;
+
+                    /**
+                     * <p>备份桶</p>
+                     */
+                    std::string m_cosBucketName;
+                    bool m_cosBucketNameHasBeenSet;
+
+                    /**
+                     * <p>备份的状态</p>
+                     */
+                    int64_t m_backUpStatus;
+                    bool m_backUpStatusHasBeenSet;
+
+                    /**
+                     * <p>备份、迁移任务信息</p>
+                     */
+                    std::vector<BackupScheduleInfo> m_backupScheduleInfos;
+                    bool m_backupScheduleInfosHasBeenSet;
+
+                    /**
+                     * <p>当前系统时间</p>
                      */
                     std::string m_currentTime;
                     bool m_currentTimeHasBeenSet;
 
                     /**
-                     * 桶加密状态信息
+                     * <p>桶加密状态信息</p>
                      */
                     BucketEncryptionInfo m_bucketEncryption;
                     bool m_bucketEncryptionHasBeenSet;

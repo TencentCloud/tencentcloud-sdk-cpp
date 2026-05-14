@@ -48,15 +48,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片路径。
-                     * @return Image 图片路径。
+                     * 获取<p>图片类型。</p>
+                     * @return Type <p>图片类型。</p>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>图片类型。</p>
+                     * @param _type <p>图片类型。</p>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图片路径。</p>
+                     * @return Image <p>图片路径。</p>
                      * 
                      */
                     MediaInputInfo GetImage() const;
 
                     /**
-                     * 设置图片路径。
-                     * @param _image 图片路径。
+                     * 设置<p>图片路径。</p>
+                     * @param _image <p>图片路径。</p>
                      * 
                      */
                     void SetImage(const MediaInputInfo& _image);
@@ -71,7 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片路径。
+                     * <p>图片类型。</p>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>图片路径。</p>
                      */
                     MediaInputInfo m_image;
                     bool m_imageHasBeenSet;

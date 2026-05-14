@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户目录ID
-                     * @return UserStoreId 用户目录ID
+                     * 获取<p>用户目录ID</p>
+                     * @return UserStoreId <p>用户目录ID</p>
                      * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
-                     * 设置用户目录ID
-                     * @param _userStoreId 用户目录ID
+                     * 设置<p>用户目录ID</p>
+                     * @param _userStoreId <p>用户目录ID</p>
                      * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
-                     * 获取分页数据
-                     * @return Pageable 分页数据
+                     * 获取<p>分页数据</p>
+                     * @return Pageable <p>分页数据</p>
                      * 
                      */
                     Pageable GetPageable() const;
 
                     /**
-                     * 设置分页数据
-                     * @param _pageable 分页数据
+                     * 设置<p>分页数据</p>
+                     * @param _pageable <p>分页数据</p>
                      * 
                      */
                     void SetPageable(const Pageable& _pageable);
@@ -87,27 +87,15 @@ namespace TencentCloud
                     bool PageableHasBeenSet() const;
 
                     /**
-                     * 获取Key可选值为condition、userGroupId
-
-<li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
-<li> **userGroupId** </li>	Values = 用户组ID
-                     * @return Filters Key可选值为condition、userGroupId
-
-<li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
-<li> **userGroupId** </li>	Values = 用户组ID
+                     * 获取<p>Key可选值为condition、userGroup、userOrg、weComUserOrg<li> <strong>condition</strong> </li>    Values = 查询条件，用户ID，用户名称，手机或邮箱<li> <strong>userGroup</strong> </li>    Values = 用户组ID<li> <strong>userOrg</strong> </li>    Values = 用户所属机构ID<li> <strong>weComUserOrg</strong> </li>    Values = 用户所属企业微信机构ID</p>
+                     * @return Filters <p>Key可选值为condition、userGroup、userOrg、weComUserOrg<li> <strong>condition</strong> </li>    Values = 查询条件，用户ID，用户名称，手机或邮箱<li> <strong>userGroup</strong> </li>    Values = 用户组ID<li> <strong>userOrg</strong> </li>    Values = 用户所属机构ID<li> <strong>weComUserOrg</strong> </li>    Values = 用户所属企业微信机构ID</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置Key可选值为condition、userGroupId
-
-<li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
-<li> **userGroupId** </li>	Values = 用户组ID
-                     * @param _filters Key可选值为condition、userGroupId
-
-<li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
-<li> **userGroupId** </li>	Values = 用户组ID
+                     * 设置<p>Key可选值为condition、userGroup、userOrg、weComUserOrg<li> <strong>condition</strong> </li>    Values = 查询条件，用户ID，用户名称，手机或邮箱<li> <strong>userGroup</strong> </li>    Values = 用户组ID<li> <strong>userOrg</strong> </li>    Values = 用户所属机构ID<li> <strong>weComUserOrg</strong> </li>    Values = 用户所属企业微信机构ID</p>
+                     * @param _filters <p>Key可选值为condition、userGroup、userOrg、weComUserOrg<li> <strong>condition</strong> </li>    Values = 查询条件，用户ID，用户名称，手机或邮箱<li> <strong>userGroup</strong> </li>    Values = 用户组ID<li> <strong>userOrg</strong> </li>    Values = 用户所属机构ID<li> <strong>weComUserOrg</strong> </li>    Values = 用户所属企业微信机构ID</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -120,15 +108,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取返回信息是否为原文
-                     * @return Original 返回信息是否为原文
+                     * 获取<p>返回信息是否为原文</p>
+                     * @return Original <p>返回信息是否为原文</p>
                      * 
                      */
                     bool GetOriginal() const;
 
                     /**
-                     * 设置返回信息是否为原文
-                     * @param _original 返回信息是否为原文
+                     * 设置<p>返回信息是否为原文</p>
+                     * @param _original <p>返回信息是否为原文</p>
                      * 
                      */
                     void SetOriginal(const bool& _original);
@@ -143,28 +131,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户目录ID
+                     * <p>用户目录ID</p>
                      */
                     std::string m_userStoreId;
                     bool m_userStoreIdHasBeenSet;
 
                     /**
-                     * 分页数据
+                     * <p>分页数据</p>
                      */
                     Pageable m_pageable;
                     bool m_pageableHasBeenSet;
 
                     /**
-                     * Key可选值为condition、userGroupId
-
-<li> **condition** </li>	Values = 查询条件，用户ID，用户名称，手机或邮箱
-<li> **userGroupId** </li>	Values = 用户组ID
+                     * <p>Key可选值为condition、userGroup、userOrg、weComUserOrg<li> <strong>condition</strong> </li>    Values = 查询条件，用户ID，用户名称，手机或邮箱<li> <strong>userGroup</strong> </li>    Values = 用户组ID<li> <strong>userOrg</strong> </li>    Values = 用户所属机构ID<li> <strong>weComUserOrg</strong> </li>    Values = 用户所属企业微信机构ID</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 返回信息是否为原文
+                     * <p>返回信息是否为原文</p>
                      */
                     bool m_original;
                     bool m_originalHasBeenSet;

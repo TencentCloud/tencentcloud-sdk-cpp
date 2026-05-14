@@ -28,7 +28,8 @@ UpdateTriggerWorkflowPartially::UpdateTriggerWorkflowPartially() :
     m_workflowDescHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
-    m_generalTaskParamsHasBeenSet(false)
+    m_generalTaskParamsHasBeenSet(false),
+    m_triggerWorkflowRunConfigurationHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,23 @@ CoreInternalOutcome UpdateTriggerWorkflowPartially::Deserialize(const rapidjson:
         m_generalTaskParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerWorkflowRunConfiguration") && !value["TriggerWorkflowRunConfiguration"].IsNull())
+    {
+        if (!value["TriggerWorkflowRunConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTriggerWorkflowPartially.TriggerWorkflowRunConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_triggerWorkflowRunConfiguration.Deserialize(value["TriggerWorkflowRunConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_triggerWorkflowRunConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +255,15 @@ void UpdateTriggerWorkflowPartially::ToJsonObject(rapidjson::Value &value, rapid
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_triggerWorkflowRunConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerWorkflowRunConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_triggerWorkflowRunConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -368,5 +395,21 @@ void UpdateTriggerWorkflowPartially::SetGeneralTaskParams(const vector<WorkflowG
 bool UpdateTriggerWorkflowPartially::GeneralTaskParamsHasBeenSet() const
 {
     return m_generalTaskParamsHasBeenSet;
+}
+
+WorkflowRunConfig UpdateTriggerWorkflowPartially::GetTriggerWorkflowRunConfiguration() const
+{
+    return m_triggerWorkflowRunConfiguration;
+}
+
+void UpdateTriggerWorkflowPartially::SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration)
+{
+    m_triggerWorkflowRunConfiguration = _triggerWorkflowRunConfiguration;
+    m_triggerWorkflowRunConfigurationHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowPartially::TriggerWorkflowRunConfigurationHasBeenSet() const
+{
+    return m_triggerWorkflowRunConfigurationHasBeenSet;
 }
 

@@ -540,6 +540,56 @@ VodClient::CreateAigcApiTokenOutcomeCallable VodClient::CreateAigcApiTokenCallab
     return prom->get_future();
 }
 
+VodClient::CreateAigcAudioCloneOutcome VodClient::CreateAigcAudioClone(const CreateAigcAudioCloneRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAudioClone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAudioCloneResponse rsp = CreateAigcAudioCloneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAudioCloneOutcome(rsp);
+        else
+            return CreateAigcAudioCloneOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAudioCloneOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAudioCloneAsync(const CreateAigcAudioCloneRequest& request, const CreateAigcAudioCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAudioCloneRequest&;
+    using Resp = CreateAigcAudioCloneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAudioClone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAudioCloneOutcomeCallable VodClient::CreateAigcAudioCloneCallable(const CreateAigcAudioCloneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAudioCloneOutcome>>();
+    CreateAigcAudioCloneAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAudioCloneRequest&,
+        CreateAigcAudioCloneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcAudioTaskOutcome VodClient::CreateAigcAudioTask(const CreateAigcAudioTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcAudioTask");

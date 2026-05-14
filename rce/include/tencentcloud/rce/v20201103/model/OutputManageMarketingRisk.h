@@ -48,35 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误码，0 表示成功，非0表示失败错误码。
-0：成功
-1：错误
-1002：参数错误
-4300：未开通服务
-4301：后端未创建对应产品
-                     * @return Code 错误码，0 表示成功，非0表示失败错误码。
-0：成功
-1：错误
-1002：参数错误
-4300：未开通服务
-4301：后端未创建对应产品
+                     * 获取<p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>4300：未开通服务<br>4301：后端未创建对应产品<br>6000：系统内部错误</p>
+                     * @return Code <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>4300：未开通服务<br>4301：后端未创建对应产品<br>6000：系统内部错误</p>
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置错误码，0 表示成功，非0表示失败错误码。
-0：成功
-1：错误
-1002：参数错误
-4300：未开通服务
-4301：后端未创建对应产品
-                     * @param _code 错误码，0 表示成功，非0表示失败错误码。
-0：成功
-1：错误
-1002：参数错误
-4300：未开通服务
-4301：后端未创建对应产品
+                     * 设置<p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>4300：未开通服务<br>4301：后端未创建对应产品<br>6000：系统内部错误</p>
+                     * @param _code <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>4300：未开通服务<br>4301：后端未创建对应产品<br>6000：系统内部错误</p>
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -89,15 +69,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取UTF-8编码，出错消息。
-                     * @return Message UTF-8编码，出错消息。
+                     * 获取<p>UTF-8编码，出错消息。</p>
+                     * @return Message <p>UTF-8编码，出错消息。</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置UTF-8编码，出错消息。
-                     * @param _message UTF-8编码，出错消息。
+                     * 设置<p>UTF-8编码，出错消息。</p>
+                     * @param _message <p>UTF-8编码，出错消息。</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -110,18 +90,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取业务详情。
+                     * 获取<p>业务详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 业务详情。
+                     * @return Value <p>业务详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OutputManageMarketingRiskValue GetValue() const;
 
                     /**
-                     * 设置业务详情。
+                     * 设置<p>业务详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 业务详情。
+                     * @param _value <p>业务详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,15 +115,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取控制台显示的req_id。
-                     * @return UUid 控制台显示的req_id。
+                     * 获取<p>控制台显示的req_id。</p>
+                     * @return UUid <p>控制台显示的req_id。</p>
                      * 
                      */
                     std::string GetUUid() const;
 
                     /**
-                     * 设置控制台显示的req_id。
-                     * @param _uUid 控制台显示的req_id。
+                     * 设置<p>控制台显示的req_id。</p>
+                     * @param _uUid <p>控制台显示的req_id。</p>
                      * 
                      */
                     void SetUUid(const std::string& _uUid);
@@ -158,31 +138,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误码，0 表示成功，非0表示失败错误码。
-0：成功
-1：错误
-1002：参数错误
-4300：未开通服务
-4301：后端未创建对应产品
+                     * <p>错误码，0 表示成功，非0表示失败错误码。<br>0：成功<br>1002：参数错误<br>4300：未开通服务<br>4301：后端未创建对应产品<br>6000：系统内部错误</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * UTF-8编码，出错消息。
+                     * <p>UTF-8编码，出错消息。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 业务详情。
+                     * <p>业务详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OutputManageMarketingRiskValue m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 控制台显示的req_id。
+                     * <p>控制台显示的req_id。</p>
                      */
                     std::string m_uUid;
                     bool m_uUidHasBeenSet;

@@ -31,7 +31,8 @@ TriggerWorkflowDetail::TriggerWorkflowDetail() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_generalTaskParamsHasBeenSet(false),
-    m_schedulerStatusHasBeenSet(false)
+    m_schedulerStatusHasBeenSet(false),
+    m_triggerWorkflowRunConfigurationHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,23 @@ CoreInternalOutcome TriggerWorkflowDetail::Deserialize(const rapidjson::Value &v
         m_schedulerStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerWorkflowRunConfiguration") && !value["TriggerWorkflowRunConfiguration"].IsNull())
+    {
+        if (!value["TriggerWorkflowRunConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowDetail.TriggerWorkflowRunConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_triggerWorkflowRunConfiguration.Deserialize(value["TriggerWorkflowRunConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_triggerWorkflowRunConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +312,15 @@ void TriggerWorkflowDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SchedulerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_schedulerStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerWorkflowRunConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerWorkflowRunConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_triggerWorkflowRunConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -473,5 +500,21 @@ void TriggerWorkflowDetail::SetSchedulerStatus(const string& _schedulerStatus)
 bool TriggerWorkflowDetail::SchedulerStatusHasBeenSet() const
 {
     return m_schedulerStatusHasBeenSet;
+}
+
+WorkflowRunConfig TriggerWorkflowDetail::GetTriggerWorkflowRunConfiguration() const
+{
+    return m_triggerWorkflowRunConfiguration;
+}
+
+void TriggerWorkflowDetail::SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration)
+{
+    m_triggerWorkflowRunConfiguration = _triggerWorkflowRunConfiguration;
+    m_triggerWorkflowRunConfigurationHasBeenSet = true;
+}
+
+bool TriggerWorkflowDetail::TriggerWorkflowRunConfigurationHasBeenSet() const
+{
+    return m_triggerWorkflowRunConfigurationHasBeenSet;
 }
 

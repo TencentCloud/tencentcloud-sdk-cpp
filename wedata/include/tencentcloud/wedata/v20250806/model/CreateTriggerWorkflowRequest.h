@@ -24,6 +24,7 @@
 #include <tencentcloud/wedata/v20250806/model/ParamInfo.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowTriggerConfig.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowGeneralTaskParam.h>
+#include <tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h>
 
 
 namespace TencentCloud
@@ -46,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
-                     * @return WorkflowName 工作流名称
+                     * 获取<p>工作流名称</p>
+                     * @return WorkflowName <p>工作流名称</p>
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
-                     * @param _workflowName 工作流名称
+                     * 设置<p>工作流名称</p>
+                     * @param _workflowName <p>工作流名称</p>
                      * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
@@ -88,15 +89,15 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取所属文件夹路径
-                     * @return ParentFolderPath 所属文件夹路径
+                     * 获取<p>所属文件夹路径</p>
+                     * @return ParentFolderPath <p>所属文件夹路径</p>
                      * 
                      */
                     std::string GetParentFolderPath() const;
 
                     /**
-                     * 设置所属文件夹路径
-                     * @param _parentFolderPath 所属文件夹路径
+                     * 设置<p>所属文件夹路径</p>
+                     * @param _parentFolderPath <p>所属文件夹路径</p>
                      * 
                      */
                     void SetParentFolderPath(const std::string& _parentFolderPath);
@@ -109,15 +110,15 @@ namespace TencentCloud
                     bool ParentFolderPathHasBeenSet() const;
 
                     /**
-                     * 获取工作流描述
-                     * @return WorkflowDesc 工作流描述
+                     * 获取<p>工作流描述</p>
+                     * @return WorkflowDesc <p>工作流描述</p>
                      * 
                      */
                     std::string GetWorkflowDesc() const;
 
                     /**
-                     * 设置工作流描述
-                     * @param _workflowDesc 工作流描述
+                     * 设置<p>工作流描述</p>
+                     * @param _workflowDesc <p>工作流描述</p>
                      * 
                      */
                     void SetWorkflowDesc(const std::string& _workflowDesc);
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool WorkflowDescHasBeenSet() const;
 
                     /**
-                     * 获取工作流负责人ID
-                     * @return OwnerUin 工作流负责人ID
+                     * 获取<p>工作流负责人ID</p>
+                     * @return OwnerUin <p>工作流负责人ID</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置工作流负责人ID
-                     * @param _ownerUin 工作流负责人ID
+                     * 设置<p>工作流负责人ID</p>
+                     * @param _ownerUin <p>工作流负责人ID</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -151,15 +152,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取工作流参数
-                     * @return WorkflowParams 工作流参数
+                     * 获取<p>工作流参数</p>
+                     * @return WorkflowParams <p>工作流参数</p>
                      * 
                      */
                     std::vector<ParamInfo> GetWorkflowParams() const;
 
                     /**
-                     * 设置工作流参数
-                     * @param _workflowParams 工作流参数
+                     * 设置<p>工作流参数</p>
+                     * @param _workflowParams <p>工作流参数</p>
                      * 
                      */
                     void SetWorkflowParams(const std::vector<ParamInfo>& _workflowParams);
@@ -172,15 +173,15 @@ namespace TencentCloud
                     bool WorkflowParamsHasBeenSet() const;
 
                     /**
-                     * 获取统一调度信息
-                     * @return TriggerWorkflowSchedulerConfigurations 统一调度信息
+                     * 获取<p>统一调度信息</p>
+                     * @return TriggerWorkflowSchedulerConfigurations <p>统一调度信息</p>
                      * 
                      */
                     std::vector<WorkflowTriggerConfig> GetTriggerWorkflowSchedulerConfigurations() const;
 
                     /**
-                     * 设置统一调度信息
-                     * @param _triggerWorkflowSchedulerConfigurations 统一调度信息
+                     * 设置<p>统一调度信息</p>
+                     * @param _triggerWorkflowSchedulerConfigurations <p>统一调度信息</p>
                      * 
                      */
                     void SetTriggerWorkflowSchedulerConfigurations(const std::vector<WorkflowTriggerConfig>& _triggerWorkflowSchedulerConfigurations);
@@ -193,15 +194,15 @@ namespace TencentCloud
                     bool TriggerWorkflowSchedulerConfigurationsHasBeenSet() const;
 
                     /**
-                     * 获取BundleId项
-                     * @return BundleId BundleId项
+                     * 获取<p>BundleId项</p>
+                     * @return BundleId <p>BundleId项</p>
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置BundleId项
-                     * @param _bundleId BundleId项
+                     * 设置<p>BundleId项</p>
+                     * @param _bundleId <p>BundleId项</p>
                      * 
                      */
                     void SetBundleId(const std::string& _bundleId);
@@ -214,15 +215,15 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取Bundle信息
-                     * @return BundleInfo Bundle信息
+                     * 获取<p>Bundle信息</p>
+                     * @return BundleInfo <p>Bundle信息</p>
                      * 
                      */
                     std::string GetBundleInfo() const;
 
                     /**
-                     * 设置Bundle信息
-                     * @param _bundleInfo Bundle信息
+                     * 设置<p>Bundle信息</p>
+                     * @param _bundleInfo <p>Bundle信息</p>
                      * 
                      */
                     void SetBundleInfo(const std::string& _bundleInfo);
@@ -235,15 +236,15 @@ namespace TencentCloud
                     bool BundleInfoHasBeenSet() const;
 
                     /**
-                     * 获取通用参数配置
-                     * @return GeneralTaskParams 通用参数配置
+                     * 获取<p>通用参数配置</p>
+                     * @return GeneralTaskParams <p>通用参数配置</p>
                      * 
                      */
                     std::vector<WorkflowGeneralTaskParam> GetGeneralTaskParams() const;
 
                     /**
-                     * 设置通用参数配置
-                     * @param _generalTaskParams 通用参数配置
+                     * 设置<p>通用参数配置</p>
+                     * @param _generalTaskParams <p>通用参数配置</p>
                      * 
                      */
                     void SetGeneralTaskParams(const std::vector<WorkflowGeneralTaskParam>& _generalTaskParams);
@@ -255,67 +256,94 @@ namespace TencentCloud
                      */
                     bool GeneralTaskParamsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流调度运行配置</p>
+                     * @return TriggerWorkflowRunConfiguration <p>工作流调度运行配置</p>
+                     * 
+                     */
+                    WorkflowRunConfig GetTriggerWorkflowRunConfiguration() const;
+
+                    /**
+                     * 设置<p>工作流调度运行配置</p>
+                     * @param _triggerWorkflowRunConfiguration <p>工作流调度运行配置</p>
+                     * 
+                     */
+                    void SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration);
+
+                    /**
+                     * 判断参数 TriggerWorkflowRunConfiguration 是否已赋值
+                     * @return TriggerWorkflowRunConfiguration 是否已赋值
+                     * 
+                     */
+                    bool TriggerWorkflowRunConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 所属文件夹路径
+                     * <p>所属文件夹路径</p>
                      */
                     std::string m_parentFolderPath;
                     bool m_parentFolderPathHasBeenSet;
 
                     /**
-                     * 工作流描述
+                     * <p>工作流描述</p>
                      */
                     std::string m_workflowDesc;
                     bool m_workflowDescHasBeenSet;
 
                     /**
-                     * 工作流负责人ID
+                     * <p>工作流负责人ID</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 工作流参数
+                     * <p>工作流参数</p>
                      */
                     std::vector<ParamInfo> m_workflowParams;
                     bool m_workflowParamsHasBeenSet;
 
                     /**
-                     * 统一调度信息
+                     * <p>统一调度信息</p>
                      */
                     std::vector<WorkflowTriggerConfig> m_triggerWorkflowSchedulerConfigurations;
                     bool m_triggerWorkflowSchedulerConfigurationsHasBeenSet;
 
                     /**
-                     * BundleId项
+                     * <p>BundleId项</p>
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * Bundle信息
+                     * <p>Bundle信息</p>
                      */
                     std::string m_bundleInfo;
                     bool m_bundleInfoHasBeenSet;
 
                     /**
-                     * 通用参数配置
+                     * <p>通用参数配置</p>
                      */
                     std::vector<WorkflowGeneralTaskParam> m_generalTaskParams;
                     bool m_generalTaskParamsHasBeenSet;
+
+                    /**
+                     * <p>工作流调度运行配置</p>
+                     */
+                    WorkflowRunConfig m_triggerWorkflowRunConfiguration;
+                    bool m_triggerWorkflowRunConfigurationHasBeenSet;
 
                 };
             }

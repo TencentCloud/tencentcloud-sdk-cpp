@@ -29,7 +29,9 @@ DspmAssetFieldInfo::DspmAssetFieldInfo() :
     m_ruleIdsHasBeenSet(false),
     m_ruleNamesHasBeenSet(false),
     m_categoryIdsHasBeenSet(false),
-    m_categoryNamesHasBeenSet(false)
+    m_categoryNamesHasBeenSet(false),
+    m_categoryDetailsHasBeenSet(false),
+    m_fieldCommentHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,36 @@ CoreInternalOutcome DspmAssetFieldInfo::Deserialize(const rapidjson::Value &valu
         m_categoryNamesHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryDetails") && !value["CategoryDetails"].IsNull())
+    {
+        if (!value["CategoryDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DspmAssetFieldInfo.CategoryDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CategoryDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DspmIdentifyCategoryDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_categoryDetails.push_back(item);
+        }
+        m_categoryDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldComment") && !value["FieldComment"].IsNull())
+    {
+        if (!value["FieldComment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmAssetFieldInfo.FieldComment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldComment = string(value["FieldComment"].GetString());
+        m_fieldCommentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +269,29 @@ void DspmAssetFieldInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_categoryDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_categoryDetails.begin(); itr != m_categoryDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_fieldCommentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldComment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fieldComment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -384,5 +439,37 @@ void DspmAssetFieldInfo::SetCategoryNames(const vector<string>& _categoryNames)
 bool DspmAssetFieldInfo::CategoryNamesHasBeenSet() const
 {
     return m_categoryNamesHasBeenSet;
+}
+
+vector<DspmIdentifyCategoryDetail> DspmAssetFieldInfo::GetCategoryDetails() const
+{
+    return m_categoryDetails;
+}
+
+void DspmAssetFieldInfo::SetCategoryDetails(const vector<DspmIdentifyCategoryDetail>& _categoryDetails)
+{
+    m_categoryDetails = _categoryDetails;
+    m_categoryDetailsHasBeenSet = true;
+}
+
+bool DspmAssetFieldInfo::CategoryDetailsHasBeenSet() const
+{
+    return m_categoryDetailsHasBeenSet;
+}
+
+string DspmAssetFieldInfo::GetFieldComment() const
+{
+    return m_fieldComment;
+}
+
+void DspmAssetFieldInfo::SetFieldComment(const string& _fieldComment)
+{
+    m_fieldComment = _fieldComment;
+    m_fieldCommentHasBeenSet = true;
+}
+
+bool DspmAssetFieldInfo::FieldCommentHasBeenSet() const
+{
+    return m_fieldCommentHasBeenSet;
 }
 

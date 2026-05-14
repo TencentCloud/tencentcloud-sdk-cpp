@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取vpc的id
-                     * @return VpcId vpc的id
+                     * 获取<p>vpc的id</p>
+                     * @return VpcId <p>vpc的id</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc的id
-                     * @param _vpcId vpc的id
+                     * 设置<p>vpc的id</p>
+                     * @param _vpcId <p>vpc的id</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id
-                     * @return SubnetId 子网id
+                     * 获取<p>子网id</p>
+                     * @return SubnetId <p>子网id</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id
-                     * @param _subnetId 子网id
+                     * 设置<p>子网id</p>
+                     * @param _subnetId <p>子网id</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc接入点信息
-                     * @return VpcEndpoint vpc接入点信息
+                     * 获取<p>vpc接入点信息</p>
+                     * @return VpcEndpoint <p>vpc接入点信息</p>
                      * 
                      */
                     std::string GetVpcEndpoint() const;
 
                     /**
-                     * 设置vpc接入点信息
-                     * @param _vpcEndpoint vpc接入点信息
+                     * 设置<p>vpc接入点信息</p>
+                     * @param _vpcEndpoint <p>vpc接入点信息</p>
                      * 
                      */
                     void SetVpcEndpoint(const std::string& _vpcEndpoint);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VpcEndpointHasBeenSet() const;
 
                     /**
-                     * 获取vpc接入点状态 OFF/ON/CREATING/DELETING
-                     * @return VpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
+                     * 获取<p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>
+                     * @return VpcDataStreamEndpointStatus <p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>
                      * 
                      */
                     std::string GetVpcDataStreamEndpointStatus() const;
 
                     /**
-                     * 设置vpc接入点状态 OFF/ON/CREATING/DELETING
-                     * @param _vpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
+                     * 设置<p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>
+                     * @param _vpcDataStreamEndpointStatus <p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>
                      * 
                      */
                     void SetVpcDataStreamEndpointStatus(const std::string& _vpcDataStreamEndpointStatus);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VpcDataStreamEndpointStatusHasBeenSet() const;
 
                     /**
-                     * 获取TLS加密的数据流接入点
-                     * @return VpcTlsEndpoint TLS加密的数据流接入点
+                     * 获取<p>TLS加密的数据流接入点</p>
+                     * @return VpcTlsEndpoint <p>TLS加密的数据流接入点</p>
                      * 
                      */
                     std::string GetVpcTlsEndpoint() const;
 
                     /**
-                     * 设置TLS加密的数据流接入点
-                     * @param _vpcTlsEndpoint TLS加密的数据流接入点
+                     * 设置<p>TLS加密的数据流接入点</p>
+                     * @param _vpcTlsEndpoint <p>TLS加密的数据流接入点</p>
                      * 
                      */
                     void SetVpcTlsEndpoint(const std::string& _vpcTlsEndpoint);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool VpcTlsEndpointHasBeenSet() const;
 
                     /**
-                     * 获取VPC 接入点操作失败的错误信息
-                     * @return VpcErrorMessage VPC 接入点操作失败的错误信息
+                     * 获取<p>VPC 接入点操作失败的错误信息</p>
+                     * @return VpcErrorMessage <p>VPC 接入点操作失败的错误信息</p>
                      * 
                      */
                     std::string GetVpcErrorMessage() const;
 
                     /**
-                     * 设置VPC 接入点操作失败的错误信息
-                     * @param _vpcErrorMessage VPC 接入点操作失败的错误信息
+                     * 设置<p>VPC 接入点操作失败的错误信息</p>
+                     * @param _vpcErrorMessage <p>VPC 接入点操作失败的错误信息</p>
                      * 
                      */
                     void SetVpcErrorMessage(const std::string& _vpcErrorMessage);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * vpc的id
+                     * <p>vpc的id</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id
+                     * <p>子网id</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * vpc接入点信息
+                     * <p>vpc接入点信息</p>
                      */
                     std::string m_vpcEndpoint;
                     bool m_vpcEndpointHasBeenSet;
 
                     /**
-                     * vpc接入点状态 OFF/ON/CREATING/DELETING
+                     * <p>vpc接入点状态 OFF/ON/CREATING/DELETING</p>
                      */
                     std::string m_vpcDataStreamEndpointStatus;
                     bool m_vpcDataStreamEndpointStatusHasBeenSet;
 
                     /**
-                     * TLS加密的数据流接入点
+                     * <p>TLS加密的数据流接入点</p>
                      */
                     std::string m_vpcTlsEndpoint;
                     bool m_vpcTlsEndpointHasBeenSet;
 
                     /**
-                     * VPC 接入点操作失败的错误信息
+                     * <p>VPC 接入点操作失败的错误信息</p>
                      */
                     std::string m_vpcErrorMessage;
                     bool m_vpcErrorMessageHasBeenSet;

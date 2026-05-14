@@ -605,7 +605,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/FunctionTypeOrKind.h
   include/tencentcloud/wedata/v20210820/model/SaveCustomFunctionResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskLinkDsDTO.h
-  include/tencentcloud/wedata/v20210820/model/ModifyDsFolderRequest.h
+  include/tencentcloud/wedata/v20210820/model/LastOperateInfo.h
   include/tencentcloud/wedata/v20210820/model/AdhocRecord.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiListResponse.h
   include/tencentcloud/wedata/v20210820/model/TriggerDsEventResponse.h
@@ -777,6 +777,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/FreezeTasksByWorkflowIdsResponse.h
   include/tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h
+  include/tencentcloud/wedata/v20210820/model/ModifyDsFolderRequest.h
   include/tencentcloud/wedata/v20210820/model/RunRerunScheduleInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/SystemRole.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTableInnerInfo.h
@@ -1414,6 +1415,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/ListSQLFolderContentsRequest.h
   include/tencentcloud/wedata/v20250806/model/DeleteWorkflowPermission.h
   include/tencentcloud/wedata/v20250806/model/CreateTaskRequest.h
+  include/tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h
   include/tencentcloud/wedata/v20250806/model/ListTriggerTasksResponse.h
   include/tencentcloud/wedata/v20250806/model/GetOpsTriggerWorkflowRequest.h
   include/tencentcloud/wedata/v20250806/model/GetDataSourceRequest.h
@@ -2247,7 +2249,7 @@ set(wedata_src
   src/v20210820/model/FunctionTypeOrKind.cpp
   src/v20210820/model/SaveCustomFunctionResponse.cpp
   src/v20210820/model/TaskLinkDsDTO.cpp
-  src/v20210820/model/ModifyDsFolderRequest.cpp
+  src/v20210820/model/LastOperateInfo.cpp
   src/v20210820/model/AdhocRecord.cpp
   src/v20210820/model/DescribeDataServicePublishedApiListResponse.cpp
   src/v20210820/model/TriggerDsEventResponse.cpp
@@ -2419,6 +2421,7 @@ set(wedata_src
   src/v20210820/model/FreezeTasksByWorkflowIdsResponse.cpp
   src/v20210820/model/SubmitWorkflowRequest.cpp
   src/v20210820/model/DescribeResourceManagePathTreesResponse.cpp
+  src/v20210820/model/ModifyDsFolderRequest.cpp
   src/v20210820/model/RunRerunScheduleInstancesRequest.cpp
   src/v20210820/model/SystemRole.cpp
   src/v20210820/model/RuleGroupTableInnerInfo.cpp
@@ -3056,6 +3059,7 @@ set(wedata_src
   src/v20250806/model/ListSQLFolderContentsRequest.cpp
   src/v20250806/model/DeleteWorkflowPermission.cpp
   src/v20250806/model/CreateTaskRequest.cpp
+  src/v20250806/model/WorkflowRunConfig.cpp
   src/v20250806/model/ListTriggerTasksResponse.cpp
   src/v20250806/model/GetOpsTriggerWorkflowRequest.cpp
   src/v20250806/model/GetDataSourceRequest.cpp

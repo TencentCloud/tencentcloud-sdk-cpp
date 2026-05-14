@@ -29,7 +29,8 @@ SubmitExtractDocAgentJobRequest::SubmitExtractDocAgentJobRequest() :
     m_itemNamesHasBeenSet(false),
     m_enableCoordHasBeenSet(false),
     m_fileStartPageNumberHasBeenSet(false),
-    m_fileEndPageNumberHasBeenSet(false)
+    m_fileEndPageNumberHasBeenSet(false),
+    m_modelConfigHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string SubmitExtractDocAgentJobRequest::ToJsonString() const
         string key = "FileEndPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileEndPageNumber, allocator);
+    }
+
+    if (m_modelConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void SubmitExtractDocAgentJobRequest::SetFileEndPageNumber(const uint64_t& _file
 bool SubmitExtractDocAgentJobRequest::FileEndPageNumberHasBeenSet() const
 {
     return m_fileEndPageNumberHasBeenSet;
+}
+
+string SubmitExtractDocAgentJobRequest::GetModelConfig() const
+{
+    return m_modelConfig;
+}
+
+void SubmitExtractDocAgentJobRequest::SetModelConfig(const string& _modelConfig)
+{
+    m_modelConfig = _modelConfig;
+    m_modelConfigHasBeenSet = true;
+}
+
+bool SubmitExtractDocAgentJobRequest::ModelConfigHasBeenSet() const
+{
+    return m_modelConfigHasBeenSet;
 }
 
 

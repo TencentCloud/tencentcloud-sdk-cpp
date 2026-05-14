@@ -102,6 +102,20 @@ namespace TencentCloud
                     bool VoiceIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>试听音频Url</p>
+                     * @return AudioUrl <p>试听音频Url</p>
+                     * 
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     * 
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtInfo <p>扩展信息</p>
@@ -143,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * <p>试听音频Url</p>
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
 
                     /**
                      * <p>扩展信息</p>

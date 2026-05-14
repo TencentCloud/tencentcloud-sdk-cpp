@@ -43,6 +43,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioCloneRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAudioCloneResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcAudioTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementRequest.h>
@@ -507,6 +509,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAigcApiTokenResponse> CreateAigcApiTokenOutcome;
                 typedef std::future<CreateAigcApiTokenOutcome> CreateAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcApiTokenRequest&, CreateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcApiTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAudioCloneResponse> CreateAigcAudioCloneOutcome;
+                typedef std::future<CreateAigcAudioCloneOutcome> CreateAigcAudioCloneOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAudioCloneRequest&, CreateAigcAudioCloneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioCloneAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcAudioTaskResponse> CreateAigcAudioTaskOutcome;
                 typedef std::future<CreateAigcAudioTaskOutcome> CreateAigcAudioTaskOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcAudioTaskRequest&, CreateAigcAudioTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAudioTaskAsyncHandler;
@@ -1244,6 +1249,15 @@ namespace TencentCloud
                 CreateAigcApiTokenOutcome CreateAigcApiToken(const Model::CreateAigcApiTokenRequest &request);
                 void CreateAigcApiTokenAsync(const Model::CreateAigcApiTokenRequest& request, const CreateAigcApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAigcApiTokenOutcomeCallable CreateAigcApiTokenCallable(const Model::CreateAigcApiTokenRequest& request);
+
+                /**
+                 *该接口用于创建 AIGC 音色复刻。注意，调用本接口会产生费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。
+                 * @param req CreateAigcAudioCloneRequest
+                 * @return CreateAigcAudioCloneOutcome
+                 */
+                CreateAigcAudioCloneOutcome CreateAigcAudioClone(const Model::CreateAigcAudioCloneRequest &request);
+                void CreateAigcAudioCloneAsync(const Model::CreateAigcAudioCloneRequest& request, const CreateAigcAudioCloneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAudioCloneOutcomeCallable CreateAigcAudioCloneCallable(const Model::CreateAigcAudioCloneRequest& request);
 
                 /**
                  *调用该接口，用于创建AI生音频任务。

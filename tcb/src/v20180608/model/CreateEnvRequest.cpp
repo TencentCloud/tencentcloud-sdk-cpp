@@ -29,7 +29,9 @@ CreateEnvRequest::CreateEnvRequest() :
     m_periodHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_externalStorageHasBeenSet(false),
+    m_enableOverrunHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,23 @@ string CreateEnvRequest::ToJsonString() const
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalStorage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externalStorage.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableOverrunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableOverrun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableOverrun.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +245,38 @@ void CreateEnvRequest::SetRenewFlag(const string& _renewFlag)
 bool CreateEnvRequest::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+ExternalStorage CreateEnvRequest::GetExternalStorage() const
+{
+    return m_externalStorage;
+}
+
+void CreateEnvRequest::SetExternalStorage(const ExternalStorage& _externalStorage)
+{
+    m_externalStorage = _externalStorage;
+    m_externalStorageHasBeenSet = true;
+}
+
+bool CreateEnvRequest::ExternalStorageHasBeenSet() const
+{
+    return m_externalStorageHasBeenSet;
+}
+
+string CreateEnvRequest::GetEnableOverrun() const
+{
+    return m_enableOverrun;
+}
+
+void CreateEnvRequest::SetEnableOverrun(const string& _enableOverrun)
+{
+    m_enableOverrun = _enableOverrun;
+    m_enableOverrunHasBeenSet = true;
+}
+
+bool CreateEnvRequest::EnableOverrunHasBeenSet() const
+{
+    return m_enableOverrunHasBeenSet;
 }
 
 

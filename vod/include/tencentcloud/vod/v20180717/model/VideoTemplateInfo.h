@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool HlsTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>
+                     * @return VideoProfile <p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>
+                     * 
+                     */
+                    std::string GetVideoProfile() const;
+
+                    /**
+                     * 设置<p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>
+                     * @param _videoProfile <p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>
+                     * 
+                     */
+                    void SetVideoProfile(const std::string& _videoProfile);
+
+                    /**
+                     * 判断参数 VideoProfile 是否已赋值
+                     * @return VideoProfile 是否已赋值
+                     * 
+                     */
+                    bool VideoProfileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     int64_t m_hlsTime;
                     bool m_hlsTimeHasBeenSet;
+
+                    /**
+                     * <p>视频编码标准中对允许使用哪些编码工具或特性的一组预定义组合，适用于不同场景。</p><p>枚举值：</p><ul><li>baseline： 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。</li><li>main： 主流 Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。</li><li>high： 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。</li><li>default： 随原视频自动填充。  </li></ul><p>默认值：default</p><p>仅 Codec 为 libx264 时该配置项有效。</p>
+                     */
+                    std::string m_videoProfile;
+                    bool m_videoProfileHasBeenSet;
 
                 };
             }

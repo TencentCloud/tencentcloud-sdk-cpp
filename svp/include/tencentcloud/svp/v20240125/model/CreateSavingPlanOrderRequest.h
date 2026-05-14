@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域编码
-                     * @return RegionId 地域编码
+                     * 获取<p>地域编码</p>
+                     * @return RegionId <p>地域编码</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域编码
-                     * @param _regionId 地域编码
+                     * 设置<p>地域编码</p>
+                     * @param _regionId <p>地域编码</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取区域编码
-                     * @return ZoneId 区域编码
+                     * 获取<p>区域编码</p>
+                     * @return ZoneId <p>区域编码</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置区域编码
-                     * @param _zoneId 区域编码
+                     * 设置<p>区域编码</p>
+                     * @param _zoneId <p>区域编码</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费类型
-                     * @return PrePayType 预付费类型
+                     * 获取<p>预付费类型</p><p>枚举值：</p><ul><li>1： 全预费</li><li>2： 部分预付</li><li>3： 不预付</li></ul>
+                     * @return PrePayType <p>预付费类型</p><p>枚举值：</p><ul><li>1： 全预费</li><li>2： 部分预付</li><li>3： 不预付</li></ul>
                      * 
                      */
                     std::string GetPrePayType() const;
 
                     /**
-                     * 设置预付费类型
-                     * @param _prePayType 预付费类型
+                     * 设置<p>预付费类型</p><p>枚举值：</p><ul><li>1： 全预费</li><li>2： 部分预付</li><li>3： 不预付</li></ul>
+                     * @param _prePayType <p>预付费类型</p><p>枚举值：</p><ul><li>1： 全预费</li><li>2： 部分预付</li><li>3： 不预付</li></ul>
                      * 
                      */
                     void SetPrePayType(const std::string& _prePayType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PrePayTypeHasBeenSet() const;
 
                     /**
-                     * 获取时长
-                     * @return TimeSpan 时长
+                     * 获取<p>时长</p>
+                     * @return TimeSpan <p>时长</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置时长
-                     * @param _timeSpan 时长
+                     * 设置<p>时长</p>
+                     * @param _timeSpan <p>时长</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取时长单位
-                     * @return TimeUnit 时长单位
+                     * 获取<p>时长单位</p>
+                     * @return TimeUnit <p>时长单位</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时长单位
-                     * @param _timeUnit 时长单位
+                     * 设置<p>时长单位</p>
+                     * @param _timeUnit <p>时长单位</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取商品唯一标识
-                     * @return CommodityCode 商品唯一标识
+                     * 获取<p>商品唯一标识</p>
+                     * @return CommodityCode <p>商品唯一标识</p>
                      * 
                      */
                     std::string GetCommodityCode() const;
 
                     /**
-                     * 设置商品唯一标识
-                     * @param _commodityCode 商品唯一标识
+                     * 设置<p>商品唯一标识</p>
+                     * @param _commodityCode <p>商品唯一标识</p>
                      * 
                      */
                     void SetCommodityCode(const std::string& _commodityCode);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CommodityCodeHasBeenSet() const;
 
                     /**
-                     * 获取承诺时长内的小额金额（单位：元）
-                     * @return PromiseUseAmount 承诺时长内的小额金额（单位：元）
+                     * 获取<p>承诺时长内的小额金额（单位：元）</p>
+                     * @return PromiseUseAmount <p>承诺时长内的小额金额（单位：元）</p>
                      * 
                      */
                     int64_t GetPromiseUseAmount() const;
 
                     /**
-                     * 设置承诺时长内的小额金额（单位：元）
-                     * @param _promiseUseAmount 承诺时长内的小额金额（单位：元）
+                     * 设置<p>承诺时长内的小额金额（单位：元）</p>
+                     * @param _promiseUseAmount <p>承诺时长内的小额金额（单位：元）</p>
                      * 
                      */
                     void SetPromiseUseAmount(const int64_t& _promiseUseAmount);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PromiseUseAmountHasBeenSet() const;
 
                     /**
-                     * 获取节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:"2023-10-01 00:00:00"，仅支持指定日期的0点时刻
-                     * @return SpecifyEffectTime 节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:"2023-10-01 00:00:00"，仅支持指定日期的0点时刻
+                     * 获取<p>节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:&quot;2023-10-01 00:00:00&quot;，仅支持指定日期的0点时刻</p>
+                     * @return SpecifyEffectTime <p>节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:&quot;2023-10-01 00:00:00&quot;，仅支持指定日期的0点时刻</p>
                      * 
                      */
                     std::string GetSpecifyEffectTime() const;
 
                     /**
-                     * 设置节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:"2023-10-01 00:00:00"，仅支持指定日期的0点时刻
-                     * @param _specifyEffectTime 节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:"2023-10-01 00:00:00"，仅支持指定日期的0点时刻
+                     * 设置<p>节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:&quot;2023-10-01 00:00:00&quot;，仅支持指定日期的0点时刻</p>
+                     * @param _specifyEffectTime <p>节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:&quot;2023-10-01 00:00:00&quot;，仅支持指定日期的0点时刻</p>
                      * 
                      */
                     void SetSpecifyEffectTime(const std::string& _specifyEffectTime);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SpecifyEffectTimeHasBeenSet() const;
 
                     /**
-                     * 获取可重入ID
-                     * @return ClientToken 可重入ID
+                     * 获取<p>可重入ID</p>
+                     * @return ClientToken <p>可重入ID</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置可重入ID
-                     * @param _clientToken 可重入ID
+                     * 设置<p>可重入ID</p>
+                     * @param _clientToken <p>可重入ID</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -231,61 +231,88 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节省计划结算类型</p><p>枚举值：</p><ul><li>1： 小时结算包</li><li>2： 日结算包</li><li>3： 月结算包</li></ul><p>默认值：1</p><p>不填写是默认是小时结算包</p>
+                     * @return CommitmentPeriod <p>节省计划结算类型</p><p>枚举值：</p><ul><li>1： 小时结算包</li><li>2： 日结算包</li><li>3： 月结算包</li></ul><p>默认值：1</p><p>不填写是默认是小时结算包</p>
+                     * 
+                     */
+                    int64_t GetCommitmentPeriod() const;
+
+                    /**
+                     * 设置<p>节省计划结算类型</p><p>枚举值：</p><ul><li>1： 小时结算包</li><li>2： 日结算包</li><li>3： 月结算包</li></ul><p>默认值：1</p><p>不填写是默认是小时结算包</p>
+                     * @param _commitmentPeriod <p>节省计划结算类型</p><p>枚举值：</p><ul><li>1： 小时结算包</li><li>2： 日结算包</li><li>3： 月结算包</li></ul><p>默认值：1</p><p>不填写是默认是小时结算包</p>
+                     * 
+                     */
+                    void SetCommitmentPeriod(const int64_t& _commitmentPeriod);
+
+                    /**
+                     * 判断参数 CommitmentPeriod 是否已赋值
+                     * @return CommitmentPeriod 是否已赋值
+                     * 
+                     */
+                    bool CommitmentPeriodHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 地域编码
+                     * <p>地域编码</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 区域编码
+                     * <p>区域编码</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 预付费类型
+                     * <p>预付费类型</p><p>枚举值：</p><ul><li>1： 全预费</li><li>2： 部分预付</li><li>3： 不预付</li></ul>
                      */
                     std::string m_prePayType;
                     bool m_prePayTypeHasBeenSet;
 
                     /**
-                     * 时长
+                     * <p>时长</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 时长单位
+                     * <p>时长单位</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 商品唯一标识
+                     * <p>商品唯一标识</p>
                      */
                     std::string m_commodityCode;
                     bool m_commodityCodeHasBeenSet;
 
                     /**
-                     * 承诺时长内的小额金额（单位：元）
+                     * <p>承诺时长内的小额金额（单位：元）</p>
                      */
                     int64_t m_promiseUseAmount;
                     bool m_promiseUseAmountHasBeenSet;
 
                     /**
-                     * 节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:"2023-10-01 00:00:00"，仅支持指定日期的0点时刻
+                     * <p>节省计划的指定生效时间，若不传则为当前下单时间。传参数格式:&quot;2023-10-01 00:00:00&quot;，仅支持指定日期的0点时刻</p>
                      */
                     std::string m_specifyEffectTime;
                     bool m_specifyEffectTimeHasBeenSet;
 
                     /**
-                     * 可重入ID
+                     * <p>可重入ID</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * <p>节省计划结算类型</p><p>枚举值：</p><ul><li>1： 小时结算包</li><li>2： 日结算包</li><li>3： 月结算包</li></ul><p>默认值：1</p><p>不填写是默认是小时结算包</p>
+                     */
+                    int64_t m_commitmentPeriod;
+                    bool m_commitmentPeriodHasBeenSet;
 
                 };
             }

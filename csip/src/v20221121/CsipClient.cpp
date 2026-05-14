@@ -6390,6 +6390,56 @@ CsipClient::DescribeSearchBugInfoOutcomeCallable CsipClient::DescribeSearchBugIn
     return prom->get_future();
 }
 
+CsipClient::DescribeSkillScanPayInfoOutcome CsipClient::DescribeSkillScanPayInfo(const DescribeSkillScanPayInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillScanPayInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillScanPayInfoResponse rsp = DescribeSkillScanPayInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillScanPayInfoOutcome(rsp);
+        else
+            return DescribeSkillScanPayInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillScanPayInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSkillScanPayInfoAsync(const DescribeSkillScanPayInfoRequest& request, const DescribeSkillScanPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillScanPayInfoRequest&;
+    using Resp = DescribeSkillScanPayInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillScanPayInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeSkillScanPayInfoOutcomeCallable CsipClient::DescribeSkillScanPayInfoCallable(const DescribeSkillScanPayInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillScanPayInfoOutcome>>();
+    DescribeSkillScanPayInfoAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeSkillScanPayInfoRequest&,
+        DescribeSkillScanPayInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeSkillScanResultOutcome CsipClient::DescribeSkillScanResult(const DescribeSkillScanResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSkillScanResult");

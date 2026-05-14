@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取更新之后的用户信息
-                     * @return User 更新之后的用户信息
+                     * 获取<p>更新之后的用户信息</p>
+                     * @return User <p>更新之后的用户信息</p>
                      * 
                      */
                     User GetUser() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 更新之后的用户信息
+                     * <p>更新之后的用户信息</p>
                      */
                     User m_user;
                     bool m_userHasBeenSet;

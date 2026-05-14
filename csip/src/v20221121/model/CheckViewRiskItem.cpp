@@ -35,7 +35,8 @@ CheckViewRiskItem::CheckViewRiskItem() :
     m_assetTypeHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_classifyHasBeenSet(false),
-    m_standardTermsHasBeenSet(false)
+    m_standardTermsHasBeenSet(false),
+    m_assetTypeIconURLHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome CheckViewRiskItem::Deserialize(const rapidjson::Value &value
         m_standardTermsHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetTypeIconURL") && !value["AssetTypeIconURL"].IsNull())
+    {
+        if (!value["AssetTypeIconURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CheckViewRiskItem.AssetTypeIconURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetTypeIconURL = string(value["AssetTypeIconURL"].GetString());
+        m_assetTypeIconURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void CheckViewRiskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_assetTypeIconURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypeIconURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetTypeIconURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void CheckViewRiskItem::SetStandardTerms(const vector<StandardTerm>& _standardTe
 bool CheckViewRiskItem::StandardTermsHasBeenSet() const
 {
     return m_standardTermsHasBeenSet;
+}
+
+string CheckViewRiskItem::GetAssetTypeIconURL() const
+{
+    return m_assetTypeIconURL;
+}
+
+void CheckViewRiskItem::SetAssetTypeIconURL(const string& _assetTypeIconURL)
+{
+    m_assetTypeIconURL = _assetTypeIconURL;
+    m_assetTypeIconURLHasBeenSet = true;
+}
+
+bool CheckViewRiskItem::AssetTypeIconURLHasBeenSet() const
+{
+    return m_assetTypeIconURLHasBeenSet;
 }
 

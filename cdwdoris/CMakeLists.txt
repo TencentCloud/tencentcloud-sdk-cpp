@@ -36,6 +36,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DeleteWorkloadGroupRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/WorkloadGroupConfig.h
+  include/tencentcloud/cdwdoris/v20211228/model/BackupScheduleInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstancesResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/CosSourceInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/ReduceInstanceResponse.h
@@ -204,6 +205,7 @@ set(cdwdoris_src
   src/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.cpp
   src/v20211228/model/DeleteWorkloadGroupRequest.cpp
   src/v20211228/model/WorkloadGroupConfig.cpp
+  src/v20211228/model/BackupScheduleInfo.cpp
   src/v20211228/model/DescribeInstancesResponse.cpp
   src/v20211228/model/CosSourceInfo.cpp
   src/v20211228/model/ReduceInstanceResponse.cpp

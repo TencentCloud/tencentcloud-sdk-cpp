@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回工作流ID
+                     * 获取<p>返回工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 返回工作流ID
+                     * @return Data <p>返回工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回工作流ID
+                     * <p>返回工作流ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateTriggerWorkflowResult m_data;

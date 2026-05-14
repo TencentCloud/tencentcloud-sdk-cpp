@@ -24,6 +24,13 @@ using namespace std;
 
 DescribeBackUpSchedulesRequest::DescribeBackUpSchedulesRequest() :
     m_applicationTypeHasBeenSet(false),
+    m_usersFiltersHasBeenSet(false),
+    m_typeFiltersHasBeenSet(false),
+    m_statusFiltersHasBeenSet(false),
+    m_orderTypeHasBeenSet(false),
+    m_scheduleNameFiltersHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_pageNumHasBeenSet(false),
     m_encryptionFiltersHasBeenSet(false),
     m_scheduleIdHasBeenSet(false)
 {
@@ -42,6 +49,77 @@ string DescribeBackUpSchedulesRequest::ToJsonString() const
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_applicationType, allocator);
+    }
+
+    if (m_usersFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsersFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_usersFilters.begin(); itr != m_usersFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_typeFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeFilters.begin(); itr != m_typeFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_statusFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusFilters.begin(); itr != m_statusFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleNameFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleNameFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleNameFilters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_pageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNum, allocator);
     }
 
     if (m_encryptionFiltersHasBeenSet)
@@ -87,6 +165,118 @@ void DescribeBackUpSchedulesRequest::SetApplicationType(const int64_t& _applicat
 bool DescribeBackUpSchedulesRequest::ApplicationTypeHasBeenSet() const
 {
     return m_applicationTypeHasBeenSet;
+}
+
+vector<string> DescribeBackUpSchedulesRequest::GetUsersFilters() const
+{
+    return m_usersFilters;
+}
+
+void DescribeBackUpSchedulesRequest::SetUsersFilters(const vector<string>& _usersFilters)
+{
+    m_usersFilters = _usersFilters;
+    m_usersFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::UsersFiltersHasBeenSet() const
+{
+    return m_usersFiltersHasBeenSet;
+}
+
+vector<int64_t> DescribeBackUpSchedulesRequest::GetTypeFilters() const
+{
+    return m_typeFilters;
+}
+
+void DescribeBackUpSchedulesRequest::SetTypeFilters(const vector<int64_t>& _typeFilters)
+{
+    m_typeFilters = _typeFilters;
+    m_typeFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::TypeFiltersHasBeenSet() const
+{
+    return m_typeFiltersHasBeenSet;
+}
+
+vector<int64_t> DescribeBackUpSchedulesRequest::GetStatusFilters() const
+{
+    return m_statusFilters;
+}
+
+void DescribeBackUpSchedulesRequest::SetStatusFilters(const vector<int64_t>& _statusFilters)
+{
+    m_statusFilters = _statusFilters;
+    m_statusFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::StatusFiltersHasBeenSet() const
+{
+    return m_statusFiltersHasBeenSet;
+}
+
+string DescribeBackUpSchedulesRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeBackUpSchedulesRequest::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
+}
+
+string DescribeBackUpSchedulesRequest::GetScheduleNameFilters() const
+{
+    return m_scheduleNameFilters;
+}
+
+void DescribeBackUpSchedulesRequest::SetScheduleNameFilters(const string& _scheduleNameFilters)
+{
+    m_scheduleNameFilters = _scheduleNameFilters;
+    m_scheduleNameFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::ScheduleNameFiltersHasBeenSet() const
+{
+    return m_scheduleNameFiltersHasBeenSet;
+}
+
+int64_t DescribeBackUpSchedulesRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeBackUpSchedulesRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+int64_t DescribeBackUpSchedulesRequest::GetPageNum() const
+{
+    return m_pageNum;
+}
+
+void DescribeBackUpSchedulesRequest::SetPageNum(const int64_t& _pageNum)
+{
+    m_pageNum = _pageNum;
+    m_pageNumHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::PageNumHasBeenSet() const
+{
+    return m_pageNumHasBeenSet;
 }
 
 vector<int64_t> DescribeBackUpSchedulesRequest::GetEncryptionFilters() const

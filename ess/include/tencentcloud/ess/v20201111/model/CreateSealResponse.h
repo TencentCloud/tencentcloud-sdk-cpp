@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子印章ID，为32位字符串。
-建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
-可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
-                     * @return SealId 电子印章ID，为32位字符串。
-建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
-可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
+                     * 获取<p>电子印章ID，为32位字符串。<br>建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。<br>可登录腾讯电子签控制台，在 &quot;印章&quot;-&gt;&quot;印章中心&quot;选择查看的印章，在&quot;印章详情&quot; 中查看某个印章的SealId(在页面中展示为印章ID)。</p>
+                     * @return SealId <p>电子印章ID，为32位字符串。<br>建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。<br>可登录腾讯电子签控制台，在 &quot;印章&quot;-&gt;&quot;印章中心&quot;选择查看的印章，在&quot;印章详情&quot; 中查看某个印章的SealId(在页面中展示为印章ID)。</p>
                      * 
                      */
                     std::string GetSealId() const;
@@ -62,8 +58,8 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
-                     * @return SealOperatorVerifyPath 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * 获取<p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
+                     * @return SealOperatorVerifyPath <p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
                      * 
                      */
                     std::string GetSealOperatorVerifyPath() const;
@@ -76,8 +72,8 @@ namespace TencentCloud
                     bool SealOperatorVerifyPathHasBeenSet() const;
 
                     /**
-                     * 获取人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
-                     * @return SealOperatorVerifyQrcodeUrl 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * 获取<p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
+                     * @return SealOperatorVerifyQrcodeUrl <p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
                      * 
                      */
                     std::string GetSealOperatorVerifyQrcodeUrl() const;
@@ -89,27 +85,65 @@ namespace TencentCloud
                      */
                     bool SealOperatorVerifyQrcodeUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果图片链接。</p>
+                     * @return PreviewFileUrl <p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果图片链接。</p>
+                     * 
+                     */
+                    std::string GetPreviewFileUrl() const;
+
+                    /**
+                     * 判断参数 PreviewFileUrl 是否已赋值
+                     * @return PreviewFileUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewFileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果PDF文件链接。</p>
+                     * @return PreviewPdfUrl <p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果PDF文件链接。</p>
+                     * 
+                     */
+                    std::string GetPreviewPdfUrl() const;
+
+                    /**
+                     * 判断参数 PreviewPdfUrl 是否已赋值
+                     * @return PreviewPdfUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewPdfUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 电子印章ID，为32位字符串。
-建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。
-可登录腾讯电子签控制台，在 "印章"->"印章中心"选择查看的印章，在"印章详情" 中查看某个印章的SealId(在页面中展示为印章ID)。
+                     * <p>电子印章ID，为32位字符串。<br>建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。<br>可登录腾讯电子签控制台，在 &quot;印章&quot;-&gt;&quot;印章中心&quot;选择查看的印章，在&quot;印章详情&quot; 中查看某个印章的SealId(在页面中展示为印章ID)。</p>
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 人脸验证操作人链接，用法可以参考"[跳转电子签小程序配置](https://qian.tencent.com/developers/company/openwxminiprogram/)"，默认为空。
+                     * <p>人脸验证操作人链接，用法可以参考&quot;<a href="https://qian.tencent.com/developers/company/openwxminiprogram/">跳转电子签小程序配置</a>&quot;，默认为空。</p>
                      */
                     std::string m_sealOperatorVerifyPath;
                     bool m_sealOperatorVerifyPathHasBeenSet;
 
                     /**
-                     * 人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。
+                     * <p>人脸验证操作人二维码链接，扫码后会跳转到腾讯电子签小程序进行人脸验证，默认为空。</p>
                      */
                     std::string m_sealOperatorVerifyQrcodeUrl;
                     bool m_sealOperatorVerifyQrcodeUrlHasBeenSet;
+
+                    /**
+                     * <p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果图片链接。</p>
+                     */
+                    std::string m_previewFileUrl;
+                    bool m_previewFileUrlHasBeenSet;
+
+                    /**
+                     * <p>创建印章预览逻辑，返回的是印章加盖在示例文件上的效果PDF文件链接。</p>
+                     */
+                    std::string m_previewPdfUrl;
+                    bool m_previewPdfUrlHasBeenSet;
 
                 };
             }

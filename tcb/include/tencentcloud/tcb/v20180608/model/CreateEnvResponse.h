@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自动生成的环境ID
-                     * @return EnvId 自动生成的环境ID
+                     * 获取<p>自动生成的环境ID</p>
+                     * @return EnvId <p>自动生成的环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自动生成的环境ID
+                     * <p>自动生成的环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

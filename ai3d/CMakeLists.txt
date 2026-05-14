@@ -31,6 +31,8 @@ set(ai3d_public_header_model
   include/tencentcloud/ai3d/v20250513/model/DescribeReduceFaceJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitAutoRiggingJobResponse.h
+  include/tencentcloud/ai3d/v20250513/model/DescribeAutoRiggingJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/File3D.h
   include/tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobRequest.h
@@ -41,6 +43,7 @@ set(ai3d_public_header_model
   include/tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DMotionJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitAutoRiggingJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DMotionJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobResponse.h
@@ -56,6 +59,7 @@ set(ai3d_public_header_model
   include/tencentcloud/ai3d/v20250513/model/Image.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DProJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuan3DPartJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/DescribeAutoRiggingJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobRequest.h
   )
 
@@ -73,6 +77,8 @@ set(ai3d_src
   src/v20250513/model/DescribeReduceFaceJobRequest.cpp
   src/v20250513/model/DescribeHunyuanTo3DMotionJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.cpp
+  src/v20250513/model/SubmitAutoRiggingJobResponse.cpp
+  src/v20250513/model/DescribeAutoRiggingJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DUVJobRequest.cpp
   src/v20250513/model/File3D.cpp
   src/v20250513/model/SubmitProfileTo3DJobRequest.cpp
@@ -83,6 +89,7 @@ set(ai3d_src
   src/v20250513/model/SubmitProfileTo3DJobResponse.cpp
   src/v20250513/model/DescribeHunyuanTo3DMotionJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.cpp
+  src/v20250513/model/SubmitAutoRiggingJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DMotionJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DUVJobResponse.cpp
   src/v20250513/model/SubmitHunyuan3DPartJobResponse.cpp
@@ -98,6 +105,7 @@ set(ai3d_src
   src/v20250513/model/Image.cpp
   src/v20250513/model/QueryHunyuanTo3DProJobResponse.cpp
   src/v20250513/model/QueryHunyuan3DPartJobRequest.cpp
+  src/v20250513/model/DescribeAutoRiggingJobRequest.cpp
   src/v20250513/model/QueryHunyuanTo3DRapidJobRequest.cpp
   )
 

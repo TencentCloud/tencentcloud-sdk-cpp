@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
+                     * 获取<p>用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserName 用户名
+                     * @return UserName <p>用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
+                     * 设置<p>用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userName 用户名
+                     * @param _userName <p>用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,18 +94,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号
+                     * 获取<p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhoneNumber 手机号
+                     * @return PhoneNumber <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号
+                     * 设置<p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phoneNumber 手机号
+                     * @param _phoneNumber <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取邮箱
+                     * 获取<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Email 邮箱
+                     * @return Email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱
+                     * 设置<p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _email 邮箱
+                     * @param _email <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,18 +144,18 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取上次登录时间
+                     * 获取<p>上次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastSignOn 上次登录时间
+                     * @return LastSignOn <p>上次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastSignOn() const;
 
                     /**
-                     * 设置上次登录时间
+                     * 设置<p>上次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastSignOn 上次登录时间
+                     * @param _lastSignOn <p>上次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LastSignOnHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedDate 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedDate <p>创建时间</p>
                      * 
                      */
                     int64_t GetCreatedDate() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdDate 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdDate <p>创建时间</p>
                      * 
                      */
                     void SetCreatedDate(const int64_t& _createdDate);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool CreatedDateHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取用户来源
-                     * @return UserDataSourceEnum 用户来源
+                     * 获取<p>用户来源</p>
+                     * @return UserDataSourceEnum <p>用户来源</p>
                      * 
                      */
                     std::string GetUserDataSourceEnum() const;
 
                     /**
-                     * 设置用户来源
-                     * @param _userDataSourceEnum 用户来源
+                     * 设置<p>用户来源</p>
+                     * @param _userDataSourceEnum <p>用户来源</p>
                      * 
                      */
                     void SetUserDataSourceEnum(const std::string& _userDataSourceEnum);
@@ -232,18 +232,18 @@ namespace TencentCloud
                     bool UserDataSourceEnumHasBeenSet() const;
 
                     /**
-                     * 获取昵称
+                     * 获取<p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nickname 昵称
+                     * @return Nickname <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置昵称
+                     * 设置<p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nickname 昵称
+                     * @param _nickname <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -257,18 +257,18 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取地址
+                     * 获取<p>地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Address 地址
+                     * @return Address <p>地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
-                     * 设置地址
+                     * 设置<p>地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _address 地址
+                     * @param _address <p>地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,18 +282,18 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取生日
+                     * 获取<p>生日</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Birthdate 生日
+                     * @return Birthdate <p>生日</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBirthdate() const;
 
                     /**
-                     * 设置生日
+                     * 设置<p>生日</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _birthdate 生日
+                     * @param _birthdate <p>生日</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -307,18 +307,18 @@ namespace TencentCloud
                     bool BirthdateHasBeenSet() const;
 
                     /**
-                     * 获取用户组ID
+                     * 获取<p>用户组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserGroups 用户组ID
+                     * @return UserGroups <p>用户组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserGroups() const;
 
                     /**
-                     * 设置用户组ID
+                     * 设置<p>用户组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userGroups 用户组ID
+                     * @param _userGroups <p>用户组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -332,18 +332,43 @@ namespace TencentCloud
                     bool UserGroupsHasBeenSet() const;
 
                     /**
-                     * 获取上次修改时间
+                     * 获取<p>用户组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifiedDate 上次修改时间
+                     * @return UserGroupNames <p>用户组名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetUserGroupNames() const;
+
+                    /**
+                     * 设置<p>用户组名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userGroupNames <p>用户组名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserGroupNames(const std::vector<std::string>& _userGroupNames);
+
+                    /**
+                     * 判断参数 UserGroupNames 是否已赋值
+                     * @return UserGroupNames 是否已赋值
+                     * 
+                     */
+                    bool UserGroupNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>上次修改时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastModifiedDate <p>上次修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastModifiedDate() const;
 
                     /**
-                     * 设置上次修改时间
+                     * 设置<p>上次修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastModifiedDate 上次修改时间
+                     * @param _lastModifiedDate <p>上次修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -357,15 +382,15 @@ namespace TencentCloud
                     bool LastModifiedDateHasBeenSet() const;
 
                     /**
-                     * 获取自定义属性
-                     * @return CustomAttributes 自定义属性
+                     * 获取<p>自定义属性</p>
+                     * @return CustomAttributes <p>自定义属性</p>
                      * 
                      */
                     std::vector<MemberMap> GetCustomAttributes() const;
 
                     /**
-                     * 设置自定义属性
-                     * @param _customAttributes 自定义属性
+                     * 设置<p>自定义属性</p>
+                     * @param _customAttributes <p>自定义属性</p>
                      * 
                      */
                     void SetCustomAttributes(const std::vector<MemberMap>& _customAttributes);
@@ -378,18 +403,18 @@ namespace TencentCloud
                     bool CustomAttributesHasBeenSet() const;
 
                     /**
-                     * 获取身份证号
+                     * 获取<p>身份证号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResidentIdentityCard 身份证号
+                     * @return ResidentIdentityCard <p>身份证号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResidentIdentityCard() const;
 
                     /**
-                     * 设置身份证号
+                     * 设置<p>身份证号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _residentIdentityCard 身份证号
+                     * @param _residentIdentityCard <p>身份证号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -403,18 +428,18 @@ namespace TencentCloud
                     bool ResidentIdentityCardHasBeenSet() const;
 
                     /**
-                     * 获取QQ的OpenId
+                     * 获取<p>QQ的OpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QqOpenId QQ的OpenId
+                     * @return QqOpenId <p>QQ的OpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQqOpenId() const;
 
                     /**
-                     * 设置QQ的OpenId
+                     * 设置<p>QQ的OpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qqOpenId QQ的OpenId
+                     * @param _qqOpenId <p>QQ的OpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -428,18 +453,18 @@ namespace TencentCloud
                     bool QqOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取QQ的UnionId
+                     * 获取<p>QQ的UnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QqUnionId QQ的UnionId
+                     * @return QqUnionId <p>QQ的UnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQqUnionId() const;
 
                     /**
-                     * 设置QQ的UnionId
+                     * 设置<p>QQ的UnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qqUnionId QQ的UnionId
+                     * @param _qqUnionId <p>QQ的UnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -453,18 +478,18 @@ namespace TencentCloud
                     bool QqUnionIdHasBeenSet() const;
 
                     /**
-                     * 获取微信的WechatOpenId
+                     * 获取<p>微信的WechatOpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatOpenId 微信的WechatOpenId
+                     * @return WechatOpenId <p>微信的WechatOpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWechatOpenId() const;
 
                     /**
-                     * 设置微信的WechatOpenId
+                     * 设置<p>微信的WechatOpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wechatOpenId 微信的WechatOpenId
+                     * @param _wechatOpenId <p>微信的WechatOpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -478,18 +503,18 @@ namespace TencentCloud
                     bool WechatOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取微信的WechatUnionId
+                     * 获取<p>微信的WechatUnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatUnionId 微信的WechatUnionId
+                     * @return WechatUnionId <p>微信的WechatUnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWechatUnionId() const;
 
                     /**
-                     * 设置微信的WechatUnionId
+                     * 设置<p>微信的WechatUnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wechatUnionId 微信的WechatUnionId
+                     * @param _wechatUnionId <p>微信的WechatUnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -503,18 +528,18 @@ namespace TencentCloud
                     bool WechatUnionIdHasBeenSet() const;
 
                     /**
-                     * 获取支付宝的AlipayUserId
+                     * 获取<p>支付宝的AlipayUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlipayUserId 支付宝的AlipayUserId
+                     * @return AlipayUserId <p>支付宝的AlipayUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlipayUserId() const;
 
                     /**
-                     * 设置支付宝的AlipayUserId
+                     * 设置<p>支付宝的AlipayUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alipayUserId 支付宝的AlipayUserId
+                     * @param _alipayUserId <p>支付宝的AlipayUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -528,18 +553,18 @@ namespace TencentCloud
                     bool AlipayUserIdHasBeenSet() const;
 
                     /**
-                     * 获取企业微信的WeComUserId
+                     * 获取<p>企业微信的WeComUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WeComUserId 企业微信的WeComUserId
+                     * @return WeComUserId <p>企业微信的WeComUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeComUserId() const;
 
                     /**
-                     * 设置企业微信的WeComUserId
+                     * 设置<p>企业微信的WeComUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weComUserId 企业微信的WeComUserId
+                     * @param _weComUserId <p>企业微信的WeComUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -553,18 +578,18 @@ namespace TencentCloud
                     bool WeComUserIdHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -578,18 +603,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取姓名
+                     * 获取<p>姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 姓名
+                     * @return Name <p>姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名
+                     * 设置<p>姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 姓名
+                     * @param _name <p>姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -603,18 +628,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取坐标
+                     * 获取<p>坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Locale 坐标
+                     * @return Locale <p>坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocale() const;
 
                     /**
-                     * 设置坐标
+                     * 设置<p>坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _locale 坐标
+                     * @param _locale <p>坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -628,18 +653,18 @@ namespace TencentCloud
                     bool LocaleHasBeenSet() const;
 
                     /**
-                     * 获取性别
+                     * 获取<p>性别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gender 性别
+                     * @return Gender <p>性别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGender() const;
 
                     /**
-                     * 设置性别
+                     * 设置<p>性别</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gender 性别
+                     * @param _gender <p>性别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -653,18 +678,18 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取实名核验方式
+                     * 获取<p>实名核验方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentityVerificationMethod 实名核验方式
+                     * @return IdentityVerificationMethod <p>实名核验方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentityVerificationMethod() const;
 
                     /**
-                     * 设置实名核验方式
+                     * 设置<p>实名核验方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _identityVerificationMethod 实名核验方式
+                     * @param _identityVerificationMethod <p>实名核验方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -678,15 +703,15 @@ namespace TencentCloud
                     bool IdentityVerificationMethodHasBeenSet() const;
 
                     /**
-                     * 获取是否已经实名核验
-                     * @return IdentityVerified 是否已经实名核验
+                     * 获取<p>是否已经实名核验</p>
+                     * @return IdentityVerified <p>是否已经实名核验</p>
                      * 
                      */
                     bool GetIdentityVerified() const;
 
                     /**
-                     * 设置是否已经实名核验
-                     * @param _identityVerified 是否已经实名核验
+                     * 设置<p>是否已经实名核验</p>
+                     * @param _identityVerified <p>是否已经实名核验</p>
                      * 
                      */
                     void SetIdentityVerified(const bool& _identityVerified);
@@ -699,18 +724,18 @@ namespace TencentCloud
                     bool IdentityVerifiedHasBeenSet() const;
 
                     /**
-                     * 获取工作
+                     * 获取<p>工作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Job 工作
+                     * @return Job <p>工作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJob() const;
 
                     /**
-                     * 设置工作
+                     * 设置<p>工作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _job 工作
+                     * @param _job <p>工作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -724,18 +749,18 @@ namespace TencentCloud
                     bool JobHasBeenSet() const;
 
                     /**
-                     * 获取国家
+                     * 获取<p>国家</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nationality 国家
+                     * @return Nationality <p>国家</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNationality() const;
 
                     /**
-                     * 设置国家
+                     * 设置<p>国家</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nationality 国家
+                     * @param _nationality <p>国家</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -749,15 +774,15 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取是否主账号（进行过账号融合后，主账号为true，从账号为false）
-                     * @return Primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
+                     * 获取<p>是否主账号（进行过账号融合后，主账号为true，从账号为false）</p>
+                     * @return Primary <p>是否主账号（进行过账号融合后，主账号为true，从账号为false）</p>
                      * 
                      */
                     bool GetPrimary() const;
 
                     /**
-                     * 设置是否主账号（进行过账号融合后，主账号为true，从账号为false）
-                     * @param _primary 是否主账号（进行过账号融合后，主账号为true，从账号为false）
+                     * 设置<p>是否主账号（进行过账号融合后，主账号为true，从账号为false）</p>
+                     * @param _primary <p>是否主账号（进行过账号融合后，主账号为true，从账号为false）</p>
                      * 
                      */
                     void SetPrimary(const bool& _primary);
@@ -770,18 +795,18 @@ namespace TencentCloud
                     bool PrimaryHasBeenSet() const;
 
                     /**
-                     * 获取时区
+                     * 获取<p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zone 时区
+                     * @return Zone <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置时区
+                     * 设置<p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zone 时区
+                     * @param _zone <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -795,15 +820,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否已经首次登录
-                     * @return AlreadyFirstLogin 是否已经首次登录
+                     * 获取<p>是否已经首次登录</p>
+                     * @return AlreadyFirstLogin <p>是否已经首次登录</p>
                      * 
                      */
                     bool GetAlreadyFirstLogin() const;
 
                     /**
-                     * 设置是否已经首次登录
-                     * @param _alreadyFirstLogin 是否已经首次登录
+                     * 设置<p>是否已经首次登录</p>
+                     * @param _alreadyFirstLogin <p>是否已经首次登录</p>
                      * 
                      */
                     void SetAlreadyFirstLogin(const bool& _alreadyFirstLogin);
@@ -816,15 +841,15 @@ namespace TencentCloud
                     bool AlreadyFirstLoginHasBeenSet() const;
 
                     /**
-                     * 获取租户id
-                     * @return TenantId 租户id
+                     * 获取<p>租户id</p>
+                     * @return TenantId <p>租户id</p>
                      * 
                      */
                     std::string GetTenantId() const;
 
                     /**
-                     * 设置租户id
-                     * @param _tenantId 租户id
+                     * 设置<p>租户id</p>
+                     * @param _tenantId <p>租户id</p>
                      * 
                      */
                     void SetTenantId(const std::string& _tenantId);
@@ -837,15 +862,15 @@ namespace TencentCloud
                     bool TenantIdHasBeenSet() const;
 
                     /**
-                     * 获取用户目录id
-                     * @return UserStoreId 用户目录id
+                     * 获取<p>用户目录id</p>
+                     * @return UserStoreId <p>用户目录id</p>
                      * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
-                     * 设置用户目录id
-                     * @param _userStoreId 用户目录id
+                     * 设置<p>用户目录id</p>
+                     * @param _userStoreId <p>用户目录id</p>
                      * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
@@ -858,18 +883,18 @@ namespace TencentCloud
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
-                     * 获取版本
+                     * 获取<p>版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 版本
+                     * @return Version <p>版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置版本
+                     * 设置<p>版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 版本
+                     * @param _version <p>版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -883,18 +908,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取锁定类型（分为管理员锁定，和登录策略锁定）
+                     * 获取<p>锁定类型（分为管理员锁定，和登录策略锁定）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LockType 锁定类型（分为管理员锁定，和登录策略锁定）
+                     * @return LockType <p>锁定类型（分为管理员锁定，和登录策略锁定）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLockType() const;
 
                     /**
-                     * 设置锁定类型（分为管理员锁定，和登录策略锁定）
+                     * 设置<p>锁定类型（分为管理员锁定，和登录策略锁定）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lockType 锁定类型（分为管理员锁定，和登录策略锁定）
+                     * @param _lockType <p>锁定类型（分为管理员锁定，和登录策略锁定）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -908,18 +933,18 @@ namespace TencentCloud
                     bool LockTypeHasBeenSet() const;
 
                     /**
-                     * 获取锁定时间点
+                     * 获取<p>锁定时间点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LockTime 锁定时间点
+                     * @return LockTime <p>锁定时间点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLockTime() const;
 
                     /**
-                     * 设置锁定时间点
+                     * 设置<p>锁定时间点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lockTime 锁定时间点
+                     * @param _lockTime <p>锁定时间点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -933,18 +958,18 @@ namespace TencentCloud
                     bool LockTimeHasBeenSet() const;
 
                     /**
-                     * 获取索引字段1
+                     * 获取<p>索引字段1</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexedAttribute1 索引字段1
+                     * @return IndexedAttribute1 <p>索引字段1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedAttribute1() const;
 
                     /**
-                     * 设置索引字段1
+                     * 设置<p>索引字段1</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexedAttribute1 索引字段1
+                     * @param _indexedAttribute1 <p>索引字段1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -958,18 +983,18 @@ namespace TencentCloud
                     bool IndexedAttribute1HasBeenSet() const;
 
                     /**
-                     * 获取索引字段2
+                     * 获取<p>索引字段2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexedAttribute2 索引字段2
+                     * @return IndexedAttribute2 <p>索引字段2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedAttribute2() const;
 
                     /**
-                     * 设置索引字段2
+                     * 设置<p>索引字段2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexedAttribute2 索引字段2
+                     * @param _indexedAttribute2 <p>索引字段2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -983,18 +1008,18 @@ namespace TencentCloud
                     bool IndexedAttribute2HasBeenSet() const;
 
                     /**
-                     * 获取索引字段3
+                     * 获取<p>索引字段3</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexedAttribute3 索引字段3
+                     * @return IndexedAttribute3 <p>索引字段3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedAttribute3() const;
 
                     /**
-                     * 设置索引字段3
+                     * 设置<p>索引字段3</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexedAttribute3 索引字段3
+                     * @param _indexedAttribute3 <p>索引字段3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1008,18 +1033,18 @@ namespace TencentCloud
                     bool IndexedAttribute3HasBeenSet() const;
 
                     /**
-                     * 获取索引字段4
+                     * 获取<p>索引字段4</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexedAttribute4 索引字段4
+                     * @return IndexedAttribute4 <p>索引字段4</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedAttribute4() const;
 
                     /**
-                     * 设置索引字段4
+                     * 设置<p>索引字段4</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexedAttribute4 索引字段4
+                     * @param _indexedAttribute4 <p>索引字段4</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1033,18 +1058,18 @@ namespace TencentCloud
                     bool IndexedAttribute4HasBeenSet() const;
 
                     /**
-                     * 获取索引字段5
+                     * 获取<p>索引字段5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexedAttribute5 索引字段5
+                     * @return IndexedAttribute5 <p>索引字段5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedAttribute5() const;
 
                     /**
-                     * 设置索引字段5
+                     * 设置<p>索引字段5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexedAttribute5 索引字段5
+                     * @param _indexedAttribute5 <p>索引字段5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1057,291 +1082,362 @@ namespace TencentCloud
                      */
                     bool IndexedAttribute5HasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户所属组织机构ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserOrgs <p>用户所属组织机构ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetUserOrgs() const;
+
+                    /**
+                     * 设置<p>用户所属组织机构ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userOrgs <p>用户所属组织机构ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserOrgs(const std::vector<std::string>& _userOrgs);
+
+                    /**
+                     * 判断参数 UserOrgs 是否已赋值
+                     * @return UserOrgs 是否已赋值
+                     * 
+                     */
+                    bool UserOrgsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户所属企业微信组织机构</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WeComUserOrgs <p>用户所属企业微信组织机构</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetWeComUserOrgs() const;
+
+                    /**
+                     * 设置<p>用户所属企业微信组织机构</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weComUserOrgs <p>用户所属企业微信组织机构</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeComUserOrgs(const std::vector<int64_t>& _weComUserOrgs);
+
+                    /**
+                     * 判断参数 WeComUserOrgs 是否已赋值
+                     * @return WeComUserOrgs 是否已赋值
+                     * 
+                     */
+                    bool WeComUserOrgsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 手机号
+                     * <p>手机号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
 
                     /**
-                     * 邮箱
+                     * <p>邮箱</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 上次登录时间
+                     * <p>上次登录时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastSignOn;
                     bool m_lastSignOnHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     int64_t m_createdDate;
                     bool m_createdDateHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 用户来源
+                     * <p>用户来源</p>
                      */
                     std::string m_userDataSourceEnum;
                     bool m_userDataSourceEnumHasBeenSet;
 
                     /**
-                     * 昵称
+                     * <p>昵称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 地址
+                     * <p>地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 生日
+                     * <p>生日</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_birthdate;
                     bool m_birthdateHasBeenSet;
 
                     /**
-                     * 用户组ID
+                     * <p>用户组ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userGroups;
                     bool m_userGroupsHasBeenSet;
 
                     /**
-                     * 上次修改时间
+                     * <p>用户组名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_userGroupNames;
+                    bool m_userGroupNamesHasBeenSet;
+
+                    /**
+                     * <p>上次修改时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastModifiedDate;
                     bool m_lastModifiedDateHasBeenSet;
 
                     /**
-                     * 自定义属性
+                     * <p>自定义属性</p>
                      */
                     std::vector<MemberMap> m_customAttributes;
                     bool m_customAttributesHasBeenSet;
 
                     /**
-                     * 身份证号
+                     * <p>身份证号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_residentIdentityCard;
                     bool m_residentIdentityCardHasBeenSet;
 
                     /**
-                     * QQ的OpenId
+                     * <p>QQ的OpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qqOpenId;
                     bool m_qqOpenIdHasBeenSet;
 
                     /**
-                     * QQ的UnionId
+                     * <p>QQ的UnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qqUnionId;
                     bool m_qqUnionIdHasBeenSet;
 
                     /**
-                     * 微信的WechatOpenId
+                     * <p>微信的WechatOpenId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wechatOpenId;
                     bool m_wechatOpenIdHasBeenSet;
 
                     /**
-                     * 微信的WechatUnionId
+                     * <p>微信的WechatUnionId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wechatUnionId;
                     bool m_wechatUnionIdHasBeenSet;
 
                     /**
-                     * 支付宝的AlipayUserId
+                     * <p>支付宝的AlipayUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alipayUserId;
                     bool m_alipayUserIdHasBeenSet;
 
                     /**
-                     * 企业微信的WeComUserId
+                     * <p>企业微信的WeComUserId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weComUserId;
                     bool m_weComUserIdHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 姓名
+                     * <p>姓名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 坐标
+                     * <p>坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_locale;
                     bool m_localeHasBeenSet;
 
                     /**
-                     * 性别
+                     * <p>性别</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 实名核验方式
+                     * <p>实名核验方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityVerificationMethod;
                     bool m_identityVerificationMethodHasBeenSet;
 
                     /**
-                     * 是否已经实名核验
+                     * <p>是否已经实名核验</p>
                      */
                     bool m_identityVerified;
                     bool m_identityVerifiedHasBeenSet;
 
                     /**
-                     * 工作
+                     * <p>工作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_job;
                     bool m_jobHasBeenSet;
 
                     /**
-                     * 国家
+                     * <p>国家</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 是否主账号（进行过账号融合后，主账号为true，从账号为false）
+                     * <p>是否主账号（进行过账号融合后，主账号为true，从账号为false）</p>
                      */
                     bool m_primary;
                     bool m_primaryHasBeenSet;
 
                     /**
-                     * 时区
+                     * <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 是否已经首次登录
+                     * <p>是否已经首次登录</p>
                      */
                     bool m_alreadyFirstLogin;
                     bool m_alreadyFirstLoginHasBeenSet;
 
                     /**
-                     * 租户id
+                     * <p>租户id</p>
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
 
                     /**
-                     * 用户目录id
+                     * <p>用户目录id</p>
                      */
                     std::string m_userStoreId;
                     bool m_userStoreIdHasBeenSet;
 
                     /**
-                     * 版本
+                     * <p>版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 锁定类型（分为管理员锁定，和登录策略锁定）
+                     * <p>锁定类型（分为管理员锁定，和登录策略锁定）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lockType;
                     bool m_lockTypeHasBeenSet;
 
                     /**
-                     * 锁定时间点
+                     * <p>锁定时间点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**
-                     * 索引字段1
+                     * <p>索引字段1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedAttribute1;
                     bool m_indexedAttribute1HasBeenSet;
 
                     /**
-                     * 索引字段2
+                     * <p>索引字段2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedAttribute2;
                     bool m_indexedAttribute2HasBeenSet;
 
                     /**
-                     * 索引字段3
+                     * <p>索引字段3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedAttribute3;
                     bool m_indexedAttribute3HasBeenSet;
 
                     /**
-                     * 索引字段4
+                     * <p>索引字段4</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedAttribute4;
                     bool m_indexedAttribute4HasBeenSet;
 
                     /**
-                     * 索引字段5
+                     * <p>索引字段5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedAttribute5;
                     bool m_indexedAttribute5HasBeenSet;
+
+                    /**
+                     * <p>用户所属组织机构ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_userOrgs;
+                    bool m_userOrgsHasBeenSet;
+
+                    /**
+                     * <p>用户所属企业微信组织机构</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_weComUserOrgs;
+                    bool m_weComUserOrgsHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户公网ip（仅支持IPv4）
-                     * @return UserIp 用户公网ip（仅支持IPv4）
+                     * 获取<p>用户公网ip（仅支持IPv4）</p>
+                     * @return UserIp <p>用户公网ip（仅支持IPv4）</p>
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置用户公网ip（仅支持IPv4）
-                     * @param _userIp 用户公网ip（仅支持IPv4）
+                     * 设置<p>用户公网ip（仅支持IPv4）</p>
+                     * @param _userIp <p>用户公网ip（仅支持IPv4）</p>
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取渠道号
-                     * @return Channel 渠道号
+                     * 获取<p>渠道号<br>1：pc<br>2：H5<br>3：app<br>4：ott</p>
+                     * @return Channel <p>渠道号<br>1：pc<br>2：H5<br>3：app<br>4：ott</p>
                      * 
                      */
                     int64_t GetChannel() const;
 
                     /**
-                     * 设置渠道号
-                     * @param _channel 渠道号
+                     * 设置<p>渠道号<br>1：pc<br>2：H5<br>3：app<br>4：ott</p>
+                     * @param _channel <p>渠道号<br>1：pc<br>2：H5<br>3：app<br>4：ott</p>
                      * 
                      */
                     void SetChannel(const int64_t& _channel);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户公网ip（仅支持IPv4）
+                     * <p>用户公网ip（仅支持IPv4）</p>
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 渠道号
+                     * <p>渠道号<br>1：pc<br>2：H5<br>3：app<br>4：ott</p>
                      */
                     int64_t m_channel;
                     bool m_channelHasBeenSet;

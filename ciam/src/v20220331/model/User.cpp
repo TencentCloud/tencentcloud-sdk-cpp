@@ -33,6 +33,7 @@ User::User() :
     m_addressHasBeenSet(false),
     m_birthdateHasBeenSet(false),
     m_userGroupsHasBeenSet(false),
+    m_userGroupNamesHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_customAttributesHasBeenSet(false),
     m_residentIdentityCardHasBeenSet(false),
@@ -62,7 +63,9 @@ User::User() :
     m_indexedAttribute2HasBeenSet(false),
     m_indexedAttribute3HasBeenSet(false),
     m_indexedAttribute4HasBeenSet(false),
-    m_indexedAttribute5HasBeenSet(false)
+    m_indexedAttribute5HasBeenSet(false),
+    m_userOrgsHasBeenSet(false),
+    m_weComUserOrgsHasBeenSet(false)
 {
 }
 
@@ -192,6 +195,19 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
             m_userGroups.push_back((*itr).GetString());
         }
         m_userGroupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserGroupNames") && !value["UserGroupNames"].IsNull())
+    {
+        if (!value["UserGroupNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `User.UserGroupNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserGroupNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_userGroupNames.push_back((*itr).GetString());
+        }
+        m_userGroupNamesHasBeenSet = true;
     }
 
     if (value.HasMember("LastModifiedDate") && !value["LastModifiedDate"].IsNull())
@@ -504,6 +520,32 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_indexedAttribute5HasBeenSet = true;
     }
 
+    if (value.HasMember("UserOrgs") && !value["UserOrgs"].IsNull())
+    {
+        if (!value["UserOrgs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `User.UserOrgs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserOrgs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_userOrgs.push_back((*itr).GetString());
+        }
+        m_userOrgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeComUserOrgs") && !value["WeComUserOrgs"].IsNull())
+    {
+        if (!value["WeComUserOrgs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `User.WeComUserOrgs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WeComUserOrgs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_weComUserOrgs.push_back((*itr).GetInt64());
+        }
+        m_weComUserOrgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -607,6 +649,19 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_userGroups.begin(); itr != m_userGroups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userGroupNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userGroupNames.begin(); itr != m_userGroupNames.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -859,6 +914,32 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_indexedAttribute5.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_userOrgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserOrgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userOrgs.begin(); itr != m_userOrgs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_weComUserOrgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeComUserOrgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_weComUserOrgs.begin(); itr != m_weComUserOrgs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
 }
 
 
@@ -1052,6 +1133,22 @@ void User::SetUserGroups(const vector<string>& _userGroups)
 bool User::UserGroupsHasBeenSet() const
 {
     return m_userGroupsHasBeenSet;
+}
+
+vector<string> User::GetUserGroupNames() const
+{
+    return m_userGroupNames;
+}
+
+void User::SetUserGroupNames(const vector<string>& _userGroupNames)
+{
+    m_userGroupNames = _userGroupNames;
+    m_userGroupNamesHasBeenSet = true;
+}
+
+bool User::UserGroupNamesHasBeenSet() const
+{
+    return m_userGroupNamesHasBeenSet;
 }
 
 int64_t User::GetLastModifiedDate() const
@@ -1532,5 +1629,37 @@ void User::SetIndexedAttribute5(const string& _indexedAttribute5)
 bool User::IndexedAttribute5HasBeenSet() const
 {
     return m_indexedAttribute5HasBeenSet;
+}
+
+vector<string> User::GetUserOrgs() const
+{
+    return m_userOrgs;
+}
+
+void User::SetUserOrgs(const vector<string>& _userOrgs)
+{
+    m_userOrgs = _userOrgs;
+    m_userOrgsHasBeenSet = true;
+}
+
+bool User::UserOrgsHasBeenSet() const
+{
+    return m_userOrgsHasBeenSet;
+}
+
+vector<int64_t> User::GetWeComUserOrgs() const
+{
+    return m_weComUserOrgs;
+}
+
+void User::SetWeComUserOrgs(const vector<int64_t>& _weComUserOrgs)
+{
+    m_weComUserOrgs = _weComUserOrgs;
+    m_weComUserOrgsHasBeenSet = true;
+}
+
+bool User::WeComUserOrgsHasBeenSet() const
+{
+    return m_weComUserOrgsHasBeenSet;
 }
 

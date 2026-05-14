@@ -3290,6 +3290,106 @@ RumClient::DescribeRumGroupLogOutcomeCallable RumClient::DescribeRumGroupLogCall
     return prom->get_future();
 }
 
+RumClient::DescribeRumGroupLogV2Outcome RumClient::DescribeRumGroupLogV2(const DescribeRumGroupLogV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumGroupLogV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumGroupLogV2Response rsp = DescribeRumGroupLogV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumGroupLogV2Outcome(rsp);
+        else
+            return DescribeRumGroupLogV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumGroupLogV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumGroupLogV2Async(const DescribeRumGroupLogV2Request& request, const DescribeRumGroupLogV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumGroupLogV2Request&;
+    using Resp = DescribeRumGroupLogV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumGroupLogV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumGroupLogV2OutcomeCallable RumClient::DescribeRumGroupLogV2Callable(const DescribeRumGroupLogV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumGroupLogV2Outcome>>();
+    DescribeRumGroupLogV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumGroupLogV2Request&,
+        DescribeRumGroupLogV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeRumLogDetailsV2Outcome RumClient::DescribeRumLogDetailsV2(const DescribeRumLogDetailsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumLogDetailsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumLogDetailsV2Response rsp = DescribeRumLogDetailsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumLogDetailsV2Outcome(rsp);
+        else
+            return DescribeRumLogDetailsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumLogDetailsV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumLogDetailsV2Async(const DescribeRumLogDetailsV2Request& request, const DescribeRumLogDetailsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumLogDetailsV2Request&;
+    using Resp = DescribeRumLogDetailsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumLogDetailsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumLogDetailsV2OutcomeCallable RumClient::DescribeRumLogDetailsV2Callable(const DescribeRumLogDetailsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumLogDetailsV2Outcome>>();
+    DescribeRumLogDetailsV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumLogDetailsV2Request&,
+        DescribeRumLogDetailsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeRumLogExportOutcome RumClient::DescribeRumLogExport(const DescribeRumLogExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRumLogExport");
@@ -3332,6 +3432,56 @@ RumClient::DescribeRumLogExportOutcomeCallable RumClient::DescribeRumLogExportCa
         const RumClient*,
         const DescribeRumLogExportRequest&,
         DescribeRumLogExportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeRumLogExportV2Outcome RumClient::DescribeRumLogExportV2(const DescribeRumLogExportV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumLogExportV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumLogExportV2Response rsp = DescribeRumLogExportV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumLogExportV2Outcome(rsp);
+        else
+            return DescribeRumLogExportV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumLogExportV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumLogExportV2Async(const DescribeRumLogExportV2Request& request, const DescribeRumLogExportV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumLogExportV2Request&;
+    using Resp = DescribeRumLogExportV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumLogExportV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumLogExportV2OutcomeCallable RumClient::DescribeRumLogExportV2Callable(const DescribeRumLogExportV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumLogExportV2Outcome>>();
+    DescribeRumLogExportV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumLogExportV2Request&,
+        DescribeRumLogExportV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3390,6 +3540,56 @@ RumClient::DescribeRumLogExportsOutcomeCallable RumClient::DescribeRumLogExports
     return prom->get_future();
 }
 
+RumClient::DescribeRumLogExportsV2Outcome RumClient::DescribeRumLogExportsV2(const DescribeRumLogExportsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumLogExportsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumLogExportsV2Response rsp = DescribeRumLogExportsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumLogExportsV2Outcome(rsp);
+        else
+            return DescribeRumLogExportsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumLogExportsV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumLogExportsV2Async(const DescribeRumLogExportsV2Request& request, const DescribeRumLogExportsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumLogExportsV2Request&;
+    using Resp = DescribeRumLogExportsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumLogExportsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumLogExportsV2OutcomeCallable RumClient::DescribeRumLogExportsV2Callable(const DescribeRumLogExportsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumLogExportsV2Outcome>>();
+    DescribeRumLogExportsV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumLogExportsV2Request&,
+        DescribeRumLogExportsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeRumLogListOutcome RumClient::DescribeRumLogList(const DescribeRumLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRumLogList");
@@ -3440,6 +3640,56 @@ RumClient::DescribeRumLogListOutcomeCallable RumClient::DescribeRumLogListCallab
     return prom->get_future();
 }
 
+RumClient::DescribeRumLogTotalV2Outcome RumClient::DescribeRumLogTotalV2(const DescribeRumLogTotalV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumLogTotalV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumLogTotalV2Response rsp = DescribeRumLogTotalV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumLogTotalV2Outcome(rsp);
+        else
+            return DescribeRumLogTotalV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumLogTotalV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumLogTotalV2Async(const DescribeRumLogTotalV2Request& request, const DescribeRumLogTotalV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumLogTotalV2Request&;
+    using Resp = DescribeRumLogTotalV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumLogTotalV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumLogTotalV2OutcomeCallable RumClient::DescribeRumLogTotalV2Callable(const DescribeRumLogTotalV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumLogTotalV2Outcome>>();
+    DescribeRumLogTotalV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumLogTotalV2Request&,
+        DescribeRumLogTotalV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeRumStatsLogListOutcome RumClient::DescribeRumStatsLogList(const DescribeRumStatsLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRumStatsLogList");
@@ -3482,6 +3732,56 @@ RumClient::DescribeRumStatsLogListOutcomeCallable RumClient::DescribeRumStatsLog
         const RumClient*,
         const DescribeRumStatsLogListRequest&,
         DescribeRumStatsLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeRumStatsLogListV2Outcome RumClient::DescribeRumStatsLogListV2(const DescribeRumStatsLogListV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumStatsLogListV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumStatsLogListV2Response rsp = DescribeRumStatsLogListV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumStatsLogListV2Outcome(rsp);
+        else
+            return DescribeRumStatsLogListV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumStatsLogListV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumStatsLogListV2Async(const DescribeRumStatsLogListV2Request& request, const DescribeRumStatsLogListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRumStatsLogListV2Request&;
+    using Resp = DescribeRumStatsLogListV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRumStatsLogListV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeRumStatsLogListV2OutcomeCallable RumClient::DescribeRumStatsLogListV2Callable(const DescribeRumStatsLogListV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRumStatsLogListV2Outcome>>();
+    DescribeRumStatsLogListV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeRumStatsLogListV2Request&,
+        DescribeRumStatsLogListV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

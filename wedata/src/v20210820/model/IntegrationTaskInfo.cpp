@@ -78,7 +78,8 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_taskSubTypeHasBeenSet(false),
     m_notExistsCheckPointHasBeenSet(false),
     m_savePointIdHasBeenSet(false),
-    m_savePointPathHasBeenSet(false)
+    m_savePointPathHasBeenSet(false),
+    m_lastOperateInfoHasBeenSet(false)
 {
 }
 
@@ -747,6 +748,23 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_savePointPathHasBeenSet = true;
     }
 
+    if (value.HasMember("LastOperateInfo") && !value["LastOperateInfo"].IsNull())
+    {
+        if (!value["LastOperateInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.LastOperateInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lastOperateInfo.Deserialize(value["LastOperateInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lastOperateInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1270,6 +1288,15 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SavePointPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_savePointPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastOperateInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastOperateInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lastOperateInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2201,5 +2228,21 @@ void IntegrationTaskInfo::SetSavePointPath(const string& _savePointPath)
 bool IntegrationTaskInfo::SavePointPathHasBeenSet() const
 {
     return m_savePointPathHasBeenSet;
+}
+
+LastOperateInfo IntegrationTaskInfo::GetLastOperateInfo() const
+{
+    return m_lastOperateInfo;
+}
+
+void IntegrationTaskInfo::SetLastOperateInfo(const LastOperateInfo& _lastOperateInfo)
+{
+    m_lastOperateInfo = _lastOperateInfo;
+    m_lastOperateInfoHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::LastOperateInfoHasBeenSet() const
+{
+    return m_lastOperateInfoHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @return ImageBase64 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 获取<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @return ImageBase64 <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
-                     * @param _imageBase64 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * 设置<p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
+                     * @param _imageBase64 <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @return ImageUrl 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 获取<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
+                     * @return ImageUrl <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
-                     * @param _imageUrl 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * 设置<p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
+                     * @param _imageUrl <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。
-                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。
+                     * 获取<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>
+                     * @return PdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>
                      * @deprecated
                      */
                     int64_t GetPdfPageNumber() const;
 
                     /**
-                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。
-                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。
+                     * 设置<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>
+                     * @param _pdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>
                      * @deprecated
                      */
                     void SetPdfPageNumber(const int64_t& _pdfPageNumber);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PdfPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取自定义抽取需要的字段名称、字段类型、字段提示词。
-                     * @return ItemNames 自定义抽取需要的字段名称、字段类型、字段提示词。
+                     * 获取<p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>
+                     * @return ItemNames <p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>
                      * 
                      */
                     std::vector<ItemNames> GetItemNames() const;
 
                     /**
-                     * 设置自定义抽取需要的字段名称、字段类型、字段提示词。
-                     * @param _itemNames 自定义抽取需要的字段名称、字段类型、字段提示词。
+                     * 设置<p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>
+                     * @param _itemNames <p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>
                      * 
                      */
                     void SetItemNames(const std::vector<ItemNames>& _itemNames);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ItemNamesHasBeenSet() const;
 
                     /**
-                     * 获取是否需要返回坐标，默认false。
-                     * @return EnableCoord 是否需要返回坐标，默认false。
+                     * 获取<p>是否需要返回坐标，默认false。</p>
+                     * @return EnableCoord <p>是否需要返回坐标，默认false。</p>
                      * 
                      */
                     bool GetEnableCoord() const;
 
                     /**
-                     * 设置是否需要返回坐标，默认false。
-                     * @param _enableCoord 是否需要返回坐标，默认false。
+                     * 设置<p>是否需要返回坐标，默认false。</p>
+                     * @param _enableCoord <p>是否需要返回坐标，默认false。</p>
                      * 
                      */
                     void SetEnableCoord(const bool& _enableCoord);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool EnableCoordHasBeenSet() const;
 
                     /**
-                     * 获取起始页
-                     * @return FileStartPageNumber 起始页
+                     * 获取<p>起始页</p>
+                     * @return FileStartPageNumber <p>起始页</p>
                      * 
                      */
                     uint64_t GetFileStartPageNumber() const;
 
                     /**
-                     * 设置起始页
-                     * @param _fileStartPageNumber 起始页
+                     * 设置<p>起始页</p>
+                     * @param _fileStartPageNumber <p>起始页</p>
                      * 
                      */
                     void SetFileStartPageNumber(const uint64_t& _fileStartPageNumber);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool FileStartPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取结束页
-                     * @return FileEndPageNumber 结束页
+                     * 获取<p>结束页</p>
+                     * @return FileEndPageNumber <p>结束页</p>
                      * 
                      */
                     uint64_t GetFileEndPageNumber() const;
 
                     /**
-                     * 设置结束页
-                     * @param _fileEndPageNumber 结束页
+                     * 设置<p>结束页</p>
+                     * @param _fileEndPageNumber <p>结束页</p>
                      * 
                      */
                     void SetFileEndPageNumber(const uint64_t& _fileEndPageNumber);
@@ -190,49 +190,76 @@ namespace TencentCloud
                      */
                     bool FileEndPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取<p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>
+                     * @return ModelConfig <p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>
+                     * 
+                     */
+                    std::string GetModelConfig() const;
+
+                    /**
+                     * 设置<p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>
+                     * @param _modelConfig <p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>
+                     * 
+                     */
+                    void SetModelConfig(const std::string& _modelConfig);
+
+                    /**
+                     * 判断参数 ModelConfig 是否已赋值
+                     * @return ModelConfig 是否已赋值
+                     * 
+                     */
+                    bool ModelConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。
+                     * <p>图片/PDF的 Base64 值。要求Base64不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。
+                     * <p>图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。
+                     * <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。</p>
                      */
                     int64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
 
                     /**
-                     * 自定义抽取需要的字段名称、字段类型、字段提示词。
+                     * <p>自定义抽取需要的字段名称、字段类型、字段提示词。</p>
                      */
                     std::vector<ItemNames> m_itemNames;
                     bool m_itemNamesHasBeenSet;
 
                     /**
-                     * 是否需要返回坐标，默认false。
+                     * <p>是否需要返回坐标，默认false。</p>
                      */
                     bool m_enableCoord;
                     bool m_enableCoordHasBeenSet;
 
                     /**
-                     * 起始页
+                     * <p>起始页</p>
                      */
                     uint64_t m_fileStartPageNumber;
                     bool m_fileStartPageNumberHasBeenSet;
 
                     /**
-                     * 结束页
+                     * <p>结束页</p>
                      */
                     uint64_t m_fileEndPageNumber;
                     bool m_fileEndPageNumberHasBeenSet;
+
+                    /**
+                     * <p>model_hunyuan:选择混元底座视觉大模型精调抽取任务  model_youtu：选择优图底座多模态大模型精调抽取任务</p>
+                     */
+                    std::string m_modelConfig;
+                    bool m_modelConfigHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/wedata/v20250806/model/ParamInfo.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowTriggerConfig.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowGeneralTaskParam.h>
+#include <tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h>
 
 
 namespace TencentCloud
@@ -255,6 +256,27 @@ namespace TencentCloud
                      */
                     bool GeneralTaskParamsHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return TriggerWorkflowRunConfiguration 
+                     * 
+                     */
+                    WorkflowRunConfig GetTriggerWorkflowRunConfiguration() const;
+
+                    /**
+                     * 设置
+                     * @param _triggerWorkflowRunConfiguration 
+                     * 
+                     */
+                    void SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration);
+
+                    /**
+                     * 判断参数 TriggerWorkflowRunConfiguration 是否已赋值
+                     * @return TriggerWorkflowRunConfiguration 是否已赋值
+                     * 
+                     */
+                    bool TriggerWorkflowRunConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +338,12 @@ namespace TencentCloud
                      */
                     std::vector<WorkflowGeneralTaskParam> m_generalTaskParams;
                     bool m_generalTaskParamsHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    WorkflowRunConfig m_triggerWorkflowRunConfiguration;
+                    bool m_triggerWorkflowRunConfigurationHasBeenSet;
 
                 };
             }

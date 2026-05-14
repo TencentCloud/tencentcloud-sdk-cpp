@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool VoiceProfileHasBeenSet() const;
 
                     /**
+                     * 获取<p>试听音频文本。长度不超过500</p>
+                     * @return Text <p>试听音频文本。长度不超过500</p>
+                     * 
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置<p>试听音频文本。长度不超过500</p>
+                     * @param _text <p>试听音频文本。长度不超过500</p>
+                     * 
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     * 
+                     */
+                    bool TextHasBeenSet() const;
+
+                    /**
                      * 获取<p>扩展参数，json字符串</p>
                      * @return ExtParam <p>扩展参数，json字符串</p>
                      * 
@@ -119,6 +140,12 @@ namespace TencentCloud
                      */
                     VoiceProfile m_voiceProfile;
                     bool m_voiceProfileHasBeenSet;
+
+                    /**
+                     * <p>试听音频文本。长度不超过500</p>
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
 
                     /**
                      * <p>扩展参数，json字符串</p>

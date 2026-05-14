@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取<p>总条数</p>
+                     * @return Total <p>总条数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取分页对象
+                     * 获取<p>分页对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Pageable 分页对象
+                     * @return Pageable <p>分页对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,8 +76,8 @@ namespace TencentCloud
                     bool PageableHasBeenSet() const;
 
                     /**
-                     * 获取用户列表
-                     * @return Content 用户列表
+                     * 获取<p>用户列表</p>
+                     * @return Content <p>用户列表</p>
                      * 
                      */
                     std::vector<User> GetContent() const;
@@ -92,20 +92,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 分页对象
+                     * <p>分页对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Pageable m_pageable;
                     bool m_pageableHasBeenSet;
 
                     /**
-                     * 用户列表
+                     * <p>用户列表</p>
                      */
                     std::vector<User> m_content;
                     bool m_contentHasBeenSet;

@@ -30,6 +30,7 @@
 #include <tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h>
 #include <tencentcloud/wedata/v20210820/model/TaskImportInfo.h>
 #include <tencentcloud/wedata/v20210820/model/IntegrationTag.h>
+#include <tencentcloud/wedata/v20210820/model/LastOperateInfo.h>
 
 
 namespace TencentCloud
@@ -53,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -74,18 +75,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务描述
+                     * 获取<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 任务描述
+                     * @return Description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述
+                     * 设置<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 任务描述
+                     * @param _description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,15 +100,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取同步类型1.解决方案(整库迁移),2.单表同步
-                     * @return SyncType 同步类型1.解决方案(整库迁移),2.单表同步
+                     * 获取<p>同步类型1.解决方案(整库迁移),2.单表同步</p>
+                     * @return SyncType <p>同步类型1.解决方案(整库迁移),2.单表同步</p>
                      * 
                      */
                     int64_t GetSyncType() const;
 
                     /**
-                     * 设置同步类型1.解决方案(整库迁移),2.单表同步
-                     * @param _syncType 同步类型1.解决方案(整库迁移),2.单表同步
+                     * 设置<p>同步类型1.解决方案(整库迁移),2.单表同步</p>
+                     * @param _syncType <p>同步类型1.解决方案(整库迁移),2.单表同步</p>
                      * 
                      */
                     void SetSyncType(const int64_t& _syncType);
@@ -120,15 +121,15 @@ namespace TencentCloud
                     bool SyncTypeHasBeenSet() const;
 
                     /**
-                     * 获取201.实时,202.离线
-                     * @return TaskType 201.实时,202.离线
+                     * 获取<p>201.实时,202.离线</p>
+                     * @return TaskType <p>201.实时,202.离线</p>
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置201.实时,202.离线
-                     * @param _taskType 201.实时,202.离线
+                     * 设置<p>201.实时,202.离线</p>
+                     * @param _taskType <p>201.实时,202.离线</p>
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -141,18 +142,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务所属工作流id
+                     * 获取<p>任务所属工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 任务所属工作流id
+                     * @return WorkflowId <p>任务所属工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置任务所属工作流id
+                     * 设置<p>任务所属工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 任务所属工作流id
+                     * @param _workflowId <p>任务所属工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -166,18 +167,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取任务id
+                     * 获取<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务id
+                     * @return TaskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
+                     * 设置<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务id
+                     * @param _taskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,18 +192,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务调度id(oceanus or us等作业id)，非填项
+                     * 获取<p>任务调度id(oceanus or us等作业id)，非填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTaskId 任务调度id(oceanus or us等作业id)，非填项
+                     * @return ScheduleTaskId <p>任务调度id(oceanus or us等作业id)，非填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleTaskId() const;
 
                     /**
-                     * 设置任务调度id(oceanus or us等作业id)，非填项
+                     * 设置<p>任务调度id(oceanus or us等作业id)，非填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleTaskId 任务调度id(oceanus or us等作业id)，非填项
+                     * @param _scheduleTaskId <p>任务调度id(oceanus or us等作业id)，非填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -216,18 +217,18 @@ namespace TencentCloud
                     bool ScheduleTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取inlong任务id
+                     * 获取<p>inlong任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskGroupId inlong任务id
+                     * @return TaskGroupId <p>inlong任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupId() const;
 
                     /**
-                     * 设置inlong任务id
+                     * 设置<p>inlong任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskGroupId inlong任务id
+                     * @param _taskGroupId <p>inlong任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -241,18 +242,18 @@ namespace TencentCloud
                     bool TaskGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
+                     * 获取<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目id
+                     * @return ProjectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
+                     * 设置<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目id
+                     * @param _projectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -266,18 +267,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取创建人uin
+                     * 获取<p>创建人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 创建人uin
+                     * @return CreatorUin <p>创建人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建人uin
+                     * 设置<p>创建人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 创建人uin
+                     * @param _creatorUin <p>创建人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -291,18 +292,18 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取操作人uin
+                     * 获取<p>操作人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorUin 操作人uin
+                     * @return OperatorUin <p>操作人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorUin() const;
 
                     /**
-                     * 设置操作人uin
+                     * 设置<p>操作人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorUin 操作人uin
+                     * @param _operatorUin <p>操作人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -316,18 +317,18 @@ namespace TencentCloud
                     bool OperatorUinHasBeenSet() const;
 
                     /**
-                     * 获取owner uin
+                     * 获取<p>owner uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin owner uin
+                     * @return OwnerUin <p>owner uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置owner uin
+                     * 设置<p>owner uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin owner uin
+                     * @param _ownerUin <p>owner uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -341,18 +342,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取应用id
+                     * 获取<p>应用id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 应用id
+                     * @return AppId <p>应用id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置应用id
+                     * 设置<p>应用id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appId 应用id
+                     * @param _appId <p>应用id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -366,18 +367,18 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
+                     * 获取<p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
+                     * @return Status <p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
+                     * 设置<p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
+                     * @param _status <p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -391,18 +392,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取节点列表
+                     * 获取<p>节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nodes 节点列表
+                     * @return Nodes <p>节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IntegrationNodeInfo> GetNodes() const;
 
                     /**
-                     * 设置节点列表
+                     * 设置<p>节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodes 节点列表
+                     * @param _nodes <p>节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,18 +417,18 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取执行资源id
+                     * 获取<p>执行资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutorId 执行资源id
+                     * @return ExecutorId <p>执行资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutorId() const;
 
                     /**
-                     * 设置执行资源id
+                     * 设置<p>执行资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executorId 执行资源id
+                     * @param _executorId <p>执行资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -441,18 +442,18 @@ namespace TencentCloud
                     bool ExecutorIdHasBeenSet() const;
 
                     /**
-                     * 获取任务配置信息
+                     * 获取<p>任务配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Config 任务配置信息
+                     * @return Config <p>任务配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordField> GetConfig() const;
 
                     /**
-                     * 设置任务配置信息
+                     * 设置<p>任务配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _config 任务配置信息
+                     * @param _config <p>任务配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -466,18 +467,18 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务扩展配置信息
+                     * 获取<p>任务扩展配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtConfig 任务扩展配置信息
+                     * @return ExtConfig <p>任务扩展配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordField> GetExtConfig() const;
 
                     /**
-                     * 设置任务扩展配置信息
+                     * 设置<p>任务扩展配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extConfig 任务扩展配置信息
+                     * @param _extConfig <p>任务扩展配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -491,18 +492,18 @@ namespace TencentCloud
                     bool ExtConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务执行context信息
+                     * 获取<p>任务执行context信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecuteContext 任务执行context信息
+                     * @return ExecuteContext <p>任务执行context信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordField> GetExecuteContext() const;
 
                     /**
-                     * 设置任务执行context信息
+                     * 设置<p>任务执行context信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executeContext 任务执行context信息
+                     * @param _executeContext <p>任务执行context信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -516,18 +517,18 @@ namespace TencentCloud
                     bool ExecuteContextHasBeenSet() const;
 
                     /**
-                     * 获取节点映射
+                     * 获取<p>节点映射</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mappings 节点映射
+                     * @return Mappings <p>节点映射</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IntegrationNodeMapping> GetMappings() const;
 
                     /**
-                     * 设置节点映射
+                     * 设置<p>节点映射</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mappings 节点映射
+                     * @param _mappings <p>节点映射</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -541,18 +542,18 @@ namespace TencentCloud
                     bool MappingsHasBeenSet() const;
 
                     /**
-                     * 获取任务配置模式，0:画布 1:表单 3:脚本
+                     * 获取<p>任务配置模式，0:画布 1:表单 3:脚本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskMode 任务配置模式，0:画布 1:表单 3:脚本
+                     * @return TaskMode <p>任务配置模式，0:画布 1:表单 3:脚本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskMode() const;
 
                     /**
-                     * 设置任务配置模式，0:画布 1:表单 3:脚本
+                     * 设置<p>任务配置模式，0:画布 1:表单 3:脚本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskMode 任务配置模式，0:画布 1:表单 3:脚本
+                     * @param _taskMode <p>任务配置模式，0:画布 1:表单 3:脚本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -566,18 +567,18 @@ namespace TencentCloud
                     bool TaskModeHasBeenSet() const;
 
                     /**
-                     * 获取责任人
+                     * 获取<p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Incharge 责任人
+                     * @return Incharge <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncharge() const;
 
                     /**
-                     * 设置责任人
+                     * 设置<p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _incharge 责任人
+                     * @param _incharge <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -591,18 +592,18 @@ namespace TencentCloud
                     bool InchargeHasBeenSet() const;
 
                     /**
-                     * 获取离线新增参数
+                     * 获取<p>离线新增参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineTaskAddEntity 离线新增参数
+                     * @return OfflineTaskAddEntity <p>离线新增参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OfflineTaskAddParam GetOfflineTaskAddEntity() const;
 
                     /**
-                     * 设置离线新增参数
+                     * 设置<p>离线新增参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offlineTaskAddEntity 离线新增参数
+                     * @param _offlineTaskAddEntity <p>离线新增参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -616,18 +617,18 @@ namespace TencentCloud
                     bool OfflineTaskAddEntityHasBeenSet() const;
 
                     /**
-                     * 获取group name
+                     * 获取<p>group name</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutorGroupName group name
+                     * @return ExecutorGroupName <p>group name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutorGroupName() const;
 
                     /**
-                     * 设置group name
+                     * 设置<p>group name</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executorGroupName group name
+                     * @param _executorGroupName <p>group name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -641,18 +642,18 @@ namespace TencentCloud
                     bool ExecutorGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取inlong manager url
+                     * 获取<p>inlong manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InLongManagerUrl inlong manager url
+                     * @return InLongManagerUrl <p>inlong manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInLongManagerUrl() const;
 
                     /**
-                     * 设置inlong manager url
+                     * 设置<p>inlong manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inLongManagerUrl inlong manager url
+                     * @param _inLongManagerUrl <p>inlong manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -666,18 +667,18 @@ namespace TencentCloud
                     bool InLongManagerUrlHasBeenSet() const;
 
                     /**
-                     * 获取stream id
+                     * 获取<p>stream id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InLongStreamId stream id
+                     * @return InLongStreamId <p>stream id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInLongStreamId() const;
 
                     /**
-                     * 设置stream id
+                     * 设置<p>stream id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inLongStreamId stream id
+                     * @param _inLongStreamId <p>stream id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -691,18 +692,18 @@ namespace TencentCloud
                     bool InLongStreamIdHasBeenSet() const;
 
                     /**
-                     * 获取version
+                     * 获取<p>version</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InLongManagerVersion version
+                     * @return InLongManagerVersion <p>version</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInLongManagerVersion() const;
 
                     /**
-                     * 设置version
+                     * 设置<p>version</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inLongManagerVersion version
+                     * @param _inLongManagerVersion <p>version</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -716,18 +717,18 @@ namespace TencentCloud
                     bool InLongManagerVersionHasBeenSet() const;
 
                     /**
-                     * 获取inlong dataproxy url
+                     * 获取<p>inlong dataproxy url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataProxyUrl inlong dataproxy url
+                     * @return DataProxyUrl <p>inlong dataproxy url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDataProxyUrl() const;
 
                     /**
-                     * 设置inlong dataproxy url
+                     * 设置<p>inlong dataproxy url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataProxyUrl inlong dataproxy url
+                     * @param _dataProxyUrl <p>inlong dataproxy url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -741,18 +742,18 @@ namespace TencentCloud
                     bool DataProxyUrlHasBeenSet() const;
 
                     /**
-                     * 获取任务版本是否已提交运维
+                     * 获取<p>任务版本是否已提交运维</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Submit 任务版本是否已提交运维
+                     * @return Submit <p>任务版本是否已提交运维</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSubmit() const;
 
                     /**
-                     * 设置任务版本是否已提交运维
+                     * 设置<p>任务版本是否已提交运维</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _submit 任务版本是否已提交运维
+                     * @param _submit <p>任务版本是否已提交运维</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -766,18 +767,18 @@ namespace TencentCloud
                     bool SubmitHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * 获取<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @return InputDatasourceType <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputDatasourceType() const;
 
                     /**
-                     * 设置数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * 设置<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @param _inputDatasourceType <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -791,18 +792,18 @@ namespace TencentCloud
                     bool InputDatasourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * 获取<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @return OutputDatasourceType <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputDatasourceType() const;
 
                     /**
-                     * 设置数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * 设置<p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @param _outputDatasourceType <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -816,18 +817,18 @@ namespace TencentCloud
                     bool OutputDatasourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取读取条数
+                     * 获取<p>读取条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumRecordsIn 读取条数
+                     * @return NumRecordsIn <p>读取条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumRecordsIn() const;
 
                     /**
-                     * 设置读取条数
+                     * 设置<p>读取条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numRecordsIn 读取条数
+                     * @param _numRecordsIn <p>读取条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -841,18 +842,18 @@ namespace TencentCloud
                     bool NumRecordsInHasBeenSet() const;
 
                     /**
-                     * 获取写入条数
+                     * 获取<p>写入条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumRecordsOut 写入条数
+                     * @return NumRecordsOut <p>写入条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumRecordsOut() const;
 
                     /**
-                     * 设置写入条数
+                     * 设置<p>写入条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numRecordsOut 写入条数
+                     * @param _numRecordsOut <p>写入条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -866,18 +867,18 @@ namespace TencentCloud
                     bool NumRecordsOutHasBeenSet() const;
 
                     /**
-                     * 获取读取延迟
+                     * 获取<p>读取延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReaderDelay 读取延迟
+                     * @return ReaderDelay <p>读取延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetReaderDelay() const;
 
                     /**
-                     * 设置读取延迟
+                     * 设置<p>读取延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readerDelay 读取延迟
+                     * @param _readerDelay <p>读取延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -891,18 +892,18 @@ namespace TencentCloud
                     bool ReaderDelayHasBeenSet() const;
 
                     /**
-                     * 获取重启次数
+                     * 获取<p>重启次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumRestarts 重启次数
+                     * @return NumRestarts <p>重启次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumRestarts() const;
 
                     /**
-                     * 设置重启次数
+                     * 设置<p>重启次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numRestarts 重启次数
+                     * @param _numRestarts <p>重启次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -916,18 +917,18 @@ namespace TencentCloud
                     bool NumRestartsHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
+                     * 获取<p>任务创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 任务创建时间
+                     * @return CreateTime <p>任务创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
+                     * 设置<p>任务创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 任务创建时间
+                     * @param _createTime <p>任务创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -941,18 +942,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务更新时间
+                     * 获取<p>任务更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 任务更新时间
+                     * @return UpdateTime <p>任务更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置任务更新时间
+                     * 设置<p>任务更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 任务更新时间
+                     * @param _updateTime <p>任务更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -966,18 +967,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务最后一次运行时间
+                     * 获取<p>任务最后一次运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastRunTime 任务最后一次运行时间
+                     * @return LastRunTime <p>任务最后一次运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastRunTime() const;
 
                     /**
-                     * 设置任务最后一次运行时间
+                     * 设置<p>任务最后一次运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastRunTime 任务最后一次运行时间
+                     * @param _lastRunTime <p>任务最后一次运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -991,18 +992,18 @@ namespace TencentCloud
                     bool LastRunTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务停止时间
+                     * 获取<p>任务停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StopTime 任务停止时间
+                     * @return StopTime <p>任务停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStopTime() const;
 
                     /**
-                     * 设置任务停止时间
+                     * 设置<p>任务停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stopTime 任务停止时间
+                     * @param _stopTime <p>任务停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1016,18 +1017,18 @@ namespace TencentCloud
                     bool StopTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业是否已提交
+                     * 获取<p>作业是否已提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HasVersion 作业是否已提交
+                     * @return HasVersion <p>作业是否已提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasVersion() const;
 
                     /**
-                     * 设置作业是否已提交
+                     * 设置<p>作业是否已提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hasVersion 作业是否已提交
+                     * @param _hasVersion <p>作业是否已提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1041,18 +1042,18 @@ namespace TencentCloud
                     bool HasVersionHasBeenSet() const;
 
                     /**
-                     * 获取任务是否被锁定
+                     * 获取<p>任务是否被锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Locked 任务是否被锁定
+                     * @return Locked <p>任务是否被锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLocked() const;
 
                     /**
-                     * 设置任务是否被锁定
+                     * 设置<p>任务是否被锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _locked 任务是否被锁定
+                     * @param _locked <p>任务是否被锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1066,18 +1067,18 @@ namespace TencentCloud
                     bool LockedHasBeenSet() const;
 
                     /**
-                     * 获取任务锁定人
+                     * 获取<p>任务锁定人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Locker 任务锁定人
+                     * @return Locker <p>任务锁定人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocker() const;
 
                     /**
-                     * 设置任务锁定人
+                     * 设置<p>任务锁定人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _locker 任务锁定人
+                     * @param _locker <p>任务锁定人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1091,18 +1092,18 @@ namespace TencentCloud
                     bool LockerHasBeenSet() const;
 
                     /**
-                     * 获取耗费资源量
+                     * 获取<p>耗费资源量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningCu 耗费资源量
+                     * @return RunningCu <p>耗费资源量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCu() const;
 
                     /**
-                     * 设置耗费资源量
+                     * 设置<p>耗费资源量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningCu 耗费资源量
+                     * @param _runningCu <p>耗费资源量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1116,18 +1117,18 @@ namespace TencentCloud
                     bool RunningCuHasBeenSet() const;
 
                     /**
-                     * 获取该任务关联的告警规则
+                     * 获取<p>该任务关联的告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskAlarmRegularList 该任务关联的告警规则
+                     * @return TaskAlarmRegularList <p>该任务关联的告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTaskAlarmRegularList() const;
 
                     /**
-                     * 设置该任务关联的告警规则
+                     * 设置<p>该任务关联的告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskAlarmRegularList 该任务关联的告警规则
+                     * @param _taskAlarmRegularList <p>该任务关联的告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1141,18 +1142,18 @@ namespace TencentCloud
                     bool TaskAlarmRegularListHasBeenSet() const;
 
                     /**
-                     * 获取实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * 获取<p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SwitchResource 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * @return SwitchResource <p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSwitchResource() const;
 
                     /**
-                     * 设置实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * 设置<p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _switchResource 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * @param _switchResource <p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1166,18 +1167,18 @@ namespace TencentCloud
                     bool SwitchResourceHasBeenSet() const;
 
                     /**
-                     * 获取实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * 获取<p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadPhase 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * @return ReadPhase <p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadPhase() const;
 
                     /**
-                     * 设置实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * 设置<p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readPhase 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * @param _readPhase <p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1191,18 +1192,18 @@ namespace TencentCloud
                     bool ReadPhaseHasBeenSet() const;
 
                     /**
-                     * 获取实时任务版本号
+                     * 获取<p>实时任务版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceVersion 实时任务版本号
+                     * @return InstanceVersion <p>实时任务版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceVersion() const;
 
                     /**
-                     * 设置实时任务版本号
+                     * 设置<p>实时任务版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceVersion 实时任务版本号
+                     * @param _instanceVersion <p>实时任务版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1216,18 +1217,18 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取离线任务导入到编排空间的任务id
+                     * 获取<p>离线任务导入到编排空间的任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ArrangeSpaceTaskId 离线任务导入到编排空间的任务id
+                     * @return ArrangeSpaceTaskId <p>离线任务导入到编排空间的任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArrangeSpaceTaskId() const;
 
                     /**
-                     * 设置离线任务导入到编排空间的任务id
+                     * 设置<p>离线任务导入到编排空间的任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _arrangeSpaceTaskId 离线任务导入到编排空间的任务id
+                     * @param _arrangeSpaceTaskId <p>离线任务导入到编排空间的任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1241,18 +1242,18 @@ namespace TencentCloud
                     bool ArrangeSpaceTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取离线任务状态区分1.未提交2.已提交3.已导出
+                     * 获取<p>离线任务状态区分1.未提交2.已提交3.已导出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineTaskStatus 离线任务状态区分1.未提交2.已提交3.已导出
+                     * @return OfflineTaskStatus <p>离线任务状态区分1.未提交2.已提交3.已导出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOfflineTaskStatus() const;
 
                     /**
-                     * 设置离线任务状态区分1.未提交2.已提交3.已导出
+                     * 设置<p>离线任务状态区分1.未提交2.已提交3.已导出</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offlineTaskStatus 离线任务状态区分1.未提交2.已提交3.已导出
+                     * @param _offlineTaskStatus <p>离线任务状态区分1.未提交2.已提交3.已导出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1266,18 +1267,18 @@ namespace TencentCloud
                     bool OfflineTaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取导入到编排空间配置
+                     * 获取<p>导入到编排空间配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskImportInfo 导入到编排空间配置
+                     * @return TaskImportInfo <p>导入到编排空间配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskImportInfo GetTaskImportInfo() const;
 
                     /**
-                     * 设置导入到编排空间配置
+                     * 设置<p>导入到编排空间配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskImportInfo 导入到编排空间配置
+                     * @param _taskImportInfo <p>导入到编排空间配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1291,18 +1292,18 @@ namespace TencentCloud
                     bool TaskImportInfoHasBeenSet() const;
 
                     /**
-                     * 获取业务延迟
+                     * 获取<p>业务延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessLatency 业务延迟
+                     * @return BusinessLatency <p>业务延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBusinessLatency() const;
 
                     /**
-                     * 设置业务延迟
+                     * 设置<p>业务延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _businessLatency 业务延迟
+                     * @param _businessLatency <p>业务延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1316,18 +1317,18 @@ namespace TencentCloud
                     bool BusinessLatencyHasBeenSet() const;
 
                     /**
-                     * 获取当前同步位点
+                     * 获取<p>当前同步位点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentSyncPosition 当前同步位点
+                     * @return CurrentSyncPosition <p>当前同步位点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentSyncPosition() const;
 
                     /**
-                     * 设置当前同步位点
+                     * 设置<p>当前同步位点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentSyncPosition 当前同步位点
+                     * @param _currentSyncPosition <p>当前同步位点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1341,18 +1342,18 @@ namespace TencentCloud
                     bool CurrentSyncPositionHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
+                     * 获取<p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagList 标签列表
+                     * @return TagList <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IntegrationTag> GetTagList() const;
 
                     /**
-                     * 设置标签列表
+                     * 设置<p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagList 标签列表
+                     * @param _tagList <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1366,18 +1367,18 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
+                     * 获取<p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 错误信息
+                     * @return ErrorMessage <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置错误信息
+                     * 设置<p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errorMessage 错误信息
+                     * @param _errorMessage <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1391,18 +1392,18 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取任务子状态
+                     * 获取<p>任务子状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskSubType 任务子状态
+                     * @return TaskSubType <p>任务子状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskSubType() const;
 
                     /**
-                     * 设置任务子状态
+                     * 设置<p>任务子状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskSubType 任务子状态
+                     * @param _taskSubType <p>任务子状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1416,18 +1417,18 @@ namespace TencentCloud
                     bool TaskSubTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+                     * 获取<p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NotExistsCheckPoint 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+                     * @return NotExistsCheckPoint <p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotExistsCheckPoint() const;
 
                     /**
-                     * 设置是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+                     * 设置<p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _notExistsCheckPoint 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+                     * @param _notExistsCheckPoint <p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1441,18 +1442,18 @@ namespace TencentCloud
                     bool NotExistsCheckPointHasBeenSet() const;
 
                     /**
-                     * 获取savepiontPath
+                     * 获取<p>savepiontPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SavePointId savepiontPath
+                     * @return SavePointId <p>savepiontPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSavePointId() const;
 
                     /**
-                     * 设置savepiontPath
+                     * 设置<p>savepiontPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _savePointId savepiontPath
+                     * @param _savePointId <p>savepiontPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1466,18 +1467,18 @@ namespace TencentCloud
                     bool SavePointIdHasBeenSet() const;
 
                     /**
-                     * 获取savepiontId
+                     * 获取<p>savepiontId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SavePointPath savepiontId
+                     * @return SavePointPath <p>savepiontId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSavePointPath() const;
 
                     /**
-                     * 设置savepiontId
+                     * 设置<p>savepiontId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _savePointPath savepiontId
+                     * @param _savePointPath <p>savepiontId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1490,410 +1491,442 @@ namespace TencentCloud
                      */
                     bool SavePointPathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最近一次操作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastOperateInfo <p>最近一次操作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LastOperateInfo GetLastOperateInfo() const;
+
+                    /**
+                     * 设置<p>最近一次操作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastOperateInfo <p>最近一次操作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastOperateInfo(const LastOperateInfo& _lastOperateInfo);
+
+                    /**
+                     * 判断参数 LastOperateInfo 是否已赋值
+                     * @return LastOperateInfo 是否已赋值
+                     * 
+                     */
+                    bool LastOperateInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务描述
+                     * <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 同步类型1.解决方案(整库迁移),2.单表同步
+                     * <p>同步类型1.解决方案(整库迁移),2.单表同步</p>
                      */
                     int64_t m_syncType;
                     bool m_syncTypeHasBeenSet;
 
                     /**
-                     * 201.实时,202.离线
+                     * <p>201.实时,202.离线</p>
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务所属工作流id
+                     * <p>任务所属工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务调度id(oceanus or us等作业id)，非填项
+                     * <p>任务调度id(oceanus or us等作业id)，非填项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleTaskId;
                     bool m_scheduleTaskIdHasBeenSet;
 
                     /**
-                     * inlong任务id
+                     * <p>inlong任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupId;
                     bool m_taskGroupIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 创建人uin
+                     * <p>创建人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 操作人uin
+                     * <p>操作人uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorUin;
                     bool m_operatorUinHasBeenSet;
 
                     /**
-                     * owner uin
+                     * <p>owner uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 应用id
+                     * <p>应用id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
+                     * <p>0:新建(任务开发态默认状态)|1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 节点列表
+                     * <p>节点列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IntegrationNodeInfo> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 执行资源id
+                     * <p>执行资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executorId;
                     bool m_executorIdHasBeenSet;
 
                     /**
-                     * 任务配置信息
+                     * <p>任务配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordField> m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 任务扩展配置信息
+                     * <p>任务扩展配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordField> m_extConfig;
                     bool m_extConfigHasBeenSet;
 
                     /**
-                     * 任务执行context信息
+                     * <p>任务执行context信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordField> m_executeContext;
                     bool m_executeContextHasBeenSet;
 
                     /**
-                     * 节点映射
+                     * <p>节点映射</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IntegrationNodeMapping> m_mappings;
                     bool m_mappingsHasBeenSet;
 
                     /**
-                     * 任务配置模式，0:画布 1:表单 3:脚本
+                     * <p>任务配置模式，0:画布 1:表单 3:脚本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskMode;
                     bool m_taskModeHasBeenSet;
 
                     /**
-                     * 责任人
+                     * <p>责任人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incharge;
                     bool m_inchargeHasBeenSet;
 
                     /**
-                     * 离线新增参数
+                     * <p>离线新增参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OfflineTaskAddParam m_offlineTaskAddEntity;
                     bool m_offlineTaskAddEntityHasBeenSet;
 
                     /**
-                     * group name
+                     * <p>group name</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executorGroupName;
                     bool m_executorGroupNameHasBeenSet;
 
                     /**
-                     * inlong manager url
+                     * <p>inlong manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inLongManagerUrl;
                     bool m_inLongManagerUrlHasBeenSet;
 
                     /**
-                     * stream id
+                     * <p>stream id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inLongStreamId;
                     bool m_inLongStreamIdHasBeenSet;
 
                     /**
-                     * version
+                     * <p>version</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inLongManagerVersion;
                     bool m_inLongManagerVersionHasBeenSet;
 
                     /**
-                     * inlong dataproxy url
+                     * <p>inlong dataproxy url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dataProxyUrl;
                     bool m_dataProxyUrlHasBeenSet;
 
                     /**
-                     * 任务版本是否已提交运维
+                     * <p>任务版本是否已提交运维</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_submit;
                     bool m_submitHasBeenSet;
 
                     /**
-                     * 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputDatasourceType;
                     bool m_inputDatasourceTypeHasBeenSet;
 
                     /**
-                     * 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * <p>数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputDatasourceType;
                     bool m_outputDatasourceTypeHasBeenSet;
 
                     /**
-                     * 读取条数
+                     * <p>读取条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numRecordsIn;
                     bool m_numRecordsInHasBeenSet;
 
                     /**
-                     * 写入条数
+                     * <p>写入条数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numRecordsOut;
                     bool m_numRecordsOutHasBeenSet;
 
                     /**
-                     * 读取延迟
+                     * <p>读取延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_readerDelay;
                     bool m_readerDelayHasBeenSet;
 
                     /**
-                     * 重启次数
+                     * <p>重启次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numRestarts;
                     bool m_numRestartsHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务更新时间
+                     * <p>任务更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 任务最后一次运行时间
+                     * <p>任务最后一次运行时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastRunTime;
                     bool m_lastRunTimeHasBeenSet;
 
                     /**
-                     * 任务停止时间
+                     * <p>任务停止时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stopTime;
                     bool m_stopTimeHasBeenSet;
 
                     /**
-                     * 作业是否已提交
+                     * <p>作业是否已提交</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasVersion;
                     bool m_hasVersionHasBeenSet;
 
                     /**
-                     * 任务是否被锁定
+                     * <p>任务是否被锁定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_locked;
                     bool m_lockedHasBeenSet;
 
                     /**
-                     * 任务锁定人
+                     * <p>任务锁定人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_locker;
                     bool m_lockerHasBeenSet;
 
                     /**
-                     * 耗费资源量
+                     * <p>耗费资源量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
 
                     /**
-                     * 该任务关联的告警规则
+                     * <p>该任务关联的告警规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_taskAlarmRegularList;
                     bool m_taskAlarmRegularListHasBeenSet;
 
                     /**
-                     * 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * <p>实时任务资源分层情况： 0：进行中,1：成功 ,2：失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_switchResource;
                     bool m_switchResourceHasBeenSet;
 
                     /**
-                     * 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * <p>实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readPhase;
                     bool m_readPhaseHasBeenSet;
 
                     /**
-                     * 实时任务版本号
+                     * <p>实时任务版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 离线任务导入到编排空间的任务id
+                     * <p>离线任务导入到编排空间的任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arrangeSpaceTaskId;
                     bool m_arrangeSpaceTaskIdHasBeenSet;
 
                     /**
-                     * 离线任务状态区分1.未提交2.已提交3.已导出
+                     * <p>离线任务状态区分1.未提交2.已提交3.已导出</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offlineTaskStatus;
                     bool m_offlineTaskStatusHasBeenSet;
 
                     /**
-                     * 导入到编排空间配置
+                     * <p>导入到编排空间配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskImportInfo m_taskImportInfo;
                     bool m_taskImportInfoHasBeenSet;
 
                     /**
-                     * 业务延迟
+                     * <p>业务延迟</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_businessLatency;
                     bool m_businessLatencyHasBeenSet;
 
                     /**
-                     * 当前同步位点
+                     * <p>当前同步位点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentSyncPosition;
                     bool m_currentSyncPositionHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IntegrationTag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 任务子状态
+                     * <p>任务子状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskSubType;
                     bool m_taskSubTypeHasBeenSet;
 
                     /**
-                     * 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+                     * <p>是否存在SavePoint, 0-存在, 1-不存在, null 为未知</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notExistsCheckPoint;
                     bool m_notExistsCheckPointHasBeenSet;
 
                     /**
-                     * savepiontPath
+                     * <p>savepiontPath</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_savePointId;
                     bool m_savePointIdHasBeenSet;
 
                     /**
-                     * savepiontId
+                     * <p>savepiontId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_savePointPath;
                     bool m_savePointPathHasBeenSet;
+
+                    /**
+                     * <p>最近一次操作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LastOperateInfo m_lastOperateInfo;
+                    bool m_lastOperateInfoHasBeenSet;
 
                 };
             }

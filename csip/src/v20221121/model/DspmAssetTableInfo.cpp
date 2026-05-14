@@ -30,7 +30,10 @@ DspmAssetTableInfo::DspmAssetTableInfo() :
     m_ruleIdsHasBeenSet(false),
     m_ruleNamesHasBeenSet(false),
     m_categoryIdsHasBeenSet(false),
-    m_categoryNamesHasBeenSet(false)
+    m_categoryNamesHasBeenSet(false),
+    m_categoryDetailsHasBeenSet(false),
+    m_tableIdHasBeenSet(false),
+    m_tableCommentHasBeenSet(false)
 {
 }
 
@@ -151,6 +154,46 @@ CoreInternalOutcome DspmAssetTableInfo::Deserialize(const rapidjson::Value &valu
         m_categoryNamesHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryDetails") && !value["CategoryDetails"].IsNull())
+    {
+        if (!value["CategoryDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DspmAssetTableInfo.CategoryDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CategoryDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DspmIdentifyCategoryDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_categoryDetails.push_back(item);
+        }
+        m_categoryDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableId") && !value["TableId"].IsNull())
+    {
+        if (!value["TableId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmAssetTableInfo.TableId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableId = value["TableId"].GetUint64();
+        m_tableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableComment") && !value["TableComment"].IsNull())
+    {
+        if (!value["TableComment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmAssetTableInfo.TableComment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableComment = string(value["TableComment"].GetString());
+        m_tableCommentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +299,37 @@ void DspmAssetTableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_categoryDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_categoryDetails.begin(); itr != m_categoryDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tableId, allocator);
+    }
+
+    if (m_tableCommentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableComment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableComment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -419,5 +493,53 @@ void DspmAssetTableInfo::SetCategoryNames(const vector<string>& _categoryNames)
 bool DspmAssetTableInfo::CategoryNamesHasBeenSet() const
 {
     return m_categoryNamesHasBeenSet;
+}
+
+vector<DspmIdentifyCategoryDetail> DspmAssetTableInfo::GetCategoryDetails() const
+{
+    return m_categoryDetails;
+}
+
+void DspmAssetTableInfo::SetCategoryDetails(const vector<DspmIdentifyCategoryDetail>& _categoryDetails)
+{
+    m_categoryDetails = _categoryDetails;
+    m_categoryDetailsHasBeenSet = true;
+}
+
+bool DspmAssetTableInfo::CategoryDetailsHasBeenSet() const
+{
+    return m_categoryDetailsHasBeenSet;
+}
+
+uint64_t DspmAssetTableInfo::GetTableId() const
+{
+    return m_tableId;
+}
+
+void DspmAssetTableInfo::SetTableId(const uint64_t& _tableId)
+{
+    m_tableId = _tableId;
+    m_tableIdHasBeenSet = true;
+}
+
+bool DspmAssetTableInfo::TableIdHasBeenSet() const
+{
+    return m_tableIdHasBeenSet;
+}
+
+string DspmAssetTableInfo::GetTableComment() const
+{
+    return m_tableComment;
+}
+
+void DspmAssetTableInfo::SetTableComment(const string& _tableComment)
+{
+    m_tableComment = _tableComment;
+    m_tableCommentHasBeenSet = true;
+}
+
+bool DspmAssetTableInfo::TableCommentHasBeenSet() const
+{
+    return m_tableCommentHasBeenSet;
 }
 

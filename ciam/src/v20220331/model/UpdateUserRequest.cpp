@@ -37,7 +37,8 @@ UpdateUserRequest::UpdateUserRequest() :
     m_indexedAttribute2HasBeenSet(false),
     m_indexedAttribute3HasBeenSet(false),
     m_indexedAttribute4HasBeenSet(false),
-    m_indexedAttribute5HasBeenSet(false)
+    m_indexedAttribute5HasBeenSet(false),
+    m_userOrgHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,19 @@ string UpdateUserRequest::ToJsonString() const
         string key = "IndexedAttribute5";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_indexedAttribute5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userOrgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserOrg";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userOrg.begin(); itr != m_userOrg.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -426,6 +440,22 @@ void UpdateUserRequest::SetIndexedAttribute5(const string& _indexedAttribute5)
 bool UpdateUserRequest::IndexedAttribute5HasBeenSet() const
 {
     return m_indexedAttribute5HasBeenSet;
+}
+
+vector<string> UpdateUserRequest::GetUserOrg() const
+{
+    return m_userOrg;
+}
+
+void UpdateUserRequest::SetUserOrg(const vector<string>& _userOrg)
+{
+    m_userOrg = _userOrg;
+    m_userOrgHasBeenSet = true;
+}
+
+bool UpdateUserRequest::UserOrgHasBeenSet() const
+{
+    return m_userOrgHasBeenSet;
 }
 
 

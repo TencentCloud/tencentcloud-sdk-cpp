@@ -21,6 +21,7 @@ set(rum_public_header
 set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectRequest.h
   include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocReportListRequest.h
@@ -40,6 +41,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemDetailRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListResponse.h
@@ -71,6 +73,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Request.h
   include/tencentcloud/rum/v20210622/model/CompareCondition.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemDetailResponse.h
@@ -80,7 +83,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeTopIssuesResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListRequest.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogTotalV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Response.h
   include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Request.h
@@ -95,12 +98,14 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemListRequest.h
   include/tencentcloud/rum/v20210622/model/ReleaseFile.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitResponse.h
@@ -124,11 +129,13 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h
   include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteWhitelistRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoResponse.h
@@ -140,17 +147,19 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemAccountDetailRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Response.h
   include/tencentcloud/rum/v20210622/model/Filter.h
   include/tencentcloud/rum/v20210622/model/DeleteStarProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeIssuesListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogTotalV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoResponse.h
@@ -180,8 +189,9 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeIssuesStatisticsTrendResponse.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTawInstancesResponse.h
@@ -191,6 +201,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateReleaseFileResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsRequest.h
   include/tencentcloud/rum/v20210622/model/Whitelist.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Request.h
@@ -199,6 +210,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeTopIssuesRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/Filters.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemDetailRequest.h
   include/tencentcloud/rum/v20210622/model/RumInstanceInfo.h
@@ -208,6 +220,7 @@ set(rum_src
   src/v20210622/RumClient.cpp
   src/v20210622/model/DescribeDataFetchProjectRequest.cpp
   src/v20210622/model/DescribeDataResponse.cpp
+  src/v20210622/model/DescribeScoresResponse.cpp
   src/v20210622/model/DeleteProjectRequest.cpp
   src/v20210622/model/StopProjectRequest.cpp
   src/v20210622/model/DescribeFOOMMallocReportListRequest.cpp
@@ -227,6 +240,7 @@ set(rum_src
   src/v20210622/model/ModifyInstanceRequest.cpp
   src/v20210622/model/DescribeDataStaticProjectV2Response.cpp
   src/v20210622/model/DescribeErrorResponse.cpp
+  src/v20210622/model/ModifyProjectLimitRequest.cpp
   src/v20210622/model/DescribeFOOMProblemDetailRequest.cpp
   src/v20210622/model/DescribeAppMetricsDataResponse.cpp
   src/v20210622/model/DescribeAppSingleCaseDetailListResponse.cpp
@@ -258,6 +272,7 @@ set(rum_src
   src/v20210622/model/DescribeUvListRequest.cpp
   src/v20210622/model/DescribeDataReportCountV2Request.cpp
   src/v20210622/model/CompareCondition.cpp
+  src/v20210622/model/ModifyProjectRequest.cpp
   src/v20210622/model/DescribeDataPerformancePageV2Response.cpp
   src/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.cpp
   src/v20210622/model/DescribeFOOMMallocProblemDetailResponse.cpp
@@ -267,7 +282,7 @@ set(rum_src
   src/v20210622/model/DescribeTopIssuesResponse.cpp
   src/v20210622/model/DescribeTawAreasResponse.cpp
   src/v20210622/model/DescribeApplicationExitReportListRequest.cpp
-  src/v20210622/model/ModifyProjectLimitRequest.cpp
+  src/v20210622/model/DescribeRumLogTotalV2Request.cpp
   src/v20210622/model/DescribeDataEventUrlV2Response.cpp
   src/v20210622/model/DeleteInstanceResponse.cpp
   src/v20210622/model/DescribeDataWebVitalsPageV2Request.cpp
@@ -282,12 +297,14 @@ set(rum_src
   src/v20210622/model/DescribeDataFetchUrlRequest.cpp
   src/v20210622/model/DescribeRumLogExportRequest.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
+  src/v20210622/model/DescribeRumLogExportV2Request.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsV2Response.cpp
   src/v20210622/model/DescribeDataCustomUrlResponse.cpp
   src/v20210622/model/CreateStarProjectResponse.cpp
   src/v20210622/model/DeleteProjectResponse.cpp
   src/v20210622/model/DescribeScoresV2Response.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsRequest.cpp
+  src/v20210622/model/DescribeRumStatsLogListV2Response.cpp
   src/v20210622/model/DescribeFOOMProblemListRequest.cpp
   src/v20210622/model/ReleaseFile.cpp
   src/v20210622/model/ModifyProjectLimitResponse.cpp
@@ -311,11 +328,13 @@ set(rum_src
   src/v20210622/model/RumAreaInfo.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
   src/v20210622/model/DescribeDataWebVitalsPageV2Response.cpp
+  src/v20210622/model/DescribeRumLogExportV2Response.cpp
   src/v20210622/model/ResumeInstanceResponse.cpp
   src/v20210622/model/DescribeDataStaticProjectResponse.cpp
   src/v20210622/model/CreateStarProjectRequest.cpp
   src/v20210622/model/DescribeAppSingleCaseListRequest.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsV2Request.cpp
+  src/v20210622/model/DescribeRumLogExportsV2Request.cpp
   src/v20210622/model/DescribeReleaseFileSignRequest.cpp
   src/v20210622/model/DeleteWhitelistRequest.cpp
   src/v20210622/model/DescribeDataLogUrlInfoResponse.cpp
@@ -327,17 +346,19 @@ set(rum_src
   src/v20210622/model/DescribeDataLogUrlStatisticsRequest.cpp
   src/v20210622/model/DescribeLagANRProblemAccountDetailRequest.cpp
   src/v20210622/model/DescribeDataBridgeUrlV2Response.cpp
-  src/v20210622/model/DescribeScoresResponse.cpp
+  src/v20210622/model/DescribeRumStatsLogListV2Request.cpp
   src/v20210622/model/DescribeTawAreasRequest.cpp
   src/v20210622/model/DescribeDataCustomUrlV2Response.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DeleteStarProjectResponse.cpp
+  src/v20210622/model/DescribeRumLogDetailsV2Response.cpp
   src/v20210622/model/DescribeDataPerformancePageResponse.cpp
   src/v20210622/model/DeleteInstanceRequest.cpp
   src/v20210622/model/DescribeIssuesListResponse.cpp
   src/v20210622/model/DescribeDataStaticResourceResponse.cpp
   src/v20210622/model/DescribeDataEventUrlResponse.cpp
   src/v20210622/model/DescribeReleaseFileSignResponse.cpp
+  src/v20210622/model/DescribeRumLogTotalV2Response.cpp
   src/v20210622/model/DescribeDataWebVitalsPageRequest.cpp
   src/v20210622/model/DescribeDataFetchUrlInfoRequest.cpp
   src/v20210622/model/DescribeDataFetchUrlInfoResponse.cpp
@@ -367,8 +388,9 @@ set(rum_src
   src/v20210622/model/DescribeRumLogExportResponse.cpp
   src/v20210622/model/DescribeRumLogExportsRequest.cpp
   src/v20210622/model/DescribeIssuesStatisticsTrendResponse.cpp
-  src/v20210622/model/ModifyProjectRequest.cpp
+  src/v20210622/model/DescribeRumLogExportsV2Response.cpp
   src/v20210622/model/DescribeRumLogListRequest.cpp
+  src/v20210622/model/DescribeRumGroupLogV2Response.cpp
   src/v20210622/model/DescribeDataPerformancePageV2Request.cpp
   src/v20210622/model/DescribeDataStaticResourceRequest.cpp
   src/v20210622/model/DescribeTawInstancesResponse.cpp
@@ -378,6 +400,7 @@ set(rum_src
   src/v20210622/model/CreateReleaseFileResponse.cpp
   src/v20210622/model/DescribeDataFetchProjectResponse.cpp
   src/v20210622/model/DescribeFOOMReportListRequest.cpp
+  src/v20210622/model/DescribeRumLogDetailsV2Request.cpp
   src/v20210622/model/DescribeLagANRProblemFeatureAccountsRequest.cpp
   src/v20210622/model/Whitelist.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsV2Request.cpp
@@ -386,6 +409,7 @@ set(rum_src
   src/v20210622/model/DescribeTopIssuesRequest.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsResponse.cpp
   src/v20210622/model/Filters.cpp
+  src/v20210622/model/DescribeRumGroupLogV2Request.cpp
   src/v20210622/model/DescribeAppDimensionMetricsRequest.cpp
   src/v20210622/model/DescribeFOOMMallocProblemDetailRequest.cpp
   src/v20210622/model/RumInstanceInfo.cpp

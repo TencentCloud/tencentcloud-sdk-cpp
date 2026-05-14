@@ -37,7 +37,8 @@ AssetRiskItem::AssetRiskItem() :
     m_riskRuleIdHasBeenSet(false),
     m_classifyHasBeenSet(false),
     m_standardTermsHasBeenSet(false),
-    m_assetTypeHasBeenSet(false)
+    m_assetTypeHasBeenSet(false),
+    m_assetTypeIconURLHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome AssetRiskItem::Deserialize(const rapidjson::Value &value)
         m_assetTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetTypeIconURL") && !value["AssetTypeIconURL"].IsNull())
+    {
+        if (!value["AssetTypeIconURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetRiskItem.AssetTypeIconURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetTypeIconURL = string(value["AssetTypeIconURL"].GetString());
+        m_assetTypeIconURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +385,14 @@ void AssetRiskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AssetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeIconURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetTypeIconURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetTypeIconURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -649,5 +668,21 @@ void AssetRiskItem::SetAssetType(const string& _assetType)
 bool AssetRiskItem::AssetTypeHasBeenSet() const
 {
     return m_assetTypeHasBeenSet;
+}
+
+string AssetRiskItem::GetAssetTypeIconURL() const
+{
+    return m_assetTypeIconURL;
+}
+
+void AssetRiskItem::SetAssetTypeIconURL(const string& _assetTypeIconURL)
+{
+    m_assetTypeIconURL = _assetTypeIconURL;
+    m_assetTypeIconURLHasBeenSet = true;
+}
+
+bool AssetRiskItem::AssetTypeIconURLHasBeenSet() const
+{
+    return m_assetTypeIconURLHasBeenSet;
 }
 

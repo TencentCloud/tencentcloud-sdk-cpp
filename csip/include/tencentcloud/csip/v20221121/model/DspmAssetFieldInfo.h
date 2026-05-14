@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/DspmIdentifyCategoryDetail.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产实例id
-                     * @return AssetId 资产实例id
+                     * 获取<p>资产实例id</p>
+                     * @return AssetId <p>资产实例id</p>
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
-                     * 设置资产实例id
-                     * @param _assetId 资产实例id
+                     * 设置<p>资产实例id</p>
+                     * @param _assetId <p>资产实例id</p>
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool AssetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
-                     * @return DbName 数据库名称
+                     * 获取<p>数据库名称</p>
+                     * @return DbName <p>数据库名称</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称
-                     * @param _dbName 数据库名称
+                     * 设置<p>数据库名称</p>
+                     * @param _dbName <p>数据库名称</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取schema名
-                     * @return SchemaName schema名
+                     * 获取<p>schema名</p>
+                     * @return SchemaName <p>schema名</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名
-                     * @param _schemaName schema名
+                     * 设置<p>schema名</p>
+                     * @param _schemaName <p>schema名</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取表名
-                     * @return TableName 表名
+                     * 获取<p>表名</p>
+                     * @return TableName <p>表名</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名
-                     * @param _tableName 表名
+                     * 设置<p>表名</p>
+                     * @param _tableName <p>表名</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取字段名
-                     * @return FieldName 字段名
+                     * 获取<p>字段名</p>
+                     * @return FieldName <p>字段名</p>
                      * 
                      */
                     std::string GetFieldName() const;
 
                     /**
-                     * 设置字段名
-                     * @param _fieldName 字段名
+                     * 设置<p>字段名</p>
+                     * @param _fieldName <p>字段名</p>
                      * 
                      */
                     void SetFieldName(const std::string& _fieldName);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool FieldNameHasBeenSet() const;
 
                     /**
-                     * 获取数据项id集合
-                     * @return RuleIds 数据项id集合
+                     * 获取<p>数据项id集合</p>
+                     * @return RuleIds <p>数据项id集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetRuleIds() const;
 
                     /**
-                     * 设置数据项id集合
-                     * @param _ruleIds 数据项id集合
+                     * 设置<p>数据项id集合</p>
+                     * @param _ruleIds <p>数据项id集合</p>
                      * 
                      */
                     void SetRuleIds(const std::vector<uint64_t>& _ruleIds);
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool RuleIdsHasBeenSet() const;
 
                     /**
-                     * 获取数据项名称集合
-                     * @return RuleNames 数据项名称集合
+                     * 获取<p>数据项名称集合</p>
+                     * @return RuleNames <p>数据项名称集合</p>
                      * 
                      */
                     std::vector<std::string> GetRuleNames() const;
 
                     /**
-                     * 设置数据项名称集合
-                     * @param _ruleNames 数据项名称集合
+                     * 设置<p>数据项名称集合</p>
+                     * @param _ruleNames <p>数据项名称集合</p>
                      * 
                      */
                     void SetRuleNames(const std::vector<std::string>& _ruleNames);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool RuleNamesHasBeenSet() const;
 
                     /**
-                     * 获取分类id集合
-                     * @return CategoryIds 分类id集合
+                     * 获取<p>分类id集合</p>
+                     * @return CategoryIds <p>分类id集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetCategoryIds() const;
 
                     /**
-                     * 设置分类id集合
-                     * @param _categoryIds 分类id集合
+                     * 设置<p>分类id集合</p>
+                     * @param _categoryIds <p>分类id集合</p>
                      * 
                      */
                     void SetCategoryIds(const std::vector<uint64_t>& _categoryIds);
@@ -215,15 +216,15 @@ namespace TencentCloud
                     bool CategoryIdsHasBeenSet() const;
 
                     /**
-                     * 获取分类名称集合
-                     * @return CategoryNames 分类名称集合
+                     * 获取<p>分类名称集合</p>
+                     * @return CategoryNames <p>分类名称集合</p>
                      * 
                      */
                     std::vector<std::string> GetCategoryNames() const;
 
                     /**
-                     * 设置分类名称集合
-                     * @param _categoryNames 分类名称集合
+                     * 设置<p>分类名称集合</p>
+                     * @param _categoryNames <p>分类名称集合</p>
                      * 
                      */
                     void SetCategoryNames(const std::vector<std::string>& _categoryNames);
@@ -235,61 +236,115 @@ namespace TencentCloud
                      */
                     bool CategoryNamesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分类详情</p>
+                     * @return CategoryDetails <p>分类详情</p>
+                     * 
+                     */
+                    std::vector<DspmIdentifyCategoryDetail> GetCategoryDetails() const;
+
+                    /**
+                     * 设置<p>分类详情</p>
+                     * @param _categoryDetails <p>分类详情</p>
+                     * 
+                     */
+                    void SetCategoryDetails(const std::vector<DspmIdentifyCategoryDetail>& _categoryDetails);
+
+                    /**
+                     * 判断参数 CategoryDetails 是否已赋值
+                     * @return CategoryDetails 是否已赋值
+                     * 
+                     */
+                    bool CategoryDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字段注释</p>
+                     * @return FieldComment <p>字段注释</p>
+                     * 
+                     */
+                    std::string GetFieldComment() const;
+
+                    /**
+                     * 设置<p>字段注释</p>
+                     * @param _fieldComment <p>字段注释</p>
+                     * 
+                     */
+                    void SetFieldComment(const std::string& _fieldComment);
+
+                    /**
+                     * 判断参数 FieldComment 是否已赋值
+                     * @return FieldComment 是否已赋值
+                     * 
+                     */
+                    bool FieldCommentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资产实例id
+                     * <p>资产实例id</p>
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * schema名
+                     * <p>schema名</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 表名
+                     * <p>表名</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 字段名
+                     * <p>字段名</p>
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;
 
                     /**
-                     * 数据项id集合
+                     * <p>数据项id集合</p>
                      */
                     std::vector<uint64_t> m_ruleIds;
                     bool m_ruleIdsHasBeenSet;
 
                     /**
-                     * 数据项名称集合
+                     * <p>数据项名称集合</p>
                      */
                     std::vector<std::string> m_ruleNames;
                     bool m_ruleNamesHasBeenSet;
 
                     /**
-                     * 分类id集合
+                     * <p>分类id集合</p>
                      */
                     std::vector<uint64_t> m_categoryIds;
                     bool m_categoryIdsHasBeenSet;
 
                     /**
-                     * 分类名称集合
+                     * <p>分类名称集合</p>
                      */
                     std::vector<std::string> m_categoryNames;
                     bool m_categoryNamesHasBeenSet;
+
+                    /**
+                     * <p>分类详情</p>
+                     */
+                    std::vector<DspmIdentifyCategoryDetail> m_categoryDetails;
+                    bool m_categoryDetailsHasBeenSet;
+
+                    /**
+                     * <p>字段注释</p>
+                     */
+                    std::string m_fieldComment;
+                    bool m_fieldCommentHasBeenSet;
 
                 };
             }

@@ -25,6 +25,10 @@ using namespace std;
 DescribeBackUpJobRequest::DescribeBackUpJobRequest() :
     m_instanceIdHasBeenSet(false),
     m_applicationTypeHasBeenSet(false),
+    m_typeFiltersHasBeenSet(false),
+    m_statusFiltersHasBeenSet(false),
+    m_scheduleNameFiltersHasBeenSet(false),
+    m_orderTypeHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
@@ -55,6 +59,48 @@ string DescribeBackUpJobRequest::ToJsonString() const
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_applicationType, allocator);
+    }
+
+    if (m_typeFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeFilters.begin(); itr != m_typeFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_statusFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusFilters.begin(); itr != m_statusFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_scheduleNameFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleNameFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleNameFilters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pageSizeHasBeenSet)
@@ -148,6 +194,70 @@ void DescribeBackUpJobRequest::SetApplicationType(const int64_t& _applicationTyp
 bool DescribeBackUpJobRequest::ApplicationTypeHasBeenSet() const
 {
     return m_applicationTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeBackUpJobRequest::GetTypeFilters() const
+{
+    return m_typeFilters;
+}
+
+void DescribeBackUpJobRequest::SetTypeFilters(const vector<int64_t>& _typeFilters)
+{
+    m_typeFilters = _typeFilters;
+    m_typeFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpJobRequest::TypeFiltersHasBeenSet() const
+{
+    return m_typeFiltersHasBeenSet;
+}
+
+vector<int64_t> DescribeBackUpJobRequest::GetStatusFilters() const
+{
+    return m_statusFilters;
+}
+
+void DescribeBackUpJobRequest::SetStatusFilters(const vector<int64_t>& _statusFilters)
+{
+    m_statusFilters = _statusFilters;
+    m_statusFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpJobRequest::StatusFiltersHasBeenSet() const
+{
+    return m_statusFiltersHasBeenSet;
+}
+
+string DescribeBackUpJobRequest::GetScheduleNameFilters() const
+{
+    return m_scheduleNameFilters;
+}
+
+void DescribeBackUpJobRequest::SetScheduleNameFilters(const string& _scheduleNameFilters)
+{
+    m_scheduleNameFilters = _scheduleNameFilters;
+    m_scheduleNameFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpJobRequest::ScheduleNameFiltersHasBeenSet() const
+{
+    return m_scheduleNameFiltersHasBeenSet;
+}
+
+string DescribeBackUpJobRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeBackUpJobRequest::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeBackUpJobRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 
 int64_t DescribeBackUpJobRequest::GetPageSize() const

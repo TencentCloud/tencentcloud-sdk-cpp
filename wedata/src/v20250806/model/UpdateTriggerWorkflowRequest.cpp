@@ -32,7 +32,8 @@ UpdateTriggerWorkflowRequest::UpdateTriggerWorkflowRequest() :
     m_triggerWorkflowSchedulerConfigurationsHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
-    m_generalTaskParamsHasBeenSet(false)
+    m_generalTaskParamsHasBeenSet(false),
+    m_triggerWorkflowRunConfigurationHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,15 @@ string UpdateTriggerWorkflowRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_triggerWorkflowRunConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerWorkflowRunConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_triggerWorkflowRunConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -310,6 +320,22 @@ void UpdateTriggerWorkflowRequest::SetGeneralTaskParams(const vector<WorkflowGen
 bool UpdateTriggerWorkflowRequest::GeneralTaskParamsHasBeenSet() const
 {
     return m_generalTaskParamsHasBeenSet;
+}
+
+WorkflowRunConfig UpdateTriggerWorkflowRequest::GetTriggerWorkflowRunConfiguration() const
+{
+    return m_triggerWorkflowRunConfiguration;
+}
+
+void UpdateTriggerWorkflowRequest::SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration)
+{
+    m_triggerWorkflowRunConfiguration = _triggerWorkflowRunConfiguration;
+    m_triggerWorkflowRunConfigurationHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowRequest::TriggerWorkflowRunConfigurationHasBeenSet() const
+{
+    return m_triggerWorkflowRunConfigurationHasBeenSet;
 }
 
 

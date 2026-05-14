@@ -27,6 +27,7 @@
 #include <tencentcloud/wedata/v20250806/model/ParamInfo.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowTriggerConfig.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowGeneralTaskParam.h>
+#include <tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h>
 
 
 namespace TencentCloud
@@ -50,18 +51,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流名称
+                     * 获取<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowName 工作流名称
+                     * @return WorkflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
+                     * 设置<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowName 工作流名称
+                     * @param _workflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +76,18 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取责任人ID
+                     * 获取<p>责任人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin 责任人ID
+                     * @return OwnerUin <p>责任人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置责任人ID
+                     * 设置<p>责任人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin 责任人ID
+                     * @param _ownerUin <p>责任人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +101,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建人ID
+                     * 获取<p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUserUin 创建人ID
+                     * @return CreateUserUin <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人ID
+                     * 设置<p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUserUin 创建人ID
+                     * @param _createUserUin <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,18 +126,18 @@ namespace TencentCloud
                     bool CreateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取工作流参数数组
+                     * 获取<p>工作流参数数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowParams 工作流参数数组
+                     * @return WorkflowParams <p>工作流参数数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamInfo> GetWorkflowParams() const;
 
                     /**
-                     * 设置工作流参数数组
+                     * 设置<p>工作流参数数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowParams 工作流参数数组
+                     * @param _workflowParams <p>工作流参数数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,18 +151,18 @@ namespace TencentCloud
                     bool WorkflowParamsHasBeenSet() const;
 
                     /**
-                     * 获取统一调度参数
+                     * 获取<p>统一调度参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerWorkflowSchedulerConfigurations 统一调度参数
+                     * @return TriggerWorkflowSchedulerConfigurations <p>统一调度参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkflowTriggerConfig> GetTriggerWorkflowSchedulerConfigurations() const;
 
                     /**
-                     * 设置统一调度参数
+                     * 设置<p>统一调度参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerWorkflowSchedulerConfigurations 统一调度参数
+                     * @param _triggerWorkflowSchedulerConfigurations <p>统一调度参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +176,18 @@ namespace TencentCloud
                     bool TriggerWorkflowSchedulerConfigurationsHasBeenSet() const;
 
                     /**
-                     * 获取工作流描述
+                     * 获取<p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowDesc 工作流描述
+                     * @return WorkflowDesc <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowDesc() const;
 
                     /**
-                     * 设置工作流描述
+                     * 设置<p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowDesc 工作流描述
+                     * @param _workflowDesc <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,18 +201,18 @@ namespace TencentCloud
                     bool WorkflowDescHasBeenSet() const;
 
                     /**
-                     * 获取工作流所属路径
+                     * 获取<p>工作流所属路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 工作流所属路径
+                     * @return Path <p>工作流所属路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置工作流所属路径
+                     * 设置<p>工作流所属路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 工作流所属路径
+                     * @param _path <p>工作流所属路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,18 +226,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取BundleId项
+                     * 获取<p>BundleId项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BundleId BundleId项
+                     * @return BundleId <p>BundleId项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置BundleId项
+                     * 设置<p>BundleId项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bundleId BundleId项
+                     * @param _bundleId <p>BundleId项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -250,18 +251,18 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取BundleInfo项
+                     * 获取<p>BundleInfo项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BundleInfo BundleInfo项
+                     * @return BundleInfo <p>BundleInfo项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleInfo() const;
 
                     /**
-                     * 设置BundleInfo项
+                     * 设置<p>BundleInfo项</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bundleInfo BundleInfo项
+                     * @param _bundleInfo <p>BundleInfo项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,18 +276,18 @@ namespace TencentCloud
                     bool BundleInfoHasBeenSet() const;
 
                     /**
-                     * 获取通用参数
+                     * 获取<p>通用参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GeneralTaskParams 通用参数
+                     * @return GeneralTaskParams <p>通用参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkflowGeneralTaskParam> GetGeneralTaskParams() const;
 
                     /**
-                     * 设置通用参数
+                     * 设置<p>通用参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _generalTaskParams 通用参数
+                     * @param _generalTaskParams <p>通用参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -300,18 +301,18 @@ namespace TencentCloud
                     bool GeneralTaskParamsHasBeenSet() const;
 
                     /**
-                     * 获取Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * 获取<p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchedulerStatus Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * @return SchedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchedulerStatus() const;
 
                     /**
-                     * 设置Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * 设置<p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _schedulerStatus Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * @param _schedulerStatus <p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,84 +325,116 @@ namespace TencentCloud
                      */
                     bool SchedulerStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流运行参数配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerWorkflowRunConfiguration <p>工作流运行参数配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WorkflowRunConfig GetTriggerWorkflowRunConfiguration() const;
+
+                    /**
+                     * 设置<p>工作流运行参数配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerWorkflowRunConfiguration <p>工作流运行参数配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerWorkflowRunConfiguration(const WorkflowRunConfig& _triggerWorkflowRunConfiguration);
+
+                    /**
+                     * 判断参数 TriggerWorkflowRunConfiguration 是否已赋值
+                     * @return TriggerWorkflowRunConfiguration 是否已赋值
+                     * 
+                     */
+                    bool TriggerWorkflowRunConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 责任人ID
+                     * <p>责任人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建人ID
+                     * <p>创建人ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
 
                     /**
-                     * 工作流参数数组
+                     * <p>工作流参数数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamInfo> m_workflowParams;
                     bool m_workflowParamsHasBeenSet;
 
                     /**
-                     * 统一调度参数
+                     * <p>统一调度参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkflowTriggerConfig> m_triggerWorkflowSchedulerConfigurations;
                     bool m_triggerWorkflowSchedulerConfigurationsHasBeenSet;
 
                     /**
-                     * 工作流描述
+                     * <p>工作流描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowDesc;
                     bool m_workflowDescHasBeenSet;
 
                     /**
-                     * 工作流所属路径
+                     * <p>工作流所属路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * BundleId项
+                     * <p>BundleId项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * BundleInfo项
+                     * <p>BundleInfo项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleInfo;
                     bool m_bundleInfoHasBeenSet;
 
                     /**
-                     * 通用参数
+                     * <p>通用参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkflowGeneralTaskParam> m_generalTaskParams;
                     bool m_generalTaskParamsHasBeenSet;
 
                     /**
-                     * Trigger 状态 启动ACTIVE，暂停PAUSED
+                     * <p>Trigger 状态 启动ACTIVE，暂停PAUSED</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerStatus;
                     bool m_schedulerStatusHasBeenSet;
+
+                    /**
+                     * <p>工作流运行参数配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkflowRunConfig m_triggerWorkflowRunConfiguration;
+                    bool m_triggerWorkflowRunConfigurationHasBeenSet;
 
                 };
             }
