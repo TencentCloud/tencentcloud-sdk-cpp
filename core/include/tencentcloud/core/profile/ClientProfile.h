@@ -18,6 +18,7 @@
 #define TENCENTCLOUD_CORE_CLIENTPROFILE_H_
 
 #include "HttpProfile.h"
+#include "RegionBreakerProfile.h"
 
 namespace TencentCloud
 {
@@ -43,7 +44,9 @@ namespace TencentCloud
         ClientProfile(const SignMethod &signMethod, const HttpProfile &httpProfile) :
             m_httpProfile(httpProfile),
             m_unsignedPayload(false),
-            m_signMethod(signMethod)
+            m_signMethod(signMethod),
+            m_disableRegionBreaker(true),
+            m_regionBreakerProfile()
         {
         }
 
@@ -56,6 +59,16 @@ namespace TencentCloud
         void SetHttpProfile(const HttpProfile &httpProfile);
         HttpProfile GetHttpProfile() const;
 
+        /// Region-level failover control.
+        /// Disabled by default: users must opt in explicitly by calling
+        /// SetDisableRegionBreaker(false). Set to false to enable
+        /// region failover.
+        void SetDisableRegionBreaker(bool disabled);
+        bool GetDisableRegionBreaker() const;
+
+        void SetRegionBreakerProfile(const RegionBreakerProfile &profile);
+        RegionBreakerProfile GetRegionBreakerProfile() const;
+
     protected:
         void SetUnsignedPayload(bool flag);
         bool IsUnsignedPayload();
@@ -64,6 +77,8 @@ namespace TencentCloud
         HttpProfile m_httpProfile;
         bool m_unsignedPayload;
         SignMethod m_signMethod;
+        bool m_disableRegionBreaker;
+        RegionBreakerProfile m_regionBreakerProfile;
     };
 }
 
