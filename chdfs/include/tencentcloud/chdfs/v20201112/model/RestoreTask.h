@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回热任务ID
-                     * @return RestoreTaskId 回热任务ID
+                     * 获取<p>回热任务ID</p>
+                     * @return RestoreTaskId <p>回热任务ID</p>
                      * 
                      */
                     uint64_t GetRestoreTaskId() const;
 
                     /**
-                     * 设置回热任务ID
-                     * @param _restoreTaskId 回热任务ID
+                     * 设置<p>回热任务ID</p>
+                     * @param _restoreTaskId <p>回热任务ID</p>
                      * 
                      */
                     void SetRestoreTaskId(const uint64_t& _restoreTaskId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RestoreTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取回热任务文件路径
-                     * @return FilePath 回热任务文件路径
+                     * 获取<p>回热任务文件路径，不支持目录和通配符</p>
+                     * @return FilePath <p>回热任务文件路径，不支持目录和通配符</p>
                      * 
                      */
                     std::string GetFilePath() const;
 
                     /**
-                     * 设置回热任务文件路径
-                     * @param _filePath 回热任务文件路径
+                     * 设置<p>回热任务文件路径，不支持目录和通配符</p>
+                     * @param _filePath <p>回热任务文件路径，不支持目录和通配符</p>
                      * 
                      */
                     void SetFilePath(const std::string& _filePath);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FilePathHasBeenSet() const;
 
                     /**
-                     * 获取回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
-                     * @return Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
+                     * 获取<p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>
+                     * @return Type <p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
-                     * @param _type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
+                     * 设置<p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>
+                     * @param _type <p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取指定恢复出的临时副本的有效时长（单位天）
-                     * @return Days 指定恢复出的临时副本的有效时长（单位天）
+                     * 获取<p>指定恢复出的临时副本的有效时长（单位天）</p>
+                     * @return Days <p>指定恢复出的临时副本的有效时长（单位天）</p>
                      * 
                      */
                     uint64_t GetDays() const;
 
                     /**
-                     * 设置指定恢复出的临时副本的有效时长（单位天）
-                     * @param _days 指定恢复出的临时副本的有效时长（单位天）
+                     * 设置<p>指定恢复出的临时副本的有效时长（单位天）</p>
+                     * @param _days <p>指定恢复出的临时副本的有效时长（单位天）</p>
                      * 
                      */
                     void SetDays(const uint64_t& _days);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DaysHasBeenSet() const;
 
                     /**
-                     * 获取回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
-                     * @return Status 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * 获取<p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>
+                     * @return Status <p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
-                     * @param _status 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * 设置<p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>
+                     * @param _status <p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回热任务ID
+                     * <p>回热任务ID</p>
                      */
                     uint64_t m_restoreTaskId;
                     bool m_restoreTaskIdHasBeenSet;
 
                     /**
-                     * 回热任务文件路径
+                     * <p>回热任务文件路径，不支持目录和通配符</p>
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
 
                     /**
-                     * 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）
+                     * <p>回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 指定恢复出的临时副本的有效时长（单位天）
+                     * <p>指定恢复出的临时副本的有效时长（单位天）</p>
                      */
                     uint64_t m_days;
                     bool m_daysHasBeenSet;
 
                     /**
-                     * 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * <p>回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

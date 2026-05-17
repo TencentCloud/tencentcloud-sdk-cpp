@@ -865,6 +865,31 @@ namespace TencentCloud
                      */
                     bool FallbackModelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelProtocol <p>模型类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModelProtocol() const;
+
+                    /**
+                     * 设置<p>模型类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelProtocol <p>模型类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelProtocol(const std::string& _modelProtocol);
+
+                    /**
+                     * 判断参数 ModelProtocol 是否已赋值
+                     * @return ModelProtocol 是否已赋值
+                     * 
+                     */
+                    bool ModelProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1096,6 +1121,13 @@ namespace TencentCloud
                      */
                     std::vector<TargetModelDTO> m_fallbackModels;
                     bool m_fallbackModelsHasBeenSet;
+
+                    /**
+                     * <p>模型类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modelProtocol;
+                    bool m_modelProtocolHasBeenSet;
 
                 };
             }

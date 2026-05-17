@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取地域中文
+                     * 获取<p>地域中文</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionName 地域中文
+                     * @return RegionName <p>地域中文</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置地域中文
+                     * 设置<p>地域中文</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionName 地域中文
+                     * @param _regionName <p>地域中文</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取是否国外
+                     * 获取<p>是否境外</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Foreign 是否国外
+                     * @return Foreign <p>是否境外</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetForeign() const;
 
                     /**
-                     * 设置是否国外
+                     * 设置<p>是否境外</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _foreign 是否国外
+                     * @param _foreign <p>是否境外</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ForeignHasBeenSet() const;
 
                     /**
-                     * 获取地域码
+                     * 获取<p>地域码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code 地域码
+                     * @return Code <p>地域码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置地域码
+                     * 设置<p>地域码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _code 地域码
+                     * @param _code <p>地域码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取是否自驾云
+                     * 获取<p>是否自驾云</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsAutoDriveCloud 是否自驾云
+                     * @return IsAutoDriveCloud <p>是否自驾云</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAutoDriveCloud() const;
 
                     /**
-                     * 设置是否自驾云
+                     * 设置<p>是否自驾云</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isAutoDriveCloud 是否自驾云
+                     * @param _isAutoDriveCloud <p>是否自驾云</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool IsAutoDriveCloudHasBeenSet() const;
 
                     /**
-                     * 获取是否支持nat
+                     * 获取<p>是否支持nat</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSupportNat 是否支持nat
+                     * @return IsSupportNat <p>是否支持nat</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSupportNat() const;
 
                     /**
-                     * 设置是否支持nat
+                     * 设置<p>是否支持nat</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSupportNat 是否支持nat
+                     * @param _isSupportNat <p>是否支持nat</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool IsSupportNatHasBeenSet() const;
 
                     /**
-                     * 获取地区信息
+                     * 获取<p>地区信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionArea 地区信息
+                     * @return RegionArea <p>地区信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionArea() const;
 
                     /**
-                     * 设置地区信息
+                     * 设置<p>地区信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionArea 地区信息
+                     * @param _regionArea <p>地区信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,15 +222,15 @@ namespace TencentCloud
                     bool RegionAreaHasBeenSet() const;
 
                     /**
-                     * 获取地域英文
-                     * @return RegionNameEN 地域英文
+                     * 获取<p>地域英文</p>
+                     * @return RegionNameEN <p>地域英文</p>
                      * 
                      */
                     std::string GetRegionNameEN() const;
 
                     /**
-                     * 设置地域英文
-                     * @param _regionNameEN 地域英文
+                     * 设置<p>地域英文</p>
+                     * @param _regionNameEN <p>地域英文</p>
                      * 
                      */
                     void SetRegionNameEN(const std::string& _regionNameEN);
@@ -245,56 +245,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 地域中文
+                     * <p>地域中文</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * 是否国外
+                     * <p>是否境外</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_foreign;
                     bool m_foreignHasBeenSet;
 
                     /**
-                     * 地域码
+                     * <p>地域码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 是否自驾云
+                     * <p>是否自驾云</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAutoDriveCloud;
                     bool m_isAutoDriveCloudHasBeenSet;
 
                     /**
-                     * 是否支持nat
+                     * <p>是否支持nat</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSupportNat;
                     bool m_isSupportNatHasBeenSet;
 
                     /**
-                     * 地区信息
+                     * <p>地区信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionArea;
                     bool m_regionAreaHasBeenSet;
 
                     /**
-                     * 地域英文
+                     * <p>地域英文</p>
                      */
                     std::string m_regionNameEN;
                     bool m_regionNameENHasBeenSet;

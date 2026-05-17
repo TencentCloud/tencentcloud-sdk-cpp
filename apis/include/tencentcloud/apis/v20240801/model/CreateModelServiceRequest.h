@@ -595,6 +595,27 @@ namespace TencentCloud
                      */
                     bool FallbackModelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型协议</p>
+                     * @return ModelProtocol <p>模型协议</p>
+                     * 
+                     */
+                    std::string GetModelProtocol() const;
+
+                    /**
+                     * 设置<p>模型协议</p>
+                     * @param _modelProtocol <p>模型协议</p>
+                     * 
+                     */
+                    void SetModelProtocol(const std::string& _modelProtocol);
+
+                    /**
+                     * 判断参数 ModelProtocol 是否已赋值
+                     * @return ModelProtocol 是否已赋值
+                     * 
+                     */
+                    bool ModelProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -752,6 +773,12 @@ namespace TencentCloud
                      */
                     std::vector<TargetModelDTO> m_fallbackModels;
                     bool m_fallbackModelsHasBeenSet;
+
+                    /**
+                     * <p>模型协议</p>
+                     */
+                    std::string m_modelProtocol;
+                    bool m_modelProtocolHasBeenSet;
 
                 };
             }

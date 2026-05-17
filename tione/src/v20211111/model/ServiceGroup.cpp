@@ -46,7 +46,9 @@ ServiceGroup::ServiceGroup() :
     m_monitorSourceHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
     m_gatewayLogConfigHasBeenSet(false),
-    m_gatewayConfigHasBeenSet(false)
+    m_gatewayConfigHasBeenSet(false),
+    m_changerHasBeenSet(false),
+    m_changerNameHasBeenSet(false)
 {
 }
 
@@ -359,6 +361,26 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_gatewayConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Changer") && !value["Changer"].IsNull())
+    {
+        if (!value["Changer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.Changer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_changer = string(value["Changer"].GetString());
+        m_changerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChangerName") && !value["ChangerName"].IsNull())
+    {
+        if (!value["ChangerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.ChangerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_changerName = string(value["ChangerName"].GetString());
+        m_changerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -595,6 +617,22 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_changerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Changer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_changer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_changerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_changerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1014,5 +1052,37 @@ void ServiceGroup::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
 bool ServiceGroup::GatewayConfigHasBeenSet() const
 {
     return m_gatewayConfigHasBeenSet;
+}
+
+string ServiceGroup::GetChanger() const
+{
+    return m_changer;
+}
+
+void ServiceGroup::SetChanger(const string& _changer)
+{
+    m_changer = _changer;
+    m_changerHasBeenSet = true;
+}
+
+bool ServiceGroup::ChangerHasBeenSet() const
+{
+    return m_changerHasBeenSet;
+}
+
+string ServiceGroup::GetChangerName() const
+{
+    return m_changerName;
+}
+
+void ServiceGroup::SetChangerName(const string& _changerName)
+{
+    m_changerName = _changerName;
+    m_changerNameHasBeenSet = true;
+}
+
+bool ServiceGroup::ChangerNameHasBeenSet() const
+{
+    return m_changerNameHasBeenSet;
 }
 

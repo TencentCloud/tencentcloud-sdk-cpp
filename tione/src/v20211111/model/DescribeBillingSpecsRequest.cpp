@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeBillingSpecsRequest::DescribeBillingSpecsRequest() :
     m_chargeTypeHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
@@ -42,6 +43,14 @@ string DescribeBillingSpecsRequest::ToJsonString() const
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTypeHasBeenSet)
@@ -82,6 +91,22 @@ void DescribeBillingSpecsRequest::SetChargeType(const string& _chargeType)
 bool DescribeBillingSpecsRequest::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+string DescribeBillingSpecsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeBillingSpecsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeBillingSpecsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DescribeBillingSpecsRequest::GetTaskType() const

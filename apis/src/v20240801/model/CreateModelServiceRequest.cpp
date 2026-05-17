@@ -48,7 +48,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_findHostKeyMethodHasBeenSet(false),
     m_hostKeyHeaderNameHasBeenSet(false),
     m_fallbackStatusHasBeenSet(false),
-    m_fallbackModelsHasBeenSet(false)
+    m_fallbackModelsHasBeenSet(false),
+    m_modelProtocolHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,14 @@ string CreateModelServiceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modelProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelProtocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -725,6 +734,22 @@ void CreateModelServiceRequest::SetFallbackModels(const vector<TargetModelDTO>& 
 bool CreateModelServiceRequest::FallbackModelsHasBeenSet() const
 {
     return m_fallbackModelsHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetModelProtocol() const
+{
+    return m_modelProtocol;
+}
+
+void CreateModelServiceRequest::SetModelProtocol(const string& _modelProtocol)
+{
+    m_modelProtocol = _modelProtocol;
+    m_modelProtocolHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ModelProtocolHasBeenSet() const
+{
+    return m_modelProtocolHasBeenSet;
 }
 
 

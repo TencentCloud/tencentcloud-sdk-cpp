@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合过滤条件的记录总数。
-                     * @return TotalCount 符合过滤条件的记录总数。
+                     * 获取<p>符合过滤条件的记录总数。</p>
+                     * @return TotalCount <p>符合过滤条件的记录总数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取任务流模板详情列表。
-                     * @return ProcedureTemplateSet 任务流模板详情列表。
+                     * 获取<p>任务流模板详情列表。</p>
+                     * @return ProcedureTemplateSet <p>任务流模板详情列表。</p>
                      * 
                      */
                     std::vector<ProcedureTemplate> GetProcedureTemplateSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合过滤条件的记录总数。
+                     * <p>符合过滤条件的记录总数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 任务流模板详情列表。
+                     * <p>任务流模板详情列表。</p>
                      */
                     std::vector<ProcedureTemplate> m_procedureTemplateSet;
                     bool m_procedureTemplateSetHasBeenSet;

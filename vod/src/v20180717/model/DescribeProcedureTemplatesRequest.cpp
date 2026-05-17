@@ -27,7 +27,8 @@ DescribeProcedureTemplatesRequest::DescribeProcedureTemplatesRequest() :
     m_namesHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_sortByHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,21 @@ string DescribeProcedureTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_sortByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sortBy.begin(); itr != m_sortBy.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -169,6 +185,22 @@ void DescribeProcedureTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeProcedureTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<SortBy> DescribeProcedureTemplatesRequest::GetSortBy() const
+{
+    return m_sortBy;
+}
+
+void DescribeProcedureTemplatesRequest::SetSortBy(const vector<SortBy>& _sortBy)
+{
+    m_sortBy = _sortBy;
+    m_sortByHasBeenSet = true;
+}
+
+bool DescribeProcedureTemplatesRequest::SortByHasBeenSet() const
+{
+    return m_sortByHasBeenSet;
 }
 
 

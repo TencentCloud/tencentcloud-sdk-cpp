@@ -395,6 +395,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyObjectResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectsRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectsResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspDomainUpdateStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyOwaspDomainUpdateStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionRequest.h>
@@ -1031,6 +1033,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyObjectsResponse> ModifyObjectsOutcome;
                 typedef std::future<ModifyObjectsOutcome> ModifyObjectsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyObjectsRequest&, ModifyObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwaspDomainUpdateStatusResponse> ModifyOwaspDomainUpdateStatusOutcome;
+                typedef std::future<ModifyOwaspDomainUpdateStatusOutcome> ModifyOwaspDomainUpdateStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyOwaspDomainUpdateStatusRequest&, ModifyOwaspDomainUpdateStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspDomainUpdateStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOwaspRuleStatusResponse> ModifyOwaspRuleStatusOutcome;
                 typedef std::future<ModifyOwaspRuleStatusOutcome> ModifyOwaspRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleStatusRequest&, ModifyOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleStatusAsyncHandler;
@@ -2806,6 +2811,15 @@ namespace TencentCloud
                 ModifyObjectsOutcome ModifyObjects(const Model::ModifyObjectsRequest &request);
                 void ModifyObjectsAsync(const Model::ModifyObjectsRequest& request, const ModifyObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyObjectsOutcomeCallable ModifyObjectsCallable(const Model::ModifyObjectsRequest& request);
+
+                /**
+                 *修改域名新规则状态
+                 * @param req ModifyOwaspDomainUpdateStatusRequest
+                 * @return ModifyOwaspDomainUpdateStatusOutcome
+                 */
+                ModifyOwaspDomainUpdateStatusOutcome ModifyOwaspDomainUpdateStatus(const Model::ModifyOwaspDomainUpdateStatusRequest &request);
+                void ModifyOwaspDomainUpdateStatusAsync(const Model::ModifyOwaspDomainUpdateStatusRequest& request, const ModifyOwaspDomainUpdateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwaspDomainUpdateStatusOutcomeCallable ModifyOwaspDomainUpdateStatusCallable(const Model::ModifyOwaspDomainUpdateStatusRequest& request);
 
                 /**
                  *更新规则的开关

@@ -22,7 +22,8 @@ using namespace std;
 
 PromptModerateConfigDTO::PromptModerateConfigDTO() :
     m_actionHasBeenSet(false),
-    m_interceptMessageHasBeenSet(false)
+    m_interceptMessageHasBeenSet(false),
+    m_contextScopeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PromptModerateConfigDTO::Deserialize(const rapidjson::Value 
         m_interceptMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("ContextScope") && !value["ContextScope"].IsNull())
+    {
+        if (!value["ContextScope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PromptModerateConfigDTO.ContextScope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextScope = string(value["ContextScope"].GetString());
+        m_contextScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PromptModerateConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "InterceptMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_interceptMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextScope.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PromptModerateConfigDTO::SetInterceptMessage(const string& _interceptMessag
 bool PromptModerateConfigDTO::InterceptMessageHasBeenSet() const
 {
     return m_interceptMessageHasBeenSet;
+}
+
+string PromptModerateConfigDTO::GetContextScope() const
+{
+    return m_contextScope;
+}
+
+void PromptModerateConfigDTO::SetContextScope(const string& _contextScope)
+{
+    m_contextScope = _contextScope;
+    m_contextScopeHasBeenSet = true;
+}
+
+bool PromptModerateConfigDTO::ContextScopeHasBeenSet() const
+{
+    return m_contextScopeHasBeenSet;
 }
 

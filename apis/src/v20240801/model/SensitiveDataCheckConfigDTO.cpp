@@ -23,7 +23,8 @@ using namespace std;
 SensitiveDataCheckConfigDTO::SensitiveDataCheckConfigDTO() :
     m_actionHasBeenSet(false),
     m_interceptMessageHasBeenSet(false),
-    m_checkItemsHasBeenSet(false)
+    m_checkItemsHasBeenSet(false),
+    m_contextScopeHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome SensitiveDataCheckConfigDTO::Deserialize(const rapidjson::Va
         m_checkItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("ContextScope") && !value["ContextScope"].IsNull())
+    {
+        if (!value["ContextScope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SensitiveDataCheckConfigDTO.ContextScope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextScope = string(value["ContextScope"].GetString());
+        m_contextScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void SensitiveDataCheckConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjso
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_contextScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextScope.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void SensitiveDataCheckConfigDTO::SetCheckItems(const vector<string>& _checkItem
 bool SensitiveDataCheckConfigDTO::CheckItemsHasBeenSet() const
 {
     return m_checkItemsHasBeenSet;
+}
+
+string SensitiveDataCheckConfigDTO::GetContextScope() const
+{
+    return m_contextScope;
+}
+
+void SensitiveDataCheckConfigDTO::SetContextScope(const string& _contextScope)
+{
+    m_contextScope = _contextScope;
+    m_contextScopeHasBeenSet = true;
+}
+
+bool SensitiveDataCheckConfigDTO::ContextScopeHasBeenSet() const
+{
+    return m_contextScopeHasBeenSet;
 }
 

@@ -4990,6 +4990,56 @@ IotexplorerClient::DescribeInstanceOutcomeCallable IotexplorerClient::DescribeIn
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeLicenseOverviewOutcome IotexplorerClient::DescribeLicenseOverview(const DescribeLicenseOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenseOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseOverviewResponse rsp = DescribeLicenseOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseOverviewOutcome(rsp);
+        else
+            return DescribeLicenseOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseOverviewOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeLicenseOverviewAsync(const DescribeLicenseOverviewRequest& request, const DescribeLicenseOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLicenseOverviewRequest&;
+    using Resp = DescribeLicenseOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLicenseOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeLicenseOverviewOutcomeCallable IotexplorerClient::DescribeLicenseOverviewCallable(const DescribeLicenseOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLicenseOverviewOutcome>>();
+    DescribeLicenseOverviewAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeLicenseOverviewRequest&,
+        DescribeLicenseOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeLoRaFrequencyOutcome IotexplorerClient::DescribeLoRaFrequency(const DescribeLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoRaFrequency");

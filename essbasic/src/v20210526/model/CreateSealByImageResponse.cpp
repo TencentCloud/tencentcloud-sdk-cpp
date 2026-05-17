@@ -27,7 +27,9 @@ CreateSealByImageResponse::CreateSealByImageResponse() :
     m_sealIdHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_sealOperatorVerifyPathHasBeenSet(false),
-    m_sealOperatorVerifyQrcodeUrlHasBeenSet(false)
+    m_sealOperatorVerifyQrcodeUrlHasBeenSet(false),
+    m_previewFileUrlHasBeenSet(false),
+    m_previewPdfUrlHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome CreateSealByImageResponse::Deserialize(const string &payload
         m_sealOperatorVerifyQrcodeUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewFileUrl") && !rsp["PreviewFileUrl"].IsNull())
+    {
+        if (!rsp["PreviewFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewFileUrl = string(rsp["PreviewFileUrl"].GetString());
+        m_previewFileUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PreviewPdfUrl") && !rsp["PreviewPdfUrl"].IsNull())
+    {
+        if (!rsp["PreviewPdfUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewPdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewPdfUrl = string(rsp["PreviewPdfUrl"].GetString());
+        m_previewPdfUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ string CreateSealByImageResponse::ToJsonString() const
         string key = "SealOperatorVerifyQrcodeUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sealOperatorVerifyQrcodeUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewPdfUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewPdfUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewPdfUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,26 @@ string CreateSealByImageResponse::GetSealOperatorVerifyQrcodeUrl() const
 bool CreateSealByImageResponse::SealOperatorVerifyQrcodeUrlHasBeenSet() const
 {
     return m_sealOperatorVerifyQrcodeUrlHasBeenSet;
+}
+
+string CreateSealByImageResponse::GetPreviewFileUrl() const
+{
+    return m_previewFileUrl;
+}
+
+bool CreateSealByImageResponse::PreviewFileUrlHasBeenSet() const
+{
+    return m_previewFileUrlHasBeenSet;
+}
+
+string CreateSealByImageResponse::GetPreviewPdfUrl() const
+{
+    return m_previewPdfUrl;
+}
+
+bool CreateSealByImageResponse::PreviewPdfUrlHasBeenSet() const
+{
+    return m_previewPdfUrlHasBeenSet;
 }
 
 

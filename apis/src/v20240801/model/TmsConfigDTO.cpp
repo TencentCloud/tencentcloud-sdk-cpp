@@ -26,7 +26,8 @@ TmsConfigDTO::TmsConfigDTO() :
     m_actionHasBeenSet(false),
     m_mergeCountHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
-    m_interceptMessageHasBeenSet(false)
+    m_interceptMessageHasBeenSet(false),
+    m_contextScopeHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome TmsConfigDTO::Deserialize(const rapidjson::Value &value)
         m_interceptMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("ContextScope") && !value["ContextScope"].IsNull())
+    {
+        if (!value["ContextScope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TmsConfigDTO.ContextScope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextScope = string(value["ContextScope"].GetString());
+        m_contextScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void TmsConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InterceptMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_interceptMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextScope.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void TmsConfigDTO::SetInterceptMessage(const string& _interceptMessage)
 bool TmsConfigDTO::InterceptMessageHasBeenSet() const
 {
     return m_interceptMessageHasBeenSet;
+}
+
+string TmsConfigDTO::GetContextScope() const
+{
+    return m_contextScope;
+}
+
+void TmsConfigDTO::SetContextScope(const string& _contextScope)
+{
+    m_contextScope = _contextScope;
+    m_contextScopeHasBeenSet = true;
+}
+
+bool TmsConfigDTO::ContextScopeHasBeenSet() const
+{
+    return m_contextScopeHasBeenSet;
 }
 

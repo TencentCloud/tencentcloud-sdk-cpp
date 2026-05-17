@@ -31,7 +31,9 @@ ModifyModelRequest::ModifyModelRequest() :
     m_targetHostsHasBeenSet(false),
     m_credentialIDHasBeenSet(false),
     m_checkTargetCertsErrorHasBeenSet(false),
-    m_httpProtocolVersionHasBeenSet(false)
+    m_httpProtocolVersionHasBeenSet(false),
+    m_modelIDHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ string ModifyModelRequest::ToJsonString() const
         string key = "HttpProtocolVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_httpProtocolVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +289,38 @@ void ModifyModelRequest::SetHttpProtocolVersion(const string& _httpProtocolVersi
 bool ModifyModelRequest::HttpProtocolVersionHasBeenSet() const
 {
     return m_httpProtocolVersionHasBeenSet;
+}
+
+string ModifyModelRequest::GetModelID() const
+{
+    return m_modelID;
+}
+
+void ModifyModelRequest::SetModelID(const string& _modelID)
+{
+    m_modelID = _modelID;
+    m_modelIDHasBeenSet = true;
+}
+
+bool ModifyModelRequest::ModelIDHasBeenSet() const
+{
+    return m_modelIDHasBeenSet;
+}
+
+string ModifyModelRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyModelRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyModelRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

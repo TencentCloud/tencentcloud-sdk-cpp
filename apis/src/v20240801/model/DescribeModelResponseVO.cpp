@@ -35,7 +35,9 @@ DescribeModelResponseVO::DescribeModelResponseVO() :
     m_targetHostsHasBeenSet(false),
     m_modelServiceCountHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_modelIDHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,26 @@ CoreInternalOutcome DescribeModelResponseVO::Deserialize(const rapidjson::Value 
         m_lastUpdateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelID") && !value["ModelID"].IsNull())
+    {
+        if (!value["ModelID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelResponseVO.ModelID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelID = string(value["ModelID"].GetString());
+        m_modelIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelResponseVO.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +358,22 @@ void DescribeModelResponseVO::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "LastUpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +617,37 @@ void DescribeModelResponseVO::SetLastUpdateTime(const string& _lastUpdateTime)
 bool DescribeModelResponseVO::LastUpdateTimeHasBeenSet() const
 {
     return m_lastUpdateTimeHasBeenSet;
+}
+
+string DescribeModelResponseVO::GetModelID() const
+{
+    return m_modelID;
+}
+
+void DescribeModelResponseVO::SetModelID(const string& _modelID)
+{
+    m_modelID = _modelID;
+    m_modelIDHasBeenSet = true;
+}
+
+bool DescribeModelResponseVO::ModelIDHasBeenSet() const
+{
+    return m_modelIDHasBeenSet;
+}
+
+string DescribeModelResponseVO::GetDescription() const
+{
+    return m_description;
+}
+
+void DescribeModelResponseVO::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool DescribeModelResponseVO::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

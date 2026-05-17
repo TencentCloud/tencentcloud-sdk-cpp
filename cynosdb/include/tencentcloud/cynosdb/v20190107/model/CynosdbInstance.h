@@ -409,15 +409,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例类型</p>
-                     * @return InstanceType <p>实例类型</p>
+                     * 获取<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写实例</li><li>ro： 只读实例</li></ul>
+                     * @return InstanceType <p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写实例</li><li>ro： 只读实例</li></ul>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置<p>实例类型</p>
-                     * @param _instanceType <p>实例类型</p>
+                     * 设置<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写实例</li><li>ro： 只读实例</li></ul>
+                     * @param _instanceType <p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写实例</li><li>ro： 只读实例</li></ul>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -1407,7 +1407,7 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * <p>实例类型</p>
+                     * <p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写实例</li><li>ro： 只读实例</li></ul>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

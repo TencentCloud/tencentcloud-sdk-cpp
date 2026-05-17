@@ -31,7 +31,8 @@ DescribeModelServicesRequest::DescribeModelServicesRequest() :
     m_statusHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_modelIDHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_sortHasBeenSet(false),
+    m_modelProtocolHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string DescribeModelServicesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sort.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modelProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelProtocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -275,6 +284,22 @@ void DescribeModelServicesRequest::SetSort(const DescribeModelServicesSort& _sor
 bool DescribeModelServicesRequest::SortHasBeenSet() const
 {
     return m_sortHasBeenSet;
+}
+
+string DescribeModelServicesRequest::GetModelProtocol() const
+{
+    return m_modelProtocol;
+}
+
+void DescribeModelServicesRequest::SetModelProtocol(const string& _modelProtocol)
+{
+    m_modelProtocol = _modelProtocol;
+    m_modelProtocolHasBeenSet = true;
+}
+
+bool DescribeModelServicesRequest::ModelProtocolHasBeenSet() const
+{
+    return m_modelProtocolHasBeenSet;
 }
 
 

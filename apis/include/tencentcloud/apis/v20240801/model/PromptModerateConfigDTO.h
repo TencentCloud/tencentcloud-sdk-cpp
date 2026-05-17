@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行动作
+                     * 获取<p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action 执行动作
+                     * @return Action <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置执行动作
+                     * 设置<p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _action 执行动作
+                     * @param _action <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取响应拦截内容
+                     * 获取<p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InterceptMessage 响应拦截内容
+                     * @return InterceptMessage <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInterceptMessage() const;
 
                     /**
-                     * 设置响应拦截内容
+                     * 设置<p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _interceptMessage 响应拦截内容
+                     * @param _interceptMessage <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,21 +96,53 @@ namespace TencentCloud
                      */
                     bool InterceptMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContextScope() const;
+
+                    /**
+                     * 设置<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _contextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContextScope(const std::string& _contextScope);
+
+                    /**
+                     * 判断参数 ContextScope 是否已赋值
+                     * @return ContextScope 是否已赋值
+                     * 
+                     */
+                    bool ContextScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 执行动作
+                     * <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 响应拦截内容
+                     * <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_interceptMessage;
                     bool m_interceptMessageHasBeenSet;
+
+                    /**
+                     * <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contextScope;
+                    bool m_contextScopeHasBeenSet;
 
                 };
             }

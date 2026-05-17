@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例
-                     * @return InstanceID 实例
+                     * 获取<p>实例</p>
+                     * @return InstanceID <p>实例</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例
-                     * @param _instanceID 实例
+                     * 设置<p>实例</p>
+                     * @param _instanceID <p>实例</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取分页参数
-                     * @return Offset 分页参数
+                     * 获取<p>分页参数</p>
+                     * @return Offset <p>分页参数</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数
-                     * @param _offset 分页参数
+                     * 设置<p>分页参数</p>
+                     * @param _offset <p>分页参数</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页限制
-                     * @return Limit 分页限制
+                     * 获取<p>分页限制</p>
+                     * @return Limit <p>分页限制</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页限制
-                     * @param _limit 分页限制
+                     * 设置<p>分页限制</p>
+                     * @param _limit <p>分页限制</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取ID列表
-                     * @return IDs ID列表
+                     * 获取<p>ID列表</p>
+                     * @return IDs <p>ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetIDs() const;
 
                     /**
-                     * 设置ID列表
-                     * @param _iDs ID列表
+                     * 设置<p>ID列表</p>
+                     * @param _iDs <p>ID列表</p>
                      * 
                      */
                     void SetIDs(const std::vector<std::string>& _iDs);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool IDsHasBeenSet() const;
 
                     /**
-                     * 获取排除的ID列表
-                     * @return NotIDs 排除的ID列表
+                     * 获取<p>排除的ID列表</p>
+                     * @return NotIDs <p>排除的ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetNotIDs() const;
 
                     /**
-                     * 设置排除的ID列表
-                     * @param _notIDs 排除的ID列表
+                     * 设置<p>排除的ID列表</p>
+                     * @param _notIDs <p>排除的ID列表</p>
                      * 
                      */
                     void SetNotIDs(const std::vector<std::string>& _notIDs);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool NotIDsHasBeenSet() const;
 
                     /**
-                     * 获取状态：normal，disabled
-                     * @return Status 状态：normal，disabled
+                     * 获取<p>状态：normal，disabled</p>
+                     * @return Status <p>状态：normal，disabled</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态：normal，disabled
-                     * @param _status 状态：normal，disabled
+                     * 设置<p>状态：normal，disabled</p>
+                     * @param _status <p>状态：normal，disabled</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取关键词
-                     * @return Keyword 关键词
+                     * 获取<p>关键词</p>
+                     * @return Keyword <p>关键词</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置关键词
-                     * @param _keyword 关键词
+                     * 设置<p>关键词</p>
+                     * @param _keyword <p>关键词</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取模型ID
-                     * @return ModelID 模型ID
+                     * 获取<p>模型ID</p>
+                     * @return ModelID <p>模型ID</p>
                      * 
                      */
                     std::string GetModelID() const;
 
                     /**
-                     * 设置模型ID
-                     * @param _modelID 模型ID
+                     * 设置<p>模型ID</p>
+                     * @param _modelID <p>模型ID</p>
                      * 
                      */
                     void SetModelID(const std::string& _modelID);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ModelIDHasBeenSet() const;
 
                     /**
-                     * 获取排序
-                     * @return Sort 排序
+                     * 获取<p>排序</p>
+                     * @return Sort <p>排序</p>
                      * 
                      */
                     DescribeModelServicesSort GetSort() const;
 
                     /**
-                     * 设置排序
-                     * @param _sort 排序
+                     * 设置<p>排序</p>
+                     * @param _sort <p>排序</p>
                      * 
                      */
                     void SetSort(const DescribeModelServicesSort& _sort);
@@ -232,61 +232,88 @@ namespace TencentCloud
                      */
                     bool SortHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型类型，OpenAI或Anthropic</p>
+                     * @return ModelProtocol <p>模型类型，OpenAI或Anthropic</p>
+                     * 
+                     */
+                    std::string GetModelProtocol() const;
+
+                    /**
+                     * 设置<p>模型类型，OpenAI或Anthropic</p>
+                     * @param _modelProtocol <p>模型类型，OpenAI或Anthropic</p>
+                     * 
+                     */
+                    void SetModelProtocol(const std::string& _modelProtocol);
+
+                    /**
+                     * 判断参数 ModelProtocol 是否已赋值
+                     * @return ModelProtocol 是否已赋值
+                     * 
+                     */
+                    bool ModelProtocolHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例
+                     * <p>实例</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 分页参数
+                     * <p>分页参数</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页限制
+                     * <p>分页限制</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * ID列表
+                     * <p>ID列表</p>
                      */
                     std::vector<std::string> m_iDs;
                     bool m_iDsHasBeenSet;
 
                     /**
-                     * 排除的ID列表
+                     * <p>排除的ID列表</p>
                      */
                     std::vector<std::string> m_notIDs;
                     bool m_notIDsHasBeenSet;
 
                     /**
-                     * 状态：normal，disabled
+                     * <p>状态：normal，disabled</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 关键词
+                     * <p>关键词</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 模型ID
+                     * <p>模型ID</p>
                      */
                     std::string m_modelID;
                     bool m_modelIDHasBeenSet;
 
                     /**
-                     * 排序
+                     * <p>排序</p>
                      */
                     DescribeModelServicesSort m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * <p>模型类型，OpenAI或Anthropic</p>
+                     */
+                    std::string m_modelProtocol;
+                    bool m_modelProtocolHasBeenSet;
 
                 };
             }

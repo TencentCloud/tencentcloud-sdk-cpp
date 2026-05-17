@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测范围,请求/响应
+                     * 获取<p>检测范围,请求/响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scope 检测范围,请求/响应
+                     * @return Scope <p>检测范围,请求/响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetScope() const;
 
                     /**
-                     * 设置检测范围,请求/响应
+                     * 设置<p>检测范围,请求/响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scope 检测范围,请求/响应
+                     * @param _scope <p>检测范围,请求/响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取检测形式
+                     * 获取<p>检测形式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode 检测形式
+                     * @return Mode <p>检测形式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置检测形式
+                     * 设置<p>检测形式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mode 检测形式
+                     * @param _mode <p>检测形式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取执行动作
+                     * 获取<p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action 执行动作
+                     * @return Action <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置执行动作
+                     * 设置<p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _action 执行动作
+                     * @param _action <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取合并请求检测event数，联动Mode字段sync
+                     * 获取<p>合并请求检测event数，联动Mode字段sync</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MergeCount 合并请求检测event数，联动Mode字段sync
+                     * @return MergeCount <p>合并请求检测event数，联动Mode字段sync</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMergeCount() const;
 
                     /**
-                     * 设置合并请求检测event数，联动Mode字段sync
+                     * 设置<p>合并请求检测event数，联动Mode字段sync</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mergeCount 合并请求检测event数，联动Mode字段sync
+                     * @param _mergeCount <p>合并请求检测event数，联动Mode字段sync</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool MergeCountHasBeenSet() const;
 
                     /**
-                     * 获取风控策略
+                     * 获取<p>风控策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizType 风控策略
+                     * @return BizType <p>风控策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置风控策略
+                     * 设置<p>风控策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bizType 风控策略
+                     * @param _bizType <p>风控策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取响应拦截内容
+                     * 获取<p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InterceptMessage 响应拦截内容
+                     * @return InterceptMessage <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInterceptMessage() const;
 
                     /**
-                     * 设置响应拦截内容
+                     * 设置<p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _interceptMessage 响应拦截内容
+                     * @param _interceptMessage <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -196,49 +196,81 @@ namespace TencentCloud
                      */
                     bool InterceptMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContextScope() const;
+
+                    /**
+                     * 设置<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _contextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContextScope(const std::string& _contextScope);
+
+                    /**
+                     * 判断参数 ContextScope 是否已赋值
+                     * @return ContextScope 是否已赋值
+                     * 
+                     */
+                    bool ContextScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 检测范围,请求/响应
+                     * <p>检测范围,请求/响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 检测形式
+                     * <p>检测形式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 执行动作
+                     * <p>执行动作</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 合并请求检测event数，联动Mode字段sync
+                     * <p>合并请求检测event数，联动Mode字段sync</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mergeCount;
                     bool m_mergeCountHasBeenSet;
 
                     /**
-                     * 风控策略
+                     * <p>风控策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 响应拦截内容
+                     * <p>响应拦截内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_interceptMessage;
                     bool m_interceptMessageHasBeenSet;
+
+                    /**
+                     * <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contextScope;
+                    bool m_contextScopeHasBeenSet;
 
                 };
             }

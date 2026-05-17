@@ -127,6 +127,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsResponse.h
   include/tencentcloud/waf/v20180125/model/Strategy.h
   include/tencentcloud/waf/v20180125/model/RemoveBypassAllRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyOwaspDomainUpdateStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostResponse.h
   include/tencentcloud/waf/v20180125/model/UpsertCCRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeHostRequest.h
@@ -354,6 +355,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AccessLogItem.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteSessionRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyOwaspDomainUpdateStatusResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAttackLogRequest.h
   include/tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h
@@ -766,6 +768,7 @@ set(waf_src
   src/v20180125/model/DescribePostCKafkaFlowsResponse.cpp
   src/v20180125/model/Strategy.cpp
   src/v20180125/model/RemoveBypassAllRuleRequest.cpp
+  src/v20180125/model/ModifyOwaspDomainUpdateStatusRequest.cpp
   src/v20180125/model/ModifyInstanceAttackLogPostResponse.cpp
   src/v20180125/model/UpsertCCRuleResponse.cpp
   src/v20180125/model/DescribeHostRequest.cpp
@@ -993,6 +996,7 @@ set(waf_src
   src/v20180125/model/AccessLogItem.cpp
   src/v20180125/model/SwitchDomainRulesRequest.cpp
   src/v20180125/model/DeleteSessionRequest.cpp
+  src/v20180125/model/ModifyOwaspDomainUpdateStatusResponse.cpp
   src/v20180125/model/SearchAttackLogRequest.cpp
   src/v20180125/model/AddCustomRuleResponse.cpp
   src/v20180125/model/DescribeFlowTrendResponse.cpp

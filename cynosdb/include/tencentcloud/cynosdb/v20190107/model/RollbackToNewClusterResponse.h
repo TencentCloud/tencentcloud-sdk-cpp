@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取冻结流水ID
-                     * @return TranId 冻结流水ID
+                     * 获取<p>冻结流水ID</p>
+                     * @return TranId <p>冻结流水ID</p>
                      * 
                      */
                     std::string GetTranId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TranIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号
-                     * @return DealNames 订单号
+                     * 获取<p>订单号</p>
+                     * @return DealNames <p>订单号</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
-                     * @return ResourceIds 资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
+                     * 获取<p>资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）</p>
+                     * @return ResourceIds <p>资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
-                     * @return ClusterIds 集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
+                     * 获取<p>集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）</p>
+                     * @return ClusterIds <p>集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）</p>
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
@@ -100,9 +100,9 @@ namespace TencentCloud
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取大订单号
+                     * 获取<p>大订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BigDealIds 大订单号
+                     * @return BigDealIds <p>大订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,31 +118,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 冻结流水ID
+                     * <p>冻结流水ID</p>
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
-                     * 订单号
+                     * <p>订单号</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）
+                     * <p>资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）</p>
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）
+                     * <p>集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）</p>
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;
 
                     /**
-                     * 大订单号
+                     * <p>大订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bigDealIds;

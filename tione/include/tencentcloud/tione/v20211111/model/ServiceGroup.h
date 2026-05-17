@@ -645,6 +645,48 @@ namespace TencentCloud
                      */
                     bool GatewayConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>变更服务的子账户</p>
+                     * @return Changer <p>变更服务的子账户</p>
+                     * 
+                     */
+                    std::string GetChanger() const;
+
+                    /**
+                     * 设置<p>变更服务的子账户</p>
+                     * @param _changer <p>变更服务的子账户</p>
+                     * 
+                     */
+                    void SetChanger(const std::string& _changer);
+
+                    /**
+                     * 判断参数 Changer 是否已赋值
+                     * @return Changer 是否已赋值
+                     * 
+                     */
+                    bool ChangerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>变更服务的子账户名称</p>
+                     * @return ChangerName <p>变更服务的子账户名称</p>
+                     * 
+                     */
+                    std::string GetChangerName() const;
+
+                    /**
+                     * 设置<p>变更服务的子账户名称</p>
+                     * @param _changerName <p>变更服务的子账户名称</p>
+                     * 
+                     */
+                    void SetChangerName(const std::string& _changerName);
+
+                    /**
+                     * 判断参数 ChangerName 是否已赋值
+                     * @return ChangerName 是否已赋值
+                     * 
+                     */
+                    bool ChangerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -814,6 +856,18 @@ namespace TencentCloud
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;
+
+                    /**
+                     * <p>变更服务的子账户</p>
+                     */
+                    std::string m_changer;
+                    bool m_changerHasBeenSet;
+
+                    /**
+                     * <p>变更服务的子账户名称</p>
+                     */
+                    std::string m_changerName;
+                    bool m_changerNameHasBeenSet;
 
                 };
             }

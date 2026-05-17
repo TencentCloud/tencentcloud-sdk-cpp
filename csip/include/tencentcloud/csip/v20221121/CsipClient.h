@@ -31,6 +31,14 @@
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeyCheckTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosAssetSyncTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosAssetSyncTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosObjectScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosObjectScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosPolicyRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosPolicyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosRiskScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateCosRiskScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmAccessExportJobRequest.h>
@@ -57,6 +65,10 @@
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateSkillScanRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateSkillScanResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCosAkAssetResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCosPolicyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteCosPolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmApplyOrderRequest.h>
@@ -105,6 +117,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssumeRoleResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBucketInvokeIpListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBucketInvokeIpListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCSIPRiskStatisticsRequest.h>
@@ -123,6 +137,60 @@
 #include <tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeConfigCheckRulesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosActionListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosActionListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAkAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAkAssetResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAkInvokeIpListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAkInvokeIpListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAlarmListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAlarmListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAlarmTrendDataRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAlarmTrendDataResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAssetRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAssetResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAssetSyncTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAssetSyncTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditAppIdListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditAppIdListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditDictionaryListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditDictionaryListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditPayInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosAuditPayInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketBillingInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketBillingInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketRiskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosBucketRiskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIdentifyFileListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIdentifyFileListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosInvokeUaRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosInvokeUaResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeLogRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeRecordFileRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosIpInvokeRecordFileResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosOverviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosPolicyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosPolicyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskActionListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskActionListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskEvidenceRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskEvidenceResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRoleAccessPermissionRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRoleAccessPermissionResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRoleAccessPermissionsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosRoleAccessPermissionsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosSourceIpRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeCosSourceIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetsRequest.h>
@@ -225,6 +293,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialListRequest.h>
@@ -239,10 +311,14 @@
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOtherCloudAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOtherCloudAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribePolicyHitDataRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribePolicyHitDataResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRepositoryImageAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskBucketListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskBucketListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCallRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCallRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewCFGRiskListRequest.h>
@@ -265,10 +341,14 @@
 #include <tencentcloud/csip/v20221121/model/DescribeRiskCenterWebsiteRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskDetailListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskDetailListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskItemListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskItemListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskRuleDetailRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskRuleDetailResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskRulesRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeRiskRulesResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskTrendDataRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeRiskTrendDataResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeScanStatisticRequest.h>
@@ -313,6 +393,12 @@
 #include <tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogRequest.h>
 #include <tencentcloud/csip/v20221121/model/DownloadDspmExportLogResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyAlarmRiskStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosAuditMonitorAccountResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosMarkInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyCosMarkInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmAccessRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmApproveStatusRequest.h>
@@ -345,6 +431,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskRequest.h>
@@ -399,6 +487,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessKeySyncTaskResponse> CreateAccessKeySyncTaskOutcome;
                 typedef std::future<CreateAccessKeySyncTaskOutcome> CreateAccessKeySyncTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAccessKeySyncTaskRequest&, CreateAccessKeySyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessKeySyncTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosAssetSyncTaskResponse> CreateCosAssetSyncTaskOutcome;
+                typedef std::future<CreateCosAssetSyncTaskOutcome> CreateCosAssetSyncTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateCosAssetSyncTaskRequest&, CreateCosAssetSyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosAssetSyncTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosObjectScanTaskResponse> CreateCosObjectScanTaskOutcome;
+                typedef std::future<CreateCosObjectScanTaskOutcome> CreateCosObjectScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateCosObjectScanTaskRequest&, CreateCosObjectScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosObjectScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosPolicyResponse> CreateCosPolicyOutcome;
+                typedef std::future<CreateCosPolicyOutcome> CreateCosPolicyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateCosPolicyRequest&, CreateCosPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosRiskScanTaskResponse> CreateCosRiskScanTaskOutcome;
+                typedef std::future<CreateCosRiskScanTaskOutcome> CreateCosRiskScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateCosRiskScanTaskRequest&, CreateCosRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosRiskScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDomainAndIpResponse> CreateDomainAndIpOutcome;
                 typedef std::future<CreateDomainAndIpOutcome> CreateDomainAndIpOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDomainAndIpRequest&, CreateDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAndIpAsyncHandler;
@@ -438,6 +538,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSkillScanResponse> CreateSkillScanOutcome;
                 typedef std::future<CreateSkillScanOutcome> CreateSkillScanOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateSkillScanRequest&, CreateSkillScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSkillScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCosAkAssetResponse> DeleteCosAkAssetOutcome;
+                typedef std::future<DeleteCosAkAssetOutcome> DeleteCosAkAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteCosAkAssetRequest&, DeleteCosAkAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosAkAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCosPolicyResponse> DeleteCosPolicyOutcome;
+                typedef std::future<DeleteCosPolicyOutcome> DeleteCosPolicyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteCosPolicyRequest&, DeleteCosPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainAndIpResponse> DeleteDomainAndIpOutcome;
                 typedef std::future<DeleteDomainAndIpOutcome> DeleteDomainAndIpOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDomainAndIpRequest&, DeleteDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAndIpAsyncHandler;
@@ -510,6 +616,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssumeRoleResponse> DescribeAssumeRoleOutcome;
                 typedef std::future<DescribeAssumeRoleOutcome> DescribeAssumeRoleOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAssumeRoleRequest&, DescribeAssumeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssumeRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBucketInvokeIpListResponse> DescribeBucketInvokeIpListOutcome;
+                typedef std::future<DescribeBucketInvokeIpListOutcome> DescribeBucketInvokeIpListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeBucketInvokeIpListRequest&, DescribeBucketInvokeIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBucketInvokeIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCFWAssetStatisticsResponse> DescribeCFWAssetStatisticsOutcome;
                 typedef std::future<DescribeCFWAssetStatisticsOutcome> DescribeCFWAssetStatisticsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCFWAssetStatisticsRequest&, DescribeCFWAssetStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCFWAssetStatisticsAsyncHandler;
@@ -537,6 +646,87 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConfigCheckRulesResponse> DescribeConfigCheckRulesOutcome;
                 typedef std::future<DescribeConfigCheckRulesOutcome> DescribeConfigCheckRulesOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeConfigCheckRulesRequest&, DescribeConfigCheckRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigCheckRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAccessPermissionResponse> DescribeCosAccessPermissionOutcome;
+                typedef std::future<DescribeCosAccessPermissionOutcome> DescribeCosAccessPermissionOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAccessPermissionRequest&, DescribeCosAccessPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAccessPermissionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAccessPermissionsResponse> DescribeCosAccessPermissionsOutcome;
+                typedef std::future<DescribeCosAccessPermissionsOutcome> DescribeCosAccessPermissionsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAccessPermissionsRequest&, DescribeCosAccessPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAccessPermissionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosActionListResponse> DescribeCosActionListOutcome;
+                typedef std::future<DescribeCosActionListOutcome> DescribeCosActionListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosActionListRequest&, DescribeCosActionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosActionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAkAssetResponse> DescribeCosAkAssetOutcome;
+                typedef std::future<DescribeCosAkAssetOutcome> DescribeCosAkAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAkAssetRequest&, DescribeCosAkAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAkAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAkInvokeIpListResponse> DescribeCosAkInvokeIpListOutcome;
+                typedef std::future<DescribeCosAkInvokeIpListOutcome> DescribeCosAkInvokeIpListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAkInvokeIpListRequest&, DescribeCosAkInvokeIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAkInvokeIpListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAlarmListResponse> DescribeCosAlarmListOutcome;
+                typedef std::future<DescribeCosAlarmListOutcome> DescribeCosAlarmListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAlarmListRequest&, DescribeCosAlarmListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAlarmListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAlarmTrendDataResponse> DescribeCosAlarmTrendDataOutcome;
+                typedef std::future<DescribeCosAlarmTrendDataOutcome> DescribeCosAlarmTrendDataOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAlarmTrendDataRequest&, DescribeCosAlarmTrendDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAlarmTrendDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAssetResponse> DescribeCosAssetOutcome;
+                typedef std::future<DescribeCosAssetOutcome> DescribeCosAssetOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAssetRequest&, DescribeCosAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAssetSyncTaskResponse> DescribeCosAssetSyncTaskOutcome;
+                typedef std::future<DescribeCosAssetSyncTaskOutcome> DescribeCosAssetSyncTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAssetSyncTaskRequest&, DescribeCosAssetSyncTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAssetSyncTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAuditAppIdListResponse> DescribeCosAuditAppIdListOutcome;
+                typedef std::future<DescribeCosAuditAppIdListOutcome> DescribeCosAuditAppIdListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAuditAppIdListRequest&, DescribeCosAuditAppIdListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAuditAppIdListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAuditDictionaryListResponse> DescribeCosAuditDictionaryListOutcome;
+                typedef std::future<DescribeCosAuditDictionaryListOutcome> DescribeCosAuditDictionaryListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAuditDictionaryListRequest&, DescribeCosAuditDictionaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAuditDictionaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosAuditPayInfoResponse> DescribeCosAuditPayInfoOutcome;
+                typedef std::future<DescribeCosAuditPayInfoOutcome> DescribeCosAuditPayInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosAuditPayInfoRequest&, DescribeCosAuditPayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosAuditPayInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosBucketBillingInfoResponse> DescribeCosBucketBillingInfoOutcome;
+                typedef std::future<DescribeCosBucketBillingInfoOutcome> DescribeCosBucketBillingInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosBucketBillingInfoRequest&, DescribeCosBucketBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosBucketBillingInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosBucketListResponse> DescribeCosBucketListOutcome;
+                typedef std::future<DescribeCosBucketListOutcome> DescribeCosBucketListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosBucketListRequest&, DescribeCosBucketListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosBucketListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosBucketRiskResponse> DescribeCosBucketRiskOutcome;
+                typedef std::future<DescribeCosBucketRiskOutcome> DescribeCosBucketRiskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosBucketRiskRequest&, DescribeCosBucketRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosBucketRiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosIdentifyFileListResponse> DescribeCosIdentifyFileListOutcome;
+                typedef std::future<DescribeCosIdentifyFileListOutcome> DescribeCosIdentifyFileListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosIdentifyFileListRequest&, DescribeCosIdentifyFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosIdentifyFileListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosInvokeUaResponse> DescribeCosInvokeUaOutcome;
+                typedef std::future<DescribeCosInvokeUaOutcome> DescribeCosInvokeUaOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosInvokeUaRequest&, DescribeCosInvokeUaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosInvokeUaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosIpInvokeLogResponse> DescribeCosIpInvokeLogOutcome;
+                typedef std::future<DescribeCosIpInvokeLogOutcome> DescribeCosIpInvokeLogOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosIpInvokeLogRequest&, DescribeCosIpInvokeLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosIpInvokeLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosIpInvokeRecordFileResponse> DescribeCosIpInvokeRecordFileOutcome;
+                typedef std::future<DescribeCosIpInvokeRecordFileOutcome> DescribeCosIpInvokeRecordFileOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosIpInvokeRecordFileRequest&, DescribeCosIpInvokeRecordFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosIpInvokeRecordFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosOverviewResponse> DescribeCosOverviewOutcome;
+                typedef std::future<DescribeCosOverviewOutcome> DescribeCosOverviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosOverviewRequest&, DescribeCosOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosPolicyResponse> DescribeCosPolicyOutcome;
+                typedef std::future<DescribeCosPolicyOutcome> DescribeCosPolicyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosPolicyRequest&, DescribeCosPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRiskActionListResponse> DescribeCosRiskActionListOutcome;
+                typedef std::future<DescribeCosRiskActionListOutcome> DescribeCosRiskActionListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosRiskActionListRequest&, DescribeCosRiskActionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRiskActionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRiskEvidenceResponse> DescribeCosRiskEvidenceOutcome;
+                typedef std::future<DescribeCosRiskEvidenceOutcome> DescribeCosRiskEvidenceOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosRiskEvidenceRequest&, DescribeCosRiskEvidenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRiskEvidenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRiskScanTaskResponse> DescribeCosRiskScanTaskOutcome;
+                typedef std::future<DescribeCosRiskScanTaskOutcome> DescribeCosRiskScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosRiskScanTaskRequest&, DescribeCosRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRoleAccessPermissionResponse> DescribeCosRoleAccessPermissionOutcome;
+                typedef std::future<DescribeCosRoleAccessPermissionOutcome> DescribeCosRoleAccessPermissionOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosRoleAccessPermissionRequest&, DescribeCosRoleAccessPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRoleAccessPermissionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRoleAccessPermissionsResponse> DescribeCosRoleAccessPermissionsOutcome;
+                typedef std::future<DescribeCosRoleAccessPermissionsOutcome> DescribeCosRoleAccessPermissionsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosRoleAccessPermissionsRequest&, DescribeCosRoleAccessPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRoleAccessPermissionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosSourceIpResponse> DescribeCosSourceIpOutcome;
+                typedef std::future<DescribeCosSourceIpOutcome> DescribeCosSourceIpOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeCosSourceIpRequest&, DescribeCosSourceIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosSourceIpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDbAssetInfoResponse> DescribeDbAssetInfoOutcome;
                 typedef std::future<DescribeDbAssetInfoOutcome> DescribeDbAssetInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDbAssetInfoRequest&, DescribeDbAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbAssetInfoAsyncHandler;
@@ -690,6 +880,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHighBaseLineRiskListResponse> DescribeHighBaseLineRiskListOutcome;
                 typedef std::future<DescribeHighBaseLineRiskListOutcome> DescribeHighBaseLineRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHighBaseLineRiskListRequest&, DescribeHighBaseLineRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHighBaseLineRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIpInvokeRecordResponse> DescribeIpInvokeRecordOutcome;
+                typedef std::future<DescribeIpInvokeRecordOutcome> DescribeIpInvokeRecordOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIpInvokeRecordRequest&, DescribeIpInvokeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInvokeRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIpInvokeRecordDetailResponse> DescribeIpInvokeRecordDetailOutcome;
+                typedef std::future<DescribeIpInvokeRecordDetailOutcome> DescribeIpInvokeRecordDetailOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIpInvokeRecordDetailRequest&, DescribeIpInvokeRecordDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInvokeRecordDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKeySandboxCredentialResponse> DescribeKeySandboxCredentialOutcome;
                 typedef std::future<DescribeKeySandboxCredentialOutcome> DescribeKeySandboxCredentialOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeKeySandboxCredentialRequest&, DescribeKeySandboxCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeySandboxCredentialAsyncHandler;
@@ -711,12 +907,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOtherCloudAssetsResponse> DescribeOtherCloudAssetsOutcome;
                 typedef std::future<DescribeOtherCloudAssetsOutcome> DescribeOtherCloudAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeOtherCloudAssetsRequest&, DescribeOtherCloudAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOtherCloudAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyHitDataResponse> DescribePolicyHitDataOutcome;
+                typedef std::future<DescribePolicyHitDataOutcome> DescribePolicyHitDataOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribePolicyHitDataRequest&, DescribePolicyHitDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyHitDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublicIpAssetsResponse> DescribePublicIpAssetsOutcome;
                 typedef std::future<DescribePublicIpAssetsOutcome> DescribePublicIpAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribePublicIpAssetsRequest&, DescribePublicIpAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicIpAssetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRepositoryImageAssetsResponse> DescribeRepositoryImageAssetsOutcome;
                 typedef std::future<DescribeRepositoryImageAssetsOutcome> DescribeRepositoryImageAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRepositoryImageAssetsRequest&, DescribeRepositoryImageAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoryImageAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskBucketListResponse> DescribeRiskBucketListOutcome;
+                typedef std::future<DescribeRiskBucketListOutcome> DescribeRiskBucketListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeRiskBucketListRequest&, DescribeRiskBucketListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskBucketListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskCallRecordResponse> DescribeRiskCallRecordOutcome;
                 typedef std::future<DescribeRiskCallRecordOutcome> DescribeRiskCallRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRiskCallRecordRequest&, DescribeRiskCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskCallRecordAsyncHandler;
@@ -750,12 +952,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRiskDetailListResponse> DescribeRiskDetailListOutcome;
                 typedef std::future<DescribeRiskDetailListOutcome> DescribeRiskDetailListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRiskDetailListRequest&, DescribeRiskDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskItemListResponse> DescribeRiskItemListOutcome;
+                typedef std::future<DescribeRiskItemListOutcome> DescribeRiskItemListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeRiskItemListRequest&, DescribeRiskItemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskItemListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskRuleDetailResponse> DescribeRiskRuleDetailOutcome;
                 typedef std::future<DescribeRiskRuleDetailOutcome> DescribeRiskRuleDetailOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRiskRuleDetailRequest&, DescribeRiskRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskRuleDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskRulesResponse> DescribeRiskRulesOutcome;
                 typedef std::future<DescribeRiskRulesOutcome> DescribeRiskRulesOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeRiskRulesRequest&, DescribeRiskRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskTrendDataResponse> DescribeRiskTrendDataOutcome;
+                typedef std::future<DescribeRiskTrendDataOutcome> DescribeRiskTrendDataOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeRiskTrendDataRequest&, DescribeRiskTrendDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskTrendDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanReportListResponse> DescribeScanReportListOutcome;
                 typedef std::future<DescribeScanReportListOutcome> DescribeScanReportListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeScanReportListRequest&, DescribeScanReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanReportListAsyncHandler;
@@ -822,6 +1030,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadDspmExportLogResponse> DownloadDspmExportLogOutcome;
                 typedef std::future<DownloadDspmExportLogOutcome> DownloadDspmExportLogOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DownloadDspmExportLogRequest&, DownloadDspmExportLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDspmExportLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAlarmRiskStatusResponse> ModifyAlarmRiskStatusOutcome;
+                typedef std::future<ModifyAlarmRiskStatusOutcome> ModifyAlarmRiskStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyAlarmRiskStatusRequest&, ModifyAlarmRiskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmRiskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosAuditMonitorAccountResponse> ModifyCosAuditMonitorAccountOutcome;
+                typedef std::future<ModifyCosAuditMonitorAccountOutcome> ModifyCosAuditMonitorAccountOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyCosAuditMonitorAccountRequest&, ModifyCosAuditMonitorAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosAuditMonitorAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosMarkInfoResponse> ModifyCosMarkInfoOutcome;
+                typedef std::future<ModifyCosMarkInfoOutcome> ModifyCosMarkInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyCosMarkInfoRequest&, ModifyCosMarkInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosMarkInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDspmAccessRecordResponse> ModifyDspmAccessRecordOutcome;
                 typedef std::future<ModifyDspmAccessRecordOutcome> ModifyDspmAccessRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmAccessRecordRequest&, ModifyDspmAccessRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmAccessRecordAsyncHandler;
@@ -870,6 +1087,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOrganizationAccountStatusResponse> ModifyOrganizationAccountStatusOutcome;
                 typedef std::future<ModifyOrganizationAccountStatusOutcome> ModifyOrganizationAccountStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyOrganizationAccountStatusRequest&, ModifyOrganizationAccountStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrganizationAccountStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPolicyStatusResponse> ModifyPolicyStatusOutcome;
+                typedef std::future<ModifyPolicyStatusOutcome> ModifyPolicyStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyPolicyStatusRequest&, ModifyPolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPolicyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRiskCenterRiskStatusResponse> ModifyRiskCenterRiskStatusOutcome;
                 typedef std::future<ModifyRiskCenterRiskStatusOutcome> ModifyRiskCenterRiskStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyRiskCenterRiskStatusRequest&, ModifyRiskCenterRiskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskCenterRiskStatusAsyncHandler;
@@ -950,6 +1170,42 @@ namespace TencentCloud
                 CreateAccessKeySyncTaskOutcome CreateAccessKeySyncTask(const Model::CreateAccessKeySyncTaskRequest &request);
                 void CreateAccessKeySyncTaskAsync(const Model::CreateAccessKeySyncTaskRequest& request, const CreateAccessKeySyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessKeySyncTaskOutcomeCallable CreateAccessKeySyncTaskCallable(const Model::CreateAccessKeySyncTaskRequest& request);
+
+                /**
+                 *创建资产同步任务
+                 * @param req CreateCosAssetSyncTaskRequest
+                 * @return CreateCosAssetSyncTaskOutcome
+                 */
+                CreateCosAssetSyncTaskOutcome CreateCosAssetSyncTask(const Model::CreateCosAssetSyncTaskRequest &request);
+                void CreateCosAssetSyncTaskAsync(const Model::CreateCosAssetSyncTaskRequest& request, const CreateCosAssetSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosAssetSyncTaskOutcomeCallable CreateCosAssetSyncTaskCallable(const Model::CreateCosAssetSyncTaskRequest& request);
+
+                /**
+                 *创建cos病毒扫描、敏感数据识别任务
+                 * @param req CreateCosObjectScanTaskRequest
+                 * @return CreateCosObjectScanTaskOutcome
+                 */
+                CreateCosObjectScanTaskOutcome CreateCosObjectScanTask(const Model::CreateCosObjectScanTaskRequest &request);
+                void CreateCosObjectScanTaskAsync(const Model::CreateCosObjectScanTaskRequest& request, const CreateCosObjectScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosObjectScanTaskOutcomeCallable CreateCosObjectScanTaskCallable(const Model::CreateCosObjectScanTaskRequest& request);
+
+                /**
+                 *添加cos告警策略
+                 * @param req CreateCosPolicyRequest
+                 * @return CreateCosPolicyOutcome
+                 */
+                CreateCosPolicyOutcome CreateCosPolicy(const Model::CreateCosPolicyRequest &request);
+                void CreateCosPolicyAsync(const Model::CreateCosPolicyRequest& request, const CreateCosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosPolicyOutcomeCallable CreateCosPolicyCallable(const Model::CreateCosPolicyRequest& request);
+
+                /**
+                 *创建风险监测任务
+                 * @param req CreateCosRiskScanTaskRequest
+                 * @return CreateCosRiskScanTaskOutcome
+                 */
+                CreateCosRiskScanTaskOutcome CreateCosRiskScanTask(const Model::CreateCosRiskScanTaskRequest &request);
+                void CreateCosRiskScanTaskAsync(const Model::CreateCosRiskScanTaskRequest& request, const CreateCosRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosRiskScanTaskOutcomeCallable CreateCosRiskScanTaskCallable(const Model::CreateCosRiskScanTaskRequest& request);
 
                 /**
                  *创建域名、ip相关信息
@@ -1067,6 +1323,24 @@ namespace TencentCloud
                 CreateSkillScanOutcome CreateSkillScan(const Model::CreateSkillScanRequest &request);
                 void CreateSkillScanAsync(const Model::CreateSkillScanRequest& request, const CreateSkillScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSkillScanOutcomeCallable CreateSkillScanCallable(const Model::CreateSkillScanRequest& request);
+
+                /**
+                 *删除已删除的cos ak资产
+                 * @param req DeleteCosAkAssetRequest
+                 * @return DeleteCosAkAssetOutcome
+                 */
+                DeleteCosAkAssetOutcome DeleteCosAkAsset(const Model::DeleteCosAkAssetRequest &request);
+                void DeleteCosAkAssetAsync(const Model::DeleteCosAkAssetRequest& request, const DeleteCosAkAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCosAkAssetOutcomeCallable DeleteCosAkAssetCallable(const Model::DeleteCosAkAssetRequest& request);
+
+                /**
+                 *删除策略
+                 * @param req DeleteCosPolicyRequest
+                 * @return DeleteCosPolicyOutcome
+                 */
+                DeleteCosPolicyOutcome DeleteCosPolicy(const Model::DeleteCosPolicyRequest &request);
+                void DeleteCosPolicyAsync(const Model::DeleteCosPolicyRequest& request, const DeleteCosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCosPolicyOutcomeCallable DeleteCosPolicyCallable(const Model::DeleteCosPolicyRequest& request);
 
                 /**
                  *删除域名和ip请求
@@ -1285,6 +1559,15 @@ namespace TencentCloud
                 DescribeAssumeRoleOutcomeCallable DescribeAssumeRoleCallable(const Model::DescribeAssumeRoleRequest& request);
 
                 /**
+                 *查看存储桶调用源ip列表
+                 * @param req DescribeBucketInvokeIpListRequest
+                 * @return DescribeBucketInvokeIpListOutcome
+                 */
+                DescribeBucketInvokeIpListOutcome DescribeBucketInvokeIpList(const Model::DescribeBucketInvokeIpListRequest &request);
+                void DescribeBucketInvokeIpListAsync(const Model::DescribeBucketInvokeIpListRequest& request, const DescribeBucketInvokeIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBucketInvokeIpListOutcomeCallable DescribeBucketInvokeIpListCallable(const Model::DescribeBucketInvokeIpListRequest& request);
+
+                /**
                  *云防资产中心统计数据
                  * @param req DescribeCFWAssetStatisticsRequest
                  * @return DescribeCFWAssetStatisticsOutcome
@@ -1364,6 +1647,249 @@ namespace TencentCloud
                 DescribeConfigCheckRulesOutcome DescribeConfigCheckRules(const Model::DescribeConfigCheckRulesRequest &request);
                 void DescribeConfigCheckRulesAsync(const Model::DescribeConfigCheckRulesRequest& request, const DescribeConfigCheckRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConfigCheckRulesOutcomeCallable DescribeConfigCheckRulesCallable(const Model::DescribeConfigCheckRulesRequest& request);
+
+                /**
+                 *查看cos桶访问权限信息
+                 * @param req DescribeCosAccessPermissionRequest
+                 * @return DescribeCosAccessPermissionOutcome
+                 */
+                DescribeCosAccessPermissionOutcome DescribeCosAccessPermission(const Model::DescribeCosAccessPermissionRequest &request);
+                void DescribeCosAccessPermissionAsync(const Model::DescribeCosAccessPermissionRequest& request, const DescribeCosAccessPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAccessPermissionOutcomeCallable DescribeCosAccessPermissionCallable(const Model::DescribeCosAccessPermissionRequest& request);
+
+                /**
+                 *查看对象存储访问权限列表
+                 * @param req DescribeCosAccessPermissionsRequest
+                 * @return DescribeCosAccessPermissionsOutcome
+                 */
+                DescribeCosAccessPermissionsOutcome DescribeCosAccessPermissions(const Model::DescribeCosAccessPermissionsRequest &request);
+                void DescribeCosAccessPermissionsAsync(const Model::DescribeCosAccessPermissionsRequest& request, const DescribeCosAccessPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAccessPermissionsOutcomeCallable DescribeCosAccessPermissionsCallable(const Model::DescribeCosAccessPermissionsRequest& request);
+
+                /**
+                 *查看COS接口列表
+                 * @param req DescribeCosActionListRequest
+                 * @return DescribeCosActionListOutcome
+                 */
+                DescribeCosActionListOutcome DescribeCosActionList(const Model::DescribeCosActionListRequest &request);
+                void DescribeCosActionListAsync(const Model::DescribeCosActionListRequest& request, const DescribeCosActionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosActionListOutcomeCallable DescribeCosActionListCallable(const Model::DescribeCosActionListRequest& request);
+
+                /**
+                 *查看ak资产列表信息
+                 * @param req DescribeCosAkAssetRequest
+                 * @return DescribeCosAkAssetOutcome
+                 */
+                DescribeCosAkAssetOutcome DescribeCosAkAsset(const Model::DescribeCosAkAssetRequest &request);
+                void DescribeCosAkAssetAsync(const Model::DescribeCosAkAssetRequest& request, const DescribeCosAkAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAkAssetOutcomeCallable DescribeCosAkAssetCallable(const Model::DescribeCosAkAssetRequest& request);
+
+                /**
+                 *查看存储桶调用源ip列表
+                 * @param req DescribeCosAkInvokeIpListRequest
+                 * @return DescribeCosAkInvokeIpListOutcome
+                 */
+                DescribeCosAkInvokeIpListOutcome DescribeCosAkInvokeIpList(const Model::DescribeCosAkInvokeIpListRequest &request);
+                void DescribeCosAkInvokeIpListAsync(const Model::DescribeCosAkInvokeIpListRequest& request, const DescribeCosAkInvokeIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAkInvokeIpListOutcomeCallable DescribeCosAkInvokeIpListCallable(const Model::DescribeCosAkInvokeIpListRequest& request);
+
+                /**
+                 *查看告警列表
+                 * @param req DescribeCosAlarmListRequest
+                 * @return DescribeCosAlarmListOutcome
+                 */
+                DescribeCosAlarmListOutcome DescribeCosAlarmList(const Model::DescribeCosAlarmListRequest &request);
+                void DescribeCosAlarmListAsync(const Model::DescribeCosAlarmListRequest& request, const DescribeCosAlarmListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAlarmListOutcomeCallable DescribeCosAlarmListCallable(const Model::DescribeCosAlarmListRequest& request);
+
+                /**
+                 *每日告警新增数据
+                 * @param req DescribeCosAlarmTrendDataRequest
+                 * @return DescribeCosAlarmTrendDataOutcome
+                 */
+                DescribeCosAlarmTrendDataOutcome DescribeCosAlarmTrendData(const Model::DescribeCosAlarmTrendDataRequest &request);
+                void DescribeCosAlarmTrendDataAsync(const Model::DescribeCosAlarmTrendDataRequest& request, const DescribeCosAlarmTrendDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAlarmTrendDataOutcomeCallable DescribeCosAlarmTrendDataCallable(const Model::DescribeCosAlarmTrendDataRequest& request);
+
+                /**
+                 *查看cos资产列表
+                 * @param req DescribeCosAssetRequest
+                 * @return DescribeCosAssetOutcome
+                 */
+                DescribeCosAssetOutcome DescribeCosAsset(const Model::DescribeCosAssetRequest &request);
+                void DescribeCosAssetAsync(const Model::DescribeCosAssetRequest& request, const DescribeCosAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAssetOutcomeCallable DescribeCosAssetCallable(const Model::DescribeCosAssetRequest& request);
+
+                /**
+                 *获取对应appid对应的当前正在扫描的taskid
+                 * @param req DescribeCosAssetSyncTaskRequest
+                 * @return DescribeCosAssetSyncTaskOutcome
+                 */
+                DescribeCosAssetSyncTaskOutcome DescribeCosAssetSyncTask(const Model::DescribeCosAssetSyncTaskRequest &request);
+                void DescribeCosAssetSyncTaskAsync(const Model::DescribeCosAssetSyncTaskRequest& request, const DescribeCosAssetSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAssetSyncTaskOutcomeCallable DescribeCosAssetSyncTaskCallable(const Model::DescribeCosAssetSyncTaskRequest& request);
+
+                /**
+                 *查看该appid下已购买的appid集合
+                 * @param req DescribeCosAuditAppIdListRequest
+                 * @return DescribeCosAuditAppIdListOutcome
+                 */
+                DescribeCosAuditAppIdListOutcome DescribeCosAuditAppIdList(const Model::DescribeCosAuditAppIdListRequest &request);
+                void DescribeCosAuditAppIdListAsync(const Model::DescribeCosAuditAppIdListRequest& request, const DescribeCosAuditAppIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAuditAppIdListOutcomeCallable DescribeCosAuditAppIdListCallable(const Model::DescribeCosAuditAppIdListRequest& request);
+
+                /**
+                 *查询cos审计字典信息列表
+                 * @param req DescribeCosAuditDictionaryListRequest
+                 * @return DescribeCosAuditDictionaryListOutcome
+                 */
+                DescribeCosAuditDictionaryListOutcome DescribeCosAuditDictionaryList(const Model::DescribeCosAuditDictionaryListRequest &request);
+                void DescribeCosAuditDictionaryListAsync(const Model::DescribeCosAuditDictionaryListRequest& request, const DescribeCosAuditDictionaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAuditDictionaryListOutcomeCallable DescribeCosAuditDictionaryListCallable(const Model::DescribeCosAuditDictionaryListRequest& request);
+
+                /**
+                 *获取审计支付信息
+                 * @param req DescribeCosAuditPayInfoRequest
+                 * @return DescribeCosAuditPayInfoOutcome
+                 */
+                DescribeCosAuditPayInfoOutcome DescribeCosAuditPayInfo(const Model::DescribeCosAuditPayInfoRequest &request);
+                void DescribeCosAuditPayInfoAsync(const Model::DescribeCosAuditPayInfoRequest& request, const DescribeCosAuditPayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosAuditPayInfoOutcomeCallable DescribeCosAuditPayInfoCallable(const Model::DescribeCosAuditPayInfoRequest& request);
+
+                /**
+                 *获取存储桶计费信息
+                 * @param req DescribeCosBucketBillingInfoRequest
+                 * @return DescribeCosBucketBillingInfoOutcome
+                 */
+                DescribeCosBucketBillingInfoOutcome DescribeCosBucketBillingInfo(const Model::DescribeCosBucketBillingInfoRequest &request);
+                void DescribeCosBucketBillingInfoAsync(const Model::DescribeCosBucketBillingInfoRequest& request, const DescribeCosBucketBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosBucketBillingInfoOutcomeCallable DescribeCosBucketBillingInfoCallable(const Model::DescribeCosBucketBillingInfoRequest& request);
+
+                /**
+                 *获取存储桶信息
+                 * @param req DescribeCosBucketListRequest
+                 * @return DescribeCosBucketListOutcome
+                 */
+                DescribeCosBucketListOutcome DescribeCosBucketList(const Model::DescribeCosBucketListRequest &request);
+                void DescribeCosBucketListAsync(const Model::DescribeCosBucketListRequest& request, const DescribeCosBucketListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosBucketListOutcomeCallable DescribeCosBucketListCallable(const Model::DescribeCosBucketListRequest& request);
+
+                /**
+                 *查看风险资产视角
+                 * @param req DescribeCosBucketRiskRequest
+                 * @return DescribeCosBucketRiskOutcome
+                 */
+                DescribeCosBucketRiskOutcome DescribeCosBucketRisk(const Model::DescribeCosBucketRiskRequest &request);
+                void DescribeCosBucketRiskAsync(const Model::DescribeCosBucketRiskRequest& request, const DescribeCosBucketRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosBucketRiskOutcomeCallable DescribeCosBucketRiskCallable(const Model::DescribeCosBucketRiskRequest& request);
+
+                /**
+                 *查询cos文件数据识别结果列表
+                 * @param req DescribeCosIdentifyFileListRequest
+                 * @return DescribeCosIdentifyFileListOutcome
+                 */
+                DescribeCosIdentifyFileListOutcome DescribeCosIdentifyFileList(const Model::DescribeCosIdentifyFileListRequest &request);
+                void DescribeCosIdentifyFileListAsync(const Model::DescribeCosIdentifyFileListRequest& request, const DescribeCosIdentifyFileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosIdentifyFileListOutcomeCallable DescribeCosIdentifyFileListCallable(const Model::DescribeCosIdentifyFileListRequest& request);
+
+                /**
+                 *查看调用记录关联的文件信息
+                 * @param req DescribeCosInvokeUaRequest
+                 * @return DescribeCosInvokeUaOutcome
+                 */
+                DescribeCosInvokeUaOutcome DescribeCosInvokeUa(const Model::DescribeCosInvokeUaRequest &request);
+                void DescribeCosInvokeUaAsync(const Model::DescribeCosInvokeUaRequest& request, const DescribeCosInvokeUaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosInvokeUaOutcomeCallable DescribeCosInvokeUaCallable(const Model::DescribeCosInvokeUaRequest& request);
+
+                /**
+                 *查看cos调用日志
+                 * @param req DescribeCosIpInvokeLogRequest
+                 * @return DescribeCosIpInvokeLogOutcome
+                 */
+                DescribeCosIpInvokeLogOutcome DescribeCosIpInvokeLog(const Model::DescribeCosIpInvokeLogRequest &request);
+                void DescribeCosIpInvokeLogAsync(const Model::DescribeCosIpInvokeLogRequest& request, const DescribeCosIpInvokeLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosIpInvokeLogOutcomeCallable DescribeCosIpInvokeLogCallable(const Model::DescribeCosIpInvokeLogRequest& request);
+
+                /**
+                 *查看调用记录关联的文件信息
+                 * @param req DescribeCosIpInvokeRecordFileRequest
+                 * @return DescribeCosIpInvokeRecordFileOutcome
+                 */
+                DescribeCosIpInvokeRecordFileOutcome DescribeCosIpInvokeRecordFile(const Model::DescribeCosIpInvokeRecordFileRequest &request);
+                void DescribeCosIpInvokeRecordFileAsync(const Model::DescribeCosIpInvokeRecordFileRequest& request, const DescribeCosIpInvokeRecordFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosIpInvokeRecordFileOutcomeCallable DescribeCosIpInvokeRecordFileCallable(const Model::DescribeCosIpInvokeRecordFileRequest& request);
+
+                /**
+                 *cos概览信息
+                 * @param req DescribeCosOverviewRequest
+                 * @return DescribeCosOverviewOutcome
+                 */
+                DescribeCosOverviewOutcome DescribeCosOverview(const Model::DescribeCosOverviewRequest &request);
+                void DescribeCosOverviewAsync(const Model::DescribeCosOverviewRequest& request, const DescribeCosOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosOverviewOutcomeCallable DescribeCosOverviewCallable(const Model::DescribeCosOverviewRequest& request);
+
+                /**
+                 *获取策略列表信息
+                 * @param req DescribeCosPolicyRequest
+                 * @return DescribeCosPolicyOutcome
+                 */
+                DescribeCosPolicyOutcome DescribeCosPolicy(const Model::DescribeCosPolicyRequest &request);
+                void DescribeCosPolicyAsync(const Model::DescribeCosPolicyRequest& request, const DescribeCosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosPolicyOutcomeCallable DescribeCosPolicyCallable(const Model::DescribeCosPolicyRequest& request);
+
+                /**
+                 *风险接口列表信息
+                 * @param req DescribeCosRiskActionListRequest
+                 * @return DescribeCosRiskActionListOutcome
+                 */
+                DescribeCosRiskActionListOutcome DescribeCosRiskActionList(const Model::DescribeCosRiskActionListRequest &request);
+                void DescribeCosRiskActionListAsync(const Model::DescribeCosRiskActionListRequest& request, const DescribeCosRiskActionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRiskActionListOutcomeCallable DescribeCosRiskActionListCallable(const Model::DescribeCosRiskActionListRequest& request);
+
+                /**
+                 *查看风险证据以及描述
+                 * @param req DescribeCosRiskEvidenceRequest
+                 * @return DescribeCosRiskEvidenceOutcome
+                 */
+                DescribeCosRiskEvidenceOutcome DescribeCosRiskEvidence(const Model::DescribeCosRiskEvidenceRequest &request);
+                void DescribeCosRiskEvidenceAsync(const Model::DescribeCosRiskEvidenceRequest& request, const DescribeCosRiskEvidenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRiskEvidenceOutcomeCallable DescribeCosRiskEvidenceCallable(const Model::DescribeCosRiskEvidenceRequest& request);
+
+                /**
+                 *查看存储桶扫描任务详情
+                 * @param req DescribeCosRiskScanTaskRequest
+                 * @return DescribeCosRiskScanTaskOutcome
+                 */
+                DescribeCosRiskScanTaskOutcome DescribeCosRiskScanTask(const Model::DescribeCosRiskScanTaskRequest &request);
+                void DescribeCosRiskScanTaskAsync(const Model::DescribeCosRiskScanTaskRequest& request, const DescribeCosRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRiskScanTaskOutcomeCallable DescribeCosRiskScanTaskCallable(const Model::DescribeCosRiskScanTaskRequest& request);
+
+                /**
+                 *查看cos桶访问权限信息
+                 * @param req DescribeCosRoleAccessPermissionRequest
+                 * @return DescribeCosRoleAccessPermissionOutcome
+                 */
+                DescribeCosRoleAccessPermissionOutcome DescribeCosRoleAccessPermission(const Model::DescribeCosRoleAccessPermissionRequest &request);
+                void DescribeCosRoleAccessPermissionAsync(const Model::DescribeCosRoleAccessPermissionRequest& request, const DescribeCosRoleAccessPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRoleAccessPermissionOutcomeCallable DescribeCosRoleAccessPermissionCallable(const Model::DescribeCosRoleAccessPermissionRequest& request);
+
+                /**
+                 *获取存储桶角色权限列表
+                 * @param req DescribeCosRoleAccessPermissionsRequest
+                 * @return DescribeCosRoleAccessPermissionsOutcome
+                 */
+                DescribeCosRoleAccessPermissionsOutcome DescribeCosRoleAccessPermissions(const Model::DescribeCosRoleAccessPermissionsRequest &request);
+                void DescribeCosRoleAccessPermissionsAsync(const Model::DescribeCosRoleAccessPermissionsRequest& request, const DescribeCosRoleAccessPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRoleAccessPermissionsOutcomeCallable DescribeCosRoleAccessPermissionsCallable(const Model::DescribeCosRoleAccessPermissionsRequest& request);
+
+                /**
+                 *调用源ip列表
+                 * @param req DescribeCosSourceIpRequest
+                 * @return DescribeCosSourceIpOutcome
+                 */
+                DescribeCosSourceIpOutcome DescribeCosSourceIp(const Model::DescribeCosSourceIpRequest &request);
+                void DescribeCosSourceIpAsync(const Model::DescribeCosSourceIpRequest& request, const DescribeCosSourceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosSourceIpOutcomeCallable DescribeCosSourceIpCallable(const Model::DescribeCosSourceIpRequest& request);
 
                 /**
                  *db资产详情
@@ -1825,6 +2351,24 @@ namespace TencentCloud
                 DescribeHighBaseLineRiskListOutcomeCallable DescribeHighBaseLineRiskListCallable(const Model::DescribeHighBaseLineRiskListRequest& request);
 
                 /**
+                 *对象存储异常检测调用记录信息
+                 * @param req DescribeIpInvokeRecordRequest
+                 * @return DescribeIpInvokeRecordOutcome
+                 */
+                DescribeIpInvokeRecordOutcome DescribeIpInvokeRecord(const Model::DescribeIpInvokeRecordRequest &request);
+                void DescribeIpInvokeRecordAsync(const Model::DescribeIpInvokeRecordRequest& request, const DescribeIpInvokeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpInvokeRecordOutcomeCallable DescribeIpInvokeRecordCallable(const Model::DescribeIpInvokeRecordRequest& request);
+
+                /**
+                 *ip访问列表详情信息
+                 * @param req DescribeIpInvokeRecordDetailRequest
+                 * @return DescribeIpInvokeRecordDetailOutcome
+                 */
+                DescribeIpInvokeRecordDetailOutcome DescribeIpInvokeRecordDetail(const Model::DescribeIpInvokeRecordDetailRequest &request);
+                void DescribeIpInvokeRecordDetailAsync(const Model::DescribeIpInvokeRecordDetailRequest& request, const DescribeIpInvokeRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpInvokeRecordDetailOutcomeCallable DescribeIpInvokeRecordDetailCallable(const Model::DescribeIpInvokeRecordDetailRequest& request);
+
+                /**
                  *查询凭证详情，返回凭证元数据和打码后的凭据数据。access类型返回Access数组（Key原文、Value打码），sts类型返回STS对象（System原文、SecretID和SecretKey打码）
                  * @param req DescribeKeySandboxCredentialRequest
                  * @return DescribeKeySandboxCredentialOutcome
@@ -1888,6 +2432,15 @@ namespace TencentCloud
                 DescribeOtherCloudAssetsOutcomeCallable DescribeOtherCloudAssetsCallable(const Model::DescribeOtherCloudAssetsRequest& request);
 
                 /**
+                 *按日期查看策略命中详情
+                 * @param req DescribePolicyHitDataRequest
+                 * @return DescribePolicyHitDataOutcome
+                 */
+                DescribePolicyHitDataOutcome DescribePolicyHitData(const Model::DescribePolicyHitDataRequest &request);
+                void DescribePolicyHitDataAsync(const Model::DescribePolicyHitDataRequest& request, const DescribePolicyHitDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyHitDataOutcomeCallable DescribePolicyHitDataCallable(const Model::DescribePolicyHitDataRequest& request);
+
+                /**
                  *ip公网列表
                  * @param req DescribePublicIpAssetsRequest
                  * @return DescribePublicIpAssetsOutcome
@@ -1904,6 +2457,15 @@ namespace TencentCloud
                 DescribeRepositoryImageAssetsOutcome DescribeRepositoryImageAssets(const Model::DescribeRepositoryImageAssetsRequest &request);
                 void DescribeRepositoryImageAssetsAsync(const Model::DescribeRepositoryImageAssetsRequest& request, const DescribeRepositoryImageAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRepositoryImageAssetsOutcomeCallable DescribeRepositoryImageAssetsCallable(const Model::DescribeRepositoryImageAssetsRequest& request);
+
+                /**
+                 *查看风险关联的存储桶信息
+                 * @param req DescribeRiskBucketListRequest
+                 * @return DescribeRiskBucketListOutcome
+                 */
+                DescribeRiskBucketListOutcome DescribeRiskBucketList(const Model::DescribeRiskBucketListRequest &request);
+                void DescribeRiskBucketListAsync(const Model::DescribeRiskBucketListRequest& request, const DescribeRiskBucketListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskBucketListOutcomeCallable DescribeRiskBucketListCallable(const Model::DescribeRiskBucketListRequest& request);
 
                 /**
                  *获取风险调用记录列表
@@ -2005,6 +2567,15 @@ namespace TencentCloud
                 DescribeRiskDetailListOutcomeCallable DescribeRiskDetailListCallable(const Model::DescribeRiskDetailListRequest& request);
 
                 /**
+                 *获取风险项视角列表
+                 * @param req DescribeRiskItemListRequest
+                 * @return DescribeRiskItemListOutcome
+                 */
+                DescribeRiskItemListOutcome DescribeRiskItemList(const Model::DescribeRiskItemListRequest &request);
+                void DescribeRiskItemListAsync(const Model::DescribeRiskItemListRequest& request, const DescribeRiskItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskItemListOutcomeCallable DescribeRiskItemListCallable(const Model::DescribeRiskItemListRequest& request);
+
+                /**
                  *查询风险规则详情示例
                  * @param req DescribeRiskRuleDetailRequest
                  * @return DescribeRiskRuleDetailOutcome
@@ -2021,6 +2592,15 @@ namespace TencentCloud
                 DescribeRiskRulesOutcome DescribeRiskRules(const Model::DescribeRiskRulesRequest &request);
                 void DescribeRiskRulesAsync(const Model::DescribeRiskRulesRequest& request, const DescribeRiskRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRiskRulesOutcomeCallable DescribeRiskRulesCallable(const Model::DescribeRiskRulesRequest& request);
+
+                /**
+                 *查看风险趋势图
+                 * @param req DescribeRiskTrendDataRequest
+                 * @return DescribeRiskTrendDataOutcome
+                 */
+                DescribeRiskTrendDataOutcome DescribeRiskTrendData(const Model::DescribeRiskTrendDataRequest &request);
+                void DescribeRiskTrendDataAsync(const Model::DescribeRiskTrendDataRequest& request, const DescribeRiskTrendDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskTrendDataOutcomeCallable DescribeRiskTrendDataCallable(const Model::DescribeRiskTrendDataRequest& request);
 
                 /**
                  *获取扫描报告列表
@@ -2221,6 +2801,33 @@ namespace TencentCloud
                 DownloadDspmExportLogOutcomeCallable DownloadDspmExportLogCallable(const Model::DownloadDspmExportLogRequest& request);
 
                 /**
+                 *修改或者更改处置状态
+                 * @param req ModifyAlarmRiskStatusRequest
+                 * @return ModifyAlarmRiskStatusOutcome
+                 */
+                ModifyAlarmRiskStatusOutcome ModifyAlarmRiskStatus(const Model::ModifyAlarmRiskStatusRequest &request);
+                void ModifyAlarmRiskStatusAsync(const Model::ModifyAlarmRiskStatusRequest& request, const ModifyAlarmRiskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmRiskStatusOutcomeCallable ModifyAlarmRiskStatusCallable(const Model::ModifyAlarmRiskStatusRequest& request);
+
+                /**
+                 *修改cos审计监测账号
+                 * @param req ModifyCosAuditMonitorAccountRequest
+                 * @return ModifyCosAuditMonitorAccountOutcome
+                 */
+                ModifyCosAuditMonitorAccountOutcome ModifyCosAuditMonitorAccount(const Model::ModifyCosAuditMonitorAccountRequest &request);
+                void ModifyCosAuditMonitorAccountAsync(const Model::ModifyCosAuditMonitorAccountRequest& request, const ModifyCosAuditMonitorAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosAuditMonitorAccountOutcomeCallable ModifyCosAuditMonitorAccountCallable(const Model::ModifyCosAuditMonitorAccountRequest& request);
+
+                /**
+                 *修改对象存储备注
+                 * @param req ModifyCosMarkInfoRequest
+                 * @return ModifyCosMarkInfoOutcome
+                 */
+                ModifyCosMarkInfoOutcome ModifyCosMarkInfo(const Model::ModifyCosMarkInfoRequest &request);
+                void ModifyCosMarkInfoAsync(const Model::ModifyCosMarkInfoRequest& request, const ModifyCosMarkInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosMarkInfoOutcomeCallable ModifyCosMarkInfoCallable(const Model::ModifyCosMarkInfoRequest& request);
+
+                /**
                  *修改Dspm访问管理信息
                  * @param req ModifyDspmAccessRecordRequest
                  * @return ModifyDspmAccessRecordOutcome
@@ -2363,6 +2970,15 @@ namespace TencentCloud
                 ModifyOrganizationAccountStatusOutcome ModifyOrganizationAccountStatus(const Model::ModifyOrganizationAccountStatusRequest &request);
                 void ModifyOrganizationAccountStatusAsync(const Model::ModifyOrganizationAccountStatusRequest& request, const ModifyOrganizationAccountStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyOrganizationAccountStatusOutcomeCallable ModifyOrganizationAccountStatusCallable(const Model::ModifyOrganizationAccountStatusRequest& request);
+
+                /**
+                 *修改策略状态
+                 * @param req ModifyPolicyStatusRequest
+                 * @return ModifyPolicyStatusOutcome
+                 */
+                ModifyPolicyStatusOutcome ModifyPolicyStatus(const Model::ModifyPolicyStatusRequest &request);
+                void ModifyPolicyStatusAsync(const Model::ModifyPolicyStatusRequest& request, const ModifyPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPolicyStatusOutcomeCallable ModifyPolicyStatusCallable(const Model::ModifyPolicyStatusRequest& request);
 
                 /**
                  *修改风险中心风险状态

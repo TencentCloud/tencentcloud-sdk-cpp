@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
-                     * @return ChargeType 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
+                     * 获取<p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>
+                     * @return ChargeType <p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
-                     * @param _chargeType 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
+                     * 设置<p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>
+                     * @param _chargeType <p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS
-                     * @return TaskType 枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>
+                     * @return TaskType <p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS
-                     * @param _taskType 枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS
+                     * 设置<p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>
+                     * @param _taskType <p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -85,15 +106,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型：["", "CALC", "CPU", "GPU", "GPU-SW"]
-                     * @return ResourceType 资源类型：["", "CALC", "CPU", "GPU", "GPU-SW"]
+                     * 获取<p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>
+                     * @return ResourceType <p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型：["", "CALC", "CPU", "GPU", "GPU-SW"]
-                     * @param _resourceType 资源类型：["", "CALC", "CPU", "GPU", "GPU-SW"]
+                     * 设置<p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>
+                     * @param _resourceType <p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -108,19 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月
+                     * <p>付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月</p>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 资源类型：["", "CALC", "CPU", "GPU", "GPU-SW"]
+                     * <p>资源类型：[&quot;&quot;, &quot;CALC&quot;, &quot;CPU&quot;, &quot;GPU&quot;, &quot;GPU-SW&quot;]</p>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 
 CreateSealResponse::CreateSealResponse() :
     m_sealIdHasBeenSet(false),
+    m_imageUrlHasBeenSet(false),
     m_sealOperatorVerifyPathHasBeenSet(false),
     m_sealOperatorVerifyQrcodeUrlHasBeenSet(false),
     m_previewFileUrlHasBeenSet(false),
@@ -74,6 +75,16 @@ CoreInternalOutcome CreateSealResponse::Deserialize(const string &payload)
         }
         m_sealId = string(rsp["SealId"].GetString());
         m_sealIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageUrl") && !rsp["ImageUrl"].IsNull())
+    {
+        if (!rsp["ImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageUrl = string(rsp["ImageUrl"].GetString());
+        m_imageUrlHasBeenSet = true;
     }
 
     if (rsp.HasMember("SealOperatorVerifyPath") && !rsp["SealOperatorVerifyPath"].IsNull())
@@ -134,6 +145,14 @@ string CreateSealResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sealOperatorVerifyPathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -186,6 +205,16 @@ string CreateSealResponse::GetSealId() const
 bool CreateSealResponse::SealIdHasBeenSet() const
 {
     return m_sealIdHasBeenSet;
+}
+
+string CreateSealResponse::GetImageUrl() const
+{
+    return m_imageUrl;
+}
+
+bool CreateSealResponse::ImageUrlHasBeenSet() const
+{
+    return m_imageUrlHasBeenSet;
 }
 
 string CreateSealResponse::GetSealOperatorVerifyPath() const

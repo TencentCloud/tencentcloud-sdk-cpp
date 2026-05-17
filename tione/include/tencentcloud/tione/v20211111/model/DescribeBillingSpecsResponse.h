@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计费项列表
-                     * @return Specs 计费项列表
+                     * 获取<p>计费项列表</p>
+                     * @return Specs <p>计费项列表</p>
                      * 
                      */
                     std::vector<Spec> GetSpecs() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计费项列表
+                     * <p>计费项列表</p>
                      */
                     std::vector<Spec> m_specs;
                     bool m_specsHasBeenSet;

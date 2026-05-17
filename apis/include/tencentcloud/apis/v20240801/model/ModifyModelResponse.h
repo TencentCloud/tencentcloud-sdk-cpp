@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结果集
-                     * @return Data 结果集
+                     * 获取<p>结果集</p>
+                     * @return Data <p>结果集</p>
                      * 
                      */
                     ResultIDVO GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结果集
+                     * <p>结果集</p>
                      */
                     ResultIDVO m_data;
                     bool m_dataHasBeenSet;

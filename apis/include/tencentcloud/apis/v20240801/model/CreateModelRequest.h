@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例
-                     * @return InstanceID 实例
+                     * 获取<p>实例</p>
+                     * @return InstanceID <p>实例</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例
-                     * @param _instanceID 实例
+                     * 设置<p>实例</p>
+                     * @param _instanceID <p>实例</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return Name 模型名称
+                     * 获取<p>模型名称</p>
+                     * @return Name <p>模型名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _name 模型名称
+                     * 设置<p>模型名称</p>
+                     * @param _name <p>模型名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取协议类型：http/https
-                     * @return HttpProtocolType 协议类型：http/https
+                     * 获取<p>协议类型：http/https</p>
+                     * @return HttpProtocolType <p>协议类型：http/https</p>
                      * 
                      */
                     std::string GetHttpProtocolType() const;
 
                     /**
-                     * 设置协议类型：http/https
-                     * @param _httpProtocolType 协议类型：http/https
+                     * 设置<p>协议类型：http/https</p>
+                     * @param _httpProtocolType <p>协议类型：http/https</p>
                      * 
                      */
                     void SetHttpProtocolType(const std::string& _httpProtocolType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool HttpProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标路径
-                     * @return TargetPath 目标路径
+                     * 获取<p>目标路径</p>
+                     * @return TargetPath <p>目标路径</p>
                      * 
                      */
                     std::string GetTargetPath() const;
 
                     /**
-                     * 设置目标路径
-                     * @param _targetPath 目标路径
+                     * 设置<p>目标路径</p>
+                     * @param _targetPath <p>目标路径</p>
                      * 
                      */
                     void SetTargetPath(const std::string& _targetPath);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TargetPathHasBeenSet() const;
 
                     /**
-                     * 获取目标服务器
-                     * @return TargetHosts 目标服务器
+                     * 获取<p>目标服务器</p>
+                     * @return TargetHosts <p>目标服务器</p>
                      * 
                      */
                     std::vector<TargetHostDTO> GetTargetHosts() const;
 
                     /**
-                     * 设置目标服务器
-                     * @param _targetHosts 目标服务器
+                     * 设置<p>目标服务器</p>
+                     * @param _targetHosts <p>目标服务器</p>
                      * 
                      */
                     void SetTargetHosts(const std::vector<TargetHostDTO>& _targetHosts);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool TargetHostsHasBeenSet() const;
 
                     /**
-                     * 获取凭据ID
-                     * @return CredentialID 凭据ID
+                     * 获取<p>凭据ID</p>
+                     * @return CredentialID <p>凭据ID</p>
                      * 
                      */
                     std::string GetCredentialID() const;
 
                     /**
-                     * 设置凭据ID
-                     * @param _credentialID 凭据ID
+                     * 设置<p>凭据ID</p>
+                     * @param _credentialID <p>凭据ID</p>
                      * 
                      */
                     void SetCredentialID(const std::string& _credentialID);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool CredentialIDHasBeenSet() const;
 
                     /**
-                     * 获取https时，是否检查证书合法
-                     * @return CheckTargetCertsError https时，是否检查证书合法
+                     * 获取<p>https时，是否检查证书合法</p>
+                     * @return CheckTargetCertsError <p>https时，是否检查证书合法</p>
                      * 
                      */
                     bool GetCheckTargetCertsError() const;
 
                     /**
-                     * 设置https时，是否检查证书合法
-                     * @param _checkTargetCertsError https时，是否检查证书合法
+                     * 设置<p>https时，是否检查证书合法</p>
+                     * @param _checkTargetCertsError <p>https时，是否检查证书合法</p>
                      * 
                      */
                     void SetCheckTargetCertsError(const bool& _checkTargetCertsError);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool CheckTargetCertsErrorHasBeenSet() const;
 
                     /**
-                     * 获取http协议版本：1.1/2.0
-                     * @return HttpProtocolVersion http协议版本：1.1/2.0
+                     * 获取<p>http协议版本：1.1/2.0</p>
+                     * @return HttpProtocolVersion <p>http协议版本：1.1/2.0</p>
                      * 
                      */
                     std::string GetHttpProtocolVersion() const;
 
                     /**
-                     * 设置http协议版本：1.1/2.0
-                     * @param _httpProtocolVersion http协议版本：1.1/2.0
+                     * 设置<p>http协议版本：1.1/2.0</p>
+                     * @param _httpProtocolVersion <p>http协议版本：1.1/2.0</p>
                      * 
                      */
                     void SetHttpProtocolVersion(const std::string& _httpProtocolVersion);
@@ -211,55 +211,109 @@ namespace TencentCloud
                      */
                     bool HttpProtocolVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>model ID</p>
+                     * @return ModelID <p>model ID</p>
+                     * 
+                     */
+                    std::string GetModelID() const;
+
+                    /**
+                     * 设置<p>model ID</p>
+                     * @param _modelID <p>model ID</p>
+                     * 
+                     */
+                    void SetModelID(const std::string& _modelID);
+
+                    /**
+                     * 判断参数 ModelID 是否已赋值
+                     * @return ModelID 是否已赋值
+                     * 
+                     */
+                    bool ModelIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例
+                     * <p>实例</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 协议类型：http/https
+                     * <p>协议类型：http/https</p>
                      */
                     std::string m_httpProtocolType;
                     bool m_httpProtocolTypeHasBeenSet;
 
                     /**
-                     * 目标路径
+                     * <p>目标路径</p>
                      */
                     std::string m_targetPath;
                     bool m_targetPathHasBeenSet;
 
                     /**
-                     * 目标服务器
+                     * <p>目标服务器</p>
                      */
                     std::vector<TargetHostDTO> m_targetHosts;
                     bool m_targetHostsHasBeenSet;
 
                     /**
-                     * 凭据ID
+                     * <p>凭据ID</p>
                      */
                     std::string m_credentialID;
                     bool m_credentialIDHasBeenSet;
 
                     /**
-                     * https时，是否检查证书合法
+                     * <p>https时，是否检查证书合法</p>
                      */
                     bool m_checkTargetCertsError;
                     bool m_checkTargetCertsErrorHasBeenSet;
 
                     /**
-                     * http协议版本：1.1/2.0
+                     * <p>http协议版本：1.1/2.0</p>
                      */
                     std::string m_httpProtocolVersion;
                     bool m_httpProtocolVersionHasBeenSet;
+
+                    /**
+                     * <p>model ID</p>
+                     */
+                    std::string m_modelID;
+                    bool m_modelIDHasBeenSet;
+
+                    /**
+                     * <p>描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

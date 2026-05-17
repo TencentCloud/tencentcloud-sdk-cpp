@@ -56,7 +56,8 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_findHostKeyMethodHasBeenSet(false),
     m_hostKeyHeaderNameHasBeenSet(false),
     m_fallbackStatusHasBeenSet(false),
-    m_fallbackModelsHasBeenSet(false)
+    m_fallbackModelsHasBeenSet(false),
+    m_modelProtocolHasBeenSet(false)
 {
 }
 
@@ -499,6 +500,16 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_fallbackModelsHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelProtocol") && !value["ModelProtocol"].IsNull())
+    {
+        if (!value["ModelProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.ModelProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelProtocol = string(value["ModelProtocol"].GetString());
+        m_modelProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -833,6 +844,14 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modelProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelProtocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1412,5 +1431,21 @@ void DescribeModelServiceResponseVO::SetFallbackModels(const vector<TargetModelD
 bool DescribeModelServiceResponseVO::FallbackModelsHasBeenSet() const
 {
     return m_fallbackModelsHasBeenSet;
+}
+
+string DescribeModelServiceResponseVO::GetModelProtocol() const
+{
+    return m_modelProtocol;
+}
+
+void DescribeModelServiceResponseVO::SetModelProtocol(const string& _modelProtocol)
+{
+    m_modelProtocol = _modelProtocol;
+    m_modelProtocolHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::ModelProtocolHasBeenSet() const
+{
+    return m_modelProtocolHasBeenSet;
 }
 

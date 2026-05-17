@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool CheckItemsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContextScope() const;
+
+                    /**
+                     * 设置<p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _contextScope <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContextScope(const std::string& _contextScope);
+
+                    /**
+                     * 判断参数 ContextScope 是否已赋值
+                     * @return ContextScope 是否已赋值
+                     * 
+                     */
+                    bool ContextScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_checkItems;
                     bool m_checkItemsHasBeenSet;
+
+                    /**
+                     * <p>检测上下文</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contextScope;
+                    bool m_contextScopeHasBeenSet;
 
                 };
             }
