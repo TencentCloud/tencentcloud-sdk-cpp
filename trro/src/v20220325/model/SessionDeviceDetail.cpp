@@ -56,7 +56,8 @@ SessionDeviceDetail::SessionDeviceDetail() :
     m_lag100DurationHasBeenSet(false),
     m_lag150DurationHasBeenSet(false),
     m_multiModeHasBeenSet(false),
-    m_multiNetHasBeenSet(false)
+    m_multiNetHasBeenSet(false),
+    m_controlLatencyHasBeenSet(false)
 {
 }
 
@@ -501,6 +502,19 @@ CoreInternalOutcome SessionDeviceDetail::Deserialize(const rapidjson::Value &val
         m_multiNetHasBeenSet = true;
     }
 
+    if (value.HasMember("ControlLatency") && !value["ControlLatency"].IsNull())
+    {
+        if (!value["ControlLatency"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.ControlLatency` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ControlLatency"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_controlLatency.push_back((*itr).GetInt64());
+        }
+        m_controlLatencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -910,6 +924,19 @@ void SessionDeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_controlLatencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ControlLatency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_controlLatency.begin(); itr != m_controlLatency.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -1490,5 +1517,21 @@ void SessionDeviceDetail::SetMultiNet(const vector<MultiNet>& _multiNet)
 bool SessionDeviceDetail::MultiNetHasBeenSet() const
 {
     return m_multiNetHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetControlLatency() const
+{
+    return m_controlLatency;
+}
+
+void SessionDeviceDetail::SetControlLatency(const vector<int64_t>& _controlLatency)
+{
+    m_controlLatency = _controlLatency;
+    m_controlLatencyHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::ControlLatencyHasBeenSet() const
+{
+    return m_controlLatencyHasBeenSet;
 }
 

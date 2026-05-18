@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取请求的数据页数。默认值为1，取值大于等于1
-                     * @return PageNumber 请求的数据页数。默认值为1，取值大于等于1
+                     * 获取<p>请求的数据页数。默认值为1，取值大于等于1</p>
+                     * @return PageNumber <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置请求的数据页数。默认值为1，取值大于等于1
-                     * @param _pageNumber 请求的数据页数。默认值为1，取值大于等于1
+                     * 设置<p>请求的数据页数。默认值为1，取值大于等于1</p>
+                     * @param _pageNumber <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
-                     * @return PageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * 获取<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
+                     * @return PageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
-                     * @param _pageSize 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * 设置<p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
+                     * @param _pageSize <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取所属工作流ID
-                     * @return WorkflowId 所属工作流ID
+                     * 获取<p>所属工作流ID</p>
+                     * @return WorkflowId <p>所属工作流ID</p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置所属工作流ID
-                     * @param _workflowId 所属工作流ID
+                     * 设置<p>所属工作流ID</p>
+                     * @param _workflowId <p>所属工作流ID</p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取责任人ID
-                     * @return OwnerUin 责任人ID
+                     * 获取<p>责任人ID</p>
+                     * @return OwnerUin <p>责任人ID</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置责任人ID
-                     * @param _ownerUin 责任人ID
+                     * 设置<p>责任人ID</p>
+                     * @param _ownerUin <p>责任人ID</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskTypeId 任务类型
+                     * 获取<p>任务类型</p>
+                     * @return TaskTypeId <p>任务类型</p>
                      * 
                      */
                     int64_t GetTaskTypeId() const;
 
                     /**
-                     * 设置任务类型
-                     * @param _taskTypeId 任务类型
+                     * 设置<p>任务类型</p>
+                     * @param _taskTypeId <p>任务类型</p>
                      * 
                      */
                     void SetTaskTypeId(const int64_t& _taskTypeId);
@@ -190,39 +190,15 @@ namespace TencentCloud
                     bool TaskTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-* N: 新建 
-* Y: 调度中 
-* F: 已下线 
-* O: 已暂停 
-* T: 下线中 
-* INVALID: 已失效
-                     * @return Status 任务状态
-* N: 新建 
-* Y: 调度中 
-* F: 已下线 
-* O: 已暂停 
-* T: 下线中 
-* INVALID: 已失效
+                     * 获取<p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>
+                     * @return Status <p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-* N: 新建 
-* Y: 调度中 
-* F: 已下线 
-* O: 已暂停 
-* T: 下线中 
-* INVALID: 已失效
-                     * @param _status 任务状态
-* N: 新建 
-* Y: 调度中 
-* F: 已下线 
-* O: 已暂停 
-* T: 下线中 
-* INVALID: 已失效
+                     * 设置<p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>
+                     * @param _status <p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -235,15 +211,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取提交状态
-                     * @return Submit 提交状态
+                     * 获取<p>提交状态</p>
+                     * @return Submit <p>提交状态</p>
                      * 
                      */
                     bool GetSubmit() const;
 
                     /**
-                     * 设置提交状态
-                     * @param _submit 提交状态
+                     * 设置<p>提交状态</p>
+                     * @param _submit <p>提交状态</p>
                      * 
                      */
                     void SetSubmit(const bool& _submit);
@@ -256,15 +232,15 @@ namespace TencentCloud
                     bool SubmitHasBeenSet() const;
 
                     /**
-                     * 获取BundleId信息
-                     * @return BundleId BundleId信息
+                     * 获取<p>BundleId信息</p>
+                     * @return BundleId <p>BundleId信息</p>
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置BundleId信息
-                     * @param _bundleId BundleId信息
+                     * 设置<p>BundleId信息</p>
+                     * @param _bundleId <p>BundleId信息</p>
                      * 
                      */
                     void SetBundleId(const std::string& _bundleId);
@@ -277,15 +253,15 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取创建人ID
-                     * @return CreateUserUin 创建人ID
+                     * 获取<p>创建人ID</p>
+                     * @return CreateUserUin <p>创建人ID</p>
                      * 
                      */
                     std::string GetCreateUserUin() const;
 
                     /**
-                     * 设置创建人ID
-                     * @param _createUserUin 创建人ID
+                     * 设置<p>创建人ID</p>
+                     * @param _createUserUin <p>创建人ID</p>
                      * 
                      */
                     void SetCreateUserUin(const std::string& _createUserUin);
@@ -298,15 +274,15 @@ namespace TencentCloud
                     bool CreateUserUinHasBeenSet() const;
 
                     /**
-                     * 获取修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @return ModifyTime 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 获取<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @return ModifyTime <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     std::vector<std::string> GetModifyTime() const;
 
                     /**
-                     * 设置修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @param _modifyTime 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 设置<p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @param _modifyTime <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     void SetModifyTime(const std::vector<std::string>& _modifyTime);
@@ -319,15 +295,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @return CreateTime 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 获取<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @return CreateTime <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     std::vector<std::string> GetCreateTime() const;
 
                     /**
-                     * 设置创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
-                     * @param _createTime 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * 设置<p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
+                     * @param _createTime <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      * 
                      */
                     void SetCreateTime(const std::vector<std::string>& _createTime);
@@ -339,91 +315,166 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>
+                     * @return TaskFolderPathList <p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>
+                     * 
+                     */
+                    std::vector<std::string> GetTaskFolderPathList() const;
+
+                    /**
+                     * 设置<p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>
+                     * @param _taskFolderPathList <p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>
+                     * 
+                     */
+                    void SetTaskFolderPathList(const std::vector<std::string>& _taskFolderPathList);
+
+                    /**
+                     * 判断参数 TaskFolderPathList 是否已赋值
+                     * @return TaskFolderPathList 是否已赋值
+                     * 
+                     */
+                    bool TaskFolderPathListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>
+                     * @return WorkflowFolderPathList <p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetWorkflowFolderPathList() const;
+
+                    /**
+                     * 设置<p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>
+                     * @param _workflowFolderPathList <p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>
+                     * 
+                     */
+                    void SetWorkflowFolderPathList(const std::vector<std::string>& _workflowFolderPathList);
+
+                    /**
+                     * 判断参数 WorkflowFolderPathList 是否已赋值
+                     * @return WorkflowFolderPathList 是否已赋值
+                     * 
+                     */
+                    bool WorkflowFolderPathListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>
+                     * @return TaskNodeTypeList <p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetTaskNodeTypeList() const;
+
+                    /**
+                     * 设置<p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>
+                     * @param _taskNodeTypeList <p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>
+                     * 
+                     */
+                    void SetTaskNodeTypeList(const std::vector<std::string>& _taskNodeTypeList);
+
+                    /**
+                     * 判断参数 TaskNodeTypeList 是否已赋值
+                     * @return TaskNodeTypeList 是否已赋值
+                     * 
+                     */
+                    bool TaskNodeTypeListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 请求的数据页数。默认值为1，取值大于等于1
+                     * <p>请求的数据页数。默认值为1，取值大于等于1</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页显示的数据条数。默认值为10 ，最小值为10，最大值为200
+                     * <p>每页显示的数据条数。默认值为10 ，最小值为10，最大值为200</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 所属工作流ID
+                     * <p>所属工作流ID</p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 责任人ID
+                     * <p>责任人ID</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * <p>任务类型</p>
                      */
                     int64_t m_taskTypeId;
                     bool m_taskTypeIdHasBeenSet;
 
                     /**
-                     * 任务状态
-* N: 新建 
-* Y: 调度中 
-* F: 已下线 
-* O: 已暂停 
-* T: 下线中 
-* INVALID: 已失效
+                     * <p>任务状态</p><ul><li>N: 新建 </li><li>Y: 调度中 </li><li>F: 已下线 </li><li>O: 已暂停 </li><li>T: 下线中 </li><li>INVALID: 已失效</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 提交状态
+                     * <p>提交状态</p>
                      */
                     bool m_submit;
                     bool m_submitHasBeenSet;
 
                     /**
-                     * BundleId信息
+                     * <p>BundleId信息</p>
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * 创建人ID
+                     * <p>创建人ID</p>
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
 
                     /**
-                     * 修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * <p>修改时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      */
                     std::vector<std::string> m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间
+                     * <p>创建时间区间 yyyy-MM-dd HH:mm:ss，需要在数组填入两个时间</p>
                      */
                     std::vector<std::string> m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>任务文件夹路径列表，支持多选，从工作流下的目录开始填写，节点类型无需填写。选择上层文件夹时，自动包含所有子文件夹下的任务。 路径格式为绝对路径，如 &quot;/子目录A&quot;，根目录为 &quot;/&quot;</p>
+                     */
+                    std::vector<std::string> m_taskFolderPathList;
+                    bool m_taskFolderPathListHasBeenSet;
+
+                    /**
+                     * <p>工作流文件夹路径列表，支持多选。选择上层文件夹时，自动包含所有子文件夹下工作流的任务。 路径格式为绝对路径，如 &quot;/数据开发/子目录&quot;，根目录为 &quot;/&quot;。</p>
+                     */
+                    std::vector<std::string> m_workflowFolderPathList;
+                    bool m_workflowFolderPathListHasBeenSet;
+
+                    /**
+                     * <p>节点类型列表，用于按任务节点分类筛选，支持多选， 可选值参考下面枚举类型 。 传入后将根据这些节点类型包含的任务类型ID列表进行筛选。</p><p>枚举值：</p><ul><li>ETL： 数据集成节点</li><li>EMR： EMR节点</li><li>DLC： DLC节点</li><li>SETATS： SETATS节点</li><li>TDSQL： TDSQL节点</li><li>TCHOUSE： TCHOUSE节点</li><li>GENERAL： 通用节点</li><li>DATA_QUALITY： 数据质量节点</li><li>INDICATOR： 指标节点</li><li>TI_ONE： TI-ONE机器学习节点</li></ul>
+                     */
+                    std::vector<std::string> m_taskNodeTypeList;
+                    bool m_taskNodeTypeListHasBeenSet;
 
                 };
             }

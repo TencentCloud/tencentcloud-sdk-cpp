@@ -173,7 +173,7 @@ string AdjustCdbProxyAddressRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApNodeAsRoNode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_apNodeAsRoNode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_apNodeAsRoNode, allocator);
     }
 
     if (m_apQueryToOtherNodeHasBeenSet)
@@ -181,7 +181,7 @@ string AdjustCdbProxyAddressRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApQueryToOtherNode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_apQueryToOtherNode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_apQueryToOtherNode, allocator);
     }
 
 
@@ -416,12 +416,12 @@ bool AdjustCdbProxyAddressRequest::AccessModeHasBeenSet() const
     return m_accessModeHasBeenSet;
 }
 
-string AdjustCdbProxyAddressRequest::GetApNodeAsRoNode() const
+bool AdjustCdbProxyAddressRequest::GetApNodeAsRoNode() const
 {
     return m_apNodeAsRoNode;
 }
 
-void AdjustCdbProxyAddressRequest::SetApNodeAsRoNode(const string& _apNodeAsRoNode)
+void AdjustCdbProxyAddressRequest::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
 {
     m_apNodeAsRoNode = _apNodeAsRoNode;
     m_apNodeAsRoNodeHasBeenSet = true;
@@ -432,12 +432,12 @@ bool AdjustCdbProxyAddressRequest::ApNodeAsRoNodeHasBeenSet() const
     return m_apNodeAsRoNodeHasBeenSet;
 }
 
-string AdjustCdbProxyAddressRequest::GetApQueryToOtherNode() const
+bool AdjustCdbProxyAddressRequest::GetApQueryToOtherNode() const
 {
     return m_apQueryToOtherNode;
 }
 
-void AdjustCdbProxyAddressRequest::SetApQueryToOtherNode(const string& _apQueryToOtherNode)
+void AdjustCdbProxyAddressRequest::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
 {
     m_apQueryToOtherNode = _apQueryToOtherNode;
     m_apQueryToOtherNodeHasBeenSet = true;

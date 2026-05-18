@@ -27,6 +27,8 @@
 #include <tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceResponse.h>
+#include <tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigRequest.h>
+#include <tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeBusinessResourcesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeBusinessResourcesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeCompanyDirectoryConfigRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeCompanyDirectoryConfigResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodesRequest.h>
@@ -97,6 +101,8 @@
 #include <tencentcloud/ioa/v20220601/model/GrantResourcesByVirtualGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyBusinessResourceRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyBusinessResourceResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
@@ -121,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBusinessResourceResponse> CreateBusinessResourceOutcome;
                 typedef std::future<CreateBusinessResourceOutcome> CreateBusinessResourceOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateBusinessResourceRequest&, CreateBusinessResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBusinessResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCompanyDirectoryConfigResponse> CreateCompanyDirectoryConfigOutcome;
+                typedef std::future<CreateCompanyDirectoryConfigOutcome> CreateCompanyDirectoryConfigOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::CreateCompanyDirectoryConfigRequest&, CreateCompanyDirectoryConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCompanyDirectoryConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDLPFileDetectTaskResponse> CreateDLPFileDetectTaskOutcome;
                 typedef std::future<CreateDLPFileDetectTaskOutcome> CreateDLPFileDetectTaskOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateDLPFileDetectTaskRequest&, CreateDLPFileDetectTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDLPFileDetectTaskAsyncHandler;
@@ -151,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBusinessResourcesResponse> DescribeBusinessResourcesOutcome;
                 typedef std::future<DescribeBusinessResourcesOutcome> DescribeBusinessResourcesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeBusinessResourcesRequest&, DescribeBusinessResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBusinessResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCompanyDirectoryConfigResponse> DescribeCompanyDirectoryConfigOutcome;
+                typedef std::future<DescribeCompanyDirectoryConfigOutcome> DescribeCompanyDirectoryConfigOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeCompanyDirectoryConfigRequest&, DescribeCompanyDirectoryConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCompanyDirectoryConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDLPEdgeNodeGroupsResponse> DescribeDLPEdgeNodeGroupsOutcome;
                 typedef std::future<DescribeDLPEdgeNodeGroupsOutcome> DescribeDLPEdgeNodeGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDLPEdgeNodeGroupsRequest&, DescribeDLPEdgeNodeGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLPEdgeNodeGroupsAsyncHandler;
@@ -226,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBusinessResourceResponse> ModifyBusinessResourceOutcome;
                 typedef std::future<ModifyBusinessResourceOutcome> ModifyBusinessResourceOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyBusinessResourceRequest&, ModifyBusinessResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBusinessResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCompanyDirectoryConfigResponse> ModifyCompanyDirectoryConfigOutcome;
+                typedef std::future<ModifyCompanyDirectoryConfigOutcome> ModifyCompanyDirectoryConfigOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ModifyCompanyDirectoryConfigRequest&, ModifyCompanyDirectoryConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCompanyDirectoryConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceTrustStatusResponse> ModifyDeviceTrustStatusOutcome;
                 typedef std::future<ModifyDeviceTrustStatusOutcome> ModifyDeviceTrustStatusOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyDeviceTrustStatusRequest&, ModifyDeviceTrustStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceTrustStatusAsyncHandler;
@@ -252,6 +267,15 @@ namespace TencentCloud
                 CreateBusinessResourceOutcome CreateBusinessResource(const Model::CreateBusinessResourceRequest &request);
                 void CreateBusinessResourceAsync(const Model::CreateBusinessResourceRequest& request, const CreateBusinessResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBusinessResourceOutcomeCallable CreateBusinessResourceCallable(const Model::CreateBusinessResourceRequest& request);
+
+                /**
+                 *创建企业目录配置
+                 * @param req CreateCompanyDirectoryConfigRequest
+                 * @return CreateCompanyDirectoryConfigOutcome
+                 */
+                CreateCompanyDirectoryConfigOutcome CreateCompanyDirectoryConfig(const Model::CreateCompanyDirectoryConfigRequest &request);
+                void CreateCompanyDirectoryConfigAsync(const Model::CreateCompanyDirectoryConfigRequest& request, const CreateCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCompanyDirectoryConfigOutcomeCallable CreateCompanyDirectoryConfigCallable(const Model::CreateCompanyDirectoryConfigRequest& request);
 
                 /**
                  *创建文件鉴定任务，私有化调用path为：capi/DlpOpenApi/CreateDLPFileDetectTask
@@ -342,6 +366,15 @@ namespace TencentCloud
                 DescribeBusinessResourcesOutcome DescribeBusinessResources(const Model::DescribeBusinessResourcesRequest &request);
                 void DescribeBusinessResourcesAsync(const Model::DescribeBusinessResourcesRequest& request, const DescribeBusinessResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBusinessResourcesOutcomeCallable DescribeBusinessResourcesCallable(const Model::DescribeBusinessResourcesRequest& request);
+
+                /**
+                 *获取企业目录配置
+                 * @param req DescribeCompanyDirectoryConfigRequest
+                 * @return DescribeCompanyDirectoryConfigOutcome
+                 */
+                DescribeCompanyDirectoryConfigOutcome DescribeCompanyDirectoryConfig(const Model::DescribeCompanyDirectoryConfigRequest &request);
+                void DescribeCompanyDirectoryConfigAsync(const Model::DescribeCompanyDirectoryConfigRequest& request, const DescribeCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCompanyDirectoryConfigOutcomeCallable DescribeCompanyDirectoryConfigCallable(const Model::DescribeCompanyDirectoryConfigRequest& request);
 
                 /**
                  *查询边缘节点分组，私有化调用path为：capi/Connectors/DescribeDLPEdgeNodeGroups
@@ -567,6 +600,15 @@ namespace TencentCloud
                 ModifyBusinessResourceOutcome ModifyBusinessResource(const Model::ModifyBusinessResourceRequest &request);
                 void ModifyBusinessResourceAsync(const Model::ModifyBusinessResourceRequest& request, const ModifyBusinessResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBusinessResourceOutcomeCallable ModifyBusinessResourceCallable(const Model::ModifyBusinessResourceRequest& request);
+
+                /**
+                 *编辑企业目录配置
+                 * @param req ModifyCompanyDirectoryConfigRequest
+                 * @return ModifyCompanyDirectoryConfigOutcome
+                 */
+                ModifyCompanyDirectoryConfigOutcome ModifyCompanyDirectoryConfig(const Model::ModifyCompanyDirectoryConfigRequest &request);
+                void ModifyCompanyDirectoryConfigAsync(const Model::ModifyCompanyDirectoryConfigRequest& request, const ModifyCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCompanyDirectoryConfigOutcomeCallable ModifyCompanyDirectoryConfigCallable(const Model::ModifyCompanyDirectoryConfigRequest& request);
 
                 /**
                  *给接入设备加黑加白,私有化调用path为：capi/NGN/ModifyDeviceTrustStatus

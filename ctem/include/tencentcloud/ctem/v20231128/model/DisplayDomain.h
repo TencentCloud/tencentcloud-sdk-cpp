@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取主域名
-                     * @return Domain 主域名
+                     * 获取<p>主域名</p>
+                     * @return Domain <p>主域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置主域名
-                     * @param _domain 主域名
+                     * 设置<p>主域名</p>
+                     * @param _domain <p>主域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取ICP
-                     * @return ICP ICP
+                     * 获取<p>ICP</p>
+                     * @return ICP <p>ICP</p>
                      * 
                      */
                     std::string GetICP() const;
 
                     /**
-                     * 设置ICP
-                     * @param _iCP ICP
+                     * 设置<p>ICP</p>
+                     * @param _iCP <p>ICP</p>
                      * 
                      */
                     void SetICP(const std::string& _iCP);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ICPHasBeenSet() const;
 
                     /**
-                     * 获取注册时间
-                     * @return RegisteredTime 注册时间
+                     * 获取<p>注册时间</p>
+                     * @return RegisteredTime <p>注册时间</p>
                      * 
                      */
                     std::string GetRegisteredTime() const;
 
                     /**
-                     * 设置注册时间
-                     * @param _registeredTime 注册时间
+                     * 设置<p>注册时间</p>
+                     * @param _registeredTime <p>注册时间</p>
                      * 
                      */
                     void SetRegisteredTime(const std::string& _registeredTime);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RegisteredTimeHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpiredTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpiredTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expiredTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expiredTime <p>过期时间</p>
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取公司
-                     * @return Company 公司
+                     * 获取<p>公司</p>
+                     * @return Company <p>公司</p>
                      * 
                      */
                     std::string GetCompany() const;
 
                     /**
-                     * 设置公司
-                     * @param _company 公司
+                     * 设置<p>公司</p>
+                     * @param _company <p>公司</p>
                      * 
                      */
                     void SetCompany(const std::string& _company);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CompanyHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取是否为云资产
-                     * @return IsCloudAsset 是否为云资产
+                     * 获取<p>是否为云资产</p>
+                     * @return IsCloudAsset <p>是否为云资产</p>
                      * 
                      */
                     int64_t GetIsCloudAsset() const;
 
                     /**
-                     * 设置是否为云资产
-                     * @param _isCloudAsset 是否为云资产
+                     * 设置<p>是否为云资产</p>
+                     * @param _isCloudAsset <p>是否为云资产</p>
                      * 
                      */
                     void SetIsCloudAsset(const int64_t& _isCloudAsset);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool IsCloudAssetHasBeenSet() const;
 
                     /**
-                     * 获取云资产状态，-1为下线
-                     * @return CloudAssetStatus 云资产状态，-1为下线
+                     * 获取<p>云资产状态，-1为下线</p>
+                     * @return CloudAssetStatus <p>云资产状态，-1为下线</p>
                      * 
                      */
                     int64_t GetCloudAssetStatus() const;
 
                     /**
-                     * 设置云资产状态，-1为下线
-                     * @param _cloudAssetStatus 云资产状态，-1为下线
+                     * 设置<p>云资产状态，-1为下线</p>
+                     * @param _cloudAssetStatus <p>云资产状态，-1为下线</p>
                      * 
                      */
                     void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
@@ -239,55 +239,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 主域名
+                     * <p>主域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * ICP
+                     * <p>ICP</p>
                      */
                     std::string m_iCP;
                     bool m_iCPHasBeenSet;
 
                     /**
-                     * 注册时间
+                     * <p>注册时间</p>
                      */
                     std::string m_registeredTime;
                     bool m_registeredTimeHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 公司
+                     * <p>公司</p>
                      */
                     std::string m_company;
                     bool m_companyHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * 是否为云资产
+                     * <p>是否为云资产</p>
                      */
                     int64_t m_isCloudAsset;
                     bool m_isCloudAssetHasBeenSet;
 
                     /**
-                     * 云资产状态，-1为下线
+                     * <p>云资产状态，-1为下线</p>
                      */
                     int64_t m_cloudAssetStatus;
                     bool m_cloudAssetStatusHasBeenSet;

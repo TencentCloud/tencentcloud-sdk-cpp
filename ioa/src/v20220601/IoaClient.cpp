@@ -140,6 +140,56 @@ IoaClient::CreateBusinessResourceOutcomeCallable IoaClient::CreateBusinessResour
     return prom->get_future();
 }
 
+IoaClient::CreateCompanyDirectoryConfigOutcome IoaClient::CreateCompanyDirectoryConfig(const CreateCompanyDirectoryConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCompanyDirectoryConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCompanyDirectoryConfigResponse rsp = CreateCompanyDirectoryConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCompanyDirectoryConfigOutcome(rsp);
+        else
+            return CreateCompanyDirectoryConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCompanyDirectoryConfigOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateCompanyDirectoryConfigAsync(const CreateCompanyDirectoryConfigRequest& request, const CreateCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCompanyDirectoryConfigRequest&;
+    using Resp = CreateCompanyDirectoryConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCompanyDirectoryConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::CreateCompanyDirectoryConfigOutcomeCallable IoaClient::CreateCompanyDirectoryConfigCallable(const CreateCompanyDirectoryConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCompanyDirectoryConfigOutcome>>();
+    CreateCompanyDirectoryConfigAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const CreateCompanyDirectoryConfigRequest&,
+        CreateCompanyDirectoryConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::CreateDLPFileDetectTaskOutcome IoaClient::CreateDLPFileDetectTask(const CreateDLPFileDetectTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDLPFileDetectTask");
@@ -632,6 +682,56 @@ IoaClient::DescribeBusinessResourcesOutcomeCallable IoaClient::DescribeBusinessR
         const IoaClient*,
         const DescribeBusinessResourcesRequest&,
         DescribeBusinessResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeCompanyDirectoryConfigOutcome IoaClient::DescribeCompanyDirectoryConfig(const DescribeCompanyDirectoryConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCompanyDirectoryConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCompanyDirectoryConfigResponse rsp = DescribeCompanyDirectoryConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCompanyDirectoryConfigOutcome(rsp);
+        else
+            return DescribeCompanyDirectoryConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCompanyDirectoryConfigOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeCompanyDirectoryConfigAsync(const DescribeCompanyDirectoryConfigRequest& request, const DescribeCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCompanyDirectoryConfigRequest&;
+    using Resp = DescribeCompanyDirectoryConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCompanyDirectoryConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeCompanyDirectoryConfigOutcomeCallable IoaClient::DescribeCompanyDirectoryConfigCallable(const DescribeCompanyDirectoryConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCompanyDirectoryConfigOutcome>>();
+    DescribeCompanyDirectoryConfigAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeCompanyDirectoryConfigRequest&,
+        DescribeCompanyDirectoryConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1882,6 +1982,56 @@ IoaClient::ModifyBusinessResourceOutcomeCallable IoaClient::ModifyBusinessResour
         const IoaClient*,
         const ModifyBusinessResourceRequest&,
         ModifyBusinessResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::ModifyCompanyDirectoryConfigOutcome IoaClient::ModifyCompanyDirectoryConfig(const ModifyCompanyDirectoryConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCompanyDirectoryConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCompanyDirectoryConfigResponse rsp = ModifyCompanyDirectoryConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCompanyDirectoryConfigOutcome(rsp);
+        else
+            return ModifyCompanyDirectoryConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCompanyDirectoryConfigOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyCompanyDirectoryConfigAsync(const ModifyCompanyDirectoryConfigRequest& request, const ModifyCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCompanyDirectoryConfigRequest&;
+    using Resp = ModifyCompanyDirectoryConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCompanyDirectoryConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::ModifyCompanyDirectoryConfigOutcomeCallable IoaClient::ModifyCompanyDirectoryConfigCallable(const ModifyCompanyDirectoryConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCompanyDirectoryConfigOutcome>>();
+    ModifyCompanyDirectoryConfigAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyCompanyDirectoryConfigRequest&,
+        ModifyCompanyDirectoryConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

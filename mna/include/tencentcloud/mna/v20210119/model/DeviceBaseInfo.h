@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备唯一ID
-                     * @return DeviceId 设备唯一ID
+                     * 获取<p>设备唯一ID</p>
+                     * @return DeviceId <p>设备唯一ID</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备唯一ID
-                     * @param _deviceId 设备唯一ID
+                     * 设置<p>设备唯一ID</p>
+                     * @param _deviceId <p>设备唯一ID</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取设备创建的时间，单位：ms
-                     * @return CreateTime 设备创建的时间，单位：ms
+                     * 获取<p>设备创建的时间，单位：ms</p>
+                     * @return CreateTime <p>设备创建的时间，单位：ms</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置设备创建的时间，单位：ms
-                     * @param _createTime 设备创建的时间，单位：ms
+                     * 设置<p>设备创建的时间，单位：ms</p>
+                     * @param _createTime <p>设备创建的时间，单位：ms</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备最后在线时间，单位：ms
-                     * @return LastTime 设备最后在线时间，单位：ms
+                     * 获取<p>设备最后在线时间，单位：ms</p>
+                     * @return LastTime <p>设备最后在线时间，单位：ms</p>
                      * 
                      */
                     std::string GetLastTime() const;
 
                     /**
-                     * 设置设备最后在线时间，单位：ms
-                     * @param _lastTime 设备最后在线时间，单位：ms
+                     * 设置<p>设备最后在线时间，单位：ms</p>
+                     * @param _lastTime <p>设备最后在线时间，单位：ms</p>
                      * 
                      */
                     void SetLastTime(const std::string& _lastTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool LastTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备的备注
-                     * @return Remark 设备的备注
+                     * 获取<p>设备的备注</p>
+                     * @return Remark <p>设备的备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置设备的备注
-                     * @param _remark 设备的备注
+                     * 设置<p>设备的备注</p>
+                     * @param _remark <p>设备的备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）
-                     * @return AccessScope 接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）
+                     * 获取<p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>
+                     * @return AccessScope <p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>
                      * 
                      */
                     int64_t GetAccessScope() const;
 
                     /**
-                     * 设置接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）
-                     * @param _accessScope 接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）
+                     * 设置<p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>
+                     * @param _accessScope <p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>
                      * 
                      */
                     void SetAccessScope(const int64_t& _accessScope);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AccessScopeHasBeenSet() const;
 
                     /**
-                     * 获取license授权有效期 0：月度授权 1：永久授权
-                     * @return LicensePayMode license授权有效期 0：月度授权 1：永久授权
+                     * 获取<p>license授权有效期 0：月度授权 1：永久授权</p>
+                     * @return LicensePayMode <p>license授权有效期 0：月度授权 1：永久授权</p>
                      * 
                      */
                     int64_t GetLicensePayMode() const;
 
                     /**
-                     * 设置license授权有效期 0：月度授权 1：永久授权
-                     * @param _licensePayMode license授权有效期 0：月度授权 1：永久授权
+                     * 设置<p>license授权有效期 0：月度授权 1：永久授权</p>
+                     * @param _licensePayMode <p>license授权有效期 0：月度授权 1：永久授权</p>
                      * 
                      */
                     void SetLicensePayMode(const int64_t& _licensePayMode);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool LicensePayModeHasBeenSet() const;
 
                     /**
-                     * 获取付费方 0：厂商付费 1：客户付费
-                     * @return Payer 付费方 0：厂商付费 1：客户付费
+                     * 获取<p>付费方 0：厂商付费 1：客户付费</p>
+                     * @return Payer <p>付费方 0：厂商付费 1：客户付费</p>
                      * 
                      */
                     int64_t GetPayer() const;
 
                     /**
-                     * 设置付费方 0：厂商付费 1：客户付费
-                     * @param _payer 付费方 0：厂商付费 1：客户付费
+                     * 设置<p>付费方 0：厂商付费 1：客户付费</p>
+                     * @param _payer <p>付费方 0：厂商付费 1：客户付费</p>
                      * 
                      */
                     void SetPayer(const int64_t& _payer);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool PayerHasBeenSet() const;
 
                     /**
-                     * 获取设备分组ID
-                     * @return GroupId 设备分组ID
+                     * 获取<p>设备分组ID</p>
+                     * @return GroupId <p>设备分组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置设备分组ID
-                     * @param _groupId 设备分组ID
+                     * 设置<p>设备分组ID</p>
+                     * @param _groupId <p>设备分组ID</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取设备分组名称
-                     * @return GroupName 设备分组名称
+                     * 获取<p>设备分组名称</p>
+                     * @return GroupName <p>设备分组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置设备分组名称
-                     * @param _groupName 设备分组名称
+                     * 设置<p>设备分组名称</p>
+                     * @param _groupName <p>设备分组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取设备无流量包处理方式，0: 按量付费，1: 截断加速
-                     * @return FlowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * 获取<p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>
+                     * @return FlowTrunc <p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>
                      * 
                      */
                     int64_t GetFlowTrunc() const;
 
                     /**
-                     * 设置设备无流量包处理方式，0: 按量付费，1: 截断加速
-                     * @param _flowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * 设置<p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>
+                     * @param _flowTrunc <p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>
                      * 
                      */
                     void SetFlowTrunc(const int64_t& _flowTrunc);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool FlowTruncHasBeenSet() const;
 
                     /**
-                     * 获取设备sn
-                     * @return Sn 设备sn
+                     * 获取<p>设备sn</p>
+                     * @return Sn <p>设备sn</p>
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
-                     * 设置设备sn
-                     * @param _sn 设备sn
+                     * 设置<p>设备sn</p>
+                     * @param _sn <p>设备sn</p>
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool SnHasBeenSet() const;
 
                     /**
-                     * 获取厂商
-                     * @return Vendor 厂商
+                     * 获取<p>厂商</p>
+                     * @return Vendor <p>厂商</p>
                      * 
                      */
                     std::string GetVendor() const;
 
                     /**
-                     * 设置厂商
-                     * @param _vendor 厂商
+                     * 设置<p>厂商</p>
+                     * @param _vendor <p>厂商</p>
                      * 
                      */
                     void SetVendor(const std::string& _vendor);
@@ -319,85 +319,112 @@ namespace TencentCloud
                      */
                     bool VendorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可接入地域列表。</p>
+                     * @return AllowedRegions <p>可接入地域列表。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetAllowedRegions() const;
+
+                    /**
+                     * 设置<p>可接入地域列表。</p>
+                     * @param _allowedRegions <p>可接入地域列表。</p>
+                     * 
+                     */
+                    void SetAllowedRegions(const std::vector<std::string>& _allowedRegions);
+
+                    /**
+                     * 判断参数 AllowedRegions 是否已赋值
+                     * @return AllowedRegions 是否已赋值
+                     * 
+                     */
+                    bool AllowedRegionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 设备唯一ID
+                     * <p>设备唯一ID</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 设备创建的时间，单位：ms
+                     * <p>设备创建的时间，单位：ms</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 设备最后在线时间，单位：ms
+                     * <p>设备最后在线时间，单位：ms</p>
                      */
                     std::string m_lastTime;
                     bool m_lastTimeHasBeenSet;
 
                     /**
-                     * 设备的备注
+                     * <p>设备的备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）
+                     * <p>接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）</p>
                      */
                     int64_t m_accessScope;
                     bool m_accessScopeHasBeenSet;
 
                     /**
-                     * license授权有效期 0：月度授权 1：永久授权
+                     * <p>license授权有效期 0：月度授权 1：永久授权</p>
                      */
                     int64_t m_licensePayMode;
                     bool m_licensePayModeHasBeenSet;
 
                     /**
-                     * 付费方 0：厂商付费 1：客户付费
+                     * <p>付费方 0：厂商付费 1：客户付费</p>
                      */
                     int64_t m_payer;
                     bool m_payerHasBeenSet;
 
                     /**
-                     * 设备分组ID
+                     * <p>设备分组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 设备分组名称
+                     * <p>设备分组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * <p>设备无流量包处理方式，0: 按量付费，1: 截断加速</p>
                      */
                     int64_t m_flowTrunc;
                     bool m_flowTruncHasBeenSet;
 
                     /**
-                     * 设备sn
+                     * <p>设备sn</p>
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;
 
                     /**
-                     * 厂商
+                     * <p>厂商</p>
                      */
                     std::string m_vendor;
                     bool m_vendorHasBeenSet;
+
+                    /**
+                     * <p>可接入地域列表。</p>
+                     */
+                    std::vector<std::string> m_allowedRegions;
+                    bool m_allowedRegionsHasBeenSet;
 
                 };
             }

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
+                     * 获取<p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 开始时间
+                     * @return StartTime <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
+                     * 设置<p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 开始时间
+                     * @param _startTime <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 结束时间
+                     * @return EndTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置<p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 结束时间
+                     * @param _endTime <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取试运行记录id
+                     * 获取<p>试运行记录id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordId 试运行记录id
+                     * @return RecordId <p>试运行记录id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecordId() const;
 
                     /**
-                     * 设置试运行记录id
+                     * 设置<p>试运行记录id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordId 试运行记录id
+                     * @param _recordId <p>试运行记录id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取开发侧提交的jobid
+                     * 获取<p>开发侧提交的jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobId 开发侧提交的jobid
+                     * @return JobId <p>开发侧提交的jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobId() const;
 
                     /**
-                     * 设置开发侧提交的jobid
+                     * 设置<p>开发侧提交的jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobId 开发侧提交的jobid
+                     * @param _jobId <p>开发侧提交的jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取执行平台jobid
+                     * 获取<p>执行平台jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionJobId 执行平台jobid
+                     * @return ExecutionJobId <p>执行平台jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionJobId() const;
 
                     /**
-                     * 设置执行平台jobid
+                     * 设置<p>执行平台jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionJobId 执行平台jobid
+                     * @param _executionJobId <p>执行平台jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool ExecutionJobIdHasBeenSet() const;
 
                     /**
-                     * 获取试运行记录名称
+                     * 获取<p>试运行记录名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordName 试运行记录名称
+                     * @return RecordName <p>试运行记录名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordName() const;
 
                     /**
-                     * 设置试运行记录名称
+                     * 设置<p>试运行记录名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordName 试运行记录名称
+                     * @param _recordName <p>试运行记录名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool RecordNameHasBeenSet() const;
 
                     /**
-                     * 获取脚本内容
+                     * 获取<p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScriptContent 脚本内容
+                     * @return ScriptContent <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScriptContent() const;
 
                     /**
-                     * 设置脚本内容
+                     * 设置<p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scriptContent 脚本内容
+                     * @param _scriptContent <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +248,18 @@ namespace TencentCloud
                     bool ScriptContentHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取耗时
+                     * 获取<p>耗时</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeCost 耗时
+                     * @return TimeCost <p>耗时</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeCost() const;
 
                     /**
-                     * 设置耗时
+                     * 设置<p>耗时</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeCost 耗时
+                     * @param _timeCost <p>耗时</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +298,18 @@ namespace TencentCloud
                     bool TimeCostHasBeenSet() const;
 
                     /**
-                     * 获取用户uin
+                     * 获取<p>用户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserUin 用户uin
+                     * @return UserUin <p>用户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserUin() const;
 
                     /**
-                     * 设置用户uin
+                     * 设置<p>用户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userUin 用户uin
+                     * @param _userUin <p>用户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -323,18 +323,18 @@ namespace TencentCloud
                     bool UserUinHasBeenSet() const;
 
                     /**
-                     * 获取主账户uin
+                     * 获取<p>主账户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnerUin 主账户uin
+                     * @return OwnerUin <p>主账户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置主账户uin
+                     * 设置<p>主账户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownerUin 主账户uin
+                     * @param _ownerUin <p>主账户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,18 +348,18 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取子记录信息
+                     * 获取<p>子记录信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubRecordList 子记录信息
+                     * @return SubRecordList <p>子记录信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TestRunningSubRecord> GetSubRecordList() const;
 
                     /**
-                     * 设置子记录信息
+                     * 设置<p>子记录信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subRecordList 子记录信息
+                     * @param _subRecordList <p>子记录信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,18 +373,18 @@ namespace TencentCloud
                     bool SubRecordListHasBeenSet() const;
 
                     /**
-                     * 获取结果或日志地域
+                     * 获取<p>结果或日志地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 结果或日志地域
+                     * @return Region <p>结果或日志地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置结果或日志地域
+                     * 设置<p>结果或日志地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 结果或日志地域
+                     * @param _region <p>结果或日志地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -398,18 +398,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取结果或日志桶名
+                     * 获取<p>结果或日志桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketName 结果或日志桶名
+                     * @return BucketName <p>结果或日志桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置结果或日志桶名
+                     * 设置<p>结果或日志桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bucketName 结果或日志桶名
+                     * @param _bucketName <p>结果或日志桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,18 +423,18 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
+                     * 获取<p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 错误信息
+                     * @return ErrorMessage <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置错误信息
+                     * 设置<p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errorMessage 错误信息
+                     * @param _errorMessage <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,119 +447,151 @@ namespace TencentCloud
                      */
                     bool ErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>脚本内容是否被截断</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScriptContentTruncated <p>脚本内容是否被截断</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetScriptContentTruncated() const;
+
+                    /**
+                     * 设置<p>脚本内容是否被截断</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scriptContentTruncated <p>脚本内容是否被截断</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScriptContentTruncated(const bool& _scriptContentTruncated);
+
+                    /**
+                     * 判断参数 ScriptContentTruncated 是否已赋值
+                     * @return ScriptContentTruncated 是否已赋值
+                     * 
+                     */
+                    bool ScriptContentTruncatedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 试运行记录id
+                     * <p>试运行记录id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 开发侧提交的jobid
+                     * <p>开发侧提交的jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 执行平台jobid
+                     * <p>执行平台jobid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionJobId;
                     bool m_executionJobIdHasBeenSet;
 
                     /**
-                     * 试运行记录名称
+                     * <p>试运行记录名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordName;
                     bool m_recordNameHasBeenSet;
 
                     /**
-                     * 脚本内容
+                     * <p>脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scriptContent;
                     bool m_scriptContentHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 耗时
+                     * <p>耗时</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeCost;
                     bool m_timeCostHasBeenSet;
 
                     /**
-                     * 用户uin
+                     * <p>用户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userUin;
                     bool m_userUinHasBeenSet;
 
                     /**
-                     * 主账户uin
+                     * <p>主账户uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 子记录信息
+                     * <p>子记录信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TestRunningSubRecord> m_subRecordList;
                     bool m_subRecordListHasBeenSet;
 
                     /**
-                     * 结果或日志地域
+                     * <p>结果或日志地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 结果或日志桶名
+                     * <p>结果或日志桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
+
+                    /**
+                     * <p>脚本内容是否被截断</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_scriptContentTruncated;
+                    bool m_scriptContentTruncatedHasBeenSet;
 
                 };
             }

@@ -1631,6 +1631,27 @@ namespace TencentCloud
                      */
                     bool ActiveCoreHasBeenSet() const;
 
+                    /**
+                     * 获取<p>排队时间</p><p>单位：毫秒</p>
+                     * @return QueueTime <p>排队时间</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    int64_t GetQueueTime() const;
+
+                    /**
+                     * 设置<p>排队时间</p><p>单位：毫秒</p>
+                     * @param _queueTime <p>排队时间</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    void SetQueueTime(const int64_t& _queueTime);
+
+                    /**
+                     * 判断参数 QueueTime 是否已赋值
+                     * @return QueueTime 是否已赋值
+                     * 
+                     */
+                    bool QueueTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2080,6 +2101,12 @@ namespace TencentCloud
                      */
                     int64_t m_activeCore;
                     bool m_activeCoreHasBeenSet;
+
+                    /**
+                     * <p>排队时间</p><p>单位：毫秒</p>
+                     */
+                    int64_t m_queueTime;
+                    bool m_queueTimeHasBeenSet;
 
                 };
             }

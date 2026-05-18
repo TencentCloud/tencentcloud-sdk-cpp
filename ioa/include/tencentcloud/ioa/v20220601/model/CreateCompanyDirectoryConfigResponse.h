@@ -14,57 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATESERVICEDISCOVERYRESPONSE_H_
-#define TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATESERVICEDISCOVERYRESPONSE_H_
+#ifndef TENCENTCLOUD_IOA_V20220601_MODEL_CREATECOMPANYDIRECTORYCONFIGRESPONSE_H_
+#define TENCENTCLOUD_IOA_V20220601_MODEL_CREATECOMPANYDIRECTORYCONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/monitor/v20180724/model/ServiceDiscoveryItem.h>
+#include <tencentcloud/ioa/v20220601/model/DirectoryConfigResultData.h>
 
 
 namespace TencentCloud
 {
-    namespace Monitor
+    namespace Ioa
     {
-        namespace V20180724
+        namespace V20220601
         {
             namespace Model
             {
                 /**
-                * CreateServiceDiscovery返回参数结构体
+                * CreateCompanyDirectoryConfig返回参数结构体
                 */
-                class CreateServiceDiscoveryResponse : public AbstractModel
+                class CreateCompanyDirectoryConfigResponse : public AbstractModel
                 {
                 public:
-                    CreateServiceDiscoveryResponse();
-                    ~CreateServiceDiscoveryResponse() = default;
+                    CreateCompanyDirectoryConfigResponse();
+                    ~CreateCompanyDirectoryConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取创建成功之后，返回对应服务发现信息
-                     * @return ServiceDiscovery 创建成功之后，返回对应服务发现信息
+                     * 获取<p>创建企业目录配置的结果</p>
+                     * @return Data <p>创建企业目录配置的结果</p>
                      * 
                      */
-                    ServiceDiscoveryItem GetServiceDiscovery() const;
+                    DirectoryConfigResultData GetData() const;
 
                     /**
-                     * 判断参数 ServiceDiscovery 是否已赋值
-                     * @return ServiceDiscovery 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool ServiceDiscoveryHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 创建成功之后，返回对应服务发现信息
+                     * <p>创建企业目录配置的结果</p>
                      */
-                    ServiceDiscoveryItem m_serviceDiscovery;
-                    bool m_serviceDiscoveryHasBeenSet;
+                    DirectoryConfigResultData m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -72,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_CREATESERVICEDISCOVERYRESPONSE_H_
+#endif // !TENCENTCLOUD_IOA_V20220601_MODEL_CREATECOMPANYDIRECTORYCONFIGRESPONSE_H_

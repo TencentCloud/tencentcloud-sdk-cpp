@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权ID
-                     * @return LicenseId 授权ID
+                     * 获取<p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>
+                     * @return LicenseId <p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>
                      * 
                      */
                     uint64_t GetLicenseId() const;
 
                     /**
-                     * 设置授权ID
-                     * @param _licenseId 授权ID
+                     * 设置<p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>
+                     * @param _licenseId <p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>
                      * 
                      */
                     void SetLicenseId(const uint64_t& _licenseId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LicenseIdHasBeenSet() const;
 
                     /**
-                     * 获取授权类型
-                     * @return LicenseType 授权类型
+                     * 获取<p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>
+                     * @return LicenseType <p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>
                      * 
                      */
                     uint64_t GetLicenseType() const;
 
                     /**
-                     * 设置授权类型
-                     * @param _licenseType 授权类型
+                     * 设置<p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>
+                     * @param _licenseType <p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>
                      * 
                      */
                     void SetLicenseType(const uint64_t& _licenseType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取<p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>
+                     * @return ResourceId <p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置<p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>
+                     * @param _resourceId <p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -107,23 +107,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取<li>InstanceID、IP、
-
-MachineName 模糊查询</li>
-                     * @return Filters <li>InstanceID、IP、
-
-MachineName 模糊查询</li>
+                     * 获取<li>InstanceID、IP、<p>MachineName 模糊查询</li></p>
+                     * @return Filters <li>InstanceID、IP、<p>MachineName 模糊查询</li></p>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置<li>InstanceID、IP、
-
-MachineName 模糊查询</li>
-                     * @param _filters <li>InstanceID、IP、
-
-MachineName 模糊查询</li>
+                     * 设置<li>InstanceID、IP、<p>MachineName 模糊查询</li></p>
+                     * @param _filters <li>InstanceID、IP、<p>MachineName 模糊查询</li></p>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -136,15 +128,15 @@ MachineName 模糊查询</li>
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取限制条数,默认10.
-                     * @return Limit 限制条数,默认10.
+                     * 获取<p>限制条数,默认10.</p>
+                     * @return Limit <p>限制条数,默认10.</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制条数,默认10.
-                     * @param _limit 限制条数,默认10.
+                     * 设置<p>限制条数,默认10.</p>
+                     * @param _limit <p>限制条数,默认10.</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -157,15 +149,15 @@ MachineName 模糊查询</li>
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量,默认0.
-                     * @return Offset 偏移量,默认0.
+                     * 获取<p>偏移量,默认0.</p>
+                     * @return Offset <p>偏移量,默认0.</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量,默认0.
-                     * @param _offset 偏移量,默认0.
+                     * 设置<p>偏移量,默认0.</p>
+                     * @param _offset <p>偏移量,默认0.</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -180,39 +172,37 @@ MachineName 模糊查询</li>
                 private:
 
                     /**
-                     * 授权ID
+                     * <p>授权ID取DescribeLicenseList接口List对象下的LicenseId参数值</p>
                      */
                     uint64_t m_licenseId;
                     bool m_licenseIdHasBeenSet;
 
                     /**
-                     * 授权类型
+                     * <p>授权类型</p><p>枚举值：</p><ul><li>0： 专业版-按量计费</li><li>1： 专业版-包年包月(主机安全)</li><li>2： 旗舰版-包年包月(主机安全)</li><li>3： 轻量版-LH-包年包月</li><li>6： 专业版-包年包月（云安全中心）</li><li>7： 旗舰版-包年包月（云安全中心）</li></ul>
                      */
                     uint64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 资源ID
+                     * <p>资源ID,取DescribeLicenseList接口List对象下的ResourceId参数值</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * <li>InstanceID、IP、
-
-MachineName 模糊查询</li>
+                     * <li>InstanceID、IP、<p>MachineName 模糊查询</li></p>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 限制条数,默认10.
+                     * <p>限制条数,默认10.</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量,默认0.
+                     * <p>偏移量,默认0.</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -47,31 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行周期， 可选值：`Period`、`Fixed`、`Cron`。
-
-- Period：固定频率
-- Fixed：固定时间
-- Cron：Cron表达式
-                     * @return Type 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
-
-- Period：固定频率
-- Fixed：固定时间
-- Cron：Cron表达式
+                     * 获取<p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>
+                     * @return Type <p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行周期， 可选值：`Period`、`Fixed`、`Cron`。
-
-- Period：固定频率
-- Fixed：固定时间
-- Cron：Cron表达式
-                     * @param _type 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
-
-- Period：固定频率
-- Fixed：固定时间
-- Cron：Cron表达式
+                     * 设置<p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>
+                     * @param _type <p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -84,19 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-当type为`Period`,`Fixed`时，time字段生效。
-                     * @return Time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-当type为`Period`,`Fixed`时，time字段生效。
+                     * 获取<p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>
+                     * @return Time <p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>
                      * 
                      */
                     int64_t GetTime() const;
 
                     /**
-                     * 设置执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-当type为`Period`,`Fixed`时，time字段生效。
-                     * @param _time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-当type为`Period`,`Fixed`时，time字段生效。
+                     * 设置<p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>
+                     * @param _time <p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>
                      * 
                      */
                     void SetTime(const int64_t& _time);
@@ -109,19 +89,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。
-当type为`Cron`时，CronExpression字段生效。
-                     * @return CronExpression 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。
-当type为`Cron`时，CronExpression字段生效。
+                     * 获取<p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>
+                     * @return CronExpression <p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>
                      * 
                      */
                     std::string GetCronExpression() const;
 
                     /**
-                     * 设置执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。
-当type为`Cron`时，CronExpression字段生效。
-                     * @param _cronExpression 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。
-当type为`Cron`时，CronExpression字段生效。
+                     * 设置<p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>
+                     * @param _cronExpression <p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>
                      * 
                      */
                     void SetCronExpression(const std::string& _cronExpression);
@@ -136,25 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
-
-- Period：固定频率
-- Fixed：固定时间
-- Cron：Cron表达式
+                     * <p>执行周期， 可选值：<code>Period</code>、<code>Fixed</code>、<code>Cron</code>。</p><ul><li>Period：固定频率</li><li>Fixed：固定时间</li><li>Cron：Cron表达式</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-当type为`Period`,`Fixed`时，time字段生效。
+                     * <p>执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。<br>当type为<code>Period</code>,<code>Fixed</code>时，time字段生效。</p>
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。
-当type为`Cron`时，CronExpression字段生效。
+                     * <p>执行的周期cron表达式。示例：<code>0/1 * * * *</code> 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。当type为<code>Cron</code>时，CronExpression字段生效。</p>
                      */
                     std::string m_cronExpression;
                     bool m_cronExpressionHasBeenSet;

@@ -31,7 +31,9 @@ DatasourceBaseInfo::DatasourceBaseInfo() :
     m_clusterIdHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_paramsStringHasBeenSet(false),
-    m_categoryHasBeenSet(false)
+    m_categoryHasBeenSet(false),
+    m_ipHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,26 @@ CoreInternalOutcome DatasourceBaseInfo::Deserialize(const rapidjson::Value &valu
         m_categoryHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceBaseInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceBaseInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = string(value["Port"].GetString());
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +273,22 @@ void DatasourceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Category";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +468,37 @@ void DatasourceBaseInfo::SetCategory(const string& _category)
 bool DatasourceBaseInfo::CategoryHasBeenSet() const
 {
     return m_categoryHasBeenSet;
+}
+
+string DatasourceBaseInfo::GetIp() const
+{
+    return m_ip;
+}
+
+void DatasourceBaseInfo::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool DatasourceBaseInfo::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
+}
+
+string DatasourceBaseInfo::GetPort() const
+{
+    return m_port;
+}
+
+void DatasourceBaseInfo::SetPort(const string& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool DatasourceBaseInfo::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

@@ -24,6 +24,10 @@ VariableItem::VariableItem() :
     m_serialIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
+    m_valueTypeHasBeenSet(false),
+    m_secretRegionHasBeenSet(false),
+    m_secretNameHasBeenSet(false),
+    m_secretVersionIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -64,6 +68,46 @@ CoreInternalOutcome VariableItem::Deserialize(const rapidjson::Value &value)
         }
         m_value = string(value["Value"].GetString());
         m_valueHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValueType") && !value["ValueType"].IsNull())
+    {
+        if (!value["ValueType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VariableItem.ValueType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueType = value["ValueType"].GetInt64();
+        m_valueTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretRegion") && !value["SecretRegion"].IsNull())
+    {
+        if (!value["SecretRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VariableItem.SecretRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretRegion = string(value["SecretRegion"].GetString());
+        m_secretRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretName") && !value["SecretName"].IsNull())
+    {
+        if (!value["SecretName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VariableItem.SecretName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretName = string(value["SecretName"].GetString());
+        m_secretNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretVersionId") && !value["SecretVersionId"].IsNull())
+    {
+        if (!value["SecretVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VariableItem.SecretVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretVersionId = string(value["SecretVersionId"].GetString());
+        m_secretVersionIdHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -135,6 +179,38 @@ void VariableItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_valueType, allocator);
+    }
+
+    if (m_secretRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretVersionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -218,6 +294,70 @@ void VariableItem::SetValue(const string& _value)
 bool VariableItem::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+int64_t VariableItem::GetValueType() const
+{
+    return m_valueType;
+}
+
+void VariableItem::SetValueType(const int64_t& _valueType)
+{
+    m_valueType = _valueType;
+    m_valueTypeHasBeenSet = true;
+}
+
+bool VariableItem::ValueTypeHasBeenSet() const
+{
+    return m_valueTypeHasBeenSet;
+}
+
+string VariableItem::GetSecretRegion() const
+{
+    return m_secretRegion;
+}
+
+void VariableItem::SetSecretRegion(const string& _secretRegion)
+{
+    m_secretRegion = _secretRegion;
+    m_secretRegionHasBeenSet = true;
+}
+
+bool VariableItem::SecretRegionHasBeenSet() const
+{
+    return m_secretRegionHasBeenSet;
+}
+
+string VariableItem::GetSecretName() const
+{
+    return m_secretName;
+}
+
+void VariableItem::SetSecretName(const string& _secretName)
+{
+    m_secretName = _secretName;
+    m_secretNameHasBeenSet = true;
+}
+
+bool VariableItem::SecretNameHasBeenSet() const
+{
+    return m_secretNameHasBeenSet;
+}
+
+string VariableItem::GetSecretVersionId() const
+{
+    return m_secretVersionId;
+}
+
+void VariableItem::SetSecretVersionId(const string& _secretVersionId)
+{
+    m_secretVersionId = _secretVersionId;
+    m_secretVersionIdHasBeenSet = true;
+}
+
+bool VariableItem::SecretVersionIdHasBeenSet() const
+{
+    return m_secretVersionIdHasBeenSet;
 }
 
 int64_t VariableItem::GetType() const

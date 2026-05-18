@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备id
-                     * @return DeviceId 设备id
+                     * 获取<p>设备id</p>
+                     * @return DeviceId <p>设备id</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备id
-                     * @param _deviceId 设备id
+                     * 设置<p>设备id</p>
+                     * @param _deviceId <p>设备id</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return BeginTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return BeginTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _beginTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _beginTime <p>开始时间</p>
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计指标（上行速率："TxRate":bit/s，下行速率："RxRate":bit/s，丢包："Loss":%，时延："RTT":ms）
-                     * @return Metrics 统计指标（上行速率："TxRate":bit/s，下行速率："RxRate":bit/s，丢包："Loss":%，时延："RTT":ms）
+                     * 获取<p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>
+                     * @return Metrics <p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>
                      * 
                      */
                     std::string GetMetrics() const;
 
                     /**
-                     * 设置统计指标（上行速率："TxRate":bit/s，下行速率："RxRate":bit/s，丢包："Loss":%，时延："RTT":ms）
-                     * @param _metrics 统计指标（上行速率："TxRate":bit/s，下行速率："RxRate":bit/s，丢包："Loss":%，时延："RTT":ms）
+                     * 设置<p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>
+                     * @param _metrics <p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>
                      * 
                      */
                     void SetMetrics(const std::string& _metrics);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @return GatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 获取<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @return GatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     int64_t GetGatewayType() const;
 
                     /**
-                     * 设置网关类型。0：公有云网关；1：自有网关。不传默认为0。
-                     * @param _gatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 设置<p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
+                     * @param _gatewayType <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      * 
                      */
                     void SetGatewayType(const int64_t& _gatewayType);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备id
+                     * <p>设备id</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计指标（上行速率："TxRate":bit/s，下行速率："RxRate":bit/s，丢包："Loss":%，时延："RTT":ms）
+                     * <p>统计指标（上行速率：&quot;TxRate&quot;:bit/s，下行速率：&quot;RxRate&quot;:bit/s，丢包：&quot;Loss&quot;:%，时延：&quot;RTT&quot;:ms）</p>
                      */
                     std::string m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * <p>网关类型。0：公有云网关；1：自有网关。不传默认为0。</p>
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;

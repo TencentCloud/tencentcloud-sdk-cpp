@@ -90,7 +90,8 @@ TaskFullRespInfo::TaskFullRespInfo() :
     m_gpuDriverSizeHasBeenSet(false),
     m_gpuExecutorSizeHasBeenSet(false),
     m_shuffleWriteBytesSumHasBeenSet(false),
-    m_activeCoreHasBeenSet(false)
+    m_activeCoreHasBeenSet(false),
+    m_queueTimeHasBeenSet(false)
 {
 }
 
@@ -820,6 +821,16 @@ CoreInternalOutcome TaskFullRespInfo::Deserialize(const rapidjson::Value &value)
         m_activeCoreHasBeenSet = true;
     }
 
+    if (value.HasMember("QueueTime") && !value["QueueTime"].IsNull())
+    {
+        if (!value["QueueTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFullRespInfo.QueueTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueTime = value["QueueTime"].GetInt64();
+        m_queueTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1388,6 +1399,14 @@ void TaskFullRespInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ActiveCore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeCore, allocator);
+    }
+
+    if (m_queueTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queueTime, allocator);
     }
 
 }
@@ -2511,5 +2530,21 @@ void TaskFullRespInfo::SetActiveCore(const int64_t& _activeCore)
 bool TaskFullRespInfo::ActiveCoreHasBeenSet() const
 {
     return m_activeCoreHasBeenSet;
+}
+
+int64_t TaskFullRespInfo::GetQueueTime() const
+{
+    return m_queueTime;
+}
+
+void TaskFullRespInfo::SetQueueTime(const int64_t& _queueTime)
+{
+    m_queueTime = _queueTime;
+    m_queueTimeHasBeenSet = true;
+}
+
+bool TaskFullRespInfo::QueueTimeHasBeenSet() const
+{
+    return m_queueTimeHasBeenSet;
 }
 

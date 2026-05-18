@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取按设备区分的会话详细数据
-                     * @return Details 按设备区分的会话详细数据
+                     * 获取<p>按设备区分的会话详细数据</p>
+                     * @return Details <p>按设备区分的会话详细数据</p>
                      * 
                      */
                     std::vector<SessionDeviceDetail> GetDetails() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 按设备区分的会话详细数据
+                     * <p>按设备区分的会话详细数据</p>
                      */
                     std::vector<SessionDeviceDetail> m_details;
                     bool m_detailsHasBeenSet;

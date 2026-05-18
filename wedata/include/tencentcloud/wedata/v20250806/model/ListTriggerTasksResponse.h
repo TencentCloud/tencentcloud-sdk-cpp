@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务分页信息
+                     * 获取<p>任务分页信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 任务分页信息
+                     * @return Data <p>任务分页信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务分页信息
+                     * <p>任务分页信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ListTriggerTaskInfo m_data;

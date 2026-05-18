@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话ID
-                     * @return SessionId 会话ID
+                     * 获取<p>会话ID</p>
+                     * @return SessionId <p>会话ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话ID
-                     * @param _sessionId 会话ID
+                     * 设置<p>会话ID</p>
+                     * @param _sessionId <p>会话ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -63,13 +63,67 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询指标开始时间</p><p>单位：秒</p>
+                     * @return StartTime <p>查询指标开始时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置<p>查询指标开始时间</p><p>单位：秒</p>
+                     * @param _startTime <p>查询指标开始时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>查询指标结束时间</p><p>单位：秒</p>
+                     * @return EndTime <p>查询指标结束时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置<p>查询指标结束时间</p><p>单位：秒</p>
+                     * @param _endTime <p>查询指标结束时间</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 会话ID
+                     * <p>会话ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>查询指标开始时间</p><p>单位：秒</p>
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>查询指标结束时间</p><p>单位：秒</p>
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

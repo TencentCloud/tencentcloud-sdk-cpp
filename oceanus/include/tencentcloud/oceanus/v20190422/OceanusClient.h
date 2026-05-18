@@ -352,7 +352,7 @@ namespace TencentCloud
                 CreateResourceConfigOutcomeCallable CreateResourceConfigCallable(const Model::CreateResourceConfigRequest& request);
 
                 /**
-                 *创建变量 
+                 *创建变量
                  * @param req CreateVariableRequest
                  * @return CreateVariableOutcome
                  */

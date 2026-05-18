@@ -33,7 +33,8 @@ DisplayToolCommon::DisplayToolCommon() :
     m_md5HasBeenSet(false),
     m_createAtHasBeenSet(false),
     m_updateAtHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_isPlainTextInDemoHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome DisplayToolCommon::Deserialize(const rapidjson::Value &value
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPlainTextInDemo") && !value["IsPlainTextInDemo"].IsNull())
+    {
+        if (!value["IsPlainTextInDemo"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayToolCommon.IsPlainTextInDemo` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPlainTextInDemo = value["IsPlainTextInDemo"].GetInt64();
+        m_isPlainTextInDemoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void DisplayToolCommon::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Labels";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_labels.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPlainTextInDemoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPlainTextInDemo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPlainTextInDemo, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void DisplayToolCommon::SetLabels(const string& _labels)
 bool DisplayToolCommon::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+int64_t DisplayToolCommon::GetIsPlainTextInDemo() const
+{
+    return m_isPlainTextInDemo;
+}
+
+void DisplayToolCommon::SetIsPlainTextInDemo(const int64_t& _isPlainTextInDemo)
+{
+    m_isPlainTextInDemo = _isPlainTextInDemo;
+    m_isPlainTextInDemoHasBeenSet = true;
+}
+
+bool DisplayToolCommon::IsPlainTextInDemoHasBeenSet() const
+{
+    return m_isPlainTextInDemoHasBeenSet;
 }
 

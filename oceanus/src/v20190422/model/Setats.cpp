@@ -37,7 +37,9 @@ Setats::Setats() :
     m_typeHasBeenSet(false),
     m_setatsUiUrlHasBeenSet(false),
     m_imageVersionHasBeenSet(false),
-    m_webUITypeHasBeenSet(false)
+    m_webUITypeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,26 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_webUITypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -398,6 +420,22 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "WebUIType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webUIType, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -673,5 +711,37 @@ void Setats::SetWebUIType(const int64_t& _webUIType)
 bool Setats::WebUITypeHasBeenSet() const
 {
     return m_webUITypeHasBeenSet;
+}
+
+string Setats::GetName() const
+{
+    return m_name;
+}
+
+void Setats::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool Setats::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string Setats::GetRemark() const
+{
+    return m_remark;
+}
+
+void Setats::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool Setats::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

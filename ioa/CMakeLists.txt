@@ -24,6 +24,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeAccountResourcesData.h
   include/tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsReqItem.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListResponse.h
+  include/tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigRequest.h
   include/tencentcloud/ioa/v20220601/model/ModifyBusinessResourceRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListRequest.h
   include/tencentcloud/ioa/v20220601/model/ComplexRule.h
@@ -52,14 +53,17 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsData.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountsResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsResponse.h
+  include/tencentcloud/ioa/v20220601/model/DirectoryConfigResultData.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedVirtualGroupsResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h
   include/tencentcloud/ioa/v20220601/model/CreateDeviceTaskResponse.h
+  include/tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigRequest.h
   include/tencentcloud/ioa/v20220601/model/GrantResourcesByAccountGroupsRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsPage.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationPageData.h
   include/tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskRequest.h
+  include/tencentcloud/ioa/v20220601/model/GrantedVirtualGroupItem.h
   include/tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceData.h
   include/tencentcloud/ioa/v20220601/model/ModifyBusinessResourceResponse.h
@@ -107,7 +111,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.h
-  include/tencentcloud/ioa/v20220601/model/GrantedVirtualGroupItem.h
+  include/tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigResponse.h
   include/tencentcloud/ioa/v20220601/model/AggrSoftDeviceRow.h
   include/tencentcloud/ioa/v20220601/model/SoftVersionAndNum.h
   include/tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskResponse.h
@@ -138,14 +142,17 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountAccountGroupsData.h
   include/tencentcloud/ioa/v20220601/model/ExportSoftwareInformationListRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRspData.h
+  include/tencentcloud/ioa/v20220601/model/DirectoryConfigData.h
   include/tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h
   include/tencentcloud/ioa/v20220601/model/GetAccountGroupData.h
   include/tencentcloud/ioa/v20220601/model/Sort.h
   include/tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupResponse.h
+  include/tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsRspData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDirectAccountGroupResourcesRequest.h
   include/tencentcloud/ioa/v20220601/model/DeviceProcessInfo.h
   include/tencentcloud/ioa/v20220601/model/ExportSoftwareDownloadUrlRspData.h
+  include/tencentcloud/ioa/v20220601/model/DescribeCompanyDirectoryConfigResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedVirtualGroupsData.h
   include/tencentcloud/ioa/v20220601/model/RuleExpression.h
   include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupRequest.h
@@ -158,9 +165,10 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDetailResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectionTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsResponse.h
+  include/tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h
   include/tencentcloud/ioa/v20220601/model/GrantResourceOperationByVirtualGroups.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h
-  include/tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeCompanyDirectoryConfigRequest.h
   include/tencentcloud/ioa/v20220601/model/CreatePrivilegeCodeResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDetailData.h
@@ -175,6 +183,7 @@ set(ioa_src
   src/v20220601/model/DescribeAccountResourcesData.cpp
   src/v20220601/model/ModifyVirtualDeviceGroupsReqItem.cpp
   src/v20220601/model/DescribeDeviceDetailListResponse.cpp
+  src/v20220601/model/ModifyCompanyDirectoryConfigRequest.cpp
   src/v20220601/model/ModifyBusinessResourceRequest.cpp
   src/v20220601/model/DescribeAggrSoftDeviceListRequest.cpp
   src/v20220601/model/ComplexRule.cpp
@@ -203,14 +212,17 @@ set(ioa_src
   src/v20220601/model/DescribeResourceGrantedAccountGroupsData.cpp
   src/v20220601/model/DescribeResourceGrantedAccountsResponse.cpp
   src/v20220601/model/DescribeResourceGrantedAccountGroupsResponse.cpp
+  src/v20220601/model/DirectoryConfigResultData.cpp
   src/v20220601/model/DescribeResourceGrantedVirtualGroupsResponse.cpp
   src/v20220601/model/DescribeLocalAccountsRequest.cpp
   src/v20220601/model/CreateDeviceTaskResponse.cpp
+  src/v20220601/model/CreateCompanyDirectoryConfigRequest.cpp
   src/v20220601/model/GrantResourcesByAccountGroupsRequest.cpp
   src/v20220601/model/DescribeLocalAccountsPage.cpp
   src/v20220601/model/DescribeSoftwareInformationPageData.cpp
   src/v20220601/model/ModifyDeviceTrustStatusResponse.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskRequest.cpp
+  src/v20220601/model/GrantedVirtualGroupItem.cpp
   src/v20220601/model/BindBusinessResourceConnectorGroupRequest.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceData.cpp
   src/v20220601/model/ModifyBusinessResourceResponse.cpp
@@ -258,7 +270,7 @@ set(ioa_src
   src/v20220601/model/CreateDeviceVirtualGroupResponse.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskData.cpp
   src/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.cpp
-  src/v20220601/model/GrantedVirtualGroupItem.cpp
+  src/v20220601/model/CreateCompanyDirectoryConfigResponse.cpp
   src/v20220601/model/AggrSoftDeviceRow.cpp
   src/v20220601/model/SoftVersionAndNum.cpp
   src/v20220601/model/ExportDeviceDownloadTaskResponse.cpp
@@ -289,14 +301,17 @@ set(ioa_src
   src/v20220601/model/DescribeLocalAccountAccountGroupsData.cpp
   src/v20220601/model/ExportSoftwareInformationListRequest.cpp
   src/v20220601/model/DescribeDeviceInfoRspData.cpp
+  src/v20220601/model/DirectoryConfigData.cpp
   src/v20220601/model/ModifyVirtualDeviceGroupsRequest.cpp
   src/v20220601/model/GetAccountGroupData.cpp
   src/v20220601/model/Sort.cpp
   src/v20220601/model/BindBusinessResourceConnectorGroupResponse.cpp
+  src/v20220601/model/ModifyCompanyDirectoryConfigResponse.cpp
   src/v20220601/model/DescribeDLPEdgeNodeGroupsRspData.cpp
   src/v20220601/model/DescribeDirectAccountGroupResourcesRequest.cpp
   src/v20220601/model/DeviceProcessInfo.cpp
   src/v20220601/model/ExportSoftwareDownloadUrlRspData.cpp
+  src/v20220601/model/DescribeCompanyDirectoryConfigResponse.cpp
   src/v20220601/model/DescribeResourceGrantedVirtualGroupsData.cpp
   src/v20220601/model/RuleExpression.cpp
   src/v20220601/model/DescribeRootAccountGroupRequest.cpp
@@ -309,9 +324,10 @@ set(ioa_src
   src/v20220601/model/DescribeAggrSoftDetailResponse.cpp
   src/v20220601/model/CreateDLPFileDetectionTaskResponse.cpp
   src/v20220601/model/DescribeDeviceChildGroupsResponse.cpp
+  src/v20220601/model/DescribeVirtualDevicesRequest.cpp
   src/v20220601/model/GrantResourceOperationByVirtualGroups.cpp
   src/v20220601/model/DescribeDLPFileDetectResultResponse.cpp
-  src/v20220601/model/DescribeVirtualDevicesRequest.cpp
+  src/v20220601/model/DescribeCompanyDirectoryConfigRequest.cpp
   src/v20220601/model/CreatePrivilegeCodeResponse.cpp
   src/v20220601/model/DescribeDeviceHardwareInfoListRequest.cpp
   src/v20220601/model/DescribeAggrSoftDetailData.cpp

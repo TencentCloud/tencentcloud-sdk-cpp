@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Aigc结果文件上传COS时，需传入的信息。 需创建并授权LVB_QCSRole角色。
+                * Aigc结果文件上传COS时，需传入的信息。 需创建并授权MPS_QcsRole角色。
                 */
                 class AigcStoreCosParam : public AbstractModel
                 {

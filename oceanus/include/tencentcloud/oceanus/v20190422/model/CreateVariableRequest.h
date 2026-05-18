@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取变量名
-                     * @return Name 变量名
+                     * 获取<p>变量名</p>
+                     * @return Name <p>变量名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置变量名
-                     * @param _name 变量名
+                     * 设置<p>变量名</p>
+                     * @param _name <p>变量名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取变量值
-                     * @return Value 变量值
+                     * 获取<p>变量值</p>
+                     * @return Value <p>变量值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置变量值
-                     * @param _value 变量值
+                     * 设置<p>变量值</p>
+                     * @param _value <p>变量值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取变量类型  1：显式   2：隐藏
-                     * @return Type 变量类型  1：显式   2：隐藏
+                     * 获取<p>变量类型  1：显式   2：隐藏</p>
+                     * @return Type <p>变量类型  1：显式   2：隐藏</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置变量类型  1：显式   2：隐藏
-                     * @param _type 变量类型  1：显式   2：隐藏
+                     * 设置<p>变量类型  1：显式   2：隐藏</p>
+                     * @param _type <p>变量类型  1：显式   2：隐藏</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取描述信息
-                     * @return Remark 描述信息
+                     * 获取<p>描述信息</p>
+                     * @return Remark <p>描述信息</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置描述信息
-                     * @param _remark 描述信息
+                     * 设置<p>描述信息</p>
+                     * @param _remark <p>描述信息</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -147,37 +147,172 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * @return ValueType <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * 
+                     */
+                    int64_t GetValueType() const;
+
+                    /**
+                     * 设置<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * @param _valueType <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * 
+                     */
+                    void SetValueType(const int64_t& _valueType);
+
+                    /**
+                     * 判断参数 ValueType 是否已赋值
+                     * @return ValueType 是否已赋值
+                     * 
+                     */
+                    bool ValueTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据所在地域</p>
+                     * @return SecretRegion <p>凭据所在地域</p>
+                     * 
+                     */
+                    std::string GetSecretRegion() const;
+
+                    /**
+                     * 设置<p>凭据所在地域</p>
+                     * @param _secretRegion <p>凭据所在地域</p>
+                     * 
+                     */
+                    void SetSecretRegion(const std::string& _secretRegion);
+
+                    /**
+                     * 判断参数 SecretRegion 是否已赋值
+                     * @return SecretRegion 是否已赋值
+                     * 
+                     */
+                    bool SecretRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据名称</p>
+                     * @return SecretName <p>凭据名称</p>
+                     * 
+                     */
+                    std::string GetSecretName() const;
+
+                    /**
+                     * 设置<p>凭据名称</p>
+                     * @param _secretName <p>凭据名称</p>
+                     * 
+                     */
+                    void SetSecretName(const std::string& _secretName);
+
+                    /**
+                     * 判断参数 SecretName 是否已赋值
+                     * @return SecretName 是否已赋值
+                     * 
+                     */
+                    bool SecretNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据版本</p>
+                     * @return SecretVersionId <p>凭据版本</p>
+                     * 
+                     */
+                    std::string GetSecretVersionId() const;
+
+                    /**
+                     * 设置<p>凭据版本</p>
+                     * @param _secretVersionId <p>凭据版本</p>
+                     * 
+                     */
+                    void SetSecretVersionId(const std::string& _secretVersionId);
+
+                    /**
+                     * 判断参数 SecretVersionId 是否已赋值
+                     * @return SecretVersionId 是否已赋值
+                     * 
+                     */
+                    bool SecretVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据值md5</p>
+                     * @return SecretValueMd5 <p>凭据值md5</p>
+                     * 
+                     */
+                    std::string GetSecretValueMd5() const;
+
+                    /**
+                     * 设置<p>凭据值md5</p>
+                     * @param _secretValueMd5 <p>凭据值md5</p>
+                     * 
+                     */
+                    void SetSecretValueMd5(const std::string& _secretValueMd5);
+
+                    /**
+                     * 判断参数 SecretValueMd5 是否已赋值
+                     * @return SecretValueMd5 是否已赋值
+                     * 
+                     */
+                    bool SecretValueMd5HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 变量名
+                     * <p>变量名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 变量值
+                     * <p>变量值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 变量类型  1：显式   2：隐藏
+                     * <p>变量类型  1：显式   2：隐藏</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 描述信息
+                     * <p>描述信息</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     */
+                    int64_t m_valueType;
+                    bool m_valueTypeHasBeenSet;
+
+                    /**
+                     * <p>凭据所在地域</p>
+                     */
+                    std::string m_secretRegion;
+                    bool m_secretRegionHasBeenSet;
+
+                    /**
+                     * <p>凭据名称</p>
+                     */
+                    std::string m_secretName;
+                    bool m_secretNameHasBeenSet;
+
+                    /**
+                     * <p>凭据版本</p>
+                     */
+                    std::string m_secretVersionId;
+                    bool m_secretVersionIdHasBeenSet;
+
+                    /**
+                     * <p>凭据值md5</p>
+                     */
+                    std::string m_secretValueMd5;
+                    bool m_secretValueMd5HasBeenSet;
 
                 };
             }

@@ -640,6 +640,56 @@ DataagentClient::GetUploadJobDetailsOutcomeCallable DataagentClient::GetUploadJo
     return prom->get_future();
 }
 
+DataagentClient::GetUserInstanceListOutcome DataagentClient::GetUserInstanceList(const GetUserInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUserInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUserInstanceListResponse rsp = GetUserInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUserInstanceListOutcome(rsp);
+        else
+            return GetUserInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUserInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::GetUserInstanceListAsync(const GetUserInstanceListRequest& request, const GetUserInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetUserInstanceListRequest&;
+    using Resp = GetUserInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetUserInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::GetUserInstanceListOutcomeCallable DataagentClient::GetUserInstanceListCallable(const GetUserInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetUserInstanceListOutcome>>();
+    GetUserInstanceListAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const GetUserInstanceListRequest&,
+        GetUserInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::ModifyChunkOutcome DataagentClient::ModifyChunk(const ModifyChunkRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyChunk");

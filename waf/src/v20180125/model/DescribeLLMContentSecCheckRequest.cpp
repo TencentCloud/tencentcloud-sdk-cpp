@@ -30,7 +30,9 @@ DescribeLLMContentSecCheckRequest::DescribeLLMContentSecCheckRequest() :
     m_chatIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_tokenUsageHasBeenSet(false),
-    m_imageEncodeHasBeenSet(false)
+    m_imageEncodeHasBeenSet(false),
+    m_toolNameHasBeenSet(false),
+    m_toolArgsHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         string key = "ImageEncode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageEncode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolArgs.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +257,38 @@ void DescribeLLMContentSecCheckRequest::SetImageEncode(const string& _imageEncod
 bool DescribeLLMContentSecCheckRequest::ImageEncodeHasBeenSet() const
 {
     return m_imageEncodeHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetToolName() const
+{
+    return m_toolName;
+}
+
+void DescribeLLMContentSecCheckRequest::SetToolName(const string& _toolName)
+{
+    m_toolName = _toolName;
+    m_toolNameHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::ToolNameHasBeenSet() const
+{
+    return m_toolNameHasBeenSet;
+}
+
+string DescribeLLMContentSecCheckRequest::GetToolArgs() const
+{
+    return m_toolArgs;
+}
+
+void DescribeLLMContentSecCheckRequest::SetToolArgs(const string& _toolArgs)
+{
+    m_toolArgs = _toolArgs;
+    m_toolArgsHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::ToolArgsHasBeenSet() const
+{
+    return m_toolArgsHasBeenSet;
 }
 
 

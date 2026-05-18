@@ -47,6 +47,8 @@
 #include <tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/GetUserInstanceListRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/GetUserInstanceListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h>
@@ -115,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUploadJobDetailsResponse> GetUploadJobDetailsOutcome;
                 typedef std::future<GetUploadJobDetailsOutcome> GetUploadJobDetailsOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::GetUploadJobDetailsRequest&, GetUploadJobDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUploadJobDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUserInstanceListResponse> GetUserInstanceListOutcome;
+                typedef std::future<GetUserInstanceListOutcome> GetUserInstanceListOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::GetUserInstanceListRequest&, GetUserInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyChunkResponse> ModifyChunkOutcome;
                 typedef std::future<ModifyChunkOutcome> ModifyChunkOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::ModifyChunkRequest&, ModifyChunkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChunkAsyncHandler;
@@ -252,6 +257,15 @@ namespace TencentCloud
                 GetUploadJobDetailsOutcome GetUploadJobDetails(const Model::GetUploadJobDetailsRequest &request);
                 void GetUploadJobDetailsAsync(const Model::GetUploadJobDetailsRequest& request, const GetUploadJobDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUploadJobDetailsOutcomeCallable GetUploadJobDetailsCallable(const Model::GetUploadJobDetailsRequest& request);
+
+                /**
+                 *获取实例信息列表
+                 * @param req GetUserInstanceListRequest
+                 * @return GetUserInstanceListOutcome
+                 */
+                GetUserInstanceListOutcome GetUserInstanceList(const Model::GetUserInstanceListRequest &request);
+                void GetUserInstanceListAsync(const Model::GetUserInstanceListRequest& request, const GetUserInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserInstanceListOutcomeCallable GetUserInstanceListCallable(const Model::GetUserInstanceListRequest& request);
 
                 /**
                  *编辑修改分片

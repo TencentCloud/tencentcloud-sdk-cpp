@@ -125,7 +125,8 @@ TaskDsDTO::TaskDsDTO() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_allowDownstreamDependencyHasBeenSet(false),
-    m_dependencyTriggerPolicyHasBeenSet(false)
+    m_dependencyTriggerPolicyHasBeenSet(false),
+    m_lastUpdateTimestampHasBeenSet(false)
 {
 }
 
@@ -1288,6 +1289,16 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_dependencyTriggerPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("LastUpdateTimestamp") && !value["LastUpdateTimestamp"].IsNull())
+    {
+        if (!value["LastUpdateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.LastUpdateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUpdateTimestamp = value["LastUpdateTimestamp"].GetUint64();
+        m_lastUpdateTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2198,6 +2209,14 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "DependencyTriggerPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastUpdateTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastUpdateTimestamp, allocator);
     }
 
 }
@@ -3881,5 +3900,21 @@ void TaskDsDTO::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolic
 bool TaskDsDTO::DependencyTriggerPolicyHasBeenSet() const
 {
     return m_dependencyTriggerPolicyHasBeenSet;
+}
+
+uint64_t TaskDsDTO::GetLastUpdateTimestamp() const
+{
+    return m_lastUpdateTimestamp;
+}
+
+void TaskDsDTO::SetLastUpdateTimestamp(const uint64_t& _lastUpdateTimestamp)
+{
+    m_lastUpdateTimestamp = _lastUpdateTimestamp;
+    m_lastUpdateTimestampHasBeenSet = true;
+}
+
+bool TaskDsDTO::LastUpdateTimestampHasBeenSet() const
+{
+    return m_lastUpdateTimestampHasBeenSet;
 }
 

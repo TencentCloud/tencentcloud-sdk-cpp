@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控数据
-                     * @return MonitorData 监控数据
+                     * 获取<p>监控数据</p>
+                     * @return MonitorData <p>监控数据</p>
                      * 
                      */
                     std::vector<MonitorData> GetMonitorData() const;
@@ -59,16 +59,8 @@ namespace TencentCloud
                     bool MonitorDataHasBeenSet() const;
 
                     /**
-                     * 获取接入区域。取值范围：['MC','AP','EU','AM']
-MC=中国大陆
-AP=亚太
-EU=欧洲
-AM=美洲
-                     * @return AccessRegion 接入区域。取值范围：['MC','AP','EU','AM']
-MC=中国大陆
-AP=亚太
-EU=欧洲
-AM=美洲
+                     * 获取<p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;]<br>MC=中国大陆<br>AP=亚太<br>EU=欧洲<br>AM=美洲</p>
+                     * @return AccessRegion <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;]<br>MC=中国大陆<br>AP=亚太<br>EU=欧洲<br>AM=美洲</p>
                      * 
                      */
                     std::string GetAccessRegion() const;
@@ -83,17 +75,13 @@ AM=美洲
                 private:
 
                     /**
-                     * 监控数据
+                     * <p>监控数据</p>
                      */
                     std::vector<MonitorData> m_monitorData;
                     bool m_monitorDataHasBeenSet;
 
                     /**
-                     * 接入区域。取值范围：['MC','AP','EU','AM']
-MC=中国大陆
-AP=亚太
-EU=欧洲
-AM=美洲
+                     * <p>接入区域。取值范围：[&#39;MC&#39;,&#39;AP&#39;,&#39;EU&#39;,&#39;AM&#39;]<br>MC=中国大陆<br>AP=亚太<br>EU=欧洲<br>AM=美洲</p>
                      */
                     std::string m_accessRegion;
                     bool m_accessRegionHasBeenSet;

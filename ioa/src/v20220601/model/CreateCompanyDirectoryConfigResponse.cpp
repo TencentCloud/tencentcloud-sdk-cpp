@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h>
+#include <tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Monitor::V20180724::Model;
+using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
-CreateServiceDiscoveryResponse::CreateServiceDiscoveryResponse() :
-    m_serviceDiscoveryHasBeenSet(false)
+CreateCompanyDirectoryConfigResponse::CreateCompanyDirectoryConfigResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateServiceDiscoveryResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateCompanyDirectoryConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,40 @@ CoreInternalOutcome CreateServiceDiscoveryResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("ServiceDiscovery") && !rsp["ServiceDiscovery"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["ServiceDiscovery"].IsObject())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ServiceDiscovery` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_serviceDiscovery.Deserialize(rsp["ServiceDiscovery"]);
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_serviceDiscoveryHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateServiceDiscoveryResponse::ToJsonString() const
+string CreateCompanyDirectoryConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_serviceDiscoveryHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceDiscovery";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_serviceDiscovery.ToJsonObject(value[key.c_str()], allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +110,14 @@ string CreateServiceDiscoveryResponse::ToJsonString() const
 }
 
 
-ServiceDiscoveryItem CreateServiceDiscoveryResponse::GetServiceDiscovery() const
+DirectoryConfigResultData CreateCompanyDirectoryConfigResponse::GetData() const
 {
-    return m_serviceDiscovery;
+    return m_data;
 }
 
-bool CreateServiceDiscoveryResponse::ServiceDiscoveryHasBeenSet() const
+bool CreateCompanyDirectoryConfigResponse::DataHasBeenSet() const
 {
-    return m_serviceDiscoveryHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

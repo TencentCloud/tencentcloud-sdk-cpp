@@ -32,7 +32,8 @@ CreateTaskVersionDsRequest::CreateTaskVersionDsRequest() :
     m_alarmRecipientTypesHasBeenSet(false),
     m_enableCheckTaskCycleLinkHasBeenSet(false),
     m_enableMakeUpHasBeenSet(false),
-    m_assignApprovalListHasBeenSet(false)
+    m_assignApprovalListHasBeenSet(false),
+    m_missingInstanceStrategyHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string CreateTaskVersionDsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_missingInstanceStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MissingInstanceStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_missingInstanceStrategy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -295,6 +304,22 @@ void CreateTaskVersionDsRequest::SetAssignApprovalList(const vector<string>& _as
 bool CreateTaskVersionDsRequest::AssignApprovalListHasBeenSet() const
 {
     return m_assignApprovalListHasBeenSet;
+}
+
+string CreateTaskVersionDsRequest::GetMissingInstanceStrategy() const
+{
+    return m_missingInstanceStrategy;
+}
+
+void CreateTaskVersionDsRequest::SetMissingInstanceStrategy(const string& _missingInstanceStrategy)
+{
+    m_missingInstanceStrategy = _missingInstanceStrategy;
+    m_missingInstanceStrategyHasBeenSet = true;
+}
+
+bool CreateTaskVersionDsRequest::MissingInstanceStrategyHasBeenSet() const
+{
+    return m_missingInstanceStrategyHasBeenSet;
 }
 
 

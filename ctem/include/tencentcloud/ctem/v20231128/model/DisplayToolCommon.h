@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子公司ID
-                     * @return EnterpriseUid 子公司ID
+                     * 获取<p>子公司ID</p>
+                     * @return EnterpriseUid <p>子公司ID</p>
                      * 
                      */
                     std::string GetEnterpriseUid() const;
 
                     /**
-                     * 设置子公司ID
-                     * @param _enterpriseUid 子公司ID
+                     * 设置<p>子公司ID</p>
+                     * @param _enterpriseUid <p>子公司ID</p>
                      * 
                      */
                     void SetEnterpriseUid(const std::string& _enterpriseUid);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EnterpriseUidHasBeenSet() const;
 
                     /**
-                     * 获取子公司名称
-                     * @return EnterpriseName 子公司名称
+                     * 获取<p>子公司名称</p>
+                     * @return EnterpriseName <p>子公司名称</p>
                      * 
                      */
                     std::string GetEnterpriseName() const;
 
                     /**
-                     * 设置子公司名称
-                     * @param _enterpriseName 子公司名称
+                     * 设置<p>子公司名称</p>
+                     * @param _enterpriseName <p>子公司名称</p>
                      * 
                      */
                     void SetEnterpriseName(const std::string& _enterpriseName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EnterpriseNameHasBeenSet() const;
 
                     /**
-                     * 获取主任务ID
-                     * @return JobId 主任务ID
+                     * 获取<p>主任务ID</p>
+                     * @return JobId <p>主任务ID</p>
                      * 
                      */
                     int64_t GetJobId() const;
 
                     /**
-                     * 设置主任务ID
-                     * @param _jobId 主任务ID
+                     * 设置<p>主任务ID</p>
+                     * @param _jobId <p>主任务ID</p>
                      * 
                      */
                     void SetJobId(const int64_t& _jobId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取单任务ID
-                     * @return JobStageId 单任务ID
+                     * 获取<p>单任务ID</p>
+                     * @return JobStageId <p>单任务ID</p>
                      * 
                      */
                     int64_t GetJobStageId() const;
 
                     /**
-                     * 设置单任务ID
-                     * @param _jobStageId 单任务ID
+                     * 设置<p>单任务ID</p>
+                     * @param _jobStageId <p>单任务ID</p>
                      * 
                      */
                     void SetJobStageId(const int64_t& _jobStageId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool JobStageIdHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略
-                     * @return Ignored 是否忽略
+                     * 获取<p>是否忽略</p>
+                     * @return Ignored <p>是否忽略</p>
                      * 
                      */
                     bool GetIgnored() const;
 
                     /**
-                     * 设置是否忽略
-                     * @param _ignored 是否忽略
+                     * 设置<p>是否忽略</p>
+                     * @param _ignored <p>是否忽略</p>
                      * 
                      */
                     void SetIgnored(const bool& _ignored);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool IgnoredHasBeenSet() const;
 
                     /**
-                     * 获取子任务ID
-                     * @return JobRecordId 子任务ID
+                     * 获取<p>子任务ID</p>
+                     * @return JobRecordId <p>子任务ID</p>
                      * 
                      */
                     int64_t GetJobRecordId() const;
 
                     /**
-                     * 设置子任务ID
-                     * @param _jobRecordId 子任务ID
+                     * 设置<p>子任务ID</p>
+                     * @param _jobRecordId <p>子任务ID</p>
                      * 
                      */
                     void SetJobRecordId(const int64_t& _jobRecordId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool JobRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取企业ID
-                     * @return CustomerId 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return CustomerId <p>企业ID</p>
                      * 
                      */
                     int64_t GetCustomerId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _customerId 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _customerId <p>企业ID</p>
                      * 
                      */
                     void SetCustomerId(const int64_t& _customerId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CustomerIdHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-                     * @return CustomerName 企业名称
+                     * 获取<p>企业名称</p>
+                     * @return CustomerName <p>企业名称</p>
                      * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
-                     * 设置企业名称
-                     * @param _customerName 企业名称
+                     * 设置<p>企业名称</p>
+                     * @param _customerName <p>企业名称</p>
                      * 
                      */
                     void SetCustomerName(const std::string& _customerName);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool CustomerNameHasBeenSet() const;
 
                     /**
-                     * 获取详情
-                     * @return Detail 详情
+                     * 获取<p>详情</p>
+                     * @return Detail <p>详情</p>
                      * 
                      */
                     std::string GetDetail() const;
 
                     /**
-                     * 设置详情
-                     * @param _detail 详情
+                     * 设置<p>详情</p>
+                     * @param _detail <p>详情</p>
                      * 
                      */
                     void SetDetail(const std::string& _detail);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取Md5值
-                     * @return Md5 Md5值
+                     * 获取<p>Md5值</p>
+                     * @return Md5 <p>Md5值</p>
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置Md5值
-                     * @param _md5 Md5值
+                     * 设置<p>Md5值</p>
+                     * @param _md5 <p>Md5值</p>
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createAt <p>创建时间</p>
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CreateAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateAt 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateAt <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateAt() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateAt 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateAt <p>更新时间</p>
                      * 
                      */
                     void SetUpdateAt(const std::string& _updateAt);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool UpdateAtHasBeenSet() const;
 
                     /**
-                     * 获取标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}
-                     * @return Labels 标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}
+                     * 获取<p>标签列表，json格式：{"tag1":["责任人xxx"],"tag2":["测试站"]}</p>
+                     * @return Labels <p>标签列表，json格式：{"tag1":["责任人xxx"],"tag2":["测试站"]}</p>
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
-                     * 设置标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}
-                     * @param _labels 标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}
+                     * 设置<p>标签列表，json格式：{"tag1":["责任人xxx"],"tag2":["测试站"]}</p>
+                     * @param _labels <p>标签列表，json格式：{"tag1":["责任人xxx"],"tag2":["测试站"]}</p>
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -319,85 +319,112 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @return IsPlainTextInDemo <p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    int64_t GetIsPlainTextInDemo() const;
+
+                    /**
+                     * 设置<p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * @param _isPlainTextInDemo <p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     * 
+                     */
+                    void SetIsPlainTextInDemo(const int64_t& _isPlainTextInDemo);
+
+                    /**
+                     * 判断参数 IsPlainTextInDemo 是否已赋值
+                     * @return IsPlainTextInDemo 是否已赋值
+                     * 
+                     */
+                    bool IsPlainTextInDemoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 子公司ID
+                     * <p>子公司ID</p>
                      */
                     std::string m_enterpriseUid;
                     bool m_enterpriseUidHasBeenSet;
 
                     /**
-                     * 子公司名称
+                     * <p>子公司名称</p>
                      */
                     std::string m_enterpriseName;
                     bool m_enterpriseNameHasBeenSet;
 
                     /**
-                     * 主任务ID
+                     * <p>主任务ID</p>
                      */
                     int64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 单任务ID
+                     * <p>单任务ID</p>
                      */
                     int64_t m_jobStageId;
                     bool m_jobStageIdHasBeenSet;
 
                     /**
-                     * 是否忽略
+                     * <p>是否忽略</p>
                      */
                     bool m_ignored;
                     bool m_ignoredHasBeenSet;
 
                     /**
-                     * 子任务ID
+                     * <p>子任务ID</p>
                      */
                     int64_t m_jobRecordId;
                     bool m_jobRecordIdHasBeenSet;
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     int64_t m_customerId;
                     bool m_customerIdHasBeenSet;
 
                     /**
-                     * 企业名称
+                     * <p>企业名称</p>
                      */
                     std::string m_customerName;
                     bool m_customerNameHasBeenSet;
 
                     /**
-                     * 详情
+                     * <p>详情</p>
                      */
                     std::string m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * Md5值
+                     * <p>Md5值</p>
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateAt;
                     bool m_updateAtHasBeenSet;
 
                     /**
-                     * 标签列表，json格式：{\"tag1\":[\"责任人xxx\"],\"tag2\":[\"测试站\"]}
+                     * <p>标签列表，json格式：{"tag1":["责任人xxx"],"tag2":["测试站"]}</p>
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * <p>演示模式是否明文展示</p><p>枚举值：</p><ul><li>0： 否</li><li>1： 是</li></ul>
+                     */
+                    int64_t m_isPlainTextInDemo;
+                    bool m_isPlainTextInDemoHasBeenSet;
 
                 };
             }

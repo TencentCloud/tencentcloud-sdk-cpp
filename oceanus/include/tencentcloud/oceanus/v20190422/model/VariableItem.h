@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取变量id
+                     * 获取<p>变量id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SerialId 变量id
+                     * @return SerialId <p>变量id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialId() const;
 
                     /**
-                     * 设置变量id
+                     * 设置<p>变量id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serialId 变量id
+                     * @param _serialId <p>变量id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool SerialIdHasBeenSet() const;
 
                     /**
-                     * 获取变量名
+                     * 获取<p>变量名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 变量名
+                     * @return Name <p>变量名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置变量名
+                     * 设置<p>变量名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 变量名
+                     * @param _name <p>变量名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取变量值
+                     * 获取<p>变量值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 变量值
+                     * @return Value <p>变量值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置变量值
+                     * 设置<p>变量值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 变量值
+                     * @param _value <p>变量值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,102 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取变量值是否隐藏
+                     * 获取<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * @return ValueType <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * 
+                     */
+                    int64_t GetValueType() const;
+
+                    /**
+                     * 设置<p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * @param _valueType <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     * 
+                     */
+                    void SetValueType(const int64_t& _valueType);
+
+                    /**
+                     * 判断参数 ValueType 是否已赋值
+                     * @return ValueType 是否已赋值
+                     * 
+                     */
+                    bool ValueTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据所在地域</p>
+                     * @return SecretRegion <p>凭据所在地域</p>
+                     * 
+                     */
+                    std::string GetSecretRegion() const;
+
+                    /**
+                     * 设置<p>凭据所在地域</p>
+                     * @param _secretRegion <p>凭据所在地域</p>
+                     * 
+                     */
+                    void SetSecretRegion(const std::string& _secretRegion);
+
+                    /**
+                     * 判断参数 SecretRegion 是否已赋值
+                     * @return SecretRegion 是否已赋值
+                     * 
+                     */
+                    bool SecretRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据名称</p>
+                     * @return SecretName <p>凭据名称</p>
+                     * 
+                     */
+                    std::string GetSecretName() const;
+
+                    /**
+                     * 设置<p>凭据名称</p>
+                     * @param _secretName <p>凭据名称</p>
+                     * 
+                     */
+                    void SetSecretName(const std::string& _secretName);
+
+                    /**
+                     * 判断参数 SecretName 是否已赋值
+                     * @return SecretName 是否已赋值
+                     * 
+                     */
+                    bool SecretNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据版本</p>
+                     * @return SecretVersionId <p>凭据版本</p>
+                     * 
+                     */
+                    std::string GetSecretVersionId() const;
+
+                    /**
+                     * 设置<p>凭据版本</p>
+                     * @param _secretVersionId <p>凭据版本</p>
+                     * 
+                     */
+                    void SetSecretVersionId(const std::string& _secretVersionId);
+
+                    /**
+                     * 判断参数 SecretVersionId 是否已赋值
+                     * @return SecretVersionId 是否已赋值
+                     * 
+                     */
+                    bool SecretVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>变量值是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 变量值是否隐藏
+                     * @return Type <p>变量值是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置变量值是否隐藏
+                     * 设置<p>变量值是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 变量值是否隐藏
+                     * @param _type <p>变量值是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +231,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取变量描述
+                     * 获取<p>变量描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 变量描述
+                     * @return Remark <p>变量描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置变量描述
+                     * 设置<p>变量描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 变量描述
+                     * @param _remark <p>变量描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +256,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取变量创建时间
+                     * 获取<p>变量创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 变量创建时间
+                     * @return CreateTime <p>变量创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置变量创建时间
+                     * 设置<p>变量创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 变量创建时间
+                     * @param _createTime <p>变量创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +281,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取变量创建人
+                     * 获取<p>变量创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 变量创建人
+                     * @return CreatorUin <p>变量创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置变量创建人
+                     * 设置<p>变量创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 变量创建人
+                     * @param _creatorUin <p>变量创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,49 +308,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 变量id
+                     * <p>变量id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialId;
                     bool m_serialIdHasBeenSet;
 
                     /**
-                     * 变量名
+                     * <p>变量名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 变量值
+                     * <p>变量值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 变量值是否隐藏
+                     * <p>变量值类型</p><p>枚举值：</p><ul><li>0： 自定义变量</li><li>1： 凭据值</li></ul>
+                     */
+                    int64_t m_valueType;
+                    bool m_valueTypeHasBeenSet;
+
+                    /**
+                     * <p>凭据所在地域</p>
+                     */
+                    std::string m_secretRegion;
+                    bool m_secretRegionHasBeenSet;
+
+                    /**
+                     * <p>凭据名称</p>
+                     */
+                    std::string m_secretName;
+                    bool m_secretNameHasBeenSet;
+
+                    /**
+                     * <p>凭据版本</p>
+                     */
+                    std::string m_secretVersionId;
+                    bool m_secretVersionIdHasBeenSet;
+
+                    /**
+                     * <p>变量值是否隐藏</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 变量描述
+                     * <p>变量描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 变量创建时间
+                     * <p>变量创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 变量创建人
+                     * <p>变量创建人</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;

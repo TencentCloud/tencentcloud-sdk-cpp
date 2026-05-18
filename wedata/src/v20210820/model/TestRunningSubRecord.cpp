@@ -38,7 +38,9 @@ TestRunningSubRecord::TestRunningSubRecord() :
     m_updateTimeHasBeenSet(false),
     m_sequenceHasBeenSet(false),
     m_logFilePathHasBeenSet(false),
-    m_hasSubResultSetHasBeenSet(false)
+    m_hasSubResultSetHasBeenSet(false),
+    m_scriptContentTruncatedHasBeenSet(false),
+    m_schemaInfoFilePathHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,26 @@ CoreInternalOutcome TestRunningSubRecord::Deserialize(const rapidjson::Value &va
         m_hasSubResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ScriptContentTruncated") && !value["ScriptContentTruncated"].IsNull())
+    {
+        if (!value["ScriptContentTruncated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestRunningSubRecord.ScriptContentTruncated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scriptContentTruncated = value["ScriptContentTruncated"].GetBool();
+        m_scriptContentTruncatedHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaInfoFilePath") && !value["SchemaInfoFilePath"].IsNull())
+    {
+        if (!value["SchemaInfoFilePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TestRunningSubRecord.SchemaInfoFilePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaInfoFilePath = string(value["SchemaInfoFilePath"].GetString());
+        m_schemaInfoFilePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void TestRunningSubRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "HasSubResultSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasSubResultSet, allocator);
+    }
+
+    if (m_scriptContentTruncatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptContentTruncated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scriptContentTruncated, allocator);
+    }
+
+    if (m_schemaInfoFilePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaInfoFilePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaInfoFilePath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +705,37 @@ void TestRunningSubRecord::SetHasSubResultSet(const bool& _hasSubResultSet)
 bool TestRunningSubRecord::HasSubResultSetHasBeenSet() const
 {
     return m_hasSubResultSetHasBeenSet;
+}
+
+bool TestRunningSubRecord::GetScriptContentTruncated() const
+{
+    return m_scriptContentTruncated;
+}
+
+void TestRunningSubRecord::SetScriptContentTruncated(const bool& _scriptContentTruncated)
+{
+    m_scriptContentTruncated = _scriptContentTruncated;
+    m_scriptContentTruncatedHasBeenSet = true;
+}
+
+bool TestRunningSubRecord::ScriptContentTruncatedHasBeenSet() const
+{
+    return m_scriptContentTruncatedHasBeenSet;
+}
+
+string TestRunningSubRecord::GetSchemaInfoFilePath() const
+{
+    return m_schemaInfoFilePath;
+}
+
+void TestRunningSubRecord::SetSchemaInfoFilePath(const string& _schemaInfoFilePath)
+{
+    m_schemaInfoFilePath = _schemaInfoFilePath;
+    m_schemaInfoFilePathHasBeenSet = true;
+}
+
+bool TestRunningSubRecord::SchemaInfoFilePathHasBeenSet() const
+{
+    return m_schemaInfoFilePathHasBeenSet;
 }
 

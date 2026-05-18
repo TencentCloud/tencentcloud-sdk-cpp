@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeCompanyDirectoryConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Monitor::V20180724::Model;
+using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
-DescribeServiceDiscoveryResponse::DescribeServiceDiscoveryResponse() :
-    m_serviceDiscoverySetHasBeenSet(false)
+DescribeCompanyDirectoryConfigResponse::DescribeCompanyDirectoryConfigResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeServiceDiscoveryResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCompanyDirectoryConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,49 +62,40 @@ CoreInternalOutcome DescribeServiceDiscoveryResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("ServiceDiscoverySet") && !rsp["ServiceDiscoverySet"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["ServiceDiscoverySet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ServiceDiscoverySet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ServiceDiscoverySet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            ServiceDiscoveryItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_serviceDiscoverySet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_serviceDiscoverySetHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeServiceDiscoveryResponse::ToJsonString() const
+string DescribeCompanyDirectoryConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_serviceDiscoverySetHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceDiscoverySet";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_serviceDiscoverySet.begin(); itr != m_serviceDiscoverySet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +110,14 @@ string DescribeServiceDiscoveryResponse::ToJsonString() const
 }
 
 
-vector<ServiceDiscoveryItem> DescribeServiceDiscoveryResponse::GetServiceDiscoverySet() const
+DirectoryConfigData DescribeCompanyDirectoryConfigResponse::GetData() const
 {
-    return m_serviceDiscoverySet;
+    return m_data;
 }
 
-bool DescribeServiceDiscoveryResponse::ServiceDiscoverySetHasBeenSet() const
+bool DescribeCompanyDirectoryConfigResponse::DataHasBeenSet() const
 {
-    return m_serviceDiscoverySetHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

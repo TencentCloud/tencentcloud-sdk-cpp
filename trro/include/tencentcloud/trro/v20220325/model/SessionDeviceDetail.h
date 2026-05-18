@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备类型：field或remote
-                     * @return DeviceType 设备类型：field或remote
+                     * 获取<p>设备类型：field或remote</p>
+                     * @return DeviceType <p>设备类型：field或remote</p>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置设备类型：field或remote
-                     * @param _deviceType 设备类型：field或remote
+                     * 设置<p>设备类型：field或remote</p>
+                     * @param _deviceType <p>设备类型：field或remote</p>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取起始点位时间，单位：秒
-                     * @return StartTime 起始点位时间，单位：秒
+                     * 获取<p>起始点位时间，单位：秒</p>
+                     * @return StartTime <p>起始点位时间，单位：秒</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置起始点位时间，单位：秒
-                     * @param _startTime 起始点位时间，单位：秒
+                     * 设置<p>起始点位时间，单位：秒</p>
+                     * @param _startTime <p>起始点位时间，单位：秒</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束点位时间，单位：秒
-                     * @return EndTime 结束点位时间，单位：秒
+                     * 获取<p>结束点位时间，单位：秒</p>
+                     * @return EndTime <p>结束点位时间，单位：秒</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束点位时间，单位：秒
-                     * @param _endTime 结束点位时间，单位：秒
+                     * 设置<p>结束点位时间，单位：秒</p>
+                     * @param _endTime <p>结束点位时间，单位：秒</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取会话ID
-                     * @return SessionId 会话ID
+                     * 获取<p>会话ID</p>
+                     * @return SessionId <p>会话ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话ID
-                     * @param _sessionId 会话ID
+                     * 设置<p>会话ID</p>
+                     * @param _sessionId <p>会话ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取码率，单位：kbps
-                     * @return Rate 码率，单位：kbps
+                     * 获取<p>码率，单位：kbps</p>
+                     * @return Rate <p>码率，单位：kbps</p>
                      * 
                      */
                     std::vector<int64_t> GetRate() const;
 
                     /**
-                     * 设置码率，单位：kbps
-                     * @param _rate 码率，单位：kbps
+                     * 设置<p>码率，单位：kbps</p>
+                     * @param _rate <p>码率，单位：kbps</p>
                      * 
                      */
                     void SetRate(const std::vector<int64_t>& _rate);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RateHasBeenSet() const;
 
                     /**
-                     * 获取帧率
-                     * @return Fps 帧率
+                     * 获取<p>帧率</p>
+                     * @return Fps <p>帧率</p>
                      * 
                      */
                     std::vector<int64_t> GetFps() const;
 
                     /**
-                     * 设置帧率
-                     * @param _fps 帧率
+                     * 设置<p>帧率</p>
+                     * @param _fps <p>帧率</p>
                      * 
                      */
                     void SetFps(const std::vector<int64_t>& _fps);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取丢包率，单位：%
-                     * @return Lost 丢包率，单位：%
+                     * 获取<p>丢包率，单位：%</p>
+                     * @return Lost <p>丢包率，单位：%</p>
                      * 
                      */
                     std::vector<double> GetLost() const;
 
                     /**
-                     * 设置丢包率，单位：%
-                     * @param _lost 丢包率，单位：%
+                     * 设置<p>丢包率，单位：%</p>
+                     * @param _lost <p>丢包率，单位：%</p>
                      * 
                      */
                     void SetLost(const std::vector<double>& _lost);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool LostHasBeenSet() const;
 
                     /**
-                     * 获取网络时延，单位：ms
-                     * @return NetworkLatency 网络时延，单位：ms
+                     * 获取<p>网络时延，单位：ms</p>
+                     * @return NetworkLatency <p>网络时延，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetNetworkLatency() const;
 
                     /**
-                     * 设置网络时延，单位：ms
-                     * @param _networkLatency 网络时延，单位：ms
+                     * 设置<p>网络时延，单位：ms</p>
+                     * @param _networkLatency <p>网络时延，单位：ms</p>
                      * 
                      */
                     void SetNetworkLatency(const std::vector<int64_t>& _networkLatency);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool NetworkLatencyHasBeenSet() const;
 
                     /**
-                     * 获取视频时延，单位：ms
-                     * @return VideoLatency 视频时延，单位：ms
+                     * 获取<p>视频时延，单位：ms</p>
+                     * @return VideoLatency <p>视频时延，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetVideoLatency() const;
 
                     /**
-                     * 设置视频时延，单位：ms
-                     * @param _videoLatency 视频时延，单位：ms
+                     * 设置<p>视频时延，单位：ms</p>
+                     * @param _videoLatency <p>视频时延，单位：ms</p>
                      * 
                      */
                     void SetVideoLatency(const std::vector<int64_t>& _videoLatency);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool VideoLatencyHasBeenSet() const;
 
                     /**
-                     * 获取CPU使用率，单位：%
-                     * @return CpuUsed CPU使用率，单位：%
+                     * 获取<p>CPU使用率，单位：%</p>
+                     * @return CpuUsed <p>CPU使用率，单位：%</p>
                      * 
                      */
                     std::vector<double> GetCpuUsed() const;
 
                     /**
-                     * 设置CPU使用率，单位：%
-                     * @param _cpuUsed CPU使用率，单位：%
+                     * 设置<p>CPU使用率，单位：%</p>
+                     * @param _cpuUsed <p>CPU使用率，单位：%</p>
                      * 
                      */
                     void SetCpuUsed(const std::vector<double>& _cpuUsed);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool CpuUsedHasBeenSet() const;
 
                     /**
-                     * 获取内存使用率，单位：%
-                     * @return MemUsed 内存使用率，单位：%
+                     * 获取<p>内存使用率，单位：%</p>
+                     * @return MemUsed <p>内存使用率，单位：%</p>
                      * 
                      */
                     std::vector<double> GetMemUsed() const;
 
                     /**
-                     * 设置内存使用率，单位：%
-                     * @param _memUsed 内存使用率，单位：%
+                     * 设置<p>内存使用率，单位：%</p>
+                     * @param _memUsed <p>内存使用率，单位：%</p>
                      * 
                      */
                     void SetMemUsed(const std::vector<double>& _memUsed);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool MemUsedHasBeenSet() const;
 
                     /**
-                     * 获取时间偏移量，单位：秒
-                     * @return TimeOffset 时间偏移量，单位：秒
+                     * 获取<p>时间偏移量，单位：秒</p>
+                     * @return TimeOffset <p>时间偏移量，单位：秒</p>
                      * 
                      */
                     std::vector<uint64_t> GetTimeOffset() const;
 
                     /**
-                     * 设置时间偏移量，单位：秒
-                     * @param _timeOffset 时间偏移量，单位：秒
+                     * 设置<p>时间偏移量，单位：秒</p>
+                     * @param _timeOffset <p>时间偏移量，单位：秒</p>
                      * 
                      */
                     void SetTimeOffset(const std::vector<uint64_t>& _timeOffset);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取设备ID
-                     * @return DeviceId 设备ID
+                     * 获取<p>设备ID</p>
+                     * @return DeviceId <p>设备ID</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _deviceId 设备ID
+                     * 设置<p>设备ID</p>
+                     * @param _deviceId <p>设备ID</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取sdk版本
-                     * @return Ver sdk版本
+                     * 获取<p>sdk版本</p>
+                     * @return Ver <p>sdk版本</p>
                      * 
                      */
                     std::string GetVer() const;
 
                     /**
-                     * 设置sdk版本
-                     * @param _ver sdk版本
+                     * 设置<p>sdk版本</p>
+                     * @param _ver <p>sdk版本</p>
                      * 
                      */
                     void SetVer(const std::string& _ver);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool VerHasBeenSet() const;
 
                     /**
-                     * 获取模式(p2p/server)
-                     * @return SdkMode 模式(p2p/server)
+                     * 获取<p>模式(p2p/server)</p>
+                     * @return SdkMode <p>模式(p2p/server)</p>
                      * 
                      */
                     std::string GetSdkMode() const;
 
                     /**
-                     * 设置模式(p2p/server)
-                     * @param _sdkMode 模式(p2p/server)
+                     * 设置<p>模式(p2p/server)</p>
+                     * @param _sdkMode <p>模式(p2p/server)</p>
                      * 
                      */
                     void SetSdkMode(const std::string& _sdkMode);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool SdkModeHasBeenSet() const;
 
                     /**
-                     * 获取解码耗时，单位：ms
-                     * @return DecodeCost 解码耗时，单位：ms
+                     * 获取<p>解码耗时，单位：ms</p>
+                     * @return DecodeCost <p>解码耗时，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetDecodeCost() const;
 
                     /**
-                     * 设置解码耗时，单位：ms
-                     * @param _decodeCost 解码耗时，单位：ms
+                     * 设置<p>解码耗时，单位：ms</p>
+                     * @param _decodeCost <p>解码耗时，单位：ms</p>
                      * 
                      */
                     void SetDecodeCost(const std::vector<int64_t>& _decodeCost);
@@ -405,18 +405,18 @@ namespace TencentCloud
                     bool DecodeCostHasBeenSet() const;
 
                     /**
-                     * 获取【已废弃，使用RenderCost】
+                     * 获取<p>【已废弃，使用RenderCost】</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenderConst 【已废弃，使用RenderCost】
+                     * @return RenderConst <p>【已废弃，使用RenderCost】</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::vector<int64_t> GetRenderConst() const;
 
                     /**
-                     * 设置【已废弃，使用RenderCost】
+                     * 设置<p>【已废弃，使用RenderCost】</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renderConst 【已废弃，使用RenderCost】
+                     * @param _renderConst <p>【已废弃，使用RenderCost】</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -430,15 +430,15 @@ namespace TencentCloud
                     bool RenderConstHasBeenSet() const;
 
                     /**
-                     * 获取卡顿k100
-                     * @return K100 卡顿k100
+                     * 获取<p>卡顿k100</p>
+                     * @return K100 <p>卡顿k100</p>
                      * 
                      */
                     std::vector<double> GetK100() const;
 
                     /**
-                     * 设置卡顿k100
-                     * @param _k100 卡顿k100
+                     * 设置<p>卡顿k100</p>
+                     * @param _k100 <p>卡顿k100</p>
                      * 
                      */
                     void SetK100(const std::vector<double>& _k100);
@@ -451,15 +451,15 @@ namespace TencentCloud
                     bool K100HasBeenSet() const;
 
                     /**
-                     * 获取卡顿k150
-                     * @return K150 卡顿k150
+                     * 获取<p>卡顿k150</p>
+                     * @return K150 <p>卡顿k150</p>
                      * 
                      */
                     std::vector<double> GetK150() const;
 
                     /**
-                     * 设置卡顿k150
-                     * @param _k150 卡顿k150
+                     * 设置<p>卡顿k150</p>
+                     * @param _k150 <p>卡顿k150</p>
                      * 
                      */
                     void SetK150(const std::vector<double>& _k150);
@@ -472,15 +472,15 @@ namespace TencentCloud
                     bool K150HasBeenSet() const;
 
                     /**
-                     * 获取nack请求数
-                     * @return NACK nack请求数
+                     * 获取<p>nack请求数</p>
+                     * @return NACK <p>nack请求数</p>
                      * 
                      */
                     std::vector<int64_t> GetNACK() const;
 
                     /**
-                     * 设置nack请求数
-                     * @param _nACK nack请求数
+                     * 设置<p>nack请求数</p>
+                     * @param _nACK <p>nack请求数</p>
                      * 
                      */
                     void SetNACK(const std::vector<int64_t>& _nACK);
@@ -493,15 +493,15 @@ namespace TencentCloud
                     bool NACKHasBeenSet() const;
 
                     /**
-                     * 获取服务端调控码率,单位：kbps
-                     * @return BitRateEstimate 服务端调控码率,单位：kbps
+                     * 获取<p>服务端调控码率,单位：kbps</p>
+                     * @return BitRateEstimate <p>服务端调控码率,单位：kbps</p>
                      * 
                      */
                     std::vector<int64_t> GetBitRateEstimate() const;
 
                     /**
-                     * 设置服务端调控码率,单位：kbps
-                     * @param _bitRateEstimate 服务端调控码率,单位：kbps
+                     * 设置<p>服务端调控码率,单位：kbps</p>
+                     * @param _bitRateEstimate <p>服务端调控码率,单位：kbps</p>
                      * 
                      */
                     void SetBitRateEstimate(const std::vector<int64_t>& _bitRateEstimate);
@@ -514,15 +514,15 @@ namespace TencentCloud
                     bool BitRateEstimateHasBeenSet() const;
 
                     /**
-                     * 获取宽度
-                     * @return Width 宽度
+                     * 获取<p>宽度</p>
+                     * @return Width <p>宽度</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置宽度
-                     * @param _width 宽度
+                     * 设置<p>宽度</p>
+                     * @param _width <p>宽度</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -535,15 +535,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取高度
-                     * @return Height 高度
+                     * 获取<p>高度</p>
+                     * @return Height <p>高度</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置高度
-                     * @param _height 高度
+                     * 设置<p>高度</p>
+                     * @param _height <p>高度</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -556,15 +556,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取编码耗时，单位：ms
-                     * @return EncodeCost 编码耗时，单位：ms
+                     * 获取<p>编码耗时，单位：ms</p>
+                     * @return EncodeCost <p>编码耗时，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetEncodeCost() const;
 
                     /**
-                     * 设置编码耗时，单位：ms
-                     * @param _encodeCost 编码耗时，单位：ms
+                     * 设置<p>编码耗时，单位：ms</p>
+                     * @param _encodeCost <p>编码耗时，单位：ms</p>
                      * 
                      */
                     void SetEncodeCost(const std::vector<int64_t>& _encodeCost);
@@ -577,15 +577,15 @@ namespace TencentCloud
                     bool EncodeCostHasBeenSet() const;
 
                     /**
-                     * 获取采集耗时，单位：ms
-                     * @return CaptureCost 采集耗时，单位：ms
+                     * 获取<p>采集耗时，单位：ms</p>
+                     * @return CaptureCost <p>采集耗时，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetCaptureCost() const;
 
                     /**
-                     * 设置采集耗时，单位：ms
-                     * @param _captureCost 采集耗时，单位：ms
+                     * 设置<p>采集耗时，单位：ms</p>
+                     * @param _captureCost <p>采集耗时，单位：ms</p>
                      * 
                      */
                     void SetCaptureCost(const std::vector<int64_t>& _captureCost);
@@ -598,15 +598,15 @@ namespace TencentCloud
                     bool CaptureCostHasBeenSet() const;
 
                     /**
-                     * 获取渲染耗时，单位：ms
-                     * @return RenderCost 渲染耗时，单位：ms
+                     * 获取<p>渲染耗时，单位：ms</p>
+                     * @return RenderCost <p>渲染耗时，单位：ms</p>
                      * 
                      */
                     std::vector<int64_t> GetRenderCost() const;
 
                     /**
-                     * 设置渲染耗时，单位：ms
-                     * @param _renderCost 渲染耗时，单位：ms
+                     * 设置<p>渲染耗时，单位：ms</p>
+                     * @param _renderCost <p>渲染耗时，单位：ms</p>
                      * 
                      */
                     void SetRenderCost(const std::vector<int64_t>& _renderCost);
@@ -619,15 +619,15 @@ namespace TencentCloud
                     bool RenderCostHasBeenSet() const;
 
                     /**
-                     * 获取配置宽度
-                     * @return ConfigWidth 配置宽度
+                     * 获取<p>配置宽度</p>
+                     * @return ConfigWidth <p>配置宽度</p>
                      * 
                      */
                     int64_t GetConfigWidth() const;
 
                     /**
-                     * 设置配置宽度
-                     * @param _configWidth 配置宽度
+                     * 设置<p>配置宽度</p>
+                     * @param _configWidth <p>配置宽度</p>
                      * 
                      */
                     void SetConfigWidth(const int64_t& _configWidth);
@@ -640,15 +640,15 @@ namespace TencentCloud
                     bool ConfigWidthHasBeenSet() const;
 
                     /**
-                     * 获取配置高度
-                     * @return ConfigHeight 配置高度
+                     * 获取<p>配置高度</p>
+                     * @return ConfigHeight <p>配置高度</p>
                      * 
                      */
                     int64_t GetConfigHeight() const;
 
                     /**
-                     * 设置配置高度
-                     * @param _configHeight 配置高度
+                     * 设置<p>配置高度</p>
+                     * @param _configHeight <p>配置高度</p>
                      * 
                      */
                     void SetConfigHeight(const int64_t& _configHeight);
@@ -661,15 +661,15 @@ namespace TencentCloud
                     bool ConfigHeightHasBeenSet() const;
 
                     /**
-                     * 获取平均帧间隔
-                     * @return FrameDelta 平均帧间隔
+                     * 获取<p>平均帧间隔</p>
+                     * @return FrameDelta <p>平均帧间隔</p>
                      * 
                      */
                     std::vector<int64_t> GetFrameDelta() const;
 
                     /**
-                     * 设置平均帧间隔
-                     * @param _frameDelta 平均帧间隔
+                     * 设置<p>平均帧间隔</p>
+                     * @param _frameDelta <p>平均帧间隔</p>
                      * 
                      */
                     void SetFrameDelta(const std::vector<int64_t>& _frameDelta);
@@ -682,15 +682,15 @@ namespace TencentCloud
                     bool FrameDeltaHasBeenSet() const;
 
                     /**
-                     * 获取最大帧间隔
-                     * @return MaxFrameDelta 最大帧间隔
+                     * 获取<p>最大帧间隔</p>
+                     * @return MaxFrameDelta <p>最大帧间隔</p>
                      * 
                      */
                     std::vector<int64_t> GetMaxFrameDelta() const;
 
                     /**
-                     * 设置最大帧间隔
-                     * @param _maxFrameDelta 最大帧间隔
+                     * 设置<p>最大帧间隔</p>
+                     * @param _maxFrameDelta <p>最大帧间隔</p>
                      * 
                      */
                     void SetMaxFrameDelta(const std::vector<int64_t>& _maxFrameDelta);
@@ -703,15 +703,15 @@ namespace TencentCloud
                     bool MaxFrameDeltaHasBeenSet() const;
 
                     /**
-                     * 获取总码率评估,单位：kbps
-                     * @return TotalBitrateEstimate 总码率评估,单位：kbps
+                     * 获取<p>总码率评估,单位：kbps</p>
+                     * @return TotalBitrateEstimate <p>总码率评估,单位：kbps</p>
                      * 
                      */
                     std::vector<int64_t> GetTotalBitrateEstimate() const;
 
                     /**
-                     * 设置总码率评估,单位：kbps
-                     * @param _totalBitrateEstimate 总码率评估,单位：kbps
+                     * 设置<p>总码率评估,单位：kbps</p>
+                     * @param _totalBitrateEstimate <p>总码率评估,单位：kbps</p>
                      * 
                      */
                     void SetTotalBitrateEstimate(const std::vector<int64_t>& _totalBitrateEstimate);
@@ -724,15 +724,15 @@ namespace TencentCloud
                     bool TotalBitrateEstimateHasBeenSet() const;
 
                     /**
-                     * 获取帧间隔大于100ms的卡顿时长
-                     * @return Lag100Duration 帧间隔大于100ms的卡顿时长
+                     * 获取<p>帧间隔大于100ms的卡顿时长</p>
+                     * @return Lag100Duration <p>帧间隔大于100ms的卡顿时长</p>
                      * 
                      */
                     std::vector<int64_t> GetLag100Duration() const;
 
                     /**
-                     * 设置帧间隔大于100ms的卡顿时长
-                     * @param _lag100Duration 帧间隔大于100ms的卡顿时长
+                     * 设置<p>帧间隔大于100ms的卡顿时长</p>
+                     * @param _lag100Duration <p>帧间隔大于100ms的卡顿时长</p>
                      * 
                      */
                     void SetLag100Duration(const std::vector<int64_t>& _lag100Duration);
@@ -745,15 +745,15 @@ namespace TencentCloud
                     bool Lag100DurationHasBeenSet() const;
 
                     /**
-                     * 获取帧间隔大于150ms的卡顿时长
-                     * @return Lag150Duration 帧间隔大于150ms的卡顿时长
+                     * 获取<p>帧间隔大于150ms的卡顿时长</p>
+                     * @return Lag150Duration <p>帧间隔大于150ms的卡顿时长</p>
                      * 
                      */
                     std::vector<int64_t> GetLag150Duration() const;
 
                     /**
-                     * 设置帧间隔大于150ms的卡顿时长
-                     * @param _lag150Duration 帧间隔大于150ms的卡顿时长
+                     * 设置<p>帧间隔大于150ms的卡顿时长</p>
+                     * @param _lag150Duration <p>帧间隔大于150ms的卡顿时长</p>
                      * 
                      */
                     void SetLag150Duration(const std::vector<int64_t>& _lag150Duration);
@@ -766,15 +766,15 @@ namespace TencentCloud
                     bool Lag150DurationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启多网：0 单网，1 多网
-                     * @return MultiMode 是否开启多网：0 单网，1 多网
+                     * 获取<p>是否开启多网：0 单网，1 多网</p>
+                     * @return MultiMode <p>是否开启多网：0 单网，1 多网</p>
                      * 
                      */
                     int64_t GetMultiMode() const;
 
                     /**
-                     * 设置是否开启多网：0 单网，1 多网
-                     * @param _multiMode 是否开启多网：0 单网，1 多网
+                     * 设置<p>是否开启多网：0 单网，1 多网</p>
+                     * @param _multiMode <p>是否开启多网：0 单网，1 多网</p>
                      * 
                      */
                     void SetMultiMode(const int64_t& _multiMode);
@@ -787,15 +787,15 @@ namespace TencentCloud
                     bool MultiModeHasBeenSet() const;
 
                     /**
-                     * 获取多网卡信息
-                     * @return MultiNet 多网卡信息
+                     * 获取<p>多网卡信息</p>
+                     * @return MultiNet <p>多网卡信息</p>
                      * 
                      */
                     std::vector<MultiNet> GetMultiNet() const;
 
                     /**
-                     * 设置多网卡信息
-                     * @param _multiNet 多网卡信息
+                     * 设置<p>多网卡信息</p>
+                     * @param _multiNet <p>多网卡信息</p>
                      * 
                      */
                     void SetMultiNet(const std::vector<MultiNet>& _multiNet);
@@ -807,224 +807,251 @@ namespace TencentCloud
                      */
                     bool MultiNetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>
+                     * @return ControlLatency <p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetControlLatency() const;
+
+                    /**
+                     * 设置<p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>
+                     * @param _controlLatency <p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>
+                     * 
+                     */
+                    void SetControlLatency(const std::vector<int64_t>& _controlLatency);
+
+                    /**
+                     * 判断参数 ControlLatency 是否已赋值
+                     * @return ControlLatency 是否已赋值
+                     * 
+                     */
+                    bool ControlLatencyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 设备类型：field或remote
+                     * <p>设备类型：field或remote</p>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 起始点位时间，单位：秒
+                     * <p>起始点位时间，单位：秒</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束点位时间，单位：秒
+                     * <p>结束点位时间，单位：秒</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 会话ID
+                     * <p>会话ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 码率，单位：kbps
+                     * <p>码率，单位：kbps</p>
                      */
                     std::vector<int64_t> m_rate;
                     bool m_rateHasBeenSet;
 
                     /**
-                     * 帧率
+                     * <p>帧率</p>
                      */
                     std::vector<int64_t> m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 丢包率，单位：%
+                     * <p>丢包率，单位：%</p>
                      */
                     std::vector<double> m_lost;
                     bool m_lostHasBeenSet;
 
                     /**
-                     * 网络时延，单位：ms
+                     * <p>网络时延，单位：ms</p>
                      */
                     std::vector<int64_t> m_networkLatency;
                     bool m_networkLatencyHasBeenSet;
 
                     /**
-                     * 视频时延，单位：ms
+                     * <p>视频时延，单位：ms</p>
                      */
                     std::vector<int64_t> m_videoLatency;
                     bool m_videoLatencyHasBeenSet;
 
                     /**
-                     * CPU使用率，单位：%
+                     * <p>CPU使用率，单位：%</p>
                      */
                     std::vector<double> m_cpuUsed;
                     bool m_cpuUsedHasBeenSet;
 
                     /**
-                     * 内存使用率，单位：%
+                     * <p>内存使用率，单位：%</p>
                      */
                     std::vector<double> m_memUsed;
                     bool m_memUsedHasBeenSet;
 
                     /**
-                     * 时间偏移量，单位：秒
+                     * <p>时间偏移量，单位：秒</p>
                      */
                     std::vector<uint64_t> m_timeOffset;
                     bool m_timeOffsetHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * sdk版本
+                     * <p>sdk版本</p>
                      */
                     std::string m_ver;
                     bool m_verHasBeenSet;
 
                     /**
-                     * 模式(p2p/server)
+                     * <p>模式(p2p/server)</p>
                      */
                     std::string m_sdkMode;
                     bool m_sdkModeHasBeenSet;
 
                     /**
-                     * 解码耗时，单位：ms
+                     * <p>解码耗时，单位：ms</p>
                      */
                     std::vector<int64_t> m_decodeCost;
                     bool m_decodeCostHasBeenSet;
 
                     /**
-                     * 【已废弃，使用RenderCost】
+                     * <p>【已废弃，使用RenderCost】</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_renderConst;
                     bool m_renderConstHasBeenSet;
 
                     /**
-                     * 卡顿k100
+                     * <p>卡顿k100</p>
                      */
                     std::vector<double> m_k100;
                     bool m_k100HasBeenSet;
 
                     /**
-                     * 卡顿k150
+                     * <p>卡顿k150</p>
                      */
                     std::vector<double> m_k150;
                     bool m_k150HasBeenSet;
 
                     /**
-                     * nack请求数
+                     * <p>nack请求数</p>
                      */
                     std::vector<int64_t> m_nACK;
                     bool m_nACKHasBeenSet;
 
                     /**
-                     * 服务端调控码率,单位：kbps
+                     * <p>服务端调控码率,单位：kbps</p>
                      */
                     std::vector<int64_t> m_bitRateEstimate;
                     bool m_bitRateEstimateHasBeenSet;
 
                     /**
-                     * 宽度
+                     * <p>宽度</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 高度
+                     * <p>高度</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 编码耗时，单位：ms
+                     * <p>编码耗时，单位：ms</p>
                      */
                     std::vector<int64_t> m_encodeCost;
                     bool m_encodeCostHasBeenSet;
 
                     /**
-                     * 采集耗时，单位：ms
+                     * <p>采集耗时，单位：ms</p>
                      */
                     std::vector<int64_t> m_captureCost;
                     bool m_captureCostHasBeenSet;
 
                     /**
-                     * 渲染耗时，单位：ms
+                     * <p>渲染耗时，单位：ms</p>
                      */
                     std::vector<int64_t> m_renderCost;
                     bool m_renderCostHasBeenSet;
 
                     /**
-                     * 配置宽度
+                     * <p>配置宽度</p>
                      */
                     int64_t m_configWidth;
                     bool m_configWidthHasBeenSet;
 
                     /**
-                     * 配置高度
+                     * <p>配置高度</p>
                      */
                     int64_t m_configHeight;
                     bool m_configHeightHasBeenSet;
 
                     /**
-                     * 平均帧间隔
+                     * <p>平均帧间隔</p>
                      */
                     std::vector<int64_t> m_frameDelta;
                     bool m_frameDeltaHasBeenSet;
 
                     /**
-                     * 最大帧间隔
+                     * <p>最大帧间隔</p>
                      */
                     std::vector<int64_t> m_maxFrameDelta;
                     bool m_maxFrameDeltaHasBeenSet;
 
                     /**
-                     * 总码率评估,单位：kbps
+                     * <p>总码率评估,单位：kbps</p>
                      */
                     std::vector<int64_t> m_totalBitrateEstimate;
                     bool m_totalBitrateEstimateHasBeenSet;
 
                     /**
-                     * 帧间隔大于100ms的卡顿时长
+                     * <p>帧间隔大于100ms的卡顿时长</p>
                      */
                     std::vector<int64_t> m_lag100Duration;
                     bool m_lag100DurationHasBeenSet;
 
                     /**
-                     * 帧间隔大于150ms的卡顿时长
+                     * <p>帧间隔大于150ms的卡顿时长</p>
                      */
                     std::vector<int64_t> m_lag150Duration;
                     bool m_lag150DurationHasBeenSet;
 
                     /**
-                     * 是否开启多网：0 单网，1 多网
+                     * <p>是否开启多网：0 单网，1 多网</p>
                      */
                     int64_t m_multiMode;
                     bool m_multiModeHasBeenSet;
 
                     /**
-                     * 多网卡信息
+                     * <p>多网卡信息</p>
                      */
                     std::vector<MultiNet> m_multiNet;
                     bool m_multiNetHasBeenSet;
+
+                    /**
+                     * <p>现场设备和远端设备消息通道往返延迟</p><p>单位：毫秒ms</p>
+                     */
+                    std::vector<int64_t> m_controlLatency;
+                    bool m_controlLatencyHasBeenSet;
 
                 };
             }

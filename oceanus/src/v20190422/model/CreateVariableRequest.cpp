@@ -27,7 +27,12 @@ CreateVariableRequest::CreateVariableRequest() :
     m_valueHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_valueTypeHasBeenSet(false),
+    m_secretRegionHasBeenSet(false),
+    m_secretNameHasBeenSet(false),
+    m_secretVersionIdHasBeenSet(false),
+    m_secretValueMd5HasBeenSet(false)
 {
 }
 
@@ -76,6 +81,46 @@ string CreateVariableRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_valueType, allocator);
+    }
+
+    if (m_secretRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretValueMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretValueMd5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretValueMd5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +209,86 @@ void CreateVariableRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool CreateVariableRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+int64_t CreateVariableRequest::GetValueType() const
+{
+    return m_valueType;
+}
+
+void CreateVariableRequest::SetValueType(const int64_t& _valueType)
+{
+    m_valueType = _valueType;
+    m_valueTypeHasBeenSet = true;
+}
+
+bool CreateVariableRequest::ValueTypeHasBeenSet() const
+{
+    return m_valueTypeHasBeenSet;
+}
+
+string CreateVariableRequest::GetSecretRegion() const
+{
+    return m_secretRegion;
+}
+
+void CreateVariableRequest::SetSecretRegion(const string& _secretRegion)
+{
+    m_secretRegion = _secretRegion;
+    m_secretRegionHasBeenSet = true;
+}
+
+bool CreateVariableRequest::SecretRegionHasBeenSet() const
+{
+    return m_secretRegionHasBeenSet;
+}
+
+string CreateVariableRequest::GetSecretName() const
+{
+    return m_secretName;
+}
+
+void CreateVariableRequest::SetSecretName(const string& _secretName)
+{
+    m_secretName = _secretName;
+    m_secretNameHasBeenSet = true;
+}
+
+bool CreateVariableRequest::SecretNameHasBeenSet() const
+{
+    return m_secretNameHasBeenSet;
+}
+
+string CreateVariableRequest::GetSecretVersionId() const
+{
+    return m_secretVersionId;
+}
+
+void CreateVariableRequest::SetSecretVersionId(const string& _secretVersionId)
+{
+    m_secretVersionId = _secretVersionId;
+    m_secretVersionIdHasBeenSet = true;
+}
+
+bool CreateVariableRequest::SecretVersionIdHasBeenSet() const
+{
+    return m_secretVersionIdHasBeenSet;
+}
+
+string CreateVariableRequest::GetSecretValueMd5() const
+{
+    return m_secretValueMd5;
+}
+
+void CreateVariableRequest::SetSecretValueMd5(const string& _secretValueMd5)
+{
+    m_secretValueMd5 = _secretValueMd5;
+    m_secretValueMd5HasBeenSet = true;
+}
+
+bool CreateVariableRequest::SecretValueMd5HasBeenSet() const
+{
+    return m_secretValueMd5HasBeenSet;
 }
 
 

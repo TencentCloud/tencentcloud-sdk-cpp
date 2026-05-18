@@ -210,6 +210,48 @@ namespace TencentCloud
                      */
                     bool ImageEncodeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>tool_call 场景工具名称</p>
+                     * @return ToolName <p>tool_call 场景工具名称</p>
+                     * 
+                     */
+                    std::string GetToolName() const;
+
+                    /**
+                     * 设置<p>tool_call 场景工具名称</p>
+                     * @param _toolName <p>tool_call 场景工具名称</p>
+                     * 
+                     */
+                    void SetToolName(const std::string& _toolName);
+
+                    /**
+                     * 判断参数 ToolName 是否已赋值
+                     * @return ToolName 是否已赋值
+                     * 
+                     */
+                    bool ToolNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>tool_call 场景工具参数</p>
+                     * @return ToolArgs <p>tool_call 场景工具参数</p>
+                     * 
+                     */
+                    std::string GetToolArgs() const;
+
+                    /**
+                     * 设置<p>tool_call 场景工具参数</p>
+                     * @param _toolArgs <p>tool_call 场景工具参数</p>
+                     * 
+                     */
+                    void SetToolArgs(const std::string& _toolArgs);
+
+                    /**
+                     * 判断参数 ToolArgs 是否已赋值
+                     * @return ToolArgs 是否已赋值
+                     * 
+                     */
+                    bool ToolArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +301,18 @@ namespace TencentCloud
                      */
                     std::string m_imageEncode;
                     bool m_imageEncodeHasBeenSet;
+
+                    /**
+                     * <p>tool_call 场景工具名称</p>
+                     */
+                    std::string m_toolName;
+                    bool m_toolNameHasBeenSet;
+
+                    /**
+                     * <p>tool_call 场景工具参数</p>
+                     */
+                    std::string m_toolArgs;
+                    bool m_toolArgsHasBeenSet;
 
                 };
             }

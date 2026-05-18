@@ -1440,56 +1440,6 @@ MonitorClient::CreateSSOAccountOutcomeCallable MonitorClient::CreateSSOAccountCa
     return prom->get_future();
 }
 
-MonitorClient::CreateServiceDiscoveryOutcome MonitorClient::CreateServiceDiscovery(const CreateServiceDiscoveryRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateServiceDiscovery");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateServiceDiscoveryResponse rsp = CreateServiceDiscoveryResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateServiceDiscoveryOutcome(rsp);
-        else
-            return CreateServiceDiscoveryOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateServiceDiscoveryOutcome(outcome.GetError());
-    }
-}
-
-void MonitorClient::CreateServiceDiscoveryAsync(const CreateServiceDiscoveryRequest& request, const CreateServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateServiceDiscoveryRequest&;
-    using Resp = CreateServiceDiscoveryResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateServiceDiscovery", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-MonitorClient::CreateServiceDiscoveryOutcomeCallable MonitorClient::CreateServiceDiscoveryCallable(const CreateServiceDiscoveryRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateServiceDiscoveryOutcome>>();
-    CreateServiceDiscoveryAsync(
-    request,
-    [prom](
-        const MonitorClient*,
-        const CreateServiceDiscoveryRequest&,
-        CreateServiceDiscoveryOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 MonitorClient::DeleteAlarmNoticesOutcome MonitorClient::DeleteAlarmNotices(const DeleteAlarmNoticesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlarmNotices");
@@ -5782,56 +5732,6 @@ MonitorClient::DescribeSSOAccountOutcomeCallable MonitorClient::DescribeSSOAccou
         const MonitorClient*,
         const DescribeSSOAccountRequest&,
         DescribeSSOAccountOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-MonitorClient::DescribeServiceDiscoveryOutcome MonitorClient::DescribeServiceDiscovery(const DescribeServiceDiscoveryRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeServiceDiscovery");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeServiceDiscoveryResponse rsp = DescribeServiceDiscoveryResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeServiceDiscoveryOutcome(rsp);
-        else
-            return DescribeServiceDiscoveryOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeServiceDiscoveryOutcome(outcome.GetError());
-    }
-}
-
-void MonitorClient::DescribeServiceDiscoveryAsync(const DescribeServiceDiscoveryRequest& request, const DescribeServiceDiscoveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeServiceDiscoveryRequest&;
-    using Resp = DescribeServiceDiscoveryResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeServiceDiscovery", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-MonitorClient::DescribeServiceDiscoveryOutcomeCallable MonitorClient::DescribeServiceDiscoveryCallable(const DescribeServiceDiscoveryRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeServiceDiscoveryOutcome>>();
-    DescribeServiceDiscoveryAsync(
-    request,
-    [prom](
-        const MonitorClient*,
-        const DescribeServiceDiscoveryRequest&,
-        DescribeServiceDiscoveryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

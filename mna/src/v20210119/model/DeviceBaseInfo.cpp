@@ -33,7 +33,8 @@ DeviceBaseInfo::DeviceBaseInfo() :
     m_groupNameHasBeenSet(false),
     m_flowTruncHasBeenSet(false),
     m_snHasBeenSet(false),
-    m_vendorHasBeenSet(false)
+    m_vendorHasBeenSet(false),
+    m_allowedRegionsHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,19 @@ CoreInternalOutcome DeviceBaseInfo::Deserialize(const rapidjson::Value &value)
         m_vendorHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowedRegions") && !value["AllowedRegions"].IsNull())
+    {
+        if (!value["AllowedRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceBaseInfo.AllowedRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllowedRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_allowedRegions.push_back((*itr).GetString());
+        }
+        m_allowedRegionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +295,19 @@ void DeviceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Vendor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vendor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowedRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowedRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_allowedRegions.begin(); itr != m_allowedRegions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -492,5 +519,21 @@ void DeviceBaseInfo::SetVendor(const string& _vendor)
 bool DeviceBaseInfo::VendorHasBeenSet() const
 {
     return m_vendorHasBeenSet;
+}
+
+vector<string> DeviceBaseInfo::GetAllowedRegions() const
+{
+    return m_allowedRegions;
+}
+
+void DeviceBaseInfo::SetAllowedRegions(const vector<string>& _allowedRegions)
+{
+    m_allowedRegions = _allowedRegions;
+    m_allowedRegionsHasBeenSet = true;
+}
+
+bool DeviceBaseInfo::AllowedRegionsHasBeenSet() const
+{
+    return m_allowedRegionsHasBeenSet;
 }
 

@@ -454,6 +454,48 @@ namespace TencentCloud
                      */
                     bool WebUITypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>setats集群的名字</p>
+                     * @return Name <p>setats集群的名字</p>
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置<p>setats集群的名字</p>
+                     * @param _name <p>setats集群的名字</p>
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>setats集群注释</p>
+                     * @return Remark <p>setats集群注释</p>
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置<p>setats集群注释</p>
+                     * @param _remark <p>setats集群注释</p>
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,6 +611,18 @@ namespace TencentCloud
                      */
                     int64_t m_webUIType;
                     bool m_webUITypeHasBeenSet;
+
+                    /**
+                     * <p>setats集群的名字</p>
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>setats集群注释</p>
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

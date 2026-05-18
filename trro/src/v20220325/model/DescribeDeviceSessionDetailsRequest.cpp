@@ -23,7 +23,9 @@ using namespace TencentCloud::Trro::V20220325::Model;
 using namespace std;
 
 DescribeDeviceSessionDetailsRequest::DescribeDeviceSessionDetailsRequest() :
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeDeviceSessionDetailsRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeDeviceSessionDetailsRequest::SetSessionId(const string& _sessionId)
 bool DescribeDeviceSessionDetailsRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+int64_t DescribeDeviceSessionDetailsRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeDeviceSessionDetailsRequest::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeDeviceSessionDetailsRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t DescribeDeviceSessionDetailsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDeviceSessionDetailsRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDeviceSessionDetailsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

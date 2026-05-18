@@ -35,7 +35,10 @@ ListTasksRequest::ListTasksRequest() :
     m_bundleIdHasBeenSet(false),
     m_createUserUinHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_taskFolderPathListHasBeenSet(false),
+    m_workflowFolderPathListHasBeenSet(false),
+    m_taskNodeTypeListHasBeenSet(false)
 {
 }
 
@@ -155,6 +158,45 @@ string ListTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_createTime.begin(); itr != m_createTime.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskFolderPathListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFolderPathList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskFolderPathList.begin(); itr != m_taskFolderPathList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_workflowFolderPathListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowFolderPathList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_workflowFolderPathList.begin(); itr != m_workflowFolderPathList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskNodeTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNodeTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskNodeTypeList.begin(); itr != m_taskNodeTypeList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -374,6 +416,54 @@ void ListTasksRequest::SetCreateTime(const vector<string>& _createTime)
 bool ListTasksRequest::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<string> ListTasksRequest::GetTaskFolderPathList() const
+{
+    return m_taskFolderPathList;
+}
+
+void ListTasksRequest::SetTaskFolderPathList(const vector<string>& _taskFolderPathList)
+{
+    m_taskFolderPathList = _taskFolderPathList;
+    m_taskFolderPathListHasBeenSet = true;
+}
+
+bool ListTasksRequest::TaskFolderPathListHasBeenSet() const
+{
+    return m_taskFolderPathListHasBeenSet;
+}
+
+vector<string> ListTasksRequest::GetWorkflowFolderPathList() const
+{
+    return m_workflowFolderPathList;
+}
+
+void ListTasksRequest::SetWorkflowFolderPathList(const vector<string>& _workflowFolderPathList)
+{
+    m_workflowFolderPathList = _workflowFolderPathList;
+    m_workflowFolderPathListHasBeenSet = true;
+}
+
+bool ListTasksRequest::WorkflowFolderPathListHasBeenSet() const
+{
+    return m_workflowFolderPathListHasBeenSet;
+}
+
+vector<string> ListTasksRequest::GetTaskNodeTypeList() const
+{
+    return m_taskNodeTypeList;
+}
+
+void ListTasksRequest::SetTaskNodeTypeList(const vector<string>& _taskNodeTypeList)
+{
+    m_taskNodeTypeList = _taskNodeTypeList;
+    m_taskNodeTypeListHasBeenSet = true;
+}
+
+bool ListTasksRequest::TaskNodeTypeListHasBeenSet() const
+{
+    return m_taskNodeTypeListHasBeenSet;
 }
 
 
