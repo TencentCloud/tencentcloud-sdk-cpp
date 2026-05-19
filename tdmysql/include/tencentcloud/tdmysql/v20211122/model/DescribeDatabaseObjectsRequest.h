@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，形如：tdsql3-42f40429.
-                     * @return InstanceId 实例 ID，形如：tdsql3-42f40429.
+                     * 获取<p>实例 ID，形如：tdsql3-42f40429.</p>
+                     * @return InstanceId <p>实例 ID，形如：tdsql3-42f40429.</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，形如：tdsql3-42f40429.
-                     * @param _instanceId 实例 ID，形如：tdsql3-42f40429.
+                     * 设置<p>实例 ID，形如：tdsql3-42f40429.</p>
+                     * @param _instanceId <p>实例 ID，形如：tdsql3-42f40429.</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称，通过 DescribeDatabases 接口获取。
-                     * @return DbName 数据库名称，通过 DescribeDatabases 接口获取。
+                     * 获取<p>数据库名称，通过 DescribeDatabases 接口获取。</p>
+                     * @return DbName <p>数据库名称，通过 DescribeDatabases 接口获取。</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称，通过 DescribeDatabases 接口获取。
-                     * @param _dbName 数据库名称，通过 DescribeDatabases 接口获取。
+                     * 设置<p>数据库名称，通过 DescribeDatabases 接口获取。</p>
+                     * @param _dbName <p>数据库名称，通过 DescribeDatabases 接口获取。</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -84,19 +84,100 @@ namespace TencentCloud
                      */
                     bool DbNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分页索引</p>
+                     * @return Offset <p>分页索引</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>分页索引</p>
+                     * @param _offset <p>分页索引</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每页数量</p>
+                     * @return Limit <p>每页数量</p>
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>每页数量</p>
+                     * @param _limit <p>每页数量</p>
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据表名称匹配表达式</p>
+                     * @return TableRegexp <p>数据表名称匹配表达式</p>
+                     * 
+                     */
+                    std::string GetTableRegexp() const;
+
+                    /**
+                     * 设置<p>数据表名称匹配表达式</p>
+                     * @param _tableRegexp <p>数据表名称匹配表达式</p>
+                     * 
+                     */
+                    void SetTableRegexp(const std::string& _tableRegexp);
+
+                    /**
+                     * 判断参数 TableRegexp 是否已赋值
+                     * @return TableRegexp 是否已赋值
+                     * 
+                     */
+                    bool TableRegexpHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID，形如：tdsql3-42f40429.
+                     * <p>实例 ID，形如：tdsql3-42f40429.</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库名称，通过 DescribeDatabases 接口获取。
+                     * <p>数据库名称，通过 DescribeDatabases 接口获取。</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
+
+                    /**
+                     * <p>分页索引</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>每页数量</p>
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>数据表名称匹配表达式</p>
+                     */
+                    std::string m_tableRegexp;
+                    bool m_tableRegexpHasBeenSet;
 
                 };
             }

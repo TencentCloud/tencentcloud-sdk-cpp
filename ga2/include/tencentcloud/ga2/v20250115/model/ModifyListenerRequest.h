@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取名称，最大长度不能超过60个字节。
-                     * @return Name 名称，最大长度不能超过60个字节。
+                     * 获取<p>名称，最大长度不能超过60个字节。</p>
+                     * @return Name <p>名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称，最大长度不能超过60个字节。
-                     * @param _name 名称，最大长度不能超过60个字节。
+                     * 设置<p>名称，最大长度不能超过60个字节。</p>
+                     * @param _name <p>名称，最大长度不能超过60个字节。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述信息，最大长度不能超过100个字节。
-                     * @return Description 描述信息，最大长度不能超过100个字节。
+                     * 获取<p>描述信息，最大长度不能超过100个字节。</p>
+                     * @return Description <p>描述信息，最大长度不能超过100个字节。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息，最大长度不能超过100个字节。
-                     * @param _description 描述信息，最大长度不能超过100个字节。
+                     * 设置<p>描述信息，最大长度不能超过100个字节。</p>
+                     * @param _description <p>描述信息，最大长度不能超过100个字节。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取连接空闲等待时间。
-                     * @return IdleTimeout 连接空闲等待时间。
+                     * 获取<p>连接空闲等待时间。</p>
+                     * @return IdleTimeout <p>连接空闲等待时间。</p>
                      * 
                      */
                     uint64_t GetIdleTimeout() const;
 
                     /**
-                     * 设置连接空闲等待时间。
-                     * @param _idleTimeout 连接空闲等待时间。
+                     * 设置<p>连接空闲等待时间。</p>
+                     * @param _idleTimeout <p>连接空闲等待时间。</p>
                      * 
                      */
                     void SetIdleTimeout(const uint64_t& _idleTimeout);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IdleTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否开启会话保持。
-                     * @return ClientAffinity 是否开启会话保持。
+                     * 获取<p>是否开启会话保持。</p>
+                     * @return ClientAffinity <p>是否开启会话保持。</p>
                      * 
                      */
                     std::string GetClientAffinity() const;
 
                     /**
-                     * 设置是否开启会话保持。
-                     * @param _clientAffinity 是否开启会话保持。
+                     * 设置<p>是否开启会话保持。</p>
+                     * @param _clientAffinity <p>是否开启会话保持。</p>
                      * 
                      */
                     void SetClientAffinity(const std::string& _clientAffinity);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ClientAffinityHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间。
-                     * @return ClientAffinityTime 会话保持时间。
+                     * 获取<p>会话保持时间。</p>
+                     * @return ClientAffinityTime <p>会话保持时间。</p>
                      * 
                      */
                     uint64_t GetClientAffinityTime() const;
 
                     /**
-                     * 设置会话保持时间。
-                     * @param _clientAffinityTime 会话保持时间。
+                     * 设置<p>会话保持时间。</p>
+                     * @param _clientAffinityTime <p>会话保持时间。</p>
                      * 
                      */
                     void SetClientAffinityTime(const uint64_t& _clientAffinityTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ClientAffinityTimeHasBeenSet() const;
 
                     /**
-                     * 获取请求超时时间。
-                     * @return RequestTimeout 请求超时时间。
+                     * 获取<p>请求超时时间。</p>
+                     * @return RequestTimeout <p>请求超时时间。</p>
                      * 
                      */
                     uint64_t GetRequestTimeout() const;
 
                     /**
-                     * 设置请求超时时间。
-                     * @param _requestTimeout 请求超时时间。
+                     * 设置<p>请求超时时间。</p>
+                     * @param _requestTimeout <p>请求超时时间。</p>
                      * 
                      */
                     void SetRequestTimeout(const uint64_t& _requestTimeout);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool RequestTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否打开七层获取源IP方式。
-                     * @return XForwardedForRealIp 是否打开七层获取源IP方式。
+                     * 获取<p>是否打开七层获取源IP方式。</p>
+                     * @return XForwardedForRealIp <p>是否打开七层获取源IP方式。</p>
                      * 
                      */
                     bool GetXForwardedForRealIp() const;
 
                     /**
-                     * 设置是否打开七层获取源IP方式。
-                     * @param _xForwardedForRealIp 是否打开七层获取源IP方式。
+                     * 设置<p>是否打开七层获取源IP方式。</p>
+                     * @param _xForwardedForRealIp <p>是否打开七层获取源IP方式。</p>
                      * 
                      */
                     void SetXForwardedForRealIp(const bool& _xForwardedForRealIp);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool XForwardedForRealIpHasBeenSet() const;
 
                     /**
-                     * 获取解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。
-                     * @return CertificationType 解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。
+                     * 获取<p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
+                     * @return CertificationType <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
                      * 
                      */
                     std::string GetCertificationType() const;
 
                     /**
-                     * 设置解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。
-                     * @param _certificationType 解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。
+                     * 设置<p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
+                     * @param _certificationType <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
                      * 
                      */
                     void SetCertificationType(const std::string& _certificationType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool CertificationTypeHasBeenSet() const;
 
                     /**
-                     * 获取加密算法套件。
-                     * @return CipherPolicyId 加密算法套件。
+                     * 获取<p>加密算法套件。</p>
+                     * @return CipherPolicyId <p>加密算法套件。</p>
                      * 
                      */
                     std::string GetCipherPolicyId() const;
 
                     /**
-                     * 设置加密算法套件。
-                     * @param _cipherPolicyId 加密算法套件。
+                     * 设置<p>加密算法套件。</p>
+                     * @param _cipherPolicyId <p>加密算法套件。</p>
                      * 
                      */
                     void SetCipherPolicyId(const std::string& _cipherPolicyId);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool CipherPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器证书。
-                     * @return ServerCertificates 服务器证书。
+                     * 获取<p>服务器证书。</p>
+                     * @return ServerCertificates <p>服务器证书。</p>
                      * 
                      */
                     std::vector<std::string> GetServerCertificates() const;
 
                     /**
-                     * 设置服务器证书。
-                     * @param _serverCertificates 服务器证书。
+                     * 设置<p>服务器证书。</p>
+                     * @param _serverCertificates <p>服务器证书。</p>
                      * 
                      */
                     void SetServerCertificates(const std::vector<std::string>& _serverCertificates);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool ServerCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书。
-                     * @return ClientCaCertificates 客户端证书。
+                     * 获取<p>客户端证书。</p>
+                     * @return ClientCaCertificates <p>客户端证书。</p>
                      * 
                      */
                     std::vector<std::string> GetClientCaCertificates() const;
 
                     /**
-                     * 设置客户端证书。
-                     * @param _clientCaCertificates 客户端证书。
+                     * 设置<p>客户端证书。</p>
+                     * @param _clientCaCertificates <p>客户端证书。</p>
                      * 
                      */
                     void SetClientCaCertificates(const std::vector<std::string>& _clientCaCertificates);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ClientCaCertificatesHasBeenSet() const;
 
                     /**
-                     * 获取四层获取源IP方式。
-                     * @return GetRealIpType 四层获取源IP方式。
+                     * 获取<p>四层获取源IP方式。</p>
+                     * @return GetRealIpType <p>四层获取源IP方式。</p>
                      * 
                      */
                     std::string GetGetRealIpType() const;
 
                     /**
-                     * 设置四层获取源IP方式。
-                     * @param _getRealIpType 四层获取源IP方式。
+                     * 设置<p>四层获取源IP方式。</p>
+                     * @param _getRealIpType <p>四层获取源IP方式。</p>
                      * 
                      */
                     void SetGetRealIpType(const std::string& _getRealIpType);
@@ -339,85 +339,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 名称，最大长度不能超过60个字节。
+                     * <p>名称，最大长度不能超过60个字节。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述信息，最大长度不能超过100个字节。
+                     * <p>描述信息，最大长度不能超过100个字节。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 连接空闲等待时间。
+                     * <p>连接空闲等待时间。</p>
                      */
                     uint64_t m_idleTimeout;
                     bool m_idleTimeoutHasBeenSet;
 
                     /**
-                     * 是否开启会话保持。
+                     * <p>是否开启会话保持。</p>
                      */
                     std::string m_clientAffinity;
                     bool m_clientAffinityHasBeenSet;
 
                     /**
-                     * 会话保持时间。
+                     * <p>会话保持时间。</p>
                      */
                     uint64_t m_clientAffinityTime;
                     bool m_clientAffinityTimeHasBeenSet;
 
                     /**
-                     * 请求超时时间。
+                     * <p>请求超时时间。</p>
                      */
                     uint64_t m_requestTimeout;
                     bool m_requestTimeoutHasBeenSet;
 
                     /**
-                     * 是否打开七层获取源IP方式。
+                     * <p>是否打开七层获取源IP方式。</p>
                      */
                     bool m_xForwardedForRealIp;
                     bool m_xForwardedForRealIpHasBeenSet;
 
                     /**
-                     * 解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。
+                     * <p>解析方式。UNIDIRECTIONAL：双向。MUTUAL：单向。</p>
                      */
                     std::string m_certificationType;
                     bool m_certificationTypeHasBeenSet;
 
                     /**
-                     * 加密算法套件。
+                     * <p>加密算法套件。</p>
                      */
                     std::string m_cipherPolicyId;
                     bool m_cipherPolicyIdHasBeenSet;
 
                     /**
-                     * 服务器证书。
+                     * <p>服务器证书。</p>
                      */
                     std::vector<std::string> m_serverCertificates;
                     bool m_serverCertificatesHasBeenSet;
 
                     /**
-                     * 客户端证书。
+                     * <p>客户端证书。</p>
                      */
                     std::vector<std::string> m_clientCaCertificates;
                     bool m_clientCaCertificatesHasBeenSet;
 
                     /**
-                     * 四层获取源IP方式。
+                     * <p>四层获取源IP方式。</p>
                      */
                     std::string m_getRealIpType;
                     bool m_getRealIpTypeHasBeenSet;

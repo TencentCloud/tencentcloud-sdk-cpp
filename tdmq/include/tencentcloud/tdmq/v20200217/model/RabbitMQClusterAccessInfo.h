@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群公网接入地址
+                     * 获取<p>集群公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicAccessEndpoint 集群公网接入地址
+                     * @return PublicAccessEndpoint <p>集群公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccessEndpoint() const;
 
                     /**
-                     * 设置集群公网接入地址
+                     * 设置<p>集群公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicAccessEndpoint 集群公网接入地址
+                     * @param _publicAccessEndpoint <p>集群公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,15 +74,15 @@ namespace TencentCloud
                     bool PublicAccessEndpointHasBeenSet() const;
 
                     /**
-                     * 获取集群控制台访问地址
-                     * @return WebConsoleEndpoint 集群控制台访问地址
+                     * 获取<p>集群 Web 控制台公网访问地址</p>
+                     * @return WebConsoleEndpoint <p>集群 Web 控制台公网访问地址</p>
                      * 
                      */
                     std::string GetWebConsoleEndpoint() const;
 
                     /**
-                     * 设置集群控制台访问地址
-                     * @param _webConsoleEndpoint 集群控制台访问地址
+                     * 设置<p>集群 Web 控制台公网访问地址</p>
+                     * @param _webConsoleEndpoint <p>集群 Web 控制台公网访问地址</p>
                      * 
                      */
                     void SetWebConsoleEndpoint(const std::string& _webConsoleEndpoint);
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool WebConsoleEndpointHasBeenSet() const;
 
                     /**
-                     * 获取集群控制台登录用户名
-                     * @return WebConsoleUsername 集群控制台登录用户名
+                     * 获取<p>集群 Web 控制台登录用户名</p>
+                     * @return WebConsoleUsername <p>集群 Web 控制台登录用户名</p>
                      * 
                      */
                     std::string GetWebConsoleUsername() const;
 
                     /**
-                     * 设置集群控制台登录用户名
-                     * @param _webConsoleUsername 集群控制台登录用户名
+                     * 设置<p>集群 Web 控制台登录用户名</p>
+                     * @param _webConsoleUsername <p>集群 Web 控制台登录用户名</p>
                      * 
                      */
                     void SetWebConsoleUsername(const std::string& _webConsoleUsername);
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool WebConsoleUsernameHasBeenSet() const;
 
                     /**
-                     * 获取集群控制台登录密码
-                     * @return WebConsolePassword 集群控制台登录密码
+                     * 获取<p>集群 Web 控制台登录密码</p>
+                     * @return WebConsolePassword <p>集群 Web 控制台登录密码</p>
                      * 
                      */
                     std::string GetWebConsolePassword() const;
 
                     /**
-                     * 设置集群控制台登录密码
-                     * @param _webConsolePassword 集群控制台登录密码
+                     * 设置<p>集群 Web 控制台登录密码</p>
+                     * @param _webConsolePassword <p>集群 Web 控制台登录密码</p>
                      * 
                      */
                     void SetWebConsolePassword(const std::string& _webConsolePassword);
@@ -137,15 +137,15 @@ namespace TencentCloud
                     bool WebConsolePasswordHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
-                     * @return PublicAccessEndpointStatus 已废弃
+                     * 获取<p>已废弃</p>
+                     * @return PublicAccessEndpointStatus <p>已废弃</p>
                      * 
                      */
                     bool GetPublicAccessEndpointStatus() const;
 
                     /**
-                     * 设置已废弃
-                     * @param _publicAccessEndpointStatus 已废弃
+                     * 设置<p>已废弃</p>
+                     * @param _publicAccessEndpointStatus <p>已废弃</p>
                      * 
                      */
                     void SetPublicAccessEndpointStatus(const bool& _publicAccessEndpointStatus);
@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool PublicAccessEndpointStatusHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
-                     * @return PublicControlConsoleSwitchStatus 已废弃
+                     * 获取<p>已废弃</p>
+                     * @return PublicControlConsoleSwitchStatus <p>已废弃</p>
                      * 
                      */
                     bool GetPublicControlConsoleSwitchStatus() const;
 
                     /**
-                     * 设置已废弃
-                     * @param _publicControlConsoleSwitchStatus 已废弃
+                     * 设置<p>已废弃</p>
+                     * @param _publicControlConsoleSwitchStatus <p>已废弃</p>
                      * 
                      */
                     void SetPublicControlConsoleSwitchStatus(const bool& _publicControlConsoleSwitchStatus);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool PublicControlConsoleSwitchStatusHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
-                     * @return VpcControlConsoleSwitchStatus 已废弃
+                     * 获取<p>已废弃</p>
+                     * @return VpcControlConsoleSwitchStatus <p>已废弃</p>
                      * 
                      */
                     bool GetVpcControlConsoleSwitchStatus() const;
 
                     /**
-                     * 设置已废弃
-                     * @param _vpcControlConsoleSwitchStatus 已废弃
+                     * 设置<p>已废弃</p>
+                     * @param _vpcControlConsoleSwitchStatus <p>已废弃</p>
                      * 
                      */
                     void SetVpcControlConsoleSwitchStatus(const bool& _vpcControlConsoleSwitchStatus);
@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool VpcControlConsoleSwitchStatusHasBeenSet() const;
 
                     /**
-                     * 获取Vpc管控台访问地址，示例值，http://1.1.1.1:15672
-                     * @return VpcWebConsoleEndpoint Vpc管控台访问地址，示例值，http://1.1.1.1:15672
+                     * 获取<p>Web 管控台 VPC 访问地址</p>
+                     * @return VpcWebConsoleEndpoint <p>Web 管控台 VPC 访问地址</p>
                      * 
                      */
                     std::string GetVpcWebConsoleEndpoint() const;
 
                     /**
-                     * 设置Vpc管控台访问地址，示例值，http://1.1.1.1:15672
-                     * @param _vpcWebConsoleEndpoint Vpc管控台访问地址，示例值，http://1.1.1.1:15672
+                     * 设置<p>Web 管控台 VPC 访问地址</p>
+                     * @param _vpcWebConsoleEndpoint <p>Web 管控台 VPC 访问地址</p>
                      * 
                      */
                     void SetVpcWebConsoleEndpoint(const std::string& _vpcWebConsoleEndpoint);
@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool VpcWebConsoleEndpointHasBeenSet() const;
 
                     /**
-                     * 获取公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-                     * @return PublicWebConsoleSwitchStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * 获取<p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @return PublicWebConsoleSwitchStatus <p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     std::string GetPublicWebConsoleSwitchStatus() const;
 
                     /**
-                     * 设置公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-                     * @param _publicWebConsoleSwitchStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * 设置<p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @param _publicWebConsoleSwitchStatus <p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     void SetPublicWebConsoleSwitchStatus(const std::string& _publicWebConsoleSwitchStatus);
@@ -242,19 +242,15 @@ namespace TencentCloud
                     bool PublicWebConsoleSwitchStatusHasBeenSet() const;
 
                     /**
-                     * 获取Vpc管控台开关状态，示例值，
-OFF/ON/CREATING/DELETING
-                     * @return VpcWebConsoleSwitchStatus Vpc管控台开关状态，示例值，
-OFF/ON/CREATING/DELETING
+                     * 获取<p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @return VpcWebConsoleSwitchStatus <p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     std::string GetVpcWebConsoleSwitchStatus() const;
 
                     /**
-                     * 设置Vpc管控台开关状态，示例值，
-OFF/ON/CREATING/DELETING
-                     * @param _vpcWebConsoleSwitchStatus Vpc管控台开关状态，示例值，
-OFF/ON/CREATING/DELETING
+                     * 设置<p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @param _vpcWebConsoleSwitchStatus <p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     void SetVpcWebConsoleSwitchStatus(const std::string& _vpcWebConsoleSwitchStatus);
@@ -267,15 +263,15 @@ OFF/ON/CREATING/DELETING
                     bool VpcWebConsoleSwitchStatusHasBeenSet() const;
 
                     /**
-                     * 获取公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-                     * @return PublicDataStreamStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * 获取<p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @return PublicDataStreamStatus <p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     std::string GetPublicDataStreamStatus() const;
 
                     /**
-                     * 设置公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
-                     * @param _publicDataStreamStatus 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * 设置<p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
+                     * @param _publicDataStreamStatus <p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      * 
                      */
                     void SetPublicDataStreamStatus(const std::string& _publicDataStreamStatus);
@@ -288,15 +284,15 @@ OFF/ON/CREATING/DELETING
                     bool PublicDataStreamStatusHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus信息
-                     * @return PrometheusEndpointInfo Prometheus信息
+                     * 获取<p>Prometheus信息</p>
+                     * @return PrometheusEndpointInfo <p>Prometheus信息</p>
                      * 
                      */
                     PrometheusEndpointInfo GetPrometheusEndpointInfo() const;
 
                     /**
-                     * 设置Prometheus信息
-                     * @param _prometheusEndpointInfo Prometheus信息
+                     * 设置<p>Prometheus信息</p>
+                     * @param _prometheusEndpointInfo <p>Prometheus信息</p>
                      * 
                      */
                     void SetPrometheusEndpointInfo(const PrometheusEndpointInfo& _prometheusEndpointInfo);
@@ -309,15 +305,15 @@ OFF/ON/CREATING/DELETING
                     bool PrometheusEndpointInfoHasBeenSet() const;
 
                     /**
-                     * 获取公网域名接入点
-                     * @return WebConsoleDomainEndpoint 公网域名接入点
+                     * 获取<p>公网域名接入点</p>
+                     * @return WebConsoleDomainEndpoint <p>公网域名接入点</p>
                      * 
                      */
                     std::string GetWebConsoleDomainEndpoint() const;
 
                     /**
-                     * 设置公网域名接入点
-                     * @param _webConsoleDomainEndpoint 公网域名接入点
+                     * 设置<p>公网域名接入点</p>
+                     * @param _webConsoleDomainEndpoint <p>公网域名接入点</p>
                      * 
                      */
                     void SetWebConsoleDomainEndpoint(const std::string& _webConsoleDomainEndpoint);
@@ -330,15 +326,15 @@ OFF/ON/CREATING/DELETING
                     bool WebConsoleDomainEndpointHasBeenSet() const;
 
                     /**
-                     * 获取控制面所使用的VPC信息
-                     * @return ControlPlaneEndpointInfo 控制面所使用的VPC信息
+                     * 获取<p>控制面所使用的VPC信息</p>
+                     * @return ControlPlaneEndpointInfo <p>控制面所使用的VPC信息</p>
                      * 
                      */
                     VpcEndpointInfo GetControlPlaneEndpointInfo() const;
 
                     /**
-                     * 设置控制面所使用的VPC信息
-                     * @param _controlPlaneEndpointInfo 控制面所使用的VPC信息
+                     * 设置<p>控制面所使用的VPC信息</p>
+                     * @param _controlPlaneEndpointInfo <p>控制面所使用的VPC信息</p>
                      * 
                      */
                     void SetControlPlaneEndpointInfo(const VpcEndpointInfo& _controlPlaneEndpointInfo);
@@ -351,15 +347,15 @@ OFF/ON/CREATING/DELETING
                     bool ControlPlaneEndpointInfoHasBeenSet() const;
 
                     /**
-                     * 获取TLS加密的数据流公网接入点
-                     * @return PublicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 获取<p>TLS加密的数据流公网接入点</p>
+                     * @return PublicTlsAccessEndpoint <p>TLS加密的数据流公网接入点</p>
                      * 
                      */
                     std::string GetPublicTlsAccessEndpoint() const;
 
                     /**
-                     * 设置TLS加密的数据流公网接入点
-                     * @param _publicTlsAccessEndpoint TLS加密的数据流公网接入点
+                     * 设置<p>TLS加密的数据流公网接入点</p>
+                     * @param _publicTlsAccessEndpoint <p>TLS加密的数据流公网接入点</p>
                      * 
                      */
                     void SetPublicTlsAccessEndpoint(const std::string& _publicTlsAccessEndpoint);
@@ -372,15 +368,15 @@ OFF/ON/CREATING/DELETING
                     bool PublicTlsAccessEndpointHasBeenSet() const;
 
                     /**
-                     * 获取公网IP是否复用
-                     * @return PublicIpReused 公网IP是否复用
+                     * 获取<p>公网IP是否复用</p>
+                     * @return PublicIpReused <p>公网IP是否复用</p>
                      * 
                      */
                     bool GetPublicIpReused() const;
 
                     /**
-                     * 设置公网IP是否复用
-                     * @param _publicIpReused 公网IP是否复用
+                     * 设置<p>公网IP是否复用</p>
+                     * @param _publicIpReused <p>公网IP是否复用</p>
                      * 
                      */
                     void SetPublicIpReused(const bool& _publicIpReused);
@@ -393,15 +389,15 @@ OFF/ON/CREATING/DELETING
                     bool PublicIpReusedHasBeenSet() const;
 
                     /**
-                     * 获取公网控制台接入点操作的错误信息
-                     * @return PublicWebConsoleErrorMessage 公网控制台接入点操作的错误信息
+                     * 获取<p>Web 控制台公网访问操作的错误信息</p>
+                     * @return PublicWebConsoleErrorMessage <p>Web 控制台公网访问操作的错误信息</p>
                      * 
                      */
                     std::string GetPublicWebConsoleErrorMessage() const;
 
                     /**
-                     * 设置公网控制台接入点操作的错误信息
-                     * @param _publicWebConsoleErrorMessage 公网控制台接入点操作的错误信息
+                     * 设置<p>Web 控制台公网访问操作的错误信息</p>
+                     * @param _publicWebConsoleErrorMessage <p>Web 控制台公网访问操作的错误信息</p>
                      * 
                      */
                     void SetPublicWebConsoleErrorMessage(const std::string& _publicWebConsoleErrorMessage);
@@ -414,15 +410,15 @@ OFF/ON/CREATING/DELETING
                     bool PublicWebConsoleErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取内网控制台接入点操作的错误信息
-                     * @return VpcWebConsoleErrorMessage 内网控制台接入点操作的错误信息
+                     * 获取<p>Web 控制台 VPC 访问操作的错误信息</p>
+                     * @return VpcWebConsoleErrorMessage <p>Web 控制台 VPC 访问操作的错误信息</p>
                      * 
                      */
                     std::string GetVpcWebConsoleErrorMessage() const;
 
                     /**
-                     * 设置内网控制台接入点操作的错误信息
-                     * @param _vpcWebConsoleErrorMessage 内网控制台接入点操作的错误信息
+                     * 设置<p>Web 控制台 VPC 访问操作的错误信息</p>
+                     * @param _vpcWebConsoleErrorMessage <p>Web 控制台 VPC 访问操作的错误信息</p>
                      * 
                      */
                     void SetVpcWebConsoleErrorMessage(const std::string& _vpcWebConsoleErrorMessage);
@@ -435,15 +431,15 @@ OFF/ON/CREATING/DELETING
                     bool VpcWebConsoleErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取公网接入点操作的错误信息
-                     * @return PublicDataStreamErrorMessage 公网接入点操作的错误信息
+                     * 获取<p>公网接入点操作的错误信息</p>
+                     * @return PublicDataStreamErrorMessage <p>公网接入点操作的错误信息</p>
                      * 
                      */
                     std::string GetPublicDataStreamErrorMessage() const;
 
                     /**
-                     * 设置公网接入点操作的错误信息
-                     * @param _publicDataStreamErrorMessage 公网接入点操作的错误信息
+                     * 设置<p>公网接入点操作的错误信息</p>
+                     * @param _publicDataStreamErrorMessage <p>公网接入点操作的错误信息</p>
                      * 
                      */
                     void SetPublicDataStreamErrorMessage(const std::string& _publicDataStreamErrorMessage);
@@ -455,123 +451,149 @@ OFF/ON/CREATING/DELETING
                      */
                     bool PublicDataStreamErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>公网Stream接入点</p>
+                     * @return PublicStreamAccessEndpoint <p>公网Stream接入点</p>
+                     * 
+                     */
+                    std::string GetPublicStreamAccessEndpoint() const;
+
+                    /**
+                     * 设置<p>公网Stream接入点</p>
+                     * @param _publicStreamAccessEndpoint <p>公网Stream接入点</p>
+                     * 
+                     */
+                    void SetPublicStreamAccessEndpoint(const std::string& _publicStreamAccessEndpoint);
+
+                    /**
+                     * 判断参数 PublicStreamAccessEndpoint 是否已赋值
+                     * @return PublicStreamAccessEndpoint 是否已赋值
+                     * 
+                     */
+                    bool PublicStreamAccessEndpointHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群公网接入地址
+                     * <p>集群公网接入地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccessEndpoint;
                     bool m_publicAccessEndpointHasBeenSet;
 
                     /**
-                     * 集群控制台访问地址
+                     * <p>集群 Web 控制台公网访问地址</p>
                      */
                     std::string m_webConsoleEndpoint;
                     bool m_webConsoleEndpointHasBeenSet;
 
                     /**
-                     * 集群控制台登录用户名
+                     * <p>集群 Web 控制台登录用户名</p>
                      */
                     std::string m_webConsoleUsername;
                     bool m_webConsoleUsernameHasBeenSet;
 
                     /**
-                     * 集群控制台登录密码
+                     * <p>集群 Web 控制台登录密码</p>
                      */
                     std::string m_webConsolePassword;
                     bool m_webConsolePasswordHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * <p>已废弃</p>
                      */
                     bool m_publicAccessEndpointStatus;
                     bool m_publicAccessEndpointStatusHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * <p>已废弃</p>
                      */
                     bool m_publicControlConsoleSwitchStatus;
                     bool m_publicControlConsoleSwitchStatusHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * <p>已废弃</p>
                      */
                     bool m_vpcControlConsoleSwitchStatus;
                     bool m_vpcControlConsoleSwitchStatusHasBeenSet;
 
                     /**
-                     * Vpc管控台访问地址，示例值，http://1.1.1.1:15672
+                     * <p>Web 管控台 VPC 访问地址</p>
                      */
                     std::string m_vpcWebConsoleEndpoint;
                     bool m_vpcWebConsoleEndpointHasBeenSet;
 
                     /**
-                     * 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * <p>Web 控制台公网访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      */
                     std::string m_publicWebConsoleSwitchStatus;
                     bool m_publicWebConsoleSwitchStatusHasBeenSet;
 
                     /**
-                     * Vpc管控台开关状态，示例值，
-OFF/ON/CREATING/DELETING
+                     * <p>Web 控制台 VPC 访问开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      */
                     std::string m_vpcWebConsoleSwitchStatus;
                     bool m_vpcWebConsoleSwitchStatusHasBeenSet;
 
                     /**
-                     * 公网管控台开关状态，示例值，OFF/ON/CREATING/DELETING
+                     * <p>公网接入点开关状态</p><p>枚举值：</p><ul><li>OFF： 已关闭</li><li>ON： 已开启</li><li>CREATING： 创建中</li><li>DELETING： 删除中</li><li>CREATE_FAILURE： 创建失败</li><li>DELETE_FAILURE： 删除失败</li></ul>
                      */
                     std::string m_publicDataStreamStatus;
                     bool m_publicDataStreamStatusHasBeenSet;
 
                     /**
-                     * Prometheus信息
+                     * <p>Prometheus信息</p>
                      */
                     PrometheusEndpointInfo m_prometheusEndpointInfo;
                     bool m_prometheusEndpointInfoHasBeenSet;
 
                     /**
-                     * 公网域名接入点
+                     * <p>公网域名接入点</p>
                      */
                     std::string m_webConsoleDomainEndpoint;
                     bool m_webConsoleDomainEndpointHasBeenSet;
 
                     /**
-                     * 控制面所使用的VPC信息
+                     * <p>控制面所使用的VPC信息</p>
                      */
                     VpcEndpointInfo m_controlPlaneEndpointInfo;
                     bool m_controlPlaneEndpointInfoHasBeenSet;
 
                     /**
-                     * TLS加密的数据流公网接入点
+                     * <p>TLS加密的数据流公网接入点</p>
                      */
                     std::string m_publicTlsAccessEndpoint;
                     bool m_publicTlsAccessEndpointHasBeenSet;
 
                     /**
-                     * 公网IP是否复用
+                     * <p>公网IP是否复用</p>
                      */
                     bool m_publicIpReused;
                     bool m_publicIpReusedHasBeenSet;
 
                     /**
-                     * 公网控制台接入点操作的错误信息
+                     * <p>Web 控制台公网访问操作的错误信息</p>
                      */
                     std::string m_publicWebConsoleErrorMessage;
                     bool m_publicWebConsoleErrorMessageHasBeenSet;
 
                     /**
-                     * 内网控制台接入点操作的错误信息
+                     * <p>Web 控制台 VPC 访问操作的错误信息</p>
                      */
                     std::string m_vpcWebConsoleErrorMessage;
                     bool m_vpcWebConsoleErrorMessageHasBeenSet;
 
                     /**
-                     * 公网接入点操作的错误信息
+                     * <p>公网接入点操作的错误信息</p>
                      */
                     std::string m_publicDataStreamErrorMessage;
                     bool m_publicDataStreamErrorMessageHasBeenSet;
+
+                    /**
+                     * <p>公网Stream接入点</p>
+                     */
+                    std::string m_publicStreamAccessEndpoint;
+                    bool m_publicStreamAccessEndpointHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CompliancePackIdHasBeenSet() const;
 
                     /**
-                     * 获取合规包名称
-                     * @return CompliancePackName 合规包名称
+                     * 获取<p>合规包名称</p>
+                     * @return CompliancePackName <p>合规包名称</p>
                      * 
                      */
                     std::string GetCompliancePackName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool CompliancePackNameHasBeenSet() const;
 
                     /**
-                     * 获取合规包描述
-                     * @return Description 合规包描述
+                     * 获取<p>合规包描述</p>
+                     * @return Description <p>合规包描述</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return RiskLevel 风险等级
+                     * 获取<p>风险等级</p>
+                     * @return RiskLevel <p>风险等级</p>
                      * 
                      */
                     uint64_t GetRiskLevel() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取合规包规则列表
-                     * @return ConfigRules 合规包规则列表
+                     * 获取<p>合规包规则列表</p>
+                     * @return ConfigRules <p>合规包规则列表</p>
                      * 
                      */
                     std::vector<CompliancePackRuleForManage> GetConfigRules() const;
@@ -117,31 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
 
                     /**
-                     * 合规包名称
+                     * <p>合规包名称</p>
                      */
                     std::string m_compliancePackName;
                     bool m_compliancePackNameHasBeenSet;
 
                     /**
-                     * 合规包描述
+                     * <p>合规包描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * <p>风险等级</p>
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 合规包规则列表
+                     * <p>合规包规则列表</p>
                      */
                     std::vector<CompliancePackRuleForManage> m_configRules;
                     bool m_configRulesHasBeenSet;

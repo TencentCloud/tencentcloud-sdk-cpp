@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
-                     * @return ClusterId 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
+                     * 获取<p>集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。</p>
+                     * @return ClusterId <p>集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
-                     * @param _clusterId 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
+                     * 设置<p>集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。</p>
+                     * @param _clusterId <p>集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为 20，最大值为 100
-                     * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 获取<p>返回数量，默认为 20，最大值为 100</p>
+                     * @return Limit <p>返回数量，默认为 20，最大值为 100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 20，最大值为 100
-                     * @param _limit 返回数量，默认为 20，最大值为 100
+                     * 设置<p>返回数量，默认为 20，最大值为 100</p>
+                     * @param _limit <p>返回数量，默认为 20，最大值为 100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取记录偏移量，默认值为0
-                     * @return Offset 记录偏移量，默认值为0
+                     * 获取<p>记录偏移量，默认值为0</p>
+                     * @return Offset <p>记录偏移量，默认值为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置记录偏移量，默认值为0
-                     * @param _offset 记录偏移量，默认值为0
+                     * 设置<p>记录偏移量，默认值为0</p>
+                     * @param _offset <p>记录偏移量，默认值为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,23 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，取值范围：
-<li> CREATETIME：创建时间</li>
-<li> PERIODENDTIME：过期时间</li>
-                     * @return OrderBy 排序字段，取值范围：
-<li> CREATETIME：创建时间</li>
-<li> PERIODENDTIME：过期时间</li>
+                     * 获取<p>排序字段，取值范围：</p><li> CREATETIME：创建时间</li><li> PERIODENDTIME：过期时间</li>
+                     * @return OrderBy <p>排序字段，取值范围：</p><li> CREATETIME：创建时间</li><li> PERIODENDTIME：过期时间</li>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，取值范围：
-<li> CREATETIME：创建时间</li>
-<li> PERIODENDTIME：过期时间</li>
-                     * @param _orderBy 排序字段，取值范围：
-<li> CREATETIME：创建时间</li>
-<li> PERIODENDTIME：过期时间</li>
+                     * 设置<p>排序字段，取值范围：</p><li> CREATETIME：创建时间</li><li> PERIODENDTIME：过期时间</li>
+                     * @param _orderBy <p>排序字段，取值范围：</p><li> CREATETIME：创建时间</li><li> PERIODENDTIME：过期时间</li>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -136,23 +128,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序类型，取值范围：
-<li> ASC：升序排序 </li>
-<li> DESC：降序排序 </li>
-                     * @return OrderByType 排序类型，取值范围：
-<li> ASC：升序排序 </li>
-<li> DESC：降序排序 </li>
+                     * 获取<p>排序类型，取值范围：</p><li> ASC：升序排序 </li><li> DESC：降序排序 </li>
+                     * @return OrderByType <p>排序类型，取值范围：</p><li> ASC：升序排序 </li><li> DESC：降序排序 </li>
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序类型，取值范围：
-<li> ASC：升序排序 </li>
-<li> DESC：降序排序 </li>
-                     * @param _orderByType 排序类型，取值范围：
-<li> ASC：升序排序 </li>
-<li> DESC：降序排序 </li>
+                     * 设置<p>排序类型，取值范围：</p><li> ASC：升序排序 </li><li> DESC：降序排序 </li>
+                     * @param _orderByType <p>排序类型，取值范围：</p><li> ASC：升序排序 </li><li> DESC：降序排序 </li>
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -165,19 +149,15 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
-说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
-                     * @return Filters 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
-说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
+                     * 获取<p>搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。<br>说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。</p>
+                     * @return Filters <p>搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。<br>说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。</p>
                      * 
                      */
                     std::vector<QueryParamFilter> GetFilters() const;
 
                     /**
-                     * 设置搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
-说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
-                     * @param _filters 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
-说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
+                     * 设置<p>搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。<br>说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。</p>
+                     * @param _filters <p>搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。<br>说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。</p>
                      * 
                      */
                     void SetFilters(const std::vector<QueryParamFilter>& _filters);
@@ -192,42 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。
+                     * <p>集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认为 20，最大值为 100
+                     * <p>返回数量，默认为 20，最大值为 100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 记录偏移量，默认值为0
+                     * <p>记录偏移量，默认值为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段，取值范围：
-<li> CREATETIME：创建时间</li>
-<li> PERIODENDTIME：过期时间</li>
+                     * <p>排序字段，取值范围：</p><li> CREATETIME：创建时间</li><li> PERIODENDTIME：过期时间</li>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序类型，取值范围：
-<li> ASC：升序排序 </li>
-<li> DESC：降序排序 </li>
+                     * <p>排序类型，取值范围：</p><li> ASC：升序排序 </li><li> DESC：降序排序 </li>
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
-说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
+                     * <p>搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。<br>说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。</p>
                      */
                     std::vector<QueryParamFilter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -48,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取透传入参。
-                     * @return InstanceId 透传入参。
+                     * 获取<p>透传入参。</p>
+                     * @return InstanceId <p>透传入参。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -62,8 +62,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称。
-                     * @return DbName 数据库名称。
+                     * 获取<p>数据库名称。</p>
+                     * @return DbName <p>数据库名称。</p>
                      * 
                      */
                     std::string GetDbName() const;
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取表列表。
+                     * 获取<p>表列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tables 表列表。
+                     * @return Tables <p>表列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -92,9 +92,9 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取视图列表。
+                     * 获取<p>视图列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Views 视图列表。
+                     * @return Views <p>视图列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -108,9 +108,9 @@ namespace TencentCloud
                     bool ViewsHasBeenSet() const;
 
                     /**
-                     * 获取存储过程列表。
+                     * 获取<p>存储过程列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Procs 存储过程列表。
+                     * @return Procs <p>存储过程列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,9 +124,9 @@ namespace TencentCloud
                     bool ProcsHasBeenSet() const;
 
                     /**
-                     * 获取函数列表。
+                     * 获取<p>函数列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Funcs 函数列表。
+                     * @return Funcs <p>函数列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -142,40 +142,40 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 透传入参。
+                     * <p>透传入参。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库名称。
+                     * <p>数据库名称。</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 表列表。
+                     * <p>表列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabaseTable> m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * 视图列表。
+                     * <p>视图列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabaseView> m_views;
                     bool m_viewsHasBeenSet;
 
                     /**
-                     * 存储过程列表。
+                     * <p>存储过程列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabaseProcedure> m_procs;
                     bool m_procsHasBeenSet;
 
                     /**
-                     * 函数列表。
+                     * <p>函数列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabaseFunction> m_funcs;

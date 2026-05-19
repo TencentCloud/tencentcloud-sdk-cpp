@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则标识
+                     * 获取<p>规则标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Identifier 规则标识
+                     * @return Identifier <p>规则标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
-                     * 设置规则标识
+                     * 设置<p>规则标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _identifier 规则标识
+                     * @param _identifier <p>规则标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool IdentifierHasBeenSet() const;
 
                     /**
-                     * 获取规则名
+                     * 获取<p>规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleName 规则名
+                     * @return RuleName <p>规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名
+                     * 设置<p>规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleName 规则名
+                     * @param _ruleName <p>规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则参数
+                     * 获取<p>规则参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputParameter 规则参数
+                     * @return InputParameter <p>规则参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InputParameterForManage> GetInputParameter() const;
 
                     /**
-                     * 设置规则参数
+                     * 设置<p>规则参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputParameter 规则参数
+                     * @param _inputParameter <p>规则参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool InputParameterHasBeenSet() const;
 
                     /**
-                     * 获取规则触发条件
+                     * 获取<p>规则触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceCondition 规则触发条件
+                     * @return SourceCondition <p>规则触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SourceConditionForManage> GetSourceCondition() const;
 
                     /**
-                     * 设置规则触发条件
+                     * 设置<p>规则触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceCondition 规则触发条件
+                     * @param _sourceCondition <p>规则触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool SourceConditionHasBeenSet() const;
 
                     /**
-                     * 获取支持的资源类型
+                     * 获取<p>支持的资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 支持的资源类型
+                     * @return ResourceType <p>支持的资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceType() const;
 
                     /**
-                     * 设置支持的资源类型
+                     * 设置<p>支持的资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceType 支持的资源类型
+                     * @param _resourceType <p>支持的资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 标签
+                     * @return Label <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabel() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _label 标签
+                     * @param _label <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取风险等级，1，2，3
+                     * 获取<p>风险等级，1，2，3</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskLevel 风险等级，1，2，3
+                     * @return RiskLevel <p>风险等级，1，2，3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级，1，2，3
+                     * 设置<p>风险等级，1，2，3</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskLevel 风险等级，1，2，3
+                     * @param _riskLevel <p>风险等级，1，2，3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取对应的函数
+                     * 获取<p>对应的函数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceFunction 对应的函数
+                     * @return ServiceFunction <p>对应的函数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceFunction() const;
 
                     /**
-                     * 设置对应的函数
+                     * 设置<p>对应的函数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceFunction 对应的函数
+                     * @param _serviceFunction <p>对应的函数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool ServiceFunctionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发类型
+                     * 获取<p>触发类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerType 触发类型
+                     * @return TriggerType <p>触发类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTriggerType() const;
 
                     /**
-                     * 设置触发类型
+                     * 设置<p>触发类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerType 触发类型
+                     * @param _triggerType <p>触发类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +324,18 @@ namespace TencentCloud
                     bool TriggerTypeHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,18 +349,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取使用次数
+                     * 获取<p>使用次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReferenceCount 使用次数
+                     * @return ReferenceCount <p>使用次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReferenceCount() const;
 
                     /**
-                     * 设置使用次数
+                     * 设置<p>使用次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _referenceCount 使用次数
+                     * @param _referenceCount <p>使用次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,15 +374,15 @@ namespace TencentCloud
                     bool ReferenceCountHasBeenSet() const;
 
                     /**
-                     * 获取规则类型
-                     * @return IdentifierType 规则类型
+                     * 获取<p>规则类型</p>
+                     * @return IdentifierType <p>规则类型</p>
                      * 
                      */
                     std::string GetIdentifierType() const;
 
                     /**
-                     * 设置规则类型
-                     * @param _identifierType 规则类型
+                     * 设置<p>规则类型</p>
+                     * @param _identifierType <p>规则类型</p>
                      * 
                      */
                     void SetIdentifierType(const std::string& _identifierType);
@@ -397,98 +397,98 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则标识
+                     * <p>规则标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;
 
                     /**
-                     * 规则名
+                     * <p>规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则参数
+                     * <p>规则参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InputParameterForManage> m_inputParameter;
                     bool m_inputParameterHasBeenSet;
 
                     /**
-                     * 规则触发条件
+                     * <p>规则触发条件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SourceConditionForManage> m_sourceCondition;
                     bool m_sourceConditionHasBeenSet;
 
                     /**
-                     * 支持的资源类型
+                     * <p>支持的资源类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 风险等级，1，2，3
+                     * <p>风险等级，1，2，3</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 对应的函数
+                     * <p>对应的函数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceFunction;
                     bool m_serviceFunctionHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 触发类型
+                     * <p>触发类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 使用次数
+                     * <p>使用次数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_referenceCount;
                     bool m_referenceCountHasBeenSet;
 
                     /**
-                     * 规则类型
+                     * <p>规则类型</p>
                      */
                     std::string m_identifierType;
                     bool m_identifierTypeHasBeenSet;

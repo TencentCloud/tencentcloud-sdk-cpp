@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool VpcErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接入点ID</p>
+                     * @return Id <p>接入点ID</p>
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置<p>接入点ID</p>
+                     * @param _id <p>接入点ID</p>
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>vpc Stream接入点</p>
+                     * @return VpcStreamEndpoint <p>vpc Stream接入点</p>
+                     * 
+                     */
+                    std::string GetVpcStreamEndpoint() const;
+
+                    /**
+                     * 设置<p>vpc Stream接入点</p>
+                     * @param _vpcStreamEndpoint <p>vpc Stream接入点</p>
+                     * 
+                     */
+                    void SetVpcStreamEndpoint(const std::string& _vpcStreamEndpoint);
+
+                    /**
+                     * 判断参数 VpcStreamEndpoint 是否已赋值
+                     * @return VpcStreamEndpoint 是否已赋值
+                     * 
+                     */
+                    bool VpcStreamEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_vpcErrorMessage;
                     bool m_vpcErrorMessageHasBeenSet;
+
+                    /**
+                     * <p>接入点ID</p>
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * <p>vpc Stream接入点</p>
+                     */
+                    std::string m_vpcStreamEndpoint;
+                    bool m_vpcStreamEndpointHasBeenSet;
 
                 };
             }

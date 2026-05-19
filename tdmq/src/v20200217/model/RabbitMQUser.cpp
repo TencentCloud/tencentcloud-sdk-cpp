@@ -32,7 +32,9 @@ RabbitMQUser::RabbitMQUser() :
     m_maxConnectionsHasBeenSet(false),
     m_maxChannelsHasBeenSet(false),
     m_createTsHasBeenSet(false),
-    m_modifyTsHasBeenSet(false)
+    m_modifyTsHasBeenSet(false),
+    m_camAuthEnabledHasBeenSet(false),
+    m_camCredentialNameHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,26 @@ CoreInternalOutcome RabbitMQUser::Deserialize(const rapidjson::Value &value)
         m_modifyTsHasBeenSet = true;
     }
 
+    if (value.HasMember("CamAuthEnabled") && !value["CamAuthEnabled"].IsNull())
+    {
+        if (!value["CamAuthEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQUser.CamAuthEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_camAuthEnabled = value["CamAuthEnabled"].GetBool();
+        m_camAuthEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("CamCredentialName") && !value["CamCredentialName"].IsNull())
+    {
+        if (!value["CamCredentialName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQUser.CamCredentialName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_camCredentialName = string(value["CamCredentialName"].GetString());
+        m_camCredentialNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void RabbitMQUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ModifyTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyTs, allocator);
+    }
+
+    if (m_camAuthEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamAuthEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_camAuthEnabled, allocator);
+    }
+
+    if (m_camCredentialNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamCredentialName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_camCredentialName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void RabbitMQUser::SetModifyTs(const uint64_t& _modifyTs)
 bool RabbitMQUser::ModifyTsHasBeenSet() const
 {
     return m_modifyTsHasBeenSet;
+}
+
+bool RabbitMQUser::GetCamAuthEnabled() const
+{
+    return m_camAuthEnabled;
+}
+
+void RabbitMQUser::SetCamAuthEnabled(const bool& _camAuthEnabled)
+{
+    m_camAuthEnabled = _camAuthEnabled;
+    m_camAuthEnabledHasBeenSet = true;
+}
+
+bool RabbitMQUser::CamAuthEnabledHasBeenSet() const
+{
+    return m_camAuthEnabledHasBeenSet;
+}
+
+string RabbitMQUser::GetCamCredentialName() const
+{
+    return m_camCredentialName;
+}
+
+void RabbitMQUser::SetCamCredentialName(const string& _camCredentialName)
+{
+    m_camCredentialName = _camCredentialName;
+    m_camCredentialNameHasBeenSet = true;
+}
+
+bool RabbitMQUser::CamCredentialNameHasBeenSet() const
+{
+    return m_camCredentialNameHasBeenSet;
 }
 

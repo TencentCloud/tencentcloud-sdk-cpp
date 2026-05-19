@@ -39,7 +39,8 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_publicIpReusedHasBeenSet(false),
     m_publicWebConsoleErrorMessageHasBeenSet(false),
     m_vpcWebConsoleErrorMessageHasBeenSet(false),
-    m_publicDataStreamErrorMessageHasBeenSet(false)
+    m_publicDataStreamErrorMessageHasBeenSet(false),
+    m_publicStreamAccessEndpointHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_publicDataStreamErrorMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicStreamAccessEndpoint") && !value["PublicStreamAccessEndpoint"].IsNull())
+    {
+        if (!value["PublicStreamAccessEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.PublicStreamAccessEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicStreamAccessEndpoint = string(value["PublicStreamAccessEndpoint"].GetString());
+        m_publicStreamAccessEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +422,14 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "PublicDataStreamErrorMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicDataStreamErrorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicStreamAccessEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicStreamAccessEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicStreamAccessEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +737,21 @@ void RabbitMQClusterAccessInfo::SetPublicDataStreamErrorMessage(const string& _p
 bool RabbitMQClusterAccessInfo::PublicDataStreamErrorMessageHasBeenSet() const
 {
     return m_publicDataStreamErrorMessageHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetPublicStreamAccessEndpoint() const
+{
+    return m_publicStreamAccessEndpoint;
+}
+
+void RabbitMQClusterAccessInfo::SetPublicStreamAccessEndpoint(const string& _publicStreamAccessEndpoint)
+{
+    m_publicStreamAccessEndpoint = _publicStreamAccessEndpoint;
+    m_publicStreamAccessEndpointHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::PublicStreamAccessEndpointHasBeenSet() const
+{
+    return m_publicStreamAccessEndpointHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 DescribeProxiesResponse::DescribeProxiesResponse() :
     m_totalCountHasBeenSet(false),
     m_proxyGroupInfosHasBeenSet(false),
-    m_proxyNodeInfosHasBeenSet(false)
+    m_proxyNodeInfosHasBeenSet(false),
+    m_columnStoreProxyForwardHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,16 @@ CoreInternalOutcome DescribeProxiesResponse::Deserialize(const string &payload)
         m_proxyNodeInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ColumnStoreProxyForward") && !rsp["ColumnStoreProxyForward"].IsNull())
+    {
+        if (!rsp["ColumnStoreProxyForward"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnStoreProxyForward` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnStoreProxyForward = string(rsp["ColumnStoreProxyForward"].GetString());
+        m_columnStoreProxyForwardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ string DescribeProxiesResponse::ToJsonString() const
         }
     }
 
+    if (m_columnStoreProxyForwardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnStoreProxyForward";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_columnStoreProxyForward.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -202,6 +221,16 @@ vector<ProxyNodeInfo> DescribeProxiesResponse::GetProxyNodeInfos() const
 bool DescribeProxiesResponse::ProxyNodeInfosHasBeenSet() const
 {
     return m_proxyNodeInfosHasBeenSet;
+}
+
+string DescribeProxiesResponse::GetColumnStoreProxyForward() const
+{
+    return m_columnStoreProxyForward;
+}
+
+bool DescribeProxiesResponse::ColumnStoreProxyForwardHasBeenSet() const
+{
+    return m_columnStoreProxyForwardHasBeenSet;
 }
 
 

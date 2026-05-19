@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 资源列列表信息
+                * 资源列表信息
                 */
                 class ResourceListInfo : public AbstractModel
                 {

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例版本
-                     * @return InstanceVersion 实例版本
+                     * 获取<p>实例版本</p>
+                     * @return InstanceVersion <p>实例版本</p>
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
-                     * 设置实例版本
-                     * @param _instanceVersion 实例版本
+                     * 设置<p>实例版本</p>
+                     * @param _instanceVersion <p>实例版本</p>
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-                     * @return Status 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * 获取<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>
+                     * @return Status <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-                     * @param _status 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * 设置<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>
+                     * @param _status <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取节点数量
-                     * @return NodeCount 节点数量
+                     * 获取<p>节点数量</p>
+                     * @return NodeCount <p>节点数量</p>
                      * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
-                     * 设置节点数量
-                     * @param _nodeCount 节点数量
+                     * 设置<p>节点数量</p>
+                     * @param _nodeCount <p>节点数量</p>
                      * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool NodeCountHasBeenSet() const;
 
                     /**
-                     * 获取实例配置规格名称
-                     * @return ConfigDisplay 实例配置规格名称
+                     * 获取<p>实例配置规格名称</p>
+                     * @return ConfigDisplay <p>实例配置规格名称</p>
                      * 
                      */
                     std::string GetConfigDisplay() const;
 
                     /**
-                     * 设置实例配置规格名称
-                     * @param _configDisplay 实例配置规格名称
+                     * 设置<p>实例配置规格名称</p>
+                     * @param _configDisplay <p>实例配置规格名称</p>
                      * 
                      */
                     void SetConfigDisplay(const std::string& _configDisplay);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ConfigDisplayHasBeenSet() const;
 
                     /**
-                     * 获取峰值TPS
-                     * @return MaxTps 峰值TPS
+                     * 获取<p>峰值TPS</p>
+                     * @return MaxTps <p>峰值TPS</p>
                      * 
                      */
                     uint64_t GetMaxTps() const;
 
                     /**
-                     * 设置峰值TPS
-                     * @param _maxTps 峰值TPS
+                     * 设置<p>峰值TPS</p>
+                     * @param _maxTps <p>峰值TPS</p>
                      * 
                      */
                     void SetMaxTps(const uint64_t& _maxTps);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool MaxTpsHasBeenSet() const;
 
                     /**
-                     * 获取峰值带宽，Mbps为单位
-                     * @return MaxBandWidth 峰值带宽，Mbps为单位
+                     * 获取<p>峰值带宽，Mbps为单位</p>
+                     * @return MaxBandWidth <p>峰值带宽，Mbps为单位</p>
                      * 
                      */
                     uint64_t GetMaxBandWidth() const;
 
                     /**
-                     * 设置峰值带宽，Mbps为单位
-                     * @param _maxBandWidth 峰值带宽，Mbps为单位
+                     * 设置<p>峰值带宽，Mbps为单位</p>
+                     * @param _maxBandWidth <p>峰值带宽，Mbps为单位</p>
                      * 
                      */
                     void SetMaxBandWidth(const uint64_t& _maxBandWidth);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取存储容量，GB为单位
-                     * @return MaxStorage 存储容量，GB为单位
+                     * 获取<p>存储容量，GB为单位</p>
+                     * @return MaxStorage <p>存储容量，GB为单位</p>
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
-                     * 设置存储容量，GB为单位
-                     * @param _maxStorage 存储容量，GB为单位
+                     * 设置<p>存储容量，GB为单位</p>
+                     * @param _maxStorage <p>存储容量，GB为单位</p>
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
-                     * @return ExpireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * 获取<p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>
+                     * @return ExpireTime <p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
-                     * @param _expireTime 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * 设置<p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>
+                     * @param _expireTime <p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 获取<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
+                     * @return AutoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-                     * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * 设置<p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
+                     * @param _autoRenewFlag <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取1 表示预付费，0 表示后付费
-                     * @return PayMode 1 表示预付费，0 表示后付费
+                     * 获取<p>1 表示预付费，0 表示后付费</p>
+                     * @return PayMode <p>1 表示预付费，0 表示后付费</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置1 表示预付费，0 表示后付费
-                     * @param _payMode 1 表示预付费，0 表示后付费
+                     * 设置<p>1 表示预付费，0 表示后付费</p>
+                     * @param _payMode <p>1 表示预付费，0 表示后付费</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Remark <p>备注信息</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remark 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _remark <p>备注信息</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -322,51 +322,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取集群的节点规格，对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
-                     * @return SpecName 集群的节点规格，对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * 获取<p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
+                     * @return SpecName <p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置集群的节点规格，对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
-                     * @param _specName 集群的节点规格，对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * 设置<p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
+                     * @param _specName <p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -379,18 +343,18 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取集群异常信息
+                     * 获取<p>集群异常信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExceptionInformation 集群异常信息
+                     * @return ExceptionInformation <p>集群异常信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
-                     * 设置集群异常信息
+                     * 设置<p>集群异常信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exceptionInformation 集群异常信息
+                     * @param _exceptionInformation <p>集群异常信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -404,19 +368,15 @@ namespace TencentCloud
                     bool ExceptionInformationHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-为了和计费区分开，额外开启一个状态位，用于显示。
-                     * @return ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-为了和计费区分开，额外开启一个状态位，用于显示。
+                     * 获取<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>
+                     * @return ClusterStatus <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>
                      * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
-                     * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-为了和计费区分开，额外开启一个状态位，用于显示。
-                     * @param _clusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-为了和计费区分开，额外开启一个状态位，用于显示。
+                     * 设置<p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>
+                     * @param _clusterStatus <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>
                      * 
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
@@ -429,18 +389,18 @@ namespace TencentCloud
                     bool ClusterStatusHasBeenSet() const;
 
                     /**
-                     * 获取公网接入点
+                     * 获取<p>公网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicAccessEndpoint 公网接入点
+                     * @return PublicAccessEndpoint <p>公网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccessEndpoint() const;
 
                     /**
-                     * 设置公网接入点
+                     * 设置<p>公网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicAccessEndpoint 公网接入点
+                     * @param _publicAccessEndpoint <p>公网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -454,15 +414,15 @@ namespace TencentCloud
                     bool PublicAccessEndpointHasBeenSet() const;
 
                     /**
-                     * 获取VPC 接入点列表
-                     * @return Vpcs VPC 接入点列表
+                     * 获取<p>VPC 接入点列表</p>
+                     * @return Vpcs <p>VPC 接入点列表</p>
                      * 
                      */
                     std::vector<VpcEndpointInfo> GetVpcs() const;
 
                     /**
-                     * 设置VPC 接入点列表
-                     * @param _vpcs VPC 接入点列表
+                     * 设置<p>VPC 接入点列表</p>
+                     * @param _vpcs <p>VPC 接入点列表</p>
                      * 
                      */
                     void SetVpcs(const std::vector<VpcEndpointInfo>& _vpcs);
@@ -475,15 +435,15 @@ namespace TencentCloud
                     bool VpcsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，毫秒为单位。unix 时间戳
-                     * @return CreateTime 创建时间，毫秒为单位。unix 时间戳
+                     * 获取<p>创建时间，毫秒为单位。unix 时间戳</p>
+                     * @return CreateTime <p>创建时间，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，毫秒为单位。unix 时间戳
-                     * @param _createTime 创建时间，毫秒为单位。unix 时间戳
+                     * 设置<p>创建时间，毫秒为单位。unix 时间戳</p>
+                     * @param _createTime <p>创建时间，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -496,15 +456,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，0 托管版、1 Serverless 版
-                     * @return InstanceType 实例类型，0 托管版、1 Serverless 版
+                     * 获取<p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>
+                     * @return InstanceType <p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>
                      * 
                      */
                     uint64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，0 托管版、1 Serverless 版
-                     * @param _instanceType 实例类型，0 托管版、1 Serverless 版
+                     * 设置<p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>
+                     * @param _instanceType <p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>
                      * 
                      */
                     void SetInstanceType(const uint64_t& _instanceType);
@@ -517,15 +477,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，毫秒为单位。unix 时间戳
-                     * @return IsolatedTime 隔离时间，毫秒为单位。unix 时间戳
+                     * 获取<p>隔离时间，毫秒为单位。unix 时间戳</p>
+                     * @return IsolatedTime <p>隔离时间，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     uint64_t GetIsolatedTime() const;
 
                     /**
-                     * 设置隔离时间，毫秒为单位。unix 时间戳
-                     * @param _isolatedTime 隔离时间，毫秒为单位。unix 时间戳
+                     * 设置<p>隔离时间，毫秒为单位。unix 时间戳</p>
+                     * @param _isolatedTime <p>隔离时间，毫秒为单位。unix 时间戳</p>
                      * 
                      */
                     void SetIsolatedTime(const uint64_t& _isolatedTime);
@@ -538,15 +498,15 @@ namespace TencentCloud
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否已开启删除保护
-                     * @return EnableDeletionProtection 是否已开启删除保护
+                     * 获取<p>是否已开启删除保护</p>
+                     * @return EnableDeletionProtection <p>是否已开启删除保护</p>
                      * 
                      */
                     bool GetEnableDeletionProtection() const;
 
                     /**
-                     * 设置是否已开启删除保护
-                     * @param _enableDeletionProtection 是否已开启删除保护
+                     * 设置<p>是否已开启删除保护</p>
+                     * @param _enableDeletionProtection <p>是否已开启删除保护</p>
                      * 
                      */
                     void SetEnableDeletionProtection(const bool& _enableDeletionProtection);
@@ -559,15 +519,15 @@ namespace TencentCloud
                     bool EnableDeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -579,157 +539,174 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>公有数据流Stream接入点</p>
+                     * @return PublicStreamAccessEndpoint <p>公有数据流Stream接入点</p>
+                     * 
+                     */
+                    std::string GetPublicStreamAccessEndpoint() const;
+
+                    /**
+                     * 设置<p>公有数据流Stream接入点</p>
+                     * @param _publicStreamAccessEndpoint <p>公有数据流Stream接入点</p>
+                     * 
+                     */
+                    void SetPublicStreamAccessEndpoint(const std::string& _publicStreamAccessEndpoint);
+
+                    /**
+                     * 判断参数 PublicStreamAccessEndpoint 是否已赋值
+                     * @return PublicStreamAccessEndpoint 是否已赋值
+                     * 
+                     */
+                    bool PublicStreamAccessEndpointHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例版本
+                     * <p>实例版本</p>
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
+                     * <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
 
                     /**
-                     * 实例配置规格名称
+                     * <p>实例配置规格名称</p>
                      */
                     std::string m_configDisplay;
                     bool m_configDisplayHasBeenSet;
 
                     /**
-                     * 峰值TPS
+                     * <p>峰值TPS</p>
                      */
                     uint64_t m_maxTps;
                     bool m_maxTpsHasBeenSet;
 
                     /**
-                     * 峰值带宽，Mbps为单位
+                     * <p>峰值带宽，Mbps为单位</p>
                      */
                     uint64_t m_maxBandWidth;
                     bool m_maxBandWidthHasBeenSet;
 
                     /**
-                     * 存储容量，GB为单位
+                     * <p>存储容量，GB为单位</p>
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳
+                     * <p>实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳</p>
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
+                     * <p>自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)</p>
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 1 表示预付费，0 表示后付费
+                     * <p>1 表示预付费，0 表示后付费</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 集群的节点规格，对应的规格标识：
-2C8G：rabbit-vip-profession-2c8g
-4C16G：rabbit-vip-profession-4c16g
-8C32G：rabbit-vip-profession-8c32g
-16C32G：rabbit-vip-basic-4
-16C64G：rabbit-vip-profession-16c64g
-2C4G：rabbit-vip-basic-5
-4C8G：rabbit-vip-basic-1
-8C16G（已售罄）：rabbit-vip-basic-2
-不传默认为 4C8G：rabbit-vip-basic-1
+                     * <p>集群的节点规格，对应的规格标识：<br>2C8G：rabbit-vip-profession-2c8g<br>4C16G：rabbit-vip-profession-4c16g<br>8C32G：rabbit-vip-profession-8c32g<br>16C32G：rabbit-vip-basic-4<br>16C64G：rabbit-vip-profession-16c64g<br>2C4G：rabbit-vip-basic-5<br>4C8G：rabbit-vip-basic-1<br>8C16G（已售罄）：rabbit-vip-basic-2<br>不传默认为 4C8G：rabbit-vip-basic-1</p>
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 集群异常信息
+                     * <p>集群异常信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionInformation;
                     bool m_exceptionInformationHasBeenSet;
 
                     /**
-                     * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-为了和计费区分开，额外开启一个状态位，用于显示。
+                     * <p>实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败<br>为了和计费区分开，额外开启一个状态位，用于显示。</p>
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
-                     * 公网接入点
+                     * <p>公网接入点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccessEndpoint;
                     bool m_publicAccessEndpointHasBeenSet;
 
                     /**
-                     * VPC 接入点列表
+                     * <p>VPC 接入点列表</p>
                      */
                     std::vector<VpcEndpointInfo> m_vpcs;
                     bool m_vpcsHasBeenSet;
 
                     /**
-                     * 创建时间，毫秒为单位。unix 时间戳
+                     * <p>创建时间，毫秒为单位。unix 时间戳</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例类型，0 托管版、1 Serverless 版
+                     * <p>实例类型</p><p>枚举值：</p><ul><li>0： 托管版实例</li></ul>
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 隔离时间，毫秒为单位。unix 时间戳
+                     * <p>隔离时间，毫秒为单位。unix 时间戳</p>
                      */
                     uint64_t m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
 
                     /**
-                     * 是否已开启删除保护
+                     * <p>是否已开启删除保护</p>
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>公有数据流Stream接入点</p>
+                     */
+                    std::string m_publicStreamAccessEndpoint;
+                    bool m_publicStreamAccessEndpointHasBeenSet;
 
                 };
             }

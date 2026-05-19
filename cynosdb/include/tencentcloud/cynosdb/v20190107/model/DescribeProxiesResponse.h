@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库代理组数
-                     * @return TotalCount 数据库代理组数
+                     * 获取<p>数据库代理组数</p>
+                     * @return TotalCount <p>数据库代理组数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组列表
-                     * @return ProxyGroupInfos 数据库代理组列表
+                     * 获取<p>数据库代理组列表</p>
+                     * @return ProxyGroupInfos <p>数据库代理组列表</p>
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyGroupInfos() const;
@@ -74,9 +74,9 @@ namespace TencentCloud
                     bool ProxyGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理节点
+                     * 获取<p>数据库代理节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyNodeInfos 数据库代理节点
+                     * @return ProxyNodeInfos <p>数据库代理节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -89,26 +89,46 @@ namespace TencentCloud
                      */
                     bool ProxyNodeInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>sql自动转发</p>
+                     * @return ColumnStoreProxyForward <p>sql自动转发</p>
+                     * 
+                     */
+                    std::string GetColumnStoreProxyForward() const;
+
+                    /**
+                     * 判断参数 ColumnStoreProxyForward 是否已赋值
+                     * @return ColumnStoreProxyForward 是否已赋值
+                     * 
+                     */
+                    bool ColumnStoreProxyForwardHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据库代理组数
+                     * <p>数据库代理组数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 数据库代理组列表
+                     * <p>数据库代理组列表</p>
                      */
                     std::vector<ProxyGroupInfo> m_proxyGroupInfos;
                     bool m_proxyGroupInfosHasBeenSet;
 
                     /**
-                     * 数据库代理节点
+                     * <p>数据库代理节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyNodeInfo> m_proxyNodeInfos;
                     bool m_proxyNodeInfosHasBeenSet;
+
+                    /**
+                     * <p>sql自动转发</p>
+                     */
+                    std::string m_columnStoreProxyForward;
+                    bool m_columnStoreProxyForwardHasBeenSet;
 
                 };
             }

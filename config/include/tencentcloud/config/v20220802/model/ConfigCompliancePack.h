@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合规包状态
-                     * @return Status 合规包状态
+                     * 获取<p>合规包状态</p>
+                     * @return Status <p>合规包状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置合规包状态
-                     * @param _status 合规包状态
+                     * 设置<p>合规包状态</p>
+                     * @param _status <p>合规包状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取合规包ID
-                     * @return CompliancePackId 合规包ID
+                     * 获取<p>合规包ID</p>
+                     * @return CompliancePackId <p>合规包ID</p>
                      * 
                      */
                     std::string GetCompliancePackId() const;
 
                     /**
-                     * 设置合规包ID
-                     * @param _compliancePackId 合规包ID
+                     * 设置<p>合规包ID</p>
+                     * @param _compliancePackId <p>合规包ID</p>
                      * 
                      */
                     void SetCompliancePackId(const std::string& _compliancePackId);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool CompliancePackIdHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取合规包名称
-                     * @return CompliancePackName 合规包名称
+                     * 获取<p>合规包名称</p>
+                     * @return CompliancePackName <p>合规包名称</p>
                      * 
                      */
                     std::string GetCompliancePackName() const;
 
                     /**
-                     * 设置合规包名称
-                     * @param _compliancePackName 合规包名称
+                     * 设置<p>合规包名称</p>
+                     * @param _compliancePackName <p>合规包名称</p>
                      * 
                      */
                     void SetCompliancePackName(const std::string& _compliancePackName);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool CompliancePackNameHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return RiskLevel 风险等级
+                     * 获取<p>风险等级</p>
+                     * @return RiskLevel <p>风险等级</p>
                      * 
                      */
                     uint64_t GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _riskLevel 风险等级
+                     * 设置<p>风险等级</p>
+                     * @param _riskLevel <p>风险等级</p>
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取评估结果
+                     * 获取<p>评估结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComplianceResult 评估结果
+                     * @return ComplianceResult <p>评估结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComplianceResult() const;
 
                     /**
-                     * 设置评估结果
+                     * 设置<p>评估结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _complianceResult 评估结果
+                     * @param _complianceResult <p>评估结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool ComplianceResultHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -202,18 +202,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取不合规规则名
+                     * 获取<p>不合规规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoCompliantNames 不合规规则名
+                     * @return NoCompliantNames <p>不合规规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNoCompliantNames() const;
 
                     /**
-                     * 设置不合规规则名
+                     * 设置<p>不合规规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noCompliantNames 不合规规则名
+                     * @param _noCompliantNames <p>不合规规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -227,18 +227,18 @@ namespace TencentCloud
                     bool NoCompliantNamesHasBeenSet() const;
 
                     /**
-                     * 获取合规包规则数
+                     * 获取<p>合规包规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleCount 合规包规则数
+                     * @return RuleCount <p>合规包规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCount() const;
 
                     /**
-                     * 设置合规包规则数
+                     * 设置<p>合规包规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleCount 合规包规则数
+                     * @param _ruleCount <p>合规包规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -254,58 +254,58 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合规包状态
+                     * <p>合规包状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 合规包ID
+                     * <p>合规包ID</p>
                      */
                     std::string m_compliancePackId;
                     bool m_compliancePackIdHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 合规包名称
+                     * <p>合规包名称</p>
                      */
                     std::string m_compliancePackName;
                     bool m_compliancePackNameHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * <p>风险等级</p>
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 评估结果
+                     * <p>评估结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_complianceResult;
                     bool m_complianceResultHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 不合规规则名
+                     * <p>不合规规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_noCompliantNames;
                     bool m_noCompliantNamesHasBeenSet;
 
                     /**
-                     * 合规包规则数
+                     * <p>合规包规则数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCount;

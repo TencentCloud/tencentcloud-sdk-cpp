@@ -133,6 +133,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodUrlRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodUrlResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h>
@@ -348,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrainingTaskResponse> DescribeTrainingTaskOutcome;
                 typedef std::future<DescribeTrainingTaskOutcome> DescribeTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTaskRequest&, DescribeTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrainingTaskPodUrlResponse> DescribeTrainingTaskPodUrlOutcome;
+                typedef std::future<DescribeTrainingTaskPodUrlOutcome> DescribeTrainingTaskPodUrlOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTaskPodUrlRequest&, DescribeTrainingTaskPodUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTaskPodUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrainingTaskPodsResponse> DescribeTrainingTaskPodsOutcome;
                 typedef std::future<DescribeTrainingTaskPodsOutcome> DescribeTrainingTaskPodsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTaskPodsRequest&, DescribeTrainingTaskPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTaskPodsAsyncHandler;
@@ -904,6 +909,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeTrainingTaskOutcome DescribeTrainingTask(const Model::DescribeTrainingTaskRequest &request);
                 void DescribeTrainingTaskAsync(const Model::DescribeTrainingTaskRequest& request, const DescribeTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingTaskOutcomeCallable DescribeTrainingTaskCallable(const Model::DescribeTrainingTaskRequest& request);
+
+                /**
+                 *获取单个训练任务实例的登录链接
+                 * @param req DescribeTrainingTaskPodUrlRequest
+                 * @return DescribeTrainingTaskPodUrlOutcome
+                 */
+                DescribeTrainingTaskPodUrlOutcome DescribeTrainingTaskPodUrl(const Model::DescribeTrainingTaskPodUrlRequest &request);
+                void DescribeTrainingTaskPodUrlAsync(const Model::DescribeTrainingTaskPodUrlRequest& request, const DescribeTrainingTaskPodUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrainingTaskPodUrlOutcomeCallable DescribeTrainingTaskPodUrlCallable(const Model::DescribeTrainingTaskPodUrlRequest& request);
 
                 /**
                  *训练任务pod列表

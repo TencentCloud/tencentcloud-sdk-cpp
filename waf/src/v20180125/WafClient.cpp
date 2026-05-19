@@ -5840,6 +5840,56 @@ WafClient::DescribeSessionOutcomeCallable WafClient::DescribeSessionCallable(con
     return prom->get_future();
 }
 
+WafClient::DescribeSkillSecScanResultOutcome WafClient::DescribeSkillSecScanResult(const DescribeSkillSecScanResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillSecScanResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillSecScanResultResponse rsp = DescribeSkillSecScanResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillSecScanResultOutcome(rsp);
+        else
+            return DescribeSkillSecScanResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillSecScanResultOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeSkillSecScanResultAsync(const DescribeSkillSecScanResultRequest& request, const DescribeSkillSecScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillSecScanResultRequest&;
+    using Resp = DescribeSkillSecScanResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillSecScanResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeSkillSecScanResultOutcomeCallable WafClient::DescribeSkillSecScanResultCallable(const DescribeSkillSecScanResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillSecScanResultOutcome>>();
+    DescribeSkillSecScanResultAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeSkillSecScanResultRequest&,
+        DescribeSkillSecScanResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeSpartaProtectionInfoOutcome WafClient::DescribeSpartaProtectionInfo(const DescribeSpartaProtectionInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSpartaProtectionInfo");
@@ -10782,6 +10832,56 @@ WafClient::UpdateRateLimitV2OutcomeCallable WafClient::UpdateRateLimitV2Callable
         const WafClient*,
         const UpdateRateLimitV2Request&,
         UpdateRateLimitV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::UploadSkillSecScanOutcome WafClient::UploadSkillSecScan(const UploadSkillSecScanRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadSkillSecScan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadSkillSecScanResponse rsp = UploadSkillSecScanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadSkillSecScanOutcome(rsp);
+        else
+            return UploadSkillSecScanOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadSkillSecScanOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::UploadSkillSecScanAsync(const UploadSkillSecScanRequest& request, const UploadSkillSecScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UploadSkillSecScanRequest&;
+    using Resp = UploadSkillSecScanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UploadSkillSecScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::UploadSkillSecScanOutcomeCallable WafClient::UploadSkillSecScanCallable(const UploadSkillSecScanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UploadSkillSecScanOutcome>>();
+    UploadSkillSecScanAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const UploadSkillSecScanRequest&,
+        UploadSkillSecScanOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

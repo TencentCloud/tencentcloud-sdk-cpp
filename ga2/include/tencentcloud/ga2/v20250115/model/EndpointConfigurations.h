@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名类型。可选值'Domain', 'PublicIp'。
-                     * @return EndpointType 域名类型。可选值'Domain', 'PublicIp'。
+                     * 获取<p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>
+                     * @return EndpointType <p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>
                      * 
                      */
                     std::string GetEndpointType() const;
 
                     /**
-                     * 设置域名类型。可选值'Domain', 'PublicIp'。
-                     * @param _endpointType 域名类型。可选值'Domain', 'PublicIp'。
+                     * 设置<p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>
+                     * @param _endpointType <p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>
                      * 
                      */
                     void SetEndpointType(const std::string& _endpointType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EndpointTypeHasBeenSet() const;
 
                     /**
-                     * 获取域名。
-                     * @return EndpointService 域名。
+                     * 获取<p>域名。</p>
+                     * @return EndpointService <p>域名。</p>
                      * 
                      */
                     std::string GetEndpointService() const;
 
                     /**
-                     * 设置域名。
-                     * @param _endpointService 域名。
+                     * 设置<p>域名。</p>
+                     * @param _endpointService <p>域名。</p>
                      * 
                      */
                     void SetEndpointService(const std::string& _endpointService);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EndpointServiceHasBeenSet() const;
 
                     /**
-                     * 获取权重。
-                     * @return Weight 权重。
+                     * 获取<p>权重。</p>
+                     * @return Weight <p>权重。</p>
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重。
-                     * @param _weight 权重。
+                     * 设置<p>权重。</p>
+                     * @param _weight <p>权重。</p>
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取健康检查状态；HEALTH：健康；UNHEALTH：不健康。
-                     * @return HealthCheckStatus 健康检查状态；HEALTH：健康；UNHEALTH：不健康。
+                     * 获取<p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>
+                     * @return HealthCheckStatus <p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>
                      * 
                      */
                     std::string GetHealthCheckStatus() const;
 
                     /**
-                     * 设置健康检查状态；HEALTH：健康；UNHEALTH：不健康。
-                     * @param _healthCheckStatus 健康检查状态；HEALTH：健康；UNHEALTH：不健康。
+                     * 设置<p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>
+                     * @param _healthCheckStatus <p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>
                      * 
                      */
                     void SetHealthCheckStatus(const std::string& _healthCheckStatus);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名类型。可选值'Domain', 'PublicIp'。
+                     * <p>域名类型。可选值&#39;Domain&#39;, &#39;PublicIp&#39;。</p>
                      */
                     std::string m_endpointType;
                     bool m_endpointTypeHasBeenSet;
 
                     /**
-                     * 域名。
+                     * <p>域名。</p>
                      */
                     std::string m_endpointService;
                     bool m_endpointServiceHasBeenSet;
 
                     /**
-                     * 权重。
+                     * <p>权重。</p>
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 健康检查状态；HEALTH：健康；UNHEALTH：不健康。
+                     * <p>健康检查状态；HEALTH：健康；UNHEALTH：不健康。</p>
                      */
                     std::string m_healthCheckStatus;
                     bool m_healthCheckStatusHasBeenSet;

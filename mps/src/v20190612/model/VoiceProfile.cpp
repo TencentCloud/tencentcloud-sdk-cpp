@@ -25,6 +25,7 @@ VoiceProfile::VoiceProfile() :
     m_descriptionHasBeenSet(false),
     m_genderHasBeenSet(false),
     m_ageHasBeenSet(false),
+    m_languagesHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_scenesHasBeenSet(false)
 {
@@ -73,6 +74,19 @@ CoreInternalOutcome VoiceProfile::Deserialize(const rapidjson::Value &value)
         }
         m_age = string(value["Age"].GetString());
         m_ageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Languages") && !value["Languages"].IsNull())
+    {
+        if (!value["Languages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VoiceProfile.Languages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Languages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_languages.push_back((*itr).GetString());
+        }
+        m_languagesHasBeenSet = true;
     }
 
     if (value.HasMember("Labels") && !value["Labels"].IsNull())
@@ -138,6 +152,19 @@ void VoiceProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_age.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Languages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_languages.begin(); itr != m_languages.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_labelsHasBeenSet)
@@ -231,6 +258,22 @@ void VoiceProfile::SetAge(const string& _age)
 bool VoiceProfile::AgeHasBeenSet() const
 {
     return m_ageHasBeenSet;
+}
+
+vector<string> VoiceProfile::GetLanguages() const
+{
+    return m_languages;
+}
+
+void VoiceProfile::SetLanguages(const vector<string>& _languages)
+{
+    m_languages = _languages;
+    m_languagesHasBeenSet = true;
+}
+
+bool VoiceProfile::LanguagesHasBeenSet() const
+{
+    return m_languagesHasBeenSet;
 }
 
 vector<string> VoiceProfile::GetLabels() const

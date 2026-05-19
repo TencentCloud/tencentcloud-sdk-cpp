@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 获取<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @return InstanceId <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 设置<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @param _instanceId <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名，登录时使用
-                     * @return User 用户名，登录时使用
+                     * 获取<p>用户名，登录时使用</p>
+                     * @return User <p>用户名，登录时使用</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置用户名，登录时使用
-                     * @param _user 用户名，登录时使用
+                     * 设置<p>用户名，登录时使用</p>
+                     * @param _user <p>用户名，登录时使用</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取密码，登录时使用
-                     * @return Password 密码，登录时使用
+                     * 获取<p>密码，登录时使用</p>
+                     * @return Password <p>密码，登录时使用</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置密码，登录时使用
-                     * @param _password 密码，登录时使用
+                     * 设置<p>密码，登录时使用</p>
+                     * @param _password <p>密码，登录时使用</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取用户描述
-                     * @return Description 用户描述
+                     * 获取<p>用户描述</p>
+                     * @return Description <p>用户描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置用户描述
-                     * @param _description 用户描述
+                     * 设置<p>用户描述</p>
+                     * @param _description <p>用户描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-                     * @return Tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
+                     * 获取<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>
+                     * @return Tags <p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-                     * @param _tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
+                     * 设置<p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>
+                     * @param _tags <p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取用户创建时间
-                     * @return CreateTime 用户创建时间
+                     * 获取<p>用户创建时间</p>
+                     * @return CreateTime <p>用户创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置用户创建时间
-                     * @param _createTime 用户创建时间
+                     * 设置<p>用户创建时间</p>
+                     * @param _createTime <p>用户创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户最后修改时间
-                     * @return ModifyTime 用户最后修改时间
+                     * 获取<p>用户最后修改时间</p>
+                     * @return ModifyTime <p>用户最后修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置用户最后修改时间
-                     * @param _modifyTime 用户最后修改时间
+                     * 设置<p>用户最后修改时间</p>
+                     * @param _modifyTime <p>用户最后修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户类型，System：系统创建，User：用户创建
-                     * @return Type 用户类型，System：系统创建，User：用户创建
+                     * 获取<p>用户类型，System：系统创建，User：用户创建</p>
+                     * @return Type <p>用户类型，System：系统创建，User：用户创建</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置用户类型，System：系统创建，User：用户创建
-                     * @param _type 用户类型，System：系统创建，User：用户创建
+                     * 设置<p>用户类型，System：系统创建，User：用户创建</p>
+                     * @param _type <p>用户类型，System：系统创建，User：用户创建</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -215,18 +215,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取单个用户最大可用连接数
+                     * 获取<p>单个用户最大可用连接数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxConnections 单个用户最大可用连接数
+                     * @return MaxConnections <p>单个用户最大可用连接数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxConnections() const;
 
                     /**
-                     * 设置单个用户最大可用连接数
+                     * 设置<p>单个用户最大可用连接数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxConnections 单个用户最大可用连接数
+                     * @param _maxConnections <p>单个用户最大可用连接数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -240,18 +240,18 @@ namespace TencentCloud
                     bool MaxConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取单个用户最大可用通道数
+                     * 获取<p>单个用户最大可用通道数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxChannels 单个用户最大可用通道数
+                     * @return MaxChannels <p>单个用户最大可用通道数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxChannels() const;
 
                     /**
-                     * 设置单个用户最大可用通道数
+                     * 设置<p>单个用户最大可用通道数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxChannels 单个用户最大可用通道数
+                     * @param _maxChannels <p>单个用户最大可用通道数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -265,15 +265,15 @@ namespace TencentCloud
                     bool MaxChannelsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间时间戳
-                     * @return CreateTs 创建时间时间戳
+                     * 获取<p>创建时间时间戳</p>
+                     * @return CreateTs <p>创建时间时间戳</p>
                      * 
                      */
                     uint64_t GetCreateTs() const;
 
                     /**
-                     * 设置创建时间时间戳
-                     * @param _createTs 创建时间时间戳
+                     * 设置<p>创建时间时间戳</p>
+                     * @param _createTs <p>创建时间时间戳</p>
                      * 
                      */
                     void SetCreateTs(const uint64_t& _createTs);
@@ -286,15 +286,15 @@ namespace TencentCloud
                     bool CreateTsHasBeenSet() const;
 
                     /**
-                     * 获取修改时间时间戳
-                     * @return ModifyTs 修改时间时间戳
+                     * 获取<p>修改时间时间戳</p>
+                     * @return ModifyTs <p>修改时间时间戳</p>
                      * 
                      */
                     uint64_t GetModifyTs() const;
 
                     /**
-                     * 设置修改时间时间戳
-                     * @param _modifyTs 修改时间时间戳
+                     * 设置<p>修改时间时间戳</p>
+                     * @param _modifyTs <p>修改时间时间戳</p>
                      * 
                      */
                     void SetModifyTs(const uint64_t& _modifyTs);
@@ -306,81 +306,140 @@ namespace TencentCloud
                      */
                     bool ModifyTsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启cam验证</p><p>默认值：false</p>
+                     * @return CamAuthEnabled <p>是否开启cam验证</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetCamAuthEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启cam验证</p><p>默认值：false</p>
+                     * @param _camAuthEnabled <p>是否开启cam验证</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetCamAuthEnabled(const bool& _camAuthEnabled);
+
+                    /**
+                     * 判断参数 CamAuthEnabled 是否已赋值
+                     * @return CamAuthEnabled 是否已赋值
+                     * 
+                     */
+                    bool CamAuthEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cam凭据名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CamCredentialName <p>cam凭据名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCamCredentialName() const;
+
+                    /**
+                     * 设置<p>cam凭据名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _camCredentialName <p>cam凭据名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCamCredentialName(const std::string& _camCredentialName);
+
+                    /**
+                     * 判断参数 CamCredentialName 是否已赋值
+                     * @return CamCredentialName 是否已赋值
+                     * 
+                     */
+                    bool CamCredentialNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名，登录时使用
+                     * <p>用户名，登录时使用</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 密码，登录时使用
+                     * <p>密码，登录时使用</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 用户描述
+                     * <p>用户描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
+                     * <p>用户标签，用于决定改用户访问RabbitMQ Management的权限范围</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 用户创建时间
+                     * <p>用户创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 用户最后修改时间
+                     * <p>用户最后修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 用户类型，System：系统创建，User：用户创建
+                     * <p>用户类型，System：系统创建，User：用户创建</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 单个用户最大可用连接数
+                     * <p>单个用户最大可用连接数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxConnections;
                     bool m_maxConnectionsHasBeenSet;
 
                     /**
-                     * 单个用户最大可用通道数
+                     * <p>单个用户最大可用通道数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxChannels;
                     bool m_maxChannelsHasBeenSet;
 
                     /**
-                     * 创建时间时间戳
+                     * <p>创建时间时间戳</p>
                      */
                     uint64_t m_createTs;
                     bool m_createTsHasBeenSet;
 
                     /**
-                     * 修改时间时间戳
+                     * <p>修改时间时间戳</p>
                      */
                     uint64_t m_modifyTs;
                     bool m_modifyTsHasBeenSet;
+
+                    /**
+                     * <p>是否开启cam验证</p><p>默认值：false</p>
+                     */
+                    bool m_camAuthEnabled;
+                    bool m_camAuthEnabledHasBeenSet;
+
+                    /**
+                     * <p>cam凭据名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_camCredentialName;
+                    bool m_camCredentialNameHasBeenSet;
 
                 };
             }

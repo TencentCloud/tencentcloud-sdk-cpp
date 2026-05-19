@@ -255,6 +255,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeScanIpResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeSkillSecScanResultRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeSkillSecScanResultResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeTlsVersionRequest.h>
@@ -453,6 +455,8 @@
 #include <tencentcloud/waf/v20180125/model/UpdateProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpdateRateLimitV2Request.h>
 #include <tencentcloud/waf/v20180125/model/UpdateRateLimitV2Response.h>
+#include <tencentcloud/waf/v20180125/model/UploadSkillSecScanRequest.h>
+#include <tencentcloud/waf/v20180125/model/UploadSkillSecScanResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
@@ -823,6 +827,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSessionResponse> DescribeSessionOutcome;
                 typedef std::future<DescribeSessionOutcome> DescribeSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeSessionRequest&, DescribeSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillSecScanResultResponse> DescribeSkillSecScanResultOutcome;
+                typedef std::future<DescribeSkillSecScanResultOutcome> DescribeSkillSecScanResultOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeSkillSecScanResultRequest&, DescribeSkillSecScanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillSecScanResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSpartaProtectionInfoResponse> DescribeSpartaProtectionInfoOutcome;
                 typedef std::future<DescribeSpartaProtectionInfoOutcome> DescribeSpartaProtectionInfoOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeSpartaProtectionInfoRequest&, DescribeSpartaProtectionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpartaProtectionInfoAsyncHandler;
@@ -1120,6 +1127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRateLimitV2Response> UpdateRateLimitV2Outcome;
                 typedef std::future<UpdateRateLimitV2Outcome> UpdateRateLimitV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpdateRateLimitV2Request&, UpdateRateLimitV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRateLimitV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadSkillSecScanResponse> UploadSkillSecScanOutcome;
+                typedef std::future<UploadSkillSecScanOutcome> UploadSkillSecScanOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::UploadSkillSecScanRequest&, UploadSkillSecScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadSkillSecScanAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCAutoStatusResponse> UpsertCCAutoStatusOutcome;
                 typedef std::future<UpsertCCAutoStatusOutcome> UpsertCCAutoStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCAutoStatusRequest&, UpsertCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCAutoStatusAsyncHandler;
@@ -2180,6 +2190,15 @@ namespace TencentCloud
                 DescribeSessionOutcomeCallable DescribeSessionCallable(const Model::DescribeSessionRequest& request);
 
                 /**
+                 *根据文件Hash查询Skill安全检测结果
+                 * @param req DescribeSkillSecScanResultRequest
+                 * @return DescribeSkillSecScanResultOutcome
+                 */
+                DescribeSkillSecScanResultOutcome DescribeSkillSecScanResult(const Model::DescribeSkillSecScanResultRequest &request);
+                void DescribeSkillSecScanResultAsync(const Model::DescribeSkillSecScanResultRequest& request, const DescribeSkillSecScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillSecScanResultOutcomeCallable DescribeSkillSecScanResultCallable(const Model::DescribeSkillSecScanResultRequest& request);
+
+                /**
                  *waf斯巴达-获取防护域名信息
                  * @param req DescribeSpartaProtectionInfoRequest
                  * @return DescribeSpartaProtectionInfoOutcome
@@ -3075,6 +3094,15 @@ namespace TencentCloud
                 UpdateRateLimitV2Outcome UpdateRateLimitV2(const Model::UpdateRateLimitV2Request &request);
                 void UpdateRateLimitV2Async(const Model::UpdateRateLimitV2Request& request, const UpdateRateLimitV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRateLimitV2OutcomeCallable UpdateRateLimitV2Callable(const Model::UpdateRateLimitV2Request& request);
+
+                /**
+                 *上传Skill ZIP文件，触发异步安全检测
+                 * @param req UploadSkillSecScanRequest
+                 * @return UploadSkillSecScanOutcome
+                 */
+                UploadSkillSecScanOutcome UploadSkillSecScan(const Model::UploadSkillSecScanRequest &request);
+                void UploadSkillSecScanAsync(const Model::UploadSkillSecScanRequest& request, const UploadSkillSecScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadSkillSecScanOutcomeCallable UploadSkillSecScanCallable(const Model::UploadSkillSecScanRequest& request);
 
                 /**
                  *编辑SAAS型接入的紧急CC防护状态

@@ -290,6 +290,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HostPath.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodUrlResponse.h
   include/tencentcloud/tione/v20211111/model/PublicAlgoVersion.h
   include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
@@ -307,6 +308,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
   include/tencentcloud/tione/v20211111/model/HealthProbe.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodUrlRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceSpec.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
   include/tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h
@@ -634,6 +636,7 @@ set(tione_src
   src/v20211111/model/HostPath.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
   src/v20211111/model/IngressPrivateLinkInfo.cpp
+  src/v20211111/model/DescribeTrainingTaskPodUrlResponse.cpp
   src/v20211111/model/PublicAlgoVersion.cpp
   src/v20211111/model/ServiceEIPInfo.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
@@ -651,6 +654,7 @@ set(tione_src
   src/v20211111/model/StorageExtraConf.cpp
   src/v20211111/model/HealthProbe.cpp
   src/v20211111/model/LocalDisk.cpp
+  src/v20211111/model/DescribeTrainingTaskPodUrlRequest.cpp
   src/v20211111/model/ResourceSpec.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
   src/v20211111/model/EncodedStartCmdInfo.cpp

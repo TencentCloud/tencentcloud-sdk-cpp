@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTP 响应数据
-                     * @return HTTP HTTP 响应数据
+                     * 获取<p>HTTP 响应数据</p>
+                     * @return HTTP <p>HTTP 响应数据</p>
                      * 
                      */
                     PrometheusDynamicAPIResponseHTTP GetHTTP() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTP 响应数据
+                     * <p>HTTP 响应数据</p>
                      */
                     PrometheusDynamicAPIResponseHTTP m_hTTP;
                     bool m_hTTPHasBeenSet;

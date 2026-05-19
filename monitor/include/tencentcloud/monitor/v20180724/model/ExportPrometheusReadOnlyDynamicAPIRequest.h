@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 实例 ID
-                     * @return InstanceId Prometheus 实例 ID
+                     * 获取<p>Prometheus 实例 ID</p>
+                     * @return InstanceId <p>Prometheus 实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID
-                     * @param _instanceId Prometheus 实例 ID
+                     * 设置<p>Prometheus 实例 ID</p>
+                     * @param _instanceId <p>Prometheus 实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 方法名 GET/POST/PUT/DELETE 等
-                     * @return Method HTTP 方法名 GET/POST/PUT/DELETE 等
+                     * 获取<p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>
+                     * @return Method <p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置HTTP 方法名 GET/POST/PUT/DELETE 等
-                     * @param _method HTTP 方法名 GET/POST/PUT/DELETE 等
+                     * 设置<p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>
+                     * @param _method <p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 路径（包括 query string）
-                     * @return Path HTTP 路径（包括 query string）
+                     * 获取<p>HTTP 路径（包括 query string）</p>
+                     * @return Path <p>HTTP 路径（包括 query string）</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置HTTP 路径（包括 query string）
-                     * @param _path HTTP 路径（包括 query string）
+                     * 设置<p>HTTP 路径（包括 query string）</p>
+                     * @param _path <p>HTTP 路径（包括 query string）</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 请求体，任何数据
-                     * @return RequestBody HTTP 请求体，任何数据
+                     * 获取<p>HTTP 请求体，任何数据</p>
+                     * @return RequestBody <p>HTTP 请求体，任何数据</p>
                      * 
                      */
                     std::string GetRequestBody() const;
 
                     /**
-                     * 设置HTTP 请求体，任何数据
-                     * @param _requestBody HTTP 请求体，任何数据
+                     * 设置<p>HTTP 请求体，任何数据</p>
+                     * @param _requestBody <p>HTTP 请求体，任何数据</p>
                      * 
                      */
                     void SetRequestBody(const std::string& _requestBody);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool RequestBodyHasBeenSet() const;
 
                     /**
-                     * 获取HTTP 请求头
-                     * @return Headers HTTP 请求头
+                     * 获取<p>HTTP 请求头</p>
+                     * @return Headers <p>HTTP 请求头</p>
                      * 
                      */
                     std::vector<PrometheusStringKeyValuePair> GetHeaders() const;
 
                     /**
-                     * 设置HTTP 请求头
-                     * @param _headers HTTP 请求头
+                     * 设置<p>HTTP 请求头</p>
+                     * @param _headers <p>HTTP 请求头</p>
                      * 
                      */
                     void SetHeaders(const std::vector<PrometheusStringKeyValuePair>& _headers);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool HeadersHasBeenSet() const;
 
                     /**
-                     * 获取是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。
-                     * @return SelfMonitor 是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。
+                     * 获取<p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>
+                     * @return SelfMonitor <p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>
                      * 
                      */
                     bool GetSelfMonitor() const;
 
                     /**
-                     * 设置是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。
-                     * @param _selfMonitor 是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。
+                     * 设置<p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>
+                     * @param _selfMonitor <p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>
                      * 
                      */
                     void SetSelfMonitor(const bool& _selfMonitor);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 实例 ID
+                     * <p>Prometheus 实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * HTTP 方法名 GET/POST/PUT/DELETE 等
+                     * <p>HTTP 方法名 GET/POST/PUT/DELETE 等</p>
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * HTTP 路径（包括 query string）
+                     * <p>HTTP 路径（包括 query string）</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * HTTP 请求体，任何数据
+                     * <p>HTTP 请求体，任何数据</p>
                      */
                     std::string m_requestBody;
                     bool m_requestBodyHasBeenSet;
 
                     /**
-                     * HTTP 请求头
+                     * <p>HTTP 请求头</p>
                      */
                     std::vector<PrometheusStringKeyValuePair> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
-                     * 是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。
+                     * <p>是否请求自监控数据。自监控仅支持 /api/v1/query 与 /api/v1/query_range 接口。</p>
                      */
                     bool m_selfMonitor;
                     bool m_selfMonitorHasBeenSet;

@@ -43,7 +43,8 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_instanceTypeHasBeenSet(false),
     m_isolatedTimeHasBeenSet(false),
     m_enableDeletionProtectionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publicStreamAccessEndpointHasBeenSet(false)
 {
 }
 
@@ -302,6 +303,16 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicStreamAccessEndpoint") && !value["PublicStreamAccessEndpoint"].IsNull())
+    {
+        if (!value["PublicStreamAccessEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.PublicStreamAccessEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicStreamAccessEndpoint = string(value["PublicStreamAccessEndpoint"].GetString());
+        m_publicStreamAccessEndpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,6 +516,14 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_publicStreamAccessEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicStreamAccessEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicStreamAccessEndpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -876,5 +895,21 @@ void RabbitMQVipInstance::SetTags(const vector<Tag>& _tags)
 bool RabbitMQVipInstance::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string RabbitMQVipInstance::GetPublicStreamAccessEndpoint() const
+{
+    return m_publicStreamAccessEndpoint;
+}
+
+void RabbitMQVipInstance::SetPublicStreamAccessEndpoint(const string& _publicStreamAccessEndpoint)
+{
+    m_publicStreamAccessEndpoint = _publicStreamAccessEndpoint;
+    m_publicStreamAccessEndpointHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::PublicStreamAccessEndpointHasBeenSet() const
+{
+    return m_publicStreamAccessEndpointHasBeenSet;
 }
 

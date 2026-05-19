@@ -2790,6 +2790,56 @@ TioneClient::DescribeTrainingTaskOutcomeCallable TioneClient::DescribeTrainingTa
     return prom->get_future();
 }
 
+TioneClient::DescribeTrainingTaskPodUrlOutcome TioneClient::DescribeTrainingTaskPodUrl(const DescribeTrainingTaskPodUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrainingTaskPodUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrainingTaskPodUrlResponse rsp = DescribeTrainingTaskPodUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrainingTaskPodUrlOutcome(rsp);
+        else
+            return DescribeTrainingTaskPodUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrainingTaskPodUrlOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeTrainingTaskPodUrlAsync(const DescribeTrainingTaskPodUrlRequest& request, const DescribeTrainingTaskPodUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrainingTaskPodUrlRequest&;
+    using Resp = DescribeTrainingTaskPodUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrainingTaskPodUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeTrainingTaskPodUrlOutcomeCallable TioneClient::DescribeTrainingTaskPodUrlCallable(const DescribeTrainingTaskPodUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrainingTaskPodUrlOutcome>>();
+    DescribeTrainingTaskPodUrlAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeTrainingTaskPodUrlRequest&,
+        DescribeTrainingTaskPodUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeTrainingTaskPodsOutcome TioneClient::DescribeTrainingTaskPods(const DescribeTrainingTaskPodsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingTaskPods");

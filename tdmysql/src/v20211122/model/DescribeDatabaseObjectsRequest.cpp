@@ -24,7 +24,10 @@ using namespace std;
 
 DescribeDatabaseObjectsRequest::DescribeDatabaseObjectsRequest() :
     m_instanceIdHasBeenSet(false),
-    m_dbNameHasBeenSet(false)
+    m_dbNameHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_tableRegexpHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,30 @@ string DescribeDatabaseObjectsRequest::ToJsonString() const
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_tableRegexpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableRegexp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableRegexp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +116,54 @@ void DescribeDatabaseObjectsRequest::SetDbName(const string& _dbName)
 bool DescribeDatabaseObjectsRequest::DbNameHasBeenSet() const
 {
     return m_dbNameHasBeenSet;
+}
+
+int64_t DescribeDatabaseObjectsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDatabaseObjectsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDatabaseObjectsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeDatabaseObjectsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeDatabaseObjectsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeDatabaseObjectsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeDatabaseObjectsRequest::GetTableRegexp() const
+{
+    return m_tableRegexp;
+}
+
+void DescribeDatabaseObjectsRequest::SetTableRegexp(const string& _tableRegexp)
+{
+    m_tableRegexp = _tableRegexp;
+    m_tableRegexpHasBeenSet = true;
+}
+
+bool DescribeDatabaseObjectsRequest::TableRegexpHasBeenSet() const
+{
+    return m_tableRegexpHasBeenSet;
 }
 
 
