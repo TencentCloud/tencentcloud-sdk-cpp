@@ -174,6 +174,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/Sv.h
   include/tencentcloud/teo/v20220901/model/Rule.h
   include/tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h
+  include/tencentcloud/teo/v20220901/model/SiteFailover.h
   include/tencentcloud/teo/v20220901/model/ZoneInfo.h
   include/tencentcloud/teo/v20220901/model/EdgeKVGetResponse.h
   include/tencentcloud/teo/v20220901/model/CAPTCHAPageChallenge.h
@@ -584,6 +585,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusRequest.h
   include/tencentcloud/teo/v20220901/model/AccelerateType.h
   include/tencentcloud/teo/v20220901/model/DeliveryCondition.h
+  include/tencentcloud/teo/v20220901/model/SiteFailoverParameters.h
   include/tencentcloud/teo/v20220901/model/ExceptionRule.h
   include/tencentcloud/teo/v20220901/model/FollowOrigin.h
   include/tencentcloud/teo/v20220901/model/EdgeKVDeleteRequest.h
@@ -975,6 +977,7 @@ set(teo_src
   src/v20220901/model/Sv.cpp
   src/v20220901/model/Rule.cpp
   src/v20220901/model/DownloadL4LogsRequest.cpp
+  src/v20220901/model/SiteFailover.cpp
   src/v20220901/model/ZoneInfo.cpp
   src/v20220901/model/EdgeKVGetResponse.cpp
   src/v20220901/model/CAPTCHAPageChallenge.cpp
@@ -1385,6 +1388,7 @@ set(teo_src
   src/v20220901/model/ModifyApplicationProxyRuleStatusRequest.cpp
   src/v20220901/model/AccelerateType.cpp
   src/v20220901/model/DeliveryCondition.cpp
+  src/v20220901/model/SiteFailoverParameters.cpp
   src/v20220901/model/ExceptionRule.cpp
   src/v20220901/model/FollowOrigin.cpp
   src/v20220901/model/EdgeKVDeleteRequest.cpp

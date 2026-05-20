@@ -57,6 +57,8 @@
 #include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorsResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeListenersRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeListenersResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeTaskResultRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyEndpointGroupRequest.h>
@@ -132,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeListenersResponse> DescribeListenersOutcome;
                 typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeListenersRequest&, DescribeListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
+                typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccelerateAreasResponse> ModifyAccelerateAreasOutcome;
                 typedef std::future<ModifyAccelerateAreasOutcome> ModifyAccelerateAreasOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyAccelerateAreasRequest&, ModifyAccelerateAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccelerateAreasAsyncHandler;
@@ -302,6 +307,15 @@ namespace TencentCloud
                 DescribeListenersOutcome DescribeListeners(const Model::DescribeListenersRequest &request);
                 void DescribeListenersAsync(const Model::DescribeListenersRequest& request, const DescribeListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeListenersOutcomeCallable DescribeListenersCallable(const Model::DescribeListenersRequest& request);
+
+                /**
+                 *查询异步任务结果
+                 * @param req DescribeTaskResultRequest
+                 * @return DescribeTaskResultOutcome
+                 */
+                DescribeTaskResultOutcome DescribeTaskResult(const Model::DescribeTaskResultRequest &request);
+                void DescribeTaskResultAsync(const Model::DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskResultOutcomeCallable DescribeTaskResultCallable(const Model::DescribeTaskResultRequest& request);
 
                 /**
                  *修改加速地域

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取实例数据时间
-                     * @return CurRunDate 实例数据时间
+                     * 获取<p>实例数据时间</p>
+                     * @return CurRunDate <p>实例数据时间</p>
                      * 
                      */
                     std::string GetCurRunDate() const;
 
                     /**
-                     * 设置实例数据时间
-                     * @param _curRunDate 实例数据时间
+                     * 设置<p>实例数据时间</p>
+                     * @param _curRunDate <p>实例数据时间</p>
                      * 
                      */
                     void SetCurRunDate(const std::string& _curRunDate);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool RequestFromSourceHasBeenSet() const;
 
                     /**
-                     * 获取执行机IP
-                     * @return BrokerIp 执行机IP
+                     * 获取<p>执行机IP</p>
+                     * @return BrokerIp <p>执行机IP</p>
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
-                     * 设置执行机IP
-                     * @param _brokerIp 执行机IP
+                     * 设置<p>执行机IP</p>
+                     * @param _brokerIp <p>执行机IP</p>
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool BrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取日志文件名
-                     * @return OriginFileName 日志文件名
+                     * 获取<p>日志文件名</p>
+                     * @return OriginFileName <p>日志文件名</p>
                      * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
-                     * 设置日志文件名
-                     * @param _originFileName 日志文件名
+                     * 设置<p>日志文件名</p>
+                     * @param _originFileName <p>日志文件名</p>
                      * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OriginFileNameHasBeenSet() const;
 
                     /**
-                     * 获取执行平台下发执行id
-                     * @return ExecutionJobId 执行平台下发执行id
+                     * 获取<p>执行平台下发执行id</p>
+                     * @return ExecutionJobId <p>执行平台下发执行id</p>
                      * 
                      */
                     std::string GetExecutionJobId() const;
 
                     /**
-                     * 设置执行平台下发执行id
-                     * @param _executionJobId 执行平台下发执行id
+                     * 设置<p>执行平台下发执行id</p>
+                     * @param _executionJobId <p>执行平台下发执行id</p>
                      * 
                      */
                     void SetExecutionJobId(const std::string& _executionJobId);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool ExecutionJobIdHasBeenSet() const;
 
                     /**
-                     * 获取日志级别，Info/Debug/Warn/Error/All
-                     * @return LogLevelType 日志级别，Info/Debug/Warn/Error/All
+                     * 获取<p>日志级别，Info/Debug/Warn/Error/All</p>
+                     * @return LogLevelType <p>日志级别，Info/Debug/Warn/Error/All</p>
                      * 
                      */
                     std::string GetLogLevelType() const;
 
                     /**
-                     * 设置日志级别，Info/Debug/Warn/Error/All
-                     * @param _logLevelType 日志级别，Info/Debug/Warn/Error/All
+                     * 设置<p>日志级别，Info/Debug/Warn/Error/All</p>
+                     * @param _logLevelType <p>日志级别，Info/Debug/Warn/Error/All</p>
                      * 
                      */
                     void SetLogLevelType(const std::string& _logLevelType);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool LogLevelTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件类型,Log/Code
-                     * @return ExecutionFileType 文件类型,Log/Code
+                     * 获取<p>文件类型,Log/Code</p>
+                     * @return ExecutionFileType <p>文件类型,Log/Code</p>
                      * 
                      */
                     std::string GetExecutionFileType() const;
 
                     /**
-                     * 设置文件类型,Log/Code
-                     * @param _executionFileType 文件类型,Log/Code
+                     * 设置<p>文件类型,Log/Code</p>
+                     * @param _executionFileType <p>文件类型,Log/Code</p>
                      * 
                      */
                     void SetExecutionFileType(const std::string& _executionFileType);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool ExecutionFileTypeHasBeenSet() const;
 
                     /**
-                     * 获取生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
-                     * @return InstanceLifeDetailDtoList 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * 获取<p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>
+                     * @return InstanceLifeDetailDtoList <p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>
                      * 
                      */
                     std::vector<InstanceLifeDetailDto> GetInstanceLifeDetailDtoList() const;
 
                     /**
-                     * 设置生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
-                     * @param _instanceLifeDetailDtoList 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * 设置<p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>
+                     * @param _instanceLifeDetailDtoList <p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>
                      * 
                      */
                     void SetInstanceLifeDetailDtoList(const std::vector<InstanceLifeDetailDto>& _instanceLifeDetailDtoList);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool InstanceLifeDetailDtoListHasBeenSet() const;
 
                     /**
-                     * 获取当前生命周期数
-                     * @return CurrentLifeRound 当前生命周期数
+                     * 获取<p>当前生命周期数</p>
+                     * @return CurrentLifeRound <p>当前生命周期数</p>
                      * 
                      */
                     int64_t GetCurrentLifeRound() const;
 
                     /**
-                     * 设置当前生命周期数
-                     * @param _currentLifeRound 当前生命周期数
+                     * 设置<p>当前生命周期数</p>
+                     * @param _currentLifeRound <p>当前生命周期数</p>
                      * 
                      */
                     void SetCurrentLifeRound(const int64_t& _currentLifeRound);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool CurrentLifeRoundHasBeenSet() const;
 
                     /**
-                     * 获取最大生命周期数
-                     * @return MaxLifeRound 最大生命周期数
+                     * 获取<p>最大生命周期数</p>
+                     * @return MaxLifeRound <p>最大生命周期数</p>
                      * 
                      */
                     int64_t GetMaxLifeRound() const;
 
                     /**
-                     * 设置最大生命周期数
-                     * @param _maxLifeRound 最大生命周期数
+                     * 设置<p>最大生命周期数</p>
+                     * @param _maxLifeRound <p>最大生命周期数</p>
                      * 
                      */
                     void SetMaxLifeRound(const int64_t& _maxLifeRound);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool MaxLifeRoundHasBeenSet() const;
 
                     /**
-                     * 获取当前生命周期重试次数
-                     * @return Tries 当前生命周期重试次数
+                     * 获取<p>当前生命周期重试次数</p>
+                     * @return Tries <p>当前生命周期重试次数</p>
                      * 
                      */
                     int64_t GetTries() const;
 
                     /**
-                     * 设置当前生命周期重试次数
-                     * @param _tries 当前生命周期重试次数
+                     * 设置<p>当前生命周期重试次数</p>
+                     * @param _tries <p>当前生命周期重试次数</p>
                      * 
                      */
                     void SetTries(const int64_t& _tries);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool TriesHasBeenSet() const;
 
                     /**
-                     * 获取动态获取日志信息标识
-                     * @return Dynamic 动态获取日志信息标识
+                     * 获取<p>动态获取日志信息标识</p>
+                     * @return Dynamic <p>动态获取日志信息标识</p>
                      * 
                      */
                     bool GetDynamic() const;
 
                     /**
-                     * 设置动态获取日志信息标识
-                     * @param _dynamic 动态获取日志信息标识
+                     * 设置<p>动态获取日志信息标识</p>
+                     * @param _dynamic <p>动态获取日志信息标识</p>
                      * 
                      */
                     void SetDynamic(const bool& _dynamic);
@@ -340,19 +340,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 实例数据时间
+                     * <p>实例数据时间</p>
                      */
                     std::string m_curRunDate;
                     bool m_curRunDateHasBeenSet;
@@ -364,61 +364,61 @@ namespace TencentCloud
                     bool m_requestFromSourceHasBeenSet;
 
                     /**
-                     * 执行机IP
+                     * <p>执行机IP</p>
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
-                     * 日志文件名
+                     * <p>日志文件名</p>
                      */
                     std::string m_originFileName;
                     bool m_originFileNameHasBeenSet;
 
                     /**
-                     * 执行平台下发执行id
+                     * <p>执行平台下发执行id</p>
                      */
                     std::string m_executionJobId;
                     bool m_executionJobIdHasBeenSet;
 
                     /**
-                     * 日志级别，Info/Debug/Warn/Error/All
+                     * <p>日志级别，Info/Debug/Warn/Error/All</p>
                      */
                     std::string m_logLevelType;
                     bool m_logLevelTypeHasBeenSet;
 
                     /**
-                     * 文件类型,Log/Code
+                     * <p>文件类型,Log/Code</p>
                      */
                     std::string m_executionFileType;
                     bool m_executionFileTypeHasBeenSet;
 
                     /**
-                     * 生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用
+                     * <p>生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用</p>
                      */
                     std::vector<InstanceLifeDetailDto> m_instanceLifeDetailDtoList;
                     bool m_instanceLifeDetailDtoListHasBeenSet;
 
                     /**
-                     * 当前生命周期数
+                     * <p>当前生命周期数</p>
                      */
                     int64_t m_currentLifeRound;
                     bool m_currentLifeRoundHasBeenSet;
 
                     /**
-                     * 最大生命周期数
+                     * <p>最大生命周期数</p>
                      */
                     int64_t m_maxLifeRound;
                     bool m_maxLifeRoundHasBeenSet;
 
                     /**
-                     * 当前生命周期重试次数
+                     * <p>当前生命周期重试次数</p>
                      */
                     int64_t m_tries;
                     bool m_triesHasBeenSet;
 
                     /**
-                     * 动态获取日志信息标识
+                     * <p>动态获取日志信息标识</p>
                      */
                     bool m_dynamic;
                     bool m_dynamicHasBeenSet;

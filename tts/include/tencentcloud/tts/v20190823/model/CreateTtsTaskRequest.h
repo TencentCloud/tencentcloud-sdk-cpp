@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PrimaryLanguageHasBeenSet() const;
 
                     /**
-                     * 获取<p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p>
-                     * @return SampleRate <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p>
+                     * 获取<p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p><p>枚举值：</p><ul><li>16000： 16kHz音频采样率</li></ul>
+                     * @return SampleRate <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p><p>枚举值：</p><ul><li>16000： 16kHz音频采样率</li></ul>
                      * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
-                     * 设置<p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p>
-                     * @param _sampleRate <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p>
+                     * 设置<p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p><p>枚举值：</p><ul><li>16000： 16kHz音频采样率</li></ul>
+                     * @param _sampleRate <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p><p>枚举值：</p><ul><li>16000： 16kHz音频采样率</li></ul>
                      * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
@@ -381,7 +381,7 @@ namespace TencentCloud
                     bool m_primaryLanguageHasBeenSet;
 
                     /**
-                     * <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p>
+                     * <p>音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li></p><p>枚举值：</p><ul><li>16000： 16kHz音频采样率</li></ul>
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;

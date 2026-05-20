@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SQL优化建议，可解析为JSON数组，无需优化时输出为空。
-                     * @return Advices SQL优化建议，可解析为JSON数组，无需优化时输出为空。
+                     * 获取<p>SQL优化建议，可解析为JSON数组，无需优化时输出为空。</p>
+                     * @return Advices <p>SQL优化建议，可解析为JSON数组，无需优化时输出为空。</p>
                      * 
                      */
                     std::string GetAdvices() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AdvicesHasBeenSet() const;
 
                     /**
-                     * 获取SQL优化建议备注，可解析为String数组，无需优化时输出为空。
-                     * @return Comments SQL优化建议备注，可解析为String数组，无需优化时输出为空。
+                     * 获取<p>SQL优化建议备注，可解析为String数组，无需优化时输出为空。</p>
+                     * @return Comments <p>SQL优化建议备注，可解析为String数组，无需优化时输出为空。</p>
                      * 
                      */
                     std::string GetComments() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CommentsHasBeenSet() const;
 
                     /**
-                     * 获取SQL语句。
-                     * @return SqlText SQL语句。
+                     * 获取<p>SQL语句。</p>
+                     * @return SqlText <p>SQL语句。</p>
                      * 
                      */
                     std::string GetSqlText() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool SqlTextHasBeenSet() const;
 
                     /**
-                     * 获取库名。
-                     * @return Schema 库名。
+                     * 获取<p>库名。</p>
+                     * @return Schema <p>库名。</p>
                      * 
                      */
                     std::string GetSchema() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool SchemaHasBeenSet() const;
 
                     /**
-                     * 获取相关表的DDL信息，可解析为JSON数组。
-                     * @return Tables 相关表的DDL信息，可解析为JSON数组。
+                     * 获取<p>相关表的DDL信息，可解析为JSON数组。</p>
+                     * @return Tables <p>相关表的DDL信息，可解析为JSON数组。</p>
                      * 
                      */
                     std::string GetTables() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取SQL执行计划，可解析为JSON，无需优化时输出为空。
-                     * @return SqlPlan SQL执行计划，可解析为JSON，无需优化时输出为空。
+                     * 获取<p>SQL执行计划，可解析为JSON，无需优化时输出为空。</p>
+                     * @return SqlPlan <p>SQL执行计划，可解析为JSON，无需优化时输出为空。</p>
                      * 
                      */
                     std::string GetSqlPlan() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool SqlPlanHasBeenSet() const;
 
                     /**
-                     * 获取SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
-                     * @return Cost SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
+                     * 获取<p>SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。</p>
+                     * @return Cost <p>SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。</p>
                      * 
                      */
                     std::string GetCost() const;
@@ -144,43 +144,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SQL优化建议，可解析为JSON数组，无需优化时输出为空。
+                     * <p>SQL优化建议，可解析为JSON数组，无需优化时输出为空。</p>
                      */
                     std::string m_advices;
                     bool m_advicesHasBeenSet;
 
                     /**
-                     * SQL优化建议备注，可解析为String数组，无需优化时输出为空。
+                     * <p>SQL优化建议备注，可解析为String数组，无需优化时输出为空。</p>
                      */
                     std::string m_comments;
                     bool m_commentsHasBeenSet;
 
                     /**
-                     * SQL语句。
+                     * <p>SQL语句。</p>
                      */
                     std::string m_sqlText;
                     bool m_sqlTextHasBeenSet;
 
                     /**
-                     * 库名。
+                     * <p>库名。</p>
                      */
                     std::string m_schema;
                     bool m_schemaHasBeenSet;
 
                     /**
-                     * 相关表的DDL信息，可解析为JSON数组。
+                     * <p>相关表的DDL信息，可解析为JSON数组。</p>
                      */
                     std::string m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * SQL执行计划，可解析为JSON，无需优化时输出为空。
+                     * <p>SQL执行计划，可解析为JSON，无需优化时输出为空。</p>
                      */
                     std::string m_sqlPlan;
                     bool m_sqlPlanHasBeenSet;
 
                     /**
-                     * SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
+                     * <p>SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。</p>
                      */
                     std::string m_cost;
                     bool m_costHasBeenSet;

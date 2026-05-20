@@ -20,6 +20,7 @@ set(ga2_public_header
 
 set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/CreateAccelerateAreasResponse.h
+  include/tencentcloud/ga2/v20250115/model/DescribeTaskResultResponse.h
   include/tencentcloud/ga2/v20250115/model/DescribeListenersResponse.h
   include/tencentcloud/ga2/v20250115/model/ModifyListenerResponse.h
   include/tencentcloud/ga2/v20250115/model/DescribeForwardingRuleRequest.h
@@ -31,6 +32,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/CreateListenerResponse.h
   include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementRequest.h
+  include/tencentcloud/ga2/v20250115/model/IpAddressInfoSet.h
   include/tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorsRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeAccelerateAreasRequest.h
   include/tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasRequest.h
@@ -52,7 +54,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/DescribeEndpointGroupsRequest.h
   include/tencentcloud/ga2/v20250115/model/CreateAccelerateAreasRequest.h
   include/tencentcloud/ga2/v20250115/model/CreateListenerRequest.h
-  include/tencentcloud/ga2/v20250115/model/IpAddressInfoSet.h
+  include/tencentcloud/ga2/v20250115/model/DescribeTaskResultRequest.h
   include/tencentcloud/ga2/v20250115/model/ModifyForwardingRuleResponse.h
   include/tencentcloud/ga2/v20250115/model/DeleteForwardingRuleRequest.h
   include/tencentcloud/ga2/v20250115/model/ListenerSet.h
@@ -84,6 +86,7 @@ set(ga2_public_header_model
 set(ga2_src
   src/v20250115/Ga2Client.cpp
   src/v20250115/model/CreateAccelerateAreasResponse.cpp
+  src/v20250115/model/DescribeTaskResultResponse.cpp
   src/v20250115/model/DescribeListenersResponse.cpp
   src/v20250115/model/ModifyListenerResponse.cpp
   src/v20250115/model/DescribeForwardingRuleRequest.cpp
@@ -95,6 +98,7 @@ set(ga2_src
   src/v20250115/model/CreateListenerResponse.cpp
   src/v20250115/model/CreateGlobalAcceleratorRequest.cpp
   src/v20250115/model/DescribeCrossBorderSettlementRequest.cpp
+  src/v20250115/model/IpAddressInfoSet.cpp
   src/v20250115/model/DescribeGlobalAcceleratorsRequest.cpp
   src/v20250115/model/DescribeAccelerateAreasRequest.cpp
   src/v20250115/model/ModifyAccelerateAreasRequest.cpp
@@ -116,7 +120,7 @@ set(ga2_src
   src/v20250115/model/DescribeEndpointGroupsRequest.cpp
   src/v20250115/model/CreateAccelerateAreasRequest.cpp
   src/v20250115/model/CreateListenerRequest.cpp
-  src/v20250115/model/IpAddressInfoSet.cpp
+  src/v20250115/model/DescribeTaskResultRequest.cpp
   src/v20250115/model/ModifyForwardingRuleResponse.cpp
   src/v20250115/model/DeleteForwardingRuleRequest.cpp
   src/v20250115/model/ListenerSet.cpp

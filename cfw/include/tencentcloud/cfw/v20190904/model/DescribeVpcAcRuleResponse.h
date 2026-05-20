@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取<p>总条数</p>
+                     * @return Total <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取内网间访问控制列表数据
-                     * @return Data 内网间访问控制列表数据
+                     * 获取<p>内网间访问控制列表数据</p>
+                     * @return Data <p>内网间访问控制列表数据</p>
                      * 
                      */
                     std::vector<VpcRuleItem> GetData() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 内网间访问控制列表数据
+                     * <p>内网间访问控制列表数据</p>
                      */
                     std::vector<VpcRuleItem> m_data;
                     bool m_dataHasBeenSet;

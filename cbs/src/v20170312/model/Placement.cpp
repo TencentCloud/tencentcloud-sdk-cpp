@@ -23,11 +23,11 @@ using namespace std;
 Placement::Placement() :
     m_zoneHasBeenSet(false),
     m_cageIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_cdcNameHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_cdcNameHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -56,6 +56,36 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
         m_cageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdcName") && !value["CdcName"].IsNull())
+    {
+        if (!value["CdcName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.CdcName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcName = string(value["CdcName"].GetString());
+        m_cdcNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DedicatedClusterId") && !value["DedicatedClusterId"].IsNull())
+    {
+        if (!value["DedicatedClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
+        m_dedicatedClusterIdHasBeenSet = true;
+    }
+
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
     {
         if (!value["ProjectId"].IsUint64())
@@ -74,36 +104,6 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
         }
         m_projectName = string(value["ProjectName"].GetString());
         m_projectNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("CdcName") && !value["CdcName"].IsNull())
-    {
-        if (!value["CdcName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Placement.CdcName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cdcName = string(value["CdcName"].GetString());
-        m_cdcNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
-    {
-        if (!value["CdcId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Placement.CdcId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cdcId = string(value["CdcId"].GetString());
-        m_cdcIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("DedicatedClusterId") && !value["DedicatedClusterId"].IsNull())
-    {
-        if (!value["DedicatedClusterId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Placement.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
-        m_dedicatedClusterIdHasBeenSet = true;
     }
 
 
@@ -129,6 +129,30 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -143,30 +167,6 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cdcNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CdcName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cdcName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cdcIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CdcId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dedicatedClusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DedicatedClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -204,6 +204,54 @@ bool Placement::CageIdHasBeenSet() const
     return m_cageIdHasBeenSet;
 }
 
+string Placement::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void Placement::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool Placement::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
+}
+
+string Placement::GetCdcName() const
+{
+    return m_cdcName;
+}
+
+void Placement::SetCdcName(const string& _cdcName)
+{
+    m_cdcName = _cdcName;
+    m_cdcNameHasBeenSet = true;
+}
+
+bool Placement::CdcNameHasBeenSet() const
+{
+    return m_cdcNameHasBeenSet;
+}
+
+string Placement::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void Placement::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool Placement::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
+}
+
 uint64_t Placement::GetProjectId() const
 {
     return m_projectId;
@@ -234,53 +282,5 @@ void Placement::SetProjectName(const string& _projectName)
 bool Placement::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
-}
-
-string Placement::GetCdcName() const
-{
-    return m_cdcName;
-}
-
-void Placement::SetCdcName(const string& _cdcName)
-{
-    m_cdcName = _cdcName;
-    m_cdcNameHasBeenSet = true;
-}
-
-bool Placement::CdcNameHasBeenSet() const
-{
-    return m_cdcNameHasBeenSet;
-}
-
-string Placement::GetCdcId() const
-{
-    return m_cdcId;
-}
-
-void Placement::SetCdcId(const string& _cdcId)
-{
-    m_cdcId = _cdcId;
-    m_cdcIdHasBeenSet = true;
-}
-
-bool Placement::CdcIdHasBeenSet() const
-{
-    return m_cdcIdHasBeenSet;
-}
-
-string Placement::GetDedicatedClusterId() const
-{
-    return m_dedicatedClusterId;
-}
-
-void Placement::SetDedicatedClusterId(const string& _dedicatedClusterId)
-{
-    m_dedicatedClusterId = _dedicatedClusterId;
-    m_dedicatedClusterIdHasBeenSet = true;
-}
-
-bool Placement::DedicatedClusterIdHasBeenSet() const
-{
-    return m_dedicatedClusterIdHasBeenSet;
 }
 

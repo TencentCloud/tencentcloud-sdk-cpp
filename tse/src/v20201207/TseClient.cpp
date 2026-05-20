@@ -40,6 +40,106 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::AddCloudNativeAPIGatewayConsumerGroupAuthOutcome TseClient::AddCloudNativeAPIGatewayConsumerGroupAuth(const AddCloudNativeAPIGatewayConsumerGroupAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCloudNativeAPIGatewayConsumerGroupAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCloudNativeAPIGatewayConsumerGroupAuthResponse rsp = AddCloudNativeAPIGatewayConsumerGroupAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCloudNativeAPIGatewayConsumerGroupAuthOutcome(rsp);
+        else
+            return AddCloudNativeAPIGatewayConsumerGroupAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCloudNativeAPIGatewayConsumerGroupAuthOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::AddCloudNativeAPIGatewayConsumerGroupAuthAsync(const AddCloudNativeAPIGatewayConsumerGroupAuthRequest& request, const AddCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddCloudNativeAPIGatewayConsumerGroupAuthRequest&;
+    using Resp = AddCloudNativeAPIGatewayConsumerGroupAuthResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddCloudNativeAPIGatewayConsumerGroupAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::AddCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable TseClient::AddCloudNativeAPIGatewayConsumerGroupAuthCallable(const AddCloudNativeAPIGatewayConsumerGroupAuthRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddCloudNativeAPIGatewayConsumerGroupAuthOutcome>>();
+    AddCloudNativeAPIGatewayConsumerGroupAuthAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const AddCloudNativeAPIGatewayConsumerGroupAuthRequest&,
+        AddCloudNativeAPIGatewayConsumerGroupAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::AddCloudNativeAPIGatewayConsumerInGroupOutcome TseClient::AddCloudNativeAPIGatewayConsumerInGroup(const AddCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCloudNativeAPIGatewayConsumerInGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCloudNativeAPIGatewayConsumerInGroupResponse rsp = AddCloudNativeAPIGatewayConsumerInGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCloudNativeAPIGatewayConsumerInGroupOutcome(rsp);
+        else
+            return AddCloudNativeAPIGatewayConsumerInGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCloudNativeAPIGatewayConsumerInGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::AddCloudNativeAPIGatewayConsumerInGroupAsync(const AddCloudNativeAPIGatewayConsumerInGroupRequest& request, const AddCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddCloudNativeAPIGatewayConsumerInGroupRequest&;
+    using Resp = AddCloudNativeAPIGatewayConsumerInGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddCloudNativeAPIGatewayConsumerInGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::AddCloudNativeAPIGatewayConsumerInGroupOutcomeCallable TseClient::AddCloudNativeAPIGatewayConsumerInGroupCallable(const AddCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddCloudNativeAPIGatewayConsumerInGroupOutcome>>();
+    AddCloudNativeAPIGatewayConsumerInGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const AddCloudNativeAPIGatewayConsumerInGroupRequest&,
+        AddCloudNativeAPIGatewayConsumerInGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::BindAutoScalerResourceStrategyToGroupsOutcome TseClient::BindAutoScalerResourceStrategyToGroups(const BindAutoScalerResourceStrategyToGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "BindAutoScalerResourceStrategyToGroups");
@@ -340,6 +440,206 @@ TseClient::CreateCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Crea
     return prom->get_future();
 }
 
+TseClient::CreateCloudNativeAPIGatewayConsumerOutcome TseClient::CreateCloudNativeAPIGatewayConsumer(const CreateCloudNativeAPIGatewayConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayConsumerResponse rsp = CreateCloudNativeAPIGatewayConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayConsumerOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayConsumerOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayConsumerAsync(const CreateCloudNativeAPIGatewayConsumerRequest& request, const CreateCloudNativeAPIGatewayConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayConsumerRequest&;
+    using Resp = CreateCloudNativeAPIGatewayConsumerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayConsumer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateCloudNativeAPIGatewayConsumerOutcomeCallable TseClient::CreateCloudNativeAPIGatewayConsumerCallable(const CreateCloudNativeAPIGatewayConsumerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayConsumerOutcome>>();
+    CreateCloudNativeAPIGatewayConsumerAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateCloudNativeAPIGatewayConsumerRequest&,
+        CreateCloudNativeAPIGatewayConsumerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayConsumerGroupOutcome TseClient::CreateCloudNativeAPIGatewayConsumerGroup(const CreateCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayConsumerGroupResponse rsp = CreateCloudNativeAPIGatewayConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayConsumerGroupOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayConsumerGroupAsync(const CreateCloudNativeAPIGatewayConsumerGroupRequest& request, const CreateCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayConsumerGroupRequest&;
+    using Resp = CreateCloudNativeAPIGatewayConsumerGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateCloudNativeAPIGatewayConsumerGroupOutcomeCallable TseClient::CreateCloudNativeAPIGatewayConsumerGroupCallable(const CreateCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayConsumerGroupOutcome>>();
+    CreateCloudNativeAPIGatewayConsumerGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateCloudNativeAPIGatewayConsumerGroupRequest&,
+        CreateCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayLLMModelAPIOutcome TseClient::CreateCloudNativeAPIGatewayLLMModelAPI(const CreateCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayLLMModelAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayLLMModelAPIResponse rsp = CreateCloudNativeAPIGatewayLLMModelAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayLLMModelAPIOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayLLMModelAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayLLMModelAPIOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayLLMModelAPIAsync(const CreateCloudNativeAPIGatewayLLMModelAPIRequest& request, const CreateCloudNativeAPIGatewayLLMModelAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayLLMModelAPIRequest&;
+    using Resp = CreateCloudNativeAPIGatewayLLMModelAPIResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayLLMModelAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateCloudNativeAPIGatewayLLMModelAPIOutcomeCallable TseClient::CreateCloudNativeAPIGatewayLLMModelAPICallable(const CreateCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayLLMModelAPIOutcome>>();
+    CreateCloudNativeAPIGatewayLLMModelAPIAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateCloudNativeAPIGatewayLLMModelAPIRequest&,
+        CreateCloudNativeAPIGatewayLLMModelAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayLLMModelServiceOutcome TseClient::CreateCloudNativeAPIGatewayLLMModelService(const CreateCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayLLMModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayLLMModelServiceResponse rsp = CreateCloudNativeAPIGatewayLLMModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayLLMModelServiceOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayLLMModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayLLMModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayLLMModelServiceAsync(const CreateCloudNativeAPIGatewayLLMModelServiceRequest& request, const CreateCloudNativeAPIGatewayLLMModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewayLLMModelServiceRequest&;
+    using Resp = CreateCloudNativeAPIGatewayLLMModelServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewayLLMModelService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateCloudNativeAPIGatewayLLMModelServiceOutcomeCallable TseClient::CreateCloudNativeAPIGatewayLLMModelServiceCallable(const CreateCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewayLLMModelServiceOutcome>>();
+    CreateCloudNativeAPIGatewayLLMModelServiceAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateCloudNativeAPIGatewayLLMModelServiceRequest&,
+        CreateCloudNativeAPIGatewayLLMModelServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::CreateCloudNativeAPIGatewayPublicNetworkOutcome TseClient::CreateCloudNativeAPIGatewayPublicNetwork(const CreateCloudNativeAPIGatewayPublicNetworkRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayPublicNetwork");
@@ -482,6 +782,56 @@ TseClient::CreateCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::C
         const TseClient*,
         const CreateCloudNativeAPIGatewayRouteRateLimitRequest&,
         CreateCloudNativeAPIGatewayRouteRateLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewaySecretKeyOutcome TseClient::CreateCloudNativeAPIGatewaySecretKey(const CreateCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewaySecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewaySecretKeyResponse rsp = CreateCloudNativeAPIGatewaySecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewaySecretKeyOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewaySecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewaySecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewaySecretKeyAsync(const CreateCloudNativeAPIGatewaySecretKeyRequest& request, const CreateCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudNativeAPIGatewaySecretKeyRequest&;
+    using Resp = CreateCloudNativeAPIGatewaySecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudNativeAPIGatewaySecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable TseClient::CreateCloudNativeAPIGatewaySecretKeyCallable(const CreateCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudNativeAPIGatewaySecretKeyOutcome>>();
+    CreateCloudNativeAPIGatewaySecretKeyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateCloudNativeAPIGatewaySecretKeyRequest&,
+        CreateCloudNativeAPIGatewaySecretKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1540,6 +1890,106 @@ TseClient::DeleteCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Dele
     return prom->get_future();
 }
 
+TseClient::DeleteCloudNativeAPIGatewayConsumerOutcome TseClient::DeleteCloudNativeAPIGatewayConsumer(const DeleteCloudNativeAPIGatewayConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayConsumerResponse rsp = DeleteCloudNativeAPIGatewayConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayConsumerOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayConsumerOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayConsumerAsync(const DeleteCloudNativeAPIGatewayConsumerRequest& request, const DeleteCloudNativeAPIGatewayConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayConsumerRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayConsumerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayConsumer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewayConsumerOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayConsumerCallable(const DeleteCloudNativeAPIGatewayConsumerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayConsumerOutcome>>();
+    DeleteCloudNativeAPIGatewayConsumerAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewayConsumerRequest&,
+        DeleteCloudNativeAPIGatewayConsumerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayConsumerGroupOutcome TseClient::DeleteCloudNativeAPIGatewayConsumerGroup(const DeleteCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayConsumerGroupResponse rsp = DeleteCloudNativeAPIGatewayConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayConsumerGroupOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayConsumerGroupAsync(const DeleteCloudNativeAPIGatewayConsumerGroupRequest& request, const DeleteCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayConsumerGroupRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayConsumerGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewayConsumerGroupOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayConsumerGroupCallable(const DeleteCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayConsumerGroupOutcome>>();
+    DeleteCloudNativeAPIGatewayConsumerGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewayConsumerGroupRequest&,
+        DeleteCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcome TseClient::DeleteCloudNativeAPIGatewayIPRestriction(const DeleteCloudNativeAPIGatewayIPRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayIPRestriction");
@@ -1582,6 +2032,106 @@ TseClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable TseClient::De
         const TseClient*,
         const DeleteCloudNativeAPIGatewayIPRestrictionRequest&,
         DeleteCloudNativeAPIGatewayIPRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayLLMModelAPIOutcome TseClient::DeleteCloudNativeAPIGatewayLLMModelAPI(const DeleteCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayLLMModelAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayLLMModelAPIResponse rsp = DeleteCloudNativeAPIGatewayLLMModelAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayLLMModelAPIOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayLLMModelAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayLLMModelAPIOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayLLMModelAPIAsync(const DeleteCloudNativeAPIGatewayLLMModelAPIRequest& request, const DeleteCloudNativeAPIGatewayLLMModelAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayLLMModelAPIRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayLLMModelAPIResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayLLMModelAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewayLLMModelAPIOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayLLMModelAPICallable(const DeleteCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayLLMModelAPIOutcome>>();
+    DeleteCloudNativeAPIGatewayLLMModelAPIAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewayLLMModelAPIRequest&,
+        DeleteCloudNativeAPIGatewayLLMModelAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayLLMModelServiceOutcome TseClient::DeleteCloudNativeAPIGatewayLLMModelService(const DeleteCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayLLMModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayLLMModelServiceResponse rsp = DeleteCloudNativeAPIGatewayLLMModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayLLMModelServiceOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayLLMModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayLLMModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayLLMModelServiceAsync(const DeleteCloudNativeAPIGatewayLLMModelServiceRequest& request, const DeleteCloudNativeAPIGatewayLLMModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayLLMModelServiceRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayLLMModelServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayLLMModelService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewayLLMModelServiceOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayLLMModelServiceCallable(const DeleteCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayLLMModelServiceOutcome>>();
+    DeleteCloudNativeAPIGatewayLLMModelServiceAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewayLLMModelServiceRequest&,
+        DeleteCloudNativeAPIGatewayLLMModelServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1732,6 +2282,56 @@ TseClient::DeleteCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::D
         const TseClient*,
         const DeleteCloudNativeAPIGatewayRouteRateLimitRequest&,
         DeleteCloudNativeAPIGatewayRouteRateLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewaySecretKeyOutcome TseClient::DeleteCloudNativeAPIGatewaySecretKey(const DeleteCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewaySecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewaySecretKeyResponse rsp = DeleteCloudNativeAPIGatewaySecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewaySecretKeyOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewaySecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewaySecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewaySecretKeyAsync(const DeleteCloudNativeAPIGatewaySecretKeyRequest& request, const DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewaySecretKeyRequest&;
+    using Resp = DeleteCloudNativeAPIGatewaySecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewaySecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable TseClient::DeleteCloudNativeAPIGatewaySecretKeyCallable(const DeleteCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewaySecretKeyOutcome>>();
+    DeleteCloudNativeAPIGatewaySecretKeyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewaySecretKeyRequest&,
+        DeleteCloudNativeAPIGatewaySecretKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2940,6 +3540,206 @@ TseClient::DescribeCloudNativeAPIGatewayConfigOutcomeCallable TseClient::Describ
     return prom->get_future();
 }
 
+TseClient::DescribeCloudNativeAPIGatewayConsumerOutcome TseClient::DescribeCloudNativeAPIGatewayConsumer(const DescribeCloudNativeAPIGatewayConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayConsumerResponse rsp = DescribeCloudNativeAPIGatewayConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayConsumerOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayConsumerOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayConsumerAsync(const DescribeCloudNativeAPIGatewayConsumerRequest& request, const DescribeCloudNativeAPIGatewayConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayConsumerRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayConsumerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayConsumer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayConsumerCallable(const DescribeCloudNativeAPIGatewayConsumerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayConsumerOutcome>>();
+    DescribeCloudNativeAPIGatewayConsumerAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayConsumerRequest&,
+        DescribeCloudNativeAPIGatewayConsumerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerGroupOutcome TseClient::DescribeCloudNativeAPIGatewayConsumerGroup(const DescribeCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayConsumerGroupResponse rsp = DescribeCloudNativeAPIGatewayConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayConsumerGroupOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayConsumerGroupAsync(const DescribeCloudNativeAPIGatewayConsumerGroupRequest& request, const DescribeCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayConsumerGroupRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayConsumerGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerGroupOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayConsumerGroupCallable(const DescribeCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayConsumerGroupOutcome>>();
+    DescribeCloudNativeAPIGatewayConsumerGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayConsumerGroupRequest&,
+        DescribeCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerGroupListOutcome TseClient::DescribeCloudNativeAPIGatewayConsumerGroupList(const DescribeCloudNativeAPIGatewayConsumerGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayConsumerGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayConsumerGroupListResponse rsp = DescribeCloudNativeAPIGatewayConsumerGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayConsumerGroupListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayConsumerGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayConsumerGroupListOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayConsumerGroupListAsync(const DescribeCloudNativeAPIGatewayConsumerGroupListRequest& request, const DescribeCloudNativeAPIGatewayConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayConsumerGroupListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayConsumerGroupListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayConsumerGroupList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerGroupListOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayConsumerGroupListCallable(const DescribeCloudNativeAPIGatewayConsumerGroupListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayConsumerGroupListOutcome>>();
+    DescribeCloudNativeAPIGatewayConsumerGroupListAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayConsumerGroupListRequest&,
+        DescribeCloudNativeAPIGatewayConsumerGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerListOutcome TseClient::DescribeCloudNativeAPIGatewayConsumerList(const DescribeCloudNativeAPIGatewayConsumerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayConsumerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayConsumerListResponse rsp = DescribeCloudNativeAPIGatewayConsumerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayConsumerListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayConsumerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayConsumerListOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayConsumerListAsync(const DescribeCloudNativeAPIGatewayConsumerListRequest& request, const DescribeCloudNativeAPIGatewayConsumerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayConsumerListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayConsumerListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayConsumerList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayConsumerListOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayConsumerListCallable(const DescribeCloudNativeAPIGatewayConsumerListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayConsumerListOutcome>>();
+    DescribeCloudNativeAPIGatewayConsumerListAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayConsumerListRequest&,
+        DescribeCloudNativeAPIGatewayConsumerListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewayIPRestrictionOutcome TseClient::DescribeCloudNativeAPIGatewayIPRestriction(const DescribeCloudNativeAPIGatewayIPRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayIPRestriction");
@@ -3032,6 +3832,206 @@ TseClient::DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable TseClient::Descr
         const TseClient*,
         const DescribeCloudNativeAPIGatewayInfoByIpRequest&,
         DescribeCloudNativeAPIGatewayInfoByIpOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIOutcome TseClient::DescribeCloudNativeAPIGatewayLLMModelAPI(const DescribeCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayLLMModelAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayLLMModelAPIResponse rsp = DescribeCloudNativeAPIGatewayLLMModelAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayLLMModelAPIOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayLLMModelAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayLLMModelAPIOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIAsync(const DescribeCloudNativeAPIGatewayLLMModelAPIRequest& request, const DescribeCloudNativeAPIGatewayLLMModelAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayLLMModelAPIRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayLLMModelAPIResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayLLMModelAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayLLMModelAPICallable(const DescribeCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayLLMModelAPIOutcome>>();
+    DescribeCloudNativeAPIGatewayLLMModelAPIAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayLLMModelAPIRequest&,
+        DescribeCloudNativeAPIGatewayLLMModelAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIs(const DescribeCloudNativeAPIGatewayLLMModelAPIsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayLLMModelAPIs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayLLMModelAPIsResponse rsp = DescribeCloudNativeAPIGatewayLLMModelAPIsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIsAsync(const DescribeCloudNativeAPIGatewayLLMModelAPIsRequest& request, const DescribeCloudNativeAPIGatewayLLMModelAPIsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayLLMModelAPIsRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayLLMModelAPIsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayLLMModelAPIs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIsOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayLLMModelAPIsCallable(const DescribeCloudNativeAPIGatewayLLMModelAPIsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome>>();
+    DescribeCloudNativeAPIGatewayLLMModelAPIsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayLLMModelAPIsRequest&,
+        DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelServiceOutcome TseClient::DescribeCloudNativeAPIGatewayLLMModelService(const DescribeCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayLLMModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayLLMModelServiceResponse rsp = DescribeCloudNativeAPIGatewayLLMModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayLLMModelServiceOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayLLMModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayLLMModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayLLMModelServiceAsync(const DescribeCloudNativeAPIGatewayLLMModelServiceRequest& request, const DescribeCloudNativeAPIGatewayLLMModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayLLMModelServiceRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayLLMModelServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayLLMModelService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelServiceOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayLLMModelServiceCallable(const DescribeCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayLLMModelServiceOutcome>>();
+    DescribeCloudNativeAPIGatewayLLMModelServiceAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayLLMModelServiceRequest&,
+        DescribeCloudNativeAPIGatewayLLMModelServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelServicesOutcome TseClient::DescribeCloudNativeAPIGatewayLLMModelServices(const DescribeCloudNativeAPIGatewayLLMModelServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayLLMModelServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayLLMModelServicesResponse rsp = DescribeCloudNativeAPIGatewayLLMModelServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayLLMModelServicesOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayLLMModelServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayLLMModelServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayLLMModelServicesAsync(const DescribeCloudNativeAPIGatewayLLMModelServicesRequest& request, const DescribeCloudNativeAPIGatewayLLMModelServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayLLMModelServicesRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayLLMModelServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayLLMModelServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayLLMModelServicesOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayLLMModelServicesCallable(const DescribeCloudNativeAPIGatewayLLMModelServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayLLMModelServicesOutcome>>();
+    DescribeCloudNativeAPIGatewayLLMModelServicesAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayLLMModelServicesRequest&,
+        DescribeCloudNativeAPIGatewayLLMModelServicesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3232,6 +4232,156 @@ TseClient::DescribeCloudNativeAPIGatewayRoutesOutcomeCallable TseClient::Describ
         const TseClient*,
         const DescribeCloudNativeAPIGatewayRoutesRequest&,
         DescribeCloudNativeAPIGatewayRoutesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyOutcome TseClient::DescribeCloudNativeAPIGatewaySecretKey(const DescribeCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewaySecretKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewaySecretKeyResponse rsp = DescribeCloudNativeAPIGatewaySecretKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewaySecretKeyOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewaySecretKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewaySecretKeyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewaySecretKeyAsync(const DescribeCloudNativeAPIGatewaySecretKeyRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewaySecretKeyRequest&;
+    using Resp = DescribeCloudNativeAPIGatewaySecretKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewaySecretKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyOutcomeCallable TseClient::DescribeCloudNativeAPIGatewaySecretKeyCallable(const DescribeCloudNativeAPIGatewaySecretKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewaySecretKeyOutcome>>();
+    DescribeCloudNativeAPIGatewaySecretKeyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewaySecretKeyRequest&,
+        DescribeCloudNativeAPIGatewaySecretKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyListOutcome TseClient::DescribeCloudNativeAPIGatewaySecretKeyList(const DescribeCloudNativeAPIGatewaySecretKeyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewaySecretKeyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewaySecretKeyListResponse rsp = DescribeCloudNativeAPIGatewaySecretKeyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewaySecretKeyListOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewaySecretKeyListAsync(const DescribeCloudNativeAPIGatewaySecretKeyListRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewaySecretKeyListRequest&;
+    using Resp = DescribeCloudNativeAPIGatewaySecretKeyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewaySecretKeyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyListOutcomeCallable TseClient::DescribeCloudNativeAPIGatewaySecretKeyListCallable(const DescribeCloudNativeAPIGatewaySecretKeyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewaySecretKeyListOutcome>>();
+    DescribeCloudNativeAPIGatewaySecretKeyListAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewaySecretKeyListRequest&,
+        DescribeCloudNativeAPIGatewaySecretKeyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyValueOutcome TseClient::DescribeCloudNativeAPIGatewaySecretKeyValue(const DescribeCloudNativeAPIGatewaySecretKeyValueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewaySecretKeyValue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewaySecretKeyValueResponse rsp = DescribeCloudNativeAPIGatewaySecretKeyValueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewaySecretKeyValueOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewaySecretKeyValueOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewaySecretKeyValueOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewaySecretKeyValueAsync(const DescribeCloudNativeAPIGatewaySecretKeyValueRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewaySecretKeyValueRequest&;
+    using Resp = DescribeCloudNativeAPIGatewaySecretKeyValueResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewaySecretKeyValue", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable TseClient::DescribeCloudNativeAPIGatewaySecretKeyValueCallable(const DescribeCloudNativeAPIGatewaySecretKeyValueRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewaySecretKeyValueOutcome>>();
+    DescribeCloudNativeAPIGatewaySecretKeyValueAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewaySecretKeyValueRequest&,
+        DescribeCloudNativeAPIGatewaySecretKeyValueOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5190,6 +6340,206 @@ TseClient::ModifyCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Modi
     return prom->get_future();
 }
 
+TseClient::ModifyCloudNativeAPIGatewayConsumerOutcome TseClient::ModifyCloudNativeAPIGatewayConsumer(const ModifyCloudNativeAPIGatewayConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayConsumerResponse rsp = ModifyCloudNativeAPIGatewayConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayConsumerOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayConsumerOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayConsumerAsync(const ModifyCloudNativeAPIGatewayConsumerRequest& request, const ModifyCloudNativeAPIGatewayConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayConsumerRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayConsumerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayConsumer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyCloudNativeAPIGatewayConsumerOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayConsumerCallable(const ModifyCloudNativeAPIGatewayConsumerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayConsumerOutcome>>();
+    ModifyCloudNativeAPIGatewayConsumerAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyCloudNativeAPIGatewayConsumerRequest&,
+        ModifyCloudNativeAPIGatewayConsumerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayConsumerGroupOutcome TseClient::ModifyCloudNativeAPIGatewayConsumerGroup(const ModifyCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayConsumerGroupResponse rsp = ModifyCloudNativeAPIGatewayConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayConsumerGroupOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayConsumerGroupAsync(const ModifyCloudNativeAPIGatewayConsumerGroupRequest& request, const ModifyCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayConsumerGroupRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayConsumerGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayConsumerGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyCloudNativeAPIGatewayConsumerGroupOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayConsumerGroupCallable(const ModifyCloudNativeAPIGatewayConsumerGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayConsumerGroupOutcome>>();
+    ModifyCloudNativeAPIGatewayConsumerGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyCloudNativeAPIGatewayConsumerGroupRequest&,
+        ModifyCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayLLMModelAPIOutcome TseClient::ModifyCloudNativeAPIGatewayLLMModelAPI(const ModifyCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayLLMModelAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayLLMModelAPIResponse rsp = ModifyCloudNativeAPIGatewayLLMModelAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayLLMModelAPIOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayLLMModelAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayLLMModelAPIOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayLLMModelAPIAsync(const ModifyCloudNativeAPIGatewayLLMModelAPIRequest& request, const ModifyCloudNativeAPIGatewayLLMModelAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayLLMModelAPIRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayLLMModelAPIResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayLLMModelAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyCloudNativeAPIGatewayLLMModelAPIOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayLLMModelAPICallable(const ModifyCloudNativeAPIGatewayLLMModelAPIRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayLLMModelAPIOutcome>>();
+    ModifyCloudNativeAPIGatewayLLMModelAPIAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyCloudNativeAPIGatewayLLMModelAPIRequest&,
+        ModifyCloudNativeAPIGatewayLLMModelAPIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayLLMModelServiceOutcome TseClient::ModifyCloudNativeAPIGatewayLLMModelService(const ModifyCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayLLMModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayLLMModelServiceResponse rsp = ModifyCloudNativeAPIGatewayLLMModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayLLMModelServiceOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayLLMModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayLLMModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayLLMModelServiceAsync(const ModifyCloudNativeAPIGatewayLLMModelServiceRequest& request, const ModifyCloudNativeAPIGatewayLLMModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewayLLMModelServiceRequest&;
+    using Resp = ModifyCloudNativeAPIGatewayLLMModelServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewayLLMModelService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyCloudNativeAPIGatewayLLMModelServiceOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayLLMModelServiceCallable(const ModifyCloudNativeAPIGatewayLLMModelServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewayLLMModelServiceOutcome>>();
+    ModifyCloudNativeAPIGatewayLLMModelServiceAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyCloudNativeAPIGatewayLLMModelServiceRequest&,
+        ModifyCloudNativeAPIGatewayLLMModelServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::ModifyCloudNativeAPIGatewayRouteOutcome TseClient::ModifyCloudNativeAPIGatewayRoute(const ModifyCloudNativeAPIGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayRoute");
@@ -5282,6 +6632,56 @@ TseClient::ModifyCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::M
         const TseClient*,
         const ModifyCloudNativeAPIGatewayRouteRateLimitRequest&,
         ModifyCloudNativeAPIGatewayRouteRateLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome TseClient::ModifyCloudNativeAPIGatewaySecretKeyStatus(const ModifyCloudNativeAPIGatewaySecretKeyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewaySecretKeyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewaySecretKeyStatusResponse rsp = ModifyCloudNativeAPIGatewaySecretKeyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewaySecretKeyStatusAsync(const ModifyCloudNativeAPIGatewaySecretKeyStatusRequest& request, const ModifyCloudNativeAPIGatewaySecretKeyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudNativeAPIGatewaySecretKeyStatusRequest&;
+    using Resp = ModifyCloudNativeAPIGatewaySecretKeyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudNativeAPIGatewaySecretKeyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyCloudNativeAPIGatewaySecretKeyStatusOutcomeCallable TseClient::ModifyCloudNativeAPIGatewaySecretKeyStatusCallable(const ModifyCloudNativeAPIGatewaySecretKeyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome>>();
+    ModifyCloudNativeAPIGatewaySecretKeyStatusAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyCloudNativeAPIGatewaySecretKeyStatusRequest&,
+        ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6132,6 +7532,106 @@ TseClient::PublishConfigFilesOutcomeCallable TseClient::PublishConfigFilesCallab
         const TseClient*,
         const PublishConfigFilesRequest&,
         PublishConfigFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome TseClient::RemoveCloudNativeAPIGatewayConsumerGroupAuth(const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveCloudNativeAPIGatewayConsumerGroupAuth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse rsp = RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome(rsp);
+        else
+            return RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::RemoveCloudNativeAPIGatewayConsumerGroupAuthAsync(const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest& request, const RemoveCloudNativeAPIGatewayConsumerGroupAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest&;
+    using Resp = RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveCloudNativeAPIGatewayConsumerGroupAuth", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable TseClient::RemoveCloudNativeAPIGatewayConsumerGroupAuthCallable(const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome>>();
+    RemoveCloudNativeAPIGatewayConsumerGroupAuthAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest&,
+        RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::RemoveCloudNativeAPIGatewayConsumerInGroupOutcome TseClient::RemoveCloudNativeAPIGatewayConsumerInGroup(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveCloudNativeAPIGatewayConsumerInGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveCloudNativeAPIGatewayConsumerInGroupResponse rsp = RemoveCloudNativeAPIGatewayConsumerInGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(rsp);
+        else
+            return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::RemoveCloudNativeAPIGatewayConsumerInGroupAsync(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest& request, const RemoveCloudNativeAPIGatewayConsumerInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveCloudNativeAPIGatewayConsumerInGroupRequest&;
+    using Resp = RemoveCloudNativeAPIGatewayConsumerInGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveCloudNativeAPIGatewayConsumerInGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::RemoveCloudNativeAPIGatewayConsumerInGroupOutcomeCallable TseClient::RemoveCloudNativeAPIGatewayConsumerInGroupCallable(const RemoveCloudNativeAPIGatewayConsumerInGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveCloudNativeAPIGatewayConsumerInGroupOutcome>>();
+    RemoveCloudNativeAPIGatewayConsumerInGroupAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const RemoveCloudNativeAPIGatewayConsumerInGroupRequest&,
+        RemoveCloudNativeAPIGatewayConsumerInGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

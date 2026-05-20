@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool TotalPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取快照Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotId 快照Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置快照Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _snapshotId 快照Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     * 
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +233,13 @@ namespace TencentCloud
                      */
                     uint64_t m_totalPageNumber;
                     bool m_totalPageNumberHasBeenSet;
+
+                    /**
+                     * 快照Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                 };
             }

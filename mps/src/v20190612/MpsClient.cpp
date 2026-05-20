@@ -3840,6 +3840,56 @@ MpsClient::DeleteTranscodeTemplateOutcomeCallable MpsClient::DeleteTranscodeTemp
     return prom->get_future();
 }
 
+MpsClient::DeleteVoiceOutcome MpsClient::DeleteVoice(const DeleteVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoiceResponse rsp = DeleteVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoiceOutcome(rsp);
+        else
+            return DeleteVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoiceOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteVoiceAsync(const DeleteVoiceRequest& request, const DeleteVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVoiceRequest&;
+    using Resp = DeleteVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DeleteVoiceOutcomeCallable MpsClient::DeleteVoiceCallable(const DeleteVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVoiceOutcome>>();
+    DeleteVoiceAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DeleteVoiceRequest&,
+        DeleteVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DeleteWatermarkTemplateOutcome MpsClient::DeleteWatermarkTemplate(const DeleteWatermarkTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWatermarkTemplate");

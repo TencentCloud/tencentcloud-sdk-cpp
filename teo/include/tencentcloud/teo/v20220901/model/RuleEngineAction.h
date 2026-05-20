@@ -53,6 +53,7 @@
 #include <tencentcloud/teo/v20220901/model/ShieldParameters.h>
 #include <tencentcloud/teo/v20220901/model/TLSConfigParameters.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginParameters.h>
+#include <tencentcloud/teo/v20220901/model/SiteFailoverParameters.h>
 #include <tencentcloud/teo/v20220901/model/HTTPUpstreamTimeoutParameters.h>
 #include <tencentcloud/teo/v20220901/model/HTTPResponseParameters.h>
 #include <tencentcloud/teo/v20220901/model/ErrorPageParameters.h>
@@ -116,6 +117,7 @@ namespace TencentCloud
 <li>Shield：源站卸载配置；</li>
 <li>TLSConfig：SSL/TLS 安全；</li>
 <li>ModifyOrigin：修改源站；</li>
+<li> SiteFailover：源站故障转移；</li>
 <li>HTTPUpstreamTimeout：七层回源超时配置；</li>
 <li>HttpResponse：HTTP 应答；</li>
 <li>ErrorPage：自定义错误页面；</li>
@@ -156,6 +158,7 @@ namespace TencentCloud
 <li>Shield：源站卸载配置；</li>
 <li>TLSConfig：SSL/TLS 安全；</li>
 <li>ModifyOrigin：修改源站；</li>
+<li> SiteFailover：源站故障转移；</li>
 <li>HTTPUpstreamTimeout：七层回源超时配置；</li>
 <li>HttpResponse：HTTP 应答；</li>
 <li>ErrorPage：自定义错误页面；</li>
@@ -201,6 +204,7 @@ namespace TencentCloud
 <li>Shield：源站卸载配置；</li>
 <li>TLSConfig：SSL/TLS 安全；</li>
 <li>ModifyOrigin：修改源站；</li>
+<li> SiteFailover：源站故障转移；</li>
 <li>HTTPUpstreamTimeout：七层回源超时配置；</li>
 <li>HttpResponse：HTTP 应答；</li>
 <li>ErrorPage：自定义错误页面；</li>
@@ -241,6 +245,7 @@ namespace TencentCloud
 <li>Shield：源站卸载配置；</li>
 <li>TLSConfig：SSL/TLS 安全；</li>
 <li>ModifyOrigin：修改源站；</li>
+<li> SiteFailover：源站故障转移；</li>
 <li>HTTPUpstreamTimeout：七层回源超时配置；</li>
 <li>HttpResponse：HTTP 应答；</li>
 <li>ErrorPage：自定义错误页面；</li>
@@ -988,6 +993,31 @@ namespace TencentCloud
                     bool ModifyOriginParametersHasBeenSet() const;
 
                     /**
+                     * 获取源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SiteFailoverParameters 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SiteFailoverParameters GetSiteFailoverParameters() const;
+
+                    /**
+                     * 设置源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _siteFailoverParameters 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSiteFailoverParameters(const SiteFailoverParameters& _siteFailoverParameters);
+
+                    /**
+                     * 判断参数 SiteFailoverParameters 是否已赋值
+                     * @return SiteFailoverParameters 是否已赋值
+                     * 
+                     */
+                    bool SiteFailoverParametersHasBeenSet() const;
+
+                    /**
                      * 获取七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPUpstreamTimeoutParameters 七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。
@@ -1262,6 +1292,7 @@ namespace TencentCloud
 <li>Shield：源站卸载配置；</li>
 <li>TLSConfig：SSL/TLS 安全；</li>
 <li>ModifyOrigin：修改源站；</li>
+<li> SiteFailover：源站故障转移；</li>
 <li>HTTPUpstreamTimeout：七层回源超时配置；</li>
 <li>HttpResponse：HTTP 应答；</li>
 <li>ErrorPage：自定义错误页面；</li>
@@ -1478,6 +1509,13 @@ namespace TencentCloud
                      */
                     ModifyOriginParameters m_modifyOriginParameters;
                     bool m_modifyOriginParametersHasBeenSet;
+
+                    /**
+                     * 源站故障转移配置参数，当 Name 取值为 SiteFailover 时，该参数必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SiteFailoverParameters m_siteFailoverParameters;
+                    bool m_siteFailoverParametersHasBeenSet;
 
                     /**
                      * 七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。

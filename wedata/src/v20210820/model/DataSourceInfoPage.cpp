@@ -25,7 +25,8 @@ DataSourceInfoPage::DataSourceInfoPage() :
     m_pageSizeHasBeenSet(false),
     m_rowsHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_totalPageNumberHasBeenSet(false)
+    m_totalPageNumberHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DataSourceInfoPage::Deserialize(const rapidjson::Value &valu
         m_totalPageNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("SnapshotId") && !value["SnapshotId"].IsNull())
+    {
+        if (!value["SnapshotId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfoPage.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotId = string(value["SnapshotId"].GetString());
+        m_snapshotIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void DataSourceInfoPage::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "TotalPageNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalPageNumber, allocator);
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void DataSourceInfoPage::SetTotalPageNumber(const uint64_t& _totalPageNumber)
 bool DataSourceInfoPage::TotalPageNumberHasBeenSet() const
 {
     return m_totalPageNumberHasBeenSet;
+}
+
+string DataSourceInfoPage::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void DataSourceInfoPage::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool DataSourceInfoPage::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
 }
 

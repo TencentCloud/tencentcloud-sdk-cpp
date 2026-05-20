@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool EmotionalEnergyHasBeenSet() const;
 
                     /**
-                     * 获取<p>本句与上一句之间的静音时长</p>
+                     * 获取<p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SilenceTime <p>本句与上一句之间的静音时长</p>
+                     * @return SilenceTime <p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSilenceTime() const;
 
                     /**
-                     * 设置<p>本句与上一句之间的静音时长</p>
+                     * 设置<p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _silenceTime <p>本句与上一句之间的静音时长</p>
+                     * @param _silenceTime <p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -488,7 +488,7 @@ namespace TencentCloud
                     bool m_emotionalEnergyHasBeenSet;
 
                     /**
-                     * <p>本句与上一句之间的静音时长</p>
+                     * <p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_silenceTime;

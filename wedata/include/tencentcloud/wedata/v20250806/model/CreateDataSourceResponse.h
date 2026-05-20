@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
+                     * 获取<p>主键ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 主键ID
+                     * @return Data <p>主键ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DataSourceResult m_data;

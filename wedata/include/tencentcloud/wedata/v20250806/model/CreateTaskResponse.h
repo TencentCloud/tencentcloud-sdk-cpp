@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return Data 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return Data <p>任务ID</p>
                      * 
                      */
                     CreateTaskResult GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     CreateTaskResult m_data;
                     bool m_dataHasBeenSet;

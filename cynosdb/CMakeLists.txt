@@ -107,6 +107,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupDownloadUserRestrictionResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AuditRuleTemplateInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplateDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h
@@ -465,6 +466,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/Objects.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeLibraDBForwardConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ZoneStockInfo4Libra.h
@@ -512,6 +514,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/PackagePriority.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBinlogConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h
@@ -736,6 +739,7 @@ set(cynosdb_src
   src/v20190107/model/AssociateSecurityGroupsResponse.cpp
   src/v20190107/model/CreateProxyEndPointRequest.cpp
   src/v20190107/model/ModifyBackupDownloadUserRestrictionResponse.cpp
+  src/v20190107/model/AddLibraDBInstancesResponse.cpp
   src/v20190107/model/AuditRuleTemplateInfo.cpp
   src/v20190107/model/DescribeParamTemplateDetailRequest.cpp
   src/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.cpp
@@ -1094,6 +1098,7 @@ set(cynosdb_src
   src/v20190107/model/CalculateBackupSaveSecExpiresResponse.cpp
   src/v20190107/model/ModifyClusterSlaveZoneRequest.cpp
   src/v20190107/model/DescribeInstanceErrorLogsResponse.cpp
+  src/v20190107/model/Objects.cpp
   src/v20190107/model/DescribeSupportProxyVersionResponse.cpp
   src/v20190107/model/DescribeLibraDBForwardConfigResponse.cpp
   src/v20190107/model/ZoneStockInfo4Libra.cpp
@@ -1141,6 +1146,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeAuditLogsResponse.cpp
   src/v20190107/model/PackagePriority.cpp
   src/v20190107/model/DescribeInstancesWithinSameClusterRequest.cpp
+  src/v20190107/model/AddLibraDBInstancesRequest.cpp
   src/v20190107/model/ModifyBinlogConfigResponse.cpp
   src/v20190107/model/ModifyAccountDescriptionResponse.cpp
   src/v20190107/model/SetRenewFlagRequest.cpp

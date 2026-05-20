@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。TDSQL MySQL数据库类型，实例ID应填写为“实例ID&amp;分片ID”的格式。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。TDSQL MySQL数据库类型，实例ID应填写为“实例ID&amp;分片ID”的格式。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。TDSQL MySQL数据库类型，实例ID应填写为“实例ID&amp;分片ID”的格式。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。TDSQL MySQL数据库类型，实例ID应填写为“实例ID&amp;分片ID”的格式。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2020-11-08T14:00:00+08:00”。
-                     * @return StartTime 开始时间，如“2020-11-08T14:00:00+08:00”。
+                     * 获取<p>开始时间，如“2020-11-08T14:00:00+08:00”。</p>
+                     * @return StartTime <p>开始时间，如“2020-11-08T14:00:00+08:00”。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2020-11-08T14:00:00+08:00”。
-                     * @param _startTime 开始时间，如“2020-11-08T14:00:00+08:00”。
+                     * 设置<p>开始时间，如“2020-11-08T14:00:00+08:00”。</p>
+                     * @param _startTime <p>开始时间，如“2020-11-08T14:00:00+08:00”。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，如“2020-11-09T14:00:00+08:00”。
-                     * @return EndTime 结束时间，如“2020-11-09T14:00:00+08:00”。
+                     * 获取<p>结束时间，如“2020-11-09T14:00:00+08:00”。</p>
+                     * @return EndTime <p>结束时间，如“2020-11-09T14:00:00+08:00”。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，如“2020-11-09T14:00:00+08:00”。
-                     * @param _endTime 结束时间，如“2020-11-09T14:00:00+08:00”。
+                     * 设置<p>结束时间，如“2020-11-09T14:00:00+08:00”。</p>
+                     * @param _endTime <p>结束时间，如“2020-11-09T14:00:00+08:00”。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否发送邮件: 0 - 否，1 - 是。
-                     * @return SendMailFlag 是否发送邮件: 0 - 否，1 - 是。
+                     * 获取<p>是否发送邮件: 0 - 否，1 - 是。</p>
+                     * @return SendMailFlag <p>是否发送邮件: 0 - 否，1 - 是。</p>
                      * 
                      */
                     int64_t GetSendMailFlag() const;
 
                     /**
-                     * 设置是否发送邮件: 0 - 否，1 - 是。
-                     * @param _sendMailFlag 是否发送邮件: 0 - 否，1 - 是。
+                     * 设置<p>是否发送邮件: 0 - 否，1 - 是。</p>
+                     * @param _sendMailFlag <p>是否发送邮件: 0 - 否，1 - 是。</p>
                      * 
                      */
                     void SetSendMailFlag(const int64_t& _sendMailFlag);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SendMailFlagHasBeenSet() const;
 
                     /**
-                     * 获取接收邮件的联系人ID数组。
-                     * @return ContactPerson 接收邮件的联系人ID数组。
+                     * 获取<p>接收邮件的联系人ID数组。</p>
+                     * @return ContactPerson <p>接收邮件的联系人ID数组。</p>
                      * 
                      */
                     std::vector<int64_t> GetContactPerson() const;
 
                     /**
-                     * 设置接收邮件的联系人ID数组。
-                     * @param _contactPerson 接收邮件的联系人ID数组。
+                     * 设置<p>接收邮件的联系人ID数组。</p>
+                     * @param _contactPerson <p>接收邮件的联系人ID数组。</p>
                      * 
                      */
                     void SetContactPerson(const std::vector<int64_t>& _contactPerson);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ContactPersonHasBeenSet() const;
 
                     /**
-                     * 获取接收邮件的联系组ID数组。
-                     * @return ContactGroup 接收邮件的联系组ID数组。
+                     * 获取<p>接收邮件的联系组ID数组。</p>
+                     * @return ContactGroup <p>接收邮件的联系组ID数组。</p>
                      * 
                      */
                     std::vector<int64_t> GetContactGroup() const;
 
                     /**
-                     * 设置接收邮件的联系组ID数组。
-                     * @param _contactGroup 接收邮件的联系组ID数组。
+                     * 设置<p>接收邮件的联系组ID数组。</p>
+                     * @param _contactGroup <p>接收邮件的联系组ID数组。</p>
                      * 
                      */
                     void SetContactGroup(const std::vector<int64_t>& _contactGroup);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ContactGroupHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，"mariadb" - 云数据库 MariaDB，"dcdb" - 云数据库 TDSQL MySQL，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，"mariadb" - 云数据库 MariaDB，"dcdb" - 云数据库 TDSQL MySQL，默认为"mysql"。
+                     * 获取<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;mariadb&quot; - 云数据库 MariaDB，&quot;dcdb&quot; - 云数据库 TDSQL MySQL，默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;mariadb&quot; - 云数据库 MariaDB，&quot;dcdb&quot; - 云数据库 TDSQL MySQL，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，"mariadb" - 云数据库 MariaDB，"dcdb" - 云数据库 TDSQL MySQL，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，"mariadb" - 云数据库 MariaDB，"dcdb" - 云数据库 TDSQL MySQL，默认为"mysql"。
+                     * 设置<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;mariadb&quot; - 云数据库 MariaDB，&quot;dcdb&quot; - 云数据库 TDSQL MySQL，默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;mariadb&quot; - 云数据库 MariaDB，&quot;dcdb&quot; - 云数据库 TDSQL MySQL，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。TDSQL MySQL数据库类型，实例ID应填写为“实例ID&amp;分片ID”的格式。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2020-11-08T14:00:00+08:00”。
+                     * <p>开始时间，如“2020-11-08T14:00:00+08:00”。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，如“2020-11-09T14:00:00+08:00”。
+                     * <p>结束时间，如“2020-11-09T14:00:00+08:00”。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 是否发送邮件: 0 - 否，1 - 是。
+                     * <p>是否发送邮件: 0 - 否，1 - 是。</p>
                      */
                     int64_t m_sendMailFlag;
                     bool m_sendMailFlagHasBeenSet;
 
                     /**
-                     * 接收邮件的联系人ID数组。
+                     * <p>接收邮件的联系人ID数组。</p>
                      */
                     std::vector<int64_t> m_contactPerson;
                     bool m_contactPersonHasBeenSet;
 
                     /**
-                     * 接收邮件的联系组ID数组。
+                     * <p>接收邮件的联系组ID数组。</p>
                      */
                     std::vector<int64_t> m_contactGroup;
                     bool m_contactGroupHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，"mariadb" - 云数据库 MariaDB，"dcdb" - 云数据库 TDSQL MySQL，默认为"mysql"。
+                     * <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;mariadb&quot; - 云数据库 MariaDB，&quot;dcdb&quot; - 云数据库 TDSQL MySQL，默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

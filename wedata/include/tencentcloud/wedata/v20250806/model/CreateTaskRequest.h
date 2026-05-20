@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务基本属性
-                     * @return TaskBaseAttribute 任务基本属性
+                     * 获取<p>任务基本属性</p>
+                     * @return TaskBaseAttribute <p>任务基本属性</p>
                      * 
                      */
                     CreateTaskBaseAttribute GetTaskBaseAttribute() const;
 
                     /**
-                     * 设置任务基本属性
-                     * @param _taskBaseAttribute 任务基本属性
+                     * 设置<p>任务基本属性</p>
+                     * @param _taskBaseAttribute <p>任务基本属性</p>
                      * 
                      */
                     void SetTaskBaseAttribute(const CreateTaskBaseAttribute& _taskBaseAttribute);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool TaskBaseAttributeHasBeenSet() const;
 
                     /**
-                     * 获取任务配置
-                     * @return TaskConfiguration 任务配置
+                     * 获取<p>任务配置</p>
+                     * @return TaskConfiguration <p>任务配置</p>
                      * 
                      */
                     CreateTaskConfiguration GetTaskConfiguration() const;
 
                     /**
-                     * 设置任务配置
-                     * @param _taskConfiguration 任务配置
+                     * 设置<p>任务配置</p>
+                     * @param _taskConfiguration <p>任务配置</p>
                      * 
                      */
                     void SetTaskConfiguration(const CreateTaskConfiguration& _taskConfiguration);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool TaskConfigurationHasBeenSet() const;
 
                     /**
-                     * 获取任务调度配置
-                     * @return TaskSchedulerConfiguration 任务调度配置
+                     * 获取<p>任务调度配置</p>
+                     * @return TaskSchedulerConfiguration <p>任务调度配置</p>
                      * 
                      */
                     CreateTaskSchedulerConfiguration GetTaskSchedulerConfiguration() const;
 
                     /**
-                     * 设置任务调度配置
-                     * @param _taskSchedulerConfiguration 任务调度配置
+                     * 设置<p>任务调度配置</p>
+                     * @param _taskSchedulerConfiguration <p>任务调度配置</p>
                      * 
                      */
                     void SetTaskSchedulerConfiguration(const CreateTaskSchedulerConfiguration& _taskSchedulerConfiguration);
@@ -132,25 +132,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务基本属性
+                     * <p>任务基本属性</p>
                      */
                     CreateTaskBaseAttribute m_taskBaseAttribute;
                     bool m_taskBaseAttributeHasBeenSet;
 
                     /**
-                     * 任务配置
+                     * <p>任务配置</p>
                      */
                     CreateTaskConfiguration m_taskConfiguration;
                     bool m_taskConfigurationHasBeenSet;
 
                     /**
-                     * 任务调度配置
+                     * <p>任务调度配置</p>
                      */
                     CreateTaskSchedulerConfiguration m_taskSchedulerConfiguration;
                     bool m_taskSchedulerConfigurationHasBeenSet;

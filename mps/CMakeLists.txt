@@ -116,6 +116,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteContentReviewTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/ActivateStreamPackageResponse.h
   include/tencentcloud/mps/v20190612/model/StartStreamLinkFlowResponse.h
+  include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.h
   include/tencentcloud/mps/v20190612/model/AiReviewPoliticalTaskInput.h
   include/tencentcloud/mps/v20190612/model/ModifyContentReviewTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyScheduleRequest.h
@@ -319,6 +320,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/Speakers.h
   include/tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/PureSubtitleTransResultOutput.h
+  include/tencentcloud/mps/v20190612/model/DeleteVoiceRequest.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h
   include/tencentcloud/mps/v20190612/model/S3InputInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramsRequest.h
@@ -556,7 +558,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiReviewTerrorismOcrTaskOutput.h
   include/tencentcloud/mps/v20190612/model/DescribeAsrHotwordsListResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisResult.h
-  include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.h
+  include/tencentcloud/mps/v20190612/model/DeleteVoiceResponse.h
   include/tencentcloud/mps/v20190612/model/BlindWatermarkInput.h
   include/tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInputForUpdate.h
@@ -1130,6 +1132,7 @@ set(mps_src
   src/v20190612/model/DeleteContentReviewTemplateRequest.cpp
   src/v20190612/model/ActivateStreamPackageResponse.cpp
   src/v20190612/model/StartStreamLinkFlowResponse.cpp
+  src/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.cpp
   src/v20190612/model/AiReviewPoliticalTaskInput.cpp
   src/v20190612/model/ModifyContentReviewTemplateResponse.cpp
   src/v20190612/model/ModifyScheduleRequest.cpp
@@ -1333,6 +1336,7 @@ set(mps_src
   src/v20190612/model/Speakers.cpp
   src/v20190612/model/DescribeBlindWatermarkTemplatesRequest.cpp
   src/v20190612/model/PureSubtitleTransResultOutput.cpp
+  src/v20190612/model/DeleteVoiceRequest.cpp
   src/v20190612/model/CreateStreamLinkOutputInfoResponse.cpp
   src/v20190612/model/S3InputInfo.cpp
   src/v20190612/model/DescribeStreamPackageLinearAssemblyProgramsRequest.cpp
@@ -1570,7 +1574,7 @@ set(mps_src
   src/v20190612/model/AiReviewTerrorismOcrTaskOutput.cpp
   src/v20190612/model/DescribeAsrHotwordsListResponse.cpp
   src/v20190612/model/AiAnalysisResult.cpp
-  src/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.cpp
+  src/v20190612/model/DeleteVoiceResponse.cpp
   src/v20190612/model/BlindWatermarkInput.cpp
   src/v20190612/model/DescribeBlindWatermarkTemplatesResponse.cpp
   src/v20190612/model/ImageWatermarkInputForUpdate.cpp

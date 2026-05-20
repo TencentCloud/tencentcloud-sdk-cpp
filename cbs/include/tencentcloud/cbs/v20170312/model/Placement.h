@@ -93,6 +93,77 @@ namespace TencentCloud
                     bool CageIdHasBeenSet() const;
 
                     /**
+                     * 获取实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
+                     * 获取独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcName() const;
+
+                    /**
+                     * 设置独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcName(const std::string& _cdcName);
+
+                    /**
+                     * 判断参数 CdcName 是否已赋值
+                     * @return CdcName 是否已赋值
+                     * 
+                     */
+                    bool CdcNameHasBeenSet() const;
+
+                    /**
+                     * 获取独享集群id。
+                     * @return DedicatedClusterId 独享集群id。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置独享集群id。
+                     * @param _dedicatedClusterId 独享集群id。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      * @return ProjectId 实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      * 
@@ -138,77 +209,6 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
-                    /**
-                     * 获取独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCdcName() const;
-
-                    /**
-                     * 设置独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCdcName(const std::string& _cdcName);
-
-                    /**
-                     * 判断参数 CdcName 是否已赋值
-                     * @return CdcName 是否已赋值
-                     * 
-                     */
-                    bool CdcNameHasBeenSet() const;
-
-                    /**
-                     * 获取实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCdcId() const;
-
-                    /**
-                     * 设置实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcId 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCdcId(const std::string& _cdcId);
-
-                    /**
-                     * 判断参数 CdcId 是否已赋值
-                     * @return CdcId 是否已赋值
-                     * 
-                     */
-                    bool CdcIdHasBeenSet() const;
-
-                    /**
-                     * 获取独享集群id。
-                     * @return DedicatedClusterId 独享集群id。
-                     * 
-                     */
-                    std::string GetDedicatedClusterId() const;
-
-                    /**
-                     * 设置独享集群id。
-                     * @param _dedicatedClusterId 独享集群id。
-                     * 
-                     */
-                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
-
-                    /**
-                     * 判断参数 DedicatedClusterId 是否已赋值
-                     * @return DedicatedClusterId 是否已赋值
-                     * 
-                     */
-                    bool DedicatedClusterIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -225,6 +225,26 @@ namespace TencentCloud
                     bool m_cageIdHasBeenSet;
 
                     /**
+                     * 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcName;
+                    bool m_cdcNameHasBeenSet;
+
+                    /**
+                     * 独享集群id。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
                      * 实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。
                      */
                     uint64_t m_projectId;
@@ -236,26 +256,6 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
-
-                    /**
-                     * 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_cdcName;
-                    bool m_cdcNameHasBeenSet;
-
-                    /**
-                     * 实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_cdcId;
-                    bool m_cdcIdHasBeenSet;
-
-                    /**
-                     * 独享集群id。
-                     */
-                    std::string m_dedicatedClusterId;
-                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

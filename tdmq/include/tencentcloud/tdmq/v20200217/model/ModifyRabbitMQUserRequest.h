@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @return InstanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 获取<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @return InstanceId <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
-                     * @param _instanceId 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * 设置<p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
+                     * @param _instanceId <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。
-                     * @return User 用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。
+                     * 获取<p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>
+                     * @return User <p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。
-                     * @param _user 用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。
+                     * 设置<p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>
+                     * @param _user <p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
-                     * @return Password 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
+                     * 获取<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>
+                     * @return Password <p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
-                     * @param _password 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
+                     * 设置<p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>
+                     * @param _password <p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取描述，不传则不修改
-                     * @return Description 描述，不传则不修改
+                     * 获取<p>描述，不传则不修改</p>
+                     * @return Description <p>描述，不传则不修改</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述，不传则不修改
-                     * @param _description 描述，不传则不修改
+                     * 设置<p>描述，不传则不修改</p>
+                     * @param _description <p>描述，不传则不修改</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,19 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
-management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
-                     * @return Tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
-management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * 获取<p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>
+                     * @return Tags <p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
-management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
-                     * @param _tags 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
-management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * 设置<p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>
+                     * @param _tags <p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -152,15 +148,15 @@ management：普通控制台用户，monitoring：管理型控制台用户，其
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取该用户的最大连接数，不传则不修改
-                     * @return MaxConnections 该用户的最大连接数，不传则不修改
+                     * 获取<p>该用户的最大连接数，不传则不修改</p>
+                     * @return MaxConnections <p>该用户的最大连接数，不传则不修改</p>
                      * 
                      */
                     int64_t GetMaxConnections() const;
 
                     /**
-                     * 设置该用户的最大连接数，不传则不修改
-                     * @param _maxConnections 该用户的最大连接数，不传则不修改
+                     * 设置<p>该用户的最大连接数，不传则不修改</p>
+                     * @param _maxConnections <p>该用户的最大连接数，不传则不修改</p>
                      * 
                      */
                     void SetMaxConnections(const int64_t& _maxConnections);
@@ -173,15 +169,15 @@ management：普通控制台用户，monitoring：管理型控制台用户，其
                     bool MaxConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取该用户的最大channel数，不传则不修改
-                     * @return MaxChannels 该用户的最大channel数，不传则不修改
+                     * 获取<p>该用户的最大channel数，不传则不修改</p>
+                     * @return MaxChannels <p>该用户的最大channel数，不传则不修改</p>
                      * 
                      */
                     int64_t GetMaxChannels() const;
 
                     /**
-                     * 设置该用户的最大channel数，不传则不修改
-                     * @param _maxChannels 该用户的最大channel数，不传则不修改
+                     * 设置<p>该用户的最大channel数，不传则不修改</p>
+                     * @param _maxChannels <p>该用户的最大channel数，不传则不修改</p>
                      * 
                      */
                     void SetMaxChannels(const int64_t& _maxChannels);
@@ -193,50 +189,76 @@ management：普通控制台用户，monitoring：管理型控制台用户，其
                      */
                     bool MaxChannelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启cam验证</p>
+                     * @return EnableCamAuth <p>是否开启cam验证</p>
+                     * 
+                     */
+                    bool GetEnableCamAuth() const;
+
+                    /**
+                     * 设置<p>是否开启cam验证</p>
+                     * @param _enableCamAuth <p>是否开启cam验证</p>
+                     * 
+                     */
+                    void SetEnableCamAuth(const bool& _enableCamAuth);
+
+                    /**
+                     * 判断参数 EnableCamAuth 是否已赋值
+                     * @return EnableCamAuth 是否已赋值
+                     * 
+                     */
+                    bool EnableCamAuthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。
+                     * <p>实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名，形如rabbitmq。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。
+                     * <p>用户名，形如rabbitmq。有效的 User 名称可通过登录 <a href="https://console.cloud.tencent.com/trabbitmq/cluster?rid=1">TDMQ RabbitMQ 控制台</a>查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。当前不支持修改admin的密码。</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&*_=|{}[]:;',.?/】中的两项
+                     * <p>密码，登录时使用。规范：不能为空，8-64个字符，至少要包含小写字母、大写字母、数字、特殊字符【()`~!@#$%^&amp;*_=|{}[]:;&#39;,.?/】中的两项</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 描述，不传则不修改
+                     * <p>描述，不传则不修改</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围
-management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户
+                     * <p>用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围<br>management：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 该用户的最大连接数，不传则不修改
+                     * <p>该用户的最大连接数，不传则不修改</p>
                      */
                     int64_t m_maxConnections;
                     bool m_maxConnectionsHasBeenSet;
 
                     /**
-                     * 该用户的最大channel数，不传则不修改
+                     * <p>该用户的最大channel数，不传则不修改</p>
                      */
                     int64_t m_maxChannels;
                     bool m_maxChannelsHasBeenSet;
+
+                    /**
+                     * <p>是否开启cam验证</p>
+                     */
+                    bool m_enableCamAuth;
+                    bool m_enableCamAuthHasBeenSet;
 
                 };
             }

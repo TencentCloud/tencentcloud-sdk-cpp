@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取请求域名
-                     * @return OriginDomain 请求域名
+                     * 获取<p>请求域名</p>
+                     * @return OriginDomain <p>请求域名</p>
                      * 
                      */
                     std::string GetOriginDomain() const;
 
                     /**
-                     * 设置请求域名
-                     * @param _originDomain 请求域名
+                     * 设置<p>请求域名</p>
+                     * @param _originDomain <p>请求域名</p>
                      * 
                      */
                     void SetOriginDomain(const std::string& _originDomain);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OriginDomainHasBeenSet() const;
 
                     /**
-                     * 获取是否需要跨域
-                     * @return CrossFlag 是否需要跨域
+                     * 获取<p>是否需要跨域</p>
+                     * @return CrossFlag <p>是否需要跨域</p>
                      * 
                      */
                     bool GetCrossFlag() const;
 
                     /**
-                     * 设置是否需要跨域
-                     * @param _crossFlag 是否需要跨域
+                     * 设置<p>是否需要跨域</p>
+                     * @param _crossFlag <p>是否需要跨域</p>
                      * 
                      */
                     void SetCrossFlag(const bool& _crossFlag);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CrossFlagHasBeenSet() const;
 
                     /**
-                     * 获取桶名
-                     * @return BucketName 桶名
+                     * 获取<p>桶名</p>
+                     * @return BucketName <p>桶名</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置桶名
-                     * @param _bucketName 桶名
+                     * 设置<p>桶名</p>
+                     * @param _bucketName <p>桶名</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取远程地址
-                     * @return RemotePath 远程地址
+                     * 获取<p>远程地址</p>
+                     * @return RemotePath <p>远程地址</p>
                      * 
                      */
                     std::string GetRemotePath() const;
 
                     /**
-                     * 设置远程地址
-                     * @param _remotePath 远程地址
+                     * 设置<p>远程地址</p>
+                     * @param _remotePath <p>远程地址</p>
                      * 
                      */
                     void SetRemotePath(const std::string& _remotePath);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RemotePathHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return RemoteRegion 地域
+                     * 获取<p>地域</p>
+                     * @return RemoteRegion <p>地域</p>
                      * 
                      */
                     std::string GetRemoteRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _remoteRegion 地域
+                     * 设置<p>地域</p>
+                     * @param _remoteRegion <p>地域</p>
                      * 
                      */
                     void SetRemoteRegion(const std::string& _remoteRegion);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 请求域名
+                     * <p>请求域名</p>
                      */
                     std::string m_originDomain;
                     bool m_originDomainHasBeenSet;
 
                     /**
-                     * 是否需要跨域
+                     * <p>是否需要跨域</p>
                      */
                     bool m_crossFlag;
                     bool m_crossFlagHasBeenSet;
 
                     /**
-                     * 桶名
+                     * <p>桶名</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 远程地址
+                     * <p>远程地址</p>
                      */
                     std::string m_remotePath;
                     bool m_remotePathHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_remoteRegion;
                     bool m_remoteRegionHasBeenSet;

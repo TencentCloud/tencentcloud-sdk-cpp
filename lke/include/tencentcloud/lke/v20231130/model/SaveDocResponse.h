@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文档ID
-                     * @return DocBizId 文档ID
+                     * 获取<p>文档ID</p>
+                     * @return DocBizId <p>文档ID</p>
                      * 
                      */
                     std::string GetDocBizId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DocBizIdHasBeenSet() const;
 
                     /**
-                     * 获取导入错误信息
-                     * @return ErrorMsg 导入错误信息
+                     * 获取<p>导入错误信息</p>
+                     * @return ErrorMsg <p>导入错误信息</p>
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取错误链接
-                     * @return ErrorLink 错误链接
+                     * 获取<p>错误链接</p>
+                     * @return ErrorLink <p>错误链接</p>
                      * 
                      */
                     std::string GetErrorLink() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ErrorLinkHasBeenSet() const;
 
                     /**
-                     * 获取错误链接文本
-                     * @return ErrorLinkText 错误链接文本
+                     * 获取<p>错误链接文本</p>
+                     * @return ErrorLinkText <p>错误链接文本</p>
                      * 
                      */
                     std::string GetErrorLinkText() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ErrorLinkTextHasBeenSet() const;
 
                     /**
-                     * 获取重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
-                     * @return DuplicateFileCheckType 重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
+                     * 获取<p>重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段</p>
+                     * @return DuplicateFileCheckType <p>重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段</p>
                      * 
                      */
                     uint64_t GetDuplicateFileCheckType() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文档ID
+                     * <p>文档ID</p>
                      */
                     std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;
 
                     /**
-                     * 导入错误信息
+                     * <p>导入错误信息</p>
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
-                     * 错误链接
+                     * <p>错误链接</p>
                      */
                     std::string m_errorLink;
                     bool m_errorLinkHasBeenSet;
 
                     /**
-                     * 错误链接文本
+                     * <p>错误链接文本</p>
                      */
                     std::string m_errorLinkText;
                     bool m_errorLinkTextHasBeenSet;
 
                     /**
-                     * 重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段
+                     * <p>重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段</p>
                      */
                     uint64_t m_duplicateFileCheckType;
                     bool m_duplicateFileCheckTypeHasBeenSet;

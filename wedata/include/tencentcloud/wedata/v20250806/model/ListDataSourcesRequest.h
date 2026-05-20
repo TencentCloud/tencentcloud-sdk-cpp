@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认10
-                     * @return PageSize 返回数量，默认10
+                     * 获取<p>返回数量，默认10</p>
+                     * @return PageSize <p>返回数量，默认10</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置返回数量，默认10
-                     * @param _pageSize 返回数量，默认10
+                     * 设置<p>返回数量，默认10</p>
+                     * @param _pageSize <p>返回数量，默认10</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码，默认1
-                     * @return PageNumber 页码，默认1
+                     * 获取<p>页码，默认1</p>
+                     * @return PageNumber <p>页码，默认1</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码，默认1
-                     * @param _pageNumber 页码，默认1
+                     * 设置<p>页码，默认1</p>
+                     * @param _pageNumber <p>页码，默认1</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取数据源名称
-                     * @return Name 数据源名称
+                     * 获取<p>数据源名称</p>
+                     * @return Name <p>数据源名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置数据源名称
-                     * @param _name 数据源名称
+                     * 设置<p>数据源名称</p>
+                     * @param _name <p>数据源名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数据源展示名
-                     * @return DisplayName 数据源展示名
+                     * 获取<p>数据源展示名</p>
+                     * @return DisplayName <p>数据源展示名</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置数据源展示名
-                     * @param _displayName 数据源展示名
+                     * 设置<p>数据源展示名</p>
+                     * @param _displayName <p>数据源展示名</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -148,239 +148,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型:枚举值
-
-- MYSQL
-- TENCENT_MYSQL
-- POSTGRE
-- ORACLE
-- SQLSERVER
-- FTP
-- HIVE
-- HUDI
-- HDFS
-- ICEBERG
-- KAFKA
-- HBASE
-- SPARK
-- VIRTUAL
-- TBASE
-- DB2
-- DM
-- GAUSSDB
-- GBASE
-- IMPALA
-- ES
-- TENCENT_ES
-- GREENPLUM
-- PHOENIX
-- SAP_HANA
-- SFTP
-- OCEANBASE
-- CLICKHOUSE
-- KUDU
-- VERTICA
-- REDIS
-- COS
-- DLC
-- DORIS
-- CKAFKA
-- S3
-- TDSQL
-- TDSQL_MYSQL
-- MONGODB
-- TENCENT_MONGODB
-- REST_API
-- SuperSQL
-- PRESTO
-- TiDB
-- StarRocks
-- Trino
-- Kyuubi
-- TCHOUSE_X
-- TCHOUSE_P
-- TCHOUSE_C
-- TCHOUSE_D
-- INFLUXDB
-- BIG_QUERY
-- SSH
-- BLOB
-                     * @return Type 数据源类型:枚举值
-
-- MYSQL
-- TENCENT_MYSQL
-- POSTGRE
-- ORACLE
-- SQLSERVER
-- FTP
-- HIVE
-- HUDI
-- HDFS
-- ICEBERG
-- KAFKA
-- HBASE
-- SPARK
-- VIRTUAL
-- TBASE
-- DB2
-- DM
-- GAUSSDB
-- GBASE
-- IMPALA
-- ES
-- TENCENT_ES
-- GREENPLUM
-- PHOENIX
-- SAP_HANA
-- SFTP
-- OCEANBASE
-- CLICKHOUSE
-- KUDU
-- VERTICA
-- REDIS
-- COS
-- DLC
-- DORIS
-- CKAFKA
-- S3
-- TDSQL
-- TDSQL_MYSQL
-- MONGODB
-- TENCENT_MONGODB
-- REST_API
-- SuperSQL
-- PRESTO
-- TiDB
-- StarRocks
-- Trino
-- Kyuubi
-- TCHOUSE_X
-- TCHOUSE_P
-- TCHOUSE_C
-- TCHOUSE_D
-- INFLUXDB
-- BIG_QUERY
-- SSH
-- BLOB
+                     * 获取<p>数据源类型:枚举值</p><ul><li>MYSQL</li><li>TENCENT_MYSQL</li><li>POSTGRE</li><li>ORACLE</li><li>SQLSERVER</li><li>FTP</li><li>HIVE</li><li>HUDI</li><li>HDFS</li><li>ICEBERG</li><li>KAFKA</li><li>HBASE</li><li>SPARK</li><li>VIRTUAL</li><li>TBASE</li><li>DB2</li><li>DM</li><li>GAUSSDB</li><li>GBASE</li><li>IMPALA</li><li>ES</li><li>TENCENT_ES</li><li>GREENPLUM</li><li>PHOENIX</li><li>SAP_HANA</li><li>SFTP</li><li>OCEANBASE</li><li>CLICKHOUSE</li><li>KUDU</li><li>VERTICA</li><li>REDIS</li><li>COS</li><li>DLC</li><li>DORIS</li><li>CKAFKA</li><li>S3</li><li>TDSQL</li><li>TDSQL_MYSQL</li><li>MONGODB</li><li>TENCENT_MONGODB</li><li>REST_API</li><li>SuperSQL</li><li>PRESTO</li><li>TiDB</li><li>StarRocks</li><li>Trino</li><li>Kyuubi</li><li>TCHOUSE_X</li><li>TCHOUSE_P</li><li>TCHOUSE_C</li><li>TCHOUSE_D</li><li>INFLUXDB</li><li>BIG_QUERY</li><li>SSH</li><li>BLOB</li></ul>
+                     * @return Type <p>数据源类型:枚举值</p><ul><li>MYSQL</li><li>TENCENT_MYSQL</li><li>POSTGRE</li><li>ORACLE</li><li>SQLSERVER</li><li>FTP</li><li>HIVE</li><li>HUDI</li><li>HDFS</li><li>ICEBERG</li><li>KAFKA</li><li>HBASE</li><li>SPARK</li><li>VIRTUAL</li><li>TBASE</li><li>DB2</li><li>DM</li><li>GAUSSDB</li><li>GBASE</li><li>IMPALA</li><li>ES</li><li>TENCENT_ES</li><li>GREENPLUM</li><li>PHOENIX</li><li>SAP_HANA</li><li>SFTP</li><li>OCEANBASE</li><li>CLICKHOUSE</li><li>KUDU</li><li>VERTICA</li><li>REDIS</li><li>COS</li><li>DLC</li><li>DORIS</li><li>CKAFKA</li><li>S3</li><li>TDSQL</li><li>TDSQL_MYSQL</li><li>MONGODB</li><li>TENCENT_MONGODB</li><li>REST_API</li><li>SuperSQL</li><li>PRESTO</li><li>TiDB</li><li>StarRocks</li><li>Trino</li><li>Kyuubi</li><li>TCHOUSE_X</li><li>TCHOUSE_P</li><li>TCHOUSE_C</li><li>TCHOUSE_D</li><li>INFLUXDB</li><li>BIG_QUERY</li><li>SSH</li><li>BLOB</li></ul>
                      * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
-                     * 设置数据源类型:枚举值
-
-- MYSQL
-- TENCENT_MYSQL
-- POSTGRE
-- ORACLE
-- SQLSERVER
-- FTP
-- HIVE
-- HUDI
-- HDFS
-- ICEBERG
-- KAFKA
-- HBASE
-- SPARK
-- VIRTUAL
-- TBASE
-- DB2
-- DM
-- GAUSSDB
-- GBASE
-- IMPALA
-- ES
-- TENCENT_ES
-- GREENPLUM
-- PHOENIX
-- SAP_HANA
-- SFTP
-- OCEANBASE
-- CLICKHOUSE
-- KUDU
-- VERTICA
-- REDIS
-- COS
-- DLC
-- DORIS
-- CKAFKA
-- S3
-- TDSQL
-- TDSQL_MYSQL
-- MONGODB
-- TENCENT_MONGODB
-- REST_API
-- SuperSQL
-- PRESTO
-- TiDB
-- StarRocks
-- Trino
-- Kyuubi
-- TCHOUSE_X
-- TCHOUSE_P
-- TCHOUSE_C
-- TCHOUSE_D
-- INFLUXDB
-- BIG_QUERY
-- SSH
-- BLOB
-                     * @param _type 数据源类型:枚举值
-
-- MYSQL
-- TENCENT_MYSQL
-- POSTGRE
-- ORACLE
-- SQLSERVER
-- FTP
-- HIVE
-- HUDI
-- HDFS
-- ICEBERG
-- KAFKA
-- HBASE
-- SPARK
-- VIRTUAL
-- TBASE
-- DB2
-- DM
-- GAUSSDB
-- GBASE
-- IMPALA
-- ES
-- TENCENT_ES
-- GREENPLUM
-- PHOENIX
-- SAP_HANA
-- SFTP
-- OCEANBASE
-- CLICKHOUSE
-- KUDU
-- VERTICA
-- REDIS
-- COS
-- DLC
-- DORIS
-- CKAFKA
-- S3
-- TDSQL
-- TDSQL_MYSQL
-- MONGODB
-- TENCENT_MONGODB
-- REST_API
-- SuperSQL
-- PRESTO
-- TiDB
-- StarRocks
-- Trino
-- Kyuubi
-- TCHOUSE_X
-- TCHOUSE_P
-- TCHOUSE_C
-- TCHOUSE_D
-- INFLUXDB
-- BIG_QUERY
-- SSH
-- BLOB
+                     * 设置<p>数据源类型:枚举值</p><ul><li>MYSQL</li><li>TENCENT_MYSQL</li><li>POSTGRE</li><li>ORACLE</li><li>SQLSERVER</li><li>FTP</li><li>HIVE</li><li>HUDI</li><li>HDFS</li><li>ICEBERG</li><li>KAFKA</li><li>HBASE</li><li>SPARK</li><li>VIRTUAL</li><li>TBASE</li><li>DB2</li><li>DM</li><li>GAUSSDB</li><li>GBASE</li><li>IMPALA</li><li>ES</li><li>TENCENT_ES</li><li>GREENPLUM</li><li>PHOENIX</li><li>SAP_HANA</li><li>SFTP</li><li>OCEANBASE</li><li>CLICKHOUSE</li><li>KUDU</li><li>VERTICA</li><li>REDIS</li><li>COS</li><li>DLC</li><li>DORIS</li><li>CKAFKA</li><li>S3</li><li>TDSQL</li><li>TDSQL_MYSQL</li><li>MONGODB</li><li>TENCENT_MONGODB</li><li>REST_API</li><li>SuperSQL</li><li>PRESTO</li><li>TiDB</li><li>StarRocks</li><li>Trino</li><li>Kyuubi</li><li>TCHOUSE_X</li><li>TCHOUSE_P</li><li>TCHOUSE_C</li><li>TCHOUSE_D</li><li>INFLUXDB</li><li>BIG_QUERY</li><li>SSH</li><li>BLOB</li></ul>
+                     * @param _type <p>数据源类型:枚举值</p><ul><li>MYSQL</li><li>TENCENT_MYSQL</li><li>POSTGRE</li><li>ORACLE</li><li>SQLSERVER</li><li>FTP</li><li>HIVE</li><li>HUDI</li><li>HDFS</li><li>ICEBERG</li><li>KAFKA</li><li>HBASE</li><li>SPARK</li><li>VIRTUAL</li><li>TBASE</li><li>DB2</li><li>DM</li><li>GAUSSDB</li><li>GBASE</li><li>IMPALA</li><li>ES</li><li>TENCENT_ES</li><li>GREENPLUM</li><li>PHOENIX</li><li>SAP_HANA</li><li>SFTP</li><li>OCEANBASE</li><li>CLICKHOUSE</li><li>KUDU</li><li>VERTICA</li><li>REDIS</li><li>COS</li><li>DLC</li><li>DORIS</li><li>CKAFKA</li><li>S3</li><li>TDSQL</li><li>TDSQL_MYSQL</li><li>MONGODB</li><li>TENCENT_MONGODB</li><li>REST_API</li><li>SuperSQL</li><li>PRESTO</li><li>TiDB</li><li>StarRocks</li><li>Trino</li><li>Kyuubi</li><li>TCHOUSE_X</li><li>TCHOUSE_P</li><li>TCHOUSE_C</li><li>TCHOUSE_D</li><li>INFLUXDB</li><li>BIG_QUERY</li><li>SSH</li><li>BLOB</li></ul>
                      * 
                      */
                     void SetType(const std::vector<std::string>& _type);
@@ -393,15 +169,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取创建人
-                     * @return Creator 创建人
+                     * 获取<p>创建人</p>
+                     * @return Creator <p>创建人</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建人
-                     * @param _creator 创建人
+                     * 设置<p>创建人</p>
+                     * @param _creator <p>创建人</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -416,99 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认10
+                     * <p>返回数量，默认10</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码，默认1
+                     * <p>页码，默认1</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 数据源名称
+                     * <p>数据源名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数据源展示名
+                     * <p>数据源展示名</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 数据源类型:枚举值
-
-- MYSQL
-- TENCENT_MYSQL
-- POSTGRE
-- ORACLE
-- SQLSERVER
-- FTP
-- HIVE
-- HUDI
-- HDFS
-- ICEBERG
-- KAFKA
-- HBASE
-- SPARK
-- VIRTUAL
-- TBASE
-- DB2
-- DM
-- GAUSSDB
-- GBASE
-- IMPALA
-- ES
-- TENCENT_ES
-- GREENPLUM
-- PHOENIX
-- SAP_HANA
-- SFTP
-- OCEANBASE
-- CLICKHOUSE
-- KUDU
-- VERTICA
-- REDIS
-- COS
-- DLC
-- DORIS
-- CKAFKA
-- S3
-- TDSQL
-- TDSQL_MYSQL
-- MONGODB
-- TENCENT_MONGODB
-- REST_API
-- SuperSQL
-- PRESTO
-- TiDB
-- StarRocks
-- Trino
-- Kyuubi
-- TCHOUSE_X
-- TCHOUSE_P
-- TCHOUSE_C
-- TCHOUSE_D
-- INFLUXDB
-- BIG_QUERY
-- SSH
-- BLOB
+                     * <p>数据源类型:枚举值</p><ul><li>MYSQL</li><li>TENCENT_MYSQL</li><li>POSTGRE</li><li>ORACLE</li><li>SQLSERVER</li><li>FTP</li><li>HIVE</li><li>HUDI</li><li>HDFS</li><li>ICEBERG</li><li>KAFKA</li><li>HBASE</li><li>SPARK</li><li>VIRTUAL</li><li>TBASE</li><li>DB2</li><li>DM</li><li>GAUSSDB</li><li>GBASE</li><li>IMPALA</li><li>ES</li><li>TENCENT_ES</li><li>GREENPLUM</li><li>PHOENIX</li><li>SAP_HANA</li><li>SFTP</li><li>OCEANBASE</li><li>CLICKHOUSE</li><li>KUDU</li><li>VERTICA</li><li>REDIS</li><li>COS</li><li>DLC</li><li>DORIS</li><li>CKAFKA</li><li>S3</li><li>TDSQL</li><li>TDSQL_MYSQL</li><li>MONGODB</li><li>TENCENT_MONGODB</li><li>REST_API</li><li>SuperSQL</li><li>PRESTO</li><li>TiDB</li><li>StarRocks</li><li>Trino</li><li>Kyuubi</li><li>TCHOUSE_X</li><li>TCHOUSE_P</li><li>TCHOUSE_C</li><li>TCHOUSE_D</li><li>INFLUXDB</li><li>BIG_QUERY</li><li>SSH</li><li>BLOB</li></ul>
                      */
                     std::vector<std::string> m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;

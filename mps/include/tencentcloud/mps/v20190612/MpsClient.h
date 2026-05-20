@@ -175,6 +175,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteVoiceRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteVoiceResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWordSamplesRequest.h>
@@ -679,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateOutcome;
                 typedef std::future<DeleteTranscodeTemplateOutcome> DeleteTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteTranscodeTemplateRequest&, DeleteTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVoiceResponse> DeleteVoiceOutcome;
+                typedef std::future<DeleteVoiceOutcome> DeleteVoiceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteVoiceRequest&, DeleteVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateOutcome;
                 typedef std::future<DeleteWatermarkTemplateOutcome> DeleteWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteWatermarkTemplateRequest&, DeleteWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWatermarkTemplateAsyncHandler;
@@ -1790,6 +1795,15 @@ namespace TencentCloud
                 DeleteTranscodeTemplateOutcome DeleteTranscodeTemplate(const Model::DeleteTranscodeTemplateRequest &request);
                 void DeleteTranscodeTemplateAsync(const Model::DeleteTranscodeTemplateRequest& request, const DeleteTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTranscodeTemplateOutcomeCallable DeleteTranscodeTemplateCallable(const Model::DeleteTranscodeTemplateRequest& request);
+
+                /**
+                 *删除音色（通过音色克隆或设计创建的）。
+                 * @param req DeleteVoiceRequest
+                 * @return DeleteVoiceOutcome
+                 */
+                DeleteVoiceOutcome DeleteVoice(const Model::DeleteVoiceRequest &request);
+                void DeleteVoiceAsync(const Model::DeleteVoiceRequest& request, const DeleteVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVoiceOutcomeCallable DeleteVoiceCallable(const Model::DeleteVoiceRequest& request);
 
                 /**
                  *删除用户自定义水印模板。

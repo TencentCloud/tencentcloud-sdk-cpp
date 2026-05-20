@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos地域
+                     * 获取<p>cos地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region cos地域
+                     * @return Region <p>cos地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取Token信息
+                     * 获取<p>Token信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Token Token信息
+                     * @return Token <p>Token信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取桶名
+                     * 获取<p>桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bucket 桶名
+                     * @return Bucket <p>桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取终止点（针对私有云环境）
+                     * 获取<p>终止点（针对私有云环境）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndPoint 终止点（针对私有云环境）
+                     * @return EndPoint <p>终止点（针对私有云环境）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,28 +111,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cos地域
+                     * <p>cos地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * Token信息
+                     * <p>Token信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosTokenResponse m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 桶名
+                     * <p>桶名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 终止点（针对私有云环境）
+                     * <p>终止点（针对私有云环境）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endPoint;

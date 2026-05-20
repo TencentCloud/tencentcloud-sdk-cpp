@@ -51,6 +51,7 @@ RuleEngineAction::RuleEngineAction() :
     m_shieldParametersHasBeenSet(false),
     m_tLSConfigParametersHasBeenSet(false),
     m_modifyOriginParametersHasBeenSet(false),
+    m_siteFailoverParametersHasBeenSet(false),
     m_hTTPUpstreamTimeoutParametersHasBeenSet(false),
     m_httpResponseParametersHasBeenSet(false),
     m_errorPageParametersHasBeenSet(false),
@@ -572,6 +573,23 @@ CoreInternalOutcome RuleEngineAction::Deserialize(const rapidjson::Value &value)
         m_modifyOriginParametersHasBeenSet = true;
     }
 
+    if (value.HasMember("SiteFailoverParameters") && !value["SiteFailoverParameters"].IsNull())
+    {
+        if (!value["SiteFailoverParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleEngineAction.SiteFailoverParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_siteFailoverParameters.Deserialize(value["SiteFailoverParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_siteFailoverParametersHasBeenSet = true;
+    }
+
     if (value.HasMember("HTTPUpstreamTimeoutParameters") && !value["HTTPUpstreamTimeoutParameters"].IsNull())
     {
         if (!value["HTTPUpstreamTimeoutParameters"].IsObject())
@@ -1016,6 +1034,15 @@ void RuleEngineAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modifyOriginParameters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_siteFailoverParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SiteFailoverParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_siteFailoverParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hTTPUpstreamTimeoutParametersHasBeenSet)
@@ -1589,6 +1616,22 @@ void RuleEngineAction::SetModifyOriginParameters(const ModifyOriginParameters& _
 bool RuleEngineAction::ModifyOriginParametersHasBeenSet() const
 {
     return m_modifyOriginParametersHasBeenSet;
+}
+
+SiteFailoverParameters RuleEngineAction::GetSiteFailoverParameters() const
+{
+    return m_siteFailoverParameters;
+}
+
+void RuleEngineAction::SetSiteFailoverParameters(const SiteFailoverParameters& _siteFailoverParameters)
+{
+    m_siteFailoverParameters = _siteFailoverParameters;
+    m_siteFailoverParametersHasBeenSet = true;
+}
+
+bool RuleEngineAction::SiteFailoverParametersHasBeenSet() const
+{
+    return m_siteFailoverParametersHasBeenSet;
 }
 
 HTTPUpstreamTimeoutParameters RuleEngineAction::GetHTTPUpstreamTimeoutParameters() const

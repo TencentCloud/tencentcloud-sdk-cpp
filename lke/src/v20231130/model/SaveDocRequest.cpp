@@ -44,7 +44,8 @@ SaveDocRequest::SaveDocRequest() :
     m_duplicateFileHandlesHasBeenSet(false),
     m_splitRuleHasBeenSet(false),
     m_updatePeriodInfoHasBeenSet(false),
-    m_enableScopeHasBeenSet(false)
+    m_enableScopeHasBeenSet(false),
+    m_fileUrlHasBeenSet(false)
 {
 }
 
@@ -244,6 +245,14 @@ string SaveDocRequest::ToJsonString() const
         string key = "EnableScope";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableScope, allocator);
+    }
+
+    if (m_fileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -604,6 +613,22 @@ void SaveDocRequest::SetEnableScope(const int64_t& _enableScope)
 bool SaveDocRequest::EnableScopeHasBeenSet() const
 {
     return m_enableScopeHasBeenSet;
+}
+
+string SaveDocRequest::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+void SaveDocRequest::SetFileUrl(const string& _fileUrl)
+{
+    m_fileUrl = _fileUrl;
+    m_fileUrlHasBeenSet = true;
+}
+
+bool SaveDocRequest::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
 }
 
 

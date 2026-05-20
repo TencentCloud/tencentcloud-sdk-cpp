@@ -33,6 +33,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h>
@@ -504,6 +506,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddInstancesResponse> AddInstancesOutcome;
                 typedef std::future<AddInstancesOutcome> AddInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AddInstancesRequest&, AddInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddLibraDBInstancesResponse> AddLibraDBInstancesOutcome;
+                typedef std::future<AddLibraDBInstancesOutcome> AddLibraDBInstancesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::AddLibraDBInstancesRequest&, AddLibraDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLibraDBInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -1214,6 +1219,15 @@ namespace TencentCloud
                 AddInstancesOutcome AddInstances(const Model::AddInstancesRequest &request);
                 void AddInstancesAsync(const Model::AddInstancesRequest& request, const AddInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddInstancesOutcomeCallable AddInstancesCallable(const Model::AddInstancesRequest& request);
+
+                /**
+                 *本接口（AddLibraDBInstances）用于集群添加只读分析引擎
+                 * @param req AddLibraDBInstancesRequest
+                 * @return AddLibraDBInstancesOutcome
+                 */
+                AddLibraDBInstancesOutcome AddLibraDBInstances(const Model::AddLibraDBInstancesRequest &request);
+                void AddLibraDBInstancesAsync(const Model::AddLibraDBInstancesRequest& request, const AddLibraDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddLibraDBInstancesOutcomeCallable AddLibraDBInstancesCallable(const Model::AddLibraDBInstancesRequest& request);
 
                 /**
                  *本接口（AssociateSecurityGroups）用于安全组批量绑定云资源。

@@ -890,6 +890,56 @@ Ga2Client::DescribeListenersOutcomeCallable Ga2Client::DescribeListenersCallable
     return prom->get_future();
 }
 
+Ga2Client::DescribeTaskResultOutcome Ga2Client::DescribeTaskResult(const DescribeTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskResultResponse rsp = DescribeTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskResultOutcome(rsp);
+        else
+            return DescribeTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeTaskResultAsync(const DescribeTaskResultRequest& request, const DescribeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTaskResultRequest&;
+    using Resp = DescribeTaskResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeTaskResultOutcomeCallable Ga2Client::DescribeTaskResultCallable(const DescribeTaskResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTaskResultOutcome>>();
+    DescribeTaskResultAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeTaskResultRequest&,
+        DescribeTaskResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::ModifyAccelerateAreasOutcome Ga2Client::ModifyAccelerateAreas(const ModifyAccelerateAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccelerateAreas");

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return Total 总条数
+                     * 获取<p>总条数</p>
+                     * @return Total <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取nat访问控制列表数据
-                     * @return Data nat访问控制列表数据
+                     * 获取<p>nat访问控制列表数据</p>
+                     * @return Data <p>nat访问控制列表数据</p>
                      * 
                      */
                     std::vector<DescAcItem> GetData() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取未过滤的总条数
-                     * @return AllTotal 未过滤的总条数
+                     * 获取<p>未过滤的总条数</p>
+                     * @return AllTotal <p>未过滤的总条数</p>
                      * 
                      */
                     uint64_t GetAllTotal() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * nat访问控制列表数据
+                     * <p>nat访问控制列表数据</p>
                      */
                     std::vector<DescAcItem> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 未过滤的总条数
+                     * <p>未过滤的总条数</p>
                      */
                     uint64_t m_allTotal;
                     bool m_allTotalHasBeenSet;

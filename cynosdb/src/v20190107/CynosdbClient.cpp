@@ -290,6 +290,56 @@ CynosdbClient::AddInstancesOutcomeCallable CynosdbClient::AddInstancesCallable(c
     return prom->get_future();
 }
 
+CynosdbClient::AddLibraDBInstancesOutcome CynosdbClient::AddLibraDBInstances(const AddLibraDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddLibraDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddLibraDBInstancesResponse rsp = AddLibraDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddLibraDBInstancesOutcome(rsp);
+        else
+            return AddLibraDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return AddLibraDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::AddLibraDBInstancesAsync(const AddLibraDBInstancesRequest& request, const AddLibraDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddLibraDBInstancesRequest&;
+    using Resp = AddLibraDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddLibraDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::AddLibraDBInstancesOutcomeCallable CynosdbClient::AddLibraDBInstancesCallable(const AddLibraDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddLibraDBInstancesOutcome>>();
+    AddLibraDBInstancesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const AddLibraDBInstancesRequest&,
+        AddLibraDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::AssociateSecurityGroupsOutcome CynosdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateSecurityGroups");
