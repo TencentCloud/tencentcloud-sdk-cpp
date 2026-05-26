@@ -39,7 +39,9 @@ SecretMetadata::SecretMetadata() :
     m_targetUinHasBeenSet(false),
     m_rotationFrequencyHasBeenSet(false),
     m_resourceIDHasBeenSet(false),
-    m_rotationBeginTimeHasBeenSet(false)
+    m_rotationBeginTimeHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_encryptSwitchingHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,26 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_rotationBeginTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptType") && !value["EncryptType"].IsNull())
+    {
+        if (!value["EncryptType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.EncryptType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptType = value["EncryptType"].GetUint64();
+        m_encryptTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptSwitching") && !value["EncryptSwitching"].IsNull())
+    {
+        if (!value["EncryptSwitching"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretMetadata.EncryptSwitching` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptSwitching = value["EncryptSwitching"].GetBool();
+        m_encryptSwitchingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RotationBeginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rotationBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptType, allocator);
+    }
+
+    if (m_encryptSwitchingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptSwitching";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptSwitching, allocator);
     }
 
 }
@@ -710,5 +748,37 @@ void SecretMetadata::SetRotationBeginTime(const string& _rotationBeginTime)
 bool SecretMetadata::RotationBeginTimeHasBeenSet() const
 {
     return m_rotationBeginTimeHasBeenSet;
+}
+
+uint64_t SecretMetadata::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void SecretMetadata::SetEncryptType(const uint64_t& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool SecretMetadata::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+bool SecretMetadata::GetEncryptSwitching() const
+{
+    return m_encryptSwitching;
+}
+
+void SecretMetadata::SetEncryptSwitching(const bool& _encryptSwitching)
+{
+    m_encryptSwitching = _encryptSwitching;
+    m_encryptSwitchingHasBeenSet = true;
+}
+
+bool SecretMetadata::EncryptSwitchingHasBeenSet() const
+{
+    return m_encryptSwitchingHasBeenSet;
 }
 

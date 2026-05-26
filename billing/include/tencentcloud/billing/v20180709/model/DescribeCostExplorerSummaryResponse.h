@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据条数
-                     * @return Total 数据条数
+                     * 获取<p>数据条数</p>
+                     * @return Total <p>数据条数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取表头信息
-                     * @return Header 表头信息
+                     * 获取<p>表头信息</p>
+                     * @return Header <p>表头信息</p>
                      * 
                      */
                     AnalyseHeaderDetail GetHeader() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool HeaderHasBeenSet() const;
 
                     /**
-                     * 获取数据明细
-                     * @return Detail 数据明细
+                     * 获取<p>数据明细</p>
+                     * @return Detail <p>数据明细</p>
                      * 
                      */
                     std::vector<AnalyseDetail> GetDetail() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取数据总计
-                     * @return TotalDetail 数据总计
+                     * 获取<p>数据总计</p>
+                     * @return TotalDetail <p>数据总计</p>
                      * 
                      */
                     AnalyseDetail GetTotalDetail() const;
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool TotalDetailHasBeenSet() const;
 
                     /**
-                     * 获取筛选框
-                     * @return ConditionValue 筛选框
+                     * 获取<p>筛选框</p>
+                     * @return ConditionValue <p>筛选框</p>
                      * 
                      */
                     AnalyseConditionDetail GetConditionValue() const;
@@ -119,31 +119,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据条数
+                     * <p>数据条数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 表头信息
+                     * <p>表头信息</p>
                      */
                     AnalyseHeaderDetail m_header;
                     bool m_headerHasBeenSet;
 
                     /**
-                     * 数据明细
+                     * <p>数据明细</p>
                      */
                     std::vector<AnalyseDetail> m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 数据总计
+                     * <p>数据总计</p>
                      */
                     AnalyseDetail m_totalDetail;
                     bool m_totalDetailHasBeenSet;
 
                     /**
-                     * 筛选框
+                     * <p>筛选框</p>
                      */
                     AnalyseConditionDetail m_conditionValue;
                     bool m_conditionValueHasBeenSet;

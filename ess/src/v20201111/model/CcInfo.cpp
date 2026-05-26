@@ -25,7 +25,8 @@ CcInfo::CcInfo() :
     m_nameHasBeenSet(false),
     m_ccTypeHasBeenSet(false),
     m_ccPermissionHasBeenSet(false),
-    m_notifyTypeHasBeenSet(false)
+    m_notifyTypeHasBeenSet(false),
+    m_organizationNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CcInfo::Deserialize(const rapidjson::Value &value)
         m_notifyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CcInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "NotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CcInfo::SetNotifyType(const string& _notifyType)
 bool CcInfo::NotifyTypeHasBeenSet() const
 {
     return m_notifyTypeHasBeenSet;
+}
+
+string CcInfo::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void CcInfo::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool CcInfo::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取goosefsx实例id
-                     * @return Id goosefsx实例id
+                     * 获取<p>goosefsx实例id</p>
+                     * @return Id <p>goosefsx实例id</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置goosefsx实例id
-                     * @param _id goosefsx实例id
+                     * 设置<p>goosefsx实例id</p>
+                     * @param _id <p>goosefsx实例id</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取GooseFSx实例需要挂载的路径
-                     * @return Path GooseFSx实例需要挂载的路径
+                     * 获取<p>GooseFSx实例需要挂载的路径</p>
+                     * @return Path <p>GooseFSx实例需要挂载的路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置GooseFSx实例需要挂载的路径
-                     * @param _path GooseFSx实例需要挂载的路径
+                     * 设置<p>GooseFSx实例需要挂载的路径</p>
+                     * @param _path <p>GooseFSx实例需要挂载的路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * goosefsx实例id
+                     * <p>goosefsx实例id</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * GooseFSx实例需要挂载的路径
+                     * <p>GooseFSx实例需要挂载的路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

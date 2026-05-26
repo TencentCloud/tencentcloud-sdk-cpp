@@ -112,14 +112,34 @@ namespace TencentCloud
 
                     /**
                      * 获取健康等级, 如："HEALTH", "SUB_HEALTH", "RISK", "HIGH_RISK"。
+其中：
+HEALTH - 健康
+SUB_HEALTH - 亚健康
+RISK - 危险
+HIGH_RISK - 高危
                      * @return HealthLevel 健康等级, 如："HEALTH", "SUB_HEALTH", "RISK", "HIGH_RISK"。
+其中：
+HEALTH - 健康
+SUB_HEALTH - 亚健康
+RISK - 危险
+HIGH_RISK - 高危
                      * 
                      */
                     std::string GetHealthLevel() const;
 
                     /**
                      * 设置健康等级, 如："HEALTH", "SUB_HEALTH", "RISK", "HIGH_RISK"。
+其中：
+HEALTH - 健康
+SUB_HEALTH - 亚健康
+RISK - 危险
+HIGH_RISK - 高危
                      * @param _healthLevel 健康等级, 如："HEALTH", "SUB_HEALTH", "RISK", "HIGH_RISK"。
+其中：
+HEALTH - 健康
+SUB_HEALTH - 亚健康
+RISK - 危险
+HIGH_RISK - 高危
                      * 
                      */
                     void SetHealthLevel(const std::string& _healthLevel);
@@ -153,6 +173,11 @@ namespace TencentCloud
 
                     /**
                      * 健康等级, 如："HEALTH", "SUB_HEALTH", "RISK", "HIGH_RISK"。
+其中：
+HEALTH - 健康
+SUB_HEALTH - 亚健康
+RISK - 危险
+HIGH_RISK - 高危
                      */
                     std::string m_healthLevel;
                     bool m_healthLevelHasBeenSet;

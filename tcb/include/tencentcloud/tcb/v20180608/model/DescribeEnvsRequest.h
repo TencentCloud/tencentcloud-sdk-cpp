@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID，如果传了这个参数则只返回该环境的相关信息
-                     * @return EnvId 环境ID，如果传了这个参数则只返回该环境的相关信息
+                     * 获取<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>
+                     * @return EnvId <p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID，如果传了这个参数则只返回该环境的相关信息
-                     * @param _envId 环境ID，如果传了这个参数则只返回该环境的相关信息
+                     * 设置<p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>
+                     * @param _envId <p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取指定Channels字段为可见渠道列表或不可见渠道列表
-如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
-                     * @return IsVisible 指定Channels字段为可见渠道列表或不可见渠道列表
-如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     * 获取<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>
+                     * @return IsVisible <p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>
                      * 
                      */
                     bool GetIsVisible() const;
 
                     /**
-                     * 设置指定Channels字段为可见渠道列表或不可见渠道列表
-如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
-                     * @param _isVisible 指定Channels字段为可见渠道列表或不可见渠道列表
-如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     * 设置<p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>
+                     * @param _isVisible <p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>
                      * 
                      */
                     void SetIsVisible(const bool& _isVisible);
@@ -89,15 +85,15 @@ namespace TencentCloud
                     bool IsVisibleHasBeenSet() const;
 
                     /**
-                     * 获取渠道列表，代表可见或不可见渠道由IsVisible参数指定
-                     * @return Channels 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     * 获取<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>
+                     * @return Channels <p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>
                      * 
                      */
                     std::vector<std::string> GetChannels() const;
 
                     /**
-                     * 设置渠道列表，代表可见或不可见渠道由IsVisible参数指定
-                     * @param _channels 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     * 设置<p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>
+                     * @param _channels <p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>
                      * 
                      */
                     void SetChannels(const std::vector<std::string>& _channels);
@@ -110,15 +106,15 @@ namespace TencentCloud
                     bool ChannelsHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，单页限制个数
-                     * @return Limit 分页参数，单页限制个数
+                     * 获取<p>分页参数，单页限制个数</p>
+                     * @return Limit <p>分页参数，单页限制个数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，单页限制个数
-                     * @param _limit 分页参数，单页限制个数
+                     * 设置<p>分页参数，单页限制个数</p>
+                     * @param _limit <p>分页参数，单页限制个数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -131,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，偏移量
-                     * @return Offset 分页参数，偏移量
+                     * 获取<p>分页参数，偏移量</p>
+                     * @return Offset <p>分页参数，偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，偏移量
-                     * @param _offset 分页参数，偏移量
+                     * 设置<p>分页参数，偏移量</p>
+                     * @param _offset <p>分页参数，偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -154,32 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID，如果传了这个参数则只返回该环境的相关信息
+                     * <p>环境ID，如果传了这个参数则只返回该环境的相关信息</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 指定Channels字段为可见渠道列表或不可见渠道列表
-如只想获取渠道A的环境 就填写IsVisible= true,Channels = ["A"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = ["A"]
+                     * <p>指定Channels字段为可见渠道列表或不可见渠道列表<br>如只想获取渠道A的环境 就填写IsVisible= true,Channels = [&quot;A&quot;], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [&quot;A&quot;]</p>
                      */
                     bool m_isVisible;
                     bool m_isVisibleHasBeenSet;
 
                     /**
-                     * 渠道列表，代表可见或不可见渠道由IsVisible参数指定
+                     * <p>渠道列表，代表可见或不可见渠道由IsVisible参数指定</p>
                      */
                     std::vector<std::string> m_channels;
                     bool m_channelsHasBeenSet;
 
                     /**
-                     * 分页参数，单页限制个数
+                     * <p>分页参数，单页限制个数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数，偏移量
+                     * <p>分页参数，偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

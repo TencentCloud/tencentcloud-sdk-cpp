@@ -79,6 +79,20 @@
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRulesResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeJobFileUrlRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantByIdRequest.h>
@@ -109,6 +123,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h>
+#include <tencentcloud/trp/v20210515/model/DownloadGEORequest.h>
+#include <tencentcloud/trp/v20210515/model/DownloadGEOResponse.h>
 #include <tencentcloud/trp/v20210515/model/EffectFeedbackRequest.h>
 #include <tencentcloud/trp/v20210515/model/EffectFeedbackResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h>
@@ -231,6 +247,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCustomRulesResponse> DescribeCustomRulesOutcome;
                 typedef std::future<DescribeCustomRulesOutcome> DescribeCustomRulesOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCustomRulesRequest&, DescribeCustomRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse> DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome> DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest&, DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse> DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome> DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest&, DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse> DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome> DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest&, DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse> DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome> DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest&, DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse> DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome> DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest&, DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandProvinceScanAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandScanAnalysisResponse> DescribeFlavorKingCycleBrandScanAnalysisOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandScanAnalysisOutcome> DescribeFlavorKingCycleBrandScanAnalysisOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandScanAnalysisRequest&, DescribeFlavorKingCycleBrandScanAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandScanAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlavorKingCycleBrandScanMetricsResponse> DescribeFlavorKingCycleBrandScanMetricsOutcome;
+                typedef std::future<DescribeFlavorKingCycleBrandScanMetricsOutcome> DescribeFlavorKingCycleBrandScanMetricsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeFlavorKingCycleBrandScanMetricsRequest&, DescribeFlavorKingCycleBrandScanMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlavorKingCycleBrandScanMetricsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobFileUrlResponse> DescribeJobFileUrlOutcome;
                 typedef std::future<DescribeJobFileUrlOutcome> DescribeJobFileUrlOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeJobFileUrlRequest&, DescribeJobFileUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFileUrlAsyncHandler;
@@ -276,6 +313,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTraceDataListResponse> DescribeTraceDataListOutcome;
                 typedef std::future<DescribeTraceDataListOutcome> DescribeTraceDataListOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTraceDataListRequest&, DescribeTraceDataListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceDataListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadGEOResponse> DownloadGEOOutcome;
+                typedef std::future<DownloadGEOOutcome> DownloadGEOOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DownloadGEORequest&, DownloadGEOOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadGEOAsyncHandler;
                 typedef Outcome<Core::Error, Model::EffectFeedbackResponse> EffectFeedbackOutcome;
                 typedef std::future<EffectFeedbackOutcome> EffectFeedbackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::EffectFeedbackRequest&, EffectFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EffectFeedbackAsyncHandler;
@@ -570,6 +610,69 @@ namespace TencentCloud
                 DescribeCustomRulesOutcomeCallable DescribeCustomRulesCallable(const Model::DescribeCustomRulesRequest& request);
 
                 /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome DescribeFlavorKingCycleBrandImportantCityScanAnalysis(const Model::DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsync(const Model::DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcomeCallable DescribeFlavorKingCycleBrandImportantCityScanAnalysisCallable(const Model::DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest& request);
+
+                /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis(const Model::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsync(const Model::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcomeCallable DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisCallable(const Model::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest& request);
+
+                /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis(const Model::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsync(const Model::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcomeCallable DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisCallable(const Model::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest& request);
+
+                /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome DescribeFlavorKingCycleBrandProvinceCityScanAnalysis(const Model::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsync(const Model::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcomeCallable DescribeFlavorKingCycleBrandProvinceCityScanAnalysisCallable(const Model::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest& request);
+
+                /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome DescribeFlavorKingCycleBrandProvinceScanAnalysis(const Model::DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandProvinceScanAnalysisAsync(const Model::DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandProvinceScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcomeCallable DescribeFlavorKingCycleBrandProvinceScanAnalysisCallable(const Model::DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest& request);
+
+                /**
+                 *统计扫码次数
+                 * @param req DescribeFlavorKingCycleBrandScanAnalysisRequest
+                 * @return DescribeFlavorKingCycleBrandScanAnalysisOutcome
+                 */
+                DescribeFlavorKingCycleBrandScanAnalysisOutcome DescribeFlavorKingCycleBrandScanAnalysis(const Model::DescribeFlavorKingCycleBrandScanAnalysisRequest &request);
+                void DescribeFlavorKingCycleBrandScanAnalysisAsync(const Model::DescribeFlavorKingCycleBrandScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandScanAnalysisOutcomeCallable DescribeFlavorKingCycleBrandScanAnalysisCallable(const Model::DescribeFlavorKingCycleBrandScanAnalysisRequest& request);
+
+                /**
+                 *统计用户次数
+                 * @param req DescribeFlavorKingCycleBrandScanMetricsRequest
+                 * @return DescribeFlavorKingCycleBrandScanMetricsOutcome
+                 */
+                DescribeFlavorKingCycleBrandScanMetricsOutcome DescribeFlavorKingCycleBrandScanMetrics(const Model::DescribeFlavorKingCycleBrandScanMetricsRequest &request);
+                void DescribeFlavorKingCycleBrandScanMetricsAsync(const Model::DescribeFlavorKingCycleBrandScanMetricsRequest& request, const DescribeFlavorKingCycleBrandScanMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlavorKingCycleBrandScanMetricsOutcomeCallable DescribeFlavorKingCycleBrandScanMetricsCallable(const Model::DescribeFlavorKingCycleBrandScanMetricsRequest& request);
+
+                /**
                  *获取异步任务的输出地址
                  * @param req DescribeJobFileUrlRequest
                  * @return DescribeJobFileUrlOutcome
@@ -704,6 +807,15 @@ namespace TencentCloud
                 DescribeTraceDataListOutcome DescribeTraceDataList(const Model::DescribeTraceDataListRequest &request);
                 void DescribeTraceDataListAsync(const Model::DescribeTraceDataListRequest& request, const DescribeTraceDataListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTraceDataListOutcomeCallable DescribeTraceDataListCallable(const Model::DescribeTraceDataListRequest& request);
+
+                /**
+                 *地理位置信息下载
+                 * @param req DownloadGEORequest
+                 * @return DownloadGEOOutcome
+                 */
+                DownloadGEOOutcome DownloadGEO(const Model::DownloadGEORequest &request);
+                void DownloadGEOAsync(const Model::DownloadGEORequest& request, const DownloadGEOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadGEOOutcomeCallable DownloadGEOCallable(const Model::DownloadGEORequest& request);
 
                 /**
                  *接收客户反馈的各环节数据

@@ -590,6 +590,56 @@ MnaClient::DeleteL3ConnOutcomeCallable MnaClient::DeleteL3ConnCallable(const Del
     return prom->get_future();
 }
 
+MnaClient::DescribeAccessRegionsOutcome MnaClient::DescribeAccessRegions(const DescribeAccessRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessRegionsResponse rsp = DescribeAccessRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessRegionsOutcome(rsp);
+        else
+            return DescribeAccessRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessRegionsOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DescribeAccessRegionsAsync(const DescribeAccessRegionsRequest& request, const DescribeAccessRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccessRegionsRequest&;
+    using Resp = DescribeAccessRegionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::DescribeAccessRegionsOutcomeCallable MnaClient::DescribeAccessRegionsCallable(const DescribeAccessRegionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccessRegionsOutcome>>();
+    DescribeAccessRegionsAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const DescribeAccessRegionsRequest&,
+        DescribeAccessRegionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MnaClient::DownloadActiveDeviceCountOutcome MnaClient::DownloadActiveDeviceCount(const DownloadActiveDeviceCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadActiveDeviceCount");
@@ -1982,6 +2032,56 @@ MnaClient::GroupDeleteDeviceOutcomeCallable MnaClient::GroupDeleteDeviceCallable
         const MnaClient*,
         const GroupDeleteDeviceRequest&,
         GroupDeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MnaClient::ModifyDeviceAccessRegionsOutcome MnaClient::ModifyDeviceAccessRegions(const ModifyDeviceAccessRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceAccessRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceAccessRegionsResponse rsp = ModifyDeviceAccessRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceAccessRegionsOutcome(rsp);
+        else
+            return ModifyDeviceAccessRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceAccessRegionsOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::ModifyDeviceAccessRegionsAsync(const ModifyDeviceAccessRegionsRequest& request, const ModifyDeviceAccessRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeviceAccessRegionsRequest&;
+    using Resp = ModifyDeviceAccessRegionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeviceAccessRegions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MnaClient::ModifyDeviceAccessRegionsOutcomeCallable MnaClient::ModifyDeviceAccessRegionsCallable(const ModifyDeviceAccessRegionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeviceAccessRegionsOutcome>>();
+    ModifyDeviceAccessRegionsAsync(
+    request,
+    [prom](
+        const MnaClient*,
+        const ModifyDeviceAccessRegionsRequest&,
+        ModifyDeviceAccessRegionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

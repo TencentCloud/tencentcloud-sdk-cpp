@@ -373,6 +373,27 @@ namespace TencentCloud
                      */
                     bool PublicDataSourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是只读存储</p>
+                     * @return ReadOnly <p>是否是只读存储</p>
+                     * 
+                     */
+                    bool GetReadOnly() const;
+
+                    /**
+                     * 设置<p>是否是只读存储</p>
+                     * @param _readOnly <p>是否是只读存储</p>
+                     * 
+                     */
+                    void SetReadOnly(const bool& _readOnly);
+
+                    /**
+                     * 判断参数 ReadOnly 是否已赋值
+                     * @return ReadOnly 是否已赋值
+                     * 
+                     */
+                    bool ReadOnlyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +484,12 @@ namespace TencentCloud
                      */
                     PublicDataSourceFS m_publicDataSource;
                     bool m_publicDataSourceHasBeenSet;
+
+                    /**
+                     * <p>是否是只读存储</p>
+                     */
+                    bool m_readOnly;
+                    bool m_readOnlyHasBeenSet;
 
                 };
             }

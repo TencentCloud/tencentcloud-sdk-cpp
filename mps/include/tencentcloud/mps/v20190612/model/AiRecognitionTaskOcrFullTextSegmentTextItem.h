@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别片段置信度。取值：0~100。
-                     * @return Confidence 识别片段置信度。取值：0~100。
+                     * 获取<p>识别片段置信度。取值：0~100。</p>
+                     * @return Confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置识别片段置信度。取值：0~100。
-                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 设置<p>识别片段置信度。取值：0~100。</p>
+                     * @param _confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @return AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 获取<p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
+                     * @return AreaCoordSet <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
-                     * 设置识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @param _areaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 设置<p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
+                     * @param _areaCoordSet <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AreaCoordSetHasBeenSet() const;
 
                     /**
-                     * 获取识别文本。
-                     * @return Text 识别文本。
+                     * 获取<p>识别文本。</p>
+                     * @return Text <p>识别文本。</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置识别文本。
-                     * @param _text 识别文本。
+                     * 设置<p>识别文本。</p>
+                     * @param _text <p>识别文本。</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别片段置信度。取值：0~100。
+                     * <p>识别片段置信度。取值：0~100。</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * <p>识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。</p>
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;
 
                     /**
-                     * 识别文本。
+                     * <p>识别文本。</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;

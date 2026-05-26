@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AigcVideoTaskOutput::AigcVideoTaskOutput() :
-    m_fileInfosHasBeenSet(false)
+    m_fileInfosHasBeenSet(false),
+    m_procedureTaskIdsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,19 @@ CoreInternalOutcome AigcVideoTaskOutput::Deserialize(const rapidjson::Value &val
         m_fileInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcedureTaskIds") && !value["ProcedureTaskIds"].IsNull())
+    {
+        if (!value["ProcedureTaskIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskOutput.ProcedureTaskIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ProcedureTaskIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_procedureTaskIds.push_back((*itr).GetString());
+        }
+        m_procedureTaskIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void AigcVideoTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         }
     }
 
+    if (m_procedureTaskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcedureTaskIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_procedureTaskIds.begin(); itr != m_procedureTaskIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 }
 
 
@@ -89,5 +116,21 @@ void AigcVideoTaskOutput::SetFileInfos(const vector<AigcVideoTaskOutputFileInfo>
 bool AigcVideoTaskOutput::FileInfosHasBeenSet() const
 {
     return m_fileInfosHasBeenSet;
+}
+
+vector<string> AigcVideoTaskOutput::GetProcedureTaskIds() const
+{
+    return m_procedureTaskIds;
+}
+
+void AigcVideoTaskOutput::SetProcedureTaskIds(const vector<string>& _procedureTaskIds)
+{
+    m_procedureTaskIds = _procedureTaskIds;
+    m_procedureTaskIdsHasBeenSet = true;
+}
+
+bool AigcVideoTaskOutput::ProcedureTaskIdsHasBeenSet() const
+{
+    return m_procedureTaskIdsHasBeenSet;
 }
 

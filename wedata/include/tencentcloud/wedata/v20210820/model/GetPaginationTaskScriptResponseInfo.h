@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目编号
+                     * 获取<p>项目编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目编号
+                     * @return ProjectId <p>项目编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目编号
+                     * 设置<p>项目编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目编号
+                     * @param _projectId <p>项目编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务编号
+                     * 获取<p>任务编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务编号
+                     * @return TaskId <p>任务编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务编号
+                     * 设置<p>任务编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务编号
+                     * @param _taskId <p>任务编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取页内尺寸
+                     * 获取<p>页内尺寸</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 页内尺寸
+                     * @return PageSize <p>页内尺寸</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置页内尺寸
+                     * 设置<p>页内尺寸</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageSize 页内尺寸
+                     * @param _pageSize <p>页内尺寸</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码
+                     * 获取<p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNum 页码
+                     * @return PageNum <p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置页码
+                     * 设置<p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageNum 页码
+                     * @param _pageNum <p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取总页数
+                     * 获取<p>总页数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageTotal 总页数
+                     * @return PageTotal <p>总页数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageTotal() const;
 
                     /**
-                     * 设置总页数
+                     * 设置<p>总页数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageTotal 总页数
+                     * @param _pageTotal <p>总页数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool PageTotalHasBeenSet() const;
 
                     /**
-                     * 获取分页内容
+                     * 获取<p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Base64ScriptContent 分页内容
+                     * @return Base64ScriptContent <p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBase64ScriptContent() const;
 
                     /**
-                     * 设置分页内容
+                     * 设置<p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _base64ScriptContent 分页内容
+                     * @param _base64ScriptContent <p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,42 +199,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目编号
+                     * <p>项目编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务编号
+                     * <p>任务编号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 页内尺寸
+                     * <p>页内尺寸</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 总页数
+                     * <p>总页数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageTotal;
                     bool m_pageTotalHasBeenSet;
 
                     /**
-                     * 分页内容
+                     * <p>分页内容</p><p>分页拉取全部代码内容后，先拼接，再Base64解码获取完整脚本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_base64ScriptContent;

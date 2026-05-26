@@ -90,6 +90,106 @@ TdmysqlClient::CancelIsolateDBInstancesOutcomeCallable TdmysqlClient::CancelIsol
     return prom->get_future();
 }
 
+TdmysqlClient::CreateCloneInstanceOutcome TdmysqlClient::CreateCloneInstance(const CreateCloneInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloneInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloneInstanceResponse rsp = CreateCloneInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloneInstanceOutcome(rsp);
+        else
+            return CreateCloneInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloneInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::CreateCloneInstanceAsync(const CreateCloneInstanceRequest& request, const CreateCloneInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloneInstanceRequest&;
+    using Resp = CreateCloneInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloneInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::CreateCloneInstanceOutcomeCallable TdmysqlClient::CreateCloneInstanceCallable(const CreateCloneInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloneInstanceOutcome>>();
+    CreateCloneInstanceAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const CreateCloneInstanceRequest&,
+        CreateCloneInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::CreateDBInstancesOutcome TdmysqlClient::CreateDBInstances(const CreateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBInstancesResponse rsp = CreateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBInstancesOutcome(rsp);
+        else
+            return CreateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::CreateDBInstancesAsync(const CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDBInstancesRequest&;
+    using Resp = CreateDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::CreateDBInstancesOutcomeCallable TdmysqlClient::CreateDBInstancesCallable(const CreateDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDBInstancesOutcome>>();
+    CreateDBInstancesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const CreateDBInstancesRequest&,
+        CreateDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::CreateDBSBackupOutcome TdmysqlClient::CreateDBSBackup(const CreateDBSBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBSBackup");
@@ -182,6 +282,106 @@ TdmysqlClient::DeleteDBSBackupSetsOutcomeCallable TdmysqlClient::DeleteDBSBackup
         const TdmysqlClient*,
         const DeleteDBSBackupSetsRequest&,
         DeleteDBSBackupSetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeDBInstanceDetailOutcome TdmysqlClient::DescribeDBInstanceDetail(const DescribeDBInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceDetailResponse rsp = DescribeDBInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceDetailOutcome(rsp);
+        else
+            return DescribeDBInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBInstanceDetailAsync(const DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstanceDetailRequest&;
+    using Resp = DescribeDBInstanceDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBInstanceDetailOutcomeCallable TdmysqlClient::DescribeDBInstanceDetailCallable(const DescribeDBInstanceDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceDetailOutcome>>();
+    DescribeDBInstanceDetailAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBInstanceDetailRequest&,
+        DescribeDBInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeDBInstancesOutcome TdmysqlClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstancesResponse rsp = DescribeDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstancesOutcome(rsp);
+        else
+            return DescribeDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstancesRequest&;
+    using Resp = DescribeDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBInstancesOutcomeCallable TdmysqlClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstancesOutcome>>();
+    DescribeDBInstancesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBInstancesRequest&,
+        DescribeDBInstancesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -340,6 +540,206 @@ TdmysqlClient::DescribeDBSAvailableRecoveryTimeOutcomeCallable TdmysqlClient::De
     return prom->get_future();
 }
 
+TdmysqlClient::DescribeDBSBackupPolicyOutcome TdmysqlClient::DescribeDBSBackupPolicy(const DescribeDBSBackupPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSBackupPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSBackupPolicyResponse rsp = DescribeDBSBackupPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSBackupPolicyOutcome(rsp);
+        else
+            return DescribeDBSBackupPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSBackupPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBSBackupPolicyAsync(const DescribeDBSBackupPolicyRequest& request, const DescribeDBSBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBSBackupPolicyRequest&;
+    using Resp = DescribeDBSBackupPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSBackupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBSBackupPolicyOutcomeCallable TdmysqlClient::DescribeDBSBackupPolicyCallable(const DescribeDBSBackupPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBSBackupPolicyOutcome>>();
+    DescribeDBSBackupPolicyAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBSBackupPolicyRequest&,
+        DescribeDBSBackupPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeDBSBackupSetsOutcome TdmysqlClient::DescribeDBSBackupSets(const DescribeDBSBackupSetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSBackupSets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSBackupSetsResponse rsp = DescribeDBSBackupSetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSBackupSetsOutcome(rsp);
+        else
+            return DescribeDBSBackupSetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSBackupSetsOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBSBackupSetsAsync(const DescribeDBSBackupSetsRequest& request, const DescribeDBSBackupSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBSBackupSetsRequest&;
+    using Resp = DescribeDBSBackupSetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSBackupSets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBSBackupSetsOutcomeCallable TdmysqlClient::DescribeDBSBackupSetsCallable(const DescribeDBSBackupSetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBSBackupSetsOutcome>>();
+    DescribeDBSBackupSetsAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBSBackupSetsRequest&,
+        DescribeDBSBackupSetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeDBSBackupStatisticsOutcome TdmysqlClient::DescribeDBSBackupStatistics(const DescribeDBSBackupStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSBackupStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSBackupStatisticsResponse rsp = DescribeDBSBackupStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSBackupStatisticsOutcome(rsp);
+        else
+            return DescribeDBSBackupStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSBackupStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBSBackupStatisticsAsync(const DescribeDBSBackupStatisticsRequest& request, const DescribeDBSBackupStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBSBackupStatisticsRequest&;
+    using Resp = DescribeDBSBackupStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSBackupStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBSBackupStatisticsOutcomeCallable TdmysqlClient::DescribeDBSBackupStatisticsCallable(const DescribeDBSBackupStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBSBackupStatisticsOutcome>>();
+    DescribeDBSBackupStatisticsAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBSBackupStatisticsRequest&,
+        DescribeDBSBackupStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeDBSBackupStatisticsDetailOutcome TdmysqlClient::DescribeDBSBackupStatisticsDetail(const DescribeDBSBackupStatisticsDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSBackupStatisticsDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSBackupStatisticsDetailResponse rsp = DescribeDBSBackupStatisticsDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSBackupStatisticsDetailOutcome(rsp);
+        else
+            return DescribeDBSBackupStatisticsDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSBackupStatisticsDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDBSBackupStatisticsDetailAsync(const DescribeDBSBackupStatisticsDetailRequest& request, const DescribeDBSBackupStatisticsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBSBackupStatisticsDetailRequest&;
+    using Resp = DescribeDBSBackupStatisticsDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBSBackupStatisticsDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDBSBackupStatisticsDetailOutcomeCallable TdmysqlClient::DescribeDBSBackupStatisticsDetailCallable(const DescribeDBSBackupStatisticsDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBSBackupStatisticsDetailOutcome>>();
+    DescribeDBSBackupStatisticsDetailAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDBSBackupStatisticsDetailRequest&,
+        DescribeDBSBackupStatisticsDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::DescribeDBSCloneInstancesOutcome TdmysqlClient::DescribeDBSCloneInstances(const DescribeDBSCloneInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSCloneInstances");
@@ -490,6 +890,56 @@ TdmysqlClient::DescribeDatabaseObjectsOutcomeCallable TdmysqlClient::DescribeDat
     return prom->get_future();
 }
 
+TdmysqlClient::DescribeDatabasesOutcome TdmysqlClient::DescribeDatabases(const DescribeDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabasesResponse rsp = DescribeDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabasesOutcome(rsp);
+        else
+            return DescribeDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeDatabasesAsync(const DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDatabasesRequest&;
+    using Resp = DescribeDatabasesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabases", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeDatabasesOutcomeCallable TdmysqlClient::DescribeDatabasesCallable(const DescribeDatabasesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDatabasesOutcome>>();
+    DescribeDatabasesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeDatabasesRequest&,
+        DescribeDatabasesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::DescribeFlowOutcome TdmysqlClient::DescribeFlow(const DescribeFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlow");
@@ -540,6 +990,206 @@ TdmysqlClient::DescribeFlowOutcomeCallable TdmysqlClient::DescribeFlowCallable(c
     return prom->get_future();
 }
 
+TdmysqlClient::DescribeSaleInfoOutcome TdmysqlClient::DescribeSaleInfo(const DescribeSaleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSaleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSaleInfoResponse rsp = DescribeSaleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSaleInfoOutcome(rsp);
+        else
+            return DescribeSaleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSaleInfoOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeSaleInfoAsync(const DescribeSaleInfoRequest& request, const DescribeSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSaleInfoRequest&;
+    using Resp = DescribeSaleInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSaleInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeSaleInfoOutcomeCallable TdmysqlClient::DescribeSaleInfoCallable(const DescribeSaleInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSaleInfoOutcome>>();
+    DescribeSaleInfoAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeSaleInfoRequest&,
+        DescribeSaleInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeSpecsOutcome TdmysqlClient::DescribeSpecs(const DescribeSpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpecsResponse rsp = DescribeSpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpecsOutcome(rsp);
+        else
+            return DescribeSpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpecsOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeSpecsAsync(const DescribeSpecsRequest& request, const DescribeSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSpecsRequest&;
+    using Resp = DescribeSpecsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeSpecsOutcomeCallable TdmysqlClient::DescribeSpecsCallable(const DescribeSpecsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSpecsOutcome>>();
+    DescribeSpecsAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeSpecsRequest&,
+        DescribeSpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeUserPrivilegesOutcome TdmysqlClient::DescribeUserPrivileges(const DescribeUserPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserPrivilegesResponse rsp = DescribeUserPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserPrivilegesOutcome(rsp);
+        else
+            return DescribeUserPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeUserPrivilegesAsync(const DescribeUserPrivilegesRequest& request, const DescribeUserPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserPrivilegesRequest&;
+    using Resp = DescribeUserPrivilegesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeUserPrivilegesOutcomeCallable TdmysqlClient::DescribeUserPrivilegesCallable(const DescribeUserPrivilegesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserPrivilegesOutcome>>();
+    DescribeUserPrivilegesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeUserPrivilegesRequest&,
+        DescribeUserPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::DescribeUsersOutcome TdmysqlClient::DescribeUsers(const DescribeUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsersResponse rsp = DescribeUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsersOutcome(rsp);
+        else
+            return DescribeUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsersOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::DescribeUsersAsync(const DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUsersRequest&;
+    using Resp = DescribeUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::DescribeUsersOutcomeCallable TdmysqlClient::DescribeUsersCallable(const DescribeUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUsersOutcome>>();
+    DescribeUsersAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const DescribeUsersRequest&,
+        DescribeUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::DestroyInstancesOutcome TdmysqlClient::DestroyInstances(const DestroyInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyInstances");
@@ -582,6 +1232,56 @@ TdmysqlClient::DestroyInstancesOutcomeCallable TdmysqlClient::DestroyInstancesCa
         const TdmysqlClient*,
         const DestroyInstancesRequest&,
         DestroyInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::ExpandInstanceOutcome TdmysqlClient::ExpandInstance(const ExpandInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExpandInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExpandInstanceResponse rsp = ExpandInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExpandInstanceOutcome(rsp);
+        else
+            return ExpandInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ExpandInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::ExpandInstanceAsync(const ExpandInstanceRequest& request, const ExpandInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExpandInstanceRequest&;
+    using Resp = ExpandInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExpandInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::ExpandInstanceOutcomeCallable TdmysqlClient::ExpandInstanceCallable(const ExpandInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExpandInstanceOutcome>>();
+    ExpandInstanceAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const ExpandInstanceRequest&,
+        ExpandInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -932,6 +1632,156 @@ TdmysqlClient::ModifyInstanceNameOutcomeCallable TdmysqlClient::ModifyInstanceNa
         const TdmysqlClient*,
         const ModifyInstanceNameRequest&,
         ModifyInstanceNameOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::ModifyUserPrivilegesOutcome TdmysqlClient::ModifyUserPrivileges(const ModifyUserPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserPrivilegesResponse rsp = ModifyUserPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserPrivilegesOutcome(rsp);
+        else
+            return ModifyUserPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::ModifyUserPrivilegesAsync(const ModifyUserPrivilegesRequest& request, const ModifyUserPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserPrivilegesRequest&;
+    using Resp = ModifyUserPrivilegesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserPrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::ModifyUserPrivilegesOutcomeCallable TdmysqlClient::ModifyUserPrivilegesCallable(const ModifyUserPrivilegesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserPrivilegesOutcome>>();
+    ModifyUserPrivilegesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const ModifyUserPrivilegesRequest&,
+        ModifyUserPrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::RestartDBInstancesOutcome TdmysqlClient::RestartDBInstances(const RestartDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartDBInstancesResponse rsp = RestartDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartDBInstancesOutcome(rsp);
+        else
+            return RestartDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::RestartDBInstancesAsync(const RestartDBInstancesRequest& request, const RestartDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RestartDBInstancesRequest&;
+    using Resp = RestartDBInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RestartDBInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::RestartDBInstancesOutcomeCallable TdmysqlClient::RestartDBInstancesCallable(const RestartDBInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RestartDBInstancesOutcome>>();
+    RestartDBInstancesAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const RestartDBInstancesRequest&,
+        RestartDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdmysqlClient::UpgradeInstanceOutcome TdmysqlClient::UpgradeInstance(const UpgradeInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeInstanceResponse rsp = UpgradeInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeInstanceOutcome(rsp);
+        else
+            return UpgradeInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::UpgradeInstanceAsync(const UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeInstanceRequest&;
+    using Resp = UpgradeInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::UpgradeInstanceOutcomeCallable TdmysqlClient::UpgradeInstanceCallable(const UpgradeInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeInstanceOutcome>>();
+    UpgradeInstanceAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const UpgradeInstanceRequest&,
+        UpgradeInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

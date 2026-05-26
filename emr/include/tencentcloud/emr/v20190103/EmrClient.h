@@ -71,6 +71,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceDetailRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceDetailResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDynamicInstanceListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEMREventListRequest.h>
@@ -309,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDAGInfoResponse> DescribeDAGInfoOutcome;
                 typedef std::future<DescribeDAGInfoOutcome> DescribeDAGInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeDAGInfoRequest&, DescribeDAGInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDAGInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDynamicInstanceDetailResponse> DescribeDynamicInstanceDetailOutcome;
+                typedef std::future<DescribeDynamicInstanceDetailOutcome> DescribeDynamicInstanceDetailOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeDynamicInstanceDetailRequest&, DescribeDynamicInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDynamicInstanceDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDynamicInstanceListResponse> DescribeDynamicInstanceListOutcome;
                 typedef std::future<DescribeDynamicInstanceListOutcome> DescribeDynamicInstanceListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeDynamicInstanceListRequest&, DescribeDynamicInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDynamicInstanceListAsyncHandler;
@@ -758,6 +763,15 @@ namespace TencentCloud
                 DescribeDAGInfoOutcome DescribeDAGInfo(const Model::DescribeDAGInfoRequest &request);
                 void DescribeDAGInfoAsync(const Model::DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDAGInfoOutcomeCallable DescribeDAGInfoCallable(const Model::DescribeDAGInfoRequest& request);
+
+                /**
+                 *描述容器EMR-TKE集群DynamicInstance详情
+                 * @param req DescribeDynamicInstanceDetailRequest
+                 * @return DescribeDynamicInstanceDetailOutcome
+                 */
+                DescribeDynamicInstanceDetailOutcome DescribeDynamicInstanceDetail(const Model::DescribeDynamicInstanceDetailRequest &request);
+                void DescribeDynamicInstanceDetailAsync(const Model::DescribeDynamicInstanceDetailRequest& request, const DescribeDynamicInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDynamicInstanceDetailOutcomeCallable DescribeDynamicInstanceDetailCallable(const Model::DescribeDynamicInstanceDetailRequest& request);
 
                 /**
                  *描述容器EMR-TKE集群DynamicInstance列表

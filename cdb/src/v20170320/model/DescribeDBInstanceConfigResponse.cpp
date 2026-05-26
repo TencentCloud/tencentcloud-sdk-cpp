@@ -29,7 +29,8 @@ DescribeDBInstanceConfigResponse::DescribeDBInstanceConfigResponse() :
     m_zoneHasBeenSet(false),
     m_slaveConfigHasBeenSet(false),
     m_backupConfigHasBeenSet(false),
-    m_switchedHasBeenSet(false)
+    m_switchedHasBeenSet(false),
+    m_fourthConfigHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,23 @@ CoreInternalOutcome DescribeDBInstanceConfigResponse::Deserialize(const string &
         m_switchedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FourthConfig") && !rsp["FourthConfig"].IsNull())
+    {
+        if (!rsp["FourthConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FourthConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fourthConfig.Deserialize(rsp["FourthConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fourthConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -199,6 +217,15 @@ string DescribeDBInstanceConfigResponse::ToJsonString() const
         string key = "Switched";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switched, allocator);
+    }
+
+    if (m_fourthConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FourthConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fourthConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -271,6 +298,16 @@ bool DescribeDBInstanceConfigResponse::GetSwitched() const
 bool DescribeDBInstanceConfigResponse::SwitchedHasBeenSet() const
 {
     return m_switchedHasBeenSet;
+}
+
+BackupConfig DescribeDBInstanceConfigResponse::GetFourthConfig() const
+{
+    return m_fourthConfig;
+}
+
+bool DescribeDBInstanceConfigResponse::FourthConfigHasBeenSet() const
+{
+    return m_fourthConfigHasBeenSet;
 }
 
 

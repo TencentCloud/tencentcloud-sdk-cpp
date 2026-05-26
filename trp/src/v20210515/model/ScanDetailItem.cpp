@@ -29,7 +29,10 @@ ScanDetailItem::ScanDetailItem() :
     m_brandNameHasBeenSet(false),
     m_specNameHasBeenSet(false),
     m_iPHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_extUidHasBeenSet(false),
+    m_latitudeHasBeenSet(false),
+    m_longitudeHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome ScanDetailItem::Deserialize(const rapidjson::Value &value)
         m_codeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtUid") && !value["ExtUid"].IsNull())
+    {
+        if (!value["ExtUid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanDetailItem.ExtUid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extUid = string(value["ExtUid"].GetString());
+        m_extUidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Latitude") && !value["Latitude"].IsNull())
+    {
+        if (!value["Latitude"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanDetailItem.Latitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_latitude = value["Latitude"].GetDouble();
+        m_latitudeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Longitude") && !value["Longitude"].IsNull())
+    {
+        if (!value["Longitude"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanDetailItem.Longitude` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_longitude = value["Longitude"].GetDouble();
+        m_longitudeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void ScanDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latitudeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Latitude";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_latitude, allocator);
+    }
+
+    if (m_longitudeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Longitude";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longitude, allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void ScanDetailItem::SetCode(const string& _code)
 bool ScanDetailItem::CodeHasBeenSet() const
 {
     return m_codeHasBeenSet;
+}
+
+string ScanDetailItem::GetExtUid() const
+{
+    return m_extUid;
+}
+
+void ScanDetailItem::SetExtUid(const string& _extUid)
+{
+    m_extUid = _extUid;
+    m_extUidHasBeenSet = true;
+}
+
+bool ScanDetailItem::ExtUidHasBeenSet() const
+{
+    return m_extUidHasBeenSet;
+}
+
+double ScanDetailItem::GetLatitude() const
+{
+    return m_latitude;
+}
+
+void ScanDetailItem::SetLatitude(const double& _latitude)
+{
+    m_latitude = _latitude;
+    m_latitudeHasBeenSet = true;
+}
+
+bool ScanDetailItem::LatitudeHasBeenSet() const
+{
+    return m_latitudeHasBeenSet;
+}
+
+double ScanDetailItem::GetLongitude() const
+{
+    return m_longitude;
+}
+
+void ScanDetailItem::SetLongitude(const double& _longitude)
+{
+    m_longitude = _longitude;
+    m_longitudeHasBeenSet = true;
+}
+
+bool ScanDetailItem::LongitudeHasBeenSet() const
+{
+    return m_longitudeHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台ID
-                     * @return CasterId 导播台ID
+                     * 获取<p>导播台ID</p>
+                     * @return CasterId <p>导播台ID</p>
                      * 
                      */
                     uint64_t GetCasterId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导播台ID
+                     * <p>导播台ID</p>
                      */
                     uint64_t m_casterId;
                     bool m_casterIdHasBeenSet;

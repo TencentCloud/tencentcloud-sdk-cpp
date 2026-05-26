@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取诊断类型。
-                     * @return DiagType 诊断类型。
+                     * 获取诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。
+                     * @return DiagType 诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。
                      * 
                      */
                     std::string GetDiagType() const;
 
                     /**
-                     * 设置诊断类型。
-                     * @param _diagType 诊断类型。
+                     * 设置诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。
+                     * @param _diagType 诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。
                      * 
                      */
                     void SetDiagType(const std::string& _diagType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DiagTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。
-                     * @return StartTime 开始时间。
+                     * 获取开始时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
+                     * @return StartTime 开始时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param _startTime 开始时间。
+                     * 设置开始时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
+                     * @param _startTime 开始时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndTime 结束时间。
+                     * 获取结束时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
+                     * @return EndTime 结束时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param _endTime 结束时间。
+                     * 设置结束时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
+                     * @param _endTime 结束时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -244,19 +244,19 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 诊断类型。
+                     * 诊断类型。包含以下值：内存利用率，CPU利用率，磁盘空间利用率，复制，复制IO线程中断。
                      */
                     std::string m_diagType;
                     bool m_diagTypeHasBeenSet;
 
                     /**
-                     * 开始时间。
+                     * 开始时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间。格式: "yyyy-MM-dd'T'HH:mm:ssXXX"
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -47,7 +47,8 @@ DescribeVsmAttributesResponse::DescribeVsmAttributesResponse() :
     m_tagsHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
-    m_pqcFlagHasBeenSet(false)
+    m_pqcFlagHasBeenSet(false),
+    m_deployEnvHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,16 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
         m_pqcFlagHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeployEnv") && !rsp["DeployEnv"].IsNull())
+    {
+        if (!rsp["DeployEnv"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployEnv` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployEnv = string(rsp["DeployEnv"].GetString());
+        m_deployEnvHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -559,6 +570,14 @@ string DescribeVsmAttributesResponse::ToJsonString() const
         string key = "PqcFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pqcFlag, allocator);
+    }
+
+    if (m_deployEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployEnv";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployEnv.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -811,6 +830,16 @@ int64_t DescribeVsmAttributesResponse::GetPqcFlag() const
 bool DescribeVsmAttributesResponse::PqcFlagHasBeenSet() const
 {
     return m_pqcFlagHasBeenSet;
+}
+
+string DescribeVsmAttributesResponse::GetDeployEnv() const
+{
+    return m_deployEnv;
+}
+
+bool DescribeVsmAttributesResponse::DeployEnvHasBeenSet() const
+{
+    return m_deployEnvHasBeenSet;
 }
 
 

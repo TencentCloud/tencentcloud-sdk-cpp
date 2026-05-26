@@ -50,7 +50,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_srcRegionHasBeenSet(false),
     m_specifiedSubBackupIdHasBeenSet(false),
     m_masterZoneHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_fourthZoneHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,14 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fourthZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FourthZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fourthZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -752,6 +761,22 @@ void CreateCloneInstanceRequest::SetZone(const string& _zone)
 bool CreateCloneInstanceRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetFourthZone() const
+{
+    return m_fourthZone;
+}
+
+void CreateCloneInstanceRequest::SetFourthZone(const string& _fourthZone)
+{
+    m_fourthZone = _fourthZone;
+    m_fourthZoneHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::FourthZoneHasBeenSet() const
+{
+    return m_fourthZoneHasBeenSet;
 }
 
 

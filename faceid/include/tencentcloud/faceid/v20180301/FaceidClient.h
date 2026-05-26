@@ -65,8 +65,12 @@
 #include <tencentcloud/faceid/v20180301/model/GetFaceidRiskInfoTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetNFCTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetNFCTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetWxNFCResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetWxNFCResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
@@ -172,9 +176,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetNFCTokenResponse> GetNFCTokenOutcome;
+                typedef std::future<GetNFCTokenOutcome> GetNFCTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetNFCTokenRequest&, GetNFCTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetNFCTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWeChatBillDetailsResponse> GetWeChatBillDetailsOutcome;
                 typedef std::future<GetWeChatBillDetailsOutcome> GetWeChatBillDetailsOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetWeChatBillDetailsRequest&, GetWeChatBillDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWeChatBillDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetWxNFCResultResponse> GetWxNFCResultOutcome;
+                typedef std::future<GetWxNFCResultOutcome> GetWxNFCResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetWxNFCResultRequest&, GetWxNFCResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWxNFCResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::IdCardOCRVerificationResponse> IdCardOCRVerificationOutcome;
                 typedef std::future<IdCardOCRVerificationOutcome> IdCardOCRVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardOCRVerificationRequest&, IdCardOCRVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardOCRVerificationAsyncHandler;
@@ -410,6 +420,15 @@ namespace TencentCloud
                 GetLiveCodeOutcomeCallable GetLiveCodeCallable(const Model::GetLiveCodeRequest& request);
 
                 /**
+                 *NFC核验服务，获取NFC识别请求对应的Token信息。
+                 * @param req GetNFCTokenRequest
+                 * @return GetNFCTokenOutcome
+                 */
+                GetNFCTokenOutcome GetNFCToken(const Model::GetNFCTokenRequest &request);
+                void GetNFCTokenAsync(const Model::GetNFCTokenRequest& request, const GetNFCTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetNFCTokenOutcomeCallable GetNFCTokenCallable(const Model::GetNFCTokenRequest& request);
+
+                /**
                  *查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。
                  * @param req GetWeChatBillDetailsRequest
                  * @return GetWeChatBillDetailsOutcome
@@ -417,6 +436,15 @@ namespace TencentCloud
                 GetWeChatBillDetailsOutcome GetWeChatBillDetails(const Model::GetWeChatBillDetailsRequest &request);
                 void GetWeChatBillDetailsAsync(const Model::GetWeChatBillDetailsRequest& request, const GetWeChatBillDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetWeChatBillDetailsOutcomeCallable GetWeChatBillDetailsCallable(const Model::GetWeChatBillDetailsRequest& request);
+
+                /**
+                 *获取到证件NFC数据，接口传入NFC SDK返回的Token（十分钟内有效），可返回对应NFC获取的证件信息。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。
+                 * @param req GetWxNFCResultRequest
+                 * @return GetWxNFCResultOutcome
+                 */
+                GetWxNFCResultOutcome GetWxNFCResult(const Model::GetWxNFCResultRequest &request);
+                void GetWxNFCResultAsync(const Model::GetWxNFCResultRequest& request, const GetWxNFCResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetWxNFCResultOutcomeCallable GetWxNFCResultCallable(const Model::GetWxNFCResultRequest& request);
 
                 /**
                  *本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。

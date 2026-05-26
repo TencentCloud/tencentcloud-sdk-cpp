@@ -235,6 +235,69 @@ namespace TencentCloud
                      */
                     bool CodeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Uid扩展字段</p>
+                     * @return ExtUid <p>Uid扩展字段</p>
+                     * 
+                     */
+                    std::string GetExtUid() const;
+
+                    /**
+                     * 设置<p>Uid扩展字段</p>
+                     * @param _extUid <p>Uid扩展字段</p>
+                     * 
+                     */
+                    void SetExtUid(const std::string& _extUid);
+
+                    /**
+                     * 判断参数 ExtUid 是否已赋值
+                     * @return ExtUid 是否已赋值
+                     * 
+                     */
+                    bool ExtUidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>维度</p><p>取值范围：[-90, 90]</p>
+                     * @return Latitude <p>维度</p><p>取值范围：[-90, 90]</p>
+                     * 
+                     */
+                    double GetLatitude() const;
+
+                    /**
+                     * 设置<p>维度</p><p>取值范围：[-90, 90]</p>
+                     * @param _latitude <p>维度</p><p>取值范围：[-90, 90]</p>
+                     * 
+                     */
+                    void SetLatitude(const double& _latitude);
+
+                    /**
+                     * 判断参数 Latitude 是否已赋值
+                     * @return Latitude 是否已赋值
+                     * 
+                     */
+                    bool LatitudeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精度</p><p>取值范围：[-180, 180]</p>
+                     * @return Longitude <p>精度</p><p>取值范围：[-180, 180]</p>
+                     * 
+                     */
+                    double GetLongitude() const;
+
+                    /**
+                     * 设置<p>精度</p><p>取值范围：[-180, 180]</p>
+                     * @param _longitude <p>精度</p><p>取值范围：[-180, 180]</p>
+                     * 
+                     */
+                    void SetLongitude(const double& _longitude);
+
+                    /**
+                     * 判断参数 Longitude 是否已赋值
+                     * @return Longitude 是否已赋值
+                     * 
+                     */
+                    bool LongitudeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +353,24 @@ namespace TencentCloud
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
+
+                    /**
+                     * <p>Uid扩展字段</p>
+                     */
+                    std::string m_extUid;
+                    bool m_extUidHasBeenSet;
+
+                    /**
+                     * <p>维度</p><p>取值范围：[-90, 90]</p>
+                     */
+                    double m_latitude;
+                    bool m_latitudeHasBeenSet;
+
+                    /**
+                     * <p>精度</p><p>取值范围：[-180, 180]</p>
+                     */
+                    double m_longitude;
+                    bool m_longitudeHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取旗舰版 配置信息
-                     * @return FlagShip 旗舰版 配置信息
+                     * 获取<p>旗舰版 配置信息</p>
+                     * @return FlagShip <p>旗舰版 配置信息</p>
                      * 
                      */
                     VersionWhiteConfig GetFlagShip() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FlagShipHasBeenSet() const;
 
                     /**
-                     * 获取专业版 配置信息
-                     * @return Professional 专业版 配置信息
+                     * 获取<p>专业版 配置信息</p>
+                     * @return Professional <p>专业版 配置信息</p>
                      * 
                      */
                     VersionWhiteConfig GetProfessional() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ProfessionalHasBeenSet() const;
 
                     /**
-                     * 获取轻量版 配置信息
-                     * @return PrattWhitney 轻量版 配置信息
+                     * 获取<p>轻量版 配置信息</p>
+                     * @return PrattWhitney <p>轻量版 配置信息</p>
                      * 
                      */
                     VersionWhiteConfig GetPrattWhitney() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool PrattWhitneyHasBeenSet() const;
 
                     /**
-                     * 获取重保授权包 配置信息
-                     * @return RASP 重保授权包 配置信息
+                     * 获取<p>重保授权包 配置信息</p>
+                     * @return RASP <p>重保授权包 配置信息</p>
                      * 
                      */
                     VersionWhiteConfig GetRASP() const;
@@ -100,31 +100,51 @@ namespace TencentCloud
                      */
                     bool RASPHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志分析配置信息</p>
+                     * @return LOG <p>日志分析配置信息</p>
+                     * 
+                     */
+                    VersionWhiteConfig GetLOG() const;
+
+                    /**
+                     * 判断参数 LOG 是否已赋值
+                     * @return LOG 是否已赋值
+                     * 
+                     */
+                    bool LOGHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 旗舰版 配置信息
+                     * <p>旗舰版 配置信息</p>
                      */
                     VersionWhiteConfig m_flagShip;
                     bool m_flagShipHasBeenSet;
 
                     /**
-                     * 专业版 配置信息
+                     * <p>专业版 配置信息</p>
                      */
                     VersionWhiteConfig m_professional;
                     bool m_professionalHasBeenSet;
 
                     /**
-                     * 轻量版 配置信息
+                     * <p>轻量版 配置信息</p>
                      */
                     VersionWhiteConfig m_prattWhitney;
                     bool m_prattWhitneyHasBeenSet;
 
                     /**
-                     * 重保授权包 配置信息
+                     * <p>重保授权包 配置信息</p>
                      */
                     VersionWhiteConfig m_rASP;
                     bool m_rASPHasBeenSet;
+
+                    /**
+                     * <p>日志分析配置信息</p>
+                     */
+                    VersionWhiteConfig m_lOG;
+                    bool m_lOGHasBeenSet;
 
                 };
             }

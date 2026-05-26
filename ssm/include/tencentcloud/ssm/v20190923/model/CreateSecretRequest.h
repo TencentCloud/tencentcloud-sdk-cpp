@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。
-                     * @return SecretName 凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。
+                     * 获取<p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>
+                     * @return SecretName <p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。
-                     * @param _secretName 凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。
+                     * 设置<p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>
+                     * @param _secretName <p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
-                     * @return VersionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
+                     * 获取<p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>
+                     * @return VersionId <p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
-                     * @param _versionId 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
+                     * 设置<p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>
+                     * @param _versionId <p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取描述信息，用于详细描述用途等，最大支持2048字节。
-                     * @return Description 描述信息，用于详细描述用途等，最大支持2048字节。
+                     * 获取<p>描述信息，用于详细描述用途等，最大支持2048字节。</p>
+                     * @return Description <p>描述信息，用于详细描述用途等，最大支持2048字节。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息，用于详细描述用途等，最大支持2048字节。
-                     * @param _description 描述信息，用于详细描述用途等，最大支持2048字节。
+                     * 设置<p>描述信息，用于详细描述用途等，最大支持2048字节。</p>
+                     * @param _description <p>描述信息，用于详细描述用途等，最大支持2048字节。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。
-                     * @return KmsKeyId 指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。
+                     * 获取<p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>
+                     * @return KmsKeyId <p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>
                      * 
                      */
                     std::string GetKmsKeyId() const;
 
                     /**
-                     * 设置指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。
-                     * @param _kmsKeyId 指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。
+                     * 设置<p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>
+                     * @param _kmsKeyId <p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>
                      * 
                      */
                     void SetKmsKeyId(const std::string& _kmsKeyId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取凭据类型，默认为0自定义凭据。
-                     * @return SecretType 凭据类型，默认为0自定义凭据。
+                     * 获取<p>凭据类型，默认为0自定义凭据。</p>
+                     * @return SecretType <p>凭据类型，默认为0自定义凭据。</p>
                      * 
                      */
                     uint64_t GetSecretType() const;
 
                     /**
-                     * 设置凭据类型，默认为0自定义凭据。
-                     * @param _secretType 凭据类型，默认为0自定义凭据。
+                     * 设置<p>凭据类型，默认为0自定义凭据。</p>
+                     * @param _secretType <p>凭据类型，默认为0自定义凭据。</p>
                      * 
                      */
                     void SetSecretType(const uint64_t& _secretType);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool SecretTypeHasBeenSet() const;
 
                     /**
-                     * 获取二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
-                     * @return SecretBinary 二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * 获取<p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
+                     * @return SecretBinary <p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      * 
                      */
                     std::string GetSecretBinary() const;
 
                     /**
-                     * 设置二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
-                     * @param _secretBinary 二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * 设置<p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
+                     * @param _secretBinary <p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      * 
                      */
                     void SetSecretBinary(const std::string& _secretBinary);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool SecretBinaryHasBeenSet() const;
 
                     /**
-                     * 获取文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
-                     * @return SecretString 文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * 获取<p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
+                     * @return SecretString <p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      * 
                      */
                     std::string GetSecretString() const;
 
                     /**
-                     * 设置文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
-                     * @param _secretString 文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * 设置<p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
+                     * @param _secretString <p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      * 
                      */
                     void SetSecretString(const std::string& _secretString);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SecretStringHasBeenSet() const;
 
                     /**
-                     * 获取JSON 格式字符串，用于指定特定凭据类型的额外配置。
-                     * @return AdditionalConfig JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     * 获取<p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>
+                     * @return AdditionalConfig <p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>
                      * 
                      */
                     std::string GetAdditionalConfig() const;
 
                     /**
-                     * 设置JSON 格式字符串，用于指定特定凭据类型的额外配置。
-                     * @param _additionalConfig JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     * 设置<p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>
+                     * @param _additionalConfig <p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>
                      * 
                      */
                     void SetAdditionalConfig(const std::string& _additionalConfig);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool AdditionalConfigHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
-                     * @return KmsHsmClusterId KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * 获取<p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>
+                     * @return KmsHsmClusterId <p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>
                      * 
                      */
                     std::string GetKmsHsmClusterId() const;
 
                     /**
-                     * 设置KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
-                     * @param _kmsHsmClusterId KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * 设置<p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>
+                     * @param _kmsHsmClusterId <p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>
                      * 
                      */
                     void SetKmsHsmClusterId(const std::string& _kmsHsmClusterId);
@@ -253,67 +253,94 @@ namespace TencentCloud
                      */
                     bool KmsHsmClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>
+                     * @return EncryptType <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>
+                     * 
+                     */
+                    uint64_t GetEncryptType() const;
+
+                    /**
+                     * 设置<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>
+                     * @param _encryptType <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>
+                     * 
+                     */
+                    void SetEncryptType(const uint64_t& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。
+                     * <p>凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。一旦创建不可修改。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。
+                     * <p>凭据版本，查询凭据信息时需要根据SecretName 和 VersionId进行查询，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。若为空，则使用默认的初始凭据版本号。可选，若为空或该凭据为云产品类凭据，则该版本号默认为 SSM_Current。</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 描述信息，用于详细描述用途等，最大支持2048字节。
+                     * <p>描述信息，用于详细描述用途等，最大支持2048字节。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。
+                     * <p>指定对凭据进行加密的KMS CMK。如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。您也可以指定在同region 下自行创建的KMS CMK进行加密。</p>
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
-                     * 凭据类型，默认为0自定义凭据。
+                     * <p>凭据类型，默认为0自定义凭据。</p>
                      */
                     uint64_t m_secretType;
                     bool m_secretTypeHasBeenSet;
 
                     /**
-                     * 二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * <p>二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      */
                     std::string m_secretBinary;
                     bool m_secretBinaryHasBeenSet;
 
                     /**
-                     * 文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。
+                     * <p>文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。</p>
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;
 
                     /**
-                     * JSON 格式字符串，用于指定特定凭据类型的额外配置。
+                     * <p>JSON 格式字符串，用于指定特定凭据类型的额外配置。</p>
                      */
                     std::string m_additionalConfig;
                     bool m_additionalConfigHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。
+                     * <p>KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。</p>
                      */
                     std::string m_kmsHsmClusterId;
                     bool m_kmsHsmClusterIdHasBeenSet;
+
+                    /**
+                     * <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul>
+                     */
+                    uint64_t m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifiableInfo.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前值
-                     * @return CurrentValue 当前值
+                     * 获取<p>当前值</p>
+                     * @return CurrentValue <p>当前值</p>
                      * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
-                     * 设置当前值
-                     * @param _currentValue 当前值
+                     * 设置<p>当前值</p>
+                     * @param _currentValue <p>当前值</p>
                      * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool CurrentValueHasBeenSet() const;
 
                     /**
-                     * 获取默认值
-                     * @return Default 默认值
+                     * 获取<p>默认值</p>
+                     * @return Default <p>默认值</p>
                      * 
                      */
                     std::string GetDefault() const;
 
                     /**
-                     * 设置默认值
-                     * @param _default 默认值
+                     * 设置<p>默认值</p>
+                     * @param _default <p>默认值</p>
                      * 
                      */
                     void SetDefault(const std::string& _default);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool DefaultHasBeenSet() const;
 
                     /**
-                     * 获取参数的可选枚举值。如果为非枚举值，则为空
-                     * @return EnumValue 参数的可选枚举值。如果为非枚举值，则为空
+                     * 获取<p>参数的可选枚举值。如果为非枚举值，则为空</p>
+                     * @return EnumValue <p>参数的可选枚举值。如果为非枚举值，则为空</p>
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
-                     * 设置参数的可选枚举值。如果为非枚举值，则为空
-                     * @param _enumValue 参数的可选枚举值。如果为非枚举值，则为空
+                     * 设置<p>参数的可选枚举值。如果为非枚举值，则为空</p>
+                     * @param _enumValue <p>参数的可选枚举值。如果为非枚举值，则为空</p>
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -110,15 +111,15 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取1：全局参数，0：非全局参数
-                     * @return IsGlobal 1：全局参数，0：非全局参数
+                     * 获取<p>1：全局参数，0：非全局参数</p>
+                     * @return IsGlobal <p>1：全局参数，0：非全局参数</p>
                      * 
                      */
                     int64_t GetIsGlobal() const;
 
                     /**
-                     * 设置1：全局参数，0：非全局参数
-                     * @param _isGlobal 1：全局参数，0：非全局参数
+                     * 设置<p>1：全局参数，0：非全局参数</p>
+                     * @param _isGlobal <p>1：全局参数，0：非全局参数</p>
                      * 
                      */
                     void SetIsGlobal(const int64_t& _isGlobal);
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool IsGlobalHasBeenSet() const;
 
                     /**
-                     * 获取最大值
-                     * @return Max 最大值
+                     * 获取<p>最大值</p>
+                     * @return Max <p>最大值</p>
                      * 
                      */
                     std::string GetMax() const;
 
                     /**
-                     * 设置最大值
-                     * @param _max 最大值
+                     * 设置<p>最大值</p>
+                     * @param _max <p>最大值</p>
                      * 
                      */
                     void SetMax(const std::string& _max);
@@ -152,15 +153,15 @@ namespace TencentCloud
                     bool MaxHasBeenSet() const;
 
                     /**
-                     * 获取最小值
-                     * @return Min 最小值
+                     * 获取<p>最小值</p>
+                     * @return Min <p>最小值</p>
                      * 
                      */
                     std::string GetMin() const;
 
                     /**
-                     * 设置最小值
-                     * @param _min 最小值
+                     * 设置<p>最小值</p>
+                     * @param _min <p>最小值</p>
                      * 
                      */
                     void SetMin(const std::string& _min);
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool MinHasBeenSet() const;
 
                     /**
-                     * 获取修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。
-                     * @return NeedReboot 修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。
+                     * 获取<p>修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。</p>
+                     * @return NeedReboot <p>修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。</p>
                      * 
                      */
                     int64_t GetNeedReboot() const;
 
                     /**
-                     * 设置修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。
-                     * @param _needReboot 修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。
+                     * 设置<p>修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。</p>
+                     * @param _needReboot <p>修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。</p>
                      * 
                      */
                     void SetNeedReboot(const int64_t& _needReboot);
@@ -194,15 +195,15 @@ namespace TencentCloud
                     bool NeedRebootHasBeenSet() const;
 
                     /**
-                     * 获取参数名称
-                     * @return ParamName 参数名称
+                     * 获取<p>参数名称</p>
+                     * @return ParamName <p>参数名称</p>
                      * 
                      */
                     std::string GetParamName() const;
 
                     /**
-                     * 设置参数名称
-                     * @param _paramName 参数名称
+                     * 设置<p>参数名称</p>
+                     * @param _paramName <p>参数名称</p>
                      * 
                      */
                     void SetParamName(const std::string& _paramName);
@@ -215,15 +216,15 @@ namespace TencentCloud
                     bool ParamNameHasBeenSet() const;
 
                     /**
-                     * 获取参数类型：integer，enum，float，string，func
-                     * @return ParamType 参数类型：integer，enum，float，string，func
+                     * 获取<p>参数类型：integer，enum，float，string，func</p>
+                     * @return ParamType <p>参数类型：integer，enum，float，string，func</p>
                      * 
                      */
                     std::string GetParamType() const;
 
                     /**
-                     * 设置参数类型：integer，enum，float，string，func
-                     * @param _paramType 参数类型：integer，enum，float，string，func
+                     * 设置<p>参数类型：integer，enum，float，string，func</p>
+                     * @param _paramType <p>参数类型：integer，enum，float，string，func</p>
                      * 
                      */
                     void SetParamType(const std::string& _paramType);
@@ -236,15 +237,36 @@ namespace TencentCloud
                     bool ParamTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数描述
-                     * @return Description 参数描述
+                     * 获取<p>参数是否可修改</p>
+                     * @return ModifiableInfo <p>参数是否可修改</p>
+                     * 
+                     */
+                    ModifiableInfo GetModifiableInfo() const;
+
+                    /**
+                     * 设置<p>参数是否可修改</p>
+                     * @param _modifiableInfo <p>参数是否可修改</p>
+                     * 
+                     */
+                    void SetModifiableInfo(const ModifiableInfo& _modifiableInfo);
+
+                    /**
+                     * 判断参数 ModifiableInfo 是否已赋值
+                     * @return ModifiableInfo 是否已赋值
+                     * 
+                     */
+                    bool ModifiableInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>参数描述</p>
+                     * @return Description <p>参数描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置参数描述
-                     * @param _description 参数描述
+                     * 设置<p>参数描述</p>
+                     * @param _description <p>参数描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -257,15 +279,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取类型是否为公式
-                     * @return IsFunc 类型是否为公式
+                     * 获取<p>类型是否为公式</p>
+                     * @return IsFunc <p>类型是否为公式</p>
                      * 
                      */
                     bool GetIsFunc() const;
 
                     /**
-                     * 设置类型是否为公式
-                     * @param _isFunc 类型是否为公式
+                     * 设置<p>类型是否为公式</p>
+                     * @param _isFunc <p>类型是否为公式</p>
                      * 
                      */
                     void SetIsFunc(const bool& _isFunc);
@@ -278,15 +300,15 @@ namespace TencentCloud
                     bool IsFuncHasBeenSet() const;
 
                     /**
-                     * 获取参数配置公式
-                     * @return Func 参数配置公式
+                     * 获取<p>参数配置公式</p>
+                     * @return Func <p>参数配置公式</p>
                      * 
                      */
                     std::string GetFunc() const;
 
                     /**
-                     * 设置参数配置公式
-                     * @param _func 参数配置公式
+                     * 设置<p>参数配置公式</p>
+                     * @param _func <p>参数配置公式</p>
                      * 
                      */
                     void SetFunc(const std::string& _func);
@@ -299,15 +321,15 @@ namespace TencentCloud
                     bool FuncHasBeenSet() const;
 
                     /**
-                     * 获取支持公式的参数的默认公式样式
-                     * @return FuncPattern 支持公式的参数的默认公式样式
+                     * 获取<p>支持公式的参数的默认公式样式</p>
+                     * @return FuncPattern <p>支持公式的参数的默认公式样式</p>
                      * 
                      */
                     std::string GetFuncPattern() const;
 
                     /**
-                     * 设置支持公式的参数的默认公式样式
-                     * @param _funcPattern 支持公式的参数的默认公式样式
+                     * 设置<p>支持公式的参数的默认公式样式</p>
+                     * @param _funcPattern <p>支持公式的参数的默认公式样式</p>
                      * 
                      */
                     void SetFuncPattern(const std::string& _funcPattern);
@@ -322,79 +344,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前值
+                     * <p>当前值</p>
                      */
                     std::string m_currentValue;
                     bool m_currentValueHasBeenSet;
 
                     /**
-                     * 默认值
+                     * <p>默认值</p>
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
-                     * 参数的可选枚举值。如果为非枚举值，则为空
+                     * <p>参数的可选枚举值。如果为非枚举值，则为空</p>
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * 1：全局参数，0：非全局参数
+                     * <p>1：全局参数，0：非全局参数</p>
                      */
                     int64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;
 
                     /**
-                     * 最大值
+                     * <p>最大值</p>
                      */
                     std::string m_max;
                     bool m_maxHasBeenSet;
 
                     /**
-                     * 最小值
+                     * <p>最小值</p>
                      */
                     std::string m_min;
                     bool m_minHasBeenSet;
 
                     /**
-                     * 修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。
+                     * <p>修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。</p>
                      */
                     int64_t m_needReboot;
                     bool m_needRebootHasBeenSet;
 
                     /**
-                     * 参数名称
+                     * <p>参数名称</p>
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
-                     * 参数类型：integer，enum，float，string，func
+                     * <p>参数类型：integer，enum，float，string，func</p>
                      */
                     std::string m_paramType;
                     bool m_paramTypeHasBeenSet;
 
                     /**
-                     * 参数描述
+                     * <p>参数是否可修改</p>
+                     */
+                    ModifiableInfo m_modifiableInfo;
+                    bool m_modifiableInfoHasBeenSet;
+
+                    /**
+                     * <p>参数描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 类型是否为公式
+                     * <p>类型是否为公式</p>
                      */
                     bool m_isFunc;
                     bool m_isFuncHasBeenSet;
 
                     /**
-                     * 参数配置公式
+                     * <p>参数配置公式</p>
                      */
                     std::string m_func;
                     bool m_funcHasBeenSet;
 
                     /**
-                     * 支持公式的参数的默认公式样式
+                     * <p>支持公式的参数的默认公式样式</p>
                      */
                     std::string m_funcPattern;
                     bool m_funcPatternHasBeenSet;

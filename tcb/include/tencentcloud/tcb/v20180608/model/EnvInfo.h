@@ -31,6 +31,8 @@
 #include <tencentcloud/tcb/v20180608/model/StaticStorageInfo.h>
 #include <tencentcloud/tcb/v20180608/model/Tag.h>
 #include <tencentcloud/tcb/v20180608/model/ClsInfo.h>
+#include <tencentcloud/tcb/v20180608/model/KVPair.h>
+#include <tencentcloud/tcb/v20180608/model/PostgreSQLInfo.h>
 
 
 namespace TencentCloud
@@ -578,6 +580,48 @@ namespace TencentCloud
                      */
                     bool RecycleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>环境meta信息列表</p>
+                     * @return Meta <p>环境meta信息列表</p>
+                     * 
+                     */
+                    std::vector<KVPair> GetMeta() const;
+
+                    /**
+                     * 设置<p>环境meta信息列表</p>
+                     * @param _meta <p>环境meta信息列表</p>
+                     * 
+                     */
+                    void SetMeta(const std::vector<KVPair>& _meta);
+
+                    /**
+                     * 判断参数 Meta 是否已赋值
+                     * @return Meta 是否已赋值
+                     * 
+                     */
+                    bool MetaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>pg信息</p>
+                     * @return PostgreSQL <p>pg信息</p>
+                     * 
+                     */
+                    std::vector<PostgreSQLInfo> GetPostgreSQL() const;
+
+                    /**
+                     * 设置<p>pg信息</p>
+                     * @param _postgreSQL <p>pg信息</p>
+                     * 
+                     */
+                    void SetPostgreSQL(const std::vector<PostgreSQLInfo>& _postgreSQL);
+
+                    /**
+                     * 判断参数 PostgreSQL 是否已赋值
+                     * @return PostgreSQL 是否已赋值
+                     * 
+                     */
+                    bool PostgreSQLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -729,6 +773,18 @@ namespace TencentCloud
                      */
                     std::string m_recycle;
                     bool m_recycleHasBeenSet;
+
+                    /**
+                     * <p>环境meta信息列表</p>
+                     */
+                    std::vector<KVPair> m_meta;
+                    bool m_metaHasBeenSet;
+
+                    /**
+                     * <p>pg信息</p>
+                     */
+                    std::vector<PostgreSQLInfo> m_postgreSQL;
+                    bool m_postgreSQLHasBeenSet;
 
                 };
             }

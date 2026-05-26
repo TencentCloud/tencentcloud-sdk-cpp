@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取根据State和SearchSecretName 筛选的凭据总数。
-                     * @return TotalCount 根据State和SearchSecretName 筛选的凭据总数。
+                     * 获取<p>根据State和SearchSecretName 筛选的凭据总数。</p>
+                     * @return TotalCount <p>根据State和SearchSecretName 筛选的凭据总数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取返回凭据信息列表。
-                     * @return SecretMetadatas 返回凭据信息列表。
+                     * 获取<p>返回凭据信息列表。</p>
+                     * @return SecretMetadatas <p>返回凭据信息列表。</p>
                      * 
                      */
                     std::vector<SecretMetadata> GetSecretMetadatas() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 根据State和SearchSecretName 筛选的凭据总数。
+                     * <p>根据State和SearchSecretName 筛选的凭据总数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 返回凭据信息列表。
+                     * <p>返回凭据信息列表。</p>
                      */
                     std::vector<SecretMetadata> m_secretMetadatas;
                     bool m_secretMetadatasHasBeenSet;

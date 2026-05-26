@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取诊断事件的总数目。
-                     * @return TotalCount 诊断事件的总数目。
+                     * 获取<p>诊断事件的总数目。</p>
+                     * @return TotalCount <p>诊断事件的总数目。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取诊断事件的列表。
-                     * @return Items 诊断事件的列表。
+                     * 获取<p>诊断事件的列表。</p>
+                     * @return Items <p>诊断事件的列表。</p>
                      * 
                      */
                     std::vector<DiagHistoryEventItem> GetItems() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 诊断事件的总数目。
+                     * <p>诊断事件的总数目。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 诊断事件的列表。
+                     * <p>诊断事件的列表。</p>
                      */
                     std::vector<DiagHistoryEventItem> m_items;
                     bool m_itemsHasBeenSet;

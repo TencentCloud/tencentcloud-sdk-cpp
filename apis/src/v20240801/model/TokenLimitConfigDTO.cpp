@@ -21,6 +21,7 @@ using namespace TencentCloud::Apis::V20240801::Model;
 using namespace std;
 
 TokenLimitConfigDTO::TokenLimitConfigDTO() :
+    m_typeHasBeenSet(false),
     m_limitRequestBodyHasBeenSet(false),
     m_limitWindowsHasBeenSet(false)
 {
@@ -30,6 +31,16 @@ CoreInternalOutcome TokenLimitConfigDTO::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenLimitConfigDTO.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
 
     if (value.HasMember("LimitRequestBody") && !value["LimitRequestBody"].IsNull())
     {
@@ -68,6 +79,14 @@ CoreInternalOutcome TokenLimitConfigDTO::Deserialize(const rapidjson::Value &val
 void TokenLimitConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_limitRequestBodyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -93,6 +112,22 @@ void TokenLimitConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
 }
 
+
+string TokenLimitConfigDTO::GetType() const
+{
+    return m_type;
+}
+
+void TokenLimitConfigDTO::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool TokenLimitConfigDTO::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
 
 uint64_t TokenLimitConfigDTO::GetLimitRequestBody() const
 {

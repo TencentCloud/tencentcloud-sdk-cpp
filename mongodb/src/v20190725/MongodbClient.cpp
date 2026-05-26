@@ -640,6 +640,56 @@ MongodbClient::DeleteAuditLogFileOutcomeCallable MongodbClient::DeleteAuditLogFi
     return prom->get_future();
 }
 
+MongodbClient::DeleteDBBackupsOutcome MongodbClient::DeleteDBBackups(const DeleteDBBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDBBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDBBackupsResponse rsp = DeleteDBBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDBBackupsOutcome(rsp);
+        else
+            return DeleteDBBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDBBackupsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteDBBackupsAsync(const DeleteDBBackupsRequest& request, const DeleteDBBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDBBackupsRequest&;
+    using Resp = DeleteDBBackupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDBBackups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DeleteDBBackupsOutcomeCallable MongodbClient::DeleteDBBackupsCallable(const DeleteDBBackupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDBBackupsOutcome>>();
+    DeleteDBBackupsAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DeleteDBBackupsRequest&,
+        DeleteDBBackupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::DeleteLogDownloadTaskOutcome MongodbClient::DeleteLogDownloadTask(const DeleteLogDownloadTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLogDownloadTask");
@@ -1840,6 +1890,56 @@ MongodbClient::DescribeMongodbLogsOutcomeCallable MongodbClient::DescribeMongodb
     return prom->get_future();
 }
 
+MongodbClient::DescribePasswordRotationOutcome MongodbClient::DescribePasswordRotation(const DescribePasswordRotationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePasswordRotation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePasswordRotationResponse rsp = DescribePasswordRotationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePasswordRotationOutcome(rsp);
+        else
+            return DescribePasswordRotationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePasswordRotationOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribePasswordRotationAsync(const DescribePasswordRotationRequest& request, const DescribePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePasswordRotationRequest&;
+    using Resp = DescribePasswordRotationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePasswordRotation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribePasswordRotationOutcomeCallable MongodbClient::DescribePasswordRotationCallable(const DescribePasswordRotationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePasswordRotationOutcome>>();
+    DescribePasswordRotationAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribePasswordRotationRequest&,
+        DescribePasswordRotationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::DescribeSRVConnectionDomainOutcome MongodbClient::DescribeSRVConnectionDomain(const DescribeSRVConnectionDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSRVConnectionDomain");
@@ -2232,6 +2332,56 @@ MongodbClient::DropDBInstanceParamTplOutcomeCallable MongodbClient::DropDBInstan
         const MongodbClient*,
         const DropDBInstanceParamTplRequest&,
         DropDBInstanceParamTplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::EnablePasswordRotationOutcome MongodbClient::EnablePasswordRotation(const EnablePasswordRotationRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePasswordRotation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePasswordRotationResponse rsp = EnablePasswordRotationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePasswordRotationOutcome(rsp);
+        else
+            return EnablePasswordRotationOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePasswordRotationOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnablePasswordRotationAsync(const EnablePasswordRotationRequest& request, const EnablePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnablePasswordRotationRequest&;
+    using Resp = EnablePasswordRotationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnablePasswordRotation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::EnablePasswordRotationOutcomeCallable MongodbClient::EnablePasswordRotationCallable(const EnablePasswordRotationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnablePasswordRotationOutcome>>();
+    EnablePasswordRotationAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const EnablePasswordRotationRequest&,
+        EnablePasswordRotationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2832,6 +2982,56 @@ MongodbClient::ModifyAuditServiceOutcomeCallable MongodbClient::ModifyAuditServi
         const MongodbClient*,
         const ModifyAuditServiceRequest&,
         ModifyAuditServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ModifyBackupExpireTimeOutcome MongodbClient::ModifyBackupExpireTime(const ModifyBackupExpireTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupExpireTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupExpireTimeResponse rsp = ModifyBackupExpireTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupExpireTimeOutcome(rsp);
+        else
+            return ModifyBackupExpireTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupExpireTimeOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyBackupExpireTimeAsync(const ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBackupExpireTimeRequest&;
+    using Resp = ModifyBackupExpireTimeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupExpireTime", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyBackupExpireTimeOutcomeCallable MongodbClient::ModifyBackupExpireTimeCallable(const ModifyBackupExpireTimeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBackupExpireTimeOutcome>>();
+    ModifyBackupExpireTimeAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyBackupExpireTimeRequest&,
+        ModifyBackupExpireTimeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

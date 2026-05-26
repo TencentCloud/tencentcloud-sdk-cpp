@@ -319,6 +319,27 @@ namespace TencentCloud
                     bool SceneTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>
+                     * @return Procedure <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>
+                     * 
+                     */
+                    std::string GetProcedure() const;
+
+                    /**
+                     * 设置<p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>
+                     * @param _procedure <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>
+                     * 
+                     */
+                    void SetProcedure(const std::string& _procedure);
+
+                    /**
+                     * 判断参数 Procedure 是否已赋值
+                     * @return Procedure 是否已赋值
+                     * 
+                     */
+                    bool ProcedureHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型随机种子。</p>
                      * @return Seed <p>模型随机种子。</p>
                      * 
@@ -502,6 +523,12 @@ namespace TencentCloud
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * <p><a href="https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81">任务流名称</a>，在需要对生成的新视频执行任务流时填写。</p>
+                     */
+                    std::string m_procedure;
+                    bool m_procedureHasBeenSet;
 
                     /**
                      * <p>模型随机种子。</p>

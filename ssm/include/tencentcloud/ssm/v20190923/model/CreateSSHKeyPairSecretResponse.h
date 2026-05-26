@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的凭据名称。
-                     * @return SecretName 创建的凭据名称。
+                     * 获取<p>创建的凭据名称。</p>
+                     * @return SecretName <p>创建的凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取创建的SSH密钥ID。
-                     * @return SSHKeyID 创建的SSH密钥ID。
+                     * 获取<p>创建的SSH密钥ID。</p>
+                     * @return SSHKeyID <p>创建的SSH密钥ID。</p>
                      * 
                      */
                     std::string GetSSHKeyID() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool SSHKeyIDHasBeenSet() const;
 
                     /**
-                     * 获取创建的SSH密钥名称。
-                     * @return SSHKeyName 创建的SSH密钥名称。
+                     * 获取<p>创建的SSH密钥名称。</p>
+                     * @return SSHKeyName <p>创建的SSH密钥名称。</p>
                      * 
                      */
                     std::string GetSSHKeyName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool SSHKeyNameHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-                     * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * 获取<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
+                     * @return TagCode <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      * 
                      */
                     uint64_t GetTagCode() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool TagCodeHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回信息。
-                     * @return TagMsg 标签操作的返回信息。
+                     * 获取<p>标签操作的返回信息。</p>
+                     * @return TagMsg <p>标签操作的返回信息。</p>
                      * 
                      */
                     std::string GetTagMsg() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的凭据名称。
+                     * <p>创建的凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 创建的SSH密钥ID。
+                     * <p>创建的SSH密钥ID。</p>
                      */
                     std::string m_sSHKeyID;
                     bool m_sSHKeyIDHasBeenSet;
 
                     /**
-                     * 创建的SSH密钥名称。
+                     * <p>创建的SSH密钥名称。</p>
                      */
                     std::string m_sSHKeyName;
                     bool m_sSHKeyNameHasBeenSet;
 
                     /**
-                     * 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      */
                     uint64_t m_tagCode;
                     bool m_tagCodeHasBeenSet;
 
                     /**
-                     * 标签操作的返回信息。
+                     * <p>标签操作的返回信息。</p>
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;

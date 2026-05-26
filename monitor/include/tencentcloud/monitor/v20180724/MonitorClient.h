@@ -207,6 +207,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertGroupsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertmanagerConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertmanagerConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusClusterAgentsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusClusterAgentsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusConfigRequest.h>
@@ -305,8 +307,12 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusTempResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyRemoteURLsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyRemoteURLsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ReplacePrometheusAlertmanagerConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ReplacePrometheusAlertmanagerConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/RoutePrometheusDynamicAPIRequest.h>
+#include <tencentcloud/monitor/v20180724/model/RoutePrometheusDynamicAPIResponse.h>
 #include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h>
@@ -651,6 +657,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusAlertPolicyResponse> DescribePrometheusAlertPolicyOutcome;
                 typedef std::future<DescribePrometheusAlertPolicyOutcome> DescribePrometheusAlertPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAlertPolicyRequest&, DescribePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusAlertmanagerConfigResponse> DescribePrometheusAlertmanagerConfigOutcome;
+                typedef std::future<DescribePrometheusAlertmanagerConfigOutcome> DescribePrometheusAlertmanagerConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAlertmanagerConfigRequest&, DescribePrometheusAlertmanagerConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertmanagerConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusClusterAgentsResponse> DescribePrometheusClusterAgentsOutcome;
                 typedef std::future<DescribePrometheusClusterAgentsOutcome> DescribePrometheusClusterAgentsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusClusterAgentsRequest&, DescribePrometheusClusterAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusClusterAgentsAsyncHandler;
@@ -798,9 +807,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRemoteURLsResponse> ModifyRemoteURLsOutcome;
                 typedef std::future<ModifyRemoteURLsOutcome> ModifyRemoteURLsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyRemoteURLsRequest&, ModifyRemoteURLsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRemoteURLsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplacePrometheusAlertmanagerConfigResponse> ReplacePrometheusAlertmanagerConfigOutcome;
+                typedef std::future<ReplacePrometheusAlertmanagerConfigOutcome> ReplacePrometheusAlertmanagerConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ReplacePrometheusAlertmanagerConfigRequest&, ReplacePrometheusAlertmanagerConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplacePrometheusAlertmanagerConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeGrafanaInstanceResponse> ResumeGrafanaInstanceOutcome;
                 typedef std::future<ResumeGrafanaInstanceOutcome> ResumeGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ResumeGrafanaInstanceRequest&, ResumeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeGrafanaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RoutePrometheusDynamicAPIResponse> RoutePrometheusDynamicAPIOutcome;
+                typedef std::future<RoutePrometheusDynamicAPIOutcome> RoutePrometheusDynamicAPIOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::RoutePrometheusDynamicAPIRequest&, RoutePrometheusDynamicAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RoutePrometheusDynamicAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunPrometheusInstanceResponse> RunPrometheusInstanceOutcome;
                 typedef std::future<RunPrometheusInstanceOutcome> RunPrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::RunPrometheusInstanceRequest&, RunPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunPrometheusInstanceAsyncHandler;
@@ -1727,6 +1742,15 @@ namespace TencentCloud
                 DescribePrometheusAlertPolicyOutcomeCallable DescribePrometheusAlertPolicyCallable(const Model::DescribePrometheusAlertPolicyRequest& request);
 
                 /**
+                 *获取 Prometheus Alertmanager 配置
+                 * @param req DescribePrometheusAlertmanagerConfigRequest
+                 * @return DescribePrometheusAlertmanagerConfigOutcome
+                 */
+                DescribePrometheusAlertmanagerConfigOutcome DescribePrometheusAlertmanagerConfig(const Model::DescribePrometheusAlertmanagerConfigRequest &request);
+                void DescribePrometheusAlertmanagerConfigAsync(const Model::DescribePrometheusAlertmanagerConfigRequest& request, const DescribePrometheusAlertmanagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAlertmanagerConfigOutcomeCallable DescribePrometheusAlertmanagerConfigCallable(const Model::DescribePrometheusAlertmanagerConfigRequest& request);
+
+                /**
                  *获取TMP实例关联集群列表
                  * @param req DescribePrometheusClusterAgentsRequest
                  * @return DescribePrometheusClusterAgentsOutcome
@@ -2197,6 +2221,15 @@ namespace TencentCloud
                 ModifyRemoteURLsOutcomeCallable ModifyRemoteURLsCallable(const Model::ModifyRemoteURLsRequest& request);
 
                 /**
+                 *替换 Prometheus Alertmanager 配置
+                 * @param req ReplacePrometheusAlertmanagerConfigRequest
+                 * @return ReplacePrometheusAlertmanagerConfigOutcome
+                 */
+                ReplacePrometheusAlertmanagerConfigOutcome ReplacePrometheusAlertmanagerConfig(const Model::ReplacePrometheusAlertmanagerConfigRequest &request);
+                void ReplacePrometheusAlertmanagerConfigAsync(const Model::ReplacePrometheusAlertmanagerConfigRequest& request, const ReplacePrometheusAlertmanagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplacePrometheusAlertmanagerConfigOutcomeCallable ReplacePrometheusAlertmanagerConfigCallable(const Model::ReplacePrometheusAlertmanagerConfigRequest& request);
+
+                /**
                  *本接口（ResumeGrafanaInstance）用于 Grafana 包年包月实例的停服续费，调用后按原版本续费一个月。仍在运行中的实例无法使用该接口进行续费。
                  * @param req ResumeGrafanaInstanceRequest
                  * @return ResumeGrafanaInstanceOutcome
@@ -2204,6 +2237,31 @@ namespace TencentCloud
                 ResumeGrafanaInstanceOutcome ResumeGrafanaInstance(const Model::ResumeGrafanaInstanceRequest &request);
                 void ResumeGrafanaInstanceAsync(const Model::ResumeGrafanaInstanceRequest& request, const ResumeGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumeGrafanaInstanceOutcomeCallable ResumeGrafanaInstanceCallable(const Model::ResumeGrafanaInstanceRequest& request);
+
+                /**
+                 *Prometheus 内部动态 api 代理，支持以云api形式访问prometheus原生api
+支持以下api:
+ 
+>! 读接口建议使用ExportPrometheusReadOnlyDynamicAPI调用，支持更长的查询时延与响应大小。同时便于权限管理
+
+| path | method | 用途 |
+| - | - | - |
+| /api/v1/query | GET, POST | 点查询 |
+| /api/v1/query_range | GET, POST |  范围查询 |
+| /api/v1/series | GET, POST | series列表查询 |
+| /api/v1/labels | GET, POST | label名查询 |
+| /api/v1/label/{label_name}/values | GET | label值查询 |
+| /api/v1/rules | GET | 告警，预聚合规则查询 |
+| /api/v1/user_limits | GET | prometheus实例限制查询 |
+| /alertmanager/api/v2/alerts/groups | GET | 当前告警信息查询 | 
+| /alertmanager/api/v2/silences | GET, POST | 告警静默查询/创建/修改 |
+| /alertmanager/api/v2/silence/{id} | GET, DELETE | 告警静默详情查询/删除 |
+                 * @param req RoutePrometheusDynamicAPIRequest
+                 * @return RoutePrometheusDynamicAPIOutcome
+                 */
+                RoutePrometheusDynamicAPIOutcome RoutePrometheusDynamicAPI(const Model::RoutePrometheusDynamicAPIRequest &request);
+                void RoutePrometheusDynamicAPIAsync(const Model::RoutePrometheusDynamicAPIRequest& request, const RoutePrometheusDynamicAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RoutePrometheusDynamicAPIOutcomeCallable RoutePrometheusDynamicAPICallable(const Model::RoutePrometheusDynamicAPIRequest& request);
 
                 /**
                  *初始化TMP实例，开启集成中心时调用

@@ -64,7 +64,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_dataProtectVolumeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_destroyProtectHasBeenSet(false)
+    m_destroyProtectHasBeenSet(false),
+    m_fourthZoneHasBeenSet(false)
 {
 }
 
@@ -445,6 +446,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "DestroyProtect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fourthZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FourthZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fourthZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1125,6 +1134,22 @@ void CreateDBInstanceRequest::SetDestroyProtect(const string& _destroyProtect)
 bool CreateDBInstanceRequest::DestroyProtectHasBeenSet() const
 {
     return m_destroyProtectHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetFourthZone() const
+{
+    return m_fourthZone;
+}
+
+void CreateDBInstanceRequest::SetFourthZone(const string& _fourthZone)
+{
+    m_fourthZone = _fourthZone;
+    m_fourthZoneHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::FourthZoneHasBeenSet() const
+{
+    return m_fourthZoneHasBeenSet;
 }
 
 

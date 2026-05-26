@@ -24,7 +24,9 @@ using namespace std;
 
 DisassociateInstancesKeyPairsRequest::DisassociateInstancesKeyPairsRequest() :
     m_keyIdsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_disassociateTypeHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string DisassociateInstancesKeyPairsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_disassociateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisassociateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_disassociateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -99,6 +117,38 @@ void DisassociateInstancesKeyPairsRequest::SetInstanceIds(const vector<string>& 
 bool DisassociateInstancesKeyPairsRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DisassociateInstancesKeyPairsRequest::GetDisassociateType() const
+{
+    return m_disassociateType;
+}
+
+void DisassociateInstancesKeyPairsRequest::SetDisassociateType(const string& _disassociateType)
+{
+    m_disassociateType = _disassociateType;
+    m_disassociateTypeHasBeenSet = true;
+}
+
+bool DisassociateInstancesKeyPairsRequest::DisassociateTypeHasBeenSet() const
+{
+    return m_disassociateTypeHasBeenSet;
+}
+
+string DisassociateInstancesKeyPairsRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void DisassociateInstancesKeyPairsRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool DisassociateInstancesKeyPairsRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 
 

@@ -37,6 +37,7 @@ namespace TencentCloud
             {
                 /**
                 * 编排空间试运行记录
+查询执行日志 可调用DownloadLogByLine接口
                 */
                 class TestRunningRecord : public AbstractModel
                 {

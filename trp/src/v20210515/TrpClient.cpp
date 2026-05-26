@@ -1440,6 +1440,356 @@ TrpClient::DescribeCustomRulesOutcomeCallable TrpClient::DescribeCustomRulesCall
     return prom->get_future();
 }
 
+TrpClient::DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandImportantCityScanAnalysis(const DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandImportantCityScanAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse rsp = DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsync(const DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandImportantCityScanAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandImportantCityScanAnalysisCallable(const DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandImportantCityScanAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest&,
+        DescribeFlavorKingCycleBrandImportantCityScanAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis(const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse rsp = DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsync(const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandImportantProvinceScanAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisCallable(const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest&,
+        DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis(const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse rsp = DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsync(const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest& request, const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandImportantProvinceUserAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisCallable(const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest&,
+        DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandProvinceCityScanAnalysis(const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse rsp = DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsync(const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandProvinceCityScanAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandProvinceCityScanAnalysisCallable(const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandProvinceCityScanAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest&,
+        DescribeFlavorKingCycleBrandProvinceCityScanAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandProvinceScanAnalysis(const DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandProvinceScanAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse rsp = DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandProvinceScanAnalysisAsync(const DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandProvinceScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandProvinceScanAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandProvinceScanAnalysisCallable(const DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandProvinceScanAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest&,
+        DescribeFlavorKingCycleBrandProvinceScanAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandScanAnalysisOutcome TrpClient::DescribeFlavorKingCycleBrandScanAnalysis(const DescribeFlavorKingCycleBrandScanAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandScanAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandScanAnalysisResponse rsp = DescribeFlavorKingCycleBrandScanAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandScanAnalysisOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandScanAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandScanAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandScanAnalysisAsync(const DescribeFlavorKingCycleBrandScanAnalysisRequest& request, const DescribeFlavorKingCycleBrandScanAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandScanAnalysisRequest&;
+    using Resp = DescribeFlavorKingCycleBrandScanAnalysisResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandScanAnalysis", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandScanAnalysisOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandScanAnalysisCallable(const DescribeFlavorKingCycleBrandScanAnalysisRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandScanAnalysisOutcome>>();
+    DescribeFlavorKingCycleBrandScanAnalysisAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandScanAnalysisRequest&,
+        DescribeFlavorKingCycleBrandScanAnalysisOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DescribeFlavorKingCycleBrandScanMetricsOutcome TrpClient::DescribeFlavorKingCycleBrandScanMetrics(const DescribeFlavorKingCycleBrandScanMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlavorKingCycleBrandScanMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlavorKingCycleBrandScanMetricsResponse rsp = DescribeFlavorKingCycleBrandScanMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlavorKingCycleBrandScanMetricsOutcome(rsp);
+        else
+            return DescribeFlavorKingCycleBrandScanMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlavorKingCycleBrandScanMetricsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeFlavorKingCycleBrandScanMetricsAsync(const DescribeFlavorKingCycleBrandScanMetricsRequest& request, const DescribeFlavorKingCycleBrandScanMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFlavorKingCycleBrandScanMetricsRequest&;
+    using Resp = DescribeFlavorKingCycleBrandScanMetricsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFlavorKingCycleBrandScanMetrics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DescribeFlavorKingCycleBrandScanMetricsOutcomeCallable TrpClient::DescribeFlavorKingCycleBrandScanMetricsCallable(const DescribeFlavorKingCycleBrandScanMetricsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFlavorKingCycleBrandScanMetricsOutcome>>();
+    DescribeFlavorKingCycleBrandScanMetricsAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DescribeFlavorKingCycleBrandScanMetricsRequest&,
+        DescribeFlavorKingCycleBrandScanMetricsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrpClient::DescribeJobFileUrlOutcome TrpClient::DescribeJobFileUrl(const DescribeJobFileUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobFileUrl");
@@ -2182,6 +2532,56 @@ TrpClient::DescribeTraceDataListOutcomeCallable TrpClient::DescribeTraceDataList
         const TrpClient*,
         const DescribeTraceDataListRequest&,
         DescribeTraceDataListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrpClient::DownloadGEOOutcome TrpClient::DownloadGEO(const DownloadGEORequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadGEO");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadGEOResponse rsp = DownloadGEOResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadGEOOutcome(rsp);
+        else
+            return DownloadGEOOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadGEOOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DownloadGEOAsync(const DownloadGEORequest& request, const DownloadGEOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DownloadGEORequest&;
+    using Resp = DownloadGEOResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DownloadGEO", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::DownloadGEOOutcomeCallable TrpClient::DownloadGEOCallable(const DownloadGEORequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DownloadGEOOutcome>>();
+    DownloadGEOAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const DownloadGEORequest&,
+        DownloadGEOOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

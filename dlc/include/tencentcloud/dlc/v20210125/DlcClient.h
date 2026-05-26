@@ -119,6 +119,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTcIcebergTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserRoleRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateUserRoleResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserVpcConnectionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserVpcConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h>
@@ -557,6 +559,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserRoleResponse> CreateUserRoleOutcome;
+                typedef std::future<CreateUserRoleOutcome> CreateUserRoleOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateUserRoleRequest&, CreateUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserVpcConnectionResponse> CreateUserVpcConnectionOutcome;
                 typedef std::future<CreateUserVpcConnectionOutcome> CreateUserVpcConnectionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserVpcConnectionRequest&, CreateUserVpcConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserVpcConnectionAsyncHandler;
@@ -1413,6 +1418,15 @@ namespace TencentCloud
                 CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
                 void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
+                 *创建用户角色
+                 * @param req CreateUserRoleRequest
+                 * @return CreateUserRoleOutcome
+                 */
+                CreateUserRoleOutcome CreateUserRole(const Model::CreateUserRoleRequest &request);
+                void CreateUserRoleAsync(const Model::CreateUserRoleRequest& request, const CreateUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserRoleOutcomeCallable CreateUserRoleCallable(const Model::CreateUserRoleRequest& request);
 
                 /**
                  *创建用户vpc连接到指定引擎网络

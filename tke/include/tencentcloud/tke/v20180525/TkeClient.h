@@ -2413,7 +2413,7 @@ namespace TencentCloud
                 DescribeClusterStatusOutcomeCallable DescribeClusterStatusCallable(const Model::DescribeClusterStatusRequest& request);
 
                 /**
-                 *查看超级节点列表
+                 *查看超级节点列表，仅支持TKE标准集群
                  * @param req DescribeClusterVirtualNodeRequest
                  * @return DescribeClusterVirtualNodeOutcome
                  */

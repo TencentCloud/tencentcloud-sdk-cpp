@@ -36,6 +36,7 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_outputConfigHasBeenSet(false),
     m_inputRegionHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
+    m_procedureHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
@@ -168,6 +169,14 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_procedureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Procedure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_procedure.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seedHasBeenSet)
@@ -424,6 +433,22 @@ void CreateAigcVideoTaskRequest::SetSceneType(const string& _sceneType)
 bool CreateAigcVideoTaskRequest::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+string CreateAigcVideoTaskRequest::GetProcedure() const
+{
+    return m_procedure;
+}
+
+void CreateAigcVideoTaskRequest::SetProcedure(const string& _procedure)
+{
+    m_procedure = _procedure;
+    m_procedureHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::ProcedureHasBeenSet() const
+{
+    return m_procedureHasBeenSet;
 }
 
 int64_t CreateAigcVideoTaskRequest::GetSeed() const

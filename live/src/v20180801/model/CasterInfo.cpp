@@ -37,7 +37,8 @@ CasterInfo::CasterInfo() :
     m_feeTypeHasBeenSet(false),
     m_recordTemplateIdHasBeenSet(false),
     m_recordStatusHasBeenSet(false),
-    m_recordTaskIdHasBeenSet(false)
+    m_recordTaskIdHasBeenSet(false),
+    m_pgmVcodecHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome CasterInfo::Deserialize(const rapidjson::Value &value)
         m_recordTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PgmVcodec") && !value["PgmVcodec"].IsNull())
+    {
+        if (!value["PgmVcodec"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CasterInfo.PgmVcodec` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pgmVcodec = string(value["PgmVcodec"].GetString());
+        m_pgmVcodecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void CasterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RecordTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pgmVcodecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PgmVcodec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pgmVcodec.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void CasterInfo::SetRecordTaskId(const string& _recordTaskId)
 bool CasterInfo::RecordTaskIdHasBeenSet() const
 {
     return m_recordTaskIdHasBeenSet;
+}
+
+string CasterInfo::GetPgmVcodec() const
+{
+    return m_pgmVcodec;
+}
+
+void CasterInfo::SetPgmVcodec(const string& _pgmVcodec)
+{
+    m_pgmVcodec = _pgmVcodec;
+    m_pgmVcodecHasBeenSet = true;
+}
+
+bool CasterInfo::PgmVcodecHasBeenSet() const
+{
+    return m_pgmVcodecHasBeenSet;
 }
 

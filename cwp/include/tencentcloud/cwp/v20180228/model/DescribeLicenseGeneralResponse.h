@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总授权数 (包含隔离,过期等不可用状态)
-                     * @return LicenseCnt 总授权数 (包含隔离,过期等不可用状态)
+                     * 获取<p>总授权数 (包含隔离,过期等不可用状态)</p>
+                     * @return LicenseCnt <p>总授权数 (包含隔离,过期等不可用状态)</p>
                      * 
                      */
                     uint64_t GetLicenseCnt() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取可用授权数
-                     * @return AvailableLicenseCnt 可用授权数
+                     * 获取<p>可用授权数</p>
+                     * @return AvailableLicenseCnt <p>可用授权数</p>
                      * 
                      */
                     uint64_t GetAvailableLicenseCnt() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AvailableLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取可用专业版授权数(包含后付费).
-                     * @return AvailableProVersionLicenseCnt 可用专业版授权数(包含后付费).
+                     * 获取<p>可用专业版授权数(包含后付费).</p>
+                     * @return AvailableProVersionLicenseCnt <p>可用专业版授权数(包含后付费).</p>
                      * 
                      */
                     uint64_t GetAvailableProVersionLicenseCnt() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool AvailableProVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取可用旗舰版授权数
-                     * @return AvailableFlagshipVersionLicenseCnt 可用旗舰版授权数
+                     * 获取<p>可用旗舰版授权数</p>
+                     * @return AvailableFlagshipVersionLicenseCnt <p>可用旗舰版授权数</p>
                      * 
                      */
                     uint64_t GetAvailableFlagshipVersionLicenseCnt() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool AvailableFlagshipVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取即将到期授权数 (15天内到期的)
-                     * @return NearExpiryLicenseCnt 即将到期授权数 (15天内到期的)
+                     * 获取<p>即将到期授权数 (15天内到期的)</p>
+                     * @return NearExpiryLicenseCnt <p>即将到期授权数 (15天内到期的)</p>
                      * 
                      */
                     uint64_t GetNearExpiryLicenseCnt() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool NearExpiryLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取已到期授权数(不包含已删除的记录)
-                     * @return ExpireLicenseCnt 已到期授权数(不包含已删除的记录)
+                     * 获取<p>已到期授权数(不包含已删除的记录)</p>
+                     * @return ExpireLicenseCnt <p>已到期授权数(不包含已删除的记录)</p>
                      * 
                      */
                     uint64_t GetExpireLicenseCnt() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ExpireLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取自动升级开关状态,默认 false,  true 开启, false 关闭
-                     * @return AutoOpenStatus 自动升级开关状态,默认 false,  true 开启, false 关闭
+                     * 获取<p>自动升级开关状态,默认 false,  true 开启, false 关闭</p>
+                     * @return AutoOpenStatus <p>自动升级开关状态,默认 false,  true 开启, false 关闭</p>
                      * 
                      */
                     bool GetAutoOpenStatus() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool AutoOpenStatusHasBeenSet() const;
 
                     /**
-                     * 获取PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费
-                     * @return ProtectType PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费
+                     * 获取<p>PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费</p>
+                     * @return ProtectType <p>PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费</p>
                      * 
                      */
                     std::string GetProtectType() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool ProtectTypeHasBeenSet() const;
 
                     /**
-                     * 获取历史是否开通过自动升级开关
-                     * @return IsOpenStatusHistory 历史是否开通过自动升级开关
+                     * 获取<p>历史是否开通过自动升级开关</p>
+                     * @return IsOpenStatusHistory <p>历史是否开通过自动升级开关</p>
                      * 
                      */
                     bool GetIsOpenStatusHistory() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool IsOpenStatusHistoryHasBeenSet() const;
 
                     /**
-                     * 获取已使用授权数
-                     * @return UsedLicenseCnt 已使用授权数
+                     * 获取<p>已使用授权数</p>
+                     * @return UsedLicenseCnt <p>已使用授权数</p>
                      * 
                      */
                     uint64_t GetUsedLicenseCnt() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool UsedLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取未到期授权数
-                     * @return NotExpiredLicenseCnt 未到期授权数
+                     * 获取<p>未到期授权数</p>
+                     * @return NotExpiredLicenseCnt <p>未到期授权数</p>
                      * 
                      */
                     uint64_t GetNotExpiredLicenseCnt() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool NotExpiredLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取旗舰版总授权数(有效订单)
-                     * @return FlagshipVersionLicenseCnt 旗舰版总授权数(有效订单)
+                     * 获取<p>旗舰版总授权数(有效订单)</p>
+                     * @return FlagshipVersionLicenseCnt <p>旗舰版总授权数(有效订单)</p>
                      * 
                      */
                     uint64_t GetFlagshipVersionLicenseCnt() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool FlagshipVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取专业版总授权数(有效订单)
-                     * @return ProVersionLicenseCnt 专业版总授权数(有效订单)
+                     * 获取<p>专业版总授权数(有效订单)</p>
+                     * @return ProVersionLicenseCnt <p>专业版总授权数(有效订单)</p>
                      * 
                      */
                     uint64_t GetProVersionLicenseCnt() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool ProVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取轻量版总授权数(有效订单的授权数)
-                     * @return CwpVersionLicenseCnt 轻量版总授权数(有效订单的授权数)
+                     * 获取<p>轻量版总授权数(有效订单的授权数)</p>
+                     * @return CwpVersionLicenseCnt <p>轻量版总授权数(有效订单的授权数)</p>
                      * 
                      */
                     uint64_t GetCwpVersionLicenseCnt() const;
@@ -240,8 +240,8 @@ namespace TencentCloud
                     bool CwpVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取可用惠普版授权数
-                     * @return AvailableLHLicenseCnt 可用惠普版授权数
+                     * 获取<p>可用惠普版授权数</p>
+                     * @return AvailableLHLicenseCnt <p>可用惠普版授权数</p>
                      * 
                      */
                     uint64_t GetAvailableLHLicenseCnt() const;
@@ -254,8 +254,8 @@ namespace TencentCloud
                     bool AvailableLHLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取自动加购开关, true 开启, false 关闭
-                     * @return AutoRepurchaseSwitch 自动加购开关, true 开启, false 关闭
+                     * 获取<p>自动加购开关, true 开启, false 关闭</p>
+                     * @return AutoRepurchaseSwitch <p>自动加购开关, true 开启, false 关闭</p>
                      * 
                      */
                     bool GetAutoRepurchaseSwitch() const;
@@ -268,8 +268,8 @@ namespace TencentCloud
                     bool AutoRepurchaseSwitchHasBeenSet() const;
 
                     /**
-                     * 获取自动加购订单是否自动续费 ,true 开启, false 关闭
-                     * @return AutoRepurchaseRenewSwitch 自动加购订单是否自动续费 ,true 开启, false 关闭
+                     * 获取<p>自动加购订单是否自动续费 ,true 开启, false 关闭</p>
+                     * @return AutoRepurchaseRenewSwitch <p>自动加购订单是否自动续费 ,true 开启, false 关闭</p>
                      * 
                      */
                     bool GetAutoRepurchaseRenewSwitch() const;
@@ -282,8 +282,8 @@ namespace TencentCloud
                     bool AutoRepurchaseRenewSwitchHasBeenSet() const;
 
                     /**
-                     * 获取已销毁订单数
-                     * @return DestroyOrderNum 已销毁订单数
+                     * 获取<p>已销毁订单数</p>
+                     * @return DestroyOrderNum <p>已销毁订单数</p>
                      * 
                      */
                     uint64_t GetDestroyOrderNum() const;
@@ -296,8 +296,8 @@ namespace TencentCloud
                     bool DestroyOrderNumHasBeenSet() const;
 
                     /**
-                     * 获取自动加购是否自动续费开关,true 开启,false 关闭
-                     * @return RepurchaseRenewSwitch 自动加购是否自动续费开关,true 开启,false 关闭
+                     * 获取<p>自动加购是否自动续费开关,true 开启,false 关闭</p>
+                     * @return RepurchaseRenewSwitch <p>自动加购是否自动续费开关,true 开启,false 关闭</p>
                      * 
                      */
                     bool GetRepurchaseRenewSwitch() const;
@@ -310,8 +310,8 @@ namespace TencentCloud
                     bool RepurchaseRenewSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否自动新增机器绑定rasp防护,false 关闭 true 开启
-                     * @return AutoBindRaspSwitch 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * 获取<p>是否自动新增机器绑定rasp防护,false 关闭 true 开启</p>
+                     * @return AutoBindRaspSwitch <p>是否自动新增机器绑定rasp防护,false 关闭 true 开启</p>
                      * 
                      */
                     bool GetAutoBindRaspSwitch() const;
@@ -324,8 +324,8 @@ namespace TencentCloud
                     bool AutoBindRaspSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否自动新增机器开启rasp防护,false 关闭 true 开启
-                     * @return AutoOpenRaspSwitch 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * 获取<p>是否自动新增机器开启rasp防护,false 关闭 true 开启</p>
+                     * @return AutoOpenRaspSwitch <p>是否自动新增机器开启rasp防护,false 关闭 true 开启</p>
                      * 
                      */
                     bool GetAutoOpenRaspSwitch() const;
@@ -338,8 +338,8 @@ namespace TencentCloud
                     bool AutoOpenRaspSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否自动缩容开关开启
-                     * @return AutoDowngradeSwitch 是否自动缩容开关开启
+                     * 获取<p>是否自动缩容开关开启</p>
+                     * @return AutoDowngradeSwitch <p>是否自动缩容开关开启</p>
                      * 
                      */
                     bool GetAutoDowngradeSwitch() const;
@@ -351,139 +351,199 @@ namespace TencentCloud
                      */
                     bool AutoDowngradeSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可使用的AI防护版授权数</p>
+                     * @return AvailableAISecurityLicenseCnt <p>可使用的AI防护版授权数</p>
+                     * 
+                     */
+                    uint64_t GetAvailableAISecurityLicenseCnt() const;
+
+                    /**
+                     * 判断参数 AvailableAISecurityLicenseCnt 是否已赋值
+                     * @return AvailableAISecurityLicenseCnt 是否已赋值
+                     * 
+                     */
+                    bool AvailableAISecurityLicenseCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AI 防护版总授权数</p>
+                     * @return AISecurityVersionLicenseCnt <p>AI 防护版总授权数</p>
+                     * 
+                     */
+                    uint64_t GetAISecurityVersionLicenseCnt() const;
+
+                    /**
+                     * 判断参数 AISecurityVersionLicenseCnt 是否已赋值
+                     * @return AISecurityVersionLicenseCnt 是否已赋值
+                     * 
+                     */
+                    bool AISecurityVersionLicenseCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用防护授权数+旗舰版授权数相加后的可使用授权数</p>
+                     * @return ApplicationAvailableLicenseCnt <p>应用防护授权数+旗舰版授权数相加后的可使用授权数</p>
+                     * 
+                     */
+                    uint64_t GetApplicationAvailableLicenseCnt() const;
+
+                    /**
+                     * 判断参数 ApplicationAvailableLicenseCnt 是否已赋值
+                     * @return ApplicationAvailableLicenseCnt 是否已赋值
+                     * 
+                     */
+                    bool ApplicationAvailableLicenseCntHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总授权数 (包含隔离,过期等不可用状态)
+                     * <p>总授权数 (包含隔离,过期等不可用状态)</p>
                      */
                     uint64_t m_licenseCnt;
                     bool m_licenseCntHasBeenSet;
 
                     /**
-                     * 可用授权数
+                     * <p>可用授权数</p>
                      */
                     uint64_t m_availableLicenseCnt;
                     bool m_availableLicenseCntHasBeenSet;
 
                     /**
-                     * 可用专业版授权数(包含后付费).
+                     * <p>可用专业版授权数(包含后付费).</p>
                      */
                     uint64_t m_availableProVersionLicenseCnt;
                     bool m_availableProVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 可用旗舰版授权数
+                     * <p>可用旗舰版授权数</p>
                      */
                     uint64_t m_availableFlagshipVersionLicenseCnt;
                     bool m_availableFlagshipVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 即将到期授权数 (15天内到期的)
+                     * <p>即将到期授权数 (15天内到期的)</p>
                      */
                     uint64_t m_nearExpiryLicenseCnt;
                     bool m_nearExpiryLicenseCntHasBeenSet;
 
                     /**
-                     * 已到期授权数(不包含已删除的记录)
+                     * <p>已到期授权数(不包含已删除的记录)</p>
                      */
                     uint64_t m_expireLicenseCnt;
                     bool m_expireLicenseCntHasBeenSet;
 
                     /**
-                     * 自动升级开关状态,默认 false,  true 开启, false 关闭
+                     * <p>自动升级开关状态,默认 false,  true 开启, false 关闭</p>
                      */
                     bool m_autoOpenStatus;
                     bool m_autoOpenStatusHasBeenSet;
 
                     /**
-                     * PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费
+                     * <p>PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费</p>
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;
 
                     /**
-                     * 历史是否开通过自动升级开关
+                     * <p>历史是否开通过自动升级开关</p>
                      */
                     bool m_isOpenStatusHistory;
                     bool m_isOpenStatusHistoryHasBeenSet;
 
                     /**
-                     * 已使用授权数
+                     * <p>已使用授权数</p>
                      */
                     uint64_t m_usedLicenseCnt;
                     bool m_usedLicenseCntHasBeenSet;
 
                     /**
-                     * 未到期授权数
+                     * <p>未到期授权数</p>
                      */
                     uint64_t m_notExpiredLicenseCnt;
                     bool m_notExpiredLicenseCntHasBeenSet;
 
                     /**
-                     * 旗舰版总授权数(有效订单)
+                     * <p>旗舰版总授权数(有效订单)</p>
                      */
                     uint64_t m_flagshipVersionLicenseCnt;
                     bool m_flagshipVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 专业版总授权数(有效订单)
+                     * <p>专业版总授权数(有效订单)</p>
                      */
                     uint64_t m_proVersionLicenseCnt;
                     bool m_proVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 轻量版总授权数(有效订单的授权数)
+                     * <p>轻量版总授权数(有效订单的授权数)</p>
                      */
                     uint64_t m_cwpVersionLicenseCnt;
                     bool m_cwpVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 可用惠普版授权数
+                     * <p>可用惠普版授权数</p>
                      */
                     uint64_t m_availableLHLicenseCnt;
                     bool m_availableLHLicenseCntHasBeenSet;
 
                     /**
-                     * 自动加购开关, true 开启, false 关闭
+                     * <p>自动加购开关, true 开启, false 关闭</p>
                      */
                     bool m_autoRepurchaseSwitch;
                     bool m_autoRepurchaseSwitchHasBeenSet;
 
                     /**
-                     * 自动加购订单是否自动续费 ,true 开启, false 关闭
+                     * <p>自动加购订单是否自动续费 ,true 开启, false 关闭</p>
                      */
                     bool m_autoRepurchaseRenewSwitch;
                     bool m_autoRepurchaseRenewSwitchHasBeenSet;
 
                     /**
-                     * 已销毁订单数
+                     * <p>已销毁订单数</p>
                      */
                     uint64_t m_destroyOrderNum;
                     bool m_destroyOrderNumHasBeenSet;
 
                     /**
-                     * 自动加购是否自动续费开关,true 开启,false 关闭
+                     * <p>自动加购是否自动续费开关,true 开启,false 关闭</p>
                      */
                     bool m_repurchaseRenewSwitch;
                     bool m_repurchaseRenewSwitchHasBeenSet;
 
                     /**
-                     * 是否自动新增机器绑定rasp防护,false 关闭 true 开启
+                     * <p>是否自动新增机器绑定rasp防护,false 关闭 true 开启</p>
                      */
                     bool m_autoBindRaspSwitch;
                     bool m_autoBindRaspSwitchHasBeenSet;
 
                     /**
-                     * 是否自动新增机器开启rasp防护,false 关闭 true 开启
+                     * <p>是否自动新增机器开启rasp防护,false 关闭 true 开启</p>
                      */
                     bool m_autoOpenRaspSwitch;
                     bool m_autoOpenRaspSwitchHasBeenSet;
 
                     /**
-                     * 是否自动缩容开关开启
+                     * <p>是否自动缩容开关开启</p>
                      */
                     bool m_autoDowngradeSwitch;
                     bool m_autoDowngradeSwitchHasBeenSet;
+
+                    /**
+                     * <p>可使用的AI防护版授权数</p>
+                     */
+                    uint64_t m_availableAISecurityLicenseCnt;
+                    bool m_availableAISecurityLicenseCntHasBeenSet;
+
+                    /**
+                     * <p>AI 防护版总授权数</p>
+                     */
+                    uint64_t m_aISecurityVersionLicenseCnt;
+                    bool m_aISecurityVersionLicenseCntHasBeenSet;
+
+                    /**
+                     * <p>应用防护授权数+旗舰版授权数相加后的可使用授权数</p>
+                     */
+                    uint64_t m_applicationAvailableLicenseCnt;
+                    bool m_applicationAvailableLicenseCntHasBeenSet;
 
                 };
             }

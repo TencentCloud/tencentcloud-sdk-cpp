@@ -84,6 +84,56 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取绑定类型。可选值：
+ONLINE - 在线绑定，不需要关机。
+OFFLINE - 离线绑定，会对实例进行关机。
+                     * @return AssociateType 绑定类型。可选值：
+ONLINE - 在线绑定，不需要关机。
+OFFLINE - 离线绑定，会对实例进行关机。
+                     * 
+                     */
+                    std::string GetAssociateType() const;
+
+                    /**
+                     * 设置绑定类型。可选值：
+ONLINE - 在线绑定，不需要关机。
+OFFLINE - 离线绑定，会对实例进行关机。
+                     * @param _associateType 绑定类型。可选值：
+ONLINE - 在线绑定，不需要关机。
+OFFLINE - 离线绑定，会对实例进行关机。
+                     * 
+                     */
+                    void SetAssociateType(const std::string& _associateType);
+
+                    /**
+                     * 判断参数 AssociateType 是否已赋值
+                     * @return AssociateType 是否已赋值
+                     * 
+                     */
+                    bool AssociateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。
+                     * @return Username 绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。
+                     * 
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。
+                     * @param _username 绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。
+                     * 
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     * 
+                     */
+                    bool UsernameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +147,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 绑定类型。可选值：
+ONLINE - 在线绑定，不需要关机。
+OFFLINE - 离线绑定，会对实例进行关机。
+                     */
+                    std::string m_associateType;
+                    bool m_associateTypeHasBeenSet;
+
+                    /**
+                     * 绑定的用户名。当 AssociateType 为 OFFLINE 时，不支持该参数。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

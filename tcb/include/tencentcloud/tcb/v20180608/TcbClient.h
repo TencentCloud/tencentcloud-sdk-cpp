@@ -29,6 +29,8 @@
 #include <tencentcloud/tcb/v20180608/model/AllocateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/AssumeRoleForAllocatedEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/BindStorageSourceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/BindStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAIModelRequest.h>
@@ -165,6 +167,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyStorageSourceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h>
@@ -177,6 +181,8 @@
 #include <tencentcloud/tcb/v20180608/model/RunSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h>
 #include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UnbindStorageSourceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UnbindStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateAIModelRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateAIModelResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
@@ -204,6 +210,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssumeRoleForAllocatedEnvResponse> AssumeRoleForAllocatedEnvOutcome;
                 typedef std::future<AssumeRoleForAllocatedEnvOutcome> AssumeRoleForAllocatedEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::AssumeRoleForAllocatedEnvRequest&, AssumeRoleForAllocatedEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssumeRoleForAllocatedEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindStorageSourceResponse> BindStorageSourceOutcome;
+                typedef std::future<BindStorageSourceOutcome> BindStorageSourceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::BindStorageSourceRequest&, BindStorageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStorageSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckTcbServiceResponse> CheckTcbServiceOutcome;
                 typedef std::future<CheckTcbServiceOutcome> CheckTcbServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CheckTcbServiceRequest&, CheckTcbServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTcbServiceAsyncHandler;
@@ -408,6 +417,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySafeRuleResponse> ModifySafeRuleOutcome;
                 typedef std::future<ModifySafeRuleOutcome> ModifySafeRuleOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifySafeRuleRequest&, ModifySafeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySafeRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStorageSourceResponse> ModifyStorageSourceOutcome;
+                typedef std::future<ModifyStorageSourceOutcome> ModifyStorageSourceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyStorageSourceRequest&, ModifyStorageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
@@ -426,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
                 typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindStorageSourceResponse> UnbindStorageSourceOutcome;
+                typedef std::future<UnbindStorageSourceOutcome> UnbindStorageSourceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UnbindStorageSourceRequest&, UnbindStorageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindStorageSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAIModelResponse> UpdateAIModelOutcome;
                 typedef std::future<UpdateAIModelOutcome> UpdateAIModelOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpdateAIModelRequest&, UpdateAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAIModelAsyncHandler;
@@ -463,6 +478,17 @@ namespace TencentCloud
                 AssumeRoleForAllocatedEnvOutcome AssumeRoleForAllocatedEnv(const Model::AssumeRoleForAllocatedEnvRequest &request);
                 void AssumeRoleForAllocatedEnvAsync(const Model::AssumeRoleForAllocatedEnvRequest& request, const AssumeRoleForAllocatedEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssumeRoleForAllocatedEnvOutcomeCallable AssumeRoleForAllocatedEnvCallable(const Model::AssumeRoleForAllocatedEnvRequest& request);
+
+                /**
+                 *为云存储绑定外部云存储源。
+将一个用户自有的 COS桶 作为外部存储源绑定到指定云开发环境的云存储。绑定后，该环境的云存储文件操作将指向此桶，通过 BasePath 路径前缀实现与其他环境的数据隔离。
+每个环境仅允许绑定 1 个外部云存储源。
+                 * @param req BindStorageSourceRequest
+                 * @return BindStorageSourceOutcome
+                 */
+                BindStorageSourceOutcome BindStorageSource(const Model::BindStorageSourceRequest &request);
+                void BindStorageSourceAsync(const Model::BindStorageSourceRequest& request, const BindStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindStorageSourceOutcomeCallable BindStorageSourceCallable(const Model::BindStorageSourceRequest& request);
 
                 /**
                  *检查是否开通Tcb服务
@@ -1189,6 +1215,19 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifySafeRuleOutcomeCallable ModifySafeRuleCallable(const Model::ModifySafeRuleRequest& request);
 
                 /**
+                 *修改指定云开发环境已绑定的外部云存储源配置。
+修改之后，大约3~5分钟生效。
+
+注意⚠️
+本接口仅更新存储源绑定关系，不会迁移您的数据。
+                 * @param req ModifyStorageSourceRequest
+                 * @return ModifyStorageSourceOutcome
+                 */
+                ModifyStorageSourceOutcome ModifyStorageSource(const Model::ModifyStorageSourceRequest &request);
+                void ModifyStorageSourceAsync(const Model::ModifyStorageSourceRequest& request, const ModifyStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStorageSourceOutcomeCallable ModifyStorageSourceCallable(const Model::ModifyStorageSourceRequest& request);
+
+                /**
                  *修改tcb用户
                  * @param req ModifyUserRequest
                  * @return ModifyUserOutcome
@@ -1247,6 +1286,19 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
                 void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
+
+                /**
+                 *从指定云开发环境中解绑已绑定的外部云存储源。解绑后，该环境将不再关联外部 存储源，云存储功能恢复为未绑定状态。
+解绑操作仅移除 CloudBase 侧的绑定关系，不会删除桶本身及桶内数据，桶仍由用户自行管理。
+
+注意⚠️
+解绑之后，会导致云存储不可用，请谨慎操作。
+                 * @param req UnbindStorageSourceRequest
+                 * @return UnbindStorageSourceOutcome
+                 */
+                UnbindStorageSourceOutcome UnbindStorageSource(const Model::UnbindStorageSourceRequest &request);
+                void UnbindStorageSourceAsync(const Model::UnbindStorageSourceRequest& request, const UnbindStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindStorageSourceOutcomeCallable UnbindStorageSourceCallable(const Model::UnbindStorageSourceRequest& request);
 
                 /**
                  *更新 AI 模型配置分组。支持修改分组的模型列表、服务地址、访问密钥、备注及启用状态。

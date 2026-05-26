@@ -27,7 +27,8 @@ DescribeLicenseWhiteConfigResponse::DescribeLicenseWhiteConfigResponse() :
     m_flagShipHasBeenSet(false),
     m_professionalHasBeenSet(false),
     m_prattWhitneyHasBeenSet(false),
-    m_rASPHasBeenSet(false)
+    m_rASPHasBeenSet(false),
+    m_lOGHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,23 @@ CoreInternalOutcome DescribeLicenseWhiteConfigResponse::Deserialize(const string
         m_rASPHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LOG") && !rsp["LOG"].IsNull())
+    {
+        if (!rsp["LOG"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LOG` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lOG.Deserialize(rsp["LOG"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lOGHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -177,6 +195,15 @@ string DescribeLicenseWhiteConfigResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rASP.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lOGHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LOG";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lOG.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -229,6 +256,16 @@ VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetRASP() const
 bool DescribeLicenseWhiteConfigResponse::RASPHasBeenSet() const
 {
     return m_rASPHasBeenSet;
+}
+
+VersionWhiteConfig DescribeLicenseWhiteConfigResponse::GetLOG() const
+{
+    return m_lOG;
+}
+
+bool DescribeLicenseWhiteConfigResponse::LOGHasBeenSet() const
+{
+    return m_lOGHasBeenSet;
 }
 
 

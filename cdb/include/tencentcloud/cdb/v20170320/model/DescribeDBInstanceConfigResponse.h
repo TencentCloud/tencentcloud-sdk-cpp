@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
-                     * @return Zone <p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
+                     * 获取<p>实例主可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
+                     * @return Zone <p>实例主可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
                      * 
                      */
                     std::string GetZone() const;
@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取<p>备库的配置信息。</p>
+                     * 获取<p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaveConfig <p>备库的配置信息。</p>
+                     * @return SlaveConfig <p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -104,9 +104,9 @@ namespace TencentCloud
                     bool SlaveConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>强同步实例第二备库的配置信息。</p>
+                     * 获取<p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupConfig <p>强同步实例第二备库的配置信息。</p>
+                     * @return BackupConfig <p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -133,6 +133,20 @@ namespace TencentCloud
                      */
                     bool SwitchedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>四节点实例第三备库的配置信息。</p><p>查询四节点时，此参数返回为第三备库的信息。</p>
+                     * @return FourthConfig <p>四节点实例第三备库的配置信息。</p><p>查询四节点时，此参数返回为第三备库的信息。</p>
+                     * 
+                     */
+                    BackupConfig GetFourthConfig() const;
+
+                    /**
+                     * 判断参数 FourthConfig 是否已赋值
+                     * @return FourthConfig 是否已赋值
+                     * 
+                     */
+                    bool FourthConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,20 +162,20 @@ namespace TencentCloud
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * <p>实例可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
+                     * <p>实例主可用区信息，格式如 &quot;ap-shanghai-2&quot;。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * <p>备库的配置信息。</p>
+                     * <p>双节点、三节点、四节点实例第一备库的配置信息。</p><p>查询双节点时，此参数返回为双节点的备库信息；查询三节点、四节点时，此参数返回为实例的第一备库信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveConfig m_slaveConfig;
                     bool m_slaveConfigHasBeenSet;
 
                     /**
-                     * <p>强同步实例第二备库的配置信息。</p>
+                     * <p>三节点、四节点实例第二备库的配置信息。</p><p>查询三节点、四节点时，此参数返回为第二备库的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackupConfig m_backupConfig;
@@ -172,6 +186,12 @@ namespace TencentCloud
                      */
                     bool m_switched;
                     bool m_switchedHasBeenSet;
+
+                    /**
+                     * <p>四节点实例第三备库的配置信息。</p><p>查询四节点时，此参数返回为第三备库的信息。</p>
+                     */
+                    BackupConfig m_fourthConfig;
+                    bool m_fourthConfigHasBeenSet;
 
                 };
             }

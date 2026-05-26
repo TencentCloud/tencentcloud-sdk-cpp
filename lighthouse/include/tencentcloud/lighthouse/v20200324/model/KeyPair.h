@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/AssociatedInstanceInfo.h>
 #include <tencentcloud/lighthouse/v20200324/model/Tag.h>
 
 
@@ -132,6 +133,27 @@ namespace TencentCloud
                     bool AssociatedInstanceIdsHasBeenSet() const;
 
                     /**
+                     * 获取密钥对关联的实例列表。
+                     * @return AssociatedInstanceSet 密钥对关联的实例列表。
+                     * 
+                     */
+                    std::vector<AssociatedInstanceInfo> GetAssociatedInstanceSet() const;
+
+                    /**
+                     * 设置密钥对关联的实例列表。
+                     * @param _associatedInstanceSet 密钥对关联的实例列表。
+                     * 
+                     */
+                    void SetAssociatedInstanceSet(const std::vector<AssociatedInstanceInfo>& _associatedInstanceSet);
+
+                    /**
+                     * 判断参数 AssociatedInstanceSet 是否已赋值
+                     * @return AssociatedInstanceSet 是否已赋值
+                     * 
+                     */
+                    bool AssociatedInstanceSetHasBeenSet() const;
+
+                    /**
                      * 获取创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ
@@ -227,6 +249,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_associatedInstanceIds;
                     bool m_associatedInstanceIdsHasBeenSet;
+
+                    /**
+                     * 密钥对关联的实例列表。
+                     */
+                    std::vector<AssociatedInstanceInfo> m_associatedInstanceSet;
+                    bool m_associatedInstanceSetHasBeenSet;
 
                     /**
                      * 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ

@@ -45,7 +45,9 @@ EnvInfo::EnvInfo() :
     m_isDauPackageHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
     m_architectureTypeHasBeenSet(false),
-    m_recycleHasBeenSet(false)
+    m_recycleHasBeenSet(false),
+    m_metaHasBeenSet(false),
+    m_postgreSQLHasBeenSet(false)
 {
 }
 
@@ -374,6 +376,46 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_recycleHasBeenSet = true;
     }
 
+    if (value.HasMember("Meta") && !value["Meta"].IsNull())
+    {
+        if (!value["Meta"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.Meta` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Meta"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KVPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_meta.push_back(item);
+        }
+        m_metaHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostgreSQL") && !value["PostgreSQL"].IsNull())
+    {
+        if (!value["PostgreSQL"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.PostgreSQL` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PostgreSQL"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PostgreSQLInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_postgreSQL.push_back(item);
+        }
+        m_postgreSQLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -628,6 +670,36 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Recycle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recycle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Meta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_meta.begin(); itr != m_meta.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_postgreSQLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostgreSQL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_postgreSQL.begin(); itr != m_postgreSQL.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1031,5 +1103,37 @@ void EnvInfo::SetRecycle(const string& _recycle)
 bool EnvInfo::RecycleHasBeenSet() const
 {
     return m_recycleHasBeenSet;
+}
+
+vector<KVPair> EnvInfo::GetMeta() const
+{
+    return m_meta;
+}
+
+void EnvInfo::SetMeta(const vector<KVPair>& _meta)
+{
+    m_meta = _meta;
+    m_metaHasBeenSet = true;
+}
+
+bool EnvInfo::MetaHasBeenSet() const
+{
+    return m_metaHasBeenSet;
+}
+
+vector<PostgreSQLInfo> EnvInfo::GetPostgreSQL() const
+{
+    return m_postgreSQL;
+}
+
+void EnvInfo::SetPostgreSQL(const vector<PostgreSQLInfo>& _postgreSQL)
+{
+    m_postgreSQL = _postgreSQL;
+    m_postgreSQLHasBeenSet = true;
+}
+
+bool EnvInfo::PostgreSQLHasBeenSet() const
+{
+    return m_postgreSQLHasBeenSet;
 }
 

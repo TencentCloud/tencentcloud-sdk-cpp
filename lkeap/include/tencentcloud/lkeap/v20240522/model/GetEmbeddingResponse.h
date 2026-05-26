@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取特征
-                     * @return Data 特征
+                     * 获取<p>特征</p>
+                     * @return Data <p>特征</p>
                      * 
                      */
                     std::vector<EmbeddingObject> GetData() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取消耗量，返回TotalToken
-                     * @return Usage 消耗量，返回TotalToken
+                     * 获取<p>消耗量，返回TotalToken</p>
+                     * @return Usage <p>消耗量，返回TotalToken</p>
                      * 
                      */
                     Usage GetUsage() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 特征
+                     * <p>特征</p>
                      */
                     std::vector<EmbeddingObject> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 消耗量，返回TotalToken
+                     * <p>消耗量，返回TotalToken</p>
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;

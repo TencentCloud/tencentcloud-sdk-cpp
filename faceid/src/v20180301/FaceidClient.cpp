@@ -1090,6 +1090,56 @@ FaceidClient::GetLiveCodeOutcomeCallable FaceidClient::GetLiveCodeCallable(const
     return prom->get_future();
 }
 
+FaceidClient::GetNFCTokenOutcome FaceidClient::GetNFCToken(const GetNFCTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetNFCToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetNFCTokenResponse rsp = GetNFCTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetNFCTokenOutcome(rsp);
+        else
+            return GetNFCTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetNFCTokenOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetNFCTokenAsync(const GetNFCTokenRequest& request, const GetNFCTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetNFCTokenRequest&;
+    using Resp = GetNFCTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetNFCToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FaceidClient::GetNFCTokenOutcomeCallable FaceidClient::GetNFCTokenCallable(const GetNFCTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetNFCTokenOutcome>>();
+    GetNFCTokenAsync(
+    request,
+    [prom](
+        const FaceidClient*,
+        const GetNFCTokenRequest&,
+        GetNFCTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FaceidClient::GetWeChatBillDetailsOutcome FaceidClient::GetWeChatBillDetails(const GetWeChatBillDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetWeChatBillDetails");
@@ -1132,6 +1182,56 @@ FaceidClient::GetWeChatBillDetailsOutcomeCallable FaceidClient::GetWeChatBillDet
         const FaceidClient*,
         const GetWeChatBillDetailsRequest&,
         GetWeChatBillDetailsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+FaceidClient::GetWxNFCResultOutcome FaceidClient::GetWxNFCResult(const GetWxNFCResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWxNFCResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWxNFCResultResponse rsp = GetWxNFCResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWxNFCResultOutcome(rsp);
+        else
+            return GetWxNFCResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWxNFCResultOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetWxNFCResultAsync(const GetWxNFCResultRequest& request, const GetWxNFCResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetWxNFCResultRequest&;
+    using Resp = GetWxNFCResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetWxNFCResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FaceidClient::GetWxNFCResultOutcomeCallable FaceidClient::GetWxNFCResultCallable(const GetWxNFCResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetWxNFCResultOutcome>>();
+    GetWxNFCResultAsync(
+    request,
+    [prom](
+        const FaceidClient*,
+        const GetWxNFCResultRequest&,
+        GetWxNFCResultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

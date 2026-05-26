@@ -4640,6 +4640,56 @@ MonitorClient::DescribePrometheusAlertPolicyOutcomeCallable MonitorClient::Descr
     return prom->get_future();
 }
 
+MonitorClient::DescribePrometheusAlertmanagerConfigOutcome MonitorClient::DescribePrometheusAlertmanagerConfig(const DescribePrometheusAlertmanagerConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAlertmanagerConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAlertmanagerConfigResponse rsp = DescribePrometheusAlertmanagerConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAlertmanagerConfigOutcome(rsp);
+        else
+            return DescribePrometheusAlertmanagerConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAlertmanagerConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusAlertmanagerConfigAsync(const DescribePrometheusAlertmanagerConfigRequest& request, const DescribePrometheusAlertmanagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePrometheusAlertmanagerConfigRequest&;
+    using Resp = DescribePrometheusAlertmanagerConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePrometheusAlertmanagerConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribePrometheusAlertmanagerConfigOutcomeCallable MonitorClient::DescribePrometheusAlertmanagerConfigCallable(const DescribePrometheusAlertmanagerConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePrometheusAlertmanagerConfigOutcome>>();
+    DescribePrometheusAlertmanagerConfigAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribePrometheusAlertmanagerConfigRequest&,
+        DescribePrometheusAlertmanagerConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribePrometheusClusterAgentsOutcome MonitorClient::DescribePrometheusClusterAgents(const DescribePrometheusClusterAgentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusClusterAgents");
@@ -7090,6 +7140,56 @@ MonitorClient::ModifyRemoteURLsOutcomeCallable MonitorClient::ModifyRemoteURLsCa
     return prom->get_future();
 }
 
+MonitorClient::ReplacePrometheusAlertmanagerConfigOutcome MonitorClient::ReplacePrometheusAlertmanagerConfig(const ReplacePrometheusAlertmanagerConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplacePrometheusAlertmanagerConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplacePrometheusAlertmanagerConfigResponse rsp = ReplacePrometheusAlertmanagerConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplacePrometheusAlertmanagerConfigOutcome(rsp);
+        else
+            return ReplacePrometheusAlertmanagerConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplacePrometheusAlertmanagerConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ReplacePrometheusAlertmanagerConfigAsync(const ReplacePrometheusAlertmanagerConfigRequest& request, const ReplacePrometheusAlertmanagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReplacePrometheusAlertmanagerConfigRequest&;
+    using Resp = ReplacePrometheusAlertmanagerConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReplacePrometheusAlertmanagerConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ReplacePrometheusAlertmanagerConfigOutcomeCallable MonitorClient::ReplacePrometheusAlertmanagerConfigCallable(const ReplacePrometheusAlertmanagerConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReplacePrometheusAlertmanagerConfigOutcome>>();
+    ReplacePrometheusAlertmanagerConfigAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ReplacePrometheusAlertmanagerConfigRequest&,
+        ReplacePrometheusAlertmanagerConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::ResumeGrafanaInstanceOutcome MonitorClient::ResumeGrafanaInstance(const ResumeGrafanaInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeGrafanaInstance");
@@ -7132,6 +7232,56 @@ MonitorClient::ResumeGrafanaInstanceOutcomeCallable MonitorClient::ResumeGrafana
         const MonitorClient*,
         const ResumeGrafanaInstanceRequest&,
         ResumeGrafanaInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::RoutePrometheusDynamicAPIOutcome MonitorClient::RoutePrometheusDynamicAPI(const RoutePrometheusDynamicAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "RoutePrometheusDynamicAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RoutePrometheusDynamicAPIResponse rsp = RoutePrometheusDynamicAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RoutePrometheusDynamicAPIOutcome(rsp);
+        else
+            return RoutePrometheusDynamicAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return RoutePrometheusDynamicAPIOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::RoutePrometheusDynamicAPIAsync(const RoutePrometheusDynamicAPIRequest& request, const RoutePrometheusDynamicAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RoutePrometheusDynamicAPIRequest&;
+    using Resp = RoutePrometheusDynamicAPIResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RoutePrometheusDynamicAPI", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::RoutePrometheusDynamicAPIOutcomeCallable MonitorClient::RoutePrometheusDynamicAPICallable(const RoutePrometheusDynamicAPIRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RoutePrometheusDynamicAPIOutcome>>();
+    RoutePrometheusDynamicAPIAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const RoutePrometheusDynamicAPIRequest&,
+        RoutePrometheusDynamicAPIOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

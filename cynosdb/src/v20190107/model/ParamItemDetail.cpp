@@ -30,6 +30,7 @@ ParamItemDetail::ParamItemDetail() :
     m_needRebootHasBeenSet(false),
     m_paramNameHasBeenSet(false),
     m_paramTypeHasBeenSet(false),
+    m_modifiableInfoHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isFuncHasBeenSet(false),
     m_funcHasBeenSet(false),
@@ -133,6 +134,23 @@ CoreInternalOutcome ParamItemDetail::Deserialize(const rapidjson::Value &value)
         }
         m_paramType = string(value["ParamType"].GetString());
         m_paramTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifiableInfo") && !value["ModifiableInfo"].IsNull())
+    {
+        if (!value["ModifiableInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamItemDetail.ModifiableInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modifiableInfo.Deserialize(value["ModifiableInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modifiableInfoHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -257,6 +275,15 @@ void ParamItemDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ParamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modifiableInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -436,6 +463,22 @@ void ParamItemDetail::SetParamType(const string& _paramType)
 bool ParamItemDetail::ParamTypeHasBeenSet() const
 {
     return m_paramTypeHasBeenSet;
+}
+
+ModifiableInfo ParamItemDetail::GetModifiableInfo() const
+{
+    return m_modifiableInfo;
+}
+
+void ParamItemDetail::SetModifiableInfo(const ModifiableInfo& _modifiableInfo)
+{
+    m_modifiableInfo = _modifiableInfo;
+    m_modifiableInfoHasBeenSet = true;
+}
+
+bool ParamItemDetail::ModifiableInfoHasBeenSet() const
+{
+    return m_modifiableInfoHasBeenSet;
 }
 
 string ParamItemDetail::GetDescription() const

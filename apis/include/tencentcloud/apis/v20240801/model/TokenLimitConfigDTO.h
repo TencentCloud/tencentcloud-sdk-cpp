@@ -48,18 +48,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单次请求上限，k
+                     * 获取<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LimitRequestBody 单次请求上限，k
+                     * @return Type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单次请求上限，k</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LimitRequestBody <p>单次请求上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLimitRequestBody() const;
 
                     /**
-                     * 设置单次请求上限，k
+                     * 设置<p>单次请求上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _limitRequestBody 单次请求上限，k
+                     * @param _limitRequestBody <p>单次请求上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +98,18 @@ namespace TencentCloud
                     bool LimitRequestBodyHasBeenSet() const;
 
                     /**
-                     * 获取累次token总量消耗上限
+                     * 获取<p>累次token总量消耗上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LimitWindows 累次token总量消耗上限
+                     * @return LimitWindows <p>累次token总量消耗上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LimitWindowsDTO> GetLimitWindows() const;
 
                     /**
-                     * 设置累次token总量消耗上限
+                     * 设置<p>累次token总量消耗上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _limitWindows 累次token总量消耗上限
+                     * @param _limitWindows <p>累次token总量消耗上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,14 +125,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单次请求上限，k
+                     * <p>限流类型</p><p>枚举值：</p><ul><li>minute： 时间窗口</li><li>day： 自然日</li><li>month： 自然月</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>单次请求上限，k</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_limitRequestBody;
                     bool m_limitRequestBodyHasBeenSet;
 
                     /**
-                     * 累次token总量消耗上限
+                     * <p>累次token总量消耗上限</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LimitWindowsDTO> m_limitWindows;

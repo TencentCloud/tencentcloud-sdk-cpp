@@ -24,7 +24,8 @@ GooseFS::GooseFS() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_nameSpaceHasBeenSet(false)
+    m_nameSpaceHasBeenSet(false),
+    m_mountOptionsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome GooseFS::Deserialize(const rapidjson::Value &value)
         m_nameSpaceHasBeenSet = true;
     }
 
+    if (value.HasMember("MountOptions") && !value["MountOptions"].IsNull())
+    {
+        if (!value["MountOptions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GooseFS.MountOptions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountOptions = string(value["MountOptions"].GetString());
+        m_mountOptionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void GooseFS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NameSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nameSpace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountOptions.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void GooseFS::SetNameSpace(const string& _nameSpace)
 bool GooseFS::NameSpaceHasBeenSet() const
 {
     return m_nameSpaceHasBeenSet;
+}
+
+string GooseFS::GetMountOptions() const
+{
+    return m_mountOptions;
+}
+
+void GooseFS::SetMountOptions(const string& _mountOptions)
+{
+    m_mountOptions = _mountOptions;
+    m_mountOptionsHasBeenSet = true;
+}
+
+bool GooseFS::MountOptionsHasBeenSet() const
+{
+    return m_mountOptionsHasBeenSet;
 }
 

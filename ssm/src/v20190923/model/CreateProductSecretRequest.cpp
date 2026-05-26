@@ -37,7 +37,8 @@ CreateProductSecretRequest::CreateProductSecretRequest() :
     m_rotationFrequencyHasBeenSet(false),
     m_kmsHsmClusterIdHasBeenSet(false),
     m_accountRemarkHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string CreateProductSecretRequest::ToJsonString() const
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptType, allocator);
     }
 
 
@@ -433,6 +442,22 @@ void CreateProductSecretRequest::SetAccountType(const string& _accountType)
 bool CreateProductSecretRequest::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+uint64_t CreateProductSecretRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CreateProductSecretRequest::SetEncryptType(const uint64_t& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CreateProductSecretRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 
 

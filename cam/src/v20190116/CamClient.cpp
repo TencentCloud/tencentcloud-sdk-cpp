@@ -2340,6 +2340,56 @@ CamClient::GetGroupOutcomeCallable CamClient::GetGroupCallable(const GetGroupReq
     return prom->get_future();
 }
 
+CamClient::GetPasswordRulesOutcome CamClient::GetPasswordRules(const GetPasswordRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPasswordRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPasswordRulesResponse rsp = GetPasswordRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPasswordRulesOutcome(rsp);
+        else
+            return GetPasswordRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPasswordRulesOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetPasswordRulesAsync(const GetPasswordRulesRequest& request, const GetPasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetPasswordRulesRequest&;
+    using Resp = GetPasswordRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetPasswordRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CamClient::GetPasswordRulesOutcomeCallable CamClient::GetPasswordRulesCallable(const GetPasswordRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetPasswordRulesOutcome>>();
+    GetPasswordRulesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const GetPasswordRulesRequest&,
+        GetPasswordRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CamClient::GetPolicyOutcome CamClient::GetPolicy(const GetPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "GetPolicy");
@@ -4232,6 +4282,56 @@ CamClient::UpdateOIDCConfigOutcomeCallable CamClient::UpdateOIDCConfigCallable(c
         const CamClient*,
         const UpdateOIDCConfigRequest&,
         UpdateOIDCConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CamClient::UpdatePasswordRulesOutcome CamClient::UpdatePasswordRules(const UpdatePasswordRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePasswordRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePasswordRulesResponse rsp = UpdatePasswordRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePasswordRulesOutcome(rsp);
+        else
+            return UpdatePasswordRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePasswordRulesOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdatePasswordRulesAsync(const UpdatePasswordRulesRequest& request, const UpdatePasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdatePasswordRulesRequest&;
+    using Resp = UpdatePasswordRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdatePasswordRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CamClient::UpdatePasswordRulesOutcomeCallable CamClient::UpdatePasswordRulesCallable(const UpdatePasswordRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdatePasswordRulesOutcome>>();
+    UpdatePasswordRulesAsync(
+    request,
+    [prom](
+        const CamClient*,
+        const UpdatePasswordRulesRequest&,
+        UpdatePasswordRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

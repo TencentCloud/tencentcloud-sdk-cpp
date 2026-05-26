@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool MitigationHasBeenSet() const;
 
                     /**
-                     * 获取<p>安全评分（0-100，100 为最安全）</p><p>取值范围：[0, 100]</p>
-                     * @return SecurityScore <p>安全评分（0-100，100 为最安全）</p><p>取值范围：[0, 100]</p>
+                     * 获取<p>安全评分（0-100，分数越高越安全）</p><p>取值范围：[0, 100]</p>
+                     * @return SecurityScore <p>安全评分（0-100，分数越高越安全）</p><p>取值范围：[0, 100]</p>
                      * 
                      */
                     uint64_t GetSecurityScore() const;
 
                     /**
-                     * 设置<p>安全评分（0-100，100 为最安全）</p><p>取值范围：[0, 100]</p>
-                     * @param _securityScore <p>安全评分（0-100，100 为最安全）</p><p>取值范围：[0, 100]</p>
+                     * 设置<p>安全评分（0-100，分数越高越安全）</p><p>取值范围：[0, 100]</p>
+                     * @param _securityScore <p>安全评分（0-100，分数越高越安全）</p><p>取值范围：[0, 100]</p>
                      * 
                      */
                     void SetSecurityScore(const uint64_t& _securityScore);
@@ -424,7 +424,7 @@ namespace TencentCloud
                     bool m_mitigationHasBeenSet;
 
                     /**
-                     * <p>安全评分（0-100，100 为最安全）</p><p>取值范围：[0, 100]</p>
+                     * <p>安全评分（0-100，分数越高越安全）</p><p>取值范围：[0, 100]</p>
                      */
                     uint64_t m_securityScore;
                     bool m_securityScoreHasBeenSet;

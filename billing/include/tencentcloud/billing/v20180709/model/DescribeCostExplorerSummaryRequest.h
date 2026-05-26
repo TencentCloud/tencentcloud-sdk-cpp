@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取周期开始时间，格式为yyyy-mm-dd hh:ii:ss
-                     * @return BeginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss
+                     * 获取<p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss</p>
+                     * @return BeginTime <p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置周期开始时间，格式为yyyy-mm-dd hh:ii:ss
-                     * @param _beginTime 周期开始时间，格式为yyyy-mm-dd hh:ii:ss
+                     * 设置<p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss</p>
+                     * @param _beginTime <p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取周期结束时间，格式为yyyy-mm-dd hh:ii:ss
-                     * @return EndTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss
+                     * 获取<p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss</p>
+                     * @return EndTime <p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置周期结束时间，格式为yyyy-mm-dd hh:ii:ss
-                     * @param _endTime 周期结束时间，格式为yyyy-mm-dd hh:ii:ss
+                     * 设置<p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss</p>
+                     * @param _endTime <p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取账单类型：1-费用账单、2-消耗账单
-                     * @return BillType 账单类型：1-费用账单、2-消耗账单
+                     * 获取<p>账单类型：1-费用账单、2-消耗账单</p>
+                     * @return BillType <p>账单类型：1-费用账单、2-消耗账单</p>
                      * 
                      */
                     std::string GetBillType() const;
 
                     /**
-                     * 设置账单类型：1-费用账单、2-消耗账单
-                     * @param _billType 账单类型：1-费用账单、2-消耗账单
+                     * 设置<p>账单类型：1-费用账单、2-消耗账单</p>
+                     * @param _billType <p>账单类型：1-费用账单、2-消耗账单</p>
                      * 
                      */
                     void SetBillType(const std::string& _billType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool BillTypeHasBeenSet() const;
 
                     /**
-                     * 获取统计周期：日-day，月-month；
-                     * @return PeriodType 统计周期：日-day，月-month；
+                     * 获取<p>统计周期：日-day，月-month；</p>
+                     * @return PeriodType <p>统计周期：日-day，月-month；</p>
                      * 
                      */
                     std::string GetPeriodType() const;
 
                     /**
-                     * 设置统计周期：日-day，月-month；
-                     * @param _periodType 统计周期：日-day，月-month；
+                     * 设置<p>统计周期：日-day，月-month；</p>
+                     * @param _periodType <p>统计周期：日-day，月-month；</p>
                      * 
                      */
                     void SetPeriodType(const std::string& _periodType);
@@ -128,67 +128,15 @@ namespace TencentCloud
                     bool PeriodTypeHasBeenSet() const;
 
                     /**
-                     * 获取分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：
-default=仅总计
-feeType=费用类型
-billType=账单类型
-business=产品
-product=子产品
-region=地域
-zone=可用区
-actionType=交易类型
-payMode =计费模式
-tags=标签
-project =项目
-payerUin=支付者账号
-ownerUin=使用者账号
-                     * @return Dimensions 分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：
-default=仅总计
-feeType=费用类型
-billType=账单类型
-business=产品
-product=子产品
-region=地域
-zone=可用区
-actionType=交易类型
-payMode =计费模式
-tags=标签
-project =项目
-payerUin=支付者账号
-ownerUin=使用者账号
+                     * 获取<p>分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：<br>default=仅总计<br>feeType=费用类型<br>billType=账单类型<br>business=产品<br>product=子产品<br>region=地域<br>zone=可用区<br>actionType=交易类型<br>payMode =计费模式<br>tags=标签<br>project =项目<br>payerUin=支付者账号<br>ownerUin=使用者账号</p>
+                     * @return Dimensions <p>分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：<br>default=仅总计<br>feeType=费用类型<br>billType=账单类型<br>business=产品<br>product=子产品<br>region=地域<br>zone=可用区<br>actionType=交易类型<br>payMode =计费模式<br>tags=标签<br>project =项目<br>payerUin=支付者账号<br>ownerUin=使用者账号</p>
                      * 
                      */
                     std::string GetDimensions() const;
 
                     /**
-                     * 设置分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：
-default=仅总计
-feeType=费用类型
-billType=账单类型
-business=产品
-product=子产品
-region=地域
-zone=可用区
-actionType=交易类型
-payMode =计费模式
-tags=标签
-project =项目
-payerUin=支付者账号
-ownerUin=使用者账号
-                     * @param _dimensions 分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：
-default=仅总计
-feeType=费用类型
-billType=账单类型
-business=产品
-product=子产品
-region=地域
-zone=可用区
-actionType=交易类型
-payMode =计费模式
-tags=标签
-project =项目
-payerUin=支付者账号
-ownerUin=使用者账号
+                     * 设置<p>分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：<br>default=仅总计<br>feeType=费用类型<br>billType=账单类型<br>business=产品<br>product=子产品<br>region=地域<br>zone=可用区<br>actionType=交易类型<br>payMode =计费模式<br>tags=标签<br>project =项目<br>payerUin=支付者账号<br>ownerUin=使用者账号</p>
+                     * @param _dimensions <p>分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：<br>default=仅总计<br>feeType=费用类型<br>billType=账单类型<br>business=产品<br>product=子产品<br>region=地域<br>zone=可用区<br>actionType=交易类型<br>payMode =计费模式<br>tags=标签<br>project =项目<br>payerUin=支付者账号<br>ownerUin=使用者账号</p>
                      * 
                      */
                     void SetDimensions(const std::string& _dimensions);
@@ -201,15 +149,15 @@ ownerUin=使用者账号
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取费用类型：cost-折后总费用，totalCost-原价费用
-                     * @return FeeType 费用类型：cost-折后总费用，totalCost-原价费用
+                     * 获取<p>费用类型：cost-折后总费用，totalCost-原价费用</p>
+                     * @return FeeType <p>费用类型：cost-折后总费用，totalCost-原价费用</p>
                      * 
                      */
                     std::string GetFeeType() const;
 
                     /**
-                     * 设置费用类型：cost-折后总费用，totalCost-原价费用
-                     * @param _feeType 费用类型：cost-折后总费用，totalCost-原价费用
+                     * 设置<p>费用类型：cost-折后总费用，totalCost-原价费用</p>
+                     * @param _feeType <p>费用类型：cost-折后总费用，totalCost-原价费用</p>
                      * 
                      */
                     void SetFeeType(const std::string& _feeType);
@@ -222,15 +170,15 @@ ownerUin=使用者账号
                     bool FeeTypeHasBeenSet() const;
 
                     /**
-                     * 获取数量，每页最大值为100
-                     * @return PageSize 数量，每页最大值为100
+                     * 获取<p>数量，每页最大值为100</p>
+                     * @return PageSize <p>数量，每页最大值为100</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置数量，每页最大值为100
-                     * @param _pageSize 数量，每页最大值为100
+                     * 设置<p>数量，每页最大值为100</p>
+                     * @param _pageSize <p>数量，每页最大值为100</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -243,15 +191,15 @@ ownerUin=使用者账号
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。
-                     * @return PageNo 起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。
+                     * 获取<p>起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。</p>
+                     * @return PageNo <p>起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。</p>
                      * 
                      */
                     uint64_t GetPageNo() const;
 
                     /**
-                     * 设置起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。
-                     * @param _pageNo 起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。
+                     * 设置<p>起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。</p>
+                     * @param _pageNo <p>起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。</p>
                      * 
                      */
                     void SetPageNo(const uint64_t& _pageNo);
@@ -264,15 +212,15 @@ ownerUin=使用者账号
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取分账标签值
-                     * @return TagKeyStr 分账标签值
+                     * 获取<p>分账标签键</p>
+                     * @return TagKeyStr <p>分账标签键</p>
                      * 
                      */
                     std::string GetTagKeyStr() const;
 
                     /**
-                     * 设置分账标签值
-                     * @param _tagKeyStr 分账标签值
+                     * 设置<p>分账标签键</p>
+                     * @param _tagKeyStr <p>分账标签键</p>
                      * 
                      */
                     void SetTagKeyStr(const std::string& _tagKeyStr);
@@ -285,15 +233,15 @@ ownerUin=使用者账号
                     bool TagKeyStrHasBeenSet() const;
 
                     /**
-                     * 获取是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。
-                     * @return NeedConditionValue 是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。
+                     * 获取<p>是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。</p>
+                     * @return NeedConditionValue <p>是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。</p>
                      * 
                      */
                     std::string GetNeedConditionValue() const;
 
                     /**
-                     * 设置是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。
-                     * @param _needConditionValue 是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。
+                     * 设置<p>是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。</p>
+                     * @param _needConditionValue <p>是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。</p>
                      * 
                      */
                     void SetNeedConditionValue(const std::string& _needConditionValue);
@@ -306,15 +254,15 @@ ownerUin=使用者账号
                     bool NeedConditionValueHasBeenSet() const;
 
                     /**
-                     * 获取筛选参数
-                     * @return Conditions 筛选参数
+                     * 获取<p>筛选参数</p>
+                     * @return Conditions <p>筛选参数</p>
                      * 
                      */
                     AnalyseConditions GetConditions() const;
 
                     /**
-                     * 设置筛选参数
-                     * @param _conditions 筛选参数
+                     * 设置<p>筛选参数</p>
+                     * @param _conditions <p>筛选参数</p>
                      * 
                      */
                     void SetConditions(const AnalyseConditions& _conditions);
@@ -329,80 +277,67 @@ ownerUin=使用者账号
                 private:
 
                     /**
-                     * 周期开始时间，格式为yyyy-mm-dd hh:ii:ss
+                     * <p>周期开始时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 周期结束时间，格式为yyyy-mm-dd hh:ii:ss
+                     * <p>周期结束时间，格式为yyyy-mm-dd hh:ii:ss</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 账单类型：1-费用账单、2-消耗账单
+                     * <p>账单类型：1-费用账单、2-消耗账单</p>
                      */
                     std::string m_billType;
                     bool m_billTypeHasBeenSet;
 
                     /**
-                     * 统计周期：日-day，月-month；
+                     * <p>统计周期：日-day，月-month；</p>
                      */
                     std::string m_periodType;
                     bool m_periodTypeHasBeenSet;
 
                     /**
-                     * 分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：
-default=仅总计
-feeType=费用类型
-billType=账单类型
-business=产品
-product=子产品
-region=地域
-zone=可用区
-actionType=交易类型
-payMode =计费模式
-tags=标签
-project =项目
-payerUin=支付者账号
-ownerUin=使用者账号
+                     * <p>分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：<br>default=仅总计<br>feeType=费用类型<br>billType=账单类型<br>business=产品<br>product=子产品<br>region=地域<br>zone=可用区<br>actionType=交易类型<br>payMode =计费模式<br>tags=标签<br>project =项目<br>payerUin=支付者账号<br>ownerUin=使用者账号</p>
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 费用类型：cost-折后总费用，totalCost-原价费用
+                     * <p>费用类型：cost-折后总费用，totalCost-原价费用</p>
                      */
                     std::string m_feeType;
                     bool m_feeTypeHasBeenSet;
 
                     /**
-                     * 数量，每页最大值为100
+                     * <p>数量，每页最大值为100</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。
+                     * <p>起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。</p>
                      */
                     uint64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 分账标签值
+                     * <p>分账标签键</p>
                      */
                     std::string m_tagKeyStr;
                     bool m_tagKeyStrHasBeenSet;
 
                     /**
-                     * 是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。
+                     * <p>是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。</p>
                      */
                     std::string m_needConditionValue;
                     bool m_needConditionValueHasBeenSet;
 
                     /**
-                     * 筛选参数
+                     * <p>筛选参数</p>
                      */
                     AnalyseConditions m_conditions;
                     bool m_conditionsHasBeenSet;

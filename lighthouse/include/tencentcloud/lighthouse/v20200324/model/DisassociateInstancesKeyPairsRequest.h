@@ -84,6 +84,56 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取解绑定类型。可选值：
+ONLINE - 在线解绑定，不需要关机。
+OFFLINE - 离线解绑定，需要关机。
+                     * @return DisassociateType 解绑定类型。可选值：
+ONLINE - 在线解绑定，不需要关机。
+OFFLINE - 离线解绑定，需要关机。
+                     * 
+                     */
+                    std::string GetDisassociateType() const;
+
+                    /**
+                     * 设置解绑定类型。可选值：
+ONLINE - 在线解绑定，不需要关机。
+OFFLINE - 离线解绑定，需要关机。
+                     * @param _disassociateType 解绑定类型。可选值：
+ONLINE - 在线解绑定，不需要关机。
+OFFLINE - 离线解绑定，需要关机。
+                     * 
+                     */
+                    void SetDisassociateType(const std::string& _disassociateType);
+
+                    /**
+                     * 判断参数 DisassociateType 是否已赋值
+                     * @return DisassociateType 是否已赋值
+                     * 
+                     */
+                    bool DisassociateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。
+                     * @return Username 解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。
+                     * 
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。
+                     * @param _username 解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。
+                     * 
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     * 
+                     */
+                    bool UsernameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +147,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 解绑定类型。可选值：
+ONLINE - 在线解绑定，不需要关机。
+OFFLINE - 离线解绑定，需要关机。
+                     */
+                    std::string m_disassociateType;
+                    bool m_disassociateTypeHasBeenSet;
+
+                    /**
+                     * 解绑定的用户名。当 DisassociateType 为 OFFLINE 时，不支持该参数。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

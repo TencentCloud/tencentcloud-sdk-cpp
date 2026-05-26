@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取goosefs实例id
+                     * 获取<p>goosefs实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id goosefs实例id
+                     * @return Id <p>goosefs实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置goosefs实例id
+                     * 设置<p>goosefs实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id goosefs实例id
+                     * @param _id <p>goosefs实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取GooseFS类型，包括GooseFS和GooseFSx
+                     * 获取<p>GooseFS类型，包括GooseFS和GooseFSx</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type GooseFS类型，包括GooseFS和GooseFSx
+                     * @return Type <p>GooseFS类型，包括GooseFS和GooseFSx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置GooseFS类型，包括GooseFS和GooseFSx
+                     * 设置<p>GooseFS类型，包括GooseFS和GooseFSx</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type GooseFS类型，包括GooseFS和GooseFSx
+                     * @param _type <p>GooseFS类型，包括GooseFS和GooseFSx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取GooseFSx实例需要挂载的路径
+                     * 获取<p>GooseFSx实例需要挂载的路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path GooseFSx实例需要挂载的路径
+                     * @return Path <p>GooseFSx实例需要挂载的路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置GooseFSx实例需要挂载的路径
+                     * 设置<p>GooseFSx实例需要挂载的路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path GooseFSx实例需要挂载的路径
+                     * @param _path <p>GooseFSx实例需要挂载的路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取GooseFS命名空间
+                     * 获取<p>GooseFS命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NameSpace GooseFS命名空间
+                     * @return NameSpace <p>GooseFS命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameSpace() const;
 
                     /**
-                     * 设置GooseFS命名空间
+                     * 设置<p>GooseFS命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nameSpace GooseFS命名空间
+                     * @param _nameSpace <p>GooseFS命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,35 +146,62 @@ namespace TencentCloud
                      */
                     bool NameSpaceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户端的挂载参数，逗号分隔的参数名</p>
+                     * @return MountOptions <p>客户端的挂载参数，逗号分隔的参数名</p>
+                     * 
+                     */
+                    std::string GetMountOptions() const;
+
+                    /**
+                     * 设置<p>客户端的挂载参数，逗号分隔的参数名</p>
+                     * @param _mountOptions <p>客户端的挂载参数，逗号分隔的参数名</p>
+                     * 
+                     */
+                    void SetMountOptions(const std::string& _mountOptions);
+
+                    /**
+                     * 判断参数 MountOptions 是否已赋值
+                     * @return MountOptions 是否已赋值
+                     * 
+                     */
+                    bool MountOptionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * goosefs实例id
+                     * <p>goosefs实例id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * GooseFS类型，包括GooseFS和GooseFSx
+                     * <p>GooseFS类型，包括GooseFS和GooseFSx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * GooseFSx实例需要挂载的路径
+                     * <p>GooseFSx实例需要挂载的路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * GooseFS命名空间
+                     * <p>GooseFS命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameSpace;
                     bool m_nameSpaceHasBeenSet;
+
+                    /**
+                     * <p>客户端的挂载参数，逗号分隔的参数名</p>
+                     */
+                    std::string m_mountOptions;
+                    bool m_mountOptionsHasBeenSet;
 
                 };
             }

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询列表的起始位置，以0开始，不设置默认为0。
-                     * @return Offset 查询列表的起始位置，以0开始，不设置默认为0。
+                     * 获取<p>查询列表的起始位置，以0开始，不设置默认为0。</p>
+                     * @return Offset <p>查询列表的起始位置，以0开始，不设置默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询列表的起始位置，以0开始，不设置默认为0。
-                     * @param _offset 查询列表的起始位置，以0开始，不设置默认为0。
+                     * 设置<p>查询列表的起始位置，以0开始，不设置默认为0。</p>
+                     * @param _offset <p>查询列表的起始位置，以0开始，不设置默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的最大数量，0或不设置则使用默认值 20。
-                     * @return Limit 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * 获取<p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>
+                     * @return Limit <p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的最大数量，0或不设置则使用默认值 20。
-                     * @param _limit 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * 设置<p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>
+                     * @param _limit <p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
-                     * @return OrderType 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * 获取<p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>
+                     * @return OrderType <p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>
                      * 
                      */
                     uint64_t GetOrderType() const;
 
                     /**
-                     * 设置根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
-                     * @param _orderType 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * 设置<p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>
+                     * @param _orderType <p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>
                      * 
                      */
                     void SetOrderType(const uint64_t& _orderType);
@@ -107,43 +107,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据凭据状态进行过滤。
-默认为0表示查询全部。
-1 --  表示查询Enabled 凭据列表。
-2 --  表示查询Disabled 凭据列表。
-3 --  表示查询PendingDelete 凭据列表。
-4 --  表示PendingCreate。
-5 --  表示CreateFailed。
-其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
-                     * @return State 根据凭据状态进行过滤。
-默认为0表示查询全部。
-1 --  表示查询Enabled 凭据列表。
-2 --  表示查询Disabled 凭据列表。
-3 --  表示查询PendingDelete 凭据列表。
-4 --  表示PendingCreate。
-5 --  表示CreateFailed。
-其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * 获取<p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>
+                     * @return State <p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>
                      * 
                      */
                     uint64_t GetState() const;
 
                     /**
-                     * 设置根据凭据状态进行过滤。
-默认为0表示查询全部。
-1 --  表示查询Enabled 凭据列表。
-2 --  表示查询Disabled 凭据列表。
-3 --  表示查询PendingDelete 凭据列表。
-4 --  表示PendingCreate。
-5 --  表示CreateFailed。
-其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
-                     * @param _state 根据凭据状态进行过滤。
-默认为0表示查询全部。
-1 --  表示查询Enabled 凭据列表。
-2 --  表示查询Disabled 凭据列表。
-3 --  表示查询PendingDelete 凭据列表。
-4 --  表示PendingCreate。
-5 --  表示CreateFailed。
-其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * 设置<p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>
+                     * @param _state <p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>
                      * 
                      */
                     void SetState(const uint64_t& _state);
@@ -156,15 +128,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取根据凭据名称进行过滤，为空表示不过滤。
-                     * @return SearchSecretName 根据凭据名称进行过滤，为空表示不过滤。
+                     * 获取<p>根据凭据名称进行过滤，为空表示不过滤。</p>
+                     * @return SearchSecretName <p>根据凭据名称进行过滤，为空表示不过滤。</p>
                      * 
                      */
                     std::string GetSearchSecretName() const;
 
                     /**
-                     * 设置根据凭据名称进行过滤，为空表示不过滤。
-                     * @param _searchSecretName 根据凭据名称进行过滤，为空表示不过滤。
+                     * 设置<p>根据凭据名称进行过滤，为空表示不过滤。</p>
+                     * @param _searchSecretName <p>根据凭据名称进行过滤，为空表示不过滤。</p>
                      * 
                      */
                     void SetSearchSecretName(const std::string& _searchSecretName);
@@ -177,15 +149,15 @@ namespace TencentCloud
                     bool SearchSecretNameHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤条件。
-                     * @return TagFilters 标签过滤条件。
+                     * 获取<p>标签过滤条件。</p>
+                     * @return TagFilters <p>标签过滤条件。</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤条件。
-                     * @param _tagFilters 标签过滤条件。
+                     * 设置<p>标签过滤条件。</p>
+                     * @param _tagFilters <p>标签过滤条件。</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -198,27 +170,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取0  -- 表示用户自定义凭据，默认为0。
-1  -- 表示用户云产品凭据。
-2 -- 表示SSH密钥对凭据。
-3 -- 表示云API密钥对凭据。
-                     * @return SecretType 0  -- 表示用户自定义凭据，默认为0。
-1  -- 表示用户云产品凭据。
-2 -- 表示SSH密钥对凭据。
-3 -- 表示云API密钥对凭据。
+                     * 获取<p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>
+                     * @return SecretType <p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>
                      * 
                      */
                     uint64_t GetSecretType() const;
 
                     /**
-                     * 设置0  -- 表示用户自定义凭据，默认为0。
-1  -- 表示用户云产品凭据。
-2 -- 表示SSH密钥对凭据。
-3 -- 表示云API密钥对凭据。
-                     * @param _secretType 0  -- 表示用户自定义凭据，默认为0。
-1  -- 表示用户云产品凭据。
-2 -- 表示SSH密钥对凭据。
-3 -- 表示云API密钥对凭据。
+                     * 设置<p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>
+                     * @param _secretType <p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>
                      * 
                      */
                     void SetSecretType(const uint64_t& _secretType);
@@ -231,35 +191,15 @@ namespace TencentCloud
                     bool SecretTypeHasBeenSet() const;
 
                     /**
-                     * 获取此参数仅在SecretType参数值为1时生效，
-当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据；
-如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
-如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
-支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
-                     * @return ProductName 此参数仅在SecretType参数值为1时生效，
-当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据；
-如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
-如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
-支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
+                     * 获取<p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>
+                     * @return ProductName <p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置此参数仅在SecretType参数值为1时生效，
-当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据；
-如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
-如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
-支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
-                     * @param _productName 此参数仅在SecretType参数值为1时生效，
-当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据；
-如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
-如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
-支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
+                     * 设置<p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>
+                     * @param _productName <p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -271,70 +211,82 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * @return EncryptType <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetEncryptType() const;
+
+                    /**
+                     * 设置<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * @param _encryptType <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetEncryptType(const uint64_t& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 查询列表的起始位置，以0开始，不设置默认为0。
+                     * <p>查询列表的起始位置，以0开始，不设置默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次查询返回的最大数量，0或不设置则使用默认值 20。
+                     * <p>单次查询返回的最大数量，0或不设置则使用默认值 20。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。
+                     * <p>根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。</p>
                      */
                     uint64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 根据凭据状态进行过滤。
-默认为0表示查询全部。
-1 --  表示查询Enabled 凭据列表。
-2 --  表示查询Disabled 凭据列表。
-3 --  表示查询PendingDelete 凭据列表。
-4 --  表示PendingCreate。
-5 --  表示CreateFailed。
-其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * <p>根据凭据状态进行过滤。<br>默认为0表示查询全部。<br>1 --  表示查询Enabled 凭据列表。<br>2 --  表示查询Disabled 凭据列表。<br>3 --  表示查询PendingDelete 凭据列表。<br>4 --  表示PendingCreate。<br>5 --  表示CreateFailed。<br>其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效</p>
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 根据凭据名称进行过滤，为空表示不过滤。
+                     * <p>根据凭据名称进行过滤，为空表示不过滤。</p>
                      */
                     std::string m_searchSecretName;
                     bool m_searchSecretNameHasBeenSet;
 
                     /**
-                     * 标签过滤条件。
+                     * <p>标签过滤条件。</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 0  -- 表示用户自定义凭据，默认为0。
-1  -- 表示用户云产品凭据。
-2 -- 表示SSH密钥对凭据。
-3 -- 表示云API密钥对凭据。
+                     * <p>0  -- 表示用户自定义凭据，默认为0。<br>1  -- 表示用户云产品凭据。<br>2 -- 表示SSH密钥对凭据。<br>3 -- 表示云API密钥对凭据。</p>
                      */
                     uint64_t m_secretType;
                     bool m_secretTypeHasBeenSet;
 
                     /**
-                     * 此参数仅在SecretType参数值为1时生效，
-当SecretType值为1时：
-如果ProductName值为空，则表示查询所有类型的云产品凭据；
-如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；
-如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；
-支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。
+                     * <p>此参数仅在SecretType参数值为1时生效，<br>当SecretType值为1时：<br>如果ProductName值为空，则表示查询所有类型的云产品凭据；<br>如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；<br>如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；<br>支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
 
                 };
             }

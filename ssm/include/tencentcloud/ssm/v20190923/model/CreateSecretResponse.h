@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的凭据名称。
-                     * @return SecretName 新创建的凭据名称。
+                     * 获取<p>新创建的凭据名称。</p>
+                     * @return SecretName <p>新创建的凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取新创建的凭据版本。
-                     * @return VersionId 新创建的凭据版本。
+                     * 获取<p>新创建的凭据版本。</p>
+                     * @return VersionId <p>新创建的凭据版本。</p>
                      * 
                      */
                     std::string GetVersionId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-                     * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * 获取<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
+                     * @return TagCode <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      * 
                      */
                     uint64_t GetTagCode() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TagCodeHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回信息
-                     * @return TagMsg 标签操作的返回信息
+                     * 获取<p>标签操作的返回信息</p>
+                     * @return TagMsg <p>标签操作的返回信息</p>
                      * 
                      */
                     std::string GetTagMsg() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的凭据名称。
+                     * <p>新创建的凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 新创建的凭据版本。
+                     * <p>新创建的凭据版本。</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      */
                     uint64_t m_tagCode;
                     bool m_tagCodeHasBeenSet;
 
                     /**
-                     * 标签操作的返回信息
+                     * <p>标签操作的返回信息</p>
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;

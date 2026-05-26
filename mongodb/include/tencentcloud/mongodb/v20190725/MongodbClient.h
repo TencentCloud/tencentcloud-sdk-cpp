@@ -47,6 +47,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAuditLogFileRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAuditLogFileResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteDBBackupsRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteDBBackupsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteLogDownloadTaskRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteLogDownloadTaskResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribePasswordRotationRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribePasswordRotationResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h>
@@ -111,6 +115,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnablePasswordRotationRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnablePasswordRotationResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
@@ -135,6 +141,8 @@
 #include <tencentcloud/mongodb/v20190725/model/KillOpsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyAuditServiceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyAuditServiceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceParamTplRequest.h>
@@ -227,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
                 typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBBackupsResponse> DeleteDBBackupsOutcome;
+                typedef std::future<DeleteDBBackupsOutcome> DeleteDBBackupsOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteDBBackupsRequest&, DeleteDBBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLogDownloadTaskResponse> DeleteLogDownloadTaskOutcome;
                 typedef std::future<DeleteLogDownloadTaskOutcome> DeleteLogDownloadTaskOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DeleteLogDownloadTaskRequest&, DeleteLogDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogDownloadTaskAsyncHandler;
@@ -299,6 +310,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMongodbLogsResponse> DescribeMongodbLogsOutcome;
                 typedef std::future<DescribeMongodbLogsOutcome> DescribeMongodbLogsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeMongodbLogsRequest&, DescribeMongodbLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongodbLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePasswordRotationResponse> DescribePasswordRotationOutcome;
+                typedef std::future<DescribePasswordRotationOutcome> DescribePasswordRotationOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribePasswordRotationRequest&, DescribePasswordRotationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePasswordRotationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSRVConnectionDomainResponse> DescribeSRVConnectionDomainOutcome;
                 typedef std::future<DescribeSRVConnectionDomainOutcome> DescribeSRVConnectionDomainOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSRVConnectionDomainRequest&, DescribeSRVConnectionDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSRVConnectionDomainAsyncHandler;
@@ -323,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DropDBInstanceParamTplResponse> DropDBInstanceParamTplOutcome;
                 typedef std::future<DropDBInstanceParamTplOutcome> DropDBInstanceParamTplOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DropDBInstanceParamTplRequest&, DropDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDBInstanceParamTplAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePasswordRotationResponse> EnablePasswordRotationOutcome;
+                typedef std::future<EnablePasswordRotationOutcome> EnablePasswordRotationOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnablePasswordRotationRequest&, EnablePasswordRotationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePasswordRotationAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableSRVConnectionUrlResponse> EnableSRVConnectionUrlOutcome;
                 typedef std::future<EnableSRVConnectionUrlOutcome> EnableSRVConnectionUrlOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::EnableSRVConnectionUrlRequest&, EnableSRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSRVConnectionUrlAsyncHandler;
@@ -359,6 +376,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAuditServiceResponse> ModifyAuditServiceOutcome;
                 typedef std::future<ModifyAuditServiceOutcome> ModifyAuditServiceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyAuditServiceRequest&, ModifyAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupExpireTimeResponse> ModifyBackupExpireTimeOutcome;
+                typedef std::future<ModifyBackupExpireTimeOutcome> ModifyBackupExpireTimeOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyBackupExpireTimeRequest&, ModifyBackupExpireTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupExpireTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNetworkAddressResponse> ModifyDBInstanceNetworkAddressOutcome;
                 typedef std::future<ModifyDBInstanceNetworkAddressOutcome> ModifyDBInstanceNetworkAddressOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceNetworkAddressRequest&, ModifyDBInstanceNetworkAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAddressAsyncHandler;
@@ -533,6 +553,15 @@ namespace TencentCloud
                 DeleteAuditLogFileOutcome DeleteAuditLogFile(const Model::DeleteAuditLogFileRequest &request);
                 void DeleteAuditLogFileAsync(const Model::DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
+
+                /**
+                 *删除全量备份
+                 * @param req DeleteDBBackupsRequest
+                 * @return DeleteDBBackupsOutcome
+                 */
+                DeleteDBBackupsOutcome DeleteDBBackups(const Model::DeleteDBBackupsRequest &request);
+                void DeleteDBBackupsAsync(const Model::DeleteDBBackupsRequest& request, const DeleteDBBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBBackupsOutcomeCallable DeleteDBBackupsCallable(const Model::DeleteDBBackupsRequest& request);
 
                 /**
                  *删除日志下载任务
@@ -753,6 +782,15 @@ namespace TencentCloud
                 DescribeMongodbLogsOutcomeCallable DescribeMongodbLogsCallable(const Model::DescribeMongodbLogsRequest& request);
 
                 /**
+                 *获取密码轮转状态信息
+                 * @param req DescribePasswordRotationRequest
+                 * @return DescribePasswordRotationOutcome
+                 */
+                DescribePasswordRotationOutcome DescribePasswordRotation(const Model::DescribePasswordRotationRequest &request);
+                void DescribePasswordRotationAsync(const Model::DescribePasswordRotationRequest& request, const DescribePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePasswordRotationOutcomeCallable DescribePasswordRotationCallable(const Model::DescribePasswordRotationRequest& request);
+
+                /**
                  *本接口（DescribeSRVConnectionDomain）用于查询MongoDB数据库当前的域名信息。
                  * @param req DescribeSRVConnectionDomainRequest
                  * @return DescribeSRVConnectionDomainOutcome
@@ -824,6 +862,15 @@ namespace TencentCloud
                 DropDBInstanceParamTplOutcome DropDBInstanceParamTpl(const Model::DropDBInstanceParamTplRequest &request);
                 void DropDBInstanceParamTplAsync(const Model::DropDBInstanceParamTplRequest& request, const DropDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DropDBInstanceParamTplOutcomeCallable DropDBInstanceParamTplCallable(const Model::DropDBInstanceParamTplRequest& request);
+
+                /**
+                 *开启密码轮转
+                 * @param req EnablePasswordRotationRequest
+                 * @return EnablePasswordRotationOutcome
+                 */
+                EnablePasswordRotationOutcome EnablePasswordRotation(const Model::EnablePasswordRotationRequest &request);
+                void EnablePasswordRotationAsync(const Model::EnablePasswordRotationRequest& request, const EnablePasswordRotationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePasswordRotationOutcomeCallable EnablePasswordRotationCallable(const Model::EnablePasswordRotationRequest& request);
 
                 /**
                  *本接口（EnableSRVConnectionUrl）用于开启MongoDB数据库的SRV访问地址。
@@ -933,6 +980,15 @@ namespace TencentCloud
                 ModifyAuditServiceOutcome ModifyAuditService(const Model::ModifyAuditServiceRequest &request);
                 void ModifyAuditServiceAsync(const Model::ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuditServiceOutcomeCallable ModifyAuditServiceCallable(const Model::ModifyAuditServiceRequest& request);
+
+                /**
+                 *修改备份过期时间
+                 * @param req ModifyBackupExpireTimeRequest
+                 * @return ModifyBackupExpireTimeOutcome
+                 */
+                ModifyBackupExpireTimeOutcome ModifyBackupExpireTime(const Model::ModifyBackupExpireTimeRequest &request);
+                void ModifyBackupExpireTimeAsync(const Model::ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupExpireTimeOutcomeCallable ModifyBackupExpireTimeCallable(const Model::ModifyBackupExpireTimeRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceNetworkAddress）用于修改云数据库实例的网络信息，支持基础网络切换为私有网络、私有网络切换私有网络。

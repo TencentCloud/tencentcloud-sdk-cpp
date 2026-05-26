@@ -25,6 +25,7 @@ KeyPair::KeyPair() :
     m_keyNameHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
     m_associatedInstanceIdsHasBeenSet(false),
+    m_associatedInstanceSetHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -77,6 +78,26 @@ CoreInternalOutcome KeyPair::Deserialize(const rapidjson::Value &value)
             m_associatedInstanceIds.push_back((*itr).GetString());
         }
         m_associatedInstanceIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociatedInstanceSet") && !value["AssociatedInstanceSet"].IsNull())
+    {
+        if (!value["AssociatedInstanceSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KeyPair.AssociatedInstanceSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AssociatedInstanceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AssociatedInstanceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_associatedInstanceSet.push_back(item);
+        }
+        m_associatedInstanceSetHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
@@ -160,6 +181,21 @@ void KeyPair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         for (auto itr = m_associatedInstanceIds.begin(); itr != m_associatedInstanceIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_associatedInstanceSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedInstanceSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_associatedInstanceSet.begin(); itr != m_associatedInstanceSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -259,6 +295,22 @@ void KeyPair::SetAssociatedInstanceIds(const vector<string>& _associatedInstance
 bool KeyPair::AssociatedInstanceIdsHasBeenSet() const
 {
     return m_associatedInstanceIdsHasBeenSet;
+}
+
+vector<AssociatedInstanceInfo> KeyPair::GetAssociatedInstanceSet() const
+{
+    return m_associatedInstanceSet;
+}
+
+void KeyPair::SetAssociatedInstanceSet(const vector<AssociatedInstanceInfo>& _associatedInstanceSet)
+{
+    m_associatedInstanceSet = _associatedInstanceSet;
+    m_associatedInstanceSetHasBeenSet = true;
+}
+
+bool KeyPair::AssociatedInstanceSetHasBeenSet() const
+{
+    return m_associatedInstanceSetHasBeenSet;
 }
 
 string KeyPair::GetCreatedTime() const

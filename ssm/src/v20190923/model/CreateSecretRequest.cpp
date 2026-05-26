@@ -32,7 +32,8 @@ CreateSecretRequest::CreateSecretRequest() :
     m_secretStringHasBeenSet(false),
     m_additionalConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsHsmClusterIdHasBeenSet(false)
+    m_kmsHsmClusterIdHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string CreateSecretRequest::ToJsonString() const
         string key = "KmsHsmClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kmsHsmClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptType, allocator);
     }
 
 
@@ -296,6 +305,22 @@ void CreateSecretRequest::SetKmsHsmClusterId(const string& _kmsHsmClusterId)
 bool CreateSecretRequest::KmsHsmClusterIdHasBeenSet() const
 {
     return m_kmsHsmClusterIdHasBeenSet;
+}
+
+uint64_t CreateSecretRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CreateSecretRequest::SetEncryptType(const uint64_t& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CreateSecretRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 
 

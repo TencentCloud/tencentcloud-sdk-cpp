@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AIGC 生视频任务的输出文件信息。	
-                     * @return FileInfos AIGC 生视频任务的输出文件信息。	
+                     * 获取<p>AIGC 生视频任务的输出文件信息。</p>
+                     * @return FileInfos <p>AIGC 生视频任务的输出文件信息。</p>
                      * 
                      */
                     std::vector<AigcVideoTaskOutputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC 生视频任务的输出文件信息。	
-                     * @param _fileInfos AIGC 生视频任务的输出文件信息。	
+                     * 设置<p>AIGC 生视频任务的输出文件信息。</p>
+                     * @param _fileInfos <p>AIGC 生视频任务的输出文件信息。</p>
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcVideoTaskOutputFileInfo>& _fileInfos);
@@ -68,13 +68,40 @@ namespace TencentCloud
                      */
                     bool FileInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务类型为 Procedure 的任务 ID。若发起<a href="https://cloud.tencent.com/document/product/266/126239">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     * @return ProcedureTaskIds <p>任务类型为 Procedure 的任务 ID。若发起<a href="https://cloud.tencent.com/document/product/266/126239">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetProcedureTaskIds() const;
+
+                    /**
+                     * 设置<p>任务类型为 Procedure 的任务 ID。若发起<a href="https://cloud.tencent.com/document/product/266/126239">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     * @param _procedureTaskIds <p>任务类型为 Procedure 的任务 ID。若发起<a href="https://cloud.tencent.com/document/product/266/126239">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     * 
+                     */
+                    void SetProcedureTaskIds(const std::vector<std::string>& _procedureTaskIds);
+
+                    /**
+                     * 判断参数 ProcedureTaskIds 是否已赋值
+                     * @return ProcedureTaskIds 是否已赋值
+                     * 
+                     */
+                    bool ProcedureTaskIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * AIGC 生视频任务的输出文件信息。	
+                     * <p>AIGC 生视频任务的输出文件信息。</p>
                      */
                     std::vector<AigcVideoTaskOutputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
+
+                    /**
+                     * <p>任务类型为 Procedure 的任务 ID。若发起<a href="https://cloud.tencent.com/document/product/266/126239">创建 AIGC 生视频任务</a>时指定了任务流模板(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。</p>
+                     */
+                    std::vector<std::string> m_procedureTaskIds;
+                    bool m_procedureTaskIdsHasBeenSet;
 
                 };
             }

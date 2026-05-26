@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取健康得分以及异常扣分项。
-                     * @return Data 健康得分以及异常扣分项。
+                     * 获取<p>健康得分以及异常扣分项。</p>
+                     * @return Data <p>健康得分以及异常扣分项。</p>
                      * 
                      */
                     HealthScoreInfo GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 健康得分以及异常扣分项。
+                     * <p>健康得分以及异常扣分项。</p>
                      */
                     HealthScoreInfo m_data;
                     bool m_dataHasBeenSet;

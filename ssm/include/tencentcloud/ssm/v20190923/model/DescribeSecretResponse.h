@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取凭据名称。
-                     * @return SecretName 凭据名称。
+                     * 获取<p>凭据名称。</p>
+                     * @return SecretName <p>凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取凭据描述信息。
-                     * @return Description 凭据描述信息。
+                     * 获取<p>凭据描述信息。</p>
+                     * @return Description <p>凭据描述信息。</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用于加密的KMS CMK ID。
-                     * @return KmsKeyId 用于加密的KMS CMK ID。
+                     * 获取<p>用于加密的KMS CMK ID。</p>
+                     * @return KmsKeyId <p>用于加密的KMS CMK ID。</p>
                      * 
                      */
                     std::string GetKmsKeyId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取创建者UIN。
-                     * @return CreateUin 创建者UIN。
+                     * 获取<p>创建者UIN。</p>
+                     * @return CreateUin <p>创建者UIN。</p>
                      * 
                      */
                     uint64_t GetCreateUin() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
-                     * @return Status 凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
+                     * 获取<p>凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。</p>
+                     * @return Status <p>凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取删除日期，uinx 时间戳，非计划删除状态的凭据为0。
-                     * @return DeleteTime 删除日期，uinx 时间戳，非计划删除状态的凭据为0。
+                     * 获取<p>删除日期，uinx 时间戳，非计划删除状态的凭据为0。</p>
+                     * @return DeleteTime <p>删除日期，uinx 时间戳，非计划删除状态的凭据为0。</p>
                      * 
                      */
                     uint64_t GetDeleteTime() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建日期。
-                     * @return CreateTime 创建日期。
+                     * 获取<p>创建日期。</p>
+                     * @return CreateTime <p>创建日期。</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。
-                     * @return SecretType 0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。
+                     * 获取<p>0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。</p>
+                     * @return SecretType <p>0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。</p>
                      * 
                      */
                     int64_t GetSecretType() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool SecretTypeHasBeenSet() const;
 
                     /**
-                     * 获取云产品名称。
-                     * @return ProductName 云产品名称。
+                     * 获取<p>云产品名称。</p>
+                     * @return ProductName <p>云产品名称。</p>
                      * 
                      */
                     std::string GetProductName() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取云产品实例ID。
-                     * @return ResourceID 云产品实例ID。
+                     * 获取<p>云产品实例ID。</p>
+                     * @return ResourceID <p>云产品实例ID。</p>
                      * 
                      */
                     std::string GetResourceID() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool ResourceIDHasBeenSet() const;
 
                     /**
-                     * 获取是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
-                     * @return RotationStatus 是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
+                     * 获取<p>是否开启轮转：True -- 开启轮转；False -- 关闭轮转。</p>
+                     * @return RotationStatus <p>是否开启轮转：True -- 开启轮转；False -- 关闭轮转。</p>
                      * 
                      */
                     bool GetRotationStatus() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool RotationStatusHasBeenSet() const;
 
                     /**
-                     * 获取轮转周期，默认以天为单位。
-                     * @return RotationFrequency 轮转周期，默认以天为单位。
+                     * 获取<p>轮转周期，默认以天为单位。</p>
+                     * @return RotationFrequency <p>轮转周期，默认以天为单位。</p>
                      * 
                      */
                     int64_t GetRotationFrequency() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool RotationFrequencyHasBeenSet() const;
 
                     /**
-                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-                     * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+                     * 获取<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。</p>
+                     * @return ResourceName <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。</p>
                      * 
                      */
                     std::string GetResourceName() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-                     * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+                     * 获取<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。</p>
+                     * @return ProjectID <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。</p>
                      * 
                      */
                     int64_t GetProjectID() const;
@@ -240,8 +240,8 @@ namespace TencentCloud
                     bool ProjectIDHasBeenSet() const;
 
                     /**
-                     * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-                     * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+                     * 获取<p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。</p>
+                     * @return AssociatedInstanceIDs <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。</p>
                      * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIDs() const;
@@ -254,8 +254,8 @@ namespace TencentCloud
                     bool AssociatedInstanceIDsHasBeenSet() const;
 
                     /**
-                     * 获取当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
-                     * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
+                     * 获取<p>当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。</p>
+                     * @return TargetUin <p>当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。</p>
                      * 
                      */
                     uint64_t GetTargetUin() const;
@@ -268,8 +268,8 @@ namespace TencentCloud
                     bool TargetUinHasBeenSet() const;
 
                     /**
-                     * 获取凭据额外配置
-                     * @return AdditionalConfig 凭据额外配置
+                     * 获取<p>凭据额外配置</p>
+                     * @return AdditionalConfig <p>凭据额外配置</p>
                      * 
                      */
                     std::string GetAdditionalConfig() const;
@@ -281,109 +281,149 @@ namespace TencentCloud
                      */
                     bool AdditionalConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * @return EncryptType <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetEncryptType() const;
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭据更新状态</p>
+                     * @return EncryptSwitching <p>凭据更新状态</p>
+                     * 
+                     */
+                    bool GetEncryptSwitching() const;
+
+                    /**
+                     * 判断参数 EncryptSwitching 是否已赋值
+                     * @return EncryptSwitching 是否已赋值
+                     * 
+                     */
+                    bool EncryptSwitchingHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 凭据名称。
+                     * <p>凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 凭据描述信息。
+                     * <p>凭据描述信息。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用于加密的KMS CMK ID。
+                     * <p>用于加密的KMS CMK ID。</p>
                      */
                     std::string m_kmsKeyId;
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
-                     * 创建者UIN。
+                     * <p>创建者UIN。</p>
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
+                     * <p>凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 删除日期，uinx 时间戳，非计划删除状态的凭据为0。
+                     * <p>删除日期，uinx 时间戳，非计划删除状态的凭据为0。</p>
                      */
                     uint64_t m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 创建日期。
+                     * <p>创建日期。</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。
+                     * <p>0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。</p>
                      */
                     int64_t m_secretType;
                     bool m_secretTypeHasBeenSet;
 
                     /**
-                     * 云产品名称。
+                     * <p>云产品名称。</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 云产品实例ID。
+                     * <p>云产品实例ID。</p>
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
 
                     /**
-                     * 是否开启轮转：True -- 开启轮转；False -- 关闭轮转。
+                     * <p>是否开启轮转：True -- 开启轮转；False -- 关闭轮转。</p>
                      */
                     bool m_rotationStatus;
                     bool m_rotationStatusHasBeenSet;
 
                     /**
-                     * 轮转周期，默认以天为单位。
+                     * <p>轮转周期，默认以天为单位。</p>
                      */
                     int64_t m_rotationFrequency;
                     bool m_rotationFrequencyHasBeenSet;
 
                     /**
-                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+                     * <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+                     * <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。</p>
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
 
                     /**
-                     * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+                     * <p>当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。</p>
                      */
                     std::vector<std::string> m_associatedInstanceIDs;
                     bool m_associatedInstanceIDsHasBeenSet;
 
                     /**
-                     * 当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。
+                     * <p>当凭据类型为云API密钥对凭据时，此字段有效，用于表示此云API密钥对所属的用户UIN。</p>
                      */
                     uint64_t m_targetUin;
                     bool m_targetUinHasBeenSet;
 
                     /**
-                     * 凭据额外配置
+                     * <p>凭据额外配置</p>
                      */
                     std::string m_additionalConfig;
                     bool m_additionalConfigHasBeenSet;
+
+                    /**
+                     * <p>凭据加密类型</p><p>枚举值：</p><ul><li>0： KMS 密钥加密</li><li>1： 软密钥加密</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
+
+                    /**
+                     * <p>凭据更新状态</p>
+                     */
+                    bool m_encryptSwitching;
+                    bool m_encryptSwitchingHasBeenSet;
 
                 };
             }

@@ -440,6 +440,56 @@ IoaClient::CreatePrivilegeCodeOutcomeCallable IoaClient::CreatePrivilegeCodeCall
     return prom->get_future();
 }
 
+IoaClient::DeleteDeviceVirtualGroupOutcome IoaClient::DeleteDeviceVirtualGroup(const DeleteDeviceVirtualGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceVirtualGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceVirtualGroupResponse rsp = DeleteDeviceVirtualGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceVirtualGroupOutcome(rsp);
+        else
+            return DeleteDeviceVirtualGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceVirtualGroupOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DeleteDeviceVirtualGroupAsync(const DeleteDeviceVirtualGroupRequest& request, const DeleteDeviceVirtualGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeviceVirtualGroupRequest&;
+    using Resp = DeleteDeviceVirtualGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceVirtualGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DeleteDeviceVirtualGroupOutcomeCallable IoaClient::DeleteDeviceVirtualGroupCallable(const DeleteDeviceVirtualGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeviceVirtualGroupOutcome>>();
+    DeleteDeviceVirtualGroupAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DeleteDeviceVirtualGroupRequest&,
+        DeleteDeviceVirtualGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountGroups");

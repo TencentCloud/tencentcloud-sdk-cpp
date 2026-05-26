@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作Id
+                     * 获取<p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobId 操作Id
+                     * @return JobId <p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
-                     * 设置操作Id
+                     * 设置<p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobId 操作Id
+                     * @param _jobId <p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作Id
+                     * <p>操作Id</p><p>可使用JobId字段通过ListBatchDetail接口 查询异步操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_jobId;

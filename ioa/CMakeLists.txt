@@ -113,6 +113,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.h
   include/tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigResponse.h
   include/tencentcloud/ioa/v20220601/model/AggrSoftDeviceRow.h
+  include/tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupResponse.h
   include/tencentcloud/ioa/v20220601/model/SoftVersionAndNum.h
   include/tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListPageData.h
@@ -127,6 +128,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesPageRsp.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodesRspItem.h
+  include/tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsRspItem.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodeGroupsResponse.h
   include/tencentcloud/ioa/v20220601/model/Filter.h
@@ -272,6 +274,7 @@ set(ioa_src
   src/v20220601/model/DescribeDeviceVirtualGroupsPageRsp.cpp
   src/v20220601/model/CreateCompanyDirectoryConfigResponse.cpp
   src/v20220601/model/AggrSoftDeviceRow.cpp
+  src/v20220601/model/DeleteDeviceVirtualGroupResponse.cpp
   src/v20220601/model/SoftVersionAndNum.cpp
   src/v20220601/model/ExportDeviceDownloadTaskResponse.cpp
   src/v20220601/model/DescribeDeviceDetailListPageData.cpp
@@ -286,6 +289,7 @@ set(ioa_src
   src/v20220601/model/DescribeDevicesPageRsp.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceResponse.cpp
   src/v20220601/model/DescribeDLPEdgeNodesRspItem.cpp
+  src/v20220601/model/DeleteDeviceVirtualGroupRequest.cpp
   src/v20220601/model/DescribeDLPEdgeNodeGroupsRspItem.cpp
   src/v20220601/model/DescribeDLPEdgeNodeGroupsResponse.cpp
   src/v20220601/model/Filter.cpp

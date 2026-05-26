@@ -190,6 +190,56 @@ TcbClient::AssumeRoleForAllocatedEnvOutcomeCallable TcbClient::AssumeRoleForAllo
     return prom->get_future();
 }
 
+TcbClient::BindStorageSourceOutcome TcbClient::BindStorageSource(const BindStorageSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindStorageSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindStorageSourceResponse rsp = BindStorageSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindStorageSourceOutcome(rsp);
+        else
+            return BindStorageSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return BindStorageSourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::BindStorageSourceAsync(const BindStorageSourceRequest& request, const BindStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindStorageSourceRequest&;
+    using Resp = BindStorageSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindStorageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::BindStorageSourceOutcomeCallable TcbClient::BindStorageSourceCallable(const BindStorageSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindStorageSourceOutcome>>();
+    BindStorageSourceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const BindStorageSourceRequest&,
+        BindStorageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckTcbService");
@@ -3590,6 +3640,56 @@ TcbClient::ModifySafeRuleOutcomeCallable TcbClient::ModifySafeRuleCallable(const
     return prom->get_future();
 }
 
+TcbClient::ModifyStorageSourceOutcome TcbClient::ModifyStorageSource(const ModifyStorageSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStorageSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStorageSourceResponse rsp = ModifyStorageSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStorageSourceOutcome(rsp);
+        else
+            return ModifyStorageSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStorageSourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyStorageSourceAsync(const ModifyStorageSourceRequest& request, const ModifyStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyStorageSourceRequest&;
+    using Resp = ModifyStorageSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyStorageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyStorageSourceOutcomeCallable TcbClient::ModifyStorageSourceCallable(const ModifyStorageSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyStorageSourceOutcome>>();
+    ModifyStorageSourceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyStorageSourceRequest&,
+        ModifyStorageSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyUserOutcome TcbClient::ModifyUser(const ModifyUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUser");
@@ -3882,6 +3982,56 @@ TcbClient::SearchClsLogOutcomeCallable TcbClient::SearchClsLogCallable(const Sea
         const TcbClient*,
         const SearchClsLogRequest&,
         SearchClsLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UnbindStorageSourceOutcome TcbClient::UnbindStorageSource(const UnbindStorageSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindStorageSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindStorageSourceResponse rsp = UnbindStorageSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindStorageSourceOutcome(rsp);
+        else
+            return UnbindStorageSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindStorageSourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UnbindStorageSourceAsync(const UnbindStorageSourceRequest& request, const UnbindStorageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindStorageSourceRequest&;
+    using Resp = UnbindStorageSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindStorageSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UnbindStorageSourceOutcomeCallable TcbClient::UnbindStorageSourceCallable(const UnbindStorageSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindStorageSourceOutcome>>();
+    UnbindStorageSourceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UnbindStorageSourceRequest&,
+        UnbindStorageSourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -115,6 +115,8 @@
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetPasswordRulesRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetPasswordRulesResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetPolicyVersionRequest.h>
@@ -191,6 +193,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateOIDCConfigResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePasswordRulesRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdatePasswordRulesResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdatePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginRequest.h>
@@ -359,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetGroupResponse> GetGroupOutcome;
                 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetGroupRequest&, GetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPasswordRulesResponse> GetPasswordRulesOutcome;
+                typedef std::future<GetPasswordRulesOutcome> GetPasswordRulesOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetPasswordRulesRequest&, GetPasswordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPasswordRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPolicyResponse> GetPolicyOutcome;
                 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetPolicyRequest&, GetPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPolicyAsyncHandler;
@@ -473,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateOIDCConfigResponse> UpdateOIDCConfigOutcome;
                 typedef std::future<UpdateOIDCConfigOutcome> UpdateOIDCConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateOIDCConfigRequest&, UpdateOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOIDCConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePasswordRulesResponse> UpdatePasswordRulesOutcome;
+                typedef std::future<UpdatePasswordRulesOutcome> UpdatePasswordRulesOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdatePasswordRulesRequest&, UpdatePasswordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePasswordRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
                 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
@@ -916,6 +926,15 @@ namespace TencentCloud
                 GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request);
 
                 /**
+                 *获取CAM密码设置规则
+                 * @param req GetPasswordRulesRequest
+                 * @return GetPasswordRulesOutcome
+                 */
+                GetPasswordRulesOutcome GetPasswordRules(const Model::GetPasswordRulesRequest &request);
+                void GetPasswordRulesAsync(const Model::GetPasswordRulesRequest& request, const GetPasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPasswordRulesOutcomeCallable GetPasswordRulesCallable(const Model::GetPasswordRulesRequest& request);
+
+                /**
                  *本接口（GetPolicy）可用于查询查看策略详情。
                  * @param req GetPolicyRequest
                  * @return GetPolicyOutcome
@@ -1256,6 +1275,15 @@ namespace TencentCloud
                 UpdateOIDCConfigOutcome UpdateOIDCConfig(const Model::UpdateOIDCConfigRequest &request);
                 void UpdateOIDCConfigAsync(const Model::UpdateOIDCConfigRequest& request, const UpdateOIDCConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateOIDCConfigOutcomeCallable UpdateOIDCConfigCallable(const Model::UpdateOIDCConfigRequest& request);
+
+                /**
+                 *更新CAM密码设置规则
+                 * @param req UpdatePasswordRulesRequest
+                 * @return UpdatePasswordRulesOutcome
+                 */
+                UpdatePasswordRulesOutcome UpdatePasswordRules(const Model::UpdatePasswordRulesRequest &request);
+                void UpdatePasswordRulesAsync(const Model::UpdatePasswordRulesRequest& request, const UpdatePasswordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePasswordRulesOutcomeCallable UpdatePasswordRulesCallable(const Model::UpdatePasswordRulesRequest& request);
 
                 /**
                  *本接口（UpdatePolicy ）可用于更新策略。

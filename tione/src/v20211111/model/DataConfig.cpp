@@ -33,7 +33,8 @@ DataConfig::DataConfig() :
     m_localDiskSourceHasBeenSet(false),
     m_cBSSourceHasBeenSet(false),
     m_hostPathSourceHasBeenSet(false),
-    m_publicDataSourceHasBeenSet(false)
+    m_publicDataSourceHasBeenSet(false),
+    m_readOnlyHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,16 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_publicDataSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
+    {
+        if (!value["ReadOnly"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnly = value["ReadOnly"].GetBool();
+        m_readOnlyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -361,6 +372,14 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_publicDataSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_readOnlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadOnly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnly, allocator);
     }
 
 }
@@ -572,5 +591,21 @@ void DataConfig::SetPublicDataSource(const PublicDataSourceFS& _publicDataSource
 bool DataConfig::PublicDataSourceHasBeenSet() const
 {
     return m_publicDataSourceHasBeenSet;
+}
+
+bool DataConfig::GetReadOnly() const
+{
+    return m_readOnly;
+}
+
+void DataConfig::SetReadOnly(const bool& _readOnly)
+{
+    m_readOnly = _readOnly;
+    m_readOnlyHasBeenSet = true;
+}
+
+bool DataConfig::ReadOnlyHasBeenSet() const
+{
+    return m_readOnlyHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境信息列表
-                     * @return EnvList 环境信息列表
+                     * 获取<p>环境信息列表</p>
+                     * @return EnvList <p>环境信息列表</p>
                      * 
                      */
                     std::vector<EnvInfo> GetEnvList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool EnvListHasBeenSet() const;
 
                     /**
-                     * 获取环境个数
-                     * @return Total 环境个数
+                     * 获取<p>环境个数</p>
+                     * @return Total <p>环境个数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境信息列表
+                     * <p>环境信息列表</p>
                      */
                     std::vector<EnvInfo> m_envList;
                     bool m_envListHasBeenSet;
 
                     /**
-                     * 环境个数
+                     * <p>环境个数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

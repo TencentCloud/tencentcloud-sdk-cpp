@@ -42,6 +42,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBundle.h
   include/tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/McpServerTemplateEnv.h
   include/tencentcloud/lighthouse/v20200324/model/ShareBlueprintAcrossAccountsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintPrice.h
   include/tencentcloud/lighthouse/v20200324/model/SyncBlueprintRequest.h
@@ -66,7 +67,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DeleteDiskBackupsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiscountDetail.h
-  include/tencentcloud/lighthouse/v20200324/model/McpServerTemplateEnv.h
+  include/tencentcloud/lighthouse/v20200324/model/AssociatedInstanceInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateQuotaResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeRegionsResponse.h
@@ -354,6 +355,7 @@ set(lighthouse_src
   src/v20200324/model/InquirePriceCreateDisksRequest.cpp
   src/v20200324/model/ModifyBundle.cpp
   src/v20200324/model/DetachCcnResponse.cpp
+  src/v20200324/model/McpServerTemplateEnv.cpp
   src/v20200324/model/ShareBlueprintAcrossAccountsRequest.cpp
   src/v20200324/model/BlueprintPrice.cpp
   src/v20200324/model/SyncBlueprintRequest.cpp
@@ -378,7 +380,7 @@ set(lighthouse_src
   src/v20200324/model/DeleteDiskBackupsRequest.cpp
   src/v20200324/model/InquirePriceRenewInstancesRequest.cpp
   src/v20200324/model/DiscountDetail.cpp
-  src/v20200324/model/McpServerTemplateEnv.cpp
+  src/v20200324/model/AssociatedInstanceInfo.cpp
   src/v20200324/model/DescribeDiskConfigsRequest.cpp
   src/v20200324/model/DescribeFirewallTemplateQuotaResponse.cpp
   src/v20200324/model/DescribeRegionsResponse.cpp

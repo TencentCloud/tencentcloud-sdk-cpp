@@ -2440,6 +2440,56 @@ DlcClient::CreateUserOutcomeCallable DlcClient::CreateUserCallable(const CreateU
     return prom->get_future();
 }
 
+DlcClient::CreateUserRoleOutcome DlcClient::CreateUserRole(const CreateUserRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserRoleResponse rsp = CreateUserRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserRoleOutcome(rsp);
+        else
+            return CreateUserRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserRoleOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateUserRoleAsync(const CreateUserRoleRequest& request, const CreateUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserRoleRequest&;
+    using Resp = CreateUserRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateUserRoleOutcomeCallable DlcClient::CreateUserRoleCallable(const CreateUserRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserRoleOutcome>>();
+    CreateUserRoleAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateUserRoleRequest&,
+        CreateUserRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateUserVpcConnectionOutcome DlcClient::CreateUserVpcConnection(const CreateUserVpcConnectionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUserVpcConnection");

@@ -37,7 +37,8 @@ ModifyCasterRequest::ModifyCasterRequest() :
     m_pgmBitRateHasBeenSet(false),
     m_feeTypeHasBeenSet(false),
     m_recordTaskIdHasBeenSet(false),
-    m_pgmAudioBitRateHasBeenSet(false)
+    m_pgmAudioBitRateHasBeenSet(false),
+    m_pgmVcodecHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,14 @@ string ModifyCasterRequest::ToJsonString() const
         string key = "PgmAudioBitRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pgmAudioBitRate, allocator);
+    }
+
+    if (m_pgmVcodecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PgmVcodec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pgmVcodec.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -414,6 +423,22 @@ void ModifyCasterRequest::SetPgmAudioBitRate(const uint64_t& _pgmAudioBitRate)
 bool ModifyCasterRequest::PgmAudioBitRateHasBeenSet() const
 {
     return m_pgmAudioBitRateHasBeenSet;
+}
+
+string ModifyCasterRequest::GetPgmVcodec() const
+{
+    return m_pgmVcodec;
+}
+
+void ModifyCasterRequest::SetPgmVcodec(const string& _pgmVcodec)
+{
+    m_pgmVcodec = _pgmVcodec;
+    m_pgmVcodecHasBeenSet = true;
+}
+
+bool ModifyCasterRequest::PgmVcodecHasBeenSet() const
+{
+    return m_pgmVcodecHasBeenSet;
 }
 
 

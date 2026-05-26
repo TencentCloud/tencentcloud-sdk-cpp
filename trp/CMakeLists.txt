@@ -23,10 +23,12 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeScanStatsRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeScanLogsResponse.h
   include/tencentcloud/trp/v20210515/model/Quota.h
+  include/tencentcloud/trp/v20210515/model/DescribeRawScanLogsRequest.h
   include/tencentcloud/trp/v20210515/model/PlanQRCode.h
-  include/tencentcloud/trp/v20210515/model/ScanLog.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeProductsRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantProvinceScanAnalysisCityItem.h
   include/tencentcloud/trp/v20210515/model/ModifyProductResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyProductRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleRequest.h
@@ -35,7 +37,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DeleteCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeRequest.h
-  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsRequest.h
   include/tencentcloud/trp/v20210515/model/CreateMerchantRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdResponse.h
@@ -43,14 +45,19 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeProductsResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceChainResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/ReportScanDetailResponse.h
   include/tencentcloud/trp/v20210515/model/AttrItem.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h
-  include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h
   include/tencentcloud/trp/v20210515/model/AuthorizedTransferResponse.h
   include/tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h
-  include/tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantCityScanAnalysisRegionItem.h
+  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/CorpQuota.h
   include/tencentcloud/trp/v20210515/model/ScanStat.h
   include/tencentcloud/trp/v20210515/model/CreateCustomRuleRequest.h
@@ -67,28 +74,35 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/TraceData.h
   include/tencentcloud/trp/v20210515/model/EffectFeedbackResponse.h
   include/tencentcloud/trp/v20210515/model/PackSpec.h
+  include/tencentcloud/trp/v20210515/model/ScanLog.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyMerchantResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodesByPackResponse.h
-  include/tencentcloud/trp/v20210515/model/CreateProductResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceDataRequest.h
+  include/tencentcloud/trp/v20210515/model/DownloadGEOResponse.h
   include/tencentcloud/trp/v20210515/model/CreateCodePackRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCorpQuotasRequest.h
   include/tencentcloud/trp/v20210515/model/AuthorizedTransferRequest.h
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusRequest.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisProvinceItem.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchesResponse.h
   include/tencentcloud/trp/v20210515/model/Chain.h
-  include/tencentcloud/trp/v20210515/model/CreateProductRequest.h
+  include/tencentcloud/trp/v20210515/model/CreateProductResponse.h
+  include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCustomPackRequest.h
   include/tencentcloud/trp/v20210515/model/Ext.h
   include/tencentcloud/trp/v20210515/model/CreateCodeBatchRequest.h
-  include/tencentcloud/trp/v20210515/model/TraceItem.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantProvinceScanAnalysisProvinceItem.h
   include/tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdRequest.h
+  include/tencentcloud/trp/v20210515/model/ScanDetailItem.h
   include/tencentcloud/trp/v20210515/model/DescribeAgentCorpsRequest.h
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusResponse.h
   include/tencentcloud/trp/v20210515/model/ChainData.h
   include/tencentcloud/trp/v20210515/model/PhaseData.h
-  include/tencentcloud/trp/v20210515/model/DescribeRawScanLogsRequest.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandScanAnalysisDataItem.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/ReportScanDetailRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteProductRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataRanksRequest.h
@@ -100,13 +114,18 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DeleteProductResponse.h
   include/tencentcloud/trp/v20210515/model/CreateChainBatchRequest.h
   include/tencentcloud/trp/v20210515/model/OutputAuthorizedTransfer.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantCityScanAnalysisCityItem.h
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleStatusRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCodePackResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantByIdResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisCityItem.h
+  include/tencentcloud/trp/v20210515/model/TraceItem.h
   include/tencentcloud/trp/v20210515/model/EffectFeedbackRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataByIdResponse.h
   include/tencentcloud/trp/v20210515/model/CodeItem.h
+  include/tencentcloud/trp/v20210515/model/DownloadGEORequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceDataResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchsResponse.h
@@ -119,8 +138,10 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncResponse.h
   include/tencentcloud/trp/v20210515/model/DescribePlanQRCodeScanRecordsRequest.h
   include/tencentcloud/trp/v20210515/model/RawScanLog.h
-  include/tencentcloud/trp/v20210515/model/DescribePlanQRCodesRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h
+  include/tencentcloud/trp/v20210515/model/CreateProductRequest.h
   include/tencentcloud/trp/v20210515/model/CreateChainBatchResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandScanMetricsItem.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesResponse.h
@@ -132,6 +153,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeScanLogsRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeUnlinkResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchesRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest.h
   include/tencentcloud/trp/v20210515/model/InputEncryptData.h
   include/tencentcloud/trp/v20210515/model/Merchant.h
   include/tencentcloud/trp/v20210515/model/Product.h
@@ -143,20 +165,28 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeRawScanLogsResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h
   include/tencentcloud/trp/v20210515/model/ChainValue.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantResponse.h
   include/tencentcloud/trp/v20210515/model/DeleteCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceChainRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantByIdRequest.h
-  include/tencentcloud/trp/v20210515/model/ScanDetailItem.h
+  include/tencentcloud/trp/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandProvinceScanAnalysisResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePacksRequest.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandProvinceScanAnalysisDataItem.h
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCustomRulesResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdRequest.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantProvinceUserAnalysisProvinceItem.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/PlanQRCodeRecord.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisRegionItem.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeResponse.h
+  include/tencentcloud/trp/v20210515/model/FlavorKingCycleBrandImportantProvinceUserAnalysisCityItem.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePackUrlResponse.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantRequest.h
   )
@@ -167,10 +197,12 @@ set(trp_src
   src/v20210515/model/DescribeScanStatsRequest.cpp
   src/v20210515/model/DescribeScanLogsResponse.cpp
   src/v20210515/model/Quota.cpp
+  src/v20210515/model/DescribeRawScanLogsRequest.cpp
   src/v20210515/model/PlanQRCode.cpp
-  src/v20210515/model/ScanLog.cpp
+  src/v20210515/model/FlavorKingCycleBrandScanAnalysisResponse.cpp
   src/v20210515/model/DescribeProductsRequest.cpp
   src/v20210515/model/CreateCorporationOrderResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantProvinceScanAnalysisCityItem.cpp
   src/v20210515/model/ModifyProductResponse.cpp
   src/v20210515/model/ModifyProductRequest.cpp
   src/v20210515/model/ModifyCustomRuleRequest.cpp
@@ -179,7 +211,7 @@ set(trp_src
   src/v20210515/model/DeleteCodeBatchRequest.cpp
   src/v20210515/model/DescribeMerchantsRequest.cpp
   src/v20210515/model/ModifyTraceCodeRequest.cpp
-  src/v20210515/model/DescribePlanQRCodesResponse.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsRequest.cpp
   src/v20210515/model/CreateMerchantRequest.cpp
   src/v20210515/model/DescribeCodeBatchByIdRequest.cpp
   src/v20210515/model/DescribeTraceCodeByIdResponse.cpp
@@ -187,14 +219,19 @@ set(trp_src
   src/v20210515/model/DescribeProductsResponse.cpp
   src/v20210515/model/CreateTraceChainResponse.cpp
   src/v20210515/model/DescribeTraceDataListResponse.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisResponse.cpp
   src/v20210515/model/ReportScanDetailResponse.cpp
   src/v20210515/model/AttrItem.cpp
   src/v20210515/model/DescribeTraceCodesRequest.cpp
-  src/v20210515/model/CreateTraceCodesAsyncRequest.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisRequest.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisResponse.cpp
   src/v20210515/model/ModifyTraceDataResponse.cpp
   src/v20210515/model/AuthorizedTransferResponse.cpp
   src/v20210515/model/CreateCodeBatchResponse.cpp
-  src/v20210515/model/DescribeCustomRulesRequest.cpp
+  src/v20210515/model/DescribePlanQRCodesResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantCityScanAnalysisRegionItem.cpp
+  src/v20210515/model/DescribePlanQRCodesRequest.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisResponse.cpp
   src/v20210515/model/CorpQuota.cpp
   src/v20210515/model/ScanStat.cpp
   src/v20210515/model/CreateCustomRuleRequest.cpp
@@ -211,28 +248,35 @@ set(trp_src
   src/v20210515/model/TraceData.cpp
   src/v20210515/model/EffectFeedbackResponse.cpp
   src/v20210515/model/PackSpec.cpp
+  src/v20210515/model/ScanLog.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceUserAnalysisRequest.cpp
   src/v20210515/model/ModifyCustomRuleResponse.cpp
   src/v20210515/model/ModifyMerchantResponse.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandProvinceScanAnalysisRequest.cpp
   src/v20210515/model/DescribeCodesByPackResponse.cpp
-  src/v20210515/model/CreateProductResponse.cpp
   src/v20210515/model/CreateTraceDataRequest.cpp
+  src/v20210515/model/DownloadGEOResponse.cpp
   src/v20210515/model/CreateCodePackRequest.cpp
   src/v20210515/model/DescribeCorpQuotasRequest.cpp
   src/v20210515/model/AuthorizedTransferRequest.cpp
   src/v20210515/model/ReportBatchCallbackStatusRequest.cpp
+  src/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisProvinceItem.cpp
   src/v20210515/model/DescribeCodeBatchesResponse.cpp
   src/v20210515/model/Chain.cpp
-  src/v20210515/model/CreateProductRequest.cpp
+  src/v20210515/model/CreateProductResponse.cpp
+  src/v20210515/model/CreateTraceCodesAsyncRequest.cpp
   src/v20210515/model/CreateCustomPackRequest.cpp
   src/v20210515/model/Ext.cpp
   src/v20210515/model/CreateCodeBatchRequest.cpp
-  src/v20210515/model/TraceItem.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantProvinceScanAnalysisProvinceItem.cpp
   src/v20210515/model/DescribeCustomRuleByIdRequest.cpp
+  src/v20210515/model/ScanDetailItem.cpp
   src/v20210515/model/DescribeAgentCorpsRequest.cpp
   src/v20210515/model/ReportBatchCallbackStatusResponse.cpp
   src/v20210515/model/ChainData.cpp
   src/v20210515/model/PhaseData.cpp
-  src/v20210515/model/DescribeRawScanLogsRequest.cpp
+  src/v20210515/model/FlavorKingCycleBrandScanAnalysisDataItem.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisResponse.cpp
   src/v20210515/model/ReportScanDetailRequest.cpp
   src/v20210515/model/DeleteProductRequest.cpp
   src/v20210515/model/ModifyTraceDataRanksRequest.cpp
@@ -244,13 +288,18 @@ set(trp_src
   src/v20210515/model/DeleteProductResponse.cpp
   src/v20210515/model/CreateChainBatchRequest.cpp
   src/v20210515/model/OutputAuthorizedTransfer.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantCityScanAnalysisCityItem.cpp
   src/v20210515/model/DeleteTraceDataResponse.cpp
   src/v20210515/model/ModifyCustomRuleStatusRequest.cpp
   src/v20210515/model/CreateCodePackResponse.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantProvinceScanAnalysisRequest.cpp
   src/v20210515/model/DescribeMerchantByIdResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisCityItem.cpp
+  src/v20210515/model/TraceItem.cpp
   src/v20210515/model/EffectFeedbackRequest.cpp
   src/v20210515/model/DescribeTraceDataByIdResponse.cpp
   src/v20210515/model/CodeItem.cpp
+  src/v20210515/model/DownloadGEORequest.cpp
   src/v20210515/model/CreateTraceDataResponse.cpp
   src/v20210515/model/DescribeCustomRuleByIdResponse.cpp
   src/v20210515/model/DescribeCodeBatchsResponse.cpp
@@ -263,8 +312,10 @@ set(trp_src
   src/v20210515/model/CreateTraceCodesAsyncResponse.cpp
   src/v20210515/model/DescribePlanQRCodeScanRecordsRequest.cpp
   src/v20210515/model/RawScanLog.cpp
-  src/v20210515/model/DescribePlanQRCodesRequest.cpp
+  src/v20210515/model/DescribeCustomRulesRequest.cpp
+  src/v20210515/model/CreateProductRequest.cpp
   src/v20210515/model/CreateChainBatchResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandScanMetricsItem.cpp
   src/v20210515/model/ModifyCodeBatchRequest.cpp
   src/v20210515/model/DescribeProductByIdRequest.cpp
   src/v20210515/model/DescribeTraceCodesResponse.cpp
@@ -276,6 +327,7 @@ set(trp_src
   src/v20210515/model/DescribeScanLogsRequest.cpp
   src/v20210515/model/ModifyTraceCodeUnlinkResponse.cpp
   src/v20210515/model/DescribeCodeBatchesRequest.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisRequest.cpp
   src/v20210515/model/InputEncryptData.cpp
   src/v20210515/model/Merchant.cpp
   src/v20210515/model/Product.cpp
@@ -287,20 +339,28 @@ set(trp_src
   src/v20210515/model/DescribeRawScanLogsResponse.cpp
   src/v20210515/model/DescribeTraceDataListRequest.cpp
   src/v20210515/model/ChainValue.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandProvinceCityScanAnalysisRequest.cpp
   src/v20210515/model/DeleteMerchantResponse.cpp
   src/v20210515/model/DeleteCodeBatchResponse.cpp
   src/v20210515/model/CreateTraceChainRequest.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandScanMetricsResponse.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandScanAnalysisResponse.cpp
   src/v20210515/model/DescribeMerchantByIdRequest.cpp
-  src/v20210515/model/ScanDetailItem.cpp
+  src/v20210515/model/DescribeFlavorKingCycleBrandImportantCityScanAnalysisResponse.cpp
   src/v20210515/model/DescribeTraceDataByIdRequest.cpp
   src/v20210515/model/DescribeProductByIdResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandProvinceScanAnalysisResponse.cpp
   src/v20210515/model/DescribeCodePacksRequest.cpp
+  src/v20210515/model/FlavorKingCycleBrandProvinceScanAnalysisDataItem.cpp
   src/v20210515/model/DescribeJobFileUrlResponse.cpp
   src/v20210515/model/DescribeCustomRulesResponse.cpp
   src/v20210515/model/DescribeTraceCodeByIdRequest.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantProvinceUserAnalysisProvinceItem.cpp
   src/v20210515/model/ModifyCodeBatchResponse.cpp
   src/v20210515/model/PlanQRCodeRecord.cpp
+  src/v20210515/model/FlavorKingCycleBrandProvinceCityScanAnalysisRegionItem.cpp
   src/v20210515/model/ModifyTraceCodeResponse.cpp
+  src/v20210515/model/FlavorKingCycleBrandImportantProvinceUserAnalysisCityItem.cpp
   src/v20210515/model/DescribeCodePackUrlResponse.cpp
   src/v20210515/model/DeleteMerchantRequest.cpp
   )

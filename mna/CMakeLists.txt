@@ -68,11 +68,14 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/DeleteGroupRequest.h
   include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateL3SwitchResponse.h
+  include/tencentcloud/mna/v20210119/model/DescribeAccessRegionsResponse.h
   include/tencentcloud/mna/v20210119/model/GetL3ConnListResponse.h
   include/tencentcloud/mna/v20210119/model/GroupInfo.h
   include/tencentcloud/mna/v20210119/model/AddApplicationResponse.h
   include/tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h
+  include/tencentcloud/mna/v20210119/model/ModifyDeviceAccessRegionsResponse.h
   include/tencentcloud/mna/v20210119/model/GetDestIPByNameResponse.h
+  include/tencentcloud/mna/v20210119/model/DescribeAccessRegionsRequest.h
   include/tencentcloud/mna/v20210119/model/VendorHardware.h
   include/tencentcloud/mna/v20210119/model/GetDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/ActivateHardwareResponse.h
@@ -85,6 +88,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/SetNotifyUrlRequest.h
   include/tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h
   include/tencentcloud/mna/v20210119/model/DeleteApplicationRequest.h
+  include/tencentcloud/mna/v20210119/model/ModifyDeviceAccessRegionsRequest.h
   include/tencentcloud/mna/v20210119/model/SlotNetInfo.h
   include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
   include/tencentcloud/mna/v20210119/model/NetDetails.h
@@ -119,6 +123,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/UpdateApplicationInfoResponse.h
   include/tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/RegionInfo.h
   include/tencentcloud/mna/v20210119/model/L3ConnInfo.h
   include/tencentcloud/mna/v20210119/model/ActivateHardwareRequest.h
   include/tencentcloud/mna/v20210119/model/GetMonitorDataByNameResponse.h
@@ -196,11 +201,14 @@ set(mna_src
   src/v20210119/model/DeleteGroupRequest.cpp
   src/v20210119/model/CreateEncryptedKeyResponse.cpp
   src/v20210119/model/UpdateL3SwitchResponse.cpp
+  src/v20210119/model/DescribeAccessRegionsResponse.cpp
   src/v20210119/model/GetL3ConnListResponse.cpp
   src/v20210119/model/GroupInfo.cpp
   src/v20210119/model/AddApplicationResponse.cpp
   src/v20210119/model/ModifyPackageRenewFlagResponse.cpp
+  src/v20210119/model/ModifyDeviceAccessRegionsResponse.cpp
   src/v20210119/model/GetDestIPByNameResponse.cpp
+  src/v20210119/model/DescribeAccessRegionsRequest.cpp
   src/v20210119/model/VendorHardware.cpp
   src/v20210119/model/GetDeviceRequest.cpp
   src/v20210119/model/ActivateHardwareResponse.cpp
@@ -213,6 +221,7 @@ set(mna_src
   src/v20210119/model/SetNotifyUrlRequest.cpp
   src/v20210119/model/GetDevicePayModeRequest.cpp
   src/v20210119/model/DeleteApplicationRequest.cpp
+  src/v20210119/model/ModifyDeviceAccessRegionsRequest.cpp
   src/v20210119/model/SlotNetInfo.cpp
   src/v20210119/model/DeviceNetInfo.cpp
   src/v20210119/model/NetDetails.cpp
@@ -247,6 +256,7 @@ set(mna_src
   src/v20210119/model/UpdateApplicationInfoResponse.cpp
   src/v20210119/model/OrderFlowPackageResponse.cpp
   src/v20210119/model/UpdateDeviceResponse.cpp
+  src/v20210119/model/RegionInfo.cpp
   src/v20210119/model/L3ConnInfo.cpp
   src/v20210119/model/ActivateHardwareRequest.cpp
   src/v20210119/model/GetMonitorDataByNameResponse.cpp

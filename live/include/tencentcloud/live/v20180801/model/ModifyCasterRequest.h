@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool PgmAudioBitRateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * @return PgmVcodec <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * 
+                     */
+                    std::string GetPgmVcodec() const;
+
+                    /**
+                     * 设置<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * @param _pgmVcodec <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * 
+                     */
+                    void SetPgmVcodec(const std::string& _pgmVcodec);
+
+                    /**
+                     * 判断参数 PgmVcodec 是否已赋值
+                     * @return PgmVcodec 是否已赋值
+                     * 
+                     */
+                    bool PgmVcodecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pgmAudioBitRate;
                     bool m_pgmAudioBitRateHasBeenSet;
+
+                    /**
+                     * <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     */
+                    std::string m_pgmVcodec;
+                    bool m_pgmVcodecHasBeenSet;
 
                 };
             }

@@ -1740,56 +1740,6 @@ CkafkaClient::DeleteTopicOutcomeCallable CkafkaClient::DeleteTopicCallable(const
     return prom->get_future();
 }
 
-CkafkaClient::DeleteTopicIpWhiteListOutcome CkafkaClient::DeleteTopicIpWhiteList(const DeleteTopicIpWhiteListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteTopicIpWhiteList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteTopicIpWhiteListResponse rsp = DeleteTopicIpWhiteListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteTopicIpWhiteListOutcome(rsp);
-        else
-            return DeleteTopicIpWhiteListOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteTopicIpWhiteListOutcome(outcome.GetError());
-    }
-}
-
-void CkafkaClient::DeleteTopicIpWhiteListAsync(const DeleteTopicIpWhiteListRequest& request, const DeleteTopicIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteTopicIpWhiteListRequest&;
-    using Resp = DeleteTopicIpWhiteListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteTopicIpWhiteList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CkafkaClient::DeleteTopicIpWhiteListOutcomeCallable CkafkaClient::DeleteTopicIpWhiteListCallable(const DeleteTopicIpWhiteListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteTopicIpWhiteListOutcome>>();
-    DeleteTopicIpWhiteListAsync(
-    request,
-    [prom](
-        const CkafkaClient*,
-        const DeleteTopicIpWhiteListRequest&,
-        DeleteTopicIpWhiteListOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 CkafkaClient::DeleteUserOutcome CkafkaClient::DeleteUser(const DeleteUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUser");

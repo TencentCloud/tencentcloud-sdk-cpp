@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区机型配置列表。
-                     * @return InstanceTypeQuotaSet 可用区机型配置列表。
+                     * 获取<p>可用区机型配置列表。</p>
+                     * @return InstanceTypeQuotaSet <p>可用区机型配置列表。</p>
                      * 
                      */
                     std::vector<InstanceTypeQuotaItem> GetInstanceTypeQuotaSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区机型配置列表。
+                     * <p>可用区机型配置列表。</p>
                      */
                     std::vector<InstanceTypeQuotaItem> m_instanceTypeQuotaSet;
                     bool m_instanceTypeQuotaSetHasBeenSet;

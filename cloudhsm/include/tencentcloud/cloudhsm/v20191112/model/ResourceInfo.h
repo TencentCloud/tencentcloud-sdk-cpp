@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源Id
-                     * @return ResourceId 资源Id
+                     * 获取<p>资源Id</p>
+                     * @return ResourceId <p>资源Id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源Id
-                     * @param _resourceId 资源Id
+                     * 设置<p>资源Id</p>
+                     * @param _resourceId <p>资源Id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源名称
-                     * @return ResourceName 资源名称
+                     * 获取<p>资源名称</p>
+                     * @return ResourceName <p>资源名称</p>
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置资源名称
-                     * @param _resourceName 资源名称
+                     * 设置<p>资源名称</p>
+                     * @param _resourceName <p>资源名称</p>
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源状态，1-正常，2-隔离，3-销毁
-                     * @return Status 资源状态，1-正常，2-隔离，3-销毁
+                     * 获取<p>资源状态，1-正常，2-隔离，3-销毁</p>
+                     * @return Status <p>资源状态，1-正常，2-隔离，3-销毁</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置资源状态，1-正常，2-隔离，3-销毁
-                     * @param _status 资源状态，1-正常，2-隔离，3-销毁
+                     * 设置<p>资源状态，1-正常，2-隔离，3-销毁</p>
+                     * @param _status <p>资源状态，1-正常，2-隔离，3-销毁</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取资源IP
-                     * @return Vip 资源IP
+                     * 获取<p>资源IP</p>
+                     * @return Vip <p>资源IP</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置资源IP
-                     * @param _vip 资源IP
+                     * 设置<p>资源IP</p>
+                     * @param _vip <p>资源IP</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取资源所属Vpc
-                     * @return VpcId 资源所属Vpc
+                     * 获取<p>资源所属Vpc</p>
+                     * @return VpcId <p>资源所属Vpc</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置资源所属Vpc
-                     * @param _vpcId 资源所属Vpc
+                     * 设置<p>资源所属Vpc</p>
+                     * @param _vpcId <p>资源所属Vpc</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取资源所属子网
-                     * @return SubnetId 资源所属子网
+                     * 获取<p>资源所属子网</p>
+                     * @return SubnetId <p>资源所属子网</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置资源所属子网
-                     * @param _subnetId 资源所属子网
+                     * 设置<p>资源所属子网</p>
+                     * @param _subnetId <p>资源所属子网</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取资源所属HSM规格
-                     * @return Model 资源所属HSM规格
+                     * 获取<p>资源所属HSM规格</p>
+                     * @return Model <p>资源所属HSM规格</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置资源所属HSM规格
-                     * @param _model 资源所属HSM规格
+                     * 设置<p>资源所属HSM规格</p>
+                     * @param _model <p>资源所属HSM规格</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取云加密机类型id
-                     * @return VsmType 云加密机类型id
+                     * 获取<p>云加密机类型id</p>
+                     * @return VsmType <p>云加密机类型id</p>
                      * 
                      */
                     int64_t GetVsmType() const;
 
                     /**
-                     * 设置云加密机类型id
-                     * @param _vsmType 云加密机类型id
+                     * 设置<p>云加密机类型id</p>
+                     * @param _vsmType <p>云加密机类型id</p>
                      * 
                      */
                     void SetVsmType(const int64_t& _vsmType);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool VsmTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域Id
-                     * @return RegionId 地域Id
+                     * 获取<p>地域Id</p>
+                     * @return RegionId <p>地域Id</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域Id
-                     * @param _regionId 地域Id
+                     * 设置<p>地域Id</p>
+                     * @param _regionId <p>地域Id</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取区域Id
-                     * @return ZoneId 区域Id
+                     * 获取<p>区域Id</p>
+                     * @return ZoneId <p>区域Id</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置区域Id
-                     * @param _zoneId 区域Id
+                     * 设置<p>区域Id</p>
+                     * @param _zoneId <p>区域Id</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间（Epoch Unix Timestamp）
-                     * @return ExpireTime 过期时间（Epoch Unix Timestamp）
+                     * 获取<p>过期时间（Epoch Unix Timestamp）</p>
+                     * @return ExpireTime <p>过期时间（Epoch Unix Timestamp）</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间（Epoch Unix Timestamp）
-                     * @param _expireTime 过期时间（Epoch Unix Timestamp）
+                     * 设置<p>过期时间（Epoch Unix Timestamp）</p>
+                     * @param _expireTime <p>过期时间（Epoch Unix Timestamp）</p>
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取地域名
-                     * @return RegionName 地域名
+                     * 获取<p>地域名</p>
+                     * @return RegionName <p>地域名</p>
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置地域名
-                     * @param _regionName 地域名
+                     * 设置<p>地域名</p>
+                     * @param _regionName <p>地域名</p>
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取区域名
-                     * @return ZoneName 区域名
+                     * 获取<p>区域名</p>
+                     * @return ZoneName <p>区域名</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置区域名
-                     * @param _zoneName 区域名
+                     * 设置<p>区域名</p>
+                     * @param _zoneName <p>区域名</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取实例的安全组列表
-                     * @return SgList 实例的安全组列表
+                     * 获取<p>实例的安全组列表</p>
+                     * @return SgList <p>实例的安全组列表</p>
                      * 
                      */
                     std::vector<SgUnit> GetSgList() const;
 
                     /**
-                     * 设置实例的安全组列表
-                     * @param _sgList 实例的安全组列表
+                     * 设置<p>实例的安全组列表</p>
+                     * @param _sgList <p>实例的安全组列表</p>
                      * 
                      */
                     void SetSgList(const std::vector<SgUnit>& _sgList);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool SgListHasBeenSet() const;
 
                     /**
-                     * 获取子网名称
-                     * @return SubnetName 子网名称
+                     * 获取<p>子网名称</p>
+                     * @return SubnetName <p>子网名称</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称
-                     * @param _subnetName 子网名称
+                     * 设置<p>子网名称</p>
+                     * @param _subnetName <p>子网名称</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取当前实例是否已经过期
-                     * @return Expired 当前实例是否已经过期
+                     * 获取<p>当前实例是否已经过期</p>
+                     * @return Expired <p>当前实例是否已经过期</p>
                      * 
                      */
                     bool GetExpired() const;
 
                     /**
-                     * 设置当前实例是否已经过期
-                     * @param _expired 当前实例是否已经过期
+                     * 设置<p>当前实例是否已经过期</p>
+                     * @param _expired <p>当前实例是否已经过期</p>
                      * 
                      */
                     void SetExpired(const bool& _expired);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool ExpiredHasBeenSet() const;
 
                     /**
-                     * 获取为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒
-                     * @return RemainSeconds 为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒
+                     * 获取<p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>
+                     * @return RemainSeconds <p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>
                      * 
                      */
                     int64_t GetRemainSeconds() const;
 
                     /**
-                     * 设置为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒
-                     * @param _remainSeconds 为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒
+                     * 设置<p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>
+                     * @param _remainSeconds <p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>
                      * 
                      */
                     void SetRemainSeconds(const int64_t& _remainSeconds);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool RemainSecondsHasBeenSet() const;
 
                     /**
-                     * 获取Vpc名称
-                     * @return VpcName Vpc名称
+                     * 获取<p>Vpc名称</p>
+                     * @return VpcName <p>Vpc名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置Vpc名称
-                     * @param _vpcName Vpc名称
+                     * 设置<p>Vpc名称</p>
+                     * @param _vpcName <p>Vpc名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取创建者Uin账号
-                     * @return CreateUin 创建者Uin账号
+                     * 获取<p>创建者Uin账号</p>
+                     * @return CreateUin <p>创建者Uin账号</p>
                      * 
                      */
                     std::string GetCreateUin() const;
 
                     /**
-                     * 设置创建者Uin账号
-                     * @param _createUin 创建者Uin账号
+                     * 设置<p>创建者Uin账号</p>
+                     * @param _createUin <p>创建者Uin账号</p>
                      * 
                      */
                     void SetCreateUin(const std::string& _createUin);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
-                     * @return RenewFlag 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+                     * 获取<p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>
+                     * @return RenewFlag <p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
-                     * @param _renewFlag 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+                     * 设置<p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>
+                     * @param _renewFlag <p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -469,15 +469,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -490,15 +490,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取厂商
-                     * @return Manufacturer 厂商
+                     * 获取<p>厂商</p>
+                     * @return Manufacturer <p>厂商</p>
                      * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
-                     * 设置厂商
-                     * @param _manufacturer 厂商
+                     * 设置<p>厂商</p>
+                     * @param _manufacturer <p>厂商</p>
                      * 
                      */
                     void SetManufacturer(const std::string& _manufacturer);
@@ -511,15 +511,15 @@ namespace TencentCloud
                     bool ManufacturerHasBeenSet() const;
 
                     /**
-                     * 获取告警状态，0：停用，1：启用
-                     * @return AlarmStatus 告警状态，0：停用，1：启用
+                     * 获取<p>告警状态，0：停用，1：启用</p>
+                     * @return AlarmStatus <p>告警状态，0：停用，1：启用</p>
                      * 
                      */
                     int64_t GetAlarmStatus() const;
 
                     /**
-                     * 设置告警状态，0：停用，1：启用
-                     * @param _alarmStatus 告警状态，0：停用，1：启用
+                     * 设置<p>告警状态，0：停用，1：启用</p>
+                     * @param _alarmStatus <p>告警状态，0：停用，1：启用</p>
                      * 
                      */
                     void SetAlarmStatus(const int64_t& _alarmStatus);
@@ -532,23 +532,15 @@ namespace TencentCloud
                     bool AlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取0不支持
-1关闭
-2开启
-                     * @return PqcStatus 0不支持
-1关闭
-2开启
+                     * 获取<p>0不支持<br>1关闭<br>2开启</p>
+                     * @return PqcStatus <p>0不支持<br>1关闭<br>2开启</p>
                      * 
                      */
                     int64_t GetPqcStatus() const;
 
                     /**
-                     * 设置0不支持
-1关闭
-2开启
-                     * @param _pqcStatus 0不支持
-1关闭
-2开启
+                     * 设置<p>0不支持<br>1关闭<br>2开启</p>
+                     * @param _pqcStatus <p>0不支持<br>1关闭<br>2开启</p>
                      * 
                      */
                     void SetPqcStatus(const int64_t& _pqcStatus);
@@ -561,15 +553,15 @@ namespace TencentCloud
                     bool PqcStatusHasBeenSet() const;
 
                     /**
-                     * 获取0关闭，1开启
-                     * @return PqcFlag 0关闭，1开启
+                     * 获取<p>0关闭，1开启</p>
+                     * @return PqcFlag <p>0关闭，1开启</p>
                      * 
                      */
                     int64_t GetPqcFlag() const;
 
                     /**
-                     * 设置0关闭，1开启
-                     * @param _pqcFlag 0关闭，1开启
+                     * 设置<p>0关闭，1开启</p>
+                     * @param _pqcFlag <p>0关闭，1开启</p>
                      * 
                      */
                     void SetPqcFlag(const int64_t& _pqcFlag);
@@ -581,159 +573,184 @@ namespace TencentCloud
                      */
                     bool PqcFlagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>
+                     * @return DeployEnv <p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>
+                     * 
+                     */
+                    std::string GetDeployEnv() const;
+
+                    /**
+                     * 设置<p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>
+                     * @param _deployEnv <p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>
+                     * 
+                     */
+                    void SetDeployEnv(const std::string& _deployEnv);
+
+                    /**
+                     * 判断参数 DeployEnv 是否已赋值
+                     * @return DeployEnv 是否已赋值
+                     * 
+                     */
+                    bool DeployEnvHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源Id
+                     * <p>资源Id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源名称
+                     * <p>资源名称</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 资源状态，1-正常，2-隔离，3-销毁
+                     * <p>资源状态，1-正常，2-隔离，3-销毁</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 资源IP
+                     * <p>资源IP</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 资源所属Vpc
+                     * <p>资源所属Vpc</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 资源所属子网
+                     * <p>资源所属子网</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 资源所属HSM规格
+                     * <p>资源所属HSM规格</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 云加密机类型id
+                     * <p>云加密机类型id</p>
                      */
                     int64_t m_vsmType;
                     bool m_vsmTypeHasBeenSet;
 
                     /**
-                     * 地域Id
+                     * <p>地域Id</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 区域Id
+                     * <p>区域Id</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 过期时间（Epoch Unix Timestamp）
+                     * <p>过期时间（Epoch Unix Timestamp）</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 地域名
+                     * <p>地域名</p>
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * 区域名
+                     * <p>区域名</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 实例的安全组列表
+                     * <p>实例的安全组列表</p>
                      */
                     std::vector<SgUnit> m_sgList;
                     bool m_sgListHasBeenSet;
 
                     /**
-                     * 子网名称
+                     * <p>子网名称</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 当前实例是否已经过期
+                     * <p>当前实例是否已经过期</p>
                      */
                     bool m_expired;
                     bool m_expiredHasBeenSet;
 
                     /**
-                     * 为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒
+                     * <p>为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒</p>
                      */
                     int64_t m_remainSeconds;
                     bool m_remainSecondsHasBeenSet;
 
                     /**
-                     * Vpc名称
+                     * <p>Vpc名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * 创建者Uin账号
+                     * <p>创建者Uin账号</p>
                      */
                     std::string m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续
+                     * <p>自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续</p>
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 厂商
+                     * <p>厂商</p>
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
 
                     /**
-                     * 告警状态，0：停用，1：启用
+                     * <p>告警状态，0：停用，1：启用</p>
                      */
                     int64_t m_alarmStatus;
                     bool m_alarmStatusHasBeenSet;
 
                     /**
-                     * 0不支持
-1关闭
-2开启
+                     * <p>0不支持<br>1关闭<br>2开启</p>
                      */
                     int64_t m_pqcStatus;
                     bool m_pqcStatusHasBeenSet;
 
                     /**
-                     * 0关闭，1开启
+                     * <p>0关闭，1开启</p>
                      */
                     int64_t m_pqcFlag;
                     bool m_pqcFlagHasBeenSet;
+
+                    /**
+                     * <p>环境</p><p>默认值：cloud</p><p>cloud或者cdc</p>
+                     */
+                    std::string m_deployEnv;
+                    bool m_deployEnvHasBeenSet;
 
                 };
             }

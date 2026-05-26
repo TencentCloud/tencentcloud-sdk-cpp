@@ -25,6 +25,7 @@ AigcVideoTaskInputFileInfo::AigcVideoTaskInputFileInfo() :
     m_categoryHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_base64HasBeenSet(false),
     m_referenceTypeHasBeenSet(false),
     m_objectIdHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
@@ -77,6 +78,16 @@ CoreInternalOutcome AigcVideoTaskInputFileInfo::Deserialize(const rapidjson::Val
         }
         m_url = string(value["Url"].GetString());
         m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Base64") && !value["Base64"].IsNull())
+    {
+        if (!value["Base64"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.Base64` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_base64 = string(value["Base64"].GetString());
+        m_base64HasBeenSet = true;
     }
 
     if (value.HasMember("ReferenceType") && !value["ReferenceType"].IsNull())
@@ -176,6 +187,14 @@ void AigcVideoTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_base64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Base64";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_base64.c_str(), allocator).Move(), allocator);
     }
 
     if (m_referenceTypeHasBeenSet)
@@ -291,6 +310,22 @@ void AigcVideoTaskInputFileInfo::SetUrl(const string& _url)
 bool AigcVideoTaskInputFileInfo::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetBase64() const
+{
+    return m_base64;
+}
+
+void AigcVideoTaskInputFileInfo::SetBase64(const string& _base64)
+{
+    m_base64 = _base64;
+    m_base64HasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::Base64HasBeenSet() const
+{
+    return m_base64HasBeenSet;
 }
 
 string AigcVideoTaskInputFileInfo::GetReferenceType() const

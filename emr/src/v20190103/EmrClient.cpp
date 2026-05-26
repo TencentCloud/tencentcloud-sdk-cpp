@@ -1240,6 +1240,56 @@ EmrClient::DescribeDAGInfoOutcomeCallable EmrClient::DescribeDAGInfoCallable(con
     return prom->get_future();
 }
 
+EmrClient::DescribeDynamicInstanceDetailOutcome EmrClient::DescribeDynamicInstanceDetail(const DescribeDynamicInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDynamicInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDynamicInstanceDetailResponse rsp = DescribeDynamicInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDynamicInstanceDetailOutcome(rsp);
+        else
+            return DescribeDynamicInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDynamicInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeDynamicInstanceDetailAsync(const DescribeDynamicInstanceDetailRequest& request, const DescribeDynamicInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDynamicInstanceDetailRequest&;
+    using Resp = DescribeDynamicInstanceDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDynamicInstanceDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeDynamicInstanceDetailOutcomeCallable EmrClient::DescribeDynamicInstanceDetailCallable(const DescribeDynamicInstanceDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDynamicInstanceDetailOutcome>>();
+    DescribeDynamicInstanceDetailAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeDynamicInstanceDetailRequest&,
+        DescribeDynamicInstanceDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeDynamicInstanceListOutcome EmrClient::DescribeDynamicInstanceList(const DescribeDynamicInstanceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDynamicInstanceList");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台名称
-                     * @return CasterName 导播台名称
+                     * 获取<p>导播台名称</p>
+                     * @return CasterName <p>导播台名称</p>
                      * 
                      */
                     std::string GetCasterName() const;
 
                     /**
-                     * 设置导播台名称
-                     * @param _casterName 导播台名称
+                     * 设置<p>导播台名称</p>
+                     * @param _casterName <p>导播台名称</p>
                      * 
                      */
                     void SetCasterName(const std::string& _casterName);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool CasterNameHasBeenSet() const;
 
                     /**
-                     * 获取导播台的描述
-最大允许长度256
-                     * @return Description 导播台的描述
-最大允许长度256
+                     * 获取<p>导播台的描述<br>最大允许长度256</p>
+                     * @return Description <p>导播台的描述<br>最大允许长度256</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置导播台的描述
-最大允许长度256
-                     * @param _description 导播台的描述
-最大允许长度256
+                     * 设置<p>导播台的描述<br>最大允许长度256</p>
+                     * @param _description <p>导播台的描述<br>最大允许长度256</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -89,35 +85,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取导播台的过期时间戳。值为-1或unix时间戳。
-默认值为-1。
-当值为-1时，表示该导播台永不过期。
-当值为正常unix时间戳时，导播台将在该时间过期。
-导播台过期后，预监与主监画面将自动停止，转推自动停止。
-点播、直播url将停止转拉，推流url需自行停止推流。
-                     * @return ExpireTime 导播台的过期时间戳。值为-1或unix时间戳。
-默认值为-1。
-当值为-1时，表示该导播台永不过期。
-当值为正常unix时间戳时，导播台将在该时间过期。
-导播台过期后，预监与主监画面将自动停止，转推自动停止。
-点播、直播url将停止转拉，推流url需自行停止推流。
+                     * 获取<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * @return ExpireTime <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置导播台的过期时间戳。值为-1或unix时间戳。
-默认值为-1。
-当值为-1时，表示该导播台永不过期。
-当值为正常unix时间戳时，导播台将在该时间过期。
-导播台过期后，预监与主监画面将自动停止，转推自动停止。
-点播、直播url将停止转拉，推流url需自行停止推流。
-                     * @param _expireTime 导播台的过期时间戳。值为-1或unix时间戳。
-默认值为-1。
-当值为-1时，表示该导播台永不过期。
-当值为正常unix时间戳时，导播台将在该时间过期。
-导播台过期后，预监与主监画面将自动停止，转推自动停止。
-点播、直播url将停止转拉，推流url需自行停止推流。
+                     * 设置<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * @param _expireTime <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -130,19 +106,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取导播台延时播放时间，单位为秒。
-默认为0，最大支持300秒
-                     * @return DelayTime 导播台延时播放时间，单位为秒。
-默认为0，最大支持300秒
+                     * 获取<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
+                     * @return DelayTime <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      * 
                      */
                     uint64_t GetDelayTime() const;
 
                     /**
-                     * 设置导播台延时播放时间，单位为秒。
-默认为0，最大支持300秒
-                     * @param _delayTime 导播台延时播放时间，单位为秒。
-默认为0，最大支持300秒
+                     * 设置<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
+                     * @param _delayTime <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      * 
                      */
                     void SetDelayTime(const uint64_t& _delayTime);
@@ -155,23 +127,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取导播台转场类型。
-默认为空。
-允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。
-                     * @return TransitionType 导播台转场类型。
-默认为空。
-允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。
+                     * 获取<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * @return TransitionType <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      * 
                      */
                     std::string GetTransitionType() const;
 
                     /**
-                     * 设置导播台转场类型。
-默认为空。
-允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。
-                     * @param _transitionType 导播台转场类型。
-默认为空。
-允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。
+                     * 设置<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * @param _transitionType <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      * 
                      */
                     void SetTransitionType(const std::string& _transitionType);
@@ -184,19 +148,15 @@ namespace TencentCloud
                     bool TransitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出的宽度，单位为像素。
-默认为1280，最大允许4096。
-                     * @return PgmWidth 导播台主监输出的宽度，单位为像素。
-默认为1280，最大允许4096。
+                     * 获取<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
+                     * @return PgmWidth <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      * 
                      */
                     uint64_t GetPgmWidth() const;
 
                     /**
-                     * 设置导播台主监输出的宽度，单位为像素。
-默认为1280，最大允许4096。
-                     * @param _pgmWidth 导播台主监输出的宽度，单位为像素。
-默认为1280，最大允许4096。
+                     * 设置<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
+                     * @param _pgmWidth <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      * 
                      */
                     void SetPgmWidth(const uint64_t& _pgmWidth);
@@ -209,19 +169,15 @@ namespace TencentCloud
                     bool PgmWidthHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出的高度，单位为像素。
-默认为720，最大允许2160。
-                     * @return PgmHeight 导播台主监输出的高度，单位为像素。
-默认为720，最大允许2160。
+                     * 获取<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
+                     * @return PgmHeight <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      * 
                      */
                     uint64_t GetPgmHeight() const;
 
                     /**
-                     * 设置导播台主监输出的高度，单位为像素。
-默认为720，最大允许2160。
-                     * @param _pgmHeight 导播台主监输出的高度，单位为像素。
-默认为720，最大允许2160。
+                     * 设置<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
+                     * @param _pgmHeight <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      * 
                      */
                     void SetPgmHeight(const uint64_t& _pgmHeight);
@@ -234,23 +190,15 @@ namespace TencentCloud
                     bool PgmHeightHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出的帧率。
-默认为0，表示随源输出。
-最大支持60。
-                     * @return PgmFps 导播台主监输出的帧率。
-默认为0，表示随源输出。
-最大支持60。
+                     * 获取<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>
+                     * @return PgmFps <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>
                      * 
                      */
                     uint64_t GetPgmFps() const;
 
                     /**
-                     * 设置导播台主监输出的帧率。
-默认为0，表示随源输出。
-最大支持60。
-                     * @param _pgmFps 导播台主监输出的帧率。
-默认为0，表示随源输出。
-最大支持60。
+                     * 设置<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>
+                     * @param _pgmFps <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>
                      * 
                      */
                     void SetPgmFps(const uint64_t& _pgmFps);
@@ -263,23 +211,15 @@ namespace TencentCloud
                     bool PgmFpsHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出的码率，单位为kbps。
-默认为0，表示随源的码率输出。
-最大允许10000kbps。
-                     * @return PgmBitRate 导播台主监输出的码率，单位为kbps。
-默认为0，表示随源的码率输出。
-最大允许10000kbps。
+                     * 获取<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
+                     * @return PgmBitRate <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      * 
                      */
                     uint64_t GetPgmBitRate() const;
 
                     /**
-                     * 设置导播台主监输出的码率，单位为kbps。
-默认为0，表示随源的码率输出。
-最大允许10000kbps。
-                     * @param _pgmBitRate 导播台主监输出的码率，单位为kbps。
-默认为0，表示随源的码率输出。
-最大允许10000kbps。
+                     * 设置<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
+                     * @param _pgmBitRate <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      * 
                      */
                     void SetPgmBitRate(const uint64_t& _pgmBitRate);
@@ -292,27 +232,15 @@ namespace TencentCloud
                     bool PgmBitRateHasBeenSet() const;
 
                     /**
-                     * 获取导播台的计费类型。
-0 通用型 
-1 播单型。
-注： 本参数暂无作用。
-                     * @return FeeType 导播台的计费类型。
-0 通用型 
-1 播单型。
-注： 本参数暂无作用。
+                     * 获取<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
+                     * @return FeeType <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      * 
                      */
                     int64_t GetFeeType() const;
 
                     /**
-                     * 设置导播台的计费类型。
-0 通用型 
-1 播单型。
-注： 本参数暂无作用。
-                     * @param _feeType 导播台的计费类型。
-0 通用型 
-1 播单型。
-注： 本参数暂无作用。
+                     * 设置<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
+                     * @param _feeType <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      * 
                      */
                     void SetFeeType(const int64_t& _feeType);
@@ -325,23 +253,15 @@ namespace TencentCloud
                     bool FeeTypeHasBeenSet() const;
 
                     /**
-                     * 获取导播台主监输出的音频码率，单位为kbps。
-可选项：[0, 128, 192, 256]
-默认值为0，表示随源的音频码率输出。
-                     * @return PgmAudioBitRate 导播台主监输出的音频码率，单位为kbps。
-可选项：[0, 128, 192, 256]
-默认值为0，表示随源的音频码率输出。
+                     * 获取<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
+                     * @return PgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      * 
                      */
                     uint64_t GetPgmAudioBitRate() const;
 
                     /**
-                     * 设置导播台主监输出的音频码率，单位为kbps。
-可选项：[0, 128, 192, 256]
-默认值为0，表示随源的音频码率输出。
-                     * @param _pgmAudioBitRate 导播台主监输出的音频码率，单位为kbps。
-可选项：[0, 128, 192, 256]
-默认值为0，表示随源的音频码率输出。
+                     * 设置<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
+                     * @param _pgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      * 
                      */
                     void SetPgmAudioBitRate(const uint64_t& _pgmAudioBitRate);
@@ -353,93 +273,100 @@ namespace TencentCloud
                      */
                     bool PgmAudioBitRateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * @return PgmVcodec <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * 
+                     */
+                    std::string GetPgmVcodec() const;
+
+                    /**
+                     * 设置<p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * @param _pgmVcodec <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     * 
+                     */
+                    void SetPgmVcodec(const std::string& _pgmVcodec);
+
+                    /**
+                     * 判断参数 PgmVcodec 是否已赋值
+                     * @return PgmVcodec 是否已赋值
+                     * 
+                     */
+                    bool PgmVcodecHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 导播台名称
+                     * <p>导播台名称</p>
                      */
                     std::string m_casterName;
                     bool m_casterNameHasBeenSet;
 
                     /**
-                     * 导播台的描述
-最大允许长度256
+                     * <p>导播台的描述<br>最大允许长度256</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 导播台的过期时间戳。值为-1或unix时间戳。
-默认值为-1。
-当值为-1时，表示该导播台永不过期。
-当值为正常unix时间戳时，导播台将在该时间过期。
-导播台过期后，预监与主监画面将自动停止，转推自动停止。
-点播、直播url将停止转拉，推流url需自行停止推流。
+                     * <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 导播台延时播放时间，单位为秒。
-默认为0，最大支持300秒
+                     * <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 导播台转场类型。
-默认为空。
-允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。
+                     * <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      */
                     std::string m_transitionType;
                     bool m_transitionTypeHasBeenSet;
 
                     /**
-                     * 导播台主监输出的宽度，单位为像素。
-默认为1280，最大允许4096。
+                     * <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      */
                     uint64_t m_pgmWidth;
                     bool m_pgmWidthHasBeenSet;
 
                     /**
-                     * 导播台主监输出的高度，单位为像素。
-默认为720，最大允许2160。
+                     * <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      */
                     uint64_t m_pgmHeight;
                     bool m_pgmHeightHasBeenSet;
 
                     /**
-                     * 导播台主监输出的帧率。
-默认为0，表示随源输出。
-最大支持60。
+                     * <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。<br>最大支持60。</p>
                      */
                     uint64_t m_pgmFps;
                     bool m_pgmFpsHasBeenSet;
 
                     /**
-                     * 导播台主监输出的码率，单位为kbps。
-默认为0，表示随源的码率输出。
-最大允许10000kbps。
+                     * <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      */
                     uint64_t m_pgmBitRate;
                     bool m_pgmBitRateHasBeenSet;
 
                     /**
-                     * 导播台的计费类型。
-0 通用型 
-1 播单型。
-注： 本参数暂无作用。
+                     * <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      */
                     int64_t m_feeType;
                     bool m_feeTypeHasBeenSet;
 
                     /**
-                     * 导播台主监输出的音频码率，单位为kbps。
-可选项：[0, 128, 192, 256]
-默认值为0，表示随源的音频码率输出。
+                     * <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      */
                     uint64_t m_pgmAudioBitRate;
                     bool m_pgmAudioBitRateHasBeenSet;
+
+                    /**
+                     * <p>导播台主监输出的编码方式</p><p>枚举值：</p><ul><li>h264： h264编码</li><li>h265： h265编码</li></ul><p>默认值：h264</p>
+                     */
+                    std::string m_pgmVcodec;
+                    bool m_pgmVcodecHasBeenSet;
 
                 };
             }

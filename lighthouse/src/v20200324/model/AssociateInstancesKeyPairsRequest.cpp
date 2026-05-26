@@ -24,7 +24,9 @@ using namespace std;
 
 AssociateInstancesKeyPairsRequest::AssociateInstancesKeyPairsRequest() :
     m_keyIdsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_associateTypeHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string AssociateInstancesKeyPairsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_associateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_associateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -99,6 +117,38 @@ void AssociateInstancesKeyPairsRequest::SetInstanceIds(const vector<string>& _in
 bool AssociateInstancesKeyPairsRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string AssociateInstancesKeyPairsRequest::GetAssociateType() const
+{
+    return m_associateType;
+}
+
+void AssociateInstancesKeyPairsRequest::SetAssociateType(const string& _associateType)
+{
+    m_associateType = _associateType;
+    m_associateTypeHasBeenSet = true;
+}
+
+bool AssociateInstancesKeyPairsRequest::AssociateTypeHasBeenSet() const
+{
+    return m_associateTypeHasBeenSet;
+}
+
+string AssociateInstancesKeyPairsRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void AssociateInstancesKeyPairsRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool AssociateInstancesKeyPairsRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 
 

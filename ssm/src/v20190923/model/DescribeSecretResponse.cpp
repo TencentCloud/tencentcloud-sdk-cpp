@@ -40,7 +40,9 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_projectIDHasBeenSet(false),
     m_associatedInstanceIDsHasBeenSet(false),
     m_targetUinHasBeenSet(false),
-    m_additionalConfigHasBeenSet(false)
+    m_additionalConfigHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false),
+    m_encryptSwitchingHasBeenSet(false)
 {
 }
 
@@ -251,6 +253,26 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_additionalConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EncryptType") && !rsp["EncryptType"].IsNull())
+    {
+        if (!rsp["EncryptType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptType = rsp["EncryptType"].GetUint64();
+        m_encryptTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EncryptSwitching") && !rsp["EncryptSwitching"].IsNull())
+    {
+        if (!rsp["EncryptSwitching"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptSwitching` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptSwitching = rsp["EncryptSwitching"].GetBool();
+        m_encryptSwitchingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -400,6 +422,22 @@ string DescribeSecretResponse::ToJsonString() const
         string key = "AdditionalConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_additionalConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptType, allocator);
+    }
+
+    if (m_encryptSwitchingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptSwitching";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptSwitching, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -582,6 +620,26 @@ string DescribeSecretResponse::GetAdditionalConfig() const
 bool DescribeSecretResponse::AdditionalConfigHasBeenSet() const
 {
     return m_additionalConfigHasBeenSet;
+}
+
+uint64_t DescribeSecretResponse::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+bool DescribeSecretResponse::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
+}
+
+bool DescribeSecretResponse::GetEncryptSwitching() const
+{
+    return m_encryptSwitching;
+}
+
+bool DescribeSecretResponse::EncryptSwitchingHasBeenSet() const
+{
+    return m_encryptSwitchingHasBeenSet;
 }
 
 
