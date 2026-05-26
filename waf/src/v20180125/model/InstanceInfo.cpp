@@ -76,7 +76,8 @@ InstanceInfo::InstanceInfo() :
     m_botSecurityPkgHasBeenSet(false),
     m_botMonitorPkgHasBeenSet(false),
     m_dedicatedIPPkgHasBeenSet(false),
-    m_dedicatedIPCountHasBeenSet(false)
+    m_dedicatedIPCountHasBeenSet(false),
+    m_tagInfosHasBeenSet(false)
 {
 }
 
@@ -771,6 +772,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_dedicatedIPCountHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1242,6 +1263,21 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DedicatedIPCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dedicatedIPCount, allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2141,5 +2177,21 @@ void InstanceInfo::SetDedicatedIPCount(const int64_t& _dedicatedIPCount)
 bool InstanceInfo::DedicatedIPCountHasBeenSet() const
 {
     return m_dedicatedIPCountHasBeenSet;
+}
+
+vector<TagInfo> InstanceInfo::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void InstanceInfo::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool InstanceInfo::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防护对象组的ID
-                     * @return GroupId 防护对象组的ID
+                     * 获取<p>防护对象组的ID</p>
+                     * @return GroupId <p>防护对象组的ID</p>
                      * 
                      */
                     uint64_t GetGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防护对象组的ID
+                     * <p>防护对象组的ID</p>
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

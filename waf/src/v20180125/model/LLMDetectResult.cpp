@@ -30,7 +30,8 @@ LLMDetectResult::LLMDetectResult() :
     m_actionHasBeenSet(false),
     m_payloadHasBeenSet(false),
     m_imageResultHasBeenSet(false),
-    m_msgIDHasBeenSet(false)
+    m_msgIDHasBeenSet(false),
+    m_toolCallResultHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         m_msgIDHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolCallResult") && !value["ToolCallResult"].IsNull())
+    {
+        if (!value["ToolCallResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.ToolCallResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_toolCallResult.Deserialize(value["ToolCallResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_toolCallResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -291,6 +309,15 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "MsgID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_msgID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolCallResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolCallResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_toolCallResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -454,5 +481,21 @@ void LLMDetectResult::SetMsgID(const string& _msgID)
 bool LLMDetectResult::MsgIDHasBeenSet() const
 {
     return m_msgIDHasBeenSet;
+}
+
+ToolCallResult LLMDetectResult::GetToolCallResult() const
+{
+    return m_toolCallResult;
+}
+
+void LLMDetectResult::SetToolCallResult(const ToolCallResult& _toolCallResult)
+{
+    m_toolCallResult = _toolCallResult;
+    m_toolCallResultHasBeenSet = true;
+}
+
+bool LLMDetectResult::ToolCallResultHasBeenSet() const
+{
+    return m_toolCallResultHasBeenSet;
 }
 

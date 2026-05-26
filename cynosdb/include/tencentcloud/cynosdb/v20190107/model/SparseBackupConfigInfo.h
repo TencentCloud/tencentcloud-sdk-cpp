@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作类型:add,modify,remove
-                     * @return OpType 操作类型:add,modify,remove
+                     * 获取<p>操作类型:add,modify,remove</p>
+                     * @return OpType <p>操作类型:add,modify,remove</p>
                      * 
                      */
                     std::string GetOpType() const;
 
                     /**
-                     * 设置操作类型:add,modify,remove
-                     * @param _opType 操作类型:add,modify,remove
+                     * 设置<p>操作类型:add,modify,remove</p>
+                     * @param _opType <p>操作类型:add,modify,remove</p>
                      * 
                      */
                     void SetOpType(const std::string& _opType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool OpTypeHasBeenSet() const;
 
                     /**
-                     * 获取配置 ID
-                     * @return ConfigId 配置 ID
+                     * 获取<p>配置 ID</p>
+                     * @return ConfigId <p>配置 ID</p>
                      * 
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置配置 ID
-                     * @param _configId 配置 ID
+                     * 设置<p>配置 ID</p>
+                     * @param _configId <p>配置 ID</p>
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取周期策略类型：weekly/monthly/yearly
-                     * @return SparsePeriodConfig 周期策略类型：weekly/monthly/yearly
+                     * 获取<p>周期策略类型：weekly/monthly/yearly</p>
+                     * @return SparsePeriodConfig <p>周期策略类型：weekly/monthly/yearly</p>
                      * 
                      */
                     std::string GetSparsePeriodConfig() const;
 
                     /**
-                     * 设置周期策略类型：weekly/monthly/yearly
-                     * @param _sparsePeriodConfig 周期策略类型：weekly/monthly/yearly
+                     * 设置<p>周期策略类型：weekly/monthly/yearly</p>
+                     * @param _sparsePeriodConfig <p>周期策略类型：weekly/monthly/yearly</p>
                      * 
                      */
                     void SetSparsePeriodConfig(const std::string& _sparsePeriodConfig);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SparsePeriodConfigHasBeenSet() const;
 
                     /**
-                     * 获取周期时间配置
-                     * @return SparsePeriodTime 周期时间配置
+                     * 获取<p>周期时间配置</p>
+                     * @return SparsePeriodTime <p>周期时间配置</p>
                      * 
                      */
                     SparsePeriodTime GetSparsePeriodTime() const;
 
                     /**
-                     * 设置周期时间配置
-                     * @param _sparsePeriodTime 周期时间配置
+                     * 设置<p>周期时间配置</p>
+                     * @param _sparsePeriodTime <p>周期时间配置</p>
                      * 
                      */
                     void SetSparsePeriodTime(const SparsePeriodTime& _sparsePeriodTime);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SparsePeriodTimeHasBeenSet() const;
 
                     /**
-                     * 获取保留天数（7-7320天，最长20年）
-                     * @return SparseBackupSaveDays 保留天数（7-7320天，最长20年）
+                     * 获取<p>保留天数（7-7320天，最长20年）</p>
+                     * @return SparseBackupSaveDays <p>保留天数（7-7320天，最长20年）</p>
                      * 
                      */
                     int64_t GetSparseBackupSaveDays() const;
 
                     /**
-                     * 设置保留天数（7-7320天，最长20年）
-                     * @param _sparseBackupSaveDays 保留天数（7-7320天，最长20年）
+                     * 设置<p>保留天数（7-7320天，最长20年）</p>
+                     * @param _sparseBackupSaveDays <p>保留天数（7-7320天，最长20年）</p>
                      * 
                      */
                     void SetSparseBackupSaveDays(const int64_t& _sparseBackupSaveDays);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作类型:add,modify,remove
+                     * <p>操作类型:add,modify,remove</p>
                      */
                     std::string m_opType;
                     bool m_opTypeHasBeenSet;
 
                     /**
-                     * 配置 ID
+                     * <p>配置 ID</p>
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
 
                     /**
-                     * 周期策略类型：weekly/monthly/yearly
+                     * <p>周期策略类型：weekly/monthly/yearly</p>
                      */
                     std::string m_sparsePeriodConfig;
                     bool m_sparsePeriodConfigHasBeenSet;
 
                     /**
-                     * 周期时间配置
+                     * <p>周期时间配置</p>
                      */
                     SparsePeriodTime m_sparsePeriodTime;
                     bool m_sparsePeriodTimeHasBeenSet;
 
                     /**
-                     * 保留天数（7-7320天，最长20年）
+                     * <p>保留天数（7-7320天，最长20年）</p>
                      */
                     int64_t m_sparseBackupSaveDays;
                     bool m_sparseBackupSaveDaysHasBeenSet;

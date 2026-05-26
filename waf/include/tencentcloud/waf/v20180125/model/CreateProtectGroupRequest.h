@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防护对象组名称
-                     * @return Name 防护对象组名称
+                     * 获取<p>防护对象组名称</p>
+                     * @return Name <p>防护对象组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置防护对象组名称
-                     * @param _name 防护对象组名称
+                     * 设置<p>防护对象组名称</p>
+                     * @param _name <p>防护对象组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取防护对象组的应用范围
-                     * @return Domains 防护对象组的应用范围
+                     * 获取<p>防护对象组的应用范围</p>
+                     * @return Domains <p>防护对象组的应用范围</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置防护对象组的应用范围
-                     * @param _domains 防护对象组的应用范围
+                     * 设置<p>防护对象组的应用范围</p>
+                     * @param _domains <p>防护对象组的应用范围</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取防护对象组备注
-                     * @return Remark 防护对象组备注
+                     * 获取<p>防护对象组备注</p>
+                     * @return Remark <p>防护对象组备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置防护对象组备注
-                     * @param _remark 防护对象组备注
+                     * 设置<p>防护对象组备注</p>
+                     * @param _remark <p>防护对象组备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -105,25 +106,52 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return Tags <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tags <p>标签信息</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 防护对象组名称
+                     * <p>防护对象组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 防护对象组的应用范围
+                     * <p>防护对象组的应用范围</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 防护对象组备注
+                     * <p>防护对象组备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

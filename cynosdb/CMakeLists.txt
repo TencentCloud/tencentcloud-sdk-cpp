@@ -394,6 +394,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RenewClustersRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/AIOptimizerStatus.h
   include/tencentcloud/cynosdb/v20190107/model/QueryParamFilter.h
   include/tencentcloud/cynosdb/v20190107/model/NewAccount.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyParamsData.h
@@ -1026,6 +1027,7 @@ set(cynosdb_src
   src/v20190107/model/RemoveClusterSlaveZoneResponse.cpp
   src/v20190107/model/RenewClustersRequest.cpp
   src/v20190107/model/OpenClusterReadOnlyInstanceGroupAccessResponse.cpp
+  src/v20190107/model/AIOptimizerStatus.cpp
   src/v20190107/model/QueryParamFilter.cpp
   src/v20190107/model/NewAccount.cpp
   src/v20190107/model/ModifyParamsData.cpp

@@ -20,9 +20,11 @@ set(tdai_public_header
 
 set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/RemoveChatRequest.h
-  include/tencentcloud/tdai/v20250717/model/SqlAgentParameter.h
+  include/tencentcloud/tdai/v20250717/model/DestroyMemoryPlusSpaceResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpacesRequest.h
   include/tencentcloud/tdai/v20250717/model/CreatingProgress.h
   include/tencentcloud/tdai/v20250717/model/AgentDutyTask.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpaceResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTaskDetailRequest.h
   include/tencentcloud/tdai/v20250717/model/UploadDelta.h
   include/tencentcloud/tdai/v20250717/model/DescribeChatDetailRequest.h
@@ -30,35 +32,53 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/DescribeChatsRequest.h
   include/tencentcloud/tdai/v20250717/model/ModifyChatTitleResponse.h
   include/tencentcloud/tdai/v20250717/model/CreateAgentInstanceRequest.h
+  include/tencentcloud/tdai/v20250717/model/SqlAgentParameter.h
   include/tencentcloud/tdai/v20250717/model/ClawConfigInfo.h
   include/tencentcloud/tdai/v20250717/model/UploadChoice.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTasksResponse.h
   include/tencentcloud/tdai/v20250717/model/Parameter.h
+  include/tencentcloud/tdai/v20250717/model/VDBFieldMap.h
   include/tencentcloud/tdai/v20250717/model/ClawDeployInfo.h
   include/tencentcloud/tdai/v20250717/model/RecoverAgentInstanceResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusRecordResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentInstancesRequest.h
+  include/tencentcloud/tdai/v20250717/model/DestroyMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentsResponse.h
   include/tencentcloud/tdai/v20250717/model/CreatingStepInfo.h
   include/tencentcloud/tdai/v20250717/model/CreateChatCompletionRequest.h
+  include/tencentcloud/tdai/v20250717/model/ModifyMemoryPlusSpaceResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeServiceAccessKeyRequest.h
   include/tencentcloud/tdai/v20250717/model/DescribeReportUrlResponse.h
   include/tencentcloud/tdai/v20250717/model/ChatDetail.h
+  include/tencentcloud/tdai/v20250717/model/CreateMemoryPlusSpaceResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/IsolateAgentInstanceResponse.h
+  include/tencentcloud/tdai/v20250717/model/VDBDocument.h
+  include/tencentcloud/tdai/v20250717/model/CreateMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceResponse.h
   include/tencentcloud/tdai/v20250717/model/PauseAgentWorkRequest.h
   include/tencentcloud/tdai/v20250717/model/TagItem.h
+  include/tencentcloud/tdai/v20250717/model/RecoverMemoryPlusSpaceResponse.h
   include/tencentcloud/tdai/v20250717/model/ExtraInfo.h
   include/tencentcloud/tdai/v20250717/model/CreateAgentInstanceResponse.h
+  include/tencentcloud/tdai/v20250717/model/RecoverMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTasksRequest.h
   include/tencentcloud/tdai/v20250717/model/InstanceInfos.h
   include/tencentcloud/tdai/v20250717/model/DescribeChatDetailResponse.h
   include/tencentcloud/tdai/v20250717/model/ModifyChatTitleRequest.h
-  include/tencentcloud/tdai/v20250717/model/PauseAgentWorkResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusRecordRequest.h
   include/tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersResponse.h
   include/tencentcloud/tdai/v20250717/model/IsolateAgentInstanceRequest.h
+  include/tencentcloud/tdai/v20250717/model/MemoryPlusInfo.h
   include/tencentcloud/tdai/v20250717/model/TagFilter.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentInstanceRequest.h
+  include/tencentcloud/tdai/v20250717/model/IsolateMemoryPlusSpaceResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpacesResponse.h
+  include/tencentcloud/tdai/v20250717/model/IsolateMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersRequest.h
   include/tencentcloud/tdai/v20250717/model/ContinueAgentWorkResponse.h
+  include/tencentcloud/tdai/v20250717/model/DescribeServiceAccessKeyResponse.h
+  include/tencentcloud/tdai/v20250717/model/StartAgentTaskResponse.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentInstancesResponse.h
   include/tencentcloud/tdai/v20250717/model/StartAgentTaskRequest.h
   include/tencentcloud/tdai/v20250717/model/CreateChatCompletionRes.h
@@ -73,18 +93,22 @@ set(tdai_public_header_model
   include/tencentcloud/tdai/v20250717/model/StatusItem.h
   include/tencentcloud/tdai/v20250717/model/DescribeReportUrlRequest.h
   include/tencentcloud/tdai/v20250717/model/DescribeAgentDutyTaskDetailResponse.h
+  include/tencentcloud/tdai/v20250717/model/ModifyMemoryPlusSpaceRequest.h
   include/tencentcloud/tdai/v20250717/model/AgentInstance.h
   include/tencentcloud/tdai/v20250717/model/RemoveChatResponse.h
+  include/tencentcloud/tdai/v20250717/model/PauseAgentWorkResponse.h
   include/tencentcloud/tdai/v20250717/model/TerminateAgentInstanceRequest.h
-  include/tencentcloud/tdai/v20250717/model/StartAgentTaskResponse.h
+  include/tencentcloud/tdai/v20250717/model/ResourceTag.h
   )
 
 set(tdai_src
   src/v20250717/TdaiClient.cpp
   src/v20250717/model/RemoveChatRequest.cpp
-  src/v20250717/model/SqlAgentParameter.cpp
+  src/v20250717/model/DestroyMemoryPlusSpaceResponse.cpp
+  src/v20250717/model/DescribeMemoryPlusSpacesRequest.cpp
   src/v20250717/model/CreatingProgress.cpp
   src/v20250717/model/AgentDutyTask.cpp
+  src/v20250717/model/DescribeMemoryPlusSpaceResponse.cpp
   src/v20250717/model/DescribeAgentDutyTaskDetailRequest.cpp
   src/v20250717/model/UploadDelta.cpp
   src/v20250717/model/DescribeChatDetailRequest.cpp
@@ -92,35 +116,53 @@ set(tdai_src
   src/v20250717/model/DescribeChatsRequest.cpp
   src/v20250717/model/ModifyChatTitleResponse.cpp
   src/v20250717/model/CreateAgentInstanceRequest.cpp
+  src/v20250717/model/SqlAgentParameter.cpp
   src/v20250717/model/ClawConfigInfo.cpp
   src/v20250717/model/UploadChoice.cpp
   src/v20250717/model/DescribeAgentDutyTasksResponse.cpp
   src/v20250717/model/Parameter.cpp
+  src/v20250717/model/VDBFieldMap.cpp
   src/v20250717/model/ClawDeployInfo.cpp
   src/v20250717/model/RecoverAgentInstanceResponse.cpp
+  src/v20250717/model/DescribeMemoryPlusRecordResponse.cpp
   src/v20250717/model/DescribeAgentInstancesRequest.cpp
+  src/v20250717/model/DestroyMemoryPlusSpaceRequest.cpp
   src/v20250717/model/DescribeAgentsResponse.cpp
   src/v20250717/model/CreatingStepInfo.cpp
   src/v20250717/model/CreateChatCompletionRequest.cpp
+  src/v20250717/model/ModifyMemoryPlusSpaceResponse.cpp
+  src/v20250717/model/DescribeServiceAccessKeyRequest.cpp
   src/v20250717/model/DescribeReportUrlResponse.cpp
   src/v20250717/model/ChatDetail.cpp
+  src/v20250717/model/CreateMemoryPlusSpaceResponse.cpp
+  src/v20250717/model/DescribeMemoryPlusSpaceRequest.cpp
   src/v20250717/model/IsolateAgentInstanceResponse.cpp
+  src/v20250717/model/VDBDocument.cpp
+  src/v20250717/model/CreateMemoryPlusSpaceRequest.cpp
   src/v20250717/model/TerminateAgentInstanceResponse.cpp
   src/v20250717/model/PauseAgentWorkRequest.cpp
   src/v20250717/model/TagItem.cpp
+  src/v20250717/model/RecoverMemoryPlusSpaceResponse.cpp
   src/v20250717/model/ExtraInfo.cpp
   src/v20250717/model/CreateAgentInstanceResponse.cpp
+  src/v20250717/model/RecoverMemoryPlusSpaceRequest.cpp
   src/v20250717/model/DescribeAgentDutyTasksRequest.cpp
   src/v20250717/model/InstanceInfos.cpp
   src/v20250717/model/DescribeChatDetailResponse.cpp
   src/v20250717/model/ModifyChatTitleRequest.cpp
-  src/v20250717/model/PauseAgentWorkResponse.cpp
+  src/v20250717/model/DescribeMemoryPlusRecordRequest.cpp
   src/v20250717/model/ModifyAgentInstanceParametersResponse.cpp
   src/v20250717/model/IsolateAgentInstanceRequest.cpp
+  src/v20250717/model/MemoryPlusInfo.cpp
   src/v20250717/model/TagFilter.cpp
   src/v20250717/model/DescribeAgentInstanceRequest.cpp
+  src/v20250717/model/IsolateMemoryPlusSpaceResponse.cpp
+  src/v20250717/model/DescribeMemoryPlusSpacesResponse.cpp
+  src/v20250717/model/IsolateMemoryPlusSpaceRequest.cpp
   src/v20250717/model/ModifyAgentInstanceParametersRequest.cpp
   src/v20250717/model/ContinueAgentWorkResponse.cpp
+  src/v20250717/model/DescribeServiceAccessKeyResponse.cpp
+  src/v20250717/model/StartAgentTaskResponse.cpp
   src/v20250717/model/DescribeAgentInstancesResponse.cpp
   src/v20250717/model/StartAgentTaskRequest.cpp
   src/v20250717/model/CreateChatCompletionRes.cpp
@@ -135,10 +177,12 @@ set(tdai_src
   src/v20250717/model/StatusItem.cpp
   src/v20250717/model/DescribeReportUrlRequest.cpp
   src/v20250717/model/DescribeAgentDutyTaskDetailResponse.cpp
+  src/v20250717/model/ModifyMemoryPlusSpaceRequest.cpp
   src/v20250717/model/AgentInstance.cpp
   src/v20250717/model/RemoveChatResponse.cpp
+  src/v20250717/model/PauseAgentWorkResponse.cpp
   src/v20250717/model/TerminateAgentInstanceRequest.cpp
-  src/v20250717/model/StartAgentTaskResponse.cpp
+  src/v20250717/model/ResourceTag.cpp
   )
 
 set(tdai_include

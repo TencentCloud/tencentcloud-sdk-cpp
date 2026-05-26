@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
+#include <tencentcloud/waf/v20180125/model/DomainInfo.h>
 
 
 namespace TencentCloud
@@ -47,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对象ID
-                     * @return ObjectId 对象ID
+                     * 获取<p>对象ID</p>
+                     * @return ObjectId <p>对象ID</p>
                      * 
                      */
                     std::string GetObjectId() const;
 
                     /**
-                     * 设置对象ID
-                     * @param _objectId 对象ID
+                     * 设置<p>对象ID</p>
+                     * @param _objectId <p>对象ID</p>
                      * 
                      */
                     void SetObjectId(const std::string& _objectId);
@@ -68,15 +70,15 @@ namespace TencentCloud
                     bool ObjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +91,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -110,15 +112,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取精准域名列表
-                     * @return PreciseDomains 精准域名列表
+                     * 获取<p>精准域名列表</p>
+                     * @return PreciseDomains <p>精准域名列表</p>
                      * 
                      */
                     std::vector<std::string> GetPreciseDomains() const;
 
                     /**
-                     * 设置精准域名列表
-                     * @param _preciseDomains 精准域名列表
+                     * 设置<p>精准域名列表</p>
+                     * @param _preciseDomains <p>精准域名列表</p>
                      * 
                      */
                     void SetPreciseDomains(const std::vector<std::string>& _preciseDomains);
@@ -131,15 +133,15 @@ namespace TencentCloud
                     bool PreciseDomainsHasBeenSet() const;
 
                     /**
-                     * 获取WAF功能开关状态，0关闭1开启
-                     * @return Status WAF功能开关状态，0关闭1开启
+                     * 获取<p>WAF功能开关状态，0关闭1开启</p>
+                     * @return Status <p>WAF功能开关状态，0关闭1开启</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置WAF功能开关状态，0关闭1开启
-                     * @param _status WAF功能开关状态，0关闭1开启
+                     * 设置<p>WAF功能开关状态，0关闭1开启</p>
+                     * @param _status <p>WAF功能开关状态，0关闭1开启</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -152,15 +154,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取WAF日志开关状态，0关闭1开启
-                     * @return ClsStatus WAF日志开关状态，0关闭1开启
+                     * 获取<p>WAF日志开关状态，0关闭1开启</p>
+                     * @return ClsStatus <p>WAF日志开关状态，0关闭1开启</p>
                      * 
                      */
                     int64_t GetClsStatus() const;
 
                     /**
-                     * 设置WAF日志开关状态，0关闭1开启
-                     * @param _clsStatus WAF日志开关状态，0关闭1开启
+                     * 设置<p>WAF日志开关状态，0关闭1开启</p>
+                     * @param _clsStatus <p>WAF日志开关状态，0关闭1开启</p>
                      * 
                      */
                     void SetClsStatus(const int64_t& _clsStatus);
@@ -173,15 +175,15 @@ namespace TencentCloud
                     bool ClsStatusHasBeenSet() const;
 
                     /**
-                     * 获取CLB对象对应的虚拟域名
-                     * @return VirtualDomain CLB对象对应的虚拟域名
+                     * 获取<p>CLB对象对应的虚拟域名</p>
+                     * @return VirtualDomain <p>CLB对象对应的虚拟域名</p>
                      * 
                      */
                     std::string GetVirtualDomain() const;
 
                     /**
-                     * 设置CLB对象对应的虚拟域名
-                     * @param _virtualDomain CLB对象对应的虚拟域名
+                     * 设置<p>CLB对象对应的虚拟域名</p>
+                     * @param _virtualDomain <p>CLB对象对应的虚拟域名</p>
                      * 
                      */
                     void SetVirtualDomain(const std::string& _virtualDomain);
@@ -194,15 +196,15 @@ namespace TencentCloud
                     bool VirtualDomainHasBeenSet() const;
 
                     /**
-                     * 获取对象名称
-                     * @return ObjectName 对象名称
+                     * 获取<p>对象名称</p>
+                     * @return ObjectName <p>对象名称</p>
                      * 
                      */
                     std::string GetObjectName() const;
 
                     /**
-                     * 设置对象名称
-                     * @param _objectName 对象名称
+                     * 设置<p>对象名称</p>
+                     * @param _objectName <p>对象名称</p>
                      * 
                      */
                     void SetObjectName(const std::string& _objectName);
@@ -215,15 +217,15 @@ namespace TencentCloud
                     bool ObjectNameHasBeenSet() const;
 
                     /**
-                     * 获取公网地址
-                     * @return PublicIp 公网地址
+                     * 获取<p>公网地址</p>
+                     * @return PublicIp <p>公网地址</p>
                      * 
                      */
                     std::vector<std::string> GetPublicIp() const;
 
                     /**
-                     * 设置公网地址
-                     * @param _publicIp 公网地址
+                     * 设置<p>公网地址</p>
+                     * @param _publicIp <p>公网地址</p>
                      * 
                      */
                     void SetPublicIp(const std::vector<std::string>& _publicIp);
@@ -236,15 +238,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取内网地址
-                     * @return PrivateIp 内网地址
+                     * 获取<p>内网地址</p>
+                     * @return PrivateIp <p>内网地址</p>
                      * 
                      */
                     std::vector<std::string> GetPrivateIp() const;
 
                     /**
-                     * 设置内网地址
-                     * @param _privateIp 内网地址
+                     * 设置<p>内网地址</p>
+                     * @param _privateIp <p>内网地址</p>
                      * 
                      */
                     void SetPrivateIp(const std::vector<std::string>& _privateIp);
@@ -257,15 +259,15 @@ namespace TencentCloud
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取VPC名称
-                     * @return VpcName VPC名称
+                     * 获取<p>VPC名称</p>
+                     * @return VpcName <p>VPC名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置VPC名称
-                     * @param _vpcName VPC名称
+                     * 设置<p>VPC名称</p>
+                     * @param _vpcName <p>VPC名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -278,15 +280,15 @@ namespace TencentCloud
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return Vpc VPC ID
+                     * 获取<p>VPC ID</p>
+                     * @return Vpc <p>VPC ID</p>
                      * 
                      */
                     std::string GetVpc() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpc VPC ID
+                     * 设置<p>VPC ID</p>
+                     * @param _vpc <p>VPC ID</p>
                      * 
                      */
                     void SetVpc(const std::string& _vpc);
@@ -299,15 +301,15 @@ namespace TencentCloud
                     bool VpcHasBeenSet() const;
 
                     /**
-                     * 获取waf实例等级，如果未绑定实例为0
-                     * @return InstanceLevel waf实例等级，如果未绑定实例为0
+                     * 获取<p>waf实例等级，如果未绑定实例为0</p>
+                     * @return InstanceLevel <p>waf实例等级，如果未绑定实例为0</p>
                      * 
                      */
                     int64_t GetInstanceLevel() const;
 
                     /**
-                     * 设置waf实例等级，如果未绑定实例为0
-                     * @param _instanceLevel waf实例等级，如果未绑定实例为0
+                     * 设置<p>waf实例等级，如果未绑定实例为0</p>
+                     * @param _instanceLevel <p>waf实例等级，如果未绑定实例为0</p>
                      * 
                      */
                     void SetInstanceLevel(const int64_t& _instanceLevel);
@@ -320,15 +322,15 @@ namespace TencentCloud
                     bool InstanceLevelHasBeenSet() const;
 
                     /**
-                     * 获取clb投递开关
-                     * @return PostCLSStatus clb投递开关
+                     * 获取<p>clb投递开关</p>
+                     * @return PostCLSStatus <p>clb投递开关</p>
                      * 
                      */
                     int64_t GetPostCLSStatus() const;
 
                     /**
-                     * 设置clb投递开关
-                     * @param _postCLSStatus clb投递开关
+                     * 设置<p>clb投递开关</p>
+                     * @param _postCLSStatus <p>clb投递开关</p>
                      * 
                      */
                     void SetPostCLSStatus(const int64_t& _postCLSStatus);
@@ -341,15 +343,15 @@ namespace TencentCloud
                     bool PostCLSStatusHasBeenSet() const;
 
                     /**
-                     * 获取kafka投递开关
-                     * @return PostCKafkaStatus kafka投递开关
+                     * 获取<p>kafka投递开关</p>
+                     * @return PostCKafkaStatus <p>kafka投递开关</p>
                      * 
                      */
                     int64_t GetPostCKafkaStatus() const;
 
                     /**
-                     * 设置kafka投递开关
-                     * @param _postCKafkaStatus kafka投递开关
+                     * 设置<p>kafka投递开关</p>
+                     * @param _postCKafkaStatus <p>kafka投递开关</p>
                      * 
                      */
                     void SetPostCKafkaStatus(const int64_t& _postCKafkaStatus);
@@ -362,15 +364,15 @@ namespace TencentCloud
                     bool PostCKafkaStatusHasBeenSet() const;
 
                     /**
-                     * 获取对象类型：CLB:负载均衡器，TSE:云原生网关
-                     * @return Type 对象类型：CLB:负载均衡器，TSE:云原生网关
+                     * 获取<p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>
+                     * @return Type <p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置对象类型：CLB:负载均衡器，TSE:云原生网关
-                     * @param _type 对象类型：CLB:负载均衡器，TSE:云原生网关
+                     * 设置<p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>
+                     * @param _type <p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -383,15 +385,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取对象地域
-                     * @return Region 对象地域
+                     * 获取<p>对象地域</p>
+                     * @return Region <p>对象地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置对象地域
-                     * @param _region 对象地域
+                     * 设置<p>对象地域</p>
+                     * @param _region <p>对象地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -404,15 +406,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-                     * @return Proxy 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
+                     * 获取<p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>
+                     * @return Proxy <p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>
                      * 
                      */
                     uint64_t GetProxy() const;
 
                     /**
-                     * 设置代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-                     * @param _proxy 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
+                     * 设置<p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>
+                     * @param _proxy <p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>
                      * 
                      */
                     void SetProxy(const uint64_t& _proxy);
@@ -425,15 +427,15 @@ namespace TencentCloud
                     bool ProxyHasBeenSet() const;
 
                     /**
-                     * 获取指定获取客户端IP的头部字段列表。IsCdn为3时有效
-                     * @return IpHeaders 指定获取客户端IP的头部字段列表。IsCdn为3时有效
+                     * 获取<p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>
+                     * @return IpHeaders <p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
-                     * 设置指定获取客户端IP的头部字段列表。IsCdn为3时有效
-                     * @param _ipHeaders 指定获取客户端IP的头部字段列表。IsCdn为3时有效
+                     * 设置<p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>
+                     * @param _ipHeaders <p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -446,15 +448,15 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取bot防护开关
-                     * @return BotStatus bot防护开关
+                     * 获取<p>bot防护开关</p>
+                     * @return BotStatus <p>bot防护开关</p>
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
-                     * 设置bot防护开关
-                     * @param _botStatus bot防护开关
+                     * 设置<p>bot防护开关</p>
+                     * @param _botStatus <p>bot防护开关</p>
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -467,15 +469,15 @@ namespace TencentCloud
                     bool BotStatusHasBeenSet() const;
 
                     /**
-                     * 获取api防护开关
-                     * @return ApiStatus api防护开关
+                     * 获取<p>api防护开关</p>
+                     * @return ApiStatus <p>api防护开关</p>
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
-                     * 设置api防护开关
-                     * @param _apiStatus api防护开关
+                     * 设置<p>api防护开关</p>
+                     * @param _apiStatus <p>api防护开关</p>
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -488,15 +490,15 @@ namespace TencentCloud
                     bool ApiStatusHasBeenSet() const;
 
                     /**
-                     * 获取对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-                     * @return ObjectFlowMode 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
+                     * 获取<p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
+                     * @return ObjectFlowMode <p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
                      * 
                      */
                     int64_t GetObjectFlowMode() const;
 
                     /**
-                     * 设置对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-                     * @param _objectFlowMode 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
+                     * 设置<p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
+                     * @param _objectFlowMode <p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
                      * 
                      */
                     void SetObjectFlowMode(const int64_t& _objectFlowMode);
@@ -509,15 +511,15 @@ namespace TencentCloud
                     bool ObjectFlowModeHasBeenSet() const;
 
                     /**
-                     * 获取数值形式的私有网络 ID
-                     * @return NumericalVpcId 数值形式的私有网络 ID
+                     * 获取<p>数值形式的私有网络 ID</p>
+                     * @return NumericalVpcId <p>数值形式的私有网络 ID</p>
                      * 
                      */
                     int64_t GetNumericalVpcId() const;
 
                     /**
-                     * 设置数值形式的私有网络 ID
-                     * @param _numericalVpcId 数值形式的私有网络 ID
+                     * 设置<p>数值形式的私有网络 ID</p>
+                     * @param _numericalVpcId <p>数值形式的私有网络 ID</p>
                      * 
                      */
                     void SetNumericalVpcId(const int64_t& _numericalVpcId);
@@ -530,15 +532,15 @@ namespace TencentCloud
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModifyTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return ModifyTime <p>修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _modifyTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _modifyTime <p>修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -551,15 +553,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return AddTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return AddTime <p>创建时间</p>
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _addTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _addTime <p>创建时间</p>
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -572,15 +574,15 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取跨账号时，表示成员账号的appid
-                     * @return MemberAppId 跨账号时，表示成员账号的appid
+                     * 获取<p>跨账号时，表示成员账号的appid</p>
+                     * @return MemberAppId <p>跨账号时，表示成员账号的appid</p>
                      * 
                      */
                     uint64_t GetMemberAppId() const;
 
                     /**
-                     * 设置跨账号时，表示成员账号的appid
-                     * @param _memberAppId 跨账号时，表示成员账号的appid
+                     * 设置<p>跨账号时，表示成员账号的appid</p>
+                     * @param _memberAppId <p>跨账号时，表示成员账号的appid</p>
                      * 
                      */
                     void SetMemberAppId(const uint64_t& _memberAppId);
@@ -593,15 +595,15 @@ namespace TencentCloud
                     bool MemberAppIdHasBeenSet() const;
 
                     /**
-                     * 获取跨账号时，表示成员账号的uin
-                     * @return MemberUin 跨账号时，表示成员账号的uin
+                     * 获取<p>跨账号时，表示成员账号的uin</p>
+                     * @return MemberUin <p>跨账号时，表示成员账号的uin</p>
                      * 
                      */
                     std::string GetMemberUin() const;
 
                     /**
-                     * 设置跨账号时，表示成员账号的uin
-                     * @param _memberUin 跨账号时，表示成员账号的uin
+                     * 设置<p>跨账号时，表示成员账号的uin</p>
+                     * @param _memberUin <p>跨账号时，表示成员账号的uin</p>
                      * 
                      */
                     void SetMemberUin(const std::string& _memberUin);
@@ -614,15 +616,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取跨账号时，表示成员账号的昵称
-                     * @return MemberNickName 跨账号时，表示成员账号的昵称
+                     * 获取<p>跨账号时，表示成员账号的昵称</p>
+                     * @return MemberNickName <p>跨账号时，表示成员账号的昵称</p>
                      * 
                      */
                     std::string GetMemberNickName() const;
 
                     /**
-                     * 设置跨账号时，表示成员账号的昵称
-                     * @param _memberNickName 跨账号时，表示成员账号的昵称
+                     * 设置<p>跨账号时，表示成员账号的昵称</p>
+                     * @param _memberNickName <p>跨账号时，表示成员账号的昵称</p>
                      * 
                      */
                     void SetMemberNickName(const std::string& _memberNickName);
@@ -634,175 +636,256 @@ namespace TencentCloud
                      */
                     bool MemberNickNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return TagInfos <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagInfos() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tagInfos <p>标签信息</p>
+                     * 
+                     */
+                    void SetTagInfos(const std::vector<TagInfo>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     * 
+                     */
+                    bool TagInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精准域名信息</p>
+                     * @return PreciseDomainDetails <p>精准域名信息</p>
+                     * 
+                     */
+                    std::vector<DomainInfo> GetPreciseDomainDetails() const;
+
+                    /**
+                     * 设置<p>精准域名信息</p>
+                     * @param _preciseDomainDetails <p>精准域名信息</p>
+                     * 
+                     */
+                    void SetPreciseDomainDetails(const std::vector<DomainInfo>& _preciseDomainDetails);
+
+                    /**
+                     * 判断参数 PreciseDomainDetails 是否已赋值
+                     * @return PreciseDomainDetails 是否已赋值
+                     * 
+                     */
+                    bool PreciseDomainDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>waf接入状态</p>
+                     * @return WafAccessStatus <p>waf接入状态</p>
+                     * 
+                     */
+                    int64_t GetWafAccessStatus() const;
+
+                    /**
+                     * 设置<p>waf接入状态</p>
+                     * @param _wafAccessStatus <p>waf接入状态</p>
+                     * 
+                     */
+                    void SetWafAccessStatus(const int64_t& _wafAccessStatus);
+
+                    /**
+                     * 判断参数 WafAccessStatus 是否已赋值
+                     * @return WafAccessStatus 是否已赋值
+                     * 
+                     */
+                    bool WafAccessStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 对象ID
+                     * <p>对象ID</p>
                      */
                     std::string m_objectId;
                     bool m_objectIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 精准域名列表
+                     * <p>精准域名列表</p>
                      */
                     std::vector<std::string> m_preciseDomains;
                     bool m_preciseDomainsHasBeenSet;
 
                     /**
-                     * WAF功能开关状态，0关闭1开启
+                     * <p>WAF功能开关状态，0关闭1开启</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * WAF日志开关状态，0关闭1开启
+                     * <p>WAF日志开关状态，0关闭1开启</p>
                      */
                     int64_t m_clsStatus;
                     bool m_clsStatusHasBeenSet;
 
                     /**
-                     * CLB对象对应的虚拟域名
+                     * <p>CLB对象对应的虚拟域名</p>
                      */
                     std::string m_virtualDomain;
                     bool m_virtualDomainHasBeenSet;
 
                     /**
-                     * 对象名称
+                     * <p>对象名称</p>
                      */
                     std::string m_objectName;
                     bool m_objectNameHasBeenSet;
 
                     /**
-                     * 公网地址
+                     * <p>公网地址</p>
                      */
                     std::vector<std::string> m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 内网地址
+                     * <p>内网地址</p>
                      */
                     std::vector<std::string> m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * VPC名称
+                     * <p>VPC名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * <p>VPC ID</p>
                      */
                     std::string m_vpc;
                     bool m_vpcHasBeenSet;
 
                     /**
-                     * waf实例等级，如果未绑定实例为0
+                     * <p>waf实例等级，如果未绑定实例为0</p>
                      */
                     int64_t m_instanceLevel;
                     bool m_instanceLevelHasBeenSet;
 
                     /**
-                     * clb投递开关
+                     * <p>clb投递开关</p>
                      */
                     int64_t m_postCLSStatus;
                     bool m_postCLSStatusHasBeenSet;
 
                     /**
-                     * kafka投递开关
+                     * <p>kafka投递开关</p>
                      */
                     int64_t m_postCKafkaStatus;
                     bool m_postCKafkaStatusHasBeenSet;
 
                     /**
-                     * 对象类型：CLB:负载均衡器，TSE:云原生网关
+                     * <p>对象类型：CLB:负载均衡器，TSE:云原生网关</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 对象地域
+                     * <p>对象地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
+                     * <p>代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出</p>
                      */
                     uint64_t m_proxy;
                     bool m_proxyHasBeenSet;
 
                     /**
-                     * 指定获取客户端IP的头部字段列表。IsCdn为3时有效
+                     * <p>指定获取客户端IP的头部字段列表。IsCdn为3时有效</p>
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * bot防护开关
+                     * <p>bot防护开关</p>
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
-                     * api防护开关
+                     * <p>api防护开关</p>
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
 
                     /**
-                     * 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
+                     * <p>对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式</p>
                      */
                     int64_t m_objectFlowMode;
                     bool m_objectFlowModeHasBeenSet;
 
                     /**
-                     * 数值形式的私有网络 ID
+                     * <p>数值形式的私有网络 ID</p>
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 跨账号时，表示成员账号的appid
+                     * <p>跨账号时，表示成员账号的appid</p>
                      */
                     uint64_t m_memberAppId;
                     bool m_memberAppIdHasBeenSet;
 
                     /**
-                     * 跨账号时，表示成员账号的uin
+                     * <p>跨账号时，表示成员账号的uin</p>
                      */
                     std::string m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 跨账号时，表示成员账号的昵称
+                     * <p>跨账号时，表示成员账号的昵称</p>
                      */
                     std::string m_memberNickName;
                     bool m_memberNickNameHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
+
+                    /**
+                     * <p>精准域名信息</p>
+                     */
+                    std::vector<DomainInfo> m_preciseDomainDetails;
+                    bool m_preciseDomainDetailsHasBeenSet;
+
+                    /**
+                     * <p>waf接入状态</p>
+                     */
+                    int64_t m_wafAccessStatus;
+                    bool m_wafAccessStatusHasBeenSet;
 
                 };
             }

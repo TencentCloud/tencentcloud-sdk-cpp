@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点数量
-                     * @return NodeNum 节点数量
+                     * 获取<p>节点数量</p>
+                     * @return NodeNum <p>节点数量</p>
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置节点数量
-                     * @param _nodeNum 节点数量
+                     * 设置<p>节点数量</p>
+                     * @param _nodeNum <p>节点数量</p>
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return NodeType <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _nodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _nodeType <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -91,27 +91,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型<li>hotData: 热数据节点</li>
-<li>warmData: 冷数据节点</li>
-<li>dedicatedMaster: 专用主节点</li>
-默认值为hotData
-                     * @return Type 节点类型<li>hotData: 热数据节点</li>
-<li>warmData: 冷数据节点</li>
-<li>dedicatedMaster: 专用主节点</li>
-默认值为hotData
+                     * 获取<p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
+                     * @return Type <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置节点类型<li>hotData: 热数据节点</li>
-<li>warmData: 冷数据节点</li>
-<li>dedicatedMaster: 专用主节点</li>
-默认值为hotData
-                     * @param _type 节点类型<li>hotData: 热数据节点</li>
-<li>warmData: 冷数据节点</li>
-<li>dedicatedMaster: 专用主节点</li>
-默认值为hotData
+                     * 设置<p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
+                     * @param _type <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -124,15 +112,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
-                     * @return DiskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 获取<p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>
+                     * @return DiskType <p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
-                     * @param _diskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 设置<p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>
+                     * @param _diskType <p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -145,15 +133,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘容量（单位GB）
-                     * @return DiskSize 节点磁盘容量（单位GB）
+                     * 获取<p>节点磁盘容量（单位GB）</p>
+                     * @return DiskSize <p>节点磁盘容量（单位GB）</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置节点磁盘容量（单位GB）
-                     * @param _diskSize 节点磁盘容量（单位GB）
+                     * 设置<p>节点磁盘容量（单位GB）</p>
+                     * @param _diskSize <p>节点磁盘容量（单位GB）</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -166,18 +154,18 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取节点本地盘信息
+                     * 获取<p>节点本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalDiskInfo 节点本地盘信息
+                     * @return LocalDiskInfo <p>节点本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LocalDiskInfo GetLocalDiskInfo() const;
 
                     /**
-                     * 设置节点本地盘信息
+                     * 设置<p>节点本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _localDiskInfo 节点本地盘信息
+                     * @param _localDiskInfo <p>节点本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,15 +179,15 @@ namespace TencentCloud
                     bool LocalDiskInfoHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘块数
-                     * @return DiskCount 节点磁盘块数
+                     * 获取<p>节点磁盘块数</p>
+                     * @return DiskCount <p>节点磁盘块数</p>
                      * 
                      */
                     uint64_t GetDiskCount() const;
 
                     /**
-                     * 设置节点磁盘块数
-                     * @param _diskCount 节点磁盘块数
+                     * 设置<p>节点磁盘块数</p>
+                     * @param _diskCount <p>节点磁盘块数</p>
                      * 
                      */
                     void SetDiskCount(const uint64_t& _diskCount);
@@ -212,15 +200,15 @@ namespace TencentCloud
                     bool DiskCountHasBeenSet() const;
 
                     /**
-                     * 获取节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
-                     * @return DiskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * 获取<p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>
+                     * @return DiskEncrypt <p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>
                      * 
                      */
                     uint64_t GetDiskEncrypt() const;
 
                     /**
-                     * 设置节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
-                     * @param _diskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * 设置<p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>
+                     * @param _diskEncrypt <p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>
                      * 
                      */
                     void SetDiskEncrypt(const uint64_t& _diskEncrypt);
@@ -233,18 +221,68 @@ namespace TencentCloud
                     bool DiskEncryptHasBeenSet() const;
 
                     /**
-                     * 获取cpu数目
+                     * 获取<p>自定义加密密钥id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CpuNum cpu数目
+                     * @return KmsKeyId <p>自定义加密密钥id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置<p>自定义加密密钥id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _kmsKeyId <p>自定义加密密钥id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义加密密钥name</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KmsKeyName <p>自定义加密密钥name</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKmsKeyName() const;
+
+                    /**
+                     * 设置<p>自定义加密密钥name</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _kmsKeyName <p>自定义加密密钥name</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKmsKeyName(const std::string& _kmsKeyName);
+
+                    /**
+                     * 判断参数 KmsKeyName 是否已赋值
+                     * @return KmsKeyName 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cpu数目</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuNum <p>cpu数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCpuNum() const;
 
                     /**
-                     * 设置cpu数目
+                     * 设置<p>cpu数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cpuNum cpu数目
+                     * @param _cpuNum <p>cpu数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -258,18 +296,18 @@ namespace TencentCloud
                     bool CpuNumHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位GB
+                     * 获取<p>内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MemSize 内存大小，单位GB
+                     * @return MemSize <p>内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置内存大小，单位GB
+                     * 设置<p>内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _memSize 内存大小，单位GB
+                     * @param _memSize <p>内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,18 +321,18 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取硬盘额外性能
+                     * 获取<p>硬盘额外性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskEnhance 硬盘额外性能
+                     * @return DiskEnhance <p>硬盘额外性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskEnhance() const;
 
                     /**
-                     * 设置硬盘额外性能
+                     * 设置<p>硬盘额外性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskEnhance 硬盘额外性能
+                     * @param _diskEnhance <p>硬盘额外性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,18 +346,18 @@ namespace TencentCloud
                     bool DiskEnhanceHasBeenSet() const;
 
                     /**
-                     * 获取节点Gpu信息
+                     * 获取<p>节点Gpu信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuInfo 节点Gpu信息
+                     * @return GpuInfo <p>节点Gpu信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GpuInfo GetGpuInfo() const;
 
                     /**
-                     * 设置节点Gpu信息
+                     * 设置<p>节点Gpu信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpuInfo 节点Gpu信息
+                     * @param _gpuInfo <p>节点Gpu信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -335,80 +373,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 节点类型<li>hotData: 热数据节点</li>
-<li>warmData: 冷数据节点</li>
-<li>dedicatedMaster: 专用主节点</li>
-默认值为hotData
+                     * <p>节点类型<li>hotData: 热数据节点</li></p><li>warmData: 冷数据节点</li><li>dedicatedMaster: 专用主节点</li>默认值为hotData
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * <p>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 节点磁盘容量（单位GB）
+                     * <p>节点磁盘容量（单位GB）</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 节点本地盘信息
+                     * <p>节点本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LocalDiskInfo m_localDiskInfo;
                     bool m_localDiskInfoHasBeenSet;
 
                     /**
-                     * 节点磁盘块数
+                     * <p>节点磁盘块数</p>
                      */
                     uint64_t m_diskCount;
                     bool m_diskCountHasBeenSet;
 
                     /**
-                     * 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * <p>节点磁盘是否加密 0: 不加密，1: 加密；默认不加密</p>
                      */
                     uint64_t m_diskEncrypt;
                     bool m_diskEncryptHasBeenSet;
 
                     /**
-                     * cpu数目
+                     * <p>自定义加密密钥id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
+
+                    /**
+                     * <p>自定义加密密钥name</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kmsKeyName;
+                    bool m_kmsKeyNameHasBeenSet;
+
+                    /**
+                     * <p>cpu数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
-                     * 内存大小，单位GB
+                     * <p>内存大小，单位GB</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 硬盘额外性能
+                     * <p>硬盘额外性能</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskEnhance;
                     bool m_diskEnhanceHasBeenSet;
 
                     /**
-                     * 节点Gpu信息
+                     * <p>节点Gpu信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GpuInfo m_gpuInfo;

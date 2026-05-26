@@ -29,6 +29,8 @@ NodeInfo::NodeInfo() :
     m_localDiskInfoHasBeenSet(false),
     m_diskCountHasBeenSet(false),
     m_diskEncryptHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_kmsKeyNameHasBeenSet(false),
     m_cpuNumHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_diskEnhanceHasBeenSet(false),
@@ -126,6 +128,26 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         }
         m_diskEncrypt = value["DiskEncrypt"].GetUint64();
         m_diskEncryptHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyId") && !value["KmsKeyId"].IsNull())
+    {
+        if (!value["KmsKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.KmsKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyId = string(value["KmsKeyId"].GetString());
+        m_kmsKeyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyName") && !value["KmsKeyName"].IsNull())
+    {
+        if (!value["KmsKeyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.KmsKeyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyName = string(value["KmsKeyName"].GetString());
+        m_kmsKeyNameHasBeenSet = true;
     }
 
     if (value.HasMember("CpuNum") && !value["CpuNum"].IsNull())
@@ -245,6 +267,22 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DiskEncrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskEncrypt, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsKeyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuNumHasBeenSet)
@@ -409,6 +447,38 @@ void NodeInfo::SetDiskEncrypt(const uint64_t& _diskEncrypt)
 bool NodeInfo::DiskEncryptHasBeenSet() const
 {
     return m_diskEncryptHasBeenSet;
+}
+
+string NodeInfo::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void NodeInfo::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool NodeInfo::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
+}
+
+string NodeInfo::GetKmsKeyName() const
+{
+    return m_kmsKeyName;
+}
+
+void NodeInfo::SetKmsKeyName(const string& _kmsKeyName)
+{
+    m_kmsKeyName = _kmsKeyName;
+    m_kmsKeyNameHasBeenSet = true;
+}
+
+bool NodeInfo::KmsKeyNameHasBeenSet() const
+{
+    return m_kmsKeyNameHasBeenSet;
 }
 
 uint64_t NodeInfo::GetCpuNum() const

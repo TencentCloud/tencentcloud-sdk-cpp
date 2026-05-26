@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * saas和clb信息
+                * saas和clb、四层域名信息
                 */
                 class UserDomainInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户id
-                     * @return Appid 用户id
+                     * 获取<p>用户id</p>
+                     * @return Appid <p>用户id</p>
                      * 
                      */
                     uint64_t GetAppid() const;
 
                     /**
-                     * 设置用户id
-                     * @param _appid 用户id
+                     * 设置<p>用户id</p>
+                     * @param _appid <p>用户id</p>
                      * 
                      */
                     void SetAppid(const uint64_t& _appid);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppidHasBeenSet() const;
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名id
-                     * @return DomainId 域名id
+                     * 获取<p>域名id</p>
+                     * @return DomainId <p>域名id</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名id
-                     * @param _domainId 域名id
+                     * 设置<p>域名id</p>
+                     * @param _domainId <p>域名id</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceName 实例名
+                     * 获取<p>实例名</p>
+                     * @return InstanceName <p>实例名</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceName 实例名
+                     * 设置<p>实例名</p>
+                     * @param _instanceName <p>实例名</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取waf类型
-                     * @return Edition waf类型
+                     * 获取<p>waf类型</p>
+                     * @return Edition <p>waf类型</p>
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置waf类型
-                     * @param _edition waf类型
+                     * 设置<p>waf类型</p>
+                     * @param _edition <p>waf类型</p>
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return Level 版本
+                     * 获取<p>版本</p>
+                     * @return Level <p>版本</p>
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置版本
-                     * @param _level 版本
+                     * 设置<p>版本</p>
+                     * @param _level <p>版本</p>
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取指定域名访问日志字段的开关
-                     * @return WriteConfig 指定域名访问日志字段的开关
+                     * 获取<p>指定域名访问日志字段的开关</p>
+                     * @return WriteConfig <p>指定域名访问日志字段的开关</p>
                      * 
                      */
                     std::string GetWriteConfig() const;
 
                     /**
-                     * 设置指定域名访问日志字段的开关
-                     * @param _writeConfig 指定域名访问日志字段的开关
+                     * 设置<p>指定域名访问日志字段的开关</p>
+                     * @param _writeConfig <p>指定域名访问日志字段的开关</p>
                      * 
                      */
                     void SetWriteConfig(const std::string& _writeConfig);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool WriteConfigHasBeenSet() const;
 
                     /**
-                     * 获取指定域名是否写cls的开关 1:写 0:不写
-                     * @return Cls 指定域名是否写cls的开关 1:写 0:不写
+                     * 获取<p>指定域名是否写cls的开关 1:写 0:不写</p>
+                     * @return Cls <p>指定域名是否写cls的开关 1:写 0:不写</p>
                      * 
                      */
                     uint64_t GetCls() const;
 
                     /**
-                     * 设置指定域名是否写cls的开关 1:写 0:不写
-                     * @param _cls 指定域名是否写cls的开关 1:写 0:不写
+                     * 设置<p>指定域名是否写cls的开关 1:写 0:不写</p>
+                     * @param _cls <p>指定域名是否写cls的开关 1:写 0:不写</p>
                      * 
                      */
                     void SetCls(const uint64_t& _cls);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool ClsHasBeenSet() const;
 
                     /**
-                     * 获取标记是否是混合云接入。hybrid表示混合云接入域名
-                     * @return CloudType 标记是否是混合云接入。hybrid表示混合云接入域名
+                     * 获取<p>标记是否是混合云接入。hybrid表示混合云接入域名</p>
+                     * @return CloudType <p>标记是否是混合云接入。hybrid表示混合云接入域名</p>
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
-                     * 设置标记是否是混合云接入。hybrid表示混合云接入域名
-                     * @param _cloudType 标记是否是混合云接入。hybrid表示混合云接入域名
+                     * 设置<p>标记是否是混合云接入。hybrid表示混合云接入域名</p>
+                     * @param _cloudType <p>标记是否是混合云接入。hybrid表示混合云接入域名</p>
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CloudTypeHasBeenSet() const;
 
                     /**
-                     * 获取标记clbwaf类型
-                     * @return AlbType 标记clbwaf类型
+                     * 获取<p>标记clbwaf类型</p>
+                     * @return AlbType <p>标记clbwaf类型</p>
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
-                     * 设置标记clbwaf类型
-                     * @param _albType 标记clbwaf类型
+                     * 设置<p>标记clbwaf类型</p>
+                     * @param _albType <p>标记clbwaf类型</p>
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool AlbTypeHasBeenSet() const;
 
                     /**
-                     * 获取BOT开关状态
-                     * @return BotStatus BOT开关状态
+                     * 获取<p>BOT开关状态</p>
+                     * @return BotStatus <p>BOT开关状态</p>
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
-                     * 设置BOT开关状态
-                     * @param _botStatus BOT开关状态
+                     * 设置<p>BOT开关状态</p>
+                     * @param _botStatus <p>BOT开关状态</p>
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool BotStatusHasBeenSet() const;
 
                     /**
-                     * 获取API开关状态
-                     * @return ApiStatus API开关状态
+                     * 获取<p>API开关状态</p>
+                     * @return ApiStatus <p>API开关状态</p>
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
-                     * 设置API开关状态
-                     * @param _apiStatus API开关状态
+                     * 设置<p>API开关状态</p>
+                     * @param _apiStatus <p>API开关状态</p>
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -319,85 +319,112 @@ namespace TencentCloud
                      */
                     bool ApiStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是四层clbwaf域名</p>
+                     * @return IsREIP <p>是否是四层clbwaf域名</p>
+                     * 
+                     */
+                    int64_t GetIsREIP() const;
+
+                    /**
+                     * 设置<p>是否是四层clbwaf域名</p>
+                     * @param _isREIP <p>是否是四层clbwaf域名</p>
+                     * 
+                     */
+                    void SetIsREIP(const int64_t& _isREIP);
+
+                    /**
+                     * 判断参数 IsREIP 是否已赋值
+                     * @return IsREIP 是否已赋值
+                     * 
+                     */
+                    bool IsREIPHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 用户id
+                     * <p>用户id</p>
                      */
                     uint64_t m_appid;
                     bool m_appidHasBeenSet;
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名id
+                     * <p>域名id</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名
+                     * <p>实例名</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * waf类型
+                     * <p>waf类型</p>
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 版本
+                     * <p>版本</p>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 指定域名访问日志字段的开关
+                     * <p>指定域名访问日志字段的开关</p>
                      */
                     std::string m_writeConfig;
                     bool m_writeConfigHasBeenSet;
 
                     /**
-                     * 指定域名是否写cls的开关 1:写 0:不写
+                     * <p>指定域名是否写cls的开关 1:写 0:不写</p>
                      */
                     uint64_t m_cls;
                     bool m_clsHasBeenSet;
 
                     /**
-                     * 标记是否是混合云接入。hybrid表示混合云接入域名
+                     * <p>标记是否是混合云接入。hybrid表示混合云接入域名</p>
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
-                     * 标记clbwaf类型
+                     * <p>标记clbwaf类型</p>
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
-                     * BOT开关状态
+                     * <p>BOT开关状态</p>
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
-                     * API开关状态
+                     * <p>API开关状态</p>
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
+
+                    /**
+                     * <p>是否是四层clbwaf域名</p>
+                     */
+                    int64_t m_isREIP;
+                    bool m_isREIPHasBeenSet;
 
                 };
             }

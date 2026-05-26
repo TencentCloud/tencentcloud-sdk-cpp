@@ -1690,6 +1690,106 @@ IotexplorerClient::CreateTRTCSignaturesWithRoomIdOutcomeCallable IotexplorerClie
     return prom->get_future();
 }
 
+IotexplorerClient::CreateTWeSeeCallbackOutcome IotexplorerClient::CreateTWeSeeCallback(const CreateTWeSeeCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeCallbackResponse rsp = CreateTWeSeeCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeCallbackOutcome(rsp);
+        else
+            return CreateTWeSeeCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeCallbackAsync(const CreateTWeSeeCallbackRequest& request, const CreateTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTWeSeeCallbackRequest&;
+    using Resp = CreateTWeSeeCallbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTWeSeeCallback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateTWeSeeCallbackOutcomeCallable IotexplorerClient::CreateTWeSeeCallbackCallable(const CreateTWeSeeCallbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTWeSeeCallbackOutcome>>();
+    CreateTWeSeeCallbackAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateTWeSeeCallbackRequest&,
+        CreateTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::CreateTWeSeePostPaidServiceOutcome IotexplorerClient::CreateTWeSeePostPaidService(const CreateTWeSeePostPaidServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeePostPaidService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeePostPaidServiceResponse rsp = CreateTWeSeePostPaidServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeePostPaidServiceOutcome(rsp);
+        else
+            return CreateTWeSeePostPaidServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeePostPaidServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeePostPaidServiceAsync(const CreateTWeSeePostPaidServiceRequest& request, const CreateTWeSeePostPaidServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTWeSeePostPaidServiceRequest&;
+    using Resp = CreateTWeSeePostPaidServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTWeSeePostPaidService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateTWeSeePostPaidServiceOutcomeCallable IotexplorerClient::CreateTWeSeePostPaidServiceCallable(const CreateTWeSeePostPaidServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTWeSeePostPaidServiceOutcome>>();
+    CreateTWeSeePostPaidServiceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateTWeSeePostPaidServiceRequest&,
+        CreateTWeSeePostPaidServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CreateTWeSeeRecognitionTaskOutcome IotexplorerClient::CreateTWeSeeRecognitionTask(const CreateTWeSeeRecognitionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeSeeRecognitionTask");
@@ -1832,6 +1932,56 @@ IotexplorerClient::CreateTWeSeeServiceOutcomeCallable IotexplorerClient::CreateT
         const IotexplorerClient*,
         const CreateTWeSeeServiceRequest&,
         CreateTWeSeeServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::CreateTWeSeeSubscriptionOutcome IotexplorerClient::CreateTWeSeeSubscription(const CreateTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeSubscriptionResponse rsp = CreateTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeSubscriptionOutcome(rsp);
+        else
+            return CreateTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeSubscriptionAsync(const CreateTWeSeeSubscriptionRequest& request, const CreateTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTWeSeeSubscriptionRequest&;
+    using Resp = CreateTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateTWeSeeSubscriptionOutcomeCallable IotexplorerClient::CreateTWeSeeSubscriptionCallable(const CreateTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTWeSeeSubscriptionOutcome>>();
+    CreateTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateTWeSeeSubscriptionRequest&,
+        CreateTWeSeeSubscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2632,6 +2782,56 @@ IotexplorerClient::DeleteStudioProductOutcomeCallable IotexplorerClient::DeleteS
         const IotexplorerClient*,
         const DeleteStudioProductRequest&,
         DeleteStudioProductOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeleteTWeSeeCallbackOutcome IotexplorerClient::DeleteTWeSeeCallback(const DeleteTWeSeeCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTWeSeeCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTWeSeeCallbackResponse rsp = DeleteTWeSeeCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTWeSeeCallbackOutcome(rsp);
+        else
+            return DeleteTWeSeeCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTWeSeeCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTWeSeeCallbackAsync(const DeleteTWeSeeCallbackRequest& request, const DeleteTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTWeSeeCallbackRequest&;
+    using Resp = DeleteTWeSeeCallbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTWeSeeCallback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteTWeSeeCallbackOutcomeCallable IotexplorerClient::DeleteTWeSeeCallbackCallable(const DeleteTWeSeeCallbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTWeSeeCallbackOutcome>>();
+    DeleteTWeSeeCallbackAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteTWeSeeCallbackRequest&,
+        DeleteTWeSeeCallbackOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5640,6 +5840,56 @@ IotexplorerClient::DescribeSubscribedTopicPolicyOutcomeCallable IotexplorerClien
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeTWeSeeCallbackOutcome IotexplorerClient::DescribeTWeSeeCallback(const DescribeTWeSeeCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeCallbackResponse rsp = DescribeTWeSeeCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeCallbackOutcome(rsp);
+        else
+            return DescribeTWeSeeCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeCallbackAsync(const DescribeTWeSeeCallbackRequest& request, const DescribeTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeCallbackRequest&;
+    using Resp = DescribeTWeSeeCallbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeCallback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeCallbackOutcomeCallable IotexplorerClient::DescribeTWeSeeCallbackCallable(const DescribeTWeSeeCallbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeCallbackOutcome>>();
+    DescribeTWeSeeCallbackAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeCallbackRequest&,
+        DescribeTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeTWeSeeConfigOutcome IotexplorerClient::DescribeTWeSeeConfig(const DescribeTWeSeeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeSeeConfig");
@@ -5690,6 +5940,56 @@ IotexplorerClient::DescribeTWeSeeConfigOutcomeCallable IotexplorerClient::Descri
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeTWeSeePostPaidServiceOutcome IotexplorerClient::DescribeTWeSeePostPaidService(const DescribeTWeSeePostPaidServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeePostPaidService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeePostPaidServiceResponse rsp = DescribeTWeSeePostPaidServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeePostPaidServiceOutcome(rsp);
+        else
+            return DescribeTWeSeePostPaidServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeePostPaidServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeePostPaidServiceAsync(const DescribeTWeSeePostPaidServiceRequest& request, const DescribeTWeSeePostPaidServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeePostPaidServiceRequest&;
+    using Resp = DescribeTWeSeePostPaidServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeePostPaidService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeePostPaidServiceOutcomeCallable IotexplorerClient::DescribeTWeSeePostPaidServiceCallable(const DescribeTWeSeePostPaidServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeePostPaidServiceOutcome>>();
+    DescribeTWeSeePostPaidServiceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeePostPaidServiceRequest&,
+        DescribeTWeSeePostPaidServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeTWeSeeRecognitionTaskOutcome IotexplorerClient::DescribeTWeSeeRecognitionTask(const DescribeTWeSeeRecognitionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeSeeRecognitionTask");
@@ -5732,6 +6032,156 @@ IotexplorerClient::DescribeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClien
         const IotexplorerClient*,
         const DescribeTWeSeeRecognitionTaskRequest&,
         DescribeTWeSeeRecognitionTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeTWeSeeSubscriptionOutcome IotexplorerClient::DescribeTWeSeeSubscription(const DescribeTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeSubscriptionResponse rsp = DescribeTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeSubscriptionOutcome(rsp);
+        else
+            return DescribeTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeSubscriptionAsync(const DescribeTWeSeeSubscriptionRequest& request, const DescribeTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeSubscriptionRequest&;
+    using Resp = DescribeTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeSubscriptionOutcomeCallable IotexplorerClient::DescribeTWeSeeSubscriptionCallable(const DescribeTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeSubscriptionOutcome>>();
+    DescribeTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeSubscriptionRequest&,
+        DescribeTWeSeeSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeTWeSeeTaskOutcome IotexplorerClient::DescribeTWeSeeTask(const DescribeTWeSeeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeTaskResponse rsp = DescribeTWeSeeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeTaskOutcome(rsp);
+        else
+            return DescribeTWeSeeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeTaskAsync(const DescribeTWeSeeTaskRequest& request, const DescribeTWeSeeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeTaskRequest&;
+    using Resp = DescribeTWeSeeTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeTaskOutcomeCallable IotexplorerClient::DescribeTWeSeeTaskCallable(const DescribeTWeSeeTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeTaskOutcome>>();
+    DescribeTWeSeeTaskAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeTaskRequest&,
+        DescribeTWeSeeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeTWeSeeTaskStatisticsOutcome IotexplorerClient::DescribeTWeSeeTaskStatistics(const DescribeTWeSeeTaskStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTWeSeeTaskStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTWeSeeTaskStatisticsResponse rsp = DescribeTWeSeeTaskStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTWeSeeTaskStatisticsOutcome(rsp);
+        else
+            return DescribeTWeSeeTaskStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTWeSeeTaskStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeTWeSeeTaskStatisticsAsync(const DescribeTWeSeeTaskStatisticsRequest& request, const DescribeTWeSeeTaskStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTWeSeeTaskStatisticsRequest&;
+    using Resp = DescribeTWeSeeTaskStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTWeSeeTaskStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeTWeSeeTaskStatisticsOutcomeCallable IotexplorerClient::DescribeTWeSeeTaskStatisticsCallable(const DescribeTWeSeeTaskStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTWeSeeTaskStatisticsOutcome>>();
+    DescribeTWeSeeTaskStatisticsAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeTWeSeeTaskStatisticsRequest&,
+        DescribeTWeSeeTaskStatisticsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6082,6 +6532,56 @@ IotexplorerClient::DescribeVideoLicenseOutcomeCallable IotexplorerClient::Descri
         const IotexplorerClient*,
         const DescribeVideoLicenseRequest&,
         DescribeVideoLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DestroyTWeSeeSubscriptionOutcome IotexplorerClient::DestroyTWeSeeSubscription(const DestroyTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyTWeSeeSubscriptionResponse rsp = DestroyTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyTWeSeeSubscriptionOutcome(rsp);
+        else
+            return DestroyTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DestroyTWeSeeSubscriptionAsync(const DestroyTWeSeeSubscriptionRequest& request, const DestroyTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DestroyTWeSeeSubscriptionRequest&;
+    using Resp = DestroyTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DestroyTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DestroyTWeSeeSubscriptionOutcomeCallable IotexplorerClient::DestroyTWeSeeSubscriptionCallable(const DestroyTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DestroyTWeSeeSubscriptionOutcome>>();
+    DestroyTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DestroyTWeSeeSubscriptionRequest&,
+        DestroyTWeSeeSubscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7490,6 +7990,106 @@ IotexplorerClient::InheritCloudStorageUserOutcomeCallable IotexplorerClient::Inh
     return prom->get_future();
 }
 
+IotexplorerClient::InquireTWeSeeSubscriptionCreatePriceOutcome IotexplorerClient::InquireTWeSeeSubscriptionCreatePrice(const InquireTWeSeeSubscriptionCreatePriceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquireTWeSeeSubscriptionCreatePrice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquireTWeSeeSubscriptionCreatePriceResponse rsp = InquireTWeSeeSubscriptionCreatePriceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquireTWeSeeSubscriptionCreatePriceOutcome(rsp);
+        else
+            return InquireTWeSeeSubscriptionCreatePriceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquireTWeSeeSubscriptionCreatePriceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InquireTWeSeeSubscriptionCreatePriceAsync(const InquireTWeSeeSubscriptionCreatePriceRequest& request, const InquireTWeSeeSubscriptionCreatePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquireTWeSeeSubscriptionCreatePriceRequest&;
+    using Resp = InquireTWeSeeSubscriptionCreatePriceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquireTWeSeeSubscriptionCreatePrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::InquireTWeSeeSubscriptionCreatePriceOutcomeCallable IotexplorerClient::InquireTWeSeeSubscriptionCreatePriceCallable(const InquireTWeSeeSubscriptionCreatePriceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquireTWeSeeSubscriptionCreatePriceOutcome>>();
+    InquireTWeSeeSubscriptionCreatePriceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const InquireTWeSeeSubscriptionCreatePriceRequest&,
+        InquireTWeSeeSubscriptionCreatePriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::InquireTWeSeeSubscriptionRenewPriceOutcome IotexplorerClient::InquireTWeSeeSubscriptionRenewPrice(const InquireTWeSeeSubscriptionRenewPriceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquireTWeSeeSubscriptionRenewPrice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquireTWeSeeSubscriptionRenewPriceResponse rsp = InquireTWeSeeSubscriptionRenewPriceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquireTWeSeeSubscriptionRenewPriceOutcome(rsp);
+        else
+            return InquireTWeSeeSubscriptionRenewPriceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquireTWeSeeSubscriptionRenewPriceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InquireTWeSeeSubscriptionRenewPriceAsync(const InquireTWeSeeSubscriptionRenewPriceRequest& request, const InquireTWeSeeSubscriptionRenewPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquireTWeSeeSubscriptionRenewPriceRequest&;
+    using Resp = InquireTWeSeeSubscriptionRenewPriceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquireTWeSeeSubscriptionRenewPrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::InquireTWeSeeSubscriptionRenewPriceOutcomeCallable IotexplorerClient::InquireTWeSeeSubscriptionRenewPriceCallable(const InquireTWeSeeSubscriptionRenewPriceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquireTWeSeeSubscriptionRenewPriceOutcome>>();
+    InquireTWeSeeSubscriptionRenewPriceAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const InquireTWeSeeSubscriptionRenewPriceRequest&,
+        InquireTWeSeeSubscriptionRenewPriceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::InvokeAISearchServiceOutcome IotexplorerClient::InvokeAISearchService(const InvokeAISearchServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "InvokeAISearchService");
@@ -7632,6 +8232,56 @@ IotexplorerClient::InvokeExternalSourceAIServiceTaskOutcomeCallable IotexplorerC
         const IotexplorerClient*,
         const InvokeExternalSourceAIServiceTaskRequest&,
         InvokeExternalSourceAIServiceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::InvokeTWeSeeComprehensionOutcome IotexplorerClient::InvokeTWeSeeComprehension(const InvokeTWeSeeComprehensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeTWeSeeComprehension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeTWeSeeComprehensionResponse rsp = InvokeTWeSeeComprehensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeTWeSeeComprehensionOutcome(rsp);
+        else
+            return InvokeTWeSeeComprehensionOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeTWeSeeComprehensionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeTWeSeeComprehensionAsync(const InvokeTWeSeeComprehensionRequest& request, const InvokeTWeSeeComprehensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InvokeTWeSeeComprehensionRequest&;
+    using Resp = InvokeTWeSeeComprehensionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InvokeTWeSeeComprehension", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::InvokeTWeSeeComprehensionOutcomeCallable IotexplorerClient::InvokeTWeSeeComprehensionCallable(const InvokeTWeSeeComprehensionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InvokeTWeSeeComprehensionOutcome>>();
+    InvokeTWeSeeComprehensionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const InvokeTWeSeeComprehensionRequest&,
+        InvokeTWeSeeComprehensionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7982,6 +8632,106 @@ IotexplorerClient::ListProductOtaModulesOutcomeCallable IotexplorerClient::ListP
         const IotexplorerClient*,
         const ListProductOtaModulesRequest&,
         ListProductOtaModulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ListTWeSeeCallbackOutcome IotexplorerClient::ListTWeSeeCallback(const ListTWeSeeCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTWeSeeCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTWeSeeCallbackResponse rsp = ListTWeSeeCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTWeSeeCallbackOutcome(rsp);
+        else
+            return ListTWeSeeCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTWeSeeCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListTWeSeeCallbackAsync(const ListTWeSeeCallbackRequest& request, const ListTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTWeSeeCallbackRequest&;
+    using Resp = ListTWeSeeCallbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTWeSeeCallback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ListTWeSeeCallbackOutcomeCallable IotexplorerClient::ListTWeSeeCallbackCallable(const ListTWeSeeCallbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTWeSeeCallbackOutcome>>();
+    ListTWeSeeCallbackAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ListTWeSeeCallbackRequest&,
+        ListTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ListTWeSeeTasksOutcome IotexplorerClient::ListTWeSeeTasks(const ListTWeSeeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTWeSeeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTWeSeeTasksResponse rsp = ListTWeSeeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTWeSeeTasksOutcome(rsp);
+        else
+            return ListTWeSeeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTWeSeeTasksOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ListTWeSeeTasksAsync(const ListTWeSeeTasksRequest& request, const ListTWeSeeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTWeSeeTasksRequest&;
+    using Resp = ListTWeSeeTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTWeSeeTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ListTWeSeeTasksOutcomeCallable IotexplorerClient::ListTWeSeeTasksCallable(const ListTWeSeeTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTWeSeeTasksOutcome>>();
+    ListTWeSeeTasksAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ListTWeSeeTasksRequest&,
+        ListTWeSeeTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8740,6 +9490,56 @@ IotexplorerClient::ModifyStudioProductOutcomeCallable IotexplorerClient::ModifyS
     return prom->get_future();
 }
 
+IotexplorerClient::ModifyTWeSeeCallbackOutcome IotexplorerClient::ModifyTWeSeeCallback(const ModifyTWeSeeCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeSeeCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeSeeCallbackResponse rsp = ModifyTWeSeeCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeSeeCallbackOutcome(rsp);
+        else
+            return ModifyTWeSeeCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeSeeCallbackOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeSeeCallbackAsync(const ModifyTWeSeeCallbackRequest& request, const ModifyTWeSeeCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTWeSeeCallbackRequest&;
+    using Resp = ModifyTWeSeeCallbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTWeSeeCallback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyTWeSeeCallbackOutcomeCallable IotexplorerClient::ModifyTWeSeeCallbackCallable(const ModifyTWeSeeCallbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTWeSeeCallbackOutcome>>();
+    ModifyTWeSeeCallbackAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyTWeSeeCallbackRequest&,
+        ModifyTWeSeeCallbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::ModifyTWeSeeConfigOutcome IotexplorerClient::ModifyTWeSeeConfig(const ModifyTWeSeeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTWeSeeConfig");
@@ -8782,6 +9582,106 @@ IotexplorerClient::ModifyTWeSeeConfigOutcomeCallable IotexplorerClient::ModifyTW
         const IotexplorerClient*,
         const ModifyTWeSeeConfigRequest&,
         ModifyTWeSeeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ModifyTWeSeeSubscriptionOutcome IotexplorerClient::ModifyTWeSeeSubscription(const ModifyTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeSeeSubscriptionResponse rsp = ModifyTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeSeeSubscriptionOutcome(rsp);
+        else
+            return ModifyTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeSeeSubscriptionAsync(const ModifyTWeSeeSubscriptionRequest& request, const ModifyTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTWeSeeSubscriptionRequest&;
+    using Resp = ModifyTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyTWeSeeSubscriptionOutcomeCallable IotexplorerClient::ModifyTWeSeeSubscriptionCallable(const ModifyTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTWeSeeSubscriptionOutcome>>();
+    ModifyTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyTWeSeeSubscriptionRequest&,
+        ModifyTWeSeeSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlagOutcome IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlag(const ModifyTWeSeeSubscriptionRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTWeSeeSubscriptionRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTWeSeeSubscriptionRenewFlagResponse rsp = ModifyTWeSeeSubscriptionRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTWeSeeSubscriptionRenewFlagOutcome(rsp);
+        else
+            return ModifyTWeSeeSubscriptionRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTWeSeeSubscriptionRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlagAsync(const ModifyTWeSeeSubscriptionRenewFlagRequest& request, const ModifyTWeSeeSubscriptionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTWeSeeSubscriptionRenewFlagRequest&;
+    using Resp = ModifyTWeSeeSubscriptionRenewFlagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTWeSeeSubscriptionRenewFlag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlagOutcomeCallable IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlagCallable(const ModifyTWeSeeSubscriptionRenewFlagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTWeSeeSubscriptionRenewFlagOutcome>>();
+    ModifyTWeSeeSubscriptionRenewFlagAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyTWeSeeSubscriptionRenewFlagRequest&,
+        ModifyTWeSeeSubscriptionRenewFlagOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9390,6 +10290,56 @@ IotexplorerClient::RemoveUserByRoomIdFromTRTCOutcomeCallable IotexplorerClient::
     return prom->get_future();
 }
 
+IotexplorerClient::RenewTWeSeeSubscriptionOutcome IotexplorerClient::RenewTWeSeeSubscription(const RenewTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewTWeSeeSubscriptionResponse rsp = RenewTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewTWeSeeSubscriptionOutcome(rsp);
+        else
+            return RenewTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::RenewTWeSeeSubscriptionAsync(const RenewTWeSeeSubscriptionRequest& request, const RenewTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewTWeSeeSubscriptionRequest&;
+    using Resp = RenewTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::RenewTWeSeeSubscriptionOutcomeCallable IotexplorerClient::RenewTWeSeeSubscriptionCallable(const RenewTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewTWeSeeSubscriptionOutcome>>();
+    RenewTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const RenewTWeSeeSubscriptionRequest&,
+        RenewTWeSeeSubscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::ResetCloudStorageOutcome IotexplorerClient::ResetCloudStorage(const ResetCloudStorageRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetCloudStorage");
@@ -9782,6 +10732,56 @@ IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopic
         const IotexplorerClient*,
         const SearchTopicRuleRequest&,
         SearchTopicRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::TerminateTWeSeeSubscriptionOutcome IotexplorerClient::TerminateTWeSeeSubscription(const TerminateTWeSeeSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateTWeSeeSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateTWeSeeSubscriptionResponse rsp = TerminateTWeSeeSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateTWeSeeSubscriptionOutcome(rsp);
+        else
+            return TerminateTWeSeeSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateTWeSeeSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::TerminateTWeSeeSubscriptionAsync(const TerminateTWeSeeSubscriptionRequest& request, const TerminateTWeSeeSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TerminateTWeSeeSubscriptionRequest&;
+    using Resp = TerminateTWeSeeSubscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TerminateTWeSeeSubscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::TerminateTWeSeeSubscriptionOutcomeCallable IotexplorerClient::TerminateTWeSeeSubscriptionCallable(const TerminateTWeSeeSubscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TerminateTWeSeeSubscriptionOutcome>>();
+    TerminateTWeSeeSubscriptionAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const TerminateTWeSeeSubscriptionRequest&,
+        TerminateTWeSeeSubscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

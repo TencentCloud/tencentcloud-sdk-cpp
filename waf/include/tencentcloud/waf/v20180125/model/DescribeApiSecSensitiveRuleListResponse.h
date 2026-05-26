@@ -27,6 +27,7 @@
 #include <tencentcloud/waf/v20180125/model/ApiSecSceneRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecCustomEventRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecExcludeRule.h>
+#include <tencentcloud/waf/v20180125/model/ApiSecSensitiveWhiteRule.h>
 
 
 namespace TencentCloud
@@ -50,9 +51,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取api敏感规则列表
+                     * 获取<p>api敏感规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data api敏感规则列表
+                     * @return Data <p>api敏感规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -66,9 +67,9 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取规则数量
+                     * 获取<p>规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 规则数量
+                     * @return Total <p>规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -82,8 +83,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取自定义敏感检测规则总开关
-                     * @return Status 自定义敏感检测规则总开关
+                     * 获取<p>自定义敏感检测规则总开关</p>
+                     * @return Status <p>自定义敏感检测规则总开关</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -96,9 +97,9 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取非内置规则的rulename列表
+                     * 获取<p>非内置规则的rulename列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleNameList 非内置规则的rulename列表
+                     * @return RuleNameList <p>非内置规则的rulename列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -112,9 +113,9 @@ namespace TencentCloud
                     bool RuleNameListHasBeenSet() const;
 
                     /**
-                     * 获取api提取规则列表
+                     * 获取<p>api提取规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiExtractRule api提取规则列表
+                     * @return ApiExtractRule <p>api提取规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,9 +129,9 @@ namespace TencentCloud
                     bool ApiExtractRuleHasBeenSet() const;
 
                     /**
-                     * 获取api鉴权规则列表
+                     * 获取<p>api鉴权规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiSecPrivilegeRule api鉴权规则列表
+                     * @return ApiSecPrivilegeRule <p>api鉴权规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,9 +145,9 @@ namespace TencentCloud
                     bool ApiSecPrivilegeRuleHasBeenSet() const;
 
                     /**
-                     * 获取api场景规则列表
+                     * 获取<p>api场景规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiSecSceneRule api场景规则列表
+                     * @return ApiSecSceneRule <p>api场景规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,9 +161,9 @@ namespace TencentCloud
                     bool ApiSecSceneRuleHasBeenSet() const;
 
                     /**
-                     * 获取自定义事件规则
+                     * 获取<p>自定义事件规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiSecCustomEventRule 自定义事件规则
+                     * @return ApiSecCustomEventRule <p>自定义事件规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -176,9 +177,9 @@ namespace TencentCloud
                     bool ApiSecCustomEventRuleHasBeenSet() const;
 
                     /**
-                     * 获取无效api排除规则列表
+                     * 获取<p>无效api排除规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiExcludeRule 无效api排除规则列表
+                     * @return ApiExcludeRule <p>无效api排除规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,69 +192,89 @@ namespace TencentCloud
                      */
                     bool ApiExcludeRuleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>敏感数据加白规则列表</p>
+                     * @return ApiSecSensitiveWhiteRule <p>敏感数据加白规则列表</p>
+                     * 
+                     */
+                    std::vector<ApiSecSensitiveWhiteRule> GetApiSecSensitiveWhiteRule() const;
+
+                    /**
+                     * 判断参数 ApiSecSensitiveWhiteRule 是否已赋值
+                     * @return ApiSecSensitiveWhiteRule 是否已赋值
+                     * 
+                     */
+                    bool ApiSecSensitiveWhiteRuleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * api敏感规则列表
+                     * <p>api敏感规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecSensitiveRule> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 规则数量
+                     * <p>规则数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 自定义敏感检测规则总开关
+                     * <p>自定义敏感检测规则总开关</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 非内置规则的rulename列表
+                     * <p>非内置规则的rulename列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ruleNameList;
                     bool m_ruleNameListHasBeenSet;
 
                     /**
-                     * api提取规则列表
+                     * <p>api提取规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecExtractRule> m_apiExtractRule;
                     bool m_apiExtractRuleHasBeenSet;
 
                     /**
-                     * api鉴权规则列表
+                     * <p>api鉴权规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecPrivilegeRule> m_apiSecPrivilegeRule;
                     bool m_apiSecPrivilegeRuleHasBeenSet;
 
                     /**
-                     * api场景规则列表
+                     * <p>api场景规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecSceneRule> m_apiSecSceneRule;
                     bool m_apiSecSceneRuleHasBeenSet;
 
                     /**
-                     * 自定义事件规则
+                     * <p>自定义事件规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecCustomEventRule> m_apiSecCustomEventRule;
                     bool m_apiSecCustomEventRuleHasBeenSet;
 
                     /**
-                     * 无效api排除规则列表
+                     * <p>无效api排除规则列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiSecExcludeRule> m_apiExcludeRule;
                     bool m_apiExcludeRuleHasBeenSet;
+
+                    /**
+                     * <p>敏感数据加白规则列表</p>
+                     */
+                    std::vector<ApiSecSensitiveWhiteRule> m_apiSecSensitiveWhiteRule;
+                    bool m_apiSecSensitiveWhiteRuleHasBeenSet;
 
                 };
             }

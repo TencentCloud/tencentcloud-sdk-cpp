@@ -47,6 +47,7 @@ Cluster::Cluster() :
     m_clusterEtcdNodeNumHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_isHighAvailabilityHasBeenSet(false),
+    m_clusterCategoryHasBeenSet(false),
     m_securityModeConfigHasBeenSet(false)
 {
 }
@@ -333,6 +334,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_isHighAvailabilityHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterCategory") && !value["ClusterCategory"].IsNull())
+    {
+        if (!value["ClusterCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterCategory = string(value["ClusterCategory"].GetString());
+        m_clusterCategoryHasBeenSet = true;
+    }
+
     if (value.HasMember("SecurityModeConfig") && !value["SecurityModeConfig"].IsNull())
     {
         if (!value["SecurityModeConfig"].IsObject())
@@ -571,6 +582,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IsHighAvailability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHighAvailability, allocator);
+    }
+
+    if (m_clusterCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityModeConfigHasBeenSet)
@@ -999,6 +1018,22 @@ void Cluster::SetIsHighAvailability(const bool& _isHighAvailability)
 bool Cluster::IsHighAvailabilityHasBeenSet() const
 {
     return m_isHighAvailabilityHasBeenSet;
+}
+
+string Cluster::GetClusterCategory() const
+{
+    return m_clusterCategory;
+}
+
+void Cluster::SetClusterCategory(const string& _clusterCategory)
+{
+    m_clusterCategory = _clusterCategory;
+    m_clusterCategoryHasBeenSet = true;
+}
+
+bool Cluster::ClusterCategoryHasBeenSet() const
+{
+    return m_clusterCategoryHasBeenSet;
 }
 
 SecurityModeConfig Cluster::GetSecurityModeConfig() const

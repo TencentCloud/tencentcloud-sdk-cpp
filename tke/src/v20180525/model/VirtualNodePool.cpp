@@ -26,7 +26,8 @@ VirtualNodePool::VirtualNodePool() :
     m_nameHasBeenSet(false),
     m_lifeStateHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_taintsHasBeenSet(false)
+    m_taintsHasBeenSet(false),
+    m_subnetAllocationPolicyHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,23 @@ CoreInternalOutcome VirtualNodePool::Deserialize(const rapidjson::Value &value)
         m_taintsHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetAllocationPolicy") && !value["SubnetAllocationPolicy"].IsNull())
+    {
+        if (!value["SubnetAllocationPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirtualNodePool.SubnetAllocationPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subnetAllocationPolicy.Deserialize(value["SubnetAllocationPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subnetAllocationPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +208,15 @@ void VirtualNodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subnetAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subnetAllocationPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -289,5 +316,21 @@ void VirtualNodePool::SetTaints(const vector<Taint>& _taints)
 bool VirtualNodePool::TaintsHasBeenSet() const
 {
     return m_taintsHasBeenSet;
+}
+
+SubnetAllocationPolicy VirtualNodePool::GetSubnetAllocationPolicy() const
+{
+    return m_subnetAllocationPolicy;
+}
+
+void VirtualNodePool::SetSubnetAllocationPolicy(const SubnetAllocationPolicy& _subnetAllocationPolicy)
+{
+    m_subnetAllocationPolicy = _subnetAllocationPolicy;
+    m_subnetAllocationPolicyHasBeenSet = true;
+}
+
+bool VirtualNodePool::SubnetAllocationPolicyHasBeenSet() const
+{
+    return m_subnetAllocationPolicyHasBeenSet;
 }
 

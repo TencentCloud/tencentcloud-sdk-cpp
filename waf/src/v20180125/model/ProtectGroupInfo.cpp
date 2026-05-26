@@ -27,7 +27,9 @@ ProtectGroupInfo::ProtectGroupInfo() :
     m_domainsHasBeenSet(false),
     m_ruleNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_tagInfosHasBeenSet(false),
+    m_boundTemplateHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,36 @@ CoreInternalOutcome ProtectGroupInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProtectGroupInfo.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("BoundTemplate") && !value["BoundTemplate"].IsNull())
+    {
+        if (!value["BoundTemplate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectGroupInfo.BoundTemplate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_boundTemplate = value["BoundTemplate"].GetBool();
+        m_boundTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +216,29 @@ void ProtectGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_boundTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_boundTemplate, allocator);
     }
 
 }
@@ -299,5 +354,37 @@ void ProtectGroupInfo::SetUpdateTime(const string& _updateTime)
 bool ProtectGroupInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<TagInfo> ProtectGroupInfo::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void ProtectGroupInfo::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool ProtectGroupInfo::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
+}
+
+bool ProtectGroupInfo::GetBoundTemplate() const
+{
+    return m_boundTemplate;
+}
+
+void ProtectGroupInfo::SetBoundTemplate(const bool& _boundTemplate)
+{
+    m_boundTemplate = _boundTemplate;
+    m_boundTemplateHasBeenSet = true;
+}
+
+bool ProtectGroupInfo::BoundTemplateHasBeenSet() const
+{
+    return m_boundTemplateHasBeenSet;
 }
 

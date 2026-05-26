@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+#include <tencentcloud/cynosdb/v20190107/model/AIOptimizerStatus.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型
-                     * @return InstanceType 引擎类型
+                     * 获取<p>引擎类型</p>
+                     * @return InstanceType <p>引擎类型</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置引擎类型
-                     * @param _instanceType 引擎类型
+                     * 设置<p>引擎类型</p>
+                     * @param _instanceType <p>引擎类型</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return InstanceStatus 实例状态
+                     * 获取<p>实例状态</p>
+                     * @return InstanceStatus <p>实例状态</p>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _instanceStatus 实例状态
+                     * 设置<p>实例状态</p>
+                     * @param _instanceStatus <p>实例状态</p>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例状态描述
-                     * @return InstanceStatusDesc 实例状态描述
+                     * 获取<p>实例状态描述</p>
+                     * @return InstanceStatusDesc <p>实例状态描述</p>
                      * 
                      */
                     std::string GetInstanceStatusDesc() const;
 
                     /**
-                     * 设置实例状态描述
-                     * @param _instanceStatusDesc 实例状态描述
+                     * 设置<p>实例状态描述</p>
+                     * @param _instanceStatusDesc <p>实例状态描述</p>
                      * 
                      */
                     void SetInstanceStatusDesc(const std::string& _instanceStatusDesc);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool InstanceStatusDescHasBeenSet() const;
 
                     /**
-                     * 获取cpu核数
-                     * @return InstanceCpu cpu核数
+                     * 获取<p>cpu核数</p>
+                     * @return InstanceCpu <p>cpu核数</p>
                      * 
                      */
                     int64_t GetInstanceCpu() const;
 
                     /**
-                     * 设置cpu核数
-                     * @param _instanceCpu cpu核数
+                     * 设置<p>cpu核数</p>
+                     * @param _instanceCpu <p>cpu核数</p>
                      * 
                      */
                     void SetInstanceCpu(const int64_t& _instanceCpu);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool InstanceCpuHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return InstanceMemory 内存
+                     * 获取<p>内存</p>
+                     * @return InstanceMemory <p>内存</p>
                      * 
                      */
                     int64_t GetInstanceMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param _instanceMemory 内存
+                     * 设置<p>内存</p>
+                     * @param _instanceMemory <p>内存</p>
                      * 
                      */
                     void SetInstanceMemory(const int64_t& _instanceMemory);
@@ -195,15 +196,15 @@ namespace TencentCloud
                     bool InstanceMemoryHasBeenSet() const;
 
                     /**
-                     * 获取硬盘
-                     * @return InstanceStorage 硬盘
+                     * 获取<p>硬盘</p>
+                     * @return InstanceStorage <p>硬盘</p>
                      * 
                      */
                     int64_t GetInstanceStorage() const;
 
                     /**
-                     * 设置硬盘
-                     * @param _instanceStorage 硬盘
+                     * 设置<p>硬盘</p>
+                     * @param _instanceStorage <p>硬盘</p>
                      * 
                      */
                     void SetInstanceStorage(const int64_t& _instanceStorage);
@@ -216,15 +217,15 @@ namespace TencentCloud
                     bool InstanceStorageHasBeenSet() const;
 
                     /**
-                     * 获取实例角色
-                     * @return InstanceRole 实例角色
+                     * 获取<p>实例角色</p>
+                     * @return InstanceRole <p>实例角色</p>
                      * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
-                     * 设置实例角色
-                     * @param _instanceRole 实例角色
+                     * 设置<p>实例角色</p>
+                     * @param _instanceRole <p>实例角色</p>
                      * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
@@ -237,15 +238,15 @@ namespace TencentCloud
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
-                     * 获取执行开始时间(距离0点的秒数)	
-                     * @return MaintainStartTime 执行开始时间(距离0点的秒数)	
+                     * 获取<p>执行开始时间(距离0点的秒数)</p>
+                     * @return MaintainStartTime <p>执行开始时间(距离0点的秒数)</p>
                      * 
                      */
                     int64_t GetMaintainStartTime() const;
 
                     /**
-                     * 设置执行开始时间(距离0点的秒数)	
-                     * @param _maintainStartTime 执行开始时间(距离0点的秒数)	
+                     * 设置<p>执行开始时间(距离0点的秒数)</p>
+                     * @param _maintainStartTime <p>执行开始时间(距离0点的秒数)</p>
                      * 
                      */
                     void SetMaintainStartTime(const int64_t& _maintainStartTime);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool MaintainStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取持续的时间(单位：秒)	
-                     * @return MaintainDuration 持续的时间(单位：秒)	
+                     * 获取<p>持续的时间(单位：秒)</p>
+                     * @return MaintainDuration <p>持续的时间(单位：秒)</p>
                      * 
                      */
                     int64_t GetMaintainDuration() const;
 
                     /**
-                     * 设置持续的时间(单位：秒)	
-                     * @param _maintainDuration 持续的时间(单位：秒)	
+                     * 设置<p>持续的时间(单位：秒)</p>
+                     * @param _maintainDuration <p>持续的时间(单位：秒)</p>
                      * 
                      */
                     void SetMaintainDuration(const int64_t& _maintainDuration);
@@ -279,15 +280,15 @@ namespace TencentCloud
                     bool MaintainDurationHasBeenSet() const;
 
                     /**
-                     * 获取可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-                     * @return MaintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+                     * 获取<p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>
+                     * @return MaintainWeekDays <p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetMaintainWeekDays() const;
 
                     /**
-                     * 设置可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-                     * @param _maintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+                     * 设置<p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>
+                     * @param _maintainWeekDays <p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>
                      * 
                      */
                     void SetMaintainWeekDays(const std::vector<std::string>& _maintainWeekDays);
@@ -300,15 +301,15 @@ namespace TencentCloud
                     bool MaintainWeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取serverless实例子状态
-                     * @return ServerlessStatus serverless实例子状态
+                     * 获取<p>serverless实例子状态</p>
+                     * @return ServerlessStatus <p>serverless实例子状态</p>
                      * 
                      */
                     std::string GetServerlessStatus() const;
 
                     /**
-                     * 设置serverless实例子状态
-                     * @param _serverlessStatus serverless实例子状态
+                     * 设置<p>serverless实例子状态</p>
+                     * @param _serverlessStatus <p>serverless实例子状态</p>
                      * 
                      */
                     void SetServerlessStatus(const std::string& _serverlessStatus);
@@ -321,15 +322,15 @@ namespace TencentCloud
                     bool ServerlessStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例任务信息
-                     * @return InstanceTasks 实例任务信息
+                     * 获取<p>实例任务信息</p>
+                     * @return InstanceTasks <p>实例任务信息</p>
                      * 
                      */
                     std::vector<ObjectTask> GetInstanceTasks() const;
 
                     /**
-                     * 设置实例任务信息
-                     * @param _instanceTasks 实例任务信息
+                     * 设置<p>实例任务信息</p>
+                     * @param _instanceTasks <p>实例任务信息</p>
                      * 
                      */
                     void SetInstanceTasks(const std::vector<ObjectTask>& _instanceTasks);
@@ -342,23 +343,15 @@ namespace TencentCloud
                     bool InstanceTasksHasBeenSet() const;
 
                     /**
-                     * 获取实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
-                     * @return InstanceDeviceType 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * 获取<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
+                     * @return InstanceDeviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * 
                      */
                     std::string GetInstanceDeviceType() const;
 
                     /**
-                     * 设置实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
-                     * @param _instanceDeviceType 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * 设置<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
+                     * @param _instanceDeviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * 
                      */
                     void SetInstanceDeviceType(const std::string& _instanceDeviceType);
@@ -371,19 +364,15 @@ namespace TencentCloud
                     bool InstanceDeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例存储类型
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
-                     * @return InstanceStorageType 实例存储类型
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * 获取<p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
+                     * @return InstanceStorageType <p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      * 
                      */
                     std::string GetInstanceStorageType() const;
 
                     /**
-                     * 设置实例存储类型
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
-                     * @param _instanceStorageType 实例存储类型
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * 设置<p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
+                     * @param _instanceStorageType <p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      * 
                      */
                     void SetInstanceStorageType(const std::string& _instanceStorageType);
@@ -396,15 +385,15 @@ namespace TencentCloud
                     bool InstanceStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型
-                     * @return DbMode 数据库类型
+                     * 获取<p>数据库类型</p>
+                     * @return DbMode <p>数据库类型</p>
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
-                     * 设置数据库类型
-                     * @param _dbMode 数据库类型
+                     * 设置<p>数据库类型</p>
+                     * @param _dbMode <p>数据库类型</p>
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -417,19 +406,15 @@ namespace TencentCloud
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取节点列表
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
-                     * @return NodeList 节点列表
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * 获取<p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
+                     * @return NodeList <p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      * 
                      */
                     std::vector<std::string> GetNodeList() const;
 
                     /**
-                     * 设置节点列表
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
-                     * @param _nodeList 节点列表
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * 设置<p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
+                     * @param _nodeList <p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      * 
                      */
                     void SetNodeList(const std::vector<std::string>& _nodeList);
@@ -441,119 +426,142 @@ namespace TencentCloud
                      */
                     bool NodeListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI优化器状态</p>
+                     * @return AIOptimizerStatus <p>AI优化器状态</p>
+                     * 
+                     */
+                    AIOptimizerStatus GetAIOptimizerStatus() const;
+
+                    /**
+                     * 设置<p>AI优化器状态</p>
+                     * @param _aIOptimizerStatus <p>AI优化器状态</p>
+                     * 
+                     */
+                    void SetAIOptimizerStatus(const AIOptimizerStatus& _aIOptimizerStatus);
+
+                    /**
+                     * 判断参数 AIOptimizerStatus 是否已赋值
+                     * @return AIOptimizerStatus 是否已赋值
+                     * 
+                     */
+                    bool AIOptimizerStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 引擎类型
+                     * <p>引擎类型</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * <p>实例状态</p>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 实例状态描述
+                     * <p>实例状态描述</p>
                      */
                     std::string m_instanceStatusDesc;
                     bool m_instanceStatusDescHasBeenSet;
 
                     /**
-                     * cpu核数
+                     * <p>cpu核数</p>
                      */
                     int64_t m_instanceCpu;
                     bool m_instanceCpuHasBeenSet;
 
                     /**
-                     * 内存
+                     * <p>内存</p>
                      */
                     int64_t m_instanceMemory;
                     bool m_instanceMemoryHasBeenSet;
 
                     /**
-                     * 硬盘
+                     * <p>硬盘</p>
                      */
                     int64_t m_instanceStorage;
                     bool m_instanceStorageHasBeenSet;
 
                     /**
-                     * 实例角色
+                     * <p>实例角色</p>
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
 
                     /**
-                     * 执行开始时间(距离0点的秒数)	
+                     * <p>执行开始时间(距离0点的秒数)</p>
                      */
                     int64_t m_maintainStartTime;
                     bool m_maintainStartTimeHasBeenSet;
 
                     /**
-                     * 持续的时间(单位：秒)	
+                     * <p>持续的时间(单位：秒)</p>
                      */
                     int64_t m_maintainDuration;
                     bool m_maintainDurationHasBeenSet;
 
                     /**
-                     * 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+                     * <p>可以执行的时间，枚举值：[&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;]</p>
                      */
                     std::vector<std::string> m_maintainWeekDays;
                     bool m_maintainWeekDaysHasBeenSet;
 
                     /**
-                     * serverless实例子状态
+                     * <p>serverless实例子状态</p>
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
 
                     /**
-                     * 实例任务信息
+                     * <p>实例任务信息</p>
                      */
                     std::vector<ObjectTask> m_instanceTasks;
                     bool m_instanceTasksHasBeenSet;
 
                     /**
-                     * 实例机器类型
-1. common，通用型。
-2. exclusive，独享型。
+                     * <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      */
                     std::string m_instanceDeviceType;
                     bool m_instanceDeviceTypeHasBeenSet;
 
                     /**
-                     * 实例存储类型
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * <p>实例存储类型<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      */
                     std::string m_instanceStorageType;
                     bool m_instanceStorageTypeHasBeenSet;
 
                     /**
-                     * 数据库类型
+                     * <p>数据库类型</p>
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 节点列表
-说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。
+                     * <p>节点列表<br>说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。</p>
                      */
                     std::vector<std::string> m_nodeList;
                     bool m_nodeListHasBeenSet;
+
+                    /**
+                     * <p>AI优化器状态</p>
+                     */
+                    AIOptimizerStatus m_aIOptimizerStatus;
+                    bool m_aIOptimizerStatusHasBeenSet;
 
                 };
             }

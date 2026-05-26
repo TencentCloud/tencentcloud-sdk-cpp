@@ -2390,6 +2390,56 @@ MqttClient::DescribeSharedSubscriptionGroupsOutcomeCallable MqttClient::Describe
     return prom->get_future();
 }
 
+MqttClient::DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome MqttClient::DescribeSharedSubscriptionGroupsWithSubscriptions(const DescribeSharedSubscriptionGroupsWithSubscriptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSharedSubscriptionGroupsWithSubscriptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSharedSubscriptionGroupsWithSubscriptionsResponse rsp = DescribeSharedSubscriptionGroupsWithSubscriptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome(rsp);
+        else
+            return DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeSharedSubscriptionGroupsWithSubscriptionsAsync(const DescribeSharedSubscriptionGroupsWithSubscriptionsRequest& request, const DescribeSharedSubscriptionGroupsWithSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSharedSubscriptionGroupsWithSubscriptionsRequest&;
+    using Resp = DescribeSharedSubscriptionGroupsWithSubscriptionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSharedSubscriptionGroupsWithSubscriptions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeSharedSubscriptionGroupsWithSubscriptionsOutcomeCallable MqttClient::DescribeSharedSubscriptionGroupsWithSubscriptionsCallable(const DescribeSharedSubscriptionGroupsWithSubscriptionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome>>();
+    DescribeSharedSubscriptionGroupsWithSubscriptionsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeSharedSubscriptionGroupsWithSubscriptionsRequest&,
+        DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::DescribeSharedSubscriptionLagOutcome MqttClient::DescribeSharedSubscriptionLag(const DescribeSharedSubscriptionLagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSharedSubscriptionLag");
@@ -3232,6 +3282,56 @@ MqttClient::ModifyUserOutcomeCallable MqttClient::ModifyUserCallable(const Modif
         const MqttClient*,
         const ModifyUserRequest&,
         ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MqttClient::ModifyX509ConfigOutcome MqttClient::ModifyX509Config(const ModifyX509ConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyX509Config");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyX509ConfigResponse rsp = ModifyX509ConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyX509ConfigOutcome(rsp);
+        else
+            return ModifyX509ConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyX509ConfigOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyX509ConfigAsync(const ModifyX509ConfigRequest& request, const ModifyX509ConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyX509ConfigRequest&;
+    using Resp = ModifyX509ConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyX509Config", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::ModifyX509ConfigOutcomeCallable MqttClient::ModifyX509ConfigCallable(const ModifyX509ConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyX509ConfigOutcome>>();
+    ModifyX509ConfigAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const ModifyX509ConfigRequest&,
+        ModifyX509ConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

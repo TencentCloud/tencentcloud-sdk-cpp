@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员
-                     * @return Role Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员
+                     * 获取<p>Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员</p>
+                     * @return Role <p>Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员</p>
                      * 
                      */
                     std::string GetRole() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员
+                     * <p>Admin:集团账号创建，DelegatedAdmin:委派管理员，Member：成员，NoMember：非集团账号成员</p>
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

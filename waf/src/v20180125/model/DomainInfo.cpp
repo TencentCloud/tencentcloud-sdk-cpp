@@ -40,6 +40,7 @@ DomainInfo::DomainInfo() :
     m_appIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
     m_ipv6StatusHasBeenSet(false),
     m_botStatusHasBeenSet(false),
     m_levelHasBeenSet(false),
@@ -57,7 +58,11 @@ DomainInfo::DomainInfo() :
     m_sgIDHasBeenSet(false),
     m_accessStatusHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_privateVipStatusHasBeenSet(false)
+    m_privateVipStatusHasBeenSet(false),
+    m_isREIPHasBeenSet(false),
+    m_rEIPObjectIdHasBeenSet(false),
+    m_tagInfosHasBeenSet(false),
+    m_lLMStatusHasBeenSet(false)
 {
 }
 
@@ -282,6 +287,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("Ipv6Status") && !value["Ipv6Status"].IsNull())
     {
         if (!value["Ipv6Status"].IsInt64())
@@ -471,6 +486,56 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_privateVipStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsREIP") && !value["IsREIP"].IsNull())
+    {
+        if (!value["IsREIP"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.IsREIP` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isREIP = value["IsREIP"].GetInt64();
+        m_isREIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("REIPObjectId") && !value["REIPObjectId"].IsNull())
+    {
+        if (!value["REIPObjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.REIPObjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rEIPObjectId = string(value["REIPObjectId"].GetString());
+        m_rEIPObjectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("LLMStatus") && !value["LLMStatus"].IsNull())
+    {
+        if (!value["LLMStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.LLMStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lLMStatus = value["LLMStatus"].GetInt64();
+        m_lLMStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -654,6 +719,14 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ipv6StatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -811,6 +884,45 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PrivateVipStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_privateVipStatus, allocator);
+    }
+
+    if (m_isREIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsREIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isREIP, allocator);
+    }
+
+    if (m_rEIPObjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "REIPObjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rEIPObjectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_lLMStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lLMStatus, allocator);
     }
 
 }
@@ -1120,6 +1232,22 @@ bool DomainInfo::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
+string DomainInfo::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void DomainInfo::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool DomainInfo::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
 int64_t DomainInfo::GetIpv6Status() const
 {
     return m_ipv6Status;
@@ -1406,5 +1534,69 @@ void DomainInfo::SetPrivateVipStatus(const int64_t& _privateVipStatus)
 bool DomainInfo::PrivateVipStatusHasBeenSet() const
 {
     return m_privateVipStatusHasBeenSet;
+}
+
+int64_t DomainInfo::GetIsREIP() const
+{
+    return m_isREIP;
+}
+
+void DomainInfo::SetIsREIP(const int64_t& _isREIP)
+{
+    m_isREIP = _isREIP;
+    m_isREIPHasBeenSet = true;
+}
+
+bool DomainInfo::IsREIPHasBeenSet() const
+{
+    return m_isREIPHasBeenSet;
+}
+
+string DomainInfo::GetREIPObjectId() const
+{
+    return m_rEIPObjectId;
+}
+
+void DomainInfo::SetREIPObjectId(const string& _rEIPObjectId)
+{
+    m_rEIPObjectId = _rEIPObjectId;
+    m_rEIPObjectIdHasBeenSet = true;
+}
+
+bool DomainInfo::REIPObjectIdHasBeenSet() const
+{
+    return m_rEIPObjectIdHasBeenSet;
+}
+
+vector<TagInfo> DomainInfo::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void DomainInfo::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool DomainInfo::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
+}
+
+int64_t DomainInfo::GetLLMStatus() const
+{
+    return m_lLMStatus;
+}
+
+void DomainInfo::SetLLMStatus(const int64_t& _lLMStatus)
+{
+    m_lLMStatus = _lLMStatus;
+    m_lLMStatusHasBeenSet = true;
+}
+
+bool DomainInfo::LLMStatusHasBeenSet() const
+{
+    return m_lLMStatusHasBeenSet;
 }
 

@@ -29,6 +29,8 @@
 #include <tencentcloud/tdai/v20250717/model/CreateAgentInstanceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/CreateChatCompletionRequest.h>
 #include <tencentcloud/tdai/v20250717/model/CreateChatCompletionResponse.h>
+#include <tencentcloud/tdai/v20250717/model/CreateMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/CreateMemoryPlusSpaceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeAgentDutyTaskDetailRequest.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeAgentDutyTaskDetailResponse.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeAgentDutyTasksRequest.h>
@@ -43,18 +45,34 @@
 #include <tencentcloud/tdai/v20250717/model/DescribeChatDetailResponse.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeChatsRequest.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeChatsResponse.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusRecordRequest.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusRecordResponse.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpaceResponse.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpacesRequest.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeMemoryPlusSpacesResponse.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeReportUrlRequest.h>
 #include <tencentcloud/tdai/v20250717/model/DescribeReportUrlResponse.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeServiceAccessKeyRequest.h>
+#include <tencentcloud/tdai/v20250717/model/DescribeServiceAccessKeyResponse.h>
+#include <tencentcloud/tdai/v20250717/model/DestroyMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/DestroyMemoryPlusSpaceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/IsolateAgentInstanceRequest.h>
 #include <tencentcloud/tdai/v20250717/model/IsolateAgentInstanceResponse.h>
+#include <tencentcloud/tdai/v20250717/model/IsolateMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/IsolateMemoryPlusSpaceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersRequest.h>
 #include <tencentcloud/tdai/v20250717/model/ModifyAgentInstanceParametersResponse.h>
 #include <tencentcloud/tdai/v20250717/model/ModifyChatTitleRequest.h>
 #include <tencentcloud/tdai/v20250717/model/ModifyChatTitleResponse.h>
+#include <tencentcloud/tdai/v20250717/model/ModifyMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/ModifyMemoryPlusSpaceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/PauseAgentWorkRequest.h>
 #include <tencentcloud/tdai/v20250717/model/PauseAgentWorkResponse.h>
 #include <tencentcloud/tdai/v20250717/model/RecoverAgentInstanceRequest.h>
 #include <tencentcloud/tdai/v20250717/model/RecoverAgentInstanceResponse.h>
+#include <tencentcloud/tdai/v20250717/model/RecoverMemoryPlusSpaceRequest.h>
+#include <tencentcloud/tdai/v20250717/model/RecoverMemoryPlusSpaceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/RemoveChatRequest.h>
 #include <tencentcloud/tdai/v20250717/model/RemoveChatResponse.h>
 #include <tencentcloud/tdai/v20250717/model/StartAgentTaskRequest.h>
@@ -84,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateChatCompletionResponse> CreateChatCompletionOutcome;
                 typedef std::future<CreateChatCompletionOutcome> CreateChatCompletionOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::CreateChatCompletionRequest&, CreateChatCompletionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChatCompletionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMemoryPlusSpaceResponse> CreateMemoryPlusSpaceOutcome;
+                typedef std::future<CreateMemoryPlusSpaceOutcome> CreateMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::CreateMemoryPlusSpaceRequest&, CreateMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMemoryPlusSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentDutyTaskDetailResponse> DescribeAgentDutyTaskDetailOutcome;
                 typedef std::future<DescribeAgentDutyTaskDetailOutcome> DescribeAgentDutyTaskDetailOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::DescribeAgentDutyTaskDetailRequest&, DescribeAgentDutyTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentDutyTaskDetailAsyncHandler;
@@ -105,24 +126,48 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChatsResponse> DescribeChatsOutcome;
                 typedef std::future<DescribeChatsOutcome> DescribeChatsOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::DescribeChatsRequest&, DescribeChatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMemoryPlusRecordResponse> DescribeMemoryPlusRecordOutcome;
+                typedef std::future<DescribeMemoryPlusRecordOutcome> DescribeMemoryPlusRecordOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::DescribeMemoryPlusRecordRequest&, DescribeMemoryPlusRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMemoryPlusRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMemoryPlusSpaceResponse> DescribeMemoryPlusSpaceOutcome;
+                typedef std::future<DescribeMemoryPlusSpaceOutcome> DescribeMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::DescribeMemoryPlusSpaceRequest&, DescribeMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMemoryPlusSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMemoryPlusSpacesResponse> DescribeMemoryPlusSpacesOutcome;
+                typedef std::future<DescribeMemoryPlusSpacesOutcome> DescribeMemoryPlusSpacesOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::DescribeMemoryPlusSpacesRequest&, DescribeMemoryPlusSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMemoryPlusSpacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReportUrlResponse> DescribeReportUrlOutcome;
                 typedef std::future<DescribeReportUrlOutcome> DescribeReportUrlOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::DescribeReportUrlRequest&, DescribeReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceAccessKeyResponse> DescribeServiceAccessKeyOutcome;
+                typedef std::future<DescribeServiceAccessKeyOutcome> DescribeServiceAccessKeyOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::DescribeServiceAccessKeyRequest&, DescribeServiceAccessKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAccessKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyMemoryPlusSpaceResponse> DestroyMemoryPlusSpaceOutcome;
+                typedef std::future<DestroyMemoryPlusSpaceOutcome> DestroyMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::DestroyMemoryPlusSpaceRequest&, DestroyMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyMemoryPlusSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateAgentInstanceResponse> IsolateAgentInstanceOutcome;
                 typedef std::future<IsolateAgentInstanceOutcome> IsolateAgentInstanceOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::IsolateAgentInstanceRequest&, IsolateAgentInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateAgentInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateMemoryPlusSpaceResponse> IsolateMemoryPlusSpaceOutcome;
+                typedef std::future<IsolateMemoryPlusSpaceOutcome> IsolateMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::IsolateMemoryPlusSpaceRequest&, IsolateMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateMemoryPlusSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAgentInstanceParametersResponse> ModifyAgentInstanceParametersOutcome;
                 typedef std::future<ModifyAgentInstanceParametersOutcome> ModifyAgentInstanceParametersOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::ModifyAgentInstanceParametersRequest&, ModifyAgentInstanceParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentInstanceParametersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyChatTitleResponse> ModifyChatTitleOutcome;
                 typedef std::future<ModifyChatTitleOutcome> ModifyChatTitleOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::ModifyChatTitleRequest&, ModifyChatTitleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChatTitleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMemoryPlusSpaceResponse> ModifyMemoryPlusSpaceOutcome;
+                typedef std::future<ModifyMemoryPlusSpaceOutcome> ModifyMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::ModifyMemoryPlusSpaceRequest&, ModifyMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMemoryPlusSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::PauseAgentWorkResponse> PauseAgentWorkOutcome;
                 typedef std::future<PauseAgentWorkOutcome> PauseAgentWorkOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::PauseAgentWorkRequest&, PauseAgentWorkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseAgentWorkAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecoverAgentInstanceResponse> RecoverAgentInstanceOutcome;
                 typedef std::future<RecoverAgentInstanceOutcome> RecoverAgentInstanceOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::RecoverAgentInstanceRequest&, RecoverAgentInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverAgentInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecoverMemoryPlusSpaceResponse> RecoverMemoryPlusSpaceOutcome;
+                typedef std::future<RecoverMemoryPlusSpaceOutcome> RecoverMemoryPlusSpaceOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::RecoverMemoryPlusSpaceRequest&, RecoverMemoryPlusSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverMemoryPlusSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveChatResponse> RemoveChatOutcome;
                 typedef std::future<RemoveChatOutcome> RemoveChatOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::RemoveChatRequest&, RemoveChatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveChatAsyncHandler;
@@ -161,6 +206,15 @@ namespace TencentCloud
                 CreateChatCompletionOutcome CreateChatCompletion(const Model::CreateChatCompletionRequest &request);
                 void CreateChatCompletionAsync(const Model::CreateChatCompletionRequest& request, const CreateChatCompletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateChatCompletionOutcomeCallable CreateChatCompletionCallable(const Model::CreateChatCompletionRequest& request);
+
+                /**
+                 *本接口（CreateMemoryPlusSpace）用于创建正式版 Memory 实例。
+                 * @param req CreateMemoryPlusSpaceRequest
+                 * @return CreateMemoryPlusSpaceOutcome
+                 */
+                CreateMemoryPlusSpaceOutcome CreateMemoryPlusSpace(const Model::CreateMemoryPlusSpaceRequest &request);
+                void CreateMemoryPlusSpaceAsync(const Model::CreateMemoryPlusSpaceRequest& request, const CreateMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMemoryPlusSpaceOutcomeCallable CreateMemoryPlusSpaceCallable(const Model::CreateMemoryPlusSpaceRequest& request);
 
                 /**
                  *查询智能体值守任务详情
@@ -226,6 +280,33 @@ namespace TencentCloud
                 DescribeChatsOutcomeCallable DescribeChatsCallable(const Model::DescribeChatsRequest& request);
 
                 /**
+                 *本接口（DescribeMemoryPlusRecord）用于查询 Memory 实例的记忆数据。
+                 * @param req DescribeMemoryPlusRecordRequest
+                 * @return DescribeMemoryPlusRecordOutcome
+                 */
+                DescribeMemoryPlusRecordOutcome DescribeMemoryPlusRecord(const Model::DescribeMemoryPlusRecordRequest &request);
+                void DescribeMemoryPlusRecordAsync(const Model::DescribeMemoryPlusRecordRequest& request, const DescribeMemoryPlusRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMemoryPlusRecordOutcomeCallable DescribeMemoryPlusRecordCallable(const Model::DescribeMemoryPlusRecordRequest& request);
+
+                /**
+                 *本接口（DescribeMemoryPlusSpace）用于查询 Memory 正式版实例详情。
+                 * @param req DescribeMemoryPlusSpaceRequest
+                 * @return DescribeMemoryPlusSpaceOutcome
+                 */
+                DescribeMemoryPlusSpaceOutcome DescribeMemoryPlusSpace(const Model::DescribeMemoryPlusSpaceRequest &request);
+                void DescribeMemoryPlusSpaceAsync(const Model::DescribeMemoryPlusSpaceRequest& request, const DescribeMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMemoryPlusSpaceOutcomeCallable DescribeMemoryPlusSpaceCallable(const Model::DescribeMemoryPlusSpaceRequest& request);
+
+                /**
+                 *本接口（DescribeMemoryPlusSpaces）用于查询 Memory正式版实例列表。
+                 * @param req DescribeMemoryPlusSpacesRequest
+                 * @return DescribeMemoryPlusSpacesOutcome
+                 */
+                DescribeMemoryPlusSpacesOutcome DescribeMemoryPlusSpaces(const Model::DescribeMemoryPlusSpacesRequest &request);
+                void DescribeMemoryPlusSpacesAsync(const Model::DescribeMemoryPlusSpacesRequest& request, const DescribeMemoryPlusSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMemoryPlusSpacesOutcomeCallable DescribeMemoryPlusSpacesCallable(const Model::DescribeMemoryPlusSpacesRequest& request);
+
+                /**
                  *智能体报告地址生成并下载
                  * @param req DescribeReportUrlRequest
                  * @return DescribeReportUrlOutcome
@@ -235,6 +316,24 @@ namespace TencentCloud
                 DescribeReportUrlOutcomeCallable DescribeReportUrlCallable(const Model::DescribeReportUrlRequest& request);
 
                 /**
+                 *本接口（DescribeServiceAccessKey）用于查询服务访问密钥。
+                 * @param req DescribeServiceAccessKeyRequest
+                 * @return DescribeServiceAccessKeyOutcome
+                 */
+                DescribeServiceAccessKeyOutcome DescribeServiceAccessKey(const Model::DescribeServiceAccessKeyRequest &request);
+                void DescribeServiceAccessKeyAsync(const Model::DescribeServiceAccessKeyRequest& request, const DescribeServiceAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceAccessKeyOutcomeCallable DescribeServiceAccessKeyCallable(const Model::DescribeServiceAccessKeyRequest& request);
+
+                /**
+                 *本接口（DestroyMemoryPlusSpace）用于从回收站彻底销毁 Memory 实例。
+                 * @param req DestroyMemoryPlusSpaceRequest
+                 * @return DestroyMemoryPlusSpaceOutcome
+                 */
+                DestroyMemoryPlusSpaceOutcome DestroyMemoryPlusSpace(const Model::DestroyMemoryPlusSpaceRequest &request);
+                void DestroyMemoryPlusSpaceAsync(const Model::DestroyMemoryPlusSpaceRequest& request, const DestroyMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyMemoryPlusSpaceOutcomeCallable DestroyMemoryPlusSpaceCallable(const Model::DestroyMemoryPlusSpaceRequest& request);
+
+                /**
                  *本接口（IsolateAgentInstance）用于隔离智能体实例，通常在用户需要隔离智能体实例时使用。
                  * @param req IsolateAgentInstanceRequest
                  * @return IsolateAgentInstanceOutcome
@@ -242,6 +341,15 @@ namespace TencentCloud
                 IsolateAgentInstanceOutcome IsolateAgentInstance(const Model::IsolateAgentInstanceRequest &request);
                 void IsolateAgentInstanceAsync(const Model::IsolateAgentInstanceRequest& request, const IsolateAgentInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateAgentInstanceOutcomeCallable IsolateAgentInstanceCallable(const Model::IsolateAgentInstanceRequest& request);
+
+                /**
+                 *本接口（IsolateMemoryPlusSpace）用于将正式版 Memory 实例放入回收站隔离。
+                 * @param req IsolateMemoryPlusSpaceRequest
+                 * @return IsolateMemoryPlusSpaceOutcome
+                 */
+                IsolateMemoryPlusSpaceOutcome IsolateMemoryPlusSpace(const Model::IsolateMemoryPlusSpaceRequest &request);
+                void IsolateMemoryPlusSpaceAsync(const Model::IsolateMemoryPlusSpaceRequest& request, const IsolateMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateMemoryPlusSpaceOutcomeCallable IsolateMemoryPlusSpaceCallable(const Model::IsolateMemoryPlusSpaceRequest& request);
 
                 /**
                  *本接口（ModifyAgentInstanceParameters）用于修改智能体实例的参数列表，通常在用户需要配置智能体实例时使用。
@@ -262,6 +370,15 @@ namespace TencentCloud
                 ModifyChatTitleOutcomeCallable ModifyChatTitleCallable(const Model::ModifyChatTitleRequest& request);
 
                 /**
+                 *本接口（ModifyMemoryPlusSpace）用于修改正式版 Memory 实例，可修改实例名称与描述。
+                 * @param req ModifyMemoryPlusSpaceRequest
+                 * @return ModifyMemoryPlusSpaceOutcome
+                 */
+                ModifyMemoryPlusSpaceOutcome ModifyMemoryPlusSpace(const Model::ModifyMemoryPlusSpaceRequest &request);
+                void ModifyMemoryPlusSpaceAsync(const Model::ModifyMemoryPlusSpaceRequest& request, const ModifyMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMemoryPlusSpaceOutcomeCallable ModifyMemoryPlusSpaceCallable(const Model::ModifyMemoryPlusSpaceRequest& request);
+
+                /**
                  *本接口（PauseAgentWork）用于暂停智能体实例的值守任务，通常在用户需要暂停时使用。
                  * @param req PauseAgentWorkRequest
                  * @return PauseAgentWorkOutcome
@@ -278,6 +395,15 @@ namespace TencentCloud
                 RecoverAgentInstanceOutcome RecoverAgentInstance(const Model::RecoverAgentInstanceRequest &request);
                 void RecoverAgentInstanceAsync(const Model::RecoverAgentInstanceRequest& request, const RecoverAgentInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecoverAgentInstanceOutcomeCallable RecoverAgentInstanceCallable(const Model::RecoverAgentInstanceRequest& request);
+
+                /**
+                 *本接口（RecoverMemoryPlusSpace）用于从回收站恢复 Memory 实例。
+                 * @param req RecoverMemoryPlusSpaceRequest
+                 * @return RecoverMemoryPlusSpaceOutcome
+                 */
+                RecoverMemoryPlusSpaceOutcome RecoverMemoryPlusSpace(const Model::RecoverMemoryPlusSpaceRequest &request);
+                void RecoverMemoryPlusSpaceAsync(const Model::RecoverMemoryPlusSpaceRequest& request, const RecoverMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecoverMemoryPlusSpaceOutcomeCallable RecoverMemoryPlusSpaceCallable(const Model::RecoverMemoryPlusSpaceRequest& request);
 
                 /**
                  *本接口（RemoveChat）用于删除会话，通常在用户删除会话时使用。

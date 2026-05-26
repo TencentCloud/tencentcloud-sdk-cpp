@@ -72,7 +72,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_upstreamPolicyHasBeenSet(false),
     m_upstreamRulesHasBeenSet(false),
     m_useCaseHasBeenSet(false),
-    m_gzipHasBeenSet(false)
+    m_gzipHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -520,6 +521,21 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "Gzip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gzip, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1328,6 +1344,22 @@ void AddSpartaProtectionRequest::SetGzip(const int64_t& _gzip)
 bool AddSpartaProtectionRequest::GzipHasBeenSet() const
 {
     return m_gzipHasBeenSet;
+}
+
+vector<TagInfo> AddSpartaProtectionRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void AddSpartaProtectionRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ DescribeApiSecSensitiveRuleListResponse::DescribeApiSecSensitiveRuleListResponse
     m_apiSecPrivilegeRuleHasBeenSet(false),
     m_apiSecSceneRuleHasBeenSet(false),
     m_apiSecCustomEventRuleHasBeenSet(false),
-    m_apiExcludeRuleHasBeenSet(false)
+    m_apiExcludeRuleHasBeenSet(false),
+    m_apiSecSensitiveWhiteRuleHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,26 @@ CoreInternalOutcome DescribeApiSecSensitiveRuleListResponse::Deserialize(const s
         m_apiExcludeRuleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApiSecSensitiveWhiteRule") && !rsp["ApiSecSensitiveWhiteRule"].IsNull())
+    {
+        if (!rsp["ApiSecSensitiveWhiteRule"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApiSecSensitiveWhiteRule` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ApiSecSensitiveWhiteRule"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApiSecSensitiveWhiteRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_apiSecSensitiveWhiteRule.push_back(item);
+        }
+        m_apiSecSensitiveWhiteRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +373,21 @@ string DescribeApiSecSensitiveRuleListResponse::ToJsonString() const
         }
     }
 
+    if (m_apiSecSensitiveWhiteRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiSecSensitiveWhiteRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_apiSecSensitiveWhiteRule.begin(); itr != m_apiSecSensitiveWhiteRule.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -452,6 +488,16 @@ vector<ApiSecExcludeRule> DescribeApiSecSensitiveRuleListResponse::GetApiExclude
 bool DescribeApiSecSensitiveRuleListResponse::ApiExcludeRuleHasBeenSet() const
 {
     return m_apiExcludeRuleHasBeenSet;
+}
+
+vector<ApiSecSensitiveWhiteRule> DescribeApiSecSensitiveRuleListResponse::GetApiSecSensitiveWhiteRule() const
+{
+    return m_apiSecSensitiveWhiteRule;
+}
+
+bool DescribeApiSecSensitiveRuleListResponse::ApiSecSensitiveWhiteRuleHasBeenSet() const
+{
+    return m_apiSecSensitiveWhiteRuleHasBeenSet;
 }
 
 

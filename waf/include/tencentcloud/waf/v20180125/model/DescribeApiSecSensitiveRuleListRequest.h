@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取是否查询api提取规则策略，true表示查询
-                     * @return IsQueryApiExtractRule 是否查询api提取规则策略，true表示查询
+                     * 获取<p>是否查询api提取规则策略，true表示查询</p>
+                     * @return IsQueryApiExtractRule <p>是否查询api提取规则策略，true表示查询</p>
                      * 
                      */
                     bool GetIsQueryApiExtractRule() const;
 
                     /**
-                     * 设置是否查询api提取规则策略，true表示查询
-                     * @param _isQueryApiExtractRule 是否查询api提取规则策略，true表示查询
+                     * 设置<p>是否查询api提取规则策略，true表示查询</p>
+                     * @param _isQueryApiExtractRule <p>是否查询api提取规则策略，true表示查询</p>
                      * 
                      */
                     void SetIsQueryApiExtractRule(const bool& _isQueryApiExtractRule);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IsQueryApiExtractRuleHasBeenSet() const;
 
                     /**
-                     * 获取是否查询api鉴权规则
-                     * @return IsQueryApiPrivilegeRule 是否查询api鉴权规则
+                     * 获取<p>是否查询api鉴权规则</p>
+                     * @return IsQueryApiPrivilegeRule <p>是否查询api鉴权规则</p>
                      * 
                      */
                     bool GetIsQueryApiPrivilegeRule() const;
 
                     /**
-                     * 设置是否查询api鉴权规则
-                     * @param _isQueryApiPrivilegeRule 是否查询api鉴权规则
+                     * 设置<p>是否查询api鉴权规则</p>
+                     * @param _isQueryApiPrivilegeRule <p>是否查询api鉴权规则</p>
                      * 
                      */
                     void SetIsQueryApiPrivilegeRule(const bool& _isQueryApiPrivilegeRule);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IsQueryApiPrivilegeRuleHasBeenSet() const;
 
                     /**
-                     * 获取是否查询api场景规则
-                     * @return IsQueryApiSceneRule 是否查询api场景规则
+                     * 获取<p>是否查询api场景规则</p>
+                     * @return IsQueryApiSceneRule <p>是否查询api场景规则</p>
                      * 
                      */
                     bool GetIsQueryApiSceneRule() const;
 
                     /**
-                     * 设置是否查询api场景规则
-                     * @param _isQueryApiSceneRule 是否查询api场景规则
+                     * 设置<p>是否查询api场景规则</p>
+                     * @param _isQueryApiSceneRule <p>是否查询api场景规则</p>
                      * 
                      */
                     void SetIsQueryApiSceneRule(const bool& _isQueryApiSceneRule);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IsQueryApiSceneRuleHasBeenSet() const;
 
                     /**
-                     * 获取查询鉴权配置的时候，该rule只返回鉴权配置的规则
-                     * @return RuleName 查询鉴权配置的时候，该rule只返回鉴权配置的规则
+                     * 获取<p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>
+                     * @return RuleName <p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置查询鉴权配置的时候，该rule只返回鉴权配置的规则
-                     * @param _ruleName 查询鉴权配置的时候，该rule只返回鉴权配置的规则
+                     * 设置<p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>
+                     * @param _ruleName <p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取是否查询api自定义事件规则
-                     * @return IsQueryApiCustomEventRule 是否查询api自定义事件规则
+                     * 获取<p>是否查询api自定义事件规则</p>
+                     * @return IsQueryApiCustomEventRule <p>是否查询api自定义事件规则</p>
                      * 
                      */
                     bool GetIsQueryApiCustomEventRule() const;
 
                     /**
-                     * 设置是否查询api自定义事件规则
-                     * @param _isQueryApiCustomEventRule 是否查询api自定义事件规则
+                     * 设置<p>是否查询api自定义事件规则</p>
+                     * @param _isQueryApiCustomEventRule <p>是否查询api自定义事件规则</p>
                      * 
                      */
                     void SetIsQueryApiCustomEventRule(const bool& _isQueryApiCustomEventRule);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IsQueryApiCustomEventRuleHasBeenSet() const;
 
                     /**
-                     * 获取是否查询无效api排除策略
-                     * @return IsQueryApiExcludeRule 是否查询无效api排除策略
+                     * 获取<p>是否查询无效api排除策略</p>
+                     * @return IsQueryApiExcludeRule <p>是否查询无效api排除策略</p>
                      * 
                      */
                     bool GetIsQueryApiExcludeRule() const;
 
                     /**
-                     * 设置是否查询无效api排除策略
-                     * @param _isQueryApiExcludeRule 是否查询无效api排除策略
+                     * 设置<p>是否查询无效api排除策略</p>
+                     * @param _isQueryApiExcludeRule <p>是否查询无效api排除策略</p>
                      * 
                      */
                     void SetIsQueryApiExcludeRule(const bool& _isQueryApiExcludeRule);
@@ -189,49 +189,76 @@ namespace TencentCloud
                      */
                     bool IsQueryApiExcludeRuleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否查询敏感数据加白规则</p>
+                     * @return IsQueryApiSensitiveWhiteRule <p>是否查询敏感数据加白规则</p>
+                     * 
+                     */
+                    bool GetIsQueryApiSensitiveWhiteRule() const;
+
+                    /**
+                     * 设置<p>是否查询敏感数据加白规则</p>
+                     * @param _isQueryApiSensitiveWhiteRule <p>是否查询敏感数据加白规则</p>
+                     * 
+                     */
+                    void SetIsQueryApiSensitiveWhiteRule(const bool& _isQueryApiSensitiveWhiteRule);
+
+                    /**
+                     * 判断参数 IsQueryApiSensitiveWhiteRule 是否已赋值
+                     * @return IsQueryApiSensitiveWhiteRule 是否已赋值
+                     * 
+                     */
+                    bool IsQueryApiSensitiveWhiteRuleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 是否查询api提取规则策略，true表示查询
+                     * <p>是否查询api提取规则策略，true表示查询</p>
                      */
                     bool m_isQueryApiExtractRule;
                     bool m_isQueryApiExtractRuleHasBeenSet;
 
                     /**
-                     * 是否查询api鉴权规则
+                     * <p>是否查询api鉴权规则</p>
                      */
                     bool m_isQueryApiPrivilegeRule;
                     bool m_isQueryApiPrivilegeRuleHasBeenSet;
 
                     /**
-                     * 是否查询api场景规则
+                     * <p>是否查询api场景规则</p>
                      */
                     bool m_isQueryApiSceneRule;
                     bool m_isQueryApiSceneRuleHasBeenSet;
 
                     /**
-                     * 查询鉴权配置的时候，该rule只返回鉴权配置的规则
+                     * <p>查询鉴权配置的时候，该rule只返回鉴权配置的规则</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 是否查询api自定义事件规则
+                     * <p>是否查询api自定义事件规则</p>
                      */
                     bool m_isQueryApiCustomEventRule;
                     bool m_isQueryApiCustomEventRuleHasBeenSet;
 
                     /**
-                     * 是否查询无效api排除策略
+                     * <p>是否查询无效api排除策略</p>
                      */
                     bool m_isQueryApiExcludeRule;
                     bool m_isQueryApiExcludeRuleHasBeenSet;
+
+                    /**
+                     * <p>是否查询敏感数据加白规则</p>
+                     */
+                    bool m_isQueryApiSensitiveWhiteRule;
+                    bool m_isQueryApiSensitiveWhiteRuleHasBeenSet;
 
                 };
             }

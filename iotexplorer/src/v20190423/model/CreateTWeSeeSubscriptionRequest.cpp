@@ -1,0 +1,244 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeSubscriptionRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
+using namespace std;
+
+CreateTWeSeeSubscriptionRequest::CreateTWeSeeSubscriptionRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
+    m_serviceTierHasBeenSet(false),
+    m_periodHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_customOrderIdHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
+{
+}
+
+string CreateTWeSeeSubscriptionRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTier";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceTier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_customOrderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomOrderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string CreateTWeSeeSubscriptionRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string CreateTWeSeeSubscriptionRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+string CreateTWeSeeSubscriptionRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
+string CreateTWeSeeSubscriptionRequest::GetServiceTier() const
+{
+    return m_serviceTier;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetServiceTier(const string& _serviceTier)
+{
+    m_serviceTier = _serviceTier;
+    m_serviceTierHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::ServiceTierHasBeenSet() const
+{
+    return m_serviceTierHasBeenSet;
+}
+
+int64_t CreateTWeSeeSubscriptionRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
+}
+
+uint64_t CreateTWeSeeSubscriptionRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+string CreateTWeSeeSubscriptionRequest::GetCustomOrderId() const
+{
+    return m_customOrderId;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetCustomOrderId(const string& _customOrderId)
+{
+    m_customOrderId = _customOrderId;
+    m_customOrderIdHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::CustomOrderIdHasBeenSet() const
+{
+    return m_customOrderIdHasBeenSet;
+}
+
+string CreateTWeSeeSubscriptionRequest::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void CreateTWeSeeSubscriptionRequest::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool CreateTWeSeeSubscriptionRequest::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+

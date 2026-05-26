@@ -24,7 +24,8 @@ using namespace std;
 
 CreateHostRequest::CreateHostRequest() :
     m_hostHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,21 @@ string CreateHostRequest::ToJsonString() const
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -90,6 +106,22 @@ void CreateHostRequest::SetInstanceID(const string& _instanceID)
 bool CreateHostRequest::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+vector<TagInfo> CreateHostRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateHostRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateHostRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

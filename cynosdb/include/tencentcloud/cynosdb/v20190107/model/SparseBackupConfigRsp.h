@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取稀疏备份开关：ON/OFF
+                     * 获取<p>稀疏备份开关：ON/OFF</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SparseBackupSwitch 稀疏备份开关：ON/OFF
+                     * @return SparseBackupSwitch <p>稀疏备份开关：ON/OFF</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSparseBackupSwitch() const;
 
                     /**
-                     * 设置稀疏备份开关：ON/OFF
+                     * 设置<p>稀疏备份开关：ON/OFF</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sparseBackupSwitch 稀疏备份开关：ON/OFF
+                     * @param _sparseBackupSwitch <p>稀疏备份开关：ON/OFF</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool SparseBackupSwitchHasBeenSet() const;
 
                     /**
-                     * 获取稀疏备份策略列表（1-3条）
+                     * 获取<p>稀疏备份策略列表（1-3条）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SparseBackupConfigInfos 稀疏备份策略列表（1-3条）
+                     * @return SparseBackupConfigInfos <p>稀疏备份策略列表（1-3条）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SparseBackupConfigInfo> GetSparseBackupConfigInfos() const;
 
                     /**
-                     * 设置稀疏备份策略列表（1-3条）
+                     * 设置<p>稀疏备份策略列表（1-3条）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sparseBackupConfigInfos 稀疏备份策略列表（1-3条）
+                     * @param _sparseBackupConfigInfos <p>稀疏备份策略列表（1-3条）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,14 +100,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 稀疏备份开关：ON/OFF
+                     * <p>稀疏备份开关：ON/OFF</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sparseBackupSwitch;
                     bool m_sparseBackupSwitchHasBeenSet;
 
                     /**
-                     * 稀疏备份策略列表（1-3条）
+                     * <p>稀疏备份策略列表（1-3条）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SparseBackupConfigInfo> m_sparseBackupConfigInfos;

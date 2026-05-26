@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增防护域名ID
-                     * @return DomainId 新增防护域名ID
+                     * 获取<p>新增防护域名ID</p>
+                     * @return DomainId <p>新增防护域名ID</p>
                      * 
                      */
                     std::string GetDomainId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新增防护域名ID
+                     * <p>新增防护域名ID</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;

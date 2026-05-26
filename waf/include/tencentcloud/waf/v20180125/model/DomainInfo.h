@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/PortInfo.h>
 #include <tencentcloud/waf/v20180125/model/LoadBalancerPackageNew.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取<p>域名ID</p>
+                     * @return DomainId <p>域名ID</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param _domainId 域名ID
+                     * 设置<p>域名ID</p>
+                     * @param _domainId <p>域名ID</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取cname地址
-                     * @return Cname cname地址
+                     * 获取<p>cname地址</p>
+                     * @return Cname <p>cname地址</p>
                      * 
                      */
                     std::string GetCname() const;
 
                     /**
-                     * 设置cname地址
-                     * @param _cname cname地址
+                     * 设置<p>cname地址</p>
+                     * @param _cname <p>cname地址</p>
                      * 
                      */
                     void SetCname(const std::string& _cname);
@@ -133,27 +134,15 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取域名所属实例类型。
-sparta-waf：SaaS型WAF实例
-clb-waf：负载均衡型WAF实例
-cdc-clb-waf：CDC环境下负载均衡型WAF实例
-                     * @return Edition 域名所属实例类型。
-sparta-waf：SaaS型WAF实例
-clb-waf：负载均衡型WAF实例
-cdc-clb-waf：CDC环境下负载均衡型WAF实例
+                     * 获取<p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>
+                     * @return Edition <p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置域名所属实例类型。
-sparta-waf：SaaS型WAF实例
-clb-waf：负载均衡型WAF实例
-cdc-clb-waf：CDC环境下负载均衡型WAF实例
-                     * @param _edition 域名所属实例类型。
-sparta-waf：SaaS型WAF实例
-clb-waf：负载均衡型WAF实例
-cdc-clb-waf：CDC环境下负载均衡型WAF实例
+                     * 设置<p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>
+                     * @param _edition <p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -166,127 +155,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取地域。
-"多伦多": "ca"
-"广州": "gz"
-"成都": "cd"
-"福州": "fzec"
-"深圳": "szx"
-"印度": "in"
-"济南": "jnec"
-"重庆": "cq"
-"天津": "tsn"
-"欧洲东北": "ru"
-"南京": "nj"
-"美国硅谷": "usw"
-"泰国": "th"
-"广州Open": "gzopen"
-"深圳金融": "szjr"
-"法兰克福": "de"
-"日本": "jp"
-"弗吉尼亚": "use"
-"北京": "bj"
-"中国香港": "hk"
-"杭州": "hzec"
-"北京金融": "bjjr"
-"上海金融": "shjr"
-"台北": "tpe"
-"首尔": "kr"
-"上海": "sh"
-"新加坡": "sg"
-"清远": "qy"
-                     * @return Region 地域。
-"多伦多": "ca"
-"广州": "gz"
-"成都": "cd"
-"福州": "fzec"
-"深圳": "szx"
-"印度": "in"
-"济南": "jnec"
-"重庆": "cq"
-"天津": "tsn"
-"欧洲东北": "ru"
-"南京": "nj"
-"美国硅谷": "usw"
-"泰国": "th"
-"广州Open": "gzopen"
-"深圳金融": "szjr"
-"法兰克福": "de"
-"日本": "jp"
-"弗吉尼亚": "use"
-"北京": "bj"
-"中国香港": "hk"
-"杭州": "hzec"
-"北京金融": "bjjr"
-"上海金融": "shjr"
-"台北": "tpe"
-"首尔": "kr"
-"上海": "sh"
-"新加坡": "sg"
-"清远": "qy"
+                     * 获取<p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>
+                     * @return Region <p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域。
-"多伦多": "ca"
-"广州": "gz"
-"成都": "cd"
-"福州": "fzec"
-"深圳": "szx"
-"印度": "in"
-"济南": "jnec"
-"重庆": "cq"
-"天津": "tsn"
-"欧洲东北": "ru"
-"南京": "nj"
-"美国硅谷": "usw"
-"泰国": "th"
-"广州Open": "gzopen"
-"深圳金融": "szjr"
-"法兰克福": "de"
-"日本": "jp"
-"弗吉尼亚": "use"
-"北京": "bj"
-"中国香港": "hk"
-"杭州": "hzec"
-"北京金融": "bjjr"
-"上海金融": "shjr"
-"台北": "tpe"
-"首尔": "kr"
-"上海": "sh"
-"新加坡": "sg"
-"清远": "qy"
-                     * @param _region 地域。
-"多伦多": "ca"
-"广州": "gz"
-"成都": "cd"
-"福州": "fzec"
-"深圳": "szx"
-"印度": "in"
-"济南": "jnec"
-"重庆": "cq"
-"天津": "tsn"
-"欧洲东北": "ru"
-"南京": "nj"
-"美国硅谷": "usw"
-"泰国": "th"
-"广州Open": "gzopen"
-"深圳金融": "szjr"
-"法兰克福": "de"
-"日本": "jp"
-"弗吉尼亚": "use"
-"北京": "bj"
-"中国香港": "hk"
-"杭州": "hzec"
-"北京金融": "bjjr"
-"上海金融": "shjr"
-"台北": "tpe"
-"首尔": "kr"
-"上海": "sh"
-"新加坡": "sg"
-"清远": "qy"
+                     * 设置<p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>
+                     * @param _region <p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -299,15 +176,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceName 实例名
+                     * 获取<p>实例名</p>
+                     * @return InstanceName <p>实例名</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceName 实例名
+                     * 设置<p>实例名</p>
+                     * @param _instanceName <p>实例名</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -320,23 +197,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取访问日志开关状态。
-0：关闭
-1：开启
-                     * @return ClsStatus 访问日志开关状态。
-0：关闭
-1：开启
+                     * 获取<p>访问日志开关状态。<br>0：关闭<br>1：开启</p>
+                     * @return ClsStatus <p>访问日志开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     uint64_t GetClsStatus() const;
 
                     /**
-                     * 设置访问日志开关状态。
-0：关闭
-1：开启
-                     * @param _clsStatus 访问日志开关状态。
-0：关闭
-1：开启
+                     * 设置<p>访问日志开关状态。<br>0：关闭<br>1：开启</p>
+                     * @param _clsStatus <p>访问日志开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetClsStatus(const uint64_t& _clsStatus);
@@ -349,23 +218,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool ClsStatusHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡型WAF使用模式。
-0：镜像模式 
-1：清洗模式
-                     * @return FlowMode 负载均衡型WAF使用模式。
-0：镜像模式 
-1：清洗模式
+                     * 获取<p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>
+                     * @return FlowMode <p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>
                      * 
                      */
                     uint64_t GetFlowMode() const;
 
                     /**
-                     * 设置负载均衡型WAF使用模式。
-0：镜像模式 
-1：清洗模式
-                     * @param _flowMode 负载均衡型WAF使用模式。
-0：镜像模式 
-1：清洗模式
+                     * 设置<p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>
+                     * @param _flowMode <p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>
                      * 
                      */
                     void SetFlowMode(const uint64_t& _flowMode);
@@ -378,23 +239,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool FlowModeHasBeenSet() const;
 
                     /**
-                     * 获取waf开关状态。
-0：关闭 
-1：开启
-                     * @return Status waf开关状态。
-0：关闭 
-1：开启
+                     * 获取<p>waf开关状态。<br>0：关闭<br>1：开启</p>
+                     * @return Status <p>waf开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置waf开关状态。
-0：关闭 
-1：开启
-                     * @param _status waf开关状态。
-0：关闭 
-1：开启
+                     * 设置<p>waf开关状态。<br>0：关闭<br>1：开启</p>
+                     * @param _status <p>waf开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -407,23 +260,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎防护模式。
-0：观察模式 
-1：拦截模式
-                     * @return Mode 规则引擎防护模式。
-0：观察模式 
-1：拦截模式
+                     * 获取<p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>
+                     * @return Mode <p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置规则引擎防护模式。
-0：观察模式 
-1：拦截模式
-                     * @param _mode 规则引擎防护模式。
-0：观察模式 
-1：拦截模式
+                     * 设置<p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>
+                     * @param _mode <p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -436,43 +281,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎和AI引擎防护模式联合状态。
-1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
-10：规则引擎观察&&AI引擎关闭模式 
-11：规则引擎观察&&AI引擎观察模式 
-12：规则引擎观察&&AI引擎拦截模式 
-20：规则引擎拦截&&AI引擎关闭模式 
-21：规则引擎拦截&&AI引擎观察模式 
-22：规则引擎拦截&&AI引擎拦截模式
-                     * @return Engine 规则引擎和AI引擎防护模式联合状态。
-1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
-10：规则引擎观察&&AI引擎关闭模式 
-11：规则引擎观察&&AI引擎观察模式 
-12：规则引擎观察&&AI引擎拦截模式 
-20：规则引擎拦截&&AI引擎关闭模式 
-21：规则引擎拦截&&AI引擎观察模式 
-22：规则引擎拦截&&AI引擎拦截模式
+                     * 获取<p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>
+                     * @return Engine <p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置规则引擎和AI引擎防护模式联合状态。
-1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
-10：规则引擎观察&&AI引擎关闭模式 
-11：规则引擎观察&&AI引擎观察模式 
-12：规则引擎观察&&AI引擎拦截模式 
-20：规则引擎拦截&&AI引擎关闭模式 
-21：规则引擎拦截&&AI引擎观察模式 
-22：规则引擎拦截&&AI引擎拦截模式
-                     * @param _engine 规则引擎和AI引擎防护模式联合状态。
-1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
-10：规则引擎观察&&AI引擎关闭模式 
-11：规则引擎观察&&AI引擎观察模式 
-12：规则引擎观察&&AI引擎拦截模式 
-20：规则引擎拦截&&AI引擎关闭模式 
-21：规则引擎拦截&&AI引擎观察模式 
-22：规则引擎拦截&&AI引擎拦截模式
+                     * 设置<p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>
+                     * @param _engine <p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -485,15 +302,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取沙箱集群回源出口IP列表
-                     * @return CCList 沙箱集群回源出口IP列表
+                     * 获取<p>沙箱集群回源出口IP列表</p>
+                     * @return CCList <p>沙箱集群回源出口IP列表</p>
                      * 
                      */
                     std::vector<std::string> GetCCList() const;
 
                     /**
-                     * 设置沙箱集群回源出口IP列表
-                     * @param _cCList 沙箱集群回源出口IP列表
+                     * 设置<p>沙箱集群回源出口IP列表</p>
+                     * @param _cCList <p>沙箱集群回源出口IP列表</p>
                      * 
                      */
                     void SetCCList(const std::vector<std::string>& _cCList);
@@ -506,15 +323,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool CCListHasBeenSet() const;
 
                     /**
-                     * 获取生产集群回源出口IP列表
-                     * @return RsList 生产集群回源出口IP列表
+                     * 获取<p>生产集群回源出口IP列表</p>
+                     * @return RsList <p>生产集群回源出口IP列表</p>
                      * 
                      */
                     std::vector<std::string> GetRsList() const;
 
                     /**
-                     * 设置生产集群回源出口IP列表
-                     * @param _rsList 生产集群回源出口IP列表
+                     * 设置<p>生产集群回源出口IP列表</p>
+                     * @param _rsList <p>生产集群回源出口IP列表</p>
                      * 
                      */
                     void SetRsList(const std::vector<std::string>& _rsList);
@@ -527,15 +344,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool RsListHasBeenSet() const;
 
                     /**
-                     * 获取服务端口配置
-                     * @return Ports 服务端口配置
+                     * 获取<p>服务端口配置</p>
+                     * @return Ports <p>服务端口配置</p>
                      * 
                      */
                     std::vector<PortInfo> GetPorts() const;
 
                     /**
-                     * 设置服务端口配置
-                     * @param _ports 服务端口配置
+                     * 设置<p>服务端口配置</p>
+                     * @param _ports <p>服务端口配置</p>
                      * 
                      */
                     void SetPorts(const std::vector<PortInfo>& _ports);
@@ -548,15 +365,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡器相关配置
-                     * @return LoadBalancerSet 负载均衡器相关配置
+                     * 获取<p>负载均衡器相关配置</p>
+                     * @return LoadBalancerSet <p>负载均衡器相关配置</p>
                      * 
                      */
                     std::vector<LoadBalancerPackageNew> GetLoadBalancerSet() const;
 
                     /**
-                     * 设置负载均衡器相关配置
-                     * @param _loadBalancerSet 负载均衡器相关配置
+                     * 设置<p>负载均衡器相关配置</p>
+                     * @param _loadBalancerSet <p>负载均衡器相关配置</p>
                      * 
                      */
                     void SetLoadBalancerSet(const std::vector<LoadBalancerPackageNew>& _loadBalancerSet);
@@ -569,15 +386,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool LoadBalancerSetHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return AppId 用户id
+                     * 获取<p>用户id</p>
+                     * @return AppId <p>用户id</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户id
-                     * @param _appId 用户id
+                     * 设置<p>用户id</p>
+                     * @param _appId <p>用户id</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -590,95 +407,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取SAAS型WAF域名状态：
--2：配置下发失败
--1：配置下发中
-0：DNS解析中
-1：无DNS解析记录，请接入WAF
-10：DNS解析未知，域名启用了代理
-11：DNS解析异常，使用A记录接入WAF IP
-200：检测源站不可达
-220：源站不支持长连接
-311：证书过期
-312：证书即将过期
-310：证书异常
-316：备案异常
-5：WAF回源已变更
-负载均衡型WAF域名LB监听器状态：
-0：操作成功 
-4：正在绑定LB 
-6：正在解绑LB 
-7：解绑LB失败 
-8：绑定LB失败 
-10：内部错误
-                     * @return State SAAS型WAF域名状态：
--2：配置下发失败
--1：配置下发中
-0：DNS解析中
-1：无DNS解析记录，请接入WAF
-10：DNS解析未知，域名启用了代理
-11：DNS解析异常，使用A记录接入WAF IP
-200：检测源站不可达
-220：源站不支持长连接
-311：证书过期
-312：证书即将过期
-310：证书异常
-316：备案异常
-5：WAF回源已变更
-负载均衡型WAF域名LB监听器状态：
-0：操作成功 
-4：正在绑定LB 
-6：正在解绑LB 
-7：解绑LB失败 
-8：绑定LB失败 
-10：内部错误
+                     * 获取<p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>
+                     * @return State <p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
-                     * 设置SAAS型WAF域名状态：
--2：配置下发失败
--1：配置下发中
-0：DNS解析中
-1：无DNS解析记录，请接入WAF
-10：DNS解析未知，域名启用了代理
-11：DNS解析异常，使用A记录接入WAF IP
-200：检测源站不可达
-220：源站不支持长连接
-311：证书过期
-312：证书即将过期
-310：证书异常
-316：备案异常
-5：WAF回源已变更
-负载均衡型WAF域名LB监听器状态：
-0：操作成功 
-4：正在绑定LB 
-6：正在解绑LB 
-7：解绑LB失败 
-8：绑定LB失败 
-10：内部错误
-                     * @param _state SAAS型WAF域名状态：
--2：配置下发失败
--1：配置下发中
-0：DNS解析中
-1：无DNS解析记录，请接入WAF
-10：DNS解析未知，域名启用了代理
-11：DNS解析异常，使用A记录接入WAF IP
-200：检测源站不可达
-220：源站不支持长连接
-311：证书过期
-312：证书即将过期
-310：证书异常
-316：备案异常
-5：WAF回源已变更
-负载均衡型WAF域名LB监听器状态：
-0：操作成功 
-4：正在绑定LB 
-6：正在解绑LB 
-7：解绑LB失败 
-8：绑定LB失败 
-10：内部错误
+                     * 设置<p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>
+                     * @param _state <p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>
                      * 
                      */
                     void SetState(const int64_t& _state);
@@ -691,15 +428,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -712,23 +449,36 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Ipv6开关状态。
-0：关闭 
-1：开启
-                     * @return Ipv6Status Ipv6开关状态。
-0：关闭 
-1：开启
+                     * 获取<p>编辑时间</p>
+                     * @return ModifyTime <p>编辑时间</p>
+                     * 
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置<p>编辑时间</p>
+                     * @param _modifyTime <p>编辑时间</p>
+                     * 
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>
+                     * @return Ipv6Status <p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     int64_t GetIpv6Status() const;
 
                     /**
-                     * 设置Ipv6开关状态。
-0：关闭 
-1：开启
-                     * @param _ipv6Status Ipv6开关状态。
-0：关闭 
-1：开启
+                     * 设置<p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>
+                     * @param _ipv6Status <p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetIpv6Status(const int64_t& _ipv6Status);
@@ -741,31 +491,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool Ipv6StatusHasBeenSet() const;
 
                     /**
-                     * 获取BOT开关状态。
-0：关闭 
-1：关闭
-2：开启
-3：开启
-                     * @return BotStatus BOT开关状态。
-0：关闭 
-1：关闭
-2：开启
-3：开启
+                     * 获取<p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>
+                     * @return BotStatus <p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
-                     * 设置BOT开关状态。
-0：关闭 
-1：关闭
-2：开启
-3：开启
-                     * @param _botStatus BOT开关状态。
-0：关闭 
-1：关闭
-2：开启
-3：开启
+                     * 设置<p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>
+                     * @param _botStatus <p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -778,39 +512,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool BotStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例版本信息。
-101：小微敏捷版 
-102：小微超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
-                     * @return Level 实例版本信息。
-101：小微敏捷版 
-102：小微超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * 获取<p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
+                     * @return Level <p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置实例版本信息。
-101：小微敏捷版 
-102：小微超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
-                     * @param _level 实例版本信息。
-101：小微敏捷版 
-102：小微超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * 设置<p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
+                     * @param _level <p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -823,23 +533,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取投递CLS状态。
-0：关闭 
-1：开启
-                     * @return PostCLSStatus 投递CLS状态。
-0：关闭 
-1：开启
+                     * 获取<p>投递CLS状态。<br>0：关闭<br>1：开启</p>
+                     * @return PostCLSStatus <p>投递CLS状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     int64_t GetPostCLSStatus() const;
 
                     /**
-                     * 设置投递CLS状态。
-0：关闭 
-1：开启
-                     * @param _postCLSStatus 投递CLS状态。
-0：关闭 
-1：开启
+                     * 设置<p>投递CLS状态。<br>0：关闭<br>1：开启</p>
+                     * @param _postCLSStatus <p>投递CLS状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetPostCLSStatus(const int64_t& _postCLSStatus);
@@ -852,23 +554,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool PostCLSStatusHasBeenSet() const;
 
                     /**
-                     * 获取投递CKafka状态。
-0：关闭 
-1：开启
-                     * @return PostCKafkaStatus 投递CKafka状态。
-0：关闭 
-1：开启
+                     * 获取<p>投递CKafka状态。<br>0：关闭<br>1：开启</p>
+                     * @return PostCKafkaStatus <p>投递CKafka状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     int64_t GetPostCKafkaStatus() const;
 
                     /**
-                     * 设置投递CKafka状态。
-0：关闭 
-1：开启
-                     * @param _postCKafkaStatus 投递CKafka状态。
-0：关闭 
-1：开启
+                     * 设置<p>投递CKafka状态。<br>0：关闭<br>1：开启</p>
+                     * @param _postCKafkaStatus <p>投递CKafka状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetPostCKafkaStatus(const int64_t& _postCKafkaStatus);
@@ -881,15 +575,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool PostCKafkaStatusHasBeenSet() const;
 
                     /**
-                     * 获取cdc实例域名接入的集群信息,非cdc实例忽略。
-                     * @return CdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
+                     * 获取<p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>
+                     * @return CdcClusters <p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>
                      * 
                      */
                     std::string GetCdcClusters() const;
 
                     /**
-                     * 设置cdc实例域名接入的集群信息,非cdc实例忽略。
-                     * @param _cdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
+                     * 设置<p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>
+                     * @param _cdcClusters <p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>
                      * 
                      */
                     void SetCdcClusters(const std::string& _cdcClusters);
@@ -902,23 +596,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool CdcClustersHasBeenSet() const;
 
                     /**
-                     * 获取api安全开关状态。
-0：关闭 
-1：开启
-                     * @return ApiStatus api安全开关状态。
-0：关闭 
-1：开启
+                     * 获取<p>api安全开关状态。<br>0：关闭<br>1：开启</p>
+                     * @return ApiStatus <p>api安全开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
-                     * 设置api安全开关状态。
-0：关闭 
-1：开启
-                     * @param _apiStatus api安全开关状态。
-0：关闭 
-1：开启
+                     * 设置<p>api安全开关状态。<br>0：关闭<br>1：开启</p>
+                     * @param _apiStatus <p>api安全开关状态。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -931,23 +617,15 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                     bool ApiStatusHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡类型，默认clb。
-clb：七层负载均衡器类型
-apisix：apisix网关型
-                     * @return AlbType 应用型负载均衡类型，默认clb。
-clb：七层负载均衡器类型
-apisix：apisix网关型
+                     * 获取<p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>
+                     * @return AlbType <p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
-                     * 设置应用型负载均衡类型，默认clb。
-clb：七层负载均衡器类型
-apisix：apisix网关型
-                     * @param _albType 应用型负载均衡类型，默认clb。
-clb：七层负载均衡器类型
-apisix：apisix网关型
+                     * 设置<p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>
+                     * @param _albType <p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -960,31 +638,15 @@ apisix：apisix网关型
                     bool AlbTypeHasBeenSet() const;
 
                     /**
-                     * 获取安全组状态。
-0：不展示
-1：非腾讯云源站
-2：安全组绑定失败
-3：安全组发生变更
-                     * @return SgState 安全组状态。
-0：不展示
-1：非腾讯云源站
-2：安全组绑定失败
-3：安全组发生变更
+                     * 获取<p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>
+                     * @return SgState <p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>
                      * 
                      */
                     int64_t GetSgState() const;
 
                     /**
-                     * 设置安全组状态。
-0：不展示
-1：非腾讯云源站
-2：安全组绑定失败
-3：安全组发生变更
-                     * @param _sgState 安全组状态。
-0：不展示
-1：非腾讯云源站
-2：安全组绑定失败
-3：安全组发生变更
+                     * 设置<p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>
+                     * @param _sgState <p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>
                      * 
                      */
                     void SetSgState(const int64_t& _sgState);
@@ -997,15 +659,15 @@ apisix：apisix网关型
                     bool SgStateHasBeenSet() const;
 
                     /**
-                     * 获取安全组状态的详细解释
-                     * @return SgDetail 安全组状态的详细解释
+                     * 获取<p>安全组状态的详细解释</p>
+                     * @return SgDetail <p>安全组状态的详细解释</p>
                      * 
                      */
                     std::string GetSgDetail() const;
 
                     /**
-                     * 设置安全组状态的详细解释
-                     * @param _sgDetail 安全组状态的详细解释
+                     * 设置<p>安全组状态的详细解释</p>
+                     * @param _sgDetail <p>安全组状态的详细解释</p>
                      * 
                      */
                     void SetSgDetail(const std::string& _sgDetail);
@@ -1018,19 +680,15 @@ apisix：apisix网关型
                     bool SgDetailHasBeenSet() const;
 
                     /**
-                     * 获取域名云环境。hybrid：混合云域名
-public：公有云域名
-                     * @return CloudType 域名云环境。hybrid：混合云域名
-public：公有云域名
+                     * 获取<p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>
+                     * @return CloudType <p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
-                     * 设置域名云环境。hybrid：混合云域名
-public：公有云域名
-                     * @param _cloudType 域名云环境。hybrid：混合云域名
-public：公有云域名
+                     * 设置<p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>
+                     * @param _cloudType <p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -1043,15 +701,15 @@ public：公有云域名
                     bool CloudTypeHasBeenSet() const;
 
                     /**
-                     * 获取域名备注信息
-                     * @return Note 域名备注信息
+                     * 获取<p>域名备注信息</p>
+                     * @return Note <p>域名备注信息</p>
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置域名备注信息
-                     * @param _note 域名备注信息
+                     * 设置<p>域名备注信息</p>
+                     * @param _note <p>域名备注信息</p>
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -1064,15 +722,15 @@ public：公有云域名
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取SAASWAF源站IP列表
-                     * @return SrcList SAASWAF源站IP列表
+                     * 获取<p>SAASWAF源站IP列表</p>
+                     * @return SrcList <p>SAASWAF源站IP列表</p>
                      * 
                      */
                     std::vector<std::string> GetSrcList() const;
 
                     /**
-                     * 设置SAASWAF源站IP列表
-                     * @param _srcList SAASWAF源站IP列表
+                     * 设置<p>SAASWAF源站IP列表</p>
+                     * @param _srcList <p>SAASWAF源站IP列表</p>
                      * 
                      */
                     void SetSrcList(const std::vector<std::string>& _srcList);
@@ -1085,15 +743,15 @@ public：公有云域名
                     bool SrcListHasBeenSet() const;
 
                     /**
-                     * 获取SAASWAF源站域名列表
-                     * @return UpstreamDomainList SAASWAF源站域名列表
+                     * 获取<p>SAASWAF源站域名列表</p>
+                     * @return UpstreamDomainList <p>SAASWAF源站域名列表</p>
                      * 
                      */
                     std::vector<std::string> GetUpstreamDomainList() const;
 
                     /**
-                     * 设置SAASWAF源站域名列表
-                     * @param _upstreamDomainList SAASWAF源站域名列表
+                     * 设置<p>SAASWAF源站域名列表</p>
+                     * @param _upstreamDomainList <p>SAASWAF源站域名列表</p>
                      * 
                      */
                     void SetUpstreamDomainList(const std::vector<std::string>& _upstreamDomainList);
@@ -1106,15 +764,15 @@ public：公有云域名
                     bool UpstreamDomainListHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID
-                     * @return SgID 安全组ID
+                     * 获取<p>安全组ID</p>
+                     * @return SgID <p>安全组ID</p>
                      * 
                      */
                     std::string GetSgID() const;
 
                     /**
-                     * 设置安全组ID
-                     * @param _sgID 安全组ID
+                     * 设置<p>安全组ID</p>
+                     * @param _sgID <p>安全组ID</p>
                      * 
                      */
                     void SetSgID(const std::string& _sgID);
@@ -1127,15 +785,15 @@ public：公有云域名
                     bool SgIDHasBeenSet() const;
 
                     /**
-                     * 获取clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
-                     * @return AccessStatus clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
+                     * 获取<p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>
+                     * @return AccessStatus <p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>
                      * 
                      */
                     int64_t GetAccessStatus() const;
 
                     /**
-                     * 设置clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
-                     * @param _accessStatus clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
+                     * 设置<p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>
+                     * @param _accessStatus <p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>
                      * 
                      */
                     void SetAccessStatus(const int64_t& _accessStatus);
@@ -1148,15 +806,15 @@ public：公有云域名
                     bool AccessStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名标签
-                     * @return Labels 域名标签
+                     * 获取<p>域名标签</p>
+                     * @return Labels <p>域名标签</p>
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
-                     * 设置域名标签
-                     * @param _labels 域名标签
+                     * 设置<p>域名标签</p>
+                     * @param _labels <p>域名标签</p>
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -1169,15 +827,15 @@ public：公有云域名
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取saaswaf独享ip状态，0是关闭，1是开启，2是开启中
-                     * @return PrivateVipStatus saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * 获取<p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>
+                     * @return PrivateVipStatus <p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>
                      * 
                      */
                     int64_t GetPrivateVipStatus() const;
 
                     /**
-                     * 设置saaswaf独享ip状态，0是关闭，1是开启，2是开启中
-                     * @param _privateVipStatus saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * 设置<p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>
+                     * @param _privateVipStatus <p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>
                      * 
                      */
                     void SetPrivateVipStatus(const int64_t& _privateVipStatus);
@@ -1189,320 +847,343 @@ public：公有云域名
                      */
                     bool PrivateVipStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>代表是否是四层clbwaf域名</p>
+                     * @return IsREIP <p>代表是否是四层clbwaf域名</p>
+                     * 
+                     */
+                    int64_t GetIsREIP() const;
+
+                    /**
+                     * 设置<p>代表是否是四层clbwaf域名</p>
+                     * @param _isREIP <p>代表是否是四层clbwaf域名</p>
+                     * 
+                     */
+                    void SetIsREIP(const int64_t& _isREIP);
+
+                    /**
+                     * 判断参数 IsREIP 是否已赋值
+                     * @return IsREIP 是否已赋值
+                     * 
+                     */
+                    bool IsREIPHasBeenSet() const;
+
+                    /**
+                     * 获取<p>四层关联的对象ID</p>
+                     * @return REIPObjectId <p>四层关联的对象ID</p>
+                     * 
+                     */
+                    std::string GetREIPObjectId() const;
+
+                    /**
+                     * 设置<p>四层关联的对象ID</p>
+                     * @param _rEIPObjectId <p>四层关联的对象ID</p>
+                     * 
+                     */
+                    void SetREIPObjectId(const std::string& _rEIPObjectId);
+
+                    /**
+                     * 判断参数 REIPObjectId 是否已赋值
+                     * @return REIPObjectId 是否已赋值
+                     * 
+                     */
+                    bool REIPObjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签结构体</p>
+                     * @return TagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagInfos() const;
+
+                    /**
+                     * 设置<p>标签结构体</p>
+                     * @param _tagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    void SetTagInfos(const std::vector<TagInfo>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     * 
+                     */
+                    bool TagInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>
+                     * @return LLMStatus <p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>
+                     * 
+                     */
+                    int64_t GetLLMStatus() const;
+
+                    /**
+                     * 设置<p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>
+                     * @param _lLMStatus <p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>
+                     * 
+                     */
+                    void SetLLMStatus(const int64_t& _lLMStatus);
+
+                    /**
+                     * 判断参数 LLMStatus 是否已赋值
+                     * @return LLMStatus 是否已赋值
+                     * 
+                     */
+                    bool LLMStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名ID
+                     * <p>域名ID</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * cname地址
+                     * <p>cname地址</p>
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 域名所属实例类型。
-sparta-waf：SaaS型WAF实例
-clb-waf：负载均衡型WAF实例
-cdc-clb-waf：CDC环境下负载均衡型WAF实例
+                     * <p>域名所属实例类型。<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例</p>
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 地域。
-"多伦多": "ca"
-"广州": "gz"
-"成都": "cd"
-"福州": "fzec"
-"深圳": "szx"
-"印度": "in"
-"济南": "jnec"
-"重庆": "cq"
-"天津": "tsn"
-"欧洲东北": "ru"
-"南京": "nj"
-"美国硅谷": "usw"
-"泰国": "th"
-"广州Open": "gzopen"
-"深圳金融": "szjr"
-"法兰克福": "de"
-"日本": "jp"
-"弗吉尼亚": "use"
-"北京": "bj"
-"中国香港": "hk"
-"杭州": "hzec"
-"北京金融": "bjjr"
-"上海金融": "shjr"
-"台北": "tpe"
-"首尔": "kr"
-"上海": "sh"
-"新加坡": "sg"
-"清远": "qy"
+                     * <p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例名
+                     * <p>实例名</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 访问日志开关状态。
-0：关闭
-1：开启
+                     * <p>访问日志开关状态。<br>0：关闭<br>1：开启</p>
                      */
                     uint64_t m_clsStatus;
                     bool m_clsStatusHasBeenSet;
 
                     /**
-                     * 负载均衡型WAF使用模式。
-0：镜像模式 
-1：清洗模式
+                     * <p>负载均衡型WAF使用模式。<br>0：镜像模式<br>1：清洗模式</p>
                      */
                     uint64_t m_flowMode;
                     bool m_flowModeHasBeenSet;
 
                     /**
-                     * waf开关状态。
-0：关闭 
-1：开启
+                     * <p>waf开关状态。<br>0：关闭<br>1：开启</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则引擎防护模式。
-0：观察模式 
-1：拦截模式
+                     * <p>规则引擎防护模式。<br>0：观察模式<br>1：拦截模式</p>
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 规则引擎和AI引擎防护模式联合状态。
-1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
-10：规则引擎观察&&AI引擎关闭模式 
-11：规则引擎观察&&AI引擎观察模式 
-12：规则引擎观察&&AI引擎拦截模式 
-20：规则引擎拦截&&AI引擎关闭模式 
-21：规则引擎拦截&&AI引擎观察模式 
-22：规则引擎拦截&&AI引擎拦截模式
+                     * <p>规则引擎和AI引擎防护模式联合状态。<br>1:初始状态,规则引擎拦截&amp;&amp;AI引擎未操作开关状态<br>10：规则引擎观察&amp;&amp;AI引擎关闭模式<br>11：规则引擎观察&amp;&amp;AI引擎观察模式<br>12：规则引擎观察&amp;&amp;AI引擎拦截模式<br>20：规则引擎拦截&amp;&amp;AI引擎关闭模式<br>21：规则引擎拦截&amp;&amp;AI引擎观察模式<br>22：规则引擎拦截&amp;&amp;AI引擎拦截模式</p>
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 沙箱集群回源出口IP列表
+                     * <p>沙箱集群回源出口IP列表</p>
                      */
                     std::vector<std::string> m_cCList;
                     bool m_cCListHasBeenSet;
 
                     /**
-                     * 生产集群回源出口IP列表
+                     * <p>生产集群回源出口IP列表</p>
                      */
                     std::vector<std::string> m_rsList;
                     bool m_rsListHasBeenSet;
 
                     /**
-                     * 服务端口配置
+                     * <p>服务端口配置</p>
                      */
                     std::vector<PortInfo> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 负载均衡器相关配置
+                     * <p>负载均衡器相关配置</p>
                      */
                     std::vector<LoadBalancerPackageNew> m_loadBalancerSet;
                     bool m_loadBalancerSetHasBeenSet;
 
                     /**
-                     * 用户id
+                     * <p>用户id</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * SAAS型WAF域名状态：
--2：配置下发失败
--1：配置下发中
-0：DNS解析中
-1：无DNS解析记录，请接入WAF
-10：DNS解析未知，域名启用了代理
-11：DNS解析异常，使用A记录接入WAF IP
-200：检测源站不可达
-220：源站不支持长连接
-311：证书过期
-312：证书即将过期
-310：证书异常
-316：备案异常
-5：WAF回源已变更
-负载均衡型WAF域名LB监听器状态：
-0：操作成功 
-4：正在绑定LB 
-6：正在解绑LB 
-7：解绑LB失败 
-8：绑定LB失败 
-10：内部错误
+                     * <p>SAAS型WAF域名状态：<br>-2：配置下发失败<br>-1：配置下发中<br>0：DNS解析中<br>1：无DNS解析记录，请接入WAF<br>10：DNS解析未知，域名启用了代理<br>11：DNS解析异常，使用A记录接入WAF IP<br>200：检测源站不可达<br>220：源站不支持长连接<br>311：证书过期<br>312：证书即将过期<br>310：证书异常<br>316：备案异常<br>5：WAF回源已变更<br>负载均衡型WAF域名LB监听器状态：<br>0：操作成功<br>4：正在绑定LB<br>6：正在解绑LB<br>7：解绑LB失败<br>8：绑定LB失败<br>10：内部错误</p>
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Ipv6开关状态。
-0：关闭 
-1：开启
+                     * <p>编辑时间</p>
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * <p>Ipv6开关状态。<br>0：关闭<br>1：开启</p>
                      */
                     int64_t m_ipv6Status;
                     bool m_ipv6StatusHasBeenSet;
 
                     /**
-                     * BOT开关状态。
-0：关闭 
-1：关闭
-2：开启
-3：开启
+                     * <p>BOT开关状态。<br>0：关闭<br>1：关闭<br>2：开启<br>3：开启</p>
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
-                     * 实例版本信息。
-101：小微敏捷版 
-102：小微超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * <p>实例版本信息。<br>101：小微敏捷版<br>102：小微超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 投递CLS状态。
-0：关闭 
-1：开启
+                     * <p>投递CLS状态。<br>0：关闭<br>1：开启</p>
                      */
                     int64_t m_postCLSStatus;
                     bool m_postCLSStatusHasBeenSet;
 
                     /**
-                     * 投递CKafka状态。
-0：关闭 
-1：开启
+                     * <p>投递CKafka状态。<br>0：关闭<br>1：开启</p>
                      */
                     int64_t m_postCKafkaStatus;
                     bool m_postCKafkaStatusHasBeenSet;
 
                     /**
-                     * cdc实例域名接入的集群信息,非cdc实例忽略。
+                     * <p>cdc实例域名接入的集群信息,非cdc实例忽略。</p>
                      */
                     std::string m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
 
                     /**
-                     * api安全开关状态。
-0：关闭 
-1：开启
+                     * <p>api安全开关状态。<br>0：关闭<br>1：开启</p>
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
 
                     /**
-                     * 应用型负载均衡类型，默认clb。
-clb：七层负载均衡器类型
-apisix：apisix网关型
+                     * <p>应用型负载均衡类型，默认clb。<br>clb：七层负载均衡器类型<br>apisix：apisix网关型</p>
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
-                     * 安全组状态。
-0：不展示
-1：非腾讯云源站
-2：安全组绑定失败
-3：安全组发生变更
+                     * <p>安全组状态。<br>0：不展示<br>1：非腾讯云源站<br>2：安全组绑定失败<br>3：安全组发生变更</p>
                      */
                     int64_t m_sgState;
                     bool m_sgStateHasBeenSet;
 
                     /**
-                     * 安全组状态的详细解释
+                     * <p>安全组状态的详细解释</p>
                      */
                     std::string m_sgDetail;
                     bool m_sgDetailHasBeenSet;
 
                     /**
-                     * 域名云环境。hybrid：混合云域名
-public：公有云域名
+                     * <p>域名云环境。hybrid：混合云域名<br>public：公有云域名</p>
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
-                     * 域名备注信息
+                     * <p>域名备注信息</p>
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
-                     * SAASWAF源站IP列表
+                     * <p>SAASWAF源站IP列表</p>
                      */
                     std::vector<std::string> m_srcList;
                     bool m_srcListHasBeenSet;
 
                     /**
-                     * SAASWAF源站域名列表
+                     * <p>SAASWAF源站域名列表</p>
                      */
                     std::vector<std::string> m_upstreamDomainList;
                     bool m_upstreamDomainListHasBeenSet;
 
                     /**
-                     * 安全组ID
+                     * <p>安全组ID</p>
                      */
                     std::string m_sgID;
                     bool m_sgIDHasBeenSet;
 
                     /**
-                     * clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”
+                     * <p>clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”</p>
                      */
                     int64_t m_accessStatus;
                     bool m_accessStatusHasBeenSet;
 
                     /**
-                     * 域名标签
+                     * <p>域名标签</p>
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * <p>saaswaf独享ip状态，0是关闭，1是开启，2是开启中</p>
                      */
                     int64_t m_privateVipStatus;
                     bool m_privateVipStatusHasBeenSet;
+
+                    /**
+                     * <p>代表是否是四层clbwaf域名</p>
+                     */
+                    int64_t m_isREIP;
+                    bool m_isREIPHasBeenSet;
+
+                    /**
+                     * <p>四层关联的对象ID</p>
+                     */
+                    std::string m_rEIPObjectId;
+                    bool m_rEIPObjectIdHasBeenSet;
+
+                    /**
+                     * <p>标签结构体</p>
+                     */
+                    std::vector<TagInfo> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
+
+                    /**
+                     * <p>大模型开关</p><p>枚举值：</p><ul><li>0： 大模型开关关闭状态</li><li>1： 大模型开关开启状态</li></ul>
+                     */
+                    int64_t m_lLMStatus;
+                    bool m_lLMStatusHasBeenSet;
 
                 };
             }

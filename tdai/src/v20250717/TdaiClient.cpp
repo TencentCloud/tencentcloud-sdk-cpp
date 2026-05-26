@@ -190,6 +190,56 @@ TdaiClient::CreateChatCompletionOutcomeCallable TdaiClient::CreateChatCompletion
     return prom->get_future();
 }
 
+TdaiClient::CreateMemoryPlusSpaceOutcome TdaiClient::CreateMemoryPlusSpace(const CreateMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMemoryPlusSpaceResponse rsp = CreateMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMemoryPlusSpaceOutcome(rsp);
+        else
+            return CreateMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::CreateMemoryPlusSpaceAsync(const CreateMemoryPlusSpaceRequest& request, const CreateMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMemoryPlusSpaceRequest&;
+    using Resp = CreateMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::CreateMemoryPlusSpaceOutcomeCallable TdaiClient::CreateMemoryPlusSpaceCallable(const CreateMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMemoryPlusSpaceOutcome>>();
+    CreateMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const CreateMemoryPlusSpaceRequest&,
+        CreateMemoryPlusSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdaiClient::DescribeAgentDutyTaskDetailOutcome TdaiClient::DescribeAgentDutyTaskDetail(const DescribeAgentDutyTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentDutyTaskDetail");
@@ -540,6 +590,156 @@ TdaiClient::DescribeChatsOutcomeCallable TdaiClient::DescribeChatsCallable(const
     return prom->get_future();
 }
 
+TdaiClient::DescribeMemoryPlusRecordOutcome TdaiClient::DescribeMemoryPlusRecord(const DescribeMemoryPlusRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMemoryPlusRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMemoryPlusRecordResponse rsp = DescribeMemoryPlusRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMemoryPlusRecordOutcome(rsp);
+        else
+            return DescribeMemoryPlusRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMemoryPlusRecordOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::DescribeMemoryPlusRecordAsync(const DescribeMemoryPlusRecordRequest& request, const DescribeMemoryPlusRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMemoryPlusRecordRequest&;
+    using Resp = DescribeMemoryPlusRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMemoryPlusRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::DescribeMemoryPlusRecordOutcomeCallable TdaiClient::DescribeMemoryPlusRecordCallable(const DescribeMemoryPlusRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMemoryPlusRecordOutcome>>();
+    DescribeMemoryPlusRecordAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const DescribeMemoryPlusRecordRequest&,
+        DescribeMemoryPlusRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdaiClient::DescribeMemoryPlusSpaceOutcome TdaiClient::DescribeMemoryPlusSpace(const DescribeMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMemoryPlusSpaceResponse rsp = DescribeMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMemoryPlusSpaceOutcome(rsp);
+        else
+            return DescribeMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::DescribeMemoryPlusSpaceAsync(const DescribeMemoryPlusSpaceRequest& request, const DescribeMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMemoryPlusSpaceRequest&;
+    using Resp = DescribeMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::DescribeMemoryPlusSpaceOutcomeCallable TdaiClient::DescribeMemoryPlusSpaceCallable(const DescribeMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMemoryPlusSpaceOutcome>>();
+    DescribeMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const DescribeMemoryPlusSpaceRequest&,
+        DescribeMemoryPlusSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdaiClient::DescribeMemoryPlusSpacesOutcome TdaiClient::DescribeMemoryPlusSpaces(const DescribeMemoryPlusSpacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMemoryPlusSpaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMemoryPlusSpacesResponse rsp = DescribeMemoryPlusSpacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMemoryPlusSpacesOutcome(rsp);
+        else
+            return DescribeMemoryPlusSpacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMemoryPlusSpacesOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::DescribeMemoryPlusSpacesAsync(const DescribeMemoryPlusSpacesRequest& request, const DescribeMemoryPlusSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMemoryPlusSpacesRequest&;
+    using Resp = DescribeMemoryPlusSpacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMemoryPlusSpaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::DescribeMemoryPlusSpacesOutcomeCallable TdaiClient::DescribeMemoryPlusSpacesCallable(const DescribeMemoryPlusSpacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMemoryPlusSpacesOutcome>>();
+    DescribeMemoryPlusSpacesAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const DescribeMemoryPlusSpacesRequest&,
+        DescribeMemoryPlusSpacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdaiClient::DescribeReportUrlOutcome TdaiClient::DescribeReportUrl(const DescribeReportUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReportUrl");
@@ -590,6 +790,106 @@ TdaiClient::DescribeReportUrlOutcomeCallable TdaiClient::DescribeReportUrlCallab
     return prom->get_future();
 }
 
+TdaiClient::DescribeServiceAccessKeyOutcome TdaiClient::DescribeServiceAccessKey(const DescribeServiceAccessKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceAccessKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceAccessKeyResponse rsp = DescribeServiceAccessKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceAccessKeyOutcome(rsp);
+        else
+            return DescribeServiceAccessKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceAccessKeyOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::DescribeServiceAccessKeyAsync(const DescribeServiceAccessKeyRequest& request, const DescribeServiceAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServiceAccessKeyRequest&;
+    using Resp = DescribeServiceAccessKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeServiceAccessKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::DescribeServiceAccessKeyOutcomeCallable TdaiClient::DescribeServiceAccessKeyCallable(const DescribeServiceAccessKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServiceAccessKeyOutcome>>();
+    DescribeServiceAccessKeyAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const DescribeServiceAccessKeyRequest&,
+        DescribeServiceAccessKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdaiClient::DestroyMemoryPlusSpaceOutcome TdaiClient::DestroyMemoryPlusSpace(const DestroyMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyMemoryPlusSpaceResponse rsp = DestroyMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyMemoryPlusSpaceOutcome(rsp);
+        else
+            return DestroyMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::DestroyMemoryPlusSpaceAsync(const DestroyMemoryPlusSpaceRequest& request, const DestroyMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DestroyMemoryPlusSpaceRequest&;
+    using Resp = DestroyMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DestroyMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::DestroyMemoryPlusSpaceOutcomeCallable TdaiClient::DestroyMemoryPlusSpaceCallable(const DestroyMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DestroyMemoryPlusSpaceOutcome>>();
+    DestroyMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const DestroyMemoryPlusSpaceRequest&,
+        DestroyMemoryPlusSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdaiClient::IsolateAgentInstanceOutcome TdaiClient::IsolateAgentInstance(const IsolateAgentInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateAgentInstance");
@@ -632,6 +932,56 @@ TdaiClient::IsolateAgentInstanceOutcomeCallable TdaiClient::IsolateAgentInstance
         const TdaiClient*,
         const IsolateAgentInstanceRequest&,
         IsolateAgentInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdaiClient::IsolateMemoryPlusSpaceOutcome TdaiClient::IsolateMemoryPlusSpace(const IsolateMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateMemoryPlusSpaceResponse rsp = IsolateMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateMemoryPlusSpaceOutcome(rsp);
+        else
+            return IsolateMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::IsolateMemoryPlusSpaceAsync(const IsolateMemoryPlusSpaceRequest& request, const IsolateMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const IsolateMemoryPlusSpaceRequest&;
+    using Resp = IsolateMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "IsolateMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::IsolateMemoryPlusSpaceOutcomeCallable TdaiClient::IsolateMemoryPlusSpaceCallable(const IsolateMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<IsolateMemoryPlusSpaceOutcome>>();
+    IsolateMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const IsolateMemoryPlusSpaceRequest&,
+        IsolateMemoryPlusSpaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +1090,56 @@ TdaiClient::ModifyChatTitleOutcomeCallable TdaiClient::ModifyChatTitleCallable(c
     return prom->get_future();
 }
 
+TdaiClient::ModifyMemoryPlusSpaceOutcome TdaiClient::ModifyMemoryPlusSpace(const ModifyMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMemoryPlusSpaceResponse rsp = ModifyMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMemoryPlusSpaceOutcome(rsp);
+        else
+            return ModifyMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::ModifyMemoryPlusSpaceAsync(const ModifyMemoryPlusSpaceRequest& request, const ModifyMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMemoryPlusSpaceRequest&;
+    using Resp = ModifyMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::ModifyMemoryPlusSpaceOutcomeCallable TdaiClient::ModifyMemoryPlusSpaceCallable(const ModifyMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMemoryPlusSpaceOutcome>>();
+    ModifyMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const ModifyMemoryPlusSpaceRequest&,
+        ModifyMemoryPlusSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdaiClient::PauseAgentWorkOutcome TdaiClient::PauseAgentWork(const PauseAgentWorkRequest &request)
 {
     auto outcome = MakeRequest(request, "PauseAgentWork");
@@ -832,6 +1232,56 @@ TdaiClient::RecoverAgentInstanceOutcomeCallable TdaiClient::RecoverAgentInstance
         const TdaiClient*,
         const RecoverAgentInstanceRequest&,
         RecoverAgentInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TdaiClient::RecoverMemoryPlusSpaceOutcome TdaiClient::RecoverMemoryPlusSpace(const RecoverMemoryPlusSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecoverMemoryPlusSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecoverMemoryPlusSpaceResponse rsp = RecoverMemoryPlusSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecoverMemoryPlusSpaceOutcome(rsp);
+        else
+            return RecoverMemoryPlusSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return RecoverMemoryPlusSpaceOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::RecoverMemoryPlusSpaceAsync(const RecoverMemoryPlusSpaceRequest& request, const RecoverMemoryPlusSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RecoverMemoryPlusSpaceRequest&;
+    using Resp = RecoverMemoryPlusSpaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RecoverMemoryPlusSpace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::RecoverMemoryPlusSpaceOutcomeCallable TdaiClient::RecoverMemoryPlusSpaceCallable(const RecoverMemoryPlusSpaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RecoverMemoryPlusSpaceOutcome>>();
+    RecoverMemoryPlusSpaceAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const RecoverMemoryPlusSpaceRequest&,
+        RecoverMemoryPlusSpaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

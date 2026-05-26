@@ -30,7 +30,8 @@ ModifyObjectRequest::ModifyObjectRequest() :
     m_proxyHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
     m_memberAppIdHasBeenSet(false),
-    m_memberUinHasBeenSet(false)
+    m_memberUinHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,21 @@ string ModifyObjectRequest::ToJsonString() const
         string key = "MemberUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_memberUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -244,6 +260,22 @@ void ModifyObjectRequest::SetMemberUin(const string& _memberUin)
 bool ModifyObjectRequest::MemberUinHasBeenSet() const
 {
     return m_memberUinHasBeenSet;
+}
+
+vector<TagInfo> ModifyObjectRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyObjectRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyObjectRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

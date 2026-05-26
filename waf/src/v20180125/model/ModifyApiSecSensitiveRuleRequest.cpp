@@ -26,18 +26,20 @@ ModifyApiSecSensitiveRuleRequest::ModifyApiSecSensitiveRuleRequest() :
     m_domainHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
-    m_customRuleHasBeenSet(false),
     m_ruleNameListHasBeenSet(false),
-    m_customApiExtractRuleHasBeenSet(false),
+    m_customRuleHasBeenSet(false),
     m_apiExtractRuleNameHasBeenSet(false),
-    m_apiSecPrivilegeRuleHasBeenSet(false),
+    m_customApiExtractRuleHasBeenSet(false),
     m_apiSecPrivilegeRuleNameHasBeenSet(false),
+    m_apiSecPrivilegeRuleHasBeenSet(false),
     m_apiSecSceneRuleNameListHasBeenSet(false),
     m_apiSecSceneRuleHasBeenSet(false),
     m_apiSecCustomEventRuleNameListHasBeenSet(false),
     m_apiSecCustomEventRuleRuleHasBeenSet(false),
+    m_apiExcludeRuleNameHasBeenSet(false),
     m_customApiExcludeRuleHasBeenSet(false),
-    m_apiExcludeRuleNameHasBeenSet(false)
+    m_apiSecSensitiveWhiteRuleNameListHasBeenSet(false),
+    m_apiSecSensitiveWhiteRuleRuleHasBeenSet(false)
 {
 }
 
@@ -72,15 +74,6 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_customRuleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomRule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_customRule.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_ruleNameListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,13 +87,13 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         }
     }
 
-    if (m_customApiExtractRuleHasBeenSet)
+    if (m_customRuleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomApiExtractRule";
+        string key = "CustomRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_customApiExtractRule.ToJsonObject(d[key.c_str()], allocator);
+        m_customRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_apiExtractRuleNameHasBeenSet)
@@ -116,13 +109,13 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         }
     }
 
-    if (m_apiSecPrivilegeRuleHasBeenSet)
+    if (m_customApiExtractRuleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApiSecPrivilegeRule";
+        string key = "CustomApiExtractRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_apiSecPrivilegeRule.ToJsonObject(d[key.c_str()], allocator);
+        m_customApiExtractRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_apiSecPrivilegeRuleNameHasBeenSet)
@@ -136,6 +129,15 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_apiSecPrivilegeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiSecPrivilegeRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_apiSecPrivilegeRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_apiSecSceneRuleNameListHasBeenSet)
@@ -182,15 +184,6 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         m_apiSecCustomEventRuleRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_customApiExcludeRuleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomApiExcludeRule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_customApiExcludeRule.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_apiExcludeRuleNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -202,6 +195,37 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_customApiExcludeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomApiExcludeRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customApiExcludeRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_apiSecSensitiveWhiteRuleNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiSecSensitiveWhiteRuleNameList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apiSecSensitiveWhiteRuleNameList.begin(); itr != m_apiSecSensitiveWhiteRuleNameList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_apiSecSensitiveWhiteRuleRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiSecSensitiveWhiteRuleRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_apiSecSensitiveWhiteRuleRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -260,22 +284,6 @@ bool ModifyApiSecSensitiveRuleRequest::RuleNameHasBeenSet() const
     return m_ruleNameHasBeenSet;
 }
 
-ApiSecCustomSensitiveRule ModifyApiSecSensitiveRuleRequest::GetCustomRule() const
-{
-    return m_customRule;
-}
-
-void ModifyApiSecSensitiveRuleRequest::SetCustomRule(const ApiSecCustomSensitiveRule& _customRule)
-{
-    m_customRule = _customRule;
-    m_customRuleHasBeenSet = true;
-}
-
-bool ModifyApiSecSensitiveRuleRequest::CustomRuleHasBeenSet() const
-{
-    return m_customRuleHasBeenSet;
-}
-
 vector<string> ModifyApiSecSensitiveRuleRequest::GetRuleNameList() const
 {
     return m_ruleNameList;
@@ -292,20 +300,20 @@ bool ModifyApiSecSensitiveRuleRequest::RuleNameListHasBeenSet() const
     return m_ruleNameListHasBeenSet;
 }
 
-ApiSecExtractRule ModifyApiSecSensitiveRuleRequest::GetCustomApiExtractRule() const
+ApiSecCustomSensitiveRule ModifyApiSecSensitiveRuleRequest::GetCustomRule() const
 {
-    return m_customApiExtractRule;
+    return m_customRule;
 }
 
-void ModifyApiSecSensitiveRuleRequest::SetCustomApiExtractRule(const ApiSecExtractRule& _customApiExtractRule)
+void ModifyApiSecSensitiveRuleRequest::SetCustomRule(const ApiSecCustomSensitiveRule& _customRule)
 {
-    m_customApiExtractRule = _customApiExtractRule;
-    m_customApiExtractRuleHasBeenSet = true;
+    m_customRule = _customRule;
+    m_customRuleHasBeenSet = true;
 }
 
-bool ModifyApiSecSensitiveRuleRequest::CustomApiExtractRuleHasBeenSet() const
+bool ModifyApiSecSensitiveRuleRequest::CustomRuleHasBeenSet() const
 {
-    return m_customApiExtractRuleHasBeenSet;
+    return m_customRuleHasBeenSet;
 }
 
 vector<string> ModifyApiSecSensitiveRuleRequest::GetApiExtractRuleName() const
@@ -324,20 +332,20 @@ bool ModifyApiSecSensitiveRuleRequest::ApiExtractRuleNameHasBeenSet() const
     return m_apiExtractRuleNameHasBeenSet;
 }
 
-ApiSecPrivilegeRule ModifyApiSecSensitiveRuleRequest::GetApiSecPrivilegeRule() const
+ApiSecExtractRule ModifyApiSecSensitiveRuleRequest::GetCustomApiExtractRule() const
 {
-    return m_apiSecPrivilegeRule;
+    return m_customApiExtractRule;
 }
 
-void ModifyApiSecSensitiveRuleRequest::SetApiSecPrivilegeRule(const ApiSecPrivilegeRule& _apiSecPrivilegeRule)
+void ModifyApiSecSensitiveRuleRequest::SetCustomApiExtractRule(const ApiSecExtractRule& _customApiExtractRule)
 {
-    m_apiSecPrivilegeRule = _apiSecPrivilegeRule;
-    m_apiSecPrivilegeRuleHasBeenSet = true;
+    m_customApiExtractRule = _customApiExtractRule;
+    m_customApiExtractRuleHasBeenSet = true;
 }
 
-bool ModifyApiSecSensitiveRuleRequest::ApiSecPrivilegeRuleHasBeenSet() const
+bool ModifyApiSecSensitiveRuleRequest::CustomApiExtractRuleHasBeenSet() const
 {
-    return m_apiSecPrivilegeRuleHasBeenSet;
+    return m_customApiExtractRuleHasBeenSet;
 }
 
 vector<string> ModifyApiSecSensitiveRuleRequest::GetApiSecPrivilegeRuleName() const
@@ -354,6 +362,22 @@ void ModifyApiSecSensitiveRuleRequest::SetApiSecPrivilegeRuleName(const vector<s
 bool ModifyApiSecSensitiveRuleRequest::ApiSecPrivilegeRuleNameHasBeenSet() const
 {
     return m_apiSecPrivilegeRuleNameHasBeenSet;
+}
+
+ApiSecPrivilegeRule ModifyApiSecSensitiveRuleRequest::GetApiSecPrivilegeRule() const
+{
+    return m_apiSecPrivilegeRule;
+}
+
+void ModifyApiSecSensitiveRuleRequest::SetApiSecPrivilegeRule(const ApiSecPrivilegeRule& _apiSecPrivilegeRule)
+{
+    m_apiSecPrivilegeRule = _apiSecPrivilegeRule;
+    m_apiSecPrivilegeRuleHasBeenSet = true;
+}
+
+bool ModifyApiSecSensitiveRuleRequest::ApiSecPrivilegeRuleHasBeenSet() const
+{
+    return m_apiSecPrivilegeRuleHasBeenSet;
 }
 
 vector<string> ModifyApiSecSensitiveRuleRequest::GetApiSecSceneRuleNameList() const
@@ -420,6 +444,22 @@ bool ModifyApiSecSensitiveRuleRequest::ApiSecCustomEventRuleRuleHasBeenSet() con
     return m_apiSecCustomEventRuleRuleHasBeenSet;
 }
 
+vector<string> ModifyApiSecSensitiveRuleRequest::GetApiExcludeRuleName() const
+{
+    return m_apiExcludeRuleName;
+}
+
+void ModifyApiSecSensitiveRuleRequest::SetApiExcludeRuleName(const vector<string>& _apiExcludeRuleName)
+{
+    m_apiExcludeRuleName = _apiExcludeRuleName;
+    m_apiExcludeRuleNameHasBeenSet = true;
+}
+
+bool ModifyApiSecSensitiveRuleRequest::ApiExcludeRuleNameHasBeenSet() const
+{
+    return m_apiExcludeRuleNameHasBeenSet;
+}
+
 ApiSecExcludeRule ModifyApiSecSensitiveRuleRequest::GetCustomApiExcludeRule() const
 {
     return m_customApiExcludeRule;
@@ -436,20 +476,36 @@ bool ModifyApiSecSensitiveRuleRequest::CustomApiExcludeRuleHasBeenSet() const
     return m_customApiExcludeRuleHasBeenSet;
 }
 
-vector<string> ModifyApiSecSensitiveRuleRequest::GetApiExcludeRuleName() const
+vector<string> ModifyApiSecSensitiveRuleRequest::GetApiSecSensitiveWhiteRuleNameList() const
 {
-    return m_apiExcludeRuleName;
+    return m_apiSecSensitiveWhiteRuleNameList;
 }
 
-void ModifyApiSecSensitiveRuleRequest::SetApiExcludeRuleName(const vector<string>& _apiExcludeRuleName)
+void ModifyApiSecSensitiveRuleRequest::SetApiSecSensitiveWhiteRuleNameList(const vector<string>& _apiSecSensitiveWhiteRuleNameList)
 {
-    m_apiExcludeRuleName = _apiExcludeRuleName;
-    m_apiExcludeRuleNameHasBeenSet = true;
+    m_apiSecSensitiveWhiteRuleNameList = _apiSecSensitiveWhiteRuleNameList;
+    m_apiSecSensitiveWhiteRuleNameListHasBeenSet = true;
 }
 
-bool ModifyApiSecSensitiveRuleRequest::ApiExcludeRuleNameHasBeenSet() const
+bool ModifyApiSecSensitiveRuleRequest::ApiSecSensitiveWhiteRuleNameListHasBeenSet() const
 {
-    return m_apiExcludeRuleNameHasBeenSet;
+    return m_apiSecSensitiveWhiteRuleNameListHasBeenSet;
+}
+
+ApiSecSensitiveWhiteRule ModifyApiSecSensitiveRuleRequest::GetApiSecSensitiveWhiteRuleRule() const
+{
+    return m_apiSecSensitiveWhiteRuleRule;
+}
+
+void ModifyApiSecSensitiveRuleRequest::SetApiSecSensitiveWhiteRuleRule(const ApiSecSensitiveWhiteRule& _apiSecSensitiveWhiteRuleRule)
+{
+    m_apiSecSensitiveWhiteRuleRule = _apiSecSensitiveWhiteRuleRule;
+    m_apiSecSensitiveWhiteRuleRuleHasBeenSet = true;
+}
+
+bool ModifyApiSecSensitiveRuleRequest::ApiSecSensitiveWhiteRuleRuleHasBeenSet() const
+{
+    return m_apiSecSensitiveWhiteRuleRuleHasBeenSet;
 }
 
 

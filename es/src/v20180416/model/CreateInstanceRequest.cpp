@@ -64,7 +64,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enableScheduleRecoverGroupHasBeenSet(false),
     m_enableScheduleOperationDurationHasBeenSet(false),
     m_autoScaleDiskInfoListHasBeenSet(false),
-    m_enableKibanaPublicAccessHasBeenSet(false)
+    m_enableKibanaPublicAccessHasBeenSet(false),
+    m_alarmPolicyIdsHasBeenSet(false)
 {
 }
 
@@ -445,6 +446,19 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnableKibanaPublicAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_enableKibanaPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmPolicyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicyIds.begin(); itr != m_alarmPolicyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -1125,6 +1139,22 @@ void CreateInstanceRequest::SetEnableKibanaPublicAccess(const string& _enableKib
 bool CreateInstanceRequest::EnableKibanaPublicAccessHasBeenSet() const
 {
     return m_enableKibanaPublicAccessHasBeenSet;
+}
+
+vector<string> CreateInstanceRequest::GetAlarmPolicyIds() const
+{
+    return m_alarmPolicyIds;
+}
+
+void CreateInstanceRequest::SetAlarmPolicyIds(const vector<string>& _alarmPolicyIds)
+{
+    m_alarmPolicyIds = _alarmPolicyIds;
+    m_alarmPolicyIdsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::AlarmPolicyIdsHasBeenSet() const
+{
+    return m_alarmPolicyIdsHasBeenSet;
 }
 
 

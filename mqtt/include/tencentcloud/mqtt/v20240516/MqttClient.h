@@ -117,6 +117,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionClientResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsWithSubscriptionsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionGroupsWithSubscriptionsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionLagResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeSharedSubscriptionsRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyUserRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyUserResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyX509ConfigRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyX509ConfigResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/PublishMessageRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/PublishMessageResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterCaCertificateRequest.h>
@@ -318,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionGroupsResponse> DescribeSharedSubscriptionGroupsOutcome;
                 typedef std::future<DescribeSharedSubscriptionGroupsOutcome> DescribeSharedSubscriptionGroupsOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionGroupsRequest&, DescribeSharedSubscriptionGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionGroupsWithSubscriptionsResponse> DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome;
+                typedef std::future<DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome> DescribeSharedSubscriptionGroupsWithSubscriptionsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionGroupsWithSubscriptionsRequest&, DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionGroupsWithSubscriptionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSharedSubscriptionLagResponse> DescribeSharedSubscriptionLagOutcome;
                 typedef std::future<DescribeSharedSubscriptionLagOutcome> DescribeSharedSubscriptionLagOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeSharedSubscriptionLagRequest&, DescribeSharedSubscriptionLagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedSubscriptionLagAsyncHandler;
@@ -369,6 +376,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyX509ConfigResponse> ModifyX509ConfigOutcome;
+                typedef std::future<ModifyX509ConfigOutcome> ModifyX509ConfigOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyX509ConfigRequest&, ModifyX509ConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyX509ConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
@@ -819,6 +829,15 @@ namespace TencentCloud
                 DescribeSharedSubscriptionGroupsOutcomeCallable DescribeSharedSubscriptionGroupsCallable(const Model::DescribeSharedSubscriptionGroupsRequest& request);
 
                 /**
+                 *查询集群下共享订阅组列表
+                 * @param req DescribeSharedSubscriptionGroupsWithSubscriptionsRequest
+                 * @return DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome
+                 */
+                DescribeSharedSubscriptionGroupsWithSubscriptionsOutcome DescribeSharedSubscriptionGroupsWithSubscriptions(const Model::DescribeSharedSubscriptionGroupsWithSubscriptionsRequest &request);
+                void DescribeSharedSubscriptionGroupsWithSubscriptionsAsync(const Model::DescribeSharedSubscriptionGroupsWithSubscriptionsRequest& request, const DescribeSharedSubscriptionGroupsWithSubscriptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedSubscriptionGroupsWithSubscriptionsOutcomeCallable DescribeSharedSubscriptionGroupsWithSubscriptionsCallable(const Model::DescribeSharedSubscriptionGroupsWithSubscriptionsRequest& request);
+
+                /**
                  *查询共享订阅消息堆积量
                  * @param req DescribeSharedSubscriptionLagRequest
                  * @return DescribeSharedSubscriptionLagOutcome
@@ -977,6 +996,15 @@ namespace TencentCloud
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
+                 *修改集群X509配置
+                 * @param req ModifyX509ConfigRequest
+                 * @return ModifyX509ConfigOutcome
+                 */
+                ModifyX509ConfigOutcome ModifyX509Config(const Model::ModifyX509ConfigRequest &request);
+                void ModifyX509ConfigAsync(const Model::ModifyX509ConfigRequest& request, const ModifyX509ConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyX509ConfigOutcomeCallable ModifyX509ConfigCallable(const Model::ModifyX509ConfigRequest& request);
 
                 /**
                  *发布 MQTT 消息到消息主题或客户端

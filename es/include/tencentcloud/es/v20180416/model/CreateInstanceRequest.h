@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
-                     * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
+                     * 获取<p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>
+                     * @return EsVersion <p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>
                      * 
                      */
                     std::string GetEsVersion() const;
 
                     /**
-                     * 设置实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
-                     * @param _esVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
+                     * 设置<p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>
+                     * @param _esVersion <p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>
                      * 
                      */
                     void SetEsVersion(const std::string& _esVersion);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool EsVersionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取<p>私有网络ID</p>
+                     * @return VpcId <p>私有网络ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置<p>私有网络ID</p>
+                     * @param _vpcId <p>私有网络ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
-                     * @return Password 访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * 获取<p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
+                     * @return Password <p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
-                     * @param _password 访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * 设置<p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
+                     * @param _password <p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
-                     * @return InstanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * 获取<p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
+                     * @return InstanceName <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
-                     * @param _instanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * 设置<p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
+                     * @param _instanceName <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -176,19 +176,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点数量（2-50个）
-                     * @return NodeNum 已废弃请使用NodeInfoList
-节点数量（2-50个）
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>
+                     * @return NodeNum <p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点数量（2-50个）
-                     * @param _nodeNum 已废弃请使用NodeInfoList
-节点数量（2-50个）
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>
+                     * @param _nodeNum <p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -201,15 +197,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
-                     * @return ChargeType 计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
+                     * 获取<p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>
+                     * @return ChargeType <p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
-                     * @param _chargeType 计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
+                     * 设置<p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>
+                     * @param _chargeType <p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -222,15 +218,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买时长（单位由参数TimeUnit决定）
-                     * @return ChargePeriod 包年包月购买时长（单位由参数TimeUnit决定）
+                     * 获取<p>包年包月购买时长（单位由参数TimeUnit决定）</p>
+                     * @return ChargePeriod <p>包年包月购买时长（单位由参数TimeUnit决定）</p>
                      * 
                      */
                     uint64_t GetChargePeriod() const;
 
                     /**
-                     * 设置包年包月购买时长（单位由参数TimeUnit决定）
-                     * @param _chargePeriod 包年包月购买时长（单位由参数TimeUnit决定）
+                     * 设置<p>包年包月购买时长（单位由参数TimeUnit决定）</p>
+                     * @param _chargePeriod <p>包年包月购买时长（单位由参数TimeUnit决定）</p>
                      * 
                      */
                     void SetChargePeriod(const uint64_t& _chargePeriod);
@@ -243,15 +239,15 @@ namespace TencentCloud
                     bool ChargePeriodHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
-                     * @return RenewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
+                     * 获取<p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>
+                     * @return RenewFlag <p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
-                     * @param _renewFlag 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
+                     * 设置<p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>
+                     * @param _renewFlag <p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -264,19 +260,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return NodeType 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return NodeType <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _nodeType 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _nodeType <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -289,19 +281,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD
-                     * @return DiskType 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>
+                     * @return DiskType <p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD
-                     * @param _diskType 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>
+                     * @param _diskType <p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -314,19 +302,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点磁盘容量（单位GB）
-                     * @return DiskSize 已废弃请使用NodeInfoList
-节点磁盘容量（单位GB）
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>
+                     * @return DiskSize <p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点磁盘容量（单位GB）
-                     * @param _diskSize 已废弃请使用NodeInfoList
-节点磁盘容量（单位GB）
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>
+                     * @param _diskSize <p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -339,15 +323,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
-                     * @return TimeUnit 计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
+                     * 获取<p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>
+                     * @return TimeUnit <p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
-                     * @param _timeUnit 计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
+                     * 设置<p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>
+                     * @param _timeUnit <p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -360,15 +344,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
-                     * @return AutoVoucher 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * 获取<p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>
+                     * @return AutoVoucher <p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
-                     * @param _autoVoucher 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * 设置<p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>
+                     * @param _autoVoucher <p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -381,15 +365,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取代金券ID列表（目前仅支持指定一张代金券）
-                     * @return VoucherIds 代金券ID列表（目前仅支持指定一张代金券）
+                     * 获取<p>代金券ID列表（目前仅支持指定一张代金券）</p>
+                     * @return VoucherIds <p>代金券ID列表（目前仅支持指定一张代金券）</p>
                      * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
-                     * 设置代金券ID列表（目前仅支持指定一张代金券）
-                     * @param _voucherIds 代金券ID列表（目前仅支持指定一张代金券）
+                     * 设置<p>代金券ID列表（目前仅支持指定一张代金券）</p>
+                     * @param _voucherIds <p>代金券ID列表（目前仅支持指定一张代金券）</p>
                      * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
@@ -402,19 +386,15 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
-                     * @return EnableDedicatedMaster 已废弃请使用NodeInfoList
-是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * 获取<p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>
+                     * @return EnableDedicatedMaster <p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>
                      * 
                      */
                     bool GetEnableDedicatedMaster() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
-                     * @param _enableDedicatedMaster 已废弃请使用NodeInfoList
-是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * 设置<p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>
+                     * @param _enableDedicatedMaster <p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>
                      * 
                      */
                     void SetEnableDedicatedMaster(const bool& _enableDedicatedMaster);
@@ -427,19 +407,15 @@ namespace TencentCloud
                     bool EnableDedicatedMasterHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
-                     * @return MasterNodeNum 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>
+                     * @return MasterNodeNum <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>
                      * 
                      */
                     uint64_t GetMasterNodeNum() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
-                     * @param _masterNodeNum 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>
+                     * @param _masterNodeNum <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>
                      * 
                      */
                     void SetMasterNodeNum(const uint64_t& _masterNodeNum);
@@ -452,19 +428,15 @@ namespace TencentCloud
                     bool MasterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return MasterNodeType 已废弃请使用NodeInfoList
-专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return MasterNodeType <p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetMasterNodeType() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _masterNodeType 已废弃请使用NodeInfoList
-专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _masterNodeType <p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetMasterNodeType(const std::string& _masterNodeType);
@@ -477,19 +449,15 @@ namespace TencentCloud
                     bool MasterNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
-                     * @return MasterNodeDiskSize 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>
+                     * @return MasterNodeDiskSize <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>
                      * 
                      */
                     uint64_t GetMasterNodeDiskSize() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
-                     * @param _masterNodeDiskSize 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>
+                     * @param _masterNodeDiskSize <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>
                      * 
                      */
                     void SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize);
@@ -502,15 +470,15 @@ namespace TencentCloud
                     bool MasterNodeDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）
-                     * @return ClusterNameInConf 集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）
+                     * 获取<p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>
+                     * @return ClusterNameInConf <p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>
                      * 
                      */
                     std::string GetClusterNameInConf() const;
 
                     /**
-                     * 设置集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）
-                     * @param _clusterNameInConf 集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）
+                     * 设置<p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>
+                     * @param _clusterNameInConf <p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>
                      * 
                      */
                     void SetClusterNameInConf(const std::string& _clusterNameInConf);
@@ -523,15 +491,15 @@ namespace TencentCloud
                     bool ClusterNameInConfHasBeenSet() const;
 
                     /**
-                     * 获取集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0
-                     * @return DeployMode 集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0
+                     * 获取<p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>
+                     * @return DeployMode <p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>
                      * 
                      */
                     uint64_t GetDeployMode() const;
 
                     /**
-                     * 设置集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0
-                     * @param _deployMode 集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0
+                     * 设置<p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>
+                     * @param _deployMode <p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>
                      * 
                      */
                     void SetDeployMode(const uint64_t& _deployMode);
@@ -544,15 +512,15 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取多可用区部署时可用区的详细信息(DeployMode为1时必传)
-                     * @return MultiZoneInfo 多可用区部署时可用区的详细信息(DeployMode为1时必传)
+                     * 获取<p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>
+                     * @return MultiZoneInfo <p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>
                      * 
                      */
                     std::vector<ZoneDetail> GetMultiZoneInfo() const;
 
                     /**
-                     * 设置多可用区部署时可用区的详细信息(DeployMode为1时必传)
-                     * @param _multiZoneInfo 多可用区部署时可用区的详细信息(DeployMode为1时必传)
+                     * 设置<p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>
+                     * @param _multiZoneInfo <p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>
                      * 
                      */
                     void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
@@ -565,15 +533,15 @@ namespace TencentCloud
                     bool MultiZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
-                     * @return LicenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 获取<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
+                     * @return LicenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      * 
                      */
                     std::string GetLicenseType() const;
 
                     /**
-                     * 设置License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
-                     * @param _licenseType License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * 设置<p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
+                     * @param _licenseType <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      * 
                      */
                     void SetLicenseType(const std::string& _licenseType);
@@ -586,15 +554,15 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
-                     * @return NodeInfoList 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     * 获取<p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>
+                     * @return NodeInfoList <p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>
                      * 
                      */
                     std::vector<NodeInfo> GetNodeInfoList() const;
 
                     /**
-                     * 设置节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
-                     * @param _nodeInfoList 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     * 设置<p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>
+                     * @param _nodeInfoList <p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>
                      * 
                      */
                     void SetNodeInfoList(const std::vector<NodeInfo>& _nodeInfoList);
@@ -607,15 +575,15 @@ namespace TencentCloud
                     bool NodeInfoListHasBeenSet() const;
 
                     /**
-                     * 获取节点标签信息列表
-                     * @return TagList 节点标签信息列表
+                     * 获取<p>节点标签信息列表</p>
+                     * @return TagList <p>节点标签信息列表</p>
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置节点标签信息列表
-                     * @param _tagList 节点标签信息列表
+                     * 设置<p>节点标签信息列表</p>
+                     * @param _tagList <p>节点标签信息列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagInfo>& _tagList);
@@ -628,15 +596,15 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
-                     * @return BasicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 获取<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
+                     * @return BasicSecurityType <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
                      * 
                      */
                     uint64_t GetBasicSecurityType() const;
 
                     /**
-                     * 设置6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
-                     * @param _basicSecurityType 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * 设置<p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
+                     * @param _basicSecurityType <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
                      * 
                      */
                     void SetBasicSecurityType(const uint64_t& _basicSecurityType);
@@ -649,15 +617,15 @@ namespace TencentCloud
                     bool BasicSecurityTypeHasBeenSet() const;
 
                     /**
-                     * 获取场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
-                     * @return SceneType 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     * 获取<p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>
+                     * @return SceneType <p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>
                      * 
                      */
                     int64_t GetSceneType() const;
 
                     /**
-                     * 设置场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
-                     * @param _sceneType 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     * 设置<p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>
+                     * @param _sceneType <p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>
                      * 
                      */
                     void SetSceneType(const int64_t& _sceneType);
@@ -670,15 +638,15 @@ namespace TencentCloud
                     bool SceneTypeHasBeenSet() const;
 
                     /**
-                     * 获取可视化节点配置
-                     * @return WebNodeTypeInfo 可视化节点配置
+                     * 获取<p>可视化节点配置</p>
+                     * @return WebNodeTypeInfo <p>可视化节点配置</p>
                      * 
                      */
                     WebNodeTypeInfo GetWebNodeTypeInfo() const;
 
                     /**
-                     * 设置可视化节点配置
-                     * @param _webNodeTypeInfo 可视化节点配置
+                     * 设置<p>可视化节点配置</p>
+                     * @param _webNodeTypeInfo <p>可视化节点配置</p>
                      * 
                      */
                     void SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo);
@@ -691,15 +659,15 @@ namespace TencentCloud
                     bool WebNodeTypeInfoHasBeenSet() const;
 
                     /**
-                     * 获取创建https集群，默认是http
-                     * @return Protocol 创建https集群，默认是http
+                     * 获取<p>创建https集群，默认是http</p>
+                     * @return Protocol <p>创建https集群，默认是http</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置创建https集群，默认是http
-                     * @param _protocol 创建https集群，默认是http
+                     * 设置<p>创建https集群，默认是http</p>
+                     * @param _protocol <p>创建https集群，默认是http</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -712,15 +680,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取可维护时间段
-                     * @return OperationDuration 可维护时间段
+                     * 获取<p>可维护时间段</p>
+                     * @return OperationDuration <p>可维护时间段</p>
                      * 
                      */
                     OperationDuration GetOperationDuration() const;
 
                     /**
-                     * 设置可维护时间段
-                     * @param _operationDuration 可维护时间段
+                     * 设置<p>可维护时间段</p>
+                     * @param _operationDuration <p>可维护时间段</p>
                      * 
                      */
                     void SetOperationDuration(const OperationDuration& _operationDuration);
@@ -733,15 +701,15 @@ namespace TencentCloud
                     bool OperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启存算分离
-                     * @return EnableHybridStorage 是否开启存算分离
+                     * 获取<p>是否开启存算分离</p>
+                     * @return EnableHybridStorage <p>是否开启存算分离</p>
                      * 
                      */
                     bool GetEnableHybridStorage() const;
 
                     /**
-                     * 设置是否开启存算分离
-                     * @param _enableHybridStorage 是否开启存算分离
+                     * 设置<p>是否开启存算分离</p>
+                     * @param _enableHybridStorage <p>是否开启存算分离</p>
                      * 
                      */
                     void SetEnableHybridStorage(const bool& _enableHybridStorage);
@@ -754,15 +722,15 @@ namespace TencentCloud
                     bool EnableHybridStorageHasBeenSet() const;
 
                     /**
-                     * 获取硬盘额外性能
-                     * @return DiskEnhance 硬盘额外性能
+                     * 获取<p>硬盘额外性能</p>
+                     * @return DiskEnhance <p>硬盘额外性能</p>
                      * 
                      */
                     uint64_t GetDiskEnhance() const;
 
                     /**
-                     * 设置硬盘额外性能
-                     * @param _diskEnhance 硬盘额外性能
+                     * 设置<p>硬盘额外性能</p>
+                     * @param _diskEnhance <p>硬盘额外性能</p>
                      * 
                      */
                     void SetDiskEnhance(const uint64_t& _diskEnhance);
@@ -775,15 +743,15 @@ namespace TencentCloud
                     bool DiskEnhanceHasBeenSet() const;
 
                     /**
-                     * 获取是否开启智能巡检
-                     * @return EnableDiagnose 是否开启智能巡检
+                     * 获取<p>是否开启智能巡检</p>
+                     * @return EnableDiagnose <p>是否开启智能巡检</p>
                      * 
                      */
                     bool GetEnableDiagnose() const;
 
                     /**
-                     * 设置是否开启智能巡检
-                     * @param _enableDiagnose 是否开启智能巡检
+                     * 设置<p>是否开启智能巡检</p>
+                     * @param _enableDiagnose <p>是否开启智能巡检</p>
                      * 
                      */
                     void SetEnableDiagnose(const bool& _enableDiagnose);
@@ -796,15 +764,15 @@ namespace TencentCloud
                     bool EnableDiagnoseHasBeenSet() const;
 
                     /**
-                     * 获取cdcId，使用cdc子网时传递
-                     * @return CdcId cdcId，使用cdc子网时传递
+                     * 获取<p>cdcId，使用cdc子网时传递</p>
+                     * @return CdcId <p>cdcId，使用cdc子网时传递</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置cdcId，使用cdc子网时传递
-                     * @param _cdcId cdcId，使用cdc子网时传递
+                     * 设置<p>cdcId，使用cdc子网时传递</p>
+                     * @param _cdcId <p>cdcId，使用cdc子网时传递</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -817,15 +785,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取置放群组亲和度，范围[0,10]，0表示不开启
-                     * @return DisasterRecoverGroupAffinity 置放群组亲和度，范围[0,10]，0表示不开启
+                     * 获取<p>置放群组亲和度，范围[0,10]，0表示不开启</p>
+                     * @return DisasterRecoverGroupAffinity <p>置放群组亲和度，范围[0,10]，0表示不开启</p>
                      * 
                      */
                     uint64_t GetDisasterRecoverGroupAffinity() const;
 
                     /**
-                     * 设置置放群组亲和度，范围[0,10]，0表示不开启
-                     * @param _disasterRecoverGroupAffinity 置放群组亲和度，范围[0,10]，0表示不开启
+                     * 设置<p>置放群组亲和度，范围[0,10]，0表示不开启</p>
+                     * @param _disasterRecoverGroupAffinity <p>置放群组亲和度，范围[0,10]，0表示不开启</p>
                      * 
                      */
                     void SetDisasterRecoverGroupAffinity(const uint64_t& _disasterRecoverGroupAffinity);
@@ -838,15 +806,15 @@ namespace TencentCloud
                     bool DisasterRecoverGroupAffinityHasBeenSet() const;
 
                     /**
-                     * 获取子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
-                     * @return SubProductCode 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * 获取<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * @return SubProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
-                     * 设置子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
-                     * @param _subProductCode 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * 设置<p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
+                     * @param _subProductCode <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
                      * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
@@ -859,15 +827,15 @@ namespace TencentCloud
                     bool SubProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
-                     * @return ReadWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * 获取<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
+                     * @return ReadWriteMode <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
                      * 
                      */
                     int64_t GetReadWriteMode() const;
 
                     /**
-                     * 设置读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
-                     * @param _readWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * 设置<p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
+                     * @param _readWriteMode <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
                      * 
                      */
                     void SetReadWriteMode(const int64_t& _readWriteMode);
@@ -880,15 +848,15 @@ namespace TencentCloud
                     bool ReadWriteModeHasBeenSet() const;
 
                     /**
-                     * 获取置放群组是否开启异步任务
-                     * @return EnableScheduleRecoverGroup 置放群组是否开启异步任务
+                     * 获取<p>置放群组是否开启异步任务</p>
+                     * @return EnableScheduleRecoverGroup <p>置放群组是否开启异步任务</p>
                      * 
                      */
                     bool GetEnableScheduleRecoverGroup() const;
 
                     /**
-                     * 设置置放群组是否开启异步任务
-                     * @param _enableScheduleRecoverGroup 置放群组是否开启异步任务
+                     * 设置<p>置放群组是否开启异步任务</p>
+                     * @param _enableScheduleRecoverGroup <p>置放群组是否开启异步任务</p>
                      * 
                      */
                     void SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup);
@@ -901,15 +869,15 @@ namespace TencentCloud
                     bool EnableScheduleRecoverGroupHasBeenSet() const;
 
                     /**
-                     * 获取置放群组开启异步任务的可维护时间段
-                     * @return EnableScheduleOperationDuration 置放群组开启异步任务的可维护时间段
+                     * 获取<p>置放群组开启异步任务的可维护时间段</p>
+                     * @return EnableScheduleOperationDuration <p>置放群组开启异步任务的可维护时间段</p>
                      * 
                      */
                     EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
 
                     /**
-                     * 设置置放群组开启异步任务的可维护时间段
-                     * @param _enableScheduleOperationDuration 置放群组开启异步任务的可维护时间段
+                     * 设置<p>置放群组开启异步任务的可维护时间段</p>
+                     * @param _enableScheduleOperationDuration <p>置放群组开启异步任务的可维护时间段</p>
                      * 
                      */
                     void SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration);
@@ -922,15 +890,15 @@ namespace TencentCloud
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取自动扩盘参数列表
-                     * @return AutoScaleDiskInfoList 自动扩盘参数列表
+                     * 获取<p>自动扩盘参数列表</p>
+                     * @return AutoScaleDiskInfoList <p>自动扩盘参数列表</p>
                      * 
                      */
                     std::vector<AutoScaleDiskInfo> GetAutoScaleDiskInfoList() const;
 
                     /**
-                     * 设置自动扩盘参数列表
-                     * @param _autoScaleDiskInfoList 自动扩盘参数列表
+                     * 设置<p>自动扩盘参数列表</p>
+                     * @param _autoScaleDiskInfoList <p>自动扩盘参数列表</p>
                      * 
                      */
                     void SetAutoScaleDiskInfoList(const std::vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList);
@@ -943,15 +911,15 @@ namespace TencentCloud
                     bool AutoScaleDiskInfoListHasBeenSet() const;
 
                     /**
-                     * 获取是否开启kibana公网访问，不传默认开启
-                     * @return EnableKibanaPublicAccess 是否开启kibana公网访问，不传默认开启
+                     * 获取<p>是否开启kibana公网访问，不传默认开启</p>
+                     * @return EnableKibanaPublicAccess <p>是否开启kibana公网访问，不传默认开启</p>
                      * 
                      */
                     std::string GetEnableKibanaPublicAccess() const;
 
                     /**
-                     * 设置是否开启kibana公网访问，不传默认开启
-                     * @param _enableKibanaPublicAccess 是否开启kibana公网访问，不传默认开启
+                     * 设置<p>是否开启kibana公网访问，不传默认开启</p>
+                     * @param _enableKibanaPublicAccess <p>是否开启kibana公网访问，不传默认开启</p>
                      * 
                      */
                     void SetEnableKibanaPublicAccess(const std::string& _enableKibanaPublicAccess);
@@ -963,267 +931,286 @@ namespace TencentCloud
                      */
                     bool EnableKibanaPublicAccessHasBeenSet() const;
 
+                    /**
+                     * 获取<p>已有的云监控告警策略 ID</p>
+                     * @return AlarmPolicyIds <p>已有的云监控告警策略 ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmPolicyIds() const;
+
+                    /**
+                     * 设置<p>已有的云监控告警策略 ID</p>
+                     * @param _alarmPolicyIds <p>已有的云监控告警策略 ID</p>
+                     * 
+                     */
+                    void SetAlarmPolicyIds(const std::vector<std::string>& _alarmPolicyIds);
+
+                    /**
+                     * 判断参数 AlarmPolicyIds 是否已赋值
+                     * @return AlarmPolicyIds 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
+                     * <p>实例版本（支持&quot;5.6.4&quot;、&quot;6.4.3&quot;、&quot;6.8.2&quot;、&quot;7.5.1&quot;、&quot;7.10.1&quot;）</p>
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * <p>私有网络ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * <p>访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点数量（2-50个）
+                     * <p>已废弃请使用NodeInfoList<br>节点数量（2-50个）</p>
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR
+                     * <p>计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR</p>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 包年包月购买时长（单位由参数TimeUnit决定）
+                     * <p>包年包月购买时长（单位由参数TimeUnit决定）</p>
                      */
                     uint64_t m_chargePeriod;
                     bool m_chargePeriodHasBeenSet;
 
                     /**
-                     * 自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费
+                     * <p>自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费</p>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD
+                     * <p>已废弃请使用NodeInfoList<br>节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点磁盘容量（单位GB）
+                     * <p>已废弃请使用NodeInfoList<br>节点磁盘容量（单位GB）</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）
+                     * <p>计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0
+                     * <p>是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0</p>
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 代金券ID列表（目前仅支持指定一张代金券）
+                     * <p>代金券ID列表（目前仅支持指定一张代金券）</p>
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false
+                     * <p>已废弃请使用NodeInfoList<br>是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false</p>
                      */
                     bool m_enableDedicatedMaster;
                     bool m_enableDedicatedMasterHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）</p>
                      */
                     uint64_t m_masterNodeNum;
                     bool m_masterNodeNumHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_masterNodeType;
                     bool m_masterNodeTypeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）</p>
                      */
                     uint64_t m_masterNodeDiskSize;
                     bool m_masterNodeDiskSizeHasBeenSet;
 
                     /**
-                     * 集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）
+                     * <p>集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）</p>
                      */
                     std::string m_clusterNameInConf;
                     bool m_clusterNameInConfHasBeenSet;
 
                     /**
-                     * 集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0
+                     * <p>集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0</p>
                      */
                     uint64_t m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 多可用区部署时可用区的详细信息(DeployMode为1时必传)
+                     * <p>多可用区部署时可用区的详细信息(DeployMode为1时必传)</p>
                      */
                     std::vector<ZoneDetail> m_multiZoneInfo;
                     bool m_multiZoneInfoHasBeenSet;
 
                     /**
-                     * License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum
+                     * <p>License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum</p>
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等
+                     * <p>节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等</p>
                      */
                     std::vector<NodeInfo> m_nodeInfoList;
                     bool m_nodeInfoListHasBeenSet;
 
                     /**
-                     * 节点标签信息列表
+                     * <p>节点标签信息列表</p>
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>
+                     * <p>6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li></p>
                      */
                     uint64_t m_basicSecurityType;
                     bool m_basicSecurityTypeHasBeenSet;
 
                     /**
-                     * 场景化模板类型 0：不启用 1：通用 2：日志 3：搜索
+                     * <p>场景化模板类型 0：不启用 1：通用 2：日志 3：搜索</p>
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
 
                     /**
-                     * 可视化节点配置
+                     * <p>可视化节点配置</p>
                      */
                     WebNodeTypeInfo m_webNodeTypeInfo;
                     bool m_webNodeTypeInfoHasBeenSet;
 
                     /**
-                     * 创建https集群，默认是http
+                     * <p>创建https集群，默认是http</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 可维护时间段
+                     * <p>可维护时间段</p>
                      */
                     OperationDuration m_operationDuration;
                     bool m_operationDurationHasBeenSet;
 
                     /**
-                     * 是否开启存算分离
+                     * <p>是否开启存算分离</p>
                      */
                     bool m_enableHybridStorage;
                     bool m_enableHybridStorageHasBeenSet;
 
                     /**
-                     * 硬盘额外性能
+                     * <p>硬盘额外性能</p>
                      */
                     uint64_t m_diskEnhance;
                     bool m_diskEnhanceHasBeenSet;
 
                     /**
-                     * 是否开启智能巡检
+                     * <p>是否开启智能巡检</p>
                      */
                     bool m_enableDiagnose;
                     bool m_enableDiagnoseHasBeenSet;
 
                     /**
-                     * cdcId，使用cdc子网时传递
+                     * <p>cdcId，使用cdc子网时传递</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 置放群组亲和度，范围[0,10]，0表示不开启
+                     * <p>置放群组亲和度，范围[0,10]，0表示不开启</p>
                      */
                     uint64_t m_disasterRecoverGroupAffinity;
                     bool m_disasterRecoverGroupAffinityHasBeenSet;
 
                     /**
-                     * 子产品ID枚举值： 开源版："sp_es_io2"， 基础版："sp_es_basic"，白金版："sp_es_platinum"，企业版："sp_es_enterprise"，CDC白金版："sp_es_cdc_platinum"，日志增强版："sp_es_enlogging"，tsearch："sp_tsearch_io2"，logstash："sp_es_logstash" ，可以为空，为空的时候后台取LicenseType映射该字段
+                     * <p>子产品ID枚举值： 开源版：&quot;sp_es_io2&quot;， 基础版：&quot;sp_es_basic&quot;，白金版：&quot;sp_es_platinum&quot;，企业版：&quot;sp_es_enterprise&quot;，CDC白金版：&quot;sp_es_cdc_platinum&quot;，日志增强版：&quot;sp_es_enlogging&quot;，tsearch：&quot;sp_tsearch_io2&quot;，logstash：&quot;sp_es_logstash&quot; ，可以为空，为空的时候后台取LicenseType映射该字段</p>
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
 
                     /**
-                     * 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+                     * <p>读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离</p>
                      */
                     int64_t m_readWriteMode;
                     bool m_readWriteModeHasBeenSet;
 
                     /**
-                     * 置放群组是否开启异步任务
+                     * <p>置放群组是否开启异步任务</p>
                      */
                     bool m_enableScheduleRecoverGroup;
                     bool m_enableScheduleRecoverGroupHasBeenSet;
 
                     /**
-                     * 置放群组开启异步任务的可维护时间段
+                     * <p>置放群组开启异步任务的可维护时间段</p>
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
 
                     /**
-                     * 自动扩盘参数列表
+                     * <p>自动扩盘参数列表</p>
                      */
                     std::vector<AutoScaleDiskInfo> m_autoScaleDiskInfoList;
                     bool m_autoScaleDiskInfoListHasBeenSet;
 
                     /**
-                     * 是否开启kibana公网访问，不传默认开启
+                     * <p>是否开启kibana公网访问，不传默认开启</p>
                      */
                     std::string m_enableKibanaPublicAccess;
                     bool m_enableKibanaPublicAccessHasBeenSet;
+
+                    /**
+                     * <p>已有的云监控告警策略 ID</p>
+                     */
+                    std::vector<std::string> m_alarmPolicyIds;
+                    bool m_alarmPolicyIdsHasBeenSet;
 
                 };
             }

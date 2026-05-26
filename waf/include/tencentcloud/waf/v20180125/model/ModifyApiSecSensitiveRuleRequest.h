@@ -27,6 +27,7 @@
 #include <tencentcloud/waf/v20180125/model/ApiSecSceneRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecCustomEventRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecExcludeRule.h>
+#include <tencentcloud/waf/v20180125/model/ApiSecSensitiveWhiteRule.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取1表示开，0表示关，3表示删除
-                     * @return Status 1表示开，0表示关，3表示删除
+                     * 获取<p>1表示开，0表示关，3表示删除</p>
+                     * @return Status <p>1表示开，0表示关，3表示删除</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置1表示开，0表示关，3表示删除
-                     * @param _status 1表示开，0表示关，3表示删除
+                     * 设置<p>1表示开，0表示关，3表示删除</p>
+                     * @param _status <p>1表示开，0表示关，3表示删除</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return RuleName <p>规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _ruleName <p>规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -112,36 +113,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义配置
-                     * @return CustomRule 客户自定义配置
-                     * 
-                     */
-                    ApiSecCustomSensitiveRule GetCustomRule() const;
-
-                    /**
-                     * 设置客户自定义配置
-                     * @param _customRule 客户自定义配置
-                     * 
-                     */
-                    void SetCustomRule(const ApiSecCustomSensitiveRule& _customRule);
-
-                    /**
-                     * 判断参数 CustomRule 是否已赋值
-                     * @return CustomRule 是否已赋值
-                     * 
-                     */
-                    bool CustomRuleHasBeenSet() const;
-
-                    /**
-                     * 获取rulename列表，批量操作的时候填改值
-                     * @return RuleNameList rulename列表，批量操作的时候填改值
+                     * 获取<p>rulename列表，批量操作的时候填改值</p>
+                     * @return RuleNameList <p>rulename列表，批量操作的时候填改值</p>
                      * 
                      */
                     std::vector<std::string> GetRuleNameList() const;
 
                     /**
-                     * 设置rulename列表，批量操作的时候填改值
-                     * @param _ruleNameList rulename列表，批量操作的时候填改值
+                     * 设置<p>rulename列表，批量操作的时候填改值</p>
+                     * @param _ruleNameList <p>rulename列表，批量操作的时候填改值</p>
                      * 
                      */
                     void SetRuleNameList(const std::vector<std::string>& _ruleNameList);
@@ -154,36 +134,36 @@ namespace TencentCloud
                     bool RuleNameListHasBeenSet() const;
 
                     /**
-                     * 获取api提取规则内容
-                     * @return CustomApiExtractRule api提取规则内容
+                     * 获取<p>客户自定义配置</p>
+                     * @return CustomRule <p>客户自定义配置</p>
                      * 
                      */
-                    ApiSecExtractRule GetCustomApiExtractRule() const;
+                    ApiSecCustomSensitiveRule GetCustomRule() const;
 
                     /**
-                     * 设置api提取规则内容
-                     * @param _customApiExtractRule api提取规则内容
+                     * 设置<p>客户自定义配置</p>
+                     * @param _customRule <p>客户自定义配置</p>
                      * 
                      */
-                    void SetCustomApiExtractRule(const ApiSecExtractRule& _customApiExtractRule);
+                    void SetCustomRule(const ApiSecCustomSensitiveRule& _customRule);
 
                     /**
-                     * 判断参数 CustomApiExtractRule 是否已赋值
-                     * @return CustomApiExtractRule 是否已赋值
+                     * 判断参数 CustomRule 是否已赋值
+                     * @return CustomRule 是否已赋值
                      * 
                      */
-                    bool CustomApiExtractRuleHasBeenSet() const;
+                    bool CustomRuleHasBeenSet() const;
 
                     /**
-                     * 获取批量操作的时候的api提取规则
-                     * @return ApiExtractRuleName 批量操作的时候的api提取规则
+                     * 获取<p>批量操作的时候的api提取规则</p>
+                     * @return ApiExtractRuleName <p>批量操作的时候的api提取规则</p>
                      * 
                      */
                     std::vector<std::string> GetApiExtractRuleName() const;
 
                     /**
-                     * 设置批量操作的时候的api提取规则
-                     * @param _apiExtractRuleName 批量操作的时候的api提取规则
+                     * 设置<p>批量操作的时候的api提取规则</p>
+                     * @param _apiExtractRuleName <p>批量操作的时候的api提取规则</p>
                      * 
                      */
                     void SetApiExtractRuleName(const std::vector<std::string>& _apiExtractRuleName);
@@ -196,36 +176,36 @@ namespace TencentCloud
                     bool ApiExtractRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取自定义api鉴权规则
-                     * @return ApiSecPrivilegeRule 自定义api鉴权规则
+                     * 获取<p>api提取规则内容</p>
+                     * @return CustomApiExtractRule <p>api提取规则内容</p>
                      * 
                      */
-                    ApiSecPrivilegeRule GetApiSecPrivilegeRule() const;
+                    ApiSecExtractRule GetCustomApiExtractRule() const;
 
                     /**
-                     * 设置自定义api鉴权规则
-                     * @param _apiSecPrivilegeRule 自定义api鉴权规则
+                     * 设置<p>api提取规则内容</p>
+                     * @param _customApiExtractRule <p>api提取规则内容</p>
                      * 
                      */
-                    void SetApiSecPrivilegeRule(const ApiSecPrivilegeRule& _apiSecPrivilegeRule);
+                    void SetCustomApiExtractRule(const ApiSecExtractRule& _customApiExtractRule);
 
                     /**
-                     * 判断参数 ApiSecPrivilegeRule 是否已赋值
-                     * @return ApiSecPrivilegeRule 是否已赋值
+                     * 判断参数 CustomApiExtractRule 是否已赋值
+                     * @return CustomApiExtractRule 是否已赋值
                      * 
                      */
-                    bool ApiSecPrivilegeRuleHasBeenSet() const;
+                    bool CustomApiExtractRuleHasBeenSet() const;
 
                     /**
-                     * 获取匹配操作时候的api鉴权规则
-                     * @return ApiSecPrivilegeRuleName 匹配操作时候的api鉴权规则
+                     * 获取<p>匹配操作时候的api鉴权规则</p>
+                     * @return ApiSecPrivilegeRuleName <p>匹配操作时候的api鉴权规则</p>
                      * 
                      */
                     std::vector<std::string> GetApiSecPrivilegeRuleName() const;
 
                     /**
-                     * 设置匹配操作时候的api鉴权规则
-                     * @param _apiSecPrivilegeRuleName 匹配操作时候的api鉴权规则
+                     * 设置<p>匹配操作时候的api鉴权规则</p>
+                     * @param _apiSecPrivilegeRuleName <p>匹配操作时候的api鉴权规则</p>
                      * 
                      */
                     void SetApiSecPrivilegeRuleName(const std::vector<std::string>& _apiSecPrivilegeRuleName);
@@ -238,15 +218,36 @@ namespace TencentCloud
                     bool ApiSecPrivilegeRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取批量操作的时候的自定义场景列表
-                     * @return ApiSecSceneRuleNameList 批量操作的时候的自定义场景列表
+                     * 获取<p>自定义api鉴权规则</p>
+                     * @return ApiSecPrivilegeRule <p>自定义api鉴权规则</p>
+                     * 
+                     */
+                    ApiSecPrivilegeRule GetApiSecPrivilegeRule() const;
+
+                    /**
+                     * 设置<p>自定义api鉴权规则</p>
+                     * @param _apiSecPrivilegeRule <p>自定义api鉴权规则</p>
+                     * 
+                     */
+                    void SetApiSecPrivilegeRule(const ApiSecPrivilegeRule& _apiSecPrivilegeRule);
+
+                    /**
+                     * 判断参数 ApiSecPrivilegeRule 是否已赋值
+                     * @return ApiSecPrivilegeRule 是否已赋值
+                     * 
+                     */
+                    bool ApiSecPrivilegeRuleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>批量操作的时候的自定义场景列表</p>
+                     * @return ApiSecSceneRuleNameList <p>批量操作的时候的自定义场景列表</p>
                      * 
                      */
                     std::vector<std::string> GetApiSecSceneRuleNameList() const;
 
                     /**
-                     * 设置批量操作的时候的自定义场景列表
-                     * @param _apiSecSceneRuleNameList 批量操作的时候的自定义场景列表
+                     * 设置<p>批量操作的时候的自定义场景列表</p>
+                     * @param _apiSecSceneRuleNameList <p>批量操作的时候的自定义场景列表</p>
                      * 
                      */
                     void SetApiSecSceneRuleNameList(const std::vector<std::string>& _apiSecSceneRuleNameList);
@@ -259,15 +260,15 @@ namespace TencentCloud
                     bool ApiSecSceneRuleNameListHasBeenSet() const;
 
                     /**
-                     * 获取单条自定义api场景规则
-                     * @return ApiSecSceneRule 单条自定义api场景规则
+                     * 获取<p>单条自定义api场景规则</p>
+                     * @return ApiSecSceneRule <p>单条自定义api场景规则</p>
                      * 
                      */
                     ApiSecSceneRule GetApiSecSceneRule() const;
 
                     /**
-                     * 设置单条自定义api场景规则
-                     * @param _apiSecSceneRule 单条自定义api场景规则
+                     * 设置<p>单条自定义api场景规则</p>
+                     * @param _apiSecSceneRule <p>单条自定义api场景规则</p>
                      * 
                      */
                     void SetApiSecSceneRule(const ApiSecSceneRule& _apiSecSceneRule);
@@ -280,15 +281,15 @@ namespace TencentCloud
                     bool ApiSecSceneRuleHasBeenSet() const;
 
                     /**
-                     * 获取批量操作的时候的自定义事件规则列表
-                     * @return ApiSecCustomEventRuleNameList 批量操作的时候的自定义事件规则列表
+                     * 获取<p>批量操作的时候的自定义事件规则列表</p>
+                     * @return ApiSecCustomEventRuleNameList <p>批量操作的时候的自定义事件规则列表</p>
                      * 
                      */
                     std::vector<std::string> GetApiSecCustomEventRuleNameList() const;
 
                     /**
-                     * 设置批量操作的时候的自定义事件规则列表
-                     * @param _apiSecCustomEventRuleNameList 批量操作的时候的自定义事件规则列表
+                     * 设置<p>批量操作的时候的自定义事件规则列表</p>
+                     * @param _apiSecCustomEventRuleNameList <p>批量操作的时候的自定义事件规则列表</p>
                      * 
                      */
                     void SetApiSecCustomEventRuleNameList(const std::vector<std::string>& _apiSecCustomEventRuleNameList);
@@ -301,15 +302,15 @@ namespace TencentCloud
                     bool ApiSecCustomEventRuleNameListHasBeenSet() const;
 
                     /**
-                     * 获取自定义事件规则
-                     * @return ApiSecCustomEventRuleRule 自定义事件规则
+                     * 获取<p>自定义事件规则</p>
+                     * @return ApiSecCustomEventRuleRule <p>自定义事件规则</p>
                      * 
                      */
                     ApiSecCustomEventRule GetApiSecCustomEventRuleRule() const;
 
                     /**
-                     * 设置自定义事件规则
-                     * @param _apiSecCustomEventRuleRule 自定义事件规则
+                     * 设置<p>自定义事件规则</p>
+                     * @param _apiSecCustomEventRuleRule <p>自定义事件规则</p>
                      * 
                      */
                     void SetApiSecCustomEventRuleRule(const ApiSecCustomEventRule& _apiSecCustomEventRuleRule);
@@ -322,15 +323,36 @@ namespace TencentCloud
                     bool ApiSecCustomEventRuleRuleHasBeenSet() const;
 
                     /**
-                     * 获取无效api排除规则
-                     * @return CustomApiExcludeRule 无效api排除规则
+                     * 获取<p>批量操作的时候的无效api排除规则</p>
+                     * @return ApiExcludeRuleName <p>批量操作的时候的无效api排除规则</p>
+                     * 
+                     */
+                    std::vector<std::string> GetApiExcludeRuleName() const;
+
+                    /**
+                     * 设置<p>批量操作的时候的无效api排除规则</p>
+                     * @param _apiExcludeRuleName <p>批量操作的时候的无效api排除规则</p>
+                     * 
+                     */
+                    void SetApiExcludeRuleName(const std::vector<std::string>& _apiExcludeRuleName);
+
+                    /**
+                     * 判断参数 ApiExcludeRuleName 是否已赋值
+                     * @return ApiExcludeRuleName 是否已赋值
+                     * 
+                     */
+                    bool ApiExcludeRuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>无效api排除规则</p>
+                     * @return CustomApiExcludeRule <p>无效api排除规则</p>
                      * 
                      */
                     ApiSecExcludeRule GetCustomApiExcludeRule() const;
 
                     /**
-                     * 设置无效api排除规则
-                     * @param _customApiExcludeRule 无效api排除规则
+                     * 设置<p>无效api排除规则</p>
+                     * @param _customApiExcludeRule <p>无效api排除规则</p>
                      * 
                      */
                     void SetCustomApiExcludeRule(const ApiSecExcludeRule& _customApiExcludeRule);
@@ -343,117 +365,150 @@ namespace TencentCloud
                     bool CustomApiExcludeRuleHasBeenSet() const;
 
                     /**
-                     * 获取批量操作的时候的无效api排除规则
-                     * @return ApiExcludeRuleName 批量操作的时候的无效api排除规则
+                     * 获取<p>批量操作时的敏感数据加白规则名称列表</p>
+                     * @return ApiSecSensitiveWhiteRuleNameList <p>批量操作时的敏感数据加白规则名称列表</p>
                      * 
                      */
-                    std::vector<std::string> GetApiExcludeRuleName() const;
+                    std::vector<std::string> GetApiSecSensitiveWhiteRuleNameList() const;
 
                     /**
-                     * 设置批量操作的时候的无效api排除规则
-                     * @param _apiExcludeRuleName 批量操作的时候的无效api排除规则
+                     * 设置<p>批量操作时的敏感数据加白规则名称列表</p>
+                     * @param _apiSecSensitiveWhiteRuleNameList <p>批量操作时的敏感数据加白规则名称列表</p>
                      * 
                      */
-                    void SetApiExcludeRuleName(const std::vector<std::string>& _apiExcludeRuleName);
+                    void SetApiSecSensitiveWhiteRuleNameList(const std::vector<std::string>& _apiSecSensitiveWhiteRuleNameList);
 
                     /**
-                     * 判断参数 ApiExcludeRuleName 是否已赋值
-                     * @return ApiExcludeRuleName 是否已赋值
+                     * 判断参数 ApiSecSensitiveWhiteRuleNameList 是否已赋值
+                     * @return ApiSecSensitiveWhiteRuleNameList 是否已赋值
                      * 
                      */
-                    bool ApiExcludeRuleNameHasBeenSet() const;
+                    bool ApiSecSensitiveWhiteRuleNameListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感数据加白规则</p>
+                     * @return ApiSecSensitiveWhiteRuleRule <p>敏感数据加白规则</p>
+                     * 
+                     */
+                    ApiSecSensitiveWhiteRule GetApiSecSensitiveWhiteRuleRule() const;
+
+                    /**
+                     * 设置<p>敏感数据加白规则</p>
+                     * @param _apiSecSensitiveWhiteRuleRule <p>敏感数据加白规则</p>
+                     * 
+                     */
+                    void SetApiSecSensitiveWhiteRuleRule(const ApiSecSensitiveWhiteRule& _apiSecSensitiveWhiteRuleRule);
+
+                    /**
+                     * 判断参数 ApiSecSensitiveWhiteRuleRule 是否已赋值
+                     * @return ApiSecSensitiveWhiteRuleRule 是否已赋值
+                     * 
+                     */
+                    bool ApiSecSensitiveWhiteRuleRuleHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 1表示开，0表示关，3表示删除
+                     * <p>1表示开，0表示关，3表示删除</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 客户自定义配置
-                     */
-                    ApiSecCustomSensitiveRule m_customRule;
-                    bool m_customRuleHasBeenSet;
-
-                    /**
-                     * rulename列表，批量操作的时候填改值
+                     * <p>rulename列表，批量操作的时候填改值</p>
                      */
                     std::vector<std::string> m_ruleNameList;
                     bool m_ruleNameListHasBeenSet;
 
                     /**
-                     * api提取规则内容
+                     * <p>客户自定义配置</p>
                      */
-                    ApiSecExtractRule m_customApiExtractRule;
-                    bool m_customApiExtractRuleHasBeenSet;
+                    ApiSecCustomSensitiveRule m_customRule;
+                    bool m_customRuleHasBeenSet;
 
                     /**
-                     * 批量操作的时候的api提取规则
+                     * <p>批量操作的时候的api提取规则</p>
                      */
                     std::vector<std::string> m_apiExtractRuleName;
                     bool m_apiExtractRuleNameHasBeenSet;
 
                     /**
-                     * 自定义api鉴权规则
+                     * <p>api提取规则内容</p>
                      */
-                    ApiSecPrivilegeRule m_apiSecPrivilegeRule;
-                    bool m_apiSecPrivilegeRuleHasBeenSet;
+                    ApiSecExtractRule m_customApiExtractRule;
+                    bool m_customApiExtractRuleHasBeenSet;
 
                     /**
-                     * 匹配操作时候的api鉴权规则
+                     * <p>匹配操作时候的api鉴权规则</p>
                      */
                     std::vector<std::string> m_apiSecPrivilegeRuleName;
                     bool m_apiSecPrivilegeRuleNameHasBeenSet;
 
                     /**
-                     * 批量操作的时候的自定义场景列表
+                     * <p>自定义api鉴权规则</p>
+                     */
+                    ApiSecPrivilegeRule m_apiSecPrivilegeRule;
+                    bool m_apiSecPrivilegeRuleHasBeenSet;
+
+                    /**
+                     * <p>批量操作的时候的自定义场景列表</p>
                      */
                     std::vector<std::string> m_apiSecSceneRuleNameList;
                     bool m_apiSecSceneRuleNameListHasBeenSet;
 
                     /**
-                     * 单条自定义api场景规则
+                     * <p>单条自定义api场景规则</p>
                      */
                     ApiSecSceneRule m_apiSecSceneRule;
                     bool m_apiSecSceneRuleHasBeenSet;
 
                     /**
-                     * 批量操作的时候的自定义事件规则列表
+                     * <p>批量操作的时候的自定义事件规则列表</p>
                      */
                     std::vector<std::string> m_apiSecCustomEventRuleNameList;
                     bool m_apiSecCustomEventRuleNameListHasBeenSet;
 
                     /**
-                     * 自定义事件规则
+                     * <p>自定义事件规则</p>
                      */
                     ApiSecCustomEventRule m_apiSecCustomEventRuleRule;
                     bool m_apiSecCustomEventRuleRuleHasBeenSet;
 
                     /**
-                     * 无效api排除规则
+                     * <p>批量操作的时候的无效api排除规则</p>
+                     */
+                    std::vector<std::string> m_apiExcludeRuleName;
+                    bool m_apiExcludeRuleNameHasBeenSet;
+
+                    /**
+                     * <p>无效api排除规则</p>
                      */
                     ApiSecExcludeRule m_customApiExcludeRule;
                     bool m_customApiExcludeRuleHasBeenSet;
 
                     /**
-                     * 批量操作的时候的无效api排除规则
+                     * <p>批量操作时的敏感数据加白规则名称列表</p>
                      */
-                    std::vector<std::string> m_apiExcludeRuleName;
-                    bool m_apiExcludeRuleNameHasBeenSet;
+                    std::vector<std::string> m_apiSecSensitiveWhiteRuleNameList;
+                    bool m_apiSecSensitiveWhiteRuleNameListHasBeenSet;
+
+                    /**
+                     * <p>敏感数据加白规则</p>
+                     */
+                    ApiSecSensitiveWhiteRule m_apiSecSensitiveWhiteRuleRule;
+                    bool m_apiSecSensitiveWhiteRuleRuleHasBeenSet;
 
                 };
             }

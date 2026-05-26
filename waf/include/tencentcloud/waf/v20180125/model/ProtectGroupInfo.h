@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/ProtectGroupDomainInfo.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防护对象组ID
-                     * @return ID 防护对象组ID
+                     * 获取<p>防护对象组ID</p>
+                     * @return ID <p>防护对象组ID</p>
                      * 
                      */
                     uint64_t GetID() const;
 
                     /**
-                     * 设置防护对象组ID
-                     * @param _iD 防护对象组ID
+                     * 设置<p>防护对象组ID</p>
+                     * @param _iD <p>防护对象组ID</p>
                      * 
                      */
                     void SetID(const uint64_t& _iD);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取防护对象组名称
-                     * @return Name 防护对象组名称
+                     * 获取<p>防护对象组名称</p>
+                     * @return Name <p>防护对象组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置防护对象组名称
-                     * @param _name 防护对象组名称
+                     * 设置<p>防护对象组名称</p>
+                     * @param _name <p>防护对象组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取防护对象组备注
-                     * @return Remark 防护对象组备注
+                     * 获取<p>防护对象组备注</p>
+                     * @return Remark <p>防护对象组备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置防护对象组备注
-                     * @param _remark 防护对象组备注
+                     * 设置<p>防护对象组备注</p>
+                     * @param _remark <p>防护对象组备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取防护对象组中绑定的域名详情
-                     * @return Domains 防护对象组中绑定的域名详情
+                     * 获取<p>防护对象组中绑定的域名详情</p>
+                     * @return Domains <p>防护对象组中绑定的域名详情</p>
                      * 
                      */
                     std::vector<ProtectGroupDomainInfo> GetDomains() const;
 
                     /**
-                     * 设置防护对象组中绑定的域名详情
-                     * @param _domains 防护对象组中绑定的域名详情
+                     * 设置<p>防护对象组中绑定的域名详情</p>
+                     * @param _domains <p>防护对象组中绑定的域名详情</p>
                      * 
                      */
                     void SetDomains(const std::vector<ProtectGroupDomainInfo>& _domains);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取关联的批量规则数
-                     * @return RuleNum 关联的批量规则数
+                     * 获取<p>关联的批量规则数</p>
+                     * @return RuleNum <p>关联的批量规则数</p>
                      * 
                      */
                     uint64_t GetRuleNum() const;
 
                     /**
-                     * 设置关联的批量规则数
-                     * @param _ruleNum 关联的批量规则数
+                     * 设置<p>关联的批量规则数</p>
+                     * @param _ruleNum <p>关联的批量规则数</p>
                      * 
                      */
                     void SetRuleNum(const uint64_t& _ruleNum);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool RuleNumHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -194,49 +195,108 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return TagInfos <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagInfos() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tagInfos <p>标签信息</p>
+                     * 
+                     */
+                    void SetTagInfos(const std::vector<TagInfo>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     * 
+                     */
+                    bool TagInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否绑定了模板</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoundTemplate <p>是否绑定了模板</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetBoundTemplate() const;
+
+                    /**
+                     * 设置<p>是否绑定了模板</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _boundTemplate <p>是否绑定了模板</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBoundTemplate(const bool& _boundTemplate);
+
+                    /**
+                     * 判断参数 BoundTemplate 是否已赋值
+                     * @return BoundTemplate 是否已赋值
+                     * 
+                     */
+                    bool BoundTemplateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 防护对象组ID
+                     * <p>防护对象组ID</p>
                      */
                     uint64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 防护对象组名称
+                     * <p>防护对象组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 防护对象组备注
+                     * <p>防护对象组备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 防护对象组中绑定的域名详情
+                     * <p>防护对象组中绑定的域名详情</p>
                      */
                     std::vector<ProtectGroupDomainInfo> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 关联的批量规则数
+                     * <p>关联的批量规则数</p>
                      */
                     uint64_t m_ruleNum;
                     bool m_ruleNumHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
+
+                    /**
+                     * <p>是否绑定了模板</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_boundTemplate;
+                    bool m_boundTemplateHasBeenSet;
 
                 };
             }

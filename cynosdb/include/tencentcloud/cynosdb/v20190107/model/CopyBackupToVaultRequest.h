@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标保险箱ID，备份文件将复制到此保险箱
-                     * @return VaultId 目标保险箱ID，备份文件将复制到此保险箱
+                     * 获取<p>目标保险箱ID，备份文件将复制到此保险箱</p>
+                     * @return VaultId <p>目标保险箱ID，备份文件将复制到此保险箱</p>
                      * 
                      */
                     std::string GetVaultId() const;
 
                     /**
-                     * 设置目标保险箱ID，备份文件将复制到此保险箱
-                     * @param _vaultId 目标保险箱ID，备份文件将复制到此保险箱
+                     * 设置<p>目标保险箱ID，备份文件将复制到此保险箱</p>
+                     * @param _vaultId <p>目标保险箱ID，备份文件将复制到此保险箱</p>
                      * 
                      */
                     void SetVaultId(const std::string& _vaultId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VaultIdHasBeenSet() const;
 
                     /**
-                     * 获取备份文件ID列表，支持批量复制多个备份文件
-                     * @return BackupIds 备份文件ID列表，支持批量复制多个备份文件
+                     * 获取<p>备份文件ID列表，支持批量复制多个备份文件</p>
+                     * @return BackupIds <p>备份文件ID列表，支持批量复制多个备份文件</p>
                      * 
                      */
                     std::vector<int64_t> GetBackupIds() const;
 
                     /**
-                     * 设置备份文件ID列表，支持批量复制多个备份文件
-                     * @param _backupIds 备份文件ID列表，支持批量复制多个备份文件
+                     * 设置<p>备份文件ID列表，支持批量复制多个备份文件</p>
+                     * @param _backupIds <p>备份文件ID列表，支持批量复制多个备份文件</p>
                      * 
                      */
                     void SetBackupIds(const std::vector<int64_t>& _backupIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标保险箱ID，备份文件将复制到此保险箱
+                     * <p>目标保险箱ID，备份文件将复制到此保险箱</p>
                      */
                     std::string m_vaultId;
                     bool m_vaultIdHasBeenSet;
 
                     /**
-                     * 备份文件ID列表，支持批量复制多个备份文件
+                     * <p>备份文件ID列表，支持批量复制多个备份文件</p>
                      */
                     std::vector<int64_t> m_backupIds;
                     bool m_backupIdsHasBeenSet;

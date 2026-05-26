@@ -28,6 +28,7 @@ DomainsPartInfo::DomainsPartInfo() :
     m_instanceNameHasBeenSet(false),
     m_certHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_httpsRewriteHasBeenSet(false),
     m_httpsUpstreamPortHasBeenSet(false),
@@ -78,7 +79,9 @@ DomainsPartInfo::DomainsPartInfo() :
     m_useCaseHasBeenSet(false),
     m_gzipHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_privateVipStatusHasBeenSet(false)
+    m_privateVipStatusHasBeenSet(false),
+    m_tagInfosHasBeenSet(false),
+    m_ipv6StatusHasBeenSet(false)
 {
 }
 
@@ -155,6 +158,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
     }
 
     if (value.HasMember("Engine") && !value["Engine"].IsNull())
@@ -702,6 +715,36 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_privateVipStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6Status") && !value["Ipv6Status"].IsNull())
+    {
+        if (!value["Ipv6Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Ipv6Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Status = value["Ipv6Status"].GetInt64();
+        m_ipv6StatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -763,6 +806,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineHasBeenSet)
@@ -1212,6 +1263,29 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_privateVipStatus, allocator);
     }
 
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ipv6StatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6Status, allocator);
+    }
+
 }
 
 
@@ -1325,6 +1399,22 @@ void DomainsPartInfo::SetCreateTime(const string& _createTime)
 bool DomainsPartInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string DomainsPartInfo::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void DomainsPartInfo::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 
 uint64_t DomainsPartInfo::GetEngine() const
@@ -2141,5 +2231,37 @@ void DomainsPartInfo::SetPrivateVipStatus(const int64_t& _privateVipStatus)
 bool DomainsPartInfo::PrivateVipStatusHasBeenSet() const
 {
     return m_privateVipStatusHasBeenSet;
+}
+
+vector<TagInfo> DomainsPartInfo::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void DomainsPartInfo::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool DomainsPartInfo::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetIpv6Status() const
+{
+    return m_ipv6Status;
+}
+
+void DomainsPartInfo::SetIpv6Status(const int64_t& _ipv6Status)
+{
+    m_ipv6Status = _ipv6Status;
+    m_ipv6StatusHasBeenSet = true;
+}
+
+bool DomainsPartInfo::Ipv6StatusHasBeenSet() const
+{
+    return m_ipv6StatusHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取编辑的域名配置信息
-                     * @return Host 编辑的域名配置信息
+                     * 获取<p>编辑的域名配置信息</p>
+                     * @return Host <p>编辑的域名配置信息</p>
                      * 
                      */
                     HostRecord GetHost() const;
 
                     /**
-                     * 设置编辑的域名配置信息
-                     * @param _host 编辑的域名配置信息
+                     * 设置<p>编辑的域名配置信息</p>
+                     * @param _host <p>编辑的域名配置信息</p>
                      * 
                      */
                     void SetHost(const HostRecord& _host);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取实例唯一ID
-                     * @return InstanceID 实例唯一ID
+                     * 获取<p>实例唯一ID</p>
+                     * @return InstanceID <p>实例唯一ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例唯一ID
-                     * @param _instanceID 实例唯一ID
+                     * 设置<p>实例唯一ID</p>
+                     * @param _instanceID <p>实例唯一ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 编辑的域名配置信息
+                     * <p>编辑的域名配置信息</p>
                      */
                     HostRecord m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 实例唯一ID
+                     * <p>实例唯一ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

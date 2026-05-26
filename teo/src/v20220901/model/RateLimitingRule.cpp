@@ -24,6 +24,7 @@ RateLimitingRule::RateLimitingRule() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_conditionHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_countByHasBeenSet(false),
     m_maxRequestThresholdHasBeenSet(false),
     m_countingPeriodHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome RateLimitingRule::Deserialize(const rapidjson::Value &value)
         }
         m_condition = string(value["Condition"].GetString());
         m_conditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitingRule.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
     }
 
     if (value.HasMember("CountBy") && !value["CountBy"].IsNull())
@@ -180,6 +191,14 @@ void RateLimitingRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_countByHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -291,6 +310,22 @@ void RateLimitingRule::SetCondition(const string& _condition)
 bool RateLimitingRule::ConditionHasBeenSet() const
 {
     return m_conditionHasBeenSet;
+}
+
+string RateLimitingRule::GetMode() const
+{
+    return m_mode;
+}
+
+void RateLimitingRule::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool RateLimitingRule::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 vector<string> RateLimitingRule::GetCountBy() const

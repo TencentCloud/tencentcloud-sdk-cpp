@@ -297,6 +297,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterVirtualNodeResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAgentInfo.h
   include/tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/SubnetAllocation.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusClusterAgentResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
@@ -580,6 +581,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeAvailableTKEEdgeVersionResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteGlobalMaintenanceWindowAndExclusionResponse.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusAlertPolicyResponse.h
+  include/tencentcloud/tke/v20180525/model/SubnetAllocationPolicy.h
   include/tencentcloud/tke/v20180525/model/InstallEdgeLogAgentResponse.h
   include/tencentcloud/tke/v20180525/model/EdgeAvailableExtraArgs.h
   include/tencentcloud/tke/v20180525/model/IPAddress.h
@@ -1138,6 +1140,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterVirtualNodeResponse.cpp
   src/v20180525/model/PrometheusAgentInfo.cpp
   src/v20180525/model/CreateEdgeCVMInstancesResponse.cpp
+  src/v20180525/model/SubnetAllocation.cpp
   src/v20180525/model/DescribeEdgeLogSwitchesResponse.cpp
   src/v20180525/model/CreatePrometheusClusterAgentResponse.cpp
   src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
@@ -1421,6 +1424,7 @@ set(tke_src
   src/v20180525/model/DescribeAvailableTKEEdgeVersionResponse.cpp
   src/v20180525/model/DeleteGlobalMaintenanceWindowAndExclusionResponse.cpp
   src/v20180525/model/DeletePrometheusAlertPolicyResponse.cpp
+  src/v20180525/model/SubnetAllocationPolicy.cpp
   src/v20180525/model/InstallEdgeLogAgentResponse.cpp
   src/v20180525/model/EdgeAvailableExtraArgs.cpp
   src/v20180525/model/IPAddress.cpp

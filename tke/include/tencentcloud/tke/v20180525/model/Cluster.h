@@ -600,6 +600,31 @@ namespace TencentCloud
                     bool IsHighAvailabilityHasBeenSet() const;
 
                     /**
+                     * 获取<p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterCategory <p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterCategory() const;
+
+                    /**
+                     * 设置<p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterCategory <p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterCategory(const std::string& _clusterCategory);
+
+                    /**
+                     * 判断参数 ClusterCategory 是否已赋值
+                     * @return ClusterCategory 是否已赋值
+                     * 
+                     */
+                    bool ClusterCategoryHasBeenSet() const;
+
+                    /**
                      * 获取<p>开启后会下发Gatekeeper和网络策略</p>
                      * @return SecurityModeConfig <p>开启后会下发Gatekeeper和网络策略</p>
                      * 
@@ -778,6 +803,13 @@ namespace TencentCloud
                      */
                     bool m_isHighAvailability;
                     bool m_isHighAvailabilityHasBeenSet;
+
+                    /**
+                     * <p>集群分类：tke=标准TKE集群，agent=Agent集群</p><p>默认值：tke</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterCategory;
+                    bool m_clusterCategoryHasBeenSet;
 
                     /**
                      * <p>开启后会下发Gatekeeper和网络策略</p>

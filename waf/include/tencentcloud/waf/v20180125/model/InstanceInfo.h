@@ -42,6 +42,7 @@
 #include <tencentcloud/waf/v20180125/model/BotSecurityPkg.h>
 #include <tencentcloud/waf/v20180125/model/BotMonitorPkg.h>
 #include <tencentcloud/waf/v20180125/model/DedicatedIPPkg.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -65,15 +66,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例唯一ID
-                     * @return InstanceId 实例唯一ID
+                     * 获取<p>实例唯一ID</p>
+                     * @return InstanceId <p>实例唯一ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例唯一ID
-                     * @param _instanceId 实例唯一ID
+                     * 设置<p>实例唯一ID</p>
+                     * @param _instanceId <p>实例唯一ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +87,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例对应资源ID，计费使用
-                     * @return ResourceIds 实例对应资源ID，计费使用
+                     * 获取<p>实例对应资源ID，计费使用</p>
+                     * @return ResourceIds <p>实例对应资源ID，计费使用</p>
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
-                     * 设置实例对应资源ID，计费使用
-                     * @param _resourceIds 实例对应资源ID，计费使用
+                     * 设置<p>实例对应资源ID，计费使用</p>
+                     * @param _resourceIds <p>实例对应资源ID，计费使用</p>
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -128,15 +129,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例所属地域
-                     * @return Region 实例所属地域
+                     * 获取<p>实例所属地域</p>
+                     * @return Region <p>实例所属地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例所属地域
-                     * @param _region 实例所属地域
+                     * 设置<p>实例所属地域</p>
+                     * @param _region <p>实例所属地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -149,15 +150,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取付费模式
-                     * @return PayMode 付费模式
+                     * 获取<p>付费模式</p>
+                     * @return PayMode <p>付费模式</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式
-                     * @param _payMode 付费模式
+                     * 设置<p>付费模式</p>
+                     * @param _payMode <p>付费模式</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -170,23 +171,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。
-0：关闭
-1：开启
-                     * @return RenewFlag 自动续费标识。
-0：关闭
-1：开启
+                     * 获取<p>自动续费标识。<br>0：关闭<br>1：开启</p>
+                     * @return RenewFlag <p>自动续费标识。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。
-0：关闭
-1：开启
-                     * @param _renewFlag 自动续费标识。
-0：关闭
-1：开启
+                     * 设置<p>自动续费标识。<br>0：关闭<br>1：开启</p>
+                     * @param _renewFlag <p>自动续费标识。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -199,23 +192,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取弹性计费开关。
-0：关闭
-1：开启
-                     * @return Mode 弹性计费开关。
-0：关闭
-1：开启
+                     * 获取<p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * @return Mode <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置弹性计费开关。
-0：关闭
-1：开启
-                     * @param _mode 弹性计费开关。
-0：关闭
-1：开启
+                     * 设置<p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * @param _mode <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -228,39 +213,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取实例套餐版本。
-101：小微版
-102：超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
-                     * @return Level 实例套餐版本。
-101：小微版
-102：超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * 获取<p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
+                     * @return Level <p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置实例套餐版本。
-101：小微版
-102：超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
-                     * @param _level 实例套餐版本。
-101：小微版
-102：超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * 设置<p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
+                     * @param _level <p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -273,15 +234,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取实例过期时间
-                     * @return ValidTime 实例过期时间
+                     * 获取<p>实例过期时间</p>
+                     * @return ValidTime <p>实例过期时间</p>
                      * 
                      */
                     std::string GetValidTime() const;
 
                     /**
-                     * 设置实例过期时间
-                     * @param _validTime 实例过期时间
+                     * 设置<p>实例过期时间</p>
+                     * @param _validTime <p>实例过期时间</p>
                      * 
                      */
                     void SetValidTime(const std::string& _validTime);
@@ -294,15 +255,15 @@ namespace TencentCloud
                     bool ValidTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例开始时间
-                     * @return BeginTime 实例开始时间
+                     * 获取<p>实例开始时间</p>
+                     * @return BeginTime <p>实例开始时间</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置实例开始时间
-                     * @param _beginTime 实例开始时间
+                     * 设置<p>实例开始时间</p>
+                     * @param _beginTime <p>实例开始时间</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -315,15 +276,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取已配置域名个数
-                     * @return DomainCount 已配置域名个数
+                     * 获取<p>已配置域名个数</p>
+                     * @return DomainCount <p>已配置域名个数</p>
                      * 
                      */
                     uint64_t GetDomainCount() const;
 
                     /**
-                     * 设置已配置域名个数
-                     * @param _domainCount 已配置域名个数
+                     * 设置<p>已配置域名个数</p>
+                     * @param _domainCount <p>已配置域名个数</p>
                      * 
                      */
                     void SetDomainCount(const uint64_t& _domainCount);
@@ -336,15 +297,15 @@ namespace TencentCloud
                     bool DomainCountHasBeenSet() const;
 
                     /**
-                     * 获取域名数量上限
-                     * @return SubDomainLimit 域名数量上限
+                     * 获取<p>域名数量上限</p>
+                     * @return SubDomainLimit <p>域名数量上限</p>
                      * 
                      */
                     uint64_t GetSubDomainLimit() const;
 
                     /**
-                     * 设置域名数量上限
-                     * @param _subDomainLimit 域名数量上限
+                     * 设置<p>域名数量上限</p>
+                     * @param _subDomainLimit <p>域名数量上限</p>
                      * 
                      */
                     void SetSubDomainLimit(const uint64_t& _subDomainLimit);
@@ -357,15 +318,15 @@ namespace TencentCloud
                     bool SubDomainLimitHasBeenSet() const;
 
                     /**
-                     * 获取已配置主域名个数
-                     * @return MainDomainCount 已配置主域名个数
+                     * 获取<p>已配置主域名个数</p>
+                     * @return MainDomainCount <p>已配置主域名个数</p>
                      * 
                      */
                     uint64_t GetMainDomainCount() const;
 
                     /**
-                     * 设置已配置主域名个数
-                     * @param _mainDomainCount 已配置主域名个数
+                     * 设置<p>已配置主域名个数</p>
+                     * @param _mainDomainCount <p>已配置主域名个数</p>
                      * 
                      */
                     void SetMainDomainCount(const uint64_t& _mainDomainCount);
@@ -378,15 +339,15 @@ namespace TencentCloud
                     bool MainDomainCountHasBeenSet() const;
 
                     /**
-                     * 获取主域名数量上限
-                     * @return MainDomainLimit 主域名数量上限
+                     * 获取<p>主域名数量上限</p>
+                     * @return MainDomainLimit <p>主域名数量上限</p>
                      * 
                      */
                     uint64_t GetMainDomainLimit() const;
 
                     /**
-                     * 设置主域名数量上限
-                     * @param _mainDomainLimit 主域名数量上限
+                     * 设置<p>主域名数量上限</p>
+                     * @param _mainDomainLimit <p>主域名数量上限</p>
                      * 
                      */
                     void SetMainDomainLimit(const uint64_t& _mainDomainLimit);
@@ -399,15 +360,15 @@ namespace TencentCloud
                     bool MainDomainLimitHasBeenSet() const;
 
                     /**
-                     * 获取实例30天内QPS峰值
-                     * @return MaxQPS 实例30天内QPS峰值
+                     * 获取<p>实例30天内QPS峰值</p>
+                     * @return MaxQPS <p>实例30天内QPS峰值</p>
                      * 
                      */
                     uint64_t GetMaxQPS() const;
 
                     /**
-                     * 设置实例30天内QPS峰值
-                     * @param _maxQPS 实例30天内QPS峰值
+                     * 设置<p>实例30天内QPS峰值</p>
+                     * @param _maxQPS <p>实例30天内QPS峰值</p>
                      * 
                      */
                     void SetMaxQPS(const uint64_t& _maxQPS);
@@ -420,15 +381,15 @@ namespace TencentCloud
                     bool MaxQPSHasBeenSet() const;
 
                     /**
-                     * 获取qps扩展包信息
-                     * @return QPS qps扩展包信息
+                     * 获取<p>qps扩展包信息</p>
+                     * @return QPS <p>qps扩展包信息</p>
                      * 
                      */
                     QPSPackageNew GetQPS() const;
 
                     /**
-                     * 设置qps扩展包信息
-                     * @param _qPS qps扩展包信息
+                     * 设置<p>qps扩展包信息</p>
+                     * @param _qPS <p>qps扩展包信息</p>
                      * 
                      */
                     void SetQPS(const QPSPackageNew& _qPS);
@@ -441,15 +402,15 @@ namespace TencentCloud
                     bool QPSHasBeenSet() const;
 
                     /**
-                     * 获取域名扩展包信息
-                     * @return DomainPkg 域名扩展包信息
+                     * 获取<p>域名扩展包信息</p>
+                     * @return DomainPkg <p>域名扩展包信息</p>
                      * 
                      */
                     DomainPackageNew GetDomainPkg() const;
 
                     /**
-                     * 设置域名扩展包信息
-                     * @param _domainPkg 域名扩展包信息
+                     * 设置<p>域名扩展包信息</p>
+                     * @param _domainPkg <p>域名扩展包信息</p>
                      * 
                      */
                     void SetDomainPkg(const DomainPackageNew& _domainPkg);
@@ -462,15 +423,15 @@ namespace TencentCloud
                     bool DomainPkgHasBeenSet() const;
 
                     /**
-                     * 获取用户appid
-                     * @return AppId 用户appid
+                     * 获取<p>用户appid</p>
+                     * @return AppId <p>用户appid</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户appid
-                     * @param _appId 用户appid
+                     * 设置<p>用户appid</p>
+                     * @param _appId <p>用户appid</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -483,15 +444,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取clb或saas
-                     * @return Edition clb或saas
+                     * 获取<p>clb或saas</p>
+                     * @return Edition <p>clb或saas</p>
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置clb或saas
-                     * @param _edition clb或saas
+                     * 设置<p>clb或saas</p>
+                     * @param _edition <p>clb或saas</p>
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -504,15 +465,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取业务安全包
-                     * @return FraudPkg 业务安全包
+                     * 获取<p>业务安全包</p>
+                     * @return FraudPkg <p>业务安全包</p>
                      * 
                      */
                     FraudPkg GetFraudPkg() const;
 
                     /**
-                     * 设置业务安全包
-                     * @param _fraudPkg 业务安全包
+                     * 设置<p>业务安全包</p>
+                     * @param _fraudPkg <p>业务安全包</p>
                      * 
                      */
                     void SetFraudPkg(const FraudPkg& _fraudPkg);
@@ -525,15 +486,15 @@ namespace TencentCloud
                     bool FraudPkgHasBeenSet() const;
 
                     /**
-                     * 获取Bot资源包
-                     * @return BotPkg Bot资源包
+                     * 获取<p>Bot资源包</p>
+                     * @return BotPkg <p>Bot资源包</p>
                      * 
                      */
                     BotPkg GetBotPkg() const;
 
                     /**
-                     * 设置Bot资源包
-                     * @param _botPkg Bot资源包
+                     * 设置<p>Bot资源包</p>
+                     * @param _botPkg <p>Bot资源包</p>
                      * 
                      */
                     void SetBotPkg(const BotPkg& _botPkg);
@@ -546,15 +507,15 @@ namespace TencentCloud
                     bool BotPkgHasBeenSet() const;
 
                     /**
-                     * 获取bot的qps详情
-                     * @return BotQPS bot的qps详情
+                     * 获取<p>bot的qps详情</p>
+                     * @return BotQPS <p>bot的qps详情</p>
                      * 
                      */
                     BotQPS GetBotQPS() const;
 
                     /**
-                     * 设置bot的qps详情
-                     * @param _botQPS bot的qps详情
+                     * 设置<p>bot的qps详情</p>
+                     * @param _botQPS <p>bot的qps详情</p>
                      * 
                      */
                     void SetBotQPS(const BotQPS& _botQPS);
@@ -567,15 +528,15 @@ namespace TencentCloud
                     bool BotQPSHasBeenSet() const;
 
                     /**
-                     * 获取qps弹性计费上限
-                     * @return ElasticBilling qps弹性计费上限
+                     * 获取<p>qps弹性计费上限</p>
+                     * @return ElasticBilling <p>qps弹性计费上限</p>
                      * 
                      */
                     uint64_t GetElasticBilling() const;
 
                     /**
-                     * 设置qps弹性计费上限
-                     * @param _elasticBilling qps弹性计费上限
+                     * 设置<p>qps弹性计费上限</p>
+                     * @param _elasticBilling <p>qps弹性计费上限</p>
                      * 
                      */
                     void SetElasticBilling(const uint64_t& _elasticBilling);
@@ -588,15 +549,15 @@ namespace TencentCloud
                     bool ElasticBillingHasBeenSet() const;
 
                     /**
-                     * 获取攻击日志投递开关
-                     * @return AttackLogPost 攻击日志投递开关
+                     * 获取<p>攻击日志投递开关</p>
+                     * @return AttackLogPost <p>攻击日志投递开关</p>
                      * 
                      */
                     int64_t GetAttackLogPost() const;
 
                     /**
-                     * 设置攻击日志投递开关
-                     * @param _attackLogPost 攻击日志投递开关
+                     * 设置<p>攻击日志投递开关</p>
+                     * @param _attackLogPost <p>攻击日志投递开关</p>
                      * 
                      */
                     void SetAttackLogPost(const int64_t& _attackLogPost);
@@ -609,15 +570,15 @@ namespace TencentCloud
                     bool AttackLogPostHasBeenSet() const;
 
                     /**
-                     * 获取带宽峰值，单位为B/s(字节每秒)
-                     * @return MaxBandwidth 带宽峰值，单位为B/s(字节每秒)
+                     * 获取<p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * @return MaxBandwidth <p>带宽峰值，单位为B/s(字节每秒)</p>
                      * 
                      */
                     uint64_t GetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽峰值，单位为B/s(字节每秒)
-                     * @param _maxBandwidth 带宽峰值，单位为B/s(字节每秒)
+                     * 设置<p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * @param _maxBandwidth <p>带宽峰值，单位为B/s(字节每秒)</p>
                      * 
                      */
                     void SetMaxBandwidth(const uint64_t& _maxBandwidth);
@@ -630,15 +591,15 @@ namespace TencentCloud
                     bool MaxBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取api安全是否购买
-                     * @return APISecurity api安全是否购买
+                     * 获取<p>api安全是否购买</p>
+                     * @return APISecurity <p>api安全是否购买</p>
                      * 
                      */
                     uint64_t GetAPISecurity() const;
 
                     /**
-                     * 设置api安全是否购买
-                     * @param _aPISecurity api安全是否购买
+                     * 设置<p>api安全是否购买</p>
+                     * @param _aPISecurity <p>api安全是否购买</p>
                      * 
                      */
                     void SetAPISecurity(const uint64_t& _aPISecurity);
@@ -651,15 +612,15 @@ namespace TencentCloud
                     bool APISecurityHasBeenSet() const;
 
                     /**
-                     * 获取购买的qps规格
-                     * @return QpsStandard 购买的qps规格
+                     * 获取<p>购买的qps规格</p>
+                     * @return QpsStandard <p>购买的qps规格</p>
                      * 
                      */
                     uint64_t GetQpsStandard() const;
 
                     /**
-                     * 设置购买的qps规格
-                     * @param _qpsStandard 购买的qps规格
+                     * 设置<p>购买的qps规格</p>
+                     * @param _qpsStandard <p>购买的qps规格</p>
                      * 
                      */
                     void SetQpsStandard(const uint64_t& _qpsStandard);
@@ -672,15 +633,15 @@ namespace TencentCloud
                     bool QpsStandardHasBeenSet() const;
 
                     /**
-                     * 获取购买的带宽规格
-                     * @return BandwidthStandard 购买的带宽规格
+                     * 获取<p>购买的带宽规格</p>
+                     * @return BandwidthStandard <p>购买的带宽规格</p>
                      * 
                      */
                     uint64_t GetBandwidthStandard() const;
 
                     /**
-                     * 设置购买的带宽规格
-                     * @param _bandwidthStandard 购买的带宽规格
+                     * 设置<p>购买的带宽规格</p>
+                     * @param _bandwidthStandard <p>购买的带宽规格</p>
                      * 
                      */
                     void SetBandwidthStandard(const uint64_t& _bandwidthStandard);
@@ -693,15 +654,15 @@ namespace TencentCloud
                     bool BandwidthStandardHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return Status 实例状态
+                     * 获取<p>实例状态</p>
+                     * @return Status <p>实例状态</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _status 实例状态
+                     * 设置<p>实例状态</p>
+                     * @param _status <p>实例状态</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -714,15 +675,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例沙箱qps值
-                     * @return SandboxQps 实例沙箱qps值
+                     * 获取<p>实例沙箱qps值</p>
+                     * @return SandboxQps <p>实例沙箱qps值</p>
                      * 
                      */
                     uint64_t GetSandboxQps() const;
 
                     /**
-                     * 设置实例沙箱qps值
-                     * @param _sandboxQps 实例沙箱qps值
+                     * 设置<p>实例沙箱qps值</p>
+                     * @param _sandboxQps <p>实例沙箱qps值</p>
                      * 
                      */
                     void SetSandboxQps(const uint64_t& _sandboxQps);
@@ -735,15 +696,15 @@ namespace TencentCloud
                     bool SandboxQpsHasBeenSet() const;
 
                     /**
-                     * 获取是否api 安全试用
-                     * @return IsAPISecurityTrial 是否api 安全试用
+                     * 获取<p>是否api 安全试用</p>
+                     * @return IsAPISecurityTrial <p>是否api 安全试用</p>
                      * 
                      */
                     uint64_t GetIsAPISecurityTrial() const;
 
                     /**
-                     * 设置是否api 安全试用
-                     * @param _isAPISecurityTrial 是否api 安全试用
+                     * 设置<p>是否api 安全试用</p>
+                     * @param _isAPISecurityTrial <p>是否api 安全试用</p>
                      * 
                      */
                     void SetIsAPISecurityTrial(const uint64_t& _isAPISecurityTrial);
@@ -756,15 +717,15 @@ namespace TencentCloud
                     bool IsAPISecurityTrialHasBeenSet() const;
 
                     /**
-                     * 获取重保包
-                     * @return MajorEventsPkg 重保包
+                     * 获取<p>重保包</p>
+                     * @return MajorEventsPkg <p>重保包</p>
                      * 
                      */
                     MajorEventsPkg GetMajorEventsPkg() const;
 
                     /**
-                     * 设置重保包
-                     * @param _majorEventsPkg 重保包
+                     * 设置<p>重保包</p>
+                     * @param _majorEventsPkg <p>重保包</p>
                      * 
                      */
                     void SetMajorEventsPkg(const MajorEventsPkg& _majorEventsPkg);
@@ -777,15 +738,15 @@ namespace TencentCloud
                     bool MajorEventsPkgHasBeenSet() const;
 
                     /**
-                     * 获取混合云子节点包
-                     * @return HybridPkg 混合云子节点包
+                     * 获取<p>混合云子节点包</p>
+                     * @return HybridPkg <p>混合云子节点包</p>
                      * 
                      */
                     HybridPkg GetHybridPkg() const;
 
                     /**
-                     * 设置混合云子节点包
-                     * @param _hybridPkg 混合云子节点包
+                     * 设置<p>混合云子节点包</p>
+                     * @param _hybridPkg <p>混合云子节点包</p>
                      * 
                      */
                     void SetHybridPkg(const HybridPkg& _hybridPkg);
@@ -798,15 +759,15 @@ namespace TencentCloud
                     bool HybridPkgHasBeenSet() const;
 
                     /**
-                     * 获取API安全资源包
-                     * @return ApiPkg API安全资源包
+                     * 获取<p>API安全资源包</p>
+                     * @return ApiPkg <p>API安全资源包</p>
                      * 
                      */
                     ApiPkg GetApiPkg() const;
 
                     /**
-                     * 设置API安全资源包
-                     * @param _apiPkg API安全资源包
+                     * 设置<p>API安全资源包</p>
+                     * @param _apiPkg <p>API安全资源包</p>
                      * 
                      */
                     void SetApiPkg(const ApiPkg& _apiPkg);
@@ -819,15 +780,15 @@ namespace TencentCloud
                     bool ApiPkgHasBeenSet() const;
 
                     /**
-                     * 获取小程序安全加速包
-                     * @return MiniPkg 小程序安全加速包
+                     * 获取<p>小程序安全加速包</p>
+                     * @return MiniPkg <p>小程序安全加速包</p>
                      * 
                      */
                     MiniPkg GetMiniPkg() const;
 
                     /**
-                     * 设置小程序安全加速包
-                     * @param _miniPkg 小程序安全加速包
+                     * 设置<p>小程序安全加速包</p>
+                     * @param _miniPkg <p>小程序安全加速包</p>
                      * 
                      */
                     void SetMiniPkg(const MiniPkg& _miniPkg);
@@ -840,15 +801,15 @@ namespace TencentCloud
                     bool MiniPkgHasBeenSet() const;
 
                     /**
-                     * 获取小程序qps规格
-                     * @return MiniQpsStandard 小程序qps规格
+                     * 获取<p>小程序qps规格</p>
+                     * @return MiniQpsStandard <p>小程序qps规格</p>
                      * 
                      */
                     uint64_t GetMiniQpsStandard() const;
 
                     /**
-                     * 设置小程序qps规格
-                     * @param _miniQpsStandard 小程序qps规格
+                     * 设置<p>小程序qps规格</p>
+                     * @param _miniQpsStandard <p>小程序qps规格</p>
                      * 
                      */
                     void SetMiniQpsStandard(const uint64_t& _miniQpsStandard);
@@ -861,15 +822,15 @@ namespace TencentCloud
                     bool MiniQpsStandardHasBeenSet() const;
 
                     /**
-                     * 获取小程序qps峰值
-                     * @return MiniMaxQPS 小程序qps峰值
+                     * 获取<p>小程序qps峰值</p>
+                     * @return MiniMaxQPS <p>小程序qps峰值</p>
                      * 
                      */
                     uint64_t GetMiniMaxQPS() const;
 
                     /**
-                     * 设置小程序qps峰值
-                     * @param _miniMaxQPS 小程序qps峰值
+                     * 设置<p>小程序qps峰值</p>
+                     * @param _miniMaxQPS <p>小程序qps峰值</p>
                      * 
                      */
                     void SetMiniMaxQPS(const uint64_t& _miniMaxQPS);
@@ -882,15 +843,15 @@ namespace TencentCloud
                     bool MiniMaxQPSHasBeenSet() const;
 
                     /**
-                     * 获取最近一次超量时间
-                     * @return LastQpsExceedTime 最近一次超量时间
+                     * 获取<p>最近一次超量时间</p>
+                     * @return LastQpsExceedTime <p>最近一次超量时间</p>
                      * 
                      */
                     std::string GetLastQpsExceedTime() const;
 
                     /**
-                     * 设置最近一次超量时间
-                     * @param _lastQpsExceedTime 最近一次超量时间
+                     * 设置<p>最近一次超量时间</p>
+                     * @param _lastQpsExceedTime <p>最近一次超量时间</p>
                      * 
                      */
                     void SetLastQpsExceedTime(const std::string& _lastQpsExceedTime);
@@ -903,15 +864,15 @@ namespace TencentCloud
                     bool LastQpsExceedTimeHasBeenSet() const;
 
                     /**
-                     * 获取小程序安全接入ID数量扩张包
-                     * @return MiniExtendPkg 小程序安全接入ID数量扩张包
+                     * 获取<p>小程序安全接入ID数量扩张包</p>
+                     * @return MiniExtendPkg <p>小程序安全接入ID数量扩张包</p>
                      * 
                      */
                     MiniExtendPkg GetMiniExtendPkg() const;
 
                     /**
-                     * 设置小程序安全接入ID数量扩张包
-                     * @param _miniExtendPkg 小程序安全接入ID数量扩张包
+                     * 设置<p>小程序安全接入ID数量扩张包</p>
+                     * @param _miniExtendPkg <p>小程序安全接入ID数量扩张包</p>
                      * 
                      */
                     void SetMiniExtendPkg(const MiniExtendPkg& _miniExtendPkg);
@@ -924,15 +885,15 @@ namespace TencentCloud
                     bool MiniExtendPkgHasBeenSet() const;
 
                     /**
-                     * 获取计费项
-                     * @return BillingItem 计费项
+                     * 获取<p>计费项</p>
+                     * @return BillingItem <p>计费项</p>
                      * 
                      */
                     std::string GetBillingItem() const;
 
                     /**
-                     * 设置计费项
-                     * @param _billingItem 计费项
+                     * 设置<p>计费项</p>
+                     * @param _billingItem <p>计费项</p>
                      * 
                      */
                     void SetBillingItem(const std::string& _billingItem);
@@ -945,15 +906,15 @@ namespace TencentCloud
                     bool BillingItemHasBeenSet() const;
 
                     /**
-                     * 获取实例延期释放标识
-                     * @return FreeDelayFlag 实例延期释放标识
+                     * 获取<p>实例延期释放标识</p>
+                     * @return FreeDelayFlag <p>实例延期释放标识</p>
                      * 
                      */
                     uint64_t GetFreeDelayFlag() const;
 
                     /**
-                     * 设置实例延期释放标识
-                     * @param _freeDelayFlag 实例延期释放标识
+                     * 设置<p>实例延期释放标识</p>
+                     * @param _freeDelayFlag <p>实例延期释放标识</p>
                      * 
                      */
                     void SetFreeDelayFlag(const uint64_t& _freeDelayFlag);
@@ -966,15 +927,15 @@ namespace TencentCloud
                     bool FreeDelayFlagHasBeenSet() const;
 
                     /**
-                     * 获取最近3天最大qps
-                     * @return Last3MaxQPS 最近3天最大qps
+                     * 获取<p>最近3天最大qps</p>
+                     * @return Last3MaxQPS <p>最近3天最大qps</p>
                      * 
                      */
                     uint64_t GetLast3MaxQPS() const;
 
                     /**
-                     * 设置最近3天最大qps
-                     * @param _last3MaxQPS 最近3天最大qps
+                     * 设置<p>最近3天最大qps</p>
+                     * @param _last3MaxQPS <p>最近3天最大qps</p>
                      * 
                      */
                     void SetLast3MaxQPS(const uint64_t& _last3MaxQPS);
@@ -987,15 +948,15 @@ namespace TencentCloud
                     bool Last3MaxQPSHasBeenSet() const;
 
                     /**
-                     * 获取最近3天最大带宽
-                     * @return Last3MaxBandwidth 最近3天最大带宽
+                     * 获取<p>最近3天最大带宽</p>
+                     * @return Last3MaxBandwidth <p>最近3天最大带宽</p>
                      * 
                      */
                     uint64_t GetLast3MaxBandwidth() const;
 
                     /**
-                     * 设置最近3天最大带宽
-                     * @param _last3MaxBandwidth 最近3天最大带宽
+                     * 设置<p>最近3天最大带宽</p>
+                     * @param _last3MaxBandwidth <p>最近3天最大带宽</p>
                      * 
                      */
                     void SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth);
@@ -1008,15 +969,15 @@ namespace TencentCloud
                     bool Last3MaxBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取重保增强包
-                     * @return MajorEventsProPkg 重保增强包
+                     * 获取<p>重保增强包</p>
+                     * @return MajorEventsProPkg <p>重保增强包</p>
                      * 
                      */
                     MajorEventsProPkg GetMajorEventsProPkg() const;
 
                     /**
-                     * 设置重保增强包
-                     * @param _majorEventsProPkg 重保增强包
+                     * 设置<p>重保增强包</p>
+                     * @param _majorEventsProPkg <p>重保增强包</p>
                      * 
                      */
                     void SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsProPkg);
@@ -1029,15 +990,15 @@ namespace TencentCloud
                     bool MajorEventsProPkgHasBeenSet() const;
 
                     /**
-                     * 获取1是基础2025版本；0不是
-                     * @return BasicFlag 1是基础2025版本；0不是
+                     * 获取<p>1是基础2025版本；0不是</p>
+                     * @return BasicFlag <p>1是基础2025版本；0不是</p>
                      * 
                      */
                     uint64_t GetBasicFlag() const;
 
                     /**
-                     * 设置1是基础2025版本；0不是
-                     * @param _basicFlag 1是基础2025版本；0不是
+                     * 设置<p>1是基础2025版本；0不是</p>
+                     * @param _basicFlag <p>1是基础2025版本；0不是</p>
                      * 
                      */
                     void SetBasicFlag(const uint64_t& _basicFlag);
@@ -1050,15 +1011,15 @@ namespace TencentCloud
                     bool BasicFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例的网络配置
-                     * @return NetworkConfig 实例的网络配置
+                     * 获取<p>实例的网络配置</p>
+                     * @return NetworkConfig <p>实例的网络配置</p>
                      * 
                      */
                     NetworkConfig GetNetworkConfig() const;
 
                     /**
-                     * 设置实例的网络配置
-                     * @param _networkConfig 实例的网络配置
+                     * 设置<p>实例的网络配置</p>
+                     * @param _networkConfig <p>实例的网络配置</p>
                      * 
                      */
                     void SetNetworkConfig(const NetworkConfig& _networkConfig);
@@ -1071,15 +1032,15 @@ namespace TencentCloud
                     bool NetworkConfigHasBeenSet() const;
 
                     /**
-                     * 获取RCE设备安全信息包
-                     * @return RCEPkg RCE设备安全信息包
+                     * 获取<p>RCE设备安全信息包</p>
+                     * @return RCEPkg <p>RCE设备安全信息包</p>
                      * 
                      */
                     RCEPkg GetRCEPkg() const;
 
                     /**
-                     * 设置RCE设备安全信息包
-                     * @param _rCEPkg RCE设备安全信息包
+                     * 设置<p>RCE设备安全信息包</p>
+                     * @param _rCEPkg <p>RCE设备安全信息包</p>
                      * 
                      */
                     void SetRCEPkg(const RCEPkg& _rCEPkg);
@@ -1092,19 +1053,15 @@ namespace TencentCloud
                     bool RCEPkgHasBeenSet() const;
 
                     /**
-                     * 获取超量策略。0：超量沙箱
-1：超量限流
-                     * @return ExceedPolicy 超量策略。0：超量沙箱
-1：超量限流
+                     * 获取<p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * @return ExceedPolicy <p>超量策略。0：超量沙箱<br>1：超量限流</p>
                      * 
                      */
                     int64_t GetExceedPolicy() const;
 
                     /**
-                     * 设置超量策略。0：超量沙箱
-1：超量限流
-                     * @param _exceedPolicy 超量策略。0：超量沙箱
-1：超量限流
+                     * 设置<p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * @param _exceedPolicy <p>超量策略。0：超量沙箱<br>1：超量限流</p>
                      * 
                      */
                     void SetExceedPolicy(const int64_t& _exceedPolicy);
@@ -1117,15 +1074,15 @@ namespace TencentCloud
                     bool ExceedPolicyHasBeenSet() const;
 
                     /**
-                     * 获取大模型安全信息包
-                     * @return LLMPkg 大模型安全信息包
+                     * 获取<p>大模型安全信息包</p>
+                     * @return LLMPkg <p>大模型安全信息包</p>
                      * 
                      */
                     LLMPkg GetLLMPkg() const;
 
                     /**
-                     * 设置大模型安全信息包
-                     * @param _lLMPkg 大模型安全信息包
+                     * 设置<p>大模型安全信息包</p>
+                     * @param _lLMPkg <p>大模型安全信息包</p>
                      * 
                      */
                     void SetLLMPkg(const LLMPkg& _lLMPkg);
@@ -1138,15 +1095,15 @@ namespace TencentCloud
                     bool LLMPkgHasBeenSet() const;
 
                     /**
-                     * 获取弹性资源Id
-                     * @return ElasticResourceId 弹性资源Id
+                     * 获取<p>弹性资源Id</p>
+                     * @return ElasticResourceId <p>弹性资源Id</p>
                      * 
                      */
                     std::string GetElasticResourceId() const;
 
                     /**
-                     * 设置弹性资源Id
-                     * @param _elasticResourceId 弹性资源Id
+                     * 设置<p>弹性资源Id</p>
+                     * @param _elasticResourceId <p>弹性资源Id</p>
                      * 
                      */
                     void SetElasticResourceId(const std::string& _elasticResourceId);
@@ -1159,15 +1116,15 @@ namespace TencentCloud
                     bool ElasticResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费大模型安全信息包
-                     * @return LLMMonPkg 预付费大模型安全信息包
+                     * 获取<p>预付费大模型安全信息包</p>
+                     * @return LLMMonPkg <p>预付费大模型安全信息包</p>
                      * 
                      */
                     LLMMonPkg GetLLMMonPkg() const;
 
                     /**
-                     * 设置预付费大模型安全信息包
-                     * @param _lLMMonPkg 预付费大模型安全信息包
+                     * 设置<p>预付费大模型安全信息包</p>
+                     * @param _lLMMonPkg <p>预付费大模型安全信息包</p>
                      * 
                      */
                     void SetLLMMonPkg(const LLMMonPkg& _lLMMonPkg);
@@ -1180,15 +1137,15 @@ namespace TencentCloud
                     bool LLMMonPkgHasBeenSet() const;
 
                     /**
-                     * 获取地域id
-                     * @return RegionId 地域id
+                     * 获取<p>地域id</p>
+                     * @return RegionId <p>地域id</p>
                      * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
-                     * 设置地域id
-                     * @param _regionId 地域id
+                     * 设置<p>地域id</p>
+                     * @param _regionId <p>地域id</p>
                      * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
@@ -1201,15 +1158,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取BOT安全护航信息
-                     * @return BotSecurityPkg BOT安全护航信息
+                     * 获取<p>BOT安全护航信息</p>
+                     * @return BotSecurityPkg <p>BOT安全护航信息</p>
                      * 
                      */
                     BotSecurityPkg GetBotSecurityPkg() const;
 
                     /**
-                     * 设置BOT安全护航信息
-                     * @param _botSecurityPkg BOT安全护航信息
+                     * 设置<p>BOT安全护航信息</p>
+                     * @param _botSecurityPkg <p>BOT安全护航信息</p>
                      * 
                      */
                     void SetBotSecurityPkg(const BotSecurityPkg& _botSecurityPkg);
@@ -1222,15 +1179,15 @@ namespace TencentCloud
                     bool BotSecurityPkgHasBeenSet() const;
 
                     /**
-                     * 获取BOT安全监测资源信息
-                     * @return BotMonitorPkg BOT安全监测资源信息
+                     * 获取<p>BOT安全监测资源信息</p>
+                     * @return BotMonitorPkg <p>BOT安全监测资源信息</p>
                      * 
                      */
                     BotMonitorPkg GetBotMonitorPkg() const;
 
                     /**
-                     * 设置BOT安全监测资源信息
-                     * @param _botMonitorPkg BOT安全监测资源信息
+                     * 设置<p>BOT安全监测资源信息</p>
+                     * @param _botMonitorPkg <p>BOT安全监测资源信息</p>
                      * 
                      */
                     void SetBotMonitorPkg(const BotMonitorPkg& _botMonitorPkg);
@@ -1243,15 +1200,15 @@ namespace TencentCloud
                     bool BotMonitorPkgHasBeenSet() const;
 
                     /**
-                     * 获取独享ip资源信息
-                     * @return DedicatedIPPkg 独享ip资源信息
+                     * 获取<p>独享ip资源信息</p>
+                     * @return DedicatedIPPkg <p>独享ip资源信息</p>
                      * 
                      */
                     DedicatedIPPkg GetDedicatedIPPkg() const;
 
                     /**
-                     * 设置独享ip资源信息
-                     * @param _dedicatedIPPkg 独享ip资源信息
+                     * 设置<p>独享ip资源信息</p>
+                     * @param _dedicatedIPPkg <p>独享ip资源信息</p>
                      * 
                      */
                     void SetDedicatedIPPkg(const DedicatedIPPkg& _dedicatedIPPkg);
@@ -1264,15 +1221,15 @@ namespace TencentCloud
                     bool DedicatedIPPkgHasBeenSet() const;
 
                     /**
-                     * 获取已经配置独享ip的数量
-                     * @return DedicatedIPCount 已经配置独享ip的数量
+                     * 获取<p>已经配置独享ip的数量</p>
+                     * @return DedicatedIPCount <p>已经配置独享ip的数量</p>
                      * 
                      */
                     int64_t GetDedicatedIPCount() const;
 
                     /**
-                     * 设置已经配置独享ip的数量
-                     * @param _dedicatedIPCount 已经配置独享ip的数量
+                     * 设置<p>已经配置独享ip的数量</p>
+                     * @param _dedicatedIPCount <p>已经配置独享ip的数量</p>
                      * 
                      */
                     void SetDedicatedIPCount(const int64_t& _dedicatedIPCount);
@@ -1284,354 +1241,370 @@ namespace TencentCloud
                      */
                     bool DedicatedIPCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签结构体</p>
+                     * @return TagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagInfos() const;
+
+                    /**
+                     * 设置<p>标签结构体</p>
+                     * @param _tagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    void SetTagInfos(const std::vector<TagInfo>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     * 
+                     */
+                    bool TagInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例唯一ID
+                     * <p>实例唯一ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例对应资源ID，计费使用
+                     * <p>实例对应资源ID，计费使用</p>
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 实例所属地域
+                     * <p>实例所属地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 付费模式
+                     * <p>付费模式</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 自动续费标识。
-0：关闭
-1：开启
+                     * <p>自动续费标识。<br>0：关闭<br>1：开启</p>
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 弹性计费开关。
-0：关闭
-1：开启
+                     * <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 实例套餐版本。
-101：小微版
-102：超轻版
-2：高级版
-3：企业版
-4：旗舰版
-6：独享版
+                     * <p>实例套餐版本。<br>101：小微版<br>102：超轻版<br>2：高级版<br>3：企业版<br>4：旗舰版<br>6：独享版</p>
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 实例过期时间
+                     * <p>实例过期时间</p>
                      */
                     std::string m_validTime;
                     bool m_validTimeHasBeenSet;
 
                     /**
-                     * 实例开始时间
+                     * <p>实例开始时间</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 已配置域名个数
+                     * <p>已配置域名个数</p>
                      */
                     uint64_t m_domainCount;
                     bool m_domainCountHasBeenSet;
 
                     /**
-                     * 域名数量上限
+                     * <p>域名数量上限</p>
                      */
                     uint64_t m_subDomainLimit;
                     bool m_subDomainLimitHasBeenSet;
 
                     /**
-                     * 已配置主域名个数
+                     * <p>已配置主域名个数</p>
                      */
                     uint64_t m_mainDomainCount;
                     bool m_mainDomainCountHasBeenSet;
 
                     /**
-                     * 主域名数量上限
+                     * <p>主域名数量上限</p>
                      */
                     uint64_t m_mainDomainLimit;
                     bool m_mainDomainLimitHasBeenSet;
 
                     /**
-                     * 实例30天内QPS峰值
+                     * <p>实例30天内QPS峰值</p>
                      */
                     uint64_t m_maxQPS;
                     bool m_maxQPSHasBeenSet;
 
                     /**
-                     * qps扩展包信息
+                     * <p>qps扩展包信息</p>
                      */
                     QPSPackageNew m_qPS;
                     bool m_qPSHasBeenSet;
 
                     /**
-                     * 域名扩展包信息
+                     * <p>域名扩展包信息</p>
                      */
                     DomainPackageNew m_domainPkg;
                     bool m_domainPkgHasBeenSet;
 
                     /**
-                     * 用户appid
+                     * <p>用户appid</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * clb或saas
+                     * <p>clb或saas</p>
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 业务安全包
+                     * <p>业务安全包</p>
                      */
                     FraudPkg m_fraudPkg;
                     bool m_fraudPkgHasBeenSet;
 
                     /**
-                     * Bot资源包
+                     * <p>Bot资源包</p>
                      */
                     BotPkg m_botPkg;
                     bool m_botPkgHasBeenSet;
 
                     /**
-                     * bot的qps详情
+                     * <p>bot的qps详情</p>
                      */
                     BotQPS m_botQPS;
                     bool m_botQPSHasBeenSet;
 
                     /**
-                     * qps弹性计费上限
+                     * <p>qps弹性计费上限</p>
                      */
                     uint64_t m_elasticBilling;
                     bool m_elasticBillingHasBeenSet;
 
                     /**
-                     * 攻击日志投递开关
+                     * <p>攻击日志投递开关</p>
                      */
                     int64_t m_attackLogPost;
                     bool m_attackLogPostHasBeenSet;
 
                     /**
-                     * 带宽峰值，单位为B/s(字节每秒)
+                     * <p>带宽峰值，单位为B/s(字节每秒)</p>
                      */
                     uint64_t m_maxBandwidth;
                     bool m_maxBandwidthHasBeenSet;
 
                     /**
-                     * api安全是否购买
+                     * <p>api安全是否购买</p>
                      */
                     uint64_t m_aPISecurity;
                     bool m_aPISecurityHasBeenSet;
 
                     /**
-                     * 购买的qps规格
+                     * <p>购买的qps规格</p>
                      */
                     uint64_t m_qpsStandard;
                     bool m_qpsStandardHasBeenSet;
 
                     /**
-                     * 购买的带宽规格
+                     * <p>购买的带宽规格</p>
                      */
                     uint64_t m_bandwidthStandard;
                     bool m_bandwidthStandardHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * <p>实例状态</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例沙箱qps值
+                     * <p>实例沙箱qps值</p>
                      */
                     uint64_t m_sandboxQps;
                     bool m_sandboxQpsHasBeenSet;
 
                     /**
-                     * 是否api 安全试用
+                     * <p>是否api 安全试用</p>
                      */
                     uint64_t m_isAPISecurityTrial;
                     bool m_isAPISecurityTrialHasBeenSet;
 
                     /**
-                     * 重保包
+                     * <p>重保包</p>
                      */
                     MajorEventsPkg m_majorEventsPkg;
                     bool m_majorEventsPkgHasBeenSet;
 
                     /**
-                     * 混合云子节点包
+                     * <p>混合云子节点包</p>
                      */
                     HybridPkg m_hybridPkg;
                     bool m_hybridPkgHasBeenSet;
 
                     /**
-                     * API安全资源包
+                     * <p>API安全资源包</p>
                      */
                     ApiPkg m_apiPkg;
                     bool m_apiPkgHasBeenSet;
 
                     /**
-                     * 小程序安全加速包
+                     * <p>小程序安全加速包</p>
                      */
                     MiniPkg m_miniPkg;
                     bool m_miniPkgHasBeenSet;
 
                     /**
-                     * 小程序qps规格
+                     * <p>小程序qps规格</p>
                      */
                     uint64_t m_miniQpsStandard;
                     bool m_miniQpsStandardHasBeenSet;
 
                     /**
-                     * 小程序qps峰值
+                     * <p>小程序qps峰值</p>
                      */
                     uint64_t m_miniMaxQPS;
                     bool m_miniMaxQPSHasBeenSet;
 
                     /**
-                     * 最近一次超量时间
+                     * <p>最近一次超量时间</p>
                      */
                     std::string m_lastQpsExceedTime;
                     bool m_lastQpsExceedTimeHasBeenSet;
 
                     /**
-                     * 小程序安全接入ID数量扩张包
+                     * <p>小程序安全接入ID数量扩张包</p>
                      */
                     MiniExtendPkg m_miniExtendPkg;
                     bool m_miniExtendPkgHasBeenSet;
 
                     /**
-                     * 计费项
+                     * <p>计费项</p>
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
 
                     /**
-                     * 实例延期释放标识
+                     * <p>实例延期释放标识</p>
                      */
                     uint64_t m_freeDelayFlag;
                     bool m_freeDelayFlagHasBeenSet;
 
                     /**
-                     * 最近3天最大qps
+                     * <p>最近3天最大qps</p>
                      */
                     uint64_t m_last3MaxQPS;
                     bool m_last3MaxQPSHasBeenSet;
 
                     /**
-                     * 最近3天最大带宽
+                     * <p>最近3天最大带宽</p>
                      */
                     uint64_t m_last3MaxBandwidth;
                     bool m_last3MaxBandwidthHasBeenSet;
 
                     /**
-                     * 重保增强包
+                     * <p>重保增强包</p>
                      */
                     MajorEventsProPkg m_majorEventsProPkg;
                     bool m_majorEventsProPkgHasBeenSet;
 
                     /**
-                     * 1是基础2025版本；0不是
+                     * <p>1是基础2025版本；0不是</p>
                      */
                     uint64_t m_basicFlag;
                     bool m_basicFlagHasBeenSet;
 
                     /**
-                     * 实例的网络配置
+                     * <p>实例的网络配置</p>
                      */
                     NetworkConfig m_networkConfig;
                     bool m_networkConfigHasBeenSet;
 
                     /**
-                     * RCE设备安全信息包
+                     * <p>RCE设备安全信息包</p>
                      */
                     RCEPkg m_rCEPkg;
                     bool m_rCEPkgHasBeenSet;
 
                     /**
-                     * 超量策略。0：超量沙箱
-1：超量限流
+                     * <p>超量策略。0：超量沙箱<br>1：超量限流</p>
                      */
                     int64_t m_exceedPolicy;
                     bool m_exceedPolicyHasBeenSet;
 
                     /**
-                     * 大模型安全信息包
+                     * <p>大模型安全信息包</p>
                      */
                     LLMPkg m_lLMPkg;
                     bool m_lLMPkgHasBeenSet;
 
                     /**
-                     * 弹性资源Id
+                     * <p>弹性资源Id</p>
                      */
                     std::string m_elasticResourceId;
                     bool m_elasticResourceIdHasBeenSet;
 
                     /**
-                     * 预付费大模型安全信息包
+                     * <p>预付费大模型安全信息包</p>
                      */
                     LLMMonPkg m_lLMMonPkg;
                     bool m_lLMMonPkgHasBeenSet;
 
                     /**
-                     * 地域id
+                     * <p>地域id</p>
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * BOT安全护航信息
+                     * <p>BOT安全护航信息</p>
                      */
                     BotSecurityPkg m_botSecurityPkg;
                     bool m_botSecurityPkgHasBeenSet;
 
                     /**
-                     * BOT安全监测资源信息
+                     * <p>BOT安全监测资源信息</p>
                      */
                     BotMonitorPkg m_botMonitorPkg;
                     bool m_botMonitorPkgHasBeenSet;
 
                     /**
-                     * 独享ip资源信息
+                     * <p>独享ip资源信息</p>
                      */
                     DedicatedIPPkg m_dedicatedIPPkg;
                     bool m_dedicatedIPPkgHasBeenSet;
 
                     /**
-                     * 已经配置独享ip的数量
+                     * <p>已经配置独享ip的数量</p>
                      */
                     int64_t m_dedicatedIPCount;
                     bool m_dedicatedIPCountHasBeenSet;
+
+                    /**
+                     * <p>标签结构体</p>
+                     */
+                    std::vector<TagInfo> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
 
                 };
             }

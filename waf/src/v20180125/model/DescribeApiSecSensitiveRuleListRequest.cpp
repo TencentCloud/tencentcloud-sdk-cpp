@@ -29,7 +29,8 @@ DescribeApiSecSensitiveRuleListRequest::DescribeApiSecSensitiveRuleListRequest()
     m_isQueryApiSceneRuleHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_isQueryApiCustomEventRuleHasBeenSet(false),
-    m_isQueryApiExcludeRuleHasBeenSet(false)
+    m_isQueryApiExcludeRuleHasBeenSet(false),
+    m_isQueryApiSensitiveWhiteRuleHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeApiSecSensitiveRuleListRequest::ToJsonString() const
         string key = "IsQueryApiExcludeRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isQueryApiExcludeRule, allocator);
+    }
+
+    if (m_isQueryApiSensitiveWhiteRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQueryApiSensitiveWhiteRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isQueryApiSensitiveWhiteRule, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeApiSecSensitiveRuleListRequest::SetIsQueryApiExcludeRule(const bool
 bool DescribeApiSecSensitiveRuleListRequest::IsQueryApiExcludeRuleHasBeenSet() const
 {
     return m_isQueryApiExcludeRuleHasBeenSet;
+}
+
+bool DescribeApiSecSensitiveRuleListRequest::GetIsQueryApiSensitiveWhiteRule() const
+{
+    return m_isQueryApiSensitiveWhiteRule;
+}
+
+void DescribeApiSecSensitiveRuleListRequest::SetIsQueryApiSensitiveWhiteRule(const bool& _isQueryApiSensitiveWhiteRule)
+{
+    m_isQueryApiSensitiveWhiteRule = _isQueryApiSensitiveWhiteRule;
+    m_isQueryApiSensitiveWhiteRuleHasBeenSet = true;
+}
+
+bool DescribeApiSecSensitiveRuleListRequest::IsQueryApiSensitiveWhiteRuleHasBeenSet() const
+{
+    return m_isQueryApiSensitiveWhiteRuleHasBeenSet;
 }
 
 

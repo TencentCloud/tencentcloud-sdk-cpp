@@ -33,7 +33,8 @@ UserDomainInfo::UserDomainInfo() :
     m_cloudTypeHasBeenSet(false),
     m_albTypeHasBeenSet(false),
     m_botStatusHasBeenSet(false),
-    m_apiStatusHasBeenSet(false)
+    m_apiStatusHasBeenSet(false),
+    m_isREIPHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome UserDomainInfo::Deserialize(const rapidjson::Value &value)
         m_apiStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsREIP") && !value["IsREIP"].IsNull())
+    {
+        if (!value["IsREIP"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDomainInfo.IsREIP` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isREIP = value["IsREIP"].GetInt64();
+        m_isREIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void UserDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ApiStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiStatus, allocator);
+    }
+
+    if (m_isREIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsREIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isREIP, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void UserDomainInfo::SetApiStatus(const int64_t& _apiStatus)
 bool UserDomainInfo::ApiStatusHasBeenSet() const
 {
     return m_apiStatusHasBeenSet;
+}
+
+int64_t UserDomainInfo::GetIsREIP() const
+{
+    return m_isREIP;
+}
+
+void UserDomainInfo::SetIsREIP(const int64_t& _isREIP)
+{
+    m_isREIP = _isREIP;
+    m_isREIPHasBeenSet = true;
+}
+
+bool UserDomainInfo::IsREIPHasBeenSet() const
+{
+    return m_isREIPHasBeenSet;
 }
 

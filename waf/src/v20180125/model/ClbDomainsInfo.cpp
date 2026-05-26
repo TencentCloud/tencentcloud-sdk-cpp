@@ -36,7 +36,8 @@ ClbDomainsInfo::ClbDomainsInfo() :
     m_cloudTypeHasBeenSet(false),
     m_noteHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_accessStatusHasBeenSet(false)
+    m_accessStatusHasBeenSet(false),
+    m_tagInfosHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,26 @@ CoreInternalOutcome ClbDomainsInfo::Deserialize(const rapidjson::Value &value)
         m_accessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbDomainsInfo.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -371,6 +392,21 @@ void ClbDomainsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AccessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessStatus, allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -630,5 +666,21 @@ void ClbDomainsInfo::SetAccessStatus(const int64_t& _accessStatus)
 bool ClbDomainsInfo::AccessStatusHasBeenSet() const
 {
     return m_accessStatusHasBeenSet;
+}
+
+vector<TagInfo> ClbDomainsInfo::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void ClbDomainsInfo::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool ClbDomainsInfo::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
 }
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/HostRecord.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。
-                     * @return Host 防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。
+                     * 获取<p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>
+                     * @return Host <p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>
                      * 
                      */
                     HostRecord GetHost() const;
 
                     /**
-                     * 设置防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。
-                     * @param _host 防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。
+                     * 设置<p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>
+                     * @param _host <p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>
                      * 
                      */
                     void SetHost(const HostRecord& _host);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceID 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceID <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceID 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceID <p>实例id</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -85,19 +86,46 @@ namespace TencentCloud
                      */
                     bool InstanceIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return Tags <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tags <p>标签信息</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。
+                     * <p>防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。</p>
                      */
                     HostRecord m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

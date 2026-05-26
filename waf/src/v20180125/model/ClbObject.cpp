@@ -48,7 +48,10 @@ ClbObject::ClbObject() :
     m_addTimeHasBeenSet(false),
     m_memberAppIdHasBeenSet(false),
     m_memberUinHasBeenSet(false),
-    m_memberNickNameHasBeenSet(false)
+    m_memberNickNameHasBeenSet(false),
+    m_tagInfosHasBeenSet(false),
+    m_preciseDomainDetailsHasBeenSet(false),
+    m_wafAccessStatusHasBeenSet(false)
 {
 }
 
@@ -349,6 +352,56 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_memberNickNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TagInfos") && !value["TagInfos"].IsNull())
+    {
+        if (!value["TagInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbObject.TagInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagInfos.push_back(item);
+        }
+        m_tagInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreciseDomainDetails") && !value["PreciseDomainDetails"].IsNull())
+    {
+        if (!value["PreciseDomainDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbObject.PreciseDomainDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PreciseDomainDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DomainInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_preciseDomainDetails.push_back(item);
+        }
+        m_preciseDomainDetailsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WafAccessStatus") && !value["WafAccessStatus"].IsNull())
+    {
+        if (!value["WafAccessStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.WafAccessStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wafAccessStatus = value["WafAccessStatus"].GetInt64();
+        m_wafAccessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -598,6 +651,44 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MemberNickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_memberNickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_preciseDomainDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreciseDomainDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_preciseDomainDetails.begin(); itr != m_preciseDomainDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_wafAccessStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WafAccessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wafAccessStatus, allocator);
     }
 
 }
@@ -1049,5 +1140,53 @@ void ClbObject::SetMemberNickName(const string& _memberNickName)
 bool ClbObject::MemberNickNameHasBeenSet() const
 {
     return m_memberNickNameHasBeenSet;
+}
+
+vector<TagInfo> ClbObject::GetTagInfos() const
+{
+    return m_tagInfos;
+}
+
+void ClbObject::SetTagInfos(const vector<TagInfo>& _tagInfos)
+{
+    m_tagInfos = _tagInfos;
+    m_tagInfosHasBeenSet = true;
+}
+
+bool ClbObject::TagInfosHasBeenSet() const
+{
+    return m_tagInfosHasBeenSet;
+}
+
+vector<DomainInfo> ClbObject::GetPreciseDomainDetails() const
+{
+    return m_preciseDomainDetails;
+}
+
+void ClbObject::SetPreciseDomainDetails(const vector<DomainInfo>& _preciseDomainDetails)
+{
+    m_preciseDomainDetails = _preciseDomainDetails;
+    m_preciseDomainDetailsHasBeenSet = true;
+}
+
+bool ClbObject::PreciseDomainDetailsHasBeenSet() const
+{
+    return m_preciseDomainDetailsHasBeenSet;
+}
+
+int64_t ClbObject::GetWafAccessStatus() const
+{
+    return m_wafAccessStatus;
+}
+
+void ClbObject::SetWafAccessStatus(const int64_t& _wafAccessStatus)
+{
+    m_wafAccessStatus = _wafAccessStatus;
+    m_wafAccessStatusHasBeenSet = true;
+}
+
+bool ClbObject::WafAccessStatusHasBeenSet() const
+{
+    return m_wafAccessStatusHasBeenSet;
 }
 

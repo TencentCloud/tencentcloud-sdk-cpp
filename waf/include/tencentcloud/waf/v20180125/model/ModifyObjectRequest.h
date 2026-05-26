@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改对象标识
-                     * @return ObjectId 修改对象标识
+                     * 获取<p>修改对象标识</p>
+                     * @return ObjectId <p>修改对象标识</p>
                      * 
                      */
                     std::string GetObjectId() const;
 
                     /**
-                     * 设置修改对象标识
-                     * @param _objectId 修改对象标识
+                     * 设置<p>修改对象标识</p>
+                     * @param _objectId <p>修改对象标识</p>
                      * 
                      */
                     void SetObjectId(const std::string& _objectId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ObjectIdHasBeenSet() const;
 
                     /**
-                     * 获取改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
-                     * @return OpType 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
+                     * 获取<p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>
+                     * @return OpType <p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>
                      * 
                      */
                     std::string GetOpType() const;
 
                     /**
-                     * 设置改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
-                     * @param _opType 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
+                     * 设置<p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>
+                     * @param _opType <p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>
                      * 
                      */
                     void SetOpType(const std::string& _opType);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool OpTypeHasBeenSet() const;
 
                     /**
-                     * 获取新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
-                     * @return Status 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
+                     * 获取<p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>
+                     * @return Status <p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
-                     * @param _status 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
+                     * 设置<p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>
+                     * @param _status <p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取新的实例ID，如果和已绑定的实例相同认为修改成功
-                     * @return InstanceId 新的实例ID，如果和已绑定的实例相同认为修改成功
+                     * 获取<p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>
+                     * @return InstanceId <p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置新的实例ID，如果和已绑定的实例相同认为修改成功
-                     * @param _instanceId 新的实例ID，如果和已绑定的实例相同认为修改成功
+                     * 设置<p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>
+                     * @param _instanceId <p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
-                     * @return Proxy 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * 获取<p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>
+                     * @return Proxy <p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>
                      * 
                      */
                     uint64_t GetProxy() const;
 
                     /**
-                     * 设置是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
-                     * @param _proxy 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * 设置<p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>
+                     * @param _proxy <p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>
                      * 
                      */
                     void SetProxy(const uint64_t& _proxy);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool ProxyHasBeenSet() const;
 
                     /**
-                     * 获取IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
-                     * @return IpHeaders IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * 获取<p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>
+                     * @return IpHeaders <p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
-                     * 设置IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
-                     * @param _ipHeaders IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * 设置<p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>
+                     * @param _ipHeaders <p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取对象所属集团成员appid
-                     * @return MemberAppId 对象所属集团成员appid
+                     * 获取<p>对象所属集团成员appid</p>
+                     * @return MemberAppId <p>对象所属集团成员appid</p>
                      * 
                      */
                     uint64_t GetMemberAppId() const;
 
                     /**
-                     * 设置对象所属集团成员appid
-                     * @param _memberAppId 对象所属集团成员appid
+                     * 设置<p>对象所属集团成员appid</p>
+                     * @param _memberAppId <p>对象所属集团成员appid</p>
                      * 
                      */
                     void SetMemberAppId(const uint64_t& _memberAppId);
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool MemberAppIdHasBeenSet() const;
 
                     /**
-                     * 获取对象所属集团成员uin
-                     * @return MemberUin 对象所属集团成员uin
+                     * 获取<p>对象所属集团成员uin</p>
+                     * @return MemberUin <p>对象所属集团成员uin</p>
                      * 
                      */
                     std::string GetMemberUin() const;
 
                     /**
-                     * 设置对象所属集团成员uin
-                     * @param _memberUin 对象所属集团成员uin
+                     * 设置<p>对象所属集团成员uin</p>
+                     * @param _memberUin <p>对象所属集团成员uin</p>
                      * 
                      */
                     void SetMemberUin(const std::string& _memberUin);
@@ -210,55 +211,82 @@ namespace TencentCloud
                      */
                     bool MemberUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签信息</p>
+                     * @return Tags <p>标签信息</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置<p>标签信息</p>
+                     * @param _tags <p>标签信息</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 修改对象标识
+                     * <p>修改对象标识</p>
                      */
                     std::string m_objectId;
                     bool m_objectIdHasBeenSet;
 
                     /**
-                     * 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
+                     * <p>改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态</p>
                      */
                     std::string m_opType;
                     bool m_opTypeHasBeenSet;
 
                     /**
-                     * 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
+                     * <p>新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 新的实例ID，如果和已绑定的实例相同认为修改成功
+                     * <p>新的实例ID，如果和已绑定的实例相同认为修改成功</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * <p>是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)</p>
                      */
                     uint64_t m_proxy;
                     bool m_proxyHasBeenSet;
 
                     /**
-                     * IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * <p>IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)</p>
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * 对象所属集团成员appid
+                     * <p>对象所属集团成员appid</p>
                      */
                     uint64_t m_memberAppId;
                     bool m_memberAppIdHasBeenSet;
 
                     /**
-                     * 对象所属集团成员uin
+                     * <p>对象所属集团成员uin</p>
                      */
                     std::string m_memberUin;
                     bool m_memberUinHasBeenSet;
+
+                    /**
+                     * <p>标签信息</p>
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

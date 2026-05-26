@@ -38,7 +38,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceDeviceTypeHasBeenSet(false),
     m_instanceStorageTypeHasBeenSet(false),
     m_dbModeHasBeenSet(false),
-    m_nodeListHasBeenSet(false)
+    m_nodeListHasBeenSet(false),
+    m_aIOptimizerStatusHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,23 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_nodeListHasBeenSet = true;
     }
 
+    if (value.HasMember("AIOptimizerStatus") && !value["AIOptimizerStatus"].IsNull())
+    {
+        if (!value["AIOptimizerStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.AIOptimizerStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aIOptimizerStatus.Deserialize(value["AIOptimizerStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aIOptimizerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +427,15 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_aIOptimizerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIOptimizerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIOptimizerStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -700,5 +727,21 @@ void ClusterInstanceDetail::SetNodeList(const vector<string>& _nodeList)
 bool ClusterInstanceDetail::NodeListHasBeenSet() const
 {
     return m_nodeListHasBeenSet;
+}
+
+AIOptimizerStatus ClusterInstanceDetail::GetAIOptimizerStatus() const
+{
+    return m_aIOptimizerStatus;
+}
+
+void ClusterInstanceDetail::SetAIOptimizerStatus(const AIOptimizerStatus& _aIOptimizerStatus)
+{
+    m_aIOptimizerStatus = _aIOptimizerStatus;
+    m_aIOptimizerStatusHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::AIOptimizerStatusHasBeenSet() const
+{
+    return m_aIOptimizerStatusHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
+#include <tencentcloud/tke/v20180525/model/SubnetAllocationPolicy.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取<p>节点池ID</p>
+                     * @return NodePoolId <p>节点池ID</p>
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
-                     * 设置节点池ID
-                     * @param _nodePoolId 节点池ID
+                     * 设置<p>节点池ID</p>
+                     * @param _nodePoolId <p>节点池ID</p>
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -70,18 +71,18 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取子网列表
+                     * 获取<p>子网列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetIds 子网列表
+                     * @return SubnetIds <p>子网列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网列表
+                     * 设置<p>子网列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnetIds 子网列表
+                     * @param _subnetIds <p>子网列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取节点池名称
-                     * @return Name 节点池名称
+                     * 获取<p>节点池名称</p>
+                     * @return Name <p>节点池名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点池名称
-                     * @param _name 节点池名称
+                     * 设置<p>节点池名称</p>
+                     * @param _name <p>节点池名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -116,27 +117,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取节点池生命周期
-- creating：创建中
-- normal：正常
-- updating：更新中
-                     * @return LifeState 节点池生命周期
-- creating：创建中
-- normal：正常
-- updating：更新中
+                     * 获取<p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>
+                     * @return LifeState <p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>
                      * 
                      */
                     std::string GetLifeState() const;
 
                     /**
-                     * 设置节点池生命周期
-- creating：创建中
-- normal：正常
-- updating：更新中
-                     * @param _lifeState 节点池生命周期
-- creating：创建中
-- normal：正常
-- updating：更新中
+                     * 设置<p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>
+                     * @param _lifeState <p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>
                      * 
                      */
                     void SetLifeState(const std::string& _lifeState);
@@ -149,18 +138,18 @@ namespace TencentCloud
                     bool LifeStateHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点label
+                     * 获取<p>虚拟节点label</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 虚拟节点label
+                     * @return Labels <p>虚拟节点label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置虚拟节点label
+                     * 设置<p>虚拟节点label</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labels 虚拟节点label
+                     * @param _labels <p>虚拟节点label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +163,18 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点taint
+                     * 获取<p>虚拟节点taint</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Taints 虚拟节点taint
+                     * @return Taints <p>虚拟节点taint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置虚拟节点taint
+                     * 设置<p>虚拟节点taint</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taints 虚拟节点taint
+                     * @param _taints <p>虚拟节点taint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,49 +187,73 @@ namespace TencentCloud
                      */
                     bool TaintsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子网分配策略</p>
+                     * @return SubnetAllocationPolicy <p>子网分配策略</p>
+                     * 
+                     */
+                    SubnetAllocationPolicy GetSubnetAllocationPolicy() const;
+
+                    /**
+                     * 设置<p>子网分配策略</p>
+                     * @param _subnetAllocationPolicy <p>子网分配策略</p>
+                     * 
+                     */
+                    void SetSubnetAllocationPolicy(const SubnetAllocationPolicy& _subnetAllocationPolicy);
+
+                    /**
+                     * 判断参数 SubnetAllocationPolicy 是否已赋值
+                     * @return SubnetAllocationPolicy 是否已赋值
+                     * 
+                     */
+                    bool SubnetAllocationPolicyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点池ID
+                     * <p>节点池ID</p>
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 子网列表
+                     * <p>子网列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 节点池名称
+                     * <p>节点池名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 节点池生命周期
-- creating：创建中
-- normal：正常
-- updating：更新中
+                     * <p>节点池生命周期</p><ul><li>creating：创建中</li><li>normal：正常</li><li>updating：更新中</li></ul>
                      */
                     std::string m_lifeState;
                     bool m_lifeStateHasBeenSet;
 
                     /**
-                     * 虚拟节点label
+                     * <p>虚拟节点label</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 虚拟节点taint
+                     * <p>虚拟节点taint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
+
+                    /**
+                     * <p>子网分配策略</p>
+                     */
+                    SubnetAllocationPolicy m_subnetAllocationPolicy;
+                    bool m_subnetAllocationPolicyHasBeenSet;
 
                 };
             }

@@ -28,6 +28,7 @@
 #include <tencentcloud/waf/v20180125/model/KeyWordInfo.h>
 #include <tencentcloud/waf/v20180125/model/PromptDetectResult.h>
 #include <tencentcloud/waf/v20180125/model/ImageResult.h>
+#include <tencentcloud/waf/v20180125/model/ToolCallResult.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,27 @@ namespace TencentCloud
                      */
                     bool MsgIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>toolcall的检测结果</p>
+                     * @return ToolCallResult <p>toolcall的检测结果</p>
+                     * 
+                     */
+                    ToolCallResult GetToolCallResult() const;
+
+                    /**
+                     * 设置<p>toolcall的检测结果</p>
+                     * @param _toolCallResult <p>toolcall的检测结果</p>
+                     * 
+                     */
+                    void SetToolCallResult(const ToolCallResult& _toolCallResult);
+
+                    /**
+                     * 判断参数 ToolCallResult 是否已赋值
+                     * @return ToolCallResult 是否已赋值
+                     * 
+                     */
+                    bool ToolCallResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +343,12 @@ namespace TencentCloud
                      */
                     std::string m_msgID;
                     bool m_msgIDHasBeenSet;
+
+                    /**
+                     * <p>toolcall的检测结果</p>
+                     */
+                    ToolCallResult m_toolCallResult;
+                    bool m_toolCallResultHasBeenSet;
 
                 };
             }
