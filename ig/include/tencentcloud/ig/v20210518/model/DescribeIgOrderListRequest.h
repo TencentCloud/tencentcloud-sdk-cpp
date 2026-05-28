@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取<p>页码</p>
+                     * @return PageNumber <p>页码</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置<p>页码</p>
+                     * @param _pageNumber <p>页码</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数目
-                     * @return PageSize 每页数目
+                     * 获取<p>每页数目</p>
+                     * @return PageSize <p>每页数目</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数目
-                     * @param _pageSize 每页数目
+                     * 设置<p>每页数目</p>
+                     * @param _pageSize <p>每页数目</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取产品类型
-                     * @return ProductType 产品类型
+                     * 获取<p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>
+                     * @return ProductType <p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置产品类型
-                     * @param _productType 产品类型
+                     * 设置<p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>
+                     * @param _productType <p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取订单状态
-                     * @return OrderStatus 订单状态
+                     * 获取<p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>
+                     * @return OrderStatus <p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetOrderStatus() const;
 
                     /**
-                     * 设置订单状态
-                     * @param _orderStatus 订单状态
+                     * 设置<p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>
+                     * @param _orderStatus <p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetOrderStatus(const int64_t& _orderStatus);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrderStatusHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return KeyWord 搜索关键字
+                     * 获取<p>搜索关键字</p>
+                     * @return KeyWord <p>搜索关键字</p>
                      * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _keyWord 搜索关键字
+                     * 设置<p>搜索关键字</p>
+                     * @param _keyWord <p>搜索关键字</p>
                      * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数目
+                     * <p>每页数目</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 产品类型
+                     * <p>产品类型</p><p>枚举值：</p><ul><li>ig： 导诊</li><li>ipc： 预问诊</li></ul><p>默认值：ig</p>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 订单状态
+                     * <p>订单状态</p><p>枚举值：</p><ul><li>0： 无状态</li><li>1： 未激活</li><li>2： 使用中</li><li>3： 暂停使用</li><li>4： 已到期</li><li>5： 已删除</li><li>6： 已失效</li></ul><p>默认值：0</p>
                      */
                     int64_t m_orderStatus;
                     bool m_orderStatusHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * <p>搜索关键字</p>
                      */
                     std::string m_keyWord;
                     bool m_keyWordHasBeenSet;

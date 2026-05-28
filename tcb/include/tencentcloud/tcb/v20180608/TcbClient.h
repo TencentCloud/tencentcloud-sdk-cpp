@@ -119,8 +119,12 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePGUserMigrationRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePGUserMigrationResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeResourcePermissionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSafeRuleRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSafeRuleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeStaticStoreRequest.h>
@@ -147,6 +151,8 @@
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/InquireVmPriceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientRequest.h>
@@ -165,16 +171,26 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyResourcePermissionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyResourcePermissionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyStorageSourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyStorageSourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/PushPGUserMigrationsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/PushPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryRequest.h>
+#include <tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryResponse.h>
+#include <tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
@@ -345,9 +361,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMySQLTaskStatusResponse> DescribeMySQLTaskStatusOutcome;
                 typedef std::future<DescribeMySQLTaskStatusOutcome> DescribeMySQLTaskStatusOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeMySQLTaskStatusRequest&, DescribeMySQLTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySQLTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePGUserMigrationResponse> DescribePGUserMigrationOutcome;
+                typedef std::future<DescribePGUserMigrationOutcome> DescribePGUserMigrationOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePGUserMigrationRequest&, DescribePGUserMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePGUserMigrationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
                 typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePermissionResponse> DescribeResourcePermissionOutcome;
+                typedef std::future<DescribeResourcePermissionOutcome> DescribeResourcePermissionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeResourcePermissionRequest&, DescribeResourcePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSafeRuleResponse> DescribeSafeRuleOutcome;
                 typedef std::future<DescribeSafeRuleOutcome> DescribeSafeRuleOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSafeRuleRequest&, DescribeSafeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeRuleAsyncHandler;
@@ -387,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquireVmPriceResponse> InquireVmPriceOutcome;
                 typedef std::future<InquireVmPriceOutcome> InquireVmPriceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::InquireVmPriceRequest&, InquireVmPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireVmPriceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPGUserMigrationsResponse> ListPGUserMigrationsOutcome;
+                typedef std::future<ListPGUserMigrationsOutcome> ListPGUserMigrationsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ListPGUserMigrationsRequest&, ListPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPGUserMigrationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTablesResponse> ListTablesOutcome;
                 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListTablesRequest&, ListTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
@@ -414,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProviderResponse> ModifyProviderOutcome;
                 typedef std::future<ModifyProviderOutcome> ModifyProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyProviderRequest&, ModifyProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProviderAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourcePermissionResponse> ModifyResourcePermissionOutcome;
+                typedef std::future<ModifyResourcePermissionOutcome> ModifyResourcePermissionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyResourcePermissionRequest&, ModifyResourcePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySafeRuleResponse> ModifySafeRuleOutcome;
                 typedef std::future<ModifySafeRuleOutcome> ModifySafeRuleOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifySafeRuleRequest&, ModifySafeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySafeRuleAsyncHandler;
@@ -423,12 +451,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::PreviewPGUserMigrationsResponse> PreviewPGUserMigrationsOutcome;
+                typedef std::future<PreviewPGUserMigrationsOutcome> PreviewPGUserMigrationsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::PreviewPGUserMigrationsRequest&, PreviewPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewPGUserMigrationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::PushPGUserMigrationsResponse> PushPGUserMigrationsOutcome;
+                typedef std::future<PushPGUserMigrationsOutcome> PushPGUserMigrationsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::PushPGUserMigrationsRequest&, PushPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushPGUserMigrationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseEnvResponse> ReleaseEnvOutcome;
                 typedef std::future<ReleaseEnvOutcome> ReleaseEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReleaseEnvRequest&, ReleaseEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewEnvResponse> RenewEnvOutcome;
                 typedef std::future<RenewEnvOutcome> RenewEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RenewEnvRequest&, RenewEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::RepairPGUserMigrationHistoryResponse> RepairPGUserMigrationHistoryOutcome;
+                typedef std::future<RepairPGUserMigrationHistoryOutcome> RepairPGUserMigrationHistoryOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::RepairPGUserMigrationHistoryRequest&, RepairPGUserMigrationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RepairPGUserMigrationHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackPGUserMigrationsResponse> RollbackPGUserMigrationsOutcome;
+                typedef std::future<RollbackPGUserMigrationsOutcome> RollbackPGUserMigrationsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::RollbackPGUserMigrationsRequest&, RollbackPGUserMigrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackPGUserMigrationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunCommandsResponse> RunCommandsOutcome;
                 typedef std::future<RunCommandsOutcome> RunCommandsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RunCommandsRequest&, RunCommandsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunCommandsAsyncHandler;
@@ -976,6 +1016,15 @@ namespace TencentCloud
                 DescribeMySQLTaskStatusOutcomeCallable DescribeMySQLTaskStatusCallable(const Model::DescribeMySQLTaskStatusRequest& request);
 
                 /**
+                 *本接口（DescribePGUserMigration）用于查询目标环境指定 migration 详情。
+                 * @param req DescribePGUserMigrationRequest
+                 * @return DescribePGUserMigrationOutcome
+                 */
+                DescribePGUserMigrationOutcome DescribePGUserMigration(const Model::DescribePGUserMigrationRequest &request);
+                void DescribePGUserMigrationAsync(const Model::DescribePGUserMigrationRequest& request, const DescribePGUserMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePGUserMigrationOutcomeCallable DescribePGUserMigrationCallable(const Model::DescribePGUserMigrationRequest& request);
+
+                /**
                  *查询指定指标的配额使用量
                  * @param req DescribeQuotaDataRequest
                  * @return DescribeQuotaDataOutcome
@@ -983,6 +1032,17 @@ namespace TencentCloud
                 DescribeQuotaDataOutcome DescribeQuotaData(const Model::DescribeQuotaDataRequest &request);
                 void DescribeQuotaDataAsync(const Model::DescribeQuotaDataRequest& request, const DescribeQuotaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQuotaDataOutcomeCallable DescribeQuotaDataCallable(const Model::DescribeQuotaDataRequest& request);
+
+                /**
+                 *查询资源基础权限。
+
+查询云函数、云存储和数据库表的基础权限配置。支持单个资源查询和批量查询。
+                 * @param req DescribeResourcePermissionRequest
+                 * @return DescribeResourcePermissionOutcome
+                 */
+                DescribeResourcePermissionOutcome DescribeResourcePermission(const Model::DescribeResourcePermissionRequest &request);
+                void DescribeResourcePermissionAsync(const Model::DescribeResourcePermissionRequest& request, const DescribeResourcePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePermissionOutcomeCallable DescribeResourcePermissionCallable(const Model::DescribeResourcePermissionRequest& request);
 
                 /**
                  *查询数据库安全规则。
@@ -1116,6 +1176,15 @@ namespace TencentCloud
                 InquireVmPriceOutcomeCallable InquireVmPriceCallable(const Model::InquireVmPriceRequest& request);
 
                 /**
+                 *本接口（ListPGUserMigrations）用于查询目标环境已应用的用户 migration 列表。
+                 * @param req ListPGUserMigrationsRequest
+                 * @return ListPGUserMigrationsOutcome
+                 */
+                ListPGUserMigrationsOutcome ListPGUserMigrations(const Model::ListPGUserMigrationsRequest &request);
+                void ListPGUserMigrationsAsync(const Model::ListPGUserMigrationsRequest& request, const ListPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPGUserMigrationsOutcomeCallable ListPGUserMigrationsCallable(const Model::ListPGUserMigrationsRequest& request);
+
+                /**
                  *本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。
 
 该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口。
@@ -1205,6 +1274,17 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyProviderOutcomeCallable ModifyProviderCallable(const Model::ModifyProviderRequest& request);
 
                 /**
+                 *修改资源基础权限。
+
+修改云函数、云存储和数据库表的基础权限配置。支持预定义权限级别和自定义安全规则两种方式配置资源访问权限。
+                 * @param req ModifyResourcePermissionRequest
+                 * @return ModifyResourcePermissionOutcome
+                 */
+                ModifyResourcePermissionOutcome ModifyResourcePermission(const Model::ModifyResourcePermissionRequest &request);
+                void ModifyResourcePermissionAsync(const Model::ModifyResourcePermissionRequest& request, const ModifyResourcePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourcePermissionOutcomeCallable ModifyResourcePermissionCallable(const Model::ModifyResourcePermissionRequest& request);
+
+                /**
                  *设置数据库安全规则。
 安全规则，用于控制C端用户的访问权限。详见 [安全规则介绍 ](https://cloud.tencent.com/document/product/876/123478)。
                  * @param req ModifySafeRuleRequest
@@ -1237,6 +1317,24 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
 
                 /**
+                 *本接口（PreviewPGUserMigrations）用于预览SQL migrations 在远端的执行计划，不实际执行SQL。
+                 * @param req PreviewPGUserMigrationsRequest
+                 * @return PreviewPGUserMigrationsOutcome
+                 */
+                PreviewPGUserMigrationsOutcome PreviewPGUserMigrations(const Model::PreviewPGUserMigrationsRequest &request);
+                void PreviewPGUserMigrationsAsync(const Model::PreviewPGUserMigrationsRequest& request, const PreviewPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PreviewPGUserMigrationsOutcomeCallable PreviewPGUserMigrationsCallable(const Model::PreviewPGUserMigrationsRequest& request);
+
+                /**
+                 *本接口（PushPGUserMigrations）用于批量应用Migrations。
+                 * @param req PushPGUserMigrationsRequest
+                 * @return PushPGUserMigrationsOutcome
+                 */
+                PushPGUserMigrationsOutcome PushPGUserMigrations(const Model::PushPGUserMigrationsRequest &request);
+                void PushPGUserMigrationsAsync(const Model::PushPGUserMigrationsRequest& request, const PushPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PushPGUserMigrationsOutcomeCallable PushPGUserMigrationsCallable(const Model::PushPGUserMigrationsRequest& request);
+
+                /**
                  *从环境池里立即取出1个环境
                  * @param req ReleaseEnvRequest
                  * @return ReleaseEnvOutcome
@@ -1255,6 +1353,24 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 RenewEnvOutcome RenewEnv(const Model::RenewEnvRequest &request);
                 void RenewEnvAsync(const Model::RenewEnvRequest& request, const RenewEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewEnvOutcomeCallable RenewEnvCallable(const Model::RenewEnvRequest& request);
+
+                /**
+                 *本接口（RepairPGUserMigrationHistory）用于受控修复 history，只修改 user_schema_migrations，不执行 SQL。
+                 * @param req RepairPGUserMigrationHistoryRequest
+                 * @return RepairPGUserMigrationHistoryOutcome
+                 */
+                RepairPGUserMigrationHistoryOutcome RepairPGUserMigrationHistory(const Model::RepairPGUserMigrationHistoryRequest &request);
+                void RepairPGUserMigrationHistoryAsync(const Model::RepairPGUserMigrationHistoryRequest& request, const RepairPGUserMigrationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RepairPGUserMigrationHistoryOutcomeCallable RepairPGUserMigrationHistoryCallable(const Model::RepairPGUserMigrationHistoryRequest& request);
+
+                /**
+                 *本接口（RollbackPGUserMigrations）用于按最近 N 条已应用 migration 倒序执行 rollback。
+                 * @param req RollbackPGUserMigrationsRequest
+                 * @return RollbackPGUserMigrationsOutcome
+                 */
+                RollbackPGUserMigrationsOutcome RollbackPGUserMigrations(const Model::RollbackPGUserMigrationsRequest &request);
+                void RollbackPGUserMigrationsAsync(const Model::RollbackPGUserMigrationsRequest& request, const RollbackPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackPGUserMigrationsOutcomeCallable RollbackPGUserMigrationsCallable(const Model::RollbackPGUserMigrationsRequest& request);
 
                 /**
                  *本接口（RunCommands）用于执行文档型数据库命令。

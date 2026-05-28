@@ -27,6 +27,7 @@
 #include <tencentcloud/thpc/v20230321/model/CFSOption.h>
 #include <tencentcloud/thpc/v20230321/model/GooseFSOption.h>
 #include <tencentcloud/thpc/v20230321/model/GooseFSxOption.h>
+#include <tencentcloud/thpc/v20230321/model/CosOption.h>
 
 
 namespace TencentCloud
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群挂载CFS文件系统选项。
-                     * @return CFSOptions 集群挂载CFS文件系统选项。
+                     * 获取<p>集群挂载CFS文件系统选项。</p>
+                     * @return CFSOptions <p>集群挂载CFS文件系统选项。</p>
                      * 
                      */
                     std::vector<CFSOption> GetCFSOptions() const;
 
                     /**
-                     * 设置集群挂载CFS文件系统选项。
-                     * @param _cFSOptions 集群挂载CFS文件系统选项。
+                     * 设置<p>集群挂载CFS文件系统选项。</p>
+                     * @param _cFSOptions <p>集群挂载CFS文件系统选项。</p>
                      * 
                      */
                     void SetCFSOptions(const std::vector<CFSOption>& _cFSOptions);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool CFSOptionsHasBeenSet() const;
 
                     /**
-                     * 获取集群挂载GooseFS文件系统选项。
-                     * @return GooseFSOptions 集群挂载GooseFS文件系统选项。
+                     * 获取<p>集群挂载GooseFS文件系统选项。</p>
+                     * @return GooseFSOptions <p>集群挂载GooseFS文件系统选项。</p>
                      * 
                      */
                     std::vector<GooseFSOption> GetGooseFSOptions() const;
 
                     /**
-                     * 设置集群挂载GooseFS文件系统选项。
-                     * @param _gooseFSOptions 集群挂载GooseFS文件系统选项。
+                     * 设置<p>集群挂载GooseFS文件系统选项。</p>
+                     * @param _gooseFSOptions <p>集群挂载GooseFS文件系统选项。</p>
                      * 
                      */
                     void SetGooseFSOptions(const std::vector<GooseFSOption>& _gooseFSOptions);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool GooseFSOptionsHasBeenSet() const;
 
                     /**
-                     * 获取集群挂载GooseFSx文件系统选项。
-                     * @return GooseFSxOptions 集群挂载GooseFSx文件系统选项。
+                     * 获取<p>集群挂载GooseFSx文件系统选项。</p>
+                     * @return GooseFSxOptions <p>集群挂载GooseFSx文件系统选项。</p>
                      * 
                      */
                     std::vector<GooseFSxOption> GetGooseFSxOptions() const;
 
                     /**
-                     * 设置集群挂载GooseFSx文件系统选项。
-                     * @param _gooseFSxOptions 集群挂载GooseFSx文件系统选项。
+                     * 设置<p>集群挂载GooseFSx文件系统选项。</p>
+                     * @param _gooseFSxOptions <p>集群挂载GooseFSx文件系统选项。</p>
                      * 
                      */
                     void SetGooseFSxOptions(const std::vector<GooseFSxOption>& _gooseFSxOptions);
@@ -112,25 +113,52 @@ namespace TencentCloud
                      */
                     bool GooseFSxOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群挂载COS文件系统选项。</p>
+                     * @return CosOptions <p>集群挂载COS文件系统选项。</p>
+                     * 
+                     */
+                    std::vector<CosOption> GetCosOptions() const;
+
+                    /**
+                     * 设置<p>集群挂载COS文件系统选项。</p>
+                     * @param _cosOptions <p>集群挂载COS文件系统选项。</p>
+                     * 
+                     */
+                    void SetCosOptions(const std::vector<CosOption>& _cosOptions);
+
+                    /**
+                     * 判断参数 CosOptions 是否已赋值
+                     * @return CosOptions 是否已赋值
+                     * 
+                     */
+                    bool CosOptionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群挂载CFS文件系统选项。
+                     * <p>集群挂载CFS文件系统选项。</p>
                      */
                     std::vector<CFSOption> m_cFSOptions;
                     bool m_cFSOptionsHasBeenSet;
 
                     /**
-                     * 集群挂载GooseFS文件系统选项。
+                     * <p>集群挂载GooseFS文件系统选项。</p>
                      */
                     std::vector<GooseFSOption> m_gooseFSOptions;
                     bool m_gooseFSOptionsHasBeenSet;
 
                     /**
-                     * 集群挂载GooseFSx文件系统选项。
+                     * <p>集群挂载GooseFSx文件系统选项。</p>
                      */
                     std::vector<GooseFSxOption> m_gooseFSxOptions;
                     bool m_gooseFSxOptionsHasBeenSet;
+
+                    /**
+                     * <p>集群挂载COS文件系统选项。</p>
+                     */
+                    std::vector<CosOption> m_cosOptions;
+                    bool m_cosOptionsHasBeenSet;
 
                 };
             }

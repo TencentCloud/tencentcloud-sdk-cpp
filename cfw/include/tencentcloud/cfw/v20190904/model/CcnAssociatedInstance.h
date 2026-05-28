@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return InsType 实例类型
+                     * 获取<p>实例类型</p>
+                     * @return InsType <p>实例类型</p>
                      * 
                      */
                     std::string GetInsType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _insType 实例类型
+                     * 设置<p>实例类型</p>
+                     * @param _insType <p>实例类型</p>
                      * 
                      */
                     void SetInsType(const std::string& _insType);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool InsTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例的网段列表
+                     * 获取<p>实例的网段列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CidrLst 实例的网段列表
+                     * @return CidrLst <p>实例的网段列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCidrLst() const;
 
                     /**
-                     * 设置实例的网段列表
+                     * 设置<p>实例的网段列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cidrLst 实例的网段列表
+                     * @param _cidrLst <p>实例的网段列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool CidrLstHasBeenSet() const;
 
                     /**
-                     * 获取实例所属地域
-                     * @return InstanceRegion 实例所属地域
+                     * 获取<p>实例所属地域</p>
+                     * @return InstanceRegion <p>实例所属地域</p>
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置实例所属地域
-                     * @param _instanceRegion 实例所属地域
+                     * 设置<p>实例所属地域</p>
+                     * @param _instanceRegion <p>实例所属地域</p>
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -155,38 +155,65 @@ namespace TencentCloud
                      */
                     bool InstanceRegionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否跨账号</p>
+                     * @return IsCrossInstance <p>是否跨账号</p>
+                     * 
+                     */
+                    uint64_t GetIsCrossInstance() const;
+
+                    /**
+                     * 设置<p>是否跨账号</p>
+                     * @param _isCrossInstance <p>是否跨账号</p>
+                     * 
+                     */
+                    void SetIsCrossInstance(const uint64_t& _isCrossInstance);
+
+                    /**
+                     * 判断参数 IsCrossInstance 是否已赋值
+                     * @return IsCrossInstance 是否已赋值
+                     * 
+                     */
+                    bool IsCrossInstanceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * <p>实例类型</p>
                      */
                     std::string m_insType;
                     bool m_insTypeHasBeenSet;
 
                     /**
-                     * 实例的网段列表
+                     * <p>实例的网段列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_cidrLst;
                     bool m_cidrLstHasBeenSet;
 
                     /**
-                     * 实例所属地域
+                     * <p>实例所属地域</p>
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
+
+                    /**
+                     * <p>是否跨账号</p>
+                     */
+                    uint64_t m_isCrossInstance;
+                    bool m_isCrossInstanceHasBeenSet;
 
                 };
             }

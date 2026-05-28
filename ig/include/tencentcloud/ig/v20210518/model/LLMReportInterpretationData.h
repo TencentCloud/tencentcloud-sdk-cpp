@@ -1,0 +1,331 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IG_V20210518_MODEL_LLMREPORTINTERPRETATIONDATA_H_
+#define TENCENTCLOUD_IG_V20210518_MODEL_LLMREPORTINTERPRETATIONDATA_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ig/v20210518/model/ReportFileInfoRsp.h>
+#include <tencentcloud/ig/v20210518/model/ReferResourceInfo.h>
+#include <tencentcloud/ig/v20210518/model/GuessQuestion.h>
+#include <tencentcloud/ig/v20210518/model/HighlightWordInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Ig
+    {
+        namespace V20210518
+        {
+            namespace Model
+            {
+                /**
+                * 大模型症状自查返回数据
+                */
+                class LLMReportInterpretationData : public AbstractModel
+                {
+                public:
+                    LLMReportInterpretationData();
+                    ~LLMReportInterpretationData() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>大模型返回问答内容</p>
+                     * @return Content <p>大模型返回问答内容</p>
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置<p>大模型返回问答内容</p>
+                     * @param _content <p>大模型返回问答内容</p>
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>大模型返回思考内容</p>
+                     * @return Think <p>大模型返回思考内容</p>
+                     * 
+                     */
+                    std::string GetThink() const;
+
+                    /**
+                     * 设置<p>大模型返回思考内容</p>
+                     * @param _think <p>大模型返回思考内容</p>
+                     * 
+                     */
+                    void SetThink(const std::string& _think);
+
+                    /**
+                     * 判断参数 Think 是否已赋值
+                     * @return Think 是否已赋值
+                     * 
+                     */
+                    bool ThinkHasBeenSet() const;
+
+                    /**
+                     * 获取<p>序号，无业务含义，标识流式结果的序号</p>
+                     * @return Sort <p>序号，无业务含义，标识流式结果的序号</p>
+                     * 
+                     */
+                    int64_t GetSort() const;
+
+                    /**
+                     * 设置<p>序号，无业务含义，标识流式结果的序号</p>
+                     * @param _sort <p>序号，无业务含义，标识流式结果的序号</p>
+                     * 
+                     */
+                    void SetSort(const int64_t& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取<p>流式输出结束标识，false:未结束，true:结束</p>
+                     * @return IsFinish <p>流式输出结束标识，false:未结束，true:结束</p>
+                     * 
+                     */
+                    bool GetIsFinish() const;
+
+                    /**
+                     * 设置<p>流式输出结束标识，false:未结束，true:结束</p>
+                     * @param _isFinish <p>流式输出结束标识，false:未结束，true:结束</p>
+                     * 
+                     */
+                    void SetIsFinish(const bool& _isFinish);
+
+                    /**
+                     * 判断参数 IsFinish 是否已赋值
+                     * @return IsFinish 是否已赋值
+                     * 
+                     */
+                    bool IsFinishHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否命中敏感词，false:否，true:是；</p>
+                     * @return IsSensitive <p>是否命中敏感词，false:否，true:是；</p>
+                     * 
+                     */
+                    bool GetIsSensitive() const;
+
+                    /**
+                     * 设置<p>是否命中敏感词，false:否，true:是；</p>
+                     * @param _isSensitive <p>是否命中敏感词，false:否，true:是；</p>
+                     * 
+                     */
+                    void SetIsSensitive(const bool& _isSensitive);
+
+                    /**
+                     * 判断参数 IsSensitive 是否已赋值
+                     * @return IsSensitive 是否已赋值
+                     * 
+                     */
+                    bool IsSensitiveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>
+                     * @return IsSupportFile <p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>
+                     * 
+                     */
+                    bool GetIsSupportFile() const;
+
+                    /**
+                     * 设置<p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>
+                     * @param _isSupportFile <p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>
+                     * 
+                     */
+                    void SetIsSupportFile(const bool& _isSupportFile);
+
+                    /**
+                     * 判断参数 IsSupportFile 是否已赋值
+                     * @return IsSupportFile 是否已赋值
+                     * 
+                     */
+                    bool IsSupportFileHasBeenSet() const;
+
+                    /**
+                     * 获取<p>返回的报告列表，和传入报告文件顺序一致</p>
+                     * @return ReportInfos <p>返回的报告列表，和传入报告文件顺序一致</p>
+                     * 
+                     */
+                    std::vector<ReportFileInfoRsp> GetReportInfos() const;
+
+                    /**
+                     * 设置<p>返回的报告列表，和传入报告文件顺序一致</p>
+                     * @param _reportInfos <p>返回的报告列表，和传入报告文件顺序一致</p>
+                     * 
+                     */
+                    void SetReportInfos(const std::vector<ReportFileInfoRsp>& _reportInfos);
+
+                    /**
+                     * 判断参数 ReportInfos 是否已赋值
+                     * @return ReportInfos 是否已赋值
+                     * 
+                     */
+                    bool ReportInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>
+                     * @return ReferResourceItems <p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>
+                     * 
+                     */
+                    std::vector<ReferResourceInfo> GetReferResourceItems() const;
+
+                    /**
+                     * 设置<p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>
+                     * @param _referResourceItems <p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>
+                     * 
+                     */
+                    void SetReferResourceItems(const std::vector<ReferResourceInfo>& _referResourceItems);
+
+                    /**
+                     * 判断参数 ReferResourceItems 是否已赋值
+                     * @return ReferResourceItems 是否已赋值
+                     * 
+                     */
+                    bool ReferResourceItemsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>
+                     * @return GuessQuestions <p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>
+                     * 
+                     */
+                    std::vector<GuessQuestion> GetGuessQuestions() const;
+
+                    /**
+                     * 设置<p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>
+                     * @param _guessQuestions <p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>
+                     * 
+                     */
+                    void SetGuessQuestions(const std::vector<GuessQuestion>& _guessQuestions);
+
+                    /**
+                     * 判断参数 GuessQuestions 是否已赋值
+                     * @return GuessQuestions 是否已赋值
+                     * 
+                     */
+                    bool GuessQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高亮词列表，流式输出方式在流式过程中输出结果。</p>
+                     * @return HighlightWords <p>高亮词列表，流式输出方式在流式过程中输出结果。</p>
+                     * 
+                     */
+                    std::vector<HighlightWordInfo> GetHighlightWords() const;
+
+                    /**
+                     * 设置<p>高亮词列表，流式输出方式在流式过程中输出结果。</p>
+                     * @param _highlightWords <p>高亮词列表，流式输出方式在流式过程中输出结果。</p>
+                     * 
+                     */
+                    void SetHighlightWords(const std::vector<HighlightWordInfo>& _highlightWords);
+
+                    /**
+                     * 判断参数 HighlightWords 是否已赋值
+                     * @return HighlightWords 是否已赋值
+                     * 
+                     */
+                    bool HighlightWordsHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>大模型返回问答内容</p>
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>大模型返回思考内容</p>
+                     */
+                    std::string m_think;
+                    bool m_thinkHasBeenSet;
+
+                    /**
+                     * <p>序号，无业务含义，标识流式结果的序号</p>
+                     */
+                    int64_t m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * <p>流式输出结束标识，false:未结束，true:结束</p>
+                     */
+                    bool m_isFinish;
+                    bool m_isFinishHasBeenSet;
+
+                    /**
+                     * <p>是否命中敏感词，false:否，true:是；</p>
+                     */
+                    bool m_isSensitive;
+                    bool m_isSensitiveHasBeenSet;
+
+                    /**
+                     * <p>是否支持报告类型，false:否，true:是； 默认返回true，不支持的报告类型返回false</p>
+                     */
+                    bool m_isSupportFile;
+                    bool m_isSupportFileHasBeenSet;
+
+                    /**
+                     * <p>返回的报告列表，和传入报告文件顺序一致</p>
+                     */
+                    std::vector<ReportFileInfoRsp> m_reportInfos;
+                    bool m_reportInfosHasBeenSet;
+
+                    /**
+                     * <p>引用资料列表，流式输出方式，只在流式输出第一次返回；</p>
+                     */
+                    std::vector<ReferResourceInfo> m_referResourceItems;
+                    bool m_referResourceItemsHasBeenSet;
+
+                    /**
+                     * <p>猜你想问列表，流式输出方式，只在流式结束输出结果；</p>
+                     */
+                    std::vector<GuessQuestion> m_guessQuestions;
+                    bool m_guessQuestionsHasBeenSet;
+
+                    /**
+                     * <p>高亮词列表，流式输出方式在流式过程中输出结果。</p>
+                     */
+                    std::vector<HighlightWordInfo> m_highlightWords;
+                    bool m_highlightWordsHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IG_V20210518_MODEL_LLMREPORTINTERPRETATIONDATA_H_

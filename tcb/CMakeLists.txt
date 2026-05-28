@@ -20,12 +20,12 @@ set(tcb_public_header
 
 set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
-  include/tencentcloud/tcb/v20180608/model/ListTablesResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResponse.h
   include/tencentcloud/tcb/v20180608/model/BindStorageSourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ManagedAIModelChargingInfo.h
   include/tencentcloud/tcb/v20180608/model/OrderInfo.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h
-  include/tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h
+  include/tencentcloud/tcb/v20180608/model/MigrationPlanItem.h
   include/tencentcloud/tcb/v20180608/model/LocalizedMessage.h
   include/tencentcloud/tcb/v20180608/model/GetProvidersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
@@ -44,17 +44,21 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateVmInstanceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserResponse.h
+  include/tencentcloud/tcb/v20180608/model/Pager.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersResp.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceRoute.h
   include/tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusRequest.h
   include/tencentcloud/tcb/v20180608/model/BanConfig.h
+  include/tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryResponse.h
+  include/tencentcloud/tcb/v20180608/model/RepairPGUserMigrationHistoryRequest.h
   include/tencentcloud/tcb/v20180608/model/AllocateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/LogResObject.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/Indexkey.h
   include/tencentcloud/tcb/v20180608/model/ManagedAIModelGroup.h
+  include/tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/EmailSmtpConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/MongoConnector.h
@@ -71,7 +75,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/SMSTemplateParams.h
   include/tencentcloud/tcb/v20180608/model/UnbindStorageSourceResponse.h
-  include/tencentcloud/tcb/v20180608/model/Pager.h
+  include/tencentcloud/tcb/v20180608/model/DescribePGUserMigrationResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyLoginConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
@@ -115,21 +119,23 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteApiKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
-  include/tencentcloud/tcb/v20180608/model/ModifyClientResponse.h
+  include/tencentcloud/tcb/v20180608/model/MigrationInput.h
   include/tencentcloud/tcb/v20180608/model/UpdateAIModelRequest.h
   include/tencentcloud/tcb/v20180608/model/VMLoginConfiguration.h
   include/tencentcloud/tcb/v20180608/model/RenewEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeClientResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteResponse.h
-  include/tencentcloud/tcb/v20180608/model/MySQLNetDetail.h
+  include/tencentcloud/tcb/v20180608/model/UpdateTableResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResult.h
   include/tencentcloud/tcb/v20180608/model/MgoKeySchema.h
   include/tencentcloud/tcb/v20180608/model/UpdateAIModelResponse.h
-  include/tencentcloud/tcb/v20180608/model/UpdateTableResponse.h
+  include/tencentcloud/tcb/v20180608/model/ListPGUserMigrationsRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvPlanResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyRequest.h
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAIModelResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h
+  include/tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/HpaPolicy.h
   include/tencentcloud/tcb/v20180608/model/EmailTemplateConfig.h
@@ -142,16 +148,19 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateTableRequest.h
   include/tencentcloud/tcb/v20180608/model/ManagedAIModelSpec.h
   include/tencentcloud/tcb/v20180608/model/CreateMySQLResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyResourcePermissionRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteApiKeyRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteTableRequest.h
+  include/tencentcloud/tcb/v20180608/model/MySQLNetDetail.h
   include/tencentcloud/tcb/v20180608/model/EnvInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteTableResponse.h
   include/tencentcloud/tcb/v20180608/model/AddProviderResponse.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceHeadersHandler.h
+  include/tencentcloud/tcb/v20180608/model/ModifyResourcePermissionResult.h
   include/tencentcloud/tcb/v20180608/model/DestroyMySQLRequest.h
   include/tencentcloud/tcb/v20180608/model/EnvBillingInfoItem.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
@@ -160,6 +169,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/MySQLTaskStatus.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResult.h
+  include/tencentcloud/tcb/v20180608/model/ModifyResourcePermissionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeSafeRuleRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserRequest.h
@@ -186,7 +196,9 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateTableResponse.h
   include/tencentcloud/tcb/v20180608/model/User.h
   include/tencentcloud/tcb/v20180608/model/DestroyMySQLResult.h
+  include/tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/ReleaseEnvRequest.h
+  include/tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceDomain.h
@@ -209,26 +221,36 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionRequest.h
+  include/tencentcloud/tcb/v20180608/model/ResourcePermission.h
   include/tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/GetProvidersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h
+  include/tencentcloud/tcb/v20180608/model/PushPGUserMigrationsRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribePGUserMigrationRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmInstancesResponse.h
   include/tencentcloud/tcb/v20180608/model/ApiKeyToken.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
+  include/tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserResp.h
   include/tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h
+  include/tencentcloud/tcb/v20180608/model/MigrationSummary.h
+  include/tencentcloud/tcb/v20180608/model/ModifyClientResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableRequest.h
   include/tencentcloud/tcb/v20180608/model/UpdateTableRequest.h
+  include/tencentcloud/tcb/v20180608/model/RollbackPGUserMigrationsRequest.h
   include/tencentcloud/tcb/v20180608/model/ExternalStorage.h
   include/tencentcloud/tcb/v20180608/model/AuthDomain.h
   include/tencentcloud/tcb/v20180608/model/RunSqlResponse.h
   include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeClientRequest.h
+  include/tencentcloud/tcb/v20180608/model/MigrationConflict.h
   include/tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyResponse.h
+  include/tencentcloud/tcb/v20180608/model/ListTablesResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientRequest.h
   include/tencentcloud/tcb/v20180608/model/ProviderResponseParametersMap.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h
@@ -259,6 +281,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/VMPrice.h
   include/tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmSpecRequest.h
+  include/tencentcloud/tcb/v20180608/model/PushPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/BindStorageSourceResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
@@ -276,12 +299,12 @@ set(tcb_public_header_model
 set(tcb_src
   src/v20180608/TcbClient.cpp
   src/v20180608/model/DescribeEnvLimitResponse.cpp
-  src/v20180608/model/ListTablesResponse.cpp
+  src/v20180608/model/DescribeResourcePermissionResponse.cpp
   src/v20180608/model/BindStorageSourceRequest.cpp
   src/v20180608/model/ManagedAIModelChargingInfo.cpp
   src/v20180608/model/OrderInfo.cpp
   src/v20180608/model/CheckTcbServiceResponse.cpp
-  src/v20180608/model/ReleaseEnvResponse.cpp
+  src/v20180608/model/MigrationPlanItem.cpp
   src/v20180608/model/LocalizedMessage.cpp
   src/v20180608/model/GetProvidersRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp
@@ -300,17 +323,21 @@ set(tcb_src
   src/v20180608/model/CreateVmInstanceRequest.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
   src/v20180608/model/ModifyUserResponse.cpp
+  src/v20180608/model/Pager.cpp
   src/v20180608/model/DeleteUsersResp.cpp
   src/v20180608/model/DescribeEnvLimitRequest.cpp
   src/v20180608/model/DescribeCloudBaseBuildServiceResponse.cpp
   src/v20180608/model/HTTPServiceRoute.cpp
   src/v20180608/model/DescribeMySQLTaskStatusRequest.cpp
   src/v20180608/model/BanConfig.cpp
+  src/v20180608/model/RepairPGUserMigrationHistoryResponse.cpp
+  src/v20180608/model/RepairPGUserMigrationHistoryRequest.cpp
   src/v20180608/model/AllocateEnvResponse.cpp
   src/v20180608/model/LogResObject.cpp
   src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/Indexkey.cpp
   src/v20180608/model/ManagedAIModelGroup.cpp
+  src/v20180608/model/ReleaseEnvResponse.cpp
   src/v20180608/model/EmailSmtpConfig.cpp
   src/v20180608/model/DescribeHTTPServiceRouteRequest.cpp
   src/v20180608/model/MongoConnector.cpp
@@ -327,7 +354,7 @@ set(tcb_src
   src/v20180608/model/CreateHostingDomainRequest.cpp
   src/v20180608/model/SMSTemplateParams.cpp
   src/v20180608/model/UnbindStorageSourceResponse.cpp
-  src/v20180608/model/Pager.cpp
+  src/v20180608/model/DescribePGUserMigrationResponse.cpp
   src/v20180608/model/ModifyLoginConfigRequest.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
@@ -371,21 +398,23 @@ set(tcb_src
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/DeleteApiKeyResponse.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
-  src/v20180608/model/ModifyClientResponse.cpp
+  src/v20180608/model/MigrationInput.cpp
   src/v20180608/model/UpdateAIModelRequest.cpp
   src/v20180608/model/VMLoginConfiguration.cpp
   src/v20180608/model/RenewEnvRequest.cpp
   src/v20180608/model/DescribeClientResponse.cpp
   src/v20180608/model/DeleteHTTPServiceRouteResponse.cpp
-  src/v20180608/model/MySQLNetDetail.cpp
+  src/v20180608/model/UpdateTableResponse.cpp
+  src/v20180608/model/DescribeResourcePermissionResult.cpp
   src/v20180608/model/MgoKeySchema.cpp
   src/v20180608/model/UpdateAIModelResponse.cpp
-  src/v20180608/model/UpdateTableResponse.cpp
+  src/v20180608/model/ListPGUserMigrationsRequest.cpp
   src/v20180608/model/ModifyEnvPlanResponse.cpp
   src/v20180608/model/CreateCustomLoginKeyRequest.cpp
   src/v20180608/model/RunSqlRequest.cpp
   src/v20180608/model/CreateAIModelResponse.cpp
   src/v20180608/model/DescribeCreateMySQLResultRequest.cpp
+  src/v20180608/model/ListPGUserMigrationsResponse.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
   src/v20180608/model/HpaPolicy.cpp
   src/v20180608/model/EmailTemplateConfig.cpp
@@ -398,16 +427,19 @@ set(tcb_src
   src/v20180608/model/CreateTableRequest.cpp
   src/v20180608/model/ManagedAIModelSpec.cpp
   src/v20180608/model/CreateMySQLResponse.cpp
+  src/v20180608/model/ModifyResourcePermissionRequest.cpp
   src/v20180608/model/DeleteAuthDomainResponse.cpp
   src/v20180608/model/DeleteApiKeyRequest.cpp
   src/v20180608/model/ModifyProviderRequest.cpp
   src/v20180608/model/DeleteTableRequest.cpp
+  src/v20180608/model/MySQLNetDetail.cpp
   src/v20180608/model/EnvInfo.cpp
   src/v20180608/model/DestroyEnvRequest.cpp
   src/v20180608/model/DestroyEnvResponse.cpp
   src/v20180608/model/DeleteTableResponse.cpp
   src/v20180608/model/AddProviderResponse.cpp
   src/v20180608/model/HTTPServiceHeadersHandler.cpp
+  src/v20180608/model/ModifyResourcePermissionResult.cpp
   src/v20180608/model/DestroyMySQLRequest.cpp
   src/v20180608/model/EnvBillingInfoItem.cpp
   src/v20180608/model/DescribeEnvsResponse.cpp
@@ -416,6 +448,7 @@ set(tcb_src
   src/v20180608/model/CreateHostingDomainResponse.cpp
   src/v20180608/model/MySQLTaskStatus.cpp
   src/v20180608/model/DescribeCreateMySQLResult.cpp
+  src/v20180608/model/ModifyResourcePermissionResponse.cpp
   src/v20180608/model/DescribeCreateMySQLResultResponse.cpp
   src/v20180608/model/DescribeSafeRuleRequest.cpp
   src/v20180608/model/ModifyUserRequest.cpp
@@ -442,7 +475,9 @@ set(tcb_src
   src/v20180608/model/CreateTableResponse.cpp
   src/v20180608/model/User.cpp
   src/v20180608/model/DestroyMySQLResult.cpp
+  src/v20180608/model/PreviewPGUserMigrationsResponse.cpp
   src/v20180608/model/ReleaseEnvRequest.cpp
+  src/v20180608/model/PreviewPGUserMigrationsRequest.cpp
   src/v20180608/model/CreateMySQLRequest.cpp
   src/v20180608/model/DatabasesInfo.cpp
   src/v20180608/model/HTTPServiceDomain.cpp
@@ -465,26 +500,36 @@ set(tcb_src
   src/v20180608/model/DescribeUserListRequest.cpp
   src/v20180608/model/DescribeCurveDataRequest.cpp
   src/v20180608/model/DescribeStaticStoreResponse.cpp
+  src/v20180608/model/DescribeResourcePermissionRequest.cpp
+  src/v20180608/model/ResourcePermission.cpp
   src/v20180608/model/ModifyHTTPServiceRouteResponse.cpp
   src/v20180608/model/GetProvidersResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/CreateStaticStoreResponse.cpp
+  src/v20180608/model/PushPGUserMigrationsRequest.cpp
+  src/v20180608/model/DescribePGUserMigrationRequest.cpp
   src/v20180608/model/DescribeVmInstancesResponse.cpp
   src/v20180608/model/ApiKeyToken.cpp
   src/v20180608/model/StorageInfo.cpp
+  src/v20180608/model/RollbackPGUserMigrationsResponse.cpp
   src/v20180608/model/ModifyUserResp.cpp
   src/v20180608/model/ModifySafeRuleResponse.cpp
+  src/v20180608/model/MigrationSummary.cpp
+  src/v20180608/model/ModifyClientResponse.cpp
   src/v20180608/model/DescribeTableRequest.cpp
   src/v20180608/model/UpdateTableRequest.cpp
+  src/v20180608/model/RollbackPGUserMigrationsRequest.cpp
   src/v20180608/model/ExternalStorage.cpp
   src/v20180608/model/AuthDomain.cpp
   src/v20180608/model/RunSqlResponse.cpp
   src/v20180608/model/LogServiceInfo.cpp
   src/v20180608/model/DescribeClientRequest.cpp
+  src/v20180608/model/MigrationConflict.cpp
   src/v20180608/model/DescribeHostingDomainTaskResponse.cpp
   src/v20180608/model/DeleteAuthDomainRequest.cpp
   src/v20180608/model/CreateHTTPServiceRouteResponse.cpp
   src/v20180608/model/CreateCustomLoginKeyResponse.cpp
+  src/v20180608/model/ListTablesResponse.cpp
   src/v20180608/model/ModifyClientRequest.cpp
   src/v20180608/model/ProviderResponseParametersMap.cpp
   src/v20180608/model/DeleteUsersResponse.cpp
@@ -515,6 +560,7 @@ set(tcb_src
   src/v20180608/model/VMPrice.cpp
   src/v20180608/model/DeleteProviderRequest.cpp
   src/v20180608/model/DescribeVmSpecRequest.cpp
+  src/v20180608/model/PushPGUserMigrationsResponse.cpp
   src/v20180608/model/BindStorageSourceResponse.cpp
   src/v20180608/model/ModifyProviderResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp

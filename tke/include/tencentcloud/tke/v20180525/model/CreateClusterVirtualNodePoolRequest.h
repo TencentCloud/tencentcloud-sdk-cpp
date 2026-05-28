@@ -24,6 +24,8 @@
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
 #include <tencentcloud/tke/v20180525/model/VirtualNodeSpec.h>
+#include <tencentcloud/tke/v20180525/model/SubnetAllocationPolicy.h>
+#include <tencentcloud/tke/v20180525/model/AgentPluginConfig.h>
 
 
 namespace TencentCloud
@@ -46,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID，通过DescribeClusters接口获取
-                     * @return ClusterId 集群ID，通过DescribeClusters接口获取
+                     * 获取<p>集群ID，通过DescribeClusters接口获取</p>
+                     * @return ClusterId <p>集群ID，通过DescribeClusters接口获取</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID，通过DescribeClusters接口获取
-                     * @param _clusterId 集群ID，通过DescribeClusters接口获取
+                     * 设置<p>集群ID，通过DescribeClusters接口获取</p>
+                     * @param _clusterId <p>集群ID，通过DescribeClusters接口获取</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -67,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池名称
-                     * @return Name 节点池名称
+                     * 获取<p>节点池名称</p>
+                     * @return Name <p>节点池名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点池名称
-                     * @param _name 节点池名称
+                     * 设置<p>节点池名称</p>
+                     * @param _name <p>节点池名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -88,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID列表
-                     * @return SecurityGroupIds 安全组ID列表
+                     * 获取<p>安全组ID列表</p>
+                     * @return SecurityGroupIds <p>安全组ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID列表
-                     * @param _securityGroupIds 安全组ID列表
+                     * 设置<p>安全组ID列表</p>
+                     * @param _securityGroupIds <p>安全组ID列表</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -109,15 +111,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网ID列表
-                     * @return SubnetIds 子网ID列表
+                     * 获取<p>子网ID列表</p>
+                     * @return SubnetIds <p>子网ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网ID列表
-                     * @param _subnetIds 子网ID列表
+                     * 设置<p>子网ID列表</p>
+                     * @param _subnetIds <p>子网ID列表</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -130,15 +132,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点label
-                     * @return Labels 虚拟节点label
+                     * 获取<p>虚拟节点label</p>
+                     * @return Labels <p>虚拟节点label</p>
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置虚拟节点label
-                     * @param _labels 虚拟节点label
+                     * 设置<p>虚拟节点label</p>
+                     * @param _labels <p>虚拟节点label</p>
                      * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
@@ -151,15 +153,15 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点taint
-                     * @return Taints 虚拟节点taint
+                     * 获取<p>虚拟节点taint</p>
+                     * @return Taints <p>虚拟节点taint</p>
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置虚拟节点taint
-                     * @param _taints 虚拟节点taint
+                     * 设置<p>虚拟节点taint</p>
+                     * @param _taints <p>虚拟节点taint</p>
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -172,15 +174,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取节点列表
-                     * @return VirtualNodes 节点列表
+                     * 获取<p>节点列表</p>
+                     * @return VirtualNodes <p>节点列表</p>
                      * 
                      */
                     std::vector<VirtualNodeSpec> GetVirtualNodes() const;
 
                     /**
-                     * 设置节点列表
-                     * @param _virtualNodes 节点列表
+                     * 设置<p>节点列表</p>
+                     * @param _virtualNodes <p>节点列表</p>
                      * 
                      */
                     void SetVirtualNodes(const std::vector<VirtualNodeSpec>& _virtualNodes);
@@ -193,15 +195,15 @@ namespace TencentCloud
                     bool VirtualNodesHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关，默认关闭
-                     * @return DeletionProtection 删除保护开关，默认关闭
+                     * 获取<p>删除保护开关，默认关闭</p>
+                     * @return DeletionProtection <p>删除保护开关，默认关闭</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关，默认关闭
-                     * @param _deletionProtection 删除保护开关，默认关闭
+                     * 设置<p>删除保护开关，默认关闭</p>
+                     * @param _deletionProtection <p>删除保护开关，默认关闭</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -214,23 +216,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取节点池操作系统：
-- linux（默认）
-- windows
-                     * @return OS 节点池操作系统：
-- linux（默认）
-- windows
+                     * 获取<p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>
+                     * @return OS <p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>
                      * 
                      */
                     std::string GetOS() const;
 
                     /**
-                     * 设置节点池操作系统：
-- linux（默认）
-- windows
-                     * @param _oS 节点池操作系统：
-- linux（默认）
-- windows
+                     * 设置<p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>
+                     * @param _oS <p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>
                      * 
                      */
                     void SetOS(const std::string& _oS);
@@ -242,63 +236,115 @@ namespace TencentCloud
                      */
                     bool OSHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>
+                     * @return SubnetAllocationPolicy <p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>
+                     * 
+                     */
+                    SubnetAllocationPolicy GetSubnetAllocationPolicy() const;
+
+                    /**
+                     * 设置<p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>
+                     * @param _subnetAllocationPolicy <p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>
+                     * 
+                     */
+                    void SetSubnetAllocationPolicy(const SubnetAllocationPolicy& _subnetAllocationPolicy);
+
+                    /**
+                     * 判断参数 SubnetAllocationPolicy 是否已赋值
+                     * @return SubnetAllocationPolicy 是否已赋值
+                     * 
+                     */
+                    bool SubnetAllocationPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>
+                     * @return AgentPlugin <p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>
+                     * 
+                     */
+                    AgentPluginConfig GetAgentPlugin() const;
+
+                    /**
+                     * 设置<p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>
+                     * @param _agentPlugin <p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>
+                     * 
+                     */
+                    void SetAgentPlugin(const AgentPluginConfig& _agentPlugin);
+
+                    /**
+                     * 判断参数 AgentPlugin 是否已赋值
+                     * @return AgentPlugin 是否已赋值
+                     * 
+                     */
+                    bool AgentPluginHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID，通过DescribeClusters接口获取
+                     * <p>集群ID，通过DescribeClusters接口获取</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点池名称
+                     * <p>节点池名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 安全组ID列表
+                     * <p>安全组ID列表</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 子网ID列表
+                     * <p>子网ID列表</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 虚拟节点label
+                     * <p>虚拟节点label</p>
                      */
                     std::vector<Label> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 虚拟节点taint
+                     * <p>虚拟节点taint</p>
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 节点列表
+                     * <p>节点列表</p>
                      */
                     std::vector<VirtualNodeSpec> m_virtualNodes;
                     bool m_virtualNodesHasBeenSet;
 
                     /**
-                     * 删除保护开关，默认关闭
+                     * <p>删除保护开关，默认关闭</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 节点池操作系统：
-- linux（默认）
-- windows
+                     * <p>节点池操作系统：</p><ul><li>linux（默认）</li><li>windows</li></ul>
                      */
                     std::string m_oS;
                     bool m_oSHasBeenSet;
+
+                    /**
+                     * <p>子网资源分配策略，精确控制各子网之间的资源分配比例。</p>
+                     */
+                    SubnetAllocationPolicy m_subnetAllocationPolicy;
+                    bool m_subnetAllocationPolicyHasBeenSet;
+
+                    /**
+                     * <p>AgentPlugin 安装配置。传入即表示需要安装（即使是空对象 {}）</p>
+                     */
+                    AgentPluginConfig m_agentPlugin;
+                    bool m_agentPluginHasBeenSet;
 
                 };
             }

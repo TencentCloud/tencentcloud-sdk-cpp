@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>插件ID</p>
+                     * @return PluginId <p>插件ID</p>
+                     * 
+                     */
+                    std::string GetPluginId() const;
+
+                    /**
+                     * 设置<p>插件ID</p>
+                     * @param _pluginId <p>插件ID</p>
+                     * 
+                     */
+                    void SetPluginId(const std::string& _pluginId);
+
+                    /**
+                     * 判断参数 PluginId 是否已赋值
+                     * @return PluginId 是否已赋值
+                     * 
+                     */
+                    bool PluginIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * <p>插件ID</p>
+                     */
+                    std::string m_pluginId;
+                    bool m_pluginIdHasBeenSet;
 
                 };
             }

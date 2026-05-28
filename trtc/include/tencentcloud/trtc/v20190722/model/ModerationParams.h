@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）
-                     * @return ModerationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）
+                     * 获取审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
+                     * @return ModerationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
                      * 
                      */
                     uint64_t GetModerationType() const;
 
                     /**
-                     * 设置审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）
-                     * @param _moderationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）
+                     * 设置审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
+                     * @param _moderationType 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
                      * 
                      */
                     void SetModerationType(const uint64_t& _moderationType);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool MaxIdleTimeHasBeenSet() const;
 
                     /**
-                     * 获取音频切片时长，默认15s 示例值：15
-                     * @return SliceAudio 音频切片时长，默认15s 示例值：15
+                     * 获取音频切片时长，默认15s 示例值：15, 范围15-60s
+                     * @return SliceAudio 音频切片时长，默认15s 示例值：15, 范围15-60s
                      * 
                      */
                     uint64_t GetSliceAudio() const;
 
                     /**
-                     * 设置音频切片时长，默认15s 示例值：15
-                     * @param _sliceAudio 音频切片时长，默认15s 示例值：15
+                     * 设置音频切片时长，默认15s 示例值：15, 范围15-60s
+                     * @param _sliceAudio 音频切片时长，默认15s 示例值：15, 范围15-60s
                      * 
                      */
                     void SetSliceAudio(const uint64_t& _sliceAudio);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool SliceAudioHasBeenSet() const;
 
                     /**
-                     * 获取视频截帧间隔时长，默认5s
-                     * @return SliceVideo 视频截帧间隔时长，默认5s
+                     * 获取视频截帧间隔时长，默认5s, 范围1-60s
+                     * @return SliceVideo 视频截帧间隔时长，默认5s, 范围1-60s
                      * 
                      */
                     uint64_t GetSliceVideo() const;
 
                     /**
-                     * 设置视频截帧间隔时长，默认5s
-                     * @param _sliceVideo 视频截帧间隔时长，默认5s
+                     * 设置视频截帧间隔时长，默认5s, 范围1-60s
+                     * @param _sliceVideo 视频截帧间隔时长，默认5s, 范围1-60s
                      * 
                      */
                     void SetSliceVideo(const uint64_t& _sliceVideo);
@@ -134,11 +134,13 @@ namespace TencentCloud
 
                     /**
                      * 获取供应商枚举，
+trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
                      * @return ModerationSupplier 供应商枚举，
+trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
@@ -149,11 +151,13 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
 
                     /**
                      * 设置供应商枚举，
+trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
                      * @param _moderationSupplier 供应商枚举，
+trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
@@ -170,15 +174,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool ModerationSupplierHasBeenSet() const;
 
                     /**
-                     * 获取第三方审核商送审需要配置信息
-                     * @return ModerationSupplierParam 第三方审核商送审需要配置信息
+                     * 获取第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
+                     * @return ModerationSupplierParam 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
                      * 
                      */
                     ModerationSupplierParam GetModerationSupplierParam() const;
 
                     /**
-                     * 设置第三方审核商送审需要配置信息
-                     * @param _moderationSupplierParam 第三方审核商送审需要配置信息
+                     * 设置第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
+                     * @param _moderationSupplierParam 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
                      * 
                      */
                     void SetModerationSupplierParam(const ModerationSupplierParam& _moderationSupplierParam);
@@ -191,15 +195,15 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool ModerationSupplierParamHasBeenSet() const;
 
                     /**
-                     * 获取是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
-                     * @return SaveModerationFile 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * 获取是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * @return SaveModerationFile 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
                      * 
                      */
                     uint64_t GetSaveModerationFile() const;
 
                     /**
-                     * 设置是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
-                     * @param _saveModerationFile 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * 设置是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * @param _saveModerationFile 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
                      * 
                      */
                     void SetSaveModerationFile(const uint64_t& _saveModerationFile);
@@ -256,7 +260,7 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                 private:
 
                     /**
-                     * 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）
+                     * 审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核  默认值1 
                      */
                     uint64_t m_moderationType;
                     bool m_moderationTypeHasBeenSet;
@@ -268,19 +272,20 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool m_maxIdleTimeHasBeenSet;
 
                     /**
-                     * 音频切片时长，默认15s 示例值：15
+                     * 音频切片时长，默认15s 示例值：15, 范围15-60s
                      */
                     uint64_t m_sliceAudio;
                     bool m_sliceAudioHasBeenSet;
 
                     /**
-                     * 视频截帧间隔时长，默认5s
+                     * 视频截帧间隔时长，默认5s, 范围1-60s
                      */
                     uint64_t m_sliceVideo;
                     bool m_sliceVideoHasBeenSet;
 
                     /**
                      * 供应商枚举，
+trtc : trtc内容理解（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 tianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 ace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
 shumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）
@@ -290,13 +295,13 @@ yidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核
                     bool m_moderationSupplierHasBeenSet;
 
                     /**
-                     * 第三方审核商送审需要配置信息
+                     * 第三方审核商送审需要配置信息, ModerationSupplier为trtc时，这个参数可以不需要初始化
                      */
                     ModerationSupplierParam m_moderationSupplierParam;
                     bool m_moderationSupplierParamHasBeenSet;
 
                     /**
-                     * 是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件
+                     * 是否保存文件:  0不保存文件 1保存所有文件 2仅保存命中文件
                      */
                     uint64_t m_saveModerationFile;
                     bool m_saveModerationFileHasBeenSet;

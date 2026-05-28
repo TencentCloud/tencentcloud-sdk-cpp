@@ -27,7 +27,8 @@ EventDataInfo::EventDataInfo() :
     m_durationHasBeenSet(false),
     m_recordSizeHasBeenSet(false),
     m_recordUrlHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome EventDataInfo::Deserialize(const rapidjson::Value &value)
         m_reasonHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.Role` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = value["Role"].GetUint64();
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void EventDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reason, allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_role, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void EventDataInfo::SetReason(const uint64_t& _reason)
 bool EventDataInfo::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+uint64_t EventDataInfo::GetRole() const
+{
+    return m_role;
+}
+
+void EventDataInfo::SetRole(const uint64_t& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool EventDataInfo::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

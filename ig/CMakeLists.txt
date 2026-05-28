@@ -19,14 +19,60 @@ set(ig_public_header
   )
 
 set(ig_public_header_model
-  include/tencentcloud/ig/v20210518/model/DescribeIgOrderListRequest.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisHealthResponse.h
+  include/tencentcloud/ig/v20210518/model/HighlightWordInfo.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisDrugChatRequest.h
+  include/tencentcloud/ig/v20210518/model/LLMDiagnosisHealthData.h
+  include/tencentcloud/ig/v20210518/model/StandardDrugCardInfo.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisDrugChatResponse.h
+  include/tencentcloud/ig/v20210518/model/GuessQuestion.h
+  include/tencentcloud/ig/v20210518/model/GetLLMReportInterpretationRequest.h
+  include/tencentcloud/ig/v20210518/model/ReferResourceInfo.h
+  include/tencentcloud/ig/v20210518/model/ReportFileInfoReq.h
   include/tencentcloud/ig/v20210518/model/DescribeIgOrderListResponse.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisDrugResponse.h
+  include/tencentcloud/ig/v20210518/model/ReportFileInfoRsp.h
+  include/tencentcloud/ig/v20210518/model/QueryDrugInstructionsRequest.h
+  include/tencentcloud/ig/v20210518/model/GetLLMReportInterpretationResponse.h
+  include/tencentcloud/ig/v20210518/model/DrugInstructionInfo.h
+  include/tencentcloud/ig/v20210518/model/LLMReportInterpretationData.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisHealthRequest.h
+  include/tencentcloud/ig/v20210518/model/LLMDiagnosisDrugData.h
+  include/tencentcloud/ig/v20210518/model/StandardDrugInstructionInfo.h
+  include/tencentcloud/ig/v20210518/model/GetLLMDiagnosisDrugRequest.h
+  include/tencentcloud/ig/v20210518/model/HealthFollowUpQuestion.h
+  include/tencentcloud/ig/v20210518/model/DrugCardInfo.h
+  include/tencentcloud/ig/v20210518/model/DescribeIgOrderListRequest.h
+  include/tencentcloud/ig/v20210518/model/QueryDrugInstructionsResponse.h
   )
 
 set(ig_src
   src/v20210518/IgClient.cpp
-  src/v20210518/model/DescribeIgOrderListRequest.cpp
+  src/v20210518/model/GetLLMDiagnosisHealthResponse.cpp
+  src/v20210518/model/HighlightWordInfo.cpp
+  src/v20210518/model/GetLLMDiagnosisDrugChatRequest.cpp
+  src/v20210518/model/LLMDiagnosisHealthData.cpp
+  src/v20210518/model/StandardDrugCardInfo.cpp
+  src/v20210518/model/GetLLMDiagnosisDrugChatResponse.cpp
+  src/v20210518/model/GuessQuestion.cpp
+  src/v20210518/model/GetLLMReportInterpretationRequest.cpp
+  src/v20210518/model/ReferResourceInfo.cpp
+  src/v20210518/model/ReportFileInfoReq.cpp
   src/v20210518/model/DescribeIgOrderListResponse.cpp
+  src/v20210518/model/GetLLMDiagnosisDrugResponse.cpp
+  src/v20210518/model/ReportFileInfoRsp.cpp
+  src/v20210518/model/QueryDrugInstructionsRequest.cpp
+  src/v20210518/model/GetLLMReportInterpretationResponse.cpp
+  src/v20210518/model/DrugInstructionInfo.cpp
+  src/v20210518/model/LLMReportInterpretationData.cpp
+  src/v20210518/model/GetLLMDiagnosisHealthRequest.cpp
+  src/v20210518/model/LLMDiagnosisDrugData.cpp
+  src/v20210518/model/StandardDrugInstructionInfo.cpp
+  src/v20210518/model/GetLLMDiagnosisDrugRequest.cpp
+  src/v20210518/model/HealthFollowUpQuestion.cpp
+  src/v20210518/model/DrugCardInfo.cpp
+  src/v20210518/model/DescribeIgOrderListRequest.cpp
+  src/v20210518/model/QueryDrugInstructionsResponse.cpp
   )
 
 set(ig_include

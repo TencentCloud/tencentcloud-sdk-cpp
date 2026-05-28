@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原始查询语
-                     * @return Query 原始查询语
+                     * 获取<p>原始查询语</p>
+                     * @return Query <p>原始查询语</p>
                      * 
                      */
                     std::string GetQuery() const;
@@ -58,26 +58,8 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取搜索结果页面详情，格式为json字符串。
-title：结果标题
-date：内容发布时间
-url：内容发布源url
-passage：标准摘要
-content：动态摘要 （尊享版字段）
-site：网站名称，部分不知名站点结果可能为空
-score：相关性得分，取值0～1，越靠近1表示越相关
-images：图片列表
-favicon：网站图标链接，部分不知名站点结果可能为空
-                     * @return Pages 搜索结果页面详情，格式为json字符串。
-title：结果标题
-date：内容发布时间
-url：内容发布源url
-passage：标准摘要
-content：动态摘要 （尊享版字段）
-site：网站名称，部分不知名站点结果可能为空
-score：相关性得分，取值0～1，越靠近1表示越相关
-images：图片列表
-favicon：网站图标链接，部分不知名站点结果可能为空
+                     * 获取<p>搜索结果页面详情，格式为json字符串。<br>title：结果标题<br>date：内容发布时间<br>url：内容发布源url<br>passage：标准摘要<br>content：动态摘要 （尊享版字段）<br>site：网站名称，部分不知名站点结果可能为空<br>score：相关性得分，取值0～1，越靠近1表示越相关<br>images：图片列表<br>favicon：网站图标链接，部分不知名站点结果可能为空</p>
+                     * @return Pages <p>搜索结果页面详情，格式为json字符串。<br>title：结果标题<br>date：内容发布时间<br>url：内容发布源url<br>passage：标准摘要<br>content：动态摘要 （尊享版字段）<br>site：网站名称，部分不知名站点结果可能为空<br>score：相关性得分，取值0～1，越靠近1表示越相关<br>images：图片列表<br>favicon：网站图标链接，部分不知名站点结果可能为空</p>
                      * 
                      */
                     std::vector<std::string> GetPages() const;
@@ -90,8 +72,8 @@ favicon：网站图标链接，部分不知名站点结果可能为空
                     bool PagesHasBeenSet() const;
 
                     /**
-                     * 获取用户版本：standard/premium/lite
-                     * @return Version 用户版本：standard/premium/lite
+                     * 获取<p>用户版本：standard/premium/lite/flagship</p>
+                     * @return Version <p>用户版本：standard/premium/lite/flagship</p>
                      * 
                      */
                     std::string GetVersion() const;
@@ -104,8 +86,8 @@ favicon：网站图标链接，部分不知名站点结果可能为空
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取提示信息
-                     * @return Msg 提示信息
+                     * 获取<p>提示信息</p>
+                     * @return Msg <p>提示信息</p>
                      * 
                      */
                     std::string GetMsg() const;
@@ -120,34 +102,25 @@ favicon：网站图标链接，部分不知名站点结果可能为空
                 private:
 
                     /**
-                     * 原始查询语
+                     * <p>原始查询语</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 搜索结果页面详情，格式为json字符串。
-title：结果标题
-date：内容发布时间
-url：内容发布源url
-passage：标准摘要
-content：动态摘要 （尊享版字段）
-site：网站名称，部分不知名站点结果可能为空
-score：相关性得分，取值0～1，越靠近1表示越相关
-images：图片列表
-favicon：网站图标链接，部分不知名站点结果可能为空
+                     * <p>搜索结果页面详情，格式为json字符串。<br>title：结果标题<br>date：内容发布时间<br>url：内容发布源url<br>passage：标准摘要<br>content：动态摘要 （尊享版字段）<br>site：网站名称，部分不知名站点结果可能为空<br>score：相关性得分，取值0～1，越靠近1表示越相关<br>images：图片列表<br>favicon：网站图标链接，部分不知名站点结果可能为空</p>
                      */
                     std::vector<std::string> m_pages;
                     bool m_pagesHasBeenSet;
 
                     /**
-                     * 用户版本：standard/premium/lite
+                     * <p>用户版本：standard/premium/lite/flagship</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 提示信息
+                     * <p>提示信息</p>
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;

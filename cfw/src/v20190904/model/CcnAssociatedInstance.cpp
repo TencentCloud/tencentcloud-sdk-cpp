@@ -25,7 +25,8 @@ CcnAssociatedInstance::CcnAssociatedInstance() :
     m_instanceNameHasBeenSet(false),
     m_insTypeHasBeenSet(false),
     m_cidrLstHasBeenSet(false),
-    m_instanceRegionHasBeenSet(false)
+    m_instanceRegionHasBeenSet(false),
+    m_isCrossInstanceHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome CcnAssociatedInstance::Deserialize(const rapidjson::Value &v
         m_instanceRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCrossInstance") && !value["IsCrossInstance"].IsNull())
+    {
+        if (!value["IsCrossInstance"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnAssociatedInstance.IsCrossInstance` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCrossInstance = value["IsCrossInstance"].GetUint64();
+        m_isCrossInstanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void CcnAssociatedInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCrossInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCrossInstance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCrossInstance, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void CcnAssociatedInstance::SetInstanceRegion(const string& _instanceRegion)
 bool CcnAssociatedInstance::InstanceRegionHasBeenSet() const
 {
     return m_instanceRegionHasBeenSet;
+}
+
+uint64_t CcnAssociatedInstance::GetIsCrossInstance() const
+{
+    return m_isCrossInstance;
+}
+
+void CcnAssociatedInstance::SetIsCrossInstance(const uint64_t& _isCrossInstance)
+{
+    m_isCrossInstance = _isCrossInstance;
+    m_isCrossInstanceHasBeenSet = true;
+}
+
+bool CcnAssociatedInstance::IsCrossInstanceHasBeenSet() const
+{
+    return m_isCrossInstanceHasBeenSet;
 }
 

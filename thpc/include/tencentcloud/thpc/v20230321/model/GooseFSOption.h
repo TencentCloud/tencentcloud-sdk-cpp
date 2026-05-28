@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统本地挂载路径。
-                     * @return LocalPath 文件系统本地挂载路径。
+                     * 获取<p>文件系统本地挂载路径。</p>
+                     * @return LocalPath <p>文件系统本地挂载路径。</p>
                      * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
-                     * 设置文件系统本地挂载路径。
-                     * @param _localPath 文件系统本地挂载路径。
+                     * 设置<p>文件系统本地挂载路径。</p>
+                     * @param _localPath <p>文件系统本地挂载路径。</p>
                      * 
                      */
                     void SetLocalPath(const std::string& _localPath);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LocalPathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统远程挂载路径。
-                     * @return RemotePath 文件系统远程挂载路径。
+                     * 获取<p>文件系统远程挂载路径。</p>
+                     * @return RemotePath <p>文件系统远程挂载路径。</p>
                      * 
                      */
                     std::string GetRemotePath() const;
 
                     /**
-                     * 设置文件系统远程挂载路径。
-                     * @param _remotePath 文件系统远程挂载路径。
+                     * 设置<p>文件系统远程挂载路径。</p>
+                     * @param _remotePath <p>文件系统远程挂载路径。</p>
                      * 
                      */
                     void SetRemotePath(const std::string& _remotePath);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RemotePathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统master的ip和端口。
-                     * @return Masters 文件系统master的ip和端口。
+                     * 获取<p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>
+                     * @return Masters <p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>
                      * 
                      */
                     std::vector<std::string> GetMasters() const;
 
                     /**
-                     * 设置文件系统master的ip和端口。
-                     * @param _masters 文件系统master的ip和端口。
+                     * 设置<p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>
+                     * @param _masters <p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>
                      * 
                      */
                     void SetMasters(const std::vector<std::string>& _masters);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool MastersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>GooseFS的文件ID；此参数和Masters 互斥。</p>
+                     * @return FileSystemId <p>GooseFS的文件ID；此参数和Masters 互斥。</p>
+                     * 
+                     */
+                    std::string GetFileSystemId() const;
+
+                    /**
+                     * 设置<p>GooseFS的文件ID；此参数和Masters 互斥。</p>
+                     * @param _fileSystemId <p>GooseFS的文件ID；此参数和Masters 互斥。</p>
+                     * 
+                     */
+                    void SetFileSystemId(const std::string& _fileSystemId);
+
+                    /**
+                     * 判断参数 FileSystemId 是否已赋值
+                     * @return FileSystemId 是否已赋值
+                     * 
+                     */
+                    bool FileSystemIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件系统本地挂载路径。
+                     * <p>文件系统本地挂载路径。</p>
                      */
                     std::string m_localPath;
                     bool m_localPathHasBeenSet;
 
                     /**
-                     * 文件系统远程挂载路径。
+                     * <p>文件系统远程挂载路径。</p>
                      */
                     std::string m_remotePath;
                     bool m_remotePathHasBeenSet;
 
                     /**
-                     * 文件系统master的ip和端口。
+                     * <p>文件系统master的ip和端口，此参数和FileSystemId互斥。</p>
                      */
                     std::vector<std::string> m_masters;
                     bool m_mastersHasBeenSet;
+
+                    /**
+                     * <p>GooseFS的文件ID；此参数和Masters 互斥。</p>
+                     */
+                    std::string m_fileSystemId;
+                    bool m_fileSystemIdHasBeenSet;
 
                 };
             }

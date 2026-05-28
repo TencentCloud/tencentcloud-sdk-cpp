@@ -25,7 +25,8 @@ using namespace std;
 PutMessageRequest::PutMessageRequest() :
     m_eventIdHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_pluginIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string PutMessageRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pluginIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void PutMessageRequest::SetSource(const string& _source)
 bool PutMessageRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string PutMessageRequest::GetPluginId() const
+{
+    return m_pluginId;
+}
+
+void PutMessageRequest::SetPluginId(const string& _pluginId)
+{
+    m_pluginId = _pluginId;
+    m_pluginIdHasBeenSet = true;
+}
+
+bool PutMessageRequest::PluginIdHasBeenSet() const
+{
+    return m_pluginIdHasBeenSet;
 }
 
 

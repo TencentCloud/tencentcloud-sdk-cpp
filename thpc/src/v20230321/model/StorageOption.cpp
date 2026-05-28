@@ -23,7 +23,8 @@ using namespace std;
 StorageOption::StorageOption() :
     m_cFSOptionsHasBeenSet(false),
     m_gooseFSOptionsHasBeenSet(false),
-    m_gooseFSxOptionsHasBeenSet(false)
+    m_gooseFSxOptionsHasBeenSet(false),
+    m_cosOptionsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,26 @@ CoreInternalOutcome StorageOption::Deserialize(const rapidjson::Value &value)
         m_gooseFSxOptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("CosOptions") && !value["CosOptions"].IsNull())
+    {
+        if (!value["CosOptions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StorageOption.CosOptions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CosOptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CosOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cosOptions.push_back(item);
+        }
+        m_cosOptionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +159,21 @@ void StorageOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_gooseFSxOptions.begin(); itr != m_gooseFSxOptions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cosOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cosOptions.begin(); itr != m_cosOptions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -193,5 +229,21 @@ void StorageOption::SetGooseFSxOptions(const vector<GooseFSxOption>& _gooseFSxOp
 bool StorageOption::GooseFSxOptionsHasBeenSet() const
 {
     return m_gooseFSxOptionsHasBeenSet;
+}
+
+vector<CosOption> StorageOption::GetCosOptions() const
+{
+    return m_cosOptions;
+}
+
+void StorageOption::SetCosOptions(const vector<CosOption>& _cosOptions)
+{
+    m_cosOptions = _cosOptions;
+    m_cosOptionsHasBeenSet = true;
+}
+
+bool StorageOption::CosOptionsHasBeenSet() const
+{
+    return m_cosOptionsHasBeenSet;
 }
 

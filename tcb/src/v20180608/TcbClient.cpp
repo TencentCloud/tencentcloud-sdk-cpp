@@ -2440,6 +2440,56 @@ TcbClient::DescribeMySQLTaskStatusOutcomeCallable TcbClient::DescribeMySQLTaskSt
     return prom->get_future();
 }
 
+TcbClient::DescribePGUserMigrationOutcome TcbClient::DescribePGUserMigration(const DescribePGUserMigrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePGUserMigration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePGUserMigrationResponse rsp = DescribePGUserMigrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePGUserMigrationOutcome(rsp);
+        else
+            return DescribePGUserMigrationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePGUserMigrationOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePGUserMigrationAsync(const DescribePGUserMigrationRequest& request, const DescribePGUserMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePGUserMigrationRequest&;
+    using Resp = DescribePGUserMigrationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePGUserMigration", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePGUserMigrationOutcomeCallable TcbClient::DescribePGUserMigrationCallable(const DescribePGUserMigrationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePGUserMigrationOutcome>>();
+    DescribePGUserMigrationAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePGUserMigrationRequest&,
+        DescribePGUserMigrationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeQuotaDataOutcome TcbClient::DescribeQuotaData(const DescribeQuotaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuotaData");
@@ -2482,6 +2532,56 @@ TcbClient::DescribeQuotaDataOutcomeCallable TcbClient::DescribeQuotaDataCallable
         const TcbClient*,
         const DescribeQuotaDataRequest&,
         DescribeQuotaDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeResourcePermissionOutcome TcbClient::DescribeResourcePermission(const DescribeResourcePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcePermissionResponse rsp = DescribeResourcePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcePermissionOutcome(rsp);
+        else
+            return DescribeResourcePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcePermissionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeResourcePermissionAsync(const DescribeResourcePermissionRequest& request, const DescribeResourcePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourcePermissionRequest&;
+    using Resp = DescribeResourcePermissionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeResourcePermissionOutcomeCallable TcbClient::DescribeResourcePermissionCallable(const DescribeResourcePermissionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourcePermissionOutcome>>();
+    DescribeResourcePermissionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeResourcePermissionRequest&,
+        DescribeResourcePermissionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3140,6 +3240,56 @@ TcbClient::InquireVmPriceOutcomeCallable TcbClient::InquireVmPriceCallable(const
     return prom->get_future();
 }
 
+TcbClient::ListPGUserMigrationsOutcome TcbClient::ListPGUserMigrations(const ListPGUserMigrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPGUserMigrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPGUserMigrationsResponse rsp = ListPGUserMigrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPGUserMigrationsOutcome(rsp);
+        else
+            return ListPGUserMigrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPGUserMigrationsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ListPGUserMigrationsAsync(const ListPGUserMigrationsRequest& request, const ListPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListPGUserMigrationsRequest&;
+    using Resp = ListPGUserMigrationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListPGUserMigrations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ListPGUserMigrationsOutcomeCallable TcbClient::ListPGUserMigrationsCallable(const ListPGUserMigrationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListPGUserMigrationsOutcome>>();
+    ListPGUserMigrationsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ListPGUserMigrationsRequest&,
+        ListPGUserMigrationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ListTablesOutcome TcbClient::ListTables(const ListTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTables");
@@ -3590,6 +3740,56 @@ TcbClient::ModifyProviderOutcomeCallable TcbClient::ModifyProviderCallable(const
     return prom->get_future();
 }
 
+TcbClient::ModifyResourcePermissionOutcome TcbClient::ModifyResourcePermission(const ModifyResourcePermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourcePermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourcePermissionResponse rsp = ModifyResourcePermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourcePermissionOutcome(rsp);
+        else
+            return ModifyResourcePermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourcePermissionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyResourcePermissionAsync(const ModifyResourcePermissionRequest& request, const ModifyResourcePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyResourcePermissionRequest&;
+    using Resp = ModifyResourcePermissionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyResourcePermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyResourcePermissionOutcomeCallable TcbClient::ModifyResourcePermissionCallable(const ModifyResourcePermissionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyResourcePermissionOutcome>>();
+    ModifyResourcePermissionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyResourcePermissionRequest&,
+        ModifyResourcePermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifySafeRuleOutcome TcbClient::ModifySafeRule(const ModifySafeRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySafeRule");
@@ -3740,6 +3940,106 @@ TcbClient::ModifyUserOutcomeCallable TcbClient::ModifyUserCallable(const ModifyU
     return prom->get_future();
 }
 
+TcbClient::PreviewPGUserMigrationsOutcome TcbClient::PreviewPGUserMigrations(const PreviewPGUserMigrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "PreviewPGUserMigrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PreviewPGUserMigrationsResponse rsp = PreviewPGUserMigrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PreviewPGUserMigrationsOutcome(rsp);
+        else
+            return PreviewPGUserMigrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return PreviewPGUserMigrationsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::PreviewPGUserMigrationsAsync(const PreviewPGUserMigrationsRequest& request, const PreviewPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PreviewPGUserMigrationsRequest&;
+    using Resp = PreviewPGUserMigrationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PreviewPGUserMigrations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::PreviewPGUserMigrationsOutcomeCallable TcbClient::PreviewPGUserMigrationsCallable(const PreviewPGUserMigrationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PreviewPGUserMigrationsOutcome>>();
+    PreviewPGUserMigrationsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const PreviewPGUserMigrationsRequest&,
+        PreviewPGUserMigrationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::PushPGUserMigrationsOutcome TcbClient::PushPGUserMigrations(const PushPGUserMigrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "PushPGUserMigrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PushPGUserMigrationsResponse rsp = PushPGUserMigrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PushPGUserMigrationsOutcome(rsp);
+        else
+            return PushPGUserMigrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return PushPGUserMigrationsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::PushPGUserMigrationsAsync(const PushPGUserMigrationsRequest& request, const PushPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PushPGUserMigrationsRequest&;
+    using Resp = PushPGUserMigrationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PushPGUserMigrations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::PushPGUserMigrationsOutcomeCallable TcbClient::PushPGUserMigrationsCallable(const PushPGUserMigrationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PushPGUserMigrationsOutcome>>();
+    PushPGUserMigrationsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const PushPGUserMigrationsRequest&,
+        PushPGUserMigrationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ReleaseEnvOutcome TcbClient::ReleaseEnv(const ReleaseEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseEnv");
@@ -3832,6 +4132,106 @@ TcbClient::RenewEnvOutcomeCallable TcbClient::RenewEnvCallable(const RenewEnvReq
         const TcbClient*,
         const RenewEnvRequest&,
         RenewEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::RepairPGUserMigrationHistoryOutcome TcbClient::RepairPGUserMigrationHistory(const RepairPGUserMigrationHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "RepairPGUserMigrationHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RepairPGUserMigrationHistoryResponse rsp = RepairPGUserMigrationHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RepairPGUserMigrationHistoryOutcome(rsp);
+        else
+            return RepairPGUserMigrationHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return RepairPGUserMigrationHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::RepairPGUserMigrationHistoryAsync(const RepairPGUserMigrationHistoryRequest& request, const RepairPGUserMigrationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RepairPGUserMigrationHistoryRequest&;
+    using Resp = RepairPGUserMigrationHistoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RepairPGUserMigrationHistory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::RepairPGUserMigrationHistoryOutcomeCallable TcbClient::RepairPGUserMigrationHistoryCallable(const RepairPGUserMigrationHistoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RepairPGUserMigrationHistoryOutcome>>();
+    RepairPGUserMigrationHistoryAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const RepairPGUserMigrationHistoryRequest&,
+        RepairPGUserMigrationHistoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::RollbackPGUserMigrationsOutcome TcbClient::RollbackPGUserMigrations(const RollbackPGUserMigrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackPGUserMigrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackPGUserMigrationsResponse rsp = RollbackPGUserMigrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackPGUserMigrationsOutcome(rsp);
+        else
+            return RollbackPGUserMigrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackPGUserMigrationsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::RollbackPGUserMigrationsAsync(const RollbackPGUserMigrationsRequest& request, const RollbackPGUserMigrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RollbackPGUserMigrationsRequest&;
+    using Resp = RollbackPGUserMigrationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RollbackPGUserMigrations", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::RollbackPGUserMigrationsOutcomeCallable TcbClient::RollbackPGUserMigrationsCallable(const RollbackPGUserMigrationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RollbackPGUserMigrationsOutcome>>();
+    RollbackPGUserMigrationsAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const RollbackPGUserMigrationsRequest&,
+        RollbackPGUserMigrationsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

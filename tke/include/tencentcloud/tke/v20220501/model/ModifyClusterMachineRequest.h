@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 ID
-                     * @return ClusterId 集群 ID
+                     * 获取<p>集群 ID</p>
+                     * @return ClusterId <p>集群 ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 ID
-                     * @param _clusterId 集群 ID
+                     * 设置<p>集群 ID</p>
+                     * @param _clusterId <p>集群 ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点名列表
-                     * @return MachineNames 节点名列表
+                     * 获取<p>节点名列表</p>
+                     * @return MachineNames <p>节点名列表</p>
                      * 
                      */
                     std::vector<std::string> GetMachineNames() const;
 
                     /**
-                     * 设置节点名列表
-                     * @param _machineNames 节点名列表
+                     * 设置<p>节点名列表</p>
+                     * @param _machineNames <p>节点名列表</p>
                      * 
                      */
                     void SetMachineNames(const std::vector<std::string>& _machineNames);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool MachineNamesHasBeenSet() const;
 
                     /**
-                     * 获取machine的display name
-                     * @return DisplayName machine的display name
+                     * 获取<p>machine的display name</p>
+                     * @return DisplayName <p>machine的display name</p>
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置machine的display name
-                     * @param _displayName machine的display name
+                     * 设置<p>machine的display name</p>
+                     * @param _displayName <p>machine的display name</p>
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取系统盘的信息
-                     * @return SystemDisk 系统盘的信息
+                     * 获取<p>系统盘的信息</p>
+                     * @return SystemDisk <p>系统盘的信息</p>
                      * 
                      */
                     Disk GetSystemDisk() const;
 
                     /**
-                     * 设置系统盘的信息
-                     * @param _systemDisk 系统盘的信息
+                     * 设置<p>系统盘的信息</p>
+                     * @param _systemDisk <p>系统盘的信息</p>
                      * 
                      */
                     void SetSystemDisk(const Disk& _systemDisk);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取安全组列表
-                     * @return SecurityGroupIDs 安全组列表
+                     * 获取<p>安全组列表</p>
+                     * @return SecurityGroupIDs <p>安全组列表</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIDs() const;
 
                     /**
-                     * 设置安全组列表
-                     * @param _securityGroupIDs 安全组列表
+                     * 设置<p>安全组列表</p>
+                     * @param _securityGroupIDs <p>安全组列表</p>
                      * 
                      */
                     void SetSecurityGroupIDs(const std::vector<std::string>& _securityGroupIDs);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool SecurityGroupIDsHasBeenSet() const;
 
                     /**
-                     * 获取节点预付费信息
-                     * @return InstanceChargePrepaid 节点预付费信息
+                     * 获取<p>节点预付费信息</p>
+                     * @return InstanceChargePrepaid <p>节点预付费信息</p>
                      * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
-                     * 设置节点预付费信息
-                     * @param _instanceChargePrepaid 节点预付费信息
+                     * 设置<p>节点预付费信息</p>
+                     * @param _instanceChargePrepaid <p>节点预付费信息</p>
                      * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
@@ -173,37 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群 ID
+                     * <p>集群 ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点名列表
+                     * <p>节点名列表</p>
                      */
                     std::vector<std::string> m_machineNames;
                     bool m_machineNamesHasBeenSet;
 
                     /**
-                     * machine的display name
+                     * <p>machine的display name</p>
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 系统盘的信息
+                     * <p>系统盘的信息</p>
                      */
                     Disk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 安全组列表
+                     * <p>安全组列表</p>
                      */
                     std::vector<std::string> m_securityGroupIDs;
                     bool m_securityGroupIDsHasBeenSet;
 
                     /**
-                     * 节点预付费信息
+                     * <p>节点预付费信息</p>
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;

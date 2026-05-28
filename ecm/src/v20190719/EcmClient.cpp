@@ -490,56 +490,6 @@ EcmClient::AssociateSecurityGroupsOutcomeCallable EcmClient::AssociateSecurityGr
     return prom->get_future();
 }
 
-EcmClient::AttachDisksOutcome EcmClient::AttachDisks(const AttachDisksRequest &request)
-{
-    auto outcome = MakeRequest(request, "AttachDisks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AttachDisksResponse rsp = AttachDisksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AttachDisksOutcome(rsp);
-        else
-            return AttachDisksOutcome(o.GetError());
-    }
-    else
-    {
-        return AttachDisksOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::AttachDisksAsync(const AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const AttachDisksRequest&;
-    using Resp = AttachDisksResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "AttachDisks", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::AttachDisksOutcomeCallable EcmClient::AttachDisksCallable(const AttachDisksRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<AttachDisksOutcome>>();
-    AttachDisksAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const AttachDisksRequest&,
-        AttachDisksOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 EcmClient::AttachNetworkInterfaceOutcome EcmClient::AttachNetworkInterface(const AttachNetworkInterfaceRequest &request)
 {
     auto outcome = MakeRequest(request, "AttachNetworkInterface");
@@ -732,56 +682,6 @@ EcmClient::BatchRegisterTargetsOutcomeCallable EcmClient::BatchRegisterTargetsCa
         const EcmClient*,
         const BatchRegisterTargetsRequest&,
         BatchRegisterTargetsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-EcmClient::CreateDisksOutcome EcmClient::CreateDisks(const CreateDisksRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateDisks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateDisksResponse rsp = CreateDisksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateDisksOutcome(rsp);
-        else
-            return CreateDisksOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateDisksOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::CreateDisksAsync(const CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateDisksRequest&;
-    using Resp = CreateDisksResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateDisks", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::CreateDisksOutcomeCallable EcmClient::CreateDisksCallable(const CreateDisksRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateDisksOutcome>>();
-    CreateDisksAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const CreateDisksRequest&,
-        CreateDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1990,56 +1890,6 @@ EcmClient::DeleteSecurityGroupPoliciesOutcomeCallable EcmClient::DeleteSecurityG
     return prom->get_future();
 }
 
-EcmClient::DeleteSnapshotsOutcome EcmClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteSnapshots");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteSnapshotsResponse rsp = DeleteSnapshotsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteSnapshotsOutcome(rsp);
-        else
-            return DeleteSnapshotsOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteSnapshotsOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::DeleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteSnapshotsRequest&;
-    using Resp = DeleteSnapshotsResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteSnapshots", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::DeleteSnapshotsOutcomeCallable EcmClient::DeleteSnapshotsCallable(const DeleteSnapshotsRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteSnapshotsOutcome>>();
-    DeleteSnapshotsAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const DeleteSnapshotsRequest&,
-        DeleteSnapshotsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 EcmClient::DeleteSubnetOutcome EcmClient::DeleteSubnet(const DeleteSubnetRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSubnet");
@@ -2432,56 +2282,6 @@ EcmClient::DescribeDefaultSubnetOutcomeCallable EcmClient::DescribeDefaultSubnet
         const EcmClient*,
         const DescribeDefaultSubnetRequest&,
         DescribeDefaultSubnetOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-EcmClient::DescribeDisksOutcome EcmClient::DescribeDisks(const DescribeDisksRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDisks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDisksResponse rsp = DescribeDisksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDisksOutcome(rsp);
-        else
-            return DescribeDisksOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDisksOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::DescribeDisksAsync(const DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeDisksRequest&;
-    using Resp = DescribeDisksResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeDisks", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::DescribeDisksOutcomeCallable EcmClient::DescribeDisksCallable(const DescribeDisksRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeDisksOutcome>>();
-    DescribeDisksAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const DescribeDisksRequest&,
-        DescribeDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3790,56 +3590,6 @@ EcmClient::DescribeSecurityGroupsOutcomeCallable EcmClient::DescribeSecurityGrou
     return prom->get_future();
 }
 
-EcmClient::DescribeSnapshotsOutcome EcmClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSnapshots");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSnapshotsResponse rsp = DescribeSnapshotsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSnapshotsOutcome(rsp);
-        else
-            return DescribeSnapshotsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSnapshotsOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeSnapshotsRequest&;
-    using Resp = DescribeSnapshotsResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeSnapshots", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::DescribeSnapshotsOutcomeCallable EcmClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeSnapshotsOutcome>>();
-    DescribeSnapshotsAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const DescribeSnapshotsRequest&,
-        DescribeSnapshotsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 EcmClient::DescribeSubnetsOutcome EcmClient::DescribeSubnets(const DescribeSubnetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnets");
@@ -4132,56 +3882,6 @@ EcmClient::DescribeVpcsOutcomeCallable EcmClient::DescribeVpcsCallable(const Des
         const EcmClient*,
         const DescribeVpcsRequest&,
         DescribeVpcsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-EcmClient::DetachDisksOutcome EcmClient::DetachDisks(const DetachDisksRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetachDisks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetachDisksResponse rsp = DetachDisksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetachDisksOutcome(rsp);
-        else
-            return DetachDisksOutcome(o.GetError());
-    }
-    else
-    {
-        return DetachDisksOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::DetachDisksAsync(const DetachDisksRequest& request, const DetachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DetachDisksRequest&;
-    using Resp = DetachDisksResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DetachDisks", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::DetachDisksOutcomeCallable EcmClient::DetachDisksCallable(const DetachDisksRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DetachDisksOutcome>>();
-    DetachDisksAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const DetachDisksRequest&,
-        DetachDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6832,56 +6532,6 @@ EcmClient::StopInstancesOutcomeCallable EcmClient::StopInstancesCallable(const S
         const EcmClient*,
         const StopInstancesRequest&,
         StopInstancesOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-EcmClient::TerminateDisksOutcome EcmClient::TerminateDisks(const TerminateDisksRequest &request)
-{
-    auto outcome = MakeRequest(request, "TerminateDisks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TerminateDisksResponse rsp = TerminateDisksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TerminateDisksOutcome(rsp);
-        else
-            return TerminateDisksOutcome(o.GetError());
-    }
-    else
-    {
-        return TerminateDisksOutcome(outcome.GetError());
-    }
-}
-
-void EcmClient::TerminateDisksAsync(const TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const TerminateDisksRequest&;
-    using Resp = TerminateDisksResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "TerminateDisks", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-EcmClient::TerminateDisksOutcomeCallable EcmClient::TerminateDisksCallable(const TerminateDisksRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<TerminateDisksOutcome>>();
-    TerminateDisksAsync(
-    request,
-    [prom](
-        const EcmClient*,
-        const TerminateDisksRequest&,
-        TerminateDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

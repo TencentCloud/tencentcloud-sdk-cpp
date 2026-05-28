@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件发生的房间号。
-                     * @return RoomId 事件发生的房间号。
+                     * 获取<p>事件发生的房间号。</p>
+                     * @return RoomId <p>事件发生的房间号。</p>
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
-                     * 设置事件发生的房间号。
-                     * @param _roomId 事件发生的房间号。
+                     * 设置<p>事件发生的房间号。</p>
+                     * @param _roomId <p>事件发生的房间号。</p>
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取事件发生的用户。
-                     * @return UserId 事件发生的用户。
+                     * 获取<p>事件发生的用户。</p>
+                     * @return UserId <p>事件发生的用户。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置事件发生的用户。
-                     * @param _userId 事件发生的用户。
+                     * 设置<p>事件发生的用户。</p>
+                     * @param _userId <p>事件发生的用户。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-                     * @return Device 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
+                     * 获取<p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>
+                     * @return Device <p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>
                      * 
                      */
                     uint64_t GetDevice() const;
 
                     /**
-                     * 设置用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
-                     * @param _device 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
+                     * 设置<p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>
+                     * @param _device <p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>
                      * 
                      */
                     void SetDevice(const uint64_t& _device);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取录制时长。单位：秒
-                     * @return Duration 录制时长。单位：秒
+                     * 获取<p>录制时长。单位：秒</p>
+                     * @return Duration <p>录制时长。单位：秒</p>
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
-                     * 设置录制时长。单位：秒
-                     * @param _duration 录制时长。单位：秒
+                     * 设置<p>录制时长。单位：秒</p>
+                     * @param _duration <p>录制时长。单位：秒</p>
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取录制文件大小
-                     * @return RecordSize 录制文件大小
+                     * 获取<p>录制文件大小</p>
+                     * @return RecordSize <p>录制文件大小</p>
                      * 
                      */
                     uint64_t GetRecordSize() const;
 
                     /**
-                     * 设置录制文件大小
-                     * @param _recordSize 录制文件大小
+                     * 设置<p>录制文件大小</p>
+                     * @param _recordSize <p>录制文件大小</p>
                      * 
                      */
                     void SetRecordSize(const uint64_t& _recordSize);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RecordSizeHasBeenSet() const;
 
                     /**
-                     * 获取录制url
-                     * @return RecordUrl 录制url
+                     * 获取<p>录制url</p>
+                     * @return RecordUrl <p>录制url</p>
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
-                     * 设置录制url
-                     * @param _recordUrl 录制url
+                     * 设置<p>录制url</p>
+                     * @param _recordUrl <p>录制url</p>
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
-                     * @return Reason MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * 获取<p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>
+                     * @return Reason <p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>
                      * 
                      */
                     uint64_t GetReason() const;
 
                     /**
-                     * 设置MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
-                     * @param _reason MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * 设置<p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>
+                     * @param _reason <p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>
                      * 
                      */
                     void SetReason(const uint64_t& _reason);
@@ -193,49 +193,76 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>
+                     * @return Role <p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>
+                     * 
+                     */
+                    uint64_t GetRole() const;
+
+                    /**
+                     * 设置<p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>
+                     * @param _role <p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>
+                     * 
+                     */
+                    void SetRole(const uint64_t& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     * 
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 事件发生的房间号。
+                     * <p>事件发生的房间号。</p>
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 事件发生的用户。
+                     * <p>事件发生的用户。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.
+                     * <p>用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.</p>
                      */
                     uint64_t m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 录制时长。单位：秒
+                     * <p>录制时长。单位：秒</p>
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 录制文件大小
+                     * <p>录制文件大小</p>
                      */
                     uint64_t m_recordSize;
                     bool m_recordSizeHasBeenSet;
 
                     /**
-                     * 录制url
+                     * <p>录制url</p>
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * <p>MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）</p>
                      */
                     uint64_t m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * <p>角色</p><p>枚举值：</p><ul><li>0： 学生</li><li>1： 老师</li><li>2： 助教</li><li>3： 巡课/督导</li></ul>
+                     */
+                    uint64_t m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

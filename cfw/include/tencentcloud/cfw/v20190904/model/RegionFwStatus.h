@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,31 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取引流网络部署状态
-1. "NotDeployed"  防火墙集群未部署
-2. "Deployed"        防火墙集群已部署，但未创建引流网络
-3. "Auto"                防火墙集群已部署，并自动选择网段创建了引流网络
-4. "Custom"            防火墙集群已部署，并根据用户自定义网段创建了引流网络
-                     * @return Status 引流网络部署状态
-1. "NotDeployed"  防火墙集群未部署
-2. "Deployed"        防火墙集群已部署，但未创建引流网络
-3. "Auto"                防火墙集群已部署，并自动选择网段创建了引流网络
-4. "Custom"            防火墙集群已部署，并根据用户自定义网段创建了引流网络
+                     * 获取<p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>
+                     * @return Status <p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置引流网络部署状态
-1. "NotDeployed"  防火墙集群未部署
-2. "Deployed"        防火墙集群已部署，但未创建引流网络
-3. "Auto"                防火墙集群已部署，并自动选择网段创建了引流网络
-4. "Custom"            防火墙集群已部署，并根据用户自定义网段创建了引流网络
-                     * @param _status 引流网络部署状态
-1. "NotDeployed"  防火墙集群未部署
-2. "Deployed"        防火墙集群已部署，但未创建引流网络
-3. "Auto"                防火墙集群已部署，并自动选择网段创建了引流网络
-4. "Custom"            防火墙集群已部署，并根据用户自定义网段创建了引流网络
+                     * 设置<p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>
+                     * @param _status <p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -105,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取引流网络的cidr，如果没有部署引流网络则为空
-                     * @return Cidr 引流网络的cidr，如果没有部署引流网络则为空
+                     * 获取<p>引流网络的cidr，如果没有部署引流网络则为空</p>
+                     * @return Cidr <p>引流网络的cidr，如果没有部署引流网络则为空</p>
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
-                     * 设置引流网络的cidr，如果没有部署引流网络则为空
-                     * @param _cidr 引流网络的cidr，如果没有部署引流网络则为空
+                     * 设置<p>引流网络的cidr，如果没有部署引流网络则为空</p>
+                     * @param _cidr <p>引流网络的cidr，如果没有部署引流网络则为空</p>
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -128,23 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 引流网络部署状态
-1. "NotDeployed"  防火墙集群未部署
-2. "Deployed"        防火墙集群已部署，但未创建引流网络
-3. "Auto"                防火墙集群已部署，并自动选择网段创建了引流网络
-4. "Custom"            防火墙集群已部署，并根据用户自定义网段创建了引流网络
+                     * <p>引流网络部署状态</p><ol><li>&quot;NotDeployed&quot;  防火墙集群未部署</li><li>&quot;Deployed&quot;        防火墙集群已部署，但未创建引流网络</li><li>&quot;DeployedCustomOnly&quot;  防火墙集群已部署，但内网段被全覆盖，无法自动选择引流网络，需自定义设置引流网段</li><li>&quot;Auto&quot;                防火墙集群已部署，并自动选择网段创建了引流网络</li><li>&quot;Custom&quot;            防火墙集群已部署，并根据用户自定义网段创建了引流网络</li></ol>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 引流网络的cidr，如果没有部署引流网络则为空
+                     * <p>引流网络的cidr，如果没有部署引流网络则为空</p>
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;

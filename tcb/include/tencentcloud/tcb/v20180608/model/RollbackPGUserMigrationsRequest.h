@@ -1,0 +1,188 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_ROLLBACKPGUSERMIGRATIONSREQUEST_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_ROLLBACKPGUSERMIGRATIONSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcb
+    {
+        namespace V20180608
+        {
+            namespace Model
+            {
+                /**
+                * RollbackPGUserMigrations请求参数结构体
+                */
+                class RollbackPGUserMigrationsRequest : public AbstractModel
+                {
+                public:
+                    RollbackPGUserMigrationsRequest();
+                    ~RollbackPGUserMigrationsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>云开发环境ID</p>
+                     * @return EnvId <p>云开发环境ID</p>
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置<p>云开发环境ID</p>
+                     * @param _envId <p>云开发环境ID</p>
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>
+                     * @return LastN <p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>
+                     * 
+                     */
+                    int64_t GetLastN() const;
+
+                    /**
+                     * 设置<p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>
+                     * @param _lastN <p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>
+                     * 
+                     */
+                    void SetLastN(const int64_t& _lastN);
+
+                    /**
+                     * 判断参数 LastN 是否已赋值
+                     * @return LastN 是否已赋值
+                     * 
+                     */
+                    bool LastNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>
+                     * @return LockTimeoutMs <p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>
+                     * 
+                     */
+                    int64_t GetLockTimeoutMs() const;
+
+                    /**
+                     * 设置<p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>
+                     * @param _lockTimeoutMs <p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>
+                     * 
+                     */
+                    void SetLockTimeoutMs(const int64_t& _lockTimeoutMs);
+
+                    /**
+                     * 判断参数 LockTimeoutMs 是否已赋值
+                     * @return LockTimeoutMs 是否已赋值
+                     * 
+                     */
+                    bool LockTimeoutMsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>
+                     * @return StatementTimeoutMs <p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>
+                     * 
+                     */
+                    int64_t GetStatementTimeoutMs() const;
+
+                    /**
+                     * 设置<p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>
+                     * @param _statementTimeoutMs <p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>
+                     * 
+                     */
+                    void SetStatementTimeoutMs(const int64_t& _statementTimeoutMs);
+
+                    /**
+                     * 判断参数 StatementTimeoutMs 是否已赋值
+                     * @return StatementTimeoutMs 是否已赋值
+                     * 
+                     */
+                    bool StatementTimeoutMsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标记API调用来源</p>
+                     * @return Source <p>标记API调用来源</p>
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置<p>标记API调用来源</p>
+                     * @param _source <p>标记API调用来源</p>
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>云开发环境ID</p>
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * <p>要回滚的条数</p><p>按照逆序回滚最近N条migration</p>
+                     */
+                    int64_t m_lastN;
+                    bool m_lastNHasBeenSet;
+
+                    /**
+                     * <p>等待获取数据库锁的最长时间</p><p>单位：毫秒</p><p>默认值：5000</p>
+                     */
+                    int64_t m_lockTimeoutMs;
+                    bool m_lockTimeoutMsHasBeenSet;
+
+                    /**
+                     * <p>单条 SQL 执行最长时间，超过后由 PostgreSQL 取消该语句</p><p>单位：毫秒</p><p>默认值：300000</p>
+                     */
+                    int64_t m_statementTimeoutMs;
+                    bool m_statementTimeoutMsHasBeenSet;
+
+                    /**
+                     * <p>标记API调用来源</p>
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_ROLLBACKPGUSERMIGRATIONSREQUEST_H_

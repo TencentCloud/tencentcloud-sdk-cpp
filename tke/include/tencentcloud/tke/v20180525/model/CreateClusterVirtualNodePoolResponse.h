@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取<p>节点池ID</p>
+                     * @return NodePoolId <p>节点池ID</p>
                      * 
                      */
                     std::string GetNodePoolId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点池ID
+                     * <p>节点池ID</p>
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;

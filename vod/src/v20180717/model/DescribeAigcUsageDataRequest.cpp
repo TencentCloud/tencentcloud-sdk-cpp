@@ -26,7 +26,8 @@ DescribeAigcUsageDataRequest::DescribeAigcUsageDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_aigcTypeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_aPIKeyHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeAigcUsageDataRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_aPIKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APIKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aPIKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeAigcUsageDataRequest::SetSubAppId(const uint64_t& _subAppId)
 bool DescribeAigcUsageDataRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string DescribeAigcUsageDataRequest::GetAPIKey() const
+{
+    return m_aPIKey;
+}
+
+void DescribeAigcUsageDataRequest::SetAPIKey(const string& _aPIKey)
+{
+    m_aPIKey = _aPIKey;
+    m_aPIKeyHasBeenSet = true;
+}
+
+bool DescribeAigcUsageDataRequest::APIKeyHasBeenSet() const
+{
+    return m_aPIKeyHasBeenSet;
 }
 
 

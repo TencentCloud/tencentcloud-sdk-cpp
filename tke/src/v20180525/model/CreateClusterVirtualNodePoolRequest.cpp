@@ -31,7 +31,9 @@ CreateClusterVirtualNodePoolRequest::CreateClusterVirtualNodePoolRequest() :
     m_taintsHasBeenSet(false),
     m_virtualNodesHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
-    m_oSHasBeenSet(false)
+    m_oSHasBeenSet(false),
+    m_subnetAllocationPolicyHasBeenSet(false),
+    m_agentPluginHasBeenSet(false)
 {
 }
 
@@ -143,6 +145,24 @@ string CreateClusterVirtualNodePoolRequest::ToJsonString() const
         string key = "OS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_oS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subnetAllocationPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentPluginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentPlugin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentPlugin.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -295,6 +315,38 @@ void CreateClusterVirtualNodePoolRequest::SetOS(const string& _oS)
 bool CreateClusterVirtualNodePoolRequest::OSHasBeenSet() const
 {
     return m_oSHasBeenSet;
+}
+
+SubnetAllocationPolicy CreateClusterVirtualNodePoolRequest::GetSubnetAllocationPolicy() const
+{
+    return m_subnetAllocationPolicy;
+}
+
+void CreateClusterVirtualNodePoolRequest::SetSubnetAllocationPolicy(const SubnetAllocationPolicy& _subnetAllocationPolicy)
+{
+    m_subnetAllocationPolicy = _subnetAllocationPolicy;
+    m_subnetAllocationPolicyHasBeenSet = true;
+}
+
+bool CreateClusterVirtualNodePoolRequest::SubnetAllocationPolicyHasBeenSet() const
+{
+    return m_subnetAllocationPolicyHasBeenSet;
+}
+
+AgentPluginConfig CreateClusterVirtualNodePoolRequest::GetAgentPlugin() const
+{
+    return m_agentPlugin;
+}
+
+void CreateClusterVirtualNodePoolRequest::SetAgentPlugin(const AgentPluginConfig& _agentPlugin)
+{
+    m_agentPlugin = _agentPlugin;
+    m_agentPluginHasBeenSet = true;
+}
+
+bool CreateClusterVirtualNodePoolRequest::AgentPluginHasBeenSet() const
+{
+    return m_agentPluginHasBeenSet;
 }
 
 
