@@ -38,7 +38,11 @@ CosAssetInfo::CosAssetInfo() :
     m_lastAccessTimeHasBeenSet(false),
     m_bucketIdHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
-    m_dataScanInfoHasBeenSet(false)
+    m_dataScanInfoHasBeenSet(false),
+    m_bucketAzTypeHasBeenSet(false),
+    m_bucketStorageSizeHasBeenSet(false),
+    m_bucketObjectCountHasBeenSet(false),
+    m_identifySampleRateHasBeenSet(false)
 {
 }
 
@@ -261,6 +265,46 @@ CoreInternalOutcome CosAssetInfo::Deserialize(const rapidjson::Value &value)
         m_dataScanInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("BucketAzType") && !value["BucketAzType"].IsNull())
+    {
+        if (!value["BucketAzType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAssetInfo.BucketAzType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketAzType = string(value["BucketAzType"].GetString());
+        m_bucketAzTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BucketStorageSize") && !value["BucketStorageSize"].IsNull())
+    {
+        if (!value["BucketStorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAssetInfo.BucketStorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketStorageSize = value["BucketStorageSize"].GetInt64();
+        m_bucketStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BucketObjectCount") && !value["BucketObjectCount"].IsNull())
+    {
+        if (!value["BucketObjectCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAssetInfo.BucketObjectCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucketObjectCount = value["BucketObjectCount"].GetInt64();
+        m_bucketObjectCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdentifySampleRate") && !value["IdentifySampleRate"].IsNull())
+    {
+        if (!value["IdentifySampleRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAssetInfo.IdentifySampleRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifySampleRate = value["IdentifySampleRate"].GetDouble();
+        m_identifySampleRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -426,6 +470,38 @@ void CosAssetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dataScanInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bucketAzTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketAzType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucketAzType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bucketStorageSize, allocator);
+    }
+
+    if (m_bucketObjectCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketObjectCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bucketObjectCount, allocator);
+    }
+
+    if (m_identifySampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifySampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifySampleRate, allocator);
     }
 
 }
@@ -717,5 +793,69 @@ void CosAssetInfo::SetDataScanInfo(const CosAssetDataScanDetail& _dataScanInfo)
 bool CosAssetInfo::DataScanInfoHasBeenSet() const
 {
     return m_dataScanInfoHasBeenSet;
+}
+
+string CosAssetInfo::GetBucketAzType() const
+{
+    return m_bucketAzType;
+}
+
+void CosAssetInfo::SetBucketAzType(const string& _bucketAzType)
+{
+    m_bucketAzType = _bucketAzType;
+    m_bucketAzTypeHasBeenSet = true;
+}
+
+bool CosAssetInfo::BucketAzTypeHasBeenSet() const
+{
+    return m_bucketAzTypeHasBeenSet;
+}
+
+int64_t CosAssetInfo::GetBucketStorageSize() const
+{
+    return m_bucketStorageSize;
+}
+
+void CosAssetInfo::SetBucketStorageSize(const int64_t& _bucketStorageSize)
+{
+    m_bucketStorageSize = _bucketStorageSize;
+    m_bucketStorageSizeHasBeenSet = true;
+}
+
+bool CosAssetInfo::BucketStorageSizeHasBeenSet() const
+{
+    return m_bucketStorageSizeHasBeenSet;
+}
+
+int64_t CosAssetInfo::GetBucketObjectCount() const
+{
+    return m_bucketObjectCount;
+}
+
+void CosAssetInfo::SetBucketObjectCount(const int64_t& _bucketObjectCount)
+{
+    m_bucketObjectCount = _bucketObjectCount;
+    m_bucketObjectCountHasBeenSet = true;
+}
+
+bool CosAssetInfo::BucketObjectCountHasBeenSet() const
+{
+    return m_bucketObjectCountHasBeenSet;
+}
+
+double CosAssetInfo::GetIdentifySampleRate() const
+{
+    return m_identifySampleRate;
+}
+
+void CosAssetInfo::SetIdentifySampleRate(const double& _identifySampleRate)
+{
+    m_identifySampleRate = _identifySampleRate;
+    m_identifySampleRateHasBeenSet = true;
+}
+
+bool CosAssetInfo::IdentifySampleRateHasBeenSet() const
+{
+    return m_identifySampleRateHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取APPID
-                     * @return AppId APPID
+                     * 获取<p>APPID</p>
+                     * @return AppId <p>APPID</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置APPID
-                     * @param _appId APPID
+                     * 设置<p>APPID</p>
+                     * @param _appId <p>APPID</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期
-                     * @return OrderStatus 订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期
+                     * 获取<p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>
+                     * @return OrderStatus <p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>
                      * 
                      */
                     uint64_t GetOrderStatus() const;
 
                     /**
-                     * 设置订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期
-                     * @param _orderStatus 订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期
+                     * 设置<p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>
+                     * @param _orderStatus <p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>
                      * 
                      */
                     void SetOrderStatus(const uint64_t& _orderStatus);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool OrderStatusHasBeenSet() const;
 
                     /**
-                     * 获取已购对象存储数量
-                     * @return BucketNum 已购对象存储数量
+                     * 获取<p>已购对象存储数量</p>
+                     * @return BucketNum <p>已购对象存储数量</p>
                      * 
                      */
                     uint64_t GetBucketNum() const;
 
                     /**
-                     * 设置已购对象存储数量
-                     * @param _bucketNum 已购对象存储数量
+                     * 设置<p>已购对象存储数量</p>
+                     * @param _bucketNum <p>已购对象存储数量</p>
                      * 
                      */
                     void SetBucketNum(const uint64_t& _bucketNum);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool BucketNumHasBeenSet() const;
 
                     /**
-                     * 获取支付模式，0-后付费 1-预付费
-                     * @return PayMode 支付模式，0-后付费 1-预付费
+                     * 获取<p>支付模式，0-后付费 1-预付费</p>
+                     * @return PayMode <p>支付模式，0-后付费 1-预付费</p>
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置支付模式，0-后付费 1-预付费
-                     * @param _payMode 支付模式，0-后付费 1-预付费
+                     * 设置<p>支付模式，0-后付费 1-预付费</p>
+                     * @param _payMode <p>支付模式，0-后付费 1-预付费</p>
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否单独购买，1-单独购买，2-被其它账号共享
-                     * @return IsSelfBuy 是否单独购买，1-单独购买，2-被其它账号共享
+                     * 获取<p>是否单独购买，1-单独购买，2-被其它账号共享</p>
+                     * @return IsSelfBuy <p>是否单独购买，1-单独购买，2-被其它账号共享</p>
                      * 
                      */
                     uint64_t GetIsSelfBuy() const;
 
                     /**
-                     * 设置是否单独购买，1-单独购买，2-被其它账号共享
-                     * @param _isSelfBuy 是否单独购买，1-单独购买，2-被其它账号共享
+                     * 设置<p>是否单独购买，1-单独购买，2-被其它账号共享</p>
+                     * @param _isSelfBuy <p>是否单独购买，1-单独购买，2-被其它账号共享</p>
                      * 
                      */
                     void SetIsSelfBuy(const uint64_t& _isSelfBuy);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsSelfBuyHasBeenSet() const;
 
                     /**
-                     * 获取订单开始时间
-                     * @return BeginTime 订单开始时间
+                     * 获取<p>订单开始时间</p>
+                     * @return BeginTime <p>订单开始时间</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置订单开始时间
-                     * @param _beginTime 订单开始时间
+                     * 设置<p>订单开始时间</p>
+                     * @param _beginTime <p>订单开始时间</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取订单到期时间
-                     * @return EndTime 订单到期时间
+                     * 获取<p>订单到期时间</p>
+                     * @return EndTime <p>订单到期时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置订单到期时间
-                     * @param _endTime 订单到期时间
+                     * 设置<p>订单到期时间</p>
+                     * @param _endTime <p>订单到期时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费
-                     * @return AutoRenew 0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费
+                     * 获取<p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>
+                     * @return AutoRenew <p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费
-                     * @param _autoRenew 0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费
+                     * 设置<p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>
+                     * @param _autoRenew <p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取订单时长
-                     * @return TimeSpan 订单时长
+                     * 获取<p>订单时长</p>
+                     * @return TimeSpan <p>订单时长</p>
                      * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置订单时长
-                     * @param _timeSpan 订单时长
+                     * 设置<p>订单时长</p>
+                     * @param _timeSpan <p>订单时长</p>
                      * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取时长单位
-                     * @return TimeUnit 时长单位
+                     * 获取<p>时长单位</p>
+                     * @return TimeUnit <p>时长单位</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置时长单位
-                     * @param _timeUnit 时长单位
+                     * 设置<p>时长单位</p>
+                     * @param _timeUnit <p>时长单位</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取资源id 
-                     * @return ResourceId 资源id 
+                     * 获取<p>资源id</p>
+                     * @return ResourceId <p>资源id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源id 
-                     * @param _resourceId 资源id 
+                     * 设置<p>资源id</p>
+                     * @param _resourceId <p>资源id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取公测结束时间
-                     * @return BetaEndTime 公测结束时间
+                     * 获取<p>公测结束时间</p>
+                     * @return BetaEndTime <p>公测结束时间</p>
                      * 
                      */
                     std::string GetBetaEndTime() const;
 
                     /**
-                     * 设置公测结束时间
-                     * @param _betaEndTime 公测结束时间
+                     * 设置<p>公测结束时间</p>
+                     * @param _betaEndTime <p>公测结束时间</p>
                      * 
                      */
                     void SetBetaEndTime(const std::string& _betaEndTime);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool BetaEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取系统当前时间
-                     * @return TimeNow 系统当前时间
+                     * 获取<p>系统当前时间</p>
+                     * @return TimeNow <p>系统当前时间</p>
                      * 
                      */
                     std::string GetTimeNow() const;
 
                     /**
-                     * 设置系统当前时间
-                     * @param _timeNow 系统当前时间
+                     * 设置<p>系统当前时间</p>
+                     * @param _timeNow <p>系统当前时间</p>
                      * 
                      */
                     void SetTimeNow(const std::string& _timeNow);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool TimeNowHasBeenSet() const;
 
                     /**
-                     * 获取是否分享给其它账号，1-是，2-否
-                     * @return IsShareToOther 是否分享给其它账号，1-是，2-否
+                     * 获取<p>是否分享给其它账号，1-是，2-否</p>
+                     * @return IsShareToOther <p>是否分享给其它账号，1-是，2-否</p>
                      * 
                      */
                     uint64_t GetIsShareToOther() const;
 
                     /**
-                     * 设置是否分享给其它账号，1-是，2-否
-                     * @param _isShareToOther 是否分享给其它账号，1-是，2-否
+                     * 设置<p>是否分享给其它账号，1-是，2-否</p>
+                     * @param _isShareToOther <p>是否分享给其它账号，1-是，2-否</p>
                      * 
                      */
                     void SetIsShareToOther(const uint64_t& _isShareToOther);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool IsShareToOtherHasBeenSet() const;
 
                     /**
-                     * 获取uin
-                     * @return Uin uin
+                     * 获取<p>uin</p>
+                     * @return Uin <p>uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置uin
-                     * @param _uin uin
+                     * 设置<p>uin</p>
+                     * @param _uin <p>uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取昵称
-                     * @return NickName 昵称
+                     * 获取<p>昵称</p>
+                     * @return NickName <p>昵称</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置昵称
-                     * @param _nickName 昵称
+                     * 设置<p>昵称</p>
+                     * @param _nickName <p>昵称</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取共享的bucketIdSet 
-                     * @return BindBucket 共享的bucketIdSet 
+                     * 获取<p>共享的bucketIdSet</p>
+                     * @return BindBucket <p>共享的bucketIdSet</p>
                      * 
                      */
                     std::vector<CosBucketId> GetBindBucket() const;
 
                     /**
-                     * 设置共享的bucketIdSet 
-                     * @param _bindBucket 共享的bucketIdSet 
+                     * 设置<p>共享的bucketIdSet</p>
+                     * @param _bindBucket <p>共享的bucketIdSet</p>
                      * 
                      */
                     void SetBindBucket(const std::vector<CosBucketId>& _bindBucket);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool BindBucketHasBeenSet() const;
 
                     /**
-                     * 获取共享的appid
-                     * @return SharedAppIdSet 共享的appid
+                     * 获取<p>共享的appid</p>
+                     * @return SharedAppIdSet <p>共享的appid</p>
                      * 
                      */
                     std::vector<uint64_t> GetSharedAppIdSet() const;
 
                     /**
-                     * 设置共享的appid
-                     * @param _sharedAppIdSet 共享的appid
+                     * 设置<p>共享的appid</p>
+                     * @param _sharedAppIdSet <p>共享的appid</p>
                      * 
                      */
                     void SetSharedAppIdSet(const std::vector<uint64_t>& _sharedAppIdSet);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool SharedAppIdSetHasBeenSet() const;
 
                     /**
-                     * 获取是否已经开启后付费
-                     * @return PostPayStatus 是否已经开启后付费
+                     * 获取<p>是否已经开启后付费</p>
+                     * @return PostPayStatus <p>是否已经开启后付费</p>
                      * 
                      */
                     uint64_t GetPostPayStatus() const;
 
                     /**
-                     * 设置是否已经开启后付费
-                     * @param _postPayStatus 是否已经开启后付费
+                     * 设置<p>是否已经开启后付费</p>
+                     * @param _postPayStatus <p>是否已经开启后付费</p>
                      * 
                      */
                     void SetPostPayStatus(const uint64_t& _postPayStatus);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool PostPayStatusHasBeenSet() const;
 
                     /**
-                     * 获取0：未做过试用期试用   1 ：做过试用期试用
-                     * @return IsTestUser 0：未做过试用期试用   1 ：做过试用期试用
+                     * 获取<p>0：未做过试用期试用   1 ：做过试用期试用</p>
+                     * @return IsTestUser <p>0：未做过试用期试用   1 ：做过试用期试用</p>
                      * 
                      */
                     uint64_t GetIsTestUser() const;
 
                     /**
-                     * 设置0：未做过试用期试用   1 ：做过试用期试用
-                     * @param _isTestUser 0：未做过试用期试用   1 ：做过试用期试用
+                     * 设置<p>0：未做过试用期试用   1 ：做过试用期试用</p>
+                     * @param _isTestUser <p>0：未做过试用期试用   1 ：做过试用期试用</p>
                      * 
                      */
                     void SetIsTestUser(const uint64_t& _isTestUser);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool IsTestUserHasBeenSet() const;
 
                     /**
-                     * 获取剩余可用数
-                     * @return AvailableBucketNum 剩余可用数
+                     * 获取<p>剩余可用数</p>
+                     * @return AvailableBucketNum <p>剩余可用数</p>
                      * 
                      */
                     uint64_t GetAvailableBucketNum() const;
 
                     /**
-                     * 设置剩余可用数
-                     * @param _availableBucketNum 剩余可用数
+                     * 设置<p>剩余可用数</p>
+                     * @param _availableBucketNum <p>剩余可用数</p>
                      * 
                      */
                     void SetAvailableBucketNum(const uint64_t& _availableBucketNum);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool AvailableBucketNumHasBeenSet() const;
 
                     /**
-                     * 获取已开启的监测存储桶数
-                     * @return MonitorBucketNum 已开启的监测存储桶数
+                     * 获取<p>已开启的监测存储桶数</p>
+                     * @return MonitorBucketNum <p>已开启的监测存储桶数</p>
                      * 
                      */
                     uint64_t GetMonitorBucketNum() const;
 
                     /**
-                     * 设置已开启的监测存储桶数
-                     * @param _monitorBucketNum 已开启的监测存储桶数
+                     * 设置<p>已开启的监测存储桶数</p>
+                     * @param _monitorBucketNum <p>已开启的监测存储桶数</p>
                      * 
                      */
                     void SetMonitorBucketNum(const uint64_t& _monitorBucketNum);
@@ -510,15 +510,15 @@ namespace TencentCloud
                     bool MonitorBucketNumHasBeenSet() const;
 
                     /**
-                     * 获取总的存储桶数
-                     * @return TotalBucketNum 总的存储桶数
+                     * 获取<p>总的存储桶数</p>
+                     * @return TotalBucketNum <p>总的存储桶数</p>
                      * 
                      */
                     uint64_t GetTotalBucketNum() const;
 
                     /**
-                     * 设置总的存储桶数
-                     * @param _totalBucketNum 总的存储桶数
+                     * 设置<p>总的存储桶数</p>
+                     * @param _totalBucketNum <p>总的存储桶数</p>
                      * 
                      */
                     void SetTotalBucketNum(const uint64_t& _totalBucketNum);
@@ -530,145 +530,226 @@ namespace TencentCloud
                      */
                     bool TotalBucketNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>后付费产品开关状态</p>
+                     * @return PostProductStatusList <p>后付费产品开关状态</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetPostProductStatusList() const;
+
+                    /**
+                     * 设置<p>后付费产品开关状态</p>
+                     * @param _postProductStatusList <p>后付费产品开关状态</p>
+                     * 
+                     */
+                    void SetPostProductStatusList(const std::vector<uint64_t>& _postProductStatusList);
+
+                    /**
+                     * 判断参数 PostProductStatusList 是否已赋值
+                     * @return PostProductStatusList 是否已赋值
+                     * 
+                     */
+                    bool PostProductStatusListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后付费产品购买状态</p>
+                     * @return PostProductBuyStatusList <p>后付费产品购买状态</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetPostProductBuyStatusList() const;
+
+                    /**
+                     * 设置<p>后付费产品购买状态</p>
+                     * @param _postProductBuyStatusList <p>后付费产品购买状态</p>
+                     * 
+                     */
+                    void SetPostProductBuyStatusList(const std::vector<uint64_t>& _postProductBuyStatusList);
+
+                    /**
+                     * 判断参数 PostProductBuyStatusList 是否已赋值
+                     * @return PostProductBuyStatusList 是否已赋值
+                     * 
+                     */
+                    bool PostProductBuyStatusListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新后付费资源id</p>
+                     * @return NewPostPayResourceId <p>新后付费资源id</p>
+                     * 
+                     */
+                    std::string GetNewPostPayResourceId() const;
+
+                    /**
+                     * 设置<p>新后付费资源id</p>
+                     * @param _newPostPayResourceId <p>新后付费资源id</p>
+                     * 
+                     */
+                    void SetNewPostPayResourceId(const std::string& _newPostPayResourceId);
+
+                    /**
+                     * 判断参数 NewPostPayResourceId 是否已赋值
+                     * @return NewPostPayResourceId 是否已赋值
+                     * 
+                     */
+                    bool NewPostPayResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * APPID
+                     * <p>APPID</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期
+                     * <p>订单状态 0未购买 1正常，2隔离，3销毁，6试用中，7到期</p>
                      */
                     uint64_t m_orderStatus;
                     bool m_orderStatusHasBeenSet;
 
                     /**
-                     * 已购对象存储数量
+                     * <p>已购对象存储数量</p>
                      */
                     uint64_t m_bucketNum;
                     bool m_bucketNumHasBeenSet;
 
                     /**
-                     * 支付模式，0-后付费 1-预付费
+                     * <p>支付模式，0-后付费 1-预付费</p>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否单独购买，1-单独购买，2-被其它账号共享
+                     * <p>是否单独购买，1-单独购买，2-被其它账号共享</p>
                      */
                     uint64_t m_isSelfBuy;
                     bool m_isSelfBuyHasBeenSet;
 
                     /**
-                     * 订单开始时间
+                     * <p>订单开始时间</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 订单到期时间
+                     * <p>订单到期时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费
+                     * <p>0-用户未设置,1-用户设置自动续费,2-用户设置不自动续费</p>
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 订单时长
+                     * <p>订单时长</p>
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 时长单位
+                     * <p>时长单位</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 资源id 
+                     * <p>资源id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 公测结束时间
+                     * <p>公测结束时间</p>
                      */
                     std::string m_betaEndTime;
                     bool m_betaEndTimeHasBeenSet;
 
                     /**
-                     * 系统当前时间
+                     * <p>系统当前时间</p>
                      */
                     std::string m_timeNow;
                     bool m_timeNowHasBeenSet;
 
                     /**
-                     * 是否分享给其它账号，1-是，2-否
+                     * <p>是否分享给其它账号，1-是，2-否</p>
                      */
                     uint64_t m_isShareToOther;
                     bool m_isShareToOtherHasBeenSet;
 
                     /**
-                     * uin
+                     * <p>uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 昵称
+                     * <p>昵称</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 共享的bucketIdSet 
+                     * <p>共享的bucketIdSet</p>
                      */
                     std::vector<CosBucketId> m_bindBucket;
                     bool m_bindBucketHasBeenSet;
 
                     /**
-                     * 共享的appid
+                     * <p>共享的appid</p>
                      */
                     std::vector<uint64_t> m_sharedAppIdSet;
                     bool m_sharedAppIdSetHasBeenSet;
 
                     /**
-                     * 是否已经开启后付费
+                     * <p>是否已经开启后付费</p>
                      */
                     uint64_t m_postPayStatus;
                     bool m_postPayStatusHasBeenSet;
 
                     /**
-                     * 0：未做过试用期试用   1 ：做过试用期试用
+                     * <p>0：未做过试用期试用   1 ：做过试用期试用</p>
                      */
                     uint64_t m_isTestUser;
                     bool m_isTestUserHasBeenSet;
 
                     /**
-                     * 剩余可用数
+                     * <p>剩余可用数</p>
                      */
                     uint64_t m_availableBucketNum;
                     bool m_availableBucketNumHasBeenSet;
 
                     /**
-                     * 已开启的监测存储桶数
+                     * <p>已开启的监测存储桶数</p>
                      */
                     uint64_t m_monitorBucketNum;
                     bool m_monitorBucketNumHasBeenSet;
 
                     /**
-                     * 总的存储桶数
+                     * <p>总的存储桶数</p>
                      */
                     uint64_t m_totalBucketNum;
                     bool m_totalBucketNumHasBeenSet;
+
+                    /**
+                     * <p>后付费产品开关状态</p>
+                     */
+                    std::vector<uint64_t> m_postProductStatusList;
+                    bool m_postProductStatusListHasBeenSet;
+
+                    /**
+                     * <p>后付费产品购买状态</p>
+                     */
+                    std::vector<uint64_t> m_postProductBuyStatusList;
+                    bool m_postProductBuyStatusListHasBeenSet;
+
+                    /**
+                     * <p>新后付费资源id</p>
+                     */
+                    std::string m_newPostPayResourceId;
+                    bool m_newPostPayResourceIdHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团账号的成员id
-                     * @return MemberId 集团账号的成员id
+                     * 获取<p>集团账号的成员id</p>
+                     * @return MemberId <p>集团账号的成员id</p>
                      * 
                      */
                     std::vector<std::string> GetMemberId() const;
 
                     /**
-                     * 设置集团账号的成员id
-                     * @param _memberId 集团账号的成员id
+                     * 设置<p>集团账号的成员id</p>
+                     * @param _memberId <p>集团账号的成员id</p>
                      * 
                      */
                     void SetMemberId(const std::vector<std::string>& _memberId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)
-                     * @return DangerLevel 风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)
+                     * 获取<p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>
+                     * @return DangerLevel <p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>
                      * 
                      */
                     int64_t GetDangerLevel() const;
 
                     /**
-                     * 设置风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)
-                     * @param _dangerLevel 风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)
+                     * 设置<p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>
+                     * @param _dangerLevel <p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>
                      * 
                      */
                     void SetDangerLevel(const int64_t& _dangerLevel);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DangerLevelHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
-                     * @return DbName 数据库名称
+                     * 获取<p>数据库名称</p>
+                     * @return DbName <p>数据库名称</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称
-                     * @param _dbName 数据库名称
+                     * 设置<p>数据库名称</p>
+                     * @param _dbName <p>数据库名称</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库端口
-                     * @return DbPort 数据库端口
+                     * 获取<p>数据库端口</p>
+                     * @return DbPort <p>数据库端口</p>
                      * 
                      */
                     int64_t GetDbPort() const;
 
                     /**
-                     * 设置数据库端口
-                     * @param _dbPort 数据库端口
+                     * 设置<p>数据库端口</p>
+                     * @param _dbPort <p>数据库端口</p>
                      * 
                      */
                     void SetDbPort(const int64_t& _dbPort);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DbPortHasBeenSet() const;
 
                     /**
-                     * 获取数据库 IP
-                     * @return DbIp 数据库 IP
+                     * 获取<p>数据库 IP</p>
+                     * @return DbIp <p>数据库 IP</p>
                      * 
                      */
                     std::string GetDbIp() const;
 
                     /**
-                     * 设置数据库 IP
-                     * @param _dbIp 数据库 IP
+                     * 设置<p>数据库 IP</p>
+                     * @param _dbIp <p>数据库 IP</p>
                      * 
                      */
                     void SetDbIp(const std::string& _dbIp);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DbIpHasBeenSet() const;
 
                     /**
-                     * 获取资产 ID
-                     * @return AssetsId 资产 ID
+                     * 获取<p>资产 ID</p>
+                     * @return AssetsId <p>资产 ID</p>
                      * 
                      */
                     int64_t GetAssetsId() const;
 
                     /**
-                     * 设置资产 ID
-                     * @param _assetsId 资产 ID
+                     * 设置<p>资产 ID</p>
+                     * @param _assetsId <p>资产 ID</p>
                      * 
                      */
                     void SetAssetsId(const int64_t& _assetsId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AssetsIdHasBeenSet() const;
 
                     /**
-                     * 获取会话 ID
-                     * @return SessionId 会话 ID
+                     * 获取<p>会话 ID</p>
+                     * @return SessionId <p>会话 ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话 ID
-                     * @param _sessionId 会话 ID
+                     * 设置<p>会话 ID</p>
+                     * @param _sessionId <p>会话 ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端 IP
-                     * @return ClientSideIp 客户端 IP
+                     * 获取<p>客户端 IP</p>
+                     * @return ClientSideIp <p>客户端 IP</p>
                      * 
                      */
                     std::string GetClientSideIp() const;
 
                     /**
-                     * 设置客户端 IP
-                     * @param _clientSideIp 客户端 IP
+                     * 设置<p>客户端 IP</p>
+                     * @param _clientSideIp <p>客户端 IP</p>
                      * 
                      */
                     void SetClientSideIp(const std::string& _clientSideIp);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ClientSideIpHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取命中规则
-                     * @return HitRule 命中规则
+                     * 获取<p>命中规则</p>
+                     * @return HitRule <p>命中规则</p>
                      * 
                      */
                     int64_t GetHitRule() const;
 
                     /**
-                     * 设置命中规则
-                     * @param _hitRule 命中规则
+                     * 设置<p>命中规则</p>
+                     * @param _hitRule <p>命中规则</p>
                      * 
                      */
                     void SetHitRule(const int64_t& _hitRule);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool HitRuleHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取模糊查询
-                     * @return FuzzySearch 模糊查询
+                     * 获取<p>模糊查询</p>
+                     * @return FuzzySearch <p>模糊查询</p>
                      * 
                      */
                     std::string GetFuzzySearch() const;
 
                     /**
-                     * 设置模糊查询
-                     * @param _fuzzySearch 模糊查询
+                     * 设置<p>模糊查询</p>
+                     * @param _fuzzySearch <p>模糊查询</p>
                      * 
                      */
                     void SetFuzzySearch(const std::string& _fuzzySearch);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool FuzzySearchHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取客户端
-                     * @return ClientName 客户端
+                     * 获取<p>客户端</p>
+                     * @return ClientName <p>客户端</p>
                      * 
                      */
                     std::string GetClientName() const;
 
                     /**
-                     * 设置客户端
-                     * @param _clientName 客户端
+                     * 设置<p>客户端</p>
+                     * @param _clientName <p>客户端</p>
                      * 
                      */
                     void SetClientName(const std::string& _clientName);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ClientNameHasBeenSet() const;
 
                     /**
-                     * 获取流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有
-                     * @return SourceTypes 流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有
+                     * 获取<p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>
+                     * @return SourceTypes <p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>
                      * 
                      */
                     std::vector<std::string> GetSourceTypes() const;
 
                     /**
-                     * 设置流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有
-                     * @param _sourceTypes 流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有
+                     * 设置<p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>
+                     * @param _sourceTypes <p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>
                      * 
                      */
                     void SetSourceTypes(const std::vector<std::string>& _sourceTypes);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool SourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取表名，长度限制64，多个表名查询的话可以用空格连接	
-                     * @return TableName 表名，长度限制64，多个表名查询的话可以用空格连接	
+                     * 获取<p>表名，长度限制64，多个表名查询的话可以用空格连接</p>
+                     * @return TableName <p>表名，长度限制64，多个表名查询的话可以用空格连接</p>
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名，长度限制64，多个表名查询的话可以用空格连接	
-                     * @param _tableName 表名，长度限制64，多个表名查询的话可以用空格连接	
+                     * 设置<p>表名，长度限制64，多个表名查询的话可以用空格连接</p>
+                     * @param _tableName <p>表名，长度限制64，多个表名查询的话可以用空格连接</p>
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
-                     * 获取字段名，长度限制64，多个字段名查询的话可以用空格连接
-                     * @return FieldName 字段名，长度限制64，多个字段名查询的话可以用空格连接
+                     * 获取<p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>
+                     * @return FieldName <p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>
                      * 
                      */
                     std::string GetFieldName() const;
 
                     /**
-                     * 设置字段名，长度限制64，多个字段名查询的话可以用空格连接
-                     * @param _fieldName 字段名，长度限制64，多个字段名查询的话可以用空格连接
+                     * 设置<p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>
+                     * @param _fieldName <p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>
                      * 
                      */
                     void SetFieldName(const std::string& _fieldName);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool FieldNameHasBeenSet() const;
 
                     /**
-                     * 获取SQL 主要类型，DDL, DML, DCL, TCL	
-                     * @return SqlMainTypes SQL 主要类型，DDL, DML, DCL, TCL	
+                     * 获取<p>SQL 主要类型，DDL, DML, DCL, TCL</p>
+                     * @return SqlMainTypes <p>SQL 主要类型，DDL, DML, DCL, TCL</p>
                      * 
                      */
                     std::vector<std::string> GetSqlMainTypes() const;
 
                     /**
-                     * 设置SQL 主要类型，DDL, DML, DCL, TCL	
-                     * @param _sqlMainTypes SQL 主要类型，DDL, DML, DCL, TCL	
+                     * 设置<p>SQL 主要类型，DDL, DML, DCL, TCL</p>
+                     * @param _sqlMainTypes <p>SQL 主要类型，DDL, DML, DCL, TCL</p>
                      * 
                      */
                     void SetSqlMainTypes(const std::vector<std::string>& _sqlMainTypes);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool SqlMainTypesHasBeenSet() const;
 
                     /**
-                     * 获取操作类型	
-                     * @return SqlType 操作类型	
+                     * 获取<p>操作类型</p>
+                     * @return SqlType <p>操作类型</p>
                      * 
                      */
                     std::string GetSqlType() const;
 
                     /**
-                     * 设置操作类型	
-                     * @param _sqlType 操作类型	
+                     * 设置<p>操作类型</p>
+                     * @param _sqlType <p>操作类型</p>
                      * 
                      */
                     void SetSqlType(const std::string& _sqlType);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool SqlTypeHasBeenSet() const;
 
                     /**
-                     * 获取影响行数最小值	
-                     * @return RowNumMin 影响行数最小值	
+                     * 获取<p>影响行数最小值</p>
+                     * @return RowNumMin <p>影响行数最小值</p>
                      * 
                      */
                     int64_t GetRowNumMin() const;
 
                     /**
-                     * 设置影响行数最小值	
-                     * @param _rowNumMin 影响行数最小值	
+                     * 设置<p>影响行数最小值</p>
+                     * @param _rowNumMin <p>影响行数最小值</p>
                      * 
                      */
                     void SetRowNumMin(const int64_t& _rowNumMin);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool RowNumMinHasBeenSet() const;
 
                     /**
-                     * 获取影响行数最大值	
-                     * @return RowNumMax 影响行数最大值	
+                     * 获取<p>影响行数最大值</p>
+                     * @return RowNumMax <p>影响行数最大值</p>
                      * 
                      */
                     int64_t GetRowNumMax() const;
 
                     /**
-                     * 设置影响行数最大值	
-                     * @param _rowNumMax 影响行数最大值	
+                     * 设置<p>影响行数最大值</p>
+                     * @param _rowNumMax <p>影响行数最大值</p>
                      * 
                      */
                     void SetRowNumMax(const int64_t& _rowNumMax);
@@ -484,15 +484,15 @@ namespace TencentCloud
                     bool RowNumMaxHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型	
-                     * @return DbTypes 数据库类型	
+                     * 获取<p>数据库类型</p>
+                     * @return DbTypes <p>数据库类型</p>
                      * 
                      */
                     std::vector<std::string> GetDbTypes() const;
 
                     /**
-                     * 设置数据库类型	
-                     * @param _dbTypes 数据库类型	
+                     * 设置<p>数据库类型</p>
+                     * @param _dbTypes <p>数据库类型</p>
                      * 
                      */
                     void SetDbTypes(const std::vector<std::string>& _dbTypes);
@@ -505,15 +505,15 @@ namespace TencentCloud
                     bool DbTypesHasBeenSet() const;
 
                     /**
-                     * 获取返回码	
-                     * @return RetNo 返回码	
+                     * 获取<p>返回码</p>
+                     * @return RetNo <p>返回码</p>
                      * 
                      */
                     int64_t GetRetNo() const;
 
                     /**
-                     * 设置返回码	
-                     * @param _retNo 返回码	
+                     * 设置<p>返回码</p>
+                     * @param _retNo <p>返回码</p>
                      * 
                      */
                     void SetRetNo(const int64_t& _retNo);
@@ -526,15 +526,15 @@ namespace TencentCloud
                     bool RetNoHasBeenSet() const;
 
                     /**
-                     * 获取客户端工具	
-                     * @return ClientDriverName 客户端工具	
+                     * 获取<p>客户端工具</p>
+                     * @return ClientDriverName <p>客户端工具</p>
                      * 
                      */
                     std::string GetClientDriverName() const;
 
                     /**
-                     * 设置客户端工具	
-                     * @param _clientDriverName 客户端工具	
+                     * 设置<p>客户端工具</p>
+                     * @param _clientDriverName <p>客户端工具</p>
                      * 
                      */
                     void SetClientDriverName(const std::string& _clientDriverName);
@@ -547,15 +547,15 @@ namespace TencentCloud
                     bool ClientDriverNameHasBeenSet() const;
 
                     /**
-                     * 获取客户端端口	
-                     * @return ClientPort 客户端端口	
+                     * 获取<p>客户端端口</p>
+                     * @return ClientPort <p>客户端端口</p>
                      * 
                      */
                     int64_t GetClientPort() const;
 
                     /**
-                     * 设置客户端端口	
-                     * @param _clientPort 客户端端口	
+                     * 设置<p>客户端端口</p>
+                     * @param _clientPort <p>客户端端口</p>
                      * 
                      */
                     void SetClientPort(const int64_t& _clientPort);
@@ -568,15 +568,15 @@ namespace TencentCloud
                     bool ClientPortHasBeenSet() const;
 
                     /**
-                     * 获取审计日志 ID
-                     * @return LogId 审计日志 ID
+                     * 获取<p>审计日志 ID</p>
+                     * @return LogId <p>审计日志 ID</p>
                      * 
                      */
                     std::string GetLogId() const;
 
                     /**
-                     * 设置审计日志 ID
-                     * @param _logId 审计日志 ID
+                     * 设置<p>审计日志 ID</p>
+                     * @param _logId <p>审计日志 ID</p>
                      * 
                      */
                     void SetLogId(const std::string& _logId);
@@ -589,15 +589,15 @@ namespace TencentCloud
                     bool LogIdHasBeenSet() const;
 
                     /**
-                     * 获取风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参
-                     * @return DangerLevels 风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参
+                     * 获取<p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>
+                     * @return DangerLevels <p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>
                      * 
                      */
                     std::vector<int64_t> GetDangerLevels() const;
 
                     /**
-                     * 设置风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参
-                     * @param _dangerLevels 风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参
+                     * 设置<p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>
+                     * @param _dangerLevels <p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>
                      * 
                      */
                     void SetDangerLevels(const std::vector<int64_t>& _dangerLevels);
@@ -610,15 +610,15 @@ namespace TencentCloud
                     bool DangerLevelsHasBeenSet() const;
 
                     /**
-                     * 获取字段分类
-                     * @return SensitiveCategoryRule 字段分类
+                     * 获取<p>字段分类</p>
+                     * @return SensitiveCategoryRule <p>字段分类</p>
                      * 
                      */
                     std::string GetSensitiveCategoryRule() const;
 
                     /**
-                     * 设置字段分类
-                     * @param _sensitiveCategoryRule 字段分类
+                     * 设置<p>字段分类</p>
+                     * @param _sensitiveCategoryRule <p>字段分类</p>
                      * 
                      */
                     void SetSensitiveCategoryRule(const std::string& _sensitiveCategoryRule);
@@ -631,15 +631,15 @@ namespace TencentCloud
                     bool SensitiveCategoryRuleHasBeenSet() const;
 
                     /**
-                     * 获取字段分级
-                     * @return SensitiveLevelRisk 字段分级
+                     * 获取<p>字段分级</p>
+                     * @return SensitiveLevelRisk <p>字段分级</p>
                      * 
                      */
                     std::string GetSensitiveLevelRisk() const;
 
                     /**
-                     * 设置字段分级
-                     * @param _sensitiveLevelRisk 字段分级
+                     * 设置<p>字段分级</p>
+                     * @param _sensitiveLevelRisk <p>字段分级</p>
                      * 
                      */
                     void SetSensitiveLevelRisk(const std::string& _sensitiveLevelRisk);
@@ -652,15 +652,15 @@ namespace TencentCloud
                     bool SensitiveLevelRiskHasBeenSet() const;
 
                     /**
-                     * 获取事务Id
-                     * @return TrxId 事务Id
+                     * 获取<p>事务Id</p>
+                     * @return TrxId <p>事务Id</p>
                      * 
                      */
                     int64_t GetTrxId() const;
 
                     /**
-                     * 设置事务Id
-                     * @param _trxId 事务Id
+                     * 设置<p>事务Id</p>
+                     * @param _trxId <p>事务Id</p>
                      * 
                      */
                     void SetTrxId(const int64_t& _trxId);
@@ -673,15 +673,15 @@ namespace TencentCloud
                     bool TrxIdHasBeenSet() const;
 
                     /**
-                     * 获取clientMac
-                     * @return ClientMac clientMac
+                     * 获取<p>clientMac</p>
+                     * @return ClientMac <p>clientMac</p>
                      * 
                      */
                     std::string GetClientMac() const;
 
                     /**
-                     * 设置clientMac
-                     * @param _clientMac clientMac
+                     * 设置<p>clientMac</p>
+                     * @param _clientMac <p>clientMac</p>
                      * 
                      */
                     void SetClientMac(const std::string& _clientMac);
@@ -696,187 +696,187 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集团账号的成员id
+                     * <p>集团账号的成员id</p>
                      */
                     std::vector<std::string> m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)
+                     * <p>风险等级(0-安全,1-低风险,2-中风险,3-高风险,-1-全部)</p>
                      */
                     int64_t m_dangerLevel;
                     bool m_dangerLevelHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 数据库端口
+                     * <p>数据库端口</p>
                      */
                     int64_t m_dbPort;
                     bool m_dbPortHasBeenSet;
 
                     /**
-                     * 数据库 IP
+                     * <p>数据库 IP</p>
                      */
                     std::string m_dbIp;
                     bool m_dbIpHasBeenSet;
 
                     /**
-                     * 资产 ID
+                     * <p>资产 ID</p>
                      */
                     int64_t m_assetsId;
                     bool m_assetsIdHasBeenSet;
 
                     /**
-                     * 会话 ID
+                     * <p>会话 ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 客户端 IP
+                     * <p>客户端 IP</p>
                      */
                     std::string m_clientSideIp;
                     bool m_clientSideIpHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 命中规则
+                     * <p>命中规则</p>
                      */
                     int64_t m_hitRule;
                     bool m_hitRuleHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 模糊查询
+                     * <p>模糊查询</p>
                      */
                     std::string m_fuzzySearch;
                     bool m_fuzzySearchHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 客户端
+                     * <p>客户端</p>
                      */
                     std::string m_clientName;
                     bool m_clientNameHasBeenSet;
 
                     /**
-                     * 流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都都传或不传则返回所有
+                     * <p>流量来源，取值 Agent/Proxy/空；传Agent会返回Agent的日志，传Proxy会返回Proxy日志，两都传或不传则返回所有</p>
                      */
                     std::vector<std::string> m_sourceTypes;
                     bool m_sourceTypesHasBeenSet;
 
                     /**
-                     * 表名，长度限制64，多个表名查询的话可以用空格连接	
+                     * <p>表名，长度限制64，多个表名查询的话可以用空格连接</p>
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
-                     * 字段名，长度限制64，多个字段名查询的话可以用空格连接
+                     * <p>字段名，长度限制64，多个字段名查询的话可以用空格连接</p>
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;
 
                     /**
-                     * SQL 主要类型，DDL, DML, DCL, TCL	
+                     * <p>SQL 主要类型，DDL, DML, DCL, TCL</p>
                      */
                     std::vector<std::string> m_sqlMainTypes;
                     bool m_sqlMainTypesHasBeenSet;
 
                     /**
-                     * 操作类型	
+                     * <p>操作类型</p>
                      */
                     std::string m_sqlType;
                     bool m_sqlTypeHasBeenSet;
 
                     /**
-                     * 影响行数最小值	
+                     * <p>影响行数最小值</p>
                      */
                     int64_t m_rowNumMin;
                     bool m_rowNumMinHasBeenSet;
 
                     /**
-                     * 影响行数最大值	
+                     * <p>影响行数最大值</p>
                      */
                     int64_t m_rowNumMax;
                     bool m_rowNumMaxHasBeenSet;
 
                     /**
-                     * 数据库类型	
+                     * <p>数据库类型</p>
                      */
                     std::vector<std::string> m_dbTypes;
                     bool m_dbTypesHasBeenSet;
 
                     /**
-                     * 返回码	
+                     * <p>返回码</p>
                      */
                     int64_t m_retNo;
                     bool m_retNoHasBeenSet;
 
                     /**
-                     * 客户端工具	
+                     * <p>客户端工具</p>
                      */
                     std::string m_clientDriverName;
                     bool m_clientDriverNameHasBeenSet;
 
                     /**
-                     * 客户端端口	
+                     * <p>客户端端口</p>
                      */
                     int64_t m_clientPort;
                     bool m_clientPortHasBeenSet;
 
                     /**
-                     * 审计日志 ID
+                     * <p>审计日志 ID</p>
                      */
                     std::string m_logId;
                     bool m_logIdHasBeenSet;
 
                     /**
-                     * 风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参
+                     * <p>风险等级数组(0-安全,1-低风险,2-中风险,3-高风险), 如果要全部，则需要将所有的值都传入。如果为空，则会参考：DangerLevel 入参</p>
                      */
                     std::vector<int64_t> m_dangerLevels;
                     bool m_dangerLevelsHasBeenSet;
 
                     /**
-                     * 字段分类
+                     * <p>字段分类</p>
                      */
                     std::string m_sensitiveCategoryRule;
                     bool m_sensitiveCategoryRuleHasBeenSet;
 
                     /**
-                     * 字段分级
+                     * <p>字段分级</p>
                      */
                     std::string m_sensitiveLevelRisk;
                     bool m_sensitiveLevelRiskHasBeenSet;
 
                     /**
-                     * 事务Id
+                     * <p>事务Id</p>
                      */
                     int64_t m_trxId;
                     bool m_trxIdHasBeenSet;
 
                     /**
-                     * clientMac
+                     * <p>clientMac</p>
                      */
                     std::string m_clientMac;
                     bool m_clientMacHasBeenSet;

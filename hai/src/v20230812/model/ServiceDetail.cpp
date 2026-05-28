@@ -30,7 +30,10 @@ ServiceDetail::ServiceDetail() :
     m_computeSetHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_deploymentConfigsHasBeenSet(false),
-    m_hyperParamHasBeenSet(false)
+    m_hyperParamHasBeenSet(false),
+    m_securityTypeHasBeenSet(false),
+    m_roleComputeSetHasBeenSet(false),
+    m_targetReplicasHasBeenSet(false)
 {
 }
 
@@ -166,6 +169,46 @@ CoreInternalOutcome ServiceDetail::Deserialize(const rapidjson::Value &value)
         m_hyperParamHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityType") && !value["SecurityType"].IsNull())
+    {
+        if (!value["SecurityType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.SecurityType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityType = string(value["SecurityType"].GetString());
+        m_securityTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleComputeSet") && !value["RoleComputeSet"].IsNull())
+    {
+        if (!value["RoleComputeSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.RoleComputeSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RoleComputeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComputeDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_roleComputeSet.push_back(item);
+        }
+        m_roleComputeSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetReplicas") && !value["TargetReplicas"].IsNull())
+    {
+        if (!value["TargetReplicas"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.TargetReplicas` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetReplicas = value["TargetReplicas"].GetUint64();
+        m_targetReplicasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -266,6 +309,37 @@ void ServiceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hyperParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleComputeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleComputeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_roleComputeSet.begin(); itr != m_roleComputeSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_targetReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetReplicas, allocator);
     }
 
 }
@@ -429,5 +503,53 @@ void ServiceDetail::SetHyperParam(const HyperParam& _hyperParam)
 bool ServiceDetail::HyperParamHasBeenSet() const
 {
     return m_hyperParamHasBeenSet;
+}
+
+string ServiceDetail::GetSecurityType() const
+{
+    return m_securityType;
+}
+
+void ServiceDetail::SetSecurityType(const string& _securityType)
+{
+    m_securityType = _securityType;
+    m_securityTypeHasBeenSet = true;
+}
+
+bool ServiceDetail::SecurityTypeHasBeenSet() const
+{
+    return m_securityTypeHasBeenSet;
+}
+
+vector<ComputeDetail> ServiceDetail::GetRoleComputeSet() const
+{
+    return m_roleComputeSet;
+}
+
+void ServiceDetail::SetRoleComputeSet(const vector<ComputeDetail>& _roleComputeSet)
+{
+    m_roleComputeSet = _roleComputeSet;
+    m_roleComputeSetHasBeenSet = true;
+}
+
+bool ServiceDetail::RoleComputeSetHasBeenSet() const
+{
+    return m_roleComputeSetHasBeenSet;
+}
+
+uint64_t ServiceDetail::GetTargetReplicas() const
+{
+    return m_targetReplicas;
+}
+
+void ServiceDetail::SetTargetReplicas(const uint64_t& _targetReplicas)
+{
+    m_targetReplicas = _targetReplicas;
+    m_targetReplicasHasBeenSet = true;
+}
+
+bool ServiceDetail::TargetReplicasHasBeenSet() const
+{
+    return m_targetReplicasHasBeenSet;
 }
 

@@ -27,6 +27,8 @@
 #include <tencentcloud/ga2/v20250115/model/CreateAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateEndpointGroupRequest.h>
 #include <tencentcloud/ga2/v20250115/model/CreateEndpointGroupResponse.h>
+#include <tencentcloud/ga2/v20250115/model/CreateForwardingPolicyRequest.h>
+#include <tencentcloud/ga2/v20250115/model/CreateForwardingPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateForwardingRuleRequest.h>
 #include <tencentcloud/ga2/v20250115/model/CreateForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/ga2/v20250115/model/DeleteAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteEndpointGroupsRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteEndpointGroupsResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteForwardingPolicyRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DeleteForwardingPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteForwardingRuleRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeEndpointGroupsRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeEndpointGroupsResponse.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeForwardingPolicyRequest.h>
+#include <tencentcloud/ga2/v20250115/model/DescribeForwardingPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeForwardingRuleRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorsRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyEndpointGroupRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyEndpointGroupResponse.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyForwardingPolicyRequest.h>
+#include <tencentcloud/ga2/v20250115/model/ModifyForwardingPolicyResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyForwardingRuleRequest.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyForwardingRuleResponse.h>
 #include <tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorRequest.h>
@@ -89,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEndpointGroupResponse> CreateEndpointGroupOutcome;
                 typedef std::future<CreateEndpointGroupOutcome> CreateEndpointGroupOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::CreateEndpointGroupRequest&, CreateEndpointGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEndpointGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateForwardingPolicyResponse> CreateForwardingPolicyOutcome;
+                typedef std::future<CreateForwardingPolicyOutcome> CreateForwardingPolicyOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::CreateForwardingPolicyRequest&, CreateForwardingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardingPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateForwardingRuleResponse> CreateForwardingRuleOutcome;
                 typedef std::future<CreateForwardingRuleOutcome> CreateForwardingRuleOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::CreateForwardingRuleRequest&, CreateForwardingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardingRuleAsyncHandler;
@@ -104,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEndpointGroupsResponse> DeleteEndpointGroupsOutcome;
                 typedef std::future<DeleteEndpointGroupsOutcome> DeleteEndpointGroupsOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteEndpointGroupsRequest&, DeleteEndpointGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndpointGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteForwardingPolicyResponse> DeleteForwardingPolicyOutcome;
+                typedef std::future<DeleteForwardingPolicyOutcome> DeleteForwardingPolicyOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DeleteForwardingPolicyRequest&, DeleteForwardingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardingPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteForwardingRuleResponse> DeleteForwardingRuleOutcome;
                 typedef std::future<DeleteForwardingRuleOutcome> DeleteForwardingRuleOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DeleteForwardingRuleRequest&, DeleteForwardingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardingRuleAsyncHandler;
@@ -125,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEndpointGroupsResponse> DescribeEndpointGroupsOutcome;
                 typedef std::future<DescribeEndpointGroupsOutcome> DescribeEndpointGroupsOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeEndpointGroupsRequest&, DescribeEndpointGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeForwardingPolicyResponse> DescribeForwardingPolicyOutcome;
+                typedef std::future<DescribeForwardingPolicyOutcome> DescribeForwardingPolicyOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::DescribeForwardingPolicyRequest&, DescribeForwardingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardingPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeForwardingRuleResponse> DescribeForwardingRuleOutcome;
                 typedef std::future<DescribeForwardingRuleOutcome> DescribeForwardingRuleOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeForwardingRuleRequest&, DescribeForwardingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardingRuleAsyncHandler;
@@ -143,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEndpointGroupResponse> ModifyEndpointGroupOutcome;
                 typedef std::future<ModifyEndpointGroupOutcome> ModifyEndpointGroupOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyEndpointGroupRequest&, ModifyEndpointGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEndpointGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyForwardingPolicyResponse> ModifyForwardingPolicyOutcome;
+                typedef std::future<ModifyForwardingPolicyOutcome> ModifyForwardingPolicyOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::ModifyForwardingPolicyRequest&, ModifyForwardingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardingPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyForwardingRuleResponse> ModifyForwardingRuleOutcome;
                 typedef std::future<ModifyForwardingRuleOutcome> ModifyForwardingRuleOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::ModifyForwardingRuleRequest&, ModifyForwardingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardingRuleAsyncHandler;
@@ -172,6 +192,15 @@ namespace TencentCloud
                 CreateEndpointGroupOutcome CreateEndpointGroup(const Model::CreateEndpointGroupRequest &request);
                 void CreateEndpointGroupAsync(const Model::CreateEndpointGroupRequest& request, const CreateEndpointGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEndpointGroupOutcomeCallable CreateEndpointGroupCallable(const Model::CreateEndpointGroupRequest& request);
+
+                /**
+                 *创建七层转发策略
+                 * @param req CreateForwardingPolicyRequest
+                 * @return CreateForwardingPolicyOutcome
+                 */
+                CreateForwardingPolicyOutcome CreateForwardingPolicy(const Model::CreateForwardingPolicyRequest &request);
+                void CreateForwardingPolicyAsync(const Model::CreateForwardingPolicyRequest& request, const CreateForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateForwardingPolicyOutcomeCallable CreateForwardingPolicyCallable(const Model::CreateForwardingPolicyRequest& request);
 
                 /**
                  *创建七层转发规则
@@ -217,6 +246,15 @@ namespace TencentCloud
                 DeleteEndpointGroupsOutcome DeleteEndpointGroups(const Model::DeleteEndpointGroupsRequest &request);
                 void DeleteEndpointGroupsAsync(const Model::DeleteEndpointGroupsRequest& request, const DeleteEndpointGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEndpointGroupsOutcomeCallable DeleteEndpointGroupsCallable(const Model::DeleteEndpointGroupsRequest& request);
+
+                /**
+                 *删除七层转发策略
+                 * @param req DeleteForwardingPolicyRequest
+                 * @return DeleteForwardingPolicyOutcome
+                 */
+                DeleteForwardingPolicyOutcome DeleteForwardingPolicy(const Model::DeleteForwardingPolicyRequest &request);
+                void DeleteForwardingPolicyAsync(const Model::DeleteForwardingPolicyRequest& request, const DeleteForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteForwardingPolicyOutcomeCallable DeleteForwardingPolicyCallable(const Model::DeleteForwardingPolicyRequest& request);
 
                 /**
                  *删除七层转发规则
@@ -282,6 +320,15 @@ namespace TencentCloud
                 DescribeEndpointGroupsOutcomeCallable DescribeEndpointGroupsCallable(const Model::DescribeEndpointGroupsRequest& request);
 
                 /**
+                 *查看七层转发策略
+                 * @param req DescribeForwardingPolicyRequest
+                 * @return DescribeForwardingPolicyOutcome
+                 */
+                DescribeForwardingPolicyOutcome DescribeForwardingPolicy(const Model::DescribeForwardingPolicyRequest &request);
+                void DescribeForwardingPolicyAsync(const Model::DescribeForwardingPolicyRequest& request, const DescribeForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeForwardingPolicyOutcomeCallable DescribeForwardingPolicyCallable(const Model::DescribeForwardingPolicyRequest& request);
+
+                /**
                  *查看七层转发规则
                  * @param req DescribeForwardingRuleRequest
                  * @return DescribeForwardingRuleOutcome
@@ -334,6 +381,15 @@ namespace TencentCloud
                 ModifyEndpointGroupOutcome ModifyEndpointGroup(const Model::ModifyEndpointGroupRequest &request);
                 void ModifyEndpointGroupAsync(const Model::ModifyEndpointGroupRequest& request, const ModifyEndpointGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEndpointGroupOutcomeCallable ModifyEndpointGroupCallable(const Model::ModifyEndpointGroupRequest& request);
+
+                /**
+                 *修改七层转发策略
+                 * @param req ModifyForwardingPolicyRequest
+                 * @return ModifyForwardingPolicyOutcome
+                 */
+                ModifyForwardingPolicyOutcome ModifyForwardingPolicy(const Model::ModifyForwardingPolicyRequest &request);
+                void ModifyForwardingPolicyAsync(const Model::ModifyForwardingPolicyRequest& request, const ModifyForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyForwardingPolicyOutcomeCallable ModifyForwardingPolicyCallable(const Model::ModifyForwardingPolicyRequest& request);
 
                 /**
                  *修改七层转发规则

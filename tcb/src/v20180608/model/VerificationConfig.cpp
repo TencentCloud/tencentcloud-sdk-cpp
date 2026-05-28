@@ -24,7 +24,8 @@ VerificationConfig::VerificationConfig() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_smsDayLimitHasBeenSet(false)
+    m_smsDayLimitHasBeenSet(false),
+    m_templateProviderHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome VerificationConfig::Deserialize(const rapidjson::Value &valu
         m_smsDayLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateProvider") && !value["TemplateProvider"].IsNull())
+    {
+        if (!value["TemplateProvider"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VerificationConfig.TemplateProvider` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_templateProvider.Deserialize(value["TemplateProvider"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_templateProviderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void VerificationConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SmsDayLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smsDayLimit, allocator);
+    }
+
+    if (m_templateProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_templateProvider.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void VerificationConfig::SetSmsDayLimit(const int64_t& _smsDayLimit)
 bool VerificationConfig::SmsDayLimitHasBeenSet() const
 {
     return m_smsDayLimitHasBeenSet;
+}
+
+SMSProviderTemplateConfig VerificationConfig::GetTemplateProvider() const
+{
+    return m_templateProvider;
+}
+
+void VerificationConfig::SetTemplateProvider(const SMSProviderTemplateConfig& _templateProvider)
+{
+    m_templateProvider = _templateProvider;
+    m_templateProviderHasBeenSet = true;
+}
+
+bool VerificationConfig::TemplateProviderHasBeenSet() const
+{
+    return m_templateProviderHasBeenSet;
 }
 

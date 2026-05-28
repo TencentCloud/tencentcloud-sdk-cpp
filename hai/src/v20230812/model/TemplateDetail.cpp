@@ -25,7 +25,8 @@ TemplateDetail::TemplateDetail() :
     m_deployModeHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
     m_computeSetHasBeenSet(false),
-    m_supportFuncHasBeenSet(false)
+    m_supportFuncHasBeenSet(false),
+    m_roleComputeSetHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,26 @@ CoreInternalOutcome TemplateDetail::Deserialize(const rapidjson::Value &value)
         m_supportFuncHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleComputeSet") && !value["RoleComputeSet"].IsNull())
+    {
+        if (!value["RoleComputeSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemplateDetail.RoleComputeSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RoleComputeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ComputeDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_roleComputeSet.push_back(item);
+        }
+        m_roleComputeSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +174,21 @@ void TemplateDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         for (auto itr = m_supportFunc.begin(); itr != m_supportFunc.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_roleComputeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleComputeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_roleComputeSet.begin(); itr != m_roleComputeSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -237,5 +273,21 @@ void TemplateDetail::SetSupportFunc(const vector<string>& _supportFunc)
 bool TemplateDetail::SupportFuncHasBeenSet() const
 {
     return m_supportFuncHasBeenSet;
+}
+
+vector<ComputeDetail> TemplateDetail::GetRoleComputeSet() const
+{
+    return m_roleComputeSet;
+}
+
+void TemplateDetail::SetRoleComputeSet(const vector<ComputeDetail>& _roleComputeSet)
+{
+    m_roleComputeSet = _roleComputeSet;
+    m_roleComputeSetHasBeenSet = true;
+}
+
+bool TemplateDetail::RoleComputeSetHasBeenSet() const
+{
+    return m_roleComputeSetHasBeenSet;
 }
 

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`
-                     * @return IdlType 集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`
+                     * 获取<p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>
+                     * @return IdlType <p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>
                      * 
                      */
                     std::string GetIdlType() const;
 
                     /**
-                     * 设置集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`
-                     * @param _idlType 集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`
+                     * 设置<p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>
+                     * @param _idlType <p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>
                      * 
                      */
                     void SetIdlType(const std::string& _idlType);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool IdlTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群名称，可使用中文或英文字符，最大长度32个字符
-                     * @return ClusterName 集群名称，可使用中文或英文字符，最大长度32个字符
+                     * 获取<p>集群名称，可使用中文或英文字符，最大长度32个字符</p>
+                     * @return ClusterName <p>集群名称，可使用中文或英文字符，最大长度32个字符</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称，可使用中文或英文字符，最大长度32个字符
-                     * @param _clusterName 集群名称，可使用中文或英文字符，最大长度32个字符
+                     * 设置<p>集群名称，可使用中文或英文字符，最大长度32个字符</p>
+                     * @param _clusterName <p>集群名称，可使用中文或英文字符，最大长度32个字符</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z
-                     * @return VpcId 集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z
+                     * 获取<p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>
+                     * @return VpcId <p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z
-                     * @param _vpcId 集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z
+                     * 设置<p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>
+                     * @param _vpcId <p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取集群所绑定的子网实例ID，形如：subnet-pxir56ns
-                     * @return SubnetId 集群所绑定的子网实例ID，形如：subnet-pxir56ns
+                     * 获取<p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>
+                     * @return SubnetId <p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置集群所绑定的子网实例ID，形如：subnet-pxir56ns
-                     * @param _subnetId 集群所绑定的子网实例ID，形如：subnet-pxir56ns
+                     * 设置<p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>
+                     * @param _subnetId <p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母
-                     * @return Password 集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母
+                     * 获取<p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>
+                     * @return Password <p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母
-                     * @param _password 集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母
+                     * 设置<p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>
+                     * @param _password <p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取集群标签列表
-                     * @return ResourceTags 集群标签列表
+                     * 获取<p>集群标签列表</p>
+                     * @return ResourceTags <p>集群标签列表</p>
                      * 
                      */
                     std::vector<TagInfoUnit> GetResourceTags() const;
 
                     /**
-                     * 设置集群标签列表
-                     * @param _resourceTags 集群标签列表
+                     * 设置<p>集群标签列表</p>
+                     * @param _resourceTags <p>集群标签列表</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<TagInfoUnit>& _resourceTags);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取集群是否开启IPv6功能
-                     * @return Ipv6Enable 集群是否开启IPv6功能
+                     * 获取<p>集群是否开启IPv6功能</p>
+                     * @return Ipv6Enable <p>集群是否开启IPv6功能</p>
                      * 
                      */
                     int64_t GetIpv6Enable() const;
 
                     /**
-                     * 设置集群是否开启IPv6功能
-                     * @param _ipv6Enable 集群是否开启IPv6功能
+                     * 设置<p>集群是否开启IPv6功能</p>
+                     * @param _ipv6Enable <p>集群是否开启IPv6功能</p>
                      * 
                      */
                     void SetIpv6Enable(const int64_t& _ipv6Enable);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool Ipv6EnableHasBeenSet() const;
 
                     /**
-                     * 获取独占集群占用的svr机器
-                     * @return ServerList 独占集群占用的svr机器
+                     * 获取<p>独占集群占用的svr机器</p>
+                     * @return ServerList <p>独占集群占用的svr机器</p>
                      * 
                      */
                     std::vector<MachineInfo> GetServerList() const;
 
                     /**
-                     * 设置独占集群占用的svr机器
-                     * @param _serverList 独占集群占用的svr机器
+                     * 设置<p>独占集群占用的svr机器</p>
+                     * @param _serverList <p>独占集群占用的svr机器</p>
                      * 
                      */
                     void SetServerList(const std::vector<MachineInfo>& _serverList);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool ServerListHasBeenSet() const;
 
                     /**
-                     * 获取独占集群占用的proxy机器
-                     * @return ProxyList 独占集群占用的proxy机器
+                     * 获取<p>独占集群占用的proxy机器</p>
+                     * @return ProxyList <p>独占集群占用的proxy机器</p>
                      * 
                      */
                     std::vector<MachineInfo> GetProxyList() const;
 
                     /**
-                     * 设置独占集群占用的proxy机器
-                     * @param _proxyList 独占集群占用的proxy机器
+                     * 设置<p>独占集群占用的proxy机器</p>
+                     * @param _proxyList <p>独占集群占用的proxy机器</p>
                      * 
                      */
                     void SetProxyList(const std::vector<MachineInfo>& _proxyList);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool ProxyListHasBeenSet() const;
 
                     /**
-                     * 获取集群类型1共享2独占
-                     * @return ClusterType 集群类型1共享2独占
+                     * 获取<p>集群类型1共享2独占</p>
+                     * @return ClusterType <p>集群类型1共享2独占</p>
                      * 
                      */
                     int64_t GetClusterType() const;
 
                     /**
-                     * 设置集群类型1共享2独占
-                     * @param _clusterType 集群类型1共享2独占
+                     * 设置<p>集群类型1共享2独占</p>
+                     * @param _clusterType <p>集群类型1共享2独占</p>
                      * 
                      */
                     void SetClusterType(const int64_t& _clusterType);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取密码认证类型，0 静态认证， 1 签名认证
-                     * @return AuthType 密码认证类型，0 静态认证， 1 签名认证
+                     * 获取<p>密码认证类型，0 静态认证， 1 签名认证</p>
+                     * @return AuthType <p>密码认证类型，0 静态认证， 1 签名认证</p>
                      * 
                      */
                     int64_t GetAuthType() const;
 
                     /**
-                     * 设置密码认证类型，0 静态认证， 1 签名认证
-                     * @param _authType 密码认证类型，0 静态认证， 1 签名认证
+                     * 设置<p>密码认证类型，0 静态认证， 1 签名认证</p>
+                     * @param _authType <p>密码认证类型，0 静态认证， 1 签名认证</p>
                      * 
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -278,67 +278,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`
+                     * <p>集群数据描述语言类型，统一填<code>MIX</code></p><p>枚举值：</p><ul><li>MIX： 同时支持<code>PROTO</code>，<code>TDR</code>表</li></ul>
                      */
                     std::string m_idlType;
                     bool m_idlTypeHasBeenSet;
 
                     /**
-                     * 集群名称，可使用中文或英文字符，最大长度32个字符
+                     * <p>集群名称，可使用中文或英文字符，最大长度32个字符</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z
+                     * <p>集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 集群所绑定的子网实例ID，形如：subnet-pxir56ns
+                     * <p>集群所绑定的子网实例ID，形如：subnet-pxir56ns</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母
+                     * <p>集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 集群标签列表
+                     * <p>集群标签列表</p>
                      */
                     std::vector<TagInfoUnit> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 集群是否开启IPv6功能
+                     * <p>集群是否开启IPv6功能</p>
                      */
                     int64_t m_ipv6Enable;
                     bool m_ipv6EnableHasBeenSet;
 
                     /**
-                     * 独占集群占用的svr机器
+                     * <p>独占集群占用的svr机器</p>
                      */
                     std::vector<MachineInfo> m_serverList;
                     bool m_serverListHasBeenSet;
 
                     /**
-                     * 独占集群占用的proxy机器
+                     * <p>独占集群占用的proxy机器</p>
                      */
                     std::vector<MachineInfo> m_proxyList;
                     bool m_proxyListHasBeenSet;
 
                     /**
-                     * 集群类型1共享2独占
+                     * <p>集群类型1共享2独占</p>
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 密码认证类型，0 静态认证， 1 签名认证
+                     * <p>密码认证类型，0 静态认证， 1 签名认证</p>
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;

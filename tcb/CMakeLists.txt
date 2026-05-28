@@ -39,6 +39,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DbInstance.h
   include/tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyStorageSourceResponse.h
+  include/tencentcloud/tcb/v20180608/model/SMSProviderTemplateConfig.h
   include/tencentcloud/tcb/v20180608/model/HTTPServicePathRewrite.h
   include/tencentcloud/tcb/v20180608/model/CreateVmInstanceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
@@ -68,7 +69,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeLoginConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
-  include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
+  include/tencentcloud/tcb/v20180608/model/SMSTemplateParams.h
   include/tencentcloud/tcb/v20180608/model/UnbindStorageSourceResponse.h
   include/tencentcloud/tcb/v20180608/model/Pager.h
   include/tencentcloud/tcb/v20180608/model/ModifyLoginConfigRequest.h
@@ -165,6 +166,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
+  include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
   include/tencentcloud/tcb/v20180608/model/Provider.h
   include/tencentcloud/tcb/v20180608/model/DescribeSafeRuleResponse.h
   include/tencentcloud/tcb/v20180608/model/CustomLogConfig.h
@@ -293,6 +295,7 @@ set(tcb_src
   src/v20180608/model/DbInstance.cpp
   src/v20180608/model/DescribeMySQLClusterDetailResponse.cpp
   src/v20180608/model/ModifyStorageSourceResponse.cpp
+  src/v20180608/model/SMSProviderTemplateConfig.cpp
   src/v20180608/model/HTTPServicePathRewrite.cpp
   src/v20180608/model/CreateVmInstanceRequest.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
@@ -322,7 +325,7 @@ set(tcb_src
   src/v20180608/model/DescribeLoginConfigRequest.cpp
   src/v20180608/model/CreateHTTPServiceRouteRequest.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp
-  src/v20180608/model/TkeClusterInfo.cpp
+  src/v20180608/model/SMSTemplateParams.cpp
   src/v20180608/model/UnbindStorageSourceResponse.cpp
   src/v20180608/model/Pager.cpp
   src/v20180608/model/ModifyLoginConfigRequest.cpp
@@ -419,6 +422,7 @@ set(tcb_src
   src/v20180608/model/DeleteUsersRequest.cpp
   src/v20180608/model/DescribeBaasPackageListResponse.cpp
   src/v20180608/model/SearchClsLogResponse.cpp
+  src/v20180608/model/TkeClusterInfo.cpp
   src/v20180608/model/Provider.cpp
   src/v20180608/model/DescribeSafeRuleResponse.cpp
   src/v20180608/model/CustomLogConfig.cpp

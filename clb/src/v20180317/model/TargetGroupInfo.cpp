@@ -39,7 +39,8 @@ TargetGroupInfo::TargetGroupInfo() :
     m_fullListenSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
-    m_ipVersionHasBeenSet(false)
+    m_ipVersionHasBeenSet(false),
+    m_snatEnableHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,16 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_ipVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SnatEnable") && !value["SnatEnable"].IsNull())
+    {
+        if (!value["SnatEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.SnatEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_snatEnable = value["SnatEnable"].GetBool();
+        m_snatEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -437,6 +448,14 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IpVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snatEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnatEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_snatEnable, allocator);
     }
 
 }
@@ -744,5 +763,21 @@ void TargetGroupInfo::SetIpVersion(const string& _ipVersion)
 bool TargetGroupInfo::IpVersionHasBeenSet() const
 {
     return m_ipVersionHasBeenSet;
+}
+
+bool TargetGroupInfo::GetSnatEnable() const
+{
+    return m_snatEnable;
+}
+
+void TargetGroupInfo::SetSnatEnable(const bool& _snatEnable)
+{
+    m_snatEnable = _snatEnable;
+    m_snatEnableHasBeenSet = true;
+}
+
+bool TargetGroupInfo::SnatEnableHasBeenSet() const
+{
+    return m_snatEnableHasBeenSet;
 }
 

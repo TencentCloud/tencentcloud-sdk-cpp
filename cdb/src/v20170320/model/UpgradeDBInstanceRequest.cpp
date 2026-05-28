@@ -42,7 +42,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_roTransTypeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
     m_checkFastUpgradeRebootHasBeenSet(false),
-    m_dataCheckSensitiveHasBeenSet(false)
+    m_dataCheckSensitiveHasBeenSet(false),
+    m_fourthZoneHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "DataCheckSensitive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataCheckSensitive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fourthZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FourthZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fourthZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -540,6 +549,22 @@ void UpgradeDBInstanceRequest::SetDataCheckSensitive(const string& _dataCheckSen
 bool UpgradeDBInstanceRequest::DataCheckSensitiveHasBeenSet() const
 {
     return m_dataCheckSensitiveHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetFourthZone() const
+{
+    return m_fourthZone;
+}
+
+void UpgradeDBInstanceRequest::SetFourthZone(const string& _fourthZone)
+{
+    m_fourthZone = _fourthZone;
+    m_fourthZoneHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::FourthZoneHasBeenSet() const
+{
+    return m_fourthZoneHasBeenSet;
 }
 
 

@@ -463,6 +463,27 @@ namespace TencentCloud
                      */
                     bool DataCheckSensitiveHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>
+                     * @return FourthZone <p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>
+                     * 
+                     */
+                    std::string GetFourthZone() const;
+
+                    /**
+                     * 设置<p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>
+                     * @param _fourthZone <p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>
+                     * 
+                     */
+                    void SetFourthZone(const std::string& _fourthZone);
+
+                    /**
+                     * 判断参数 FourthZone 是否已赋值
+                     * @return FourthZone 是否已赋值
+                     * 
+                     */
+                    bool FourthZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -584,6 +605,12 @@ namespace TencentCloud
                      */
                     std::string m_dataCheckSensitive;
                     bool m_dataCheckSensitiveHasBeenSet;
+
+                    /**
+                     * <p>备库 3 的可用区信息，默认为空，购买四节点主实例时可指定该参数。</p>
+                     */
+                    std::string m_fourthZone;
+                    bool m_fourthZoneHasBeenSet;
 
                 };
             }

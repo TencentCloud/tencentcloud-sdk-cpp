@@ -340,6 +340,56 @@ CynosdbClient::AddLibraDBInstancesOutcomeCallable CynosdbClient::AddLibraDBInsta
     return prom->get_future();
 }
 
+CynosdbClient::AddServerlessRoInstancesOutcome CynosdbClient::AddServerlessRoInstances(const AddServerlessRoInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddServerlessRoInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddServerlessRoInstancesResponse rsp = AddServerlessRoInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddServerlessRoInstancesOutcome(rsp);
+        else
+            return AddServerlessRoInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return AddServerlessRoInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::AddServerlessRoInstancesAsync(const AddServerlessRoInstancesRequest& request, const AddServerlessRoInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddServerlessRoInstancesRequest&;
+    using Resp = AddServerlessRoInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddServerlessRoInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::AddServerlessRoInstancesOutcomeCallable CynosdbClient::AddServerlessRoInstancesCallable(const AddServerlessRoInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddServerlessRoInstancesOutcome>>();
+    AddServerlessRoInstancesAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const AddServerlessRoInstancesRequest&,
+        AddServerlessRoInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::AssociateSecurityGroupsOutcome CynosdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateSecurityGroups");
@@ -5932,6 +5982,56 @@ CynosdbClient::DescribeRollbackTimeRangeOutcomeCallable CynosdbClient::DescribeR
         const CynosdbClient*,
         const DescribeRollbackTimeRangeRequest&,
         DescribeRollbackTimeRangeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeSQLExecutionPlanOutcome CynosdbClient::DescribeSQLExecutionPlan(const DescribeSQLExecutionPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSQLExecutionPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSQLExecutionPlanResponse rsp = DescribeSQLExecutionPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSQLExecutionPlanOutcome(rsp);
+        else
+            return DescribeSQLExecutionPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSQLExecutionPlanOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeSQLExecutionPlanAsync(const DescribeSQLExecutionPlanRequest& request, const DescribeSQLExecutionPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSQLExecutionPlanRequest&;
+    using Resp = DescribeSQLExecutionPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSQLExecutionPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeSQLExecutionPlanOutcomeCallable CynosdbClient::DescribeSQLExecutionPlanCallable(const DescribeSQLExecutionPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSQLExecutionPlanOutcome>>();
+    DescribeSQLExecutionPlanAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeSQLExecutionPlanRequest&,
+        DescribeSQLExecutionPlanOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -43,7 +43,10 @@ CosAuditPayInfo::CosAuditPayInfo() :
     m_isTestUserHasBeenSet(false),
     m_availableBucketNumHasBeenSet(false),
     m_monitorBucketNumHasBeenSet(false),
-    m_totalBucketNumHasBeenSet(false)
+    m_totalBucketNumHasBeenSet(false),
+    m_postProductStatusListHasBeenSet(false),
+    m_postProductBuyStatusListHasBeenSet(false),
+    m_newPostPayResourceIdHasBeenSet(false)
 {
 }
 
@@ -295,6 +298,42 @@ CoreInternalOutcome CosAuditPayInfo::Deserialize(const rapidjson::Value &value)
         m_totalBucketNumHasBeenSet = true;
     }
 
+    if (value.HasMember("PostProductStatusList") && !value["PostProductStatusList"].IsNull())
+    {
+        if (!value["PostProductStatusList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosAuditPayInfo.PostProductStatusList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PostProductStatusList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_postProductStatusList.push_back((*itr).GetUint64());
+        }
+        m_postProductStatusListHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostProductBuyStatusList") && !value["PostProductBuyStatusList"].IsNull())
+    {
+        if (!value["PostProductBuyStatusList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosAuditPayInfo.PostProductBuyStatusList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PostProductBuyStatusList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_postProductBuyStatusList.push_back((*itr).GetUint64());
+        }
+        m_postProductBuyStatusListHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewPostPayResourceId") && !value["NewPostPayResourceId"].IsNull())
+    {
+        if (!value["NewPostPayResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosAuditPayInfo.NewPostPayResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newPostPayResourceId = string(value["NewPostPayResourceId"].GetString());
+        m_newPostPayResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +535,40 @@ void CosAuditPayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TotalBucketNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalBucketNum, allocator);
+    }
+
+    if (m_postProductStatusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostProductStatusList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_postProductStatusList.begin(); itr != m_postProductStatusList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_postProductBuyStatusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostProductBuyStatusList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_postProductBuyStatusList.begin(); itr != m_postProductBuyStatusList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_newPostPayResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewPostPayResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newPostPayResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -867,5 +940,53 @@ void CosAuditPayInfo::SetTotalBucketNum(const uint64_t& _totalBucketNum)
 bool CosAuditPayInfo::TotalBucketNumHasBeenSet() const
 {
     return m_totalBucketNumHasBeenSet;
+}
+
+vector<uint64_t> CosAuditPayInfo::GetPostProductStatusList() const
+{
+    return m_postProductStatusList;
+}
+
+void CosAuditPayInfo::SetPostProductStatusList(const vector<uint64_t>& _postProductStatusList)
+{
+    m_postProductStatusList = _postProductStatusList;
+    m_postProductStatusListHasBeenSet = true;
+}
+
+bool CosAuditPayInfo::PostProductStatusListHasBeenSet() const
+{
+    return m_postProductStatusListHasBeenSet;
+}
+
+vector<uint64_t> CosAuditPayInfo::GetPostProductBuyStatusList() const
+{
+    return m_postProductBuyStatusList;
+}
+
+void CosAuditPayInfo::SetPostProductBuyStatusList(const vector<uint64_t>& _postProductBuyStatusList)
+{
+    m_postProductBuyStatusList = _postProductBuyStatusList;
+    m_postProductBuyStatusListHasBeenSet = true;
+}
+
+bool CosAuditPayInfo::PostProductBuyStatusListHasBeenSet() const
+{
+    return m_postProductBuyStatusListHasBeenSet;
+}
+
+string CosAuditPayInfo::GetNewPostPayResourceId() const
+{
+    return m_newPostPayResourceId;
+}
+
+void CosAuditPayInfo::SetNewPostPayResourceId(const string& _newPostPayResourceId)
+{
+    m_newPostPayResourceId = _newPostPayResourceId;
+    m_newPostPayResourceIdHasBeenSet = true;
+}
+
+bool CosAuditPayInfo::NewPostPayResourceIdHasBeenSet() const
+{
+    return m_newPostPayResourceIdHasBeenSet;
 }
 

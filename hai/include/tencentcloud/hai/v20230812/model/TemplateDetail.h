@@ -152,6 +152,27 @@ namespace TencentCloud
                      */
                     bool SupportFuncHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return RoleComputeSet 
+                     * 
+                     */
+                    std::vector<ComputeDetail> GetRoleComputeSet() const;
+
+                    /**
+                     * 设置
+                     * @param _roleComputeSet 
+                     * 
+                     */
+                    void SetRoleComputeSet(const std::vector<ComputeDetail>& _roleComputeSet);
+
+                    /**
+                     * 判断参数 RoleComputeSet 是否已赋值
+                     * @return RoleComputeSet 是否已赋值
+                     * 
+                     */
+                    bool RoleComputeSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +204,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_supportFunc;
                     bool m_supportFuncHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::vector<ComputeDetail> m_roleComputeSet;
+                    bool m_roleComputeSetHasBeenSet;
 
                 };
             }

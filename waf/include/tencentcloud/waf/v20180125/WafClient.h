@@ -2037,7 +2037,7 @@ namespace TencentCloud
                 DescribeModuleStatusOutcomeCallable DescribeModuleStatusCallable(const Model::DescribeModuleStatusRequest& request);
 
                 /**
-                 *查看防护对象列表
+                 *查看CLB/TSE防护对象列表
                  * @param req DescribeObjectsRequest
                  * @return DescribeObjectsOutcome
                  */

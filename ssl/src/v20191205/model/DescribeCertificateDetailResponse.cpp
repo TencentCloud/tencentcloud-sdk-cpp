@@ -68,7 +68,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_certChainInfoHasBeenSet(false),
     m_domainTypeHasBeenSet(false),
     m_certTypeHasBeenSet(false),
-    m_useCrossSignRootHasBeenSet(false)
+    m_useCrossSignRootHasBeenSet(false),
+    m_hostingStatusHasBeenSet(false)
 {
 }
 
@@ -617,6 +618,16 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_useCrossSignRootHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostingStatus") && !rsp["HostingStatus"].IsNull())
+    {
+        if (!rsp["HostingStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostingStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostingStatus = rsp["HostingStatus"].GetInt64();
+        m_hostingStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1015,6 +1026,14 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         string key = "UseCrossSignRoot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useCrossSignRoot, allocator);
+    }
+
+    if (m_hostingStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostingStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostingStatus, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1477,6 +1496,16 @@ bool DescribeCertificateDetailResponse::GetUseCrossSignRoot() const
 bool DescribeCertificateDetailResponse::UseCrossSignRootHasBeenSet() const
 {
     return m_useCrossSignRootHasBeenSet;
+}
+
+int64_t DescribeCertificateDetailResponse::GetHostingStatus() const
+{
+    return m_hostingStatus;
+}
+
+bool DescribeCertificateDetailResponse::HostingStatusHasBeenSet() const
+{
+    return m_hostingStatusHasBeenSet;
 }
 
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddLibraDBInstancesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddServerlessRoInstancesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddServerlessRoInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h>
@@ -259,6 +261,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSQLExecutionPlanRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSQLExecutionPlanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSaveBackupClustersRequest.h>
@@ -509,6 +513,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddLibraDBInstancesResponse> AddLibraDBInstancesOutcome;
                 typedef std::future<AddLibraDBInstancesOutcome> AddLibraDBInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AddLibraDBInstancesRequest&, AddLibraDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLibraDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddServerlessRoInstancesResponse> AddServerlessRoInstancesOutcome;
+                typedef std::future<AddServerlessRoInstancesOutcome> AddServerlessRoInstancesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::AddServerlessRoInstancesRequest&, AddServerlessRoInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddServerlessRoInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -845,6 +852,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeRangeResponse> DescribeRollbackTimeRangeOutcome;
                 typedef std::future<DescribeRollbackTimeRangeOutcome> DescribeRollbackTimeRangeOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRollbackTimeRangeRequest&, DescribeRollbackTimeRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeRangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSQLExecutionPlanResponse> DescribeSQLExecutionPlanOutcome;
+                typedef std::future<DescribeSQLExecutionPlanOutcome> DescribeSQLExecutionPlanOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeSQLExecutionPlanRequest&, DescribeSQLExecutionPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExecutionPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
                 typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
@@ -1228,6 +1238,15 @@ namespace TencentCloud
                 AddLibraDBInstancesOutcome AddLibraDBInstances(const Model::AddLibraDBInstancesRequest &request);
                 void AddLibraDBInstancesAsync(const Model::AddLibraDBInstancesRequest& request, const AddLibraDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddLibraDBInstancesOutcomeCallable AddLibraDBInstancesCallable(const Model::AddLibraDBInstancesRequest& request);
+
+                /**
+                 *添加serverless集群只读实例
+                 * @param req AddServerlessRoInstancesRequest
+                 * @return AddServerlessRoInstancesOutcome
+                 */
+                AddServerlessRoInstancesOutcome AddServerlessRoInstances(const Model::AddServerlessRoInstancesRequest &request);
+                void AddServerlessRoInstancesAsync(const Model::AddServerlessRoInstancesRequest& request, const AddServerlessRoInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddServerlessRoInstancesOutcomeCallable AddServerlessRoInstancesCallable(const Model::AddServerlessRoInstancesRequest& request);
 
                 /**
                  *本接口（AssociateSecurityGroups）用于安全组批量绑定云资源。
@@ -2236,6 +2255,15 @@ namespace TencentCloud
                 DescribeRollbackTimeRangeOutcome DescribeRollbackTimeRange(const Model::DescribeRollbackTimeRangeRequest &request);
                 void DescribeRollbackTimeRangeAsync(const Model::DescribeRollbackTimeRangeRequest& request, const DescribeRollbackTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRollbackTimeRangeOutcomeCallable DescribeRollbackTimeRangeCallable(const Model::DescribeRollbackTimeRangeRequest& request);
+
+                /**
+                 *本接口(DescribeSQLExecutionPlan)用于查询执行计划详情
+                 * @param req DescribeSQLExecutionPlanRequest
+                 * @return DescribeSQLExecutionPlanOutcome
+                 */
+                DescribeSQLExecutionPlanOutcome DescribeSQLExecutionPlan(const Model::DescribeSQLExecutionPlanRequest &request);
+                void DescribeSQLExecutionPlanAsync(const Model::DescribeSQLExecutionPlanRequest& request, const DescribeSQLExecutionPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSQLExecutionPlanOutcomeCallable DescribeSQLExecutionPlanCallable(const Model::DescribeSQLExecutionPlanRequest& request);
 
                 /**
                  *查询实例SSL状态

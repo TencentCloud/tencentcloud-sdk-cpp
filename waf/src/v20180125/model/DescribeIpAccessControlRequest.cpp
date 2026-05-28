@@ -39,7 +39,8 @@ DescribeIpAccessControlRequest::DescribeIpAccessControlRequest() :
     m_validTimeStampMinHasBeenSet(false),
     m_validTimeStampMaxHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_timerTypeHasBeenSet(false)
+    m_timerTypeHasBeenSet(false),
+    m_ipListHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,19 @@ string DescribeIpAccessControlRequest::ToJsonString() const
         string key = "TimerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timerType, allocator);
+    }
+
+    if (m_ipListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -464,6 +478,22 @@ void DescribeIpAccessControlRequest::SetTimerType(const int64_t& _timerType)
 bool DescribeIpAccessControlRequest::TimerTypeHasBeenSet() const
 {
     return m_timerTypeHasBeenSet;
+}
+
+vector<string> DescribeIpAccessControlRequest::GetIpList() const
+{
+    return m_ipList;
+}
+
+void DescribeIpAccessControlRequest::SetIpList(const vector<string>& _ipList)
+{
+    m_ipList = _ipList;
+    m_ipListHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::IpListHasBeenSet() const
+{
+    return m_ipListHasBeenSet;
 }
 
 

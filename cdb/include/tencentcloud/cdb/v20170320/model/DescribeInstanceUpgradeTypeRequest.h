@@ -317,6 +317,27 @@ namespace TencentCloud
                      */
                     bool ClusterTopologyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>目标实例备机3可用区 ID。可使用 <a href="https://cloud.tencent.com/document/product/236/80281">DescribeCdbZoneConfig</a> 获取可用区 ID。</p>
+                     * @return DstFourthZone <p>目标实例备机3可用区 ID。可使用 <a href="https://cloud.tencent.com/document/product/236/80281">DescribeCdbZoneConfig</a> 获取可用区 ID。</p>
+                     * 
+                     */
+                    int64_t GetDstFourthZone() const;
+
+                    /**
+                     * 设置<p>目标实例备机3可用区 ID。可使用 <a href="https://cloud.tencent.com/document/product/236/80281">DescribeCdbZoneConfig</a> 获取可用区 ID。</p>
+                     * @param _dstFourthZone <p>目标实例备机3可用区 ID。可使用 <a href="https://cloud.tencent.com/document/product/236/80281">DescribeCdbZoneConfig</a> 获取可用区 ID。</p>
+                     * 
+                     */
+                    void SetDstFourthZone(const int64_t& _dstFourthZone);
+
+                    /**
+                     * 判断参数 DstFourthZone 是否已赋值
+                     * @return DstFourthZone 是否已赋值
+                     * 
+                     */
+                    bool DstFourthZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +417,12 @@ namespace TencentCloud
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
+
+                    /**
+                     * <p>目标实例备机3可用区 ID。可使用 <a href="https://cloud.tencent.com/document/product/236/80281">DescribeCdbZoneConfig</a> 获取可用区 ID。</p>
+                     */
+                    int64_t m_dstFourthZone;
+                    bool m_dstFourthZoneHasBeenSet;
 
                 };
             }

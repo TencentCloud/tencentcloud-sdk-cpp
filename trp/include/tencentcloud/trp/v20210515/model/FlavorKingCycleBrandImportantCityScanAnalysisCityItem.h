@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool LastCycleRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>上周期口味王牌市场份额</p>
-                     * @return LastCycleMarketShare <p>上周期口味王牌市场份额</p>
+                     * 获取<p>上周期口味王品牌市场份额</p>
+                     * @return LastCycleMarketShare <p>上周期口味王品牌市场份额</p>
                      * 
                      */
                     double GetLastCycleMarketShare() const;
 
                     /**
-                     * 设置<p>上周期口味王牌市场份额</p>
-                     * @param _lastCycleMarketShare <p>上周期口味王牌市场份额</p>
+                     * 设置<p>上周期口味王品牌市场份额</p>
+                     * @param _lastCycleMarketShare <p>上周期口味王品牌市场份额</p>
                      * 
                      */
                     void SetLastCycleMarketShare(const double& _lastCycleMarketShare);
@@ -284,7 +284,7 @@ namespace TencentCloud
                     bool m_lastCycleRatioHasBeenSet;
 
                     /**
-                     * <p>上周期口味王牌市场份额</p>
+                     * <p>上周期口味王品牌市场份额</p>
                      */
                     double m_lastCycleMarketShare;
                     bool m_lastCycleMarketShareHasBeenSet;

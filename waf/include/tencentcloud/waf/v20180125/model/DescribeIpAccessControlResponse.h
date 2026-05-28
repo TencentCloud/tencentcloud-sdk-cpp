@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出
-                     * @return Data 输出
+                     * 获取<p>输出</p>
+                     * @return Data <p>输出</p>
                      * 
                      */
                     IpAccessControlData GetData() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取已经使用的IP黑白名单的IP总数
-                     * @return UsedTotal 已经使用的IP黑白名单的IP总数
+                     * 获取<p>已经使用的IP黑白名单的IP总数</p>
+                     * @return UsedTotal <p>已经使用的IP黑白名单的IP总数</p>
                      * 
                      */
                     uint64_t GetUsedTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输出
+                     * <p>输出</p>
                      */
                     IpAccessControlData m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 已经使用的IP黑白名单的IP总数
+                     * <p>已经使用的IP黑白名单的IP总数</p>
                      */
                     uint64_t m_usedTotal;
                     bool m_usedTotalHasBeenSet;

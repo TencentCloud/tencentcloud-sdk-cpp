@@ -472,6 +472,27 @@ namespace TencentCloud
                      */
                     bool IpVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启SNAT</p>
+                     * @return SnatEnable <p>是否开启SNAT</p>
+                     * 
+                     */
+                    bool GetSnatEnable() const;
+
+                    /**
+                     * 设置<p>是否开启SNAT</p>
+                     * @param _snatEnable <p>是否开启SNAT</p>
+                     * 
+                     */
+                    void SetSnatEnable(const bool& _snatEnable);
+
+                    /**
+                     * 判断参数 SnatEnable 是否已赋值
+                     * @return SnatEnable 是否已赋值
+                     * 
+                     */
+                    bool SnatEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +614,12 @@ namespace TencentCloud
                      */
                     std::string m_ipVersion;
                     bool m_ipVersionHasBeenSet;
+
+                    /**
+                     * <p>是否开启SNAT</p>
+                     */
+                    bool m_snatEnable;
+                    bool m_snatEnableHasBeenSet;
 
                 };
             }

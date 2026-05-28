@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名，当操作对象为全局规则时，Domain参数应填写为"global"
-                     * @return Domain 域名，当操作对象为全局规则时，Domain参数应填写为"global"
+                     * 获取<p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>
+                     * @return Domain <p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名，当操作对象为全局规则时，Domain参数应填写为"global"
-                     * @param _domain 域名，当操作对象为全局规则时，Domain参数应填写为"global"
+                     * 设置<p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>
+                     * @param _domain <p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取计数标识
-                     * @return Count 计数标识
+                     * 获取<p>计数标识</p>
+                     * @return Count <p>计数标识</p>
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置计数标识
-                     * @param _count 计数标识
+                     * 设置<p>计数标识</p>
+                     * @param _count <p>计数标识</p>
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取动作，40表示查询白名单，42表示查询黑名单
-                     * @return ActionType 动作，40表示查询白名单，42表示查询黑名单
+                     * 获取<p>动作，40表示查询白名单，42表示查询黑名单</p>
+                     * @return ActionType <p>动作，40表示查询白名单，42表示查询黑名单</p>
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置动作，40表示查询白名单，42表示查询黑名单
-                     * @param _actionType 动作，40表示查询白名单，42表示查询黑名单
+                     * 设置<p>动作，40表示查询白名单，42表示查询黑名单</p>
+                     * @param _actionType <p>动作，40表示查询白名单，42表示查询黑名单</p>
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取最小有效时间的时间戳
-                     * @return VtsMin 最小有效时间的时间戳
+                     * 获取<p>最小有效时间的时间戳</p>
+                     * @return VtsMin <p>最小有效时间的时间戳</p>
                      * @deprecated
                      */
                     uint64_t GetVtsMin() const;
 
                     /**
-                     * 设置最小有效时间的时间戳
-                     * @param _vtsMin 最小有效时间的时间戳
+                     * 设置<p>最小有效时间的时间戳</p>
+                     * @param _vtsMin <p>最小有效时间的时间戳</p>
                      * @deprecated
                      */
                     void SetVtsMin(const uint64_t& _vtsMin);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool VtsMinHasBeenSet() const;
 
                     /**
-                     * 获取最大有效时间的时间戳
-                     * @return VtsMax 最大有效时间的时间戳
+                     * 获取<p>最大有效时间的时间戳</p>
+                     * @return VtsMax <p>最大有效时间的时间戳</p>
                      * @deprecated
                      */
                     uint64_t GetVtsMax() const;
 
                     /**
-                     * 设置最大有效时间的时间戳
-                     * @param _vtsMax 最大有效时间的时间戳
+                     * 设置<p>最大有效时间的时间戳</p>
+                     * @param _vtsMax <p>最大有效时间的时间戳</p>
                      * @deprecated
                      */
                     void SetVtsMax(const uint64_t& _vtsMax);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool VtsMaxHasBeenSet() const;
 
                     /**
-                     * 获取最小创建时间的时间戳
-                     * @return CtsMin 最小创建时间的时间戳
+                     * 获取<p>最小创建时间的时间戳</p>
+                     * @return CtsMin <p>最小创建时间的时间戳</p>
                      * 
                      */
                     uint64_t GetCtsMin() const;
 
                     /**
-                     * 设置最小创建时间的时间戳
-                     * @param _ctsMin 最小创建时间的时间戳
+                     * 设置<p>最小创建时间的时间戳</p>
+                     * @param _ctsMin <p>最小创建时间的时间戳</p>
                      * 
                      */
                     void SetCtsMin(const uint64_t& _ctsMin);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CtsMinHasBeenSet() const;
 
                     /**
-                     * 获取最大创建时间的时间戳
-                     * @return CtsMax 最大创建时间的时间戳
+                     * 获取<p>最大创建时间的时间戳</p>
+                     * @return CtsMax <p>最大创建时间的时间戳</p>
                      * 
                      */
                     uint64_t GetCtsMax() const;
 
                     /**
-                     * 设置最大创建时间的时间戳
-                     * @param _ctsMax 最大创建时间的时间戳
+                     * 设置<p>最大创建时间的时间戳</p>
+                     * @param _ctsMax <p>最大创建时间的时间戳</p>
                      * 
                      */
                     void SetCtsMax(const uint64_t& _ctsMax);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool CtsMaxHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
-                     * @return OffSet 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * 获取<p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>
+                     * @return OffSet <p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>
                      * 
                      */
                     uint64_t GetOffSet() const;
 
                     /**
-                     * 设置分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
-                     * @param _offSet 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * 设置<p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>
+                     * @param _offSet <p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>
                      * 
                      */
                     void SetOffSet(const uint64_t& _offSet);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffSetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回的数量，默认为20
-                     * @return Limit 每页返回的数量，默认为20
+                     * 获取<p>每页返回的数量，默认为20</p>
+                     * @return Limit <p>每页返回的数量，默认为20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页返回的数量，默认为20
-                     * @param _limit 每页返回的数量，默认为20
+                     * 设置<p>每页返回的数量，默认为20</p>
+                     * @param _limit <p>每页返回的数量，默认为20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 "" (空字符串)	，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则
-                     * @return Source 用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 "" (空字符串)	，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则
+                     * 获取<p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>
+                     * @return Source <p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 "" (空字符串)	，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则
-                     * @param _source 用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 "" (空字符串)	，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则
+                     * 设置<p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>
+                     * @param _source <p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取排序参数
-                     * @return Sort 排序参数
+                     * 获取<p>排序参数</p>
+                     * @return Sort <p>排序参数</p>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序参数
-                     * @param _sort 排序参数
+                     * 设置<p>排序参数</p>
+                     * @param _sort <p>排序参数</p>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取IP
-                     * @return Ip IP
+                     * 获取<p>IP</p>
+                     * @return Ip <p>IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP
-                     * @param _ip IP
+                     * 设置<p>IP</p>
+                     * @param _ip <p>IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取生效状态，1表示生效中，2表示过期，0表示全部
-                     * @return ValidStatus 生效状态，1表示生效中，2表示过期，0表示全部
+                     * 获取<p>生效状态，1表示生效中，2表示过期，0表示全部</p>
+                     * @return ValidStatus <p>生效状态，1表示生效中，2表示过期，0表示全部</p>
                      * 
                      */
                     int64_t GetValidStatus() const;
 
                     /**
-                     * 设置生效状态，1表示生效中，2表示过期，0表示全部
-                     * @param _validStatus 生效状态，1表示生效中，2表示过期，0表示全部
+                     * 设置<p>生效状态，1表示生效中，2表示过期，0表示全部</p>
+                     * @param _validStatus <p>生效状态，1表示生效中，2表示过期，0表示全部</p>
                      * 
                      */
                     void SetValidStatus(const int64_t& _validStatus);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool ValidStatusHasBeenSet() const;
 
                     /**
-                     * 获取最小有效时间的时间戳
-                     * @return ValidTimeStampMin 最小有效时间的时间戳
+                     * 获取<p>最小有效时间的时间戳</p>
+                     * @return ValidTimeStampMin <p>最小有效时间的时间戳</p>
                      * 
                      */
                     std::string GetValidTimeStampMin() const;
 
                     /**
-                     * 设置最小有效时间的时间戳
-                     * @param _validTimeStampMin 最小有效时间的时间戳
+                     * 设置<p>最小有效时间的时间戳</p>
+                     * @param _validTimeStampMin <p>最小有效时间的时间戳</p>
                      * 
                      */
                     void SetValidTimeStampMin(const std::string& _validTimeStampMin);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool ValidTimeStampMinHasBeenSet() const;
 
                     /**
-                     * 获取最大有效时间的时间戳
-                     * @return ValidTimeStampMax 最大有效时间的时间戳
+                     * 获取<p>最大有效时间的时间戳</p>
+                     * @return ValidTimeStampMax <p>最大有效时间的时间戳</p>
                      * 
                      */
                     std::string GetValidTimeStampMax() const;
 
                     /**
-                     * 设置最大有效时间的时间戳
-                     * @param _validTimeStampMax 最大有效时间的时间戳
+                     * 设置<p>最大有效时间的时间戳</p>
+                     * @param _validTimeStampMax <p>最大有效时间的时间戳</p>
                      * 
                      */
                     void SetValidTimeStampMax(const std::string& _validTimeStampMax);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool ValidTimeStampMaxHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleId <p>规则ID</p>
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
-                     * @return TimerType 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
+                     * 获取<p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>
+                     * @return TimerType <p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>
                      * 
                      */
                     int64_t GetTimerType() const;
 
                     /**
-                     * 设置0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
-                     * @param _timerType 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
+                     * 设置<p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>
+                     * @param _timerType <p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>
                      * 
                      */
                     void SetTimerType(const int64_t& _timerType);
@@ -399,109 +399,136 @@ namespace TencentCloud
                      */
                     bool TimerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询的ip列表</p>
+                     * @return IpList <p>查询的ip列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIpList() const;
+
+                    /**
+                     * 设置<p>查询的ip列表</p>
+                     * @param _ipList <p>查询的ip列表</p>
+                     * 
+                     */
+                    void SetIpList(const std::vector<std::string>& _ipList);
+
+                    /**
+                     * 判断参数 IpList 是否已赋值
+                     * @return IpList 是否已赋值
+                     * 
+                     */
+                    bool IpListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名，当操作对象为全局规则时，Domain参数应填写为"global"
+                     * <p>域名，当操作对象为全局规则时，Domain参数应填写为&quot;global&quot;</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 计数标识
+                     * <p>计数标识</p>
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 动作，40表示查询白名单，42表示查询黑名单
+                     * <p>动作，40表示查询白名单，42表示查询黑名单</p>
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 最小有效时间的时间戳
+                     * <p>最小有效时间的时间戳</p>
                      */
                     uint64_t m_vtsMin;
                     bool m_vtsMinHasBeenSet;
 
                     /**
-                     * 最大有效时间的时间戳
+                     * <p>最大有效时间的时间戳</p>
                      */
                     uint64_t m_vtsMax;
                     bool m_vtsMaxHasBeenSet;
 
                     /**
-                     * 最小创建时间的时间戳
+                     * <p>最小创建时间的时间戳</p>
                      */
                     uint64_t m_ctsMin;
                     bool m_ctsMinHasBeenSet;
 
                     /**
-                     * 最大创建时间的时间戳
+                     * <p>最大创建时间的时间戳</p>
                      */
                     uint64_t m_ctsMax;
                     bool m_ctsMaxHasBeenSet;
 
                     /**
-                     * 分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整
+                     * <p>分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整</p>
                      */
                     uint64_t m_offSet;
                     bool m_offSetHasBeenSet;
 
                     /**
-                     * 每页返回的数量，默认为20
+                     * <p>每页返回的数量，默认为20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 "" (空字符串)	，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则
+                     * <p>用于按数据来源过滤黑白名单记录，非必填（默认为空字符串，表示不过滤/查询全部）。 &quot;&quot; (空字符串)    ，不按来源过滤，返回所有记录（默认值） custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护    ），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则 batch-group（防护对象组），防护对象组维度添加的黑白名单规则</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 排序参数
+                     * <p>排序参数</p>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * IP
+                     * <p>IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 生效状态，1表示生效中，2表示过期，0表示全部
+                     * <p>生效状态，1表示生效中，2表示过期，0表示全部</p>
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
 
                     /**
-                     * 最小有效时间的时间戳
+                     * <p>最小有效时间的时间戳</p>
                      */
                     std::string m_validTimeStampMin;
                     bool m_validTimeStampMinHasBeenSet;
 
                     /**
-                     * 最大有效时间的时间戳
+                     * <p>最大有效时间的时间戳</p>
                      */
                     std::string m_validTimeStampMax;
                     bool m_validTimeStampMaxHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效
+                     * <p>0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效</p>
                      */
                     int64_t m_timerType;
                     bool m_timerTypeHasBeenSet;
+
+                    /**
+                     * <p>查询的ip列表</p>
+                     */
+                    std::vector<std::string> m_ipList;
+                    bool m_ipListHasBeenSet;
 
                 };
             }

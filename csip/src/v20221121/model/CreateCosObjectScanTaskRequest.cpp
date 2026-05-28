@@ -25,7 +25,10 @@ using namespace std;
 CreateCosObjectScanTaskRequest::CreateCosObjectScanTaskRequest() :
     m_taskTypeHasBeenSet(false),
     m_memberIdHasBeenSet(false),
-    m_bucketSetHasBeenSet(false)
+    m_bucketSetHasBeenSet(false),
+    m_taskArgsHasBeenSet(false),
+    m_isScanAllHasBeenSet(false),
+    m_deleteBucketSetHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,35 @@ string CreateCosObjectScanTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_bucketSet.begin(); itr != m_bucketSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isScanAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsScanAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isScanAll, allocator);
+    }
+
+    if (m_deleteBucketSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteBucketSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deleteBucketSet.begin(); itr != m_deleteBucketSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -124,6 +156,54 @@ void CreateCosObjectScanTaskRequest::SetBucketSet(const vector<string>& _bucketS
 bool CreateCosObjectScanTaskRequest::BucketSetHasBeenSet() const
 {
     return m_bucketSetHasBeenSet;
+}
+
+string CreateCosObjectScanTaskRequest::GetTaskArgs() const
+{
+    return m_taskArgs;
+}
+
+void CreateCosObjectScanTaskRequest::SetTaskArgs(const string& _taskArgs)
+{
+    m_taskArgs = _taskArgs;
+    m_taskArgsHasBeenSet = true;
+}
+
+bool CreateCosObjectScanTaskRequest::TaskArgsHasBeenSet() const
+{
+    return m_taskArgsHasBeenSet;
+}
+
+bool CreateCosObjectScanTaskRequest::GetIsScanAll() const
+{
+    return m_isScanAll;
+}
+
+void CreateCosObjectScanTaskRequest::SetIsScanAll(const bool& _isScanAll)
+{
+    m_isScanAll = _isScanAll;
+    m_isScanAllHasBeenSet = true;
+}
+
+bool CreateCosObjectScanTaskRequest::IsScanAllHasBeenSet() const
+{
+    return m_isScanAllHasBeenSet;
+}
+
+vector<string> CreateCosObjectScanTaskRequest::GetDeleteBucketSet() const
+{
+    return m_deleteBucketSet;
+}
+
+void CreateCosObjectScanTaskRequest::SetDeleteBucketSet(const vector<string>& _deleteBucketSet)
+{
+    m_deleteBucketSet = _deleteBucketSet;
+    m_deleteBucketSetHasBeenSet = true;
+}
+
+bool CreateCosObjectScanTaskRequest::DeleteBucketSetHasBeenSet() const
+{
+    return m_deleteBucketSetHasBeenSet;
 }
 
 

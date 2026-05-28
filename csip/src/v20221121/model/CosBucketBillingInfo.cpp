@@ -30,7 +30,11 @@ CosBucketBillingInfo::CosBucketBillingInfo() :
     m_shareFromUinHasBeenSet(false),
     m_shareFromNickNameHasBeenSet(false),
     m_monitorBucketCountHasBeenSet(false),
-    m_isAutoMonitorHasBeenSet(false)
+    m_isAutoMonitorHasBeenSet(false),
+    m_logFeatureWhitelistHasBeenSet(false),
+    m_isHaveNewPostOrderHasBeenSet(false),
+    m_isHaveOldPostOrderHasBeenSet(false),
+    m_postProductListHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,49 @@ CoreInternalOutcome CosBucketBillingInfo::Deserialize(const rapidjson::Value &va
         m_isAutoMonitorHasBeenSet = true;
     }
 
+    if (value.HasMember("LogFeatureWhitelist") && !value["LogFeatureWhitelist"].IsNull())
+    {
+        if (!value["LogFeatureWhitelist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.LogFeatureWhitelist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_logFeatureWhitelist = value["LogFeatureWhitelist"].GetBool();
+        m_logFeatureWhitelistHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsHaveNewPostOrder") && !value["IsHaveNewPostOrder"].IsNull())
+    {
+        if (!value["IsHaveNewPostOrder"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.IsHaveNewPostOrder` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHaveNewPostOrder = value["IsHaveNewPostOrder"].GetBool();
+        m_isHaveNewPostOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsHaveOldPostOrder") && !value["IsHaveOldPostOrder"].IsNull())
+    {
+        if (!value["IsHaveOldPostOrder"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.IsHaveOldPostOrder` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHaveOldPostOrder = value["IsHaveOldPostOrder"].GetBool();
+        m_isHaveOldPostOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostProductList") && !value["PostProductList"].IsNull())
+    {
+        if (!value["PostProductList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosBucketBillingInfo.PostProductList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PostProductList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_postProductList.push_back((*itr).GetInt64());
+        }
+        m_postProductListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +271,43 @@ void CosBucketBillingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsAutoMonitor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAutoMonitor, allocator);
+    }
+
+    if (m_logFeatureWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFeatureWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logFeatureWhitelist, allocator);
+    }
+
+    if (m_isHaveNewPostOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHaveNewPostOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isHaveNewPostOrder, allocator);
+    }
+
+    if (m_isHaveOldPostOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHaveOldPostOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isHaveOldPostOrder, allocator);
+    }
+
+    if (m_postProductListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostProductList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_postProductList.begin(); itr != m_postProductList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -387,5 +471,69 @@ void CosBucketBillingInfo::SetIsAutoMonitor(const uint64_t& _isAutoMonitor)
 bool CosBucketBillingInfo::IsAutoMonitorHasBeenSet() const
 {
     return m_isAutoMonitorHasBeenSet;
+}
+
+bool CosBucketBillingInfo::GetLogFeatureWhitelist() const
+{
+    return m_logFeatureWhitelist;
+}
+
+void CosBucketBillingInfo::SetLogFeatureWhitelist(const bool& _logFeatureWhitelist)
+{
+    m_logFeatureWhitelist = _logFeatureWhitelist;
+    m_logFeatureWhitelistHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::LogFeatureWhitelistHasBeenSet() const
+{
+    return m_logFeatureWhitelistHasBeenSet;
+}
+
+bool CosBucketBillingInfo::GetIsHaveNewPostOrder() const
+{
+    return m_isHaveNewPostOrder;
+}
+
+void CosBucketBillingInfo::SetIsHaveNewPostOrder(const bool& _isHaveNewPostOrder)
+{
+    m_isHaveNewPostOrder = _isHaveNewPostOrder;
+    m_isHaveNewPostOrderHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::IsHaveNewPostOrderHasBeenSet() const
+{
+    return m_isHaveNewPostOrderHasBeenSet;
+}
+
+bool CosBucketBillingInfo::GetIsHaveOldPostOrder() const
+{
+    return m_isHaveOldPostOrder;
+}
+
+void CosBucketBillingInfo::SetIsHaveOldPostOrder(const bool& _isHaveOldPostOrder)
+{
+    m_isHaveOldPostOrder = _isHaveOldPostOrder;
+    m_isHaveOldPostOrderHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::IsHaveOldPostOrderHasBeenSet() const
+{
+    return m_isHaveOldPostOrderHasBeenSet;
+}
+
+vector<int64_t> CosBucketBillingInfo::GetPostProductList() const
+{
+    return m_postProductList;
+}
+
+void CosBucketBillingInfo::SetPostProductList(const vector<int64_t>& _postProductList)
+{
+    m_postProductList = _postProductList;
+    m_postProductListHasBeenSet = true;
+}
+
+bool CosBucketBillingInfo::PostProductListHasBeenSet() const
+{
+    return m_postProductListHasBeenSet;
 }
 

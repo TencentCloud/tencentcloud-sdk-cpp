@@ -35,7 +35,8 @@ DescribeInstanceUpgradeTypeRequest::DescribeInstanceUpgradeTypeRequest() :
     m_dstCdbTypeHasBeenSet(false),
     m_dstZoneIdHasBeenSet(false),
     m_nodeDistributionHasBeenSet(false),
-    m_clusterTopologyHasBeenSet(false)
+    m_clusterTopologyHasBeenSet(false),
+    m_dstFourthZoneHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,14 @@ string DescribeInstanceUpgradeTypeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dstFourthZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstFourthZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dstFourthZone, allocator);
     }
 
 
@@ -366,6 +375,22 @@ void DescribeInstanceUpgradeTypeRequest::SetClusterTopology(const ClusterTopolog
 bool DescribeInstanceUpgradeTypeRequest::ClusterTopologyHasBeenSet() const
 {
     return m_clusterTopologyHasBeenSet;
+}
+
+int64_t DescribeInstanceUpgradeTypeRequest::GetDstFourthZone() const
+{
+    return m_dstFourthZone;
+}
+
+void DescribeInstanceUpgradeTypeRequest::SetDstFourthZone(const int64_t& _dstFourthZone)
+{
+    m_dstFourthZone = _dstFourthZone;
+    m_dstFourthZoneHasBeenSet = true;
+}
+
+bool DescribeInstanceUpgradeTypeRequest::DstFourthZoneHasBeenSet() const
+{
+    return m_dstFourthZoneHasBeenSet;
 }
 
 

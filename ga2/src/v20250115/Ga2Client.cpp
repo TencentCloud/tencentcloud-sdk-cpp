@@ -140,6 +140,56 @@ Ga2Client::CreateEndpointGroupOutcomeCallable Ga2Client::CreateEndpointGroupCall
     return prom->get_future();
 }
 
+Ga2Client::CreateForwardingPolicyOutcome Ga2Client::CreateForwardingPolicy(const CreateForwardingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateForwardingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateForwardingPolicyResponse rsp = CreateForwardingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateForwardingPolicyOutcome(rsp);
+        else
+            return CreateForwardingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateForwardingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateForwardingPolicyAsync(const CreateForwardingPolicyRequest& request, const CreateForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateForwardingPolicyRequest&;
+    using Resp = CreateForwardingPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateForwardingPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateForwardingPolicyOutcomeCallable Ga2Client::CreateForwardingPolicyCallable(const CreateForwardingPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateForwardingPolicyOutcome>>();
+    CreateForwardingPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateForwardingPolicyRequest&,
+        CreateForwardingPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::CreateForwardingRuleOutcome Ga2Client::CreateForwardingRule(const CreateForwardingRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateForwardingRule");
@@ -382,6 +432,56 @@ Ga2Client::DeleteEndpointGroupsOutcomeCallable Ga2Client::DeleteEndpointGroupsCa
         const Ga2Client*,
         const DeleteEndpointGroupsRequest&,
         DeleteEndpointGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::DeleteForwardingPolicyOutcome Ga2Client::DeleteForwardingPolicy(const DeleteForwardingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteForwardingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteForwardingPolicyResponse rsp = DeleteForwardingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteForwardingPolicyOutcome(rsp);
+        else
+            return DeleteForwardingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteForwardingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DeleteForwardingPolicyAsync(const DeleteForwardingPolicyRequest& request, const DeleteForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteForwardingPolicyRequest&;
+    using Resp = DeleteForwardingPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteForwardingPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DeleteForwardingPolicyOutcomeCallable Ga2Client::DeleteForwardingPolicyCallable(const DeleteForwardingPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteForwardingPolicyOutcome>>();
+    DeleteForwardingPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DeleteForwardingPolicyRequest&,
+        DeleteForwardingPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +840,56 @@ Ga2Client::DescribeEndpointGroupsOutcomeCallable Ga2Client::DescribeEndpointGrou
     return prom->get_future();
 }
 
+Ga2Client::DescribeForwardingPolicyOutcome Ga2Client::DescribeForwardingPolicy(const DescribeForwardingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeForwardingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeForwardingPolicyResponse rsp = DescribeForwardingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeForwardingPolicyOutcome(rsp);
+        else
+            return DescribeForwardingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeForwardingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::DescribeForwardingPolicyAsync(const DescribeForwardingPolicyRequest& request, const DescribeForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeForwardingPolicyRequest&;
+    using Resp = DescribeForwardingPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeForwardingPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::DescribeForwardingPolicyOutcomeCallable Ga2Client::DescribeForwardingPolicyCallable(const DescribeForwardingPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeForwardingPolicyOutcome>>();
+    DescribeForwardingPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const DescribeForwardingPolicyRequest&,
+        DescribeForwardingPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::DescribeForwardingRuleOutcome Ga2Client::DescribeForwardingRule(const DescribeForwardingRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeForwardingRule");
@@ -1032,6 +1182,56 @@ Ga2Client::ModifyEndpointGroupOutcomeCallable Ga2Client::ModifyEndpointGroupCall
         const Ga2Client*,
         const ModifyEndpointGroupRequest&,
         ModifyEndpointGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ga2Client::ModifyForwardingPolicyOutcome Ga2Client::ModifyForwardingPolicy(const ModifyForwardingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyForwardingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyForwardingPolicyResponse rsp = ModifyForwardingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyForwardingPolicyOutcome(rsp);
+        else
+            return ModifyForwardingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyForwardingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::ModifyForwardingPolicyAsync(const ModifyForwardingPolicyRequest& request, const ModifyForwardingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyForwardingPolicyRequest&;
+    using Resp = ModifyForwardingPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyForwardingPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::ModifyForwardingPolicyOutcomeCallable Ga2Client::ModifyForwardingPolicyCallable(const ModifyForwardingPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyForwardingPolicyOutcome>>();
+    ModifyForwardingPolicyAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const ModifyForwardingPolicyRequest&,
+        ModifyForwardingPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

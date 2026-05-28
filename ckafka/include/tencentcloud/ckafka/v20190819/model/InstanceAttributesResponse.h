@@ -598,15 +598,15 @@ namespace TencentCloud
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例类型  枚举列表:<br>profession  :专业版<br>standards2  :标准版<br>premium   :高级版<br>serverless  :serverless版</p>
-                     * @return InstanceType <p>实例类型  枚举列表:<br>profession  :专业版<br>standards2  :标准版<br>premium   :高级版<br>serverless  :serverless版</p>
+                     * 获取<p>实例类型</p><p>枚举值：</p><ul><li>profession： 专业版</li><li>premium： 高级版</li><li>serverless： serverless版</li><li>其他： 标准版（如:standards2/standard，该版本已停售）</li></ul>
+                     * @return InstanceType <p>实例类型</p><p>枚举值：</p><ul><li>profession： 专业版</li><li>premium： 高级版</li><li>serverless： serverless版</li><li>其他： 标准版（如:standards2/standard，该版本已停售）</li></ul>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置<p>实例类型  枚举列表:<br>profession  :专业版<br>standards2  :标准版<br>premium   :高级版<br>serverless  :serverless版</p>
-                     * @param _instanceType <p>实例类型  枚举列表:<br>profession  :专业版<br>standards2  :标准版<br>premium   :高级版<br>serverless  :serverless版</p>
+                     * 设置<p>实例类型</p><p>枚举值：</p><ul><li>profession： 专业版</li><li>premium： 高级版</li><li>serverless： serverless版</li><li>其他： 标准版（如:standards2/standard，该版本已停售）</li></ul>
+                     * @param _instanceType <p>实例类型</p><p>枚举值：</p><ul><li>profession： 专业版</li><li>premium： 高级版</li><li>serverless： serverless版</li><li>其他： 标准版（如:standards2/standard，该版本已停售）</li></ul>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -1218,7 +1218,7 @@ namespace TencentCloud
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * <p>实例类型  枚举列表:<br>profession  :专业版<br>standards2  :标准版<br>premium   :高级版<br>serverless  :serverless版</p>
+                     * <p>实例类型</p><p>枚举值：</p><ul><li>profession： 专业版</li><li>premium： 高级版</li><li>serverless： serverless版</li><li>其他： 标准版（如:standards2/standard，该版本已停售）</li></ul>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

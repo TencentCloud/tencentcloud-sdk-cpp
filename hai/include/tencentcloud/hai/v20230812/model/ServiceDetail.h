@@ -259,6 +259,69 @@ namespace TencentCloud
                      */
                     bool HyperParamHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return SecurityType 
+                     * 
+                     */
+                    std::string GetSecurityType() const;
+
+                    /**
+                     * 设置
+                     * @param _securityType 
+                     * 
+                     */
+                    void SetSecurityType(const std::string& _securityType);
+
+                    /**
+                     * 判断参数 SecurityType 是否已赋值
+                     * @return SecurityType 是否已赋值
+                     * 
+                     */
+                    bool SecurityTypeHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return RoleComputeSet 
+                     * 
+                     */
+                    std::vector<ComputeDetail> GetRoleComputeSet() const;
+
+                    /**
+                     * 设置
+                     * @param _roleComputeSet 
+                     * 
+                     */
+                    void SetRoleComputeSet(const std::vector<ComputeDetail>& _roleComputeSet);
+
+                    /**
+                     * 判断参数 RoleComputeSet 是否已赋值
+                     * @return RoleComputeSet 是否已赋值
+                     * 
+                     */
+                    bool RoleComputeSetHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return TargetReplicas 
+                     * 
+                     */
+                    uint64_t GetTargetReplicas() const;
+
+                    /**
+                     * 设置
+                     * @param _targetReplicas 
+                     * 
+                     */
+                    void SetTargetReplicas(const uint64_t& _targetReplicas);
+
+                    /**
+                     * 判断参数 TargetReplicas 是否已赋值
+                     * @return TargetReplicas 是否已赋值
+                     * 
+                     */
+                    bool TargetReplicasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +383,24 @@ namespace TencentCloud
                      */
                     HyperParam m_hyperParam;
                     bool m_hyperParamHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_securityType;
+                    bool m_securityTypeHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::vector<ComputeDetail> m_roleComputeSet;
+                    bool m_roleComputeSetHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    uint64_t m_targetReplicas;
+                    bool m_targetReplicasHasBeenSet;
 
                 };
             }

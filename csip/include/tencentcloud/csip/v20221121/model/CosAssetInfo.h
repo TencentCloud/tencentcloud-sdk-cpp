@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取appid
-                     * @return AppId appid
+                     * 获取<p>appid</p>
+                     * @return AppId <p>appid</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置appid
-                     * @param _appId appid
+                     * 设置<p>appid</p>
+                     * @param _appId <p>appid</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取cos桶名
-                     * @return BucketName cos桶名
+                     * 获取<p>cos桶名</p>
+                     * @return BucketName <p>cos桶名</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置cos桶名
-                     * @param _bucketName cos桶名
+                     * 设置<p>cos桶名</p>
+                     * @param _bucketName <p>cos桶名</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取cos region名
-                     * @return BucketRegion cos region名
+                     * 获取<p>cos region名</p>
+                     * @return BucketRegion <p>cos region名</p>
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置cos region名
-                     * @param _bucketRegion cos region名
+                     * 设置<p>cos region名</p>
+                     * @param _bucketRegion <p>cos region名</p>
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取地域码值
-                     * @return BucketRegionCode 地域码值
+                     * 获取<p>地域码值</p>
+                     * @return BucketRegionCode <p>地域码值</p>
                      * 
                      */
                     std::string GetBucketRegionCode() const;
 
                     /**
-                     * 设置地域码值
-                     * @param _bucketRegionCode 地域码值
+                     * 设置<p>地域码值</p>
+                     * @param _bucketRegionCode <p>地域码值</p>
                      * 
                      */
                     void SetBucketRegionCode(const std::string& _bucketRegionCode);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool BucketRegionCodeHasBeenSet() const;
 
                     /**
-                     * 获取cos桶备注
-                     * @return BucketMarker cos桶备注
+                     * 获取<p>cos桶备注</p>
+                     * @return BucketMarker <p>cos桶备注</p>
                      * 
                      */
                     std::string GetBucketMarker() const;
 
                     /**
-                     * 设置cos桶备注
-                     * @param _bucketMarker cos桶备注
+                     * 设置<p>cos桶备注</p>
+                     * @param _bucketMarker <p>cos桶备注</p>
                      * 
                      */
                     void SetBucketMarker(const std::string& _bucketMarker);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool BucketMarkerHasBeenSet() const;
 
                     /**
-                     * 获取cos桶主账号所属者
-                     * @return BucketOwnerUin cos桶主账号所属者
+                     * 获取<p>cos桶主账号所属者</p>
+                     * @return BucketOwnerUin <p>cos桶主账号所属者</p>
                      * 
                      */
                     std::string GetBucketOwnerUin() const;
 
                     /**
-                     * 设置cos桶主账号所属者
-                     * @param _bucketOwnerUin cos桶主账号所属者
+                     * 设置<p>cos桶主账号所属者</p>
+                     * @param _bucketOwnerUin <p>cos桶主账号所属者</p>
                      * 
                      */
                     void SetBucketOwnerUin(const std::string& _bucketOwnerUin);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool BucketOwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取cos主账号所属者昵称
-                     * @return BucketOwnerNickName cos主账号所属者昵称
+                     * 获取<p>cos主账号所属者昵称</p>
+                     * @return BucketOwnerNickName <p>cos主账号所属者昵称</p>
                      * 
                      */
                     std::string GetBucketOwnerNickName() const;
 
                     /**
-                     * 设置cos主账号所属者昵称
-                     * @param _bucketOwnerNickName cos主账号所属者昵称
+                     * 设置<p>cos主账号所属者昵称</p>
+                     * @param _bucketOwnerNickName <p>cos主账号所属者昵称</p>
                      * 
                      */
                     void SetBucketOwnerNickName(const std::string& _bucketOwnerNickName);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool BucketOwnerNickNameHasBeenSet() const;
 
                     /**
-                     * 获取cos桶标签详情
-                     * @return BucketTagInfo cos桶标签详情
+                     * 获取<p>cos桶标签详情</p>
+                     * @return BucketTagInfo <p>cos桶标签详情</p>
                      * 
                      */
                     std::string GetBucketTagInfo() const;
 
                     /**
-                     * 设置cos桶标签详情
-                     * @param _bucketTagInfo cos桶标签详情
+                     * 设置<p>cos桶标签详情</p>
+                     * @param _bucketTagInfo <p>cos桶标签详情</p>
                      * 
                      */
                     void SetBucketTagInfo(const std::string& _bucketTagInfo);
@@ -218,27 +218,15 @@ namespace TencentCloud
                     bool BucketTagInfoHasBeenSet() const;
 
                     /**
-                     * 获取安全建议
-1 暂无异常
-2 建议加固
-3 立即处理
-                     * @return BucketSecuritySuggestion 安全建议
-1 暂无异常
-2 建议加固
-3 立即处理
+                     * 获取<p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>
+                     * @return BucketSecuritySuggestion <p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>
                      * 
                      */
                     int64_t GetBucketSecuritySuggestion() const;
 
                     /**
-                     * 设置安全建议
-1 暂无异常
-2 建议加固
-3 立即处理
-                     * @param _bucketSecuritySuggestion 安全建议
-1 暂无异常
-2 建议加固
-3 立即处理
+                     * 设置<p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>
+                     * @param _bucketSecuritySuggestion <p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>
                      * 
                      */
                     void SetBucketSecuritySuggestion(const int64_t& _bucketSecuritySuggestion);
@@ -251,15 +239,15 @@ namespace TencentCloud
                     bool BucketSecuritySuggestionHasBeenSet() const;
 
                     /**
-                     * 获取告警列表
-                     * @return BucketAlarmList 告警列表
+                     * 获取<p>告警列表</p>
+                     * @return BucketAlarmList <p>告警列表</p>
                      * 
                      */
                     std::vector<CosRiskAlarmInfo> GetBucketAlarmList() const;
 
                     /**
-                     * 设置告警列表
-                     * @param _bucketAlarmList 告警列表
+                     * 设置<p>告警列表</p>
+                     * @param _bucketAlarmList <p>告警列表</p>
                      * 
                      */
                     void SetBucketAlarmList(const std::vector<CosRiskAlarmInfo>& _bucketAlarmList);
@@ -272,15 +260,15 @@ namespace TencentCloud
                     bool BucketAlarmListHasBeenSet() const;
 
                     /**
-                     * 获取风险列表
-                     * @return BucketRiskList 风险列表
+                     * 获取<p>风险列表</p>
+                     * @return BucketRiskList <p>风险列表</p>
                      * 
                      */
                     std::vector<CosRiskAlarmInfo> GetBucketRiskList() const;
 
                     /**
-                     * 设置风险列表
-                     * @param _bucketRiskList 风险列表
+                     * 设置<p>风险列表</p>
+                     * @param _bucketRiskList <p>风险列表</p>
                      * 
                      */
                     void SetBucketRiskList(const std::vector<CosRiskAlarmInfo>& _bucketRiskList);
@@ -293,15 +281,15 @@ namespace TencentCloud
                     bool BucketRiskListHasBeenSet() const;
 
                     /**
-                     * 获取调用源ip数
-                     * @return BucketInvokeSourceIpCount 调用源ip数
+                     * 获取<p>调用源ip数</p>
+                     * @return BucketInvokeSourceIpCount <p>调用源ip数</p>
                      * 
                      */
                     int64_t GetBucketInvokeSourceIpCount() const;
 
                     /**
-                     * 设置调用源ip数
-                     * @param _bucketInvokeSourceIpCount 调用源ip数
+                     * 设置<p>调用源ip数</p>
+                     * @param _bucketInvokeSourceIpCount <p>调用源ip数</p>
                      * 
                      */
                     void SetBucketInvokeSourceIpCount(const int64_t& _bucketInvokeSourceIpCount);
@@ -314,15 +302,15 @@ namespace TencentCloud
                     bool BucketInvokeSourceIpCountHasBeenSet() const;
 
                     /**
-                     * 获取访问策略
-                     * @return BucketAccessWay 访问策略
+                     * 获取<p>访问策略</p>
+                     * @return BucketAccessWay <p>访问策略</p>
                      * 
                      */
                     CosBucketAccessWay GetBucketAccessWay() const;
 
                     /**
-                     * 设置访问策略
-                     * @param _bucketAccessWay 访问策略
+                     * 设置<p>访问策略</p>
+                     * @param _bucketAccessWay <p>访问策略</p>
                      * 
                      */
                     void SetBucketAccessWay(const CosBucketAccessWay& _bucketAccessWay);
@@ -335,15 +323,15 @@ namespace TencentCloud
                     bool BucketAccessWayHasBeenSet() const;
 
                     /**
-                     * 获取创建时间Unix时间单位毫秒
-                     * @return CreateTime 创建时间Unix时间单位毫秒
+                     * 获取<p>创建时间Unix时间单位毫秒</p>
+                     * @return CreateTime <p>创建时间Unix时间单位毫秒</p>
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间Unix时间单位毫秒
-                     * @param _createTime 创建时间Unix时间单位毫秒
+                     * 设置<p>创建时间Unix时间单位毫秒</p>
+                     * @param _createTime <p>创建时间Unix时间单位毫秒</p>
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -356,15 +344,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后访问时间Unix时间单位毫秒
-                     * @return LastAccessTime 最后访问时间Unix时间单位毫秒
+                     * 获取<p>最后访问时间Unix时间单位毫秒</p>
+                     * @return LastAccessTime <p>最后访问时间Unix时间单位毫秒</p>
                      * 
                      */
                     int64_t GetLastAccessTime() const;
 
                     /**
-                     * 设置最后访问时间Unix时间单位毫秒
-                     * @param _lastAccessTime 最后访问时间Unix时间单位毫秒
+                     * 设置<p>最后访问时间Unix时间单位毫秒</p>
+                     * @param _lastAccessTime <p>最后访问时间Unix时间单位毫秒</p>
                      * 
                      */
                     void SetLastAccessTime(const int64_t& _lastAccessTime);
@@ -377,15 +365,15 @@ namespace TencentCloud
                     bool LastAccessTimeHasBeenSet() const;
 
                     /**
-                     * 获取存储桶id
-                     * @return BucketId 存储桶id
+                     * 获取<p>存储桶id</p>
+                     * @return BucketId <p>存储桶id</p>
                      * 
                      */
                     uint64_t GetBucketId() const;
 
                     /**
-                     * 设置存储桶id
-                     * @param _bucketId 存储桶id
+                     * 设置<p>存储桶id</p>
+                     * @param _bucketId <p>存储桶id</p>
                      * 
                      */
                     void SetBucketId(const uint64_t& _bucketId);
@@ -398,19 +386,15 @@ namespace TencentCloud
                     bool BucketIdHasBeenSet() const;
 
                     /**
-                     * 获取0 关闭
-1 开启
-                     * @return MonitorStatus 0 关闭
-1 开启
+                     * 获取<p>0 关闭<br>1 开启</p>
+                     * @return MonitorStatus <p>0 关闭<br>1 开启</p>
                      * 
                      */
                     uint64_t GetMonitorStatus() const;
 
                     /**
-                     * 设置0 关闭
-1 开启
-                     * @param _monitorStatus 0 关闭
-1 开启
+                     * 设置<p>0 关闭<br>1 开启</p>
+                     * @param _monitorStatus <p>0 关闭<br>1 开启</p>
                      * 
                      */
                     void SetMonitorStatus(const uint64_t& _monitorStatus);
@@ -423,15 +407,15 @@ namespace TencentCloud
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
-                     * 获取数据识别扫描信息
-                     * @return DataScanInfo 数据识别扫描信息
+                     * 获取<p>数据识别扫描信息</p>
+                     * @return DataScanInfo <p>数据识别扫描信息</p>
                      * 
                      */
                     CosAssetDataScanDetail GetDataScanInfo() const;
 
                     /**
-                     * 设置数据识别扫描信息
-                     * @param _dataScanInfo 数据识别扫描信息
+                     * 设置<p>数据识别扫描信息</p>
+                     * @param _dataScanInfo <p>数据识别扫描信息</p>
                      * 
                      */
                     void SetDataScanInfo(const CosAssetDataScanDetail& _dataScanInfo);
@@ -443,119 +427,223 @@ namespace TencentCloud
                      */
                     bool DataScanInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>
+                     * @return BucketAzType <p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>
+                     * 
+                     */
+                    std::string GetBucketAzType() const;
+
+                    /**
+                     * 设置<p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>
+                     * @param _bucketAzType <p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>
+                     * 
+                     */
+                    void SetBucketAzType(const std::string& _bucketAzType);
+
+                    /**
+                     * 判断参数 BucketAzType 是否已赋值
+                     * @return BucketAzType 是否已赋值
+                     * 
+                     */
+                    bool BucketAzTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储桶存储大小</p><p>默认值：0</p>
+                     * @return BucketStorageSize <p>存储桶存储大小</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetBucketStorageSize() const;
+
+                    /**
+                     * 设置<p>存储桶存储大小</p><p>默认值：0</p>
+                     * @param _bucketStorageSize <p>存储桶存储大小</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetBucketStorageSize(const int64_t& _bucketStorageSize);
+
+                    /**
+                     * 判断参数 BucketStorageSize 是否已赋值
+                     * @return BucketStorageSize 是否已赋值
+                     * 
+                     */
+                    bool BucketStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储桶对象个数</p><p>默认值：0</p>
+                     * @return BucketObjectCount <p>存储桶对象个数</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetBucketObjectCount() const;
+
+                    /**
+                     * 设置<p>存储桶对象个数</p><p>默认值：0</p>
+                     * @param _bucketObjectCount <p>存储桶对象个数</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetBucketObjectCount(const int64_t& _bucketObjectCount);
+
+                    /**
+                     * 判断参数 BucketObjectCount 是否已赋值
+                     * @return BucketObjectCount 是否已赋值
+                     * 
+                     */
+                    bool BucketObjectCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return IdentifySampleRate <p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    double GetIdentifySampleRate() const;
+
+                    /**
+                     * 设置<p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _identifySampleRate <p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetIdentifySampleRate(const double& _identifySampleRate);
+
+                    /**
+                     * 判断参数 IdentifySampleRate 是否已赋值
+                     * @return IdentifySampleRate 是否已赋值
+                     * 
+                     */
+                    bool IdentifySampleRateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * appid
+                     * <p>appid</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * cos桶名
+                     * <p>cos桶名</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * cos region名
+                     * <p>cos region名</p>
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * 地域码值
+                     * <p>地域码值</p>
                      */
                     std::string m_bucketRegionCode;
                     bool m_bucketRegionCodeHasBeenSet;
 
                     /**
-                     * cos桶备注
+                     * <p>cos桶备注</p>
                      */
                     std::string m_bucketMarker;
                     bool m_bucketMarkerHasBeenSet;
 
                     /**
-                     * cos桶主账号所属者
+                     * <p>cos桶主账号所属者</p>
                      */
                     std::string m_bucketOwnerUin;
                     bool m_bucketOwnerUinHasBeenSet;
 
                     /**
-                     * cos主账号所属者昵称
+                     * <p>cos主账号所属者昵称</p>
                      */
                     std::string m_bucketOwnerNickName;
                     bool m_bucketOwnerNickNameHasBeenSet;
 
                     /**
-                     * cos桶标签详情
+                     * <p>cos桶标签详情</p>
                      */
                     std::string m_bucketTagInfo;
                     bool m_bucketTagInfoHasBeenSet;
 
                     /**
-                     * 安全建议
-1 暂无异常
-2 建议加固
-3 立即处理
+                     * <p>安全建议<br>1 暂无异常<br>2 建议加固<br>3 立即处理</p>
                      */
                     int64_t m_bucketSecuritySuggestion;
                     bool m_bucketSecuritySuggestionHasBeenSet;
 
                     /**
-                     * 告警列表
+                     * <p>告警列表</p>
                      */
                     std::vector<CosRiskAlarmInfo> m_bucketAlarmList;
                     bool m_bucketAlarmListHasBeenSet;
 
                     /**
-                     * 风险列表
+                     * <p>风险列表</p>
                      */
                     std::vector<CosRiskAlarmInfo> m_bucketRiskList;
                     bool m_bucketRiskListHasBeenSet;
 
                     /**
-                     * 调用源ip数
+                     * <p>调用源ip数</p>
                      */
                     int64_t m_bucketInvokeSourceIpCount;
                     bool m_bucketInvokeSourceIpCountHasBeenSet;
 
                     /**
-                     * 访问策略
+                     * <p>访问策略</p>
                      */
                     CosBucketAccessWay m_bucketAccessWay;
                     bool m_bucketAccessWayHasBeenSet;
 
                     /**
-                     * 创建时间Unix时间单位毫秒
+                     * <p>创建时间Unix时间单位毫秒</p>
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后访问时间Unix时间单位毫秒
+                     * <p>最后访问时间Unix时间单位毫秒</p>
                      */
                     int64_t m_lastAccessTime;
                     bool m_lastAccessTimeHasBeenSet;
 
                     /**
-                     * 存储桶id
+                     * <p>存储桶id</p>
                      */
                     uint64_t m_bucketId;
                     bool m_bucketIdHasBeenSet;
 
                     /**
-                     * 0 关闭
-1 开启
+                     * <p>0 关闭<br>1 开启</p>
                      */
                     uint64_t m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
 
                     /**
-                     * 数据识别扫描信息
+                     * <p>数据识别扫描信息</p>
                      */
                     CosAssetDataScanDetail m_dataScanInfo;
                     bool m_dataScanInfoHasBeenSet;
+
+                    /**
+                     * <p>存储桶Az类型</p><p>枚举值：</p><ul><li>MAZ： 多az</li><li>SAZ： 单az</li></ul>
+                     */
+                    std::string m_bucketAzType;
+                    bool m_bucketAzTypeHasBeenSet;
+
+                    /**
+                     * <p>存储桶存储大小</p><p>默认值：0</p>
+                     */
+                    int64_t m_bucketStorageSize;
+                    bool m_bucketStorageSizeHasBeenSet;
+
+                    /**
+                     * <p>存储桶对象个数</p><p>默认值：0</p>
+                     */
+                    int64_t m_bucketObjectCount;
+                    bool m_bucketObjectCountHasBeenSet;
+
+                    /**
+                     * <p>存储桶敏感识别采样率</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    double m_identifySampleRate;
+                    bool m_identifySampleRateHasBeenSet;
 
                 };
             }
