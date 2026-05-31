@@ -23,7 +23,9 @@ using namespace std;
 CloudNativeAPIGatewayLLMModelServiceRoute::CloudNativeAPIGatewayLLMModelServiceRoute() :
     m_selectedTypesHasBeenSet(false),
     m_weightedConfigHasBeenSet(false),
-    m_modelNameConfigHasBeenSet(false)
+    m_modelNameConfigHasBeenSet(false),
+    m_intentRouteConfigHasBeenSet(false),
+    m_latencyPriorityConfigHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,40 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelServiceRoute::Deserialize(const
         m_modelNameConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentRouteConfig") && !value["IntentRouteConfig"].IsNull())
+    {
+        if (!value["IntentRouteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRoute.IntentRouteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intentRouteConfig.Deserialize(value["IntentRouteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentRouteConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatencyPriorityConfig") && !value["LatencyPriorityConfig"].IsNull())
+    {
+        if (!value["LatencyPriorityConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRoute.LatencyPriorityConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_latencyPriorityConfig.Deserialize(value["LatencyPriorityConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_latencyPriorityConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -133,6 +169,24 @@ void CloudNativeAPIGatewayLLMModelServiceRoute::ToJsonObject(rapidjson::Value &v
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_intentRouteConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentRouteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intentRouteConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_latencyPriorityConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatencyPriorityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_latencyPriorityConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -184,5 +238,37 @@ void CloudNativeAPIGatewayLLMModelServiceRoute::SetModelNameConfig(const vector<
 bool CloudNativeAPIGatewayLLMModelServiceRoute::ModelNameConfigHasBeenSet() const
 {
     return m_modelNameConfigHasBeenSet;
+}
+
+AIGWIntentRoute CloudNativeAPIGatewayLLMModelServiceRoute::GetIntentRouteConfig() const
+{
+    return m_intentRouteConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRoute::SetIntentRouteConfig(const AIGWIntentRoute& _intentRouteConfig)
+{
+    m_intentRouteConfig = _intentRouteConfig;
+    m_intentRouteConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRoute::IntentRouteConfigHasBeenSet() const
+{
+    return m_intentRouteConfigHasBeenSet;
+}
+
+AIGWLatencyPriorityConfig CloudNativeAPIGatewayLLMModelServiceRoute::GetLatencyPriorityConfig() const
+{
+    return m_latencyPriorityConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRoute::SetLatencyPriorityConfig(const AIGWLatencyPriorityConfig& _latencyPriorityConfig)
+{
+    m_latencyPriorityConfig = _latencyPriorityConfig;
+    m_latencyPriorityConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRoute::LatencyPriorityConfigHasBeenSet() const
+{
+    return m_latencyPriorityConfigHasBeenSet;
 }
 

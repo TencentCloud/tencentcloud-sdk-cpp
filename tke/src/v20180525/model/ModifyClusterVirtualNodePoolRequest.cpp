@@ -29,7 +29,8 @@ ModifyClusterVirtualNodePoolRequest::ModifyClusterVirtualNodePoolRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_subnetAllocationPolicyHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,15 @@ string ModifyClusterVirtualNodePoolRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_subnetAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subnetAllocationPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -233,6 +243,22 @@ void ModifyClusterVirtualNodePoolRequest::SetDeletionProtection(const bool& _del
 bool ModifyClusterVirtualNodePoolRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+SubnetAllocationPolicy ModifyClusterVirtualNodePoolRequest::GetSubnetAllocationPolicy() const
+{
+    return m_subnetAllocationPolicy;
+}
+
+void ModifyClusterVirtualNodePoolRequest::SetSubnetAllocationPolicy(const SubnetAllocationPolicy& _subnetAllocationPolicy)
+{
+    m_subnetAllocationPolicy = _subnetAllocationPolicy;
+    m_subnetAllocationPolicyHasBeenSet = true;
+}
+
+bool ModifyClusterVirtualNodePoolRequest::SubnetAllocationPolicyHasBeenSet() const
+{
+    return m_subnetAllocationPolicyHasBeenSet;
 }
 
 

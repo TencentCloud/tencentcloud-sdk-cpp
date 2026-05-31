@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为 10，最大值为 1000。
-                     * @return Limit 返回数量，默认为 10，最大值为 1000。
+                     * 获取<p>每页条数，范围 [1, 1000]，默认 10。</p>
+                     * @return Limit <p>每页条数，范围 [1, 1000]，默认 10。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 10，最大值为 1000。
-                     * @param _limit 返回数量，默认为 10，最大值为 1000。
+                     * 设置<p>每页条数，范围 [1, 1000]，默认 10。</p>
+                     * @param _limit <p>每页条数，范围 [1, 1000]，默认 10。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为 0。
-                     * @return Offset 偏移量，默认为 0。
+                     * 获取<p>起始位置，从 0 开始。</p>
+                     * @return Offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0。
-                     * @param _offset 偏移量，默认为 0。
+                     * 设置<p>起始位置，从 0 开始。</p>
+                     * @param _offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，多个过滤条件之间是“与”的关系
-                     * @return Filters 过滤条件，多个过滤条件之间是“与”的关系
+                     * 获取<p>过滤条件。当前未启用具体字段。</p>
+                     * @return Filters <p>过滤条件。当前未启用具体字段。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，多个过滤条件之间是“与”的关系
-                     * @param _filters 过滤条件，多个过滤条件之间是“与”的关系
+                     * 设置<p>过滤条件。当前未启用具体字段。</p>
+                     * @param _filters <p>过滤条件。当前未启用具体字段。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词，模糊匹配 name 和 description
-                     * @return Keyword 搜索关键词，模糊匹配 name 和 description
+                     * 获取<p>模糊匹配模型 API 名称。</p>
+                     * @return Keyword <p>模糊匹配模型 API 名称。</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置搜索关键词，模糊匹配 name 和 description
-                     * @param _keyword 搜索关键词，模糊匹配 name 和 description
+                     * 设置<p>模糊匹配模型 API 名称。</p>
+                     * @param _keyword <p>模糊匹配模型 API 名称。</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取通过消费者组Id筛选，UseToBind 为 true 时ConsumerGroupId不为空
-                     * @return ConsumerGroupId 通过消费者组Id筛选，UseToBind 为 true 时ConsumerGroupId不为空
+                     * 获取<p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>
+                     * @return ConsumerGroupId <p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>
                      * 
                      */
                     std::string GetConsumerGroupId() const;
 
                     /**
-                     * 设置通过消费者组Id筛选，UseToBind 为 true 时ConsumerGroupId不为空
-                     * @param _consumerGroupId 通过消费者组Id筛选，UseToBind 为 true 时ConsumerGroupId不为空
+                     * 设置<p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>
+                     * @param _consumerGroupId <p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>
                      * 
                      */
                     void SetConsumerGroupId(const std::string& _consumerGroupId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ConsumerGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选可被绑定的数据， 比如模型API里面绑定模型服务筛选时，如果设置true, 返回结果只会有可以被绑定的数据。
-                     * @return UseToBind 筛选可被绑定的数据， 比如模型API里面绑定模型服务筛选时，如果设置true, 返回结果只会有可以被绑定的数据。
+                     * 获取<p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>
+                     * @return UseToBind <p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>
                      * 
                      */
                     bool GetUseToBind() const;
 
                     /**
-                     * 设置筛选可被绑定的数据， 比如模型API里面绑定模型服务筛选时，如果设置true, 返回结果只会有可以被绑定的数据。
-                     * @param _useToBind 筛选可被绑定的数据， 比如模型API里面绑定模型服务筛选时，如果设置true, 返回结果只会有可以被绑定的数据。
+                     * 设置<p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>
+                     * @param _useToBind <p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>
                      * 
                      */
                     void SetUseToBind(const bool& _useToBind);
@@ -199,37 +199,37 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认为 10，最大值为 1000。
+                     * <p>每页条数，范围 [1, 1000]，默认 10。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为 0。
+                     * <p>起始位置，从 0 开始。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件，多个过滤条件之间是“与”的关系
+                     * <p>过滤条件。当前未启用具体字段。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 搜索关键词，模糊匹配 name 和 description
+                     * <p>模糊匹配模型 API 名称。</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 通过消费者组Id筛选，UseToBind 为 true 时ConsumerGroupId不为空
+                     * <p>消费者组 ID（以 cg- 开头），与 UseToBind 搭配使用。</p>
                      */
                     std::string m_consumerGroupId;
                     bool m_consumerGroupIdHasBeenSet;
 
                     /**
-                     * 筛选可被绑定的数据， 比如模型API里面绑定模型服务筛选时，如果设置true, 返回结果只会有可以被绑定的数据。
+                     * <p>是否用于绑定场景。true 时仅返回可被绑定到指定消费者组的模型 API。</p>
                      */
                     bool m_useToBind;
                     bool m_useToBindHasBeenSet;

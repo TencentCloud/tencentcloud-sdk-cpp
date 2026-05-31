@@ -35,7 +35,8 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_extInfoHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_outputAsIndependentMediaHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,14 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputAsIndependentMediaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputAsIndependentMedia";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outputAsIndependentMedia.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -368,6 +377,22 @@ void ProcessMediaRequest::SetUrl(const string& _url)
 bool ProcessMediaRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string ProcessMediaRequest::GetOutputAsIndependentMedia() const
+{
+    return m_outputAsIndependentMedia;
+}
+
+void ProcessMediaRequest::SetOutputAsIndependentMedia(const string& _outputAsIndependentMedia)
+{
+    m_outputAsIndependentMedia = _outputAsIndependentMedia;
+    m_outputAsIndependentMediaHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::OutputAsIndependentMediaHasBeenSet() const
+{
+    return m_outputAsIndependentMediaHasBeenSet;
 }
 
 

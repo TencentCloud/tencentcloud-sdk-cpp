@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型服务id
-                     * @return ModelServiceId 模型服务id
+                     * 获取<p>模型服务id</p>
+                     * @return ModelServiceId <p>模型服务id</p>
                      * 
                      */
                     std::string GetModelServiceId() const;
 
                     /**
-                     * 设置模型服务id
-                     * @param _modelServiceId 模型服务id
+                     * 设置<p>模型服务id</p>
+                     * @param _modelServiceId <p>模型服务id</p>
                      * 
                      */
                     void SetModelServiceId(const std::string& _modelServiceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModelServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取权重值
-                     * @return Weight 权重值
+                     * 获取<p>权重值</p>
+                     * @return Weight <p>权重值</p>
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重值
-                     * @param _weight 权重值
+                     * 设置<p>权重值</p>
+                     * @param _weight <p>权重值</p>
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型服务id
+                     * <p>模型服务id</p>
                      */
                     std::string m_modelServiceId;
                     bool m_modelServiceIdHasBeenSet;
 
                     /**
-                     * 权重值
+                     * <p>权重值</p>
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

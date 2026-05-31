@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标匹配规则名
-                     * @return Name 指标匹配规则名
+                     * 获取<p>指标匹配规则名</p>
+                     * @return Name <p>指标匹配规则名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置指标匹配规则名
-                     * @param _name 指标匹配规则名
+                     * 设置<p>指标匹配规则名</p>
+                     * @param _name <p>指标匹配规则名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则生效的应用。作用全部应用就传空字符串
-                     * @return ServiceName 规则生效的应用。作用全部应用就传空字符串
+                     * 获取<p>规则生效的应用。作用全部应用就传空字符串</p>
+                     * @return ServiceName <p>规则生效的应用。作用全部应用就传空字符串</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置规则生效的应用。作用全部应用就传空字符串
-                     * @param _serviceName 规则生效的应用。作用全部应用就传空字符串
+                     * 设置<p>规则生效的应用。作用全部应用就传空字符串</p>
+                     * @param _serviceName <p>规则生效的应用。作用全部应用就传空字符串</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配
-                     * @return MetricMatchType 指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * 获取<p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
+                     * @return MetricMatchType <p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
                      * 
                      */
                     int64_t GetMetricMatchType() const;
 
                     /**
-                     * 设置指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配
-                     * @param _metricMatchType 指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * 设置<p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
+                     * @param _metricMatchType <p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
                      * 
                      */
                     void SetMetricMatchType(const int64_t& _metricMatchType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MetricMatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取客户定义的命中指标名规则。
-                     * @return MetricNameRule 客户定义的命中指标名规则。
+                     * 获取<p>客户定义的命中指标名规则。</p>
+                     * @return MetricNameRule <p>客户定义的命中指标名规则。</p>
                      * 
                      */
                     std::string GetMetricNameRule() const;
 
                     /**
-                     * 设置客户定义的命中指标名规则。
-                     * @param _metricNameRule 客户定义的命中指标名规则。
+                     * 设置<p>客户定义的命中指标名规则。</p>
+                     * @param _metricNameRule <p>客户定义的命中指标名规则。</p>
                      * 
                      */
                     void SetMetricNameRule(const std::string& _metricNameRule);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MetricNameRuleHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取<p>业务系统ID</p>
+                     * @return InstanceId <p>业务系统ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置<p>业务系统ID</p>
+                     * @param _instanceId <p>业务系统ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否追加资源属性</p>
+                     * @return AppendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    bool GetAppendResourceAttributes() const;
+
+                    /**
+                     * 设置<p>是否追加资源属性</p>
+                     * @param _appendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    void SetAppendResourceAttributes(const bool& _appendResourceAttributes);
+
+                    /**
+                     * 判断参数 AppendResourceAttributes 是否已赋值
+                     * @return AppendResourceAttributes 是否已赋值
+                     * 
+                     */
+                    bool AppendResourceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指标匹配规则名
+                     * <p>指标匹配规则名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则生效的应用。作用全部应用就传空字符串
+                     * <p>规则生效的应用。作用全部应用就传空字符串</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * <p>指标匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
                      */
                     int64_t m_metricMatchType;
                     bool m_metricMatchTypeHasBeenSet;
 
                     /**
-                     * 客户定义的命中指标名规则。
+                     * <p>客户定义的命中指标名规则。</p>
                      */
                     std::string m_metricNameRule;
                     bool m_metricNameRuleHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * <p>业务系统ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>是否追加资源属性</p>
+                     */
+                    bool m_appendResourceAttributes;
+                    bool m_appendResourceAttributesHasBeenSet;
 
                 };
             }

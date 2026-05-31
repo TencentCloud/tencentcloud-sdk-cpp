@@ -27,6 +27,7 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SeeTaskMetadata.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightResult.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousResult.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h>
 
 
@@ -137,9 +138,11 @@ namespace TencentCloud
                      * 获取算法类目。可能取值：
 
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * @return ServiceCategory 算法类目。可能取值：
 
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * 
                      */
                     std::string GetServiceCategory() const;
@@ -148,9 +151,11 @@ namespace TencentCloud
                      * 设置算法类目。可能取值：
 
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * @param _serviceCategory 算法类目。可能取值：
 
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * 
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -167,10 +172,12 @@ namespace TencentCloud
 
 - `VID_COMP`：视频理解
 - `IMG_COMP`：图片理解
+- `COMP_HIGHLIGHT`：视频浓缩
                      * @return ServiceType 算法类型。可能取值：
 
 - `VID_COMP`：视频理解
 - `IMG_COMP`：图片理解
+- `COMP_HIGHLIGHT`：视频浓缩
                      * 
                      */
                     std::string GetServiceType() const;
@@ -180,10 +187,12 @@ namespace TencentCloud
 
 - `VID_COMP`：视频理解
 - `IMG_COMP`：图片理解
+- `COMP_HIGHLIGHT`：视频浓缩
                      * @param _serviceType 算法类型。可能取值：
 
 - `VID_COMP`：视频理解
 - `IMG_COMP`：图片理解
+- `COMP_HIGHLIGHT`：视频浓缩
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -269,6 +278,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CompHighlightResultHasBeenSet() const;
+
+                    /**
+                     * 获取标签持续检测结果
+                     * @return DetectContinuousResult 标签持续检测结果
+                     * 
+                     */
+                    SeeDetectContinuousResult GetDetectContinuousResult() const;
+
+                    /**
+                     * 设置标签持续检测结果
+                     * @param _detectContinuousResult 标签持续检测结果
+                     * 
+                     */
+                    void SetDetectContinuousResult(const SeeDetectContinuousResult& _detectContinuousResult);
+
+                    /**
+                     * 判断参数 DetectContinuousResult 是否已赋值
+                     * @return DetectContinuousResult 是否已赋值
+                     * 
+                     */
+                    bool DetectContinuousResultHasBeenSet() const;
 
                     /**
                      * 获取完成该任务所消耗的基础能力额度
@@ -425,6 +455,7 @@ namespace TencentCloud
                      * 算法类目。可能取值：
 
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
@@ -434,6 +465,7 @@ namespace TencentCloud
 
 - `VID_COMP`：视频理解
 - `IMG_COMP`：图片理解
+- `COMP_HIGHLIGHT`：视频浓缩
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -458,6 +490,12 @@ namespace TencentCloud
                      */
                     SeeCompHighlightResult m_compHighlightResult;
                     bool m_compHighlightResultHasBeenSet;
+
+                    /**
+                     * 标签持续检测结果
+                     */
+                    SeeDetectContinuousResult m_detectContinuousResult;
+                    bool m_detectContinuousResultHasBeenSet;
 
                     /**
                      * 完成该任务所消耗的基础能力额度

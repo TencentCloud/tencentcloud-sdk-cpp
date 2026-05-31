@@ -37,7 +37,11 @@ CloudNativeAPIGatewayLLMModelAPI::CloudNativeAPIGatewayLLMModelAPI() :
     m_matchHeadersHasBeenSet(false),
     m_enableCrossServiceFallbackHasBeenSet(false),
     m_crossServiceFallbackConfigHasBeenSet(false),
-    m_describeCloudNativeAPIGatewayLLMModelAPIHasBeenSet(false)
+    m_describeCloudNativeAPIGatewayLLMModelAPIHasBeenSet(false),
+    m_tagFilterHasBeenSet(false),
+    m_logConfigHasBeenSet(false),
+    m_logDesensitizeConfigHasBeenSet(false),
+    m_forwardDesensitizeConfigHasBeenSet(false)
 {
 }
 
@@ -250,6 +254,74 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelAPI::Deserialize(const rapidjso
         m_describeCloudNativeAPIGatewayLLMModelAPIHasBeenSet = true;
     }
 
+    if (value.HasMember("TagFilter") && !value["TagFilter"].IsNull())
+    {
+        if (!value["TagFilter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.TagFilter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagFilter.Deserialize(value["TagFilter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagFilterHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogConfig") && !value["LogConfig"].IsNull())
+    {
+        if (!value["LogConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.LogConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logConfig.Deserialize(value["LogConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogDesensitizeConfig") && !value["LogDesensitizeConfig"].IsNull())
+    {
+        if (!value["LogDesensitizeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.LogDesensitizeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logDesensitizeConfig.Deserialize(value["LogDesensitizeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logDesensitizeConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardDesensitizeConfig") && !value["ForwardDesensitizeConfig"].IsNull())
+    {
+        if (!value["ForwardDesensitizeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.ForwardDesensitizeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_forwardDesensitizeConfig.Deserialize(value["ForwardDesensitizeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_forwardDesensitizeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -407,6 +479,42 @@ void CloudNativeAPIGatewayLLMModelAPI::ToJsonObject(rapidjson::Value &value, rap
         string key = "DescribeCloudNativeAPIGatewayLLMModelAPI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_describeCloudNativeAPIGatewayLLMModelAPI, allocator);
+    }
+
+    if (m_tagFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagFilter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logDesensitizeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogDesensitizeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logDesensitizeConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_forwardDesensitizeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardDesensitizeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_forwardDesensitizeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -682,5 +790,69 @@ void CloudNativeAPIGatewayLLMModelAPI::SetDescribeCloudNativeAPIGatewayLLMModelA
 bool CloudNativeAPIGatewayLLMModelAPI::DescribeCloudNativeAPIGatewayLLMModelAPIHasBeenSet() const
 {
     return m_describeCloudNativeAPIGatewayLLMModelAPIHasBeenSet;
+}
+
+AIGWTagFilter CloudNativeAPIGatewayLLMModelAPI::GetTagFilter() const
+{
+    return m_tagFilter;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetTagFilter(const AIGWTagFilter& _tagFilter)
+{
+    m_tagFilter = _tagFilter;
+    m_tagFilterHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::TagFilterHasBeenSet() const
+{
+    return m_tagFilterHasBeenSet;
+}
+
+AIGWLogConfig CloudNativeAPIGatewayLLMModelAPI::GetLogConfig() const
+{
+    return m_logConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetLogConfig(const AIGWLogConfig& _logConfig)
+{
+    m_logConfig = _logConfig;
+    m_logConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::LogConfigHasBeenSet() const
+{
+    return m_logConfigHasBeenSet;
+}
+
+AIGWLogDesensitizeConfig CloudNativeAPIGatewayLLMModelAPI::GetLogDesensitizeConfig() const
+{
+    return m_logDesensitizeConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetLogDesensitizeConfig(const AIGWLogDesensitizeConfig& _logDesensitizeConfig)
+{
+    m_logDesensitizeConfig = _logDesensitizeConfig;
+    m_logDesensitizeConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::LogDesensitizeConfigHasBeenSet() const
+{
+    return m_logDesensitizeConfigHasBeenSet;
+}
+
+AIGWForwardDesensitizeConfig CloudNativeAPIGatewayLLMModelAPI::GetForwardDesensitizeConfig() const
+{
+    return m_forwardDesensitizeConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetForwardDesensitizeConfig(const AIGWForwardDesensitizeConfig& _forwardDesensitizeConfig)
+{
+    m_forwardDesensitizeConfig = _forwardDesensitizeConfig;
+    m_forwardDesensitizeConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::ForwardDesensitizeConfigHasBeenSet() const
+{
+    return m_forwardDesensitizeConfigHasBeenSet;
 }
 

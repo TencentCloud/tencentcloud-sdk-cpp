@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例id
-                     * @return GatewayId 网关实例id
+                     * 获取<p>网关实例id</p>
+                     * @return GatewayId <p>网关实例id</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关实例id
-                     * @param _gatewayId 网关实例id
+                     * 设置<p>网关实例id</p>
+                     * @param _gatewayId <p>网关实例id</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者ID
-                     * @return ConsumerId 消费者ID
+                     * 获取<p>消费者ID</p>
+                     * @return ConsumerId <p>消费者ID</p>
                      * 
                      */
                     std::string GetConsumerId() const;
 
                     /**
-                     * 设置消费者ID
-                     * @param _consumerId 消费者ID
+                     * 设置<p>消费者ID</p>
+                     * @param _consumerId <p>消费者ID</p>
                      * 
                      */
                     void SetConsumerId(const std::string& _consumerId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关实例id
+                     * <p>网关实例id</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 消费者ID
+                     * <p>消费者ID</p>
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;

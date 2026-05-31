@@ -29,7 +29,8 @@ ModifyApmPrometheusRuleRequest::ModifyApmPrometheusRuleRequest() :
     m_statusHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_metricMatchTypeHasBeenSet(false),
-    m_metricNameRuleHasBeenSet(false)
+    m_metricNameRuleHasBeenSet(false),
+    m_appendResourceAttributesHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string ModifyApmPrometheusRuleRequest::ToJsonString() const
         string key = "MetricNameRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metricNameRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appendResourceAttributesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppendResourceAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_appendResourceAttributes, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void ModifyApmPrometheusRuleRequest::SetMetricNameRule(const string& _metricName
 bool ModifyApmPrometheusRuleRequest::MetricNameRuleHasBeenSet() const
 {
     return m_metricNameRuleHasBeenSet;
+}
+
+bool ModifyApmPrometheusRuleRequest::GetAppendResourceAttributes() const
+{
+    return m_appendResourceAttributes;
+}
+
+void ModifyApmPrometheusRuleRequest::SetAppendResourceAttributes(const bool& _appendResourceAttributes)
+{
+    m_appendResourceAttributes = _appendResourceAttributes;
+    m_appendResourceAttributesHasBeenSet = true;
+}
+
+bool ModifyApmPrometheusRuleRequest::AppendResourceAttributesHasBeenSet() const
+{
+    return m_appendResourceAttributesHasBeenSet;
 }
 
 

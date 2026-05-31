@@ -55,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点池伸缩配置
-                     * @return Scaling 节点池伸缩配置
+                     * 获取<p>节点池伸缩配置</p>
+                     * @return Scaling <p>节点池伸缩配置</p>
                      * 
                      */
                     MachineSetScaling GetScaling() const;
 
                     /**
-                     * 设置节点池伸缩配置
-                     * @param _scaling 节点池伸缩配置
+                     * 设置<p>节点池伸缩配置</p>
+                     * @param _scaling <p>节点池伸缩配置</p>
                      * 
                      */
                     void SetScaling(const MachineSetScaling& _scaling);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool ScalingHasBeenSet() const;
 
                     /**
-                     * 获取子网列表
-                     * @return SubnetIds 子网列表
+                     * 获取<p>子网列表</p>
+                     * @return SubnetIds <p>子网列表</p>
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
-                     * 设置子网列表
-                     * @param _subnetIds 子网列表
+                     * 设置<p>子网列表</p>
+                     * @param _subnetIds <p>子网列表</p>
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
-                     * @return InstanceChargeType 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * 获取<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
+                     * @return InstanceChargeType <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
-                     * @param _instanceChargeType 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * 设置<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
+                     * @param _instanceChargeType <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘配置
-                     * @return SystemDisk 系统盘配置
+                     * 获取<p>系统盘配置</p>
+                     * @return SystemDisk <p>系统盘配置</p>
                      * 
                      */
                     Disk GetSystemDisk() const;
 
                     /**
-                     * 设置系统盘配置
-                     * @param _systemDisk 系统盘配置
+                     * 设置<p>系统盘配置</p>
+                     * @param _systemDisk <p>系统盘配置</p>
                      * 
                      */
                     void SetSystemDisk(const Disk& _systemDisk);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取机型列表
-                     * @return InstanceTypes 机型列表
+                     * 获取<p>机型列表</p>
+                     * @return InstanceTypes <p>机型列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置机型列表
-                     * @param _instanceTypes 机型列表
+                     * 设置<p>机型列表</p>
+                     * @param _instanceTypes <p>机型列表</p>
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
-                     * 获取安全组列表
-                     * @return SecurityGroupIds 安全组列表
+                     * 获取<p>安全组列表</p>
+                     * @return SecurityGroupIds <p>安全组列表</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组列表
-                     * @param _securityGroupIds 安全组列表
+                     * 设置<p>安全组列表</p>
+                     * @param _securityGroupIds <p>安全组列表</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取自动升级配置
-                     * @return UpgradeSettings 自动升级配置
+                     * 获取<p>自动升级配置</p>
+                     * @return UpgradeSettings <p>自动升级配置</p>
                      * 
                      */
                     MachineUpgradeSettings GetUpgradeSettings() const;
 
                     /**
-                     * 设置自动升级配置
-                     * @param _upgradeSettings 自动升级配置
+                     * 设置<p>自动升级配置</p>
+                     * @param _upgradeSettings <p>自动升级配置</p>
                      * 
                      */
                     void SetUpgradeSettings(const MachineUpgradeSettings& _upgradeSettings);
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool UpgradeSettingsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自愈能力
-                     * @return AutoRepair 是否开启自愈能力
+                     * 获取<p>是否开启自愈能力</p>
+                     * @return AutoRepair <p>是否开启自愈能力</p>
                      * 
                      */
                     bool GetAutoRepair() const;
 
                     /**
-                     * 设置是否开启自愈能力
-                     * @param _autoRepair 是否开启自愈能力
+                     * 设置<p>是否开启自愈能力</p>
+                     * @param _autoRepair <p>是否开启自愈能力</p>
                      * 
                      */
                     void SetAutoRepair(const bool& _autoRepair);
@@ -223,15 +223,15 @@ namespace TencentCloud
                     bool AutoRepairHasBeenSet() const;
 
                     /**
-                     * 获取包年包月机型计费配置
-                     * @return InstanceChargePrepaid 包年包月机型计费配置
+                     * 获取<p>包年包月机型计费配置</p>
+                     * @return InstanceChargePrepaid <p>包年包月机型计费配置</p>
                      * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
-                     * 设置包年包月机型计费配置
-                     * @param _instanceChargePrepaid 包年包月机型计费配置
+                     * 设置<p>包年包月机型计费配置</p>
+                     * @param _instanceChargePrepaid <p>包年包月机型计费配置</p>
                      * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
@@ -244,15 +244,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取节点池 Management 参数设置
-                     * @return Management 节点池 Management 参数设置
+                     * 获取<p>节点池 Management 参数设置</p>
+                     * @return Management <p>节点池 Management 参数设置</p>
                      * 
                      */
                     ManagementConfig GetManagement() const;
 
                     /**
-                     * 设置节点池 Management 参数设置
-                     * @param _management 节点池 Management 参数设置
+                     * 设置<p>节点池 Management 参数设置</p>
+                     * @param _management <p>节点池 Management 参数设置</p>
                      * 
                      */
                     void SetManagement(const ManagementConfig& _management);
@@ -265,15 +265,15 @@ namespace TencentCloud
                     bool ManagementHasBeenSet() const;
 
                     /**
-                     * 获取故障自愈规则名称
-                     * @return HealthCheckPolicyName 故障自愈规则名称
+                     * 获取<p>故障自愈规则名称</p>
+                     * @return HealthCheckPolicyName <p>故障自愈规则名称</p>
                      * 
                      */
                     std::string GetHealthCheckPolicyName() const;
 
                     /**
-                     * 设置故障自愈规则名称
-                     * @param _healthCheckPolicyName 故障自愈规则名称
+                     * 设置<p>故障自愈规则名称</p>
+                     * @param _healthCheckPolicyName <p>故障自愈规则名称</p>
                      * 
                      */
                     void SetHealthCheckPolicyName(const std::string& _healthCheckPolicyName);
@@ -286,15 +286,15 @@ namespace TencentCloud
                     bool HealthCheckPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池hostName模式串
-                     * @return HostNamePattern 原生节点池hostName模式串
+                     * 获取<p>原生节点池hostName模式串</p>
+                     * @return HostNamePattern <p>原生节点池hostName模式串</p>
                      * 
                      */
                     std::string GetHostNamePattern() const;
 
                     /**
-                     * 设置原生节点池hostName模式串
-                     * @param _hostNamePattern 原生节点池hostName模式串
+                     * 设置<p>原生节点池hostName模式串</p>
+                     * @param _hostNamePattern <p>原生节点池hostName模式串</p>
                      * 
                      */
                     void SetHostNamePattern(const std::string& _hostNamePattern);
@@ -307,15 +307,15 @@ namespace TencentCloud
                     bool HostNamePatternHasBeenSet() const;
 
                     /**
-                     * 获取kubelet 自定义参数
-                     * @return KubeletArgs kubelet 自定义参数
+                     * 获取<p>kubelet 自定义参数</p>
+                     * @return KubeletArgs <p>kubelet 自定义参数</p>
                      * 
                      */
                     std::vector<std::string> GetKubeletArgs() const;
 
                     /**
-                     * 设置kubelet 自定义参数
-                     * @param _kubeletArgs kubelet 自定义参数
+                     * 设置<p>kubelet 自定义参数</p>
+                     * @param _kubeletArgs <p>kubelet 自定义参数</p>
                      * 
                      */
                     void SetKubeletArgs(const std::vector<std::string>& _kubeletArgs);
@@ -328,15 +328,15 @@ namespace TencentCloud
                     bool KubeletArgsHasBeenSet() const;
 
                     /**
-                     * 获取预定义脚本
-                     * @return Lifecycle 预定义脚本
+                     * 获取<p>预定义脚本</p>
+                     * @return Lifecycle <p>预定义脚本</p>
                      * 
                      */
                     LifecycleConfig GetLifecycle() const;
 
                     /**
-                     * 设置预定义脚本
-                     * @param _lifecycle 预定义脚本
+                     * 设置<p>预定义脚本</p>
+                     * @param _lifecycle <p>预定义脚本</p>
                      * 
                      */
                     void SetLifecycle(const LifecycleConfig& _lifecycle);
@@ -349,15 +349,15 @@ namespace TencentCloud
                     bool LifecycleHasBeenSet() const;
 
                     /**
-                     * 获取运行时根目录
-                     * @return RuntimeRootDir 运行时根目录
+                     * 获取<p>运行时根目录</p>
+                     * @return RuntimeRootDir <p>运行时根目录</p>
                      * 
                      */
                     std::string GetRuntimeRootDir() const;
 
                     /**
-                     * 设置运行时根目录
-                     * @param _runtimeRootDir 运行时根目录
+                     * 设置<p>运行时根目录</p>
+                     * @param _runtimeRootDir <p>运行时根目录</p>
                      * 
                      */
                     void SetRuntimeRootDir(const std::string& _runtimeRootDir);
@@ -370,15 +370,15 @@ namespace TencentCloud
                     bool RuntimeRootDirHasBeenSet() const;
 
                     /**
-                     * 获取是否开启弹性伸缩
-                     * @return EnableAutoscaling 是否开启弹性伸缩
+                     * 获取<p>是否开启弹性伸缩</p>
+                     * @return EnableAutoscaling <p>是否开启弹性伸缩</p>
                      * 
                      */
                     bool GetEnableAutoscaling() const;
 
                     /**
-                     * 设置是否开启弹性伸缩
-                     * @param _enableAutoscaling 是否开启弹性伸缩
+                     * 设置<p>是否开启弹性伸缩</p>
+                     * @param _enableAutoscaling <p>是否开启弹性伸缩</p>
                      * 
                      */
                     void SetEnableAutoscaling(const bool& _enableAutoscaling);
@@ -391,15 +391,15 @@ namespace TencentCloud
                     bool EnableAutoscalingHasBeenSet() const;
 
                     /**
-                     * 获取期望节点数
-                     * @return Replicas 期望节点数
+                     * 获取<p>期望节点数</p>
+                     * @return Replicas <p>期望节点数</p>
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
-                     * 设置期望节点数
-                     * @param _replicas 期望节点数
+                     * 设置<p>期望节点数</p>
+                     * @param _replicas <p>期望节点数</p>
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -412,15 +412,15 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽设置
-                     * @return InternetAccessible 公网带宽设置
+                     * 获取<p>公网带宽设置</p>
+                     * @return InternetAccessible <p>公网带宽设置</p>
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置公网带宽设置
-                     * @param _internetAccessible 公网带宽设置
+                     * 设置<p>公网带宽设置</p>
+                     * @param _internetAccessible <p>公网带宽设置</p>
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -433,15 +433,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池数据盘列表
-                     * @return DataDisks 原生节点池数据盘列表
+                     * 获取<p>原生节点池数据盘列表</p>
+                     * @return DataDisks <p>原生节点池数据盘列表</p>
                      * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
-                     * 设置原生节点池数据盘列表
-                     * @param _dataDisks 原生节点池数据盘列表
+                     * 设置<p>原生节点池数据盘列表</p>
+                     * @param _dataDisks <p>原生节点池数据盘列表</p>
                      * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
@@ -454,15 +454,15 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
-                     * 获取qgpu开关
-                     * @return QGPUEnable qgpu开关
+                     * 获取<p>qgpu开关</p>
+                     * @return QGPUEnable <p>qgpu开关</p>
                      * 
                      */
                     bool GetQGPUEnable() const;
 
                     /**
-                     * 设置qgpu开关
-                     * @param _qGPUEnable qgpu开关
+                     * 设置<p>qgpu开关</p>
+                     * @param _qGPUEnable <p>qgpu开关</p>
                      * 
                      */
                     void SetQGPUEnable(const bool& _qGPUEnable);
@@ -475,15 +475,15 @@ namespace TencentCloud
                     bool QGPUEnableHasBeenSet() const;
 
                     /**
-                     * 获取节点池ssh公钥id数组
-                     * @return KeyIds 节点池ssh公钥id数组
+                     * 获取<p>节点池ssh公钥id数组</p>
+                     * @return KeyIds <p>节点池ssh公钥id数组</p>
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置节点池ssh公钥id数组
-                     * @param _keyIds 节点池ssh公钥id数组
+                     * 设置<p>节点池ssh公钥id数组</p>
+                     * @param _keyIds <p>节点池ssh公钥id数组</p>
                      * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
@@ -496,15 +496,15 @@ namespace TencentCloud
                     bool KeyIdsHasBeenSet() const;
 
                     /**
-                     * 获取节点池类型
-                     * @return MachineType 节点池类型
+                     * 获取<p>节点池类型</p>
+                     * @return MachineType <p>节点池类型</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置节点池类型
-                     * @param _machineType 节点池类型
+                     * 设置<p>节点池类型</p>
+                     * @param _machineType <p>节点池类型</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -517,15 +517,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池安装节点自动化助手开关
-                     * @return AutomationService 原生节点池安装节点自动化助手开关
+                     * 获取<p>原生节点池安装节点自动化助手开关</p>
+                     * @return AutomationService <p>原生节点池安装节点自动化助手开关</p>
                      * 
                      */
                     bool GetAutomationService() const;
 
                     /**
-                     * 设置原生节点池安装节点自动化助手开关
-                     * @param _automationService 原生节点池安装节点自动化助手开关
+                     * 设置<p>原生节点池安装节点自动化助手开关</p>
+                     * @param _automationService <p>原生节点池安装节点自动化助手开关</p>
                      * 
                      */
                     void SetAutomationService(const bool& _automationService);
@@ -538,15 +538,15 @@ namespace TencentCloud
                     bool AutomationServiceHasBeenSet() const;
 
                     /**
-                     * 获取原生节点池密码
-                     * @return Password 原生节点池密码
+                     * 获取<p>原生节点池密码</p>
+                     * @return Password <p>原生节点池密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置原生节点池密码
-                     * @param _password 原生节点池密码
+                     * 设置<p>原生节点池密码</p>
+                     * @param _password <p>原生节点池密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -561,145 +561,145 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点池伸缩配置
+                     * <p>节点池伸缩配置</p>
                      */
                     MachineSetScaling m_scaling;
                     bool m_scalingHasBeenSet;
 
                     /**
-                     * 子网列表
+                     * <p>子网列表</p>
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 系统盘配置
+                     * <p>系统盘配置</p>
                      */
                     Disk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 机型列表
+                     * <p>机型列表</p>
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
 
                     /**
-                     * 安全组列表
+                     * <p>安全组列表</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 自动升级配置
+                     * <p>自动升级配置</p>
                      */
                     MachineUpgradeSettings m_upgradeSettings;
                     bool m_upgradeSettingsHasBeenSet;
 
                     /**
-                     * 是否开启自愈能力
+                     * <p>是否开启自愈能力</p>
                      */
                     bool m_autoRepair;
                     bool m_autoRepairHasBeenSet;
 
                     /**
-                     * 包年包月机型计费配置
+                     * <p>包年包月机型计费配置</p>
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 节点池 Management 参数设置
+                     * <p>节点池 Management 参数设置</p>
                      */
                     ManagementConfig m_management;
                     bool m_managementHasBeenSet;
 
                     /**
-                     * 故障自愈规则名称
+                     * <p>故障自愈规则名称</p>
                      */
                     std::string m_healthCheckPolicyName;
                     bool m_healthCheckPolicyNameHasBeenSet;
 
                     /**
-                     * 原生节点池hostName模式串
+                     * <p>原生节点池hostName模式串</p>
                      */
                     std::string m_hostNamePattern;
                     bool m_hostNamePatternHasBeenSet;
 
                     /**
-                     * kubelet 自定义参数
+                     * <p>kubelet 自定义参数</p>
                      */
                     std::vector<std::string> m_kubeletArgs;
                     bool m_kubeletArgsHasBeenSet;
 
                     /**
-                     * 预定义脚本
+                     * <p>预定义脚本</p>
                      */
                     LifecycleConfig m_lifecycle;
                     bool m_lifecycleHasBeenSet;
 
                     /**
-                     * 运行时根目录
+                     * <p>运行时根目录</p>
                      */
                     std::string m_runtimeRootDir;
                     bool m_runtimeRootDirHasBeenSet;
 
                     /**
-                     * 是否开启弹性伸缩
+                     * <p>是否开启弹性伸缩</p>
                      */
                     bool m_enableAutoscaling;
                     bool m_enableAutoscalingHasBeenSet;
 
                     /**
-                     * 期望节点数
+                     * <p>期望节点数</p>
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 公网带宽设置
+                     * <p>公网带宽设置</p>
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 原生节点池数据盘列表
+                     * <p>原生节点池数据盘列表</p>
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
 
                     /**
-                     * qgpu开关
+                     * <p>qgpu开关</p>
                      */
                     bool m_qGPUEnable;
                     bool m_qGPUEnableHasBeenSet;
 
                     /**
-                     * 节点池ssh公钥id数组
+                     * <p>节点池ssh公钥id数组</p>
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
 
                     /**
-                     * 节点池类型
+                     * <p>节点池类型</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 原生节点池安装节点自动化助手开关
+                     * <p>原生节点池安装节点自动化助手开关</p>
                      */
                     bool m_automationService;
                     bool m_automationServiceHasBeenSet;
 
                     /**
-                     * 原生节点池密码
+                     * <p>原生节点池密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LocalPathHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件系统远程挂载路径。</p>
-                     * @return RemotePath <p>文件系统远程挂载路径。</p>
+                     * 获取<p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>
+                     * @return RemotePath <p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>
                      * 
                      */
                     std::string GetRemotePath() const;
 
                     /**
-                     * 设置<p>文件系统远程挂载路径。</p>
-                     * @param _remotePath <p>文件系统远程挂载路径。</p>
+                     * 设置<p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>
+                     * @param _remotePath <p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>
                      * 
                      */
                     void SetRemotePath(const std::string& _remotePath);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_localPathHasBeenSet;
 
                     /**
-                     * <p>文件系统远程挂载路径。</p>
+                     * <p>文件系统远程挂载路径; 远端路径为GooseFS控制台看到的命名空间的url;命名空间文档参考https://cloud.tencent.com/document/product/1424/117877</p>
                      */
                     std::string m_remotePath;
                     bool m_remotePathHasBeenSet;

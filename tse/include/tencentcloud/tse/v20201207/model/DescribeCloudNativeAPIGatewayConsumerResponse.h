@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除结果
-                     * @return Result 删除结果
+                     * 获取<p>消费者详情</p>
+                     * @return Result <p>消费者详情</p>
                      * 
                      */
                     CNAPIGwConsumer GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除结果
+                     * <p>消费者详情</p>
                      */
                     CNAPIGwConsumer m_result;
                     bool m_resultHasBeenSet;

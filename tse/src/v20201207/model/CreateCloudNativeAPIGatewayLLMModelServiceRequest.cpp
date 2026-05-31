@@ -42,7 +42,9 @@ CreateCloudNativeAPIGatewayLLMModelServiceRequest::CreateCloudNativeAPIGatewayLL
     m_readTimeoutHasBeenSet(false),
     m_retriesHasBeenSet(false),
     m_upstreamUrlModeHasBeenSet(false),
-    m_sNIHasBeenSet(false)
+    m_sNIHasBeenSet(false),
+    m_quotaLimitHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,28 @@ string CreateCloudNativeAPIGatewayLLMModelServiceRequest::ToJsonString() const
         string key = "SNI";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sNI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quotaLimit.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -546,6 +570,38 @@ void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetSNI(const string& _sN
 bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::SNIHasBeenSet() const
 {
     return m_sNIHasBeenSet;
+}
+
+AIGWLLMQuotaLimit CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetQuotaLimit() const
+{
+    return m_quotaLimit;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetQuotaLimit(const AIGWLLMQuotaLimit& _quotaLimit)
+{
+    m_quotaLimit = _quotaLimit;
+    m_quotaLimitHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::QuotaLimitHasBeenSet() const
+{
+    return m_quotaLimitHasBeenSet;
+}
+
+vector<string> CreateCloudNativeAPIGatewayLLMModelServiceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelServiceRequest::SetTags(const vector<string>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelServiceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

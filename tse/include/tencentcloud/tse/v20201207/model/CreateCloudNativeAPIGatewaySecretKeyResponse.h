@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取允许的操作
-                     * @return Result 允许的操作
+                     * 获取<p>创建结果。包含成功标识与新建资源 ID。</p>
+                     * @return Result <p>创建结果。包含成功标识与新建资源 ID。</p>
                      * 
                      */
                     CNAPIGwCreateCommonResult GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 允许的操作
+                     * <p>创建结果。包含成功标识与新建资源 ID。</p>
                      */
                     CNAPIGwCreateCommonResult m_result;
                     bool m_resultHasBeenSet;

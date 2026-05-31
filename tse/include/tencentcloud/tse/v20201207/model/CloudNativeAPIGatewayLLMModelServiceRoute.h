@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy.h>
+#include <tencentcloud/tse/v20201207/model/AIGWIntentRoute.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLatencyPriorityConfig.h>
 
 
 namespace TencentCloud
@@ -49,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)
-                     * @return SelectedTypes 生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)
+                     * 获取<p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>
+                     * @return SelectedTypes <p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>
                      * 
                      */
                     std::vector<std::string> GetSelectedTypes() const;
 
                     /**
-                     * 设置生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)
-                     * @param _selectedTypes 生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)
+                     * 设置<p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>
+                     * @param _selectedTypes <p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>
                      * 
                      */
                     void SetSelectedTypes(const std::vector<std::string>& _selectedTypes);
@@ -70,15 +72,15 @@ namespace TencentCloud
                     bool SelectedTypesHasBeenSet() const;
 
                     /**
-                     * 获取权重路由配置，最多10个
-                     * @return WeightedConfig 权重路由配置，最多10个
+                     * 获取<p>权重路由配置，最多10个</p>
+                     * @return WeightedConfig <p>权重路由配置，最多10个</p>
                      * 
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy> GetWeightedConfig() const;
 
                     /**
-                     * 设置权重路由配置，最多10个
-                     * @param _weightedConfig 权重路由配置，最多10个
+                     * 设置<p>权重路由配置，最多10个</p>
+                     * @param _weightedConfig <p>权重路由配置，最多10个</p>
                      * 
                      */
                     void SetWeightedConfig(const std::vector<CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy>& _weightedConfig);
@@ -91,15 +93,15 @@ namespace TencentCloud
                     bool WeightedConfigHasBeenSet() const;
 
                     /**
-                     * 获取模型名称路由配置，最多10个
-                     * @return ModelNameConfig 模型名称路由配置，最多10个
+                     * 获取<p>模型名称路由配置，最多10个</p>
+                     * @return ModelNameConfig <p>模型名称路由配置，最多10个</p>
                      * 
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy> GetModelNameConfig() const;
 
                     /**
-                     * 设置模型名称路由配置，最多10个
-                     * @param _modelNameConfig 模型名称路由配置，最多10个
+                     * 设置<p>模型名称路由配置，最多10个</p>
+                     * @param _modelNameConfig <p>模型名称路由配置，最多10个</p>
                      * 
                      */
                     void SetModelNameConfig(const std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy>& _modelNameConfig);
@@ -111,25 +113,79 @@ namespace TencentCloud
                      */
                     bool ModelNameConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>意图识别</p>
+                     * @return IntentRouteConfig <p>意图识别</p>
+                     * 
+                     */
+                    AIGWIntentRoute GetIntentRouteConfig() const;
+
+                    /**
+                     * 设置<p>意图识别</p>
+                     * @param _intentRouteConfig <p>意图识别</p>
+                     * 
+                     */
+                    void SetIntentRouteConfig(const AIGWIntentRoute& _intentRouteConfig);
+
+                    /**
+                     * 判断参数 IntentRouteConfig 是否已赋值
+                     * @return IntentRouteConfig 是否已赋值
+                     * 
+                     */
+                    bool IntentRouteConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>延迟路由</p>
+                     * @return LatencyPriorityConfig <p>延迟路由</p>
+                     * 
+                     */
+                    AIGWLatencyPriorityConfig GetLatencyPriorityConfig() const;
+
+                    /**
+                     * 设置<p>延迟路由</p>
+                     * @param _latencyPriorityConfig <p>延迟路由</p>
+                     * 
+                     */
+                    void SetLatencyPriorityConfig(const AIGWLatencyPriorityConfig& _latencyPriorityConfig);
+
+                    /**
+                     * 判断参数 LatencyPriorityConfig 是否已赋值
+                     * @return LatencyPriorityConfig 是否已赋值
+                     * 
+                     */
+                    bool LatencyPriorityConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)
+                     * <p>生效的路由算法类型：权重路由，模型名称路由、参数路由等Weighted/ModelName/Query (预留多个，暂时只能填写一个)</p>
                      */
                     std::vector<std::string> m_selectedTypes;
                     bool m_selectedTypesHasBeenSet;
 
                     /**
-                     * 权重路由配置，最多10个
+                     * <p>权重路由配置，最多10个</p>
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy> m_weightedConfig;
                     bool m_weightedConfigHasBeenSet;
 
                     /**
-                     * 模型名称路由配置，最多10个
+                     * <p>模型名称路由配置，最多10个</p>
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy> m_modelNameConfig;
                     bool m_modelNameConfigHasBeenSet;
+
+                    /**
+                     * <p>意图识别</p>
+                     */
+                    AIGWIntentRoute m_intentRouteConfig;
+                    bool m_intentRouteConfigHasBeenSet;
+
+                    /**
+                     * <p>延迟路由</p>
+                     */
+                    AIGWLatencyPriorityConfig m_latencyPriorityConfig;
+                    bool m_latencyPriorityConfigHasBeenSet;
 
                 };
             }

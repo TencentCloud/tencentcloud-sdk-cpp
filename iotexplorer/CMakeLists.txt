@@ -461,6 +461,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeStatsResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousResult.h
   include/tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/WXIoTDeviceInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h
@@ -555,6 +556,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ListOtaModulesRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeP2PRouteRequest.h
@@ -1026,6 +1028,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateBatchProductionRequest.cpp
   src/v20190423/model/ReleaseStudioProductRequest.cpp
   src/v20190423/model/DescribeCloudStoragePackageConsumeStatsResponse.cpp
+  src/v20190423/model/SeeDetectContinuousResult.cpp
   src/v20190423/model/ListEventHistoryRequest.cpp
   src/v20190423/model/WXIoTDeviceInfo.cpp
   src/v20190423/model/SearchTopicRuleRequest.cpp
@@ -1120,6 +1123,7 @@ set(iotexplorer_src
   src/v20190423/model/GetTWeTalkAIBotListRequest.cpp
   src/v20190423/model/GetTopicRuleListRequest.cpp
   src/v20190423/model/ListOtaModulesRequest.cpp
+  src/v20190423/model/SeeDetectContinuousConfig.cpp
   src/v20190423/model/CreateDeviceSDPAnswerResponse.cpp
   src/v20190423/model/DeleteStudioProductRequest.cpp
   src/v20190423/model/DescribeP2PRouteRequest.cpp

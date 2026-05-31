@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标匹配规则的ID
-                     * @return RuleId 指标匹配规则的ID
+                     * 获取<p>指标匹配规则的ID</p>
+                     * @return RuleId <p>指标匹配规则的ID</p>
                      * 
                      */
                     int64_t GetRuleId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标匹配规则的ID
+                     * <p>指标匹配规则的ID</p>
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

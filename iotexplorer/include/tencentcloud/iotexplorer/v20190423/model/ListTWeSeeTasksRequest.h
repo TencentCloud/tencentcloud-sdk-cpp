@@ -85,19 +85,23 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取算法类目。可能取值：
+                     * 获取算法类目。可选值：
 - `COMPREHENSION`：视觉理解
-                     * @return ServiceCategory 算法类目。可能取值：
+- `HIGHLIGHT`：视频浓缩
+                     * @return ServiceCategory 算法类目。可选值：
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * 
                      */
                     std::string GetServiceCategory() const;
 
                     /**
-                     * 设置算法类目。可能取值：
+                     * 设置算法类目。可选值：
 - `COMPREHENSION`：视觉理解
-                     * @param _serviceCategory 算法类目。可能取值：
+- `HIGHLIGHT`：视频浓缩
+                     * @param _serviceCategory 算法类目。可选值：
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      * 
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -150,6 +154,59 @@ namespace TencentCloud
                      * 
                      */
                     bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取算法类型。
+
+当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：
+- `VID_COMP`：视频理解
+- `IMG_COMP`：图片理解
+- `CONT_PERSON_MOTIONLESS`：静姿检测
+
+当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：
+- `COMP_HIGHLIGHT`：视频浓缩
+                     * @return ServiceTypes 算法类型。
+
+当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：
+- `VID_COMP`：视频理解
+- `IMG_COMP`：图片理解
+- `CONT_PERSON_MOTIONLESS`：静姿检测
+
+当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：
+- `COMP_HIGHLIGHT`：视频浓缩
+                     * 
+                     */
+                    std::vector<std::string> GetServiceTypes() const;
+
+                    /**
+                     * 设置算法类型。
+
+当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：
+- `VID_COMP`：视频理解
+- `IMG_COMP`：图片理解
+- `CONT_PERSON_MOTIONLESS`：静姿检测
+
+当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：
+- `COMP_HIGHLIGHT`：视频浓缩
+                     * @param _serviceTypes 算法类型。
+
+当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：
+- `VID_COMP`：视频理解
+- `IMG_COMP`：图片理解
+- `CONT_PERSON_MOTIONLESS`：静姿检测
+
+当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：
+- `COMP_HIGHLIGHT`：视频浓缩
+                     * 
+                     */
+                    void SetServiceTypes(const std::vector<std::string>& _serviceTypes);
+
+                    /**
+                     * 判断参数 ServiceTypes 是否已赋值
+                     * @return ServiceTypes 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypesHasBeenSet() const;
 
                     /**
                      * 获取通道 ID
@@ -251,6 +308,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @return FileURLExpireTime 下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    int64_t GetFileURLExpireTime() const;
+
+                    /**
+                     * 设置下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @param _fileURLExpireTime 下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    void SetFileURLExpireTime(const int64_t& _fileURLExpireTime);
+
+                    /**
+                     * 判断参数 FileURLExpireTime 是否已赋值
+                     * @return FileURLExpireTime 是否已赋值
+                     * 
+                     */
+                    bool FileURLExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,8 +344,9 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 算法类目。可能取值：
+                     * 算法类目。可选值：
 - `COMPREHENSION`：视觉理解
+- `HIGHLIGHT`：视频浓缩
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
@@ -283,6 +362,20 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 算法类型。
+
+当 ServiceCategory 为 `COMPREHENSION` 时，可选值包括：
+- `VID_COMP`：视频理解
+- `IMG_COMP`：图片理解
+- `CONT_PERSON_MOTIONLESS`：静姿检测
+
+当 ServiceCategory 为 `HIGHLIGHT` 时，可选值包括：
+- `COMP_HIGHLIGHT`：视频浓缩
+                     */
+                    std::vector<std::string> m_serviceTypes;
+                    bool m_serviceTypesHasBeenSet;
 
                     /**
                      * 通道 ID
@@ -311,6 +404,12 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 下载 URL 的过期时间（秒级 UNIX 时间戳）。若传入该参数，则响应中将包含所有文件的下载 URL
+                     */
+                    int64_t m_fileURLExpireTime;
+                    bool m_fileURLExpireTimeHasBeenSet;
 
                 };
             }

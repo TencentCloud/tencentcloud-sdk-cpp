@@ -41,7 +41,10 @@ CloudNativeAPIGatewayLLMModelService::CloudNativeAPIGatewayLLMModelService() :
     m_readTimeoutHasBeenSet(false),
     m_retriesHasBeenSet(false),
     m_upstreamUrlModeHasBeenSet(false),
-    m_sNIHasBeenSet(false)
+    m_sNIHasBeenSet(false),
+    m_quotaLimitHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_secretKeyIdsHasBeenSet(false)
 {
 }
 
@@ -274,6 +277,46 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelService::Deserialize(const rapi
         m_sNIHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaLimit") && !value["QuotaLimit"].IsNull())
+    {
+        if (!value["QuotaLimit"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.QuotaLimit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quotaLimit.Deserialize(value["QuotaLimit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.Tags` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tags = string(value["Tags"].GetString());
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKeyIds") && !value["SecretKeyIds"].IsNull())
+    {
+        if (!value["SecretKeyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SecretKeyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecretKeyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_secretKeyIds.push_back((*itr).GetString());
+        }
+        m_secretKeyIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +492,36 @@ void CloudNativeAPIGatewayLLMModelService::ToJsonObject(rapidjson::Value &value,
         string key = "SNI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sNI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quotaLimit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tags.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secretKeyIds.begin(); itr != m_secretKeyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -788,5 +861,53 @@ void CloudNativeAPIGatewayLLMModelService::SetSNI(const string& _sNI)
 bool CloudNativeAPIGatewayLLMModelService::SNIHasBeenSet() const
 {
     return m_sNIHasBeenSet;
+}
+
+AIGWLLMQuotaLimit CloudNativeAPIGatewayLLMModelService::GetQuotaLimit() const
+{
+    return m_quotaLimit;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetQuotaLimit(const AIGWLLMQuotaLimit& _quotaLimit)
+{
+    m_quotaLimit = _quotaLimit;
+    m_quotaLimitHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::QuotaLimitHasBeenSet() const
+{
+    return m_quotaLimitHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelService::GetTags() const
+{
+    return m_tags;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetTags(const string& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+vector<string> CloudNativeAPIGatewayLLMModelService::GetSecretKeyIds() const
+{
+    return m_secretKeyIds;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSecretKeyIds(const vector<string>& _secretKeyIds)
+{
+    m_secretKeyIds = _secretKeyIds;
+    m_secretKeyIdsHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SecretKeyIdsHasBeenSet() const
+{
+    return m_secretKeyIdsHasBeenSet;
 }
 

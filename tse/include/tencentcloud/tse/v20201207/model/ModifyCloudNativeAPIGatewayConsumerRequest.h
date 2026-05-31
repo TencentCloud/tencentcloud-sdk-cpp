@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者ID
-                     * @return ConsumerId 消费者ID
+                     * 获取<p>消费者 ID。</p>
+                     * @return ConsumerId <p>消费者 ID。</p>
                      * 
                      */
                     std::string GetConsumerId() const;
 
                     /**
-                     * 设置消费者ID
-                     * @param _consumerId 消费者ID
+                     * 设置<p>消费者 ID。</p>
+                     * @param _consumerId <p>消费者 ID。</p>
                      * 
                      */
                     void SetConsumerId(const std::string& _consumerId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConsumerIdHasBeenSet() const;
 
                     /**
-                     * 获取新的消费者名称
-                     * @return Name 新的消费者名称
+                     * 获取<p>消费者名称，最长 60 字符。</p>
+                     * @return Name <p>消费者名称，最长 60 字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置新的消费者名称
-                     * @param _name 新的消费者名称
+                     * 设置<p>消费者名称，最长 60 字符。</p>
+                     * @param _name <p>消费者名称，最长 60 字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取新的消费者描述
-                     * @return Description 新的消费者描述
+                     * 获取<p>消费者描述。最长 200 字符。</p>
+                     * @return Description <p>消费者描述。最长 200 字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置新的消费者描述
-                     * @param _description 新的消费者描述
+                     * 设置<p>消费者描述。最长 200 字符。</p>
+                     * @param _description <p>消费者描述。最长 200 字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -135,19 +135,19 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 消费者ID
+                     * <p>消费者 ID。</p>
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;
 
                     /**
-                     * 新的消费者名称
+                     * <p>消费者名称，最长 60 字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 新的消费者描述
+                     * <p>消费者描述。最长 200 字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

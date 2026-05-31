@@ -437,6 +437,8 @@
 #include <tencentcloud/mps/v20190612/model/TextTranslationResponse.h>
 #include <tencentcloud/mps/v20190612/model/UpdateProjectRequest.h>
 #include <tencentcloud/mps/v20190612/model/UpdateProjectResponse.h>
+#include <tencentcloud/mps/v20190612/model/UpdateVoiceRequest.h>
+#include <tencentcloud/mps/v20190612/model/UpdateVoiceResponse.h>
 #include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h>
 #include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkResponse.h>
 
@@ -1074,6 +1076,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateProjectResponse> UpdateProjectOutcome;
                 typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::UpdateProjectRequest&, UpdateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateVoiceResponse> UpdateVoiceOutcome;
+                typedef std::future<UpdateVoiceOutcome> UpdateVoiceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::UpdateVoiceRequest&, UpdateVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawsWatermarkResponse> WithdrawsWatermarkOutcome;
                 typedef std::future<WithdrawsWatermarkOutcome> WithdrawsWatermarkOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::WithdrawsWatermarkRequest&, WithdrawsWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawsWatermarkAsyncHandler;
@@ -3017,6 +3022,15 @@ namespace TencentCloud
                 UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest &request);
                 void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request);
+
+                /**
+                 *更新音色信息
+                 * @param req UpdateVoiceRequest
+                 * @return UpdateVoiceOutcome
+                 */
+                UpdateVoiceOutcome UpdateVoice(const Model::UpdateVoiceRequest &request);
+                void UpdateVoiceAsync(const Model::UpdateVoiceRequest& request, const UpdateVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateVoiceOutcomeCallable UpdateVoiceCallable(const Model::UpdateVoiceRequest& request);
 
                 /**
                  *提取视频中的盲水印。

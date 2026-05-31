@@ -25,7 +25,8 @@ VisionSummaryConfig::VisionSummaryConfig() :
     m_alternativeOutputLangHasBeenSet(false),
     m_multiCameraLayoutHasBeenSet(false),
     m_detectTypesHasBeenSet(false),
-    m_customDetectQueriesHasBeenSet(false)
+    m_customDetectQueriesHasBeenSet(false),
+    m_detectContinuousHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,26 @@ CoreInternalOutcome VisionSummaryConfig::Deserialize(const rapidjson::Value &val
         m_customDetectQueriesHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectContinuous") && !value["DetectContinuous"].IsNull())
+    {
+        if (!value["DetectContinuous"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VisionSummaryConfig.DetectContinuous` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetectContinuous"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SeeDetectContinuousConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detectContinuous.push_back(item);
+        }
+        m_detectContinuousHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +171,21 @@ void VisionSummaryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
         int i=0;
         for (auto itr = m_customDetectQueries.begin(); itr != m_customDetectQueries.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_detectContinuousHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectContinuous";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detectContinuous.begin(); itr != m_detectContinuous.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -237,5 +273,21 @@ void VisionSummaryConfig::SetCustomDetectQueries(const vector<VisionCustomDetect
 bool VisionSummaryConfig::CustomDetectQueriesHasBeenSet() const
 {
     return m_customDetectQueriesHasBeenSet;
+}
+
+vector<SeeDetectContinuousConfig> VisionSummaryConfig::GetDetectContinuous() const
+{
+    return m_detectContinuous;
+}
+
+void VisionSummaryConfig::SetDetectContinuous(const vector<SeeDetectContinuousConfig>& _detectContinuous)
+{
+    m_detectContinuous = _detectContinuous;
+    m_detectContinuousHasBeenSet = true;
+}
+
+bool VisionSummaryConfig::DetectContinuousHasBeenSet() const
+{
+    return m_detectContinuousHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ ApmPrometheusRules::ApmPrometheusRules() :
     m_serviceNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_metricNameRuleHasBeenSet(false),
-    m_metricMatchTypeHasBeenSet(false)
+    m_metricMatchTypeHasBeenSet(false),
+    m_appendResourceAttributesHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ApmPrometheusRules::Deserialize(const rapidjson::Value &valu
         m_metricMatchTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppendResourceAttributes") && !value["AppendResourceAttributes"].IsNull())
+    {
+        if (!value["AppendResourceAttributes"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmPrometheusRules.AppendResourceAttributes` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_appendResourceAttributes = value["AppendResourceAttributes"].GetBool();
+        m_appendResourceAttributesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ApmPrometheusRules::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MetricMatchType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metricMatchType, allocator);
+    }
+
+    if (m_appendResourceAttributesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppendResourceAttributes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appendResourceAttributes, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ApmPrometheusRules::SetMetricMatchType(const int64_t& _metricMatchType)
 bool ApmPrometheusRules::MetricMatchTypeHasBeenSet() const
 {
     return m_metricMatchTypeHasBeenSet;
+}
+
+bool ApmPrometheusRules::GetAppendResourceAttributes() const
+{
+    return m_appendResourceAttributes;
+}
+
+void ApmPrometheusRules::SetAppendResourceAttributes(const bool& _appendResourceAttributes)
+{
+    m_appendResourceAttributes = _appendResourceAttributes;
+    m_appendResourceAttributesHasBeenSet = true;
+}
+
+bool ApmPrometheusRules::AppendResourceAttributesHasBeenSet() const
+{
+    return m_appendResourceAttributesHasBeenSet;
 }
 

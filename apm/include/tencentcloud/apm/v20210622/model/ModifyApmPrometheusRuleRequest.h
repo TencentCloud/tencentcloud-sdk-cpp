@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则ID
-                     * @return Id 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return Id <p>规则ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _id 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _id <p>规则ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取<p>业务系统ID</p>
+                     * @return InstanceId <p>业务系统ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置<p>业务系统ID</p>
+                     * @param _instanceId <p>业务系统ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取所要修改的规则名
-                     * @return Name 所要修改的规则名
+                     * 获取<p>所要修改的规则名</p>
+                     * @return Name <p>所要修改的规则名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置所要修改的规则名
-                     * @param _name 所要修改的规则名
+                     * 设置<p>所要修改的规则名</p>
+                     * @param _name <p>所要修改的规则名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则状态：1(启用)、2（不启用）、3（删除）
-                     * @return Status 规则状态：1(启用)、2（不启用）、3（删除）
+                     * 获取<p>规则状态：1(启用)、2（不启用）、3（删除）</p>
+                     * @return Status <p>规则状态：1(启用)、2（不启用）、3（删除）</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置规则状态：1(启用)、2（不启用）、3（删除）
-                     * @param _status 规则状态：1(启用)、2（不启用）、3（删除）
+                     * 设置<p>规则状态：1(启用)、2（不启用）、3（删除）</p>
+                     * @param _status <p>规则状态：1(启用)、2（不启用）、3（删除）</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）
-                     * @return ServiceName 规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）
+                     * 获取<p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>
+                     * @return ServiceName <p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）
-                     * @param _serviceName 规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）
+                     * 设置<p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>
+                     * @param _serviceName <p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）
-                     * @return MetricMatchType 匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）
+                     * 获取<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>
+                     * @return MetricMatchType <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>
                      * 
                      */
                     int64_t GetMetricMatchType() const;
 
                     /**
-                     * 设置匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）
-                     * @param _metricMatchType 匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）
+                     * 设置<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>
+                     * @param _metricMatchType <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>
                      * 
                      */
                     void SetMetricMatchType(const int64_t& _metricMatchType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool MetricMatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取客户定义的命中指标名规则。
-                     * @return MetricNameRule 客户定义的命中指标名规则。
+                     * 获取<p>客户定义的命中指标名规则。</p>
+                     * @return MetricNameRule <p>客户定义的命中指标名规则。</p>
                      * 
                      */
                     std::string GetMetricNameRule() const;
 
                     /**
-                     * 设置客户定义的命中指标名规则。
-                     * @param _metricNameRule 客户定义的命中指标名规则。
+                     * 设置<p>客户定义的命中指标名规则。</p>
+                     * @param _metricNameRule <p>客户定义的命中指标名规则。</p>
                      * 
                      */
                     void SetMetricNameRule(const std::string& _metricNameRule);
@@ -189,49 +189,76 @@ namespace TencentCloud
                      */
                     bool MetricNameRuleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否追加资源属性</p>
+                     * @return AppendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    bool GetAppendResourceAttributes() const;
+
+                    /**
+                     * 设置<p>是否追加资源属性</p>
+                     * @param _appendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    void SetAppendResourceAttributes(const bool& _appendResourceAttributes);
+
+                    /**
+                     * 判断参数 AppendResourceAttributes 是否已赋值
+                     * @return AppendResourceAttributes 是否已赋值
+                     * 
+                     */
+                    bool AppendResourceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * <p>业务系统ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 所要修改的规则名
+                     * <p>所要修改的规则名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则状态：1(启用)、2（不启用）、3（删除）
+                     * <p>规则状态：1(启用)、2（不启用）、3（删除）</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）
+                     * <p>规则生效的应用。生效于全部应用就传空（这个如果不修改也要传旧的规则）</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）
+                     * <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配（这个如果不修改也要传旧的规则）</p>
                      */
                     int64_t m_metricMatchType;
                     bool m_metricMatchTypeHasBeenSet;
 
                     /**
-                     * 客户定义的命中指标名规则。
+                     * <p>客户定义的命中指标名规则。</p>
                      */
                     std::string m_metricNameRule;
                     bool m_metricNameRuleHasBeenSet;
+
+                    /**
+                     * <p>是否追加资源属性</p>
+                     */
+                    bool m_appendResourceAttributes;
+                    bool m_appendResourceAttributesHasBeenSet;
 
                 };
             }

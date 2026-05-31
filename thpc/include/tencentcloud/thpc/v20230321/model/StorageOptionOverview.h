@@ -27,6 +27,7 @@
 #include <tencentcloud/thpc/v20230321/model/CFSOptionOverview.h>
 #include <tencentcloud/thpc/v20230321/model/GooseFSOptionOverview.h>
 #include <tencentcloud/thpc/v20230321/model/GooseFSxOptionOverview.h>
+#include <tencentcloud/thpc/v20230321/model/CosOptionOverview.h>
 
 
 namespace TencentCloud
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CFS存储选项概览信息列表。
-                     * @return CFSOptions CFS存储选项概览信息列表。
+                     * 获取<p>CFS存储选项概览信息列表。</p>
+                     * @return CFSOptions <p>CFS存储选项概览信息列表。</p>
                      * 
                      */
                     std::vector<CFSOptionOverview> GetCFSOptions() const;
 
                     /**
-                     * 设置CFS存储选项概览信息列表。
-                     * @param _cFSOptions CFS存储选项概览信息列表。
+                     * 设置<p>CFS存储选项概览信息列表。</p>
+                     * @param _cFSOptions <p>CFS存储选项概览信息列表。</p>
                      * 
                      */
                     void SetCFSOptions(const std::vector<CFSOptionOverview>& _cFSOptions);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool CFSOptionsHasBeenSet() const;
 
                     /**
-                     * 获取GooseFS存储选项概览信息列表。
-                     * @return GooseFSOptions GooseFS存储选项概览信息列表。
+                     * 获取<p>GooseFS存储选项概览信息列表。</p>
+                     * @return GooseFSOptions <p>GooseFS存储选项概览信息列表。</p>
                      * 
                      */
                     std::vector<GooseFSOptionOverview> GetGooseFSOptions() const;
 
                     /**
-                     * 设置GooseFS存储选项概览信息列表。
-                     * @param _gooseFSOptions GooseFS存储选项概览信息列表。
+                     * 设置<p>GooseFS存储选项概览信息列表。</p>
+                     * @param _gooseFSOptions <p>GooseFS存储选项概览信息列表。</p>
                      * 
                      */
                     void SetGooseFSOptions(const std::vector<GooseFSOptionOverview>& _gooseFSOptions);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool GooseFSOptionsHasBeenSet() const;
 
                     /**
-                     * 获取GooseFSx存储选项概览信息列表。
-                     * @return GooseFSxOptions GooseFSx存储选项概览信息列表。
+                     * 获取<p>GooseFSx存储选项概览信息列表。</p>
+                     * @return GooseFSxOptions <p>GooseFSx存储选项概览信息列表。</p>
                      * 
                      */
                     std::vector<GooseFSxOptionOverview> GetGooseFSxOptions() const;
 
                     /**
-                     * 设置GooseFSx存储选项概览信息列表。
-                     * @param _gooseFSxOptions GooseFSx存储选项概览信息列表。
+                     * 设置<p>GooseFSx存储选项概览信息列表。</p>
+                     * @param _gooseFSxOptions <p>GooseFSx存储选项概览信息列表。</p>
                      * 
                      */
                     void SetGooseFSxOptions(const std::vector<GooseFSxOptionOverview>& _gooseFSxOptions);
@@ -112,25 +113,52 @@ namespace TencentCloud
                      */
                     bool GooseFSxOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>COS存储选项概览信息列表。</p>
+                     * @return CosOptions <p>COS存储选项概览信息列表。</p>
+                     * 
+                     */
+                    std::vector<CosOptionOverview> GetCosOptions() const;
+
+                    /**
+                     * 设置<p>COS存储选项概览信息列表。</p>
+                     * @param _cosOptions <p>COS存储选项概览信息列表。</p>
+                     * 
+                     */
+                    void SetCosOptions(const std::vector<CosOptionOverview>& _cosOptions);
+
+                    /**
+                     * 判断参数 CosOptions 是否已赋值
+                     * @return CosOptions 是否已赋值
+                     * 
+                     */
+                    bool CosOptionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CFS存储选项概览信息列表。
+                     * <p>CFS存储选项概览信息列表。</p>
                      */
                     std::vector<CFSOptionOverview> m_cFSOptions;
                     bool m_cFSOptionsHasBeenSet;
 
                     /**
-                     * GooseFS存储选项概览信息列表。
+                     * <p>GooseFS存储选项概览信息列表。</p>
                      */
                     std::vector<GooseFSOptionOverview> m_gooseFSOptions;
                     bool m_gooseFSOptionsHasBeenSet;
 
                     /**
-                     * GooseFSx存储选项概览信息列表。
+                     * <p>GooseFSx存储选项概览信息列表。</p>
                      */
                     std::vector<GooseFSxOptionOverview> m_gooseFSxOptions;
                     bool m_gooseFSxOptionsHasBeenSet;
+
+                    /**
+                     * <p>COS存储选项概览信息列表。</p>
+                     */
+                    std::vector<CosOptionOverview> m_cosOptions;
+                    bool m_cosOptionsHasBeenSet;
 
                 };
             }

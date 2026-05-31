@@ -29,6 +29,7 @@ SeeTaskInfo::SeeTaskInfo() :
     m_serviceTierHasBeenSet(false),
     m_comprehensionResultHasBeenSet(false),
     m_compHighlightResultHasBeenSet(false),
+    m_detectContinuousResultHasBeenSet(false),
     m_costBasicHasBeenSet(false),
     m_costAdvancedHasBeenSet(false),
     m_filesHasBeenSet(false),
@@ -142,6 +143,23 @@ CoreInternalOutcome SeeTaskInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_compHighlightResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("DetectContinuousResult") && !value["DetectContinuousResult"].IsNull())
+    {
+        if (!value["DetectContinuousResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeTaskInfo.DetectContinuousResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_detectContinuousResult.Deserialize(value["DetectContinuousResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_detectContinuousResultHasBeenSet = true;
     }
 
     if (value.HasMember("CostBasic") && !value["CostBasic"].IsNull())
@@ -289,6 +307,15 @@ void SeeTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_compHighlightResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_detectContinuousResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectContinuousResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_detectContinuousResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_costBasicHasBeenSet)
@@ -480,6 +507,22 @@ void SeeTaskInfo::SetCompHighlightResult(const SeeCompHighlightResult& _compHigh
 bool SeeTaskInfo::CompHighlightResultHasBeenSet() const
 {
     return m_compHighlightResultHasBeenSet;
+}
+
+SeeDetectContinuousResult SeeTaskInfo::GetDetectContinuousResult() const
+{
+    return m_detectContinuousResult;
+}
+
+void SeeTaskInfo::SetDetectContinuousResult(const SeeDetectContinuousResult& _detectContinuousResult)
+{
+    m_detectContinuousResult = _detectContinuousResult;
+    m_detectContinuousResultHasBeenSet = true;
+}
+
+bool SeeTaskInfo::DetectContinuousResultHasBeenSet() const
+{
+    return m_detectContinuousResultHasBeenSet;
 }
 
 int64_t SeeTaskInfo::GetCostBasic() const

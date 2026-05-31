@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return GatewayId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return GatewayId <p>实例 ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _gatewayId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _gatewayId <p>实例 ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，最大20个
-                     * @return Limit 每页数量，最大20个
+                     * 获取<p>每页条数，范围 [1, 100]，默认 10。</p>
+                     * @return Limit <p>每页条数，范围 [1, 100]，默认 10。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量，最大20个
-                     * @param _limit 每页数量，最大20个
+                     * 设置<p>每页条数，范围 [1, 100]，默认 10。</p>
+                     * @param _limit <p>每页条数，范围 [1, 100]，默认 10。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取起始值
-                     * @return Offset 起始值
+                     * 获取<p>起始位置，从 0 开始。</p>
+                     * @return Offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置起始值
-                     * @param _offset 起始值
+                     * 设置<p>起始位置，从 0 开始。</p>
+                     * @param _offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
+                     * @return ResourceType <p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置<p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
+                     * @param _resourceType <p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 每页数量，最大20个
+                     * <p>每页条数，范围 [1, 100]，默认 10。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 起始值
+                     * <p>起始位置，从 0 开始。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

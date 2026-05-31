@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return GatewayId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return GatewayId <p>实例 ID</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _gatewayId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _gatewayId <p>实例 ID</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取密钥名字
-                     * @return Status 密钥名字
+                     * 获取<p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * @return Status <p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置密钥名字
-                     * @param _status 密钥名字
+                     * 设置<p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * @param _status <p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取密钥id
-                     * @return SecretKeyId 密钥id
+                     * 获取<p>密钥 ID（以 secret- 开头）。</p>
+                     * @return SecretKeyId <p>密钥 ID（以 secret- 开头）。</p>
                      * 
                      */
                     std::string GetSecretKeyId() const;
 
                     /**
-                     * 设置密钥id
-                     * @param _secretKeyId 密钥id
+                     * 设置<p>密钥 ID（以 secret- 开头）。</p>
+                     * @param _secretKeyId <p>密钥 ID（以 secret- 开头）。</p>
                      * 
                      */
                     void SetSecretKeyId(const std::string& _secretKeyId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 密钥名字
+                     * <p>密钥状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 密钥id
+                     * <p>密钥 ID（以 secret- 开头）。</p>
                      */
                     std::string m_secretKeyId;
                     bool m_secretKeyIdHasBeenSet;

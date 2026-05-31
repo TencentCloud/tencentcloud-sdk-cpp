@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者组ID
-                     * @return ConsumerGroupId 消费者组ID
+                     * 获取<p>消费者组 ID（以 cg- 开头）。</p>
+                     * @return ConsumerGroupId <p>消费者组 ID（以 cg- 开头）。</p>
                      * 
                      */
                     std::string GetConsumerGroupId() const;
 
                     /**
-                     * 设置消费者组ID
-                     * @param _consumerGroupId 消费者组ID
+                     * 设置<p>消费者组 ID（以 cg- 开头）。</p>
+                     * @param _consumerGroupId <p>消费者组 ID（以 cg- 开头）。</p>
                      * 
                      */
                     void SetConsumerGroupId(const std::string& _consumerGroupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConsumerGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取新的消费者组名称
-                     * @return Name 新的消费者组名称
+                     * 获取<p>消费者组名称，最长 60 字符。</p>
+                     * @return Name <p>消费者组名称，最长 60 字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置新的消费者组名称
-                     * @param _name 新的消费者组名称
+                     * 设置<p>消费者组名称，最长 60 字符。</p>
+                     * @param _name <p>消费者组名称，最长 60 字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,23 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取状态：
-- Enable 启用
-- Disable 禁用
-                     * @return Status 状态：
-- Enable 启用
-- Disable 禁用
+                     * 获取<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * @return Status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态：
-- Enable 启用
-- Disable 禁用
-                     * @param _status 状态：
-- Enable 启用
-- Disable 禁用
+                     * 设置<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * @param _status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取新的消费者组描述
-                     * @return Description 新的消费者组描述
+                     * 获取<p>消费者组描述。最长 200 字符。</p>
+                     * @return Description <p>消费者组描述。最长 200 字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置新的消费者组描述
-                     * @param _description 新的消费者组描述
+                     * 设置<p>消费者组描述。最长 200 字符。</p>
+                     * @param _description <p>消费者组描述。最长 200 字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -164,27 +156,25 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 消费者组ID
+                     * <p>消费者组 ID（以 cg- 开头）。</p>
                      */
                     std::string m_consumerGroupId;
                     bool m_consumerGroupIdHasBeenSet;
 
                     /**
-                     * 新的消费者组名称
+                     * <p>消费者组名称，最长 60 字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 状态：
-- Enable 启用
-- Disable 禁用
+                     * <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 新的消费者组描述
+                     * <p>消费者组描述。最长 200 字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

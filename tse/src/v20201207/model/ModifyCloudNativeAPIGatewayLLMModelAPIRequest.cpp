@@ -32,7 +32,9 @@ ModifyCloudNativeAPIGatewayLLMModelAPIRequest::ModifyCloudNativeAPIGatewayLLMMod
     m_modelServiceRouteHasBeenSet(false),
     m_matchHeadersHasBeenSet(false),
     m_enableCrossServiceFallbackHasBeenSet(false),
-    m_crossServiceFallbackConfigHasBeenSet(false)
+    m_crossServiceFallbackConfigHasBeenSet(false),
+    m_tagFilterHasBeenSet(false),
+    m_logConfigHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,24 @@ string ModifyCloudNativeAPIGatewayLLMModelAPIRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_crossServiceFallbackConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagFilter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -303,6 +323,38 @@ void ModifyCloudNativeAPIGatewayLLMModelAPIRequest::SetCrossServiceFallbackConfi
 bool ModifyCloudNativeAPIGatewayLLMModelAPIRequest::CrossServiceFallbackConfigHasBeenSet() const
 {
     return m_crossServiceFallbackConfigHasBeenSet;
+}
+
+AIGWTagFilter ModifyCloudNativeAPIGatewayLLMModelAPIRequest::GetTagFilter() const
+{
+    return m_tagFilter;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelAPIRequest::SetTagFilter(const AIGWTagFilter& _tagFilter)
+{
+    m_tagFilter = _tagFilter;
+    m_tagFilterHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelAPIRequest::TagFilterHasBeenSet() const
+{
+    return m_tagFilterHasBeenSet;
+}
+
+AIGWLogConfig ModifyCloudNativeAPIGatewayLLMModelAPIRequest::GetLogConfig() const
+{
+    return m_logConfig;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelAPIRequest::SetLogConfig(const AIGWLogConfig& _logConfig)
+{
+    m_logConfig = _logConfig;
+    m_logConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelAPIRequest::LogConfigHasBeenSet() const
+{
+    return m_logConfigHasBeenSet;
 }
 
 

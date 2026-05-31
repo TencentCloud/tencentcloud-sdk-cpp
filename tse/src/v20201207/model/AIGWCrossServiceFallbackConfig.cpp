@@ -22,7 +22,8 @@ using namespace std;
 
 AIGWCrossServiceFallbackConfig::AIGWCrossServiceFallbackConfig() :
     m_triggerConditionsHasBeenSet(false),
-    m_fallbackServiceChainHasBeenSet(false)
+    m_fallbackServiceChainHasBeenSet(false),
+    m_quotaFallbackTriggerHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,23 @@ CoreInternalOutcome AIGWCrossServiceFallbackConfig::Deserialize(const rapidjson:
         m_fallbackServiceChainHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaFallbackTrigger") && !value["QuotaFallbackTrigger"].IsNull())
+    {
+        if (!value["QuotaFallbackTrigger"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWCrossServiceFallbackConfig.QuotaFallbackTrigger` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quotaFallbackTrigger.Deserialize(value["QuotaFallbackTrigger"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaFallbackTriggerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void AIGWCrossServiceFallbackConfig::ToJsonObject(rapidjson::Value &value, rapid
         }
     }
 
+    if (m_quotaFallbackTriggerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaFallbackTrigger";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quotaFallbackTrigger.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -132,5 +159,21 @@ void AIGWCrossServiceFallbackConfig::SetFallbackServiceChain(const vector<AIGWFa
 bool AIGWCrossServiceFallbackConfig::FallbackServiceChainHasBeenSet() const
 {
     return m_fallbackServiceChainHasBeenSet;
+}
+
+AIGWLLMQuotaFallbackTrigger AIGWCrossServiceFallbackConfig::GetQuotaFallbackTrigger() const
+{
+    return m_quotaFallbackTrigger;
+}
+
+void AIGWCrossServiceFallbackConfig::SetQuotaFallbackTrigger(const AIGWLLMQuotaFallbackTrigger& _quotaFallbackTrigger)
+{
+    m_quotaFallbackTrigger = _quotaFallbackTrigger;
+    m_quotaFallbackTriggerHasBeenSet = true;
+}
+
+bool AIGWCrossServiceFallbackConfig::QuotaFallbackTriggerHasBeenSet() const
+{
+    return m_quotaFallbackTriggerHasBeenSet;
 }
 

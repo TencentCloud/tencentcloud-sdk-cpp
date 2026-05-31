@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者组ID
-                     * @return ConsumerGroupId 消费者组ID
+                     * 获取<p>消费者组 ID（以 cg- 开头）。</p>
+                     * @return ConsumerGroupId <p>消费者组 ID（以 cg- 开头）。</p>
                      * 
                      */
                     std::string GetConsumerGroupId() const;
 
                     /**
-                     * 设置消费者组ID
-                     * @param _consumerGroupId 消费者组ID
+                     * 设置<p>消费者组 ID（以 cg- 开头）。</p>
+                     * @param _consumerGroupId <p>消费者组 ID（以 cg- 开头）。</p>
                      * 
                      */
                     void SetConsumerGroupId(const std::string& _consumerGroupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ConsumerGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者ID
-                     * @return ConsumerIds 消费者ID
+                     * 获取<p>消费者 ID 列表，长度 1-10。</p>
+                     * @return ConsumerIds <p>消费者 ID 列表，长度 1-10。</p>
                      * 
                      */
                     std::vector<std::string> GetConsumerIds() const;
 
                     /**
-                     * 设置消费者ID
-                     * @param _consumerIds 消费者ID
+                     * 设置<p>消费者 ID 列表，长度 1-10。</p>
+                     * @param _consumerIds <p>消费者 ID 列表，长度 1-10。</p>
                      * 
                      */
                     void SetConsumerIds(const std::vector<std::string>& _consumerIds);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 消费者组ID
+                     * <p>消费者组 ID（以 cg- 开头）。</p>
                      */
                     std::string m_consumerGroupId;
                     bool m_consumerGroupIdHasBeenSet;
 
                     /**
-                     * 消费者ID
+                     * <p>消费者 ID 列表，长度 1-10。</p>
                      */
                     std::vector<std::string> m_consumerIds;
                     bool m_consumerIdsHasBeenSet;

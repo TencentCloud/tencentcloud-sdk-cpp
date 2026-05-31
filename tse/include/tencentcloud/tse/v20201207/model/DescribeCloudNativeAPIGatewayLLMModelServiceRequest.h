@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关 id。
-                     * @return GatewayId 网关 id。
+                     * 获取<p>网关 id。</p>
+                     * @return GatewayId <p>网关 id。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关 id。
-                     * @param _gatewayId 网关 id。
+                     * 设置<p>网关 id。</p>
+                     * @param _gatewayId <p>网关 id。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取模型服务 ID，全局唯一标识。
-                     * @return ModelServiceId 模型服务 ID，全局唯一标识。
+                     * 获取<p>模型服务 ID，全局唯一标识。</p>
+                     * @return ModelServiceId <p>模型服务 ID，全局唯一标识。</p>
                      * 
                      */
                     std::string GetModelServiceId() const;
 
                     /**
-                     * 设置模型服务 ID，全局唯一标识。
-                     * @param _modelServiceId 模型服务 ID，全局唯一标识。
+                     * 设置<p>模型服务 ID，全局唯一标识。</p>
+                     * @param _modelServiceId <p>模型服务 ID，全局唯一标识。</p>
                      * 
                      */
                     void SetModelServiceId(const std::string& _modelServiceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关 id。
+                     * <p>网关 id。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 模型服务 ID，全局唯一标识。
+                     * <p>模型服务 ID，全局唯一标识。</p>
                      */
                     std::string m_modelServiceId;
                     bool m_modelServiceIdHasBeenSet;

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelFallbackRule.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelParamCheckInfo.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaLimit.h>
 
 
 namespace TencentCloud
@@ -489,6 +490,69 @@ namespace TencentCloud
                      */
                     bool SNIHasBeenSet() const;
 
+                    /**
+                     * 获取<p>配额限制</p>
+                     * @return QuotaLimit <p>配额限制</p>
+                     * 
+                     */
+                    AIGWLLMQuotaLimit GetQuotaLimit() const;
+
+                    /**
+                     * 设置<p>配额限制</p>
+                     * @param _quotaLimit <p>配额限制</p>
+                     * 
+                     */
+                    void SetQuotaLimit(const AIGWLLMQuotaLimit& _quotaLimit);
+
+                    /**
+                     * 判断参数 QuotaLimit 是否已赋值
+                     * @return QuotaLimit 是否已赋值
+                     * 
+                     */
+                    bool QuotaLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
+                     * 
+                     */
+                    std::string GetTags() const;
+
+                    /**
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
+                     * 
+                     */
+                    void SetTags(const std::string& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>绑定的模型服务秘钥</p>
+                     * @return SecretKeyIds <p>绑定的模型服务秘钥</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSecretKeyIds() const;
+
+                    /**
+                     * 设置<p>绑定的模型服务秘钥</p>
+                     * @param _secretKeyIds <p>绑定的模型服务秘钥</p>
+                     * 
+                     */
+                    void SetSecretKeyIds(const std::vector<std::string>& _secretKeyIds);
+
+                    /**
+                     * 判断参数 SecretKeyIds 是否已赋值
+                     * @return SecretKeyIds 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +680,24 @@ namespace TencentCloud
                      */
                     std::string m_sNI;
                     bool m_sNIHasBeenSet;
+
+                    /**
+                     * <p>配额限制</p>
+                     */
+                    AIGWLLMQuotaLimit m_quotaLimit;
+                    bool m_quotaLimitHasBeenSet;
+
+                    /**
+                     * <p>标签</p>
+                     */
+                    std::string m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>绑定的模型服务秘钥</p>
+                     */
+                    std::vector<std::string> m_secretKeyIds;
+                    bool m_secretKeyIdsHasBeenSet;
 
                 };
             }

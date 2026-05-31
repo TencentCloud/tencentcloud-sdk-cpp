@@ -10390,6 +10390,56 @@ MpsClient::UpdateProjectOutcomeCallable MpsClient::UpdateProjectCallable(const U
     return prom->get_future();
 }
 
+MpsClient::UpdateVoiceOutcome MpsClient::UpdateVoice(const UpdateVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateVoiceResponse rsp = UpdateVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateVoiceOutcome(rsp);
+        else
+            return UpdateVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateVoiceOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::UpdateVoiceAsync(const UpdateVoiceRequest& request, const UpdateVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateVoiceRequest&;
+    using Resp = UpdateVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::UpdateVoiceOutcomeCallable MpsClient::UpdateVoiceCallable(const UpdateVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateVoiceOutcome>>();
+    UpdateVoiceAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const UpdateVoiceRequest&,
+        UpdateVoiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::WithdrawsWatermarkOutcome MpsClient::WithdrawsWatermark(const WithdrawsWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "WithdrawsWatermark");

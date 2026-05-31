@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥id
-                     * @return SecretKeyId 密钥id
+                     * 获取<p>密钥id</p>
+                     * @return SecretKeyId <p>密钥id</p>
                      * 
                      */
                     std::string GetSecretKeyId() const;
 
                     /**
-                     * 设置密钥id
-                     * @param _secretKeyId 密钥id
+                     * 设置<p>密钥id</p>
+                     * @param _secretKeyId <p>密钥id</p>
                      * 
                      */
                     void SetSecretKeyId(const std::string& _secretKeyId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SecretKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取密钥名字
-                     * @return Name 密钥名字
+                     * 获取<p>密钥名字</p>
+                     * @return Name <p>密钥名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置密钥名字
-                     * @param _name 密钥名字
+                     * 设置<p>密钥名字</p>
+                     * @param _name <p>密钥名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取密钥类型：ApiKey/JWT
-                     * @return SecretType 密钥类型：ApiKey/JWT
+                     * 获取<p>密钥协议类型。</p>
+                     * @return SecretType <p>密钥协议类型。</p>
                      * 
                      */
                     std::string GetSecretType() const;
 
                     /**
-                     * 设置密钥类型：ApiKey/JWT
-                     * @param _secretType 密钥类型：ApiKey/JWT
+                     * 设置<p>密钥协议类型。</p>
+                     * @param _secretType <p>密钥协议类型。</p>
                      * 
                      */
                     void SetSecretType(const std::string& _secretType);
@@ -110,23 +110,15 @@ namespace TencentCloud
                     bool SecretTypeHasBeenSet() const;
 
                     /**
-                     * 获取状态:
-- Enable: 启用
-- Disable: 禁用
-                     * @return Status 状态:
-- Enable: 启用
-- Disable: 禁用
+                     * 获取<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * @return Status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态:
-- Enable: 启用
-- Disable: 禁用
-                     * @param _status 状态:
-- Enable: 启用
-- Disable: 禁用
+                     * 设置<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * @param _status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取生成方式:KMS/System/Custom
-                     * @return GenerateType 生成方式:KMS/System/Custom
+                     * 获取<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
+                     * @return GenerateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
                      * 
                      */
                     std::string GetGenerateType() const;
 
                     /**
-                     * 设置生成方式:KMS/System/Custom
-                     * @param _generateType 生成方式:KMS/System/Custom
+                     * 设置<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
+                     * @param _generateType <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool GenerateTypeHasBeenSet() const;
 
                     /**
-                     * 获取密钥值
-                     * @return SecretValue 密钥值
+                     * 获取<p>密钥明文</p>
+                     * @return SecretValue <p>密钥明文</p>
                      * 
                      */
                     std::string GetSecretValue() const;
 
                     /**
-                     * 设置密钥值
-                     * @param _secretValue 密钥值
+                     * 设置<p>密钥明文</p>
+                     * @param _secretValue <p>密钥明文</p>
                      * 
                      */
                     void SetSecretValue(const std::string& _secretValue);
@@ -181,18 +173,18 @@ namespace TencentCloud
                     bool SecretValueHasBeenSet() const;
 
                     /**
-                     * 获取KMS凭证名字
+                     * 获取<p>KMS凭证名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KmsKeyName KMS凭证名字
+                     * @return KmsKeyName <p>KMS凭证名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKmsKeyName() const;
 
                     /**
-                     * 设置KMS凭证名字
+                     * 设置<p>KMS凭证名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kmsKeyName KMS凭证名字
+                     * @param _kmsKeyName <p>KMS凭证名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,18 +198,18 @@ namespace TencentCloud
                     bool KmsKeyNameHasBeenSet() const;
 
                     /**
-                     * 获取KMS凭证版本
+                     * 获取<p>KMS凭证版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KmsKeyVersion KMS凭证版本
+                     * @return KmsKeyVersion <p>KMS凭证版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKmsKeyVersion() const;
 
                     /**
-                     * 设置KMS凭证版本
+                     * 设置<p>KMS凭证版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kmsKeyVersion KMS凭证版本
+                     * @param _kmsKeyVersion <p>KMS凭证版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -231,18 +223,18 @@ namespace TencentCloud
                     bool KmsKeyVersionHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -256,18 +248,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取是否可以绑定
+                     * 获取<p>是否可以绑定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CanBind 是否可以绑定
+                     * @return CanBind <p>是否可以绑定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanBind() const;
 
                     /**
-                     * 设置是否可以绑定
+                     * 设置<p>是否可以绑定</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _canBind 是否可以绑定
+                     * @param _canBind <p>是否可以绑定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -281,15 +273,15 @@ namespace TencentCloud
                     bool CanBindHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -302,15 +294,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModifyTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return ModifyTime <p>修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _modifyTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _modifyTime <p>修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -323,15 +315,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取绑定数
-                     * @return BindCount 绑定数
+                     * 获取<p>绑定数</p>
+                     * @return BindCount <p>绑定数</p>
                      * 
                      */
                     uint64_t GetBindCount() const;
 
                     /**
-                     * 设置绑定数
-                     * @param _bindCount 绑定数
+                     * 设置<p>绑定数</p>
+                     * @param _bindCount <p>绑定数</p>
                      * 
                      */
                     void SetBindCount(const uint64_t& _bindCount);
@@ -344,23 +336,15 @@ namespace TencentCloud
                     bool BindCountHasBeenSet() const;
 
                     /**
-                     * 获取资源类型：
-- Consumer 消费者
-- LLM 模型服务
-                     * @return ResourceType 资源类型：
-- Consumer 消费者
-- LLM 模型服务
+                     * 获取<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * @return ResourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型：
-- Consumer 消费者
-- LLM 模型服务
-                     * @param _resourceType 资源类型：
-- Consumer 消费者
-- LLM 模型服务
+                     * 设置<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * @param _resourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -375,93 +359,89 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥id
+                     * <p>密钥id</p>
                      */
                     std::string m_secretKeyId;
                     bool m_secretKeyIdHasBeenSet;
 
                     /**
-                     * 密钥名字
+                     * <p>密钥名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 密钥类型：ApiKey/JWT
+                     * <p>密钥协议类型。</p>
                      */
                     std::string m_secretType;
                     bool m_secretTypeHasBeenSet;
 
                     /**
-                     * 状态:
-- Enable: 启用
-- Disable: 禁用
+                     * <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 生成方式:KMS/System/Custom
+                     * <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
 
                     /**
-                     * 密钥值
+                     * <p>密钥明文</p>
                      */
                     std::string m_secretValue;
                     bool m_secretValueHasBeenSet;
 
                     /**
-                     * KMS凭证名字
+                     * <p>KMS凭证名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kmsKeyName;
                     bool m_kmsKeyNameHasBeenSet;
 
                     /**
-                     * KMS凭证版本
+                     * <p>KMS凭证版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kmsKeyVersion;
                     bool m_kmsKeyVersionHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 是否可以绑定
+                     * <p>是否可以绑定</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canBind;
                     bool m_canBindHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 绑定数
+                     * <p>绑定数</p>
                      */
                     uint64_t m_bindCount;
                     bool m_bindCountHasBeenSet;
 
                     /**
-                     * 资源类型：
-- Consumer 消费者
-- LLM 模型服务
+                     * <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

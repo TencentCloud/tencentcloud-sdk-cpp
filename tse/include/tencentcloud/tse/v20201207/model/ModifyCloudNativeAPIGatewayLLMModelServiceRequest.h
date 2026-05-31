@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelFallbackRule.h>
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelParamCheckInfo.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaLimit.h>
 
 
 namespace TencentCloud
@@ -401,6 +402,48 @@ namespace TencentCloud
                      */
                     bool SNIHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>
+                     * @return QuotaLimit <p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>
+                     * 
+                     */
+                    AIGWLLMQuotaLimit GetQuotaLimit() const;
+
+                    /**
+                     * 设置<p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>
+                     * @param _quotaLimit <p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>
+                     * 
+                     */
+                    void SetQuotaLimit(const AIGWLLMQuotaLimit& _quotaLimit);
+
+                    /**
+                     * 判断参数 QuotaLimit 是否已赋值
+                     * @return QuotaLimit 是否已赋值
+                     * 
+                     */
+                    bool QuotaLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
+                     * 
+                     */
+                    std::vector<std::string> GetTags() const;
+
+                    /**
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<std::string>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -504,6 +547,18 @@ namespace TencentCloud
                      */
                     std::string m_sNI;
                     bool m_sNIHasBeenSet;
+
+                    /**
+                     * <p>模型服务级别的配额上限（RPM/TPM）。需要网关版本 ≥ 3.9.4。</p>
+                     */
+                    AIGWLLMQuotaLimit m_quotaLimit;
+                    bool m_quotaLimitHasBeenSet;
+
+                    /**
+                     * <p>标签</p>
+                     */
+                    std::vector<std::string> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

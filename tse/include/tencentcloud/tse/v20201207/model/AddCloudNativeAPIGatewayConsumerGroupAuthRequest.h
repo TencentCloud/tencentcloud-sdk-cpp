@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例id
-                     * @return GatewayId 网关实例id
+                     * 获取<p>网关实例id</p>
+                     * @return GatewayId <p>网关实例id</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关实例id
-                     * @param _gatewayId 网关实例id
+                     * 设置<p>网关实例id</p>
+                     * @param _gatewayId <p>网关实例id</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型:
-
-- ModelAPI: 模型API
-                     * @return ResourceType 资源类型:
-
-- ModelAPI: 模型API
+                     * 获取<p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>
+                     * @return ResourceType <p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型:
-
-- ModelAPI: 模型API
-                     * @param _resourceType 资源类型:
-
-- ModelAPI: 模型API
+                     * 设置<p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>
+                     * @param _resourceType <p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -93,15 +85,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取对应资源的id
-                     * @return ResourceId 对应资源的id
+                     * 获取<p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>
+                     * @return ResourceId <p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置对应资源的id
-                     * @param _resourceId 对应资源的id
+                     * 设置<p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>
+                     * @param _resourceId <p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源ID
-                     * @return ConsumerGroupIds 资源ID
+                     * 获取<p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>
+                     * @return ConsumerGroupIds <p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>
                      * 
                      */
                     std::vector<std::string> GetConsumerGroupIds() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _consumerGroupIds 资源ID
+                     * 设置<p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>
+                     * @param _consumerGroupIds <p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>
                      * 
                      */
                     void SetConsumerGroupIds(const std::vector<std::string>& _consumerGroupIds);
@@ -137,27 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关实例id
+                     * <p>网关实例id</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 资源类型:
-
-- ModelAPI: 模型API
+                     * <p>授权资源类型。</p><p>枚举值：</p><ul><li>ModelAPI：模型 API</li><li>MCPServer：MCP Server</li></ul>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 对应资源的id
+                     * <p>对应资源的 ID。</p><ul><li>ResourceType=ModelAPI 时是模型 API ID</li><li>ResourceType=MCPServer 时是 MCP Server ID</li></ul>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源ID
+                     * <p>消费者组 ID 列表（每个 ID 以 cg- 开头），长度 1-10。</p>
                      */
                     std::vector<std::string> m_consumerGroupIds;
                     bool m_consumerGroupIdsHasBeenSet;

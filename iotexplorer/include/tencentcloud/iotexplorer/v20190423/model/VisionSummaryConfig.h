@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/VisionCustomDetectQuery.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousConfig.h>
 
 
 namespace TencentCloud
@@ -556,6 +557,27 @@ namespace TencentCloud
                      */
                     bool CustomDetectQueriesHasBeenSet() const;
 
+                    /**
+                     * 获取标签持续检测配置
+                     * @return DetectContinuous 标签持续检测配置
+                     * 
+                     */
+                    std::vector<SeeDetectContinuousConfig> GetDetectContinuous() const;
+
+                    /**
+                     * 设置标签持续检测配置
+                     * @param _detectContinuous 标签持续检测配置
+                     * 
+                     */
+                    void SetDetectContinuous(const std::vector<SeeDetectContinuousConfig>& _detectContinuous);
+
+                    /**
+                     * 判断参数 DetectContinuous 是否已赋值
+                     * @return DetectContinuous 是否已赋值
+                     * 
+                     */
+                    bool DetectContinuousHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,6 +710,12 @@ namespace TencentCloud
                      */
                     std::vector<VisionCustomDetectQuery> m_customDetectQueries;
                     bool m_customDetectQueriesHasBeenSet;
+
+                    /**
+                     * 标签持续检测配置
+                     */
+                    std::vector<SeeDetectContinuousConfig> m_detectContinuous;
+                    bool m_detectContinuousHasBeenSet;
 
                 };
             }

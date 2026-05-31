@@ -28,10 +28,12 @@ ListTWeSeeTasksRequest::ListTWeSeeTasksRequest() :
     m_serviceCategoryHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_serviceTypesHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_startTimeMsHasBeenSet(false),
     m_endTimeMsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_fileURLExpireTimeHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,19 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_serviceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceTypes.begin(); itr != m_serviceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_channelIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -112,6 +127,14 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_fileURLExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileURLExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileURLExpireTime, allocator);
     }
 
 
@@ -202,6 +225,22 @@ bool ListTWeSeeTasksRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
+vector<string> ListTWeSeeTasksRequest::GetServiceTypes() const
+{
+    return m_serviceTypes;
+}
+
+void ListTWeSeeTasksRequest::SetServiceTypes(const vector<string>& _serviceTypes)
+{
+    m_serviceTypes = _serviceTypes;
+    m_serviceTypesHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::ServiceTypesHasBeenSet() const
+{
+    return m_serviceTypesHasBeenSet;
+}
+
 uint64_t ListTWeSeeTasksRequest::GetChannelId() const
 {
     return m_channelId;
@@ -264,6 +303,22 @@ void ListTWeSeeTasksRequest::SetStatus(const int64_t& _status)
 bool ListTWeSeeTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ListTWeSeeTasksRequest::GetFileURLExpireTime() const
+{
+    return m_fileURLExpireTime;
+}
+
+void ListTWeSeeTasksRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireTime)
+{
+    m_fileURLExpireTime = _fileURLExpireTime;
+    m_fileURLExpireTimeHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::FileURLExpireTimeHasBeenSet() const
+{
+    return m_fileURLExpireTimeHasBeenSet;
 }
 
 

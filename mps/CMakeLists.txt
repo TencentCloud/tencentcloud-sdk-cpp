@@ -196,6 +196,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiParagraphInfo.h
   include/tencentcloud/mps/v20190612/model/AudioSeparateConfig.h
   include/tencentcloud/mps/v20190612/model/DeleteAIRecognitionTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/UpdateVoiceRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeInputSRTSettings.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCoverResult.h
   include/tencentcloud/mps/v20190612/model/AudioBeautifyConfig.h
@@ -706,6 +707,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/FlowRealtimeStatusSRT.h
   include/tencentcloud/mps/v20190612/model/SpecificationDataItem.h
   include/tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h
+  include/tencentcloud/mps/v20190612/model/VoiceUpdateFields.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceResponse.h
   include/tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputRequest.h
@@ -741,6 +743,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ImageEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/WatermarkInput.h
   include/tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h
+  include/tencentcloud/mps/v20190612/model/UpdateVoiceResponse.h
   include/tencentcloud/mps/v20190612/model/Activity.h
   include/tencentcloud/mps/v20190612/model/AiSampleWordInfo.h
   include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingInfoItem.h
@@ -1212,6 +1215,7 @@ set(mps_src
   src/v20190612/model/AiParagraphInfo.cpp
   src/v20190612/model/AudioSeparateConfig.cpp
   src/v20190612/model/DeleteAIRecognitionTemplateRequest.cpp
+  src/v20190612/model/UpdateVoiceRequest.cpp
   src/v20190612/model/DescribeInputSRTSettings.cpp
   src/v20190612/model/AiAnalysisTaskCoverResult.cpp
   src/v20190612/model/AudioBeautifyConfig.cpp
@@ -1722,6 +1726,7 @@ set(mps_src
   src/v20190612/model/FlowRealtimeStatusSRT.cpp
   src/v20190612/model/SpecificationDataItem.cpp
   src/v20190612/model/TEHDConfigForUpdate.cpp
+  src/v20190612/model/VoiceUpdateFields.cpp
   src/v20190612/model/DescribeStreamPackageSourceResponse.cpp
   src/v20190612/model/WithdrawsWatermarkRequest.cpp
   src/v20190612/model/DeleteStreamLinkOutputRequest.cpp
@@ -1757,6 +1762,7 @@ set(mps_src
   src/v20190612/model/ImageEnhanceConfig.cpp
   src/v20190612/model/WatermarkInput.cpp
   src/v20190612/model/EnableWorkflowResponse.cpp
+  src/v20190612/model/UpdateVoiceResponse.cpp
   src/v20190612/model/Activity.cpp
   src/v20190612/model/AiSampleWordInfo.cpp
   src/v20190612/model/AdaptiveDynamicStreamingInfoItem.cpp

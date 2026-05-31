@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点名称
-                     * @return MachineName 节点名称
+                     * 获取<p>节点名称</p>
+                     * @return MachineName <p>节点名称</p>
                      * 
                      */
                     std::string GetMachineName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _machineName 节点名称
+                     * 设置<p>节点名称</p>
+                     * @param _machineName <p>节点名称</p>
                      * 
                      */
                     void SetMachineName(const std::string& _machineName);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool MachineNameHasBeenSet() const;
 
                     /**
-                     * 获取Machine 状态
-                     * @return MachineState Machine 状态
+                     * 获取<p>Machine 状态</p>
+                     * @return MachineState <p>Machine 状态</p>
                      * 
                      */
                     std::string GetMachineState() const;
 
                     /**
-                     * 设置Machine 状态
-                     * @param _machineState Machine 状态
+                     * 设置<p>Machine 状态</p>
+                     * @param _machineState <p>Machine 状态</p>
                      * 
                      */
                     void SetMachineState(const std::string& _machineState);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool MachineStateHasBeenSet() const;
 
                     /**
-                     * 获取Machine 所在可用区
-                     * @return Zone Machine 所在可用区
+                     * 获取<p>Machine 所在可用区</p>
+                     * @return Zone <p>Machine 所在可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置Machine 所在可用区
-                     * @param _zone Machine 所在可用区
+                     * 设置<p>Machine 所在可用区</p>
+                     * @param _zone <p>Machine 所在可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
-                     * @return InstanceChargeType 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * 获取<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
+                     * @return InstanceChargeType <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
-                     * @param _instanceChargeType 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * 设置<p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
+                     * @param _instanceChargeType <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdAt <p>创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -157,18 +157,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取Machine 登录状态
+                     * 获取<p>Machine 登录状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoginStatus Machine 登录状态
+                     * @return LoginStatus <p>Machine 登录状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoginStatus() const;
 
                     /**
-                     * 设置Machine 登录状态
+                     * 设置<p>Machine 登录状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _loginStatus Machine 登录状态
+                     * @param _loginStatus <p>Machine 登录状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -182,18 +182,18 @@ namespace TencentCloud
                     bool LoginStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否开启缩容保护
+                     * 获取<p>是否开启缩容保护</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsProtectedFromScaleIn 是否开启缩容保护
+                     * @return IsProtectedFromScaleIn <p>是否开启缩容保护</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsProtectedFromScaleIn() const;
 
                     /**
-                     * 设置是否开启缩容保护
+                     * 设置<p>是否开启缩容保护</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isProtectedFromScaleIn 是否开启缩容保护
+                     * @param _isProtectedFromScaleIn <p>是否开启缩容保护</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -207,18 +207,18 @@ namespace TencentCloud
                     bool IsProtectedFromScaleInHasBeenSet() const;
 
                     /**
-                     * 获取Machine 名字
+                     * 获取<p>Machine 名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisplayName Machine 名字
+                     * @return DisplayName <p>Machine 名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置Machine 名字
+                     * 设置<p>Machine 名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _displayName Machine 名字
+                     * @param _displayName <p>Machine 名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数，单位：核
-                     * @return CPU CPU核数，单位：核
+                     * 获取<p>CPU核数，单位：核</p>
+                     * @return CPU <p>CPU核数，单位：核</p>
                      * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
-                     * 设置CPU核数，单位：核
-                     * @param _cPU CPU核数，单位：核
+                     * 设置<p>CPU核数，单位：核</p>
+                     * @param _cPU <p>CPU核数，单位：核</p>
                      * 
                      */
                     void SetCPU(const uint64_t& _cPU);
@@ -253,18 +253,18 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取GPU核数，单位：核
+                     * 获取<p>GPU核数，单位：核</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GPU GPU核数，单位：核
+                     * @return GPU <p>GPU核数，单位：核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGPU() const;
 
                     /**
-                     * 设置GPU核数，单位：核
+                     * 设置<p>GPU核数，单位：核</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gPU GPU核数，单位：核
+                     * @param _gPU <p>GPU核数，单位：核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool GPUHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识
-                     * @return RenewFlag 自动续费标识
+                     * 获取<p>自动续费标识</p>
+                     * @return RenewFlag <p>自动续费标识</p>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识
-                     * @param _renewFlag 自动续费标识
+                     * 设置<p>自动续费标识</p>
+                     * @param _renewFlag <p>自动续费标识</p>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取节点计费模式
-                     * @return PayMode 节点计费模式
+                     * 获取<p>节点计费模式</p>
+                     * @return PayMode <p>节点计费模式</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置节点计费模式
-                     * @param _payMode 节点计费模式
+                     * 设置<p>节点计费模式</p>
+                     * @param _payMode <p>节点计费模式</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取节点内存容量，单位：`GB`
-                     * @return Memory 节点内存容量，单位：`GB`
+                     * 获取<p>节点内存容量，单位：<code>GB</code></p>
+                     * @return Memory <p>节点内存容量，单位：<code>GB</code></p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置节点内存容量，单位：`GB`
-                     * @param _memory 节点内存容量，单位：`GB`
+                     * 设置<p>节点内存容量，单位：<code>GB</code></p>
+                     * @param _memory <p>节点内存容量，单位：<code>GB</code></p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取节点系统盘配置信息
-                     * @return SystemDisk 节点系统盘配置信息
+                     * 获取<p>节点系统盘配置信息</p>
+                     * @return SystemDisk <p>节点系统盘配置信息</p>
                      * 
                      */
                     Disk GetSystemDisk() const;
 
                     /**
-                     * 设置节点系统盘配置信息
-                     * @param _systemDisk 节点系统盘配置信息
+                     * 设置<p>节点系统盘配置信息</p>
+                     * @param _systemDisk <p>节点系统盘配置信息</p>
                      * 
                      */
                     void SetSystemDisk(const Disk& _systemDisk);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽相关信息设置
-                     * @return InternetAccessible 公网带宽相关信息设置
+                     * 获取<p>公网带宽相关信息设置</p>
+                     * @return InternetAccessible <p>公网带宽相关信息设置</p>
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置公网带宽相关信息设置
-                     * @param _internetAccessible 公网带宽相关信息设置
+                     * 设置<p>公网带宽相关信息设置</p>
+                     * @param _internetAccessible <p>公网带宽相关信息设置</p>
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取机型所属机型族
-                     * @return InstanceFamily 机型所属机型族
+                     * 获取<p>机型所属机型族</p>
+                     * @return InstanceFamily <p>机型所属机型族</p>
                      * 
                      */
                     std::string GetInstanceFamily() const;
 
                     /**
-                     * 设置机型所属机型族
-                     * @param _instanceFamily 机型所属机型族
+                     * 设置<p>机型所属机型族</p>
+                     * @param _instanceFamily <p>机型所属机型族</p>
                      * 
                      */
                     void SetInstanceFamily(const std::string& _instanceFamily);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
-                     * 获取节点内网 IP
-                     * @return LanIp 节点内网 IP
+                     * 获取<p>节点内网 IP</p>
+                     * @return LanIp <p>节点内网 IP</p>
                      * 
                      */
                     std::string GetLanIp() const;
 
                     /**
-                     * 设置节点内网 IP
-                     * @param _lanIp 节点内网 IP
+                     * 设置<p>节点内网 IP</p>
+                     * @param _lanIp <p>节点内网 IP</p>
                      * 
                      */
                     void SetLanIp(const std::string& _lanIp);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool LanIpHasBeenSet() const;
 
                     /**
-                     * 获取机型
-                     * @return InstanceType 机型
+                     * 获取<p>机型</p>
+                     * @return InstanceType <p>机型</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置机型
-                     * @param _instanceType 机型
+                     * 设置<p>机型</p>
+                     * @param _instanceType <p>机型</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -446,18 +446,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取包年包月节点计费过期时间
+                     * 获取<p>包年包月节点计费过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiredTime 包年包月节点计费过期时间
+                     * @return ExpiredTime <p>包年包月节点计费过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置包年包月节点计费过期时间
+                     * 设置<p>包年包月节点计费过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expiredTime 包年包月节点计费过期时间
+                     * @param _expiredTime <p>包年包月节点计费过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -471,18 +471,18 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取节点外网 IP
+                     * 获取<p>节点外网 IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WanIp 节点外网 IP
+                     * @return WanIp <p>节点外网 IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanIp() const;
 
                     /**
-                     * 设置节点外网 IP
+                     * 设置<p>节点外网 IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wanIp 节点外网 IP
+                     * @param _wanIp <p>节点外网 IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,18 +496,18 @@ namespace TencentCloud
                     bool WanIpHasBeenSet() const;
 
                     /**
-                     * 获取节点密钥 ID 列表
+                     * 获取<p>节点密钥 ID 列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeyIds 节点密钥 ID 列表
+                     * @return KeyIds <p>节点密钥 ID 列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置节点密钥 ID 列表
+                     * 设置<p>节点密钥 ID 列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keyIds 节点密钥 ID 列表
+                     * @param _keyIds <p>节点密钥 ID 列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -521,18 +521,18 @@ namespace TencentCloud
                     bool KeyIdsHasBeenSet() const;
 
                     /**
-                     * 获取节点GPU相关配置
+                     * 获取<p>节点GPU相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GPUParams 节点GPU相关配置
+                     * @return GPUParams <p>节点GPU相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GPUParams GetGPUParams() const;
 
                     /**
-                     * 设置节点GPU相关配置
+                     * 设置<p>节点GPU相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gPUParams 节点GPU相关配置
+                     * @param _gPUParams <p>节点GPU相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -546,18 +546,18 @@ namespace TencentCloud
                     bool GPUParamsHasBeenSet() const;
 
                     /**
-                     * 获取数据盘列表
+                     * 获取<p>数据盘列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataDisks 数据盘列表
+                     * @return DataDisks <p>数据盘列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
-                     * 设置数据盘列表
+                     * 设置<p>数据盘列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataDisks 数据盘列表
+                     * @param _dataDisks <p>数据盘列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -571,18 +571,18 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
-                     * 获取安全组列表
+                     * 获取<p>安全组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecurityGroupIDs 安全组列表
+                     * @return SecurityGroupIDs <p>安全组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIDs() const;
 
                     /**
-                     * 设置安全组列表
+                     * 设置<p>安全组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _securityGroupIDs 安全组列表
+                     * @param _securityGroupIDs <p>安全组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -596,15 +596,15 @@ namespace TencentCloud
                     bool SecurityGroupIDsHasBeenSet() const;
 
                     /**
-                     * 获取VPC 唯一 ID
-                     * @return VpcId VPC 唯一 ID
+                     * 获取<p>VPC 唯一 ID</p>
+                     * @return VpcId <p>VPC 唯一 ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC 唯一 ID
-                     * @param _vpcId VPC 唯一 ID
+                     * 设置<p>VPC 唯一 ID</p>
+                     * @param _vpcId <p>VPC 唯一 ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -617,15 +617,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网唯一 ID
-                     * @return SubnetId 子网唯一 ID
+                     * 获取<p>子网唯一 ID</p>
+                     * @return SubnetId <p>子网唯一 ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网唯一 ID
-                     * @param _subnetId 子网唯一 ID
+                     * 设置<p>子网唯一 ID</p>
+                     * @param _subnetId <p>子网唯一 ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -638,18 +638,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取OS的名称
+                     * 获取<p>OS的名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OsImage OS的名称
+                     * @return OsImage <p>OS的名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsImage() const;
 
                     /**
-                     * 设置OS的名称
+                     * 设置<p>OS的名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _osImage OS的名称
+                     * @param _osImage <p>OS的名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -663,27 +663,15 @@ namespace TencentCloud
                     bool OsImageHasBeenSet() const;
 
                     /**
-                     * 获取**原生节点的 Machine 类型**
-
-- Native 表示 CXM 类型的原生节点
-- NativeCVM 表示 CVM 类型的原生节点
-                     * @return MachineType **原生节点的 Machine 类型**
-
-- Native 表示 CXM 类型的原生节点
-- NativeCVM 表示 CVM 类型的原生节点
+                     * 获取<p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>
+                     * @return MachineType <p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置**原生节点的 Machine 类型**
-
-- Native 表示 CXM 类型的原生节点
-- NativeCVM 表示 CVM 类型的原生节点
-                     * @param _machineType **原生节点的 Machine 类型**
-
-- Native 表示 CXM 类型的原生节点
-- NativeCVM 表示 CVM 类型的原生节点
+                     * 设置<p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>
+                     * @param _machineType <p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -696,30 +684,18 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取**原生节点对应的实例 ID**
-
-- ins-q47ofw6 表示这个实例是一个 CVM 的实例
-- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+                     * 获取<p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId **原生节点对应的实例 ID**
-
-- ins-q47ofw6 表示这个实例是一个 CVM 的实例
-- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+                     * @return InstanceId <p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置**原生节点对应的实例 ID**
-
-- ins-q47ofw6 表示这个实例是一个 CVM 的实例
-- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+                     * 设置<p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId **原生节点对应的实例 ID**
-
-- ins-q47ofw6 表示这个实例是一个 CVM 的实例
-- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+                     * @param _instanceId <p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -733,18 +709,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取原生节点云标签
+                     * 获取<p>原生节点云标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 原生节点云标签
+                     * @return Tags <p>原生节点云标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置原生节点云标签
+                     * 设置<p>原生节点云标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 原生节点云标签
+                     * @param _tags <p>原生节点云标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -760,199 +736,193 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点名称
+                     * <p>节点名称</p>
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
 
                     /**
-                     * Machine 状态
+                     * <p>Machine 状态</p>
                      */
                     std::string m_machineState;
                     bool m_machineStateHasBeenSet;
 
                     /**
-                     * Machine 所在可用区
+                     * <p>Machine 所在可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+                     * <p>节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * Machine 登录状态
+                     * <p>Machine 登录状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loginStatus;
                     bool m_loginStatusHasBeenSet;
 
                     /**
-                     * 是否开启缩容保护
+                     * <p>是否开启缩容保护</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isProtectedFromScaleIn;
                     bool m_isProtectedFromScaleInHasBeenSet;
 
                     /**
-                     * Machine 名字
+                     * <p>Machine 名字</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * CPU核数，单位：核
+                     * <p>CPU核数，单位：核</p>
                      */
                     uint64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * GPU核数，单位：核
+                     * <p>GPU核数，单位：核</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gPU;
                     bool m_gPUHasBeenSet;
 
                     /**
-                     * 自动续费标识
+                     * <p>自动续费标识</p>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 节点计费模式
+                     * <p>节点计费模式</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 节点内存容量，单位：`GB`
+                     * <p>节点内存容量，单位：<code>GB</code></p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 节点系统盘配置信息
+                     * <p>节点系统盘配置信息</p>
                      */
                     Disk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 公网带宽相关信息设置
+                     * <p>公网带宽相关信息设置</p>
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 机型所属机型族
+                     * <p>机型所属机型族</p>
                      */
                     std::string m_instanceFamily;
                     bool m_instanceFamilyHasBeenSet;
 
                     /**
-                     * 节点内网 IP
+                     * <p>节点内网 IP</p>
                      */
                     std::string m_lanIp;
                     bool m_lanIpHasBeenSet;
 
                     /**
-                     * 机型
+                     * <p>机型</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 包年包月节点计费过期时间
+                     * <p>包年包月节点计费过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 节点外网 IP
+                     * <p>节点外网 IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanIp;
                     bool m_wanIpHasBeenSet;
 
                     /**
-                     * 节点密钥 ID 列表
+                     * <p>节点密钥 ID 列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
 
                     /**
-                     * 节点GPU相关配置
+                     * <p>节点GPU相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GPUParams m_gPUParams;
                     bool m_gPUParamsHasBeenSet;
 
                     /**
-                     * 数据盘列表
+                     * <p>数据盘列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
 
                     /**
-                     * 安全组列表
+                     * <p>安全组列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIDs;
                     bool m_securityGroupIDsHasBeenSet;
 
                     /**
-                     * VPC 唯一 ID
+                     * <p>VPC 唯一 ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网唯一 ID
+                     * <p>子网唯一 ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * OS的名称
+                     * <p>OS的名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osImage;
                     bool m_osImageHasBeenSet;
 
                     /**
-                     * **原生节点的 Machine 类型**
-
-- Native 表示 CXM 类型的原生节点
-- NativeCVM 表示 CVM 类型的原生节点
+                     * <p><strong>原生节点的 Machine 类型</strong></p><ul><li>Native 表示 CXM 类型的原生节点</li><li>NativeCVM 表示 CVM 类型的原生节点</li></ul>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * **原生节点对应的实例 ID**
-
-- ins-q47ofw6 表示这个实例是一个 CVM 的实例
-- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+                     * <p><strong>原生节点对应的实例 ID</strong></p><ul><li>ins-q47ofw6 表示这个实例是一个 CVM 的实例</li><li>eks-f8mvyaep 表示这个实例是一个 CXM 的实例</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 原生节点云标签
+                     * <p>原生节点云标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;

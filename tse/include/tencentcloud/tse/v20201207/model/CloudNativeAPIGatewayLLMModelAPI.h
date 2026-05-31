@@ -28,6 +28,10 @@
 #include <tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayLLMModelServiceRoute.h>
 #include <tencentcloud/tse/v20201207/model/AIGWKVMatch.h>
 #include <tencentcloud/tse/v20201207/model/AIGWCrossServiceFallbackConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWTagFilter.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLogConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLogDesensitizeConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWForwardDesensitizeConfig.h>
 
 
 namespace TencentCloud
@@ -407,6 +411,90 @@ namespace TencentCloud
                      */
                     bool DescribeCloudNativeAPIGatewayLLMModelAPIHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签</p>
+                     * @return TagFilter <p>标签</p>
+                     * 
+                     */
+                    AIGWTagFilter GetTagFilter() const;
+
+                    /**
+                     * 设置<p>标签</p>
+                     * @param _tagFilter <p>标签</p>
+                     * 
+                     */
+                    void SetTagFilter(const AIGWTagFilter& _tagFilter);
+
+                    /**
+                     * 判断参数 TagFilter 是否已赋值
+                     * @return TagFilter 是否已赋值
+                     * 
+                     */
+                    bool TagFilterHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志显示相关开关</p>
+                     * @return LogConfig <p>日志显示相关开关</p>
+                     * 
+                     */
+                    AIGWLogConfig GetLogConfig() const;
+
+                    /**
+                     * 设置<p>日志显示相关开关</p>
+                     * @param _logConfig <p>日志显示相关开关</p>
+                     * 
+                     */
+                    void SetLogConfig(const AIGWLogConfig& _logConfig);
+
+                    /**
+                     * 判断参数 LogConfig 是否已赋值
+                     * @return LogConfig 是否已赋值
+                     * 
+                     */
+                    bool LogConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志脱敏规则</p>
+                     * @return LogDesensitizeConfig <p>日志脱敏规则</p>
+                     * 
+                     */
+                    AIGWLogDesensitizeConfig GetLogDesensitizeConfig() const;
+
+                    /**
+                     * 设置<p>日志脱敏规则</p>
+                     * @param _logDesensitizeConfig <p>日志脱敏规则</p>
+                     * 
+                     */
+                    void SetLogDesensitizeConfig(const AIGWLogDesensitizeConfig& _logDesensitizeConfig);
+
+                    /**
+                     * 判断参数 LogDesensitizeConfig 是否已赋值
+                     * @return LogDesensitizeConfig 是否已赋值
+                     * 
+                     */
+                    bool LogDesensitizeConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>转发脱敏规则</p>
+                     * @return ForwardDesensitizeConfig <p>转发脱敏规则</p>
+                     * 
+                     */
+                    AIGWForwardDesensitizeConfig GetForwardDesensitizeConfig() const;
+
+                    /**
+                     * 设置<p>转发脱敏规则</p>
+                     * @param _forwardDesensitizeConfig <p>转发脱敏规则</p>
+                     * 
+                     */
+                    void SetForwardDesensitizeConfig(const AIGWForwardDesensitizeConfig& _forwardDesensitizeConfig);
+
+                    /**
+                     * 判断参数 ForwardDesensitizeConfig 是否已赋值
+                     * @return ForwardDesensitizeConfig 是否已赋值
+                     * 
+                     */
+                    bool ForwardDesensitizeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +598,30 @@ namespace TencentCloud
                      */
                     bool m_describeCloudNativeAPIGatewayLLMModelAPI;
                     bool m_describeCloudNativeAPIGatewayLLMModelAPIHasBeenSet;
+
+                    /**
+                     * <p>标签</p>
+                     */
+                    AIGWTagFilter m_tagFilter;
+                    bool m_tagFilterHasBeenSet;
+
+                    /**
+                     * <p>日志显示相关开关</p>
+                     */
+                    AIGWLogConfig m_logConfig;
+                    bool m_logConfigHasBeenSet;
+
+                    /**
+                     * <p>日志脱敏规则</p>
+                     */
+                    AIGWLogDesensitizeConfig m_logDesensitizeConfig;
+                    bool m_logDesensitizeConfigHasBeenSet;
+
+                    /**
+                     * <p>转发脱敏规则</p>
+                     */
+                    AIGWForwardDesensitizeConfig m_forwardDesensitizeConfig;
+                    bool m_forwardDesensitizeConfigHasBeenSet;
 
                 };
             }

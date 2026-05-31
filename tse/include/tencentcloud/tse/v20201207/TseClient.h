@@ -841,7 +841,7 @@ namespace TencentCloud
 
 
                 /**
-                 *添加消费者组授权
+                 *为资源（模型 API / MCP Server）添加消费者组授权。
                  * @param req AddCloudNativeAPIGatewayConsumerGroupAuthRequest
                  * @return AddCloudNativeAPIGatewayConsumerGroupAuthOutcome
                  */
@@ -850,7 +850,7 @@ namespace TencentCloud
                 AddCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable AddCloudNativeAPIGatewayConsumerGroupAuthCallable(const Model::AddCloudNativeAPIGatewayConsumerGroupAuthRequest& request);
 
                 /**
-                 *将消费者添加到指定的消费者组中
+                 *将消费者添加到消费者组。
                  * @param req AddCloudNativeAPIGatewayConsumerInGroupRequest
                  * @return AddCloudNativeAPIGatewayConsumerInGroupOutcome
                  */
@@ -913,7 +913,7 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayCertificateOutcomeCallable CreateCloudNativeAPIGatewayCertificateCallable(const Model::CreateCloudNativeAPIGatewayCertificateRequest& request);
 
                 /**
-                 *创建云原生网关的消费者，支持多种密钥生成方式
+                 *创建消费者。
                  * @param req CreateCloudNativeAPIGatewayConsumerRequest
                  * @return CreateCloudNativeAPIGatewayConsumerOutcome
                  */
@@ -922,7 +922,7 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayConsumerOutcomeCallable CreateCloudNativeAPIGatewayConsumerCallable(const Model::CreateCloudNativeAPIGatewayConsumerRequest& request);
 
                 /**
-                 *创建云原生网关的消费者组
+                 *创建消费者组。
                  * @param req CreateCloudNativeAPIGatewayConsumerGroupRequest
                  * @return CreateCloudNativeAPIGatewayConsumerGroupOutcome
                  */
@@ -931,7 +931,7 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayConsumerGroupOutcomeCallable CreateCloudNativeAPIGatewayConsumerGroupCallable(const Model::CreateCloudNativeAPIGatewayConsumerGroupRequest& request);
 
                 /**
-                 *创建AI网关模型 API
+                 *创建 LLM 模型 API。
                  * @param req CreateCloudNativeAPIGatewayLLMModelAPIRequest
                  * @return CreateCloudNativeAPIGatewayLLMModelAPIOutcome
                  */
@@ -976,7 +976,7 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayRouteRateLimitOutcomeCallable CreateCloudNativeAPIGatewayRouteRateLimitCallable(const Model::CreateCloudNativeAPIGatewayRouteRateLimitRequest& request);
 
                 /**
-                 *创建云原生网关密钥
+                 *创建消费者密钥。
                  * @param req CreateCloudNativeAPIGatewaySecretKeyRequest
                  * @return CreateCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -1174,7 +1174,7 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayCertificateOutcomeCallable DeleteCloudNativeAPIGatewayCertificateCallable(const Model::DeleteCloudNativeAPIGatewayCertificateRequest& request);
 
                 /**
-                 *删除指定的云原生网关消费者
+                 *删除消费者（被绑定到消费者组/密钥时需先解绑）。
                  * @param req DeleteCloudNativeAPIGatewayConsumerRequest
                  * @return DeleteCloudNativeAPIGatewayConsumerOutcome
                  */
@@ -1183,7 +1183,7 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayConsumerOutcomeCallable DeleteCloudNativeAPIGatewayConsumerCallable(const Model::DeleteCloudNativeAPIGatewayConsumerRequest& request);
 
                 /**
-                 *删除云原生网关消费者组的信息
+                 *删除消费者组（被授权资源占用时返回 CheckItems）。
                  * @param req DeleteCloudNativeAPIGatewayConsumerGroupRequest
                  * @return DeleteCloudNativeAPIGatewayConsumerGroupOutcome
                  */
@@ -1201,7 +1201,7 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable DeleteCloudNativeAPIGatewayIPRestrictionCallable(const Model::DeleteCloudNativeAPIGatewayIPRestrictionRequest& request);
 
                 /**
-                 *删除 LLM 模型 API 信息
+                 *删除 LLM 模型 API。
                  * @param req DeleteCloudNativeAPIGatewayLLMModelAPIRequest
                  * @return DeleteCloudNativeAPIGatewayLLMModelAPIOutcome
                  */
@@ -1210,7 +1210,7 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayLLMModelAPIOutcomeCallable DeleteCloudNativeAPIGatewayLLMModelAPICallable(const Model::DeleteCloudNativeAPIGatewayLLMModelAPIRequest& request);
 
                 /**
-                 *删除 LLM 模型服务信息
+                 *删除 LLM 模型服务（被模型 API 绑定时需先解绑）。
                  * @param req DeleteCloudNativeAPIGatewayLLMModelServiceRequest
                  * @return DeleteCloudNativeAPIGatewayLLMModelServiceOutcome
                  */
@@ -1246,7 +1246,7 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayRouteRateLimitOutcomeCallable DeleteCloudNativeAPIGatewayRouteRateLimitCallable(const Model::DeleteCloudNativeAPIGatewayRouteRateLimitRequest& request);
 
                 /**
-                 *删除云原生网关密钥
+                 *删除消费者密钥（被绑定时需先解绑）。
                  * @param req DeleteCloudNativeAPIGatewaySecretKeyRequest
                  * @return DeleteCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -1471,7 +1471,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConfigOutcomeCallable DescribeCloudNativeAPIGatewayConfigCallable(const Model::DescribeCloudNativeAPIGatewayConfigRequest& request);
 
                 /**
-                 *查询指定的云原生网关消费者
+                 *查询消费者详情。
                  * @param req DescribeCloudNativeAPIGatewayConsumerRequest
                  * @return DescribeCloudNativeAPIGatewayConsumerOutcome
                  */
@@ -1480,7 +1480,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConsumerOutcomeCallable DescribeCloudNativeAPIGatewayConsumerCallable(const Model::DescribeCloudNativeAPIGatewayConsumerRequest& request);
 
                 /**
-                 *查看云原生网关消费者组的信息
+                 *查询消费者组详情。
                  * @param req DescribeCloudNativeAPIGatewayConsumerGroupRequest
                  * @return DescribeCloudNativeAPIGatewayConsumerGroupOutcome
                  */
@@ -1489,7 +1489,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConsumerGroupOutcomeCallable DescribeCloudNativeAPIGatewayConsumerGroupCallable(const Model::DescribeCloudNativeAPIGatewayConsumerGroupRequest& request);
 
                 /**
-                 *获取消费者组列表
+                 *查询消费者组列表。
                  * @param req DescribeCloudNativeAPIGatewayConsumerGroupListRequest
                  * @return DescribeCloudNativeAPIGatewayConsumerGroupListOutcome
                  */
@@ -1498,7 +1498,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConsumerGroupListOutcomeCallable DescribeCloudNativeAPIGatewayConsumerGroupListCallable(const Model::DescribeCloudNativeAPIGatewayConsumerGroupListRequest& request);
 
                 /**
-                 *查询云原生网关消费者列表
+                 *查询消费者列表。
                  * @param req DescribeCloudNativeAPIGatewayConsumerListRequest
                  * @return DescribeCloudNativeAPIGatewayConsumerListOutcome
                  */
@@ -1525,7 +1525,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable DescribeCloudNativeAPIGatewayInfoByIpCallable(const Model::DescribeCloudNativeAPIGatewayInfoByIpRequest& request);
 
                 /**
-                 *查询单个 LLM 模型 API 信息
+                 *查询单个 LLM 模型 API 详情。
                  * @param req DescribeCloudNativeAPIGatewayLLMModelAPIRequest
                  * @return DescribeCloudNativeAPIGatewayLLMModelAPIOutcome
                  */
@@ -1534,7 +1534,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMModelAPIOutcomeCallable DescribeCloudNativeAPIGatewayLLMModelAPICallable(const Model::DescribeCloudNativeAPIGatewayLLMModelAPIRequest& request);
 
                 /**
-                 *查询 LLM 模型 API 列表
+                 *查询 LLM 模型 API 列表。
                  * @param req DescribeCloudNativeAPIGatewayLLMModelAPIsRequest
                  * @return DescribeCloudNativeAPIGatewayLLMModelAPIsOutcome
                  */
@@ -1543,7 +1543,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMModelAPIsOutcomeCallable DescribeCloudNativeAPIGatewayLLMModelAPIsCallable(const Model::DescribeCloudNativeAPIGatewayLLMModelAPIsRequest& request);
 
                 /**
-                 *查询单个 LLM 模型服务列表
+                 *查询单个 LLM 模型服务详情。
                  * @param req DescribeCloudNativeAPIGatewayLLMModelServiceRequest
                  * @return DescribeCloudNativeAPIGatewayLLMModelServiceOutcome
                  */
@@ -1552,7 +1552,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMModelServiceOutcomeCallable DescribeCloudNativeAPIGatewayLLMModelServiceCallable(const Model::DescribeCloudNativeAPIGatewayLLMModelServiceRequest& request);
 
                 /**
-                 *查询 LLM 模型服务列表
+                 *查询 LLM 模型服务列表。
                  * @param req DescribeCloudNativeAPIGatewayLLMModelServicesRequest
                  * @return DescribeCloudNativeAPIGatewayLLMModelServicesOutcome
                  */
@@ -1597,7 +1597,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayRoutesOutcomeCallable DescribeCloudNativeAPIGatewayRoutesCallable(const Model::DescribeCloudNativeAPIGatewayRoutesRequest& request);
 
                 /**
-                 *查询密钥详情
+                 *查询密钥详情（SecretValue 字段会被掩码）。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -1606,7 +1606,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaySecretKeyOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyRequest& request);
 
                 /**
-                 *获取密钥列表
+                 *查询密钥列表。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyListRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyListOutcome
                  */
@@ -1615,7 +1615,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaySecretKeyListOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyListCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyListRequest& request);
 
                 /**
-                 *查询密钥值
+                 *查询密钥明文值（KMS 类型密钥不可获取）。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyValueRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyValueOutcome
                  */
@@ -1975,7 +1975,7 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayCertificateOutcomeCallable ModifyCloudNativeAPIGatewayCertificateCallable(const Model::ModifyCloudNativeAPIGatewayCertificateRequest& request);
 
                 /**
-                 *修改云原生网关消费者的信息
+                 *修改消费者。
                  * @param req ModifyCloudNativeAPIGatewayConsumerRequest
                  * @return ModifyCloudNativeAPIGatewayConsumerOutcome
                  */
@@ -1984,7 +1984,7 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayConsumerOutcomeCallable ModifyCloudNativeAPIGatewayConsumerCallable(const Model::ModifyCloudNativeAPIGatewayConsumerRequest& request);
 
                 /**
-                 *修改云原生网关消费者组的信息
+                 *修改消费者组。
                  * @param req ModifyCloudNativeAPIGatewayConsumerGroupRequest
                  * @return ModifyCloudNativeAPIGatewayConsumerGroupOutcome
                  */
@@ -1993,7 +1993,7 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayConsumerGroupOutcomeCallable ModifyCloudNativeAPIGatewayConsumerGroupCallable(const Model::ModifyCloudNativeAPIGatewayConsumerGroupRequest& request);
 
                 /**
-                 *修改 LLM 模型 API 信息
+                 *修改 LLM 模型 API。
                  * @param req ModifyCloudNativeAPIGatewayLLMModelAPIRequest
                  * @return ModifyCloudNativeAPIGatewayLLMModelAPIOutcome
                  */
@@ -2029,7 +2029,7 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayRouteRateLimitOutcomeCallable ModifyCloudNativeAPIGatewayRouteRateLimitCallable(const Model::ModifyCloudNativeAPIGatewayRouteRateLimitRequest& request);
 
                 /**
-                 *修改密钥状态
+                 *修改密钥启用状态。
                  * @param req ModifyCloudNativeAPIGatewaySecretKeyStatusRequest
                  * @return ModifyCloudNativeAPIGatewaySecretKeyStatusOutcome
                  */
@@ -2191,7 +2191,7 @@ namespace TencentCloud
                 PublishConfigFilesOutcomeCallable PublishConfigFilesCallable(const Model::PublishConfigFilesRequest& request);
 
                 /**
-                 *云原生网关移除消费者组授权
+                 *从资源（模型 API / MCP Server）移除消费者组授权。
                  * @param req RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest
                  * @return RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcome
                  */
@@ -2200,7 +2200,7 @@ namespace TencentCloud
                 RemoveCloudNativeAPIGatewayConsumerGroupAuthOutcomeCallable RemoveCloudNativeAPIGatewayConsumerGroupAuthCallable(const Model::RemoveCloudNativeAPIGatewayConsumerGroupAuthRequest& request);
 
                 /**
-                 *从指定的消费者组中移除消费者
+                 *将消费者从消费者组移除。
                  * @param req RemoveCloudNativeAPIGatewayConsumerInGroupRequest
                  * @return RemoveCloudNativeAPIGatewayConsumerInGroupOutcome
                  */

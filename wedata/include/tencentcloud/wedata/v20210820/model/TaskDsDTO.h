@@ -1858,18 +1858,18 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>创建者帐号</p>
+                     * 获取<p>创建者账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OwnId <p>创建者帐号</p>
+                     * @return OwnId <p>创建者账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnId() const;
 
                     /**
-                     * 设置<p>创建者帐号</p>
+                     * 设置<p>创建者账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ownId <p>创建者帐号</p>
+                     * @param _ownId <p>创建者账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -3214,7 +3214,7 @@ namespace TencentCloud
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * <p>创建者帐号</p>
+                     * <p>创建者账号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownId;

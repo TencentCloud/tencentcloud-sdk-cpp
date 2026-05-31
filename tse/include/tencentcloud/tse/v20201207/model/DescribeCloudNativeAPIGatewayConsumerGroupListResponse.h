@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改结果
-                     * @return Result 修改结果
+                     * 获取<p>分组列表</p>
+                     * @return Result <p>分组列表</p>
                      * 
                      */
                     CNAPIGwConsumerGroupList GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改结果
+                     * <p>分组列表</p>
                      */
                     CNAPIGwConsumerGroupList m_result;
                     bool m_resultHasBeenSet;

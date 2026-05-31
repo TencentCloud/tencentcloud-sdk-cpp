@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分组id
-                     * @return ConsumerId 分组id
+                     * 获取<p>消费者 ID。</p>
+                     * @return ConsumerId <p>消费者 ID。</p>
                      * 
                      */
                     std::string GetConsumerId() const;
 
                     /**
-                     * 设置分组id
-                     * @param _consumerId 分组id
+                     * 设置<p>消费者 ID。</p>
+                     * @param _consumerId <p>消费者 ID。</p>
                      * 
                      */
                     void SetConsumerId(const std::string& _consumerId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ConsumerIdHasBeenSet() const;
 
                     /**
-                     * 获取名字
-                     * @return Name 名字
+                     * 获取<p>名字</p>
+                     * @return Name <p>名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名字
-                     * @param _name 名字
+                     * 设置<p>名字</p>
+                     * @param _name <p>名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间 yyyy-MM-dd hh:mm:ss
-                     * @return ModifyTime 更新时间 yyyy-MM-dd hh:mm:ss
+                     * 获取<p>更新时间 yyyy-MM-dd hh:mm:ss</p>
+                     * @return ModifyTime <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置更新时间 yyyy-MM-dd hh:mm:ss
-                     * @param _modifyTime 更新时间 yyyy-MM-dd hh:mm:ss
+                     * 设置<p>更新时间 yyyy-MM-dd hh:mm:ss</p>
+                     * @param _modifyTime <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -132,18 +132,18 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,18 +157,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取消费者分组
+                     * 获取<p>消费者分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConsumerGroups 消费者分组
+                     * @return ConsumerGroups <p>消费者分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CNAPIGwConsumerGroup> GetConsumerGroups() const;
 
                     /**
-                     * 设置消费者分组
+                     * 设置<p>消费者分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consumerGroups 消费者分组
+                     * @param _consumerGroups <p>消费者分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -184,38 +184,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分组id
+                     * <p>消费者 ID。</p>
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;
 
                     /**
-                     * 名字
+                     * <p>名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间 yyyy-MM-dd hh:mm:ss
+                     * <p>更新时间 yyyy-MM-dd hh:mm:ss</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 消费者分组
+                     * <p>消费者分组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CNAPIGwConsumerGroup> m_consumerGroups;

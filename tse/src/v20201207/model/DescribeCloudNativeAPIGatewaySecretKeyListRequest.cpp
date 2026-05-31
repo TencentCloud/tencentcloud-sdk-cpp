@@ -25,7 +25,8 @@ using namespace std;
 DescribeCloudNativeAPIGatewaySecretKeyListRequest::DescribeCloudNativeAPIGatewaySecretKeyListRequest() :
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeCloudNativeAPIGatewaySecretKeyListRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetOffset(const uint64_t
 bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 

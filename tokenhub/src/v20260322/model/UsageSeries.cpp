@@ -1,0 +1,146 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/tokenhub/v20260322/model/UsageSeries.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tokenhub::V20260322::Model;
+using namespace std;
+
+UsageSeries::UsageSeries() :
+    m_totalTokenHasBeenSet(false),
+    m_inputTotalTokenHasBeenSet(false),
+    m_outputTotalTokenHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome UsageSeries::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("TotalToken") && !value["TotalToken"].IsNull())
+    {
+        if (!value["TotalToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.TotalToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalToken = string(value["TotalToken"].GetString());
+        m_totalTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputTotalToken") && !value["InputTotalToken"].IsNull())
+    {
+        if (!value["InputTotalToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.InputTotalToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputTotalToken = string(value["InputTotalToken"].GetString());
+        m_inputTotalTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputTotalToken") && !value["OutputTotalToken"].IsNull())
+    {
+        if (!value["OutputTotalToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageSeries.OutputTotalToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputTotalToken = string(value["OutputTotalToken"].GetString());
+        m_outputTotalTokenHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void UsageSeries::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_totalTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTotalTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputTotalToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputTotalToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputTotalTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputTotalToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputTotalToken.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string UsageSeries::GetTotalToken() const
+{
+    return m_totalToken;
+}
+
+void UsageSeries::SetTotalToken(const string& _totalToken)
+{
+    m_totalToken = _totalToken;
+    m_totalTokenHasBeenSet = true;
+}
+
+bool UsageSeries::TotalTokenHasBeenSet() const
+{
+    return m_totalTokenHasBeenSet;
+}
+
+string UsageSeries::GetInputTotalToken() const
+{
+    return m_inputTotalToken;
+}
+
+void UsageSeries::SetInputTotalToken(const string& _inputTotalToken)
+{
+    m_inputTotalToken = _inputTotalToken;
+    m_inputTotalTokenHasBeenSet = true;
+}
+
+bool UsageSeries::InputTotalTokenHasBeenSet() const
+{
+    return m_inputTotalTokenHasBeenSet;
+}
+
+string UsageSeries::GetOutputTotalToken() const
+{
+    return m_outputTotalToken;
+}
+
+void UsageSeries::SetOutputTotalToken(const string& _outputTotalToken)
+{
+    m_outputTotalToken = _outputTotalToken;
+    m_outputTotalTokenHasBeenSet = true;
+}
+
+bool UsageSeries::OutputTotalTokenHasBeenSet() const
+{
+    return m_outputTotalTokenHasBeenSet;
+}
+

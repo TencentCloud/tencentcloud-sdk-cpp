@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标匹配规则ID
-                     * @return Id 指标匹配规则ID
+                     * 获取<p>指标匹配规则ID</p>
+                     * @return Id <p>指标匹配规则ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置指标匹配规则ID
-                     * @param _id 指标匹配规则ID
+                     * 设置<p>指标匹配规则ID</p>
+                     * @param _id <p>指标匹配规则ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取指标匹配规则名
+                     * 获取<p>指标匹配规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 指标匹配规则名
+                     * @return Name <p>指标匹配规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置指标匹配规则名
+                     * 设置<p>指标匹配规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 指标匹配规则名
+                     * @param _name <p>指标匹配规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取规则生效的应用。生效于全部应用就传空字符串
+                     * 获取<p>规则生效的应用。生效于全部应用就传空字符串</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceName 规则生效的应用。生效于全部应用就传空字符串
+                     * @return ServiceName <p>规则生效的应用。生效于全部应用就传空字符串</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置规则生效的应用。生效于全部应用就传空字符串
+                     * 设置<p>规则生效的应用。生效于全部应用就传空字符串</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceName 规则生效的应用。生效于全部应用就传空字符串
+                     * @param _serviceName <p>规则生效的应用。生效于全部应用就传空字符串</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,18 +118,18 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取指标匹配规则状态：1(启用)、2（不启用）
+                     * 获取<p>指标匹配规则状态：1(启用)、2（不启用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 指标匹配规则状态：1(启用)、2（不启用）
+                     * @return Status <p>指标匹配规则状态：1(启用)、2（不启用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置指标匹配规则状态：1(启用)、2（不启用）
+                     * 设置<p>指标匹配规则状态：1(启用)、2（不启用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 指标匹配规则状态：1(启用)、2（不启用）
+                     * @param _status <p>指标匹配规则状态：1(启用)、2（不启用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取指标匹配规则
+                     * 获取<p>指标匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricNameRule 指标匹配规则
+                     * @return MetricNameRule <p>指标匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricNameRule() const;
 
                     /**
-                     * 设置指标匹配规则
+                     * 设置<p>指标匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricNameRule 指标匹配规则
+                     * @param _metricNameRule <p>指标匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -168,18 +168,18 @@ namespace TencentCloud
                     bool MetricNameRuleHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * 获取<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricMatchType 匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * @return MetricMatchType <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMetricMatchType() const;
 
                     /**
-                     * 设置匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * 设置<p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricMatchType 匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * @param _metricMatchType <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -192,48 +192,75 @@ namespace TencentCloud
                      */
                     bool MetricMatchTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否追加资源属性</p>
+                     * @return AppendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    bool GetAppendResourceAttributes() const;
+
+                    /**
+                     * 设置<p>是否追加资源属性</p>
+                     * @param _appendResourceAttributes <p>是否追加资源属性</p>
+                     * 
+                     */
+                    void SetAppendResourceAttributes(const bool& _appendResourceAttributes);
+
+                    /**
+                     * 判断参数 AppendResourceAttributes 是否已赋值
+                     * @return AppendResourceAttributes 是否已赋值
+                     * 
+                     */
+                    bool AppendResourceAttributesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指标匹配规则ID
+                     * <p>指标匹配规则ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 指标匹配规则名
+                     * <p>指标匹配规则名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 规则生效的应用。生效于全部应用就传空字符串
+                     * <p>规则生效的应用。生效于全部应用就传空字符串</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 指标匹配规则状态：1(启用)、2（不启用）
+                     * <p>指标匹配规则状态：1(启用)、2（不启用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 指标匹配规则
+                     * <p>指标匹配规则</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricNameRule;
                     bool m_metricNameRuleHasBeenSet;
 
                     /**
-                     * 匹配类型：0精准匹配，1前缀匹配，2后缀匹配
+                     * <p>匹配类型：0精准匹配，1前缀匹配，2后缀匹配</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_metricMatchType;
                     bool m_metricMatchTypeHasBeenSet;
+
+                    /**
+                     * <p>是否追加资源属性</p>
+                     */
+                    bool m_appendResourceAttributes;
+                    bool m_appendResourceAttributesHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关实例id
-                     * @return GatewayId 网关实例id
+                     * 获取<p>网关实例id</p>
+                     * @return GatewayId <p>网关实例id</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关实例id
-                     * @param _gatewayId 网关实例id
+                     * 设置<p>网关实例id</p>
+                     * @param _gatewayId <p>网关实例id</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取页显示条数，最大20
-                     * @return Limit 页显示条数，最大20
+                     * 获取<p>每页条数，范围 [1, 100]，默认 20。</p>
+                     * @return Limit <p>每页条数，范围 [1, 100]，默认 20。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置页显示条数，最大20
-                     * @param _limit 页显示条数，最大20
+                     * 设置<p>每页条数，范围 [1, 100]，默认 20。</p>
+                     * @param _limit <p>每页条数，范围 [1, 100]，默认 20。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取起始位置
-                     * @return Offset 起始位置
+                     * 获取<p>起始位置，从 0 开始。</p>
+                     * @return Offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置起始位置
-                     * @param _offset 起始位置
+                     * 设置<p>起始位置，从 0 开始。</p>
+                     * @param _offset <p>起始位置，从 0 开始。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关实例id
+                     * <p>网关实例id</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 页显示条数，最大20
+                     * <p>每页条数，范围 [1, 100]，默认 20。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 起始位置
+                     * <p>起始位置，从 0 开始。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

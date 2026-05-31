@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取消费者名称
-                     * @return Name 消费者名称
+                     * 获取<p>消费者名称，最长 60 字符。同一网关下唯一。</p>
+                     * @return Name <p>消费者名称，最长 60 字符。同一网关下唯一。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置消费者名称
-                     * @param _name 消费者名称
+                     * 设置<p>消费者名称，最长 60 字符。同一网关下唯一。</p>
+                     * @param _name <p>消费者名称，最长 60 字符。同一网关下唯一。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取消费者描述
-                     * @return Description 消费者描述
+                     * 获取<p>消费者描述。最长 200 字符。</p>
+                     * @return Description <p>消费者描述。最长 200 字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置消费者描述
-                     * @param _description 消费者描述
+                     * 设置<p>消费者描述。最长 200 字符。</p>
+                     * @param _description <p>消费者描述。最长 200 字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 消费者名称
+                     * <p>消费者名称，最长 60 字符。同一网关下唯一。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 消费者描述
+                     * <p>消费者描述。最长 200 字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

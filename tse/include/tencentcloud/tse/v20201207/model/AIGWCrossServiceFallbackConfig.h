@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/AIGWFallbackServiceItem.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLLMQuotaFallbackTrigger.h>
 
 
 namespace TencentCloud
@@ -89,6 +90,27 @@ namespace TencentCloud
                      */
                     bool FallbackServiceChainHasBeenSet() const;
 
+                    /**
+                     * 获取<p>额度降级触发配置</p>
+                     * @return QuotaFallbackTrigger <p>额度降级触发配置</p>
+                     * 
+                     */
+                    AIGWLLMQuotaFallbackTrigger GetQuotaFallbackTrigger() const;
+
+                    /**
+                     * 设置<p>额度降级触发配置</p>
+                     * @param _quotaFallbackTrigger <p>额度降级触发配置</p>
+                     * 
+                     */
+                    void SetQuotaFallbackTrigger(const AIGWLLMQuotaFallbackTrigger& _quotaFallbackTrigger);
+
+                    /**
+                     * 判断参数 QuotaFallbackTrigger 是否已赋值
+                     * @return QuotaFallbackTrigger 是否已赋值
+                     * 
+                     */
+                    bool QuotaFallbackTriggerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +124,12 @@ namespace TencentCloud
                      */
                     std::vector<AIGWFallbackServiceItem> m_fallbackServiceChain;
                     bool m_fallbackServiceChainHasBeenSet;
+
+                    /**
+                     * <p>额度降级触发配置</p>
+                     */
+                    AIGWLLMQuotaFallbackTrigger m_quotaFallbackTrigger;
+                    bool m_quotaFallbackTriggerHasBeenSet;
 
                 };
             }

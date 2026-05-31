@@ -175,6 +175,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/SpaceInternetAccessible.h
   include/tencentcloud/thpc/v20230321/model/DescribeJobsRequest.h
   include/tencentcloud/thpc/v20230321/model/GooseFSxOptionOverview.h
+  include/tencentcloud/thpc/v20230321/model/CosOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20230321/model/SubmitJobResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h
@@ -389,6 +390,7 @@ set(thpc_src
   src/v20230321/model/SpaceInternetAccessible.cpp
   src/v20230321/model/DescribeJobsRequest.cpp
   src/v20230321/model/GooseFSxOptionOverview.cpp
+  src/v20230321/model/CosOptionOverview.cpp
   src/v20230321/model/SetAutoScalingConfigurationRequest.cpp
   src/v20230321/model/SubmitJobResponse.cpp
   src/v20230321/model/DescribeNodesRequest.cpp

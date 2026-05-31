@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型服务id
-                     * @return ModelServiceId 模型服务id
+                     * 获取<p>模型服务id</p>
+                     * @return ModelServiceId <p>模型服务id</p>
                      * 
                      */
                     std::string GetModelServiceId() const;
 
                     /**
-                     * 设置模型服务id
-                     * @param _modelServiceId 模型服务id
+                     * 设置<p>模型服务id</p>
+                     * @param _modelServiceId <p>模型服务id</p>
                      * 
                      */
                     void SetModelServiceId(const std::string& _modelServiceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModelServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取匹配模型服务
-                     * @return MatchModelName 匹配模型服务
+                     * 获取<p>匹配模型服务</p>
+                     * @return MatchModelName <p>匹配模型服务</p>
                      * 
                      */
                     std::string GetMatchModelName() const;
 
                     /**
-                     * 设置匹配模型服务
-                     * @param _matchModelName 匹配模型服务
+                     * 设置<p>匹配模型服务</p>
+                     * @param _matchModelName <p>匹配模型服务</p>
                      * 
                      */
                     void SetMatchModelName(const std::string& _matchModelName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MatchModelNameHasBeenSet() const;
 
                     /**
-                     * 获取重写模型
-                     * @return RewriteModelName 重写模型
+                     * 获取<p>重写模型</p>
+                     * @return RewriteModelName <p>重写模型</p>
                      * 
                      */
                     std::string GetRewriteModelName() const;
 
                     /**
-                     * 设置重写模型
-                     * @param _rewriteModelName 重写模型
+                     * 设置<p>重写模型</p>
+                     * @param _rewriteModelName <p>重写模型</p>
                      * 
                      */
                     void SetRewriteModelName(const std::string& _rewriteModelName);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型服务id
+                     * <p>模型服务id</p>
                      */
                     std::string m_modelServiceId;
                     bool m_modelServiceIdHasBeenSet;
 
                     /**
-                     * 匹配模型服务
+                     * <p>匹配模型服务</p>
                      */
                     std::string m_matchModelName;
                     bool m_matchModelNameHasBeenSet;
 
                     /**
-                     * 重写模型
+                     * <p>重写模型</p>
                      */
                     std::string m_rewriteModelName;
                     bool m_rewriteModelNameHasBeenSet;

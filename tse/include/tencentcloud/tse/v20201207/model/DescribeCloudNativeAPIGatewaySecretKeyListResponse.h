@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取允许的操作
-                     * @return Result 允许的操作
+                     * 获取<p>密钥列表</p>
+                     * @return Result <p>密钥列表</p>
                      * 
                      */
                     CNAPIGwSecretKeyList GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 允许的操作
+                     * <p>密钥列表</p>
                      */
                     CNAPIGwSecretKeyList m_result;
                     bool m_resultHasBeenSet;

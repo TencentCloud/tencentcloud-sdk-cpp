@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>媒体处理转码结果输出为独立媒资, 开启该选项会使产物输出为独立媒资，生成全新FileID，目前仅支持TranscodeTask转码任务输出为独立媒资。</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>注意：新媒资会产生存储费用，转码任务中片头片尾、溯源水印等暂不支持开启该选项。</p>
+                     * @return OutputAsIndependentMedia <p>媒体处理转码结果输出为独立媒资, 开启该选项会使产物输出为独立媒资，生成全新FileID，目前仅支持TranscodeTask转码任务输出为独立媒资。</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>注意：新媒资会产生存储费用，转码任务中片头片尾、溯源水印等暂不支持开启该选项。</p>
+                     * 
+                     */
+                    std::string GetOutputAsIndependentMedia() const;
+
+                    /**
+                     * 设置<p>媒体处理转码结果输出为独立媒资, 开启该选项会使产物输出为独立媒资，生成全新FileID，目前仅支持TranscodeTask转码任务输出为独立媒资。</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>注意：新媒资会产生存储费用，转码任务中片头片尾、溯源水印等暂不支持开启该选项。</p>
+                     * @param _outputAsIndependentMedia <p>媒体处理转码结果输出为独立媒资, 开启该选项会使产物输出为独立媒资，生成全新FileID，目前仅支持TranscodeTask转码任务输出为独立媒资。</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>注意：新媒资会产生存储费用，转码任务中片头片尾、溯源水印等暂不支持开启该选项。</p>
+                     * 
+                     */
+                    void SetOutputAsIndependentMedia(const std::string& _outputAsIndependentMedia);
+
+                    /**
+                     * 判断参数 OutputAsIndependentMedia 是否已赋值
+                     * @return OutputAsIndependentMedia 是否已赋值
+                     * 
+                     */
+                    bool OutputAsIndependentMediaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * <p>媒体处理转码结果输出为独立媒资, 开启该选项会使产物输出为独立媒资，生成全新FileID，目前仅支持TranscodeTask转码任务输出为独立媒资。</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>注意：新媒资会产生存储费用，转码任务中片头片尾、溯源水印等暂不支持开启该选项。</p>
+                     */
+                    std::string m_outputAsIndependentMedia;
+                    bool m_outputAsIndependentMediaHasBeenSet;
 
                 };
             }
