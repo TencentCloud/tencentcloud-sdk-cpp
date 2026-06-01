@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取Url
-                     * @return Url Url
+                     * 获取<p>Url</p>
+                     * @return Url <p>Url</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Url
-                     * @param _url Url
+                     * 设置<p>Url</p>
+                     * @param _url <p>Url</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取标题
-                     * @return Title 标题
+                     * 获取<p>标题</p>
+                     * @return Title <p>标题</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置标题
-                     * @param _title 标题
+                     * 设置<p>标题</p>
+                     * @param _title <p>标题</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取报文长度
-                     * @return ContentLength 报文长度
+                     * 获取<p>报文长度</p>
+                     * @return ContentLength <p>报文长度</p>
                      * 
                      */
                     int64_t GetContentLength() const;
 
                     /**
-                     * 设置报文长度
-                     * @param _contentLength 报文长度
+                     * 设置<p>报文长度</p>
+                     * @param _contentLength <p>报文长度</p>
                      * 
                      */
                     void SetContentLength(const int64_t& _contentLength);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ContentLengthHasBeenSet() const;
 
                     /**
-                     * 获取报文内容
-                     * @return Content 报文内容
+                     * 获取<p>报文内容</p>
+                     * @return Content <p>报文内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置报文内容
-                     * @param _content 报文内容
+                     * 设置<p>报文内容</p>
+                     * @param _content <p>报文内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取截图缩略图URL
-                     * @return ScreenshotThumbUrl 截图缩略图URL
+                     * 获取<p>截图缩略图URL</p>
+                     * @return ScreenshotThumbUrl <p>截图缩略图URL</p>
                      * 
                      */
                     std::string GetScreenshotThumbUrl() const;
 
                     /**
-                     * 设置截图缩略图URL
-                     * @param _screenshotThumbUrl 截图缩略图URL
+                     * 设置<p>截图缩略图URL</p>
+                     * @param _screenshotThumbUrl <p>截图缩略图URL</p>
                      * 
                      */
                     void SetScreenshotThumbUrl(const std::string& _screenshotThumbUrl);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ScreenshotThumbUrlHasBeenSet() const;
 
                     /**
-                     * 获取截图URL
-                     * @return ScreenshotUrl 截图URL
+                     * 获取<p>截图URL</p>
+                     * @return ScreenshotUrl <p>截图URL</p>
                      * 
                      */
                     std::string GetScreenshotUrl() const;
 
                     /**
-                     * 设置截图URL
-                     * @param _screenshotUrl 截图URL
+                     * 设置<p>截图URL</p>
+                     * @param _screenshotUrl <p>截图URL</p>
                      * 
                      */
                     void SetScreenshotUrl(const std::string& _screenshotUrl);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ScreenshotUrlHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Code 状态码
+                     * 获取<p>状态码</p>
+                     * @return Code <p>状态码</p>
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置状态码
-                     * @param _code 状态码
+                     * 设置<p>状态码</p>
+                     * @param _code <p>状态码</p>
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取Api
-                     * @return Api Api
+                     * 获取<p>Api</p>
+                     * @return Api <p>Api</p>
                      * 
                      */
                     std::string GetApi() const;
 
                     /**
-                     * 设置Api
-                     * @param _api Api
+                     * 设置<p>Api</p>
+                     * @param _api <p>Api</p>
                      * 
                      */
                     void SetApi(const std::string& _api);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ApiHasBeenSet() const;
 
                     /**
-                     * 获取解析的IP
-                     * @return Ip 解析的IP
+                     * 获取<p>解析的IP</p>
+                     * @return Ip <p>解析的IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置解析的IP
-                     * @param _ip 解析的IP
+                     * 设置<p>解析的IP</p>
+                     * @param _ip <p>解析的IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取证书信息
-                     * @return Ssl 证书信息
+                     * 获取<p>证书信息</p>
+                     * @return Ssl <p>证书信息</p>
                      * 
                      */
                     std::string GetSsl() const;
 
                     /**
-                     * 设置证书信息
-                     * @param _ssl 证书信息
+                     * 设置<p>证书信息</p>
+                     * @param _ssl <p>证书信息</p>
                      * 
                      */
                     void SetSsl(const std::string& _ssl);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool SslHasBeenSet() const;
 
                     /**
-                     * 获取ssl证书过期时间
-                     * @return SslExpiredTime ssl证书过期时间
+                     * 获取<p>ssl证书过期时间</p>
+                     * @return SslExpiredTime <p>ssl证书过期时间</p>
                      * 
                      */
                     std::string GetSslExpiredTime() const;
 
                     /**
-                     * 设置ssl证书过期时间
-                     * @param _sslExpiredTime ssl证书过期时间
+                     * 设置<p>ssl证书过期时间</p>
+                     * @param _sslExpiredTime <p>ssl证书过期时间</p>
                      * 
                      */
                     void SetSslExpiredTime(const std::string& _sslExpiredTime);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool SslExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取来源类型
-                     * @return SourceType 来源类型
+                     * 获取<p>来源类型</p>
+                     * @return SourceType <p>来源类型</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置来源类型
-                     * @param _sourceType 来源类型
+                     * 设置<p>来源类型</p>
+                     * @param _sourceType <p>来源类型</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取来源值
-                     * @return SourceValue 来源值
+                     * 获取<p>来源值</p>
+                     * @return SourceValue <p>来源值</p>
                      * 
                      */
                     std::string GetSourceValue() const;
 
                     /**
-                     * 设置来源值
-                     * @param _sourceValue 来源值
+                     * 设置<p>来源值</p>
+                     * @param _sourceValue <p>来源值</p>
                      * 
                      */
                     void SetSourceValue(const std::string& _sourceValue);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool SourceValueHasBeenSet() const;
 
                     /**
-                     * 获取是否信任
-                     * @return Trusted 是否信任
+                     * 获取<p>是否信任</p>
+                     * @return Trusted <p>是否信任</p>
                      * 
                      */
                     bool GetTrusted() const;
 
                     /**
-                     * 设置是否信任
-                     * @param _trusted 是否信任
+                     * 设置<p>是否信任</p>
+                     * @param _trusted <p>是否信任</p>
                      * 
                      */
                     void SetTrusted(const bool& _trusted);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool TrustedHasBeenSet() const;
 
                     /**
-                     * 获取所属者
-                     * @return Owner 所属者
+                     * 获取<p>所属者</p>
+                     * @return Owner <p>所属者</p>
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
-                     * 设置所属者
-                     * @param _owner 所属者
+                     * 设置<p>所属者</p>
+                     * @param _owner <p>所属者</p>
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool OwnerHasBeenSet() const;
 
                     /**
-                     * 获取根域名
-                     * @return RootDomain 根域名
+                     * 获取<p>根域名</p>
+                     * @return RootDomain <p>根域名</p>
                      * 
                      */
                     std::string GetRootDomain() const;
 
                     /**
-                     * 设置根域名
-                     * @param _rootDomain 根域名
+                     * 设置<p>根域名</p>
+                     * @param _rootDomain <p>根域名</p>
                      * 
                      */
                     void SetRootDomain(const std::string& _rootDomain);
@@ -425,115 +425,142 @@ namespace TencentCloud
                      */
                     bool RootDomainHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * Url
+                     * <p>Url</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 标题
+                     * <p>标题</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 报文长度
+                     * <p>报文长度</p>
                      */
                     int64_t m_contentLength;
                     bool m_contentLengthHasBeenSet;
 
                     /**
-                     * 报文内容
+                     * <p>报文内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 截图缩略图URL
+                     * <p>截图缩略图URL</p>
                      */
                     std::string m_screenshotThumbUrl;
                     bool m_screenshotThumbUrlHasBeenSet;
 
                     /**
-                     * 截图URL
+                     * <p>截图URL</p>
                      */
                     std::string m_screenshotUrl;
                     bool m_screenshotUrlHasBeenSet;
 
                     /**
-                     * 状态码
+                     * <p>状态码</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * Api
+                     * <p>Api</p>
                      */
                     std::string m_api;
                     bool m_apiHasBeenSet;
 
                     /**
-                     * 解析的IP
+                     * <p>解析的IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 证书信息
+                     * <p>证书信息</p>
                      */
                     std::string m_ssl;
                     bool m_sslHasBeenSet;
 
                     /**
-                     * ssl证书过期时间
+                     * <p>ssl证书过期时间</p>
                      */
                     std::string m_sslExpiredTime;
                     bool m_sslExpiredTimeHasBeenSet;
 
                     /**
-                     * 来源类型
+                     * <p>来源类型</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 来源值
+                     * <p>来源值</p>
                      */
                     std::string m_sourceValue;
                     bool m_sourceValueHasBeenSet;
 
                     /**
-                     * 是否信任
+                     * <p>是否信任</p>
                      */
                     bool m_trusted;
                     bool m_trustedHasBeenSet;
 
                     /**
-                     * 所属者
+                     * <p>所属者</p>
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
 
                     /**
-                     * 根域名
+                     * <p>根域名</p>
                      */
                     std::string m_rootDomain;
                     bool m_rootDomainHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

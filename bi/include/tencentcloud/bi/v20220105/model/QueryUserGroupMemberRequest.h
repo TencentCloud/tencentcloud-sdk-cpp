@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组id集合
-                     * @return GroupIds 用户组id集合
+                     * 获取<p>用户组id集合</p>
+                     * @return GroupIds <p>用户组id集合</p>
                      * 
                      */
                     std::vector<int64_t> GetGroupIds() const;
 
                     /**
-                     * 设置用户组id集合
-                     * @param _groupIds 用户组id集合
+                     * 设置<p>用户组id集合</p>
+                     * @param _groupIds <p>用户组id集合</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<int64_t>& _groupIds);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return Keyword 搜索关键字
+                     * 获取<p>搜索关键字</p>
+                     * @return Keyword <p>搜索关键字</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _keyword 搜索关键字
+                     * 设置<p>搜索关键字</p>
+                     * @param _keyword <p>搜索关键字</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _pageSize <p>分页大小</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码
-                     * @return PageNo 分页页码
+                     * 获取<p>分页页码</p>
+                     * @return PageNo <p>分页页码</p>
                      * 
                      */
                     uint64_t GetPageNo() const;
 
                     /**
-                     * 设置分页页码
-                     * @param _pageNo 分页页码
+                     * 设置<p>分页页码</p>
+                     * @param _pageNo <p>分页页码</p>
                      * 
                      */
                     void SetPageNo(const uint64_t& _pageNo);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取是否需要分页
-                     * @return AllPage 是否需要分页
+                     * 获取<p>是否需要分页</p>
+                     * @return AllPage <p>是否需要分页</p>
                      * 
                      */
                     bool GetAllPage() const;
 
                     /**
-                     * 设置是否需要分页
-                     * @param _allPage 是否需要分页
+                     * 设置<p>是否需要分页</p>
+                     * @param _allPage <p>是否需要分页</p>
                      * 
                      */
                     void SetAllPage(const bool& _allPage);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool AllPageHasBeenSet() const;
 
                     /**
-                     * 获取用户组节点信息
-                     * @return Nodes 用户组节点信息
+                     * 获取<p>用户组节点信息</p>
+                     * @return Nodes <p>用户组节点信息</p>
                      * 
                      */
                     std::vector<UserGroupTreeNodeDTO> GetNodes() const;
 
                     /**
-                     * 设置用户组节点信息
-                     * @param _nodes 用户组节点信息
+                     * 设置<p>用户组节点信息</p>
+                     * @param _nodes <p>用户组节点信息</p>
                      * 
                      */
                     void SetNodes(const std::vector<UserGroupTreeNodeDTO>& _nodes);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取标签值
-                     * @return TagValueList 标签值
+                     * 获取<p>标签值</p>
+                     * @return TagValueList <p>标签值</p>
                      * 
                      */
                     std::vector<ResourceTagValue> GetTagValueList() const;
 
                     /**
-                     * 设置标签值
-                     * @param _tagValueList 标签值
+                     * 设置<p>标签值</p>
+                     * @param _tagValueList <p>标签值</p>
                      * 
                      */
                     void SetTagValueList(const std::vector<ResourceTagValue>& _tagValueList);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool TagValueListHasBeenSet() const;
 
                     /**
-                     * 获取需要过滤的用户组
-                     * @return FilterGroupIds 需要过滤的用户组
+                     * 获取<p>需要过滤的用户组</p>
+                     * @return FilterGroupIds <p>需要过滤的用户组</p>
                      * 
                      */
                     std::vector<int64_t> GetFilterGroupIds() const;
 
                     /**
-                     * 设置需要过滤的用户组
-                     * @param _filterGroupIds 需要过滤的用户组
+                     * 设置<p>需要过滤的用户组</p>
+                     * @param _filterGroupIds <p>需要过滤的用户组</p>
                      * 
                      */
                     void SetFilterGroupIds(const std::vector<int64_t>& _filterGroupIds);
@@ -215,49 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组id集合
+                     * <p>用户组id集合</p>
                      */
                     std::vector<int64_t> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * <p>搜索关键字</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码
+                     * <p>分页页码</p>
                      */
                     uint64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 是否需要分页
+                     * <p>是否需要分页</p>
                      */
                     bool m_allPage;
                     bool m_allPageHasBeenSet;
 
                     /**
-                     * 用户组节点信息
+                     * <p>用户组节点信息</p>
                      */
                     std::vector<UserGroupTreeNodeDTO> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 标签值
+                     * <p>标签值</p>
                      */
                     std::vector<ResourceTagValue> m_tagValueList;
                     bool m_tagValueListHasBeenSet;
 
                     /**
-                     * 需要过滤的用户组
+                     * <p>需要过滤的用户组</p>
                      */
                     std::vector<int64_t> m_filterGroupIds;
                     bool m_filterGroupIdsHasBeenSet;

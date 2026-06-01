@@ -990,6 +990,56 @@ TeoClient::CreateFunctionOutcomeCallable TeoClient::CreateFunctionCallable(const
     return prom->get_future();
 }
 
+TeoClient::CreateFunctionReplicaOutcome TeoClient::CreateFunctionReplica(const CreateFunctionReplicaRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFunctionReplica");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFunctionReplicaResponse rsp = CreateFunctionReplicaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFunctionReplicaOutcome(rsp);
+        else
+            return CreateFunctionReplicaOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFunctionReplicaOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateFunctionReplicaAsync(const CreateFunctionReplicaRequest& request, const CreateFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateFunctionReplicaRequest&;
+    using Resp = CreateFunctionReplicaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateFunctionReplica", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateFunctionReplicaOutcomeCallable TeoClient::CreateFunctionReplicaCallable(const CreateFunctionReplicaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateFunctionReplicaOutcome>>();
+    CreateFunctionReplicaAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateFunctionReplicaRequest&,
+        CreateFunctionReplicaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateFunctionRuleOutcome TeoClient::CreateFunctionRule(const CreateFunctionRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFunctionRule");
@@ -2632,6 +2682,56 @@ TeoClient::DeleteFunctionOutcomeCallable TeoClient::DeleteFunctionCallable(const
         const TeoClient*,
         const DeleteFunctionRequest&,
         DeleteFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DeleteFunctionReplicaOutcome TeoClient::DeleteFunctionReplica(const DeleteFunctionReplicaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFunctionReplica");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFunctionReplicaResponse rsp = DeleteFunctionReplicaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFunctionReplicaOutcome(rsp);
+        else
+            return DeleteFunctionReplicaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFunctionReplicaOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteFunctionReplicaAsync(const DeleteFunctionReplicaRequest& request, const DeleteFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteFunctionReplicaRequest&;
+    using Resp = DeleteFunctionReplicaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteFunctionReplica", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DeleteFunctionReplicaOutcomeCallable TeoClient::DeleteFunctionReplicaCallable(const DeleteFunctionReplicaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteFunctionReplicaOutcome>>();
+    DeleteFunctionReplicaAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DeleteFunctionReplicaRequest&,
+        DeleteFunctionReplicaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4632,6 +4732,56 @@ TeoClient::DescribeFunctionComponentBindingsOutcomeCallable TeoClient::DescribeF
         const TeoClient*,
         const DescribeFunctionComponentBindingsRequest&,
         DescribeFunctionComponentBindingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeFunctionReplicasOutcome TeoClient::DescribeFunctionReplicas(const DescribeFunctionReplicasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFunctionReplicas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFunctionReplicasResponse rsp = DescribeFunctionReplicasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFunctionReplicasOutcome(rsp);
+        else
+            return DescribeFunctionReplicasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFunctionReplicasOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeFunctionReplicasAsync(const DescribeFunctionReplicasRequest& request, const DescribeFunctionReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFunctionReplicasRequest&;
+    using Resp = DescribeFunctionReplicasResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFunctionReplicas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeFunctionReplicasOutcomeCallable TeoClient::DescribeFunctionReplicasCallable(const DescribeFunctionReplicasRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFunctionReplicasOutcome>>();
+    DescribeFunctionReplicasAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeFunctionReplicasRequest&,
+        DescribeFunctionReplicasOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8682,6 +8832,56 @@ TeoClient::ModifyFunctionComponentBindingsOutcomeCallable TeoClient::ModifyFunct
         const TeoClient*,
         const ModifyFunctionComponentBindingsRequest&,
         ModifyFunctionComponentBindingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::ModifyFunctionReplicaOutcome TeoClient::ModifyFunctionReplica(const ModifyFunctionReplicaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunctionReplica");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionReplicaResponse rsp = ModifyFunctionReplicaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionReplicaOutcome(rsp);
+        else
+            return ModifyFunctionReplicaOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionReplicaOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyFunctionReplicaAsync(const ModifyFunctionReplicaRequest& request, const ModifyFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyFunctionReplicaRequest&;
+    using Resp = ModifyFunctionReplicaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyFunctionReplica", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyFunctionReplicaOutcomeCallable TeoClient::ModifyFunctionReplicaCallable(const ModifyFunctionReplicaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyFunctionReplicaOutcome>>();
+    ModifyFunctionReplicaAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyFunctionReplicaRequest&,
+        ModifyFunctionReplicaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

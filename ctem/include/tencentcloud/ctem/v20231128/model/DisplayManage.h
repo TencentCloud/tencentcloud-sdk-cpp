@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取Url
-                     * @return Url Url
+                     * 获取<p>Url</p>
+                     * @return Url <p>Url</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Url
-                     * @param _url Url
+                     * 设置<p>Url</p>
+                     * @param _url <p>Url</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取标题
-                     * @return Title 标题
+                     * 获取<p>标题</p>
+                     * @return Title <p>标题</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置标题
-                     * @param _title 标题
+                     * 设置<p>标题</p>
+                     * @param _title <p>标题</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取Icon
-                     * @return Icon Icon
+                     * 获取<p>Icon</p>
+                     * @return Icon <p>Icon</p>
                      * 
                      */
                     std::string GetIcon() const;
 
                     /**
-                     * 设置Icon
-                     * @param _icon Icon
+                     * 设置<p>Icon</p>
+                     * @param _icon <p>Icon</p>
                      * 
                      */
                     void SetIcon(const std::string& _icon);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IconHasBeenSet() const;
 
                     /**
-                     * 获取缩略图
-                     * @return Screenshot 缩略图
+                     * 获取<p>缩略图</p>
+                     * @return Screenshot <p>缩略图</p>
                      * 
                      */
                     std::string GetScreenshot() const;
 
                     /**
-                     * 设置缩略图
-                     * @param _screenshot 缩略图
+                     * 设置<p>缩略图</p>
+                     * @param _screenshot <p>缩略图</p>
                      * 
                      */
                     void SetScreenshot(const std::string& _screenshot);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool ScreenshotHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Code 状态码
+                     * 获取<p>状态码</p>
+                     * @return Code <p>状态码</p>
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置状态码
-                     * @param _code 状态码
+                     * 设置<p>状态码</p>
+                     * @param _code <p>状态码</p>
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取后台Host
-                     * @return Host 后台Host
+                     * 获取<p>后台Host</p>
+                     * @return Host <p>后台Host</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置后台Host
-                     * @param _host 后台Host
+                     * 设置<p>后台Host</p>
+                     * @param _host <p>后台Host</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -216,19 +216,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取状态：not_converged:未收敛, converged:已收敛, ignore:已忽略
-
-                     * @return Status 状态：not_converged:未收敛, converged:已收敛, ignore:已忽略
-
+                     * 获取<p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>
+                     * @return Status <p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态：not_converged:未收敛, converged:已收敛, ignore:已忽略
-
-                     * @param _status 状态：not_converged:未收敛, converged:已收敛, ignore:已忽略
-
+                     * 设置<p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>
+                     * @param _status <p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -241,15 +237,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否为云资产：0-非云资产 1-是云资产
-                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 获取<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @return IsCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     int64_t GetIsCloudAsset() const;
 
                     /**
-                     * 设置是否为云资产：0-非云资产 1-是云资产
-                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 设置<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @param _isCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     void SetIsCloudAsset(const int64_t& _isCloudAsset);
@@ -262,15 +258,15 @@ namespace TencentCloud
                     bool IsCloudAssetHasBeenSet() const;
 
                     /**
-                     * 获取云资产是否下线：-1-已下线 0-正常
-                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 获取<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @return CloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     int64_t GetCloudAssetStatus() const;
 
                     /**
-                     * 设置云资产是否下线：-1-已下线 0-正常
-                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 设置<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @param _cloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
@@ -282,74 +278,100 @@ namespace TencentCloud
                      */
                     bool CloudAssetStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * Url
+                     * <p>Url</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 标题
+                     * <p>标题</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * Icon
+                     * <p>Icon</p>
                      */
                     std::string m_icon;
                     bool m_iconHasBeenSet;
 
                     /**
-                     * 缩略图
+                     * <p>缩略图</p>
                      */
                     std::string m_screenshot;
                     bool m_screenshotHasBeenSet;
 
                     /**
-                     * 状态码
+                     * <p>状态码</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 后台Host
+                     * <p>后台Host</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 状态：not_converged:未收敛, converged:已收敛, ignore:已忽略
-
+                     * <p>状态：not_converged:未收敛, converged:已收敛, ignore:已忽略</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否为云资产：0-非云资产 1-是云资产
+                     * <p>是否为云资产：0-非云资产 1-是云资产</p>
                      */
                     int64_t m_isCloudAsset;
                     bool m_isCloudAssetHasBeenSet;
 
                     /**
-                     * 云资产是否下线：-1-已下线 0-正常
+                     * <p>云资产是否下线：-1-已下线 0-正常</p>
                      */
                     int64_t m_cloudAssetStatus;
                     bool m_cloudAssetStatusHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

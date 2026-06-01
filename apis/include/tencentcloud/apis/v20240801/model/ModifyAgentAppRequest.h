@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return ID 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return ID <p>应用ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _iD 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _iD <p>应用ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取OAuth2资源服务器ID
-                     * @return OAuth2ResourceServerID OAuth2资源服务器ID
+                     * 获取<p>OAuth2资源服务器ID</p>
+                     * @return OAuth2ResourceServerID <p>OAuth2资源服务器ID</p>
                      * 
                      */
                     std::string GetOAuth2ResourceServerID() const;
 
                     /**
-                     * 设置OAuth2资源服务器ID
-                     * @param _oAuth2ResourceServerID OAuth2资源服务器ID
+                     * 设置<p>OAuth2资源服务器ID</p>
+                     * @param _oAuth2ResourceServerID <p>OAuth2资源服务器ID</p>
                      * 
                      */
                     void SetOAuth2ResourceServerID(const std::string& _oAuth2ResourceServerID);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OAuth2ResourceServerIDHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭据ID</p>
+                     * @return ConnectorIDs <p>凭据ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetConnectorIDs() const;
+
+                    /**
+                     * 设置<p>凭据ID</p>
+                     * @param _connectorIDs <p>凭据ID</p>
+                     * 
+                     */
+                    void SetConnectorIDs(const std::vector<std::string>& _connectorIDs);
+
+                    /**
+                     * 判断参数 ConnectorIDs 是否已赋值
+                     * @return ConnectorIDs 是否已赋值
+                     * 
+                     */
+                    bool ConnectorIDsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * OAuth2资源服务器ID
+                     * <p>OAuth2资源服务器ID</p>
                      */
                     std::string m_oAuth2ResourceServerID;
                     bool m_oAuth2ResourceServerIDHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>凭据ID</p>
+                     */
+                    std::vector<std::string> m_connectorIDs;
+                    bool m_connectorIDsHasBeenSet;
 
                 };
             }

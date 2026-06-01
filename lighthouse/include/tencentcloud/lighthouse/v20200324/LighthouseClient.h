@@ -77,6 +77,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsShareAcrossAccountInfosRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsShareAcrossAccountInfosResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
                 typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlueprintsShareAcrossAccountInfosResponse> DescribeBlueprintsShareAcrossAccountInfosOutcome;
+                typedef std::future<DescribeBlueprintsShareAcrossAccountInfosOutcome> DescribeBlueprintsShareAcrossAccountInfosOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsShareAcrossAccountInfosRequest&, DescribeBlueprintsShareAcrossAccountInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsShareAcrossAccountInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBundleDiscountResponse> DescribeBundleDiscountOutcome;
                 typedef std::future<DescribeBundleDiscountOutcome> DescribeBundleDiscountOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBundleDiscountRequest&, DescribeBundleDiscountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundleDiscountAsyncHandler;
@@ -915,6 +920,15 @@ namespace TencentCloud
                 DescribeBlueprintsOutcome DescribeBlueprints(const Model::DescribeBlueprintsRequest &request);
                 void DescribeBlueprintsAsync(const Model::DescribeBlueprintsRequest& request, const DescribeBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlueprintsOutcomeCallable DescribeBlueprintsCallable(const Model::DescribeBlueprintsRequest& request);
+
+                /**
+                 *本接口（DescribeBlueprintsShareAcrossAccountInfos）用于查询一个或多个镜像的跨账号共享信息。
+                 * @param req DescribeBlueprintsShareAcrossAccountInfosRequest
+                 * @return DescribeBlueprintsShareAcrossAccountInfosOutcome
+                 */
+                DescribeBlueprintsShareAcrossAccountInfosOutcome DescribeBlueprintsShareAcrossAccountInfos(const Model::DescribeBlueprintsShareAcrossAccountInfosRequest &request);
+                void DescribeBlueprintsShareAcrossAccountInfosAsync(const Model::DescribeBlueprintsShareAcrossAccountInfosRequest& request, const DescribeBlueprintsShareAcrossAccountInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlueprintsShareAcrossAccountInfosOutcomeCallable DescribeBlueprintsShareAcrossAccountInfosCallable(const Model::DescribeBlueprintsShareAcrossAccountInfosRequest& request);
 
                 /**
                  *本接口（DescribeBundleDiscount）用于查询套餐折扣信息。

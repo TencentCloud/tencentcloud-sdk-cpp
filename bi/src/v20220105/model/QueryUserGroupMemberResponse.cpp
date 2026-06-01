@@ -24,7 +24,10 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 QueryUserGroupMemberResponse::QueryUserGroupMemberResponse() :
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_extraHasBeenSet(false),
+    m_msgHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -79,6 +82,43 @@ CoreInternalOutcome QueryUserGroupMemberResponse::Deserialize(const string &payl
         m_errorInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Extra") && !rsp["Extra"].IsNull())
+    {
+        if (!rsp["Extra"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(rsp["Extra"].GetString());
+        m_extraHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +136,31 @@ string QueryUserGroupMemberResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_errorInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +183,36 @@ ErrorInfo QueryUserGroupMemberResponse::GetErrorInfo() const
 bool QueryUserGroupMemberResponse::ErrorInfoHasBeenSet() const
 {
     return m_errorInfoHasBeenSet;
+}
+
+string QueryUserGroupMemberResponse::GetExtra() const
+{
+    return m_extra;
+}
+
+bool QueryUserGroupMemberResponse::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
+}
+
+string QueryUserGroupMemberResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool QueryUserGroupMemberResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
+}
+
+DescribeUserGroupMemberPageListContainer QueryUserGroupMemberResponse::GetData() const
+{
+    return m_data;
+}
+
+bool QueryUserGroupMemberResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -63,13 +63,94 @@ namespace TencentCloud
                      */
                     bool EnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>
+                     * @return EnvIds <p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>
+                     * 
+                     */
+                    std::vector<std::string> GetEnvIds() const;
+
+                    /**
+                     * 设置<p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>
+                     * @param _envIds <p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>
+                     * 
+                     */
+                    void SetEnvIds(const std::vector<std::string>& _envIds);
+
+                    /**
+                     * 判断参数 EnvIds 是否已赋值
+                     * @return EnvIds 是否已赋值
+                     * 
+                     */
+                    bool EnvIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每页条数（用于拉取列表时分页）</p>
+                     * @return Limit <p>每页条数（用于拉取列表时分页）</p>
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>每页条数（用于拉取列表时分页）</p>
+                     * @param _limit <p>每页条数（用于拉取列表时分页）</p>
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>偏移</p>
+                     * @return Offset <p>偏移</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>偏移</p>
+                     * @param _offset <p>偏移</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * <p>环境列表，当环境列表不为空时，查询的环境以该参数为准</p>
+                     */
+                    std::vector<std::string> m_envIds;
+                    bool m_envIdsHasBeenSet;
+
+                    /**
+                     * <p>每页条数（用于拉取列表时分页）</p>
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>偏移</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

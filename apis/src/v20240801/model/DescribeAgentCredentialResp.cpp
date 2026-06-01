@@ -30,6 +30,7 @@ DescribeAgentCredentialResp::DescribeAgentCredentialResp() :
     m_relateAgentAppNumHasBeenSet(false),
     m_relateMcpServerNumHasBeenSet(false),
     m_relateModelNumHasBeenSet(false),
+    m_relateServiceNumHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
@@ -130,6 +131,16 @@ CoreInternalOutcome DescribeAgentCredentialResp::Deserialize(const rapidjson::Va
         }
         m_relateModelNum = value["RelateModelNum"].GetInt64();
         m_relateModelNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelateServiceNum") && !value["RelateServiceNum"].IsNull())
+    {
+        if (!value["RelateServiceNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAgentCredentialResp.RelateServiceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_relateServiceNum = value["RelateServiceNum"].GetInt64();
+        m_relateServiceNumHasBeenSet = true;
     }
 
     if (value.HasMember("Content") && !value["Content"].IsNull())
@@ -256,6 +267,14 @@ void DescribeAgentCredentialResp::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "RelateModelNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_relateModelNum, allocator);
+    }
+
+    if (m_relateServiceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelateServiceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_relateServiceNum, allocator);
     }
 
     if (m_contentHasBeenSet)
@@ -436,6 +455,22 @@ void DescribeAgentCredentialResp::SetRelateModelNum(const int64_t& _relateModelN
 bool DescribeAgentCredentialResp::RelateModelNumHasBeenSet() const
 {
     return m_relateModelNumHasBeenSet;
+}
+
+int64_t DescribeAgentCredentialResp::GetRelateServiceNum() const
+{
+    return m_relateServiceNum;
+}
+
+void DescribeAgentCredentialResp::SetRelateServiceNum(const int64_t& _relateServiceNum)
+{
+    m_relateServiceNum = _relateServiceNum;
+    m_relateServiceNumHasBeenSet = true;
+}
+
+bool DescribeAgentCredentialResp::RelateServiceNumHasBeenSet() const
+{
+    return m_relateServiceNumHasBeenSet;
 }
 
 AgentCredentialContentDTO DescribeAgentCredentialResp::GetContent() const

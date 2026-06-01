@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取租户appID
-                     * @return AppID 租户appID
+                     * 获取<p>租户appID</p>
+                     * @return AppID <p>租户appID</p>
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置租户appID
-                     * @param _appID 租户appID
+                     * 设置<p>租户appID</p>
+                     * @param _appID <p>租户appID</p>
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取租户ID
-                     * @return Uin 租户ID
+                     * 获取<p>租户ID</p>
+                     * @return Uin <p>租户ID</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置租户ID
-                     * @param _uin 租户ID
+                     * 设置<p>租户ID</p>
+                     * @param _uin <p>租户ID</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return ID 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return ID <p>应用ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _iD 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _iD <p>应用ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return UpdateTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return UpdateTime <p>修改时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _updateTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _updateTime <p>修改时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取认证类型
-                     * @return AuthType 认证类型
+                     * 获取<p>认证类型</p>
+                     * @return AuthType <p>认证类型</p>
                      * 
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置认证类型
-                     * @param _authType 认证类型
+                     * 设置<p>认证类型</p>
+                     * @param _authType <p>认证类型</p>
                      * 
                      */
                     void SetAuthType(const std::string& _authType);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取apiKeys列表，脱敏
-                     * @return ApiKeys apiKeys列表，脱敏
+                     * 获取<p>apiKeys列表，脱敏</p>
+                     * @return ApiKeys <p>apiKeys列表，脱敏</p>
                      * 
                      */
                     std::vector<std::string> GetApiKeys() const;
 
                     /**
-                     * 设置apiKeys列表，脱敏
-                     * @param _apiKeys apiKeys列表，脱敏
+                     * 设置<p>apiKeys列表，脱敏</p>
+                     * @param _apiKeys <p>apiKeys列表，脱敏</p>
                      * 
                      */
                     void SetApiKeys(const std::vector<std::string>& _apiKeys);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ApiKeysHasBeenSet() const;
 
                     /**
-                     * 获取secretKey列表，脱敏
-                     * @return SecretKeys secretKey列表，脱敏
+                     * 获取<p>secretKey列表，脱敏</p>
+                     * @return SecretKeys <p>secretKey列表，脱敏</p>
                      * 
                      */
                     std::vector<AgentAppSecretKeyVO> GetSecretKeys() const;
 
                     /**
-                     * 设置secretKey列表，脱敏
-                     * @param _secretKeys secretKey列表，脱敏
+                     * 设置<p>secretKey列表，脱敏</p>
+                     * @param _secretKeys <p>secretKey列表，脱敏</p>
                      * 
                      */
                     void SetSecretKeys(const std::vector<AgentAppSecretKeyVO>& _secretKeys);
@@ -300,18 +300,18 @@ namespace TencentCloud
                     bool SecretKeysHasBeenSet() const;
 
                     /**
-                     * 获取OAuth2 Resource Server ID
+                     * 获取<p>OAuth2 Resource Server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OAuth2ResourceServerID OAuth2 Resource Server ID
+                     * @return OAuth2ResourceServerID <p>OAuth2 Resource Server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOAuth2ResourceServerID() const;
 
                     /**
-                     * 设置OAuth2 Resource Server ID
+                     * 设置<p>OAuth2 Resource Server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _oAuth2ResourceServerID OAuth2 Resource Server ID
+                     * @param _oAuth2ResourceServerID <p>OAuth2 Resource Server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool OAuth2ResourceServerIDHasBeenSet() const;
 
                     /**
-                     * 获取绑定mcpServer数量
-                     * @return McpServersNum 绑定mcpServer数量
+                     * 获取<p>绑定mcpServer数量</p>
+                     * @return McpServersNum <p>绑定mcpServer数量</p>
                      * 
                      */
                     int64_t GetMcpServersNum() const;
 
                     /**
-                     * 设置绑定mcpServer数量
-                     * @param _mcpServersNum 绑定mcpServer数量
+                     * 设置<p>绑定mcpServer数量</p>
+                     * @param _mcpServersNum <p>绑定mcpServer数量</p>
                      * 
                      */
                     void SetMcpServersNum(const int64_t& _mcpServersNum);
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool McpServersNumHasBeenSet() const;
 
                     /**
-                     * 获取绑定的模型服务数量
+                     * 获取<p>绑定的模型服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelServicesNum 绑定的模型服务数量
+                     * @return ModelServicesNum <p>绑定的模型服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetModelServicesNum() const;
 
                     /**
-                     * 设置绑定的模型服务数量
+                     * 设置<p>绑定的模型服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelServicesNum 绑定的模型服务数量
+                     * @param _modelServicesNum <p>绑定的模型服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -370,99 +370,153 @@ namespace TencentCloud
                      */
                     bool ModelServicesNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>API认证列表</p>
+                     * @return ConnectorIDs <p>API认证列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetConnectorIDs() const;
+
+                    /**
+                     * 设置<p>API认证列表</p>
+                     * @param _connectorIDs <p>API认证列表</p>
+                     * 
+                     */
+                    void SetConnectorIDs(const std::vector<std::string>& _connectorIDs);
+
+                    /**
+                     * 判断参数 ConnectorIDs 是否已赋值
+                     * @return ConnectorIDs 是否已赋值
+                     * 
+                     */
+                    bool ConnectorIDsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联API数量</p>
+                     * @return ServicesNum <p>关联API数量</p>
+                     * 
+                     */
+                    int64_t GetServicesNum() const;
+
+                    /**
+                     * 设置<p>关联API数量</p>
+                     * @param _servicesNum <p>关联API数量</p>
+                     * 
+                     */
+                    void SetServicesNum(const int64_t& _servicesNum);
+
+                    /**
+                     * 判断参数 ServicesNum 是否已赋值
+                     * @return ServicesNum 是否已赋值
+                     * 
+                     */
+                    bool ServicesNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 租户appID
+                     * <p>租户appID</p>
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 租户ID
+                     * <p>租户ID</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 认证类型
+                     * <p>认证类型</p>
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * apiKeys列表，脱敏
+                     * <p>apiKeys列表，脱敏</p>
                      */
                     std::vector<std::string> m_apiKeys;
                     bool m_apiKeysHasBeenSet;
 
                     /**
-                     * secretKey列表，脱敏
+                     * <p>secretKey列表，脱敏</p>
                      */
                     std::vector<AgentAppSecretKeyVO> m_secretKeys;
                     bool m_secretKeysHasBeenSet;
 
                     /**
-                     * OAuth2 Resource Server ID
+                     * <p>OAuth2 Resource Server ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oAuth2ResourceServerID;
                     bool m_oAuth2ResourceServerIDHasBeenSet;
 
                     /**
-                     * 绑定mcpServer数量
+                     * <p>绑定mcpServer数量</p>
                      */
                     int64_t m_mcpServersNum;
                     bool m_mcpServersNumHasBeenSet;
 
                     /**
-                     * 绑定的模型服务数量
+                     * <p>绑定的模型服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_modelServicesNum;
                     bool m_modelServicesNumHasBeenSet;
+
+                    /**
+                     * <p>API认证列表</p>
+                     */
+                    std::vector<std::string> m_connectorIDs;
+                    bool m_connectorIDsHasBeenSet;
+
+                    /**
+                     * <p>关联API数量</p>
+                     */
+                    int64_t m_servicesNum;
+                    bool m_servicesNumHasBeenSet;
 
                 };
             }

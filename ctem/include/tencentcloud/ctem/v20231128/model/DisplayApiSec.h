@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取Url
-                     * @return Url Url
+                     * 获取<p>Url</p>
+                     * @return Url <p>Url</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Url
-                     * @param _url Url
+                     * 设置<p>Url</p>
+                     * @param _url <p>Url</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取Host地址
-                     * @return Host Host地址
+                     * 获取<p>Host地址</p>
+                     * @return Host <p>Host地址</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置Host地址
-                     * @param _host Host地址
+                     * 设置<p>Host地址</p>
+                     * @param _host <p>Host地址</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取Path路径
-                     * @return Path Path路径
+                     * 获取<p>Path路径</p>
+                     * @return Path <p>Path路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置Path路径
-                     * @param _path Path路径
+                     * 设置<p>Path路径</p>
+                     * @param _path <p>Path路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取方法：POST、GET、DELETE等
-                     * @return Method 方法：POST、GET、DELETE等
+                     * 获取<p>方法：POST、GET、DELETE等</p>
+                     * @return Method <p>方法：POST、GET、DELETE等</p>
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置方法：POST、GET、DELETE等
-                     * @param _method 方法：POST、GET、DELETE等
+                     * 设置<p>方法：POST、GET、DELETE等</p>
+                     * @param _method <p>方法：POST、GET、DELETE等</p>
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中
-                     * @return Status 修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中
+                     * 获取<p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>
+                     * @return Status <p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中
-                     * @param _status 修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中
+                     * 设置<p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>
+                     * @param _status <p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Code 状态码
+                     * 获取<p>状态码</p>
+                     * @return Code <p>状态码</p>
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置状态码
-                     * @param _code 状态码
+                     * 设置<p>状态码</p>
+                     * @param _code <p>状态码</p>
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取请求体
-                     * @return Request 请求体
+                     * 获取<p>请求体</p>
+                     * @return Request <p>请求体</p>
                      * 
                      */
                     std::string GetRequest() const;
 
                     /**
-                     * 设置请求体
-                     * @param _request 请求体
+                     * 设置<p>请求体</p>
+                     * @param _request <p>请求体</p>
                      * 
                      */
                     void SetRequest(const std::string& _request);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool RequestHasBeenSet() const;
 
                     /**
-                     * 获取响应体
-                     * @return Response 响应体
+                     * 获取<p>响应体</p>
+                     * @return Response <p>响应体</p>
                      * 
                      */
                     std::string GetResponse() const;
 
                     /**
-                     * 设置响应体
-                     * @param _response 响应体
+                     * 设置<p>响应体</p>
+                     * @param _response <p>响应体</p>
                      * 
                      */
                     void SetResponse(const std::string& _response);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ResponseHasBeenSet() const;
 
                     /**
-                     * 获取是否风险API
-                     * @return IsRiskAPI 是否风险API
+                     * 获取<p>是否风险API</p>
+                     * @return IsRiskAPI <p>是否风险API</p>
                      * 
                      */
                     bool GetIsRiskAPI() const;
 
                     /**
-                     * 设置是否风险API
-                     * @param _isRiskAPI 是否风险API
+                     * 设置<p>是否风险API</p>
+                     * @param _isRiskAPI <p>是否风险API</p>
                      * 
                      */
                     void SetIsRiskAPI(const bool& _isRiskAPI);
@@ -278,73 +278,100 @@ namespace TencentCloud
                      */
                     bool IsRiskAPIHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * Url
+                     * <p>Url</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * Host地址
+                     * <p>Host地址</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * Path路径
+                     * <p>Path路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 方法：POST、GET、DELETE等
+                     * <p>方法：POST、GET、DELETE等</p>
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中
+                     * <p>修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态码
+                     * <p>状态码</p>
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 请求体
+                     * <p>请求体</p>
                      */
                     std::string m_request;
                     bool m_requestHasBeenSet;
 
                     /**
-                     * 响应体
+                     * <p>响应体</p>
                      */
                     std::string m_response;
                     bool m_responseHasBeenSet;
 
                     /**
-                     * 是否风险API
+                     * <p>是否风险API</p>
                      */
                     bool m_isRiskAPI;
                     bool m_isRiskAPIHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

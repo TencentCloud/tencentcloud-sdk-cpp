@@ -39,7 +39,11 @@ CreateCustomerRequest::CreateCustomerRequest() :
     m_iconHasBeenSet(false),
     m_qpsHasBeenSet(false),
     m_subCompanyLevelHasBeenSet(false),
-    m_isIncludeFullScanHasBeenSet(false)
+    m_isIncludeFullScanHasBeenSet(false),
+    m_portScanQpsHasBeenSet(false),
+    m_singleIPTaskLimitHasBeenSet(false),
+    m_highRiskAckHasBeenSet(false),
+    m_scanRateAckChecklistHasBeenSet(false)
 {
 }
 
@@ -184,6 +188,43 @@ string CreateCustomerRequest::ToJsonString() const
         string key = "IsIncludeFullScan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isIncludeFullScan, allocator);
+    }
+
+    if (m_portScanQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortScanQps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_portScanQps, allocator);
+    }
+
+    if (m_singleIPTaskLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingleIPTaskLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_singleIPTaskLimit, allocator);
+    }
+
+    if (m_highRiskAckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighRiskAck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_highRiskAck, allocator);
+    }
+
+    if (m_scanRateAckChecklistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanRateAckChecklist";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scanRateAckChecklist.begin(); itr != m_scanRateAckChecklist.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -464,6 +505,70 @@ void CreateCustomerRequest::SetIsIncludeFullScan(const bool& _isIncludeFullScan)
 bool CreateCustomerRequest::IsIncludeFullScanHasBeenSet() const
 {
     return m_isIncludeFullScanHasBeenSet;
+}
+
+int64_t CreateCustomerRequest::GetPortScanQps() const
+{
+    return m_portScanQps;
+}
+
+void CreateCustomerRequest::SetPortScanQps(const int64_t& _portScanQps)
+{
+    m_portScanQps = _portScanQps;
+    m_portScanQpsHasBeenSet = true;
+}
+
+bool CreateCustomerRequest::PortScanQpsHasBeenSet() const
+{
+    return m_portScanQpsHasBeenSet;
+}
+
+int64_t CreateCustomerRequest::GetSingleIPTaskLimit() const
+{
+    return m_singleIPTaskLimit;
+}
+
+void CreateCustomerRequest::SetSingleIPTaskLimit(const int64_t& _singleIPTaskLimit)
+{
+    m_singleIPTaskLimit = _singleIPTaskLimit;
+    m_singleIPTaskLimitHasBeenSet = true;
+}
+
+bool CreateCustomerRequest::SingleIPTaskLimitHasBeenSet() const
+{
+    return m_singleIPTaskLimitHasBeenSet;
+}
+
+bool CreateCustomerRequest::GetHighRiskAck() const
+{
+    return m_highRiskAck;
+}
+
+void CreateCustomerRequest::SetHighRiskAck(const bool& _highRiskAck)
+{
+    m_highRiskAck = _highRiskAck;
+    m_highRiskAckHasBeenSet = true;
+}
+
+bool CreateCustomerRequest::HighRiskAckHasBeenSet() const
+{
+    return m_highRiskAckHasBeenSet;
+}
+
+vector<string> CreateCustomerRequest::GetScanRateAckChecklist() const
+{
+    return m_scanRateAckChecklist;
+}
+
+void CreateCustomerRequest::SetScanRateAckChecklist(const vector<string>& _scanRateAckChecklist)
+{
+    m_scanRateAckChecklist = _scanRateAckChecklist;
+    m_scanRateAckChecklistHasBeenSet = true;
+}
+
+bool CreateCustomerRequest::ScanRateAckChecklistHasBeenSet() const
+{
+    return m_scanRateAckChecklistHasBeenSet;
 }
 
 

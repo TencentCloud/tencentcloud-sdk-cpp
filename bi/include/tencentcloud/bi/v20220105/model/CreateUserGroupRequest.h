@@ -43,15 +43,57 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组名称
-                     * @return GroupName 用户组名称
+                     * 获取<p>组管理员</p>
+                     * @return AdminUserId <p>组管理员</p>
+                     * 
+                     */
+                    std::string GetAdminUserId() const;
+
+                    /**
+                     * 设置<p>组管理员</p>
+                     * @param _adminUserId <p>组管理员</p>
+                     * 
+                     */
+                    void SetAdminUserId(const std::string& _adminUserId);
+
+                    /**
+                     * 判断参数 AdminUserId 是否已赋值
+                     * @return AdminUserId 是否已赋值
+                     * 
+                     */
+                    bool AdminUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户组名称</p>
+                     * @return GroupName <p>用户组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置用户组名称
-                     * @param _groupName 用户组名称
+                     * 设置<p>用户组名称</p>
+                     * @param _groupName <p>用户组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -64,15 +106,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取位置
-                     * @return Location 位置
+                     * 获取<p>位置</p>
+                     * @return Location <p>位置</p>
                      * 
                      */
                     int64_t GetLocation() const;
 
                     /**
-                     * 设置位置
-                     * @param _location 位置
+                     * 设置<p>位置</p>
+                     * @param _location <p>位置</p>
                      * 
                      */
                     void SetLocation(const int64_t& _location);
@@ -85,15 +127,15 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取父用户组id
-                     * @return ParentId 父用户组id
+                     * 获取<p>父用户组id</p>
+                     * @return ParentId <p>父用户组id</p>
                      * 
                      */
                     int64_t GetParentId() const;
 
                     /**
-                     * 设置父用户组id
-                     * @param _parentId 父用户组id
+                     * 设置<p>父用户组id</p>
+                     * @param _parentId <p>父用户组id</p>
                      * 
                      */
                     void SetParentId(const int64_t& _parentId);
@@ -108,19 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组名称
+                     * <p>组管理员</p>
+                     */
+                    std::string m_adminUserId;
+                    bool m_adminUserIdHasBeenSet;
+
+                    /**
+                     * <p>描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>用户组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 位置
+                     * <p>位置</p>
                      */
                     int64_t m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 父用户组id
+                     * <p>父用户组id</p>
                      */
                     int64_t m_parentId;
                     bool m_parentIdHasBeenSet;

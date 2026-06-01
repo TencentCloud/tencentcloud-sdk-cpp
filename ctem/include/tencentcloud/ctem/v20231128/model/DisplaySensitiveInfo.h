@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键Id
-                     * @return Id 主键Id
+                     * 获取<p>主键Id</p>
+                     * @return Id <p>主键Id</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键Id
-                     * @param _id 主键Id
+                     * 设置<p>主键Id</p>
+                     * @param _id <p>主键Id</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取<p>类型</p>
+                     * @return Type <p>类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置<p>类型</p>
+                     * @param _type <p>类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return Source 来源
+                     * 获取<p>来源</p>
+                     * @return Source <p>来源</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置来源
-                     * @param _source 来源
+                     * 设置<p>来源</p>
+                     * @param _source <p>来源</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取值
-                     * @return Value 值
+                     * 获取<p>值</p>
+                     * @return Value <p>值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置值
-                     * @param _value 值
+                     * 设置<p>值</p>
+                     * @param _value <p>值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取是否为云资产：0-非云资产 1-是云资产
-                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 获取<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @return IsCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     int64_t GetIsCloudAsset() const;
 
                     /**
-                     * 设置是否为云资产：0-非云资产 1-是云资产
-                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 设置<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @param _isCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     void SetIsCloudAsset(const int64_t& _isCloudAsset);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool IsCloudAssetHasBeenSet() const;
 
                     /**
-                     * 获取云资产是否下线：-1-已下线 0-正常
-                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 获取<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @return CloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     int64_t GetCloudAssetStatus() const;
 
                     /**
-                     * 设置云资产是否下线：-1-已下线 0-正常
-                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 设置<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @param _cloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
@@ -194,49 +194,76 @@ namespace TencentCloud
                      */
                     bool CloudAssetStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键Id
+                     * <p>主键Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 来源
+                     * <p>来源</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 值
+                     * <p>值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * 是否为云资产：0-非云资产 1-是云资产
+                     * <p>是否为云资产：0-非云资产 1-是云资产</p>
                      */
                     int64_t m_isCloudAsset;
                     bool m_isCloudAssetHasBeenSet;
 
                     /**
-                     * 云资产是否下线：-1-已下线 0-正常
+                     * <p>云资产是否下线：-1-已下线 0-正常</p>
                      */
                     int64_t m_cloudAssetStatus;
                     bool m_cloudAssetStatusHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

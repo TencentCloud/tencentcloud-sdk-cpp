@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境计费信息列表
-                     * @return EnvBillingInfoList 环境计费信息列表
+                     * 获取<p>环境计费信息列表</p>
+                     * @return EnvBillingInfoList <p>环境计费信息列表</p>
                      * 
                      */
                     std::vector<EnvBillingInfoItem> GetEnvBillingInfoList() const;
@@ -58,13 +58,33 @@ namespace TencentCloud
                      */
                     bool EnvBillingInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>总个数</p>
+                     * @return Total <p>总个数</p>
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境计费信息列表
+                     * <p>环境计费信息列表</p>
                      */
                     std::vector<EnvBillingInfoItem> m_envBillingInfoList;
                     bool m_envBillingInfoListHasBeenSet;
+
+                    /**
+                     * <p>总个数</p>
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

@@ -61,6 +61,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateEdgeKVNamespaceResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.h>
@@ -127,6 +129,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteEdgeKVNamespaceResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteJustInTimeTranscodeTemplatesRequest.h>
@@ -207,6 +211,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionComponentBindingsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionComponentBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionReplicasRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeFunctionReplicasResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRuntimeEnvironmentRequest.h>
@@ -369,6 +375,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionComponentBindingsRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionComponentBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionReplicaRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyFunctionReplicaResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityRequest.h>
@@ -514,6 +522,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFunctionReplicaResponse> CreateFunctionReplicaOutcome;
+                typedef std::future<CreateFunctionReplicaOutcome> CreateFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateFunctionReplicaRequest&, CreateFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFunctionRuleResponse> CreateFunctionRuleOutcome;
                 typedef std::future<CreateFunctionRuleOutcome> CreateFunctionRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRuleRequest&, CreateFunctionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionRuleAsyncHandler;
@@ -613,6 +624,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFunctionReplicaResponse> DeleteFunctionReplicaOutcome;
+                typedef std::future<DeleteFunctionReplicaOutcome> DeleteFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteFunctionReplicaRequest&, DeleteFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFunctionRulesResponse> DeleteFunctionRulesOutcome;
                 typedef std::future<DeleteFunctionRulesOutcome> DeleteFunctionRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRulesRequest&, DeleteFunctionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionRulesAsyncHandler;
@@ -733,6 +747,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFunctionComponentBindingsResponse> DescribeFunctionComponentBindingsOutcome;
                 typedef std::future<DescribeFunctionComponentBindingsOutcome> DescribeFunctionComponentBindingsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeFunctionComponentBindingsRequest&, DescribeFunctionComponentBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionComponentBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFunctionReplicasResponse> DescribeFunctionReplicasOutcome;
+                typedef std::future<DescribeFunctionReplicasOutcome> DescribeFunctionReplicasOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeFunctionReplicasRequest&, DescribeFunctionReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionReplicasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFunctionRulesResponse> DescribeFunctionRulesOutcome;
                 typedef std::future<DescribeFunctionRulesOutcome> DescribeFunctionRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeFunctionRulesRequest&, DescribeFunctionRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionRulesAsyncHandler;
@@ -976,6 +993,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFunctionComponentBindingsResponse> ModifyFunctionComponentBindingsOutcome;
                 typedef std::future<ModifyFunctionComponentBindingsOutcome> ModifyFunctionComponentBindingsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyFunctionComponentBindingsRequest&, ModifyFunctionComponentBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionComponentBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFunctionReplicaResponse> ModifyFunctionReplicaOutcome;
+                typedef std::future<ModifyFunctionReplicaOutcome> ModifyFunctionReplicaOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyFunctionReplicaRequest&, ModifyFunctionReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionReplicaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFunctionRuleResponse> ModifyFunctionRuleOutcome;
                 typedef std::future<ModifyFunctionRuleOutcome> ModifyFunctionRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyFunctionRuleRequest&, ModifyFunctionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionRuleAsyncHandler;
@@ -1276,6 +1296,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest &request);
                 void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request);
+
+                /**
+                 *本接口用于创建指定边缘函数的副本。创建副本后，当客户端请求匹配已配置的触发规则或默认域名时，您可以通过在请求头中添加 EO-Function-Replica-Name:[副本名称] 来访问特定的函数副本。每个函数默认支持创建两个副本。
+                 * @param req CreateFunctionReplicaRequest
+                 * @return CreateFunctionReplicaOutcome
+                 */
+                CreateFunctionReplicaOutcome CreateFunctionReplica(const Model::CreateFunctionReplicaRequest &request);
+                void CreateFunctionReplicaAsync(const Model::CreateFunctionReplicaRequest& request, const CreateFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFunctionReplicaOutcomeCallable CreateFunctionReplicaCallable(const Model::CreateFunctionReplicaRequest& request);
 
                 /**
                  *创建边缘函数的触发规则。支持通过自定义过滤条件来决定是否需要执行函数，当需要执行函数时，提供了多种选择目标函数的方式，包括：直接指定，基于客户端归属地区选择和基于权重选择。
@@ -1590,6 +1619,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest &request);
                 void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request);
+
+                /**
+                 *本接口用于删除指定的边缘函数副本。
+                 * @param req DeleteFunctionReplicaRequest
+                 * @return DeleteFunctionReplicaOutcome
+                 */
+                DeleteFunctionReplicaOutcome DeleteFunctionReplica(const Model::DeleteFunctionReplicaRequest &request);
+                void DeleteFunctionReplicaAsync(const Model::DeleteFunctionReplicaRequest& request, const DeleteFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFunctionReplicaOutcomeCallable DeleteFunctionReplicaCallable(const Model::DeleteFunctionReplicaRequest& request);
 
                 /**
                  *删除边缘函数触发规则。
@@ -1952,6 +1990,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeFunctionComponentBindingsOutcome DescribeFunctionComponentBindings(const Model::DescribeFunctionComponentBindingsRequest &request);
                 void DescribeFunctionComponentBindingsAsync(const Model::DescribeFunctionComponentBindingsRequest& request, const DescribeFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFunctionComponentBindingsOutcomeCallable DescribeFunctionComponentBindingsCallable(const Model::DescribeFunctionComponentBindingsRequest& request);
+
+                /**
+                 *本接口用于查询边缘函数的副本列表。
+                 * @param req DescribeFunctionReplicasRequest
+                 * @return DescribeFunctionReplicasOutcome
+                 */
+                DescribeFunctionReplicasOutcome DescribeFunctionReplicas(const Model::DescribeFunctionReplicasRequest &request);
+                void DescribeFunctionReplicasAsync(const Model::DescribeFunctionReplicasRequest& request, const DescribeFunctionReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFunctionReplicasOutcomeCallable DescribeFunctionReplicasCallable(const Model::DescribeFunctionReplicasRequest& request);
 
                 /**
                  *查询边缘函数触发规则列表，支持按照规则 ID、函数 ID、规则描述等条件进行过滤。
@@ -2712,6 +2759,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyFunctionComponentBindingsOutcome ModifyFunctionComponentBindings(const Model::ModifyFunctionComponentBindingsRequest &request);
                 void ModifyFunctionComponentBindingsAsync(const Model::ModifyFunctionComponentBindingsRequest& request, const ModifyFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyFunctionComponentBindingsOutcomeCallable ModifyFunctionComponentBindingsCallable(const Model::ModifyFunctionComponentBindingsRequest& request);
+
+                /**
+                 *本接口用于修改指定边缘函数副本的内容和描述。
+                 * @param req ModifyFunctionReplicaRequest
+                 * @return ModifyFunctionReplicaOutcome
+                 */
+                ModifyFunctionReplicaOutcome ModifyFunctionReplica(const Model::ModifyFunctionReplicaRequest &request);
+                void ModifyFunctionReplicaAsync(const Model::ModifyFunctionReplicaRequest& request, const ModifyFunctionReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFunctionReplicaOutcomeCallable ModifyFunctionReplicaCallable(const Model::ModifyFunctionReplicaRequest& request);
 
                 /**
                  *修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。

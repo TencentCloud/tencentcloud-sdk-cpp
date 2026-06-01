@@ -27,7 +27,8 @@ CreateAgentAppRequest::CreateAgentAppRequest() :
     m_nameHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_oAuth2ResourceServerIDHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_connectorIDsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string CreateAgentAppRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectorIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectorIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_connectorIDs.begin(); itr != m_connectorIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void CreateAgentAppRequest::SetDescription(const string& _description)
 bool CreateAgentAppRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<string> CreateAgentAppRequest::GetConnectorIDs() const
+{
+    return m_connectorIDs;
+}
+
+void CreateAgentAppRequest::SetConnectorIDs(const vector<string>& _connectorIDs)
+{
+    m_connectorIDs = _connectorIDs;
+    m_connectorIDsHasBeenSet = true;
+}
+
+bool CreateAgentAppRequest::ConnectorIDsHasBeenSet() const
+{
+    return m_connectorIDsHasBeenSet;
 }
 
 

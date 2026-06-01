@@ -28,6 +28,7 @@
 #include <tencentcloud/tcbr/v20220217/model/TimerScale.h>
 #include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
 #include <tencentcloud/tcbr/v20220217/model/VolumeConf.h>
+#include <tencentcloud/tcbr/v20220217/model/PublicNetConf.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境 Id
-                     * @return EnvId 环境 Id
+                     * 获取<p>环境 Id</p>
+                     * @return EnvId <p>环境 Id</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境 Id
-                     * @param _envId 环境 Id
+                     * 设置<p>环境 Id</p>
+                     * @param _envId <p>环境 Id</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -72,15 +73,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取服务名
-                     * @return ServerName 服务名
+                     * 获取<p>服务名</p>
+                     * @return ServerName <p>服务名</p>
                      * 
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置服务名
-                     * @param _serverName 服务名
+                     * 设置<p>服务名</p>
+                     * @param _serverName <p>服务名</p>
                      * 
                      */
                     void SetServerName(const std::string& _serverName);
@@ -93,15 +94,15 @@ namespace TencentCloud
                     bool ServerNameHasBeenSet() const;
 
                     /**
-                     * 获取是否开启公网访问
-                     * @return OpenAccessTypes 是否开启公网访问
+                     * 获取<p>是否开启公网访问</p>
+                     * @return OpenAccessTypes <p>是否开启公网访问</p>
                      * 
                      */
                     std::vector<std::string> GetOpenAccessTypes() const;
 
                     /**
-                     * 设置是否开启公网访问
-                     * @param _openAccessTypes 是否开启公网访问
+                     * 设置<p>是否开启公网访问</p>
+                     * @param _openAccessTypes <p>是否开启公网访问</p>
                      * 
                      */
                     void SetOpenAccessTypes(const std::vector<std::string>& _openAccessTypes);
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool OpenAccessTypesHasBeenSet() const;
 
                     /**
-                     * 获取Cpu 规格
-                     * @return Cpu Cpu 规格
+                     * 获取<p>Cpu 规格</p>
+                     * @return Cpu <p>Cpu 规格</p>
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置Cpu 规格
-                     * @param _cpu Cpu 规格
+                     * 设置<p>Cpu 规格</p>
+                     * @param _cpu <p>Cpu 规格</p>
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -135,15 +136,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取Mem 规格
-                     * @return Mem Mem 规格
+                     * 获取<p>Mem 规格</p>
+                     * @return Mem <p>Mem 规格</p>
                      * 
                      */
                     double GetMem() const;
 
                     /**
-                     * 设置Mem 规格
-                     * @param _mem Mem 规格
+                     * 设置<p>Mem 规格</p>
+                     * @param _mem <p>Mem 规格</p>
                      * 
                      */
                     void SetMem(const double& _mem);
@@ -156,15 +157,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取最小副本数
-                     * @return MinNum 最小副本数
+                     * 获取<p>最小副本数</p>
+                     * @return MinNum <p>最小副本数</p>
                      * 
                      */
                     uint64_t GetMinNum() const;
 
                     /**
-                     * 设置最小副本数
-                     * @param _minNum 最小副本数
+                     * 设置<p>最小副本数</p>
+                     * @param _minNum <p>最小副本数</p>
                      * 
                      */
                     void SetMinNum(const uint64_t& _minNum);
@@ -177,15 +178,15 @@ namespace TencentCloud
                     bool MinNumHasBeenSet() const;
 
                     /**
-                     * 获取最大副本数
-                     * @return MaxNum 最大副本数
+                     * 获取<p>最大副本数</p>
+                     * @return MaxNum <p>最大副本数</p>
                      * 
                      */
                     uint64_t GetMaxNum() const;
 
                     /**
-                     * 设置最大副本数
-                     * @param _maxNum 最大副本数
+                     * 设置<p>最大副本数</p>
+                     * @param _maxNum <p>最大副本数</p>
                      * 
                      */
                     void SetMaxNum(const uint64_t& _maxNum);
@@ -198,15 +199,15 @@ namespace TencentCloud
                     bool MaxNumHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容配置
-                     * @return PolicyDetails 扩缩容配置
+                     * 获取<p>扩缩容配置</p>
+                     * @return PolicyDetails <p>扩缩容配置</p>
                      * 
                      */
                     std::vector<HpaPolicy> GetPolicyDetails() const;
 
                     /**
-                     * 设置扩缩容配置
-                     * @param _policyDetails 扩缩容配置
+                     * 设置<p>扩缩容配置</p>
+                     * @param _policyDetails <p>扩缩容配置</p>
                      * 
                      */
                     void SetPolicyDetails(const std::vector<HpaPolicy>& _policyDetails);
@@ -219,15 +220,15 @@ namespace TencentCloud
                     bool PolicyDetailsHasBeenSet() const;
 
                     /**
-                     * 获取日志采集路径
-                     * @return CustomLogs 日志采集路径
+                     * 获取<p>日志采集路径</p>
+                     * @return CustomLogs <p>日志采集路径</p>
                      * 
                      */
                     std::string GetCustomLogs() const;
 
                     /**
-                     * 设置日志采集路径
-                     * @param _customLogs 日志采集路径
+                     * 设置<p>日志采集路径</p>
+                     * @param _customLogs <p>日志采集路径</p>
                      * 
                      */
                     void SetCustomLogs(const std::string& _customLogs);
@@ -240,15 +241,15 @@ namespace TencentCloud
                     bool CustomLogsHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
-                     * @return EnvParams 环境变量
+                     * 获取<p>环境变量</p>
+                     * @return EnvParams <p>环境变量</p>
                      * 
                      */
                     std::string GetEnvParams() const;
 
                     /**
-                     * 设置环境变量
-                     * @param _envParams 环境变量
+                     * 设置<p>环境变量</p>
+                     * @param _envParams <p>环境变量</p>
                      * 
                      */
                     void SetEnvParams(const std::string& _envParams);
@@ -261,15 +262,15 @@ namespace TencentCloud
                     bool EnvParamsHasBeenSet() const;
 
                     /**
-                     * 获取延迟检测时间
-                     * @return InitialDelaySeconds 延迟检测时间
+                     * 获取<p>延迟检测时间</p>
+                     * @return InitialDelaySeconds <p>延迟检测时间</p>
                      * 
                      */
                     uint64_t GetInitialDelaySeconds() const;
 
                     /**
-                     * 设置延迟检测时间
-                     * @param _initialDelaySeconds 延迟检测时间
+                     * 设置<p>延迟检测时间</p>
+                     * @param _initialDelaySeconds <p>延迟检测时间</p>
                      * 
                      */
                     void SetInitialDelaySeconds(const uint64_t& _initialDelaySeconds);
@@ -282,15 +283,15 @@ namespace TencentCloud
                     bool InitialDelaySecondsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -303,15 +304,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务端口
-                     * @return Port 服务端口
+                     * 获取<p>服务端口</p>
+                     * @return Port <p>服务端口</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置服务端口
-                     * @param _port 服务端口
+                     * 设置<p>服务端口</p>
+                     * @param _port <p>服务端口</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -324,15 +325,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取是否有Dockerfile
-                     * @return HasDockerfile 是否有Dockerfile
+                     * 获取<p>是否有Dockerfile</p>
+                     * @return HasDockerfile <p>是否有Dockerfile</p>
                      * 
                      */
                     bool GetHasDockerfile() const;
 
                     /**
-                     * 设置是否有Dockerfile
-                     * @param _hasDockerfile 是否有Dockerfile
+                     * 设置<p>是否有Dockerfile</p>
+                     * @param _hasDockerfile <p>是否有Dockerfile</p>
                      * 
                      */
                     void SetHasDockerfile(const bool& _hasDockerfile);
@@ -345,15 +346,15 @@ namespace TencentCloud
                     bool HasDockerfileHasBeenSet() const;
 
                     /**
-                     * 获取Dockerfile 文件名
-                     * @return Dockerfile Dockerfile 文件名
+                     * 获取<p>Dockerfile 文件名</p>
+                     * @return Dockerfile <p>Dockerfile 文件名</p>
                      * 
                      */
                     std::string GetDockerfile() const;
 
                     /**
-                     * 设置Dockerfile 文件名
-                     * @param _dockerfile Dockerfile 文件名
+                     * 设置<p>Dockerfile 文件名</p>
+                     * @param _dockerfile <p>Dockerfile 文件名</p>
                      * 
                      */
                     void SetDockerfile(const std::string& _dockerfile);
@@ -366,15 +367,15 @@ namespace TencentCloud
                     bool DockerfileHasBeenSet() const;
 
                     /**
-                     * 获取构建目录
-                     * @return BuildDir 构建目录
+                     * 获取<p>构建目录</p>
+                     * @return BuildDir <p>构建目录</p>
                      * 
                      */
                     std::string GetBuildDir() const;
 
                     /**
-                     * 设置构建目录
-                     * @param _buildDir 构建目录
+                     * 设置<p>构建目录</p>
+                     * @param _buildDir <p>构建目录</p>
                      * 
                      */
                     void SetBuildDir(const std::string& _buildDir);
@@ -387,15 +388,15 @@ namespace TencentCloud
                     bool BuildDirHasBeenSet() const;
 
                     /**
-                     * 获取日志类型: none | default | custom
-                     * @return LogType 日志类型: none | default | custom
+                     * 获取<p>日志类型: none | default | custom</p>
+                     * @return LogType <p>日志类型: none | default | custom</p>
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型: none | default | custom
-                     * @param _logType 日志类型: none | default | custom
+                     * 设置<p>日志类型: none | default | custom</p>
+                     * @param _logType <p>日志类型: none | default | custom</p>
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -408,15 +409,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取cls setId
-                     * @return LogSetId cls setId
+                     * 获取<p>cls setId</p>
+                     * @return LogSetId <p>cls setId</p>
                      * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
-                     * 设置cls setId
-                     * @param _logSetId cls setId
+                     * 设置<p>cls setId</p>
+                     * @param _logSetId <p>cls setId</p>
                      * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
@@ -429,15 +430,15 @@ namespace TencentCloud
                     bool LogSetIdHasBeenSet() const;
 
                     /**
-                     * 获取cls 主题id
-                     * @return LogTopicId cls 主题id
+                     * 获取<p>cls 主题id</p>
+                     * @return LogTopicId <p>cls 主题id</p>
                      * 
                      */
                     std::string GetLogTopicId() const;
 
                     /**
-                     * 设置cls 主题id
-                     * @param _logTopicId cls 主题id
+                     * 设置<p>cls 主题id</p>
+                     * @param _logTopicId <p>cls 主题id</p>
                      * 
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
@@ -450,15 +451,15 @@ namespace TencentCloud
                     bool LogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取解析类型：json ｜ line
-                     * @return LogParseType 解析类型：json ｜ line
+                     * 获取<p>解析类型：json ｜ line</p>
+                     * @return LogParseType <p>解析类型：json ｜ line</p>
                      * 
                      */
                     std::string GetLogParseType() const;
 
                     /**
-                     * 设置解析类型：json ｜ line
-                     * @param _logParseType 解析类型：json ｜ line
+                     * 设置<p>解析类型：json ｜ line</p>
+                     * @param _logParseType <p>解析类型：json ｜ line</p>
                      * 
                      */
                     void SetLogParseType(const std::string& _logParseType);
@@ -471,15 +472,15 @@ namespace TencentCloud
                     bool LogParseTypeHasBeenSet() const;
 
                     /**
-                     * 获取服务标签, function: 函数托管
-                     * @return Tag 服务标签, function: 函数托管
+                     * 获取<p>服务标签, function: 函数托管</p>
+                     * @return Tag <p>服务标签, function: 函数托管</p>
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置服务标签, function: 函数托管
-                     * @param _tag 服务标签, function: 函数托管
+                     * 设置<p>服务标签, function: 函数托管</p>
+                     * @param _tag <p>服务标签, function: 函数托管</p>
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -492,15 +493,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取内网访问开关 close | open
-                     * @return InternalAccess 内网访问开关 close | open
+                     * 获取<p>内网访问开关 close | open</p>
+                     * @return InternalAccess <p>内网访问开关 close | open</p>
                      * 
                      */
                     std::string GetInternalAccess() const;
 
                     /**
-                     * 设置内网访问开关 close | open
-                     * @param _internalAccess 内网访问开关 close | open
+                     * 设置<p>内网访问开关 close | open</p>
+                     * @param _internalAccess <p>内网访问开关 close | open</p>
                      * 
                      */
                     void SetInternalAccess(const std::string& _internalAccess);
@@ -513,15 +514,15 @@ namespace TencentCloud
                     bool InternalAccessHasBeenSet() const;
 
                     /**
-                     * 获取内网域名
-                     * @return InternalDomain 内网域名
+                     * 获取<p>内网域名</p>
+                     * @return InternalDomain <p>内网域名</p>
                      * 
                      */
                     std::string GetInternalDomain() const;
 
                     /**
-                     * 设置内网域名
-                     * @param _internalDomain 内网域名
+                     * 设置<p>内网域名</p>
+                     * @param _internalDomain <p>内网域名</p>
                      * 
                      */
                     void SetInternalDomain(const std::string& _internalDomain);
@@ -534,15 +535,15 @@ namespace TencentCloud
                     bool InternalDomainHasBeenSet() const;
 
                     /**
-                     * 获取运行模式
-                     * @return OperationMode 运行模式
+                     * 获取<p>运行模式</p>
+                     * @return OperationMode <p>运行模式</p>
                      * 
                      */
                     std::string GetOperationMode() const;
 
                     /**
-                     * 设置运行模式
-                     * @param _operationMode 运行模式
+                     * 设置<p>运行模式</p>
+                     * @param _operationMode <p>运行模式</p>
                      * 
                      */
                     void SetOperationMode(const std::string& _operationMode);
@@ -555,15 +556,15 @@ namespace TencentCloud
                     bool OperationModeHasBeenSet() const;
 
                     /**
-                     * 获取定时扩缩容配置
-                     * @return TimerScale 定时扩缩容配置
+                     * 获取<p>定时扩缩容配置</p>
+                     * @return TimerScale <p>定时扩缩容配置</p>
                      * 
                      */
                     std::vector<TimerScale> GetTimerScale() const;
 
                     /**
-                     * 设置定时扩缩容配置
-                     * @param _timerScale 定时扩缩容配置
+                     * 设置<p>定时扩缩容配置</p>
+                     * @param _timerScale <p>定时扩缩容配置</p>
                      * 
                      */
                     void SetTimerScale(const std::vector<TimerScale>& _timerScale);
@@ -576,15 +577,15 @@ namespace TencentCloud
                     bool TimerScaleHasBeenSet() const;
 
                     /**
-                     * 获取Dockerfile EntryPoint 参数
-                     * @return EntryPoint Dockerfile EntryPoint 参数
+                     * 获取<p>Dockerfile EntryPoint 参数</p>
+                     * @return EntryPoint <p>Dockerfile EntryPoint 参数</p>
                      * 
                      */
                     std::vector<std::string> GetEntryPoint() const;
 
                     /**
-                     * 设置Dockerfile EntryPoint 参数
-                     * @param _entryPoint Dockerfile EntryPoint 参数
+                     * 设置<p>Dockerfile EntryPoint 参数</p>
+                     * @param _entryPoint <p>Dockerfile EntryPoint 参数</p>
                      * 
                      */
                     void SetEntryPoint(const std::vector<std::string>& _entryPoint);
@@ -597,15 +598,15 @@ namespace TencentCloud
                     bool EntryPointHasBeenSet() const;
 
                     /**
-                     * 获取Dockerfile Cmd 参数
-                     * @return Cmd Dockerfile Cmd 参数
+                     * 获取<p>Dockerfile Cmd 参数</p>
+                     * @return Cmd <p>Dockerfile Cmd 参数</p>
                      * 
                      */
                     std::vector<std::string> GetCmd() const;
 
                     /**
-                     * 设置Dockerfile Cmd 参数
-                     * @param _cmd Dockerfile Cmd 参数
+                     * 设置<p>Dockerfile Cmd 参数</p>
+                     * @param _cmd <p>Dockerfile Cmd 参数</p>
                      * 
                      */
                     void SetCmd(const std::vector<std::string>& _cmd);
@@ -618,18 +619,18 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取会话亲和性开关
+                     * 获取<p>会话亲和性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SessionAffinity 会话亲和性开关
+                     * @return SessionAffinity <p>会话亲和性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionAffinity() const;
 
                     /**
-                     * 设置会话亲和性开关
+                     * 设置<p>会话亲和性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sessionAffinity 会话亲和性开关
+                     * @param _sessionAffinity <p>会话亲和性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -643,15 +644,15 @@ namespace TencentCloud
                     bool SessionAffinityHasBeenSet() const;
 
                     /**
-                     * 获取Vpc 配置参数
-                     * @return VpcConf Vpc 配置参数
+                     * 获取<p>Vpc 配置参数</p>
+                     * @return VpcConf <p>Vpc 配置参数</p>
                      * 
                      */
                     VpcConf GetVpcConf() const;
 
                     /**
-                     * 设置Vpc 配置参数
-                     * @param _vpcConf Vpc 配置参数
+                     * 设置<p>Vpc 配置参数</p>
+                     * @param _vpcConf <p>Vpc 配置参数</p>
                      * 
                      */
                     void SetVpcConf(const VpcConf& _vpcConf);
@@ -664,15 +665,15 @@ namespace TencentCloud
                     bool VpcConfHasBeenSet() const;
 
                     /**
-                     * 获取存储配置信息
-                     * @return VolumesConf 存储配置信息
+                     * 获取<p>存储配置信息</p>
+                     * @return VolumesConf <p>存储配置信息</p>
                      * 
                      */
                     std::vector<VolumeConf> GetVolumesConf() const;
 
                     /**
-                     * 设置存储配置信息
-                     * @param _volumesConf 存储配置信息
+                     * 设置<p>存储配置信息</p>
+                     * @param _volumesConf <p>存储配置信息</p>
                      * 
                      */
                     void SetVolumesConf(const std::vector<VolumeConf>& _volumesConf);
@@ -685,15 +686,15 @@ namespace TencentCloud
                     bool VolumesConfHasBeenSet() const;
 
                     /**
-                     * 获取关联镜像密钥
-                     * @return LinkImageRegistry 关联镜像密钥
+                     * 获取<p>关联镜像密钥</p>
+                     * @return LinkImageRegistry <p>关联镜像密钥</p>
                      * 
                      */
                     std::string GetLinkImageRegistry() const;
 
                     /**
-                     * 设置关联镜像密钥
-                     * @param _linkImageRegistry 关联镜像密钥
+                     * 设置<p>关联镜像密钥</p>
+                     * @param _linkImageRegistry <p>关联镜像密钥</p>
                      * 
                      */
                     void SetLinkImageRegistry(const std::string& _linkImageRegistry);
@@ -705,194 +706,221 @@ namespace TencentCloud
                      */
                     bool LinkImageRegistryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>公网访问配置</p>
+                     * @return PublicNetConf <p>公网访问配置</p>
+                     * 
+                     */
+                    PublicNetConf GetPublicNetConf() const;
+
+                    /**
+                     * 设置<p>公网访问配置</p>
+                     * @param _publicNetConf <p>公网访问配置</p>
+                     * 
+                     */
+                    void SetPublicNetConf(const PublicNetConf& _publicNetConf);
+
+                    /**
+                     * 判断参数 PublicNetConf 是否已赋值
+                     * @return PublicNetConf 是否已赋值
+                     * 
+                     */
+                    bool PublicNetConfHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境 Id
+                     * <p>环境 Id</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 服务名
+                     * <p>服务名</p>
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
-                     * 是否开启公网访问
+                     * <p>是否开启公网访问</p>
                      */
                     std::vector<std::string> m_openAccessTypes;
                     bool m_openAccessTypesHasBeenSet;
 
                     /**
-                     * Cpu 规格
+                     * <p>Cpu 规格</p>
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * Mem 规格
+                     * <p>Mem 规格</p>
                      */
                     double m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 最小副本数
+                     * <p>最小副本数</p>
                      */
                     uint64_t m_minNum;
                     bool m_minNumHasBeenSet;
 
                     /**
-                     * 最大副本数
+                     * <p>最大副本数</p>
                      */
                     uint64_t m_maxNum;
                     bool m_maxNumHasBeenSet;
 
                     /**
-                     * 扩缩容配置
+                     * <p>扩缩容配置</p>
                      */
                     std::vector<HpaPolicy> m_policyDetails;
                     bool m_policyDetailsHasBeenSet;
 
                     /**
-                     * 日志采集路径
+                     * <p>日志采集路径</p>
                      */
                     std::string m_customLogs;
                     bool m_customLogsHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
                      */
                     std::string m_envParams;
                     bool m_envParamsHasBeenSet;
 
                     /**
-                     * 延迟检测时间
+                     * <p>延迟检测时间</p>
                      */
                     uint64_t m_initialDelaySeconds;
                     bool m_initialDelaySecondsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 服务端口
+                     * <p>服务端口</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 是否有Dockerfile
+                     * <p>是否有Dockerfile</p>
                      */
                     bool m_hasDockerfile;
                     bool m_hasDockerfileHasBeenSet;
 
                     /**
-                     * Dockerfile 文件名
+                     * <p>Dockerfile 文件名</p>
                      */
                     std::string m_dockerfile;
                     bool m_dockerfileHasBeenSet;
 
                     /**
-                     * 构建目录
+                     * <p>构建目录</p>
                      */
                     std::string m_buildDir;
                     bool m_buildDirHasBeenSet;
 
                     /**
-                     * 日志类型: none | default | custom
+                     * <p>日志类型: none | default | custom</p>
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * cls setId
+                     * <p>cls setId</p>
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
-                     * cls 主题id
+                     * <p>cls 主题id</p>
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
 
                     /**
-                     * 解析类型：json ｜ line
+                     * <p>解析类型：json ｜ line</p>
                      */
                     std::string m_logParseType;
                     bool m_logParseTypeHasBeenSet;
 
                     /**
-                     * 服务标签, function: 函数托管
+                     * <p>服务标签, function: 函数托管</p>
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 内网访问开关 close | open
+                     * <p>内网访问开关 close | open</p>
                      */
                     std::string m_internalAccess;
                     bool m_internalAccessHasBeenSet;
 
                     /**
-                     * 内网域名
+                     * <p>内网域名</p>
                      */
                     std::string m_internalDomain;
                     bool m_internalDomainHasBeenSet;
 
                     /**
-                     * 运行模式
+                     * <p>运行模式</p>
                      */
                     std::string m_operationMode;
                     bool m_operationModeHasBeenSet;
 
                     /**
-                     * 定时扩缩容配置
+                     * <p>定时扩缩容配置</p>
                      */
                     std::vector<TimerScale> m_timerScale;
                     bool m_timerScaleHasBeenSet;
 
                     /**
-                     * Dockerfile EntryPoint 参数
+                     * <p>Dockerfile EntryPoint 参数</p>
                      */
                     std::vector<std::string> m_entryPoint;
                     bool m_entryPointHasBeenSet;
 
                     /**
-                     * Dockerfile Cmd 参数
+                     * <p>Dockerfile Cmd 参数</p>
                      */
                     std::vector<std::string> m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * 会话亲和性开关
+                     * <p>会话亲和性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionAffinity;
                     bool m_sessionAffinityHasBeenSet;
 
                     /**
-                     * Vpc 配置参数
+                     * <p>Vpc 配置参数</p>
                      */
                     VpcConf m_vpcConf;
                     bool m_vpcConfHasBeenSet;
 
                     /**
-                     * 存储配置信息
+                     * <p>存储配置信息</p>
                      */
                     std::vector<VolumeConf> m_volumesConf;
                     bool m_volumesConfHasBeenSet;
 
                     /**
-                     * 关联镜像密钥
+                     * <p>关联镜像密钥</p>
                      */
                     std::string m_linkImageRegistry;
                     bool m_linkImageRegistryHasBeenSet;
+
+                    /**
+                     * <p>公网访问配置</p>
+                     */
+                    PublicNetConf m_publicNetConf;
+                    bool m_publicNetConfHasBeenSet;
 
                 };
             }

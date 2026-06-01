@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>用户组id</p>
+                     * @return GroupId <p>用户组id</p>
+                     * 
+                     */
+                    uint64_t GetGroupId() const;
+
+                    /**
+                     * 设置<p>用户组id</p>
+                     * @param _groupId <p>用户组id</p>
+                     * 
+                     */
+                    void SetGroupId(const uint64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户id集合</p>
+                     * @return UserIdList <p>用户id集合</p>
+                     * 
+                     */
+                    std::vector<std::string> GetUserIdList() const;
+
+                    /**
+                     * 设置<p>用户id集合</p>
+                     * @param _userIdList <p>用户id集合</p>
+                     * 
+                     */
+                    void SetUserIdList(const std::vector<std::string>& _userIdList);
+
+                    /**
+                     * 判断参数 UserIdList 是否已赋值
+                     * @return UserIdList 是否已赋值
+                     * 
+                     */
+                    bool UserIdListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>用户组id</p>
+                     */
+                    uint64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * <p>用户id集合</p>
+                     */
+                    std::vector<std::string> m_userIdList;
+                    bool m_userIdListHasBeenSet;
 
                 };
             }

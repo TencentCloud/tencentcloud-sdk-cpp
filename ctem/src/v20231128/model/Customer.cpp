@@ -43,7 +43,9 @@ Customer::Customer() :
     m_qpsHasBeenSet(false),
     m_subCompanyLevelHasBeenSet(false),
     m_isIncludeFullScanHasBeenSet(false),
-    m_enableGroupMemberDiscoveredHasBeenSet(false)
+    m_enableGroupMemberDiscoveredHasBeenSet(false),
+    m_singleIPTaskLimitHasBeenSet(false),
+    m_portScanQpsHasBeenSet(false)
 {
 }
 
@@ -282,6 +284,26 @@ CoreInternalOutcome Customer::Deserialize(const rapidjson::Value &value)
         m_enableGroupMemberDiscoveredHasBeenSet = true;
     }
 
+    if (value.HasMember("SingleIPTaskLimit") && !value["SingleIPTaskLimit"].IsNull())
+    {
+        if (!value["SingleIPTaskLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Customer.SingleIPTaskLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_singleIPTaskLimit = value["SingleIPTaskLimit"].GetInt64();
+        m_singleIPTaskLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortScanQps") && !value["PortScanQps"].IsNull())
+    {
+        if (!value["PortScanQps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Customer.PortScanQps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portScanQps = value["PortScanQps"].GetInt64();
+        m_portScanQpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +493,22 @@ void Customer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EnableGroupMemberDiscovered";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableGroupMemberDiscovered, allocator);
+    }
+
+    if (m_singleIPTaskLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingleIPTaskLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_singleIPTaskLimit, allocator);
+    }
+
+    if (m_portScanQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortScanQps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portScanQps, allocator);
     }
 
 }
@@ -842,5 +880,37 @@ void Customer::SetEnableGroupMemberDiscovered(const bool& _enableGroupMemberDisc
 bool Customer::EnableGroupMemberDiscoveredHasBeenSet() const
 {
     return m_enableGroupMemberDiscoveredHasBeenSet;
+}
+
+int64_t Customer::GetSingleIPTaskLimit() const
+{
+    return m_singleIPTaskLimit;
+}
+
+void Customer::SetSingleIPTaskLimit(const int64_t& _singleIPTaskLimit)
+{
+    m_singleIPTaskLimit = _singleIPTaskLimit;
+    m_singleIPTaskLimitHasBeenSet = true;
+}
+
+bool Customer::SingleIPTaskLimitHasBeenSet() const
+{
+    return m_singleIPTaskLimitHasBeenSet;
+}
+
+int64_t Customer::GetPortScanQps() const
+{
+    return m_portScanQps;
+}
+
+void Customer::SetPortScanQps(const int64_t& _portScanQps)
+{
+    m_portScanQps = _portScanQps;
+    m_portScanQpsHasBeenSet = true;
+}
+
+bool Customer::PortScanQpsHasBeenSet() const
+{
+    return m_portScanQpsHasBeenSet;
 }
 

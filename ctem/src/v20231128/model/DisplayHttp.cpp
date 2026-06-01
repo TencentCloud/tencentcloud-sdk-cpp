@@ -40,7 +40,8 @@ DisplayHttp::DisplayHttp() :
     m_availabilityRateHasBeenSet(false),
     m_availabilityStateHasBeenSet(false),
     m_responseTimeHasBeenSet(false),
-    m_analysisStateHasBeenSet(false)
+    m_analysisStateHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome DisplayHttp::Deserialize(const rapidjson::Value &value)
         m_analysisStateHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void DisplayHttp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AnalysisState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_analysisState, allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void DisplayHttp::SetAnalysisState(const int64_t& _analysisState)
 bool DisplayHttp::AnalysisStateHasBeenSet() const
 {
     return m_analysisStateHasBeenSet;
+}
+
+int64_t DisplayHttp::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplayHttp::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplayHttp::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 

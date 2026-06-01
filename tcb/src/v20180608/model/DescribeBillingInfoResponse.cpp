@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
 DescribeBillingInfoResponse::DescribeBillingInfoResponse() :
-    m_envBillingInfoListHasBeenSet(false)
+    m_envBillingInfoListHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeBillingInfoResponse::Deserialize(const string &paylo
         m_envBillingInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeBillingInfoResponse::ToJsonString() const
         }
     }
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<EnvBillingInfoItem> DescribeBillingInfoResponse::GetEnvBillingInfoList() 
 bool DescribeBillingInfoResponse::EnvBillingInfoListHasBeenSet() const
 {
     return m_envBillingInfoListHasBeenSet;
+}
+
+int64_t DescribeBillingInfoResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeBillingInfoResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

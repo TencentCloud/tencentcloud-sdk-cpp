@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组id
-                     * @return GroupId 用户组id
+                     * 获取<p>用户组id</p>
+                     * @return GroupId <p>用户组id</p>
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置用户组id
-                     * @param _groupId 用户组id
+                     * 设置<p>用户组id</p>
+                     * @param _groupId <p>用户组id</p>
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取用户id集合
-                     * @return UserIdList 用户id集合
+                     * 获取<p>用户id集合</p>
+                     * @return UserIdList <p>用户id集合</p>
                      * 
                      */
                     std::vector<std::string> GetUserIdList() const;
 
                     /**
-                     * 设置用户id集合
-                     * @param _userIdList 用户id集合
+                     * 设置<p>用户id集合</p>
+                     * @param _userIdList <p>用户id集合</p>
                      * 
                      */
                     void SetUserIdList(const std::vector<std::string>& _userIdList);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组id
+                     * <p>用户组id</p>
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 用户id集合
+                     * <p>用户id集合</p>
                      */
                     std::vector<std::string> m_userIdList;
                     bool m_userIdListHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境ID
-                     * @return EnvId 环境ID
+                     * 获取<p>环境ID</p>
+                     * @return EnvId <p>环境ID</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境ID
-                     * @param _envId 环境ID
+                     * 设置<p>环境ID</p>
+                     * @param _envId <p>环境ID</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取tcb产品套餐ID，参考DescribePackages接口的返回值。
-                     * @return PackageId tcb产品套餐ID，参考DescribePackages接口的返回值。
+                     * 获取<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>
+                     * @return PackageId <p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置tcb产品套餐ID，参考DescribePackages接口的返回值。
-                     * @param _packageId tcb产品套餐ID，参考DescribePackages接口的返回值。
+                     * 设置<p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>
+                     * @param _packageId <p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记
-                     * @return IsAutoRenew 自动续费标记
+                     * 获取<p>自动续费标记</p>
+                     * @return IsAutoRenew <p>自动续费标记</p>
                      * 
                      */
                     bool GetIsAutoRenew() const;
 
                     /**
-                     * 设置自动续费标记
-                     * @param _isAutoRenew 自动续费标记
+                     * 设置<p>自动续费标记</p>
+                     * @param _isAutoRenew <p>自动续费标记</p>
                      * 
                      */
                     void SetIsAutoRenew(const bool& _isAutoRenew);
@@ -111,27 +111,15 @@ namespace TencentCloud
                     bool IsAutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取状态。包含以下取值：
-<li> 空字符串：初始化中</li>
-<li> NORMAL：正常</li>
-<li> ISOLATE：隔离</li>
-                     * @return Status 状态。包含以下取值：
-<li> 空字符串：初始化中</li>
-<li> NORMAL：正常</li>
-<li> ISOLATE：隔离</li>
+                     * 获取<p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>
+                     * @return Status <p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态。包含以下取值：
-<li> 空字符串：初始化中</li>
-<li> NORMAL：正常</li>
-<li> ISOLATE：隔离</li>
-                     * @param _status 状态。包含以下取值：
-<li> 空字符串：初始化中</li>
-<li> NORMAL：正常</li>
-<li> ISOLATE：隔离</li>
+                     * 设置<p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>
+                     * @param _status <p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -144,23 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取支付方式。包含以下取值：
-<li> PREPAYMENT：预付费</li>
-<li> POSTPAID：后付费</li>
-                     * @return PayMode 支付方式。包含以下取值：
-<li> PREPAYMENT：预付费</li>
-<li> POSTPAID：后付费</li>
+                     * 获取<p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>
+                     * @return PayMode <p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置支付方式。包含以下取值：
-<li> PREPAYMENT：预付费</li>
-<li> POSTPAID：后付费</li>
-                     * @param _payMode 支付方式。包含以下取值：
-<li> PREPAYMENT：预付费</li>
-<li> POSTPAID：后付费</li>
+                     * 设置<p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>
+                     * @param _payMode <p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -173,15 +153,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间，最近一次隔离的时间
-                     * @return IsolatedTime 隔离时间，最近一次隔离的时间
+                     * 获取<p>隔离时间，最近一次隔离的时间</p>
+                     * @return IsolatedTime <p>隔离时间，最近一次隔离的时间</p>
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置隔离时间，最近一次隔离的时间
-                     * @param _isolatedTime 隔离时间，最近一次隔离的时间
+                     * 设置<p>隔离时间，最近一次隔离的时间</p>
+                     * @param _isolatedTime <p>隔离时间，最近一次隔离的时间</p>
                      * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
@@ -194,15 +174,15 @@ namespace TencentCloud
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取过期时间，套餐即将到期的时间
-                     * @return ExpireTime 过期时间，套餐即将到期的时间
+                     * 获取<p>过期时间，套餐即将到期的时间</p>
+                     * @return ExpireTime <p>过期时间，套餐即将到期的时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间，套餐即将到期的时间
-                     * @param _expireTime 过期时间，套餐即将到期的时间
+                     * 设置<p>过期时间，套餐即将到期的时间</p>
+                     * @param _expireTime <p>过期时间，套餐即将到期的时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -215,15 +195,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，第一次接入计费方案的时间。
-                     * @return CreateTime 创建时间，第一次接入计费方案的时间。
+                     * 获取<p>创建时间，第一次接入计费方案的时间。</p>
+                     * @return CreateTime <p>创建时间，第一次接入计费方案的时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，第一次接入计费方案的时间。
-                     * @param _createTime 创建时间，第一次接入计费方案的时间。
+                     * 设置<p>创建时间，第一次接入计费方案的时间。</p>
+                     * @param _createTime <p>创建时间，第一次接入计费方案的时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -236,15 +216,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，计费信息最近一次更新的时间。
-                     * @return UpdateTime 更新时间，计费信息最近一次更新的时间。
+                     * 获取<p>更新时间，计费信息最近一次更新的时间。</p>
+                     * @return UpdateTime <p>更新时间，计费信息最近一次更新的时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，计费信息最近一次更新的时间。
-                     * @param _updateTime 更新时间，计费信息最近一次更新的时间。
+                     * 设置<p>更新时间，计费信息最近一次更新的时间。</p>
+                     * @param _updateTime <p>更新时间，计费信息最近一次更新的时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -257,15 +237,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取true表示从未升级过付费版。
-                     * @return IsAlwaysFree true表示从未升级过付费版。
+                     * 获取<p>true表示从未升级过付费版。</p>
+                     * @return IsAlwaysFree <p>true表示从未升级过付费版。</p>
                      * 
                      */
                     bool GetIsAlwaysFree() const;
 
                     /**
-                     * 设置true表示从未升级过付费版。
-                     * @param _isAlwaysFree true表示从未升级过付费版。
+                     * 设置<p>true表示从未升级过付费版。</p>
+                     * @param _isAlwaysFree <p>true表示从未升级过付费版。</p>
                      * 
                      */
                     void SetIsAlwaysFree(const bool& _isAlwaysFree);
@@ -278,23 +258,15 @@ namespace TencentCloud
                     bool IsAlwaysFreeHasBeenSet() const;
 
                     /**
-                     * 获取付费渠道。
-<li> miniapp：小程序</li>
-<li> qcloud：腾讯云</li>
-                     * @return PaymentChannel 付费渠道。
-<li> miniapp：小程序</li>
-<li> qcloud：腾讯云</li>
+                     * 获取<p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>
+                     * @return PaymentChannel <p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>
                      * 
                      */
                     std::string GetPaymentChannel() const;
 
                     /**
-                     * 设置付费渠道。
-<li> miniapp：小程序</li>
-<li> qcloud：腾讯云</li>
-                     * @param _paymentChannel 付费渠道。
-<li> miniapp：小程序</li>
-<li> qcloud：腾讯云</li>
+                     * 设置<p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>
+                     * @param _paymentChannel <p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>
                      * 
                      */
                     void SetPaymentChannel(const std::string& _paymentChannel);
@@ -307,15 +279,15 @@ namespace TencentCloud
                     bool PaymentChannelHasBeenSet() const;
 
                     /**
-                     * 获取最新的订单信息
-                     * @return OrderInfo 最新的订单信息
+                     * 获取<p>最新的订单信息</p>
+                     * @return OrderInfo <p>最新的订单信息</p>
                      * 
                      */
                     OrderInfo GetOrderInfo() const;
 
                     /**
-                     * 设置最新的订单信息
-                     * @param _orderInfo 最新的订单信息
+                     * 设置<p>最新的订单信息</p>
+                     * @param _orderInfo <p>最新的订单信息</p>
                      * 
                      */
                     void SetOrderInfo(const OrderInfo& _orderInfo);
@@ -328,15 +300,15 @@ namespace TencentCloud
                     bool OrderInfoHasBeenSet() const;
 
                     /**
-                     * 获取免费配额信息。
-                     * @return FreeQuota 免费配额信息。
+                     * 获取<p>免费配额信息。</p>
+                     * @return FreeQuota <p>免费配额信息。</p>
                      * 
                      */
                     std::string GetFreeQuota() const;
 
                     /**
-                     * 设置免费配额信息。
-                     * @param _freeQuota 免费配额信息。
+                     * 设置<p>免费配额信息。</p>
+                     * @param _freeQuota <p>免费配额信息。</p>
                      * 
                      */
                     void SetFreeQuota(const std::string& _freeQuota);
@@ -349,15 +321,15 @@ namespace TencentCloud
                     bool FreeQuotaHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 `超过套餐额度部分转按量付费`
-                     * @return EnableOverrun 是否开启 `超过套餐额度部分转按量付费`
+                     * 获取<p>是否开启 <code>超过套餐额度部分转按量付费</code></p>
+                     * @return EnableOverrun <p>是否开启 <code>超过套餐额度部分转按量付费</code></p>
                      * 
                      */
                     bool GetEnableOverrun() const;
 
                     /**
-                     * 设置是否开启 `超过套餐额度部分转按量付费`
-                     * @param _enableOverrun 是否开启 `超过套餐额度部分转按量付费`
+                     * 设置<p>是否开启 <code>超过套餐额度部分转按量付费</code></p>
+                     * @param _enableOverrun <p>是否开启 <code>超过套餐额度部分转按量付费</code></p>
                      * 
                      */
                     void SetEnableOverrun(const bool& _enableOverrun);
@@ -370,15 +342,15 @@ namespace TencentCloud
                     bool EnableOverrunHasBeenSet() const;
 
                     /**
-                     * 获取环境套餐类型
-                     * @return ExtPackageType 环境套餐类型
+                     * 获取<p>环境套餐类型</p>
+                     * @return ExtPackageType <p>环境套餐类型</p>
                      * 
                      */
                     std::string GetExtPackageType() const;
 
                     /**
-                     * 设置环境套餐类型
-                     * @param _extPackageType 环境套餐类型
+                     * 设置<p>环境套餐类型</p>
+                     * @param _extPackageType <p>环境套餐类型</p>
                      * 
                      */
                     void SetExtPackageType(const std::string& _extPackageType);
@@ -391,15 +363,15 @@ namespace TencentCloud
                     bool ExtPackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否付费期环境，可取值：yes/no。
-                     * @return EnvCharged 是否付费期环境，可取值：yes/no。
+                     * 获取<p>是否付费期环境，可取值：yes/no。</p>
+                     * @return EnvCharged <p>是否付费期环境，可取值：yes/no。</p>
                      * 
                      */
                     std::string GetEnvCharged() const;
 
                     /**
-                     * 设置是否付费期环境，可取值：yes/no。
-                     * @param _envCharged 是否付费期环境，可取值：yes/no。
+                     * 设置<p>是否付费期环境，可取值：yes/no。</p>
+                     * @param _envCharged <p>是否付费期环境，可取值：yes/no。</p>
                      * 
                      */
                     void SetEnvCharged(const std::string& _envCharged);
@@ -412,15 +384,15 @@ namespace TencentCloud
                     bool EnvChargedHasBeenSet() const;
 
                     /**
-                     * 获取是否已激活，可取值：yes/no。
-                     * @return EnvActivated 是否已激活，可取值：yes/no。
+                     * 获取<p>是否已激活，可取值：yes/no。</p>
+                     * @return EnvActivated <p>是否已激活，可取值：yes/no。</p>
                      * 
                      */
                     std::string GetEnvActivated() const;
 
                     /**
-                     * 设置是否已激活，可取值：yes/no。
-                     * @param _envActivated 是否已激活，可取值：yes/no。
+                     * 设置<p>是否已激活，可取值：yes/no。</p>
+                     * @param _envActivated <p>是否已激活，可取值：yes/no。</p>
                      * 
                      */
                     void SetEnvActivated(const std::string& _envActivated);
@@ -435,110 +407,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境ID
+                     * <p>环境ID</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * tcb产品套餐ID，参考DescribePackages接口的返回值。
+                     * <p>tcb产品套餐ID，参考DescribePackages接口的返回值。</p>
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 自动续费标记
+                     * <p>自动续费标记</p>
                      */
                     bool m_isAutoRenew;
                     bool m_isAutoRenewHasBeenSet;
 
                     /**
-                     * 状态。包含以下取值：
-<li> 空字符串：初始化中</li>
-<li> NORMAL：正常</li>
-<li> ISOLATE：隔离</li>
+                     * <p>状态。包含以下取值：</p><li> 空字符串：初始化中</li><li> NORMAL：正常</li><li> ISOLATE：隔离</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 支付方式。包含以下取值：
-<li> PREPAYMENT：预付费</li>
-<li> POSTPAID：后付费</li>
+                     * <p>支付方式。包含以下取值：</p><li> PREPAYMENT：预付费</li><li> POSTPAID：后付费</li>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 隔离时间，最近一次隔离的时间
+                     * <p>隔离时间，最近一次隔离的时间</p>
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
 
                     /**
-                     * 过期时间，套餐即将到期的时间
+                     * <p>过期时间，套餐即将到期的时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 创建时间，第一次接入计费方案的时间。
+                     * <p>创建时间，第一次接入计费方案的时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间，计费信息最近一次更新的时间。
+                     * <p>更新时间，计费信息最近一次更新的时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * true表示从未升级过付费版。
+                     * <p>true表示从未升级过付费版。</p>
                      */
                     bool m_isAlwaysFree;
                     bool m_isAlwaysFreeHasBeenSet;
 
                     /**
-                     * 付费渠道。
-<li> miniapp：小程序</li>
-<li> qcloud：腾讯云</li>
+                     * <p>付费渠道。</p><li> miniapp：小程序</li><li> qcloud：腾讯云</li>
                      */
                     std::string m_paymentChannel;
                     bool m_paymentChannelHasBeenSet;
 
                     /**
-                     * 最新的订单信息
+                     * <p>最新的订单信息</p>
                      */
                     OrderInfo m_orderInfo;
                     bool m_orderInfoHasBeenSet;
 
                     /**
-                     * 免费配额信息。
+                     * <p>免费配额信息。</p>
                      */
                     std::string m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
 
                     /**
-                     * 是否开启 `超过套餐额度部分转按量付费`
+                     * <p>是否开启 <code>超过套餐额度部分转按量付费</code></p>
                      */
                     bool m_enableOverrun;
                     bool m_enableOverrunHasBeenSet;
 
                     /**
-                     * 环境套餐类型
+                     * <p>环境套餐类型</p>
                      */
                     std::string m_extPackageType;
                     bool m_extPackageTypeHasBeenSet;
 
                     /**
-                     * 是否付费期环境，可取值：yes/no。
+                     * <p>是否付费期环境，可取值：yes/no。</p>
                      */
                     std::string m_envCharged;
                     bool m_envChargedHasBeenSet;
 
                     /**
-                     * 是否已激活，可取值：yes/no。
+                     * <p>是否已激活，可取值：yes/no。</p>
                      */
                     std::string m_envActivated;
                     bool m_envActivatedHasBeenSet;

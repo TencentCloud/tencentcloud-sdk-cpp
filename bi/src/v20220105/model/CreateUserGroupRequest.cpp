@@ -23,6 +23,8 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 CreateUserGroupRequest::CreateUserGroupRequest() :
+    m_adminUserIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_parentIdHasBeenSet(false)
@@ -35,6 +37,22 @@ string CreateUserGroupRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_adminUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_adminUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_groupNameHasBeenSet)
     {
@@ -67,6 +85,38 @@ string CreateUserGroupRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateUserGroupRequest::GetAdminUserId() const
+{
+    return m_adminUserId;
+}
+
+void CreateUserGroupRequest::SetAdminUserId(const string& _adminUserId)
+{
+    m_adminUserId = _adminUserId;
+    m_adminUserIdHasBeenSet = true;
+}
+
+bool CreateUserGroupRequest::AdminUserIdHasBeenSet() const
+{
+    return m_adminUserIdHasBeenSet;
+}
+
+string CreateUserGroupRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateUserGroupRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateUserGroupRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
 
 string CreateUserGroupRequest::GetGroupName() const
 {

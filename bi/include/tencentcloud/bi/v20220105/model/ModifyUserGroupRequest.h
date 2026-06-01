@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组更新list
-                     * @return UpdateList 用户组更新list
+                     * 获取<p>用户组更新list</p>
+                     * @return UpdateList <p>用户组更新list</p>
                      * 
                      */
                     std::vector<UserGroupUpdateDTO> GetUpdateList() const;
 
                     /**
-                     * 设置用户组更新list
-                     * @param _updateList 用户组更新list
+                     * 设置<p>用户组更新list</p>
+                     * @param _updateList <p>用户组更新list</p>
                      * 
                      */
                     void SetUpdateList(const std::vector<UserGroupUpdateDTO>& _updateList);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组更新list
+                     * <p>用户组更新list</p>
                      */
                     std::vector<UserGroupUpdateDTO> m_updateList;
                     bool m_updateListHasBeenSet;

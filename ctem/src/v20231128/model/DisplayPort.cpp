@@ -34,7 +34,8 @@ DisplayPort::DisplayPort() :
     m_statusHasBeenSet(false),
     m_isCloudAssetHasBeenSet(false),
     m_cloudAssetStatusHasBeenSet(false),
-    m_analysisStateHasBeenSet(false)
+    m_analysisStateHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome DisplayPort::Deserialize(const rapidjson::Value &value)
         m_analysisStateHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayPort.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void DisplayPort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AnalysisState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_analysisState, allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void DisplayPort::SetAnalysisState(const int64_t& _analysisState)
 bool DisplayPort::AnalysisStateHasBeenSet() const
 {
     return m_analysisStateHasBeenSet;
+}
+
+int64_t DisplayPort::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplayPort::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplayPort::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 

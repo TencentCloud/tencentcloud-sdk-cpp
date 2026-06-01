@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转码后的视频文件地址。
-                     * @return Url 转码后的视频文件地址。
+                     * 获取<p>转码后的视频文件地址。</p>
+                     * @return Url <p>转码后的视频文件地址。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置转码后的视频文件地址。
-                     * @param _url 转码后的视频文件地址。
+                     * 设置<p>转码后的视频文件地址。</p>
+                     * @param _url <p>转码后的视频文件地址。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -70,19 +70,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-<font color=red>注意：取值 0 表示原始文件。</font> 
-                     * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-<font color=red>注意：取值 0 表示原始文件。</font> 
+                     * 获取<p>转码规格 ID，参见<a href="https://cloud.tencent.com/document/product/266/33476">转码参数模板</a>。<br><font color="red">注意：取值 0 表示原始文件。</font></p>
+                     * @return Definition <p>转码规格 ID，参见<a href="https://cloud.tencent.com/document/product/266/33476">转码参数模板</a>。<br><font color="red">注意：取值 0 表示原始文件。</font></p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-<font color=red>注意：取值 0 表示原始文件。</font> 
-                     * @param _definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-<font color=red>注意：取值 0 表示原始文件。</font> 
+                     * 设置<p>转码规格 ID，参见<a href="https://cloud.tencent.com/document/product/266/33476">转码参数模板</a>。<br><font color="red">注意：取值 0 表示原始文件。</font></p>
+                     * @param _definition <p>转码规格 ID，参见<a href="https://cloud.tencent.com/document/product/266/33476">转码参数模板</a>。<br><font color="red">注意：取值 0 表示原始文件。</font></p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -95,15 +91,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取视频流码率平均值与音频流码率平均值之和， 单位：bps。
-                     * @return Bitrate 视频流码率平均值与音频流码率平均值之和， 单位：bps。
+                     * 获取<p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>
+                     * @return Bitrate <p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流码率平均值与音频流码率平均值之和， 单位：bps。
-                     * @param _bitrate 视频流码率平均值与音频流码率平均值之和， 单位：bps。
+                     * 设置<p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>
+                     * @param _bitrate <p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -116,15 +112,15 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取视频流高度的最大值，单位：px。
-                     * @return Height 视频流高度的最大值，单位：px。
+                     * 获取<p>视频流高度的最大值，单位：px。</p>
+                     * @return Height <p>视频流高度的最大值，单位：px。</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置视频流高度的最大值，单位：px。
-                     * @param _height 视频流高度的最大值，单位：px。
+                     * 设置<p>视频流高度的最大值，单位：px。</p>
+                     * @param _height <p>视频流高度的最大值，单位：px。</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -137,15 +133,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取视频流宽度的最大值，单位：px。
-                     * @return Width 视频流宽度的最大值，单位：px。
+                     * 获取<p>视频流宽度的最大值，单位：px。</p>
+                     * @return Width <p>视频流宽度的最大值，单位：px。</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置视频流宽度的最大值，单位：px。
-                     * @param _width 视频流宽度的最大值，单位：px。
+                     * 设置<p>视频流宽度的最大值，单位：px。</p>
+                     * @param _width <p>视频流宽度的最大值，单位：px。</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -158,19 +154,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件总大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
-                     * @return Size 媒体文件总大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * 获取<p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * @return Size <p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置媒体文件总大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
-                     * @param _size 媒体文件总大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * 设置<p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * @param _size <p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -183,15 +175,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取视频时长，单位：秒。
-                     * @return Duration 视频时长，单位：秒。
+                     * 获取<p>视频时长，单位：秒。</p>
+                     * @return Duration <p>视频时长，单位：秒。</p>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置视频时长，单位：秒。
-                     * @param _duration 视频时长，单位：秒。
+                     * 设置<p>视频时长，单位：秒。</p>
+                     * @param _duration <p>视频时长，单位：秒。</p>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -204,15 +196,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取视频的 md5 值。
-                     * @return Md5 视频的 md5 值。
+                     * 获取<p>视频的 md5 值。</p>
+                     * @return Md5 <p>视频的 md5 值。</p>
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置视频的 md5 值。
-                     * @param _md5 视频的 md5 值。
+                     * 设置<p>视频的 md5 值。</p>
+                     * @param _md5 <p>视频的 md5 值。</p>
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -225,15 +217,15 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取容器类型，例如 m4a，mp4 等。
-                     * @return Container 容器类型，例如 m4a，mp4 等。
+                     * 获取<p>容器类型，例如 m4a，mp4 等。</p>
+                     * @return Container <p>容器类型，例如 m4a，mp4 等。</p>
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置容器类型，例如 m4a，mp4 等。
-                     * @param _container 容器类型，例如 m4a，mp4 等。
+                     * 设置<p>容器类型，例如 m4a，mp4 等。</p>
+                     * @param _container <p>容器类型，例如 m4a，mp4 等。</p>
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -246,15 +238,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取视频流信息。
-                     * @return VideoStreamSet 视频流信息。
+                     * 获取<p>视频流信息。</p>
+                     * @return VideoStreamSet <p>视频流信息。</p>
                      * 
                      */
                     std::vector<MediaVideoStreamItem> GetVideoStreamSet() const;
 
                     /**
-                     * 设置视频流信息。
-                     * @param _videoStreamSet 视频流信息。
+                     * 设置<p>视频流信息。</p>
+                     * @param _videoStreamSet <p>视频流信息。</p>
                      * 
                      */
                     void SetVideoStreamSet(const std::vector<MediaVideoStreamItem>& _videoStreamSet);
@@ -267,15 +259,15 @@ namespace TencentCloud
                     bool VideoStreamSetHasBeenSet() const;
 
                     /**
-                     * 获取音频流信息。
-                     * @return AudioStreamSet 音频流信息。
+                     * 获取<p>音频流信息。</p>
+                     * @return AudioStreamSet <p>音频流信息。</p>
                      * 
                      */
                     std::vector<MediaAudioStreamItem> GetAudioStreamSet() const;
 
                     /**
-                     * 设置音频流信息。
-                     * @param _audioStreamSet 音频流信息。
+                     * 设置<p>音频流信息。</p>
+                     * @param _audioStreamSet <p>音频流信息。</p>
                      * 
                      */
                     void SetAudioStreamSet(const std::vector<MediaAudioStreamItem>& _audioStreamSet);
@@ -288,27 +280,15 @@ namespace TencentCloud
                     bool AudioStreamSetHasBeenSet() const;
 
                     /**
-                     * 获取数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
-                     * @return DigitalWatermarkType 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * 获取<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
+                     * @return DigitalWatermarkType <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
                     std::string GetDigitalWatermarkType() const;
 
                     /**
-                     * 设置数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
-                     * @param _digitalWatermarkType 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * 设置<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
+                     * @param _digitalWatermarkType <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
                     void SetDigitalWatermarkType(const std::string& _digitalWatermarkType);
@@ -321,15 +301,15 @@ namespace TencentCloud
                     bool DigitalWatermarkTypeHasBeenSet() const;
 
                     /**
-                     * 获取版权信息。
-                     * @return CopyRightWatermarkText 版权信息。
+                     * 获取<p>版权信息。</p>
+                     * @return CopyRightWatermarkText <p>版权信息。</p>
                      * 
                      */
                     std::string GetCopyRightWatermarkText() const;
 
                     /**
-                     * 设置版权信息。
-                     * @param _copyRightWatermarkText 版权信息。
+                     * 设置<p>版权信息。</p>
+                     * @param _copyRightWatermarkText <p>版权信息。</p>
                      * 
                      */
                     void SetCopyRightWatermarkText(const std::string& _copyRightWatermarkText);
@@ -342,15 +322,15 @@ namespace TencentCloud
                     bool CopyRightWatermarkTextHasBeenSet() const;
 
                     /**
-                     * 获取数字水印模板id。
-                     * @return BlindWatermarkDefinition 数字水印模板id。
+                     * 获取<p>数字水印模板id。</p>
+                     * @return BlindWatermarkDefinition <p>数字水印模板id。</p>
                      * 
                      */
                     int64_t GetBlindWatermarkDefinition() const;
 
                     /**
-                     * 设置数字水印模板id。
-                     * @param _blindWatermarkDefinition 数字水印模板id。
+                     * 设置<p>数字水印模板id。</p>
+                     * @param _blindWatermarkDefinition <p>数字水印模板id。</p>
                      * 
                      */
                     void SetBlindWatermarkDefinition(const int64_t& _blindWatermarkDefinition);
@@ -362,96 +342,118 @@ namespace TencentCloud
                      */
                     bool BlindWatermarkDefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>
+                     * @return FileId <p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置<p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>
+                     * @param _fileId <p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转码后的视频文件地址。
+                     * <p>转码后的视频文件地址。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
-<font color=red>注意：取值 0 表示原始文件。</font> 
+                     * <p>转码规格 ID，参见<a href="https://cloud.tencent.com/document/product/266/33476">转码参数模板</a>。<br><font color="red">注意：取值 0 表示原始文件。</font></p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 视频流码率平均值与音频流码率平均值之和， 单位：bps。
+                     * <p>视频流码率平均值与音频流码率平均值之和， 单位：bps。</p>
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 视频流高度的最大值，单位：px。
+                     * <p>视频流高度的最大值，单位：px。</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 视频流宽度的最大值，单位：px。
+                     * <p>视频流宽度的最大值，单位：px。</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 媒体文件总大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
+                     * <p>媒体文件总大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 视频时长，单位：秒。
+                     * <p>视频时长，单位：秒。</p>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 视频的 md5 值。
+                     * <p>视频的 md5 值。</p>
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 容器类型，例如 m4a，mp4 等。
+                     * <p>容器类型，例如 m4a，mp4 等。</p>
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 视频流信息。
+                     * <p>视频流信息。</p>
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;
 
                     /**
-                     * 音频流信息。
+                     * <p>音频流信息。</p>
                      */
                     std::vector<MediaAudioStreamItem> m_audioStreamSet;
                     bool m_audioStreamSetHasBeenSet;
 
                     /**
-                     * 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      */
                     std::string m_digitalWatermarkType;
                     bool m_digitalWatermarkTypeHasBeenSet;
 
                     /**
-                     * 版权信息。
+                     * <p>版权信息。</p>
                      */
                     std::string m_copyRightWatermarkText;
                     bool m_copyRightWatermarkTextHasBeenSet;
 
                     /**
-                     * 数字水印模板id。
+                     * <p>数字水印模板id。</p>
                      */
                     int64_t m_blindWatermarkDefinition;
                     bool m_blindWatermarkDefinitionHasBeenSet;
+
+                    /**
+                     * <p>转码生成的新FileId，请求开启独立媒资输出时有效。</p>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

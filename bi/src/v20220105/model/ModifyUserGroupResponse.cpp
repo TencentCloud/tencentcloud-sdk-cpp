@@ -24,7 +24,10 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 ModifyUserGroupResponse::ModifyUserGroupResponse() :
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_extraHasBeenSet(false),
+    m_msgHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -79,6 +82,46 @@ CoreInternalOutcome ModifyUserGroupResponse::Deserialize(const string &payload)
         m_errorInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Extra") && !rsp["Extra"].IsNull())
+    {
+        if (!rsp["Extra"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extra` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extra = string(rsp["Extra"].GetString());
+        m_extraHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserGroupVO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
+        }
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +139,37 @@ string ModifyUserGroupResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_errorInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +192,36 @@ ErrorInfo ModifyUserGroupResponse::GetErrorInfo() const
 bool ModifyUserGroupResponse::ErrorInfoHasBeenSet() const
 {
     return m_errorInfoHasBeenSet;
+}
+
+string ModifyUserGroupResponse::GetExtra() const
+{
+    return m_extra;
+}
+
+bool ModifyUserGroupResponse::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
+}
+
+string ModifyUserGroupResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool ModifyUserGroupResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
+}
+
+vector<UserGroupVO> ModifyUserGroupResponse::GetData() const
+{
+    return m_data;
+}
+
+bool ModifyUserGroupResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

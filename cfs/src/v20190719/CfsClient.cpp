@@ -490,6 +490,56 @@ CfsClient::CreateDataFlowOutcomeCallable CfsClient::CreateDataFlowCallable(const
     return prom->get_future();
 }
 
+CfsClient::CreateDataRetrievalOutcome CfsClient::CreateDataRetrieval(const CreateDataRetrievalRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataRetrieval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataRetrievalResponse rsp = CreateDataRetrievalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataRetrievalOutcome(rsp);
+        else
+            return CreateDataRetrievalOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataRetrievalOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::CreateDataRetrievalAsync(const CreateDataRetrievalRequest& request, const CreateDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDataRetrievalRequest&;
+    using Resp = CreateDataRetrievalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDataRetrieval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::CreateDataRetrievalOutcomeCallable CfsClient::CreateDataRetrievalCallable(const CreateDataRetrievalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDataRetrievalOutcome>>();
+    CreateDataRetrievalAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateDataRetrievalRequest&,
+        CreateDataRetrievalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::CreateLifecycleDataTaskOutcome CfsClient::CreateLifecycleDataTask(const CreateLifecycleDataTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLifecycleDataTask");
@@ -982,6 +1032,56 @@ CfsClient::DeleteDataFlowOutcomeCallable CfsClient::DeleteDataFlowCallable(const
         const CfsClient*,
         const DeleteDataFlowRequest&,
         DeleteDataFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfsClient::DeleteDataRetrievalOutcome CfsClient::DeleteDataRetrieval(const DeleteDataRetrievalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataRetrieval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataRetrievalResponse rsp = DeleteDataRetrievalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataRetrievalOutcome(rsp);
+        else
+            return DeleteDataRetrievalOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataRetrievalOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DeleteDataRetrievalAsync(const DeleteDataRetrievalRequest& request, const DeleteDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDataRetrievalRequest&;
+    using Resp = DeleteDataRetrievalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataRetrieval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::DeleteDataRetrievalOutcomeCallable CfsClient::DeleteDataRetrievalCallable(const DeleteDataRetrievalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDataRetrievalOutcome>>();
+    DeleteDataRetrievalAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteDataRetrievalRequest&,
+        DeleteDataRetrievalOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1690,6 +1790,106 @@ CfsClient::DescribeDataFlowOutcomeCallable CfsClient::DescribeDataFlowCallable(c
     return prom->get_future();
 }
 
+CfsClient::DescribeDataRetrievalOutcome CfsClient::DescribeDataRetrieval(const DescribeDataRetrievalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataRetrieval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataRetrievalResponse rsp = DescribeDataRetrievalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataRetrievalOutcome(rsp);
+        else
+            return DescribeDataRetrievalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataRetrievalOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeDataRetrievalAsync(const DescribeDataRetrievalRequest& request, const DescribeDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataRetrievalRequest&;
+    using Resp = DescribeDataRetrievalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataRetrieval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::DescribeDataRetrievalOutcomeCallable CfsClient::DescribeDataRetrievalCallable(const DescribeDataRetrievalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataRetrievalOutcome>>();
+    DescribeDataRetrievalAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeDataRetrievalRequest&,
+        DescribeDataRetrievalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfsClient::DescribeDataRetrievalTaskOutcome CfsClient::DescribeDataRetrievalTask(const DescribeDataRetrievalTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataRetrievalTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataRetrievalTaskResponse rsp = DescribeDataRetrievalTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataRetrievalTaskOutcome(rsp);
+        else
+            return DescribeDataRetrievalTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataRetrievalTaskOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeDataRetrievalTaskAsync(const DescribeDataRetrievalTaskRequest& request, const DescribeDataRetrievalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataRetrievalTaskRequest&;
+    using Resp = DescribeDataRetrievalTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataRetrievalTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::DescribeDataRetrievalTaskOutcomeCallable CfsClient::DescribeDataRetrievalTaskCallable(const DescribeDataRetrievalTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataRetrievalTaskOutcome>>();
+    DescribeDataRetrievalTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeDataRetrievalTaskRequest&,
+        DescribeDataRetrievalTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::DescribeLifecycleDataTaskOutcome CfsClient::DescribeLifecycleDataTask(const DescribeLifecycleDataTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLifecycleDataTask");
@@ -2090,6 +2290,56 @@ CfsClient::ModifyDataFlowOutcomeCallable CfsClient::ModifyDataFlowCallable(const
     return prom->get_future();
 }
 
+CfsClient::ModifyDataRetrievalOutcome CfsClient::ModifyDataRetrieval(const ModifyDataRetrievalRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataRetrieval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataRetrievalResponse rsp = ModifyDataRetrievalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataRetrievalOutcome(rsp);
+        else
+            return ModifyDataRetrievalOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataRetrievalOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::ModifyDataRetrievalAsync(const ModifyDataRetrievalRequest& request, const ModifyDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDataRetrievalRequest&;
+    using Resp = ModifyDataRetrievalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDataRetrieval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::ModifyDataRetrievalOutcomeCallable CfsClient::ModifyDataRetrievalCallable(const ModifyDataRetrievalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDataRetrievalOutcome>>();
+    ModifyDataRetrievalAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ModifyDataRetrievalRequest&,
+        ModifyDataRetrievalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::ModifyFileSystemAutoScaleUpRuleOutcome CfsClient::ModifyFileSystemAutoScaleUpRule(const ModifyFileSystemAutoScaleUpRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFileSystemAutoScaleUpRule");
@@ -2232,6 +2482,56 @@ CfsClient::OverrideCfsRulesOutcomeCallable CfsClient::OverrideCfsRulesCallable(c
         const CfsClient*,
         const OverrideCfsRulesRequest&,
         OverrideCfsRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfsClient::RunDataRetrievalTaskOutcome CfsClient::RunDataRetrievalTask(const RunDataRetrievalTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunDataRetrievalTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunDataRetrievalTaskResponse rsp = RunDataRetrievalTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunDataRetrievalTaskOutcome(rsp);
+        else
+            return RunDataRetrievalTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RunDataRetrievalTaskOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::RunDataRetrievalTaskAsync(const RunDataRetrievalTaskRequest& request, const RunDataRetrievalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RunDataRetrievalTaskRequest&;
+    using Resp = RunDataRetrievalTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RunDataRetrievalTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::RunDataRetrievalTaskOutcomeCallable CfsClient::RunDataRetrievalTaskCallable(const RunDataRetrievalTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RunDataRetrievalTaskOutcome>>();
+    RunDataRetrievalTaskAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const RunDataRetrievalTaskRequest&,
+        RunDataRetrievalTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -30,7 +30,8 @@ DiffConfigItem::DiffConfigItem() :
     m_policyDetailsHasBeenSet(false),
     m_timerScaleHasBeenSet(false),
     m_vpcConfHasBeenSet(false),
-    m_volumesConfHasBeenSet(false)
+    m_volumesConfHasBeenSet(false),
+    m_publicNetConfHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome DiffConfigItem::Deserialize(const rapidjson::Value &value)
         m_volumesConfHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicNetConf") && !value["PublicNetConf"].IsNull())
+    {
+        if (!value["PublicNetConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiffConfigItem.PublicNetConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicNetConf.Deserialize(value["PublicNetConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicNetConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -291,6 +309,15 @@ void DiffConfigItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_publicNetConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicNetConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -454,5 +481,21 @@ void DiffConfigItem::SetVolumesConf(const vector<VolumeConf>& _volumesConf)
 bool DiffConfigItem::VolumesConfHasBeenSet() const
 {
     return m_volumesConfHasBeenSet;
+}
+
+PublicNetConf DiffConfigItem::GetPublicNetConf() const
+{
+    return m_publicNetConf;
+}
+
+void DiffConfigItem::SetPublicNetConf(const PublicNetConf& _publicNetConf)
+{
+    m_publicNetConf = _publicNetConf;
+    m_publicNetConfHasBeenSet = true;
+}
+
+bool DiffConfigItem::PublicNetConfHasBeenSet() const
+{
+    return m_publicNetConfHasBeenSet;
 }
 

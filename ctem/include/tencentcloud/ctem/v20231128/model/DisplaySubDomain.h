@@ -404,6 +404,27 @@ namespace TencentCloud
                      */
                     bool DnsValueHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +528,12 @@ namespace TencentCloud
                      */
                     std::string m_dnsValue;
                     bool m_dnsValueHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

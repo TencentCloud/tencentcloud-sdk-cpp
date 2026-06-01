@@ -47,18 +47,68 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问方式：public - 公网，internal - 内网
+                     * 获取<p>网段或IP，支持IPv4或IPv6。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessMode 访问方式：public - 公网，internal - 内网
+                     * @return CidrBlocks <p>网段或IP，支持IPv4或IPv6。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCidrBlocks() const;
+
+                    /**
+                     * 设置<p>网段或IP，支持IPv4或IPv6。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cidrBlocks <p>网段或IP，支持IPv4或IPv6。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCidrBlocks(const std::vector<std::string>& _cidrBlocks);
+
+                    /**
+                     * 判断参数 CidrBlocks 是否已赋值
+                     * @return CidrBlocks 是否已赋值
+                     * 
+                     */
+                    bool CidrBlocksHasBeenSet() const;
+
+                    /**
+                     * 获取<p>ACCEPT 或 DROP。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Action <p>ACCEPT 或 DROP。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置<p>ACCEPT 或 DROP。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _action <p>ACCEPT 或 DROP。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     * 
+                     */
+                    bool ActionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>访问方式：public - 公网，internal - 内网</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessMode <p>访问方式：public - 公网，internal - 内网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置访问方式：public - 公网，internal - 内网
+                     * 设置<p>访问方式：public - 公网，internal - 内网</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessMode 访问方式：public - 公网，internal - 内网
+                     * @param _accessMode <p>访问方式：public - 公网，internal - 内网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问方式：public - 公网，internal - 内网
+                     * <p>网段或IP，支持IPv4或IPv6。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cidrBlocks;
+                    bool m_cidrBlocksHasBeenSet;
+
+                    /**
+                     * <p>ACCEPT 或 DROP。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
+
+                    /**
+                     * <p>访问方式：public - 公网，internal - 内网</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessMode;

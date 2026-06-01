@@ -33,7 +33,8 @@ DisplayConfig::DisplayConfig() :
     m_riskLevelHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_isCloudAssetHasBeenSet(false),
-    m_cloudAssetStatusHasBeenSet(false)
+    m_cloudAssetStatusHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome DisplayConfig::Deserialize(const rapidjson::Value &value)
         m_cloudAssetStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayConfig.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void DisplayConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CloudAssetStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cloudAssetStatus, allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void DisplayConfig::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
 bool DisplayConfig::CloudAssetStatusHasBeenSet() const
 {
     return m_cloudAssetStatusHasBeenSet;
+}
+
+int64_t DisplayConfig::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplayConfig::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplayConfig::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取app id
-                     * @return Data app id
+                     * 获取<p>app id</p>
+                     * @return Data <p>app id</p>
                      * 
                      */
                     ResultIDVO GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * app id
+                     * <p>app id</p>
                      */
                     ResultIDVO m_data;
                     bool m_dataHasBeenSet;

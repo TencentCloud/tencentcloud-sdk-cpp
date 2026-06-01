@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组id集合
-                     * @return GroupIds 用户组id集合
+                     * 获取<p>用户组id集合</p>
+                     * @return GroupIds <p>用户组id集合</p>
                      * 
                      */
                     std::vector<int64_t> GetGroupIds() const;
 
                     /**
-                     * 设置用户组id集合
-                     * @param _groupIds 用户组id集合
+                     * 设置<p>用户组id集合</p>
+                     * @param _groupIds <p>用户组id集合</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<int64_t>& _groupIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取asc正序,desc倒序
-                     * @return CreatedOnOrder asc正序,desc倒序
+                     * 获取<p>asc正序,desc倒序</p>
+                     * @return CreatedOnOrder <p>asc正序,desc倒序</p>
                      * 
                      */
                     std::string GetCreatedOnOrder() const;
 
                     /**
-                     * 设置asc正序,desc倒序
-                     * @param _createdOnOrder asc正序,desc倒序
+                     * 设置<p>asc正序,desc倒序</p>
+                     * @param _createdOnOrder <p>asc正序,desc倒序</p>
                      * 
                      */
                     void SetCreatedOnOrder(const std::string& _createdOnOrder);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CreatedOnOrderHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return Keyword 搜索关键字
+                     * 获取<p>搜索关键字</p>
+                     * @return Keyword <p>搜索关键字</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _keyword 搜索关键字
+                     * 设置<p>搜索关键字</p>
+                     * @param _keyword <p>搜索关键字</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _pageSize <p>分页大小</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码
-                     * @return PageNo 分页页码
+                     * 获取<p>分页页码</p>
+                     * @return PageNo <p>分页页码</p>
                      * 
                      */
                     uint64_t GetPageNo() const;
 
                     /**
-                     * 设置分页页码
-                     * @param _pageNo 分页页码
+                     * 设置<p>分页页码</p>
+                     * @param _pageNo <p>分页页码</p>
                      * 
                      */
                     void SetPageNo(const uint64_t& _pageNo);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取是否需要分页
-                     * @return AllPage 是否需要分页
+                     * 获取<p>是否需要分页</p>
+                     * @return AllPage <p>是否需要分页</p>
                      * 
                      */
                     bool GetAllPage() const;
 
                     /**
-                     * 设置是否需要分页
-                     * @param _allPage 是否需要分页
+                     * 设置<p>是否需要分页</p>
+                     * @param _allPage <p>是否需要分页</p>
                      * 
                      */
                     void SetAllPage(const bool& _allPage);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组id集合
+                     * <p>用户组id集合</p>
                      */
                     std::vector<int64_t> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * asc正序,desc倒序
+                     * <p>asc正序,desc倒序</p>
                      */
                     std::string m_createdOnOrder;
                     bool m_createdOnOrderHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * <p>搜索关键字</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码
+                     * <p>分页页码</p>
                      */
                     uint64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 是否需要分页
+                     * <p>是否需要分页</p>
                      */
                     bool m_allPage;
                     bool m_allPageHasBeenSet;

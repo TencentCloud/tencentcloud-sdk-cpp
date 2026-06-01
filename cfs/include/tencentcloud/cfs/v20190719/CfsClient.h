@@ -41,6 +41,8 @@
 #include <tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateDataFlowResponse.h>
+#include <tencentcloud/cfs/v20190719/model/CreateDataRetrievalRequest.h>
+#include <tencentcloud/cfs/v20190719/model/CreateDataRetrievalResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateLifecycleDataTaskRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateLifecycleDataTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateLifecyclePolicyRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteDataFlowResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteDataRetrievalRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteDataRetrievalResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteLifecyclePolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteLifecyclePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMigrationTaskRequest.h>
@@ -89,6 +93,10 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeDataFlowResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeDataRetrievalRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeDataRetrievalResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeDataRetrievalTaskRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeDataRetrievalTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeLifecycleDataTaskRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeLifecycleDataTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeLifecyclePoliciesRequest.h>
@@ -105,12 +113,16 @@
 #include <tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowResponse.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyDataRetrievalRequest.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyDataRetrievalResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyFileSystemAutoScaleUpRuleResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/OverrideCfsRulesRequest.h>
 #include <tencentcloud/cfs/v20190719/model/OverrideCfsRulesResponse.h>
+#include <tencentcloud/cfs/v20190719/model/RunDataRetrievalTaskRequest.h>
+#include <tencentcloud/cfs/v20190719/model/RunDataRetrievalTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h>
@@ -180,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataFlowResponse> CreateDataFlowOutcome;
                 typedef std::future<CreateDataFlowOutcome> CreateDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateDataFlowRequest&, CreateDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDataRetrievalResponse> CreateDataRetrievalOutcome;
+                typedef std::future<CreateDataRetrievalOutcome> CreateDataRetrievalOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::CreateDataRetrievalRequest&, CreateDataRetrievalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataRetrievalAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLifecycleDataTaskResponse> CreateLifecycleDataTaskOutcome;
                 typedef std::future<CreateLifecycleDataTaskOutcome> CreateLifecycleDataTaskOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateLifecycleDataTaskRequest&, CreateLifecycleDataTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLifecycleDataTaskAsyncHandler;
@@ -210,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataFlowResponse> DeleteDataFlowOutcome;
                 typedef std::future<DeleteDataFlowOutcome> DeleteDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteDataFlowRequest&, DeleteDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDataRetrievalResponse> DeleteDataRetrievalOutcome;
+                typedef std::future<DeleteDataRetrievalOutcome> DeleteDataRetrievalOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DeleteDataRetrievalRequest&, DeleteDataRetrievalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataRetrievalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyOutcome;
                 typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteLifecyclePolicyRequest&, DeleteLifecyclePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLifecyclePolicyAsyncHandler;
@@ -252,6 +270,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataFlowResponse> DescribeDataFlowOutcome;
                 typedef std::future<DescribeDataFlowOutcome> DescribeDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeDataFlowRequest&, DescribeDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataRetrievalResponse> DescribeDataRetrievalOutcome;
+                typedef std::future<DescribeDataRetrievalOutcome> DescribeDataRetrievalOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeDataRetrievalRequest&, DescribeDataRetrievalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRetrievalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataRetrievalTaskResponse> DescribeDataRetrievalTaskOutcome;
+                typedef std::future<DescribeDataRetrievalTaskOutcome> DescribeDataRetrievalTaskOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeDataRetrievalTaskRequest&, DescribeDataRetrievalTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRetrievalTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLifecycleDataTaskResponse> DescribeLifecycleDataTaskOutcome;
                 typedef std::future<DescribeLifecycleDataTaskOutcome> DescribeLifecycleDataTaskOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeLifecycleDataTaskRequest&, DescribeLifecycleDataTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLifecycleDataTaskAsyncHandler;
@@ -276,6 +300,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDataFlowResponse> ModifyDataFlowOutcome;
                 typedef std::future<ModifyDataFlowOutcome> ModifyDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ModifyDataFlowRequest&, ModifyDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDataRetrievalResponse> ModifyDataRetrievalOutcome;
+                typedef std::future<ModifyDataRetrievalOutcome> ModifyDataRetrievalOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::ModifyDataRetrievalRequest&, ModifyDataRetrievalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataRetrievalAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFileSystemAutoScaleUpRuleResponse> ModifyFileSystemAutoScaleUpRuleOutcome;
                 typedef std::future<ModifyFileSystemAutoScaleUpRuleOutcome> ModifyFileSystemAutoScaleUpRuleOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ModifyFileSystemAutoScaleUpRuleRequest&, ModifyFileSystemAutoScaleUpRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFileSystemAutoScaleUpRuleAsyncHandler;
@@ -285,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OverrideCfsRulesResponse> OverrideCfsRulesOutcome;
                 typedef std::future<OverrideCfsRulesOutcome> OverrideCfsRulesOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::OverrideCfsRulesRequest&, OverrideCfsRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OverrideCfsRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunDataRetrievalTaskResponse> RunDataRetrievalTaskOutcome;
+                typedef std::future<RunDataRetrievalTaskOutcome> RunDataRetrievalTaskOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::RunDataRetrievalTaskRequest&, RunDataRetrievalTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDataRetrievalTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScaleUpFileSystemResponse> ScaleUpFileSystemOutcome;
                 typedef std::future<ScaleUpFileSystemOutcome> ScaleUpFileSystemOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ScaleUpFileSystemRequest&, ScaleUpFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpFileSystemAsyncHandler;
@@ -412,6 +442,15 @@ namespace TencentCloud
                 CreateDataFlowOutcomeCallable CreateDataFlowCallable(const Model::CreateDataFlowRequest& request);
 
                 /**
+                 *创建数据检索
+                 * @param req CreateDataRetrievalRequest
+                 * @return CreateDataRetrievalOutcome
+                 */
+                CreateDataRetrievalOutcome CreateDataRetrieval(const Model::CreateDataRetrievalRequest &request);
+                void CreateDataRetrievalAsync(const Model::CreateDataRetrievalRequest& request, const CreateDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataRetrievalOutcomeCallable CreateDataRetrievalCallable(const Model::CreateDataRetrievalRequest& request);
+
+                /**
                  *支持主动沉降/预热接口
                  * @param req CreateLifecycleDataTaskRequest
                  * @return CreateLifecycleDataTaskOutcome
@@ -500,6 +539,17 @@ namespace TencentCloud
                 DeleteDataFlowOutcome DeleteDataFlow(const Model::DeleteDataFlowRequest &request);
                 void DeleteDataFlowAsync(const Model::DeleteDataFlowRequest& request, const DeleteDataFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataFlowOutcomeCallable DeleteDataFlowCallable(const Model::DeleteDataFlowRequest& request);
+
+                /**
+                 *删除数据检索。
+
+删除指定的数据检索配置，不允许在存在关联任务时删除。调用接口后，若通过 DescribeDataRetrieval 接口查询不到对应的数据检索，则表示删除成功。
+                 * @param req DeleteDataRetrievalRequest
+                 * @return DeleteDataRetrievalOutcome
+                 */
+                DeleteDataRetrievalOutcome DeleteDataRetrieval(const Model::DeleteDataRetrievalRequest &request);
+                void DeleteDataRetrievalAsync(const Model::DeleteDataRetrievalRequest& request, const DeleteDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDataRetrievalOutcomeCallable DeleteDataRetrievalCallable(const Model::DeleteDataRetrievalRequest& request);
 
                 /**
                  *删除生命周期管理策略
@@ -628,6 +678,26 @@ namespace TencentCloud
                 DescribeDataFlowOutcomeCallable DescribeDataFlowCallable(const Model::DescribeDataFlowRequest& request);
 
                 /**
+                 *查询数据检索。
+
+查询数据检索列表，支持按文件系统 ID、数据检索 ID、名称等条件筛选。
+                 * @param req DescribeDataRetrievalRequest
+                 * @return DescribeDataRetrievalOutcome
+                 */
+                DescribeDataRetrievalOutcome DescribeDataRetrieval(const Model::DescribeDataRetrievalRequest &request);
+                void DescribeDataRetrievalAsync(const Model::DescribeDataRetrievalRequest& request, const DescribeDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataRetrievalOutcomeCallable DescribeDataRetrievalCallable(const Model::DescribeDataRetrievalRequest& request);
+
+                /**
+                 *查询数据检索任务
+                 * @param req DescribeDataRetrievalTaskRequest
+                 * @return DescribeDataRetrievalTaskOutcome
+                 */
+                DescribeDataRetrievalTaskOutcome DescribeDataRetrievalTask(const Model::DescribeDataRetrievalTaskRequest &request);
+                void DescribeDataRetrievalTaskAsync(const Model::DescribeDataRetrievalTaskRequest& request, const DescribeDataRetrievalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataRetrievalTaskOutcomeCallable DescribeDataRetrievalTaskCallable(const Model::DescribeDataRetrievalTaskRequest& request);
+
+                /**
                  *查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。
                  * @param req DescribeLifecycleDataTaskRequest
                  * @return DescribeLifecycleDataTaskOutcome
@@ -701,6 +771,15 @@ namespace TencentCloud
                 ModifyDataFlowOutcomeCallable ModifyDataFlowCallable(const Model::ModifyDataFlowRequest& request);
 
                 /**
+                 *修改数据检索
+                 * @param req ModifyDataRetrievalRequest
+                 * @return ModifyDataRetrievalOutcome
+                 */
+                ModifyDataRetrievalOutcome ModifyDataRetrieval(const Model::ModifyDataRetrievalRequest &request);
+                void ModifyDataRetrievalAsync(const Model::ModifyDataRetrievalRequest& request, const ModifyDataRetrievalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDataRetrievalOutcomeCallable ModifyDataRetrievalCallable(const Model::ModifyDataRetrievalRequest& request);
+
+                /**
                  *用来设置文件系统扩容策略，该接口只支持turbo文件系统
                  * @param req ModifyFileSystemAutoScaleUpRuleRequest
                  * @return ModifyFileSystemAutoScaleUpRuleOutcome
@@ -726,6 +805,17 @@ namespace TencentCloud
                 OverrideCfsRulesOutcome OverrideCfsRules(const Model::OverrideCfsRulesRequest &request);
                 void OverrideCfsRulesAsync(const Model::OverrideCfsRulesRequest& request, const OverrideCfsRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OverrideCfsRulesOutcomeCallable OverrideCfsRulesCallable(const Model::OverrideCfsRulesRequest& request);
+
+                /**
+                 *执行数据检索任务。
+
+手动触发指定数据检索的执行，创建一个新的数据检索任务。单个文件系统同时执行的任务数不超过 20 个。
+                 * @param req RunDataRetrievalTaskRequest
+                 * @return RunDataRetrievalTaskOutcome
+                 */
+                RunDataRetrievalTaskOutcome RunDataRetrievalTask(const Model::RunDataRetrievalTaskRequest &request);
+                void RunDataRetrievalTaskAsync(const Model::RunDataRetrievalTaskRequest& request, const RunDataRetrievalTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunDataRetrievalTaskOutcomeCallable RunDataRetrievalTaskCallable(const Model::RunDataRetrievalTaskRequest& request);
 
                 /**
                  *该接口用于对turbo 文件系统扩容使用,该接口只支持扩容不支持缩容。turbo标准型扩容步长是10240GIB，turbo性能型扩容步长是5120GIB

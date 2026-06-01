@@ -51,7 +51,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_sessionAffinityHasBeenSet(false),
     m_vpcConfHasBeenSet(false),
     m_volumesConfHasBeenSet(false),
-    m_linkImageRegistryHasBeenSet(false)
+    m_linkImageRegistryHasBeenSet(false),
+    m_publicNetConfHasBeenSet(false)
 {
 }
 
@@ -416,6 +417,23 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_linkImageRegistryHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicNetConf") && !value["PublicNetConf"].IsNull())
+    {
+        if (!value["PublicNetConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.PublicNetConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicNetConf.Deserialize(value["PublicNetConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicNetConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -706,6 +724,15 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LinkImageRegistry";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_linkImageRegistry.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicNetConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicNetConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1205,5 +1232,21 @@ void ServerBaseConfig::SetLinkImageRegistry(const string& _linkImageRegistry)
 bool ServerBaseConfig::LinkImageRegistryHasBeenSet() const
 {
     return m_linkImageRegistryHasBeenSet;
+}
+
+PublicNetConf ServerBaseConfig::GetPublicNetConf() const
+{
+    return m_publicNetConf;
+}
+
+void ServerBaseConfig::SetPublicNetConf(const PublicNetConf& _publicNetConf)
+{
+    m_publicNetConf = _publicNetConf;
+    m_publicNetConfHasBeenSet = true;
+}
+
+bool ServerBaseConfig::PublicNetConfHasBeenSet() const
+{
+    return m_publicNetConfHasBeenSet;
 }
 

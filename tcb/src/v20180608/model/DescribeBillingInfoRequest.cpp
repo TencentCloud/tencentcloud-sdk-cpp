@@ -23,7 +23,10 @@ using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
 DescribeBillingInfoRequest::DescribeBillingInfoRequest() :
-    m_envIdHasBeenSet(false)
+    m_envIdHasBeenSet(false),
+    m_envIdsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -40,6 +43,35 @@ string DescribeBillingInfoRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_envIds.begin(); itr != m_envIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -64,6 +96,54 @@ void DescribeBillingInfoRequest::SetEnvId(const string& _envId)
 bool DescribeBillingInfoRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+vector<string> DescribeBillingInfoRequest::GetEnvIds() const
+{
+    return m_envIds;
+}
+
+void DescribeBillingInfoRequest::SetEnvIds(const vector<string>& _envIds)
+{
+    m_envIds = _envIds;
+    m_envIdsHasBeenSet = true;
+}
+
+bool DescribeBillingInfoRequest::EnvIdsHasBeenSet() const
+{
+    return m_envIdsHasBeenSet;
+}
+
+int64_t DescribeBillingInfoRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeBillingInfoRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeBillingInfoRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeBillingInfoRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeBillingInfoRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeBillingInfoRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

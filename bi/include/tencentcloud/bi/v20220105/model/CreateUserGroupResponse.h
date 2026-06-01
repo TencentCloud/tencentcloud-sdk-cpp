@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bi/v20220105/model/ErrorInfo.h>
+#include <tencentcloud/bi/v20220105/model/UserGroupVO.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,54 @@ namespace TencentCloud
                      */
                     bool ErrorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extra <p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结果信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Msg <p>结果信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMsg() const;
+
+                    /**
+                     * 判断参数 Msg 是否已赋值
+                     * @return Msg 是否已赋值
+                     * 
+                     */
+                    bool MsgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data <p>数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UserGroupVO GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +117,27 @@ namespace TencentCloud
                      */
                     ErrorInfo m_errorInfo;
                     bool m_errorInfoHasBeenSet;
+
+                    /**
+                     * <p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
+
+                    /**
+                     * <p>结果信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_msg;
+                    bool m_msgHasBeenSet;
+
+                    /**
+                     * <p>数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UserGroupVO m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

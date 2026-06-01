@@ -41,9 +41,12 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DescribeMigrationTasksResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoRequest.h
+  include/tencentcloud/cfs/v20190719/model/ModifyDataRetrievalRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeMountTargetsRequest.h
+  include/tencentcloud/cfs/v20190719/model/CreateDataRetrievalResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateDataFlowResponse.h
   include/tencentcloud/cfs/v20190719/model/SignUpCfsServiceRequest.h
+  include/tencentcloud/cfs/v20190719/model/DeleteDataRetrievalRequest.h
   include/tencentcloud/cfs/v20190719/model/SignUpCfsServiceResponse.h
   include/tencentcloud/cfs/v20190719/model/AutoSnapshotPolicyInfo.h
   include/tencentcloud/cfs/v20190719/model/InputPermissionGroupRules.h
@@ -54,32 +57,35 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DescribeLifecycleDataTaskResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitResponse.h
-  include/tencentcloud/cfs/v20190719/model/SnapshotOperateLog.h
+  include/tencentcloud/cfs/v20190719/model/DataRetrievalInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeLifecyclePoliciesRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateLifecyclePolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleRequest.h
-  include/tencentcloud/cfs/v20190719/model/OverrideCfsRulesRequest.h
+  include/tencentcloud/cfs/v20190719/model/DescribeDataRetrievalTaskRequest.h
   include/tencentcloud/cfs/v20190719/model/StopLifecycleDataTaskResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteUserQuotaRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsResponse.h
   include/tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h
-  include/tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h
+  include/tencentcloud/cfs/v20190719/model/ModifyDataRetrievalResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeBucketListRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/ApplyPathLifecyclePolicyResponse.h
+  include/tencentcloud/cfs/v20190719/model/DataRetrievalTaskInfo.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteMigrationTaskResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeLifecycleDataTaskRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h
+  include/tencentcloud/cfs/v20190719/model/DescribeDataRetrievalResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateFileSystemBandwidthLimitRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteLifecyclePolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusRequest.h
+  include/tencentcloud/cfs/v20190719/model/DescribeDataRetrievalRequest.h
   include/tencentcloud/cfs/v20190719/model/CheckResult.h
   include/tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteMigrationTaskRequest.h
@@ -90,6 +96,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DataFlowInfo.h
   include/tencentcloud/cfs/v20190719/model/AvailableType.h
   include/tencentcloud/cfs/v20190719/model/LifecyclePolicy.h
+  include/tencentcloud/cfs/v20190719/model/RunDataRetrievalTaskResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/LifecycleRule.h
   include/tencentcloud/cfs/v20190719/model/UserQuota.h
@@ -112,23 +119,28 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/AutoScaleUpRule.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsRequest.h
+  include/tencentcloud/cfs/v20190719/model/OverrideCfsRulesRequest.h
+  include/tencentcloud/cfs/v20190719/model/CreateDataRetrievalRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemsRequest.h
   include/tencentcloud/cfs/v20190719/model/AvailableRegion.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/AvailableZone.h
+  include/tencentcloud/cfs/v20190719/model/RunDataRetrievalTaskRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeMigrationTasksRequest.h
   include/tencentcloud/cfs/v20190719/model/PGroupRuleInfo.h
   include/tencentcloud/cfs/v20190719/model/Filter.h
   include/tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyRequest.h
-  include/tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyResponse.h
+  include/tencentcloud/cfs/v20190719/model/DescribeDataRetrievalTaskResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusResponse.h
   include/tencentcloud/cfs/v20190719/model/ExstraPerformanceInfo.h
   include/tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.h
+  include/tencentcloud/cfs/v20190719/model/SnapshotOperateLog.h
   include/tencentcloud/cfs/v20190719/model/UpdateAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemSizeLimitRequest.h
+  include/tencentcloud/cfs/v20190719/model/DeleteDataRetrievalResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsRulesResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemPGroupResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateAutoSnapshotPolicyResponse.h
@@ -142,7 +154,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteDataFlowRequest.h
-  include/tencentcloud/cfs/v20190719/model/PathInfo.h
+  include/tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/SetUserQuotaResponse.h
   include/tencentcloud/cfs/v20190719/model/TagInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h
@@ -161,6 +173,8 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesResponse.h
   include/tencentcloud/cfs/v20190719/model/ModifyDataFlowRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotOverviewRequest.h
+  include/tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyResponse.h
+  include/tencentcloud/cfs/v20190719/model/PathInfo.h
   include/tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateDataFlowRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeDataFlowResponse.h
@@ -191,9 +205,12 @@ set(cfs_src
   src/v20190719/model/DescribeMigrationTasksResponse.cpp
   src/v20190719/model/DescribeAutoSnapshotPoliciesRequest.cpp
   src/v20190719/model/DescribeAvailableZoneInfoRequest.cpp
+  src/v20190719/model/ModifyDataRetrievalRequest.cpp
   src/v20190719/model/DescribeMountTargetsRequest.cpp
+  src/v20190719/model/CreateDataRetrievalResponse.cpp
   src/v20190719/model/CreateDataFlowResponse.cpp
   src/v20190719/model/SignUpCfsServiceRequest.cpp
+  src/v20190719/model/DeleteDataRetrievalRequest.cpp
   src/v20190719/model/SignUpCfsServiceResponse.cpp
   src/v20190719/model/AutoSnapshotPolicyInfo.cpp
   src/v20190719/model/InputPermissionGroupRules.cpp
@@ -204,32 +221,35 @@ set(cfs_src
   src/v20190719/model/DescribeLifecycleDataTaskResponse.cpp
   src/v20190719/model/UpdateCfsPGroupResponse.cpp
   src/v20190719/model/UpdateFileSystemBandwidthLimitResponse.cpp
-  src/v20190719/model/SnapshotOperateLog.cpp
+  src/v20190719/model/DataRetrievalInfo.cpp
   src/v20190719/model/DescribeLifecyclePoliciesRequest.cpp
   src/v20190719/model/DeleteAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/CreateLifecyclePolicyResponse.cpp
   src/v20190719/model/UpdateCfsRuleRequest.cpp
-  src/v20190719/model/OverrideCfsRulesRequest.cpp
+  src/v20190719/model/DescribeDataRetrievalTaskRequest.cpp
   src/v20190719/model/StopLifecycleDataTaskResponse.cpp
   src/v20190719/model/DeleteUserQuotaRequest.cpp
   src/v20190719/model/DescribeAvailableZoneInfoResponse.cpp
   src/v20190719/model/DeleteCfsSnapshotResponse.cpp
   src/v20190719/model/DescribeCfsFileSystemClientsResponse.cpp
   src/v20190719/model/DoDirectoryOperationResponse.cpp
-  src/v20190719/model/ModifyLifecyclePolicyResponse.cpp
+  src/v20190719/model/ModifyDataRetrievalResponse.cpp
   src/v20190719/model/CreateCfsSnapshotRequest.cpp
   src/v20190719/model/DescribeBucketListRequest.cpp
   src/v20190719/model/DeleteCfsRuleRequest.cpp
   src/v20190719/model/ApplyPathLifecyclePolicyResponse.cpp
+  src/v20190719/model/DataRetrievalTaskInfo.cpp
   src/v20190719/model/UpdateCfsRuleResponse.cpp
   src/v20190719/model/DeleteMigrationTaskResponse.cpp
   src/v20190719/model/DescribeLifecycleDataTaskRequest.cpp
   src/v20190719/model/DescribeSnapshotOperationLogsResponse.cpp
+  src/v20190719/model/DescribeDataRetrievalResponse.cpp
   src/v20190719/model/DeleteCfsFileSystemRequest.cpp
   src/v20190719/model/UpdateFileSystemBandwidthLimitRequest.cpp
   src/v20190719/model/DeleteLifecyclePolicyResponse.cpp
   src/v20190719/model/CreateCfsPGroupResponse.cpp
   src/v20190719/model/DescribeCfsServiceStatusRequest.cpp
+  src/v20190719/model/DescribeDataRetrievalRequest.cpp
   src/v20190719/model/CheckResult.cpp
   src/v20190719/model/DeleteUserQuotaResponse.cpp
   src/v20190719/model/DeleteMigrationTaskRequest.cpp
@@ -240,6 +260,7 @@ set(cfs_src
   src/v20190719/model/DataFlowInfo.cpp
   src/v20190719/model/AvailableType.cpp
   src/v20190719/model/LifecyclePolicy.cpp
+  src/v20190719/model/RunDataRetrievalTaskResponse.cpp
   src/v20190719/model/CreateCfsSnapshotResponse.cpp
   src/v20190719/model/LifecycleRule.cpp
   src/v20190719/model/UserQuota.cpp
@@ -262,23 +283,28 @@ set(cfs_src
   src/v20190719/model/AutoScaleUpRule.cpp
   src/v20190719/model/DeleteCfsSnapshotRequest.cpp
   src/v20190719/model/DescribeCfsFileSystemClientsRequest.cpp
+  src/v20190719/model/OverrideCfsRulesRequest.cpp
+  src/v20190719/model/CreateDataRetrievalRequest.cpp
   src/v20190719/model/DescribeCfsSnapshotsResponse.cpp
   src/v20190719/model/DescribeCfsFileSystemsRequest.cpp
   src/v20190719/model/AvailableRegion.cpp
   src/v20190719/model/CreateCfsFileSystemRequest.cpp
   src/v20190719/model/AvailableZone.cpp
+  src/v20190719/model/RunDataRetrievalTaskRequest.cpp
   src/v20190719/model/DescribeMigrationTasksRequest.cpp
   src/v20190719/model/PGroupRuleInfo.cpp
   src/v20190719/model/Filter.cpp
   src/v20190719/model/UnbindAutoSnapshotPolicyRequest.cpp
-  src/v20190719/model/UnbindAutoSnapshotPolicyResponse.cpp
+  src/v20190719/model/DescribeDataRetrievalTaskResponse.cpp
   src/v20190719/model/DescribeCfsServiceStatusResponse.cpp
   src/v20190719/model/ExstraPerformanceInfo.cpp
   src/v20190719/model/BindAutoSnapshotPolicyResponse.cpp
   src/v20190719/model/DescribeCfsSnapshotsRequest.cpp
   src/v20190719/model/UpdateCfsFileSystemSizeLimitResponse.cpp
+  src/v20190719/model/SnapshotOperateLog.cpp
   src/v20190719/model/UpdateAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/UpdateCfsFileSystemSizeLimitRequest.cpp
+  src/v20190719/model/DeleteDataRetrievalResponse.cpp
   src/v20190719/model/DescribeCfsRulesResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemPGroupResponse.cpp
   src/v20190719/model/UpdateAutoSnapshotPolicyResponse.cpp
@@ -292,7 +318,7 @@ set(cfs_src
   src/v20190719/model/UpdateCfsSnapshotAttributeResponse.cpp
   src/v20190719/model/UpdateCfsPGroupRequest.cpp
   src/v20190719/model/DeleteDataFlowRequest.cpp
-  src/v20190719/model/PathInfo.cpp
+  src/v20190719/model/ModifyLifecyclePolicyResponse.cpp
   src/v20190719/model/SetUserQuotaResponse.cpp
   src/v20190719/model/TagInfo.cpp
   src/v20190719/model/DescribeCfsPGroupsRequest.cpp
@@ -311,6 +337,8 @@ set(cfs_src
   src/v20190719/model/DescribeAutoSnapshotPoliciesResponse.cpp
   src/v20190719/model/ModifyDataFlowRequest.cpp
   src/v20190719/model/DescribeCfsSnapshotOverviewRequest.cpp
+  src/v20190719/model/UnbindAutoSnapshotPolicyResponse.cpp
+  src/v20190719/model/PathInfo.cpp
   src/v20190719/model/CreateAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/CreateDataFlowRequest.cpp
   src/v20190719/model/DescribeDataFlowResponse.cpp

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业ID
-                     * @return Id 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return Id <p>企业ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _id 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _id <p>企业ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-                     * @return Name 企业名称
+                     * 获取<p>企业名称</p>
+                     * @return Name <p>企业名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置企业名称
-                     * @param _name 企业名称
+                     * 设置<p>企业名称</p>
+                     * @param _name <p>企业名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取股权占比
-                     * @return Percent 股权占比
+                     * 获取<p>股权占比</p>
+                     * @return Percent <p>股权占比</p>
                      * 
                      */
                     int64_t GetPercent() const;
 
                     /**
-                     * 设置股权占比
-                     * @param _percent 股权占比
+                     * 设置<p>股权占比</p>
+                     * @param _percent <p>股权占比</p>
                      * 
                      */
                     void SetPercent(const int64_t& _percent);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息
-                     * @return ScanType 资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息
+                     * 获取<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>
+                     * @return ScanType <p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>
                      * 
                      */
                     std::string GetScanType() const;
 
                     /**
-                     * 设置资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息
-                     * @param _scanType 资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息
+                     * 设置<p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>
+                     * @param _scanType <p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>
                      * 
                      */
                     void SetScanType(const std::string& _scanType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ScanTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建账号
-                     * @return Creator 创建账号
+                     * 获取<p>创建账号</p>
+                     * @return Creator <p>创建账号</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建账号
-                     * @param _creator 创建账号
+                     * 设置<p>创建账号</p>
+                     * @param _creator <p>创建账号</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云客户AppId
-                     * @return AppId 腾讯云客户AppId
+                     * 获取<p>腾讯云客户AppId</p>
+                     * @return AppId <p>腾讯云客户AppId</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置腾讯云客户AppId
-                     * @param _appId 腾讯云客户AppId
+                     * 设置<p>腾讯云客户AppId</p>
+                     * @param _appId <p>腾讯云客户AppId</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云客户Uin
-                     * @return Uin 腾讯云客户Uin
+                     * 获取<p>腾讯云客户Uin</p>
+                     * @return Uin <p>腾讯云客户Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置腾讯云客户Uin
-                     * @param _uin 腾讯云客户Uin
+                     * 设置<p>腾讯云客户Uin</p>
+                     * @param _uin <p>腾讯云客户Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createAt <p>创建时间</p>
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool CreateAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateAt 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateAt <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateAt() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateAt 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateAt <p>更新时间</p>
                      * 
                      */
                     void SetUpdateAt(const std::string& _updateAt);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool UpdateAtHasBeenSet() const;
 
                     /**
-                     * 获取周期测绘时间
-                     * @return ScanCron 周期测绘时间
+                     * 获取<p>周期测绘时间</p>
+                     * @return ScanCron <p>周期测绘时间</p>
                      * 
                      */
                     std::string GetScanCron() const;
 
                     /**
-                     * 设置周期测绘时间
-                     * @param _scanCron 周期测绘时间
+                     * 设置<p>周期测绘时间</p>
+                     * @param _scanCron <p>周期测绘时间</p>
                      * 
                      */
                     void SetScanCron(const std::string& _scanCron);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ScanCronHasBeenSet() const;
 
                     /**
-                     * 获取是否启用周期测绘
-                     * @return EnableCron 是否启用周期测绘
+                     * 获取<p>是否启用周期测绘</p>
+                     * @return EnableCron <p>是否启用周期测绘</p>
                      * 
                      */
                     bool GetEnableCron() const;
 
                     /**
-                     * 设置是否启用周期测绘
-                     * @param _enableCron 是否启用周期测绘
+                     * 设置<p>是否启用周期测绘</p>
+                     * @param _enableCron <p>是否启用周期测绘</p>
                      * 
                      */
                     void SetEnableCron(const bool& _enableCron);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool EnableCronHasBeenSet() const;
 
                     /**
-                     * 获取是否扫描子公司
-                     * @return EnableScanSubEnterprise 是否扫描子公司
+                     * 获取<p>是否扫描子公司</p>
+                     * @return EnableScanSubEnterprise <p>是否扫描子公司</p>
                      * 
                      */
                     bool GetEnableScanSubEnterprise() const;
 
                     /**
-                     * 设置是否扫描子公司
-                     * @param _enableScanSubEnterprise 是否扫描子公司
+                     * 设置<p>是否扫描子公司</p>
+                     * @param _enableScanSubEnterprise <p>是否扫描子公司</p>
                      * 
                      */
                     void SetEnableScanSubEnterprise(const bool& _enableScanSubEnterprise);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool EnableScanSubEnterpriseHasBeenSet() const;
 
                     /**
-                     * 获取是否授权
-                     * @return EnableAuth 是否授权
+                     * 获取<p>是否授权</p>
+                     * @return EnableAuth <p>是否授权</p>
                      * 
                      */
                     bool GetEnableAuth() const;
 
                     /**
-                     * 设置是否授权
-                     * @param _enableAuth 是否授权
+                     * 设置<p>是否授权</p>
+                     * @param _enableAuth <p>是否授权</p>
                      * 
                      */
                     void SetEnableAuth(const bool& _enableAuth);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool EnableAuthHasBeenSet() const;
 
                     /**
-                     * 获取授权开始时间
-                     * @return AuthStartAt 授权开始时间
+                     * 获取<p>授权开始时间</p>
+                     * @return AuthStartAt <p>授权开始时间</p>
                      * 
                      */
                     std::string GetAuthStartAt() const;
 
                     /**
-                     * 设置授权开始时间
-                     * @param _authStartAt 授权开始时间
+                     * 设置<p>授权开始时间</p>
+                     * @param _authStartAt <p>授权开始时间</p>
                      * 
                      */
                     void SetAuthStartAt(const std::string& _authStartAt);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool AuthStartAtHasBeenSet() const;
 
                     /**
-                     * 获取授权结束时间
-                     * @return AuthEndAt 授权结束时间
+                     * 获取<p>授权结束时间</p>
+                     * @return AuthEndAt <p>授权结束时间</p>
                      * 
                      */
                     std::string GetAuthEndAt() const;
 
                     /**
-                     * 设置授权结束时间
-                     * @param _authEndAt 授权结束时间
+                     * 设置<p>授权结束时间</p>
+                     * @param _authEndAt <p>授权结束时间</p>
                      * 
                      */
                     void SetAuthEndAt(const std::string& _authEndAt);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool AuthEndAtHasBeenSet() const;
 
                     /**
-                     * 获取授权文件id
-                     * @return AuthFile 授权文件id
+                     * 获取<p>授权文件id</p>
+                     * @return AuthFile <p>授权文件id</p>
                      * 
                      */
                     std::string GetAuthFile() const;
 
                     /**
-                     * 设置授权文件id
-                     * @param _authFile 授权文件id
+                     * 设置<p>授权文件id</p>
+                     * @param _authFile <p>授权文件id</p>
                      * 
                      */
                     void SetAuthFile(const std::string& _authFile);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool AuthFileHasBeenSet() const;
 
                     /**
-                     * 获取测绘时间配置项
-                     * @return ScanTime 测绘时间配置项
+                     * 获取<p>测绘时间配置项</p>
+                     * @return ScanTime <p>测绘时间配置项</p>
                      * 
                      */
                     std::string GetScanTime() const;
 
                     /**
-                     * 设置测绘时间配置项
-                     * @param _scanTime 测绘时间配置项
+                     * 设置<p>测绘时间配置项</p>
+                     * @param _scanTime <p>测绘时间配置项</p>
                      * 
                      */
                     void SetScanTime(const std::string& _scanTime);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool ScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取图标
-                     * @return Icon 图标
+                     * 获取<p>图标</p>
+                     * @return Icon <p>图标</p>
                      * 
                      */
                     std::string GetIcon() const;
 
                     /**
-                     * 设置图标
-                     * @param _icon 图标
+                     * 设置<p>图标</p>
+                     * @param _icon <p>图标</p>
                      * 
                      */
                     void SetIcon(const std::string& _icon);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool IconHasBeenSet() const;
 
                     /**
-                     * 获取关键字
-                     * @return Keywords 关键字
+                     * 获取<p>关键字</p>
+                     * @return Keywords <p>关键字</p>
                      * 
                      */
                     std::string GetKeywords() const;
 
                     /**
-                     * 设置关键字
-                     * @param _keywords 关键字
+                     * 设置<p>关键字</p>
+                     * @param _keywords <p>关键字</p>
                      * 
                      */
                     void SetKeywords(const std::string& _keywords);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取Qps设置，10-500，默认100
-                     * @return Qps Qps设置，10-500，默认100
+                     * 获取<p>Qps设置，10-500，默认100</p>
+                     * @return Qps <p>Qps设置，10-500，默认100</p>
                      * 
                      */
                     int64_t GetQps() const;
 
                     /**
-                     * 设置Qps设置，10-500，默认100
-                     * @param _qps Qps设置，10-500，默认100
+                     * 设置<p>Qps设置，10-500，默认100</p>
+                     * @param _qps <p>Qps设置，10-500，默认100</p>
                      * 
                      */
                     void SetQps(const int64_t& _qps);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取子公司拓展层次
-                     * @return SubCompanyLevel 子公司拓展层次
+                     * 获取<p>子公司拓展层次</p>
+                     * @return SubCompanyLevel <p>子公司拓展层次</p>
                      * 
                      */
                     int64_t GetSubCompanyLevel() const;
 
                     /**
-                     * 设置子公司拓展层次
-                     * @param _subCompanyLevel 子公司拓展层次
+                     * 设置<p>子公司拓展层次</p>
+                     * @param _subCompanyLevel <p>子公司拓展层次</p>
                      * 
                      */
                     void SetSubCompanyLevel(const int64_t& _subCompanyLevel);
@@ -488,18 +488,18 @@ namespace TencentCloud
                     bool SubCompanyLevelHasBeenSet() const;
 
                     /**
-                     * 获取是否包含完整扫描
+                     * 获取<p>是否包含完整扫描</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsIncludeFullScan 是否包含完整扫描
+                     * @return IsIncludeFullScan <p>是否包含完整扫描</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsIncludeFullScan() const;
 
                     /**
-                     * 设置是否包含完整扫描
+                     * 设置<p>是否包含完整扫描</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isIncludeFullScan 是否包含完整扫描
+                     * @param _isIncludeFullScan <p>是否包含完整扫描</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -513,15 +513,15 @@ namespace TencentCloud
                     bool IsIncludeFullScanHasBeenSet() const;
 
                     /**
-                     * 获取是否识别集团成员
-                     * @return EnableGroupMemberDiscovered 是否识别集团成员
+                     * 获取<p>是否识别集团成员</p>
+                     * @return EnableGroupMemberDiscovered <p>是否识别集团成员</p>
                      * 
                      */
                     bool GetEnableGroupMemberDiscovered() const;
 
                     /**
-                     * 设置是否识别集团成员
-                     * @param _enableGroupMemberDiscovered 是否识别集团成员
+                     * 设置<p>是否识别集团成员</p>
+                     * @param _enableGroupMemberDiscovered <p>是否识别集团成员</p>
                      * 
                      */
                     void SetEnableGroupMemberDiscovered(const bool& _enableGroupMemberDiscovered);
@@ -533,146 +533,200 @@ namespace TencentCloud
                      */
                     bool EnableGroupMemberDiscoveredHasBeenSet() const;
 
+                    /**
+                     * 获取<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>
+                     * @return SingleIPTaskLimit <p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>
+                     * 
+                     */
+                    int64_t GetSingleIPTaskLimit() const;
+
+                    /**
+                     * 设置<p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>
+                     * @param _singleIPTaskLimit <p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>
+                     * 
+                     */
+                    void SetSingleIPTaskLimit(const int64_t& _singleIPTaskLimit);
+
+                    /**
+                     * 判断参数 SingleIPTaskLimit 是否已赋值
+                     * @return SingleIPTaskLimit 是否已赋值
+                     * 
+                     */
+                    bool SingleIPTaskLimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>
+                     * @return PortScanQps <p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>
+                     * 
+                     */
+                    int64_t GetPortScanQps() const;
+
+                    /**
+                     * 设置<p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>
+                     * @param _portScanQps <p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>
+                     * 
+                     */
+                    void SetPortScanQps(const int64_t& _portScanQps);
+
+                    /**
+                     * 判断参数 PortScanQps 是否已赋值
+                     * @return PortScanQps 是否已赋值
+                     * 
+                     */
+                    bool PortScanQpsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 企业名称
+                     * <p>企业名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 股权占比
+                     * <p>股权占比</p>
                      */
                     int64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息
+                     * <p>资产收集、漏洞信息、弱口令、目录爆破、暗网泄露、Github泄露、文库网盘泄露、敏感信息泄露，其中资产收集必包含，多个用英文逗号隔离，例如：资产收集,漏洞信息</p>
                      */
                     std::string m_scanType;
                     bool m_scanTypeHasBeenSet;
 
                     /**
-                     * 创建账号
+                     * <p>创建账号</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 腾讯云客户AppId
+                     * <p>腾讯云客户AppId</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 腾讯云客户Uin
+                     * <p>腾讯云客户Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateAt;
                     bool m_updateAtHasBeenSet;
 
                     /**
-                     * 周期测绘时间
+                     * <p>周期测绘时间</p>
                      */
                     std::string m_scanCron;
                     bool m_scanCronHasBeenSet;
 
                     /**
-                     * 是否启用周期测绘
+                     * <p>是否启用周期测绘</p>
                      */
                     bool m_enableCron;
                     bool m_enableCronHasBeenSet;
 
                     /**
-                     * 是否扫描子公司
+                     * <p>是否扫描子公司</p>
                      */
                     bool m_enableScanSubEnterprise;
                     bool m_enableScanSubEnterpriseHasBeenSet;
 
                     /**
-                     * 是否授权
+                     * <p>是否授权</p>
                      */
                     bool m_enableAuth;
                     bool m_enableAuthHasBeenSet;
 
                     /**
-                     * 授权开始时间
+                     * <p>授权开始时间</p>
                      */
                     std::string m_authStartAt;
                     bool m_authStartAtHasBeenSet;
 
                     /**
-                     * 授权结束时间
+                     * <p>授权结束时间</p>
                      */
                     std::string m_authEndAt;
                     bool m_authEndAtHasBeenSet;
 
                     /**
-                     * 授权文件id
+                     * <p>授权文件id</p>
                      */
                     std::string m_authFile;
                     bool m_authFileHasBeenSet;
 
                     /**
-                     * 测绘时间配置项
+                     * <p>测绘时间配置项</p>
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;
 
                     /**
-                     * 图标
+                     * <p>图标</p>
                      */
                     std::string m_icon;
                     bool m_iconHasBeenSet;
 
                     /**
-                     * 关键字
+                     * <p>关键字</p>
                      */
                     std::string m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * Qps设置，10-500，默认100
+                     * <p>Qps设置，10-500，默认100</p>
                      */
                     int64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * 子公司拓展层次
+                     * <p>子公司拓展层次</p>
                      */
                     int64_t m_subCompanyLevel;
                     bool m_subCompanyLevelHasBeenSet;
 
                     /**
-                     * 是否包含完整扫描
+                     * <p>是否包含完整扫描</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isIncludeFullScan;
                     bool m_isIncludeFullScanHasBeenSet;
 
                     /**
-                     * 是否识别集团成员
+                     * <p>是否识别集团成员</p>
                      */
                     bool m_enableGroupMemberDiscovered;
                     bool m_enableGroupMemberDiscoveredHasBeenSet;
+
+                    /**
+                     * <p>单 IP 任务并发数，默认 1，下限 1，保守值 3，上限 10</p>
+                     */
+                    int64_t m_singleIPTaskLimit;
+                    bool m_singleIPTaskLimitHasBeenSet;
+
+                    /**
+                     * <p>端口扫描 QPS，默认 100，下限 10，保守值 200，上限 5000</p>
+                     */
+                    int64_t m_portScanQps;
+                    bool m_portScanQpsHasBeenSet;
 
                 };
             }

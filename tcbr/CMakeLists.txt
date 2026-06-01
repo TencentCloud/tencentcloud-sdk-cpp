@@ -57,6 +57,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/StaticStorageInfo.h
   include/tencentcloud/tcbr/v20220217/model/LogResObject.h
   include/tencentcloud/tcbr/v20220217/model/UpdateCloudRunServerRequest.h
+  include/tencentcloud/tcbr/v20220217/model/SimpleVersion.h
   include/tencentcloud/tcbr/v20220217/model/LogServiceInfo.h
   include/tencentcloud/tcbr/v20220217/model/OperateServerManageResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServerDetailRequest.h
@@ -69,7 +70,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/HpaPolicy.h
   include/tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h
   include/tencentcloud/tcbr/v20220217/model/LogObject.h
-  include/tencentcloud/tcbr/v20220217/model/SimpleVersion.h
+  include/tencentcloud/tcbr/v20220217/model/PublicNetConf.h
   include/tencentcloud/tcbr/v20220217/model/ObjectKV.h
   include/tencentcloud/tcbr/v20220217/model/DescribeReleaseOrderRequest.h
   include/tencentcloud/tcbr/v20220217/model/EnvBaseInfo.h
@@ -138,6 +139,7 @@ set(tcbr_src
   src/v20220217/model/StaticStorageInfo.cpp
   src/v20220217/model/LogResObject.cpp
   src/v20220217/model/UpdateCloudRunServerRequest.cpp
+  src/v20220217/model/SimpleVersion.cpp
   src/v20220217/model/LogServiceInfo.cpp
   src/v20220217/model/OperateServerManageResponse.cpp
   src/v20220217/model/DescribeCloudRunServerDetailRequest.cpp
@@ -150,7 +152,7 @@ set(tcbr_src
   src/v20220217/model/HpaPolicy.cpp
   src/v20220217/model/OperateServerManageRequest.cpp
   src/v20220217/model/LogObject.cpp
-  src/v20220217/model/SimpleVersion.cpp
+  src/v20220217/model/PublicNetConf.cpp
   src/v20220217/model/ObjectKV.cpp
   src/v20220217/model/DescribeReleaseOrderRequest.cpp
   src/v20220217/model/EnvBaseInfo.cpp

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取公共字段
-                     * @return DisplayToolCommon 公共字段
+                     * 获取<p>公共字段</p>
+                     * @return DisplayToolCommon <p>公共字段</p>
                      * 
                      */
                     DisplayToolCommon GetDisplayToolCommon() const;
 
                     /**
-                     * 设置公共字段
-                     * @param _displayToolCommon 公共字段
+                     * 设置<p>公共字段</p>
+                     * @param _displayToolCommon <p>公共字段</p>
                      * 
                      */
                     void SetDisplayToolCommon(const DisplayToolCommon& _displayToolCommon);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DisplayToolCommonHasBeenSet() const;
 
                     /**
-                     * 获取IP或域名地址
-                     * @return Asset IP或域名地址
+                     * 获取<p>IP或域名地址</p>
+                     * @return Asset <p>IP或域名地址</p>
                      * 
                      */
                     std::string GetAsset() const;
 
                     /**
-                     * 设置IP或域名地址
-                     * @param _asset IP或域名地址
+                     * 设置<p>IP或域名地址</p>
+                     * @param _asset <p>IP或域名地址</p>
                      * 
                      */
                     void SetAsset(const std::string& _asset);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AssetHasBeenSet() const;
 
                     /**
-                     * 获取解析的IP
-                     * @return Ip 解析的IP
+                     * 获取<p>解析的IP</p>
+                     * @return Ip <p>解析的IP</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置解析的IP
-                     * @param _ip 解析的IP
+                     * 设置<p>解析的IP</p>
+                     * @param _ip <p>解析的IP</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取<p>端口</p>
+                     * @return Port <p>端口</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置<p>端口</p>
+                     * @param _port <p>端口</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取是否高危
-                     * @return IsHighRisk 是否高危
+                     * 获取<p>是否高危</p>
+                     * @return IsHighRisk <p>是否高危</p>
                      * 
                      */
                     bool GetIsHighRisk() const;
 
                     /**
-                     * 设置是否高危
-                     * @param _isHighRisk 是否高危
+                     * 设置<p>是否高危</p>
+                     * @param _isHighRisk <p>是否高危</p>
                      * 
                      */
                     void SetIsHighRisk(const bool& _isHighRisk);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool IsHighRiskHasBeenSet() const;
 
                     /**
-                     * 获取组件名称
-                     * @return App 组件名称
+                     * 获取<p>组件名称</p>
+                     * @return App <p>组件名称</p>
                      * 
                      */
                     std::string GetApp() const;
 
                     /**
-                     * 设置组件名称
-                     * @param _app 组件名称
+                     * 设置<p>组件名称</p>
+                     * @param _app <p>组件名称</p>
                      * 
                      */
                     void SetApp(const std::string& _app);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool AppHasBeenSet() const;
 
                     /**
-                     * 获取服务名称
-                     * @return Service 服务名称
+                     * 获取<p>服务名称</p>
+                     * @return Service <p>服务名称</p>
                      * 
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置服务名称
-                     * @param _service 服务名称
+                     * 设置<p>服务名称</p>
+                     * @param _service <p>服务名称</p>
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取端口响应详情
-                     * @return Banner 端口响应详情
+                     * 获取<p>端口响应详情</p>
+                     * @return Banner <p>端口响应详情</p>
                      * 
                      */
                     std::string GetBanner() const;
 
                     /**
-                     * 设置端口响应详情
-                     * @param _banner 端口响应详情
+                     * 设置<p>端口响应详情</p>
+                     * @param _banner <p>端口响应详情</p>
                      * 
                      */
                     void SetBanner(const std::string& _banner);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool BannerHasBeenSet() const;
 
                     /**
-                     * 获取上次检测时间
-                     * @return LastCheckTime 上次检测时间
+                     * 获取<p>上次检测时间</p>
+                     * @return LastCheckTime <p>上次检测时间</p>
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
-                     * 设置上次检测时间
-                     * @param _lastCheckTime 上次检测时间
+                     * 设置<p>上次检测时间</p>
+                     * @param _lastCheckTime <p>上次检测时间</p>
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool LastCheckTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略
-                     * @return Status 状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略
+                     * 获取<p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>
+                     * @return Status <p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略
-                     * @param _status 状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略
+                     * 设置<p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>
+                     * @param _status <p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否为云资产：0-非云资产 1-是云资产
-                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 获取<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @return IsCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     int64_t GetIsCloudAsset() const;
 
                     /**
-                     * 设置是否为云资产：0-非云资产 1-是云资产
-                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 设置<p>是否为云资产：0-非云资产 1-是云资产</p>
+                     * @param _isCloudAsset <p>是否为云资产：0-非云资产 1-是云资产</p>
                      * 
                      */
                     void SetIsCloudAsset(const int64_t& _isCloudAsset);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool IsCloudAssetHasBeenSet() const;
 
                     /**
-                     * 获取云资产是否下线：-1-已下线 0-正常
-                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 获取<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @return CloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     int64_t GetCloudAssetStatus() const;
 
                     /**
-                     * 设置云资产是否下线：-1-已下线 0-正常
-                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 设置<p>云资产是否下线：-1-已下线 0-正常</p>
+                     * @param _cloudAssetStatus <p>云资产是否下线：-1-已下线 0-正常</p>
                      * 
                      */
                     void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool CloudAssetStatusHasBeenSet() const;
 
                     /**
-                     * 获取域名解析状态 1:异常 0:正常
-                     * @return AnalysisState 域名解析状态 1:异常 0:正常
+                     * 获取<p>域名解析状态 1:异常 0:正常</p>
+                     * @return AnalysisState <p>域名解析状态 1:异常 0:正常</p>
                      * 
                      */
                     int64_t GetAnalysisState() const;
 
                     /**
-                     * 设置域名解析状态 1:异常 0:正常
-                     * @param _analysisState 域名解析状态 1:异常 0:正常
+                     * 设置<p>域名解析状态 1:异常 0:正常</p>
+                     * @param _analysisState <p>域名解析状态 1:异常 0:正常</p>
                      * 
                      */
                     void SetAnalysisState(const int64_t& _analysisState);
@@ -341,91 +341,118 @@ namespace TencentCloud
                      */
                     bool AnalysisStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @return AggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    int64_t GetAggregationCount() const;
+
+                    /**
+                     * 设置<p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * @param _aggregationCount <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     * 
+                     */
+                    void SetAggregationCount(const int64_t& _aggregationCount);
+
+                    /**
+                     * 判断参数 AggregationCount 是否已赋值
+                     * @return AggregationCount 是否已赋值
+                     * 
+                     */
+                    bool AggregationCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 公共字段
+                     * <p>公共字段</p>
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
 
                     /**
-                     * IP或域名地址
+                     * <p>IP或域名地址</p>
                      */
                     std::string m_asset;
                     bool m_assetHasBeenSet;
 
                     /**
-                     * 解析的IP
+                     * <p>解析的IP</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 是否高危
+                     * <p>是否高危</p>
                      */
                     bool m_isHighRisk;
                     bool m_isHighRiskHasBeenSet;
 
                     /**
-                     * 组件名称
+                     * <p>组件名称</p>
                      */
                     std::string m_app;
                     bool m_appHasBeenSet;
 
                     /**
-                     * 服务名称
+                     * <p>服务名称</p>
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * 端口响应详情
+                     * <p>端口响应详情</p>
                      */
                     std::string m_banner;
                     bool m_bannerHasBeenSet;
 
                     /**
-                     * 上次检测时间
+                     * <p>上次检测时间</p>
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
 
                     /**
-                     * 状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略
+                     * <p>状态，close:连接超时，端口可能已关闭，open:端口开放, checking:复测中, ignore:已忽略</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否为云资产：0-非云资产 1-是云资产
+                     * <p>是否为云资产：0-非云资产 1-是云资产</p>
                      */
                     int64_t m_isCloudAsset;
                     bool m_isCloudAssetHasBeenSet;
 
                     /**
-                     * 云资产是否下线：-1-已下线 0-正常
+                     * <p>云资产是否下线：-1-已下线 0-正常</p>
                      */
                     int64_t m_cloudAssetStatus;
                     bool m_cloudAssetStatusHasBeenSet;
 
                     /**
-                     * 域名解析状态 1:异常 0:正常
+                     * <p>域名解析状态 1:异常 0:正常</p>
                      */
                     int64_t m_analysisState;
                     bool m_analysisStateHasBeenSet;
+
+                    /**
+                     * <p>聚合视角下该组真实子项总数；非聚合视角为 0</p>
+                     */
+                    int64_t m_aggregationCount;
+                    bool m_aggregationCountHasBeenSet;
 
                 };
             }

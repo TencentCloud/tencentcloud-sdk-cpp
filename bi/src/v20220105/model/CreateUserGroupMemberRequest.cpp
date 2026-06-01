@@ -22,7 +22,9 @@
 using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
-CreateUserGroupMemberRequest::CreateUserGroupMemberRequest()
+CreateUserGroupMemberRequest::CreateUserGroupMemberRequest() :
+    m_groupIdHasBeenSet(false),
+    m_userIdListHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string CreateUserGroupMemberRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_userIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIdList.begin(); itr != m_userIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string CreateUserGroupMemberRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateUserGroupMemberRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CreateUserGroupMemberRequest::SetGroupId(const uint64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CreateUserGroupMemberRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+vector<string> CreateUserGroupMemberRequest::GetUserIdList() const
+{
+    return m_userIdList;
+}
+
+void CreateUserGroupMemberRequest::SetUserIdList(const vector<string>& _userIdList)
+{
+    m_userIdList = _userIdList;
+    m_userIdListHasBeenSet = true;
+}
+
+bool CreateUserGroupMemberRequest::UserIdListHasBeenSet() const
+{
+    return m_userIdListHasBeenSet;
+}
 
 

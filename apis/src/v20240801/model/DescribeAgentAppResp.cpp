@@ -35,7 +35,9 @@ DescribeAgentAppResp::DescribeAgentAppResp() :
     m_secretKeysHasBeenSet(false),
     m_oAuth2ResourceServerIDHasBeenSet(false),
     m_mcpServersNumHasBeenSet(false),
-    m_modelServicesNumHasBeenSet(false)
+    m_modelServicesNumHasBeenSet(false),
+    m_connectorIDsHasBeenSet(false),
+    m_servicesNumHasBeenSet(false)
 {
 }
 
@@ -207,6 +209,29 @@ CoreInternalOutcome DescribeAgentAppResp::Deserialize(const rapidjson::Value &va
         m_modelServicesNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectorIDs") && !value["ConnectorIDs"].IsNull())
+    {
+        if (!value["ConnectorIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeAgentAppResp.ConnectorIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConnectorIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_connectorIDs.push_back((*itr).GetString());
+        }
+        m_connectorIDsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServicesNum") && !value["ServicesNum"].IsNull())
+    {
+        if (!value["ServicesNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAgentAppResp.ServicesNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_servicesNum = value["ServicesNum"].GetInt64();
+        m_servicesNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +369,27 @@ void DescribeAgentAppResp::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ModelServicesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelServicesNum, allocator);
+    }
+
+    if (m_connectorIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectorIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_connectorIDs.begin(); itr != m_connectorIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_servicesNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServicesNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_servicesNum, allocator);
     }
 
 }
@@ -587,5 +633,37 @@ void DescribeAgentAppResp::SetModelServicesNum(const int64_t& _modelServicesNum)
 bool DescribeAgentAppResp::ModelServicesNumHasBeenSet() const
 {
     return m_modelServicesNumHasBeenSet;
+}
+
+vector<string> DescribeAgentAppResp::GetConnectorIDs() const
+{
+    return m_connectorIDs;
+}
+
+void DescribeAgentAppResp::SetConnectorIDs(const vector<string>& _connectorIDs)
+{
+    m_connectorIDs = _connectorIDs;
+    m_connectorIDsHasBeenSet = true;
+}
+
+bool DescribeAgentAppResp::ConnectorIDsHasBeenSet() const
+{
+    return m_connectorIDsHasBeenSet;
+}
+
+int64_t DescribeAgentAppResp::GetServicesNum() const
+{
+    return m_servicesNum;
+}
+
+void DescribeAgentAppResp::SetServicesNum(const int64_t& _servicesNum)
+{
+    m_servicesNum = _servicesNum;
+    m_servicesNumHasBeenSet = true;
+}
+
+bool DescribeAgentAppResp::ServicesNumHasBeenSet() const
+{
+    return m_servicesNumHasBeenSet;
 }
 

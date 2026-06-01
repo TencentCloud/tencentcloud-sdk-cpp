@@ -50,6 +50,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/RowColumnStatus.h
   include/tencentcloud/bi/v20220105/model/DescribePermissionStatusInfoRequest.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserGroupMemberPageListContainer.h
   include/tencentcloud/bi/v20220105/model/CreateUserGroupRequest.h
   include/tencentcloud/bi/v20220105/model/CreateAuthApiKeyResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteDatasourceResponse.h
@@ -81,6 +82,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/UserIdAndUserName.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h
   include/tencentcloud/bi/v20220105/model/RowColumnTagValue.h
+  include/tencentcloud/bi/v20220105/model/UserGroupUserInfoVO.h
   include/tencentcloud/bi/v20220105/model/DescribeResourceUserGroupPageListRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteAuthApiKeyResponse.h
   include/tencentcloud/bi/v20220105/model/ResourceListDTO.h
@@ -117,12 +119,14 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ClearEmbedTokenRequest.h
   include/tencentcloud/bi/v20220105/model/UserVO.h
   include/tencentcloud/bi/v20220105/model/DescribeUserGroupMemberListResponse.h
+  include/tencentcloud/bi/v20220105/model/UserGroupMemberVO.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListResponse.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteDatasourceRequest.h
   include/tencentcloud/bi/v20220105/model/WidgetListVO.h
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h
   include/tencentcloud/bi/v20220105/model/DescribePageWidgetListResponse.h
+  include/tencentcloud/bi/v20220105/model/UserGroupVO.h
   include/tencentcloud/bi/v20220105/model/UserGroupPageTreeVO.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
@@ -191,6 +195,7 @@ set(bi_src
   src/v20220105/model/RowColumnStatus.cpp
   src/v20220105/model/DescribePermissionStatusInfoRequest.cpp
   src/v20220105/model/CreateDatasourceResponse.cpp
+  src/v20220105/model/DescribeUserGroupMemberPageListContainer.cpp
   src/v20220105/model/CreateUserGroupRequest.cpp
   src/v20220105/model/CreateAuthApiKeyResponse.cpp
   src/v20220105/model/DeleteDatasourceResponse.cpp
@@ -222,6 +227,7 @@ set(bi_src
   src/v20220105/model/UserIdAndUserName.cpp
   src/v20220105/model/DescribeUserRoleListResponse.cpp
   src/v20220105/model/RowColumnTagValue.cpp
+  src/v20220105/model/UserGroupUserInfoVO.cpp
   src/v20220105/model/DescribeResourceUserGroupPageListRequest.cpp
   src/v20220105/model/DeleteAuthApiKeyResponse.cpp
   src/v20220105/model/ResourceListDTO.cpp
@@ -258,12 +264,14 @@ set(bi_src
   src/v20220105/model/ClearEmbedTokenRequest.cpp
   src/v20220105/model/UserVO.cpp
   src/v20220105/model/DescribeUserGroupMemberListResponse.cpp
+  src/v20220105/model/UserGroupMemberVO.cpp
   src/v20220105/model/DescribeUserProjectListResponse.cpp
   src/v20220105/model/CreateDatasourceRequest.cpp
   src/v20220105/model/DeleteDatasourceRequest.cpp
   src/v20220105/model/WidgetListVO.cpp
   src/v20220105/model/ModifyDatasourceResponse.cpp
   src/v20220105/model/DescribePageWidgetListResponse.cpp
+  src/v20220105/model/UserGroupVO.cpp
   src/v20220105/model/UserGroupPageTreeVO.cpp
   src/v20220105/model/CreateDatasourceCloudResponse.cpp
   src/v20220105/model/ProjectConfigList.cpp

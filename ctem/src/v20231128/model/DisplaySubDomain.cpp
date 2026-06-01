@@ -37,7 +37,8 @@ DisplaySubDomain::DisplaySubDomain() :
     m_averageDelayHasBeenSet(false),
     m_lossRateHasBeenSet(false),
     m_dnsTypeHasBeenSet(false),
-    m_dnsValueHasBeenSet(false)
+    m_dnsValueHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,16 @@ CoreInternalOutcome DisplaySubDomain::Deserialize(const rapidjson::Value &value)
         m_dnsValueHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +376,14 @@ void DisplaySubDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DnsValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dnsValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -640,5 +659,21 @@ void DisplaySubDomain::SetDnsValue(const string& _dnsValue)
 bool DisplaySubDomain::DnsValueHasBeenSet() const
 {
     return m_dnsValueHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplaySubDomain::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 

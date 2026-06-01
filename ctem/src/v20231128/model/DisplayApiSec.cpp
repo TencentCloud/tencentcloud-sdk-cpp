@@ -31,7 +31,8 @@ DisplayApiSec::DisplayApiSec() :
     m_codeHasBeenSet(false),
     m_requestHasBeenSet(false),
     m_responseHasBeenSet(false),
-    m_isRiskAPIHasBeenSet(false)
+    m_isRiskAPIHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome DisplayApiSec::Deserialize(const rapidjson::Value &value)
         m_isRiskAPIHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayApiSec.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void DisplayApiSec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsRiskAPI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRiskAPI, allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void DisplayApiSec::SetIsRiskAPI(const bool& _isRiskAPI)
 bool DisplayApiSec::IsRiskAPIHasBeenSet() const
 {
     return m_isRiskAPIHasBeenSet;
+}
+
+int64_t DisplayApiSec::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplayApiSec::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplayApiSec::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 

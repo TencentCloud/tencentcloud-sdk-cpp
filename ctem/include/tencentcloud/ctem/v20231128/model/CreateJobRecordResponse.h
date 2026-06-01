@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return Id 任务Id
+                     * 获取<p>任务Id</p>
+                     * @return Id <p>任务Id</p>
                      * 
                      */
                     int64_t GetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * <p>任务Id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

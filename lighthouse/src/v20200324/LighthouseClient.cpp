@@ -1390,6 +1390,56 @@ LighthouseClient::DescribeBlueprintsOutcomeCallable LighthouseClient::DescribeBl
     return prom->get_future();
 }
 
+LighthouseClient::DescribeBlueprintsShareAcrossAccountInfosOutcome LighthouseClient::DescribeBlueprintsShareAcrossAccountInfos(const DescribeBlueprintsShareAcrossAccountInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlueprintsShareAcrossAccountInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlueprintsShareAcrossAccountInfosResponse rsp = DescribeBlueprintsShareAcrossAccountInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlueprintsShareAcrossAccountInfosOutcome(rsp);
+        else
+            return DescribeBlueprintsShareAcrossAccountInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlueprintsShareAcrossAccountInfosOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeBlueprintsShareAcrossAccountInfosAsync(const DescribeBlueprintsShareAcrossAccountInfosRequest& request, const DescribeBlueprintsShareAcrossAccountInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlueprintsShareAcrossAccountInfosRequest&;
+    using Resp = DescribeBlueprintsShareAcrossAccountInfosResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlueprintsShareAcrossAccountInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LighthouseClient::DescribeBlueprintsShareAcrossAccountInfosOutcomeCallable LighthouseClient::DescribeBlueprintsShareAcrossAccountInfosCallable(const DescribeBlueprintsShareAcrossAccountInfosRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlueprintsShareAcrossAccountInfosOutcome>>();
+    DescribeBlueprintsShareAcrossAccountInfosAsync(
+    request,
+    [prom](
+        const LighthouseClient*,
+        const DescribeBlueprintsShareAcrossAccountInfosRequest&,
+        DescribeBlueprintsShareAcrossAccountInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LighthouseClient::DescribeBundleDiscountOutcome LighthouseClient::DescribeBundleDiscount(const DescribeBundleDiscountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBundleDiscount");

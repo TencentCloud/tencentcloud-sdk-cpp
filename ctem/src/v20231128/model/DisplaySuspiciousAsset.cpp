@@ -38,7 +38,8 @@ DisplaySuspiciousAsset::DisplaySuspiciousAsset() :
     m_sourceValueHasBeenSet(false),
     m_trustedHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_rootDomainHasBeenSet(false)
+    m_rootDomainHasBeenSet(false),
+    m_aggregationCountHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome DisplaySuspiciousAsset::Deserialize(const rapidjson::Value &
         m_rootDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("AggregationCount") && !value["AggregationCount"].IsNull())
+    {
+        if (!value["AggregationCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySuspiciousAsset.AggregationCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aggregationCount = value["AggregationCount"].GetInt64();
+        m_aggregationCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void DisplaySuspiciousAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RootDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rootDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aggregationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AggregationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aggregationCount, allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void DisplaySuspiciousAsset::SetRootDomain(const string& _rootDomain)
 bool DisplaySuspiciousAsset::RootDomainHasBeenSet() const
 {
     return m_rootDomainHasBeenSet;
+}
+
+int64_t DisplaySuspiciousAsset::GetAggregationCount() const
+{
+    return m_aggregationCount;
+}
+
+void DisplaySuspiciousAsset::SetAggregationCount(const int64_t& _aggregationCount)
+{
+    m_aggregationCount = _aggregationCount;
+    m_aggregationCountHasBeenSet = true;
+}
+
+bool DisplaySuspiciousAsset::AggregationCountHasBeenSet() const
+{
+    return m_aggregationCountHasBeenSet;
 }
 
