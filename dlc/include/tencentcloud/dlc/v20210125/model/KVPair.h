@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置的key值
-                     * @return Key 配置的key值
+                     * 获取<p>配置的key值</p>
+                     * @return Key <p>配置的key值</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置配置的key值
-                     * @param _key 配置的key值
+                     * 设置<p>配置的key值</p>
+                     * @param _key <p>配置的key值</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取配置的value值
-                     * @return Value 配置的value值
+                     * 获取<p>配置的value值</p>
+                     * @return Value <p>配置的value值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置配置的value值
-                     * @param _value 配置的value值
+                     * 设置<p>配置的value值</p>
+                     * @param _value <p>配置的value值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置的key值
+                     * <p>配置的key值</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 配置的value值
+                     * <p>配置的value值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

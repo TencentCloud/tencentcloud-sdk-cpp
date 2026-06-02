@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务列表
-                     * @return ServiceIds 服务列表
+                     * 获取<p>服务列表</p>
+                     * @return ServiceIds <p>服务列表</p>
                      * 
                      */
                     std::vector<std::string> GetServiceIds() const;
 
                     /**
-                     * 设置服务列表
-                     * @param _serviceIds 服务列表
+                     * 设置<p>服务列表</p>
+                     * @param _serviceIds <p>服务列表</p>
                      * 
                      */
                     void SetServiceIds(const std::vector<std::string>& _serviceIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ServiceIdsHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return Limit <p>分页大小</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _limit <p>分页大小</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务列表
+                     * <p>服务列表</p>
                      */
                     std::vector<std::string> m_serviceIds;
                     bool m_serviceIdsHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

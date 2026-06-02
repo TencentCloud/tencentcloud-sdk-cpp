@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取 
-                     * @return Items  
+                     * 获取<p>授权信息</p>
+                     * @return Items <p>授权信息</p>
                      * 
                      */
                     std::vector<GrantedVirtualGroupItem> GetItems() const;
 
                     /**
-                     * 设置 
-                     * @param _items  
+                     * 设置<p>授权信息</p>
+                     * @param _items <p>授权信息</p>
                      * 
                      */
                     void SetItems(const std::vector<GrantedVirtualGroupItem>& _items);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     *  
+                     * <p>授权信息</p>
                      */
                     std::vector<GrantedVirtualGroupItem> m_items;
                     bool m_itemsHasBeenSet;

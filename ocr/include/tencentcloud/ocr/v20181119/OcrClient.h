@@ -135,8 +135,6 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
@@ -167,8 +165,6 @@
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TextDetectRequest.h>
 #include <tencentcloud/ocr/v20181119/model/TextDetectResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h>
@@ -373,9 +369,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeMedicalInvoiceOCRResponse> RecognizeMedicalInvoiceOCROutcome;
                 typedef std::future<RecognizeMedicalInvoiceOCROutcome> RecognizeMedicalInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeMedicalInvoiceOCRRequest&, RecognizeMedicalInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMedicalInvoiceOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeOnlineTaxiItineraryOCRResponse> RecognizeOnlineTaxiItineraryOCROutcome;
-                typedef std::future<RecognizeOnlineTaxiItineraryOCROutcome> RecognizeOnlineTaxiItineraryOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeOnlineTaxiItineraryOCRRequest&, RecognizeOnlineTaxiItineraryOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeOnlineTaxiItineraryOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeStoreNameResponse> RecognizeStoreNameOutcome;
                 typedef std::future<RecognizeStoreNameOutcome> RecognizeStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeStoreNameRequest&, RecognizeStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeStoreNameAsyncHandler;
@@ -421,9 +414,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TableOCRResponse> TableOCROutcome;
                 typedef std::future<TableOCROutcome> TableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TableOCRRequest&, TableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TableOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::TaxiInvoiceOCRResponse> TaxiInvoiceOCROutcome;
-                typedef std::future<TaxiInvoiceOCROutcome> TaxiInvoiceOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::TaxiInvoiceOCRRequest&, TaxiInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> TaxiInvoiceOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextDetectResponse> TextDetectOutcome;
                 typedef std::future<TextDetectOutcome> TextDetectOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::TextDetectRequest&, TextDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextDetectAsyncHandler;
@@ -1558,17 +1548,6 @@ namespace TencentCloud
                 RecognizeMedicalInvoiceOCROutcomeCallable RecognizeMedicalInvoiceOCRCallable(const Model::RecognizeMedicalInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。
-
-默认接口请求频率限制：20次/秒。
-                 * @param req RecognizeOnlineTaxiItineraryOCRRequest
-                 * @return RecognizeOnlineTaxiItineraryOCROutcome
-                 */
-                RecognizeOnlineTaxiItineraryOCROutcome RecognizeOnlineTaxiItineraryOCR(const Model::RecognizeOnlineTaxiItineraryOCRRequest &request);
-                void RecognizeOnlineTaxiItineraryOCRAsync(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeOnlineTaxiItineraryOCROutcomeCallable RecognizeOnlineTaxiItineraryOCRCallable(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request);
-
-                /**
                  *本接口用于识别门头照文字识别结果以及对应分类标签信息
 默认接口请求频率限制：1次/秒
                  * @param req RecognizeStoreNameRequest
@@ -1736,17 +1715,6 @@ namespace TencentCloud
                 TableOCROutcome TableOCR(const Model::TableOCRRequest &request);
                 void TableOCRAsync(const Model::TableOCRRequest& request, const TableOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TableOCROutcomeCallable TableOCRCallable(const Model::TableOCRRequest& request);
-
-                /**
-                 *本接口支持出租车发票关键字段的识别，包括发票号码、发票代码、金额、日期、上下车时间、里程、车牌号、发票类型及所属地区等字段。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req TaxiInvoiceOCRRequest
-                 * @return TaxiInvoiceOCROutcome
-                 */
-                TaxiInvoiceOCROutcome TaxiInvoiceOCR(const Model::TaxiInvoiceOCRRequest &request);
-                void TaxiInvoiceOCRAsync(const Model::TaxiInvoiceOCRRequest& request, const TaxiInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                TaxiInvoiceOCROutcomeCallable TaxiInvoiceOCRCallable(const Model::TaxiInvoiceOCRRequest& request);
 
                 /**
                  *本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。

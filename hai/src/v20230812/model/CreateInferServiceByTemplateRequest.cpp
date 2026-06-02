@@ -28,7 +28,8 @@ CreateInferServiceByTemplateRequest::CreateInferServiceByTemplateRequest() :
     m_replicasHasBeenSet(false),
     m_serviceChargeTypeHasBeenSet(false),
     m_hyperParamHasBeenSet(false),
-    m_networkSettingHasBeenSet(false)
+    m_networkSettingHasBeenSet(false),
+    m_securityTypeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string CreateInferServiceByTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_networkSetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_securityType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,6 +200,22 @@ void CreateInferServiceByTemplateRequest::SetNetworkSetting(const NetworkSetting
 bool CreateInferServiceByTemplateRequest::NetworkSettingHasBeenSet() const
 {
     return m_networkSettingHasBeenSet;
+}
+
+string CreateInferServiceByTemplateRequest::GetSecurityType() const
+{
+    return m_securityType;
+}
+
+void CreateInferServiceByTemplateRequest::SetSecurityType(const string& _securityType)
+{
+    m_securityType = _securityType;
+    m_securityTypeHasBeenSet = true;
+}
+
+bool CreateInferServiceByTemplateRequest::SecurityTypeHasBeenSet() const
+{
+    return m_securityTypeHasBeenSet;
 }
 
 

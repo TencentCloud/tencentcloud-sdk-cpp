@@ -34,7 +34,11 @@ DescribePredictiveDialingCampaignResponse::DescribePredictiveDialingCampaignResp
     m_retryTimesHasBeenSet(false),
     m_retryIntervalHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_variablesHasBeenSet(false),
+    m_uUIHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -182,6 +186,56 @@ CoreInternalOutcome DescribePredictiveDialingCampaignResponse::Deserialize(const
         m_endTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Variables") && !rsp["Variables"].IsNull())
+    {
+        if (!rsp["Variables"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Variables` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Variables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Variable item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_variables.push_back(item);
+        }
+        m_variablesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UUI") && !rsp["UUI"].IsNull())
+    {
+        if (!rsp["UUI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UUI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uUI = string(rsp["UUI"].GetString());
+        m_uUIHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("StatusReason") && !rsp["StatusReason"].IsNull())
+    {
+        if (!rsp["StatusReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusReason = rsp["StatusReason"].GetInt64();
+        m_statusReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +332,45 @@ string DescribePredictiveDialingCampaignResponse::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_variablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Variables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_variables.begin(); itr != m_variables.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_uUIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_statusReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_statusReason, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +493,46 @@ int64_t DescribePredictiveDialingCampaignResponse::GetEndTime() const
 bool DescribePredictiveDialingCampaignResponse::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<Variable> DescribePredictiveDialingCampaignResponse::GetVariables() const
+{
+    return m_variables;
+}
+
+bool DescribePredictiveDialingCampaignResponse::VariablesHasBeenSet() const
+{
+    return m_variablesHasBeenSet;
+}
+
+string DescribePredictiveDialingCampaignResponse::GetUUI() const
+{
+    return m_uUI;
+}
+
+bool DescribePredictiveDialingCampaignResponse::UUIHasBeenSet() const
+{
+    return m_uUIHasBeenSet;
+}
+
+int64_t DescribePredictiveDialingCampaignResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribePredictiveDialingCampaignResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t DescribePredictiveDialingCampaignResponse::GetStatusReason() const
+{
+    return m_statusReason;
+}
+
+bool DescribePredictiveDialingCampaignResponse::StatusReasonHasBeenSet() const
+{
+    return m_statusReasonHasBeenSet;
 }
 
 

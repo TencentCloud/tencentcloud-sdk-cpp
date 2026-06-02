@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID
-                     * @return CampaignId 任务 ID
+                     * 获取<p>任务 ID</p>
+                     * @return CampaignId <p>任务 ID</p>
                      * 
                      */
                     int64_t GetCampaignId() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool CampaignIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return Name 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return Name <p>任务名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -72,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取被叫呼叫顺序 0 随机 1 顺序
-                     * @return CallOrder 被叫呼叫顺序 0 随机 1 顺序
+                     * 获取<p>被叫呼叫顺序 0 随机 1 顺序</p>
+                     * @return CallOrder <p>被叫呼叫顺序 0 随机 1 顺序</p>
                      * 
                      */
                     int64_t GetCallOrder() const;
@@ -86,8 +87,8 @@ namespace TencentCloud
                     bool CallOrderHasBeenSet() const;
 
                     /**
-                     * 获取使用的座席技能组 ID
-                     * @return SkillGroupId 使用的座席技能组 ID
+                     * 获取<p>使用的座席技能组 ID</p>
+                     * @return SkillGroupId <p>使用的座席技能组 ID</p>
                      * 
                      */
                     int64_t GetSkillGroupId() const;
@@ -100,8 +101,8 @@ namespace TencentCloud
                     bool SkillGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取指定的 IVR ID
-                     * @return IVRId 指定的 IVR ID
+                     * 获取<p>指定的 IVR ID</p>
+                     * @return IVRId <p>指定的 IVR ID</p>
                      * 
                      */
                     int64_t GetIVRId() const;
@@ -114,8 +115,8 @@ namespace TencentCloud
                     bool IVRIdHasBeenSet() const;
 
                     /**
-                     * 获取相同应用内多个任务运行优先级，从高到底 1 - 5
-                     * @return Priority 相同应用内多个任务运行优先级，从高到底 1 - 5
+                     * 获取<p>相同应用内多个任务运行优先级，从高到底 1 - 5</p>
+                     * @return Priority <p>相同应用内多个任务运行优先级，从高到底 1 - 5</p>
                      * 
                      */
                     int64_t GetPriority() const;
@@ -128,8 +129,8 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取预期呼损率，百分比，5 - 50
-                     * @return ExpectedAbandonRate 预期呼损率，百分比，5 - 50
+                     * 获取<p>预期呼损率，百分比，5 - 50</p>
+                     * @return ExpectedAbandonRate <p>预期呼损率，百分比，5 - 50</p>
                      * 
                      */
                     int64_t GetExpectedAbandonRate() const;
@@ -142,8 +143,8 @@ namespace TencentCloud
                     bool ExpectedAbandonRateHasBeenSet() const;
 
                     /**
-                     * 获取呼叫重试次数，0 - 2
-                     * @return RetryTimes 呼叫重试次数，0 - 2
+                     * 获取<p>呼叫重试次数，0 - 2</p>
+                     * @return RetryTimes <p>呼叫重试次数，0 - 2</p>
                      * 
                      */
                     int64_t GetRetryTimes() const;
@@ -156,8 +157,8 @@ namespace TencentCloud
                     bool RetryTimesHasBeenSet() const;
 
                     /**
-                     * 获取呼叫重试间隔时间，单位秒，60 - 86400
-                     * @return RetryInterval 呼叫重试间隔时间，单位秒，60 - 86400
+                     * 获取<p>呼叫重试间隔时间，单位秒，60 - 86400</p>
+                     * @return RetryInterval <p>呼叫重试间隔时间，单位秒，60 - 86400</p>
                      * 
                      */
                     int64_t GetRetryInterval() const;
@@ -170,8 +171,8 @@ namespace TencentCloud
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取任务启动时间，Unix 时间戳，到此时间后会自动启动任务
-                     * @return StartTime 任务启动时间，Unix 时间戳，到此时间后会自动启动任务
+                     * 获取<p>任务启动时间，Unix 时间戳，到此时间后会自动启动任务</p>
+                     * @return StartTime <p>任务启动时间，Unix 时间戳，到此时间后会自动启动任务</p>
                      * 
                      */
                     int64_t GetStartTime() const;
@@ -184,8 +185,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间，Unix 时间戳，到此时间后会自动终止任务
-                     * @return EndTime 任务结束时间，Unix 时间戳，到此时间后会自动终止任务
+                     * 获取<p>任务结束时间，Unix 时间戳，到此时间后会自动终止任务</p>
+                     * @return EndTime <p>任务结束时间，Unix 时间戳，到此时间后会自动终止任务</p>
                      * 
                      */
                     int64_t GetEndTime() const;
@@ -197,73 +198,153 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义变量</p>
+                     * @return Variables <p>自定义变量</p>
+                     * 
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     * 
+                     */
+                    bool VariablesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>UUI</p>
+                     * @return UUI <p>UUI</p>
+                     * 
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     * 
+                     */
+                    bool UUIHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>0： 待开始 </li><li>1： 进行中</li><li>2： 已暂停</li><li>3： 已终止</li><li>4： 已完成</li></ul>
+                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>0： 待开始 </li><li>1： 进行中</li><li>2： 已暂停</li><li>3： 已终止</li><li>4： 已完成</li></ul>
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务状态原因 0 正常 1 手动结束 2 超时结束</p>
+                     * @return StatusReason <p>任务状态原因 0 正常 1 手动结束 2 超时结束</p>
+                     * 
+                     */
+                    int64_t GetStatusReason() const;
+
+                    /**
+                     * 判断参数 StatusReason 是否已赋值
+                     * @return StatusReason 是否已赋值
+                     * 
+                     */
+                    bool StatusReasonHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务 ID
+                     * <p>任务 ID</p>
                      */
                     int64_t m_campaignId;
                     bool m_campaignIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 被叫呼叫顺序 0 随机 1 顺序
+                     * <p>被叫呼叫顺序 0 随机 1 顺序</p>
                      */
                     int64_t m_callOrder;
                     bool m_callOrderHasBeenSet;
 
                     /**
-                     * 使用的座席技能组 ID
+                     * <p>使用的座席技能组 ID</p>
                      */
                     int64_t m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;
 
                     /**
-                     * 指定的 IVR ID
+                     * <p>指定的 IVR ID</p>
                      */
                     int64_t m_iVRId;
                     bool m_iVRIdHasBeenSet;
 
                     /**
-                     * 相同应用内多个任务运行优先级，从高到底 1 - 5
+                     * <p>相同应用内多个任务运行优先级，从高到底 1 - 5</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 预期呼损率，百分比，5 - 50
+                     * <p>预期呼损率，百分比，5 - 50</p>
                      */
                     int64_t m_expectedAbandonRate;
                     bool m_expectedAbandonRateHasBeenSet;
 
                     /**
-                     * 呼叫重试次数，0 - 2
+                     * <p>呼叫重试次数，0 - 2</p>
                      */
                     int64_t m_retryTimes;
                     bool m_retryTimesHasBeenSet;
 
                     /**
-                     * 呼叫重试间隔时间，单位秒，60 - 86400
+                     * <p>呼叫重试间隔时间，单位秒，60 - 86400</p>
                      */
                     int64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
 
                     /**
-                     * 任务启动时间，Unix 时间戳，到此时间后会自动启动任务
+                     * <p>任务启动时间，Unix 时间戳，到此时间后会自动启动任务</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间，Unix 时间戳，到此时间后会自动终止任务
+                     * <p>任务结束时间，Unix 时间戳，到此时间后会自动终止任务</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>自定义变量</p>
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
+
+                    /**
+                     * <p>UUI</p>
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
+
+                    /**
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>0： 待开始 </li><li>1： 进行中</li><li>2： 已暂停</li><li>3： 已终止</li><li>4： 已完成</li></ul>
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>任务状态原因 0 正常 1 手动结束 2 超时结束</p>
+                     */
+                    int64_t m_statusReason;
+                    bool m_statusReasonHasBeenSet;
 
                 };
             }

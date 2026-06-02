@@ -27,7 +27,8 @@ DescribePredictiveDialingCampaignsRequest::DescribePredictiveDialingCampaignsReq
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_skillGroupIdHasBeenSet(false)
+    m_skillGroupIdHasBeenSet(false),
+    m_campaignIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribePredictiveDialingCampaignsRequest::ToJsonString() const
         string key = "SkillGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_skillGroupId, allocator);
+    }
+
+    if (m_campaignIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CampaignId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_campaignId, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribePredictiveDialingCampaignsRequest::SetSkillGroupId(const int64_t& _
 bool DescribePredictiveDialingCampaignsRequest::SkillGroupIdHasBeenSet() const
 {
     return m_skillGroupIdHasBeenSet;
+}
+
+int64_t DescribePredictiveDialingCampaignsRequest::GetCampaignId() const
+{
+    return m_campaignId;
+}
+
+void DescribePredictiveDialingCampaignsRequest::SetCampaignId(const int64_t& _campaignId)
+{
+    m_campaignId = _campaignId;
+    m_campaignIdHasBeenSet = true;
+}
+
+bool DescribePredictiveDialingCampaignsRequest::CampaignIdHasBeenSet() const
+{
+    return m_campaignIdHasBeenSet;
 }
 
 

@@ -23,8 +23,7 @@ using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
 DescribeDBSAvailableRecoveryTimeRequest::DescribeDBSAvailableRecoveryTimeRequest() :
-    m_instanceIdHasBeenSet(false),
-    m_backupSetIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -41,14 +40,6 @@ string DescribeDBSAvailableRecoveryTimeRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_backupSetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupSetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_backupSetId, allocator);
     }
 
 
@@ -73,22 +64,6 @@ void DescribeDBSAvailableRecoveryTimeRequest::SetInstanceId(const string& _insta
 bool DescribeDBSAvailableRecoveryTimeRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
-}
-
-int64_t DescribeDBSAvailableRecoveryTimeRequest::GetBackupSetId() const
-{
-    return m_backupSetId;
-}
-
-void DescribeDBSAvailableRecoveryTimeRequest::SetBackupSetId(const int64_t& _backupSetId)
-{
-    m_backupSetId = _backupSetId;
-    m_backupSetIdHasBeenSet = true;
-}
-
-bool DescribeDBSAvailableRecoveryTimeRequest::BackupSetIdHasBeenSet() const
-{
-    return m_backupSetIdHasBeenSet;
 }
 
 

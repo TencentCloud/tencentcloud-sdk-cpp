@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool NetworkSettingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>
+                     * @return SecurityType <p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>
+                     * 
+                     */
+                    std::string GetSecurityType() const;
+
+                    /**
+                     * 设置<p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>
+                     * @param _securityType <p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>
+                     * 
+                     */
+                    void SetSecurityType(const std::string& _securityType);
+
+                    /**
+                     * 判断参数 SecurityType 是否已赋值
+                     * @return SecurityType 是否已赋值
+                     * 
+                     */
+                    bool SecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     NetworkSetting m_networkSetting;
                     bool m_networkSettingHasBeenSet;
+
+                    /**
+                     * <p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>
+                     */
+                    std::string m_securityType;
+                    bool m_securityTypeHasBeenSet;
 
                 };
             }

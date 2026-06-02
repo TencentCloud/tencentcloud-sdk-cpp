@@ -63,27 +63,6 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
-                    /**
-                     * 获取<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>
-                     * @return BackupSetId <p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>
-                     * 
-                     */
-                    int64_t GetBackupSetId() const;
-
-                    /**
-                     * 设置<p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>
-                     * @param _backupSetId <p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>
-                     * 
-                     */
-                    void SetBackupSetId(const int64_t& _backupSetId);
-
-                    /**
-                     * 判断参数 BackupSetId 是否已赋值
-                     * @return BackupSetId 是否已赋值
-                     * 
-                     */
-                    bool BackupSetIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -91,12 +70,6 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * <p>备份集ID,值来自 DescribeDBSBackupSets 接口返回</p>
-                     */
-                    int64_t m_backupSetId;
-                    bool m_backupSetIdHasBeenSet;
 
                 };
             }

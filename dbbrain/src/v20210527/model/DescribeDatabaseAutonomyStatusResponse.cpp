@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Dbbrain::V20210527::Model;
 using namespace std;
 
-RecognizeOnlineTaxiItineraryOCRResponse::RecognizeOnlineTaxiItineraryOCRResponse() :
-    m_onlineTaxiItineraryInfosHasBeenSet(false)
+DescribeDatabaseAutonomyStatusResponse::DescribeDatabaseAutonomyStatusResponse() :
+    m_statusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RecognizeOnlineTaxiItineraryOCRResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDatabaseAutonomyStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,49 +62,32 @@ CoreInternalOutcome RecognizeOnlineTaxiItineraryOCRResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("OnlineTaxiItineraryInfos") && !rsp["OnlineTaxiItineraryInfos"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["OnlineTaxiItineraryInfos"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `OnlineTaxiItineraryInfos` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["OnlineTaxiItineraryInfos"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Status"].IsInt64())
         {
-            OnlineTaxiItineraryInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_onlineTaxiItineraryInfos.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_onlineTaxiItineraryInfosHasBeenSet = true;
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string RecognizeOnlineTaxiItineraryOCRResponse::ToJsonString() const
+string DescribeDatabaseAutonomyStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_onlineTaxiItineraryInfosHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OnlineTaxiItineraryInfos";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_onlineTaxiItineraryInfos.begin(); itr != m_onlineTaxiItineraryInfos.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +102,14 @@ string RecognizeOnlineTaxiItineraryOCRResponse::ToJsonString() const
 }
 
 
-vector<OnlineTaxiItineraryInfo> RecognizeOnlineTaxiItineraryOCRResponse::GetOnlineTaxiItineraryInfos() const
+int64_t DescribeDatabaseAutonomyStatusResponse::GetStatus() const
 {
-    return m_onlineTaxiItineraryInfos;
+    return m_status;
 }
 
-bool RecognizeOnlineTaxiItineraryOCRResponse::OnlineTaxiItineraryInfosHasBeenSet() const
+bool DescribeDatabaseAutonomyStatusResponse::StatusHasBeenSet() const
 {
-    return m_onlineTaxiItineraryInfosHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 

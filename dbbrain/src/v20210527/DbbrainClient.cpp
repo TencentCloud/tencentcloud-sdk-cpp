@@ -1940,6 +1940,56 @@ DbbrainClient::DescribeDBSpaceStatusOutcomeCallable DbbrainClient::DescribeDBSpa
     return prom->get_future();
 }
 
+DbbrainClient::DescribeDatabaseAutonomyStatusOutcome DbbrainClient::DescribeDatabaseAutonomyStatus(const DescribeDatabaseAutonomyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseAutonomyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseAutonomyStatusResponse rsp = DescribeDatabaseAutonomyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseAutonomyStatusOutcome(rsp);
+        else
+            return DescribeDatabaseAutonomyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseAutonomyStatusOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDatabaseAutonomyStatusAsync(const DescribeDatabaseAutonomyStatusRequest& request, const DescribeDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDatabaseAutonomyStatusRequest&;
+    using Resp = DescribeDatabaseAutonomyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseAutonomyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDatabaseAutonomyStatusOutcomeCallable DbbrainClient::DescribeDatabaseAutonomyStatusCallable(const DescribeDatabaseAutonomyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseAutonomyStatusOutcome>>();
+    DescribeDatabaseAutonomyStatusAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDatabaseAutonomyStatusRequest&,
+        DescribeDatabaseAutonomyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeDiagDBInstancesOutcome DbbrainClient::DescribeDiagDBInstances(const DescribeDiagDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiagDBInstances");
@@ -4232,6 +4282,56 @@ DbbrainClient::UpdateAgentSwitchOutcomeCallable DbbrainClient::UpdateAgentSwitch
         const DbbrainClient*,
         const UpdateAgentSwitchRequest&,
         UpdateAgentSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbbrainClient::UpdateDatabaseAutonomyStatusOutcome DbbrainClient::UpdateDatabaseAutonomyStatus(const UpdateDatabaseAutonomyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDatabaseAutonomyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDatabaseAutonomyStatusResponse rsp = UpdateDatabaseAutonomyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDatabaseAutonomyStatusOutcome(rsp);
+        else
+            return UpdateDatabaseAutonomyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDatabaseAutonomyStatusOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::UpdateDatabaseAutonomyStatusAsync(const UpdateDatabaseAutonomyStatusRequest& request, const UpdateDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateDatabaseAutonomyStatusRequest&;
+    using Resp = UpdateDatabaseAutonomyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateDatabaseAutonomyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::UpdateDatabaseAutonomyStatusOutcomeCallable DbbrainClient::UpdateDatabaseAutonomyStatusCallable(const UpdateDatabaseAutonomyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateDatabaseAutonomyStatusOutcome>>();
+    UpdateDatabaseAutonomyStatusAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const UpdateDatabaseAutonomyStatusRequest&,
+        UpdateDatabaseAutonomyStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

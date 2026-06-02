@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据总量
-                     * @return TotalCount 数据总量
+                     * 获取<p>数据总量</p>
+                     * @return TotalCount <p>数据总量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取数据
-                     * @return CampaignList 数据
+                     * 获取<p>数据</p>
+                     * @return CampaignList <p>数据</p>
                      * 
                      */
                     std::vector<DescribePredictiveDialingCampaignsElement> GetCampaignList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据总量
+                     * <p>数据总量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 数据
+                     * <p>数据</p>
                      */
                     std::vector<DescribePredictiveDialingCampaignsElement> m_campaignList;
                     bool m_campaignListHasBeenSet;

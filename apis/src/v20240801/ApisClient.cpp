@@ -190,6 +190,56 @@ ApisClient::CreateAgentAppModelServicesOutcomeCallable ApisClient::CreateAgentAp
     return prom->get_future();
 }
 
+ApisClient::CreateAgentAppServicesOutcome ApisClient::CreateAgentAppServices(const CreateAgentAppServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgentAppServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgentAppServicesResponse rsp = CreateAgentAppServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgentAppServicesOutcome(rsp);
+        else
+            return CreateAgentAppServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgentAppServicesOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::CreateAgentAppServicesAsync(const CreateAgentAppServicesRequest& request, const CreateAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAgentAppServicesRequest&;
+    using Resp = CreateAgentAppServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAgentAppServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::CreateAgentAppServicesOutcomeCallable ApisClient::CreateAgentAppServicesCallable(const CreateAgentAppServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAgentAppServicesOutcome>>();
+    CreateAgentAppServicesAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const CreateAgentAppServicesRequest&,
+        CreateAgentAppServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApisClient::CreateAgentCredentialOutcome ApisClient::CreateAgentCredential(const CreateAgentCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAgentCredential");
@@ -390,6 +440,56 @@ ApisClient::CreateModelServiceOutcomeCallable ApisClient::CreateModelServiceCall
     return prom->get_future();
 }
 
+ApisClient::CreateServiceOutcome ApisClient::CreateService(const CreateServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServiceResponse rsp = CreateServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServiceOutcome(rsp);
+        else
+            return CreateServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServiceOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateServiceRequest&;
+    using Resp = CreateServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::CreateServiceOutcomeCallable ApisClient::CreateServiceCallable(const CreateServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateServiceOutcome>>();
+    CreateServiceAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const CreateServiceRequest&,
+        CreateServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApisClient::DeleteAgentAppOutcome ApisClient::DeleteAgentApp(const DeleteAgentAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAgentApp");
@@ -532,6 +632,56 @@ ApisClient::DeleteAgentAppModelServicesOutcomeCallable ApisClient::DeleteAgentAp
         const ApisClient*,
         const DeleteAgentAppModelServicesRequest&,
         DeleteAgentAppModelServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ApisClient::DeleteAgentAppServicesOutcome ApisClient::DeleteAgentAppServices(const DeleteAgentAppServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAgentAppServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAgentAppServicesResponse rsp = DeleteAgentAppServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAgentAppServicesOutcome(rsp);
+        else
+            return DeleteAgentAppServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAgentAppServicesOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::DeleteAgentAppServicesAsync(const DeleteAgentAppServicesRequest& request, const DeleteAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAgentAppServicesRequest&;
+    using Resp = DeleteAgentAppServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAgentAppServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::DeleteAgentAppServicesOutcomeCallable ApisClient::DeleteAgentAppServicesCallable(const DeleteAgentAppServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAgentAppServicesOutcome>>();
+    DeleteAgentAppServicesAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const DeleteAgentAppServicesRequest&,
+        DeleteAgentAppServicesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +890,56 @@ ApisClient::DeleteModelServiceOutcomeCallable ApisClient::DeleteModelServiceCall
     return prom->get_future();
 }
 
+ApisClient::DeleteServiceOutcome ApisClient::DeleteService(const DeleteServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServiceResponse rsp = DeleteServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServiceOutcome(rsp);
+        else
+            return DeleteServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServiceOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteServiceRequest&;
+    using Resp = DeleteServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::DeleteServiceOutcomeCallable ApisClient::DeleteServiceCallable(const DeleteServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteServiceOutcome>>();
+    DeleteServiceAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const DeleteServiceRequest&,
+        DeleteServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApisClient::DescribeAgentAppOutcome ApisClient::DescribeAgentApp(const DescribeAgentAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentApp");
@@ -882,6 +1082,56 @@ ApisClient::DescribeAgentAppModelServicesOutcomeCallable ApisClient::DescribeAge
         const ApisClient*,
         const DescribeAgentAppModelServicesRequest&,
         DescribeAgentAppModelServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ApisClient::DescribeAgentAppServicesOutcome ApisClient::DescribeAgentAppServices(const DescribeAgentAppServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentAppServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentAppServicesResponse rsp = DescribeAgentAppServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentAppServicesOutcome(rsp);
+        else
+            return DescribeAgentAppServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentAppServicesOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::DescribeAgentAppServicesAsync(const DescribeAgentAppServicesRequest& request, const DescribeAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAgentAppServicesRequest&;
+    using Resp = DescribeAgentAppServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAgentAppServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::DescribeAgentAppServicesOutcomeCallable ApisClient::DescribeAgentAppServicesCallable(const DescribeAgentAppServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAgentAppServicesOutcome>>();
+    DescribeAgentAppServicesAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const DescribeAgentAppServicesRequest&,
+        DescribeAgentAppServicesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1590,106 @@ ApisClient::DescribeModelsOutcomeCallable ApisClient::DescribeModelsCallable(con
     return prom->get_future();
 }
 
+ApisClient::DescribeServiceOutcome ApisClient::DescribeService(const DescribeServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceResponse rsp = DescribeServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceOutcome(rsp);
+        else
+            return DescribeServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::DescribeServiceAsync(const DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServiceRequest&;
+    using Resp = DescribeServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::DescribeServiceOutcomeCallable ApisClient::DescribeServiceCallable(const DescribeServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServiceOutcome>>();
+    DescribeServiceAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const DescribeServiceRequest&,
+        DescribeServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ApisClient::DescribeServicesOutcome ApisClient::DescribeServices(const DescribeServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServicesResponse rsp = DescribeServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServicesOutcome(rsp);
+        else
+            return DescribeServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServicesOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServicesRequest&;
+    using Resp = DescribeServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::DescribeServicesOutcomeCallable ApisClient::DescribeServicesCallable(const DescribeServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServicesOutcome>>();
+    DescribeServicesAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const DescribeServicesRequest&,
+        DescribeServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApisClient::ModifyAgentAppOutcome ApisClient::ModifyAgentApp(const ModifyAgentAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAgentApp");
@@ -1632,6 +1982,56 @@ ApisClient::ModifyModelServiceOutcomeCallable ApisClient::ModifyModelServiceCall
         const ApisClient*,
         const ModifyModelServiceRequest&,
         ModifyModelServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ApisClient::ModifyServiceOutcome ApisClient::ModifyService(const ModifyServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceResponse rsp = ModifyServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceOutcome(rsp);
+        else
+            return ModifyServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceOutcome(outcome.GetError());
+    }
+}
+
+void ApisClient::ModifyServiceAsync(const ModifyServiceRequest& request, const ModifyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyServiceRequest&;
+    using Resp = ModifyServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApisClient::ModifyServiceOutcomeCallable ApisClient::ModifyServiceCallable(const ModifyServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyServiceOutcome>>();
+    ModifyServiceAsync(
+    request,
+    [prom](
+        const ApisClient*,
+        const ModifyServiceRequest&,
+        ModifyServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

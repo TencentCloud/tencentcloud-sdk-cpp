@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员库名称。
-                     * @return GroupName 人员库名称。
+                     * 获取<p>人员库名称。</p>
+                     * @return GroupName <p>人员库名称。</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置人员库名称。
-                     * @param _groupName 人员库名称。
+                     * 设置<p>人员库名称。</p>
+                     * @param _groupName <p>人员库名称。</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取人员库ID。
-                     * @return GroupId 人员库ID。
+                     * 获取<p>人员库ID。</p>
+                     * @return GroupId <p>人员库ID。</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置人员库ID。
-                     * @param _groupId 人员库ID。
+                     * 设置<p>人员库ID。</p>
+                     * @param _groupId <p>人员库ID。</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取人员库自定义描述字段。
+                     * 获取<p>人员库自定义描述字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupExDescriptions 人员库自定义描述字段。
+                     * @return GroupExDescriptions <p>人员库自定义描述字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGroupExDescriptions() const;
 
                     /**
-                     * 设置人员库自定义描述字段。
+                     * 设置<p>人员库自定义描述字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupExDescriptions 人员库自定义描述字段。
+                     * @param _groupExDescriptions <p>人员库自定义描述字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool GroupExDescriptionsHasBeenSet() const;
 
                     /**
-                     * 获取人员库信息备注。
+                     * 获取<p>人员库信息备注。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tag 人员库信息备注。
+                     * @return Tag <p>人员库信息备注。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置人员库信息备注。
+                     * 设置<p>人员库信息备注。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tag 人员库信息备注。
+                     * @param _tag <p>人员库信息备注。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
+                     * 获取<p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * @return FaceModelVersion <p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
-                     * 设置人脸识别所用的算法模型版本。
+                     * 设置<p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _faceModelVersion 人脸识别所用的算法模型版本。
+                     * @param _faceModelVersion <p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,30 +164,18 @@ namespace TencentCloud
                     bool FaceModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取Group的创建时间和日期 CreationTimestamp。
-- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
-- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
-- 有关更多信息，请参阅 Unix 时间。
+                     * 获取<p>Group的创建时间和日期 CreationTimestamp。</p><ul><li>CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreationTimestamp Group的创建时间和日期 CreationTimestamp。
-- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
-- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
-- 有关更多信息，请参阅 Unix 时间。
+                     * @return CreationTimestamp <p>Group的创建时间和日期 CreationTimestamp。</p><ul><li>CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreationTimestamp() const;
 
                     /**
-                     * 设置Group的创建时间和日期 CreationTimestamp。
-- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
-- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
-- 有关更多信息，请参阅 Unix 时间。
+                     * 设置<p>Group的创建时间和日期 CreationTimestamp。</p><ul><li>CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creationTimestamp Group的创建时间和日期 CreationTimestamp。
-- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
-- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
-- 有关更多信息，请参阅 Unix 时间。
+                     * @param _creationTimestamp <p>Group的创建时间和日期 CreationTimestamp。</p><ul><li>CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,50 +188,74 @@ namespace TencentCloud
                      */
                     bool CreationTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Group的创建时间和日期 CreationTimestamp。- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 - Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。- 有关更多信息，请参阅 Unix 时间。</p>
+                     * @return UpdateTimestamp <p>Group的创建时间和日期 CreationTimestamp。- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 - Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。- 有关更多信息，请参阅 Unix 时间。</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTimestamp() const;
+
+                    /**
+                     * 设置<p>Group的创建时间和日期 CreationTimestamp。- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 - Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。- 有关更多信息，请参阅 Unix 时间。</p>
+                     * @param _updateTimestamp <p>Group的创建时间和日期 CreationTimestamp。- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 - Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。- 有关更多信息，请参阅 Unix 时间。</p>
+                     * 
+                     */
+                    void SetUpdateTimestamp(const uint64_t& _updateTimestamp);
+
+                    /**
+                     * 判断参数 UpdateTimestamp 是否已赋值
+                     * @return UpdateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimestampHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 人员库名称。
+                     * <p>人员库名称。</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 人员库ID。
+                     * <p>人员库ID。</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 人员库自定义描述字段。
+                     * <p>人员库自定义描述字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_groupExDescriptions;
                     bool m_groupExDescriptionsHasBeenSet;
 
                     /**
-                     * 人员库信息备注。
+                     * <p>人员库信息备注。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * <p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;
 
                     /**
-                     * Group的创建时间和日期 CreationTimestamp。
-- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 
-- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
-- 有关更多信息，请参阅 Unix 时间。
+                     * <p>Group的创建时间和日期 CreationTimestamp。</p><ul><li>CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_creationTimestamp;
                     bool m_creationTimestampHasBeenSet;
+
+                    /**
+                     * <p>Group的创建时间和日期 CreationTimestamp。- CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 - Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。- 有关更多信息，请参阅 Unix 时间。</p>
+                     */
+                    uint64_t m_updateTimestamp;
+                    bool m_updateTimestampHasBeenSet;
 
                 };
             }

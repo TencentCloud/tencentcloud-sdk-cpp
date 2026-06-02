@@ -2840,56 +2840,6 @@ OcrClient::RecognizeMedicalInvoiceOCROutcomeCallable OcrClient::RecognizeMedical
     return prom->get_future();
 }
 
-OcrClient::RecognizeOnlineTaxiItineraryOCROutcome OcrClient::RecognizeOnlineTaxiItineraryOCR(const RecognizeOnlineTaxiItineraryOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeOnlineTaxiItineraryOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeOnlineTaxiItineraryOCRResponse rsp = RecognizeOnlineTaxiItineraryOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeOnlineTaxiItineraryOCROutcome(rsp);
-        else
-            return RecognizeOnlineTaxiItineraryOCROutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeOnlineTaxiItineraryOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeOnlineTaxiItineraryOCRAsync(const RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RecognizeOnlineTaxiItineraryOCRRequest&;
-    using Resp = RecognizeOnlineTaxiItineraryOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RecognizeOnlineTaxiItineraryOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::RecognizeOnlineTaxiItineraryOCROutcomeCallable OcrClient::RecognizeOnlineTaxiItineraryOCRCallable(const RecognizeOnlineTaxiItineraryOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RecognizeOnlineTaxiItineraryOCROutcome>>();
-    RecognizeOnlineTaxiItineraryOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const RecognizeOnlineTaxiItineraryOCRRequest&,
-        RecognizeOnlineTaxiItineraryOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 OcrClient::RecognizeStoreNameOutcome OcrClient::RecognizeStoreName(const RecognizeStoreNameRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeStoreName");
@@ -3632,56 +3582,6 @@ OcrClient::TableOCROutcomeCallable OcrClient::TableOCRCallable(const TableOCRReq
         const OcrClient*,
         const TableOCRRequest&,
         TableOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-OcrClient::TaxiInvoiceOCROutcome OcrClient::TaxiInvoiceOCR(const TaxiInvoiceOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "TaxiInvoiceOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        TaxiInvoiceOCRResponse rsp = TaxiInvoiceOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return TaxiInvoiceOCROutcome(rsp);
-        else
-            return TaxiInvoiceOCROutcome(o.GetError());
-    }
-    else
-    {
-        return TaxiInvoiceOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::TaxiInvoiceOCRAsync(const TaxiInvoiceOCRRequest& request, const TaxiInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const TaxiInvoiceOCRRequest&;
-    using Resp = TaxiInvoiceOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "TaxiInvoiceOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::TaxiInvoiceOCROutcomeCallable OcrClient::TaxiInvoiceOCRCallable(const TaxiInvoiceOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<TaxiInvoiceOCROutcome>>();
-    TaxiInvoiceOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const TaxiInvoiceOCRRequest&,
-        TaxiInvoiceOCROutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

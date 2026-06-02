@@ -99,6 +99,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreRequest.h>
@@ -191,6 +193,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/UpdateAgentSwitchRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/UpdateAgentSwitchResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateDatabaseAutonomyStatusRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/UpdateDatabaseAutonomyStatusResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/VerifyUserAccountRequest.h>
@@ -323,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSpaceStatusResponse> DescribeDBSpaceStatusOutcome;
                 typedef std::future<DescribeDBSpaceStatusOutcome> DescribeDBSpaceStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBSpaceStatusRequest&, DescribeDBSpaceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSpaceStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseAutonomyStatusResponse> DescribeDatabaseAutonomyStatusOutcome;
+                typedef std::future<DescribeDatabaseAutonomyStatusOutcome> DescribeDatabaseAutonomyStatusOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDatabaseAutonomyStatusRequest&, DescribeDatabaseAutonomyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAutonomyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagDBInstancesResponse> DescribeDiagDBInstancesOutcome;
                 typedef std::future<DescribeDiagDBInstancesOutcome> DescribeDiagDBInstancesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDiagDBInstancesRequest&, DescribeDiagDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagDBInstancesAsyncHandler;
@@ -461,6 +468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAgentSwitchResponse> UpdateAgentSwitchOutcome;
                 typedef std::future<UpdateAgentSwitchOutcome> UpdateAgentSwitchOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::UpdateAgentSwitchRequest&, UpdateAgentSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAgentSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDatabaseAutonomyStatusResponse> UpdateDatabaseAutonomyStatusOutcome;
+                typedef std::future<UpdateDatabaseAutonomyStatusOutcome> UpdateDatabaseAutonomyStatusOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::UpdateDatabaseAutonomyStatusRequest&, UpdateDatabaseAutonomyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDatabaseAutonomyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateMonitorSwitchResponse> UpdateMonitorSwitchOutcome;
                 typedef std::future<UpdateMonitorSwitchOutcome> UpdateMonitorSwitchOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::UpdateMonitorSwitchRequest&, UpdateMonitorSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMonitorSwitchAsyncHandler;
@@ -811,6 +821,15 @@ namespace TencentCloud
                 DescribeDBSpaceStatusOutcome DescribeDBSpaceStatus(const Model::DescribeDBSpaceStatusRequest &request);
                 void DescribeDBSpaceStatusAsync(const Model::DescribeDBSpaceStatusRequest& request, const DescribeDBSpaceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSpaceStatusOutcomeCallable DescribeDBSpaceStatusCallable(const Model::DescribeDBSpaceStatusRequest& request);
+
+                /**
+                 *查询数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能状态查询。
+                 * @param req DescribeDatabaseAutonomyStatusRequest
+                 * @return DescribeDatabaseAutonomyStatusOutcome
+                 */
+                DescribeDatabaseAutonomyStatusOutcome DescribeDatabaseAutonomyStatus(const Model::DescribeDatabaseAutonomyStatusRequest &request);
+                void DescribeDatabaseAutonomyStatusAsync(const Model::DescribeDatabaseAutonomyStatusRequest& request, const DescribeDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseAutonomyStatusOutcomeCallable DescribeDatabaseAutonomyStatusCallable(const Model::DescribeDatabaseAutonomyStatusRequest& request);
 
                 /**
                  *获取实例信息列表。Region统一选择广州。
@@ -1225,6 +1244,15 @@ namespace TencentCloud
                 UpdateAgentSwitchOutcome UpdateAgentSwitch(const Model::UpdateAgentSwitchRequest &request);
                 void UpdateAgentSwitchAsync(const Model::UpdateAgentSwitchRequest& request, const UpdateAgentSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAgentSwitchOutcomeCallable UpdateAgentSwitchCallable(const Model::UpdateAgentSwitchRequest& request);
+
+                /**
+                 *设置数据库自治功能的开关状态。当前支持 MongoDB 的索引推荐（AutoIndexAdvice）功能的开启或关闭。
+                 * @param req UpdateDatabaseAutonomyStatusRequest
+                 * @return UpdateDatabaseAutonomyStatusOutcome
+                 */
+                UpdateDatabaseAutonomyStatusOutcome UpdateDatabaseAutonomyStatus(const Model::UpdateDatabaseAutonomyStatusRequest &request);
+                void UpdateDatabaseAutonomyStatusAsync(const Model::UpdateDatabaseAutonomyStatusRequest& request, const UpdateDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDatabaseAutonomyStatusOutcomeCallable UpdateDatabaseAutonomyStatusCallable(const Model::UpdateDatabaseAutonomyStatusRequest& request);
 
                 /**
                  *更新Agent实例状态（停止或重连实例）

@@ -112,7 +112,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/AuditRuleTemplateInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplateDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ExportResourcePackageDeductDetailsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/AIOptimizerTaskData.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeRedoLogListByVaultItem.h
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ParamItemInfo.h
@@ -175,7 +175,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ManualBackupData.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogsRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/InquirePriceModifyResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceAuditLogFilter.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterReplicationObjectResponse.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeProxyVersionRequest.h
@@ -316,6 +316,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/Package.h
+  include/tencentcloud/cynosdb/v20190107/model/InquirePriceModifyResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteAccountsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenClusterTransparentEncryptRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ReloadBalanceProxyNodeRequest.h
@@ -451,7 +452,6 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ClusterTaskId.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterAccountsResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountHostRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h
@@ -540,6 +540,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AuditLogFile.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleTemplatesResponse.h
@@ -633,7 +634,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceGroup.h
   include/tencentcloud/cynosdb/v20190107/model/ActivateLibraDBInstanceRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ExportResourcePackageDeductDetailsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifiableInfo.h
   include/tencentcloud/cynosdb/v20190107/model/TaskMaintainInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyRequest.h
@@ -751,7 +752,7 @@ set(cynosdb_src
   src/v20190107/model/AuditRuleTemplateInfo.cpp
   src/v20190107/model/DescribeParamTemplateDetailRequest.cpp
   src/v20190107/model/OpenReadOnlyInstanceExclusiveAccessRequest.cpp
-  src/v20190107/model/ExportResourcePackageDeductDetailsRequest.cpp
+  src/v20190107/model/AIOptimizerTaskData.cpp
   src/v20190107/model/DescribeRedoLogListByVaultItem.cpp
   src/v20190107/model/StartCLSDeliveryResponse.cpp
   src/v20190107/model/ParamItemInfo.cpp
@@ -814,7 +815,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeServerlessInstanceSpecsResponse.cpp
   src/v20190107/model/ManualBackupData.cpp
   src/v20190107/model/DescribeBinlogsRequest.cpp
-  src/v20190107/model/InquirePriceModifyResponse.cpp
+  src/v20190107/model/DescribeSSLStatusResponse.cpp
   src/v20190107/model/InstanceAuditLogFilter.cpp
   src/v20190107/model/ModifyLibraDBClusterReplicationObjectResponse.cpp
   src/v20190107/model/UpgradeProxyVersionRequest.cpp
@@ -955,6 +956,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeInstanceErrorLogsRequest.cpp
   src/v20190107/model/DescribeInstanceDetailRequest.cpp
   src/v20190107/model/Package.cpp
+  src/v20190107/model/InquirePriceModifyResponse.cpp
   src/v20190107/model/DeleteAccountsRequest.cpp
   src/v20190107/model/OpenClusterTransparentEncryptRequest.cpp
   src/v20190107/model/ReloadBalanceProxyNodeRequest.cpp
@@ -1090,7 +1092,6 @@ set(cynosdb_src
   src/v20190107/model/OfflineClusterResponse.cpp
   src/v20190107/model/ClusterTaskId.cpp
   src/v20190107/model/DeleteLibraDBClusterAccountsResponse.cpp
-  src/v20190107/model/DescribeSSLStatusResponse.cpp
   src/v20190107/model/ModifyClusterGlobalEncryptionRequest.cpp
   src/v20190107/model/ModifyAccountHostRequest.cpp
   src/v20190107/model/DescribeFlowRequest.cpp
@@ -1179,6 +1180,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.cpp
   src/v20190107/model/DescribeIsolatedInstancesRequest.cpp
   src/v20190107/model/ModifyAccountParamsRequest.cpp
+  src/v20190107/model/ResetAccountPasswordRequest.cpp
   src/v20190107/model/CheckCreateLibraDBInstanceResponse.cpp
   src/v20190107/model/AuditLogFile.cpp
   src/v20190107/model/DescribeAuditRuleTemplatesResponse.cpp
@@ -1272,7 +1274,7 @@ set(cynosdb_src
   src/v20190107/model/LogicBackupConfigInfo.cpp
   src/v20190107/model/CynosdbInstanceGroup.cpp
   src/v20190107/model/ActivateLibraDBInstanceRequest.cpp
-  src/v20190107/model/ResetAccountPasswordRequest.cpp
+  src/v20190107/model/ExportResourcePackageDeductDetailsRequest.cpp
   src/v20190107/model/ModifiableInfo.cpp
   src/v20190107/model/TaskMaintainInfo.cpp
   src/v20190107/model/DescribeServerlessStrategyRequest.cpp

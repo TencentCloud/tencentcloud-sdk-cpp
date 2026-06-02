@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分页尺寸，最大为 100
-                     * @return PageSize 分页尺寸，最大为 100
+                     * 获取<p>分页尺寸，最大为 100</p>
+                     * @return PageSize <p>分页尺寸，最大为 100</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页尺寸，最大为 100
-                     * @param _pageSize 分页尺寸，最大为 100
+                     * 设置<p>分页尺寸，最大为 100</p>
+                     * @param _pageSize <p>分页尺寸，最大为 100</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码，从 0 开始
-                     * @return PageNumber 分页页码，从 0 开始
+                     * 获取<p>分页页码，从 0 开始</p>
+                     * @return PageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码，从 0 开始
-                     * @param _pageNumber 分页页码，从 0 开始
+                     * 设置<p>分页页码，从 0 开始</p>
+                     * @param _pageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取查询任务列表名称关键字
-                     * @return Name 查询任务列表名称关键字
+                     * 获取<p>查询任务列表名称关键字</p>
+                     * @return Name <p>查询任务列表名称关键字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置查询任务列表名称关键字
-                     * @param _name 查询任务列表名称关键字
+                     * 设置<p>查询任务列表名称关键字</p>
+                     * @param _name <p>查询任务列表名称关键字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取查询任务列表技能组 ID
-                     * @return SkillGroupId 查询任务列表技能组 ID
+                     * 获取<p>查询任务列表技能组 ID</p>
+                     * @return SkillGroupId <p>查询任务列表技能组 ID</p>
                      * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
-                     * 设置查询任务列表技能组 ID
-                     * @param _skillGroupId 查询任务列表技能组 ID
+                     * 设置<p>查询任务列表技能组 ID</p>
+                     * @param _skillGroupId <p>查询任务列表技能组 ID</p>
                      * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool SkillGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务 ID</p>
+                     * @return CampaignId <p>任务 ID</p>
+                     * 
+                     */
+                    int64_t GetCampaignId() const;
+
+                    /**
+                     * 设置<p>任务 ID</p>
+                     * @param _campaignId <p>任务 ID</p>
+                     * 
+                     */
+                    void SetCampaignId(const int64_t& _campaignId);
+
+                    /**
+                     * 判断参数 CampaignId 是否已赋值
+                     * @return CampaignId 是否已赋值
+                     * 
+                     */
+                    bool CampaignIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分页尺寸，最大为 100
+                     * <p>分页尺寸，最大为 100</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码，从 0 开始
+                     * <p>分页页码，从 0 开始</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 查询任务列表名称关键字
+                     * <p>查询任务列表名称关键字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 查询任务列表技能组 ID
+                     * <p>查询任务列表技能组 ID</p>
                      */
                     int64_t m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;
+
+                    /**
+                     * <p>任务 ID</p>
+                     */
+                    int64_t m_campaignId;
+                    bool m_campaignIdHasBeenSet;
 
                 };
             }

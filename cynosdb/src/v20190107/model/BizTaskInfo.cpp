@@ -60,7 +60,8 @@ BizTaskInfo::BizTaskInfo() :
     m_taskProgressInfoHasBeenSet(false),
     m_gdnTaskInfoHasBeenSet(false),
     m_vaultIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false)
+    m_vaultNameHasBeenSet(false),
+    m_aIOptimizerTaskDataHasBeenSet(false)
 {
 }
 
@@ -566,6 +567,23 @@ CoreInternalOutcome BizTaskInfo::Deserialize(const rapidjson::Value &value)
         m_vaultNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AIOptimizerTaskData") && !value["AIOptimizerTaskData"].IsNull())
+    {
+        if (!value["AIOptimizerTaskData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BizTaskInfo.AIOptimizerTaskData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aIOptimizerTaskData.Deserialize(value["AIOptimizerTaskData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aIOptimizerTaskDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -916,6 +934,15 @@ void BizTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VaultName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vaultName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aIOptimizerTaskDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIOptimizerTaskData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aIOptimizerTaskData.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1559,5 +1586,21 @@ void BizTaskInfo::SetVaultName(const string& _vaultName)
 bool BizTaskInfo::VaultNameHasBeenSet() const
 {
     return m_vaultNameHasBeenSet;
+}
+
+AIOptimizerTaskData BizTaskInfo::GetAIOptimizerTaskData() const
+{
+    return m_aIOptimizerTaskData;
+}
+
+void BizTaskInfo::SetAIOptimizerTaskData(const AIOptimizerTaskData& _aIOptimizerTaskData)
+{
+    m_aIOptimizerTaskData = _aIOptimizerTaskData;
+    m_aIOptimizerTaskDataHasBeenSet = true;
+}
+
+bool BizTaskInfo::AIOptimizerTaskDataHasBeenSet() const
+{
+    return m_aIOptimizerTaskDataHasBeenSet;
 }
 

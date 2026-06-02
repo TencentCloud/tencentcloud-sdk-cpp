@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置总数
-                     * @param _totalCount 总数
+                     * 设置<p>总数</p>
+                     * @param _totalCount <p>总数</p>
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取 
-                     * @return Items  
+                     * 获取<p>授权信息</p>
+                     * @return Items <p>授权信息</p>
                      * 
                      */
                     std::vector<GrantedAccountItem> GetItems() const;
 
                     /**
-                     * 设置 
-                     * @param _items  
+                     * 设置<p>授权信息</p>
+                     * @param _items <p>授权信息</p>
                      * 
                      */
                     void SetItems(const std::vector<GrantedAccountItem>& _items);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     *  
+                     * <p>授权信息</p>
                      */
                     std::vector<GrantedAccountItem> m_items;
                     bool m_itemsHasBeenSet;

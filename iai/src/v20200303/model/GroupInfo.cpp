@@ -26,7 +26,8 @@ GroupInfo::GroupInfo() :
     m_groupExDescriptionsHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_faceModelVersionHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false)
+    m_creationTimestampHasBeenSet(false),
+    m_updateTimestampHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
         m_creationTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTimestamp") && !value["UpdateTimestamp"].IsNull())
+    {
+        if (!value["UpdateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupInfo.UpdateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTimestamp = value["UpdateTimestamp"].GetUint64();
+        m_updateTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void GroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreationTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationTimestamp, allocator);
+    }
+
+    if (m_updateTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTimestamp, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void GroupInfo::SetCreationTimestamp(const uint64_t& _creationTimestamp)
 bool GroupInfo::CreationTimestampHasBeenSet() const
 {
     return m_creationTimestampHasBeenSet;
+}
+
+uint64_t GroupInfo::GetUpdateTimestamp() const
+{
+    return m_updateTimestamp;
+}
+
+void GroupInfo::SetUpdateTimestamp(const uint64_t& _updateTimestamp)
+{
+    m_updateTimestamp = _updateTimestamp;
+    m_updateTimestampHasBeenSet = true;
+}
+
+bool GroupInfo::UpdateTimestampHasBeenSet() const
+{
+    return m_updateTimestampHasBeenSet;
 }
 

@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool VerifyChannelHasBeenSet() const;
 
                     /**
-                     * 获取<p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **sms**  :  (默认)短信</li><li>  **email**  :  邮件</li><li>  **all**  :  邮件+短信</li><li>   **none**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>sms： 短信通知</li><li>email： 邮件通知</li><li>all： 邮件通知+短信通知</li><li>none： 不做任何形式的通知</li></ul>
-                     * @return NotifyType <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **sms**  :  (默认)短信</li><li>  **email**  :  邮件</li><li>  **all**  :  邮件+短信</li><li>   **none**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>sms： 短信通知</li><li>email： 邮件通知</li><li>all： 邮件通知+短信通知</li><li>none： 不做任何形式的通知</li></ul>
+                     * 获取<p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **SMS**  :  (默认)短信</li><li>  **EMAIL**  :  邮件</li><li>  **ALL**  :  邮件+短信</li><li>   **NONE**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>SMS： 短信通知</li><li>EMAIL： 邮件通知</li><li>ALL： 邮件通知+短信通知</li><li>NONE： 不做任何形式的通知</li></ul>
+                     * @return NotifyType <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **SMS**  :  (默认)短信</li><li>  **EMAIL**  :  邮件</li><li>  **ALL**  :  邮件+短信</li><li>   **NONE**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>SMS： 短信通知</li><li>EMAIL： 邮件通知</li><li>ALL： 邮件通知+短信通知</li><li>NONE： 不做任何形式的通知</li></ul>
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置<p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **sms**  :  (默认)短信</li><li>  **email**  :  邮件</li><li>  **all**  :  邮件+短信</li><li>   **none**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>sms： 短信通知</li><li>email： 邮件通知</li><li>all： 邮件通知+短信通知</li><li>none： 不做任何形式的通知</li></ul>
-                     * @param _notifyType <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **sms**  :  (默认)短信</li><li>  **email**  :  邮件</li><li>  **all**  :  邮件+短信</li><li>   **none**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>sms： 短信通知</li><li>email： 邮件通知</li><li>all： 邮件通知+短信通知</li><li>none： 不做任何形式的通知</li></ul>
+                     * 设置<p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **SMS**  :  (默认)短信</li><li>  **EMAIL**  :  邮件</li><li>  **ALL**  :  邮件+短信</li><li>   **NONE**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>SMS： 短信通知</li><li>EMAIL： 邮件通知</li><li>ALL： 邮件通知+短信通知</li><li>NONE： 不做任何形式的通知</li></ul>
+                     * @param _notifyType <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **SMS**  :  (默认)短信</li><li>  **EMAIL**  :  邮件</li><li>  **ALL**  :  邮件+短信</li><li>   **NONE**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>SMS： 短信通知</li><li>EMAIL： 邮件通知</li><li>ALL： 邮件通知+短信通知</li><li>NONE： 不做任何形式的通知</li></ul>
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -752,7 +752,7 @@ namespace TencentCloud
                     bool m_verifyChannelHasBeenSet;
 
                     /**
-                     * <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **sms**  :  (默认)短信</li><li>  **email**  :  邮件</li><li>  **all**  :  邮件+短信</li><li>   **none**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>sms： 短信通知</li><li>email： 邮件通知</li><li>all： 邮件通知+短信通知</li><li>none： 不做任何形式的通知</li></ul>
+                     * <p>通知签署方经办人的方式,  有以下途径:</p><ul><li>  **SMS**  :  (默认)短信</li><li>  **EMAIL**  :  邮件</li><li>  **ALL**  :  邮件+短信</li><li>   **NONE**   : 不通知</li></ul><p>注: <code>既是发起方又是签署方时，不给此签署方发送短信</code></p><p>枚举值：</p><ul><li>SMS： 短信通知</li><li>EMAIL： 邮件通知</li><li>ALL： 邮件通知+短信通知</li><li>NONE： 不做任何形式的通知</li></ul>
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

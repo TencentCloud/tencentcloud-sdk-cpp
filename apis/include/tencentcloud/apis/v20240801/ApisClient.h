@@ -29,6 +29,8 @@
 #include <tencentcloud/apis/v20240801/model/CreateAgentAppMcpServersResponse.h>
 #include <tencentcloud/apis/v20240801/model/CreateAgentAppModelServicesRequest.h>
 #include <tencentcloud/apis/v20240801/model/CreateAgentAppModelServicesResponse.h>
+#include <tencentcloud/apis/v20240801/model/CreateAgentAppServicesRequest.h>
+#include <tencentcloud/apis/v20240801/model/CreateAgentAppServicesResponse.h>
 #include <tencentcloud/apis/v20240801/model/CreateAgentCredentialRequest.h>
 #include <tencentcloud/apis/v20240801/model/CreateAgentCredentialResponse.h>
 #include <tencentcloud/apis/v20240801/model/CreateMcpServerRequest.h>
@@ -37,12 +39,16 @@
 #include <tencentcloud/apis/v20240801/model/CreateModelResponse.h>
 #include <tencentcloud/apis/v20240801/model/CreateModelServiceRequest.h>
 #include <tencentcloud/apis/v20240801/model/CreateModelServiceResponse.h>
+#include <tencentcloud/apis/v20240801/model/CreateServiceRequest.h>
+#include <tencentcloud/apis/v20240801/model/CreateServiceResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppRequest.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppMcpServersRequest.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppMcpServersResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppModelServicesRequest.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentAppModelServicesResponse.h>
+#include <tencentcloud/apis/v20240801/model/DeleteAgentAppServicesRequest.h>
+#include <tencentcloud/apis/v20240801/model/DeleteAgentAppServicesResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentCredentialRequest.h>
 #include <tencentcloud/apis/v20240801/model/DeleteAgentCredentialResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteMcpServerRequest.h>
@@ -51,12 +57,16 @@
 #include <tencentcloud/apis/v20240801/model/DeleteModelResponse.h>
 #include <tencentcloud/apis/v20240801/model/DeleteModelServiceRequest.h>
 #include <tencentcloud/apis/v20240801/model/DeleteModelServiceResponse.h>
+#include <tencentcloud/apis/v20240801/model/DeleteServiceRequest.h>
+#include <tencentcloud/apis/v20240801/model/DeleteServiceResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppRequest.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppMcpServersRequest.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppMcpServersResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppModelServicesRequest.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppModelServicesResponse.h>
+#include <tencentcloud/apis/v20240801/model/DescribeAgentAppServicesRequest.h>
+#include <tencentcloud/apis/v20240801/model/DescribeAgentAppServicesResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppsRequest.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentAppsResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentCredentialRequest.h>
@@ -75,6 +85,10 @@
 #include <tencentcloud/apis/v20240801/model/DescribeModelServicesResponse.h>
 #include <tencentcloud/apis/v20240801/model/DescribeModelsRequest.h>
 #include <tencentcloud/apis/v20240801/model/DescribeModelsResponse.h>
+#include <tencentcloud/apis/v20240801/model/DescribeServiceRequest.h>
+#include <tencentcloud/apis/v20240801/model/DescribeServiceResponse.h>
+#include <tencentcloud/apis/v20240801/model/DescribeServicesRequest.h>
+#include <tencentcloud/apis/v20240801/model/DescribeServicesResponse.h>
 #include <tencentcloud/apis/v20240801/model/ModifyAgentAppRequest.h>
 #include <tencentcloud/apis/v20240801/model/ModifyAgentAppResponse.h>
 #include <tencentcloud/apis/v20240801/model/ModifyAgentAppModelServicesRequest.h>
@@ -87,6 +101,8 @@
 #include <tencentcloud/apis/v20240801/model/ModifyModelResponse.h>
 #include <tencentcloud/apis/v20240801/model/ModifyModelServiceRequest.h>
 #include <tencentcloud/apis/v20240801/model/ModifyModelServiceResponse.h>
+#include <tencentcloud/apis/v20240801/model/ModifyServiceRequest.h>
+#include <tencentcloud/apis/v20240801/model/ModifyServiceResponse.h>
 
 
 namespace TencentCloud
@@ -110,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAgentAppModelServicesResponse> CreateAgentAppModelServicesOutcome;
                 typedef std::future<CreateAgentAppModelServicesOutcome> CreateAgentAppModelServicesOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::CreateAgentAppModelServicesRequest&, CreateAgentAppModelServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentAppModelServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAgentAppServicesResponse> CreateAgentAppServicesOutcome;
+                typedef std::future<CreateAgentAppServicesOutcome> CreateAgentAppServicesOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::CreateAgentAppServicesRequest&, CreateAgentAppServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentAppServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAgentCredentialResponse> CreateAgentCredentialOutcome;
                 typedef std::future<CreateAgentCredentialOutcome> CreateAgentCredentialOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::CreateAgentCredentialRequest&, CreateAgentCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentCredentialAsyncHandler;
@@ -122,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateModelServiceResponse> CreateModelServiceOutcome;
                 typedef std::future<CreateModelServiceOutcome> CreateModelServiceOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::CreateModelServiceRequest&, CreateModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateServiceResponse> CreateServiceOutcome;
+                typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::CreateServiceRequest&, CreateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAgentAppResponse> DeleteAgentAppOutcome;
                 typedef std::future<DeleteAgentAppOutcome> DeleteAgentAppOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DeleteAgentAppRequest&, DeleteAgentAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentAppAsyncHandler;
@@ -131,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAgentAppModelServicesResponse> DeleteAgentAppModelServicesOutcome;
                 typedef std::future<DeleteAgentAppModelServicesOutcome> DeleteAgentAppModelServicesOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DeleteAgentAppModelServicesRequest&, DeleteAgentAppModelServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentAppModelServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAgentAppServicesResponse> DeleteAgentAppServicesOutcome;
+                typedef std::future<DeleteAgentAppServicesOutcome> DeleteAgentAppServicesOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::DeleteAgentAppServicesRequest&, DeleteAgentAppServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentAppServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAgentCredentialResponse> DeleteAgentCredentialOutcome;
                 typedef std::future<DeleteAgentCredentialOutcome> DeleteAgentCredentialOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DeleteAgentCredentialRequest&, DeleteAgentCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentCredentialAsyncHandler;
@@ -143,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteModelServiceResponse> DeleteModelServiceOutcome;
                 typedef std::future<DeleteModelServiceOutcome> DeleteModelServiceOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DeleteModelServiceRequest&, DeleteModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteServiceResponse> DeleteServiceOutcome;
+                typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::DeleteServiceRequest&, DeleteServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentAppResponse> DescribeAgentAppOutcome;
                 typedef std::future<DescribeAgentAppOutcome> DescribeAgentAppOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DescribeAgentAppRequest&, DescribeAgentAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAppAsyncHandler;
@@ -152,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAgentAppModelServicesResponse> DescribeAgentAppModelServicesOutcome;
                 typedef std::future<DescribeAgentAppModelServicesOutcome> DescribeAgentAppModelServicesOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DescribeAgentAppModelServicesRequest&, DescribeAgentAppModelServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAppModelServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentAppServicesResponse> DescribeAgentAppServicesOutcome;
+                typedef std::future<DescribeAgentAppServicesOutcome> DescribeAgentAppServicesOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::DescribeAgentAppServicesRequest&, DescribeAgentAppServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAppServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentAppsResponse> DescribeAgentAppsOutcome;
                 typedef std::future<DescribeAgentAppsOutcome> DescribeAgentAppsOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DescribeAgentAppsRequest&, DescribeAgentAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAppsAsyncHandler;
@@ -179,6 +210,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelsResponse> DescribeModelsOutcome;
                 typedef std::future<DescribeModelsOutcome> DescribeModelsOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::DescribeModelsRequest&, DescribeModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceResponse> DescribeServiceOutcome;
+                typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::DescribeServiceRequest&, DescribeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServicesResponse> DescribeServicesOutcome;
+                typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::DescribeServicesRequest&, DescribeServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAgentAppResponse> ModifyAgentAppOutcome;
                 typedef std::future<ModifyAgentAppOutcome> ModifyAgentAppOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::ModifyAgentAppRequest&, ModifyAgentAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentAppAsyncHandler;
@@ -197,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
                 typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
                 typedef std::function<void(const ApisClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServiceResponse> ModifyServiceOutcome;
+                typedef std::future<ModifyServiceOutcome> ModifyServiceOutcomeCallable;
+                typedef std::function<void(const ApisClient*, const Model::ModifyServiceRequest&, ModifyServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAsyncHandler;
 
 
 
@@ -226,6 +266,15 @@ namespace TencentCloud
                 CreateAgentAppModelServicesOutcome CreateAgentAppModelServices(const Model::CreateAgentAppModelServicesRequest &request);
                 void CreateAgentAppModelServicesAsync(const Model::CreateAgentAppModelServicesRequest& request, const CreateAgentAppModelServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAgentAppModelServicesOutcomeCallable CreateAgentAppModelServicesCallable(const Model::CreateAgentAppModelServicesRequest& request);
+
+                /**
+                 *应用关联API
+                 * @param req CreateAgentAppServicesRequest
+                 * @return CreateAgentAppServicesOutcome
+                 */
+                CreateAgentAppServicesOutcome CreateAgentAppServices(const Model::CreateAgentAppServicesRequest &request);
+                void CreateAgentAppServicesAsync(const Model::CreateAgentAppServicesRequest& request, const CreateAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgentAppServicesOutcomeCallable CreateAgentAppServicesCallable(const Model::CreateAgentAppServicesRequest& request);
 
                 /**
                  *创建Credential
@@ -264,6 +313,15 @@ namespace TencentCloud
                 CreateModelServiceOutcomeCallable CreateModelServiceCallable(const Model::CreateModelServiceRequest& request);
 
                 /**
+                 *创建服务
+                 * @param req CreateServiceRequest
+                 * @return CreateServiceOutcome
+                 */
+                CreateServiceOutcome CreateService(const Model::CreateServiceRequest &request);
+                void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request);
+
+                /**
                  *删除app
                  * @param req DeleteAgentAppRequest
                  * @return DeleteAgentAppOutcome
@@ -289,6 +347,15 @@ namespace TencentCloud
                 DeleteAgentAppModelServicesOutcome DeleteAgentAppModelServices(const Model::DeleteAgentAppModelServicesRequest &request);
                 void DeleteAgentAppModelServicesAsync(const Model::DeleteAgentAppModelServicesRequest& request, const DeleteAgentAppModelServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAgentAppModelServicesOutcomeCallable DeleteAgentAppModelServicesCallable(const Model::DeleteAgentAppModelServicesRequest& request);
+
+                /**
+                 *应用API关联解除
+                 * @param req DeleteAgentAppServicesRequest
+                 * @return DeleteAgentAppServicesOutcome
+                 */
+                DeleteAgentAppServicesOutcome DeleteAgentAppServices(const Model::DeleteAgentAppServicesRequest &request);
+                void DeleteAgentAppServicesAsync(const Model::DeleteAgentAppServicesRequest& request, const DeleteAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAgentAppServicesOutcomeCallable DeleteAgentAppServicesCallable(const Model::DeleteAgentAppServicesRequest& request);
 
                 /**
                  *删除Credential
@@ -327,6 +394,15 @@ namespace TencentCloud
                 DeleteModelServiceOutcomeCallable DeleteModelServiceCallable(const Model::DeleteModelServiceRequest& request);
 
                 /**
+                 *删除服务
+                 * @param req DeleteServiceRequest
+                 * @return DeleteServiceOutcome
+                 */
+                DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest &request);
+                void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request);
+
+                /**
                  *查询app详情
                  * @param req DescribeAgentAppRequest
                  * @return DescribeAgentAppOutcome
@@ -352,6 +428,15 @@ namespace TencentCloud
                 DescribeAgentAppModelServicesOutcome DescribeAgentAppModelServices(const Model::DescribeAgentAppModelServicesRequest &request);
                 void DescribeAgentAppModelServicesAsync(const Model::DescribeAgentAppModelServicesRequest& request, const DescribeAgentAppModelServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentAppModelServicesOutcomeCallable DescribeAgentAppModelServicesCallable(const Model::DescribeAgentAppModelServicesRequest& request);
+
+                /**
+                 *创建app
+                 * @param req DescribeAgentAppServicesRequest
+                 * @return DescribeAgentAppServicesOutcome
+                 */
+                DescribeAgentAppServicesOutcome DescribeAgentAppServices(const Model::DescribeAgentAppServicesRequest &request);
+                void DescribeAgentAppServicesAsync(const Model::DescribeAgentAppServicesRequest& request, const DescribeAgentAppServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentAppServicesOutcomeCallable DescribeAgentAppServicesCallable(const Model::DescribeAgentAppServicesRequest& request);
 
                 /**
                  *查询app列表
@@ -435,6 +520,24 @@ namespace TencentCloud
                 DescribeModelsOutcomeCallable DescribeModelsCallable(const Model::DescribeModelsRequest& request);
 
                 /**
+                 *查询服务详情
+                 * @param req DescribeServiceRequest
+                 * @return DescribeServiceOutcome
+                 */
+                DescribeServiceOutcome DescribeService(const Model::DescribeServiceRequest &request);
+                void DescribeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceOutcomeCallable DescribeServiceCallable(const Model::DescribeServiceRequest& request);
+
+                /**
+                 *查询服务列表
+                 * @param req DescribeServicesRequest
+                 * @return DescribeServicesOutcome
+                 */
+                DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest &request);
+                void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request);
+
+                /**
                  *修改app
                  * @param req ModifyAgentAppRequest
                  * @return ModifyAgentAppOutcome
@@ -487,6 +590,15 @@ namespace TencentCloud
                 ModifyModelServiceOutcome ModifyModelService(const Model::ModifyModelServiceRequest &request);
                 void ModifyModelServiceAsync(const Model::ModifyModelServiceRequest& request, const ModifyModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModelServiceOutcomeCallable ModifyModelServiceCallable(const Model::ModifyModelServiceRequest& request);
+
+                /**
+                 *修改服务
+                 * @param req ModifyServiceRequest
+                 * @return ModifyServiceOutcome
+                 */
+                ModifyServiceOutcome ModifyService(const Model::ModifyServiceRequest &request);
+                void ModifyServiceAsync(const Model::ModifyServiceRequest& request, const ModifyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceOutcomeCallable ModifyServiceCallable(const Model::ModifyServiceRequest& request);
 
             };
         }

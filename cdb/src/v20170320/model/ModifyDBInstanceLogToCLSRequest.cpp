@@ -32,7 +32,8 @@ ModifyDBInstanceLogToCLSRequest::ModifyDBInstanceLogToCLSRequest() :
     m_logTopicHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_createIndexHasBeenSet(false),
-    m_clsRegionHasBeenSet(false)
+    m_clsRegionHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string ModifyDBInstanceLogToCLSRequest::ToJsonString() const
         string key = "ClsRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clsRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void ModifyDBInstanceLogToCLSRequest::SetClsRegion(const string& _clsRegion)
 bool ModifyDBInstanceLogToCLSRequest::ClsRegionHasBeenSet() const
 {
     return m_clsRegionHasBeenSet;
+}
+
+vector<TagInfoItem> ModifyDBInstanceLogToCLSRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void ModifyDBInstanceLogToCLSRequest::SetResourceTags(const vector<TagInfoItem>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool ModifyDBInstanceLogToCLSRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

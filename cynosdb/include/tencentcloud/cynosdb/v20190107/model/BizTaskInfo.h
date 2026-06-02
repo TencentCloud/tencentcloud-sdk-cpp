@@ -37,6 +37,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/GdnTaskInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/AIOptimizerTaskData.h>
 
 
 namespace TencentCloud
@@ -60,15 +61,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return ID 任务id
+                     * 获取<p>任务id</p>
+                     * @return ID <p>任务id</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置任务id
-                     * @param _iD 任务id
+                     * 设置<p>任务id</p>
+                     * @param _iD <p>任务id</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -81,15 +82,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取用户appid
-                     * @return AppId 用户appid
+                     * 获取<p>用户appid</p>
+                     * @return AppId <p>用户appid</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户appid
-                     * @param _appId 用户appid
+                     * 设置<p>用户appid</p>
+                     * @param _appId <p>用户appid</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -102,15 +103,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -123,15 +124,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -144,15 +145,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreateTime 任务创建时间
+                     * 获取<p>任务创建时间</p>
+                     * @return CreateTime <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createTime 任务创建时间
+                     * 设置<p>任务创建时间</p>
+                     * @param _createTime <p>任务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -165,15 +166,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取延迟执行时间
-                     * @return DelayTime 延迟执行时间
+                     * 获取<p>延迟执行时间</p>
+                     * @return DelayTime <p>延迟执行时间</p>
                      * 
                      */
                     std::string GetDelayTime() const;
 
                     /**
-                     * 设置延迟执行时间
-                     * @param _delayTime 延迟执行时间
+                     * 设置<p>延迟执行时间</p>
+                     * @param _delayTime <p>延迟执行时间</p>
                      * 
                      */
                     void SetDelayTime(const std::string& _delayTime);
@@ -186,15 +187,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务失败信息
-                     * @return ErrMsg 任务失败信息
+                     * 获取<p>任务失败信息</p>
+                     * @return ErrMsg <p>任务失败信息</p>
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
-                     * 设置任务失败信息
-                     * @param _errMsg 任务失败信息
+                     * 设置<p>任务失败信息</p>
+                     * @param _errMsg <p>任务失败信息</p>
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -207,15 +208,15 @@ namespace TencentCloud
                     bool ErrMsgHasBeenSet() const;
 
                     /**
-                     * 获取异步任务流id
-                     * @return FlowId 异步任务流id
+                     * 获取<p>异步任务流id</p>
+                     * @return FlowId <p>异步任务流id</p>
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置异步任务流id
-                     * @param _flowId 异步任务流id
+                     * 设置<p>异步任务流id</p>
+                     * @param _flowId <p>异步任务流id</p>
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -228,15 +229,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取任务输入信息
-                     * @return Input 任务输入信息
+                     * 获取<p>任务输入信息</p>
+                     * @return Input <p>任务输入信息</p>
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
-                     * 设置任务输入信息
-                     * @param _input 任务输入信息
+                     * 设置<p>任务输入信息</p>
+                     * @param _input <p>任务输入信息</p>
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -249,15 +250,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取实例组id
-                     * @return InstanceGrpId 实例组id
+                     * 获取<p>实例组id</p>
+                     * @return InstanceGrpId <p>实例组id</p>
                      * @deprecated
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置实例组id
-                     * @param _instanceGrpId 实例组id
+                     * 设置<p>实例组id</p>
+                     * @param _instanceGrpId <p>实例组id</p>
                      * @deprecated
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
@@ -270,15 +271,15 @@ namespace TencentCloud
                     bool InstanceGrpIdHasBeenSet() const;
 
                     /**
-                     * 获取实例组id
-                     * @return InstanceGroupId 实例组id
+                     * 获取<p>实例组id</p>
+                     * @return InstanceGroupId <p>实例组id</p>
                      * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例组id
-                     * @param _instanceGroupId 实例组id
+                     * 设置<p>实例组id</p>
+                     * @param _instanceGroupId <p>实例组id</p>
                      * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -291,15 +292,15 @@ namespace TencentCloud
                     bool InstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -312,15 +313,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取任务操作对象id
-                     * @return ObjectId 任务操作对象id
+                     * 获取<p>任务操作对象id</p>
+                     * @return ObjectId <p>任务操作对象id</p>
                      * 
                      */
                     std::string GetObjectId() const;
 
                     /**
-                     * 设置任务操作对象id
-                     * @param _objectId 任务操作对象id
+                     * 设置<p>任务操作对象id</p>
+                     * @param _objectId <p>任务操作对象id</p>
                      * 
                      */
                     void SetObjectId(const std::string& _objectId);
@@ -333,15 +334,15 @@ namespace TencentCloud
                     bool ObjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务操作对象类型
-                     * @return ObjectType 任务操作对象类型
+                     * 获取<p>任务操作对象类型</p>
+                     * @return ObjectType <p>任务操作对象类型</p>
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
-                     * 设置任务操作对象类型
-                     * @param _objectType 任务操作对象类型
+                     * 设置<p>任务操作对象类型</p>
+                     * @param _objectType <p>任务操作对象类型</p>
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -354,15 +355,15 @@ namespace TencentCloud
                     bool ObjectTypeHasBeenSet() const;
 
                     /**
-                     * 获取操作者uin
-                     * @return Operator 操作者uin
+                     * 获取<p>操作者uin</p>
+                     * @return Operator <p>操作者uin</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者uin
-                     * @param _operator 操作者uin
+                     * 设置<p>操作者uin</p>
+                     * @param _operator <p>操作者uin</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -375,15 +376,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取任务输出信息
-                     * @return Output 任务输出信息
+                     * 获取<p>任务输出信息</p>
+                     * @return Output <p>任务输出信息</p>
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
-                     * 设置任务输出信息
-                     * @param _output 任务输出信息
+                     * 设置<p>任务输出信息</p>
+                     * @param _output <p>任务输出信息</p>
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -396,15 +397,15 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取<p>任务状态</p>
+                     * @return Status <p>任务状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param _status 任务状态
+                     * 设置<p>任务状态</p>
+                     * @param _status <p>任务状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -417,15 +418,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取<p>任务类型</p>
+                     * @return TaskType <p>任务类型</p>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型
-                     * @param _taskType 任务类型
+                     * 设置<p>任务类型</p>
+                     * @param _taskType <p>任务类型</p>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -438,15 +439,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取触发本任务的父任务ID
-                     * @return TriggerTaskId 触发本任务的父任务ID
+                     * 获取<p>触发本任务的父任务ID</p>
+                     * @return TriggerTaskId <p>触发本任务的父任务ID</p>
                      * 
                      */
                     int64_t GetTriggerTaskId() const;
 
                     /**
-                     * 设置触发本任务的父任务ID
-                     * @param _triggerTaskId 触发本任务的父任务ID
+                     * 设置<p>触发本任务的父任务ID</p>
+                     * @param _triggerTaskId <p>触发本任务的父任务ID</p>
                      * 
                      */
                     void SetTriggerTaskId(const int64_t& _triggerTaskId);
@@ -459,15 +460,15 @@ namespace TencentCloud
                     bool TriggerTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -480,15 +481,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始时间
-                     * @return StartTime 任务开始时间
+                     * 获取<p>任务开始时间</p>
+                     * @return StartTime <p>任务开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置任务开始时间
-                     * @param _startTime 任务开始时间
+                     * 设置<p>任务开始时间</p>
+                     * @param _startTime <p>任务开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -501,15 +502,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间
-                     * @return EndTime 任务结束时间
+                     * 获取<p>任务结束时间</p>
+                     * @return EndTime <p>任务结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务结束时间
-                     * @param _endTime 任务结束时间
+                     * 设置<p>任务结束时间</p>
+                     * @param _endTime <p>任务结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -522,15 +523,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -543,15 +544,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -564,15 +565,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取任务进度
-                     * @return Process 任务进度
+                     * 获取<p>任务进度</p>
+                     * @return Process <p>任务进度</p>
                      * 
                      */
                     int64_t GetProcess() const;
 
                     /**
-                     * 设置任务进度
-                     * @param _process 任务进度
+                     * 设置<p>任务进度</p>
+                     * @param _process <p>任务进度</p>
                      * 
                      */
                     void SetProcess(const int64_t& _process);
@@ -585,18 +586,18 @@ namespace TencentCloud
                     bool ProcessHasBeenSet() const;
 
                     /**
-                     * 获取修改参数任务信息
+                     * 获取<p>修改参数任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyParamsData 修改参数任务信息
+                     * @return ModifyParamsData <p>修改参数任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::vector<ModifyParamsData> GetModifyParamsData() const;
 
                     /**
-                     * 设置修改参数任务信息
+                     * 设置<p>修改参数任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyParamsData 修改参数任务信息
+                     * @param _modifyParamsData <p>修改参数任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -610,15 +611,15 @@ namespace TencentCloud
                     bool ModifyParamsDataHasBeenSet() const;
 
                     /**
-                     * 获取创建集群任务信息
-                     * @return CreateClustersData 创建集群任务信息
+                     * 获取<p>创建集群任务信息</p>
+                     * @return CreateClustersData <p>创建集群任务信息</p>
                      * 
                      */
                     CreateClustersData GetCreateClustersData() const;
 
                     /**
-                     * 设置创建集群任务信息
-                     * @param _createClustersData 创建集群任务信息
+                     * 设置<p>创建集群任务信息</p>
+                     * @param _createClustersData <p>创建集群任务信息</p>
                      * 
                      */
                     void SetCreateClustersData(const CreateClustersData& _createClustersData);
@@ -631,15 +632,15 @@ namespace TencentCloud
                     bool CreateClustersDataHasBeenSet() const;
 
                     /**
-                     * 获取集群回档任务信息
-                     * @return RollbackData 集群回档任务信息
+                     * 获取<p>集群回档任务信息</p>
+                     * @return RollbackData <p>集群回档任务信息</p>
                      * 
                      */
                     RollbackData GetRollbackData() const;
 
                     /**
-                     * 设置集群回档任务信息
-                     * @param _rollbackData 集群回档任务信息
+                     * 设置<p>集群回档任务信息</p>
+                     * @param _rollbackData <p>集群回档任务信息</p>
                      * 
                      */
                     void SetRollbackData(const RollbackData& _rollbackData);
@@ -652,15 +653,15 @@ namespace TencentCloud
                     bool RollbackDataHasBeenSet() const;
 
                     /**
-                     * 获取实例变配任务信息
-                     * @return ModifyInstanceData 实例变配任务信息
+                     * 获取<p>实例变配任务信息</p>
+                     * @return ModifyInstanceData <p>实例变配任务信息</p>
                      * 
                      */
                     ModifyInstanceData GetModifyInstanceData() const;
 
                     /**
-                     * 设置实例变配任务信息
-                     * @param _modifyInstanceData 实例变配任务信息
+                     * 设置<p>实例变配任务信息</p>
+                     * @param _modifyInstanceData <p>实例变配任务信息</p>
                      * 
                      */
                     void SetModifyInstanceData(const ModifyInstanceData& _modifyInstanceData);
@@ -673,18 +674,18 @@ namespace TencentCloud
                     bool ModifyInstanceDataHasBeenSet() const;
 
                     /**
-                     * 获取手动备份任务信息
+                     * 获取<p>手动备份任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ManualBackupData 手动备份任务信息
+                     * @return ManualBackupData <p>手动备份任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ManualBackupData GetManualBackupData() const;
 
                     /**
-                     * 设置手动备份任务信息
+                     * 设置<p>手动备份任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _manualBackupData 手动备份任务信息
+                     * @param _manualBackupData <p>手动备份任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -698,15 +699,15 @@ namespace TencentCloud
                     bool ManualBackupDataHasBeenSet() const;
 
                     /**
-                     * 获取修改内核版本任务信息
-                     * @return ModifyDbVersionData 修改内核版本任务信息
+                     * 获取<p>修改内核版本任务信息</p>
+                     * @return ModifyDbVersionData <p>修改内核版本任务信息</p>
                      * 
                      */
                     ModifyDbVersionData GetModifyDbVersionData() const;
 
                     /**
-                     * 设置修改内核版本任务信息
-                     * @param _modifyDbVersionData 修改内核版本任务信息
+                     * 设置<p>修改内核版本任务信息</p>
+                     * @param _modifyDbVersionData <p>修改内核版本任务信息</p>
                      * 
                      */
                     void SetModifyDbVersionData(const ModifyDbVersionData& _modifyDbVersionData);
@@ -719,15 +720,15 @@ namespace TencentCloud
                     bool ModifyDbVersionDataHasBeenSet() const;
 
                     /**
-                     * 获取集群可用区信息
-                     * @return ClusterSlaveData 集群可用区信息
+                     * 获取<p>集群可用区信息</p>
+                     * @return ClusterSlaveData <p>集群可用区信息</p>
                      * 
                      */
                     ClusterSlaveData GetClusterSlaveData() const;
 
                     /**
-                     * 设置集群可用区信息
-                     * @param _clusterSlaveData 集群可用区信息
+                     * 设置<p>集群可用区信息</p>
+                     * @param _clusterSlaveData <p>集群可用区信息</p>
                      * 
                      */
                     void SetClusterSlaveData(const ClusterSlaveData& _clusterSlaveData);
@@ -740,18 +741,18 @@ namespace TencentCloud
                     bool ClusterSlaveDataHasBeenSet() const;
 
                     /**
-                     * 获取转换集群日志
+                     * 获取<p>转换集群日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SwitchClusterLogBin 转换集群日志
+                     * @return SwitchClusterLogBin <p>转换集群日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchClusterLogBin GetSwitchClusterLogBin() const;
 
                     /**
-                     * 设置转换集群日志
+                     * 设置<p>转换集群日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _switchClusterLogBin 转换集群日志
+                     * @param _switchClusterLogBin <p>转换集群日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -765,18 +766,18 @@ namespace TencentCloud
                     bool SwitchClusterLogBinHasBeenSet() const;
 
                     /**
-                     * 获取修改实例参数数据
+                     * 获取<p>修改实例参数数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyInstanceParamsData 修改实例参数数据
+                     * @return ModifyInstanceParamsData <p>修改实例参数数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BizTaskModifyParamsData GetModifyInstanceParamsData() const;
 
                     /**
-                     * 设置修改实例参数数据
+                     * 设置<p>修改实例参数数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyInstanceParamsData 修改实例参数数据
+                     * @param _modifyInstanceParamsData <p>修改实例参数数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -790,15 +791,15 @@ namespace TencentCloud
                     bool ModifyInstanceParamsDataHasBeenSet() const;
 
                     /**
-                     * 获取维护时间
-                     * @return TaskMaintainInfo 维护时间
+                     * 获取<p>维护时间</p>
+                     * @return TaskMaintainInfo <p>维护时间</p>
                      * 
                      */
                     TaskMaintainInfo GetTaskMaintainInfo() const;
 
                     /**
-                     * 设置维护时间
-                     * @param _taskMaintainInfo 维护时间
+                     * 设置<p>维护时间</p>
+                     * @param _taskMaintainInfo <p>维护时间</p>
                      * 
                      */
                     void SetTaskMaintainInfo(const TaskMaintainInfo& _taskMaintainInfo);
@@ -811,19 +812,15 @@ namespace TencentCloud
                     bool TaskMaintainInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例日志投递信息
-
-                     * @return InstanceCLSDeliveryInfos 实例日志投递信息
-
+                     * 获取<p>实例日志投递信息</p>
+                     * @return InstanceCLSDeliveryInfos <p>实例日志投递信息</p>
                      * 
                      */
                     std::vector<InstanceCLSDeliveryInfo> GetInstanceCLSDeliveryInfos() const;
 
                     /**
-                     * 设置实例日志投递信息
-
-                     * @param _instanceCLSDeliveryInfos 实例日志投递信息
-
+                     * 设置<p>实例日志投递信息</p>
+                     * @param _instanceCLSDeliveryInfos <p>实例日志投递信息</p>
                      * 
                      */
                     void SetInstanceCLSDeliveryInfos(const std::vector<InstanceCLSDeliveryInfo>& _instanceCLSDeliveryInfos);
@@ -836,15 +833,15 @@ namespace TencentCloud
                     bool InstanceCLSDeliveryInfosHasBeenSet() const;
 
                     /**
-                     * 获取任务进度信息
-                     * @return TaskProgressInfo 任务进度信息
+                     * 获取<p>任务进度信息</p>
+                     * @return TaskProgressInfo <p>任务进度信息</p>
                      * 
                      */
                     TaskProgressInfo GetTaskProgressInfo() const;
 
                     /**
-                     * 设置任务进度信息
-                     * @param _taskProgressInfo 任务进度信息
+                     * 设置<p>任务进度信息</p>
+                     * @param _taskProgressInfo <p>任务进度信息</p>
                      * 
                      */
                     void SetTaskProgressInfo(const TaskProgressInfo& _taskProgressInfo);
@@ -857,15 +854,15 @@ namespace TencentCloud
                     bool TaskProgressInfoHasBeenSet() const;
 
                     /**
-                     * 获取全球数据库网络任务
-                     * @return GdnTaskInfo 全球数据库网络任务
+                     * 获取<p>全球数据库网络任务</p>
+                     * @return GdnTaskInfo <p>全球数据库网络任务</p>
                      * 
                      */
                     GdnTaskInfo GetGdnTaskInfo() const;
 
                     /**
-                     * 设置全球数据库网络任务
-                     * @param _gdnTaskInfo 全球数据库网络任务
+                     * 设置<p>全球数据库网络任务</p>
+                     * @param _gdnTaskInfo <p>全球数据库网络任务</p>
                      * 
                      */
                     void SetGdnTaskInfo(const GdnTaskInfo& _gdnTaskInfo);
@@ -878,15 +875,15 @@ namespace TencentCloud
                     bool GdnTaskInfoHasBeenSet() const;
 
                     /**
-                     * 获取保险箱id
-                     * @return VaultId 保险箱id
+                     * 获取<p>保险箱id</p>
+                     * @return VaultId <p>保险箱id</p>
                      * 
                      */
                     std::string GetVaultId() const;
 
                     /**
-                     * 设置保险箱id
-                     * @param _vaultId 保险箱id
+                     * 设置<p>保险箱id</p>
+                     * @param _vaultId <p>保险箱id</p>
                      * 
                      */
                     void SetVaultId(const std::string& _vaultId);
@@ -899,15 +896,15 @@ namespace TencentCloud
                     bool VaultIdHasBeenSet() const;
 
                     /**
-                     * 获取保险箱名称
-                     * @return VaultName 保险箱名称
+                     * 获取<p>保险箱名称</p>
+                     * @return VaultName <p>保险箱名称</p>
                      * 
                      */
                     std::string GetVaultName() const;
 
                     /**
-                     * 设置保险箱名称
-                     * @param _vaultName 保险箱名称
+                     * 设置<p>保险箱名称</p>
+                     * @param _vaultName <p>保险箱名称</p>
                      * 
                      */
                     void SetVaultName(const std::string& _vaultName);
@@ -919,252 +916,278 @@ namespace TencentCloud
                      */
                     bool VaultNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AI优化器任务信息</p>
+                     * @return AIOptimizerTaskData <p>AI优化器任务信息</p>
+                     * 
+                     */
+                    AIOptimizerTaskData GetAIOptimizerTaskData() const;
+
+                    /**
+                     * 设置<p>AI优化器任务信息</p>
+                     * @param _aIOptimizerTaskData <p>AI优化器任务信息</p>
+                     * 
+                     */
+                    void SetAIOptimizerTaskData(const AIOptimizerTaskData& _aIOptimizerTaskData);
+
+                    /**
+                     * 判断参数 AIOptimizerTaskData 是否已赋值
+                     * @return AIOptimizerTaskData 是否已赋值
+                     * 
+                     */
+                    bool AIOptimizerTaskDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 用户appid
+                     * <p>用户appid</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 延迟执行时间
+                     * <p>延迟执行时间</p>
                      */
                     std::string m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 任务失败信息
+                     * <p>任务失败信息</p>
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
 
                     /**
-                     * 异步任务流id
+                     * <p>异步任务流id</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 任务输入信息
+                     * <p>任务输入信息</p>
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 实例组id
+                     * <p>实例组id</p>
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;
 
                     /**
-                     * 实例组id
+                     * <p>实例组id</p>
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 任务操作对象id
+                     * <p>任务操作对象id</p>
                      */
                     std::string m_objectId;
                     bool m_objectIdHasBeenSet;
 
                     /**
-                     * 任务操作对象类型
+                     * <p>任务操作对象类型</p>
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
-                     * 操作者uin
+                     * <p>操作者uin</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 任务输出信息
+                     * <p>任务输出信息</p>
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * <p>任务状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * <p>任务类型</p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 触发本任务的父任务ID
+                     * <p>触发本任务的父任务ID</p>
                      */
                     int64_t m_triggerTaskId;
                     bool m_triggerTaskIdHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 任务开始时间
+                     * <p>任务开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间
+                     * <p>任务结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 任务进度
+                     * <p>任务进度</p>
                      */
                     int64_t m_process;
                     bool m_processHasBeenSet;
 
                     /**
-                     * 修改参数任务信息
+                     * <p>修改参数任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModifyParamsData> m_modifyParamsData;
                     bool m_modifyParamsDataHasBeenSet;
 
                     /**
-                     * 创建集群任务信息
+                     * <p>创建集群任务信息</p>
                      */
                     CreateClustersData m_createClustersData;
                     bool m_createClustersDataHasBeenSet;
 
                     /**
-                     * 集群回档任务信息
+                     * <p>集群回档任务信息</p>
                      */
                     RollbackData m_rollbackData;
                     bool m_rollbackDataHasBeenSet;
 
                     /**
-                     * 实例变配任务信息
+                     * <p>实例变配任务信息</p>
                      */
                     ModifyInstanceData m_modifyInstanceData;
                     bool m_modifyInstanceDataHasBeenSet;
 
                     /**
-                     * 手动备份任务信息
+                     * <p>手动备份任务信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ManualBackupData m_manualBackupData;
                     bool m_manualBackupDataHasBeenSet;
 
                     /**
-                     * 修改内核版本任务信息
+                     * <p>修改内核版本任务信息</p>
                      */
                     ModifyDbVersionData m_modifyDbVersionData;
                     bool m_modifyDbVersionDataHasBeenSet;
 
                     /**
-                     * 集群可用区信息
+                     * <p>集群可用区信息</p>
                      */
                     ClusterSlaveData m_clusterSlaveData;
                     bool m_clusterSlaveDataHasBeenSet;
 
                     /**
-                     * 转换集群日志
+                     * <p>转换集群日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchClusterLogBin m_switchClusterLogBin;
                     bool m_switchClusterLogBinHasBeenSet;
 
                     /**
-                     * 修改实例参数数据
+                     * <p>修改实例参数数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BizTaskModifyParamsData m_modifyInstanceParamsData;
                     bool m_modifyInstanceParamsDataHasBeenSet;
 
                     /**
-                     * 维护时间
+                     * <p>维护时间</p>
                      */
                     TaskMaintainInfo m_taskMaintainInfo;
                     bool m_taskMaintainInfoHasBeenSet;
 
                     /**
-                     * 实例日志投递信息
-
+                     * <p>实例日志投递信息</p>
                      */
                     std::vector<InstanceCLSDeliveryInfo> m_instanceCLSDeliveryInfos;
                     bool m_instanceCLSDeliveryInfosHasBeenSet;
 
                     /**
-                     * 任务进度信息
+                     * <p>任务进度信息</p>
                      */
                     TaskProgressInfo m_taskProgressInfo;
                     bool m_taskProgressInfoHasBeenSet;
 
                     /**
-                     * 全球数据库网络任务
+                     * <p>全球数据库网络任务</p>
                      */
                     GdnTaskInfo m_gdnTaskInfo;
                     bool m_gdnTaskInfoHasBeenSet;
 
                     /**
-                     * 保险箱id
+                     * <p>保险箱id</p>
                      */
                     std::string m_vaultId;
                     bool m_vaultIdHasBeenSet;
 
                     /**
-                     * 保险箱名称
+                     * <p>保险箱名称</p>
                      */
                     std::string m_vaultName;
                     bool m_vaultNameHasBeenSet;
+
+                    /**
+                     * <p>AI优化器任务信息</p>
+                     */
+                    AIOptimizerTaskData m_aIOptimizerTaskData;
+                    bool m_aIOptimizerTaskDataHasBeenSet;
 
                 };
             }
