@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p>
+                     * @return InstanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p>
+                     * @param _instanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取1.平滑升配.2.垂直升配
-                     * @return Type 1.平滑升配.2.垂直升配
+                     * 获取<p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>
+                     * @return Type <p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置1.平滑升配.2.垂直升配
-                     * @param _type 1.平滑升配.2.垂直升配
+                     * 设置<p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>
+                     * @param _type <p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取版本号
-                     * @return SourceVersion 版本号
+                     * 获取<p>版本号</p>
+                     * @return SourceVersion <p>版本号</p>
                      * 
                      */
                     std::string GetSourceVersion() const;
 
                     /**
-                     * 设置版本号
-                     * @param _sourceVersion 版本号
+                     * 设置<p>版本号</p>
+                     * @param _sourceVersion <p>版本号</p>
                      * 
                      */
                     void SetSourceVersion(const std::string& _sourceVersion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SourceVersionHasBeenSet() const;
 
                     /**
-                     * 获取版本号
-                     * @return TargetVersion 版本号
+                     * 获取<p>版本号</p>
+                     * @return TargetVersion <p>版本号</p>
                      * 
                      */
                     std::string GetTargetVersion() const;
 
                     /**
-                     * 设置版本号
-                     * @param _targetVersion 版本号
+                     * 设置<p>版本号</p>
+                     * @param _targetVersion <p>版本号</p>
                      * 
                      */
                     void SetTargetVersion(const std::string& _targetVersion);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TargetVersionHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
-                     * @return DelayTimeStamp 延迟时间
+                     * 获取<p>延迟时间</p>
+                     * @return DelayTimeStamp <p>延迟时间</p>
                      * 
                      */
                     std::string GetDelayTimeStamp() const;
 
                     /**
-                     * 设置延迟时间
-                     * @param _delayTimeStamp 延迟时间
+                     * 设置<p>延迟时间</p>
+                     * @param _delayTimeStamp <p>延迟时间</p>
                      * 
                      */
                     void SetDelayTimeStamp(const std::string& _delayTimeStamp);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 1.平滑升配.2.垂直升配
+                     * <p>版本升级类型</p><p>枚举值：</p><ul><li>1： 小版本迁移升级(推荐)</li></ul>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
                      */
                     std::string m_sourceVersion;
                     bool m_sourceVersionHasBeenSet;
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
                      */
                     std::string m_targetVersion;
                     bool m_targetVersionHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * <p>延迟时间</p>
                      */
                     std::string m_delayTimeStamp;
                     bool m_delayTimeStampHasBeenSet;

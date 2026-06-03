@@ -27,6 +27,7 @@ CreateAigcCustomVoiceRequest::CreateAigcCustomVoiceRequest() :
     m_voiceNameHasBeenSet(false),
     m_voiceUrlHasBeenSet(false),
     m_videoIdHasBeenSet(false),
+    m_disableModerationHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false)
@@ -70,6 +71,14 @@ string CreateAigcCustomVoiceRequest::ToJsonString() const
         string key = "VideoId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_videoId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableModerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableModeration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_disableModeration.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -166,6 +175,22 @@ void CreateAigcCustomVoiceRequest::SetVideoId(const string& _videoId)
 bool CreateAigcCustomVoiceRequest::VideoIdHasBeenSet() const
 {
     return m_videoIdHasBeenSet;
+}
+
+string CreateAigcCustomVoiceRequest::GetDisableModeration() const
+{
+    return m_disableModeration;
+}
+
+void CreateAigcCustomVoiceRequest::SetDisableModeration(const string& _disableModeration)
+{
+    m_disableModeration = _disableModeration;
+    m_disableModerationHasBeenSet = true;
+}
+
+bool CreateAigcCustomVoiceRequest::DisableModerationHasBeenSet() const
+{
+    return m_disableModerationHasBeenSet;
 }
 
 string CreateAigcCustomVoiceRequest::GetSessionId() const

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户id
-                     * @return UserId 用户id
+                     * 获取<p>用户id</p>
+                     * @return UserId <p>用户id</p>
                      * 
                      */
                     int64_t GetUserId() const;
 
                     /**
-                     * 设置用户id
-                     * @param _userId 用户id
+                     * 设置<p>用户id</p>
+                     * @param _userId <p>用户id</p>
                      * 
                      */
                     void SetUserId(const int64_t& _userId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名称
-                     * @return Name 用户名称
+                     * 获取<p>用户名称</p>
+                     * @return Name <p>用户名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置用户名称
-                     * @param _name 用户名称
+                     * 设置<p>用户名称</p>
+                     * @param _name <p>用户名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
-                     * @return UpdateTime 最后更新时间
+                     * 获取<p>最后更新时间</p>
+                     * @return UpdateTime <p>最后更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最后更新时间
-                     * @param _updateTime 最后更新时间
+                     * 设置<p>最后更新时间</p>
+                     * @param _updateTime <p>最后更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户id
+                     * <p>用户id</p>
                      */
                     int64_t m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户名称
+                     * <p>用户名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * <p>最后更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

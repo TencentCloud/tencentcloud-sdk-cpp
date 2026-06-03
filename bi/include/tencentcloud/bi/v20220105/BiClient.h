@@ -29,6 +29,8 @@
 #include <tencentcloud/bi/v20220105/model/ClearEmbedTokenResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateAuthApiKeyRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateAuthApiKeyResponse.h>
+#include <tencentcloud/bi/v20220105/model/CreateDataTableRequest.h>
+#include <tencentcloud/bi/v20220105/model/CreateDataTableResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/CreateDatasourceCloudRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/bi/v20220105/model/DescribeProjectListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeResourceUserGroupPageListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeResourceUserGroupPageListResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribeSourceFieldListRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribeSourceFieldListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserGroupInfoRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserGroupInfoResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserGroupMemberListRequest.h>
@@ -140,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuthApiKeyResponse> CreateAuthApiKeyOutcome;
                 typedef std::future<CreateAuthApiKeyOutcome> CreateAuthApiKeyOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateAuthApiKeyRequest&, CreateAuthApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthApiKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDataTableResponse> CreateDataTableOutcome;
+                typedef std::future<CreateDataTableOutcome> CreateDataTableOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::CreateDataTableRequest&, CreateDataTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatasourceResponse> CreateDatasourceOutcome;
                 typedef std::future<CreateDatasourceOutcome> CreateDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::CreateDatasourceRequest&, CreateDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceAsyncHandler;
@@ -218,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceUserGroupPageListResponse> DescribeResourceUserGroupPageListOutcome;
                 typedef std::future<DescribeResourceUserGroupPageListOutcome> DescribeResourceUserGroupPageListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeResourceUserGroupPageListRequest&, DescribeResourceUserGroupPageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUserGroupPageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSourceFieldListResponse> DescribeSourceFieldListOutcome;
+                typedef std::future<DescribeSourceFieldListOutcome> DescribeSourceFieldListOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribeSourceFieldListRequest&, DescribeSourceFieldListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceFieldListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserGroupInfoResponse> DescribeUserGroupInfoOutcome;
                 typedef std::future<DescribeUserGroupInfoOutcome> DescribeUserGroupInfoOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeUserGroupInfoRequest&, DescribeUserGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupInfoAsyncHandler;
@@ -301,6 +311,15 @@ namespace TencentCloud
                 CreateAuthApiKeyOutcome CreateAuthApiKey(const Model::CreateAuthApiKeyRequest &request);
                 void CreateAuthApiKeyAsync(const Model::CreateAuthApiKeyRequest& request, const CreateAuthApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuthApiKeyOutcomeCallable CreateAuthApiKeyCallable(const Model::CreateAuthApiKeyRequest& request);
+
+                /**
+                 *添加数据表
+                 * @param req CreateDataTableRequest
+                 * @return CreateDataTableOutcome
+                 */
+                CreateDataTableOutcome CreateDataTable(const Model::CreateDataTableRequest &request);
+                void CreateDataTableAsync(const Model::CreateDataTableRequest& request, const CreateDataTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataTableOutcomeCallable CreateDataTableCallable(const Model::CreateDataTableRequest& request);
 
                 /**
                  *创建数据源
@@ -535,6 +554,15 @@ namespace TencentCloud
                 DescribeResourceUserGroupPageListOutcome DescribeResourceUserGroupPageList(const Model::DescribeResourceUserGroupPageListRequest &request);
                 void DescribeResourceUserGroupPageListAsync(const Model::DescribeResourceUserGroupPageListRequest& request, const DescribeResourceUserGroupPageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceUserGroupPageListOutcomeCallable DescribeResourceUserGroupPageListCallable(const Model::DescribeResourceUserGroupPageListRequest& request);
+
+                /**
+                 *原始数据表字段接口信息
+                 * @param req DescribeSourceFieldListRequest
+                 * @return DescribeSourceFieldListOutcome
+                 */
+                DescribeSourceFieldListOutcome DescribeSourceFieldList(const Model::DescribeSourceFieldListRequest &request);
+                void DescribeSourceFieldListAsync(const Model::DescribeSourceFieldListRequest& request, const DescribeSourceFieldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceFieldListOutcomeCallable DescribeSourceFieldListCallable(const Model::DescribeSourceFieldListRequest& request);
 
                 /**
                  *DescribeUserGroupInfo

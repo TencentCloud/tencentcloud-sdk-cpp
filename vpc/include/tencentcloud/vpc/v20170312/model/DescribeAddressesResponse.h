@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的 EIP 数量。
-                     * @return TotalCount 符合条件的 EIP 数量。
+                     * 获取<p>符合条件的 EIP 数量。</p>
+                     * @return TotalCount <p>符合条件的 EIP 数量。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取EIP 详细信息列表。
-                     * @return AddressSet EIP 详细信息列表。
+                     * 获取<p>EIP 详细信息列表。</p>
+                     * @return AddressSet <p>EIP 详细信息列表。</p>
                      * 
                      */
                     std::vector<Address> GetAddressSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的 EIP 数量。
+                     * <p>符合条件的 EIP 数量。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * EIP 详细信息列表。
+                     * <p>EIP 详细信息列表。</p>
                      */
                     std::vector<Address> m_addressSet;
                     bool m_addressSetHasBeenSet;

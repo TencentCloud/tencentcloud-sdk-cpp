@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/QualityControlResult.h>
 #include <tencentcloud/mps/v20190612/model/ContainerDiagnoseResultItem.h>
+#include <tencentcloud/mps/v20190612/model/LLMDetectionReport.h>
 
 
 namespace TencentCloud
@@ -195,6 +196,27 @@ namespace TencentCloud
                      */
                     bool ContainerDiagnoseResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>LLM大模型AIGC质量检测结果。</p>
+                     * @return LLMDetectionReport <p>LLM大模型AIGC质量检测结果。</p>
+                     * 
+                     */
+                    LLMDetectionReport GetLLMDetectionReport() const;
+
+                    /**
+                     * 设置<p>LLM大模型AIGC质量检测结果。</p>
+                     * @param _lLMDetectionReport <p>LLM大模型AIGC质量检测结果。</p>
+                     * 
+                     */
+                    void SetLLMDetectionReport(const LLMDetectionReport& _lLMDetectionReport);
+
+                    /**
+                     * 判断参数 LLMDetectionReport 是否已赋值
+                     * @return LLMDetectionReport 是否已赋值
+                     * 
+                     */
+                    bool LLMDetectionReportHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +260,12 @@ namespace TencentCloud
                      */
                     std::vector<ContainerDiagnoseResultItem> m_containerDiagnoseResultSet;
                     bool m_containerDiagnoseResultSetHasBeenSet;
+
+                    /**
+                     * <p>LLM大模型AIGC质量检测结果。</p>
+                     */
+                    LLMDetectionReport m_lLMDetectionReport;
+                    bool m_lLMDetectionReportHasBeenSet;
 
                 };
             }

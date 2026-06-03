@@ -26,7 +26,8 @@ VisionSummaryConfig::VisionSummaryConfig() :
     m_multiCameraLayoutHasBeenSet(false),
     m_detectTypesHasBeenSet(false),
     m_customDetectQueriesHasBeenSet(false),
-    m_detectContinuousHasBeenSet(false)
+    m_detectContinuousHasBeenSet(false),
+    m_summaryPromptHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome VisionSummaryConfig::Deserialize(const rapidjson::Value &val
         m_detectContinuousHasBeenSet = true;
     }
 
+    if (value.HasMember("SummaryPrompt") && !value["SummaryPrompt"].IsNull())
+    {
+        if (!value["SummaryPrompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VisionSummaryConfig.SummaryPrompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_summaryPrompt = string(value["SummaryPrompt"].GetString());
+        m_summaryPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +201,14 @@ void VisionSummaryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_summaryPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_summaryPrompt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -289,5 +308,21 @@ void VisionSummaryConfig::SetDetectContinuous(const vector<SeeDetectContinuousCo
 bool VisionSummaryConfig::DetectContinuousHasBeenSet() const
 {
     return m_detectContinuousHasBeenSet;
+}
+
+string VisionSummaryConfig::GetSummaryPrompt() const
+{
+    return m_summaryPrompt;
+}
+
+void VisionSummaryConfig::SetSummaryPrompt(const string& _summaryPrompt)
+{
+    m_summaryPrompt = _summaryPrompt;
+    m_summaryPromptHasBeenSet = true;
+}
+
+bool VisionSummaryConfig::SummaryPromptHasBeenSet() const
+{
+    return m_summaryPromptHasBeenSet;
 }
 

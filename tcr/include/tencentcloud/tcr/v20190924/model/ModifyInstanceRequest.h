@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return RegistryId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return RegistryId <p>实例ID</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _registryId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _registryId <p>实例ID</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取实例的规格,
-基础版：basic
-标准版：standard
-高级版：premium
-                     * @return RegistryType 实例的规格,
-基础版：basic
-标准版：standard
-高级版：premium
+                     * 获取<p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>
+                     * @return RegistryType <p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>
                      * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
-                     * 设置实例的规格,
-基础版：basic
-标准版：standard
-高级版：premium
-                     * @param _registryType 实例的规格,
-基础版：basic
-标准版：standard
-高级版：premium
+                     * 设置<p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>
+                     * @param _registryType <p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>
                      * 
                      */
                     void SetRegistryType(const std::string& _registryType);
@@ -97,15 +85,15 @@ namespace TencentCloud
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例删除保护，false为关闭
-                     * @return DeletionProtection 实例删除保护，false为关闭
+                     * 获取<p>实例删除保护，false为关闭</p>
+                     * @return DeletionProtection <p>实例删除保护，false为关闭</p>
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置实例删除保护，false为关闭
-                     * @param _deletionProtection 实例删除保护，false为关闭
+                     * 设置<p>实例删除保护，false为关闭</p>
+                     * @param _deletionProtection <p>实例删除保护，false为关闭</p>
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -117,28 +105,52 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例是否开启多版本控制，false为关闭</p>
+                     * @return EnableCosVersioning <p>实例是否开启多版本控制，false为关闭</p>
+                     * 
+                     */
+                    bool GetEnableCosVersioning() const;
+
+                    /**
+                     * 设置<p>实例是否开启多版本控制，false为关闭</p>
+                     * @param _enableCosVersioning <p>实例是否开启多版本控制，false为关闭</p>
+                     * 
+                     */
+                    void SetEnableCosVersioning(const bool& _enableCosVersioning);
+
+                    /**
+                     * 判断参数 EnableCosVersioning 是否已赋值
+                     * @return EnableCosVersioning 是否已赋值
+                     * 
+                     */
+                    bool EnableCosVersioningHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 实例的规格,
-基础版：basic
-标准版：standard
-高级版：premium
+                     * <p>实例的规格,<br>基础版：basic<br>标准版：standard<br>高级版：premium</p>
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
 
                     /**
-                     * 实例删除保护，false为关闭
+                     * <p>实例删除保护，false为关闭</p>
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * <p>实例是否开启多版本控制，false为关闭</p>
+                     */
+                    bool m_enableCosVersioning;
+                    bool m_enableCosVersioningHasBeenSet;
 
                 };
             }

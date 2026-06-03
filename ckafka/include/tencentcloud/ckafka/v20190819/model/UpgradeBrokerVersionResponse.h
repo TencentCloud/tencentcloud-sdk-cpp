@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取升配结果
-                     * @return Result 升配结果
+                     * 获取<p>升配结果</p>
+                     * @return Result <p>升配结果</p>
                      * 
                      */
                     JgwOperateResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 升配结果
+                     * <p>升配结果</p>
                      */
                     JgwOperateResponse m_result;
                     bool m_resultHasBeenSet;

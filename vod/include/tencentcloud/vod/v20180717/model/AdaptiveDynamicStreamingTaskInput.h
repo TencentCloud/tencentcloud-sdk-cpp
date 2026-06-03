@@ -29,6 +29,7 @@
 #include <tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/SubtitleInfoInput.h>
+#include <tencentcloud/vod/v20180717/model/ThirdPartyDrmInfo.h>
 
 
 namespace TencentCloud
@@ -198,6 +199,27 @@ namespace TencentCloud
                      */
                     bool SubtitleInfoSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>
+                     * @return DrmInfo <p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>
+                     * 
+                     */
+                    ThirdPartyDrmInfo GetDrmInfo() const;
+
+                    /**
+                     * 设置<p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>
+                     * @param _drmInfo <p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>
+                     * 
+                     */
+                    void SetDrmInfo(const ThirdPartyDrmInfo& _drmInfo);
+
+                    /**
+                     * 判断参数 DrmInfo 是否已赋值
+                     * @return DrmInfo 是否已赋值
+                     * 
+                     */
+                    bool DrmInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +263,12 @@ namespace TencentCloud
                      */
                     std::vector<SubtitleInfoInput> m_subtitleInfoSet;
                     bool m_subtitleInfoSetHasBeenSet;
+
+                    /**
+                     * <p>第三方DRM加密信息。暂不支持任务流的方式使用第三方DRM信息发起任务。</p>
+                     */
+                    ThirdPartyDrmInfo m_drmInfo;
+                    bool m_drmInfoHasBeenSet;
 
                 };
             }

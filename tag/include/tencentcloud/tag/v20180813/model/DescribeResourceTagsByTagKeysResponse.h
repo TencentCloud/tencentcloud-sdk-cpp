@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结果总数
-                     * @return TotalCount 结果总数
+                     * 获取<p>结果总数</p>
+                     * @return TotalCount <p>结果总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取数据位移偏量
-                     * @return Offset 数据位移偏量
+                     * 获取<p>数据位移偏量</p>
+                     * @return Offset <p>数据位移偏量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页大小
-                     * @return Limit 每页大小
+                     * 获取<p>每页大小</p>
+                     * @return Limit <p>每页大小</p>
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取资源标签
-                     * @return Rows 资源标签
+                     * 获取<p>资源标签</p>
+                     * @return Rows <p>资源标签</p>
                      * 
                      */
                     std::vector<ResourceIdTag> GetRows() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结果总数
+                     * <p>结果总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 数据位移偏量
+                     * <p>数据位移偏量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页大小
+                     * <p>每页大小</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 资源标签
+                     * <p>资源标签</p>
                      */
                     std::vector<ResourceIdTag> m_rows;
                     bool m_rowsHasBeenSet;

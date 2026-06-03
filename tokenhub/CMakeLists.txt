@@ -54,6 +54,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/DeleteTokenPlanApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyUsageDetailRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ApiKeyDetail.h
+  include/tencentcloud/tokenhub/v20260322/model/UsageDetailItem.h
   include/tencentcloud/tokenhub/v20260322/model/BatchCreateFailedItem.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RequestFilter.h
@@ -106,6 +107,7 @@ set(tokenhub_src
   src/v20260322/model/DeleteTokenPlanApiKeyResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyUsageDetailRequest.cpp
   src/v20260322/model/ApiKeyDetail.cpp
+  src/v20260322/model/UsageDetailItem.cpp
   src/v20260322/model/BatchCreateFailedItem.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.cpp
   src/v20260322/model/RequestFilter.cpp

@@ -159,6 +159,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/StartStreamPackageLinearAssemblyChannelResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyProgramResponse.h
   include/tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/LLMDetectionResultItem.h
   include/tencentcloud/mps/v20190612/model/CreateProcessImageTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateInputRTMPPullSettings.h
   include/tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfoForUpdate.h
@@ -298,6 +299,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ComposeVideoStream.h
   include/tencentcloud/mps/v20190612/model/LiveSmartSubtitleResult.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamPackageSSAIChannelResponse.h
+  include/tencentcloud/mps/v20190612/model/LLMDetectionIssue.h
   include/tencentcloud/mps/v20190612/model/ProhibitedAsrReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCutoutInput.h
   include/tencentcloud/mps/v20190612/model/ModifyAnimatedGraphicsTemplateResponse.h
@@ -884,6 +886,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/QualityControlStrategy.h
   include/tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeSmartSubtitleTemplatesResponse.h
+  include/tencentcloud/mps/v20190612/model/LLMDetectionReport.h
   include/tencentcloud/mps/v20190612/model/DescribeUsageDataRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelResponse.h
   include/tencentcloud/mps/v20190612/model/BatchDeleteStreamLinkFlowResponse.h
@@ -1178,6 +1181,7 @@ set(mps_src
   src/v20190612/model/StartStreamPackageLinearAssemblyChannelResponse.cpp
   src/v20190612/model/ModifyStreamPackageLinearAssemblyProgramResponse.cpp
   src/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.cpp
+  src/v20190612/model/LLMDetectionResultItem.cpp
   src/v20190612/model/CreateProcessImageTemplateResponse.cpp
   src/v20190612/model/CreateInputRTMPPullSettings.cpp
   src/v20190612/model/TerrorismImgReviewTemplateInfoForUpdate.cpp
@@ -1317,6 +1321,7 @@ set(mps_src
   src/v20190612/model/ComposeVideoStream.cpp
   src/v20190612/model/LiveSmartSubtitleResult.cpp
   src/v20190612/model/ModifyStreamPackageSSAIChannelResponse.cpp
+  src/v20190612/model/LLMDetectionIssue.cpp
   src/v20190612/model/ProhibitedAsrReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/AiAnalysisTaskCutoutInput.cpp
   src/v20190612/model/ModifyAnimatedGraphicsTemplateResponse.cpp
@@ -1903,6 +1908,7 @@ set(mps_src
   src/v20190612/model/QualityControlStrategy.cpp
   src/v20190612/model/DescribeTranscodeTemplatesRequest.cpp
   src/v20190612/model/DescribeSmartSubtitleTemplatesResponse.cpp
+  src/v20190612/model/LLMDetectionReport.cpp
   src/v20190612/model/DescribeUsageDataRequest.cpp
   src/v20190612/model/DeleteStreamPackageLinearAssemblyChannelResponse.cpp
   src/v20190612/model/BatchDeleteStreamLinkFlowResponse.cpp

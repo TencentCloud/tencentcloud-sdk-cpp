@@ -27,7 +27,8 @@ QualityControlData::QualityControlData() :
     m_qualityEvaluationMeanOpinionScoreHasBeenSet(false),
     m_aestheticEvaluationScoreHasBeenSet(false),
     m_qualityControlResultSetHasBeenSet(false),
-    m_containerDiagnoseResultSetHasBeenSet(false)
+    m_containerDiagnoseResultSetHasBeenSet(false),
+    m_lLMDetectionReportHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,23 @@ CoreInternalOutcome QualityControlData::Deserialize(const rapidjson::Value &valu
         m_containerDiagnoseResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("LLMDetectionReport") && !value["LLMDetectionReport"].IsNull())
+    {
+        if (!value["LLMDetectionReport"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityControlData.LLMDetectionReport` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lLMDetectionReport.Deserialize(value["LLMDetectionReport"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lLMDetectionReportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +219,15 @@ void QualityControlData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_lLMDetectionReportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMDetectionReport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lLMDetectionReport.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -316,5 +343,21 @@ void QualityControlData::SetContainerDiagnoseResultSet(const vector<ContainerDia
 bool QualityControlData::ContainerDiagnoseResultSetHasBeenSet() const
 {
     return m_containerDiagnoseResultSetHasBeenSet;
+}
+
+LLMDetectionReport QualityControlData::GetLLMDetectionReport() const
+{
+    return m_lLMDetectionReport;
+}
+
+void QualityControlData::SetLLMDetectionReport(const LLMDetectionReport& _lLMDetectionReport)
+{
+    m_lLMDetectionReport = _lLMDetectionReport;
+    m_lLMDetectionReportHasBeenSet = true;
+}
+
+bool QualityControlData::LLMDetectionReportHasBeenSet() const
+{
+    return m_lLMDetectionReportHasBeenSet;
 }
 

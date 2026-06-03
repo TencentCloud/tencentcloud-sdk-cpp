@@ -211,6 +211,27 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
+                     * 获取<p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>
+                     * @return DisableModeration <p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>
+                     * 
+                     */
+                    std::string GetDisableModeration() const;
+
+                    /**
+                     * 设置<p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>
+                     * @param _disableModeration <p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>
+                     * 
+                     */
+                    void SetDisableModeration(const std::string& _disableModeration);
+
+                    /**
+                     * 判断参数 DisableModeration 是否已赋值
+                     * @return DisableModeration 是否已赋值
+                     * 
+                     */
+                    bool DisableModerationHasBeenSet() const;
+
+                    /**
                      * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
@@ -322,6 +343,12 @@ namespace TencentCloud
                      */
                     std::string m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>若已开通海外自定义主体库，可传入<code>True</code>使用海外自定义主体库。</p><p>枚举值：</p><ul><li>True： 使用海外自定义主体库。</li><li>False： 不使用海外自定义主体库。</li></ul>
+                     */
+                    std::string m_disableModeration;
+                    bool m_disableModerationHasBeenSet;
 
                     /**
                      * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>

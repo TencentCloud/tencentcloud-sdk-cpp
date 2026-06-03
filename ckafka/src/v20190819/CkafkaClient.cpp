@@ -740,6 +740,156 @@ CkafkaClient::CreateInstancePreOutcomeCallable CkafkaClient::CreateInstancePreCa
     return prom->get_future();
 }
 
+CkafkaClient::CreateMetaAndDataSyncDatahubTaskOutcome CkafkaClient::CreateMetaAndDataSyncDatahubTask(const CreateMetaAndDataSyncDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaAndDataSyncDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaAndDataSyncDatahubTaskResponse rsp = CreateMetaAndDataSyncDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaAndDataSyncDatahubTaskOutcome(rsp);
+        else
+            return CreateMetaAndDataSyncDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaAndDataSyncDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateMetaAndDataSyncDatahubTaskAsync(const CreateMetaAndDataSyncDatahubTaskRequest& request, const CreateMetaAndDataSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaAndDataSyncDatahubTaskRequest&;
+    using Resp = CreateMetaAndDataSyncDatahubTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaAndDataSyncDatahubTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::CreateMetaAndDataSyncDatahubTaskOutcomeCallable CkafkaClient::CreateMetaAndDataSyncDatahubTaskCallable(const CreateMetaAndDataSyncDatahubTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaAndDataSyncDatahubTaskOutcome>>();
+    CreateMetaAndDataSyncDatahubTaskAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const CreateMetaAndDataSyncDatahubTaskRequest&,
+        CreateMetaAndDataSyncDatahubTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::CreateMetaDataAndOffsetSyncDatahubTaskOutcome CkafkaClient::CreateMetaDataAndOffsetSyncDatahubTask(const CreateMetaDataAndOffsetSyncDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaDataAndOffsetSyncDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaDataAndOffsetSyncDatahubTaskResponse rsp = CreateMetaDataAndOffsetSyncDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaDataAndOffsetSyncDatahubTaskOutcome(rsp);
+        else
+            return CreateMetaDataAndOffsetSyncDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaDataAndOffsetSyncDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateMetaDataAndOffsetSyncDatahubTaskAsync(const CreateMetaDataAndOffsetSyncDatahubTaskRequest& request, const CreateMetaDataAndOffsetSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaDataAndOffsetSyncDatahubTaskRequest&;
+    using Resp = CreateMetaDataAndOffsetSyncDatahubTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaDataAndOffsetSyncDatahubTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::CreateMetaDataAndOffsetSyncDatahubTaskOutcomeCallable CkafkaClient::CreateMetaDataAndOffsetSyncDatahubTaskCallable(const CreateMetaDataAndOffsetSyncDatahubTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaDataAndOffsetSyncDatahubTaskOutcome>>();
+    CreateMetaDataAndOffsetSyncDatahubTaskAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const CreateMetaDataAndOffsetSyncDatahubTaskRequest&,
+        CreateMetaDataAndOffsetSyncDatahubTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::CreateMetaSyncDatahubTaskOutcome CkafkaClient::CreateMetaSyncDatahubTask(const CreateMetaSyncDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMetaSyncDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMetaSyncDatahubTaskResponse rsp = CreateMetaSyncDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMetaSyncDatahubTaskOutcome(rsp);
+        else
+            return CreateMetaSyncDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMetaSyncDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateMetaSyncDatahubTaskAsync(const CreateMetaSyncDatahubTaskRequest& request, const CreateMetaSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMetaSyncDatahubTaskRequest&;
+    using Resp = CreateMetaSyncDatahubTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMetaSyncDatahubTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::CreateMetaSyncDatahubTaskOutcomeCallable CkafkaClient::CreateMetaSyncDatahubTaskCallable(const CreateMetaSyncDatahubTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMetaSyncDatahubTaskOutcome>>();
+    CreateMetaSyncDatahubTaskAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const CreateMetaSyncDatahubTaskRequest&,
+        CreateMetaSyncDatahubTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::CreatePartitionOutcome CkafkaClient::CreatePartition(const CreatePartitionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePartition");

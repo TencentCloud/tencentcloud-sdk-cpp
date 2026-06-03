@@ -28,7 +28,8 @@ DescribeRiskRuleDetailResponse::DescribeRiskRuleDetailResponse() :
     m_providerHasBeenSet(false),
     m_riskNameHasBeenSet(false),
     m_riskInfluenceHasBeenSet(false),
-    m_riskFixAdviceHasBeenSet(false)
+    m_riskFixAdviceHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeRiskRuleDetailResponse::Deserialize(const string &pa
         m_riskFixAdviceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AssetType") && !rsp["AssetType"].IsNull())
+    {
+        if (!rsp["AssetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetType = string(rsp["AssetType"].GetString());
+        m_assetTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeRiskRuleDetailResponse::ToJsonString() const
         string key = "RiskFixAdvice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskFixAdvice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ string DescribeRiskRuleDetailResponse::GetRiskFixAdvice() const
 bool DescribeRiskRuleDetailResponse::RiskFixAdviceHasBeenSet() const
 {
     return m_riskFixAdviceHasBeenSet;
+}
+
+string DescribeRiskRuleDetailResponse::GetAssetType() const
+{
+    return m_assetType;
+}
+
+bool DescribeRiskRuleDetailResponse::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

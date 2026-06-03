@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步流程 ID。
-                     * @return FlowId 异步流程 ID。
+                     * 获取<p>异步流程 ID。</p>
+                     * @return FlowId <p>异步流程 ID。</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取异步任务 ID。
-                     * @return TaskId 异步任务 ID。
+                     * 获取<p>异步任务 ID。</p>
+                     * @return TaskId <p>异步任务 ID。</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组 ID。
-                     * @return ProxyGroupId 数据库代理组 ID。
+                     * 获取<p>数据库代理组 ID。</p>
+                     * @return ProxyGroupId <p>数据库代理组 ID。</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步流程 ID。
+                     * <p>异步流程 ID。</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 异步任务 ID。
+                     * <p>异步任务 ID。</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 数据库代理组 ID。
+                     * <p>数据库代理组 ID。</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;

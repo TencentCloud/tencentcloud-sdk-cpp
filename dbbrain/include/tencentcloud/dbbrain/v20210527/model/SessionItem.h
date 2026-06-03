@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问来源。
-                     * @return Ip 访问来源。
+                     * 获取<p>访问来源。</p>
+                     * @return Ip <p>访问来源。</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置访问来源。
-                     * @param _ip 访问来源。
+                     * 设置<p>访问来源。</p>
+                     * @param _ip <p>访问来源。</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取当前访问来源活跃连接数
-                     * @return ActiveConn 当前访问来源活跃连接数
+                     * 获取<p>当前访问来源活跃连接数</p>
+                     * @return ActiveConn <p>当前访问来源活跃连接数</p>
                      * 
                      */
                     std::string GetActiveConn() const;
 
                     /**
-                     * 设置当前访问来源活跃连接数
-                     * @param _activeConn 当前访问来源活跃连接数
+                     * 设置<p>当前访问来源活跃连接数</p>
+                     * @param _activeConn <p>当前访问来源活跃连接数</p>
                      * 
                      */
                     void SetActiveConn(const std::string& _activeConn);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ActiveConnHasBeenSet() const;
 
                     /**
-                     * 获取当前访问来源总连接数
-                     * @return AllConn 当前访问来源总连接数
+                     * 获取<p>当前访问来源总连接数</p>
+                     * @return AllConn <p>当前访问来源总连接数</p>
                      * 
                      */
                     int64_t GetAllConn() const;
 
                     /**
-                     * 设置当前访问来源总连接数
-                     * @param _allConn 当前访问来源总连接数
+                     * 设置<p>当前访问来源总连接数</p>
+                     * @param _allConn <p>当前访问来源总连接数</p>
                      * 
                      */
                     void SetAllConn(const int64_t& _allConn);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool AllConnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为内网ip</p>
+                     * @return IsInternalIp <p>是否为内网ip</p>
+                     * 
+                     */
+                    bool GetIsInternalIp() const;
+
+                    /**
+                     * 设置<p>是否为内网ip</p>
+                     * @param _isInternalIp <p>是否为内网ip</p>
+                     * 
+                     */
+                    void SetIsInternalIp(const bool& _isInternalIp);
+
+                    /**
+                     * 判断参数 IsInternalIp 是否已赋值
+                     * @return IsInternalIp 是否已赋值
+                     * 
+                     */
+                    bool IsInternalIpHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 访问来源。
+                     * <p>访问来源。</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 当前访问来源活跃连接数
+                     * <p>当前访问来源活跃连接数</p>
                      */
                     std::string m_activeConn;
                     bool m_activeConnHasBeenSet;
 
                     /**
-                     * 当前访问来源总连接数
+                     * <p>当前访问来源总连接数</p>
                      */
                     int64_t m_allConn;
                     bool m_allConnHasBeenSet;
+
+                    /**
+                     * <p>是否为内网ip</p>
+                     */
+                    bool m_isInternalIp;
+                    bool m_isInternalIpHasBeenSet;
 
                 };
             }

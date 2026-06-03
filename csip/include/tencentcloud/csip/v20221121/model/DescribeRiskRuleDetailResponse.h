@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险规则ID
-                     * @return RiskRuleId 风险规则ID
+                     * 获取<p>风险规则ID</p>
+                     * @return RiskRuleId <p>风险规则ID</p>
                      * 
                      */
                     std::string GetRiskRuleId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool RiskRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取云厂商
-                     * @return Provider 云厂商
+                     * 获取<p>云厂商</p>
+                     * @return Provider <p>云厂商</p>
                      * 
                      */
                     std::string GetProvider() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ProviderHasBeenSet() const;
 
                     /**
-                     * 获取风险名称
-                     * @return RiskName 风险名称
+                     * 获取<p>风险名称</p>
+                     * @return RiskName <p>风险名称</p>
                      * 
                      */
                     std::string GetRiskName() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool RiskNameHasBeenSet() const;
 
                     /**
-                     * 获取风险危害
-                     * @return RiskInfluence 风险危害
+                     * 获取<p>风险危害</p>
+                     * @return RiskInfluence <p>风险危害</p>
                      * 
                      */
                     std::string GetRiskInfluence() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool RiskInfluenceHasBeenSet() const;
 
                     /**
-                     * 获取修复指引
-                     * @return RiskFixAdvice 修复指引
+                     * 获取<p>修复指引</p>
+                     * @return RiskFixAdvice <p>修复指引</p>
                      * 
                      */
                     std::string GetRiskFixAdvice() const;
@@ -113,37 +113,57 @@ namespace TencentCloud
                      */
                     bool RiskFixAdviceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资产类型</p>
+                     * @return AssetType <p>资产类型</p>
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 风险规则ID
+                     * <p>风险规则ID</p>
                      */
                     std::string m_riskRuleId;
                     bool m_riskRuleIdHasBeenSet;
 
                     /**
-                     * 云厂商
+                     * <p>云厂商</p>
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
 
                     /**
-                     * 风险名称
+                     * <p>风险名称</p>
                      */
                     std::string m_riskName;
                     bool m_riskNameHasBeenSet;
 
                     /**
-                     * 风险危害
+                     * <p>风险危害</p>
                      */
                     std::string m_riskInfluence;
                     bool m_riskInfluenceHasBeenSet;
 
                     /**
-                     * 修复指引
+                     * <p>修复指引</p>
                      */
                     std::string m_riskFixAdvice;
                     bool m_riskFixAdviceHasBeenSet;
+
+                    /**
+                     * <p>资产类型</p>
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

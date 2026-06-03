@@ -970,6 +970,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AigcVideoRedrawTaskOutput.h
   include/tencentcloud/vod/v20180717/model/DescribeFileAttributesTaskOutput.h
   include/tencentcloud/vod/v20180717/model/RemoveWatermarkRequest.h
+  include/tencentcloud/vod/v20180717/model/SPEKEDrm.h
   include/tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h
   include/tencentcloud/vod/v20180717/model/RebuildMediaTask.h
   include/tencentcloud/vod/v20180717/model/ConfirmEventsResponse.h
@@ -1067,6 +1068,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeStorageDetailsRequest.h
   include/tencentcloud/vod/v20180717/model/EnhanceMediaQualityResponse.h
   include/tencentcloud/vod/v20180717/model/SubtitleFormatsOperation.h
+  include/tencentcloud/vod/v20180717/model/ThirdPartyDrmInfo.h
   include/tencentcloud/vod/v20180717/model/MediaTrack.h
   include/tencentcloud/vod/v20180717/model/FastEditMediaFileInfo.h
   include/tencentcloud/vod/v20180717/model/StorageStatData.h
@@ -2048,6 +2050,7 @@ set(vod_src
   src/v20180717/model/AigcVideoRedrawTaskOutput.cpp
   src/v20180717/model/DescribeFileAttributesTaskOutput.cpp
   src/v20180717/model/RemoveWatermarkRequest.cpp
+  src/v20180717/model/SPEKEDrm.cpp
   src/v20180717/model/ExecuteFunctionRequest.cpp
   src/v20180717/model/RebuildMediaTask.cpp
   src/v20180717/model/ConfirmEventsResponse.cpp
@@ -2145,6 +2148,7 @@ set(vod_src
   src/v20180717/model/DescribeStorageDetailsRequest.cpp
   src/v20180717/model/EnhanceMediaQualityResponse.cpp
   src/v20180717/model/SubtitleFormatsOperation.cpp
+  src/v20180717/model/ThirdPartyDrmInfo.cpp
   src/v20180717/model/MediaTrack.cpp
   src/v20180717/model/FastEditMediaFileInfo.cpp
   src/v20180717/model/StorageStatData.cpp

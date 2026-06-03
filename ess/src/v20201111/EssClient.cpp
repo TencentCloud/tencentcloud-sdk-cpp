@@ -290,6 +290,56 @@ EssClient::CancelUserAutoSignEnableUrlOutcomeCallable EssClient::CancelUserAutoS
     return prom->get_future();
 }
 
+EssClient::CreateArchiveFlowTaskOutcome EssClient::CreateArchiveFlowTask(const CreateArchiveFlowTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateArchiveFlowTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateArchiveFlowTaskResponse rsp = CreateArchiveFlowTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateArchiveFlowTaskOutcome(rsp);
+        else
+            return CreateArchiveFlowTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateArchiveFlowTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateArchiveFlowTaskAsync(const CreateArchiveFlowTaskRequest& request, const CreateArchiveFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateArchiveFlowTaskRequest&;
+    using Resp = CreateArchiveFlowTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateArchiveFlowTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateArchiveFlowTaskOutcomeCallable EssClient::CreateArchiveFlowTaskCallable(const CreateArchiveFlowTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateArchiveFlowTaskOutcome>>();
+    CreateArchiveFlowTaskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateArchiveFlowTaskRequest&,
+        CreateArchiveFlowTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreateBatchAdminChangeInvitationsOutcome EssClient::CreateBatchAdminChangeInvitations(const CreateBatchAdminChangeInvitationsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchAdminChangeInvitations");
@@ -4132,6 +4182,56 @@ EssClient::DeleteSingleSignOnEmployeesOutcomeCallable EssClient::DeleteSingleSig
         const EssClient*,
         const DeleteSingleSignOnEmployeesRequest&,
         DeleteSingleSignOnEmployeesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::DescribeArchiveFlowTaskOutcome EssClient::DescribeArchiveFlowTask(const DescribeArchiveFlowTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeArchiveFlowTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeArchiveFlowTaskResponse rsp = DescribeArchiveFlowTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeArchiveFlowTaskOutcome(rsp);
+        else
+            return DescribeArchiveFlowTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeArchiveFlowTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeArchiveFlowTaskAsync(const DescribeArchiveFlowTaskRequest& request, const DescribeArchiveFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeArchiveFlowTaskRequest&;
+    using Resp = DescribeArchiveFlowTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeArchiveFlowTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeArchiveFlowTaskOutcomeCallable EssClient::DescribeArchiveFlowTaskCallable(const DescribeArchiveFlowTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeArchiveFlowTaskOutcome>>();
+    DescribeArchiveFlowTaskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeArchiveFlowTaskRequest&,
+        DescribeArchiveFlowTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
-                     * @return ServiceType 业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
+                     * 获取<p>业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka</p>
+                     * @return ServiceType <p>业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka</p>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
-                     * @param _serviceType 业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
+                     * 设置<p>业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka</p>
+                     * @param _serviceType <p>业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka</p>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填
-                     * @return ResourcePrefix 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填
+                     * 获取<p>该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId</p>
+                     * @return ResourcePrefix <p>该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId</p>
                      * 
                      */
                     std::string GetResourcePrefix() const;
 
                     /**
-                     * 设置该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填
-                     * @param _resourcePrefix 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填
+                     * 设置<p>该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId</p>
+                     * @param _resourcePrefix <p>该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId</p>
                      * 
                      */
                     void SetResourcePrefix(const std::string& _resourcePrefix);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ResourcePrefixHasBeenSet() const;
 
                     /**
-                     * 获取资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @return ResourceRegion 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 获取<p>资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填</p>
+                     * @return ResourceRegion <p>资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填</p>
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @param _resourceRegion 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 设置<p>资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填</p>
+                     * @param _resourceRegion <p>资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填</p>
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一标识ID的列表，列表容量不超过20
-                     * @return ResourceIds 资源唯一标识ID的列表，列表容量不超过20
+                     * 获取<p>资源唯一标识ID的列表，列表容量不超过20</p>
+                     * @return ResourceIds <p>资源唯一标识ID的列表，列表容量不超过20</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源唯一标识ID的列表，列表容量不超过20
-                     * @param _resourceIds 资源唯一标识ID的列表，列表容量不超过20
+                     * 设置<p>资源唯一标识ID的列表，列表容量不超过20</p>
+                     * @param _resourceIds <p>资源唯一标识ID的列表，列表容量不超过20</p>
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取资源标签键列表，列表容量不超过20
-                     * @return TagKeys 资源标签键列表，列表容量不超过20
+                     * 获取<p>资源标签键列表，列表容量不超过20</p>
+                     * @return TagKeys <p>资源标签键列表，列表容量不超过20</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置资源标签键列表，列表容量不超过20
-                     * @param _tagKeys 资源标签键列表，列表容量不超过20
+                     * 设置<p>资源标签键列表，列表容量不超过20</p>
+                     * @param _tagKeys <p>资源标签键列表，列表容量不超过20</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认为 400
-                     * @return Limit 每页大小，默认为 400
+                     * 获取<p>每页大小，默认为 400</p>
+                     * @return Limit <p>每页大小，默认为 400</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小，默认为 400
-                     * @param _limit 每页大小，默认为 400
+                     * 设置<p>每页大小，默认为 400</p>
+                     * @param _limit <p>每页大小，默认为 400</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @return Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 获取<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @return Offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @param _offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 设置<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @param _offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
+                     * <p>业务类型，示例 cvm 。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka</p>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId。cos存储桶为非必填，其他云资源为必填
+                     * <p>该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId</p>
                      */
                     std::string m_resourcePrefix;
                     bool m_resourcePrefixHasBeenSet;
 
                     /**
-                     * 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * <p>资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填</p>
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 资源唯一标识ID的列表，列表容量不超过20
+                     * <p>资源唯一标识ID的列表，列表容量不超过20</p>
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 资源标签键列表，列表容量不超过20
+                     * <p>资源标签键列表，列表容量不超过20</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 每页大小，默认为 400
+                     * <p>每页大小，默认为 400</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

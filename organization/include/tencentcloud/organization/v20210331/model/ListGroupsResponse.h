@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。
-                     * @return NextToken 查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。
+                     * 获取<p>查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。</p>
+                     * @return NextToken <p>查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。</p>
                      * 
                      */
                     std::string GetNextToken() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool NextTokenHasBeenSet() const;
 
                     /**
-                     * 获取用户组列表。
-                     * @return Groups 用户组列表。
+                     * 获取<p>用户组列表。</p>
+                     * @return Groups <p>用户组列表。</p>
                      * 
                      */
                     std::vector<GroupInfo> GetGroups() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool GroupsHasBeenSet() const;
 
                     /**
-                     * 获取每页的最大数据条数。
-                     * @return MaxResults 每页的最大数据条数。
+                     * 获取<p>每页的最大数据条数。</p>
+                     * @return MaxResults <p>每页的最大数据条数。</p>
                      * 
                      */
                     int64_t GetMaxResults() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取符合请求参数条件的数据总条数。
-                     * @return TotalCounts 符合请求参数条件的数据总条数。
+                     * 获取<p>符合请求参数条件的数据总条数。</p>
+                     * @return TotalCounts <p>符合请求参数条件的数据总条数。</p>
                      * 
                      */
                     int64_t GetTotalCounts() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool TotalCountsHasBeenSet() const;
 
                     /**
-                     * 获取返回结果是否被截断。取值：  true：已截断。 false：未截断。
-                     * @return IsTruncated 返回结果是否被截断。取值：  true：已截断。 false：未截断。
+                     * 获取<p>返回结果是否被截断。取值：  true：已截断。 false：未截断。</p>
+                     * @return IsTruncated <p>返回结果是否被截断。取值：  true：已截断。 false：未截断。</p>
                      * 
                      */
                     bool GetIsTruncated() const;
@@ -117,31 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。
+                     * <p>查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。</p>
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
 
                     /**
-                     * 用户组列表。
+                     * <p>用户组列表。</p>
                      */
                     std::vector<GroupInfo> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**
-                     * 每页的最大数据条数。
+                     * <p>每页的最大数据条数。</p>
                      */
                     int64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 符合请求参数条件的数据总条数。
+                     * <p>符合请求参数条件的数据总条数。</p>
                      */
                     int64_t m_totalCounts;
                     bool m_totalCountsHasBeenSet;
 
                     /**
-                     * 返回结果是否被截断。取值：  true：已截断。 false：未截断。
+                     * <p>返回结果是否被截断。取值：  true：已截断。 false：未截断。</p>
                      */
                     bool m_isTruncated;
                     bool m_isTruncatedHasBeenSet;

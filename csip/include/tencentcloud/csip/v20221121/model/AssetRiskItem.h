@@ -425,6 +425,27 @@ namespace TencentCloud
                      */
                     bool AssetTypeIconURLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资产类型</p>
+                     * @return AssetTypeName <p>资产类型</p>
+                     * 
+                     */
+                    std::string GetAssetTypeName() const;
+
+                    /**
+                     * 设置<p>资产类型</p>
+                     * @param _assetTypeName <p>资产类型</p>
+                     * 
+                     */
+                    void SetAssetTypeName(const std::string& _assetTypeName);
+
+                    /**
+                     * 判断参数 AssetTypeName 是否已赋值
+                     * @return AssetTypeName 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -534,6 +555,12 @@ namespace TencentCloud
                      */
                     std::string m_assetTypeIconURL;
                     bool m_assetTypeIconURLHasBeenSet;
+
+                    /**
+                     * <p>资产类型</p>
+                     */
+                    std::string m_assetTypeName;
+                    bool m_assetTypeNameHasBeenSet;
 
                 };
             }

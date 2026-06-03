@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤内容
-                     * @return Filters 过滤内容
+                     * 获取<p>过滤内容</p>
+                     * @return Filters <p>过滤内容</p>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置过滤内容
-                     * @param _filters 过滤内容
+                     * 设置<p>过滤内容</p>
+                     * @param _filters <p>过滤内容</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return Limit <p>分页大小</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _limit 分页大小
+                     * 设置<p>分页大小</p>
+                     * @param _limit <p>分页大小</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序类型
-                     * @return Order 排序类型
+                     * 获取<p>排序类型</p>
+                     * @return Order <p>排序类型</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序类型
-                     * @param _order 排序类型
+                     * 设置<p>排序类型</p>
+                     * @param _order <p>排序类型</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return By <p>排序字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _by <p>排序字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -178,31 +178,31 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 过滤内容
+                     * <p>过滤内容</p>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序类型
+                     * <p>排序类型</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题列表
-                     * @return Result 主题列表
+                     * 获取<p>主题列表</p>
+                     * @return Result <p>主题列表</p>
                      * 
                      */
                     DescribeDatahubTopicsResp GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题列表
+                     * <p>主题列表</p>
                      */
                     DescribeDatahubTopicsResp m_result;
                     bool m_resultHasBeenSet;

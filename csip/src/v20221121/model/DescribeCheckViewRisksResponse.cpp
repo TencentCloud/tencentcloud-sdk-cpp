@@ -27,7 +27,8 @@ DescribeCheckViewRisksResponse::DescribeCheckViewRisksResponse() :
     m_totalCountHasBeenSet(false),
     m_checkViewRiskListHasBeenSet(false),
     m_standardNameListHasBeenSet(false),
-    m_assetTypeListHasBeenSet(false)
+    m_assetTypeListHasBeenSet(false),
+    m_providerListHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,26 @@ CoreInternalOutcome DescribeCheckViewRisksResponse::Deserialize(const string &pa
         m_assetTypeListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProviderList") && !rsp["ProviderList"].IsNull())
+    {
+        if (!rsp["ProviderList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProviderList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ProviderList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttributeOptionSet item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_providerList.push_back(item);
+        }
+        m_providerListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -198,6 +219,21 @@ string DescribeCheckViewRisksResponse::ToJsonString() const
         }
     }
 
+    if (m_providerListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_providerList.begin(); itr != m_providerList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -248,6 +284,16 @@ vector<AttributeOptionSet> DescribeCheckViewRisksResponse::GetAssetTypeList() co
 bool DescribeCheckViewRisksResponse::AssetTypeListHasBeenSet() const
 {
     return m_assetTypeListHasBeenSet;
+}
+
+vector<AttributeOptionSet> DescribeCheckViewRisksResponse::GetProviderList() const
+{
+    return m_providerList;
+}
+
+bool DescribeCheckViewRisksResponse::ProviderListHasBeenSet() const
+{
+    return m_providerListHasBeenSet;
 }
 
 

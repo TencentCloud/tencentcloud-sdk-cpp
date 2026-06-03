@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID，例如cynosdbmysql-asd123
-                     * @return ClusterId 集群ID，例如cynosdbmysql-asd123
+                     * 获取<p>集群ID，例如cynosdbmysql-asd123</p>
+                     * @return ClusterId <p>集群ID，例如cynosdbmysql-asd123</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID，例如cynosdbmysql-asd123
-                     * @param _clusterId 集群ID，例如cynosdbmysql-asd123
+                     * 设置<p>集群ID，例如cynosdbmysql-asd123</p>
+                     * @param _clusterId <p>集群ID，例如cynosdbmysql-asd123</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组ID，例如cynosdbmysql-proxy-qwe123
-                     * @return ProxyGroupId 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
+                     * 获取<p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>
+                     * @return ProxyGroupId <p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>
                      * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置数据库代理组ID，例如cynosdbmysql-proxy-qwe123
-                     * @param _proxyGroupId 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
+                     * 设置<p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>
+                     * @param _proxyGroupId <p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>
                      * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取一致性类型；“eventual"-最终一致性, "session"-会话一致性, "global"-全局一致性
-                     * @return ConsistencyType 一致性类型；“eventual"-最终一致性, "session"-会话一致性, "global"-全局一致性
+                     * 获取<p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>
+                     * @return ConsistencyType <p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>
                      * 
                      */
                     std::string GetConsistencyType() const;
 
                     /**
-                     * 设置一致性类型；“eventual"-最终一致性, "session"-会话一致性, "global"-全局一致性
-                     * @param _consistencyType 一致性类型；“eventual"-最终一致性, "session"-会话一致性, "global"-全局一致性
+                     * 设置<p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>
+                     * @param _consistencyType <p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>
                      * 
                      */
                     void SetConsistencyType(const std::string& _consistencyType);
@@ -107,19 +107,15 @@ namespace TencentCloud
                     bool ConsistencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取一致性超时时间。
-取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
-                     * @return ConsistencyTimeOut 一致性超时时间。
-取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
+                     * 获取<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * @return ConsistencyTimeOut <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      * 
                      */
                     std::string GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置一致性超时时间。
-取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
-                     * @param _consistencyTimeOut 一致性超时时间。
-取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
+                     * 设置<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * @param _consistencyTimeOut <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      * 
                      */
                     void SetConsistencyTimeOut(const std::string& _consistencyTimeOut);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool ConsistencyTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取读写权重分配模式；系统自动分配："system"， 自定义："custom"
-                     * @return WeightMode 读写权重分配模式；系统自动分配："system"， 自定义："custom"
+                     * 获取<p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>
+                     * @return WeightMode <p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>
                      * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置读写权重分配模式；系统自动分配："system"， 自定义："custom"
-                     * @param _weightMode 读写权重分配模式；系统自动分配："system"， 自定义："custom"
+                     * 设置<p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>
+                     * @param _weightMode <p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -153,19 +149,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取实例只读权重。
-
-                     * @return InstanceWeights 实例只读权重。
-
+                     * 获取<p>实例只读权重。</p>
+                     * @return InstanceWeights <p>实例只读权重。</p>
                      * 
                      */
                     std::vector<ProxyInstanceWeight> GetInstanceWeights() const;
 
                     /**
-                     * 设置实例只读权重。
-
-                     * @param _instanceWeights 实例只读权重。
-
+                     * 设置<p>实例只读权重。</p>
+                     * @param _instanceWeights <p>实例只读权重。</p>
                      * 
                      */
                     void SetInstanceWeights(const std::vector<ProxyInstanceWeight>& _instanceWeights);
@@ -178,15 +170,15 @@ namespace TencentCloud
                     bool InstanceWeightsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："yes" , "no"
-                     * @return FailOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："yes" , "no"
+                     * 获取<p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
+                     * @return FailOver <p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      * 
                      */
                     std::string GetFailOver() const;
 
                     /**
-                     * 设置是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："yes" , "no"
-                     * @param _failOver 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："yes" , "no"
+                     * 设置<p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
+                     * @param _failOver <p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      * 
                      */
                     void SetFailOver(const std::string& _failOver);
@@ -199,15 +191,15 @@ namespace TencentCloud
                     bool FailOverHasBeenSet() const;
 
                     /**
-                     * 获取是否自动添加只读实例，取值："yes" , "no"
-                     * @return AutoAddRo 是否自动添加只读实例，取值："yes" , "no"
+                     * 获取<p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
+                     * @return AutoAddRo <p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      * 
                      */
                     std::string GetAutoAddRo() const;
 
                     /**
-                     * 设置是否自动添加只读实例，取值："yes" , "no"
-                     * @param _autoAddRo 是否自动添加只读实例，取值："yes" , "no"
+                     * 设置<p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
+                     * @param _autoAddRo <p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      * 
                      */
                     void SetAutoAddRo(const std::string& _autoAddRo);
@@ -220,19 +212,15 @@ namespace TencentCloud
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
-                     * 获取是否打开读写分离。
-该参数已废弃，请通过RwType设置读写属性。
-                     * @return OpenRw 是否打开读写分离。
-该参数已废弃，请通过RwType设置读写属性。
+                     * 获取<p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>
+                     * @return OpenRw <p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
-                     * 设置是否打开读写分离。
-该参数已废弃，请通过RwType设置读写属性。
-                     * @param _openRw 是否打开读写分离。
-该参数已废弃，请通过RwType设置读写属性。
+                     * 设置<p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>
+                     * @param _openRw <p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -245,19 +233,15 @@ namespace TencentCloud
                     bool OpenRwHasBeenSet() const;
 
                     /**
-                     * 获取读写类型：
-READWRITE,READONLY
-                     * @return RwType 读写类型：
-READWRITE,READONLY
+                     * 获取<p>读写类型：<br>READWRITE,READONLY</p>
+                     * @return RwType <p>读写类型：<br>READWRITE,READONLY</p>
                      * 
                      */
                     std::string GetRwType() const;
 
                     /**
-                     * 设置读写类型：
-READWRITE,READONLY
-                     * @param _rwType 读写类型：
-READWRITE,READONLY
+                     * 设置<p>读写类型：<br>READWRITE,READONLY</p>
+                     * @param _rwType <p>读写类型：<br>READWRITE,READONLY</p>
                      * 
                      */
                     void SetRwType(const std::string& _rwType);
@@ -270,19 +254,15 @@ READWRITE,READONLY
                     bool RwTypeHasBeenSet() const;
 
                     /**
-                     * 获取事务拆分。
-在一个事务中拆分读和写到不同的实例上去执行。
-                     * @return TransSplit 事务拆分。
-在一个事务中拆分读和写到不同的实例上去执行。
+                     * 获取<p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>
+                     * @return TransSplit <p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置事务拆分。
-在一个事务中拆分读和写到不同的实例上去执行。
-                     * @param _transSplit 事务拆分。
-在一个事务中拆分读和写到不同的实例上去执行。
+                     * 设置<p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>
+                     * @param _transSplit <p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -295,19 +275,15 @@ READWRITE,READONLY
                     bool TransSplitHasBeenSet() const;
 
                     /**
-                     * 获取连接模式：
-nearby,balance
-                     * @return AccessMode 连接模式：
-nearby,balance
+                     * 获取<p>连接模式：<br>nearby,balance</p>
+                     * @return AccessMode <p>连接模式：<br>nearby,balance</p>
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置连接模式：
-nearby,balance
-                     * @param _accessMode 连接模式：
-nearby,balance
+                     * 设置<p>连接模式：<br>nearby,balance</p>
+                     * @param _accessMode <p>连接模式：<br>nearby,balance</p>
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -320,19 +296,15 @@ nearby,balance
                     bool AccessModeHasBeenSet() const;
 
                     /**
-                     * 获取是否打开连接池：
-yes,no
-                     * @return OpenConnectionPool 是否打开连接池：
-yes,no
+                     * 获取<p>是否打开连接池：<br>yes,no</p>
+                     * @return OpenConnectionPool <p>是否打开连接池：<br>yes,no</p>
                      * 
                      */
                     std::string GetOpenConnectionPool() const;
 
                     /**
-                     * 设置是否打开连接池：
-yes,no
-                     * @param _openConnectionPool 是否打开连接池：
-yes,no
+                     * 设置<p>是否打开连接池：<br>yes,no</p>
+                     * @param _openConnectionPool <p>是否打开连接池：<br>yes,no</p>
                      * 
                      */
                     void SetOpenConnectionPool(const std::string& _openConnectionPool);
@@ -345,19 +317,15 @@ yes,no
                     bool OpenConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取连接池类型：
-SessionConnectionPool
-                     * @return ConnectionPoolType 连接池类型：
-SessionConnectionPool
+                     * 获取<p>连接池类型：<br>SessionConnectionPool</p>
+                     * @return ConnectionPoolType <p>连接池类型：<br>SessionConnectionPool</p>
                      * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
-                     * 设置连接池类型：
-SessionConnectionPool
-                     * @param _connectionPoolType 连接池类型：
-SessionConnectionPool
+                     * 设置<p>连接池类型：<br>SessionConnectionPool</p>
+                     * @param _connectionPoolType <p>连接池类型：<br>SessionConnectionPool</p>
                      * 
                      */
                     void SetConnectionPoolType(const std::string& _connectionPoolType);
@@ -370,19 +338,15 @@ SessionConnectionPool
                     bool ConnectionPoolTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接池时间。
-可选范围:0~300（秒）
-                     * @return ConnectionPoolTimeOut 连接池时间。
-可选范围:0~300（秒）
+                     * 获取<p>连接池时间。<br>可选范围:0~300（秒）</p>
+                     * @return ConnectionPoolTimeOut <p>连接池时间。<br>可选范围:0~300（秒）</p>
                      * 
                      */
                     int64_t GetConnectionPoolTimeOut() const;
 
                     /**
-                     * 设置连接池时间。
-可选范围:0~300（秒）
-                     * @param _connectionPoolTimeOut 连接池时间。
-可选范围:0~300（秒）
+                     * 设置<p>连接池时间。<br>可选范围:0~300（秒）</p>
+                     * @param _connectionPoolTimeOut <p>连接池时间。<br>可选范围:0~300（秒）</p>
                      * 
                      */
                     void SetConnectionPoolTimeOut(const int64_t& _connectionPoolTimeOut);
@@ -395,15 +359,15 @@ SessionConnectionPool
                     bool ConnectionPoolTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取是否将libra节点当作普通RO节点
-                     * @return ApNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 获取<p>是否将libra节点当作普通RO节点</p>
+                     * @return ApNodeAsRoNode <p>是否将libra节点当作普通RO节点</p>
                      * 
                      */
                     bool GetApNodeAsRoNode() const;
 
                     /**
-                     * 设置是否将libra节点当作普通RO节点
-                     * @param _apNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 设置<p>是否将libra节点当作普通RO节点</p>
+                     * @param _apNodeAsRoNode <p>是否将libra节点当作普通RO节点</p>
                      * 
                      */
                     void SetApNodeAsRoNode(const bool& _apNodeAsRoNode);
@@ -416,15 +380,15 @@ SessionConnectionPool
                     bool ApNodeAsRoNodeHasBeenSet() const;
 
                     /**
-                     * 获取libra节点故障，是否转发给其他节点
-                     * @return ApQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 获取<p>libra节点故障，是否转发给其他节点</p>
+                     * @return ApQueryToOtherNode <p>libra节点故障，是否转发给其他节点</p>
                      * 
                      */
                     bool GetApQueryToOtherNode() const;
 
                     /**
-                     * 设置libra节点故障，是否转发给其他节点
-                     * @param _apQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 设置<p>libra节点故障，是否转发给其他节点</p>
+                     * @param _apQueryToOtherNode <p>libra节点故障，是否转发给其他节点</p>
                      * 
                      */
                     void SetApQueryToOtherNode(const bool& _apQueryToOtherNode);
@@ -439,112 +403,103 @@ SessionConnectionPool
                 private:
 
                     /**
-                     * 集群ID，例如cynosdbmysql-asd123
+                     * <p>集群ID，例如cynosdbmysql-asd123</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 数据库代理组ID，例如cynosdbmysql-proxy-qwe123
+                     * <p>数据库代理组ID，例如cynosdbmysql-proxy-qwe123</p>
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;
 
                     /**
-                     * 一致性类型；“eventual"-最终一致性, "session"-会话一致性, "global"-全局一致性
+                     * <p>一致性类型；“eventual&quot;-最终一致性, &quot;session&quot;-会话一致性, &quot;global&quot;-全局一致性</p>
                      */
                     std::string m_consistencyType;
                     bool m_consistencyTypeHasBeenSet;
 
                     /**
-                     * 一致性超时时间。
-取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。
+                     * <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      */
                     std::string m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;
 
                     /**
-                     * 读写权重分配模式；系统自动分配："system"， 自定义："custom"
+                     * <p>读写权重分配模式；系统自动分配：&quot;system&quot;， 自定义：&quot;custom&quot;</p>
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 实例只读权重。
-
+                     * <p>实例只读权重。</p>
                      */
                     std::vector<ProxyInstanceWeight> m_instanceWeights;
                     bool m_instanceWeightsHasBeenSet;
 
                     /**
-                     * 是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值："yes" , "no"
+                     * <p>是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      */
                     std::string m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
-                     * 是否自动添加只读实例，取值："yes" , "no"
+                     * <p>是否自动添加只读实例，取值：&quot;yes&quot; , &quot;no&quot;</p>
                      */
                     std::string m_autoAddRo;
                     bool m_autoAddRoHasBeenSet;
 
                     /**
-                     * 是否打开读写分离。
-该参数已废弃，请通过RwType设置读写属性。
+                     * <p>是否打开读写分离。<br>该参数已废弃，请通过RwType设置读写属性。</p>
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;
 
                     /**
-                     * 读写类型：
-READWRITE,READONLY
+                     * <p>读写类型：<br>READWRITE,READONLY</p>
                      */
                     std::string m_rwType;
                     bool m_rwTypeHasBeenSet;
 
                     /**
-                     * 事务拆分。
-在一个事务中拆分读和写到不同的实例上去执行。
+                     * <p>事务拆分。<br>在一个事务中拆分读和写到不同的实例上去执行。</p>
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
 
                     /**
-                     * 连接模式：
-nearby,balance
+                     * <p>连接模式：<br>nearby,balance</p>
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
 
                     /**
-                     * 是否打开连接池：
-yes,no
+                     * <p>是否打开连接池：<br>yes,no</p>
                      */
                     std::string m_openConnectionPool;
                     bool m_openConnectionPoolHasBeenSet;
 
                     /**
-                     * 连接池类型：
-SessionConnectionPool
+                     * <p>连接池类型：<br>SessionConnectionPool</p>
                      */
                     std::string m_connectionPoolType;
                     bool m_connectionPoolTypeHasBeenSet;
 
                     /**
-                     * 连接池时间。
-可选范围:0~300（秒）
+                     * <p>连接池时间。<br>可选范围:0~300（秒）</p>
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;
 
                     /**
-                     * 是否将libra节点当作普通RO节点
+                     * <p>是否将libra节点当作普通RO节点</p>
                      */
                     bool m_apNodeAsRoNode;
                     bool m_apNodeAsRoNodeHasBeenSet;
 
                     /**
-                     * libra节点故障，是否转发给其他节点
+                     * <p>libra节点故障，是否转发给其他节点</p>
                      */
                     bool m_apQueryToOtherNode;
                     bool m_apQueryToOtherNodeHasBeenSet;

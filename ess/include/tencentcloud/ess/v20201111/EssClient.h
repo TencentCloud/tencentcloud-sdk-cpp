@@ -33,6 +33,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateArchiveFlowTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateArchiveFlowTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsUrlRequest.h>
@@ -187,6 +189,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSingleSignOnEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeArchiveFlowTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeArchiveFlowTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
@@ -352,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelUserAutoSignEnableUrlResponse> CancelUserAutoSignEnableUrlOutcome;
                 typedef std::future<CancelUserAutoSignEnableUrlOutcome> CancelUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CancelUserAutoSignEnableUrlRequest&, CancelUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateArchiveFlowTaskResponse> CreateArchiveFlowTaskOutcome;
+                typedef std::future<CreateArchiveFlowTaskOutcome> CreateArchiveFlowTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateArchiveFlowTaskRequest&, CreateArchiveFlowTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateArchiveFlowTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchAdminChangeInvitationsResponse> CreateBatchAdminChangeInvitationsOutcome;
                 typedef std::future<CreateBatchAdminChangeInvitationsOutcome> CreateBatchAdminChangeInvitationsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchAdminChangeInvitationsRequest&, CreateBatchAdminChangeInvitationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAdminChangeInvitationsAsyncHandler;
@@ -583,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSingleSignOnEmployeesResponse> DeleteSingleSignOnEmployeesOutcome;
                 typedef std::future<DeleteSingleSignOnEmployeesOutcome> DeleteSingleSignOnEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSingleSignOnEmployeesRequest&, DeleteSingleSignOnEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSingleSignOnEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeArchiveFlowTaskResponse> DescribeArchiveFlowTaskOutcome;
+                typedef std::future<DescribeArchiveFlowTaskOutcome> DescribeArchiveFlowTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeArchiveFlowTaskRequest&, DescribeArchiveFlowTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeArchiveFlowTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationTasksResponse> DescribeBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationTasksOutcome> DescribeBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBatchOrganizationRegistrationTasksRequest&, DescribeBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationTasksAsyncHandler;
@@ -873,6 +883,26 @@ namespace TencentCloud
                 CancelUserAutoSignEnableUrlOutcome CancelUserAutoSignEnableUrl(const Model::CancelUserAutoSignEnableUrlRequest &request);
                 void CancelUserAutoSignEnableUrlAsync(const Model::CancelUserAutoSignEnableUrlRequest& request, const CancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelUserAutoSignEnableUrlOutcomeCallable CancelUserAutoSignEnableUrlCallable(const Model::CancelUserAutoSignEnableUrlRequest& request);
+
+                /**
+                 *创建合同归档任务
+
+合同归档接口用于将外部系统生成的合同、线下签署完成的合同或历史存量合同归档至腾讯电子签系统，实现合同统一管理。
+
+调用方提交合同文件资源、合同基础信息、签署方信息等数据后，系统将异步创建归档任务进行处理。归档成功后，系统会生成唯一的归档合同 ID（ArchivedFlowId），用于后续合同查询和管理。
+
+合同归档流程：
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/1c99715285540088b97a0435895736a1.png)
+1. 使用<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles" target="_blank">UploadFiles</a> 上传文件返回resourceId
+2. 根据resourceId调用CreateArchiveFlowTask创建合同归档任务返回任务id
+3. 通过任务ID查询合同归档任务状态
+                 * @param req CreateArchiveFlowTaskRequest
+                 * @return CreateArchiveFlowTaskOutcome
+                 */
+                CreateArchiveFlowTaskOutcome CreateArchiveFlowTask(const Model::CreateArchiveFlowTaskRequest &request);
+                void CreateArchiveFlowTaskAsync(const Model::CreateArchiveFlowTaskRequest& request, const CreateArchiveFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateArchiveFlowTaskOutcomeCallable CreateArchiveFlowTaskCallable(const Model::CreateArchiveFlowTaskRequest& request);
 
                 /**
                  *本接口（CreateBatchAdminChangeInvitations）用于批量创建企业超管信息变更。
@@ -2323,6 +2353,15 @@ namespace TencentCloud
                 DeleteSingleSignOnEmployeesOutcome DeleteSingleSignOnEmployees(const Model::DeleteSingleSignOnEmployeesRequest &request);
                 void DeleteSingleSignOnEmployeesAsync(const Model::DeleteSingleSignOnEmployeesRequest& request, const DeleteSingleSignOnEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSingleSignOnEmployeesOutcomeCallable DeleteSingleSignOnEmployeesCallable(const Model::DeleteSingleSignOnEmployeesRequest& request);
+
+                /**
+                 *查询归档任务的执行结果， 用于获取合同归档任务的当前处理状态及执行结果。
+                 * @param req DescribeArchiveFlowTaskRequest
+                 * @return DescribeArchiveFlowTaskOutcome
+                 */
+                DescribeArchiveFlowTaskOutcome DescribeArchiveFlowTask(const Model::DescribeArchiveFlowTaskRequest &request);
+                void DescribeArchiveFlowTaskAsync(const Model::DescribeArchiveFlowTaskRequest& request, const DescribeArchiveFlowTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeArchiveFlowTaskOutcomeCallable DescribeArchiveFlowTaskCallable(const Model::DescribeArchiveFlowTaskRequest& request);
 
                 /**
                  *本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。

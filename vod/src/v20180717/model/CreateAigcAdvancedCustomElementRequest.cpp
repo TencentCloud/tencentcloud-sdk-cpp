@@ -31,6 +31,7 @@ CreateAigcAdvancedCustomElementRequest::CreateAigcAdvancedCustomElementRequest()
     m_elementVideoListHasBeenSet(false),
     m_elementImageListHasBeenSet(false),
     m_tagListHasBeenSet(false),
+    m_disableModerationHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false)
@@ -106,6 +107,14 @@ string CreateAigcAdvancedCustomElementRequest::ToJsonString() const
         string key = "TagList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tagList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableModerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableModeration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_disableModeration.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -266,6 +275,22 @@ void CreateAigcAdvancedCustomElementRequest::SetTagList(const string& _tagList)
 bool CreateAigcAdvancedCustomElementRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string CreateAigcAdvancedCustomElementRequest::GetDisableModeration() const
+{
+    return m_disableModeration;
+}
+
+void CreateAigcAdvancedCustomElementRequest::SetDisableModeration(const string& _disableModeration)
+{
+    m_disableModeration = _disableModeration;
+    m_disableModerationHasBeenSet = true;
+}
+
+bool CreateAigcAdvancedCustomElementRequest::DisableModerationHasBeenSet() const
+{
+    return m_disableModerationHasBeenSet;
 }
 
 string CreateAigcAdvancedCustomElementRequest::GetSessionId() const

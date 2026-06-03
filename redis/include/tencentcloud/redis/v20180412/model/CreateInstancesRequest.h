@@ -591,15 +591,15 @@ namespace TencentCloud
                     bool AlarmPolicyListHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否加密密码</p>
-                     * @return EncryptPassword <p>是否加密密码</p>
+                     * 获取<p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>
+                     * @return EncryptPassword <p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>
                      * 
                      */
                     bool GetEncryptPassword() const;
 
                     /**
-                     * 设置<p>是否加密密码</p>
-                     * @param _encryptPassword <p>是否加密密码</p>
+                     * 设置<p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>
+                     * @param _encryptPassword <p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>
                      * 
                      */
                     void SetEncryptPassword(const bool& _encryptPassword);
@@ -770,7 +770,7 @@ namespace TencentCloud
                     bool m_alarmPolicyListHasBeenSet;
 
                     /**
-                     * <p>是否加密密码</p>
+                     * <p>是否启用密码加密传输。</p><ul><li>true：加密。</li><li>false：不加密（默认值）。</li></ul>
                      */
                     bool m_encryptPassword;
                     bool m_encryptPasswordHasBeenSet;

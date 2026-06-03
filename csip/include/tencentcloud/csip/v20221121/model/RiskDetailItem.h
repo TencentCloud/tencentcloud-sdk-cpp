@@ -340,6 +340,27 @@ namespace TencentCloud
                      */
                     bool AppIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资产类型</p>
+                     * @return AssetType <p>资产类型</p>
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置<p>资产类型</p>
+                     * @param _assetType <p>资产类型</p>
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +446,12 @@ namespace TencentCloud
                      */
                     uint64_t m_appID;
                     bool m_appIDHasBeenSet;
+
+                    /**
+                     * <p>资产类型</p>
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 SessionItem::SessionItem() :
     m_ipHasBeenSet(false),
     m_activeConnHasBeenSet(false),
-    m_allConnHasBeenSet(false)
+    m_allConnHasBeenSet(false),
+    m_isInternalIpHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SessionItem::Deserialize(const rapidjson::Value &value)
         m_allConnHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInternalIp") && !value["IsInternalIp"].IsNull())
+    {
+        if (!value["IsInternalIp"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionItem.IsInternalIp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInternalIp = value["IsInternalIp"].GetBool();
+        m_isInternalIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SessionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AllConn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allConn, allocator);
+    }
+
+    if (m_isInternalIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInternalIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInternalIp, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SessionItem::SetAllConn(const int64_t& _allConn)
 bool SessionItem::AllConnHasBeenSet() const
 {
     return m_allConnHasBeenSet;
+}
+
+bool SessionItem::GetIsInternalIp() const
+{
+    return m_isInternalIp;
+}
+
+void SessionItem::SetIsInternalIp(const bool& _isInternalIp)
+{
+    m_isInternalIp = _isInternalIp;
+    m_isInternalIpHasBeenSet = true;
+}
+
+bool SessionItem::IsInternalIpHasBeenSet() const
+{
+    return m_isInternalIpHasBeenSet;
 }
 

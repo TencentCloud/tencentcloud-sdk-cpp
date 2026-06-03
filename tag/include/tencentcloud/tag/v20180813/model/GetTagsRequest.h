@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
-                     * @return PaginationToken <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
+                     * 获取<p>从上一页的响应中获取的下一页的Token值。<br>如果是第一次请求，设置为空。</p>
+                     * @return PaginationToken <p>从上一页的响应中获取的下一页的Token值。<br>如果是第一次请求，设置为空。</p>
                      * 
                      */
                     std::string GetPaginationToken() const;
 
                     /**
-                     * 设置<p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
-                     * @param _paginationToken <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
+                     * 设置<p>从上一页的响应中获取的下一页的Token值。<br>如果是第一次请求，设置为空。</p>
+                     * @param _paginationToken <p>从上一页的响应中获取的下一页的Token值。<br>如果是第一次请求，设置为空。</p>
                      * 
                      */
                     void SetPaginationToken(const std::string& _paginationToken);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PaginationTokenHasBeenSet() const;
 
                     /**
-                     * 获取<p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
-                     * @return MaxResults <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
+                     * 获取<p>每一页返回的数据最大条数，最大1000。<br>缺省值：50。</p>
+                     * @return MaxResults <p>每一页返回的数据最大条数，最大1000。<br>缺省值：50。</p>
                      * 
                      */
                     uint64_t GetMaxResults() const;
 
                     /**
-                     * 设置<p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
-                     * @param _maxResults <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
+                     * 设置<p>每一页返回的数据最大条数，最大1000。<br>缺省值：50。</p>
+                     * @param _maxResults <p>每一页返回的数据最大条数，最大1000。<br>缺省值：50。</p>
                      * 
                      */
                     void SetMaxResults(const uint64_t& _maxResults);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签键。返回所有标签键列表对应的标签。最大长度：20</p>
-                     * @return TagKeys <p>标签键。返回所有标签键列表对应的标签。最大长度：20</p>
+                     * 获取<p>标签键。<br>返回所有标签键列表对应的标签。<br>最大长度：20</p>
+                     * @return TagKeys <p>标签键。<br>返回所有标签键列表对应的标签。<br>最大长度：20</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置<p>标签键。返回所有标签键列表对应的标签。最大长度：20</p>
-                     * @param _tagKeys <p>标签键。返回所有标签键列表对应的标签。最大长度：20</p>
+                     * 设置<p>标签键。<br>返回所有标签键列表对应的标签。<br>最大长度：20</p>
+                     * @param _tagKeys <p>标签键。<br>返回所有标签键列表对应的标签。<br>最大长度：20</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -129,19 +129,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
+                     * <p>从上一页的响应中获取的下一页的Token值。<br>如果是第一次请求，设置为空。</p>
                      */
                     std::string m_paginationToken;
                     bool m_paginationTokenHasBeenSet;
 
                     /**
-                     * <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
+                     * <p>每一页返回的数据最大条数，最大1000。<br>缺省值：50。</p>
                      */
                     uint64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * <p>标签键。返回所有标签键列表对应的标签。最大长度：20</p>
+                     * <p>标签键。<br>返回所有标签键列表对应的标签。<br>最大长度：20</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;

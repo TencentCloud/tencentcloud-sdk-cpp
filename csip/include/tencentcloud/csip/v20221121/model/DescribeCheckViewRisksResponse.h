@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检查视角下风险数量
-                     * @return TotalCount 检查视角下风险数量
+                     * 获取<p>检查视角下风险数量</p>
+                     * @return TotalCount <p>检查视角下风险数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取检查视角下风险列表
-                     * @return CheckViewRiskList 检查视角下风险列表
+                     * 获取<p>检查视角下风险列表</p>
+                     * @return CheckViewRiskList <p>检查视角下风险列表</p>
                      * 
                      */
                     std::vector<CheckViewRiskItem> GetCheckViewRiskList() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool CheckViewRiskListHasBeenSet() const;
 
                     /**
-                     * 获取检查视角下cspm规范标签列表
-                     * @return StandardNameList 检查视角下cspm规范标签列表
+                     * 获取<p>检查视角下cspm规范标签列表</p>
+                     * @return StandardNameList <p>检查视角下cspm规范标签列表</p>
                      * 
                      */
                     std::vector<StandardItem> GetStandardNameList() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool StandardNameListHasBeenSet() const;
 
                     /**
-                     * 获取资产类型集合
-                     * @return AssetTypeList 资产类型集合
+                     * 获取<p>资产类型集合</p>
+                     * @return AssetTypeList <p>资产类型集合</p>
                      * 
                      */
                     std::vector<AttributeOptionSet> GetAssetTypeList() const;
@@ -102,31 +102,51 @@ namespace TencentCloud
                      */
                     bool AssetTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云厂商类型集合</p>
+                     * @return ProviderList <p>云厂商类型集合</p>
+                     * 
+                     */
+                    std::vector<AttributeOptionSet> GetProviderList() const;
+
+                    /**
+                     * 判断参数 ProviderList 是否已赋值
+                     * @return ProviderList 是否已赋值
+                     * 
+                     */
+                    bool ProviderListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 检查视角下风险数量
+                     * <p>检查视角下风险数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 检查视角下风险列表
+                     * <p>检查视角下风险列表</p>
                      */
                     std::vector<CheckViewRiskItem> m_checkViewRiskList;
                     bool m_checkViewRiskListHasBeenSet;
 
                     /**
-                     * 检查视角下cspm规范标签列表
+                     * <p>检查视角下cspm规范标签列表</p>
                      */
                     std::vector<StandardItem> m_standardNameList;
                     bool m_standardNameListHasBeenSet;
 
                     /**
-                     * 资产类型集合
+                     * <p>资产类型集合</p>
                      */
                     std::vector<AttributeOptionSet> m_assetTypeList;
                     bool m_assetTypeListHasBeenSet;
+
+                    /**
+                     * <p>云厂商类型集合</p>
+                     */
+                    std::vector<AttributeOptionSet> m_providerList;
+                    bool m_providerListHasBeenSet;
 
                 };
             }

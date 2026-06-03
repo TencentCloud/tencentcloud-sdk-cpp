@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险规则ID
-                     * @return RiskRuleId 风险规则ID
+                     * 获取<p>风险规则ID</p>
+                     * @return RiskRuleId <p>风险规则ID</p>
                      * 
                      */
                     std::string GetRiskRuleId() const;
 
                     /**
-                     * 设置风险规则ID
-                     * @param _riskRuleId 风险规则ID
+                     * 设置<p>风险规则ID</p>
+                     * @param _riskRuleId <p>风险规则ID</p>
                      * 
                      */
                     void SetRiskRuleId(const std::string& _riskRuleId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风险规则ID
+                     * <p>风险规则ID</p>
                      */
                     std::string m_riskRuleId;
                     bool m_riskRuleIdHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 ModifyInstanceRequest::ModifyInstanceRequest() :
     m_registryIdHasBeenSet(false),
     m_registryTypeHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableCosVersioningHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_enableCosVersioningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosVersioning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCosVersioning, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyInstanceRequest::SetDeletionProtection(const bool& _deletionProtectio
 bool ModifyInstanceRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetEnableCosVersioning() const
+{
+    return m_enableCosVersioning;
+}
+
+void ModifyInstanceRequest::SetEnableCosVersioning(const bool& _enableCosVersioning)
+{
+    m_enableCosVersioning = _enableCosVersioning;
+    m_enableCosVersioningHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::EnableCosVersioningHasBeenSet() const
+{
+    return m_enableCosVersioningHasBeenSet;
 }
 
 

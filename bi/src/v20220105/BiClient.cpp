@@ -190,6 +190,56 @@ BiClient::CreateAuthApiKeyOutcomeCallable BiClient::CreateAuthApiKeyCallable(con
     return prom->get_future();
 }
 
+BiClient::CreateDataTableOutcome BiClient::CreateDataTable(const CreateDataTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataTableResponse rsp = CreateDataTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataTableOutcome(rsp);
+        else
+            return CreateDataTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataTableOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateDataTableAsync(const CreateDataTableRequest& request, const CreateDataTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDataTableRequest&;
+    using Resp = CreateDataTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDataTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateDataTableOutcomeCallable BiClient::CreateDataTableCallable(const CreateDataTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDataTableOutcome>>();
+    CreateDataTableAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateDataTableRequest&,
+        CreateDataTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::CreateDatasourceOutcome BiClient::CreateDatasource(const CreateDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDatasource");
@@ -1482,6 +1532,56 @@ BiClient::DescribeResourceUserGroupPageListOutcomeCallable BiClient::DescribeRes
         const BiClient*,
         const DescribeResourceUserGroupPageListRequest&,
         DescribeResourceUserGroupPageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::DescribeSourceFieldListOutcome BiClient::DescribeSourceFieldList(const DescribeSourceFieldListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSourceFieldList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSourceFieldListResponse rsp = DescribeSourceFieldListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSourceFieldListOutcome(rsp);
+        else
+            return DescribeSourceFieldListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSourceFieldListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribeSourceFieldListAsync(const DescribeSourceFieldListRequest& request, const DescribeSourceFieldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSourceFieldListRequest&;
+    using Resp = DescribeSourceFieldListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSourceFieldList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::DescribeSourceFieldListOutcomeCallable BiClient::DescribeSourceFieldListCallable(const DescribeSourceFieldListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSourceFieldListOutcome>>();
+    DescribeSourceFieldListAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const DescribeSourceFieldListRequest&,
+        DescribeSourceFieldListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

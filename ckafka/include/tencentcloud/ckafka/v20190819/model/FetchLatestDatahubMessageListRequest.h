@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性topic名称
-                     * @return Name 弹性topic名称
+                     * 获取<p>弹性topic名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/86863">DescribeDatahubTopics</a></p>
+                     * @return Name <p>弹性topic名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/86863">DescribeDatahubTopics</a></p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置弹性topic名称
-                     * @param _name 弹性topic名称
+                     * 设置<p>弹性topic名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/86863">DescribeDatahubTopics</a></p>
+                     * @param _name <p>弹性topic名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/86863">DescribeDatahubTopics</a></p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分区id
-                     * @return Partition 分区id
+                     * 获取<p>分区id</p>
+                     * @return Partition <p>分区id</p>
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区id
-                     * @param _partition 分区id
+                     * 设置<p>分区id</p>
+                     * @param _partition <p>分区id</p>
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取位点信息
-                     * @return Offset 位点信息
+                     * 获取<p>位点信息</p>
+                     * @return Offset <p>位点信息</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置位点信息
-                     * @param _offset 位点信息
+                     * 设置<p>位点信息</p>
+                     * @param _offset <p>位点信息</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大查询条数，最小1，最大100
-                     * @return MessageCount 最大查询条数，最小1，最大100
+                     * 获取<p>最大查询条数</p><p>取值范围：[1, 100]</p>
+                     * @return MessageCount <p>最大查询条数</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     int64_t GetMessageCount() const;
 
                     /**
-                     * 设置最大查询条数，最小1，最大100
-                     * @param _messageCount 最大查询条数，最小1，最大100
+                     * 设置<p>最大查询条数</p><p>取值范围：[1, 100]</p>
+                     * @param _messageCount <p>最大查询条数</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     void SetMessageCount(const int64_t& _messageCount);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性topic名称
+                     * <p>弹性topic名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/86863">DescribeDatahubTopics</a></p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分区id
+                     * <p>分区id</p>
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 位点信息
+                     * <p>位点信息</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大查询条数，最小1，最大100
+                     * <p>最大查询条数</p><p>取值范围：[1, 100]</p>
                      */
                     int64_t m_messageCount;
                     bool m_messageCountHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性
-                     * @return ConsistencyType 一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性
+                     * 获取<p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>
+                     * @return ConsistencyType <p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>
                      * 
                      */
                     std::string GetConsistencyType() const;
 
                     /**
-                     * 设置一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性
-                     * @param _consistencyType 一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性
+                     * 设置<p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>
+                     * @param _consistencyType <p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>
                      * 
                      */
                     void SetConsistencyType(const std::string& _consistencyType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ConsistencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取一致性超时时间
-                     * @return ConsistencyTimeOut 一致性超时时间
+                     * 获取<p>一致性超时时间</p>
+                     * @return ConsistencyTimeOut <p>一致性超时时间</p>
                      * 
                      */
                     int64_t GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置一致性超时时间
-                     * @param _consistencyTimeOut 一致性超时时间
+                     * 设置<p>一致性超时时间</p>
+                     * @param _consistencyTimeOut <p>一致性超时时间</p>
                      * 
                      */
                     void SetConsistencyTimeOut(const int64_t& _consistencyTimeOut);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ConsistencyTimeOutHasBeenSet() const;
 
                     /**
-                     * 获取权重模式 system-系统分配，custom-自定义
-                     * @return WeightMode 权重模式 system-系统分配，custom-自定义
+                     * 获取<p>权重模式 system-系统分配，custom-自定义</p>
+                     * @return WeightMode <p>权重模式 system-系统分配，custom-自定义</p>
                      * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置权重模式 system-系统分配，custom-自定义
-                     * @param _weightMode 权重模式 system-系统分配，custom-自定义
+                     * 设置<p>权重模式 system-系统分配，custom-自定义</p>
+                     * @param _weightMode <p>权重模式 system-系统分配，custom-自定义</p>
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启故障转移
-                     * @return FailOver 是否开启故障转移
+                     * 获取<p>是否开启故障转移</p>
+                     * @return FailOver <p>是否开启故障转移</p>
                      * 
                      */
                     std::string GetFailOver() const;
 
                     /**
-                     * 设置是否开启故障转移
-                     * @param _failOver 是否开启故障转移
+                     * 设置<p>是否开启故障转移</p>
+                     * @param _failOver <p>是否开启故障转移</p>
                      * 
                      */
                     void SetFailOver(const std::string& _failOver);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FailOverHasBeenSet() const;
 
                     /**
-                     * 获取是否自动添加只读实例，yes-是，no-不自动添加
-                     * @return AutoAddRo 是否自动添加只读实例，yes-是，no-不自动添加
+                     * 获取<p>是否自动添加只读实例，yes-是，no-不自动添加</p>
+                     * @return AutoAddRo <p>是否自动添加只读实例，yes-是，no-不自动添加</p>
                      * 
                      */
                     std::string GetAutoAddRo() const;
 
                     /**
-                     * 设置是否自动添加只读实例，yes-是，no-不自动添加
-                     * @param _autoAddRo 是否自动添加只读实例，yes-是，no-不自动添加
+                     * 设置<p>是否自动添加只读实例，yes-是，no-不自动添加</p>
+                     * @param _autoAddRo <p>是否自动添加只读实例，yes-是，no-不自动添加</p>
                      * 
                      */
                     void SetAutoAddRo(const std::string& _autoAddRo);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AutoAddRoHasBeenSet() const;
 
                     /**
-                     * 获取实例权重数组
-                     * @return InstanceWeights 实例权重数组
+                     * 获取<p>实例权重数组</p>
+                     * @return InstanceWeights <p>实例权重数组</p>
                      * 
                      */
                     std::vector<ProxyInstanceWeight> GetInstanceWeights() const;
 
                     /**
-                     * 设置实例权重数组
-                     * @param _instanceWeights 实例权重数组
+                     * 设置<p>实例权重数组</p>
+                     * @param _instanceWeights <p>实例权重数组</p>
                      * 
                      */
                     void SetInstanceWeights(const std::vector<ProxyInstanceWeight>& _instanceWeights);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool InstanceWeightsHasBeenSet() const;
 
                     /**
-                     * 获取是否开通读写节点，yse-是，no-否
-                     * @return OpenRw 是否开通读写节点，yse-是，no-否
+                     * 获取<p>是否开通读写节点，yse-是，no-否</p>
+                     * @return OpenRw <p>是否开通读写节点，yse-是，no-否</p>
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
-                     * 设置是否开通读写节点，yse-是，no-否
-                     * @param _openRw 是否开通读写节点，yse-是，no-否
+                     * 设置<p>是否开通读写节点，yse-是，no-否</p>
+                     * @param _openRw <p>是否开通读写节点，yse-是，no-否</p>
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool OpenRwHasBeenSet() const;
 
                     /**
-                     * 获取读写属性，可选值：READWRITE,READONLY
-                     * @return RwType 读写属性，可选值：READWRITE,READONLY
+                     * 获取<p>读写属性，可选值：READWRITE,READONLY</p>
+                     * @return RwType <p>读写属性，可选值：READWRITE,READONLY</p>
                      * 
                      */
                     std::string GetRwType() const;
 
                     /**
-                     * 设置读写属性，可选值：READWRITE,READONLY
-                     * @param _rwType 读写属性，可选值：READWRITE,READONLY
+                     * 设置<p>读写属性，可选值：READWRITE,READONLY</p>
+                     * @param _rwType <p>读写属性，可选值：READWRITE,READONLY</p>
                      * 
                      */
                     void SetRwType(const std::string& _rwType);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RwTypeHasBeenSet() const;
 
                     /**
-                     * 获取事务拆分
-                     * @return TransSplit 事务拆分
+                     * 获取<p>事务拆分</p>
+                     * @return TransSplit <p>事务拆分</p>
                      * 
                      */
                     bool GetTransSplit() const;
 
                     /**
-                     * 设置事务拆分
-                     * @param _transSplit 事务拆分
+                     * 设置<p>事务拆分</p>
+                     * @param _transSplit <p>事务拆分</p>
                      * 
                      */
                     void SetTransSplit(const bool& _transSplit);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool TransSplitHasBeenSet() const;
 
                     /**
-                     * 获取连接模式，可选值：balance，nearby
-                     * @return AccessMode 连接模式，可选值：balance，nearby
+                     * 获取<p>连接模式，可选值：balance，nearby</p>
+                     * @return AccessMode <p>连接模式，可选值：balance，nearby</p>
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
-                     * 设置连接模式，可选值：balance，nearby
-                     * @param _accessMode 连接模式，可选值：balance，nearby
+                     * 设置<p>连接模式，可选值：balance，nearby</p>
+                     * @param _accessMode <p>连接模式，可选值：balance，nearby</p>
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool AccessModeHasBeenSet() const;
 
                     /**
-                     * 获取是否将libra节点当作普通RO节点
-                     * @return ApNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 获取<p>是否将libra节点当作普通RO节点</p>
+                     * @return ApNodeAsRoNode <p>是否将libra节点当作普通RO节点</p>
                      * 
                      */
                     bool GetApNodeAsRoNode() const;
 
                     /**
-                     * 设置是否将libra节点当作普通RO节点
-                     * @param _apNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 设置<p>是否将libra节点当作普通RO节点</p>
+                     * @param _apNodeAsRoNode <p>是否将libra节点当作普通RO节点</p>
                      * 
                      */
                     void SetApNodeAsRoNode(const bool& _apNodeAsRoNode);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ApNodeAsRoNodeHasBeenSet() const;
 
                     /**
-                     * 获取libra节点故障，是否转发给其他节点
-                     * @return ApQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 获取<p>libra节点故障，是否转发给其他节点</p>
+                     * @return ApQueryToOtherNode <p>libra节点故障，是否转发给其他节点</p>
                      * 
                      */
                     bool GetApQueryToOtherNode() const;
 
                     /**
-                     * 设置libra节点故障，是否转发给其他节点
-                     * @param _apQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 设置<p>libra节点故障，是否转发给其他节点</p>
+                     * @param _apQueryToOtherNode <p>libra节点故障，是否转发给其他节点</p>
                      * 
                      */
                     void SetApQueryToOtherNode(const bool& _apQueryToOtherNode);
@@ -302,73 +302,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性
+                     * <p>一致性类型 eventual-最终一致性,global-全局一致性,session-会话一致性</p>
                      */
                     std::string m_consistencyType;
                     bool m_consistencyTypeHasBeenSet;
 
                     /**
-                     * 一致性超时时间
+                     * <p>一致性超时时间</p>
                      */
                     int64_t m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;
 
                     /**
-                     * 权重模式 system-系统分配，custom-自定义
+                     * <p>权重模式 system-系统分配，custom-自定义</p>
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 是否开启故障转移
+                     * <p>是否开启故障转移</p>
                      */
                     std::string m_failOver;
                     bool m_failOverHasBeenSet;
 
                     /**
-                     * 是否自动添加只读实例，yes-是，no-不自动添加
+                     * <p>是否自动添加只读实例，yes-是，no-不自动添加</p>
                      */
                     std::string m_autoAddRo;
                     bool m_autoAddRoHasBeenSet;
 
                     /**
-                     * 实例权重数组
+                     * <p>实例权重数组</p>
                      */
                     std::vector<ProxyInstanceWeight> m_instanceWeights;
                     bool m_instanceWeightsHasBeenSet;
 
                     /**
-                     * 是否开通读写节点，yse-是，no-否
+                     * <p>是否开通读写节点，yse-是，no-否</p>
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;
 
                     /**
-                     * 读写属性，可选值：READWRITE,READONLY
+                     * <p>读写属性，可选值：READWRITE,READONLY</p>
                      */
                     std::string m_rwType;
                     bool m_rwTypeHasBeenSet;
 
                     /**
-                     * 事务拆分
+                     * <p>事务拆分</p>
                      */
                     bool m_transSplit;
                     bool m_transSplitHasBeenSet;
 
                     /**
-                     * 连接模式，可选值：balance，nearby
+                     * <p>连接模式，可选值：balance，nearby</p>
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
 
                     /**
-                     * 是否将libra节点当作普通RO节点
+                     * <p>是否将libra节点当作普通RO节点</p>
                      */
                     bool m_apNodeAsRoNode;
                     bool m_apNodeAsRoNodeHasBeenSet;
 
                     /**
-                     * libra节点故障，是否转发给其他节点
+                     * <p>libra节点故障，是否转发给其他节点</p>
                      */
                     bool m_apQueryToOtherNode;
                     bool m_apQueryToOtherNodeHasBeenSet;

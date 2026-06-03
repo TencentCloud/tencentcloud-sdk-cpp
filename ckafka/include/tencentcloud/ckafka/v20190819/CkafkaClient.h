@@ -51,6 +51,12 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaAndDataSyncDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaAndDataSyncDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaDataAndOffsetSyncDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaDataAndOffsetSyncDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaSyncDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateMetaSyncDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePostPaidInstanceRequest.h>
@@ -267,6 +273,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaAndDataSyncDatahubTaskResponse> CreateMetaAndDataSyncDatahubTaskOutcome;
+                typedef std::future<CreateMetaAndDataSyncDatahubTaskOutcome> CreateMetaAndDataSyncDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateMetaAndDataSyncDatahubTaskRequest&, CreateMetaAndDataSyncDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaAndDataSyncDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaDataAndOffsetSyncDatahubTaskResponse> CreateMetaDataAndOffsetSyncDatahubTaskOutcome;
+                typedef std::future<CreateMetaDataAndOffsetSyncDatahubTaskOutcome> CreateMetaDataAndOffsetSyncDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateMetaDataAndOffsetSyncDatahubTaskRequest&, CreateMetaDataAndOffsetSyncDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaDataAndOffsetSyncDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMetaSyncDatahubTaskResponse> CreateMetaSyncDatahubTaskOutcome;
+                typedef std::future<CreateMetaSyncDatahubTaskOutcome> CreateMetaSyncDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateMetaSyncDatahubTaskRequest&, CreateMetaSyncDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaSyncDatahubTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
                 typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
@@ -635,6 +650,33 @@ namespace TencentCloud
                 CreateInstancePreOutcome CreateInstancePre(const Model::CreateInstancePreRequest &request);
                 void CreateInstancePreAsync(const Model::CreateInstancePreRequest& request, const CreateInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstancePreOutcomeCallable CreateInstancePreCallable(const Model::CreateInstancePreRequest& request);
+
+                /**
+                 *连接器实例同步任务-元数据、消息同步
+                 * @param req CreateMetaAndDataSyncDatahubTaskRequest
+                 * @return CreateMetaAndDataSyncDatahubTaskOutcome
+                 */
+                CreateMetaAndDataSyncDatahubTaskOutcome CreateMetaAndDataSyncDatahubTask(const Model::CreateMetaAndDataSyncDatahubTaskRequest &request);
+                void CreateMetaAndDataSyncDatahubTaskAsync(const Model::CreateMetaAndDataSyncDatahubTaskRequest& request, const CreateMetaAndDataSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaAndDataSyncDatahubTaskOutcomeCallable CreateMetaAndDataSyncDatahubTaskCallable(const Model::CreateMetaAndDataSyncDatahubTaskRequest& request);
+
+                /**
+                 *连接器实例同步任务-同步元数据、消息数据、消费微点
+                 * @param req CreateMetaDataAndOffsetSyncDatahubTaskRequest
+                 * @return CreateMetaDataAndOffsetSyncDatahubTaskOutcome
+                 */
+                CreateMetaDataAndOffsetSyncDatahubTaskOutcome CreateMetaDataAndOffsetSyncDatahubTask(const Model::CreateMetaDataAndOffsetSyncDatahubTaskRequest &request);
+                void CreateMetaDataAndOffsetSyncDatahubTaskAsync(const Model::CreateMetaDataAndOffsetSyncDatahubTaskRequest& request, const CreateMetaDataAndOffsetSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaDataAndOffsetSyncDatahubTaskOutcomeCallable CreateMetaDataAndOffsetSyncDatahubTaskCallable(const Model::CreateMetaDataAndOffsetSyncDatahubTaskRequest& request);
+
+                /**
+                 *连接器实例同步任务-元数据同步
+                 * @param req CreateMetaSyncDatahubTaskRequest
+                 * @return CreateMetaSyncDatahubTaskOutcome
+                 */
+                CreateMetaSyncDatahubTaskOutcome CreateMetaSyncDatahubTask(const Model::CreateMetaSyncDatahubTaskRequest &request);
+                void CreateMetaSyncDatahubTaskAsync(const Model::CreateMetaSyncDatahubTaskRequest& request, const CreateMetaSyncDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMetaSyncDatahubTaskOutcomeCallable CreateMetaSyncDatahubTaskCallable(const Model::CreateMetaSyncDatahubTaskRequest& request);
 
                 /**
                  *本接口用于增加主题中的分区

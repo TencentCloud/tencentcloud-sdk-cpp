@@ -34,7 +34,8 @@ RiskDetailItem::RiskDetailItem() :
     m_riskIdHasBeenSet(false),
     m_riskRuleIdHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
-    m_appIDHasBeenSet(false)
+    m_appIDHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome RiskDetailItem::Deserialize(const rapidjson::Value &value)
         m_appIDHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetType") && !value["AssetType"].IsNull())
+    {
+        if (!value["AssetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskDetailItem.AssetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetType = string(value["AssetType"].GetString());
+        m_assetTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void RiskDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AppID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appID, allocator);
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void RiskDetailItem::SetAppID(const uint64_t& _appID)
 bool RiskDetailItem::AppIDHasBeenSet() const
 {
     return m_appIDHasBeenSet;
+}
+
+string RiskDetailItem::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void RiskDetailItem::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool RiskDetailItem::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
