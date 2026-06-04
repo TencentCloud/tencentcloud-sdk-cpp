@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool CreationTimestampHasBeenSet() const;
 
                     /**
-                     * 获取<p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
-                     * @return UpdateTimestamp <p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
+                     * 获取<p>Group的更新时间和日期 UpdateTimestamp。<br>UpdateTimestamp 的值是自 Unix 纪元时间到Group更新时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。<br>有关更多信息，请参阅 Unix 时间。</p>
+                     * @return UpdateTimestamp <p>Group的更新时间和日期 UpdateTimestamp。<br>UpdateTimestamp 的值是自 Unix 纪元时间到Group更新时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。<br>有关更多信息，请参阅 Unix 时间。</p>
                      * 
                      */
                     uint64_t GetUpdateTimestamp() const;
 
                     /**
-                     * 设置<p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
-                     * @param _updateTimestamp <p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
+                     * 设置<p>Group的更新时间和日期 UpdateTimestamp。<br>UpdateTimestamp 的值是自 Unix 纪元时间到Group更新时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。<br>有关更多信息，请参阅 Unix 时间。</p>
+                     * @param _updateTimestamp <p>Group的更新时间和日期 UpdateTimestamp。<br>UpdateTimestamp 的值是自 Unix 纪元时间到Group更新时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。<br>有关更多信息，请参阅 Unix 时间。</p>
                      * 
                      */
                     void SetUpdateTimestamp(const uint64_t& _updateTimestamp);
@@ -252,7 +252,7 @@ namespace TencentCloud
                     bool m_creationTimestampHasBeenSet;
 
                     /**
-                     * <p>Group的更新时间和日期 UpdateTimestamp。</p><ul><li>UpdateTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 </li><li>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。</li><li>有关更多信息，请参阅 Unix 时间。</li></ul>
+                     * <p>Group的更新时间和日期 UpdateTimestamp。<br>UpdateTimestamp 的值是自 Unix 纪元时间到Group更新时间的毫秒数。<br>Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。<br>有关更多信息，请参阅 Unix 时间。</p>
                      */
                     uint64_t m_updateTimestamp;
                     bool m_updateTimestampHasBeenSet;

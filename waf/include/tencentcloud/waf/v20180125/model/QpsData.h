@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性qps默认值
-                     * @return ElasticBillingDefault 弹性qps默认值
+                     * 获取<p>弹性qps默认值</p>
+                     * @return ElasticBillingDefault <p>弹性qps默认值</p>
                      * 
                      */
                     uint64_t GetElasticBillingDefault() const;
 
                     /**
-                     * 设置弹性qps默认值
-                     * @param _elasticBillingDefault 弹性qps默认值
+                     * 设置<p>弹性qps默认值</p>
+                     * @param _elasticBillingDefault <p>弹性qps默认值</p>
                      * 
                      */
                     void SetElasticBillingDefault(const uint64_t& _elasticBillingDefault);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ElasticBillingDefaultHasBeenSet() const;
 
                     /**
-                     * 获取弹性qps最小值
-                     * @return ElasticBillingMin 弹性qps最小值
+                     * 获取<p>弹性qps最小值</p>
+                     * @return ElasticBillingMin <p>弹性qps最小值</p>
                      * 
                      */
                     uint64_t GetElasticBillingMin() const;
 
                     /**
-                     * 设置弹性qps最小值
-                     * @param _elasticBillingMin 弹性qps最小值
+                     * 设置<p>弹性qps最小值</p>
+                     * @param _elasticBillingMin <p>弹性qps最小值</p>
                      * 
                      */
                     void SetElasticBillingMin(const uint64_t& _elasticBillingMin);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ElasticBillingMinHasBeenSet() const;
 
                     /**
-                     * 获取弹性qps最大值
-                     * @return ElasticBillingMax 弹性qps最大值
+                     * 获取<p>弹性qps最大值</p>
+                     * @return ElasticBillingMax <p>弹性qps最大值</p>
                      * 
                      */
                     uint64_t GetElasticBillingMax() const;
 
                     /**
-                     * 设置弹性qps最大值
-                     * @param _elasticBillingMax 弹性qps最大值
+                     * 设置<p>弹性qps最大值</p>
+                     * @param _elasticBillingMax <p>弹性qps最大值</p>
                      * 
                      */
                     void SetElasticBillingMax(const uint64_t& _elasticBillingMax);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ElasticBillingMaxHasBeenSet() const;
 
                     /**
-                     * 获取业务扩展包最大qps
-                     * @return QPSExtendMax 业务扩展包最大qps
+                     * 获取<p>业务扩展包最大qps</p>
+                     * @return QPSExtendMax <p>业务扩展包最大qps</p>
                      * 
                      */
                     uint64_t GetQPSExtendMax() const;
 
                     /**
-                     * 设置业务扩展包最大qps
-                     * @param _qPSExtendMax 业务扩展包最大qps
+                     * 设置<p>业务扩展包最大qps</p>
+                     * @param _qPSExtendMax <p>业务扩展包最大qps</p>
                      * 
                      */
                     void SetQPSExtendMax(const uint64_t& _qPSExtendMax);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool QPSExtendMaxHasBeenSet() const;
 
                     /**
-                     * 获取境外业务扩展包最大qps
-                     * @return QPSExtendIntlMax 境外业务扩展包最大qps
+                     * 获取<p>境外业务扩展包最大qps</p>
+                     * @return QPSExtendIntlMax <p>境外业务扩展包最大qps</p>
                      * 
                      */
                     uint64_t GetQPSExtendIntlMax() const;
 
                     /**
-                     * 设置境外业务扩展包最大qps
-                     * @param _qPSExtendIntlMax 境外业务扩展包最大qps
+                     * 设置<p>境外业务扩展包最大qps</p>
+                     * @param _qPSExtendIntlMax <p>境外业务扩展包最大qps</p>
                      * 
                      */
                     void SetQPSExtendIntlMax(const uint64_t& _qPSExtendIntlMax);
@@ -151,37 +151,64 @@ namespace TencentCloud
                      */
                     bool QPSExtendIntlMaxHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预付费/后付费QPS扩容比</p>
+                     * @return ElasticPrepaidRatio <p>预付费/后付费QPS扩容比</p>
+                     * 
+                     */
+                    double GetElasticPrepaidRatio() const;
+
+                    /**
+                     * 设置<p>预付费/后付费QPS扩容比</p>
+                     * @param _elasticPrepaidRatio <p>预付费/后付费QPS扩容比</p>
+                     * 
+                     */
+                    void SetElasticPrepaidRatio(const double& _elasticPrepaidRatio);
+
+                    /**
+                     * 判断参数 ElasticPrepaidRatio 是否已赋值
+                     * @return ElasticPrepaidRatio 是否已赋值
+                     * 
+                     */
+                    bool ElasticPrepaidRatioHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 弹性qps默认值
+                     * <p>弹性qps默认值</p>
                      */
                     uint64_t m_elasticBillingDefault;
                     bool m_elasticBillingDefaultHasBeenSet;
 
                     /**
-                     * 弹性qps最小值
+                     * <p>弹性qps最小值</p>
                      */
                     uint64_t m_elasticBillingMin;
                     bool m_elasticBillingMinHasBeenSet;
 
                     /**
-                     * 弹性qps最大值
+                     * <p>弹性qps最大值</p>
                      */
                     uint64_t m_elasticBillingMax;
                     bool m_elasticBillingMaxHasBeenSet;
 
                     /**
-                     * 业务扩展包最大qps
+                     * <p>业务扩展包最大qps</p>
                      */
                     uint64_t m_qPSExtendMax;
                     bool m_qPSExtendMaxHasBeenSet;
 
                     /**
-                     * 境外业务扩展包最大qps
+                     * <p>境外业务扩展包最大qps</p>
                      */
                     uint64_t m_qPSExtendIntlMax;
                     bool m_qPSExtendIntlMaxHasBeenSet;
+
+                    /**
+                     * <p>预付费/后付费QPS扩容比</p>
+                     */
+                    double m_elasticPrepaidRatio;
+                    bool m_elasticPrepaidRatioHasBeenSet;
 
                 };
             }

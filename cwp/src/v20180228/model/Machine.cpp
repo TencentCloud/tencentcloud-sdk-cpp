@@ -54,7 +54,9 @@ Machine::Machine() :
     m_machineExtraInfoHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
+    m_agentVersionHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_cSIPProtectTypeHasBeenSet(false)
 {
 }
 
@@ -437,6 +439,26 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_agentVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.AppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetUint64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CSIPProtectType") && !value["CSIPProtectType"].IsNull())
+    {
+        if (!value["CSIPProtectType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.CSIPProtectType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cSIPProtectType = string(value["CSIPProtectType"].GetString());
+        m_cSIPProtectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -730,6 +752,22 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AgentVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_agentVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_cSIPProtectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CSIPProtectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cSIPProtectType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1277,5 +1315,37 @@ void Machine::SetAgentVersion(const string& _agentVersion)
 bool Machine::AgentVersionHasBeenSet() const
 {
     return m_agentVersionHasBeenSet;
+}
+
+uint64_t Machine::GetAppId() const
+{
+    return m_appId;
+}
+
+void Machine::SetAppId(const uint64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool Machine::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string Machine::GetCSIPProtectType() const
+{
+    return m_cSIPProtectType;
+}
+
+void Machine::SetCSIPProtectType(const string& _cSIPProtectType)
+{
+    m_cSIPProtectType = _cSIPProtectType;
+    m_cSIPProtectTypeHasBeenSet = true;
+}
+
+bool Machine::CSIPProtectTypeHasBeenSet() const
+{
+    return m_cSIPProtectTypeHasBeenSet;
 }
 

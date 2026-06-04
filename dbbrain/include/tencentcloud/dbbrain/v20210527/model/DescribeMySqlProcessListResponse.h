@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实时线程列表。
-                     * @return ProcessList 实时线程列表。
+                     * 获取<p>实时线程列表。</p>
+                     * @return ProcessList <p>实时线程列表。</p>
                      * 
                      */
                     std::vector<MySqlProcess> GetProcessList() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ProcessListHasBeenSet() const;
 
                     /**
-                     * 获取sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
-                     * @return Statistics sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
+                     * 获取<p>sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。</p>
+                     * @return Statistics <p>sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。</p>
                      * 
                      */
                     std::vector<StatisticInfo> GetStatistics() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实时线程列表。
+                     * <p>实时线程列表。</p>
                      */
                     std::vector<MySqlProcess> m_processList;
                     bool m_processListHasBeenSet;
 
                     /**
-                     * sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。
+                     * <p>sql会话统计信息。如果请求参数中包含StatDimensions，该参数则可能返回，否则不返回。</p>
                      */
                     std::vector<StatisticInfo> m_statistics;
                     bool m_statisticsHasBeenSet;

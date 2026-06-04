@@ -25,7 +25,8 @@ QpsData::QpsData() :
     m_elasticBillingMinHasBeenSet(false),
     m_elasticBillingMaxHasBeenSet(false),
     m_qPSExtendMaxHasBeenSet(false),
-    m_qPSExtendIntlMaxHasBeenSet(false)
+    m_qPSExtendIntlMaxHasBeenSet(false),
+    m_elasticPrepaidRatioHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome QpsData::Deserialize(const rapidjson::Value &value)
         m_qPSExtendIntlMaxHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticPrepaidRatio") && !value["ElasticPrepaidRatio"].IsNull())
+    {
+        if (!value["ElasticPrepaidRatio"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `QpsData.ElasticPrepaidRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticPrepaidRatio = value["ElasticPrepaidRatio"].GetDouble();
+        m_elasticPrepaidRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void QpsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "QPSExtendIntlMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qPSExtendIntlMax, allocator);
+    }
+
+    if (m_elasticPrepaidRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticPrepaidRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticPrepaidRatio, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void QpsData::SetQPSExtendIntlMax(const uint64_t& _qPSExtendIntlMax)
 bool QpsData::QPSExtendIntlMaxHasBeenSet() const
 {
     return m_qPSExtendIntlMaxHasBeenSet;
+}
+
+double QpsData::GetElasticPrepaidRatio() const
+{
+    return m_elasticPrepaidRatio;
+}
+
+void QpsData::SetElasticPrepaidRatio(const double& _elasticPrepaidRatio)
+{
+    m_elasticPrepaidRatio = _elasticPrepaidRatio;
+    m_elasticPrepaidRatioHasBeenSet = true;
+}
+
+bool QpsData::ElasticPrepaidRatioHasBeenSet() const
+{
+    return m_elasticPrepaidRatioHasBeenSet;
 }
 

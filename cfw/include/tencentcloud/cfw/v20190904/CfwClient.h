@@ -31,6 +31,8 @@
 #include <tencentcloud/cfw/v20190904/model/AddNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/AddVpcAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/AddVpcAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CloseClusterNatFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CloseClusterNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeClusterNatCcnFwSwitchListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeClusterNatCcnFwSwitchListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterVpcFwSwitchsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeClusterVpcFwSwitchsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h>
@@ -139,6 +143,10 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNDRAssetIdentificationListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatCcnFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatCcnFwSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwClusterRegionStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwClusterRegionStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
@@ -207,6 +215,10 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterFwBypassRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterFwBypassResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterNatFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyClusterVpcFwSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyClusterVpcFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h>
@@ -257,6 +269,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/OpenClusterNatFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/OpenClusterNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAclRuleRequest.h>
@@ -307,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddVpcAcRuleResponse> AddVpcAcRuleOutcome;
                 typedef std::future<AddVpcAcRuleOutcome> AddVpcAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::AddVpcAcRuleRequest&, AddVpcAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVpcAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseClusterNatFwSwitchResponse> CloseClusterNatFwSwitchOutcome;
+                typedef std::future<CloseClusterNatFwSwitchOutcome> CloseClusterNatFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CloseClusterNatFwSwitchRequest&, CloseClusterNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseClusterNatFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
@@ -421,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCfwInsStatusResponse> DescribeCfwInsStatusOutcome;
                 typedef std::future<DescribeCfwInsStatusOutcome> DescribeCfwInsStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwInsStatusRequest&, DescribeCfwInsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwInsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterNatCcnFwSwitchListResponse> DescribeClusterNatCcnFwSwitchListOutcome;
+                typedef std::future<DescribeClusterNatCcnFwSwitchListOutcome> DescribeClusterNatCcnFwSwitchListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeClusterNatCcnFwSwitchListRequest&, DescribeClusterNatCcnFwSwitchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNatCcnFwSwitchListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterVpcFwSwitchsResponse> DescribeClusterVpcFwSwitchsOutcome;
                 typedef std::future<DescribeClusterVpcFwSwitchsOutcome> DescribeClusterVpcFwSwitchsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeClusterVpcFwSwitchsRequest&, DescribeClusterVpcFwSwitchsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterVpcFwSwitchsAsyncHandler;
@@ -469,6 +489,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatAcRuleResponse> DescribeNatAcRuleOutcome;
                 typedef std::future<DescribeNatAcRuleOutcome> DescribeNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatAcRuleRequest&, DescribeNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatCcnFwSwitchResponse> DescribeNatCcnFwSwitchOutcome;
+                typedef std::future<DescribeNatCcnFwSwitchOutcome> DescribeNatCcnFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatCcnFwSwitchRequest&, DescribeNatCcnFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatCcnFwSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatFwClusterRegionStatusResponse> DescribeNatFwClusterRegionStatusOutcome;
+                typedef std::future<DescribeNatFwClusterRegionStatusOutcome> DescribeNatFwClusterRegionStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwClusterRegionStatusRequest&, DescribeNatFwClusterRegionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwClusterRegionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatFwDnatRuleResponse> DescribeNatFwDnatRuleOutcome;
                 typedef std::future<DescribeNatFwDnatRuleOutcome> DescribeNatFwDnatRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwDnatRuleRequest&, DescribeNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwDnatRuleAsyncHandler;
@@ -571,6 +597,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
                 typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterFwBypassResponse> ModifyClusterFwBypassOutcome;
+                typedef std::future<ModifyClusterFwBypassOutcome> ModifyClusterFwBypassOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyClusterFwBypassRequest&, ModifyClusterFwBypassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterFwBypassAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterNatFwSwitchResponse> ModifyClusterNatFwSwitchOutcome;
+                typedef std::future<ModifyClusterNatFwSwitchOutcome> ModifyClusterNatFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyClusterNatFwSwitchRequest&, ModifyClusterNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNatFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterVpcFwSwitchResponse> ModifyClusterVpcFwSwitchOutcome;
                 typedef std::future<ModifyClusterVpcFwSwitchOutcome> ModifyClusterVpcFwSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyClusterVpcFwSwitchRequest&, ModifyClusterVpcFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVpcFwSwitchAsyncHandler;
@@ -646,6 +678,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpcFwSequenceRulesResponse> ModifyVpcFwSequenceRulesOutcome;
                 typedef std::future<ModifyVpcFwSequenceRulesOutcome> ModifyVpcFwSequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyVpcFwSequenceRulesRequest&, ModifyVpcFwSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcFwSequenceRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenClusterNatFwSwitchResponse> OpenClusterNatFwSwitchOutcome;
+                typedef std::future<OpenClusterNatFwSwitchOutcome> OpenClusterNatFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::OpenClusterNatFwSwitchRequest&, OpenClusterNatFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClusterNatFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveAcRuleResponse> RemoveAcRuleOutcome;
                 typedef std::future<RemoveAcRuleOutcome> RemoveAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveAcRuleRequest&, RemoveAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAcRuleAsyncHandler;
@@ -720,6 +755,15 @@ namespace TencentCloud
                 AddVpcAcRuleOutcome AddVpcAcRule(const Model::AddVpcAcRuleRequest &request);
                 void AddVpcAcRuleAsync(const Model::AddVpcAcRuleRequest& request, const AddVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddVpcAcRuleOutcomeCallable AddVpcAcRuleCallable(const Model::AddVpcAcRuleRequest& request);
+
+                /**
+                 *关闭NAT CCN集群模式防火墙开关
+                 * @param req CloseClusterNatFwSwitchRequest
+                 * @return CloseClusterNatFwSwitchOutcome
+                 */
+                CloseClusterNatFwSwitchOutcome CloseClusterNatFwSwitch(const Model::CloseClusterNatFwSwitchRequest &request);
+                void CloseClusterNatFwSwitchAsync(const Model::CloseClusterNatFwSwitchRequest& request, const CloseClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseClusterNatFwSwitchOutcomeCallable CloseClusterNatFwSwitchCallable(const Model::CloseClusterNatFwSwitchRequest& request);
 
                 /**
                  *创建访问控制规则
@@ -1066,6 +1110,15 @@ namespace TencentCloud
                 DescribeCfwInsStatusOutcomeCallable DescribeCfwInsStatusCallable(const Model::DescribeCfwInsStatusRequest& request);
 
                 /**
+                 *查询NAT CCN集群模式防火墙开关列表
+                 * @param req DescribeClusterNatCcnFwSwitchListRequest
+                 * @return DescribeClusterNatCcnFwSwitchListOutcome
+                 */
+                DescribeClusterNatCcnFwSwitchListOutcome DescribeClusterNatCcnFwSwitchList(const Model::DescribeClusterNatCcnFwSwitchListRequest &request);
+                void DescribeClusterNatCcnFwSwitchListAsync(const Model::DescribeClusterNatCcnFwSwitchListRequest& request, const DescribeClusterNatCcnFwSwitchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterNatCcnFwSwitchListOutcomeCallable DescribeClusterNatCcnFwSwitchListCallable(const Model::DescribeClusterNatCcnFwSwitchListRequest& request);
+
+                /**
                  *查询集群模式Vpc间防火墙开关
                  * @param req DescribeClusterVpcFwSwitchsRequest
                  * @return DescribeClusterVpcFwSwitchsOutcome
@@ -1208,6 +1261,24 @@ namespace TencentCloud
                 DescribeNatAcRuleOutcome DescribeNatAcRule(const Model::DescribeNatAcRuleRequest &request);
                 void DescribeNatAcRuleAsync(const Model::DescribeNatAcRuleRequest& request, const DescribeNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatAcRuleOutcomeCallable DescribeNatAcRuleCallable(const Model::DescribeNatAcRuleRequest& request);
+
+                /**
+                 *查询NAT CCN防火墙开关配置
+                 * @param req DescribeNatCcnFwSwitchRequest
+                 * @return DescribeNatCcnFwSwitchOutcome
+                 */
+                DescribeNatCcnFwSwitchOutcome DescribeNatCcnFwSwitch(const Model::DescribeNatCcnFwSwitchRequest &request);
+                void DescribeNatCcnFwSwitchAsync(const Model::DescribeNatCcnFwSwitchRequest& request, const DescribeNatCcnFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatCcnFwSwitchOutcomeCallable DescribeNatCcnFwSwitchCallable(const Model::DescribeNatCcnFwSwitchRequest& request);
+
+                /**
+                 *查询指定NAT所在地域是否有NAT防火墙引流集群
+                 * @param req DescribeNatFwClusterRegionStatusRequest
+                 * @return DescribeNatFwClusterRegionStatusOutcome
+                 */
+                DescribeNatFwClusterRegionStatusOutcome DescribeNatFwClusterRegionStatus(const Model::DescribeNatFwClusterRegionStatusRequest &request);
+                void DescribeNatFwClusterRegionStatusAsync(const Model::DescribeNatFwClusterRegionStatusRequest& request, const DescribeNatFwClusterRegionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwClusterRegionStatusOutcomeCallable DescribeNatFwClusterRegionStatusCallable(const Model::DescribeNatFwClusterRegionStatusRequest& request);
 
                 /**
                  *查询Nat防火墙Dnat规则
@@ -1519,6 +1590,24 @@ namespace TencentCloud
                 ModifyBlockTopOutcomeCallable ModifyBlockTopCallable(const Model::ModifyBlockTopRequest& request);
 
                 /**
+                 *修改集群防火墙Bypass状态
+                 * @param req ModifyClusterFwBypassRequest
+                 * @return ModifyClusterFwBypassOutcome
+                 */
+                ModifyClusterFwBypassOutcome ModifyClusterFwBypass(const Model::ModifyClusterFwBypassRequest &request);
+                void ModifyClusterFwBypassAsync(const Model::ModifyClusterFwBypassRequest& request, const ModifyClusterFwBypassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterFwBypassOutcomeCallable ModifyClusterFwBypassCallable(const Model::ModifyClusterFwBypassRequest& request);
+
+                /**
+                 *修改NAT CCN集群模式防火墙开关配置
+                 * @param req ModifyClusterNatFwSwitchRequest
+                 * @return ModifyClusterNatFwSwitchOutcome
+                 */
+                ModifyClusterNatFwSwitchOutcome ModifyClusterNatFwSwitch(const Model::ModifyClusterNatFwSwitchRequest &request);
+                void ModifyClusterNatFwSwitchAsync(const Model::ModifyClusterNatFwSwitchRequest& request, const ModifyClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterNatFwSwitchOutcomeCallable ModifyClusterNatFwSwitchCallable(const Model::ModifyClusterNatFwSwitchRequest& request);
+
+                /**
                  *修改集群模式VPC防火墙开关
                  * @param req ModifyClusterVpcFwSwitchRequest
                  * @return ModifyClusterVpcFwSwitchOutcome
@@ -1743,6 +1832,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 ModifyVpcFwSequenceRulesOutcome ModifyVpcFwSequenceRules(const Model::ModifyVpcFwSequenceRulesRequest &request);
                 void ModifyVpcFwSequenceRulesAsync(const Model::ModifyVpcFwSequenceRulesRequest& request, const ModifyVpcFwSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpcFwSequenceRulesOutcomeCallable ModifyVpcFwSequenceRulesCallable(const Model::ModifyVpcFwSequenceRulesRequest& request);
+
+                /**
+                 *开启NAT CCN集群模式防火墙开关
+                 * @param req OpenClusterNatFwSwitchRequest
+                 * @return OpenClusterNatFwSwitchOutcome
+                 */
+                OpenClusterNatFwSwitchOutcome OpenClusterNatFwSwitch(const Model::OpenClusterNatFwSwitchRequest &request);
+                void OpenClusterNatFwSwitchAsync(const Model::OpenClusterNatFwSwitchRequest& request, const OpenClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenClusterNatFwSwitchOutcomeCallable OpenClusterNatFwSwitchCallable(const Model::OpenClusterNatFwSwitchRequest& request);
 
                 /**
                  *删除互联网边界规则

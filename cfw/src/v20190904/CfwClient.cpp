@@ -240,6 +240,56 @@ CfwClient::AddVpcAcRuleOutcomeCallable CfwClient::AddVpcAcRuleCallable(const Add
     return prom->get_future();
 }
 
+CfwClient::CloseClusterNatFwSwitchOutcome CfwClient::CloseClusterNatFwSwitch(const CloseClusterNatFwSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseClusterNatFwSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseClusterNatFwSwitchResponse rsp = CloseClusterNatFwSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseClusterNatFwSwitchOutcome(rsp);
+        else
+            return CloseClusterNatFwSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseClusterNatFwSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CloseClusterNatFwSwitchAsync(const CloseClusterNatFwSwitchRequest& request, const CloseClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseClusterNatFwSwitchRequest&;
+    using Resp = CloseClusterNatFwSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseClusterNatFwSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CloseClusterNatFwSwitchOutcomeCallable CfwClient::CloseClusterNatFwSwitchCallable(const CloseClusterNatFwSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseClusterNatFwSwitchOutcome>>();
+    CloseClusterNatFwSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CloseClusterNatFwSwitchRequest&,
+        CloseClusterNatFwSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::CreateAcRulesOutcome CfwClient::CreateAcRules(const CreateAcRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcRules");
@@ -2140,6 +2190,56 @@ CfwClient::DescribeCfwInsStatusOutcomeCallable CfwClient::DescribeCfwInsStatusCa
     return prom->get_future();
 }
 
+CfwClient::DescribeClusterNatCcnFwSwitchListOutcome CfwClient::DescribeClusterNatCcnFwSwitchList(const DescribeClusterNatCcnFwSwitchListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterNatCcnFwSwitchList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterNatCcnFwSwitchListResponse rsp = DescribeClusterNatCcnFwSwitchListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterNatCcnFwSwitchListOutcome(rsp);
+        else
+            return DescribeClusterNatCcnFwSwitchListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterNatCcnFwSwitchListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeClusterNatCcnFwSwitchListAsync(const DescribeClusterNatCcnFwSwitchListRequest& request, const DescribeClusterNatCcnFwSwitchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterNatCcnFwSwitchListRequest&;
+    using Resp = DescribeClusterNatCcnFwSwitchListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterNatCcnFwSwitchList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeClusterNatCcnFwSwitchListOutcomeCallable CfwClient::DescribeClusterNatCcnFwSwitchListCallable(const DescribeClusterNatCcnFwSwitchListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterNatCcnFwSwitchListOutcome>>();
+    DescribeClusterNatCcnFwSwitchListAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeClusterNatCcnFwSwitchListRequest&,
+        DescribeClusterNatCcnFwSwitchListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeClusterVpcFwSwitchsOutcome CfwClient::DescribeClusterVpcFwSwitchs(const DescribeClusterVpcFwSwitchsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterVpcFwSwitchs");
@@ -2932,6 +3032,106 @@ CfwClient::DescribeNatAcRuleOutcomeCallable CfwClient::DescribeNatAcRuleCallable
         const CfwClient*,
         const DescribeNatAcRuleRequest&,
         DescribeNatAcRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeNatCcnFwSwitchOutcome CfwClient::DescribeNatCcnFwSwitch(const DescribeNatCcnFwSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatCcnFwSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatCcnFwSwitchResponse rsp = DescribeNatCcnFwSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatCcnFwSwitchOutcome(rsp);
+        else
+            return DescribeNatCcnFwSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatCcnFwSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatCcnFwSwitchAsync(const DescribeNatCcnFwSwitchRequest& request, const DescribeNatCcnFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNatCcnFwSwitchRequest&;
+    using Resp = DescribeNatCcnFwSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNatCcnFwSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNatCcnFwSwitchOutcomeCallable CfwClient::DescribeNatCcnFwSwitchCallable(const DescribeNatCcnFwSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNatCcnFwSwitchOutcome>>();
+    DescribeNatCcnFwSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNatCcnFwSwitchRequest&,
+        DescribeNatCcnFwSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeNatFwClusterRegionStatusOutcome CfwClient::DescribeNatFwClusterRegionStatus(const DescribeNatFwClusterRegionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatFwClusterRegionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatFwClusterRegionStatusResponse rsp = DescribeNatFwClusterRegionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatFwClusterRegionStatusOutcome(rsp);
+        else
+            return DescribeNatFwClusterRegionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatFwClusterRegionStatusOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatFwClusterRegionStatusAsync(const DescribeNatFwClusterRegionStatusRequest& request, const DescribeNatFwClusterRegionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNatFwClusterRegionStatusRequest&;
+    using Resp = DescribeNatFwClusterRegionStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNatFwClusterRegionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeNatFwClusterRegionStatusOutcomeCallable CfwClient::DescribeNatFwClusterRegionStatusCallable(const DescribeNatFwClusterRegionStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNatFwClusterRegionStatusOutcome>>();
+    DescribeNatFwClusterRegionStatusAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeNatFwClusterRegionStatusRequest&,
+        DescribeNatFwClusterRegionStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4640,6 +4840,106 @@ CfwClient::ModifyBlockTopOutcomeCallable CfwClient::ModifyBlockTopCallable(const
     return prom->get_future();
 }
 
+CfwClient::ModifyClusterFwBypassOutcome CfwClient::ModifyClusterFwBypass(const ModifyClusterFwBypassRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterFwBypass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterFwBypassResponse rsp = ModifyClusterFwBypassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterFwBypassOutcome(rsp);
+        else
+            return ModifyClusterFwBypassOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterFwBypassOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyClusterFwBypassAsync(const ModifyClusterFwBypassRequest& request, const ModifyClusterFwBypassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterFwBypassRequest&;
+    using Resp = ModifyClusterFwBypassResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterFwBypass", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ModifyClusterFwBypassOutcomeCallable CfwClient::ModifyClusterFwBypassCallable(const ModifyClusterFwBypassRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterFwBypassOutcome>>();
+    ModifyClusterFwBypassAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ModifyClusterFwBypassRequest&,
+        ModifyClusterFwBypassOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::ModifyClusterNatFwSwitchOutcome CfwClient::ModifyClusterNatFwSwitch(const ModifyClusterNatFwSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterNatFwSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterNatFwSwitchResponse rsp = ModifyClusterNatFwSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterNatFwSwitchOutcome(rsp);
+        else
+            return ModifyClusterNatFwSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterNatFwSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyClusterNatFwSwitchAsync(const ModifyClusterNatFwSwitchRequest& request, const ModifyClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterNatFwSwitchRequest&;
+    using Resp = ModifyClusterNatFwSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterNatFwSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ModifyClusterNatFwSwitchOutcomeCallable CfwClient::ModifyClusterNatFwSwitchCallable(const ModifyClusterNatFwSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterNatFwSwitchOutcome>>();
+    ModifyClusterNatFwSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ModifyClusterNatFwSwitchRequest&,
+        ModifyClusterNatFwSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::ModifyClusterVpcFwSwitchOutcome CfwClient::ModifyClusterVpcFwSwitch(const ModifyClusterVpcFwSwitchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterVpcFwSwitch");
@@ -5882,6 +6182,56 @@ CfwClient::ModifyVpcFwSequenceRulesOutcomeCallable CfwClient::ModifyVpcFwSequenc
         const CfwClient*,
         const ModifyVpcFwSequenceRulesRequest&,
         ModifyVpcFwSequenceRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::OpenClusterNatFwSwitchOutcome CfwClient::OpenClusterNatFwSwitch(const OpenClusterNatFwSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenClusterNatFwSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenClusterNatFwSwitchResponse rsp = OpenClusterNatFwSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenClusterNatFwSwitchOutcome(rsp);
+        else
+            return OpenClusterNatFwSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenClusterNatFwSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::OpenClusterNatFwSwitchAsync(const OpenClusterNatFwSwitchRequest& request, const OpenClusterNatFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenClusterNatFwSwitchRequest&;
+    using Resp = OpenClusterNatFwSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenClusterNatFwSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::OpenClusterNatFwSwitchOutcomeCallable CfwClient::OpenClusterNatFwSwitchCallable(const OpenClusterNatFwSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenClusterNatFwSwitchOutcome>>();
+    OpenClusterNatFwSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const OpenClusterNatFwSwitchRequest&,
+        OpenClusterNatFwSwitchOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

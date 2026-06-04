@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机名称。
-                     * @return MachineName 主机名称。
+                     * 获取<p>主机名称。</p>
+                     * @return MachineName <p>主机名称。</p>
                      * 
                      */
                     std::string GetMachineName() const;
 
                     /**
-                     * 设置主机名称。
-                     * @param _machineName 主机名称。
+                     * 设置<p>主机名称。</p>
+                     * @param _machineName <p>主机名称。</p>
                      * 
                      */
                     void SetMachineName(const std::string& _machineName);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool MachineNameHasBeenSet() const;
 
                     /**
-                     * 获取主机系统。
-                     * @return MachineOs 主机系统。
+                     * 获取<p>主机系统。</p>
+                     * @return MachineOs <p>主机系统。</p>
                      * 
                      */
                     std::string GetMachineOs() const;
 
                     /**
-                     * 设置主机系统。
-                     * @param _machineOs 主机系统。
+                     * 设置<p>主机系统。</p>
+                     * @param _machineOs <p>主机系统。</p>
                      * 
                      */
                     void SetMachineOs(const std::string& _machineOs);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool MachineOsHasBeenSet() const;
 
                     /**
-                     * 获取主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
-                     * @return MachineStatus 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
+                     * 获取<p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>
+                     * @return MachineStatus <p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>
                      * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
-                     * 设置主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
-                     * @param _machineStatus 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
+                     * 设置<p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>
+                     * @param _machineStatus <p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>
                      * 
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool MachineStatusHasBeenSet() const;
 
                     /**
-                     * 获取ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
-                     * @return AgentStatus ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * 获取<p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>
+                     * @return AgentStatus <p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>
                      * 
                      */
                     std::string GetAgentStatus() const;
 
                     /**
-                     * 设置ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
-                     * @param _agentStatus ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * 设置<p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>
+                     * @param _agentStatus <p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>
                      * 
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool AgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
-                     * @return InstanceStatus RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * 获取<p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>
+                     * @return InstanceStatus <p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
-                     * @param _instanceStatus RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * 设置<p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>
+                     * @param _instanceStatus <p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取主机安全Uuid，若客户端长时间不在线将返回空字符。
-                     * @return Uuid 主机安全Uuid，若客户端长时间不在线将返回空字符。
+                     * 获取<p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>
+                     * @return Uuid <p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置主机安全Uuid，若客户端长时间不在线将返回空字符。
-                     * @param _uuid 主机安全Uuid，若客户端长时间不在线将返回空字符。
+                     * 设置<p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>
+                     * @param _uuid <p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取CVM或BM机器唯一Uuid。
-                     * @return Quuid CVM或BM机器唯一Uuid。
+                     * 获取<p>CVM或BM机器唯一Uuid。</p>
+                     * @return Quuid <p>CVM或BM机器唯一Uuid。</p>
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置CVM或BM机器唯一Uuid。
-                     * @param _quuid CVM或BM机器唯一Uuid。
+                     * 设置<p>CVM或BM机器唯一Uuid。</p>
+                     * @param _quuid <p>CVM或BM机器唯一Uuid。</p>
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取漏洞数。
-                     * @return VulNum 漏洞数。
+                     * 获取<p>漏洞数。</p>
+                     * @return VulNum <p>漏洞数。</p>
                      * 
                      */
                     int64_t GetVulNum() const;
 
                     /**
-                     * 设置漏洞数。
-                     * @param _vulNum 漏洞数。
+                     * 设置<p>漏洞数。</p>
+                     * @param _vulNum <p>漏洞数。</p>
                      * 
                      */
                     void SetVulNum(const int64_t& _vulNum);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool VulNumHasBeenSet() const;
 
                     /**
-                     * 获取主机IP。
-                     * @return MachineIp 主机IP。
+                     * 获取<p>主机IP。</p>
+                     * @return MachineIp <p>主机IP。</p>
                      * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
-                     * 设置主机IP。
-                     * @param _machineIp 主机IP。
+                     * 设置<p>主机IP。</p>
+                     * @param _machineIp <p>主机IP。</p>
                      * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
@@ -240,23 +240,15 @@ namespace TencentCloud
                     bool MachineIpHasBeenSet() const;
 
                     /**
-                     * 获取是否是专业版。
-<li>true： 是</li>
-<li>false：否</li>
-                     * @return IsProVersion 是否是专业版。
-<li>true： 是</li>
-<li>false：否</li>
+                     * 获取<p>是否是专业版。</p><li>true： 是</li><li>false：否</li>
+                     * @return IsProVersion <p>是否是专业版。</p><li>true： 是</li><li>false：否</li>
                      * 
                      */
                     bool GetIsProVersion() const;
 
                     /**
-                     * 设置是否是专业版。
-<li>true： 是</li>
-<li>false：否</li>
-                     * @param _isProVersion 是否是专业版。
-<li>true： 是</li>
-<li>false：否</li>
+                     * 设置<p>是否是专业版。</p><li>true： 是</li><li>false：否</li>
+                     * @param _isProVersion <p>是否是专业版。</p><li>true： 是</li><li>false：否</li>
                      * 
                      */
                     void SetIsProVersion(const bool& _isProVersion);
@@ -269,15 +261,15 @@ namespace TencentCloud
                     bool IsProVersionHasBeenSet() const;
 
                     /**
-                     * 获取主机外网IP。
-                     * @return MachineWanIp 主机外网IP。
+                     * 获取<p>主机外网IP。</p>
+                     * @return MachineWanIp <p>主机外网IP。</p>
                      * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
-                     * 设置主机外网IP。
-                     * @param _machineWanIp 主机外网IP。
+                     * 设置<p>主机外网IP。</p>
+                     * @param _machineWanIp <p>主机外网IP。</p>
                      * 
                      */
                     void SetMachineWanIp(const std::string& _machineWanIp);
@@ -290,23 +282,15 @@ namespace TencentCloud
                     bool MachineWanIpHasBeenSet() const;
 
                     /**
-                     * 获取主机状态。
-<li>POSTPAY: 表示后付费，即按量计费  </li>
-<li>PREPAY: 表示预付费，即包年包月</li>
-                     * @return PayMode 主机状态。
-<li>POSTPAY: 表示后付费，即按量计费  </li>
-<li>PREPAY: 表示预付费，即包年包月</li>
+                     * 获取<p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>
+                     * @return PayMode <p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置主机状态。
-<li>POSTPAY: 表示后付费，即按量计费  </li>
-<li>PREPAY: 表示预付费，即包年包月</li>
-                     * @param _payMode 主机状态。
-<li>POSTPAY: 表示后付费，即按量计费  </li>
-<li>PREPAY: 表示预付费，即包年包月</li>
+                     * 设置<p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>
+                     * @param _payMode <p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -319,15 +303,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取木马数。
-                     * @return MalwareNum 木马数。
+                     * 获取<p>木马数。</p>
+                     * @return MalwareNum <p>木马数。</p>
                      * 
                      */
                     int64_t GetMalwareNum() const;
 
                     /**
-                     * 设置木马数。
-                     * @param _malwareNum 木马数。
+                     * 设置<p>木马数。</p>
+                     * @param _malwareNum <p>木马数。</p>
                      * 
                      */
                     void SetMalwareNum(const int64_t& _malwareNum);
@@ -340,15 +324,15 @@ namespace TencentCloud
                     bool MalwareNumHasBeenSet() const;
 
                     /**
-                     * 获取标签信息
-                     * @return Tag 标签信息
+                     * 获取<p>标签信息</p>
+                     * @return Tag <p>标签信息</p>
                      * 
                      */
                     std::vector<MachineTag> GetTag() const;
 
                     /**
-                     * 设置标签信息
-                     * @param _tag 标签信息
+                     * 设置<p>标签信息</p>
+                     * @param _tag <p>标签信息</p>
                      * 
                      */
                     void SetTag(const std::vector<MachineTag>& _tag);
@@ -361,15 +345,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取基线风险数。
-                     * @return BaselineNum 基线风险数。
+                     * 获取<p>基线风险数。</p>
+                     * @return BaselineNum <p>基线风险数。</p>
                      * 
                      */
                     int64_t GetBaselineNum() const;
 
                     /**
-                     * 设置基线风险数。
-                     * @param _baselineNum 基线风险数。
+                     * 设置<p>基线风险数。</p>
+                     * @param _baselineNum <p>基线风险数。</p>
                      * 
                      */
                     void SetBaselineNum(const int64_t& _baselineNum);
@@ -382,15 +366,15 @@ namespace TencentCloud
                     bool BaselineNumHasBeenSet() const;
 
                     /**
-                     * 获取网络风险数。
-                     * @return CyberAttackNum 网络风险数。
+                     * 获取<p>网络风险数。</p>
+                     * @return CyberAttackNum <p>网络风险数。</p>
                      * 
                      */
                     int64_t GetCyberAttackNum() const;
 
                     /**
-                     * 设置网络风险数。
-                     * @param _cyberAttackNum 网络风险数。
+                     * 设置<p>网络风险数。</p>
+                     * @param _cyberAttackNum <p>网络风险数。</p>
                      * 
                      */
                     void SetCyberAttackNum(const int64_t& _cyberAttackNum);
@@ -403,27 +387,15 @@ namespace TencentCloud
                     bool CyberAttackNumHasBeenSet() const;
 
                     /**
-                     * 获取风险状态。
-<li>SAFE：安全</li>
-<li>RISK：风险</li>
-<li>UNKNOWN：未知</li>
-                     * @return SecurityStatus 风险状态。
-<li>SAFE：安全</li>
-<li>RISK：风险</li>
-<li>UNKNOWN：未知</li>
+                     * 获取<p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>
+                     * @return SecurityStatus <p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>
                      * 
                      */
                     std::string GetSecurityStatus() const;
 
                     /**
-                     * 设置风险状态。
-<li>SAFE：安全</li>
-<li>RISK：风险</li>
-<li>UNKNOWN：未知</li>
-                     * @param _securityStatus 风险状态。
-<li>SAFE：安全</li>
-<li>RISK：风险</li>
-<li>UNKNOWN：未知</li>
+                     * 设置<p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>
+                     * @param _securityStatus <p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>
                      * 
                      */
                     void SetSecurityStatus(const std::string& _securityStatus);
@@ -436,15 +408,15 @@ namespace TencentCloud
                     bool SecurityStatusHasBeenSet() const;
 
                     /**
-                     * 获取入侵事件数
-                     * @return InvasionNum 入侵事件数
+                     * 获取<p>入侵事件数</p>
+                     * @return InvasionNum <p>入侵事件数</p>
                      * 
                      */
                     int64_t GetInvasionNum() const;
 
                     /**
-                     * 设置入侵事件数
-                     * @param _invasionNum 入侵事件数
+                     * 设置<p>入侵事件数</p>
+                     * @param _invasionNum <p>入侵事件数</p>
                      * 
                      */
                     void SetInvasionNum(const int64_t& _invasionNum);
@@ -457,15 +429,15 @@ namespace TencentCloud
                     bool InvasionNumHasBeenSet() const;
 
                     /**
-                     * 获取地域信息
-                     * @return RegionInfo 地域信息
+                     * 获取<p>地域信息</p>
+                     * @return RegionInfo <p>地域信息</p>
                      * 
                      */
                     RegionInfo GetRegionInfo() const;
 
                     /**
-                     * 设置地域信息
-                     * @param _regionInfo 地域信息
+                     * 设置<p>地域信息</p>
+                     * @param _regionInfo <p>地域信息</p>
                      * 
                      */
                     void SetRegionInfo(const RegionInfo& _regionInfo);
@@ -478,15 +450,15 @@ namespace TencentCloud
                     bool RegionInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例状态 TERMINATED_PRO_VERSION 已销毁
-                     * @return InstanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * 获取<p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>
+                     * @return InstanceState <p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
-                     * 设置实例状态 TERMINATED_PRO_VERSION 已销毁
-                     * @param _instanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * 设置<p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>
+                     * @param _instanceState <p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -499,15 +471,15 @@ namespace TencentCloud
                     bool InstanceStateHasBeenSet() const;
 
                     /**
-                     * 获取防篡改 授权状态 1 授权 0 未授权
-                     * @return LicenseStatus 防篡改 授权状态 1 授权 0 未授权
+                     * 获取<p>防篡改 授权状态 1 授权 0 未授权</p>
+                     * @return LicenseStatus <p>防篡改 授权状态 1 授权 0 未授权</p>
                      * 
                      */
                     uint64_t GetLicenseStatus() const;
 
                     /**
-                     * 设置防篡改 授权状态 1 授权 0 未授权
-                     * @param _licenseStatus 防篡改 授权状态 1 授权 0 未授权
+                     * 设置<p>防篡改 授权状态 1 授权 0 未授权</p>
+                     * @param _licenseStatus <p>防篡改 授权状态 1 授权 0 未授权</p>
                      * 
                      */
                     void SetLicenseStatus(const uint64_t& _licenseStatus);
@@ -520,15 +492,15 @@ namespace TencentCloud
                     bool LicenseStatusHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -541,15 +513,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取是否有资产扫描接口，0无，1有
-                     * @return HasAssetScan 是否有资产扫描接口，0无，1有
+                     * 获取<p>是否有资产扫描接口，0无，1有</p>
+                     * @return HasAssetScan <p>是否有资产扫描接口，0无，1有</p>
                      * 
                      */
                     uint64_t GetHasAssetScan() const;
 
                     /**
-                     * 设置是否有资产扫描接口，0无，1有
-                     * @param _hasAssetScan 是否有资产扫描接口，0无，1有
+                     * 设置<p>是否有资产扫描接口，0无，1有</p>
+                     * @param _hasAssetScan <p>是否有资产扫描接口，0无，1有</p>
                      * 
                      */
                     void SetHasAssetScan(const uint64_t& _hasAssetScan);
@@ -562,15 +534,15 @@ namespace TencentCloud
                     bool HasAssetScanHasBeenSet() const;
 
                     /**
-                     * 获取机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
-                     * @return MachineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * 获取<p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>
+                     * @return MachineType <p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
-                     * @param _machineType 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * 设置<p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>
+                     * @param _machineType <p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -583,15 +555,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取内核版本
-                     * @return KernelVersion 内核版本
+                     * 获取<p>内核版本</p>
+                     * @return KernelVersion <p>内核版本</p>
                      * 
                      */
                     std::string GetKernelVersion() const;
 
                     /**
-                     * 设置内核版本
-                     * @param _kernelVersion 内核版本
+                     * 设置<p>内核版本</p>
+                     * @param _kernelVersion <p>内核版本</p>
                      * 
                      */
                     void SetKernelVersion(const std::string& _kernelVersion);
@@ -604,15 +576,15 @@ namespace TencentCloud
                     bool KernelVersionHasBeenSet() const;
 
                     /**
-                     * 获取防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
-                     * @return ProtectType 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
+                     * 获取<p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>
+                     * @return ProtectType <p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>
                      * 
                      */
                     std::string GetProtectType() const;
 
                     /**
-                     * 设置防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
-                     * @param _protectType 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
+                     * 设置<p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>
+                     * @param _protectType <p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>
                      * 
                      */
                     void SetProtectType(const std::string& _protectType);
@@ -625,15 +597,15 @@ namespace TencentCloud
                     bool ProtectTypeHasBeenSet() const;
 
                     /**
-                     * 获取云标签信息
-                     * @return CloudTags 云标签信息
+                     * 获取<p>云标签信息</p>
+                     * @return CloudTags <p>云标签信息</p>
                      * 
                      */
                     std::vector<Tags> GetCloudTags() const;
 
                     /**
-                     * 设置云标签信息
-                     * @param _cloudTags 云标签信息
+                     * 设置<p>云标签信息</p>
+                     * @param _cloudTags <p>云标签信息</p>
                      * 
                      */
                     void SetCloudTags(const std::vector<Tags>& _cloudTags);
@@ -646,15 +618,15 @@ namespace TencentCloud
                     bool CloudTagsHasBeenSet() const;
 
                     /**
-                     * 获取是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-                     * @return IsAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+                     * 获取<p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>
+                     * @return IsAddedOnTheFifteen <p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>
                      * 
                      */
                     uint64_t GetIsAddedOnTheFifteen() const;
 
                     /**
-                     * 设置是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-                     * @param _isAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+                     * 设置<p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>
+                     * @param _isAddedOnTheFifteen <p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>
                      * 
                      */
                     void SetIsAddedOnTheFifteen(const uint64_t& _isAddedOnTheFifteen);
@@ -667,15 +639,15 @@ namespace TencentCloud
                     bool IsAddedOnTheFifteenHasBeenSet() const;
 
                     /**
-                     * 获取主机ip列表
-                     * @return IpList 主机ip列表
+                     * 获取<p>主机ip列表</p>
+                     * @return IpList <p>主机ip列表</p>
                      * 
                      */
                     std::string GetIpList() const;
 
                     /**
-                     * 设置主机ip列表
-                     * @param _ipList 主机ip列表
+                     * 设置<p>主机ip列表</p>
+                     * @param _ipList <p>主机ip列表</p>
                      * 
                      */
                     void SetIpList(const std::string& _ipList);
@@ -688,15 +660,15 @@ namespace TencentCloud
                     bool IpListHasBeenSet() const;
 
                     /**
-                     * 获取所属网络
-                     * @return VpcId 所属网络
+                     * 获取<p>所属网络</p>
+                     * @return VpcId <p>所属网络</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属网络
-                     * @param _vpcId 所属网络
+                     * 设置<p>所属网络</p>
+                     * @param _vpcId <p>所属网络</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -709,15 +681,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取附加信息
-                     * @return MachineExtraInfo 附加信息
+                     * 获取<p>附加信息</p>
+                     * @return MachineExtraInfo <p>附加信息</p>
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
-                     * 设置附加信息
-                     * @param _machineExtraInfo 附加信息
+                     * 设置<p>附加信息</p>
+                     * @param _machineExtraInfo <p>附加信息</p>
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -730,15 +702,15 @@ namespace TencentCloud
                     bool MachineExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -751,15 +723,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Remark <p>备注信息</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remark 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _remark <p>备注信息</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -772,15 +744,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取主机安全agent版本
-                     * @return AgentVersion 主机安全agent版本
+                     * 获取<p>主机安全agent版本</p>
+                     * @return AgentVersion <p>主机安全agent版本</p>
                      * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
-                     * 设置主机安全agent版本
-                     * @param _agentVersion 主机安全agent版本
+                     * 设置<p>主机安全agent版本</p>
+                     * @param _agentVersion <p>主机安全agent版本</p>
                      * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
@@ -792,218 +764,265 @@ namespace TencentCloud
                      */
                     bool AgentVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>机器对应APPID</p>
+                     * @return AppId <p>机器对应APPID</p>
+                     * 
+                     */
+                    uint64_t GetAppId() const;
+
+                    /**
+                     * 设置<p>机器对应APPID</p>
+                     * @param _appId <p>机器对应APPID</p>
+                     * 
+                     */
+                    void SetAppId(const uint64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全中心付费版本</p>
+                     * @return CSIPProtectType <p>安全中心付费版本</p>
+                     * 
+                     */
+                    std::string GetCSIPProtectType() const;
+
+                    /**
+                     * 设置<p>安全中心付费版本</p>
+                     * @param _cSIPProtectType <p>安全中心付费版本</p>
+                     * 
+                     */
+                    void SetCSIPProtectType(const std::string& _cSIPProtectType);
+
+                    /**
+                     * 判断参数 CSIPProtectType 是否已赋值
+                     * @return CSIPProtectType 是否已赋值
+                     * 
+                     */
+                    bool CSIPProtectTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主机名称。
+                     * <p>主机名称。</p>
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
 
                     /**
-                     * 主机系统。
+                     * <p>主机系统。</p>
                      */
                     std::string m_machineOs;
                     bool m_machineOsHasBeenSet;
 
                     /**
-                     * 主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>	
+                     * <p>主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li></p>
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
 
                     /**
-                     * ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装
+                     * <p>ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装</p>
                      */
                     std::string m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
-                     * RUNNING 运行中; STOPED 已关机; EXPIRED 待回收	
+                     * <p>RUNNING 运行中; STOPED 已关机; EXPIRED 待回收</p>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 主机安全Uuid，若客户端长时间不在线将返回空字符。
+                     * <p>主机安全Uuid，若客户端长时间不在线将返回空字符。</p>
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * CVM或BM机器唯一Uuid。
+                     * <p>CVM或BM机器唯一Uuid。</p>
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 漏洞数。
+                     * <p>漏洞数。</p>
                      */
                     int64_t m_vulNum;
                     bool m_vulNumHasBeenSet;
 
                     /**
-                     * 主机IP。
+                     * <p>主机IP。</p>
                      */
                     std::string m_machineIp;
                     bool m_machineIpHasBeenSet;
 
                     /**
-                     * 是否是专业版。
-<li>true： 是</li>
-<li>false：否</li>
+                     * <p>是否是专业版。</p><li>true： 是</li><li>false：否</li>
                      */
                     bool m_isProVersion;
                     bool m_isProVersionHasBeenSet;
 
                     /**
-                     * 主机外网IP。
+                     * <p>主机外网IP。</p>
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
 
                     /**
-                     * 主机状态。
-<li>POSTPAY: 表示后付费，即按量计费  </li>
-<li>PREPAY: 表示预付费，即包年包月</li>
+                     * <p>主机状态。</p><li>POSTPAY: 表示后付费，即按量计费  </li><li>PREPAY: 表示预付费，即包年包月</li>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 木马数。
+                     * <p>木马数。</p>
                      */
                     int64_t m_malwareNum;
                     bool m_malwareNumHasBeenSet;
 
                     /**
-                     * 标签信息
+                     * <p>标签信息</p>
                      */
                     std::vector<MachineTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 基线风险数。
+                     * <p>基线风险数。</p>
                      */
                     int64_t m_baselineNum;
                     bool m_baselineNumHasBeenSet;
 
                     /**
-                     * 网络风险数。
+                     * <p>网络风险数。</p>
                      */
                     int64_t m_cyberAttackNum;
                     bool m_cyberAttackNumHasBeenSet;
 
                     /**
-                     * 风险状态。
-<li>SAFE：安全</li>
-<li>RISK：风险</li>
-<li>UNKNOWN：未知</li>
+                     * <p>风险状态。</p><li>SAFE：安全</li><li>RISK：风险</li><li>UNKNOWN：未知</li>
                      */
                     std::string m_securityStatus;
                     bool m_securityStatusHasBeenSet;
 
                     /**
-                     * 入侵事件数
+                     * <p>入侵事件数</p>
                      */
                     int64_t m_invasionNum;
                     bool m_invasionNumHasBeenSet;
 
                     /**
-                     * 地域信息
+                     * <p>地域信息</p>
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
 
                     /**
-                     * 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * <p>实例状态 TERMINATED_PRO_VERSION 已销毁</p>
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
 
                     /**
-                     * 防篡改 授权状态 1 授权 0 未授权
+                     * <p>防篡改 授权状态 1 授权 0 未授权</p>
                      */
                     uint64_t m_licenseStatus;
                     bool m_licenseStatusHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 是否有资产扫描接口，0无，1有
+                     * <p>是否有资产扫描接口，0无，1有</p>
                      */
                     uint64_t m_hasAssetScan;
                     bool m_hasAssetScanHasBeenSet;
 
                     /**
-                     * 机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区
+                     * <p>机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 内核版本
+                     * <p>内核版本</p>
                      */
                     std::string m_kernelVersion;
                     bool m_kernelVersionHasBeenSet;
 
                     /**
-                     * 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
+                     * <p>防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版</p>
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;
 
                     /**
-                     * 云标签信息
+                     * <p>云标签信息</p>
                      */
                     std::vector<Tags> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
 
                     /**
-                     * 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+                     * <p>是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机</p>
                      */
                     uint64_t m_isAddedOnTheFifteen;
                     bool m_isAddedOnTheFifteenHasBeenSet;
 
                     /**
-                     * 主机ip列表
+                     * <p>主机ip列表</p>
                      */
                     std::string m_ipList;
                     bool m_ipListHasBeenSet;
 
                     /**
-                     * 所属网络
+                     * <p>所属网络</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 附加信息
+                     * <p>附加信息</p>
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 主机安全agent版本
+                     * <p>主机安全agent版本</p>
                      */
                     std::string m_agentVersion;
                     bool m_agentVersionHasBeenSet;
+
+                    /**
+                     * <p>机器对应APPID</p>
+                     */
+                    uint64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>安全中心付费版本</p>
+                     */
+                    std::string m_cSIPProtectType;
+                    bool m_cSIPProtectTypeHasBeenSet;
 
                 };
             }

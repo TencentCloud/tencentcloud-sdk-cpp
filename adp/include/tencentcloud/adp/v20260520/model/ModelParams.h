@@ -1,0 +1,389 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ADP_V20260520_MODEL_MODELPARAMS_H_
+#define TENCENTCLOUD_ADP_V20260520_MODEL_MODELPARAMS_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Adp
+    {
+        namespace V20260520
+        {
+            namespace Model
+            {
+                /**
+                * 模型参数
+                */
+                class ModelParams : public AbstractModel
+                {
+                public:
+                    ModelParams();
+                    ~ModelParams() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取是否开启深度思考
+                     * @return DeepThinking 是否开启深度思考
+                     * 
+                     */
+                    std::string GetDeepThinking() const;
+
+                    /**
+                     * 设置是否开启深度思考
+                     * @param _deepThinking 是否开启深度思考
+                     * 
+                     */
+                    void SetDeepThinking(const std::string& _deepThinking);
+
+                    /**
+                     * 判断参数 DeepThinking 是否已赋值
+                     * @return DeepThinking 是否已赋值
+                     * 
+                     */
+                    bool DeepThinkingHasBeenSet() const;
+
+                    /**
+                     * 获取深度思考效果
+                     * @return ReasoningEffort 深度思考效果
+                     * 
+                     */
+                    std::string GetReasoningEffort() const;
+
+                    /**
+                     * 设置深度思考效果
+                     * @param _reasoningEffort 深度思考效果
+                     * 
+                     */
+                    void SetReasoningEffort(const std::string& _reasoningEffort);
+
+                    /**
+                     * 判断参数 ReasoningEffort 是否已赋值
+                     * @return ReasoningEffort 是否已赋值
+                     * 
+                     */
+                    bool ReasoningEffortHasBeenSet() const;
+
+                    /**
+                     * 获取输出格式  text、json_object
+                     * @return ReplyFormat 输出格式  text、json_object
+                     * 
+                     */
+                    std::string GetReplyFormat() const;
+
+                    /**
+                     * 设置输出格式  text、json_object
+                     * @param _replyFormat 输出格式  text、json_object
+                     * 
+                     */
+                    void SetReplyFormat(const std::string& _replyFormat);
+
+                    /**
+                     * 判断参数 ReplyFormat 是否已赋值
+                     * @return ReplyFormat 是否已赋值
+                     * 
+                     */
+                    bool ReplyFormatHasBeenSet() const;
+
+                    /**
+                     * 获取频率惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrequencyPenalty 频率惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetFrequencyPenalty() const;
+
+                    /**
+                     * 设置频率惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _frequencyPenalty 频率惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFrequencyPenalty(const double& _frequencyPenalty);
+
+                    /**
+                     * 判断参数 FrequencyPenalty 是否已赋值
+                     * @return FrequencyPenalty 是否已赋值
+                     * 
+                     */
+                    bool FrequencyPenaltyHasBeenSet() const;
+
+                    /**
+                     * 获取最大输出长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxTokens 最大输出长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxTokens() const;
+
+                    /**
+                     * 设置最大输出长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxTokens 最大输出长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxTokens(const int64_t& _maxTokens);
+
+                    /**
+                     * 判断参数 MaxTokens 是否已赋值
+                     * @return MaxTokens 是否已赋值
+                     * 
+                     */
+                    bool MaxTokensHasBeenSet() const;
+
+                    /**
+                     * 获取存在惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PresencePenalty 存在惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetPresencePenalty() const;
+
+                    /**
+                     * 设置存在惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _presencePenalty 存在惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPresencePenalty(const double& _presencePenalty);
+
+                    /**
+                     * 判断参数 PresencePenalty 是否已赋值
+                     * @return PresencePenalty 是否已赋值
+                     * 
+                     */
+                    bool PresencePenaltyHasBeenSet() const;
+
+                    /**
+                     * 获取重复惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepetitionPenalty 重复惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetRepetitionPenalty() const;
+
+                    /**
+                     * 设置重复惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _repetitionPenalty 重复惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRepetitionPenalty(const double& _repetitionPenalty);
+
+                    /**
+                     * 判断参数 RepetitionPenalty 是否已赋值
+                     * @return RepetitionPenalty 是否已赋值
+                     * 
+                     */
+                    bool RepetitionPenaltyHasBeenSet() const;
+
+                    /**
+                     * 获取seed 随机种子
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Seed seed 随机种子
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置seed 随机种子
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _seed seed 随机种子
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
+                    /**
+                     * 获取停止序列
+                     * @return StopSequenceList 停止序列
+                     * 
+                     */
+                    std::vector<std::string> GetStopSequenceList() const;
+
+                    /**
+                     * 设置停止序列
+                     * @param _stopSequenceList 停止序列
+                     * 
+                     */
+                    void SetStopSequenceList(const std::vector<std::string>& _stopSequenceList);
+
+                    /**
+                     * 判断参数 StopSequenceList 是否已赋值
+                     * @return StopSequenceList 是否已赋值
+                     * 
+                     */
+                    bool StopSequenceListHasBeenSet() const;
+
+                    /**
+                     * 获取温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Temperature 温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTemperature() const;
+
+                    /**
+                     * 设置温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _temperature 温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemperature(const double& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
+                    /**
+                     * 获取top_p
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopP top_p
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTopP() const;
+
+                    /**
+                     * 设置top_p
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topP top_p
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopP(const double& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 是否开启深度思考
+                     */
+                    std::string m_deepThinking;
+                    bool m_deepThinkingHasBeenSet;
+
+                    /**
+                     * 深度思考效果
+                     */
+                    std::string m_reasoningEffort;
+                    bool m_reasoningEffortHasBeenSet;
+
+                    /**
+                     * 输出格式  text、json_object
+                     */
+                    std::string m_replyFormat;
+                    bool m_replyFormatHasBeenSet;
+
+                    /**
+                     * 频率惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_frequencyPenalty;
+                    bool m_frequencyPenaltyHasBeenSet;
+
+                    /**
+                     * 最大输出长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxTokens;
+                    bool m_maxTokensHasBeenSet;
+
+                    /**
+                     * 存在惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_presencePenalty;
+                    bool m_presencePenaltyHasBeenSet;
+
+                    /**
+                     * 重复惩罚
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_repetitionPenalty;
+                    bool m_repetitionPenaltyHasBeenSet;
+
+                    /**
+                     * seed 随机种子
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
+
+                    /**
+                     * 停止序列
+                     */
+                    std::vector<std::string> m_stopSequenceList;
+                    bool m_stopSequenceListHasBeenSet;
+
+                    /**
+                     * 温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_temperature;
+                    bool m_temperatureHasBeenSet;
+
+                    /**
+                     * top_p
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_topP;
+                    bool m_topPHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ADP_V20260520_MODEL_MODELPARAMS_H_
