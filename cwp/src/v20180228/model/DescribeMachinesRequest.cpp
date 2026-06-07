@@ -28,7 +28,8 @@ DescribeMachinesRequest::DescribeMachinesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_projectIdsHasBeenSet(false)
+    m_projectIdsHasBeenSet(false),
+    m_machineAppIdHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeMachinesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_machineAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_machineAppId, allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeMachinesRequest::SetProjectIds(const vector<uint64_t>& _projectIds)
 bool DescribeMachinesRequest::ProjectIdsHasBeenSet() const
 {
     return m_projectIdsHasBeenSet;
+}
+
+uint64_t DescribeMachinesRequest::GetMachineAppId() const
+{
+    return m_machineAppId;
+}
+
+void DescribeMachinesRequest::SetMachineAppId(const uint64_t& _machineAppId)
+{
+    m_machineAppId = _machineAppId;
+    m_machineAppIdHasBeenSet = true;
+}
+
+bool DescribeMachinesRequest::MachineAppIdHasBeenSet() const
+{
+    return m_machineAppIdHasBeenSet;
 }
 
 

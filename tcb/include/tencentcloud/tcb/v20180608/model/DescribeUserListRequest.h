@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境id
-                     * @return EnvId 环境id
+                     * 获取<p>环境id</p>
+                     * @return EnvId <p>环境id</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境id
-                     * @param _envId 环境id
+                     * 设置<p>环境id</p>
+                     * @param _envId <p>环境id</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取页码，从1开始，默认1
-                     * @return PageNo 页码，从1开始，默认1
+                     * 获取<p>页码，从1开始，默认1</p>
+                     * @return PageNo <p>页码，从1开始，默认1</p>
                      * 
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置页码，从1开始，默认1
-                     * @param _pageNo 页码，从1开始，默认1
+                     * 设置<p>页码，从1开始，默认1</p>
+                     * @param _pageNo <p>页码，从1开始，默认1</p>
                      * 
                      */
                     void SetPageNo(const int64_t& _pageNo);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认20，最大100
-                     * @return PageSize 每页数量，默认20，最大100
+                     * 获取<p>每页数量，默认20，最大100</p>
+                     * @return PageSize <p>每页数量，默认20，最大100</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量，默认20，最大100
-                     * @param _pageSize 每页数量，默认20，最大100
+                     * 设置<p>每页数量，默认20，最大100</p>
+                     * @param _pageSize <p>每页数量，默认20，最大100</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取用户名，模糊查询
-                     * @return Name 用户名，模糊查询
+                     * 获取<p>用户名，模糊查询</p>
+                     * @return Name <p>用户名，模糊查询</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置用户名，模糊查询
-                     * @param _name 用户名，模糊查询
+                     * 设置<p>用户名，模糊查询</p>
+                     * @param _name <p>用户名，模糊查询</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户昵称，模糊查询
-                     * @return NickName 用户昵称，模糊查询
+                     * 获取<p>用户昵称，模糊查询</p>
+                     * @return NickName <p>用户昵称，模糊查询</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置用户昵称，模糊查询
-                     * @param _nickName 用户昵称，模糊查询
+                     * 设置<p>用户昵称，模糊查询</p>
+                     * @param _nickName <p>用户昵称，模糊查询</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号，模糊查询
-                     * @return Phone 手机号，模糊查询
+                     * 获取<p>手机号，模糊查询</p>
+                     * @return Phone <p>手机号，模糊查询</p>
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号，模糊查询
-                     * @param _phone 手机号，模糊查询
+                     * 设置<p>手机号，模糊查询</p>
+                     * @param _phone <p>手机号，模糊查询</p>
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取邮箱，模糊查询
-                     * @return Email 邮箱，模糊查询
+                     * 获取<p>邮箱，模糊查询</p>
+                     * @return Email <p>邮箱，模糊查询</p>
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱，模糊查询
-                     * @param _email 邮箱，模糊查询
+                     * 设置<p>邮箱，模糊查询</p>
+                     * @param _email <p>邮箱，模糊查询</p>
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -189,49 +189,76 @@ namespace TencentCloud
                      */
                     bool EmailHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户id列表，根据id过滤用户</p>
+                     * @return UidList <p>用户id列表，根据id过滤用户</p>
+                     * 
+                     */
+                    std::vector<std::string> GetUidList() const;
+
+                    /**
+                     * 设置<p>用户id列表，根据id过滤用户</p>
+                     * @param _uidList <p>用户id列表，根据id过滤用户</p>
+                     * 
+                     */
+                    void SetUidList(const std::vector<std::string>& _uidList);
+
+                    /**
+                     * 判断参数 UidList 是否已赋值
+                     * @return UidList 是否已赋值
+                     * 
+                     */
+                    bool UidListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 环境id
+                     * <p>环境id</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 页码，从1开始，默认1
+                     * <p>页码，从1开始，默认1</p>
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 每页数量，默认20，最大100
+                     * <p>每页数量，默认20，最大100</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 用户名，模糊查询
+                     * <p>用户名，模糊查询</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户昵称，模糊查询
+                     * <p>用户昵称，模糊查询</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 手机号，模糊查询
+                     * <p>手机号，模糊查询</p>
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 邮箱，模糊查询
+                     * <p>邮箱，模糊查询</p>
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
+
+                    /**
+                     * <p>用户id列表，根据id过滤用户</p>
+                     */
+                    std::vector<std::string> m_uidList;
+                    bool m_uidListHasBeenSet;
 
                 };
             }

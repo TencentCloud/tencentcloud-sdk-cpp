@@ -1640,56 +1640,6 @@ OcrClient::HandwritingEssayOCROutcomeCallable OcrClient::HandwritingEssayOCRCall
     return prom->get_future();
 }
 
-OcrClient::HmtResidentPermitOCROutcome OcrClient::HmtResidentPermitOCR(const HmtResidentPermitOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "HmtResidentPermitOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        HmtResidentPermitOCRResponse rsp = HmtResidentPermitOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return HmtResidentPermitOCROutcome(rsp);
-        else
-            return HmtResidentPermitOCROutcome(o.GetError());
-    }
-    else
-    {
-        return HmtResidentPermitOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::HmtResidentPermitOCRAsync(const HmtResidentPermitOCRRequest& request, const HmtResidentPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const HmtResidentPermitOCRRequest&;
-    using Resp = HmtResidentPermitOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "HmtResidentPermitOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::HmtResidentPermitOCROutcomeCallable OcrClient::HmtResidentPermitOCRCallable(const HmtResidentPermitOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<HmtResidentPermitOCROutcome>>();
-    HmtResidentPermitOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const HmtResidentPermitOCRRequest&,
-        HmtResidentPermitOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 OcrClient::IDCardOCROutcome OcrClient::IDCardOCR(const IDCardOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "IDCardOCR");

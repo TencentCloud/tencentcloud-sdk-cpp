@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要删除的记录id值,最大长度100个
-                     * @return Ids 需要删除的记录id值,最大长度100个
+                     * 获取<p>需要删除的记录id值,最大长度100个</p>
+                     * @return Ids <p>需要删除的记录id值,最大长度100个</p>
                      * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置需要删除的记录id值,最大长度100个
-                     * @param _ids 需要删除的记录id值,最大长度100个
+                     * 设置<p>需要删除的记录id值,最大长度100个</p>
+                     * @param _ids <p>需要删除的记录id值,最大长度100个</p>
                      * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要删除的记录id值,最大长度100个
+                     * <p>需要删除的记录id值,最大长度100个</p>
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

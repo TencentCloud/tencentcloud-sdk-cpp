@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0 关闭网络攻击检测，1开启网络攻击检测
-                     * @return NetAttackEnable 0 关闭网络攻击检测，1开启网络攻击检测
+                     * 获取<p>0 关闭网络攻击检测，1开启网络攻击检测</p>
+                     * @return NetAttackEnable <p>0 关闭网络攻击检测，1开启网络攻击检测</p>
                      * 
                      */
                     uint64_t GetNetAttackEnable() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NetAttackEnableHasBeenSet() const;
 
                     /**
-                     * 获取0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
-                     * @return NetAttackAlarmStatus 0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
+                     * 获取<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
+                     * @return NetAttackAlarmStatus <p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
                      * 
                      */
                     uint64_t GetNetAttackAlarmStatus() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool NetAttackAlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取1 全部旗舰版主机，0 InstanceIds列表主机
-                     * @return Scope 1 全部旗舰版主机，0 InstanceIds列表主机
+                     * 获取<p>1 全部旗舰版主机，0 InstanceIds列表主机</p>
+                     * @return Scope <p>1 全部旗舰版主机，0 InstanceIds列表主机</p>
                      * 
                      */
                     uint64_t GetScope() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取自选主机
-                     * @return InstanceIds 自选主机
+                     * 获取<p>自选主机</p>
+                     * @return InstanceIds <p>自选主机</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取自选排除主机
-                     * @return ExcludeInstanceIds 自选排除主机
+                     * 获取<p>自选排除主机</p>
+                     * @return ExcludeInstanceIds <p>自选排除主机</p>
                      * 
                      */
                     std::vector<std::string> GetExcludeInstanceIds() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ExcludeInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取新增资产自动包含 0 不包含 1包含
-                     * @return AutoInclude 新增资产自动包含 0 不包含 1包含
+                     * 获取<p>新增资产自动包含 0 不包含 1包含</p>
+                     * @return AutoInclude <p>新增资产自动包含 0 不包含 1包含</p>
                      * 
                      */
                     uint64_t GetAutoInclude() const;
@@ -130,37 +130,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0 关闭网络攻击检测，1开启网络攻击检测
+                     * <p>0 关闭网络攻击检测，1开启网络攻击检测</p>
                      */
                     uint64_t m_netAttackEnable;
                     bool m_netAttackEnableHasBeenSet;
 
                     /**
-                     * 0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
+                     * <p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
                      */
                     uint64_t m_netAttackAlarmStatus;
                     bool m_netAttackAlarmStatusHasBeenSet;
 
                     /**
-                     * 1 全部旗舰版主机，0 InstanceIds列表主机
+                     * <p>1 全部旗舰版主机，0 InstanceIds列表主机</p>
                      */
                     uint64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 自选主机
+                     * <p>自选主机</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 自选排除主机
+                     * <p>自选排除主机</p>
                      */
                     std::vector<std::string> m_excludeInstanceIds;
                     bool m_excludeInstanceIdsHasBeenSet;
 
                     /**
-                     * 新增资产自动包含 0 不包含 1包含
+                     * <p>新增资产自动包含 0 不包含 1包含</p>
                      */
                     uint64_t m_autoInclude;
                     bool m_autoIncludeHasBeenSet;

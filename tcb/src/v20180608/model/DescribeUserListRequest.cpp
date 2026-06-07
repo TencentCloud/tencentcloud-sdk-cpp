@@ -29,7 +29,8 @@ DescribeUserListRequest::DescribeUserListRequest() :
     m_nameHasBeenSet(false),
     m_nickNameHasBeenSet(false),
     m_phoneHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_uidListHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ string DescribeUserListRequest::ToJsonString() const
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uidListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UidList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uidList.begin(); itr != m_uidList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +228,22 @@ void DescribeUserListRequest::SetEmail(const string& _email)
 bool DescribeUserListRequest::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+vector<string> DescribeUserListRequest::GetUidList() const
+{
+    return m_uidList;
+}
+
+void DescribeUserListRequest::SetUidList(const vector<string>& _uidList)
+{
+    m_uidList = _uidList;
+    m_uidListHasBeenSet = true;
+}
+
+bool DescribeUserListRequest::UidListHasBeenSet() const
+{
+    return m_uidListHasBeenSet;
 }
 
 

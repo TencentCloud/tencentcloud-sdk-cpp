@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cpu 资源量
-                     * @return CPU cpu 资源量
+                     * 获取<p>cpu 资源量</p>
+                     * @return CPU <p>cpu 资源量</p>
                      * 
                      */
                     std::string GetCPU() const;
 
                     /**
-                     * 设置cpu 资源量
-                     * @param _cPU cpu 资源量
+                     * 设置<p>cpu 资源量</p>
+                     * @param _cPU <p>cpu 资源量</p>
                      * 
                      */
                     void SetCPU(const std::string& _cPU);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取内存资源量
-                     * @return Memory 内存资源量
+                     * 获取<p>内存资源量</p>
+                     * @return Memory <p>内存资源量</p>
                      * 
                      */
                     std::string GetMemory() const;
 
                     /**
-                     * 设置内存资源量
-                     * @param _memory 内存资源量
+                     * 设置<p>内存资源量</p>
+                     * @param _memory <p>内存资源量</p>
                      * 
                      */
                     void SetMemory(const std::string& _memory);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cpu 资源量
+                     * <p>cpu 资源量</p>
                      */
                     std::string m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 内存资源量
+                     * <p>内存资源量</p>
                      */
                     std::string m_memory;
                     bool m_memoryHasBeenSet;

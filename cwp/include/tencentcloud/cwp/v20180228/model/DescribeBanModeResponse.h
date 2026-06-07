@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
-                     * @return Mode 阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
+                     * 获取<p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
+                     * @return Mode <p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
                      * 
                      */
                     std::string GetMode() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取标准阻断模式的配置
-                     * @return StandardModeConfig 标准阻断模式的配置
+                     * 获取<p>标准阻断模式的配置</p>
+                     * @return StandardModeConfig <p>标准阻断模式的配置</p>
                      * 
                      */
                     StandardModeConfig GetStandardModeConfig() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
+                     * <p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 标准阻断模式的配置
+                     * <p>标准阻断模式的配置</p>
                      */
                     StandardModeConfig m_standardModeConfig;
                     bool m_standardModeConfigHasBeenSet;

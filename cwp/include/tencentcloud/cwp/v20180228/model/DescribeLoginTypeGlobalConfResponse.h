@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li>
-                     * @return Enable 是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li>
+                     * 获取<p>是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>
+                     * @return Enable <p>是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>
                      * 
                      */
                     uint64_t GetEnable() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取开启范围 <li>0 自选主机</li> <li>1 全部主机</li>
-                     * @return Scope 开启范围 <li>0 自选主机</li> <li>1 全部主机</li>
+                     * 获取<p>开启范围 <li>0 自选主机</li> <li>1 全部主机</li></p>
+                     * @return Scope <p>开启范围 <li>0 自选主机</li> <li>1 全部主机</li></p>
                      * 
                      */
                     uint64_t GetScope() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取正选主机配置数
-                     * @return IncludeHostCount 正选主机配置数
+                     * 获取<p>正选主机配置数</p>
+                     * @return IncludeHostCount <p>正选主机配置数</p>
                      * 
                      */
                     uint64_t GetIncludeHostCount() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool IncludeHostCountHasBeenSet() const;
 
                     /**
-                     * 获取反选主机配置数
-                     * @return ExcludeHostCount 反选主机配置数
+                     * 获取<p>反选主机配置数</p>
+                     * @return ExcludeHostCount <p>反选主机配置数</p>
                      * 
                      */
                     uint64_t GetExcludeHostCount() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ExcludeHostCountHasBeenSet() const;
 
                     /**
-                     * 获取正选quuid配置列表
-                     * @return IncludeQuuid 正选quuid配置列表
+                     * 获取<p>正选quuid配置列表</p>
+                     * @return IncludeQuuid <p>正选quuid配置列表</p>
                      * 
                      */
                     std::vector<std::string> GetIncludeQuuid() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool IncludeQuuidHasBeenSet() const;
 
                     /**
-                     * 获取反选quuid配置列表
-                     * @return ExcludeQuuid 反选quuid配置列表
+                     * 获取<p>反选quuid配置列表</p>
+                     * @return ExcludeQuuid <p>反选quuid配置列表</p>
                      * 
                      */
                     std::vector<std::string> GetExcludeQuuid() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ExcludeQuuidHasBeenSet() const;
 
                     /**
-                     * 获取已开启机器数
-                     * @return EnableCount 已开启机器数
+                     * 获取<p>已开启机器数</p>
+                     * @return EnableCount <p>已开启机器数</p>
                      * 
                      */
                     uint64_t GetEnableCount() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool EnableCountHasBeenSet() const;
 
                     /**
-                     * 获取未启机器数
-                     * @return DisableCount 未启机器数
+                     * 获取<p>未启机器数</p>
+                     * @return DisableCount <p>未启机器数</p>
                      * 
                      */
                     uint64_t GetDisableCount() const;
@@ -158,49 +158,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li>
+                     * <p>是否开启防卸载 <li>0 否</li> <li>1 是</li> <li>9 未设置,和0一样是未开启</li></p>
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 开启范围 <li>0 自选主机</li> <li>1 全部主机</li>
+                     * <p>开启范围 <li>0 自选主机</li> <li>1 全部主机</li></p>
                      */
                     uint64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 正选主机配置数
+                     * <p>正选主机配置数</p>
                      */
                     uint64_t m_includeHostCount;
                     bool m_includeHostCountHasBeenSet;
 
                     /**
-                     * 反选主机配置数
+                     * <p>反选主机配置数</p>
                      */
                     uint64_t m_excludeHostCount;
                     bool m_excludeHostCountHasBeenSet;
 
                     /**
-                     * 正选quuid配置列表
+                     * <p>正选quuid配置列表</p>
                      */
                     std::vector<std::string> m_includeQuuid;
                     bool m_includeQuuidHasBeenSet;
 
                     /**
-                     * 反选quuid配置列表
+                     * <p>反选quuid配置列表</p>
                      */
                     std::vector<std::string> m_excludeQuuid;
                     bool m_excludeQuuidHasBeenSet;
 
                     /**
-                     * 已开启机器数
+                     * <p>已开启机器数</p>
                      */
                     uint64_t m_enableCount;
                     bool m_enableCountHasBeenSet;
 
                     /**
-                     * 未启机器数
+                     * <p>未启机器数</p>
                      */
                     uint64_t m_disableCount;
                     bool m_disableCountHasBeenSet;

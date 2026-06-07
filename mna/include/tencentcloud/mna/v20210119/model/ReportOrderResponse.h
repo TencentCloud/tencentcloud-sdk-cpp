@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单信息
-                     * @return OrderInfo 订单信息
+                     * 获取<p>订单信息</p>
+                     * @return OrderInfo <p>订单信息</p>
                      * 
                      */
                     OrderInfo GetOrderInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单信息
+                     * <p>订单信息</p>
                      */
                     OrderInfo m_orderInfo;
                     bool m_orderInfoHasBeenSet;

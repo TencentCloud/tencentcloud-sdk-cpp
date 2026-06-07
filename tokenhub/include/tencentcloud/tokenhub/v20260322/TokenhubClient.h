@@ -33,6 +33,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyRequest.h>
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApiKeyListResponse> DescribeApiKeyListOutcome;
                 typedef std::future<DescribeApiKeyListOutcome> DescribeApiKeyListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeApiKeyListRequest&, DescribeApiKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiKeyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelListResponse> DescribeModelListOutcome;
+                typedef std::future<DescribeModelListOutcome> DescribeModelListOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DescribeModelListRequest&, DescribeModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTokenPlanResponse> DescribeTokenPlanOutcome;
                 typedef std::future<DescribeTokenPlanOutcome> DescribeTokenPlanOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeTokenPlanRequest&, DescribeTokenPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenPlanAsyncHandler;
@@ -172,6 +177,17 @@ namespace TencentCloud
                 DescribeApiKeyListOutcome DescribeApiKeyList(const Model::DescribeApiKeyListRequest &request);
                 void DescribeApiKeyListAsync(const Model::DescribeApiKeyListRequest& request, const DescribeApiKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApiKeyListOutcomeCallable DescribeApiKeyListCallable(const Model::DescribeApiKeyListRequest& request);
+
+                /**
+                 *查询模型列表。
+
+支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。
+                 * @param req DescribeModelListRequest
+                 * @return DescribeModelListOutcome
+                 */
+                DescribeModelListOutcome DescribeModelList(const Model::DescribeModelListRequest &request);
+                void DescribeModelListAsync(const Model::DescribeModelListRequest& request, const DescribeModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelListOutcomeCallable DescribeModelListCallable(const Model::DescribeModelListRequest& request);
 
                 /**
                  *查询 TokenPlan 套餐详情。

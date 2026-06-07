@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴力破解判断规则
-                     * @return Rules 暴力破解判断规则
+                     * 获取<p>暴力破解判断规则</p>
+                     * @return Rules <p>暴力破解判断规则</p>
                      * 
                      */
                     std::vector<BruteAttackRule> GetRules() const;
 
                     /**
-                     * 设置暴力破解判断规则
-                     * @param _rules 暴力破解判断规则
+                     * 设置<p>暴力破解判断规则</p>
+                     * @param _rules <p>暴力破解判断规则</p>
                      * 
                      */
                     void SetRules(const std::vector<BruteAttackRule>& _rules);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 暴力破解判断规则
+                     * <p>暴力破解判断规则</p>
                      */
                     std::vector<BruteAttackRule> m_rules;
                     bool m_rulesHasBeenSet;

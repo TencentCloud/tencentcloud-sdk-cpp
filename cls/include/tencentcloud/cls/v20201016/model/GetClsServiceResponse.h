@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEUSERLISTRESPONSE_H_
-#define TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEUSERLISTRESPONSE_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_GETCLSSERVICERESPONSE_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_GETCLSSERVICERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeUserListResp.h>
 
 
 namespace TencentCloud
 {
-    namespace Tcb
+    namespace Cls
     {
-        namespace V20180608
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * DescribeUserList返回参数结构体
+                * GetClsService返回参数结构体
                 */
-                class DescribeUserListResponse : public AbstractModel
+                class GetClsServiceResponse : public AbstractModel
                 {
                 public:
-                    DescribeUserListResponse();
-                    ~DescribeUserListResponse() = default;
+                    GetClsServiceResponse();
+                    ~GetClsServiceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>结果返回</p>
-                     * @return Data <p>结果返回</p>
+                     * 获取账户服务开通状态，0:服务已开通，1:服务未开通
+                     * @return Status 账户服务开通状态，0:服务已开通，1:服务未开通
                      * 
                      */
-                    DescribeUserListResp GetData() const;
+                    int64_t GetStatus() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool StatusHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>结果返回</p>
+                     * 账户服务开通状态，0:服务已开通，1:服务未开通
                      */
-                    DescribeUserListResp m_data;
-                    bool m_dataHasBeenSet;
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEUSERLISTRESPONSE_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_GETCLSSERVICERESPONSE_H_

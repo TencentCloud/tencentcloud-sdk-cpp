@@ -54,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤键的名称。
-                     * @return Name 过滤键的名称。
+                     * 获取<p>过滤键的名称。</p>
+                     * @return Name <p>过滤键的名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤键的名称。
-                     * @param _name 过滤键的名称。
+                     * 设置<p>过滤键的名称。</p>
+                     * @param _name <p>过滤键的名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -75,15 +75,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取一个或者多个过滤值。
-                     * @return Values 一个或者多个过滤值。
+                     * 获取<p>一个或者多个过滤值。</p>
+                     * @return Values <p>一个或者多个过滤值。</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置一个或者多个过滤值。
-                     * @param _values 一个或者多个过滤值。
+                     * 设置<p>一个或者多个过滤值。</p>
+                     * @param _values <p>一个或者多个过滤值。</p>
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -96,15 +96,15 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索
-                     * @return ExactMatch 模糊搜索
+                     * 获取<p>模糊搜索</p>
+                     * @return ExactMatch <p>模糊搜索</p>
                      * 
                      */
                     bool GetExactMatch() const;
 
                     /**
-                     * 设置模糊搜索
-                     * @param _exactMatch 模糊搜索
+                     * 设置<p>模糊搜索</p>
+                     * @param _exactMatch <p>模糊搜索</p>
                      * 
                      */
                     void SetExactMatch(const bool& _exactMatch);
@@ -119,19 +119,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤键的名称。
+                     * <p>过滤键的名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 一个或者多个过滤值。
+                     * <p>一个或者多个过滤值。</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 模糊搜索
+                     * <p>模糊搜索</p>
                      */
                     bool m_exactMatch;
                     bool m_exactMatchHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInsId 防火墙实例id
+                     * 获取<p>防火墙实例id</p>
+                     * @return CfwInsId <p>防火墙实例id</p>
                      * 
                      */
                     std::string GetCfwInsId() const;
 
                     /**
-                     * 设置防火墙实例id
-                     * @param _cfwInsId 防火墙实例id
+                     * 设置<p>防火墙实例id</p>
+                     * @param _cfwInsId <p>防火墙实例id</p>
                      * 
                      */
                     void SetCfwInsId(const std::string& _cfwInsId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CfwInsIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙类型，nat：nat防火墙；ew：vpc间防火墙
-                     * @return FwType 防火墙类型，nat：nat防火墙；ew：vpc间防火墙
+                     * 获取<p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>
+                     * @return FwType <p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置防火墙类型，nat：nat防火墙；ew：vpc间防火墙
-                     * @param _fwType 防火墙类型，nat：nat防火墙；ew：vpc间防火墙
+                     * 设置<p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>
+                     * @param _fwType <p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例所属地域
-                     * @return Region 实例所属地域
+                     * 获取<p>实例所属地域</p>
+                     * @return Region <p>实例所属地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例所属地域
-                     * @param _region 实例所属地域
+                     * 设置<p>实例所属地域</p>
+                     * @param _region <p>实例所属地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中
-                     * @return Status 实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中
+                     * 获取<p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>
+                     * @return Status <p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中
-                     * @param _status 实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中
+                     * 设置<p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>
+                     * @param _status <p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取事件时间
-                     * @return EventTime 事件时间
+                     * 获取<p>事件时间</p>
+                     * @return EventTime <p>事件时间</p>
                      * 
                      */
                     std::string GetEventTime() const;
 
                     /**
-                     * 设置事件时间
-                     * @param _eventTime 事件时间
+                     * 设置<p>事件时间</p>
+                     * @param _eventTime <p>事件时间</p>
                      * 
                      */
                     void SetEventTime(const std::string& _eventTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EventTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复时间
-                     * @return RecoverTime 恢复时间
+                     * 获取<p>恢复时间</p>
+                     * @return RecoverTime <p>恢复时间</p>
                      * 
                      */
                     std::string GetRecoverTime() const;
 
                     /**
-                     * 设置恢复时间
-                     * @param _recoverTime 恢复时间
+                     * 设置<p>恢复时间</p>
+                     * @param _recoverTime <p>恢复时间</p>
                      * 
                      */
                     void SetRecoverTime(const std::string& _recoverTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RecoverTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return CfwInsName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return CfwInsName <p>实例名称</p>
                      * 
                      */
                     std::string GetCfwInsName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _cfwInsName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _cfwInsName <p>实例名称</p>
                      * 
                      */
                     void SetCfwInsName(const std::string& _cfwInsName);
@@ -194,19 +194,15 @@ namespace TencentCloud
                     bool CfwInsNameHasBeenSet() const;
 
                     /**
-                     * 获取Normal: 正常模式
-OnlyRoute: 透明模式
-                     * @return TrafficMode Normal: 正常模式
-OnlyRoute: 透明模式
+                     * 获取<p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>
+                     * @return TrafficMode <p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>
                      * 
                      */
                     std::string GetTrafficMode() const;
 
                     /**
-                     * 设置Normal: 正常模式
-OnlyRoute: 透明模式
-                     * @param _trafficMode Normal: 正常模式
-OnlyRoute: 透明模式
+                     * 设置<p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>
+                     * @param _trafficMode <p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -221,50 +217,49 @@ OnlyRoute: 透明模式
                 private:
 
                     /**
-                     * 防火墙实例id
+                     * <p>防火墙实例id</p>
                      */
                     std::string m_cfwInsId;
                     bool m_cfwInsIdHasBeenSet;
 
                     /**
-                     * 防火墙类型，nat：nat防火墙；ew：vpc间防火墙
+                     * <p>防火墙类型，nat：nat防火墙；ew：vpc间防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 实例所属地域
+                     * <p>实例所属地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中
+                     * <p>实例运行状态，Running：正常运行；BypassAutoFix：bypass修复；Updating：升级中；Expand：扩容中；BypassManual：手动触发bypass中；BypassAuto：自动触发bypass中；BypassTcDrop：丢包触发bypass中</p><p>枚举值：</p><ul><li>Running： 正常运行</li><li>BypassAutoFix： 自动bypass已修复</li><li>Updating： 实例升级中</li><li>Expand： 实例扩容中</li><li>BypassManual： 手动触发bypass中</li><li>BypassAuto： 自动触发bypass中</li><li>BypassTcDrop： 丢包触发bypass中</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 事件时间
+                     * <p>事件时间</p>
                      */
                     std::string m_eventTime;
                     bool m_eventTimeHasBeenSet;
 
                     /**
-                     * 恢复时间
+                     * <p>恢复时间</p>
                      */
                     std::string m_recoverTime;
                     bool m_recoverTimeHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_cfwInsName;
                     bool m_cfwInsNameHasBeenSet;
 
                     /**
-                     * Normal: 正常模式
-OnlyRoute: 透明模式
+                     * <p>Normal: 正常模式<br>OnlyRoute: 透明模式</p>
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;

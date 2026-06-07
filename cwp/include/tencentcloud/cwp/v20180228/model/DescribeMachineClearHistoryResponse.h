@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return TotalCount 总条数
+                     * 获取<p>总条数</p>
+                     * @return TotalCount <p>总条数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取列表数据
-                     * @return List 列表数据
+                     * 获取<p>列表数据</p>
+                     * @return List <p>列表数据</p>
                      * 
                      */
                     std::vector<MachineClearHistory> GetList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 列表数据
+                     * <p>列表数据</p>
                      */
                     std::vector<MachineClearHistory> m_list;
                     bool m_listHasBeenSet;

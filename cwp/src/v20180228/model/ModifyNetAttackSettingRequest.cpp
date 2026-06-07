@@ -28,7 +28,8 @@ ModifyNetAttackSettingRequest::ModifyNetAttackSettingRequest() :
     m_scopeHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_excludeInstanceIdsHasBeenSet(false),
-    m_autoIncludeHasBeenSet(false)
+    m_autoIncludeHasBeenSet(false),
+    m_productTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ModifyNetAttackSettingRequest::ToJsonString() const
         string key = "AutoInclude";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoInclude, allocator);
+    }
+
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productType, allocator);
     }
 
 
@@ -199,6 +208,22 @@ void ModifyNetAttackSettingRequest::SetAutoInclude(const uint64_t& _autoInclude)
 bool ModifyNetAttackSettingRequest::AutoIncludeHasBeenSet() const
 {
     return m_autoIncludeHasBeenSet;
+}
+
+uint64_t ModifyNetAttackSettingRequest::GetProductType() const
+{
+    return m_productType;
+}
+
+void ModifyNetAttackSettingRequest::SetProductType(const uint64_t& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool ModifyNetAttackSettingRequest::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
 }
 
 

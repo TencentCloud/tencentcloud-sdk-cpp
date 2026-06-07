@@ -46,6 +46,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
+                     * @return SubAppId <p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
+                     * 
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
+                     * @param _subAppId <p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
+                     * 
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     * 
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型名称。</p>
                      * @return ModelName <p>模型名称。</p>
                      * 
@@ -88,15 +109,15 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定场景，目前支持sfx（音效）。</p>
-                     * @return SceneType <p>指定场景，目前支持sfx（音效）。</p>
+                     * 获取<p>指定场景，目前支持sfx（音效）、music（音乐）。</p>
+                     * @return SceneType <p>指定场景，目前支持sfx（音效）、music（音乐）。</p>
                      * 
                      */
                     std::string GetSceneType() const;
 
                     /**
-                     * 设置<p>指定场景，目前支持sfx（音效）。</p>
-                     * @param _sceneType <p>指定场景，目前支持sfx（音效）。</p>
+                     * 设置<p>指定场景，目前支持sfx（音效）、music（音乐）。</p>
+                     * @param _sceneType <p>指定场景，目前支持sfx（音效）、music（音乐）。</p>
                      * 
                      */
                     void SetSceneType(const std::string& _sceneType);
@@ -216,6 +237,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * <p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
                      * <p>模型名称。</p>
                      */
                     std::string m_modelName;
@@ -228,7 +255,7 @@ namespace TencentCloud
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * <p>指定场景，目前支持sfx（音效）。</p>
+                     * <p>指定场景，目前支持sfx（音效）、music（音乐）。</p>
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;

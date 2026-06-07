@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问源示例： net：IP/CIDR(192.168.0.2)
-                     * @return SourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * 获取<p>访问源示例： net：IP/CIDR(192.168.0.2)</p>
+                     * @return SourceContent <p>访问源示例： net：IP/CIDR(192.168.0.2)</p>
                      * 
                      */
                     std::string GetSourceContent() const;
 
                     /**
-                     * 设置访问源示例： net：IP/CIDR(192.168.0.2)
-                     * @param _sourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * 设置<p>访问源示例： net：IP/CIDR(192.168.0.2)</p>
+                     * @param _sourceContent <p>访问源示例： net：IP/CIDR(192.168.0.2)</p>
                      * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceContentHasBeenSet() const;
 
                     /**
-                     * 获取访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-                     * @return SourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * 获取<p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>
+                     * @return SourceType <p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-                     * @param _sourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * 设置<p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>
+                     * @param _sourceType <p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-                     * @return TargetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * 获取<p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>
+                     * @return TargetContent <p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>
                      * 
                      */
                     std::string GetTargetContent() const;
 
                     /**
-                     * 设置访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-                     * @param _targetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * 设置<p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>
+                     * @param _targetContent <p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>
                      * 
                      */
                     void SetTargetContent(const std::string& _targetContent);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TargetContentHasBeenSet() const;
 
                     /**
-                     * 获取访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-                     * @return TargetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * 获取<p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>
+                     * @return TargetType <p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-                     * @param _targetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * 设置<p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>
+                     * @param _targetType <p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-                     * @return Protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * 获取<p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>
+                     * @return Protocol <p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-                     * @param _protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * 设置<p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>
+                     * @param _protocol <p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-                     * @return RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * 获取<p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>
+                     * @return RuleAction <p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>
                      * 
                      */
                     std::string GetRuleAction() const;
 
                     /**
-                     * 设置访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-                     * @param _ruleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * 设置<p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>
+                     * @param _ruleAction <p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>
                      * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RuleActionHasBeenSet() const;
 
                     /**
-                     * 获取访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-                     * @return Port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * 获取<p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>
+                     * @return Port <p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-                     * @param _port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * 设置<p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>
+                     * @param _port <p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取规则方向：1，入站；0，出站
-                     * @return Direction 规则方向：1，入站；0，出站
+                     * 获取<p>规则方向：1，入站；0，出站</p>
+                     * @return Direction <p>规则方向：1，入站；0，出站</p>
                      * 
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置规则方向：1，入站；0，出站
-                     * @param _direction 规则方向：1，入站；0，出站
+                     * 设置<p>规则方向：1，入站；0，出站</p>
+                     * @param _direction <p>规则方向：1，入站；0，出站</p>
                      * 
                      */
                     void SetDirection(const uint64_t& _direction);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取规则序号
-                     * @return OrderIndex 规则序号
+                     * 获取<p>规则序号</p>
+                     * @return OrderIndex <p>规则序号</p>
                      * 
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
-                     * 设置规则序号
-                     * @param _orderIndex 规则序号
+                     * 设置<p>规则序号</p>
+                     * @param _orderIndex <p>规则序号</p>
                      * 
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取规则状态，true表示启用，false表示禁用
-                     * @return Enable 规则状态，true表示启用，false表示禁用
+                     * 获取<p>规则状态，true表示启用，false表示禁用</p>
+                     * @return Enable <p>规则状态，true表示启用，false表示禁用</p>
                      * 
                      */
                     std::string GetEnable() const;
 
                     /**
-                     * 设置规则状态，true表示启用，false表示禁用
-                     * @param _enable 规则状态，true表示启用，false表示禁用
+                     * 设置<p>规则状态，true表示启用，false表示禁用</p>
+                     * @param _enable <p>规则状态，true表示启用，false表示禁用</p>
                      * 
                      */
                     void SetEnable(const std::string& _enable);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取规则对应的唯一id，创建规则时无需填写
-                     * @return Uuid 规则对应的唯一id，创建规则时无需填写
+                     * 获取<p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>
+                     * @return Uuid <p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>
                      * 
                      */
                     int64_t GetUuid() const;
 
                     /**
-                     * 设置规则对应的唯一id，创建规则时无需填写
-                     * @param _uuid 规则对应的唯一id，创建规则时无需填写
+                     * 设置<p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>
+                     * @param _uuid <p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>
                      * 
                      */
                     void SetUuid(const int64_t& _uuid);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取端口协议组ID
-                     * @return ParamTemplateId 端口协议组ID
+                     * 获取<p>端口协议组ID</p>
+                     * @return ParamTemplateId <p>端口协议组ID</p>
                      * 
                      */
                     std::string GetParamTemplateId() const;
 
                     /**
-                     * 设置端口协议组ID
-                     * @param _paramTemplateId 端口协议组ID
+                     * 设置<p>端口协议组ID</p>
+                     * @param _paramTemplateId <p>端口协议组ID</p>
                      * 
                      */
                     void SetParamTemplateId(const std::string& _paramTemplateId);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取内部id
-                     * @return InternalUuid 内部id
+                     * 获取<p>内部id</p>
+                     * @return InternalUuid <p>内部id</p>
                      * 
                      */
                     int64_t GetInternalUuid() const;
 
                     /**
-                     * 设置内部id
-                     * @param _internalUuid 内部id
+                     * 设置<p>内部id</p>
+                     * @param _internalUuid <p>内部id</p>
                      * 
                      */
                     void SetInternalUuid(const int64_t& _internalUuid);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool InternalUuidHasBeenSet() const;
 
                     /**
-                     * 获取规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
-                     * @return Scope 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * 获取<p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>
+                     * @return Scope <p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
-                     * @param _scope 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * 设置<p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>
+                     * @param _scope <p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -364,91 +364,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问源示例： net：IP/CIDR(192.168.0.2)
+                     * <p>访问源示例： net：IP/CIDR(192.168.0.2)</p>
                      */
                     std::string m_sourceContent;
                     bool m_sourceContentHasBeenSet;
 
                     /**
-                     * 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
+                     * <p>访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
+                     * <p>访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com</p>
                      */
                     std::string m_targetContent;
                     bool m_targetContentHasBeenSet;
 
                     /**
-                     * 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
+                     * <p>访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location</p>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
+                     * <p>协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
+                     * <p>访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察</p>
                      */
                     std::string m_ruleAction;
                     bool m_ruleActionHasBeenSet;
 
                     /**
-                     * 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
+                     * <p>访问控制策略的端口。取值： -1/-1：全部端口 80：80端口</p>
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 规则方向：1，入站；0，出站
+                     * <p>规则方向：1，入站；0，出站</p>
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 规则序号
+                     * <p>规则序号</p>
                      */
                     int64_t m_orderIndex;
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 规则状态，true表示启用，false表示禁用
+                     * <p>规则状态，true表示启用，false表示禁用</p>
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 规则对应的唯一id，创建规则时无需填写
+                     * <p>规则对应的唯一id，创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p><p>创建规则AddNatAcRule时无需填写；修改规则ModifyNatAcRule时必须填写</p>
                      */
                     int64_t m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 端口协议组ID
+                     * <p>端口协议组ID</p>
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 内部id
+                     * <p>内部id</p>
                      */
                     int64_t m_internalUuid;
                     bool m_internalUuidHasBeenSet;
 
                     /**
-                     * 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * <p>规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度</p>
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;

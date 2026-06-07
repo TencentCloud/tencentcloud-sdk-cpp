@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id
-                     * @return ClusterId 集群Id
+                     * 获取<p>集群Id</p>
+                     * @return ClusterId <p>集群Id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群Id
-                     * @param _clusterId 集群Id
+                     * 设置<p>集群Id</p>
+                     * @param _clusterId <p>集群Id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取当前可用区
-                     * @return OldZone 当前可用区
+                     * 获取<p>当前可用区</p>
+                     * @return OldZone <p>当前可用区</p>
                      * 
                      */
                     std::string GetOldZone() const;
 
                     /**
-                     * 设置当前可用区
-                     * @param _oldZone 当前可用区
+                     * 设置<p>当前可用区</p>
+                     * @param _oldZone <p>当前可用区</p>
                      * 
                      */
                     void SetOldZone(const std::string& _oldZone);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OldZoneHasBeenSet() const;
 
                     /**
-                     * 获取要切换到的可用区
-                     * @return NewZone 要切换到的可用区
+                     * 获取<p>要切换到的可用区</p>
+                     * @return NewZone <p>要切换到的可用区</p>
                      * 
                      */
                     std::string GetNewZone() const;
 
                     /**
-                     * 设置要切换到的可用区
-                     * @param _newZone 要切换到的可用区
+                     * 设置<p>要切换到的可用区</p>
+                     * @param _newZone <p>要切换到的可用区</p>
                      * 
                      */
                     void SetNewZone(const std::string& _newZone);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NewZoneHasBeenSet() const;
 
                     /**
-                     * 获取维护期间执行-yes,立即执行-no
-                     * @return IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     * 获取<p>维护期间执行-yes,立即执行-no</p>
+                     * @return IsInMaintainPeriod <p>维护期间执行-yes,立即执行-no</p>
                      * 
                      */
                     std::string GetIsInMaintainPeriod() const;
 
                     /**
-                     * 设置维护期间执行-yes,立即执行-no
-                     * @param _isInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     * 设置<p>维护期间执行-yes,立即执行-no</p>
+                     * @param _isInMaintainPeriod <p>维护期间执行-yes,立即执行-no</p>
                      * 
                      */
                     void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群Id
+                     * <p>集群Id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 当前可用区
+                     * <p>当前可用区</p>
                      */
                     std::string m_oldZone;
                     bool m_oldZoneHasBeenSet;
 
                     /**
-                     * 要切换到的可用区
+                     * <p>要切换到的可用区</p>
                      */
                     std::string m_newZone;
                     bool m_newZoneHasBeenSet;
 
                     /**
-                     * 维护期间执行-yes,立即执行-no
+                     * <p>维护期间执行-yes,立即执行-no</p>
                      */
                     std::string m_isInMaintainPeriod;
                     bool m_isInMaintainPeriodHasBeenSet;

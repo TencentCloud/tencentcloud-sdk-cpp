@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取清理规则时间, 0 表示关闭, 单位为天, 最大为 30天
-                     * @return ClearRule 清理规则时间, 0 表示关闭, 单位为天, 最大为 30天
+                     * 获取<p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>
+                     * @return ClearRule <p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>
                      * 
                      */
                     uint64_t GetClearRule() const;
 
                     /**
-                     * 设置清理规则时间, 0 表示关闭, 单位为天, 最大为 30天
-                     * @param _clearRule 清理规则时间, 0 表示关闭, 单位为天, 最大为 30天
+                     * 设置<p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>
+                     * @param _clearRule <p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>
                      * 
                      */
                     void SetClearRule(const uint64_t& _clearRule);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 清理规则时间, 0 表示关闭, 单位为天, 最大为 30天
+                     * <p>清理规则时间, 0 表示关闭, 单位为天, 最大为 30天</p>
                      */
                     uint64_t m_clearRule;
                     bool m_clearRuleHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
-                     * @return Mode 阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
+                     * 获取<p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
+                     * @return Mode <p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
-                     * @param _mode 阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
+                     * 设置<p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
+                     * @param _mode <p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取阻断时间，用于标准阻断模式
-                     * @return Ttl 阻断时间，用于标准阻断模式
+                     * 获取<p>阻断时间，用于标准阻断模式</p>
+                     * @return Ttl <p>阻断时间，用于标准阻断模式</p>
                      * 
                      */
                     uint64_t GetTtl() const;
 
                     /**
-                     * 设置阻断时间，用于标准阻断模式
-                     * @param _ttl 阻断时间，用于标准阻断模式
+                     * 设置<p>阻断时间，用于标准阻断模式</p>
+                     * @param _ttl <p>阻断时间，用于标准阻断模式</p>
                      * 
                      */
                     void SetTtl(const uint64_t& _ttl);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断
+                     * <p>阻断模式，STANDARD_MODE：标准阻断，DEEP_MODE：深度阻断</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 阻断时间，用于标准阻断模式
+                     * <p>阻断时间，用于标准阻断模式</p>
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;

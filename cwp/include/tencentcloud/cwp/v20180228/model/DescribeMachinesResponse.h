@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机列表
-                     * @return Machines 主机列表
+                     * 获取<p>主机列表</p>
+                     * @return Machines <p>主机列表</p>
                      * 
                      */
                     std::vector<Machine> GetMachines() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool MachinesHasBeenSet() const;
 
                     /**
-                     * 获取主机数量
-                     * @return TotalCount 主机数量
+                     * 获取<p>主机数量</p>
+                     * @return TotalCount <p>主机数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主机列表
+                     * <p>主机列表</p>
                      */
                     std::vector<Machine> m_machines;
                     bool m_machinesHasBeenSet;
 
                     /**
-                     * 主机数量
+                     * <p>主机数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

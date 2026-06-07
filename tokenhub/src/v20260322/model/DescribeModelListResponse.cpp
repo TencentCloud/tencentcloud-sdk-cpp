@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cynosdb::V20190107::Model;
+using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-SwitchClusterZoneResponse::SwitchClusterZoneResponse() :
-    m_taskIdHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+DescribeModelListResponse::DescribeModelListResponse()
 {
 }
 
-CoreInternalOutcome SwitchClusterZoneResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeModelListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome SwitchClusterZoneResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
-    {
-        if (!rsp["TaskId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = rsp["TaskId"].GetInt64();
-        m_taskIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
-    {
-        if (!rsp["FlowId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_flowId = rsp["FlowId"].GetInt64();
-        m_flowIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string SwitchClusterZoneResponse::ToJsonString() const
+string DescribeModelListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
-    }
-
-    if (m_flowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_flowId, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string SwitchClusterZoneResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t SwitchClusterZoneResponse::GetTaskId() const
-{
-    return m_taskId;
-}
-
-bool SwitchClusterZoneResponse::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
-
-int64_t SwitchClusterZoneResponse::GetFlowId() const
-{
-    return m_flowId;
-}
-
-bool SwitchClusterZoneResponse::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
 
 

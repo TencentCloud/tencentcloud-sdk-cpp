@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取限制条数,默认10,最大100
-                     * @return Limit 限制条数,默认10,最大100
+                     * 获取<p>限制条数,默认10,最大100</p>
+                     * @return Limit <p>限制条数,默认10,最大100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制条数,默认10,最大100
-                     * @param _limit 限制条数,默认10,最大100
+                     * 设置<p>限制条数,默认10,最大100</p>
+                     * @param _limit <p>限制条数,默认10,最大100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量,默认0
-                     * @return Offset 偏移量,默认0
+                     * 获取<p>偏移量,默认0</p>
+                     * @return Offset <p>偏移量,默认0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量,默认0
-                     * @param _offset 偏移量,默认0
+                     * 设置<p>偏移量,默认0</p>
+                     * @param _offset <p>偏移量,默认0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序方式: [ASC:升序|DESC:降序]
-                     * @return Order 排序方式: [ASC:升序|DESC:降序]
+                     * 获取<p>排序方式: [ASC:升序|DESC:降序]</p>
+                     * @return Order <p>排序方式: [ASC:升序|DESC:降序]</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式: [ASC:升序|DESC:降序]
-                     * @param _order 排序方式: [ASC:升序|DESC:降序]
+                     * 设置<p>排序方式: [ASC:升序|DESC:降序]</p>
+                     * @param _order <p>排序方式: [ASC:升序|DESC:降序]</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取可选排序列: [Id]
-                     * @return By 可选排序列: [Id]
+                     * 获取<p>可选排序列: [Id]</p>
+                     * @return By <p>可选排序列: [Id]</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置可选排序列: [Id]
-                     * @param _by 可选排序列: [Id]
+                     * 设置<p>可选排序列: [Id]</p>
+                     * @param _by <p>可选排序列: [Id]</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -157,25 +157,25 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 限制条数,默认10,最大100
+                     * <p>限制条数,默认10,最大100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量,默认0
+                     * <p>偏移量,默认0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序方式: [ASC:升序|DESC:降序]
+                     * <p>排序方式: [ASC:升序|DESC:降序]</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 可选排序列: [Id]
+                     * <p>可选排序列: [Id]</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

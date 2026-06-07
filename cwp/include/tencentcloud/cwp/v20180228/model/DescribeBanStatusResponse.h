@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)
-                     * @return Status (已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)
+                     * 获取<p>(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)</p>
+                     * @return Status <p>(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否弹窗提示信息 false: 关闭，true: 开启
-                     * @return ShowTips 是否弹窗提示信息 false: 关闭，true: 开启
+                     * 获取<p>是否弹窗提示信息 false: 关闭，true: 开启</p>
+                     * @return ShowTips <p>是否弹窗提示信息 false: 关闭，true: 开启</p>
                      * 
                      */
                     bool GetShowTips() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ShowTipsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启智能过白模式
-                     * @return OpenSmartMode 是否开启智能过白模式
+                     * 获取<p>是否开启智能过白模式</p>
+                     * @return OpenSmartMode <p>是否开启智能过白模式</p>
                      * 
                      */
                     bool GetOpenSmartMode() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool OpenSmartModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启情报IP阻断
-                     * @return BanBlackIp 是否开启情报IP阻断
+                     * 获取<p>是否开启情报IP阻断</p>
+                     * @return BanBlackIp <p>是否开启情报IP阻断</p>
                      * 
                      */
                     bool GetBanBlackIp() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool BanBlackIpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启漏洞IP阻断
-                     * @return BanVulIp 是否开启漏洞IP阻断
+                     * 获取<p>是否开启漏洞IP阻断</p>
+                     * @return BanVulIp <p>是否开启漏洞IP阻断</p>
                      * 
                      */
                     bool GetBanVulIp() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool BanVulIpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启规则阻断
-                     * @return BanByRule 是否开启规则阻断
+                     * 获取<p>是否开启规则阻断</p>
+                     * @return BanByRule <p>是否开启规则阻断</p>
                      * 
                      */
                     bool GetBanByRule() const;
@@ -130,37 +130,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * (已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)
+                     * <p>(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否弹窗提示信息 false: 关闭，true: 开启
+                     * <p>是否弹窗提示信息 false: 关闭，true: 开启</p>
                      */
                     bool m_showTips;
                     bool m_showTipsHasBeenSet;
 
                     /**
-                     * 是否开启智能过白模式
+                     * <p>是否开启智能过白模式</p>
                      */
                     bool m_openSmartMode;
                     bool m_openSmartModeHasBeenSet;
 
                     /**
-                     * 是否开启情报IP阻断
+                     * <p>是否开启情报IP阻断</p>
                      */
                     bool m_banBlackIp;
                     bool m_banBlackIpHasBeenSet;
 
                     /**
-                     * 是否开启漏洞IP阻断
+                     * <p>是否开启漏洞IP阻断</p>
                      */
                     bool m_banVulIp;
                     bool m_banVulIpHasBeenSet;
 
                     /**
-                     * 是否开启规则阻断
+                     * <p>是否开启规则阻断</p>
                      */
                     bool m_banByRule;
                     bool m_banByRuleHasBeenSet;

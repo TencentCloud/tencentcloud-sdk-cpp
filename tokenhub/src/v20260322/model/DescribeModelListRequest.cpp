@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeMalwareTimingScanSettingRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Tokenhub::V20260322::Model;
 using namespace std;
 
-DescribeMalwareTimingScanSettingRequest::DescribeMalwareTimingScanSettingRequest() :
-    m_productTypeHasBeenSet(false)
+DescribeModelListRequest::DescribeModelListRequest()
 {
 }
 
-string DescribeMalwareTimingScanSettingRequest::ToJsonString() const
+string DescribeModelListRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_productTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProductType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_productType, allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string DescribeMalwareTimingScanSettingRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeMalwareTimingScanSettingRequest::GetProductType() const
-{
-    return m_productType;
-}
-
-void DescribeMalwareTimingScanSettingRequest::SetProductType(const int64_t& _productType)
-{
-    m_productType = _productType;
-    m_productTypeHasBeenSet = true;
-}
-
-bool DescribeMalwareTimingScanSettingRequest::ProductTypeHasBeenSet() const
-{
-    return m_productTypeHasBeenSet;
-}
 
 

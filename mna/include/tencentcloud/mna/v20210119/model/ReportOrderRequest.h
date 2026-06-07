@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单编号唯一标识符
-                     * @return OrderId 订单编号唯一标识符
+                     * 获取<p>订单编号唯一标识符</p>
+                     * @return OrderId <p>订单编号唯一标识符</p>
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单编号唯一标识符
-                     * @param _orderId 订单编号唯一标识符
+                     * 设置<p>订单编号唯一标识符</p>
+                     * @param _orderId <p>订单编号唯一标识符</p>
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取用量类型
-                     * @return PackageType 用量类型
+                     * 获取<p>用量类型</p>
+                     * @return PackageType <p>用量类型</p>
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置用量类型
-                     * @param _packageType 用量类型
+                     * 设置<p>用量类型</p>
+                     * @param _packageType <p>用量类型</p>
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取上报月份，默认当前月
-                     * @return ReportMonth 上报月份，默认当前月
+                     * 获取<p>上报月份，默认当前月</p>
+                     * @return ReportMonth <p>上报月份，默认当前月</p>
                      * 
                      */
                     std::string GetReportMonth() const;
 
                     /**
-                     * 设置上报月份，默认当前月
-                     * @param _reportMonth 上报月份，默认当前月
+                     * 设置<p>上报月份，默认当前月</p>
+                     * @param _reportMonth <p>上报月份，默认当前月</p>
                      * 
                      */
                     void SetReportMonth(const std::string& _reportMonth);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单编号唯一标识符
+                     * <p>订单编号唯一标识符</p>
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 用量类型
+                     * <p>用量类型</p>
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 上报月份，默认当前月
+                     * <p>上报月份，默认当前月</p>
                      */
                     std::string m_reportMonth;
                     bool m_reportMonthHasBeenSet;

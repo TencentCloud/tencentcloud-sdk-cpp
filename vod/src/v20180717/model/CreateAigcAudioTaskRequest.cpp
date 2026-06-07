@@ -23,6 +23,7 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 CreateAigcAudioTaskRequest::CreateAigcAudioTaskRequest() :
+    m_subAppIdHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
@@ -40,6 +41,14 @@ string CreateAigcAudioTaskRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_modelNameHasBeenSet)
     {
@@ -127,6 +136,22 @@ string CreateAigcAudioTaskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateAigcAudioTaskRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateAigcAudioTaskRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateAigcAudioTaskRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 string CreateAigcAudioTaskRequest::GetModelName() const
 {

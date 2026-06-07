@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeNetAttackSettingRequest::DescribeNetAttackSettingRequest()
+DescribeNetAttackSettingRequest::DescribeNetAttackSettingRequest() :
+    m_productTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeNetAttackSettingRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeNetAttackSettingRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeNetAttackSettingRequest::GetProductType() const
+{
+    return m_productType;
+}
+
+void DescribeNetAttackSettingRequest::SetProductType(const uint64_t& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool DescribeNetAttackSettingRequest::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
+}
 
 

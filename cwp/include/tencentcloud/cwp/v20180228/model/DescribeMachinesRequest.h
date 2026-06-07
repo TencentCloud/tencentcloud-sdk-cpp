@@ -44,35 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器所属专区类型 
-CVM 云服务器
-BM 黑石
-ECM 边缘计算
-LH 轻量应用服务器
-Other 混合云专区
-                     * @return MachineType 机器所属专区类型 
-CVM 云服务器
-BM 黑石
-ECM 边缘计算
-LH 轻量应用服务器
-Other 混合云专区
+                     * 获取<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
+                     * @return MachineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置机器所属专区类型 
-CVM 云服务器
-BM 黑石
-ECM 边缘计算
-LH 轻量应用服务器
-Other 混合云专区
-                     * @param _machineType 机器所属专区类型 
-CVM 云服务器
-BM 黑石
-ECM 边缘计算
-LH 轻量应用服务器
-Other 混合云专区
+                     * 设置<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
+                     * @param _machineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -85,15 +65,15 @@ Other 混合云专区
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others
-                     * @return MachineRegion 机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others
+                     * 获取<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
+                     * @return MachineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
                      * 
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others
-                     * @param _machineRegion 机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others
+                     * 设置<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
+                     * @param _machineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
                      * 
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
@@ -106,15 +86,15 @@ Other 混合云专区
                     bool MachineRegionHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为10，最大值为100。
-                     * @return Limit 返回数量，默认为10，最大值为100。
+                     * 获取<p>返回数量，默认为10，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为10，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大值为100。
-                     * @param _limit 返回数量，默认为10，最大值为100。
+                     * 设置<p>返回数量，默认为10，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为10，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -127,15 +107,15 @@ Other 混合云专区
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -148,63 +128,15 @@ Other 混合云专区
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>Ips - String - 是否必填：否 - 通过ip查询 </li>
-<li>Names - String - 是否必填：否 - 通过实例名查询 </li>
-<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>
-<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
-<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
-每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>
-<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>
-<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>
-<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>
-<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>
-<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
-                     * @return Filters 过滤条件。
-<li>Ips - String - 是否必填：否 - 通过ip查询 </li>
-<li>Names - String - 是否必填：否 - 通过实例名查询 </li>
-<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>
-<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
-<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
-每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>
-<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>
-<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>
-<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>
-<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>
-<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
+                     * 获取<p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
+                     * @return Filters <p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>Ips - String - 是否必填：否 - 通过ip查询 </li>
-<li>Names - String - 是否必填：否 - 通过实例名查询 </li>
-<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>
-<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
-<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
-每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>
-<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>
-<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>
-<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>
-<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>
-<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
-                     * @param _filters 过滤条件。
-<li>Ips - String - 是否必填：否 - 通过ip查询 </li>
-<li>Names - String - 是否必填：否 - 通过实例名查询 </li>
-<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>
-<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
-<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
-每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>
-<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>
-<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>
-<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>
-<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>
-<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
+                     * 设置<p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
+                     * @param _filters <p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -217,15 +149,15 @@ Other 混合云专区
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取机器所属业务ID列表
-                     * @return ProjectIds 机器所属业务ID列表
+                     * 获取<p>机器所属业务ID列表</p>
+                     * @return ProjectIds <p>机器所属业务ID列表</p>
                      * 
                      */
                     std::vector<uint64_t> GetProjectIds() const;
 
                     /**
-                     * 设置机器所属业务ID列表
-                     * @param _projectIds 机器所属业务ID列表
+                     * 设置<p>机器所属业务ID列表</p>
+                     * @param _projectIds <p>机器所属业务ID列表</p>
                      * 
                      */
                     void SetProjectIds(const std::vector<uint64_t>& _projectIds);
@@ -237,60 +169,70 @@ Other 混合云专区
                      */
                     bool ProjectIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>机器对应的APPID</p>
+                     * @return MachineAppId <p>机器对应的APPID</p>
+                     * 
+                     */
+                    uint64_t GetMachineAppId() const;
+
+                    /**
+                     * 设置<p>机器对应的APPID</p>
+                     * @param _machineAppId <p>机器对应的APPID</p>
+                     * 
+                     */
+                    void SetMachineAppId(const uint64_t& _machineAppId);
+
+                    /**
+                     * 判断参数 MachineAppId 是否已赋值
+                     * @return MachineAppId 是否已赋值
+                     * 
+                     */
+                    bool MachineAppIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 机器所属专区类型 
-CVM 云服务器
-BM 黑石
-ECM 边缘计算
-LH 轻量应用服务器
-Other 混合云专区
+                     * <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others
+                     * <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;
 
                     /**
-                     * 返回数量，默认为10，最大值为100。
+                     * <p>返回数量，默认为10，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>Ips - String - 是否必填：否 - 通过ip查询 </li>
-<li>Names - String - 是否必填：否 - 通过实例名查询 </li>
-<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>
-<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>
-<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>
-<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )
-每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>
-<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>
-<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>
-<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>
-<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>
-<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
+                     * <p>过滤条件。</p><li>Ips - String - 是否必填：否 - 通过ip查询 </li><li>Names - String - 是否必填：否 - 通过实例名查询 </li><li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li><li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li><li>Risk - String 是否必填: 否 - 风险主机( yes ) </li><li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li><li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li><li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li><li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li><li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li><li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 机器所属业务ID列表
+                     * <p>机器所属业务ID列表</p>
                      */
                     std::vector<uint64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * <p>机器对应的APPID</p>
+                     */
+                    uint64_t m_machineAppId;
+                    bool m_machineAppIdHasBeenSet;
 
                 };
             }

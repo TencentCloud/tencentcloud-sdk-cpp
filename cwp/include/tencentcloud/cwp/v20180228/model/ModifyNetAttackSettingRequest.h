@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0 关闭网络攻击检测，1开启网络攻击检测
-                     * @return NetAttackEnable 0 关闭网络攻击检测，1开启网络攻击检测
+                     * 获取<p>0 关闭网络攻击检测，1开启网络攻击检测</p>
+                     * @return NetAttackEnable <p>0 关闭网络攻击检测，1开启网络攻击检测</p>
                      * 
                      */
                     uint64_t GetNetAttackEnable() const;
 
                     /**
-                     * 设置0 关闭网络攻击检测，1开启网络攻击检测
-                     * @param _netAttackEnable 0 关闭网络攻击检测，1开启网络攻击检测
+                     * 设置<p>0 关闭网络攻击检测，1开启网络攻击检测</p>
+                     * @param _netAttackEnable <p>0 关闭网络攻击检测，1开启网络攻击检测</p>
                      * 
                      */
                     void SetNetAttackEnable(const uint64_t& _netAttackEnable);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NetAttackEnableHasBeenSet() const;
 
                     /**
-                     * 获取0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
-                     * @return NetAttackAlarmStatus 0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
+                     * 获取<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
+                     * @return NetAttackAlarmStatus <p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
                      * 
                      */
                     uint64_t GetNetAttackAlarmStatus() const;
 
                     /**
-                     * 设置0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
-                     * @param _netAttackAlarmStatus 0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
+                     * 设置<p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
+                     * @param _netAttackAlarmStatus <p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
                      * 
                      */
                     void SetNetAttackAlarmStatus(const uint64_t& _netAttackAlarmStatus);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NetAttackAlarmStatusHasBeenSet() const;
 
                     /**
-                     * 获取1 全部旗舰版主机，0 Quuids列表主机
-                     * @return Scope 1 全部旗舰版主机，0 Quuids列表主机
+                     * 获取<p>1 全部旗舰版主机，0 Quuids列表主机</p>
+                     * @return Scope <p>1 全部旗舰版主机，0 Quuids列表主机</p>
                      * 
                      */
                     uint64_t GetScope() const;
 
                     /**
-                     * 设置1 全部旗舰版主机，0 Quuids列表主机
-                     * @param _scope 1 全部旗舰版主机，0 Quuids列表主机
+                     * 设置<p>1 全部旗舰版主机，0 Quuids列表主机</p>
+                     * @param _scope <p>1 全部旗舰版主机，0 Quuids列表主机</p>
                      * 
                      */
                     void SetScope(const uint64_t& _scope);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取自选主机
-                     * @return InstanceIds 自选主机
+                     * 获取<p>自选主机</p>
+                     * @return InstanceIds <p>自选主机</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置自选主机
-                     * @param _instanceIds 自选主机
+                     * 设置<p>自选主机</p>
+                     * @param _instanceIds <p>自选主机</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取自选排除的主机
-                     * @return ExcludeInstanceIds 自选排除的主机
+                     * 获取<p>自选排除的主机</p>
+                     * @return ExcludeInstanceIds <p>自选排除的主机</p>
                      * 
                      */
                     std::vector<std::string> GetExcludeInstanceIds() const;
 
                     /**
-                     * 设置自选排除的主机
-                     * @param _excludeInstanceIds 自选排除的主机
+                     * 设置<p>自选排除的主机</p>
+                     * @param _excludeInstanceIds <p>自选排除的主机</p>
                      * 
                      */
                     void SetExcludeInstanceIds(const std::vector<std::string>& _excludeInstanceIds);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ExcludeInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取新增资产自动包含 0 不包含 1包含
-                     * @return AutoInclude 新增资产自动包含 0 不包含 1包含
+                     * 获取<p>新增资产自动包含 0 不包含 1包含</p>
+                     * @return AutoInclude <p>新增资产自动包含 0 不包含 1包含</p>
                      * 
                      */
                     uint64_t GetAutoInclude() const;
 
                     /**
-                     * 设置新增资产自动包含 0 不包含 1包含
-                     * @param _autoInclude 新增资产自动包含 0 不包含 1包含
+                     * 设置<p>新增资产自动包含 0 不包含 1包含</p>
+                     * @param _autoInclude <p>新增资产自动包含 0 不包含 1包含</p>
                      * 
                      */
                     void SetAutoInclude(const uint64_t& _autoInclude);
@@ -168,43 +168,70 @@ namespace TencentCloud
                      */
                     bool AutoIncludeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>产品类型 0-主机安全 1-安全中心</p>
+                     * @return ProductType <p>产品类型 0-主机安全 1-安全中心</p>
+                     * 
+                     */
+                    uint64_t GetProductType() const;
+
+                    /**
+                     * 设置<p>产品类型 0-主机安全 1-安全中心</p>
+                     * @param _productType <p>产品类型 0-主机安全 1-安全中心</p>
+                     * 
+                     */
+                    void SetProductType(const uint64_t& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 0 关闭网络攻击检测，1开启网络攻击检测
+                     * <p>0 关闭网络攻击检测，1开启网络攻击检测</p>
                      */
                     uint64_t m_netAttackEnable;
                     bool m_netAttackEnableHasBeenSet;
 
                     /**
-                     * 0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略
+                     * <p>0 新增告警事件默认待处理，1新增告警事件默认已处理，3新增告警事件默认忽略</p>
                      */
                     uint64_t m_netAttackAlarmStatus;
                     bool m_netAttackAlarmStatusHasBeenSet;
 
                     /**
-                     * 1 全部旗舰版主机，0 Quuids列表主机
+                     * <p>1 全部旗舰版主机，0 Quuids列表主机</p>
                      */
                     uint64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 自选主机
+                     * <p>自选主机</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 自选排除的主机
+                     * <p>自选排除的主机</p>
                      */
                     std::vector<std::string> m_excludeInstanceIds;
                     bool m_excludeInstanceIdsHasBeenSet;
 
                     /**
-                     * 新增资产自动包含 0 不包含 1包含
+                     * <p>新增资产自动包含 0 不包含 1包含</p>
                      */
                     uint64_t m_autoInclude;
                     bool m_autoIncludeHasBeenSet;
+
+                    /**
+                     * <p>产品类型 0-主机安全 1-安全中心</p>
+                     */
+                    uint64_t m_productType;
+                    bool m_productTypeHasBeenSet;
 
                 };
             }

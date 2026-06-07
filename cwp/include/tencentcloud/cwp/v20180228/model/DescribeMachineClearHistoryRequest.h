@@ -44,27 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件
-多个条件筛选时 Keywords,TimeBetween,取交集
-<li> Keywords 实例名称/内网/公网IP</li>
-<li> TimeBetween 时间区间</li>
-                     * @return Filters 筛选条件
-多个条件筛选时 Keywords,TimeBetween,取交集
-<li> Keywords 实例名称/内网/公网IP</li>
-<li> TimeBetween 时间区间</li>
+                     * 获取<p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>
+                     * @return Filters <p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置筛选条件
-多个条件筛选时 Keywords,TimeBetween,取交集
-<li> Keywords 实例名称/内网/公网IP</li>
-<li> TimeBetween 时间区间</li>
-                     * @param _filters 筛选条件
-多个条件筛选时 Keywords,TimeBetween,取交集
-<li> Keywords 实例名称/内网/公网IP</li>
-<li> TimeBetween 时间区间</li>
+                     * 设置<p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>
+                     * @param _filters <p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -77,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取限制条数,默认10 ,最大100
-                     * @return Limit 限制条数,默认10 ,最大100
+                     * 获取<p>限制条数,默认10 ,最大100</p>
+                     * @return Limit <p>限制条数,默认10 ,最大100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制条数,默认10 ,最大100
-                     * @param _limit 限制条数,默认10 ,最大100
+                     * 设置<p>限制条数,默认10 ,最大100</p>
+                     * @param _limit <p>限制条数,默认10 ,最大100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -98,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量,默认0
-                     * @return Offset 偏移量,默认0
+                     * 获取<p>偏移量,默认0</p>
+                     * @return Offset <p>偏移量,默认0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量,默认0
-                     * @param _offset 偏移量,默认0
+                     * 设置<p>偏移量,默认0</p>
+                     * @param _offset <p>偏移量,默认0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -119,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取正序, ASC , 倒序 DESC , 默认ASC
-                     * @return Order 正序, ASC , 倒序 DESC , 默认ASC
+                     * 获取<p>正序, ASC , 倒序 DESC , 默认ASC</p>
+                     * @return Order <p>正序, ASC , 倒序 DESC , 默认ASC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置正序, ASC , 倒序 DESC , 默认ASC
-                     * @param _order 正序, ASC , 倒序 DESC , 默认ASC
+                     * 设置<p>正序, ASC , 倒序 DESC , 默认ASC</p>
+                     * @param _order <p>正序, ASC , 倒序 DESC , 默认ASC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -140,19 +128,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取AgentLastOfflineTime 客户端最后离线时间
-AutoClearTime 清理时间
-                     * @return By AgentLastOfflineTime 客户端最后离线时间
-AutoClearTime 清理时间
+                     * 获取<p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>
+                     * @return By <p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置AgentLastOfflineTime 客户端最后离线时间
-AutoClearTime 清理时间
-                     * @param _by AgentLastOfflineTime 客户端最后离线时间
-AutoClearTime 清理时间
+                     * 设置<p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>
+                     * @param _by <p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -167,35 +151,31 @@ AutoClearTime 清理时间
                 private:
 
                     /**
-                     * 筛选条件
-多个条件筛选时 Keywords,TimeBetween,取交集
-<li> Keywords 实例名称/内网/公网IP</li>
-<li> TimeBetween 时间区间</li>
+                     * <p>筛选条件<br>多个条件筛选时 Keywords,TimeBetween,取交集</p><li> Keywords 实例名称/内网/公网IP</li><li> TimeBetween 时间区间</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 限制条数,默认10 ,最大100
+                     * <p>限制条数,默认10 ,最大100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量,默认0
+                     * <p>偏移量,默认0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 正序, ASC , 倒序 DESC , 默认ASC
+                     * <p>正序, ASC , 倒序 DESC , 默认ASC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * AgentLastOfflineTime 客户端最后离线时间
-AutoClearTime 清理时间
+                     * <p>AgentLastOfflineTime 客户端最后离线时间<br>AutoClearTime 清理时间</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

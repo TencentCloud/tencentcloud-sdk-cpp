@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool APIKeyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>API Key</p>
+                     * @return APIKeys <p>API Key</p>
+                     * 
+                     */
+                    std::vector<std::string> GetAPIKeys() const;
+
+                    /**
+                     * 设置<p>API Key</p>
+                     * @param _aPIKeys <p>API Key</p>
+                     * 
+                     */
+                    void SetAPIKeys(const std::vector<std::string>& _aPIKeys);
+
+                    /**
+                     * 判断参数 APIKeys 是否已赋值
+                     * @return APIKeys 是否已赋值
+                     * 
+                     */
+                    bool APIKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_aPIKey;
                     bool m_aPIKeyHasBeenSet;
+
+                    /**
+                     * <p>API Key</p>
+                     */
+                    std::vector<std::string> m_aPIKeys;
+                    bool m_aPIKeysHasBeenSet;
 
                 };
             }

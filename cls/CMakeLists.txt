@@ -62,6 +62,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeConsumerPreviewRequest.h
   include/tencentcloud/cls/v20201016/model/CreateRecordingRuleTaskResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteDashboardResponse.h
+  include/tencentcloud/cls/v20201016/model/OpenClsServiceRequest.h
   include/tencentcloud/cls/v20201016/model/LogItems.h
   include/tencentcloud/cls/v20201016/model/DescribeRecordingRuleYamlTaskResponse.h
   include/tencentcloud/cls/v20201016/model/RuleKeyValueInfo.h
@@ -69,6 +70,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeDashboardSubscribesRequest.h
   include/tencentcloud/cls/v20201016/model/PartitionInfo.h
   include/tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h
+  include/tencentcloud/cls/v20201016/model/OpenClsServiceResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmRequest.h
   include/tencentcloud/cls/v20201016/model/ConfigExtraInfo.h
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h
@@ -312,6 +314,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyDashboardRequest.h
   include/tencentcloud/cls/v20201016/model/SendConsumerHeartbeatResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteHostMetricConfigResponse.h
+  include/tencentcloud/cls/v20201016/model/GetClsServiceResponse.h
   include/tencentcloud/cls/v20201016/model/Choice.h
   include/tencentcloud/cls/v20201016/model/DeleteMetricConfigRequest.h
   include/tencentcloud/cls/v20201016/model/CreateEsRechargeRequest.h
@@ -455,6 +458,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeNoticeContentsRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeDlcDeliversRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeNetworkApplicationDetailResponse.h
+  include/tencentcloud/cls/v20201016/model/GetClsServiceRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h
   include/tencentcloud/cls/v20201016/model/CreateCloudProductLogCollectionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexRequest.h
@@ -614,6 +618,7 @@ set(cls_src
   src/v20201016/model/DescribeConsumerPreviewRequest.cpp
   src/v20201016/model/CreateRecordingRuleTaskResponse.cpp
   src/v20201016/model/DeleteDashboardResponse.cpp
+  src/v20201016/model/OpenClsServiceRequest.cpp
   src/v20201016/model/LogItems.cpp
   src/v20201016/model/DescribeRecordingRuleYamlTaskResponse.cpp
   src/v20201016/model/RuleKeyValueInfo.cpp
@@ -621,6 +626,7 @@ set(cls_src
   src/v20201016/model/DescribeDashboardSubscribesRequest.cpp
   src/v20201016/model/PartitionInfo.cpp
   src/v20201016/model/CreateNoticeContentResponse.cpp
+  src/v20201016/model/OpenClsServiceResponse.cpp
   src/v20201016/model/ModifyAlarmRequest.cpp
   src/v20201016/model/ConfigExtraInfo.cpp
   src/v20201016/model/RetryShipperTaskResponse.cpp
@@ -864,6 +870,7 @@ set(cls_src
   src/v20201016/model/ModifyDashboardRequest.cpp
   src/v20201016/model/SendConsumerHeartbeatResponse.cpp
   src/v20201016/model/DeleteHostMetricConfigResponse.cpp
+  src/v20201016/model/GetClsServiceResponse.cpp
   src/v20201016/model/Choice.cpp
   src/v20201016/model/DeleteMetricConfigRequest.cpp
   src/v20201016/model/CreateEsRechargeRequest.cpp
@@ -1007,6 +1014,7 @@ set(cls_src
   src/v20201016/model/DescribeNoticeContentsRequest.cpp
   src/v20201016/model/DescribeDlcDeliversRequest.cpp
   src/v20201016/model/DescribeNetworkApplicationDetailResponse.cpp
+  src/v20201016/model/GetClsServiceRequest.cpp
   src/v20201016/model/DescribeShipperTasksRequest.cpp
   src/v20201016/model/CreateCloudProductLogCollectionRequest.cpp
   src/v20201016/model/DescribeIndexRequest.cpp

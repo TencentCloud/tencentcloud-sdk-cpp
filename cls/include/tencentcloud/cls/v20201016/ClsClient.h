@@ -305,6 +305,8 @@
 #include <tencentcloud/cls/v20201016/model/EstimateRebuildIndexTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h>
+#include <tencentcloud/cls/v20201016/model/GetClsServiceRequest.h>
+#include <tencentcloud/cls/v20201016/model/GetClsServiceResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetMetricLabelValuesRequest.h>
 #include <tencentcloud/cls/v20201016/model/GetMetricLabelValuesResponse.h>
 #include <tencentcloud/cls/v20201016/model/MergePartitionRequest.h>
@@ -381,6 +383,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/OpenClawServiceRequest.h>
 #include <tencentcloud/cls/v20201016/model/OpenClawServiceResponse.h>
+#include <tencentcloud/cls/v20201016/model/OpenClsServiceRequest.h>
+#include <tencentcloud/cls/v20201016/model/OpenClsServiceResponse.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h>
@@ -840,6 +844,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAlarmLogResponse> GetAlarmLogOutcome;
                 typedef std::future<GetAlarmLogOutcome> GetAlarmLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::GetAlarmLogRequest&, GetAlarmLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetClsServiceResponse> GetClsServiceOutcome;
+                typedef std::future<GetClsServiceOutcome> GetClsServiceOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::GetClsServiceRequest&, GetClsServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClsServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMetricLabelValuesResponse> GetMetricLabelValuesOutcome;
                 typedef std::future<GetMetricLabelValuesOutcome> GetMetricLabelValuesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::GetMetricLabelValuesRequest&, GetMetricLabelValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMetricLabelValuesAsyncHandler;
@@ -954,6 +961,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenClawServiceResponse> OpenClawServiceOutcome;
                 typedef std::future<OpenClawServiceOutcome> OpenClawServiceOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::OpenClawServiceRequest&, OpenClawServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClawServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenClsServiceResponse> OpenClsServiceOutcome;
+                typedef std::future<OpenClsServiceOutcome> OpenClsServiceOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::OpenClsServiceRequest&, OpenClsServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClsServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenKafkaConsumerResponse> OpenKafkaConsumerOutcome;
                 typedef std::future<OpenKafkaConsumerOutcome> OpenKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::OpenKafkaConsumerRequest&, OpenKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenKafkaConsumerAsyncHandler;
@@ -2276,6 +2286,16 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 GetAlarmLogOutcomeCallable GetAlarmLogCallable(const Model::GetAlarmLogRequest& request);
 
                 /**
+                 *查询日志服务是否开通
+API 中 Region 填写任意一个地域均可，建议使用广州(ap-guangzhou)
+                 * @param req GetClsServiceRequest
+                 * @return GetClsServiceOutcome
+                 */
+                GetClsServiceOutcome GetClsService(const Model::GetClsServiceRequest &request);
+                void GetClsServiceAsync(const Model::GetClsServiceRequest& request, const GetClsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetClsServiceOutcomeCallable GetClsServiceCallable(const Model::GetClsServiceRequest& request);
+
+                /**
                  *获取时序label values列表
                  * @param req GetMetricLabelValuesRequest
                  * @return GetMetricLabelValuesOutcome
@@ -2617,6 +2637,16 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 OpenClawServiceOutcome OpenClawService(const Model::OpenClawServiceRequest &request);
                 void OpenClawServiceAsync(const Model::OpenClawServiceRequest& request, const OpenClawServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenClawServiceOutcomeCallable OpenClawServiceCallable(const Model::OpenClawServiceRequest& request);
+
+                /**
+                 *开通日志服务
+API 中 Region 填写任意一个地域均可开通所有地域的 CLS，建议使用广州(ap-guangzhou)
+                 * @param req OpenClsServiceRequest
+                 * @return OpenClsServiceOutcome
+                 */
+                OpenClsServiceOutcome OpenClsService(const Model::OpenClsServiceRequest &request);
+                void OpenClsServiceAsync(const Model::OpenClsServiceRequest& request, const OpenClsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenClsServiceOutcomeCallable OpenClsServiceCallable(const Model::OpenClsServiceRequest& request);
 
                 /**
                  *打开Kafka协议消费功能

@@ -7090,6 +7090,56 @@ ClsClient::GetAlarmLogOutcomeCallable ClsClient::GetAlarmLogCallable(const GetAl
     return prom->get_future();
 }
 
+ClsClient::GetClsServiceOutcome ClsClient::GetClsService(const GetClsServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetClsService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetClsServiceResponse rsp = GetClsServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetClsServiceOutcome(rsp);
+        else
+            return GetClsServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return GetClsServiceOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::GetClsServiceAsync(const GetClsServiceRequest& request, const GetClsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetClsServiceRequest&;
+    using Resp = GetClsServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetClsService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::GetClsServiceOutcomeCallable ClsClient::GetClsServiceCallable(const GetClsServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetClsServiceOutcome>>();
+    GetClsServiceAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const GetClsServiceRequest&,
+        GetClsServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::GetMetricLabelValuesOutcome ClsClient::GetMetricLabelValues(const GetMetricLabelValuesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMetricLabelValues");
@@ -8982,6 +9032,56 @@ ClsClient::OpenClawServiceOutcomeCallable ClsClient::OpenClawServiceCallable(con
         const ClsClient*,
         const OpenClawServiceRequest&,
         OpenClawServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::OpenClsServiceOutcome ClsClient::OpenClsService(const OpenClsServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenClsService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenClsServiceResponse rsp = OpenClsServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenClsServiceOutcome(rsp);
+        else
+            return OpenClsServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenClsServiceOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::OpenClsServiceAsync(const OpenClsServiceRequest& request, const OpenClsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenClsServiceRequest&;
+    using Resp = OpenClsServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenClsService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::OpenClsServiceOutcomeCallable ClsClient::OpenClsServiceCallable(const OpenClsServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenClsServiceOutcome>>();
+    OpenClsServiceAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const OpenClsServiceRequest&,
+        OpenClsServiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

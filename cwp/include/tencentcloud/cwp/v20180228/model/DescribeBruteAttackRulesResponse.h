@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取爆破阻断规则列表
-                     * @return Rules 爆破阻断规则列表
+                     * 获取<p>爆破阻断规则列表</p>
+                     * @return Rules <p>爆破阻断规则列表</p>
                      * 
                      */
                     std::vector<BruteAttackRuleList> GetRules() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 爆破阻断规则列表
+                     * <p>爆破阻断规则列表</p>
                      */
                     std::vector<BruteAttackRuleList> m_rules;
                     bool m_rulesHasBeenSet;

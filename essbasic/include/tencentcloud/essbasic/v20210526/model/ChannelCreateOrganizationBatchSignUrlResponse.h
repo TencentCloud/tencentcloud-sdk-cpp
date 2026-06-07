@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。	
-                     * @return SignUrl 批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。	
+                     * 获取<p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>
+                     * @return SignUrl <p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>
                      * 
                      */
                     std::string GetSignUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
-                     * @return ExpiredTime 链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
+                     * 获取<p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
+                     * @return ExpiredTime <p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
                      * 
                      */
                     int64_t GetExpiredTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。	
+                     * <p>批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。</p>
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。
+                     * <p>链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。</p>
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

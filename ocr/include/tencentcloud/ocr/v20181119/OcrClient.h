@@ -87,8 +87,6 @@
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HandwritingEssayOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HandwritingEssayOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h>
@@ -297,9 +295,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::HandwritingEssayOCRResponse> HandwritingEssayOCROutcome;
                 typedef std::future<HandwritingEssayOCROutcome> HandwritingEssayOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HandwritingEssayOCRRequest&, HandwritingEssayOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HandwritingEssayOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::HmtResidentPermitOCRResponse> HmtResidentPermitOCROutcome;
-                typedef std::future<HmtResidentPermitOCROutcome> HmtResidentPermitOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::HmtResidentPermitOCRRequest&, HmtResidentPermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HmtResidentPermitOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::IDCardOCRResponse> IDCardOCROutcome;
                 typedef std::future<IDCardOCROutcome> IDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::IDCardOCRRequest&, IDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> IDCardOCRAsyncHandler;
@@ -974,17 +969,6 @@ namespace TencentCloud
                 HandwritingEssayOCROutcome HandwritingEssayOCR(const Model::HandwritingEssayOCRRequest &request);
                 void HandwritingEssayOCRAsync(const Model::HandwritingEssayOCRRequest& request, const HandwritingEssayOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 HandwritingEssayOCROutcomeCallable HandwritingEssayOCRCallable(const Model::HandwritingEssayOCRRequest& request);
-
-                /**
-                 *港澳台居住证OCR支持港澳台居住证正反面全字段内容检测识别功能，包括姓名、性别、出生日期、地址、身份证号、签发机关、有效期限、签发次数、通行证号码关键字段识别。可以应用于港澳台居住证信息识别场景，例如银行开户、用户注册等。
-
-默认接口请求频率限制：20次/秒。
-                 * @param req HmtResidentPermitOCRRequest
-                 * @return HmtResidentPermitOCROutcome
-                 */
-                HmtResidentPermitOCROutcome HmtResidentPermitOCR(const Model::HmtResidentPermitOCRRequest &request);
-                void HmtResidentPermitOCRAsync(const Model::HmtResidentPermitOCRRequest& request, const HmtResidentPermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                HmtResidentPermitOCROutcomeCallable HmtResidentPermitOCRCallable(const Model::HmtResidentPermitOCRRequest& request);
 
                 /**
                  *本接口支持中国大陆居民二代身份证正反面所有字段的识别，包括姓名、性别、民族、出生日期、住址、公民身份证号、签发机关、有效期限，识别准确度达到99%以上。

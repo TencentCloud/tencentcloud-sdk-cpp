@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内网告警展示
-                     * @return InnerNetAlarmShow 内网告警展示
+                     * 获取<p>内网告警展示</p>
+                     * @return InnerNetAlarmShow <p>内网告警展示</p>
                      * 
                      */
                     bool GetInnerNetAlarmShow() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InnerNetAlarmShowHasBeenSet() const;
 
                     /**
-                     * 获取内网ip展示
-                     * @return InnerIPShow 内网ip展示
+                     * 获取<p>内网ip展示</p>
+                     * @return InnerIPShow <p>内网ip展示</p>
                      * 
                      */
                     bool GetInnerIPShow() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内网告警展示
+                     * <p>内网告警展示</p>
                      */
                     bool m_innerNetAlarmShow;
                     bool m_innerNetAlarmShowHasBeenSet;
 
                     /**
-                     * 内网ip展示
+                     * <p>内网ip展示</p>
                      */
                     bool m_innerIPShow;
                     bool m_innerIPShowHasBeenSet;
