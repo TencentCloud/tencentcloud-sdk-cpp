@@ -24,10 +24,11 @@ namespace TencentCloud
 
 /// Configuration for region-level circuit breaker (domain failover).
 ///
-/// Once the primary endpoint fails enough, the SDK automatically switches to
-/// |backup_endpoint|; if that also fails it falls back to backup TLDs
-/// (tencentcloudapi.com.cn -> tencentcloudapi.cn), each transition driven
-/// by the same circuit breaker state machine.
+/// Two mutually exclusive failover modes:
+///   - If |backup_endpoint| is set: Primary → BackupEndpoint (sole fallback).
+///     No TLD-level failover is performed.
+///   - If |backup_endpoint| is empty (default): Primary → .com.cn → .cn
+///     (TLD ring fallback with region stripped).
 class RegionBreakerProfile
 {
 public:

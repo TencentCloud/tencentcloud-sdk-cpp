@@ -101,26 +101,31 @@ namespace TencentCloud
 
         // Region failover (domain-level circuit breaker).
         //
-        // There are 4 endpoints in the fallback chain, but only the
-        // first 3 need a circuit breaker -- the last one is the bottom
-        // fallback and never needs to "fail over" to anything:
+        // Two mutually exclusive failover modes:
         //
-        //   breaker[0] : primary endpoint (user-supplied)
-        //   breaker[1] : BackupEndpoint   (fallback_index=0; skipped if not set)
-        //   breaker[2] : 1st TLD fallback (fallback_index=1)
-        //   (no breaker): 2nd TLD fallback (fallback_index=2) <- last resort
+        // Mode A (BackupEndpoint configured):
+        //   breaker[0]: guards primary; if Open → descend to BackupEndpoint
+        //   breaker[1]: (unused, GetFallbackEndpoint returns "")
+        //   breaker[2]: (unused, GetFallbackEndpoint returns "")
+        //   BackupEndpoint is the bottom fallback (no breaker needed).
+        //
+        // Mode B (no BackupEndpoint, default):
+        //   breaker[0]: (skipped, GetFallbackEndpoint returns "" for index 0)
+        //   breaker[1]: guards primary; if Open → descend to 1st TLD fallback
+        //   breaker[2]: guards 1st TLD fallback; if Open → descend to 2nd TLD
+        //   2nd TLD is the bottom fallback (no breaker needed).
         //
         //   TLD ring: .com → .com.cn → .cn → .com → ...
-        //   Examples (primary = .com, no BackupEndpoint):
-        //     breaker[0]: cvm.ap-shanghai.tencentcloudapi.com
-        //     breaker[1]: (skipped, BackupEndpoint empty)
-        //     breaker[2]: cvm.tencentcloudapi.com.cn
-        //     bottom:     cvm.tencentcloudapi.cn
+        //   Example (primary = cvm.ap-shanghai.tencentcloudapi.com):
+        //     breaker[0]: (idle, skipped -- no BackupEndpoint configured)
+        //     breaker[1]: guards primary; Open → fall to cvm.tencentcloudapi.com.cn
+        //     breaker[2]: guards .com.cn;  Open → fall to cvm.tencentcloudapi.cn
+        //     bottom:     cvm.tencentcloudapi.cn (no breaker)
         //
         // Semantics: breaker[i] Open means "the endpoint currently
         // handled by this breaker is unhealthy -- the next request
-        // should skip past it to endpoint i+1". When all three
-        // breakers are Open, requests go to the bottom TLD (no breaker
+        // should skip past it to endpoint i+1". When all active
+        // breakers are Open, requests go to the bottom (no breaker
         // needed since there is no further fallback).
         //
         // For any single request, at most ONE breaker is Allow()ed ==

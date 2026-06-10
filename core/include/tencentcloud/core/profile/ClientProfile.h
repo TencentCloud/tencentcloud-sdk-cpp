@@ -45,7 +45,7 @@ namespace TencentCloud
             m_httpProfile(httpProfile),
             m_unsignedPayload(false),
             m_signMethod(signMethod),
-            m_disableRegionBreaker(true),
+            m_disableRegionBreaker(false),
             m_regionBreakerProfile()
         {
         }
@@ -60,9 +60,8 @@ namespace TencentCloud
         HttpProfile GetHttpProfile() const;
 
         /// Region-level failover control.
-        /// Disabled by default: users must opt in explicitly by calling
-        /// SetDisableRegionBreaker(false). Set to false to enable
-        /// region failover.
+        /// Enabled by default. Call SetDisableRegionBreaker(true)
+        /// to explicitly disable region failover.
         void SetDisableRegionBreaker(bool disabled);
         bool GetDisableRegionBreaker() const;
 

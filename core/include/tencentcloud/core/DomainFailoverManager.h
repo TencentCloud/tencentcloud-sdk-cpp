@@ -26,30 +26,43 @@ namespace TencentCloud
 /// Pure utility that constructs fallback endpoint candidates.
 ///
 /// Design:
-///   Primary endpoint (index -1): the user-supplied endpoint.
-///   Fallback sequence:
-///     index 0: user-configured BackupEndpoint (e.g. ap-guangzhou.tencentcloudapi.com)
-///     index 1: next TLD in ring after primary's TLD (region stripped)
-///     index 2: second TLD in ring after primary's TLD (region stripped)
+///   Two mutually exclusive failover modes depending on whether a
+///   BackupEndpoint is configured:
 ///
-///   TLD ring order: .com → .com.cn → .cn → .com → ...
-///   Examples:
-///     primary .com    → index 1 = .com.cn, index 2 = .cn
-///     primary .com.cn → index 1 = .cn,     index 2 = .com
-///     primary .cn     → index 1 = .com,    index 2 = .com.cn
+///   Mode A (BackupEndpoint configured):
+///     Primary → BackupEndpoint (sole fallback, acts as bottom)
+///     No TLD fallback is performed.
+///     Works regardless of whether primary has a region segment.
 ///
-/// When constructing TLD fallback, the region segment is stripped so that
-/// "cvm.ap-shanghai.tencentcloudapi.com" -> "cvm.tencentcloudapi.com.cn".
-/// The ".ai" style middle segment is preserved:
-/// "hunyuan.ai.ap-shanghai.tencentcloudapi.com" -> "hunyuan.ai.tencentcloudapi.com.cn".
+///   Mode B (BackupEndpoint empty, default):
+///     - If primary does NOT contain a region segment:
+///       Primary → next TLD in ring → second TLD (bottom)
+///       TLD ring order: .com → .com.cn → .cn → .com → ...
+///       Examples:
+///         cvm.tencentcloudapi.com        → .com.cn → .cn (bottom)
+///         hunyuan.ai.tencentcloudapi.com → hunyuan.ai.tencentcloudapi.com.cn → .cn
+///         cvm.internal.tencentcloudapi.com → cvm.internal.tencentcloudapi.com.cn → .cn
+///
+///     - If primary DOES contain a region segment:
+///       No TLD fallback is performed (returns "").
+///       Rationale: TLD fallback strips the region, which may route
+///       requests to a different geography, violating user intent.
+///       Users who need failover for regional endpoints should
+///       configure a BackupEndpoint explicitly (Mode A).
+///       Examples (no fallback):
+///         cvm.ap-shanghai.tencentcloudapi.com     → "" (no fallback)
+///         hunyuan.ai.ap-shanghai.tencentcloudapi.com → "" (no fallback)
 ///
 /// This class is stateless; state (closed/open/halfopen) lives in CircuitBreaker.
 class DomainFailoverManager {
  public:
   /// Number of breaker slots needed for the failover chain.
-  /// 3 slots: primary(breaker[0]) + BackupEndpoint(breaker[1]) +
-  /// first TLD fallback(breaker[2]). The last TLD in the ring is the
-  /// bottom fallback and has no breaker.
+  /// 3 slots (the maximum across both modes):
+  ///   Mode A (BackupEndpoint set): only breaker[0] is used (primary);
+  ///     BackupEndpoint is the bottom, no breaker needed.
+  ///   Mode B (no BackupEndpoint): breaker[0] skipped, breaker[1] guards
+  ///     primary, breaker[2] guards 1st TLD fallback; last TLD is bottom.
+  /// Unused slots are skipped via empty GetFallbackEndpoint() returns.
   static int GetBreakerSlotCount();
 
   /// Build a fallback endpoint for |fallback_index| given the primary
@@ -74,12 +87,21 @@ class DomainFailoverManager {
   static std::string ExtractService(const std::string &endpoint);
 
   /// Extract the "middle" segment between the service and the TLD.
-  /// TencentCloud API domains have exactly two shapes:
-  ///   {service}[.{region}].{tld}           -> returns ""
-  ///   {service}.ai[.{region}].{tld}        -> returns "ai"
-  /// This recognizes ONLY the literal "ai" middle; any other shape
-  /// returns "". Region segments are not enumerated, so new regions
-  /// need no change here.
+  /// TencentCloud API domains have these shapes:
+  ///   {service}[.{region}].{tld}              -> returns ""
+  ///   {service}.ai[.{region}].{tld}           -> returns "ai"
+  ///   {service}.internal.{tld}                -> returns "internal"
+  ///
+  /// "ai" is a product identifier -- preserved in both TLD fallback
+  /// and BackupEndpoint construction.
+  ///
+  /// "internal" is a network route marker (intranet resolution) --
+  /// preserved in TLD fallback (staying on internal route with
+  /// different TLD), but stripped in BackupEndpoint construction
+  /// (falling back from internal to public route).
+  ///
+  /// Region segments are not enumerated, so new regions need no
+  /// change here.
   static std::string ExtractMiddleSegment(const std::string &endpoint,
                                            const std::string &tld);
 
