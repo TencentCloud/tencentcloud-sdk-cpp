@@ -36,7 +36,8 @@ DescribeMetricRecordsRequest::DescribeMetricRecordsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_serviceIDHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string DescribeMetricRecordsRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_serviceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -416,6 +425,22 @@ void DescribeMetricRecordsRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeMetricRecordsRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeMetricRecordsRequest::GetServiceID() const
+{
+    return m_serviceID;
+}
+
+void DescribeMetricRecordsRequest::SetServiceID(const string& _serviceID)
+{
+    m_serviceID = _serviceID;
+    m_serviceIDHasBeenSet = true;
+}
+
+bool DescribeMetricRecordsRequest::ServiceIDHasBeenSet() const
+{
+    return m_serviceIDHasBeenSet;
 }
 
 

@@ -39,7 +39,8 @@ DescribeTopologyNewRequest::DescribeTopologyNewRequest() :
     m_isSlowTopFiveHasBeenSet(false),
     m_getResourceHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_hiddenHasBeenSet(false)
+    m_hiddenHasBeenSet(false),
+    m_enableResourceLinkHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,14 @@ string DescribeTopologyNewRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hidden.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableResourceLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableResourceLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableResourceLink, allocator);
     }
 
 
@@ -480,6 +489,22 @@ void DescribeTopologyNewRequest::SetHidden(const Selectors& _hidden)
 bool DescribeTopologyNewRequest::HiddenHasBeenSet() const
 {
     return m_hiddenHasBeenSet;
+}
+
+bool DescribeTopologyNewRequest::GetEnableResourceLink() const
+{
+    return m_enableResourceLink;
+}
+
+void DescribeTopologyNewRequest::SetEnableResourceLink(const bool& _enableResourceLink)
+{
+    m_enableResourceLink = _enableResourceLink;
+    m_enableResourceLinkHasBeenSet = true;
+}
+
+bool DescribeTopologyNewRequest::EnableResourceLinkHasBeenSet() const
+{
+    return m_enableResourceLinkHasBeenSet;
 }
 
 

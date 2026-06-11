@@ -53,7 +53,9 @@ InstanceInfo::InstanceInfo() :
     m_isolateAtHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_upgradeVersionHasBeenSet(false),
+    m_isInternalHasBeenSet(false)
 {
 }
 
@@ -415,6 +417,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("UpgradeVersion") && !value["UpgradeVersion"].IsNull())
+    {
+        if (!value["UpgradeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UpgradeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeVersion = string(value["UpgradeVersion"].GetString());
+        m_upgradeVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInternal") && !value["IsInternal"].IsNull())
+    {
+        if (!value["IsInternal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsInternal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInternal = value["IsInternal"].GetBool();
+        m_isInternalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -703,6 +725,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_upgradeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upgradeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInternalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInternal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInternal, allocator);
     }
 
 }
@@ -1234,5 +1272,37 @@ void InstanceInfo::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
 bool InstanceInfo::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string InstanceInfo::GetUpgradeVersion() const
+{
+    return m_upgradeVersion;
+}
+
+void InstanceInfo::SetUpgradeVersion(const string& _upgradeVersion)
+{
+    m_upgradeVersion = _upgradeVersion;
+    m_upgradeVersionHasBeenSet = true;
+}
+
+bool InstanceInfo::UpgradeVersionHasBeenSet() const
+{
+    return m_upgradeVersionHasBeenSet;
+}
+
+bool InstanceInfo::GetIsInternal() const
+{
+    return m_isInternal;
+}
+
+void InstanceInfo::SetIsInternal(const bool& _isInternal)
+{
+    m_isInternal = _isInternal;
+    m_isInternalHasBeenSet = true;
+}
+
+bool InstanceInfo::IsInternalHasBeenSet() const
+{
+    return m_isInternalHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务元数据信息，如服务名
-                     * @return ServiceMetaData 服务元数据信息，如服务名
+                     * 获取<p>服务元数据信息，如服务名</p>
+                     * @return ServiceMetaData <p>服务元数据信息，如服务名</p>
                      * 
                      */
                     ServiceMetaData GetServiceMetaData() const;
 
                     /**
-                     * 设置服务元数据信息，如服务名
-                     * @param _serviceMetaData 服务元数据信息，如服务名
+                     * 设置<p>服务元数据信息，如服务名</p>
+                     * @param _serviceMetaData <p>服务元数据信息，如服务名</p>
                      * 
                      */
                     void SetServiceMetaData(const ServiceMetaData& _serviceMetaData);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ServiceMetaDataHasBeenSet() const;
 
                     /**
-                     * 获取资源相关信息
-                     * @return ComputeInfo 资源相关信息
+                     * 获取<p>资源相关信息</p>
+                     * @return ComputeInfo <p>资源相关信息</p>
                      * 
                      */
                     ComputeInfo GetComputeInfo() const;
 
                     /**
-                     * 设置资源相关信息
-                     * @param _computeInfo 资源相关信息
+                     * 设置<p>资源相关信息</p>
+                     * @param _computeInfo <p>资源相关信息</p>
                      * 
                      */
                     void SetComputeInfo(const ComputeInfo& _computeInfo);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ComputeInfoHasBeenSet() const;
 
                     /**
-                     * 获取服务部署信息
-                     * @return DeploymentConfigs 服务部署信息
+                     * 获取<p>服务部署信息</p>
+                     * @return DeploymentConfigs <p>服务部署信息</p>
                      * 
                      */
                     std::vector<DeploymentConfig> GetDeploymentConfigs() const;
 
                     /**
-                     * 设置服务部署信息
-                     * @param _deploymentConfigs 服务部署信息
+                     * 设置<p>服务部署信息</p>
+                     * @param _deploymentConfigs <p>服务部署信息</p>
                      * 
                      */
                     void SetDeploymentConfigs(const std::vector<DeploymentConfig>& _deploymentConfigs);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DeploymentConfigsHasBeenSet() const;
 
                     /**
-                     * 获取服务超参数配置
-                     * @return HyperParam 服务超参数配置
+                     * 获取<p>服务超参数配置</p>
+                     * @return HyperParam <p>服务超参数配置</p>
                      * 
                      */
                     HyperParam GetHyperParam() const;
 
                     /**
-                     * 设置服务超参数配置
-                     * @param _hyperParam 服务超参数配置
+                     * 设置<p>服务超参数配置</p>
+                     * @param _hyperParam <p>服务超参数配置</p>
                      * 
                      */
                     void SetHyperParam(const HyperParam& _hyperParam);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool HyperParamHasBeenSet() const;
 
                     /**
-                     * 获取网络设置
-                     * @return NetworkSetting 网络设置
+                     * 获取<p>网络设置</p>
+                     * @return NetworkSetting <p>网络设置</p>
                      * 
                      */
                     NetworkSetting GetNetworkSetting() const;
 
                     /**
-                     * 设置网络设置
-                     * @param _networkSetting 网络设置
+                     * 设置<p>网络设置</p>
+                     * @param _networkSetting <p>网络设置</p>
                      * 
                      */
                     void SetNetworkSetting(const NetworkSetting& _networkSetting);
@@ -152,37 +152,64 @@ namespace TencentCloud
                      */
                     bool NetworkSettingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>
+                     * @return SecurityType <p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>
+                     * 
+                     */
+                    std::string GetSecurityType() const;
+
+                    /**
+                     * 设置<p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>
+                     * @param _securityType <p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>
+                     * 
+                     */
+                    void SetSecurityType(const std::string& _securityType);
+
+                    /**
+                     * 判断参数 SecurityType 是否已赋值
+                     * @return SecurityType 是否已赋值
+                     * 
+                     */
+                    bool SecurityTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务元数据信息，如服务名
+                     * <p>服务元数据信息，如服务名</p>
                      */
                     ServiceMetaData m_serviceMetaData;
                     bool m_serviceMetaDataHasBeenSet;
 
                     /**
-                     * 资源相关信息
+                     * <p>资源相关信息</p>
                      */
                     ComputeInfo m_computeInfo;
                     bool m_computeInfoHasBeenSet;
 
                     /**
-                     * 服务部署信息
+                     * <p>服务部署信息</p>
                      */
                     std::vector<DeploymentConfig> m_deploymentConfigs;
                     bool m_deploymentConfigsHasBeenSet;
 
                     /**
-                     * 服务超参数配置
+                     * <p>服务超参数配置</p>
                      */
                     HyperParam m_hyperParam;
                     bool m_hyperParamHasBeenSet;
 
                     /**
-                     * 网络设置
+                     * <p>网络设置</p>
                      */
                     NetworkSetting m_networkSetting;
                     bool m_networkSettingHasBeenSet;
+
+                    /**
+                     * <p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>
+                     */
+                    std::string m_securityType;
+                    bool m_securityTypeHasBeenSet;
 
                 };
             }

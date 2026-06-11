@@ -521,6 +521,48 @@ namespace TencentCloud
                      */
                     bool ServiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取调用次数
+                     * @return ReqCnt 调用次数
+                     * 
+                     */
+                    int64_t GetReqCnt() const;
+
+                    /**
+                     * 设置调用次数
+                     * @param _reqCnt 调用次数
+                     * 
+                     */
+                    void SetReqCnt(const int64_t& _reqCnt);
+
+                    /**
+                     * 判断参数 ReqCnt 是否已赋值
+                     * @return ReqCnt 是否已赋值
+                     * 
+                     */
+                    bool ReqCntHasBeenSet() const;
+
+                    /**
+                     * 获取消息队列消费者视角的调用次数
+                     * @return ConsumerReqCnt 消息队列消费者视角的调用次数
+                     * 
+                     */
+                    int64_t GetConsumerReqCnt() const;
+
+                    /**
+                     * 设置消息队列消费者视角的调用次数
+                     * @param _consumerReqCnt 消息队列消费者视角的调用次数
+                     * 
+                     */
+                    void SetConsumerReqCnt(const int64_t& _consumerReqCnt);
+
+                    /**
+                     * 判断参数 ConsumerReqCnt 是否已赋值
+                     * @return ConsumerReqCnt 是否已赋值
+                     * 
+                     */
+                    bool ConsumerReqCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -655,6 +697,18 @@ namespace TencentCloud
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
+
+                    /**
+                     * 调用次数
+                     */
+                    int64_t m_reqCnt;
+                    bool m_reqCntHasBeenSet;
+
+                    /**
+                     * 消息队列消费者视角的调用次数
+                     */
+                    int64_t m_consumerReqCnt;
+                    bool m_consumerReqCntHasBeenSet;
 
                 };
             }

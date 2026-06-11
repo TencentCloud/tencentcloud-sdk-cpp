@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>
+                     * @return RemoteDiskIds <p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRemoteDiskIds() const;
+
+                    /**
+                     * 设置<p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>
+                     * @param _remoteDiskIds <p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>
+                     * 
+                     */
+                    void SetRemoteDiskIds(const std::vector<std::string>& _remoteDiskIds);
+
+                    /**
+                     * 判断参数 RemoteDiskIds 是否已赋值
+                     * @return RemoteDiskIds 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的单副本SSD硬盘名称</p>
+                     * @return DiskName <p>新的单副本SSD硬盘名称</p>
+                     * 
+                     */
+                    std::string GetDiskName() const;
+
+                    /**
+                     * 设置<p>新的单副本SSD硬盘名称</p>
+                     * @param _diskName <p>新的单副本SSD硬盘名称</p>
+                     * 
+                     */
+                    void SetDiskName(const std::string& _diskName);
+
+                    /**
+                     * 判断参数 DiskName 是否已赋值
+                     * @return DiskName 是否已赋值
+                     * 
+                     */
+                    bool DiskNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的单副本SSD硬盘项目ID。</p>
+                     * @return ProjectId <p>新的单副本SSD硬盘项目ID。</p>
+                     * 
+                     */
+                    uint64_t GetProjectId() const;
+
+                    /**
+                     * 设置<p>新的单副本SSD硬盘项目ID。</p>
+                     * @param _projectId <p>新的单副本SSD硬盘项目ID。</p>
+                     * 
+                     */
+                    void SetProjectId(const uint64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>一个或多个待操作的单副本SSD硬盘ID。如果传入多个单副本SSD硬盘ID，只支持所有硬盘修改为同一属性。</p>
+                     */
+                    std::vector<std::string> m_remoteDiskIds;
+                    bool m_remoteDiskIdsHasBeenSet;
+
+                    /**
+                     * <p>新的单副本SSD硬盘名称</p>
+                     */
+                    std::string m_diskName;
+                    bool m_diskNameHasBeenSet;
+
+                    /**
+                     * <p>新的单副本SSD硬盘项目ID。</p>
+                     */
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

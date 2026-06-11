@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取提示信息
-                     * @return Message 提示信息
+                     * 获取<p>提示信息</p>
+                     * @return Message <p>提示信息</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置提示信息
-                     * @param _message 提示信息
+                     * 设置<p>提示信息</p>
+                     * @param _message <p>提示信息</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取解决方案
-                     * @return Solution 解决方案
+                     * 获取<p>解决方案</p>
+                     * @return Solution <p>解决方案</p>
                      * 
                      */
                     std::string GetSolution() const;
 
                     /**
-                     * 设置解决方案
-                     * @param _solution 解决方案
+                     * 设置<p>解决方案</p>
+                     * @param _solution <p>解决方案</p>
                      * 
                      */
                     void SetSolution(const std::string& _solution);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SolutionHasBeenSet() const;
 
                     /**
-                     * 获取文档提示
-                     * @return HelpDoc 文档提示
+                     * 获取<p>文档提示</p>
+                     * @return HelpDoc <p>文档提示</p>
                      * 
                      */
                     std::string GetHelpDoc() const;
 
                     /**
-                     * 设置文档提示
-                     * @param _helpDoc 文档提示
+                     * 设置<p>文档提示</p>
+                     * @param _helpDoc <p>文档提示</p>
                      * 
                      */
                     void SetHelpDoc(const std::string& _helpDoc);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 提示信息
+                     * <p>提示信息</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 解决方案
+                     * <p>解决方案</p>
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
 
                     /**
-                     * 文档提示
+                     * <p>文档提示</p>
                      */
                     std::string m_helpDoc;
                     bool m_helpDocHasBeenSet;

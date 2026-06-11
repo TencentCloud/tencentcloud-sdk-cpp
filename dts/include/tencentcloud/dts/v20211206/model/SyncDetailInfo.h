@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总步骤数
-                     * @return StepAll 总步骤数
+                     * 获取<p>总步骤数</p>
+                     * @return StepAll <p>总步骤数</p>
                      * 
                      */
                     uint64_t GetStepAll() const;
 
                     /**
-                     * 设置总步骤数
-                     * @param _stepAll 总步骤数
+                     * 设置<p>总步骤数</p>
+                     * @param _stepAll <p>总步骤数</p>
                      * 
                      */
                     void SetStepAll(const uint64_t& _stepAll);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool StepAllHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤
-                     * @return StepNow 当前步骤
+                     * 获取<p>当前步骤</p>
+                     * @return StepNow <p>当前步骤</p>
                      * 
                      */
                     uint64_t GetStepNow() const;
 
                     /**
-                     * 设置当前步骤
-                     * @param _stepNow 当前步骤
+                     * 设置<p>当前步骤</p>
+                     * @param _stepNow <p>当前步骤</p>
                      * 
                      */
                     void SetStepNow(const uint64_t& _stepNow);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool StepNowHasBeenSet() const;
 
                     /**
-                     * 获取总体进度
-                     * @return Progress 总体进度
+                     * 获取<p>总体进度</p>
+                     * @return Progress <p>总体进度</p>
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置总体进度
-                     * @param _progress 总体进度
+                     * 设置<p>总体进度</p>
+                     * @param _progress <p>总体进度</p>
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-                     * @return CurrentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
+                     * 获取<p>当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度</p>
+                     * @return CurrentStepProgress <p>当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度</p>
                      * 
                      */
                     int64_t GetCurrentStepProgress() const;
 
                     /**
-                     * 设置当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-                     * @param _currentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
+                     * 设置<p>当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度</p>
+                     * @param _currentStepProgress <p>当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度</p>
                      * 
                      */
                     void SetCurrentStepProgress(const int64_t& _currentStepProgress);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool CurrentStepProgressHasBeenSet() const;
 
                     /**
-                     * 获取同步两端数据量差距
-                     * @return MasterSlaveDistance 同步两端数据量差距
+                     * 获取<p>同步两端数据量差距</p>
+                     * @return MasterSlaveDistance <p>同步两端数据量差距</p>
                      * 
                      */
                     int64_t GetMasterSlaveDistance() const;
 
                     /**
-                     * 设置同步两端数据量差距
-                     * @param _masterSlaveDistance 同步两端数据量差距
+                     * 设置<p>同步两端数据量差距</p>
+                     * @param _masterSlaveDistance <p>同步两端数据量差距</p>
                      * 
                      */
                     void SetMasterSlaveDistance(const int64_t& _masterSlaveDistance);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool MasterSlaveDistanceHasBeenSet() const;
 
                     /**
-                     * 获取同步两端时间差距
-                     * @return SecondsBehindMaster 同步两端时间差距
+                     * 获取<p>同步两端时间差距</p>
+                     * @return SecondsBehindMaster <p>同步两端时间差距</p>
                      * 
                      */
                     int64_t GetSecondsBehindMaster() const;
 
                     /**
-                     * 设置同步两端时间差距
-                     * @param _secondsBehindMaster 同步两端时间差距
+                     * 设置<p>同步两端时间差距</p>
+                     * @param _secondsBehindMaster <p>同步两端时间差距</p>
                      * 
                      */
                     void SetSecondsBehindMaster(const int64_t& _secondsBehindMaster);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool SecondsBehindMasterHasBeenSet() const;
 
                     /**
-                     * 获取总体描述信息
-                     * @return Message 总体描述信息
+                     * 获取<p>总体描述信息</p>
+                     * @return Message <p>总体描述信息</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置总体描述信息
-                     * @param _message 总体描述信息
+                     * 设置<p>总体描述信息</p>
+                     * @param _message <p>总体描述信息</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -196,18 +196,18 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取详细步骤信息
+                     * 获取<p>详细步骤信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StepInfos 详细步骤信息
+                     * @return StepInfos <p>详细步骤信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StepInfo> GetStepInfos() const;
 
                     /**
-                     * 设置详细步骤信息
+                     * 设置<p>详细步骤信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stepInfos 详细步骤信息
+                     * @param _stepInfos <p>详细步骤信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,15 +221,15 @@ namespace TencentCloud
                     bool StepInfosHasBeenSet() const;
 
                     /**
-                     * 获取不能发起内置校验的原因
-                     * @return CauseOfCompareDisable 不能发起内置校验的原因
+                     * 获取<p>不能发起内置校验的原因</p>
+                     * @return CauseOfCompareDisable <p>不能发起内置校验的原因</p>
                      * 
                      */
                     std::string GetCauseOfCompareDisable() const;
 
                     /**
-                     * 设置不能发起内置校验的原因
-                     * @param _causeOfCompareDisable 不能发起内置校验的原因
+                     * 设置<p>不能发起内置校验的原因</p>
+                     * @param _causeOfCompareDisable <p>不能发起内置校验的原因</p>
                      * 
                      */
                     void SetCauseOfCompareDisable(const std::string& _causeOfCompareDisable);
@@ -242,15 +242,15 @@ namespace TencentCloud
                     bool CauseOfCompareDisableHasBeenSet() const;
 
                     /**
-                     * 获取任务的错误和解决方案信息
-                     * @return ErrInfo 任务的错误和解决方案信息
+                     * 获取<p>任务的错误和解决方案信息</p>
+                     * @return ErrInfo <p>任务的错误和解决方案信息</p>
                      * 
                      */
                     ErrInfo GetErrInfo() const;
 
                     /**
-                     * 设置任务的错误和解决方案信息
-                     * @param _errInfo 任务的错误和解决方案信息
+                     * 设置<p>任务的错误和解决方案信息</p>
+                     * @param _errInfo <p>任务的错误和解决方案信息</p>
                      * 
                      */
                     void SetErrInfo(const ErrInfo& _errInfo);
@@ -265,62 +265,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总步骤数
+                     * <p>总步骤数</p>
                      */
                     uint64_t m_stepAll;
                     bool m_stepAllHasBeenSet;
 
                     /**
-                     * 当前步骤
+                     * <p>当前步骤</p>
                      */
                     uint64_t m_stepNow;
                     bool m_stepNowHasBeenSet;
 
                     /**
-                     * 总体进度
+                     * <p>总体进度</p>
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
+                     * <p>当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度</p>
                      */
                     int64_t m_currentStepProgress;
                     bool m_currentStepProgressHasBeenSet;
 
                     /**
-                     * 同步两端数据量差距
+                     * <p>同步两端数据量差距</p>
                      */
                     int64_t m_masterSlaveDistance;
                     bool m_masterSlaveDistanceHasBeenSet;
 
                     /**
-                     * 同步两端时间差距
+                     * <p>同步两端时间差距</p>
                      */
                     int64_t m_secondsBehindMaster;
                     bool m_secondsBehindMasterHasBeenSet;
 
                     /**
-                     * 总体描述信息
+                     * <p>总体描述信息</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 详细步骤信息
+                     * <p>详细步骤信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StepInfo> m_stepInfos;
                     bool m_stepInfosHasBeenSet;
 
                     /**
-                     * 不能发起内置校验的原因
+                     * <p>不能发起内置校验的原因</p>
                      */
                     std::string m_causeOfCompareDisable;
                     bool m_causeOfCompareDisableHasBeenSet;
 
                     /**
-                     * 任务的错误和解决方案信息
+                     * <p>任务的错误和解决方案信息</p>
                      */
                     ErrInfo m_errInfo;
                     bool m_errInfoHasBeenSet;

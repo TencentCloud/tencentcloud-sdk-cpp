@@ -22,7 +22,10 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-DetachRemoteDisksRequest::DetachRemoteDisksRequest()
+DetachRemoteDisksRequest::DetachRemoteDisksRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_remoteDiskIdsHasBeenSet(false),
+    m_forceDetachHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,35 @@ string DetachRemoteDisksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteDiskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteDiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_remoteDiskIds.begin(); itr != m_remoteDiskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_forceDetachHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceDetach";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceDetach, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +72,53 @@ string DetachRemoteDisksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DetachRemoteDisksRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DetachRemoteDisksRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DetachRemoteDisksRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<string> DetachRemoteDisksRequest::GetRemoteDiskIds() const
+{
+    return m_remoteDiskIds;
+}
+
+void DetachRemoteDisksRequest::SetRemoteDiskIds(const vector<string>& _remoteDiskIds)
+{
+    m_remoteDiskIds = _remoteDiskIds;
+    m_remoteDiskIdsHasBeenSet = true;
+}
+
+bool DetachRemoteDisksRequest::RemoteDiskIdsHasBeenSet() const
+{
+    return m_remoteDiskIdsHasBeenSet;
+}
+
+bool DetachRemoteDisksRequest::GetForceDetach() const
+{
+    return m_forceDetach;
+}
+
+void DetachRemoteDisksRequest::SetForceDetach(const bool& _forceDetach)
+{
+    m_forceDetach = _forceDetach;
+    m_forceDetachHasBeenSet = true;
+}
+
+bool DetachRemoteDisksRequest::ForceDetachHasBeenSet() const
+{
+    return m_forceDetachHasBeenSet;
+}
 
 

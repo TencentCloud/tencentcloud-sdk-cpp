@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地址池id
-                     * @return PoolId 地址池id
+                     * 获取<p>地址池id</p>
+                     * @return PoolId <p>地址池id</p>
                      * 
                      */
                     uint64_t GetPoolId() const;
 
                     /**
-                     * 设置地址池id
-                     * @param _poolId 地址池id
+                     * 设置<p>地址池id</p>
+                     * @param _poolId <p>地址池id</p>
                      * 
                      */
                     void SetPoolId(const uint64_t& _poolId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool PoolIdHasBeenSet() const;
 
                     /**
-                     * 获取地址池名称，不允许重复
-                     * @return PoolName 地址池名称，不允许重复
+                     * 获取<p>地址池名称，不允许重复</p>
+                     * @return PoolName <p>地址池名称，不允许重复</p>
                      * 
                      */
                     std::string GetPoolName() const;
 
                     /**
-                     * 设置地址池名称，不允许重复
-                     * @param _poolName 地址池名称，不允许重复
+                     * 设置<p>地址池名称，不允许重复</p>
+                     * @param _poolName <p>地址池名称，不允许重复</p>
                      * 
                      */
                     void SetPoolName(const std::string& _poolName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PoolNameHasBeenSet() const;
 
                     /**
-                     * 获取流量策略: WEIGHT负载均衡，ALL解析全部
-                     * @return TrafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
+                     * 获取<p>流量策略: WEIGHT负载均衡，ALL解析全部</p>
+                     * @return TrafficStrategy <p>流量策略: WEIGHT负载均衡，ALL解析全部</p>
                      * 
                      */
                     std::string GetTrafficStrategy() const;
 
                     /**
-                     * 设置流量策略: WEIGHT负载均衡，ALL解析全部
-                     * @param _trafficStrategy 流量策略: WEIGHT负载均衡，ALL解析全部
+                     * 设置<p>流量策略: WEIGHT负载均衡，ALL解析全部</p>
+                     * @param _trafficStrategy <p>流量策略: WEIGHT负载均衡，ALL解析全部</p>
                      * 
                      */
                     void SetTrafficStrategy(const std::string& _trafficStrategy);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TrafficStrategyHasBeenSet() const;
 
                     /**
-                     * 获取监控器id，当监控器已关联策略时，此字段必传
-                     * @return MonitorId 监控器id，当监控器已关联策略时，此字段必传
+                     * 获取<p>监控器id，当监控器已关联策略时，此字段必传</p>
+                     * @return MonitorId <p>监控器id，当监控器已关联策略时，此字段必传</p>
                      * 
                      */
                     uint64_t GetMonitorId() const;
 
                     /**
-                     * 设置监控器id，当监控器已关联策略时，此字段必传
-                     * @param _monitorId 监控器id，当监控器已关联策略时，此字段必传
+                     * 设置<p>监控器id，当监控器已关联策略时，此字段必传</p>
+                     * @param _monitorId <p>监控器id，当监控器已关联策略时，此字段必传</p>
                      * 
                      */
                     void SetMonitorId(const uint64_t& _monitorId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MonitorIdHasBeenSet() const;
 
                     /**
-                     * 获取地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
-                     * @return AddressSet 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
+                     * 获取<p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>
+                     * @return AddressSet <p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>
                      * 
                      */
                     std::vector<Address> GetAddressSet() const;
 
                     /**
-                     * 设置地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
-                     * @param _addressSet 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
+                     * 设置<p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>
+                     * @param _addressSet <p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>
                      * 
                      */
                     void SetAddressSet(const std::vector<Address>& _addressSet);
@@ -148,37 +148,64 @@ namespace TencentCloud
                      */
                     bool AddressSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * @return KeepResource <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * 
+                     */
+                    bool GetKeepResource() const;
+
+                    /**
+                     * 设置<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * @param _keepResource <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * 
+                     */
+                    void SetKeepResource(const bool& _keepResource);
+
+                    /**
+                     * 判断参数 KeepResource 是否已赋值
+                     * @return KeepResource 是否已赋值
+                     * 
+                     */
+                    bool KeepResourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 地址池id
+                     * <p>地址池id</p>
                      */
                     uint64_t m_poolId;
                     bool m_poolIdHasBeenSet;
 
                     /**
-                     * 地址池名称，不允许重复
+                     * <p>地址池名称，不允许重复</p>
                      */
                     std::string m_poolName;
                     bool m_poolNameHasBeenSet;
 
                     /**
-                     * 流量策略: WEIGHT负载均衡，ALL解析全部
+                     * <p>流量策略: WEIGHT负载均衡，ALL解析全部</p>
                      */
                     std::string m_trafficStrategy;
                     bool m_trafficStrategyHasBeenSet;
 
                     /**
-                     * 监控器id，当监控器已关联策略时，此字段必传
+                     * <p>监控器id，当监控器已关联策略时，此字段必传</p>
                      */
                     uint64_t m_monitorId;
                     bool m_monitorIdHasBeenSet;
 
                     /**
-                     * 地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。
+                     * <p>地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。</p>
                      */
                     std::vector<Address> m_addressSet;
                     bool m_addressSetHasBeenSet;
+
+                    /**
+                     * <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     */
+                    bool m_keepResource;
+                    bool m_keepResourceHasBeenSet;
 
                 };
             }

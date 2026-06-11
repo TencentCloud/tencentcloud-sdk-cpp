@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集合中的地址池id与权重，数组
+                     * 获取<p>集合中的地址池id与权重，数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AddressPools 集合中的地址池id与权重，数组
+                     * @return AddressPools <p>集合中的地址池id与权重，数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MainPoolWeight> GetAddressPools() const;
 
                     /**
-                     * 设置集合中的地址池id与权重，数组
+                     * 设置<p>集合中的地址池id与权重，数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _addressPools 集合中的地址池id与权重，数组
+                     * @param _addressPools <p>集合中的地址池id与权重，数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool AddressPoolsHasBeenSet() const;
 
                     /**
-                     * 获取地址池集合id
-                     * @return MainAddressPoolId 地址池集合id
+                     * 获取<p>地址池集合id</p>
+                     * @return MainAddressPoolId <p>地址池集合id</p>
                      * 
                      */
                     uint64_t GetMainAddressPoolId() const;
 
                     /**
-                     * 设置地址池集合id
-                     * @param _mainAddressPoolId 地址池集合id
+                     * 设置<p>地址池集合id</p>
+                     * @param _mainAddressPoolId <p>地址池集合id</p>
                      * 
                      */
                     void SetMainAddressPoolId(const uint64_t& _mainAddressPoolId);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool MainAddressPoolIdHasBeenSet() const;
 
                     /**
-                     * 获取切换阀值，不能大于主力集合内地址总数
-                     * @return MinSurviveNum 切换阀值，不能大于主力集合内地址总数
+                     * 获取<p>切换阈值，不能大于主力集合内地址总数</p>
+                     * @return MinSurviveNum <p>切换阈值，不能大于主力集合内地址总数</p>
                      * 
                      */
                     uint64_t GetMinSurviveNum() const;
 
                     /**
-                     * 设置切换阀值，不能大于主力集合内地址总数
-                     * @param _minSurviveNum 切换阀值，不能大于主力集合内地址总数
+                     * 设置<p>切换阈值，不能大于主力集合内地址总数</p>
+                     * @param _minSurviveNum <p>切换阈值，不能大于主力集合内地址总数</p>
                      * 
                      */
                     void SetMinSurviveNum(const uint64_t& _minSurviveNum);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool MinSurviveNumHasBeenSet() const;
 
                     /**
-                     * 获取切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-                     * @return TrafficStrategy 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
+                     * 获取<p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>
+                     * @return TrafficStrategy <p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>
                      * 
                      */
                     std::string GetTrafficStrategy() const;
 
                     /**
-                     * 设置切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
-                     * @param _trafficStrategy 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
+                     * 设置<p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>
+                     * @param _trafficStrategy <p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>
                      * 
                      */
                     void SetTrafficStrategy(const std::string& _trafficStrategy);
@@ -138,26 +138,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集合中的地址池id与权重，数组
+                     * <p>集合中的地址池id与权重，数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MainPoolWeight> m_addressPools;
                     bool m_addressPoolsHasBeenSet;
 
                     /**
-                     * 地址池集合id
+                     * <p>地址池集合id</p>
                      */
                     uint64_t m_mainAddressPoolId;
                     bool m_mainAddressPoolIdHasBeenSet;
 
                     /**
-                     * 切换阀值，不能大于主力集合内地址总数
+                     * <p>切换阈值，不能大于主力集合内地址总数</p>
                      */
                     uint64_t m_minSurviveNum;
                     bool m_minSurviveNumHasBeenSet;
 
                     /**
-                     * 切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重
+                     * <p>切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重</p>
                      */
                     std::string m_trafficStrategy;
                     bool m_trafficStrategyHasBeenSet;

@@ -39,7 +39,8 @@ LifecycleDataTaskInfo::LifecycleDataTaskInfo() :
     m_taskPathHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_dataFlowIdHasBeenSet(false),
-    m_isOverwriteHasBeenSet(false)
+    m_isOverwriteHasBeenSet(false),
+    m_listPathHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome LifecycleDataTaskInfo::Deserialize(const rapidjson::Value &v
         m_isOverwriteHasBeenSet = true;
     }
 
+    if (value.HasMember("ListPath") && !value["ListPath"].IsNull())
+    {
+        if (!value["ListPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleDataTaskInfo.ListPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_listPath = string(value["ListPath"].GetString());
+        m_listPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void LifecycleDataTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "IsOverwrite";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOverwrite, allocator);
+    }
+
+    if (m_listPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void LifecycleDataTaskInfo::SetIsOverwrite(const bool& _isOverwrite)
 bool LifecycleDataTaskInfo::IsOverwriteHasBeenSet() const
 {
     return m_isOverwriteHasBeenSet;
+}
+
+string LifecycleDataTaskInfo::GetListPath() const
+{
+    return m_listPath;
+}
+
+void LifecycleDataTaskInfo::SetListPath(const string& _listPath)
+{
+    m_listPath = _listPath;
+    m_listPathHasBeenSet = true;
+}
+
+bool LifecycleDataTaskInfo::ListPathHasBeenSet() const
+{
+    return m_listPathHasBeenSet;
 }
 

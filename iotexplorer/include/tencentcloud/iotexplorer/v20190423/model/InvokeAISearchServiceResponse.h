@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基于搜索结果的总结
-                     * @return Summary 基于搜索结果的总结
+                     * 获取<p>基于搜索结果的总结</p>
+                     * @return Summary <p>基于搜索结果的总结</p>
                      * 
                      */
                     std::string GetSummary() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取视频结果集
-                     * @return Targets 视频结果集
+                     * 获取<p>视频结果集</p>
+                     * @return Targets <p>视频结果集</p>
                      * 
                      */
                     std::vector<TargetInfo> GetTargets() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取视频回放URL
-                     * @return VideoURL 视频回放URL
+                     * 获取<p>视频回放URL</p>
+                     * @return VideoURL <p>视频回放URL</p>
                      * 
                      */
                     std::string GetVideoURL() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 基于搜索结果的总结
+                     * <p>基于搜索结果的总结</p>
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * 视频结果集
+                     * <p>视频结果集</p>
                      */
                     std::vector<TargetInfo> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 视频回放URL
+                     * <p>视频回放URL</p>
                      */
                     std::string m_videoURL;
                     bool m_videoURLHasBeenSet;

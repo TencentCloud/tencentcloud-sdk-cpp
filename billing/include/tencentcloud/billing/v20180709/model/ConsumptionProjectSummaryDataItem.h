@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取项目名称
-                     * @return ProjectName 项目名称
+                     * 获取<p>项目名称</p>
+                     * @return ProjectName <p>项目名称</p>
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
-                     * 设置项目名称
-                     * @param _projectName 项目名称
+                     * 设置<p>项目名称</p>
+                     * @param _projectName <p>项目名称</p>
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取折后总价
-                     * @return RealTotalCost 折后总价
+                     * 获取<p>折后总价</p>
+                     * @return RealTotalCost <p>折后总价</p>
                      * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
-                     * 设置折后总价
-                     * @param _realTotalCost 折后总价
+                     * 设置<p>折后总价</p>
+                     * @param _realTotalCost <p>折后总价</p>
                      * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool RealTotalCostHasBeenSet() const;
 
                     /**
-                     * 获取趋势
-                     * @return Trend 趋势
+                     * 获取<p>趋势</p>
+                     * @return Trend <p>趋势</p>
                      * 
                      */
                     ConsumptionSummaryTrend GetTrend() const;
 
                     /**
-                     * 设置趋势
-                     * @param _trend 趋势
+                     * 设置<p>趋势</p>
+                     * @param _trend <p>趋势</p>
                      * 
                      */
                     void SetTrend(const ConsumptionSummaryTrend& _trend);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool TrendHasBeenSet() const;
 
                     /**
-                     * 获取产品消耗详情
-                     * @return Business 产品消耗详情
+                     * 获取<p>产品消耗详情</p>
+                     * @return Business <p>产品消耗详情</p>
                      * 
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> GetBusiness() const;
 
                     /**
-                     * 设置产品消耗详情
-                     * @param _business 产品消耗详情
+                     * 设置<p>产品消耗详情</p>
+                     * @param _business <p>产品消耗详情</p>
                      * 
                      */
                     void SetBusiness(const std::vector<ConsumptionBusinessSummaryDataItem>& _business);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取现金
-                     * @return CashPayAmount 现金
+                     * 获取<p>现金</p>
+                     * @return CashPayAmount <p>现金</p>
                      * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
-                     * 设置现金
-                     * @param _cashPayAmount 现金
+                     * 设置<p>现金</p>
+                     * @param _cashPayAmount <p>现金</p>
                      * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool CashPayAmountHasBeenSet() const;
 
                     /**
-                     * 获取赠送金
-                     * @return IncentivePayAmount 赠送金
+                     * 获取<p>赠送金</p>
+                     * @return IncentivePayAmount <p>赠送金</p>
                      * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
-                     * 设置赠送金
-                     * @param _incentivePayAmount 赠送金
+                     * 设置<p>赠送金</p>
+                     * @param _incentivePayAmount <p>赠送金</p>
                      * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool IncentivePayAmountHasBeenSet() const;
 
                     /**
-                     * 获取代金券
-                     * @return VoucherPayAmount 代金券
+                     * 获取<p>代金券</p>
+                     * @return VoucherPayAmount <p>代金券</p>
                      * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
-                     * 设置代金券
-                     * @param _voucherPayAmount 代金券
+                     * 设置<p>代金券</p>
+                     * @param _voucherPayAmount <p>代金券</p>
                      * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool VoucherPayAmountHasBeenSet() const;
 
                     /**
-                     * 获取分成金
-                     * @return TransferPayAmount 分成金
+                     * 获取<p>分成金</p>
+                     * @return TransferPayAmount <p>分成金</p>
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
-                     * 设置分成金
-                     * @param _transferPayAmount 分成金
+                     * 设置<p>分成金</p>
+                     * @param _transferPayAmount <p>分成金</p>
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -237,61 +237,88 @@ namespace TencentCloud
                      */
                     bool TransferPayAmountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>
+                     * @return LeftRealTotalCost <p>待分摊金额</p><p>剩余待分摊的折后总金额</p>
+                     * 
+                     */
+                    std::string GetLeftRealTotalCost() const;
+
+                    /**
+                     * 设置<p>待分摊金额</p><p>剩余待分摊的折后总金额</p>
+                     * @param _leftRealTotalCost <p>待分摊金额</p><p>剩余待分摊的折后总金额</p>
+                     * 
+                     */
+                    void SetLeftRealTotalCost(const std::string& _leftRealTotalCost);
+
+                    /**
+                     * 判断参数 LeftRealTotalCost 是否已赋值
+                     * @return LeftRealTotalCost 是否已赋值
+                     * 
+                     */
+                    bool LeftRealTotalCostHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 项目名称
+                     * <p>项目名称</p>
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
-                     * 折后总价
+                     * <p>折后总价</p>
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
-                     * 趋势
+                     * <p>趋势</p>
                      */
                     ConsumptionSummaryTrend m_trend;
                     bool m_trendHasBeenSet;
 
                     /**
-                     * 产品消耗详情
+                     * <p>产品消耗详情</p>
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 现金
+                     * <p>现金</p>
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
 
                     /**
-                     * 赠送金
+                     * <p>赠送金</p>
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
-                     * 代金券
+                     * <p>代金券</p>
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
-                     * 分成金
+                     * <p>分成金</p>
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
+
+                    /**
+                     * <p>待分摊金额</p><p>剩余待分摊的折后总金额</p>
+                     */
+                    std::string m_leftRealTotalCost;
+                    bool m_leftRealTotalCostHasBeenSet;
 
                 };
             }

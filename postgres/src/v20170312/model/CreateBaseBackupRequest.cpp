@@ -23,7 +23,8 @@ using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
 CreateBaseBackupRequest::CreateBaseBackupRequest() :
-    m_dBInstanceIdHasBeenSet(false)
+    m_dBInstanceIdHasBeenSet(false),
+    m_backupMethodHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateBaseBackupRequest::ToJsonString() const
         string key = "DBInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateBaseBackupRequest::SetDBInstanceId(const string& _dBInstanceId)
 bool CreateBaseBackupRequest::DBInstanceIdHasBeenSet() const
 {
     return m_dBInstanceIdHasBeenSet;
+}
+
+string CreateBaseBackupRequest::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void CreateBaseBackupRequest::SetBackupMethod(const string& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool CreateBaseBackupRequest::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
 }
 
 

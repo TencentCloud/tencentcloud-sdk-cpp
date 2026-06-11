@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>指定待挂载单副本SSD硬盘的CVM实例。</p>
+                     * @return InstanceId <p>指定待挂载单副本SSD硬盘的CVM实例。</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>指定待挂载单副本SSD硬盘的CVM实例。</p>
+                     * @param _instanceId <p>指定待挂载单副本SSD硬盘的CVM实例。</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>一个或多个待挂载的单副本SSD硬盘ID。</p>
+                     * @return RemoteDiskIds <p>一个或多个待挂载的单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRemoteDiskIds() const;
+
+                    /**
+                     * 设置<p>一个或多个待挂载的单副本SSD硬盘ID。</p>
+                     * @param _remoteDiskIds <p>一个或多个待挂载的单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    void SetRemoteDiskIds(const std::vector<std::string>& _remoteDiskIds);
+
+                    /**
+                     * 判断参数 RemoteDiskIds 是否已赋值
+                     * @return RemoteDiskIds 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>指定待挂载单副本SSD硬盘的CVM实例。</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>一个或多个待挂载的单副本SSD硬盘ID。</p>
+                     */
+                    std::vector<std::string> m_remoteDiskIds;
+                    bool m_remoteDiskIdsHasBeenSet;
 
                 };
             }

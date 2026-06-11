@@ -25,7 +25,8 @@ using namespace std;
 DescribeInstanceSpecsRequest::DescribeInstanceSpecsRequest() :
     m_dbTypeHasBeenSet(false),
     m_includeZoneStocksHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+    m_deviceTypeHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeInstanceSpecsRequest::ToJsonString() const
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeInstanceSpecsRequest::SetDeviceType(const string& _deviceType)
 bool DescribeInstanceSpecsRequest::DeviceTypeHasBeenSet() const
 {
     return m_deviceTypeHasBeenSet;
+}
+
+string DescribeInstanceSpecsRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void DescribeInstanceSpecsRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
 }
 
 

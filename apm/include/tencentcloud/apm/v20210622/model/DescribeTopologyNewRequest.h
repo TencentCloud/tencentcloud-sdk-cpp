@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统 ID
-                     * @return InstanceId 业务系统 ID
+                     * 获取<p>业务系统 ID</p>
+                     * @return InstanceId <p>业务系统 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统 ID
-                     * @param _instanceId 业务系统 ID
+                     * 设置<p>业务系统 ID</p>
+                     * @param _instanceId <p>业务系统 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间
-                     * @return StartTime 查询开始时间
+                     * 获取<p>查询开始时间</p>
+                     * @return StartTime <p>查询开始时间</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间
-                     * @param _startTime 查询开始时间
+                     * 设置<p>查询开始时间</p>
+                     * @param _startTime <p>查询开始时间</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取<p>查询结束时间</p>
+                     * @return EndTime <p>查询结束时间</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param _endTime 查询结束时间
+                     * 设置<p>查询结束时间</p>
+                     * @param _endTime <p>查询结束时间</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取应用名
-                     * @return ServiceName 应用名
+                     * 获取<p>应用名</p>
+                     * @return ServiceName <p>应用名</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置应用名
-                     * @param _serviceName 应用名
+                     * 设置<p>应用名</p>
+                     * @param _serviceName <p>应用名</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取上游层级
-                     * @return UpLevel 上游层级
+                     * 获取<p>上游层级</p>
+                     * @return UpLevel <p>上游层级</p>
                      * 
                      */
                     int64_t GetUpLevel() const;
 
                     /**
-                     * 设置上游层级
-                     * @param _upLevel 上游层级
+                     * 设置<p>上游层级</p>
+                     * @param _upLevel <p>上游层级</p>
                      * 
                      */
                     void SetUpLevel(const int64_t& _upLevel);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool UpLevelHasBeenSet() const;
 
                     /**
-                     * 获取应用实例信息
-                     * @return ServiceInstance 应用实例信息
+                     * 获取<p>应用实例信息</p>
+                     * @return ServiceInstance <p>应用实例信息</p>
                      * 
                      */
                     std::string GetServiceInstance() const;
 
                     /**
-                     * 设置应用实例信息
-                     * @param _serviceInstance 应用实例信息
+                     * 设置<p>应用实例信息</p>
+                     * @param _serviceInstance <p>应用实例信息</p>
                      * 
                      */
                     void SetServiceInstance(const std::string& _serviceInstance);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool ServiceInstanceHasBeenSet() const;
 
                     /**
-                     * 获取下游层级
-                     * @return DownLevel 下游层级
+                     * 获取<p>下游层级</p>
+                     * @return DownLevel <p>下游层级</p>
                      * 
                      */
                     int64_t GetDownLevel() const;
 
                     /**
-                     * 设置下游层级
-                     * @param _downLevel 下游层级
+                     * 设置<p>下游层级</p>
+                     * @param _downLevel <p>下游层级</p>
                      * 
                      */
                     void SetDownLevel(const int64_t& _downLevel);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool DownLevelHasBeenSet() const;
 
                     /**
-                     * 获取视角
-                     * @return View 视角
+                     * 获取<p>视角</p>
+                     * @return View <p>视角</p>
                      * 
                      */
                     std::string GetView() const;
 
                     /**
-                     * 设置视角
-                     * @param _view 视角
+                     * 设置<p>视角</p>
+                     * @param _view <p>视角</p>
                      * 
                      */
                     void SetView(const std::string& _view);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool ViewHasBeenSet() const;
 
                     /**
-                     * 获取过滤器
-                     * @return Filters 过滤器
+                     * 获取<p>过滤器</p>
+                     * @return Filters <p>过滤器</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器
-                     * @param _filters 过滤器
+                     * 设置<p>过滤器</p>
+                     * @param _filters <p>过滤器</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取表示Topic（MQ拓扑图用）
-                     * @return Topic 表示Topic（MQ拓扑图用）
+                     * 获取<p>表示Topic（MQ拓扑图用）</p>
+                     * @return Topic <p>表示Topic（MQ拓扑图用）</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置表示Topic（MQ拓扑图用）
-                     * @param _topic 表示Topic（MQ拓扑图用）
+                     * 设置<p>表示Topic（MQ拓扑图用）</p>
+                     * @param _topic <p>表示Topic（MQ拓扑图用）</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取视图筛选列表
-                     * @return Selectors 视图筛选列表
+                     * 获取<p>视图筛选列表</p>
+                     * @return Selectors <p>视图筛选列表</p>
                      * 
                      */
                     Selectors GetSelectors() const;
 
                     /**
-                     * 设置视图筛选列表
-                     * @param _selectors 视图筛选列表
+                     * 设置<p>视图筛选列表</p>
+                     * @param _selectors <p>视图筛选列表</p>
                      * 
                      */
                     void SetSelectors(const Selectors& _selectors);
@@ -277,15 +277,15 @@ namespace TencentCloud
                     bool SelectorsHasBeenSet() const;
 
                     /**
-                     * 获取视图ID
-                     * @return Id 视图ID
+                     * 获取<p>视图ID</p>
+                     * @return Id <p>视图ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置视图ID
-                     * @param _id 视图ID
+                     * 设置<p>视图ID</p>
+                     * @param _id <p>视图ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -298,15 +298,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取TraceID
-                     * @return TraceID TraceID
+                     * 获取<p>TraceID</p>
+                     * @return TraceID <p>TraceID</p>
                      * 
                      */
                     std::string GetTraceID() const;
 
                     /**
-                     * 设置TraceID
-                     * @param _traceID TraceID
+                     * 设置<p>TraceID</p>
+                     * @param _traceID <p>TraceID</p>
                      * 
                      */
                     void SetTraceID(const std::string& _traceID);
@@ -319,15 +319,15 @@ namespace TencentCloud
                     bool TraceIDHasBeenSet() const;
 
                     /**
-                     * 获取查询top5慢响应节点
-                     * @return IsSlowTopFive 查询top5慢响应节点
+                     * 获取<p>查询top5慢响应节点</p>
+                     * @return IsSlowTopFive <p>查询top5慢响应节点</p>
                      * 
                      */
                     bool GetIsSlowTopFive() const;
 
                     /**
-                     * 设置查询top5慢响应节点
-                     * @param _isSlowTopFive 查询top5慢响应节点
+                     * 设置<p>查询top5慢响应节点</p>
+                     * @param _isSlowTopFive <p>查询top5慢响应节点</p>
                      * 
                      */
                     void SetIsSlowTopFive(const bool& _isSlowTopFive);
@@ -340,15 +340,15 @@ namespace TencentCloud
                     bool IsSlowTopFiveHasBeenSet() const;
 
                     /**
-                     * 获取是否获取资源层信息
-                     * @return GetResource 是否获取资源层信息
+                     * 获取<p>是否获取资源层信息</p>
+                     * @return GetResource <p>是否获取资源层信息</p>
                      * 
                      */
                     bool GetGetResource() const;
 
                     /**
-                     * 设置是否获取资源层信息
-                     * @param _getResource 是否获取资源层信息
+                     * 设置<p>是否获取资源层信息</p>
+                     * @param _getResource <p>是否获取资源层信息</p>
                      * 
                      */
                     void SetGetResource(const bool& _getResource);
@@ -361,15 +361,15 @@ namespace TencentCloud
                     bool GetResourceHasBeenSet() const;
 
                     /**
-                     * 获取根据应用标签过滤
-                     * @return Tags 根据应用标签过滤
+                     * 获取<p>根据应用标签过滤</p>
+                     * @return Tags <p>根据应用标签过滤</p>
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置根据应用标签过滤
-                     * @param _tags 根据应用标签过滤
+                     * 设置<p>根据应用标签过滤</p>
+                     * @param _tags <p>根据应用标签过滤</p>
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -382,15 +382,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取不显示的节点类型
-                     * @return Hidden 不显示的节点类型
+                     * 获取<p>不显示的节点类型</p>
+                     * @return Hidden <p>不显示的节点类型</p>
                      * 
                      */
                     Selectors GetHidden() const;
 
                     /**
-                     * 设置不显示的节点类型
-                     * @param _hidden 不显示的节点类型
+                     * 设置<p>不显示的节点类型</p>
+                     * @param _hidden <p>不显示的节点类型</p>
                      * 
                      */
                     void SetHidden(const Selectors& _hidden);
@@ -402,109 +402,136 @@ namespace TencentCloud
                      */
                     bool HiddenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启云资源关联</p>
+                     * @return EnableResourceLink <p>是否开启云资源关联</p>
+                     * 
+                     */
+                    bool GetEnableResourceLink() const;
+
+                    /**
+                     * 设置<p>是否开启云资源关联</p>
+                     * @param _enableResourceLink <p>是否开启云资源关联</p>
+                     * 
+                     */
+                    void SetEnableResourceLink(const bool& _enableResourceLink);
+
+                    /**
+                     * 判断参数 EnableResourceLink 是否已赋值
+                     * @return EnableResourceLink 是否已赋值
+                     * 
+                     */
+                    bool EnableResourceLinkHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务系统 ID
+                     * <p>业务系统 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询开始时间
+                     * <p>查询开始时间</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * <p>查询结束时间</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 应用名
+                     * <p>应用名</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 上游层级
+                     * <p>上游层级</p>
                      */
                     int64_t m_upLevel;
                     bool m_upLevelHasBeenSet;
 
                     /**
-                     * 应用实例信息
+                     * <p>应用实例信息</p>
                      */
                     std::string m_serviceInstance;
                     bool m_serviceInstanceHasBeenSet;
 
                     /**
-                     * 下游层级
+                     * <p>下游层级</p>
                      */
                     int64_t m_downLevel;
                     bool m_downLevelHasBeenSet;
 
                     /**
-                     * 视角
+                     * <p>视角</p>
                      */
                     std::string m_view;
                     bool m_viewHasBeenSet;
 
                     /**
-                     * 过滤器
+                     * <p>过滤器</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 表示Topic（MQ拓扑图用）
+                     * <p>表示Topic（MQ拓扑图用）</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 视图筛选列表
+                     * <p>视图筛选列表</p>
                      */
                     Selectors m_selectors;
                     bool m_selectorsHasBeenSet;
 
                     /**
-                     * 视图ID
+                     * <p>视图ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * TraceID
+                     * <p>TraceID</p>
                      */
                     std::string m_traceID;
                     bool m_traceIDHasBeenSet;
 
                     /**
-                     * 查询top5慢响应节点
+                     * <p>查询top5慢响应节点</p>
                      */
                     bool m_isSlowTopFive;
                     bool m_isSlowTopFiveHasBeenSet;
 
                     /**
-                     * 是否获取资源层信息
+                     * <p>是否获取资源层信息</p>
                      */
                     bool m_getResource;
                     bool m_getResourceHasBeenSet;
 
                     /**
-                     * 根据应用标签过滤
+                     * <p>根据应用标签过滤</p>
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 不显示的节点类型
+                     * <p>不显示的节点类型</p>
                      */
                     Selectors m_hidden;
                     bool m_hiddenHasBeenSet;
+
+                    /**
+                     * <p>是否开启云资源关联</p>
+                     */
+                    bool m_enableResourceLink;
+                    bool m_enableResourceLinkHasBeenSet;
 
                 };
             }

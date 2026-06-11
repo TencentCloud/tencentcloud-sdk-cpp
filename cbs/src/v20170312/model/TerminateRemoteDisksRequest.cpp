@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-TerminateRemoteDisksRequest::TerminateRemoteDisksRequest()
+TerminateRemoteDisksRequest::TerminateRemoteDisksRequest() :
+    m_remoteDiskIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,19 @@ string TerminateRemoteDisksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_remoteDiskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteDiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_remoteDiskIds.begin(); itr != m_remoteDiskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +54,21 @@ string TerminateRemoteDisksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> TerminateRemoteDisksRequest::GetRemoteDiskIds() const
+{
+    return m_remoteDiskIds;
+}
+
+void TerminateRemoteDisksRequest::SetRemoteDiskIds(const vector<string>& _remoteDiskIds)
+{
+    m_remoteDiskIds = _remoteDiskIds;
+    m_remoteDiskIdsHasBeenSet = true;
+}
+
+bool TerminateRemoteDisksRequest::RemoteDiskIdsHasBeenSet() const
+{
+    return m_remoteDiskIdsHasBeenSet;
+}
 
 

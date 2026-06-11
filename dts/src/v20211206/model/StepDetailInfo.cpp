@@ -26,6 +26,7 @@ StepDetailInfo::StepDetailInfo() :
     m_stepIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false),
     m_stepMessageHasBeenSet(false),
     m_percentHasBeenSet(false),
     m_errorsHasBeenSet(false),
@@ -86,6 +87,16 @@ CoreInternalOutcome StepDetailInfo::Deserialize(const rapidjson::Value &value)
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StepDetailInfo.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
     }
 
     if (value.HasMember("StepMessage") && !value["StepMessage"].IsNull())
@@ -193,6 +204,14 @@ void StepDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stepMessageHasBeenSet)
@@ -322,6 +341,22 @@ void StepDetailInfo::SetStartTime(const string& _startTime)
 bool StepDetailInfo::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+string StepDetailInfo::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void StepDetailInfo::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool StepDetailInfo::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 
 string StepDetailInfo::GetStepMessage() const

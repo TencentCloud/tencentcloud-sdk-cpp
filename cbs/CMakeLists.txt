@@ -114,6 +114,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesRequest.h
   include/tencentcloud/cbs/v20170312/model/DiskChargePrepaid.h
   include/tencentcloud/cbs/v20170312/model/DeleteSnapshotGroupResponse.h
+  include/tencentcloud/cbs/v20170312/model/RemoteDiskChargePrepaid.h
   include/tencentcloud/cbs/v20170312/model/ApplySnapshotGroupResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewRequest.h
   include/tencentcloud/cbs/v20170312/model/Filter.h
@@ -261,6 +262,7 @@ set(cbs_src
   src/v20170312/model/DeleteAutoSnapshotPoliciesRequest.cpp
   src/v20170312/model/DiskChargePrepaid.cpp
   src/v20170312/model/DeleteSnapshotGroupResponse.cpp
+  src/v20170312/model/RemoteDiskChargePrepaid.cpp
   src/v20170312/model/ApplySnapshotGroupResponse.cpp
   src/v20170312/model/DescribeSnapshotOverviewRequest.cpp
   src/v20170312/model/Filter.cpp

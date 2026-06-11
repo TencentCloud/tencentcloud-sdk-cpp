@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取策略id
-                     * @return StrategyId 策略id
+                     * 获取<p>策略id</p>
+                     * @return StrategyId <p>策略id</p>
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
-                     * 设置策略id
-                     * @param _strategyId 策略id
+                     * 设置<p>策略id</p>
+                     * @param _strategyId <p>策略id</p>
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool StrategyIdHasBeenSet() const;
 
                     /**
-                     * 获取解析线路，需要全量传参
-                     * @return Source 解析线路，需要全量传参
+                     * 获取<p>解析线路，需要全量传参</p>
+                     * @return Source <p>解析线路，需要全量传参</p>
                      * 
                      */
                     std::vector<Source> GetSource() const;
 
                     /**
-                     * 设置解析线路，需要全量传参
-                     * @param _source 解析线路，需要全量传参
+                     * 设置<p>解析线路，需要全量传参</p>
+                     * @param _source <p>解析线路，需要全量传参</p>
                      * 
                      */
                     void SetSource(const std::vector<Source>& _source);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取主力地址池集合，需要全量传参
-                     * @return MainAddressPoolSet 主力地址池集合，需要全量传参
+                     * 获取<p>主力地址池集合，需要全量传参</p>
+                     * @return MainAddressPoolSet <p>主力地址池集合，需要全量传参</p>
                      * 
                      */
                     std::vector<MainAddressPool> GetMainAddressPoolSet() const;
 
                     /**
-                     * 设置主力地址池集合，需要全量传参
-                     * @param _mainAddressPoolSet 主力地址池集合，需要全量传参
+                     * 设置<p>主力地址池集合，需要全量传参</p>
+                     * @param _mainAddressPoolSet <p>主力地址池集合，需要全量传参</p>
                      * 
                      */
                     void SetMainAddressPoolSet(const std::vector<MainAddressPool>& _mainAddressPoolSet);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool MainAddressPoolSetHasBeenSet() const;
 
                     /**
-                     * 获取兜底地址池集合，需要全量传参
-                     * @return FallbackAddressPoolSet 兜底地址池集合，需要全量传参
+                     * 获取<p>兜底地址池集合，需要全量传参</p>
+                     * @return FallbackAddressPoolSet <p>兜底地址池集合，需要全量传参</p>
                      * 
                      */
                     std::vector<MainAddressPool> GetFallbackAddressPoolSet() const;
 
                     /**
-                     * 设置兜底地址池集合，需要全量传参
-                     * @param _fallbackAddressPoolSet 兜底地址池集合，需要全量传参
+                     * 设置<p>兜底地址池集合，需要全量传参</p>
+                     * @param _fallbackAddressPoolSet <p>兜底地址池集合，需要全量传参</p>
                      * 
                      */
                     void SetFallbackAddressPoolSet(const std::vector<MainAddressPool>& _fallbackAddressPoolSet);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool FallbackAddressPoolSetHasBeenSet() const;
 
                     /**
-                     * 获取策略名称，不允许重复
-                     * @return StrategyName 策略名称，不允许重复
+                     * 获取<p>策略名称，不允许重复</p>
+                     * @return StrategyName <p>策略名称，不允许重复</p>
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
-                     * 设置策略名称，不允许重复
-                     * @param _strategyName 策略名称，不允许重复
+                     * 设置<p>策略名称，不允许重复</p>
+                     * @param _strategyName <p>策略名称，不允许重复</p>
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool StrategyNameHasBeenSet() const;
 
                     /**
-                     * 获取策略开启状态：ENABLED开启；DISABLED关闭
-                     * @return IsEnabled 策略开启状态：ENABLED开启；DISABLED关闭
+                     * 获取<p>策略开启状态：ENABLED开启；DISABLED关闭</p>
+                     * @return IsEnabled <p>策略开启状态：ENABLED开启；DISABLED关闭</p>
                      * 
                      */
                     std::string GetIsEnabled() const;
 
                     /**
-                     * 设置策略开启状态：ENABLED开启；DISABLED关闭
-                     * @param _isEnabled 策略开启状态：ENABLED开启；DISABLED关闭
+                     * 设置<p>策略开启状态：ENABLED开启；DISABLED关闭</p>
+                     * @param _isEnabled <p>策略开启状态：ENABLED开启；DISABLED关闭</p>
                      * 
                      */
                     void SetIsEnabled(const std::string& _isEnabled);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool IsEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启
-                     * @return KeepDomainRecords 是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启
+                     * 获取<p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>
+                     * @return KeepDomainRecords <p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>
                      * 
                      */
                     std::string GetKeepDomainRecords() const;
 
                     /**
-                     * 设置是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启
-                     * @param _keepDomainRecords 是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启
+                     * 设置<p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>
+                     * @param _keepDomainRecords <p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>
                      * 
                      */
                     void SetKeepDomainRecords(const std::string& _keepDomainRecords);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool KeepDomainRecordsHasBeenSet() const;
 
                     /**
-                     * 获取调度模式：AUTO默认；STOP仅暂停不切换
-                     * @return SwitchPoolType 调度模式：AUTO默认；STOP仅暂停不切换
+                     * 获取<p>调度模式：AUTO默认；STOP仅暂停不切换</p>
+                     * @return SwitchPoolType <p>调度模式：AUTO默认；STOP仅暂停不切换</p>
                      * 
                      */
                     std::string GetSwitchPoolType() const;
 
                     /**
-                     * 设置调度模式：AUTO默认；STOP仅暂停不切换
-                     * @param _switchPoolType 调度模式：AUTO默认；STOP仅暂停不切换
+                     * 设置<p>调度模式：AUTO默认；STOP仅暂停不切换</p>
+                     * @param _switchPoolType <p>调度模式：AUTO默认；STOP仅暂停不切换</p>
                      * 
                      */
                     void SetSwitchPoolType(const std::string& _switchPoolType);
@@ -233,61 +233,88 @@ namespace TencentCloud
                      */
                     bool SwitchPoolTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * @return KeepResource <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * 
+                     */
+                    bool GetKeepResource() const;
+
+                    /**
+                     * 设置<p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * @param _keepResource <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     * 
+                     */
+                    void SetKeepResource(const bool& _keepResource);
+
+                    /**
+                     * 判断参数 KeepResource 是否已赋值
+                     * @return KeepResource 是否已赋值
+                     * 
+                     */
+                    bool KeepResourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 策略id
+                     * <p>策略id</p>
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
-                     * 解析线路，需要全量传参
+                     * <p>解析线路，需要全量传参</p>
                      */
                     std::vector<Source> m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 主力地址池集合，需要全量传参
+                     * <p>主力地址池集合，需要全量传参</p>
                      */
                     std::vector<MainAddressPool> m_mainAddressPoolSet;
                     bool m_mainAddressPoolSetHasBeenSet;
 
                     /**
-                     * 兜底地址池集合，需要全量传参
+                     * <p>兜底地址池集合，需要全量传参</p>
                      */
                     std::vector<MainAddressPool> m_fallbackAddressPoolSet;
                     bool m_fallbackAddressPoolSetHasBeenSet;
 
                     /**
-                     * 策略名称，不允许重复
+                     * <p>策略名称，不允许重复</p>
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
-                     * 策略开启状态：ENABLED开启；DISABLED关闭
+                     * <p>策略开启状态：ENABLED开启；DISABLED关闭</p>
                      */
                     std::string m_isEnabled;
                     bool m_isEnabledHasBeenSet;
 
                     /**
-                     * 是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启
+                     * <p>是否开启策略强制保留默认线路 disabled, enabled，默认不开启且只有一个策略能开启</p>
                      */
                     std::string m_keepDomainRecords;
                     bool m_keepDomainRecordsHasBeenSet;
 
                     /**
-                     * 调度模式：AUTO默认；STOP仅暂停不切换
+                     * <p>调度模式：AUTO默认；STOP仅暂停不切换</p>
                      */
                     std::string m_switchPoolType;
                     bool m_switchPoolTypeHasBeenSet;
+
+                    /**
+                     * <p>是否保留资源</p><p>枚举值：</p><ul><li>false： 全量操作，会有删除逻辑</li><li>true： 不会删除原有资源</li></ul>
+                     */
+                    bool m_keepResource;
+                    bool m_keepResourceHasBeenSet;
 
                 };
             }

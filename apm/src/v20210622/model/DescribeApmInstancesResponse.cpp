@@ -24,7 +24,10 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeApmInstancesResponse::DescribeApmInstancesResponse() :
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_totalCountHasBeenSet(false),
+    m_pageIndexHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,36 @@ CoreInternalOutcome DescribeApmInstancesResponse::Deserialize(const string &payl
         m_instancesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PageIndex") && !rsp["PageIndex"].IsNull())
+    {
+        if (!rsp["PageIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PageIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageIndex = rsp["PageIndex"].GetInt64();
+        m_pageIndexHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PageSize") && !rsp["PageSize"].IsNull())
+    {
+        if (!rsp["PageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageSize = rsp["PageSize"].GetInt64();
+        m_pageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +140,30 @@ string DescribeApmInstancesResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_pageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageIndex, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageSize, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +184,36 @@ vector<ApmInstanceDetail> DescribeApmInstancesResponse::GetInstances() const
 bool DescribeApmInstancesResponse::InstancesHasBeenSet() const
 {
     return m_instancesHasBeenSet;
+}
+
+int64_t DescribeApmInstancesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeApmInstancesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+int64_t DescribeApmInstancesResponse::GetPageIndex() const
+{
+    return m_pageIndex;
+}
+
+bool DescribeApmInstancesResponse::PageIndexHasBeenSet() const
+{
+    return m_pageIndexHasBeenSet;
+}
+
+int64_t DescribeApmInstancesResponse::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+bool DescribeApmInstancesResponse::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

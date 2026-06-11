@@ -77,6 +77,7 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_usedArchiveStorageHasBeenSet(false),
     m_archiveStatusHasBeenSet(false),
     m_archiveProgressHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
     m_isOpenTDEHasBeenSet(false)
 {
 }
@@ -716,6 +717,16 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_archiveProgressHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterLevel") && !value["ClusterLevel"].IsNull())
+    {
+        if (!value["ClusterLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ClusterLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterLevel = string(value["ClusterLevel"].GetString());
+        m_clusterLevelHasBeenSet = true;
+    }
+
     if (value.HasMember("IsOpenTDE") && !value["IsOpenTDE"].IsNull())
     {
         if (!value["IsOpenTDE"].IsBool())
@@ -1227,6 +1238,14 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ArchiveProgress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_archiveProgress, allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isOpenTDEHasBeenSet)
@@ -2134,6 +2153,22 @@ void CynosdbClusterDetail::SetArchiveProgress(const int64_t& _archiveProgress)
 bool CynosdbClusterDetail::ArchiveProgressHasBeenSet() const
 {
     return m_archiveProgressHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void CynosdbClusterDetail::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
 }
 
 bool CynosdbClusterDetail::GetIsOpenTDE() const

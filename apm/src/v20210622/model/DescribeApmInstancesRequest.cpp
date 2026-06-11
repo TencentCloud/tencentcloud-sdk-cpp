@@ -28,7 +28,12 @@ DescribeApmInstancesRequest::DescribeApmInstancesRequest() :
     m_instanceIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_demoInstanceFlagHasBeenSet(false),
-    m_allRegionsFlagHasBeenSet(false)
+    m_allRegionsFlagHasBeenSet(false),
+    m_pageIndexHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_keywordHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -97,6 +102,46 @@ string DescribeApmInstancesRequest::ToJsonString() const
         string key = "AllRegionsFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allRegionsFlag, allocator);
+    }
+
+    if (m_pageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageIndex, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +246,86 @@ void DescribeApmInstancesRequest::SetAllRegionsFlag(const int64_t& _allRegionsFl
 bool DescribeApmInstancesRequest::AllRegionsFlagHasBeenSet() const
 {
     return m_allRegionsFlagHasBeenSet;
+}
+
+int64_t DescribeApmInstancesRequest::GetPageIndex() const
+{
+    return m_pageIndex;
+}
+
+void DescribeApmInstancesRequest::SetPageIndex(const int64_t& _pageIndex)
+{
+    m_pageIndex = _pageIndex;
+    m_pageIndexHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::PageIndexHasBeenSet() const
+{
+    return m_pageIndexHasBeenSet;
+}
+
+int64_t DescribeApmInstancesRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeApmInstancesRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+string DescribeApmInstancesRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeApmInstancesRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
+}
+
+string DescribeApmInstancesRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeApmInstancesRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
+}
+
+string DescribeApmInstancesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeApmInstancesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

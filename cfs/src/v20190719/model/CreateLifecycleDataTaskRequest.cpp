@@ -25,10 +25,11 @@ using namespace std;
 CreateLifecycleDataTaskRequest::CreateLifecycleDataTaskRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_taskPathHasBeenSet(false),
     m_taskNameHasBeenSet(false),
+    m_taskPathHasBeenSet(false),
     m_dataFlowIdHasBeenSet(false),
-    m_isOverwriteHasBeenSet(false)
+    m_isOverwriteHasBeenSet(false),
+    m_listPathHasBeenSet(false)
 {
 }
 
@@ -55,20 +56,20 @@ string CreateLifecycleDataTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_taskPathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskPath";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskPath.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_taskNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataFlowIdHasBeenSet)
@@ -85,6 +86,14 @@ string CreateLifecycleDataTaskRequest::ToJsonString() const
         string key = "IsOverwrite";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOverwrite, allocator);
+    }
+
+    if (m_listPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_listPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -127,22 +136,6 @@ bool CreateLifecycleDataTaskRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-string CreateLifecycleDataTaskRequest::GetTaskPath() const
-{
-    return m_taskPath;
-}
-
-void CreateLifecycleDataTaskRequest::SetTaskPath(const string& _taskPath)
-{
-    m_taskPath = _taskPath;
-    m_taskPathHasBeenSet = true;
-}
-
-bool CreateLifecycleDataTaskRequest::TaskPathHasBeenSet() const
-{
-    return m_taskPathHasBeenSet;
-}
-
 string CreateLifecycleDataTaskRequest::GetTaskName() const
 {
     return m_taskName;
@@ -157,6 +150,22 @@ void CreateLifecycleDataTaskRequest::SetTaskName(const string& _taskName)
 bool CreateLifecycleDataTaskRequest::TaskNameHasBeenSet() const
 {
     return m_taskNameHasBeenSet;
+}
+
+string CreateLifecycleDataTaskRequest::GetTaskPath() const
+{
+    return m_taskPath;
+}
+
+void CreateLifecycleDataTaskRequest::SetTaskPath(const string& _taskPath)
+{
+    m_taskPath = _taskPath;
+    m_taskPathHasBeenSet = true;
+}
+
+bool CreateLifecycleDataTaskRequest::TaskPathHasBeenSet() const
+{
+    return m_taskPathHasBeenSet;
 }
 
 string CreateLifecycleDataTaskRequest::GetDataFlowId() const
@@ -189,6 +198,22 @@ void CreateLifecycleDataTaskRequest::SetIsOverwrite(const bool& _isOverwrite)
 bool CreateLifecycleDataTaskRequest::IsOverwriteHasBeenSet() const
 {
     return m_isOverwriteHasBeenSet;
+}
+
+string CreateLifecycleDataTaskRequest::GetListPath() const
+{
+    return m_listPath;
+}
+
+void CreateLifecycleDataTaskRequest::SetListPath(const string& _listPath)
+{
+    m_listPath = _listPath;
+    m_listPathHasBeenSet = true;
+}
+
+bool CreateLifecycleDataTaskRequest::ListPathHasBeenSet() const
+{
+    return m_listPathHasBeenSet;
 }
 
 

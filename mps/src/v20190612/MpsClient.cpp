@@ -490,6 +490,56 @@ MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::Crea
     return prom->get_future();
 }
 
+MpsClient::CreateAigcAudioTaskOutcome MpsClient::CreateAigcAudioTask(const CreateAigcAudioTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAudioTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAudioTaskResponse rsp = CreateAigcAudioTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAudioTaskOutcome(rsp);
+        else
+            return CreateAigcAudioTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAudioTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAigcAudioTaskAsync(const CreateAigcAudioTaskRequest& request, const CreateAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAudioTaskRequest&;
+    using Resp = CreateAigcAudioTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAudioTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAigcAudioTaskOutcomeCallable MpsClient::CreateAigcAudioTaskCallable(const CreateAigcAudioTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAudioTaskOutcome>>();
+    CreateAigcAudioTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAigcAudioTaskRequest&,
+        CreateAigcAudioTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAigcImageTaskOutcome MpsClient::CreateAigcImageTask(const CreateAigcImageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcImageTask");
@@ -4182,6 +4232,56 @@ MpsClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable MpsClient::D
         const MpsClient*,
         const DescribeAdaptiveDynamicStreamingTemplatesRequest&,
         DescribeAdaptiveDynamicStreamingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeAigcAudioTaskOutcome MpsClient::DescribeAigcAudioTask(const DescribeAigcAudioTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcAudioTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcAudioTaskResponse rsp = DescribeAigcAudioTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcAudioTaskOutcome(rsp);
+        else
+            return DescribeAigcAudioTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcAudioTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAigcAudioTaskAsync(const DescribeAigcAudioTaskRequest& request, const DescribeAigcAudioTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcAudioTaskRequest&;
+    using Resp = DescribeAigcAudioTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcAudioTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAigcAudioTaskOutcomeCallable MpsClient::DescribeAigcAudioTaskCallable(const DescribeAigcAudioTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcAudioTaskOutcome>>();
+    DescribeAigcAudioTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAigcAudioTaskRequest&,
+        DescribeAigcAudioTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

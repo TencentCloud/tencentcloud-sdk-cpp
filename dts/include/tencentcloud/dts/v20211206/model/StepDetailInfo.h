@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取步骤序列
-                     * @return StepNo 步骤序列
+                     * 获取<p>步骤序列</p>
+                     * @return StepNo <p>步骤序列</p>
                      * 
                      */
                     uint64_t GetStepNo() const;
 
                     /**
-                     * 设置步骤序列
-                     * @param _stepNo 步骤序列
+                     * 设置<p>步骤序列</p>
+                     * @param _stepNo <p>步骤序列</p>
                      * 
                      */
                     void SetStepNo(const uint64_t& _stepNo);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StepNoHasBeenSet() const;
 
                     /**
-                     * 获取步骤展现名称
-                     * @return StepName 步骤展现名称
+                     * 获取<p>步骤展现名称</p>
+                     * @return StepName <p>步骤展现名称</p>
                      * 
                      */
                     std::string GetStepName() const;
 
                     /**
-                     * 设置步骤展现名称
-                     * @param _stepName 步骤展现名称
+                     * 设置<p>步骤展现名称</p>
+                     * @param _stepName <p>步骤展现名称</p>
                      * 
                      */
                     void SetStepName(const std::string& _stepName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StepNameHasBeenSet() const;
 
                     /**
-                     * 获取步骤英文标识
-                     * @return StepId 步骤英文标识
+                     * 获取<p>步骤英文标识</p>
+                     * @return StepId <p>步骤英文标识</p>
                      * 
                      */
                     std::string GetStepId() const;
 
                     /**
-                     * 设置步骤英文标识
-                     * @param _stepId 步骤英文标识
+                     * 设置<p>步骤英文标识</p>
+                     * @param _stepId <p>步骤英文标识</p>
                      * 
                      */
                     void SetStepId(const std::string& _stepId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StepIdHasBeenSet() const;
 
                     /**
-                     * 获取步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-                     * @return Status 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
+                     * 获取<p>步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted</p>
+                     * @return Status <p>步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-                     * @param _status 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
+                     * 设置<p>步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted</p>
+                     * @param _status <p>步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>当前步骤开始的时间，格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。</p>
+                     * @return StartTime <p>当前步骤开始的时间，格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置<p>当前步骤开始的时间，格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。</p>
+                     * @param _startTime <p>当前步骤开始的时间，格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -153,15 +153,36 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取步骤错误信息
-                     * @return StepMessage 步骤错误信息
+                     * 获取<p>完成时间</p>
+                     * @return FinishTime <p>完成时间</p>
+                     * 
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置<p>完成时间</p>
+                     * @param _finishTime <p>完成时间</p>
+                     * 
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>步骤错误信息</p>
+                     * @return StepMessage <p>步骤错误信息</p>
                      * 
                      */
                     std::string GetStepMessage() const;
 
                     /**
-                     * 设置步骤错误信息
-                     * @param _stepMessage 步骤错误信息
+                     * 设置<p>步骤错误信息</p>
+                     * @param _stepMessage <p>步骤错误信息</p>
                      * 
                      */
                     void SetStepMessage(const std::string& _stepMessage);
@@ -174,15 +195,15 @@ namespace TencentCloud
                     bool StepMessageHasBeenSet() const;
 
                     /**
-                     * 获取执行进度
-                     * @return Percent 执行进度
+                     * 获取<p>执行进度</p>
+                     * @return Percent <p>执行进度</p>
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
-                     * 设置执行进度
-                     * @param _percent 执行进度
+                     * 设置<p>执行进度</p>
+                     * @param _percent <p>执行进度</p>
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -195,15 +216,15 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return Errors 错误信息
+                     * 获取<p>错误信息</p>
+                     * @return Errors <p>错误信息</p>
                      * 
                      */
                     std::vector<ProcessStepTip> GetErrors() const;
 
                     /**
-                     * 设置错误信息
-                     * @param _errors 错误信息
+                     * 设置<p>错误信息</p>
+                     * @param _errors <p>错误信息</p>
                      * 
                      */
                     void SetErrors(const std::vector<ProcessStepTip>& _errors);
@@ -216,15 +237,15 @@ namespace TencentCloud
                     bool ErrorsHasBeenSet() const;
 
                     /**
-                     * 获取告警提示
-                     * @return Warnings 告警提示
+                     * 获取<p>告警提示</p>
+                     * @return Warnings <p>告警提示</p>
                      * 
                      */
                     std::vector<ProcessStepTip> GetWarnings() const;
 
                     /**
-                     * 设置告警提示
-                     * @param _warnings 告警提示
+                     * 设置<p>告警提示</p>
+                     * @param _warnings <p>告警提示</p>
                      * 
                      */
                     void SetWarnings(const std::vector<ProcessStepTip>& _warnings);
@@ -239,55 +260,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 步骤序列
+                     * <p>步骤序列</p>
                      */
                     uint64_t m_stepNo;
                     bool m_stepNoHasBeenSet;
 
                     /**
-                     * 步骤展现名称
+                     * <p>步骤展现名称</p>
                      */
                     std::string m_stepName;
                     bool m_stepNameHasBeenSet;
 
                     /**
-                     * 步骤英文标识
+                     * <p>步骤英文标识</p>
                      */
                     std::string m_stepId;
                     bool m_stepIdHasBeenSet;
 
                     /**
-                     * 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
+                     * <p>步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>当前步骤开始的时间，格式为&quot;yyyy-mm-dd hh:mm:ss&quot;，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 步骤错误信息
+                     * <p>完成时间</p>
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * <p>步骤错误信息</p>
                      */
                     std::string m_stepMessage;
                     bool m_stepMessageHasBeenSet;
 
                     /**
-                     * 执行进度
+                     * <p>执行进度</p>
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
                      */
                     std::vector<ProcessStepTip> m_errors;
                     bool m_errorsHasBeenSet;
 
                     /**
-                     * 告警提示
+                     * <p>告警提示</p>
                      */
                     std::vector<ProcessStepTip> m_warnings;
                     bool m_warningsHasBeenSet;

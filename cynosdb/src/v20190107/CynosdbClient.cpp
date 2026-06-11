@@ -540,6 +540,56 @@ CynosdbClient::CalculateBackupSaveSecExpiresOutcomeCallable CynosdbClient::Calcu
     return prom->get_future();
 }
 
+CynosdbClient::CancelClusterServerlessScalePlanOutcome CynosdbClient::CancelClusterServerlessScalePlan(const CancelClusterServerlessScalePlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelClusterServerlessScalePlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelClusterServerlessScalePlanResponse rsp = CancelClusterServerlessScalePlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelClusterServerlessScalePlanOutcome(rsp);
+        else
+            return CancelClusterServerlessScalePlanOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelClusterServerlessScalePlanOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CancelClusterServerlessScalePlanAsync(const CancelClusterServerlessScalePlanRequest& request, const CancelClusterServerlessScalePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelClusterServerlessScalePlanRequest&;
+    using Resp = CancelClusterServerlessScalePlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelClusterServerlessScalePlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CancelClusterServerlessScalePlanOutcomeCallable CynosdbClient::CancelClusterServerlessScalePlanCallable(const CancelClusterServerlessScalePlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelClusterServerlessScalePlanOutcome>>();
+    CancelClusterServerlessScalePlanAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CancelClusterServerlessScalePlanRequest&,
+        CancelClusterServerlessScalePlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::CheckCreateLibraDBInstanceOutcome CynosdbClient::CheckCreateLibraDBInstance(const CheckCreateLibraDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckCreateLibraDBInstance");
@@ -1340,6 +1390,56 @@ CynosdbClient::CreateClusterDatabaseOutcomeCallable CynosdbClient::CreateCluster
     return prom->get_future();
 }
 
+CynosdbClient::CreateClusterPeriodScalePolicyOutcome CynosdbClient::CreateClusterPeriodScalePolicy(const CreateClusterPeriodScalePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterPeriodScalePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterPeriodScalePolicyResponse rsp = CreateClusterPeriodScalePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterPeriodScalePolicyOutcome(rsp);
+        else
+            return CreateClusterPeriodScalePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterPeriodScalePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateClusterPeriodScalePolicyAsync(const CreateClusterPeriodScalePolicyRequest& request, const CreateClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateClusterPeriodScalePolicyRequest&;
+    using Resp = CreateClusterPeriodScalePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateClusterPeriodScalePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CreateClusterPeriodScalePolicyOutcomeCallable CynosdbClient::CreateClusterPeriodScalePolicyCallable(const CreateClusterPeriodScalePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateClusterPeriodScalePolicyOutcome>>();
+    CreateClusterPeriodScalePolicyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateClusterPeriodScalePolicyRequest&,
+        CreateClusterPeriodScalePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusters");
@@ -2132,6 +2232,56 @@ CynosdbClient::DeleteClusterDatabaseOutcomeCallable CynosdbClient::DeleteCluster
         const CynosdbClient*,
         const DeleteClusterDatabaseRequest&,
         DeleteClusterDatabaseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DeleteClusterPeriodScalePolicyOutcome CynosdbClient::DeleteClusterPeriodScalePolicy(const DeleteClusterPeriodScalePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterPeriodScalePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterPeriodScalePolicyResponse rsp = DeleteClusterPeriodScalePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterPeriodScalePolicyOutcome(rsp);
+        else
+            return DeleteClusterPeriodScalePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterPeriodScalePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteClusterPeriodScalePolicyAsync(const DeleteClusterPeriodScalePolicyRequest& request, const DeleteClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteClusterPeriodScalePolicyRequest&;
+    using Resp = DeleteClusterPeriodScalePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterPeriodScalePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DeleteClusterPeriodScalePolicyOutcomeCallable CynosdbClient::DeleteClusterPeriodScalePolicyCallable(const DeleteClusterPeriodScalePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteClusterPeriodScalePolicyOutcome>>();
+    DeleteClusterPeriodScalePolicyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteClusterPeriodScalePolicyRequest&,
+        DeleteClusterPeriodScalePolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3840,6 +3990,56 @@ CynosdbClient::DescribeClusterPasswordComplexityOutcomeCallable CynosdbClient::D
     return prom->get_future();
 }
 
+CynosdbClient::DescribeClusterPeriodScalePolicyOutcome CynosdbClient::DescribeClusterPeriodScalePolicy(const DescribeClusterPeriodScalePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterPeriodScalePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterPeriodScalePolicyResponse rsp = DescribeClusterPeriodScalePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterPeriodScalePolicyOutcome(rsp);
+        else
+            return DescribeClusterPeriodScalePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterPeriodScalePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterPeriodScalePolicyAsync(const DescribeClusterPeriodScalePolicyRequest& request, const DescribeClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterPeriodScalePolicyRequest&;
+    using Resp = DescribeClusterPeriodScalePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterPeriodScalePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeClusterPeriodScalePolicyOutcomeCallable CynosdbClient::DescribeClusterPeriodScalePolicyCallable(const DescribeClusterPeriodScalePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterPeriodScalePolicyOutcome>>();
+    DescribeClusterPeriodScalePolicyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterPeriodScalePolicyRequest&,
+        DescribeClusterPeriodScalePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeClusterReadOnlyOutcome CynosdbClient::DescribeClusterReadOnly(const DescribeClusterReadOnlyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterReadOnly");
@@ -3882,6 +4082,56 @@ CynosdbClient::DescribeClusterReadOnlyOutcomeCallable CynosdbClient::DescribeClu
         const CynosdbClient*,
         const DescribeClusterReadOnlyRequest&,
         DescribeClusterReadOnlyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeClusterServerlessScalePlansOutcome CynosdbClient::DescribeClusterServerlessScalePlans(const DescribeClusterServerlessScalePlansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterServerlessScalePlans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterServerlessScalePlansResponse rsp = DescribeClusterServerlessScalePlansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterServerlessScalePlansOutcome(rsp);
+        else
+            return DescribeClusterServerlessScalePlansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterServerlessScalePlansOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterServerlessScalePlansAsync(const DescribeClusterServerlessScalePlansRequest& request, const DescribeClusterServerlessScalePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterServerlessScalePlansRequest&;
+    using Resp = DescribeClusterServerlessScalePlansResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterServerlessScalePlans", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeClusterServerlessScalePlansOutcomeCallable CynosdbClient::DescribeClusterServerlessScalePlansCallable(const DescribeClusterServerlessScalePlansRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterServerlessScalePlansOutcome>>();
+    DescribeClusterServerlessScalePlansAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeClusterServerlessScalePlansRequest&,
+        DescribeClusterServerlessScalePlansOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8140,6 +8390,56 @@ CynosdbClient::ModifyClusterPasswordComplexityOutcomeCallable CynosdbClient::Mod
     return prom->get_future();
 }
 
+CynosdbClient::ModifyClusterPeriodScalePolicyOutcome CynosdbClient::ModifyClusterPeriodScalePolicy(const ModifyClusterPeriodScalePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterPeriodScalePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterPeriodScalePolicyResponse rsp = ModifyClusterPeriodScalePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterPeriodScalePolicyOutcome(rsp);
+        else
+            return ModifyClusterPeriodScalePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterPeriodScalePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterPeriodScalePolicyAsync(const ModifyClusterPeriodScalePolicyRequest& request, const ModifyClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterPeriodScalePolicyRequest&;
+    using Resp = ModifyClusterPeriodScalePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterPeriodScalePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::ModifyClusterPeriodScalePolicyOutcomeCallable CynosdbClient::ModifyClusterPeriodScalePolicyCallable(const ModifyClusterPeriodScalePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterPeriodScalePolicyOutcome>>();
+    ModifyClusterPeriodScalePolicyAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterPeriodScalePolicyRequest&,
+        ModifyClusterPeriodScalePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::ModifyClusterReadOnlyOutcome CynosdbClient::ModifyClusterReadOnly(const ModifyClusterReadOnlyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterReadOnly");
@@ -9632,6 +9932,56 @@ CynosdbClient::OfflineLibraDBInstanceOutcomeCallable CynosdbClient::OfflineLibra
         const CynosdbClient*,
         const OfflineLibraDBInstanceRequest&,
         OfflineLibraDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::OpenAIOptimizerOutcome CynosdbClient::OpenAIOptimizer(const OpenAIOptimizerRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAIOptimizer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAIOptimizerResponse rsp = OpenAIOptimizerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAIOptimizerOutcome(rsp);
+        else
+            return OpenAIOptimizerOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAIOptimizerOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenAIOptimizerAsync(const OpenAIOptimizerRequest& request, const OpenAIOptimizerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenAIOptimizerRequest&;
+    using Resp = OpenAIOptimizerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenAIOptimizer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::OpenAIOptimizerOutcomeCallable CynosdbClient::OpenAIOptimizerCallable(const OpenAIOptimizerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenAIOptimizerOutcome>>();
+    OpenAIOptimizerAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const OpenAIOptimizerRequest&,
+        OpenAIOptimizerOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

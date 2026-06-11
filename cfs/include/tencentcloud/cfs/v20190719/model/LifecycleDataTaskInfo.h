@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,31 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态.
-init：未执行
-running：执行中，finished：已完成
-,failed：失败
-,stopping：停止中,stopped：已停止
-                     * @return TaskStatus 任务状态.
-init：未执行
-running：执行中，finished：已完成
-,failed：失败
-,stopping：停止中,stopped：已停止
+                     * 获取<p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
+                     * @return TaskStatus <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态.
-init：未执行
-running：执行中，finished：已完成
-,failed：失败
-,stopping：停止中,stopped：已停止
-                     * @param _taskStatus 任务状态.
-init：未执行
-running：执行中，finished：已完成
-,failed：失败
-,stopping：停止中,stopped：已停止
+                     * 设置<p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
+                     * @param _taskStatus <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -105,15 +89,15 @@ running：执行中，finished：已完成
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreationTime 任务创建时间
+                     * 获取<p>任务创建时间</p>
+                     * @return CreationTime <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _creationTime 任务创建时间
+                     * 设置<p>任务创建时间</p>
+                     * @param _creationTime <p>任务创建时间</p>
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -126,15 +110,15 @@ running：执行中，finished：已完成
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间
-                     * @return FinishTime 任务结束时间
+                     * 获取<p>任务结束时间</p>
+                     * @return FinishTime <p>任务结束时间</p>
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置任务结束时间
-                     * @param _finishTime 任务结束时间
+                     * 设置<p>任务结束时间</p>
+                     * @param _finishTime <p>任务结束时间</p>
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -147,15 +131,15 @@ running：执行中，finished：已完成
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件总数
-                     * @return FileTotalCount 文件总数
+                     * 获取<p>文件总数</p>
+                     * @return FileTotalCount <p>文件总数</p>
                      * 
                      */
                     uint64_t GetFileTotalCount() const;
 
                     /**
-                     * 设置文件总数
-                     * @param _fileTotalCount 文件总数
+                     * 设置<p>文件总数</p>
+                     * @param _fileTotalCount <p>文件总数</p>
                      * 
                      */
                     void SetFileTotalCount(const uint64_t& _fileTotalCount);
@@ -168,15 +152,15 @@ running：执行中，finished：已完成
                     bool FileTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取处理成功文件数量
-                     * @return FileSuccessedCount 处理成功文件数量
+                     * 获取<p>处理成功文件数量</p>
+                     * @return FileSuccessedCount <p>处理成功文件数量</p>
                      * 
                      */
                     uint64_t GetFileSuccessedCount() const;
 
                     /**
-                     * 设置处理成功文件数量
-                     * @param _fileSuccessedCount 处理成功文件数量
+                     * 设置<p>处理成功文件数量</p>
+                     * @param _fileSuccessedCount <p>处理成功文件数量</p>
                      * 
                      */
                     void SetFileSuccessedCount(const uint64_t& _fileSuccessedCount);
@@ -189,15 +173,15 @@ running：执行中，finished：已完成
                     bool FileSuccessedCountHasBeenSet() const;
 
                     /**
-                     * 获取当前已经失败的文件数
-                     * @return FileFailedCount 当前已经失败的文件数
+                     * 获取<p>当前已经失败的文件数</p>
+                     * @return FileFailedCount <p>当前已经失败的文件数</p>
                      * 
                      */
                     uint64_t GetFileFailedCount() const;
 
                     /**
-                     * 设置当前已经失败的文件数
-                     * @param _fileFailedCount 当前已经失败的文件数
+                     * 设置<p>当前已经失败的文件数</p>
+                     * @param _fileFailedCount <p>当前已经失败的文件数</p>
                      * 
                      */
                     void SetFileFailedCount(const uint64_t& _fileFailedCount);
@@ -210,23 +194,15 @@ running：执行中，finished：已完成
                     bool FileFailedCountHasBeenSet() const;
 
                     /**
-                     * 获取文件容量，单位Byte
-
-
-                     * @return FileTotalSize 文件容量，单位Byte
-
-
+                     * 获取<p>文件容量，单位Byte</p>
+                     * @return FileTotalSize <p>文件容量，单位Byte</p>
                      * 
                      */
                     uint64_t GetFileTotalSize() const;
 
                     /**
-                     * 设置文件容量，单位Byte
-
-
-                     * @param _fileTotalSize 文件容量，单位Byte
-
-
+                     * 设置<p>文件容量，单位Byte</p>
+                     * @param _fileTotalSize <p>文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileTotalSize(const uint64_t& _fileTotalSize);
@@ -239,23 +215,15 @@ running：执行中，finished：已完成
                     bool FileTotalSizeHasBeenSet() const;
 
                     /**
-                     * 获取已处理完成的文件容量，单位Byte
-
-
-                     * @return FileSuccessedSize 已处理完成的文件容量，单位Byte
-
-
+                     * 获取<p>已处理完成的文件容量，单位Byte</p>
+                     * @return FileSuccessedSize <p>已处理完成的文件容量，单位Byte</p>
                      * 
                      */
                     uint64_t GetFileSuccessedSize() const;
 
                     /**
-                     * 设置已处理完成的文件容量，单位Byte
-
-
-                     * @param _fileSuccessedSize 已处理完成的文件容量，单位Byte
-
-
+                     * 设置<p>已处理完成的文件容量，单位Byte</p>
+                     * @param _fileSuccessedSize <p>已处理完成的文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileSuccessedSize(const uint64_t& _fileSuccessedSize);
@@ -268,19 +236,15 @@ running：执行中，finished：已完成
                     bool FileSuccessedSizeHasBeenSet() const;
 
                     /**
-                     * 获取已处理失败文件容量，单位Byte
-
-                     * @return FileFailedSize 已处理失败文件容量，单位Byte
-
+                     * 获取<p>已处理失败文件容量，单位Byte</p>
+                     * @return FileFailedSize <p>已处理失败文件容量，单位Byte</p>
                      * 
                      */
                     uint64_t GetFileFailedSize() const;
 
                     /**
-                     * 设置已处理失败文件容量，单位Byte
-
-                     * @param _fileFailedSize 已处理失败文件容量，单位Byte
-
+                     * 设置<p>已处理失败文件容量，单位Byte</p>
+                     * @param _fileFailedSize <p>已处理失败文件容量，单位Byte</p>
                      * 
                      */
                     void SetFileFailedSize(const uint64_t& _fileFailedSize);
@@ -293,15 +257,15 @@ running：执行中，finished：已完成
                     bool FileFailedSizeHasBeenSet() const;
 
                     /**
-                     * 获取总文件列表
-                     * @return FileTotalList 总文件列表
+                     * 获取<p>总文件列表</p>
+                     * @return FileTotalList <p>总文件列表</p>
                      * 
                      */
                     std::string GetFileTotalList() const;
 
                     /**
-                     * 设置总文件列表
-                     * @param _fileTotalList 总文件列表
+                     * 设置<p>总文件列表</p>
+                     * @param _fileTotalList <p>总文件列表</p>
                      * 
                      */
                     void SetFileTotalList(const std::string& _fileTotalList);
@@ -314,15 +278,15 @@ running：执行中，finished：已完成
                     bool FileTotalListHasBeenSet() const;
 
                     /**
-                     * 获取成功的文件列表
-                     * @return FileSuccessedList 成功的文件列表
+                     * 获取<p>成功的文件列表</p>
+                     * @return FileSuccessedList <p>成功的文件列表</p>
                      * 
                      */
                     std::string GetFileSuccessedList() const;
 
                     /**
-                     * 设置成功的文件列表
-                     * @param _fileSuccessedList 成功的文件列表
+                     * 设置<p>成功的文件列表</p>
+                     * @param _fileSuccessedList <p>成功的文件列表</p>
                      * 
                      */
                     void SetFileSuccessedList(const std::string& _fileSuccessedList);
@@ -335,15 +299,15 @@ running：执行中，finished：已完成
                     bool FileSuccessedListHasBeenSet() const;
 
                     /**
-                     * 获取失败文件的列表
-                     * @return FileFailedList 失败文件的列表
+                     * 获取<p>失败文件的列表</p>
+                     * @return FileFailedList <p>失败文件的列表</p>
                      * 
                      */
                     std::string GetFileFailedList() const;
 
                     /**
-                     * 设置失败文件的列表
-                     * @param _fileFailedList 失败文件的列表
+                     * 设置<p>失败文件的列表</p>
+                     * @param _fileFailedList <p>失败文件的列表</p>
                      * 
                      */
                     void SetFileFailedList(const std::string& _fileFailedList);
@@ -356,15 +320,15 @@ running：执行中，finished：已完成
                     bool FileFailedListHasBeenSet() const;
 
                     /**
-                     * 获取FileSystemId
-                     * @return FileSystemId FileSystemId
+                     * 获取<p>FileSystemId</p>
+                     * @return FileSystemId <p>FileSystemId</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置FileSystemId
-                     * @param _fileSystemId FileSystemId
+                     * 设置<p>FileSystemId</p>
+                     * @param _fileSystemId <p>FileSystemId</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -377,15 +341,15 @@ running：执行中，finished：已完成
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return TaskName 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return TaskName <p>任务名称</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _taskName 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _taskName <p>任务名称</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -398,15 +362,15 @@ running：执行中，finished：已完成
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务路径
-                     * @return TaskPath 任务路径
+                     * 获取<p>任务路径</p>
+                     * @return TaskPath <p>任务路径</p>
                      * 
                      */
                     std::string GetTaskPath() const;
 
                     /**
-                     * 设置任务路径
-                     * @param _taskPath 任务路径
+                     * 设置<p>任务路径</p>
+                     * @param _taskPath <p>任务路径</p>
                      * 
                      */
                     void SetTaskPath(const std::string& _taskPath);
@@ -419,15 +383,15 @@ running：执行中，finished：已完成
                     bool TaskPathHasBeenSet() const;
 
                     /**
-                     * 获取任务类型,archive:表示沉降任务，restore：表示拉取任务
-                     * @return Type 任务类型,archive:表示沉降任务，restore：表示拉取任务
+                     * 获取<p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>
+                     * @return Type <p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务类型,archive:表示沉降任务，restore：表示拉取任务
-                     * @param _type 任务类型,archive:表示沉降任务，restore：表示拉取任务
+                     * 设置<p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>
+                     * @param _type <p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -440,15 +404,15 @@ running：执行中，finished：已完成
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数据流动Id
-                     * @return DataFlowId 数据流动Id
+                     * 获取<p>数据流动Id</p>
+                     * @return DataFlowId <p>数据流动Id</p>
                      * 
                      */
                     std::string GetDataFlowId() const;
 
                     /**
-                     * 设置数据流动Id
-                     * @param _dataFlowId 数据流动Id
+                     * 设置<p>数据流动Id</p>
+                     * @param _dataFlowId <p>数据流动Id</p>
                      * 
                      */
                     void SetDataFlowId(const std::string& _dataFlowId);
@@ -461,35 +425,15 @@ running：执行中，finished：已完成
                     bool DataFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
-
-ture：覆盖
-
-false：不覆盖（同时也不会释放热存数据）
-为空时，默认为false
-                     * @return IsOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
-
-ture：覆盖
-
-false：不覆盖（同时也不会释放热存数据）
-为空时，默认为false
+                     * 获取<p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>
+                     * @return IsOverwrite <p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>
                      * 
                      */
                     bool GetIsOverwrite() const;
 
                     /**
-                     * 设置当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
-
-ture：覆盖
-
-false：不覆盖（同时也不会释放热存数据）
-为空时，默认为false
-                     * @param _isOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
-
-ture：覆盖
-
-false：不覆盖（同时也不会释放热存数据）
-为空时，默认为false
+                     * 设置<p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>
+                     * @param _isOverwrite <p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>
                      * 
                      */
                     void SetIsOverwrite(const bool& _isOverwrite);
@@ -501,135 +445,148 @@ false：不覆盖（同时也不会释放热存数据）
                      */
                     bool IsOverwriteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>
+                     * @return ListPath <p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>
+                     * 
+                     */
+                    std::string GetListPath() const;
+
+                    /**
+                     * 设置<p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>
+                     * @param _listPath <p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>
+                     * 
+                     */
+                    void SetListPath(const std::string& _listPath);
+
+                    /**
+                     * 判断参数 ListPath 是否已赋值
+                     * @return ListPath 是否已赋值
+                     * 
+                     */
+                    bool ListPathHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态.
-init：未执行
-running：执行中，finished：已完成
-,failed：失败
-,stopping：停止中,stopped：已停止
+                     * <p>任务状态.<br>init：未执行<br>running：执行中，finished：已完成<br>,failed：失败<br>,stopping：停止中,stopped：已停止</p>
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间
+                     * <p>任务结束时间</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 文件总数
+                     * <p>文件总数</p>
                      */
                     uint64_t m_fileTotalCount;
                     bool m_fileTotalCountHasBeenSet;
 
                     /**
-                     * 处理成功文件数量
+                     * <p>处理成功文件数量</p>
                      */
                     uint64_t m_fileSuccessedCount;
                     bool m_fileSuccessedCountHasBeenSet;
 
                     /**
-                     * 当前已经失败的文件数
+                     * <p>当前已经失败的文件数</p>
                      */
                     uint64_t m_fileFailedCount;
                     bool m_fileFailedCountHasBeenSet;
 
                     /**
-                     * 文件容量，单位Byte
-
-
+                     * <p>文件容量，单位Byte</p>
                      */
                     uint64_t m_fileTotalSize;
                     bool m_fileTotalSizeHasBeenSet;
 
                     /**
-                     * 已处理完成的文件容量，单位Byte
-
-
+                     * <p>已处理完成的文件容量，单位Byte</p>
                      */
                     uint64_t m_fileSuccessedSize;
                     bool m_fileSuccessedSizeHasBeenSet;
 
                     /**
-                     * 已处理失败文件容量，单位Byte
-
+                     * <p>已处理失败文件容量，单位Byte</p>
                      */
                     uint64_t m_fileFailedSize;
                     bool m_fileFailedSizeHasBeenSet;
 
                     /**
-                     * 总文件列表
+                     * <p>总文件列表</p>
                      */
                     std::string m_fileTotalList;
                     bool m_fileTotalListHasBeenSet;
 
                     /**
-                     * 成功的文件列表
+                     * <p>成功的文件列表</p>
                      */
                     std::string m_fileSuccessedList;
                     bool m_fileSuccessedListHasBeenSet;
 
                     /**
-                     * 失败文件的列表
+                     * <p>失败文件的列表</p>
                      */
                     std::string m_fileFailedList;
                     bool m_fileFailedListHasBeenSet;
 
                     /**
-                     * FileSystemId
+                     * <p>FileSystemId</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务路径
+                     * <p>任务路径</p>
                      */
                     std::string m_taskPath;
                     bool m_taskPathHasBeenSet;
 
                     /**
-                     * 任务类型,archive:表示沉降任务，restore：表示拉取任务
+                     * <p>任务类型,archive:表示沉降任务，restore：表示拉取任务</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数据流动Id
+                     * <p>数据流动Id</p>
                      */
                     std::string m_dataFlowId;
                     bool m_dataFlowIdHasBeenSet;
 
                     /**
-                     * 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
-
-ture：覆盖
-
-false：不覆盖（同时也不会释放热存数据）
-为空时，默认为false
+                     * <p>当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。</p><p>ture：覆盖</p><p>false：不覆盖（同时也不会释放热存数据）<br>为空时，默认为false</p>
                      */
                     bool m_isOverwrite;
                     bool m_isOverwriteHasBeenSet;
+
+                    /**
+                     * <p>【新增】数据清单文件路径，清单文件内每行一条待处理文件的完整路径。与 TaskPath 二选一。路径必须以 /cfs 开头，且必须为 CFS 文件系统内已存在的文件。示例值：/cfs/lists/archive_list.txt</p>
+                     */
+                    std::string m_listPath;
+                    bool m_listPathHasBeenSet;
 
                 };
             }

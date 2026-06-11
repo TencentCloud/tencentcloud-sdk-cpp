@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>
-                     * @return EncodeConfig <p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>
+                     * 获取<p>输出图片编码格式参数。</p>
+                     * @return EncodeConfig <p>输出图片编码格式参数。</p>
                      * 
                      */
                     ImageSceneAigcEncodeConfig GetEncodeConfig() const;
 
                     /**
-                     * 设置<p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>
-                     * @param _encodeConfig <p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>
+                     * 设置<p>输出图片编码格式参数。</p>
+                     * @param _encodeConfig <p>输出图片编码格式参数。</p>
                      * 
                      */
                     void SetEncodeConfig(const ImageSceneAigcEncodeConfig& _encodeConfig);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool ImageHeightHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>
-                     * @return Resolution <p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>
+                     * 获取<p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>
+                     * @return Resolution <p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置<p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>
-                     * @param _resolution <p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>
+                     * 设置<p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>
+                     * @param _resolution <p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * <p>输出图片编码格式参数。<strong>仅AI换衣场景有效。</strong></p>
+                     * <p>输出图片编码格式参数。</p>
                      */
                     ImageSceneAigcEncodeConfig m_encodeConfig;
                     bool m_encodeConfigHasBeenSet;
@@ -287,7 +287,7 @@ namespace TencentCloud
                     bool m_imageHeightHasBeenSet;
 
                     /**
-                     * <p>输出分辨率。仅change_clothes、change_clothes_under场景有效。可选值：1K、2K、4K。</p>
+                     * <p>输出分辨率。仅<code>ai_try_on</code>场景有效。可选值：1K、2K、4K。</p>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;

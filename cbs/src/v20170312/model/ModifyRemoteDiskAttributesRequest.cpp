@@ -22,7 +22,10 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-ModifyRemoteDiskAttributesRequest::ModifyRemoteDiskAttributesRequest()
+ModifyRemoteDiskAttributesRequest::ModifyRemoteDiskAttributesRequest() :
+    m_remoteDiskIdsHasBeenSet(false),
+    m_diskNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,35 @@ string ModifyRemoteDiskAttributesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_remoteDiskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteDiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_remoteDiskIds.begin(); itr != m_remoteDiskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_diskNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +72,53 @@ string ModifyRemoteDiskAttributesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> ModifyRemoteDiskAttributesRequest::GetRemoteDiskIds() const
+{
+    return m_remoteDiskIds;
+}
+
+void ModifyRemoteDiskAttributesRequest::SetRemoteDiskIds(const vector<string>& _remoteDiskIds)
+{
+    m_remoteDiskIds = _remoteDiskIds;
+    m_remoteDiskIdsHasBeenSet = true;
+}
+
+bool ModifyRemoteDiskAttributesRequest::RemoteDiskIdsHasBeenSet() const
+{
+    return m_remoteDiskIdsHasBeenSet;
+}
+
+string ModifyRemoteDiskAttributesRequest::GetDiskName() const
+{
+    return m_diskName;
+}
+
+void ModifyRemoteDiskAttributesRequest::SetDiskName(const string& _diskName)
+{
+    m_diskName = _diskName;
+    m_diskNameHasBeenSet = true;
+}
+
+bool ModifyRemoteDiskAttributesRequest::DiskNameHasBeenSet() const
+{
+    return m_diskNameHasBeenSet;
+}
+
+uint64_t ModifyRemoteDiskAttributesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyRemoteDiskAttributesRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyRemoteDiskAttributesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
 
 

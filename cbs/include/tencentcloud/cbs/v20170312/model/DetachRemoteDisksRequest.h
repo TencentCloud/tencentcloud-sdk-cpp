@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>
+                     * @return InstanceId <p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>
+                     * @param _instanceId <p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>一个或多个将要卸载的单副本SSD硬盘ID。</p>
+                     * @return RemoteDiskIds <p>一个或多个将要卸载的单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRemoteDiskIds() const;
+
+                    /**
+                     * 设置<p>一个或多个将要卸载的单副本SSD硬盘ID。</p>
+                     * @param _remoteDiskIds <p>一个或多个将要卸载的单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    void SetRemoteDiskIds(const std::vector<std::string>& _remoteDiskIds);
+
+                    /**
+                     * 判断参数 RemoteDiskIds 是否已赋值
+                     * @return RemoteDiskIds 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>强制解挂，内部使用。</p>
+                     * @return ForceDetach <p>强制解挂，内部使用。</p>
+                     * 
+                     */
+                    bool GetForceDetach() const;
+
+                    /**
+                     * 设置<p>强制解挂，内部使用。</p>
+                     * @param _forceDetach <p>强制解挂，内部使用。</p>
+                     * 
+                     */
+                    void SetForceDetach(const bool& _forceDetach);
+
+                    /**
+                     * 判断参数 ForceDetach 是否已赋值
+                     * @return ForceDetach 是否已赋值
+                     * 
+                     */
+                    bool ForceDetachHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>指定从特定CVM实例上卸载单副本SSD硬盘。</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>一个或多个将要卸载的单副本SSD硬盘ID。</p>
+                     */
+                    std::vector<std::string> m_remoteDiskIds;
+                    bool m_remoteDiskIdsHasBeenSet;
+
+                    /**
+                     * <p>强制解挂，内部使用。</p>
+                     */
+                    bool m_forceDetach;
+                    bool m_forceDetachHasBeenSet;
 
                 };
             }

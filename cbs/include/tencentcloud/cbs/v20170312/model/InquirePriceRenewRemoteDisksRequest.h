@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/RemoteDiskChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>
+                     * @return DiskChargePrepaidSet <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>
+                     * 
+                     */
+                    std::vector<RemoteDiskChargePrepaid> GetDiskChargePrepaidSet() const;
+
+                    /**
+                     * 设置<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>
+                     * @param _diskChargePrepaidSet <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>
+                     * 
+                     */
+                    void SetDiskChargePrepaidSet(const std::vector<RemoteDiskChargePrepaid>& _diskChargePrepaidSet);
+
+                    /**
+                     * 判断参数 DiskChargePrepaidSet 是否已赋值
+                     * @return DiskChargePrepaidSet 是否已赋值
+                     * 
+                     */
+                    bool DiskChargePrepaidSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>一个或多个单副本SSD硬盘ID。</p>
+                     * @return RemoteDiskIds <p>一个或多个单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRemoteDiskIds() const;
+
+                    /**
+                     * 设置<p>一个或多个单副本SSD硬盘ID。</p>
+                     * @param _remoteDiskIds <p>一个或多个单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    void SetRemoteDiskIds(const std::vector<std::string>& _remoteDiskIds);
+
+                    /**
+                     * 判断参数 RemoteDiskIds 是否已赋值
+                     * @return RemoteDiskIds 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。</p>
+                     */
+                    std::vector<RemoteDiskChargePrepaid> m_diskChargePrepaidSet;
+                    bool m_diskChargePrepaidSetHasBeenSet;
+
+                    /**
+                     * <p>一个或多个单副本SSD硬盘ID。</p>
+                     */
+                    std::vector<std::string> m_remoteDiskIds;
+                    bool m_remoteDiskIdsHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取裁剪后的视频地址。
-                     * @return Url 裁剪后的视频地址。
+                     * 获取<p>裁剪后的视频地址。</p>
+                     * @return Url <p>裁剪后的视频地址。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。
-                     * @return MetaData 裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。
+                     * 获取<p>裁剪后的视频元信息。目前<code>Size</code>，<code>Rotate</code>，<code>VideoDuration</code>，<code>AudioDuration</code> 几个字段暂时缺省，没有真实数据。</p>
+                     * @return MetaData <p>裁剪后的视频元信息。目前<code>Size</code>，<code>Rotate</code>，<code>VideoDuration</code>，<code>AudioDuration</code> 几个字段暂时缺省，没有真实数据。</p>
                      * 
                      */
                     MediaMetaData GetMetaData() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取剪辑固化后的视频的媒体文件的唯一标识。
-                     * @return FileId 剪辑固化后的视频的媒体文件的唯一标识。
+                     * 获取<p>剪辑固化后的视频的媒体文件的唯一标识。</p>
+                     * @return FileId <p>剪辑固化后的视频的媒体文件的唯一标识。</p>
                      * 
                      */
                     std::string GetFileId() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取剪辑固化后的视频任务流 ID。
-                     * @return TaskId 剪辑固化后的视频任务流 ID。
+                     * 获取<p>剪辑固化后的视频任务流 ID。</p>
+                     * @return TaskId <p>剪辑固化后的视频任务流 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 裁剪后的视频地址。
+                     * <p>裁剪后的视频地址。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。
+                     * <p>裁剪后的视频元信息。目前<code>Size</code>，<code>Rotate</code>，<code>VideoDuration</code>，<code>AudioDuration</code> 几个字段暂时缺省，没有真实数据。</p>
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 剪辑固化后的视频的媒体文件的唯一标识。
+                     * <p>剪辑固化后的视频的媒体文件的唯一标识。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 剪辑固化后的视频任务流 ID。
+                     * <p>剪辑固化后的视频任务流 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

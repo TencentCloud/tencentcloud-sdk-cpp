@@ -38,7 +38,8 @@ WorkflowExtOpsDto::WorkflowExtOpsDto() :
     m_modifyUserHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
-    m_bundleInfoHasBeenSet(false)
+    m_bundleInfoHasBeenSet(false),
+    m_nestedBySpTaskIdsHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,19 @@ CoreInternalOutcome WorkflowExtOpsDto::Deserialize(const rapidjson::Value &value
         m_bundleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("NestedBySpTaskIds") && !value["NestedBySpTaskIds"].IsNull())
+    {
+        if (!value["NestedBySpTaskIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkflowExtOpsDto.NestedBySpTaskIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NestedBySpTaskIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nestedBySpTaskIds.push_back((*itr).GetString());
+        }
+        m_nestedBySpTaskIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +390,19 @@ void WorkflowExtOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BundleInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nestedBySpTaskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NestedBySpTaskIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nestedBySpTaskIds.begin(); itr != m_nestedBySpTaskIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -667,5 +694,21 @@ void WorkflowExtOpsDto::SetBundleInfo(const string& _bundleInfo)
 bool WorkflowExtOpsDto::BundleInfoHasBeenSet() const
 {
     return m_bundleInfoHasBeenSet;
+}
+
+vector<string> WorkflowExtOpsDto::GetNestedBySpTaskIds() const
+{
+    return m_nestedBySpTaskIds;
+}
+
+void WorkflowExtOpsDto::SetNestedBySpTaskIds(const vector<string>& _nestedBySpTaskIds)
+{
+    m_nestedBySpTaskIds = _nestedBySpTaskIds;
+    m_nestedBySpTaskIdsHasBeenSet = true;
+}
+
+bool WorkflowExtOpsDto::NestedBySpTaskIdsHasBeenSet() const
+{
+    return m_nestedBySpTaskIdsHasBeenSet;
 }
 

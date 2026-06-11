@@ -69,6 +69,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/SpanTag.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h
+  include/tencentcloud/apm/v20210622/model/TopologyNodeStats.h
   include/tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/SpanLog.h
   include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
@@ -108,6 +109,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmAgentInfo.h
   include/tencentcloud/apm/v20210622/model/ApmApplicationConfigView.h
   include/tencentcloud/apm/v20210622/model/OrderBy.h
+  include/tencentcloud/apm/v20210622/model/OverviewStats.h
   include/tencentcloud/apm/v20210622/model/ApmField.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
   include/tencentcloud/apm/v20210622/model/ApmAssociation.h
@@ -176,6 +178,7 @@ set(apm_src
   src/v20210622/model/ModifyApmInstanceResponse.cpp
   src/v20210622/model/SpanTag.cpp
   src/v20210622/model/DescribeGeneralMetricDataResponse.cpp
+  src/v20210622/model/TopologyNodeStats.cpp
   src/v20210622/model/ModifyApmInstanceRequest.cpp
   src/v20210622/model/SpanLog.cpp
   src/v20210622/model/QueryMetricItem.cpp
@@ -215,6 +218,7 @@ set(apm_src
   src/v20210622/model/ApmAgentInfo.cpp
   src/v20210622/model/ApmApplicationConfigView.cpp
   src/v20210622/model/OrderBy.cpp
+  src/v20210622/model/OverviewStats.cpp
   src/v20210622/model/ApmField.cpp
   src/v20210622/model/DescribeGeneralSpanListResponse.cpp
   src/v20210622/model/ApmAssociation.cpp

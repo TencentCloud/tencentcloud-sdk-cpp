@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/BlindWatermarkConfig.h>
 #include <tencentcloud/mps/v20190612/model/BeautyConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageTransformConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiTryOnConfig.h>
 
 
 namespace TencentCloud
@@ -53,18 +54,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片编码配置。
+                     * 获取<p>图片编码配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EncodeConfig 图片编码配置。
+                     * @return EncodeConfig <p>图片编码配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageEncodeConfig GetEncodeConfig() const;
 
                     /**
-                     * 设置图片编码配置。
+                     * 设置<p>图片编码配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encodeConfig 图片编码配置。
+                     * @param _encodeConfig <p>图片编码配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,18 +79,18 @@ namespace TencentCloud
                     bool EncodeConfigHasBeenSet() const;
 
                     /**
-                     * 获取图片增强配置。
+                     * 获取<p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnhanceConfig 图片增强配置。
+                     * @return EnhanceConfig <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageEnhanceConfig GetEnhanceConfig() const;
 
                     /**
-                     * 设置图片增强配置。
+                     * 设置<p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enhanceConfig 图片增强配置。
+                     * @param _enhanceConfig <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -103,18 +104,18 @@ namespace TencentCloud
                     bool EnhanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取图片擦除配置。
+                     * 获取<p>图片擦除配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EraseConfig 图片擦除配置。
+                     * @return EraseConfig <p>图片擦除配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageEraseConfig GetEraseConfig() const;
 
                     /**
-                     * 设置图片擦除配置。
+                     * 设置<p>图片擦除配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eraseConfig 图片擦除配置。
+                     * @param _eraseConfig <p>图片擦除配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,18 +129,18 @@ namespace TencentCloud
                     bool EraseConfigHasBeenSet() const;
 
                     /**
-                     * 获取盲水印配置。
+                     * 获取<p>盲水印配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BlindWatermarkConfig 盲水印配置。
+                     * @return BlindWatermarkConfig <p>盲水印配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlindWatermarkConfig GetBlindWatermarkConfig() const;
 
                     /**
-                     * 设置盲水印配置。
+                     * 设置<p>盲水印配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _blindWatermarkConfig 盲水印配置。
+                     * @param _blindWatermarkConfig <p>盲水印配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool BlindWatermarkConfigHasBeenSet() const;
 
                     /**
-                     * 获取美颜配置。
-                     * @return BeautyConfig 美颜配置。
+                     * 获取<p>美颜配置。</p>
+                     * @return BeautyConfig <p>美颜配置。</p>
                      * 
                      */
                     BeautyConfig GetBeautyConfig() const;
 
                     /**
-                     * 设置美颜配置。
-                     * @param _beautyConfig 美颜配置。
+                     * 设置<p>美颜配置。</p>
+                     * @param _beautyConfig <p>美颜配置。</p>
                      * 
                      */
                     void SetBeautyConfig(const BeautyConfig& _beautyConfig);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool BeautyConfigHasBeenSet() const;
 
                     /**
-                     * 获取图片基础转换能力。
-                     * @return TransformConfig 图片基础转换能力。
+                     * 获取<p>图片基础转换能力。</p>
+                     * @return TransformConfig <p>图片基础转换能力。</p>
                      * 
                      */
                     ImageTransformConfig GetTransformConfig() const;
 
                     /**
-                     * 设置图片基础转换能力。
-                     * @param _transformConfig 图片基础转换能力。
+                     * 设置<p>图片基础转换能力。</p>
+                     * @param _transformConfig <p>图片基础转换能力。</p>
                      * 
                      */
                     void SetTransformConfig(const ImageTransformConfig& _transformConfig);
@@ -194,47 +195,74 @@ namespace TencentCloud
                      */
                     bool TransformConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ai 换装配置。</p>
+                     * @return AiTryOnConfig <p>Ai 换装配置。</p>
+                     * 
+                     */
+                    AiTryOnConfig GetAiTryOnConfig() const;
+
+                    /**
+                     * 设置<p>Ai 换装配置。</p>
+                     * @param _aiTryOnConfig <p>Ai 换装配置。</p>
+                     * 
+                     */
+                    void SetAiTryOnConfig(const AiTryOnConfig& _aiTryOnConfig);
+
+                    /**
+                     * 判断参数 AiTryOnConfig 是否已赋值
+                     * @return AiTryOnConfig 是否已赋值
+                     * 
+                     */
+                    bool AiTryOnConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片编码配置。
+                     * <p>图片编码配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageEncodeConfig m_encodeConfig;
                     bool m_encodeConfigHasBeenSet;
 
                     /**
-                     * 图片增强配置。
+                     * <p>图片增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageEnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
 
                     /**
-                     * 图片擦除配置。
+                     * <p>图片擦除配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageEraseConfig m_eraseConfig;
                     bool m_eraseConfigHasBeenSet;
 
                     /**
-                     * 盲水印配置。
+                     * <p>盲水印配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlindWatermarkConfig m_blindWatermarkConfig;
                     bool m_blindWatermarkConfigHasBeenSet;
 
                     /**
-                     * 美颜配置。
+                     * <p>美颜配置。</p>
                      */
                     BeautyConfig m_beautyConfig;
                     bool m_beautyConfigHasBeenSet;
 
                     /**
-                     * 图片基础转换能力。
+                     * <p>图片基础转换能力。</p>
                      */
                     ImageTransformConfig m_transformConfig;
                     bool m_transformConfigHasBeenSet;
+
+                    /**
+                     * <p>Ai 换装配置。</p>
+                     */
+                    AiTryOnConfig m_aiTryOnConfig;
+                    bool m_aiTryOnConfigHasBeenSet;
 
                 };
             }

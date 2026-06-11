@@ -22,7 +22,9 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-RenewRemoteDiskRequest::RenewRemoteDiskRequest()
+RenewRemoteDiskRequest::RenewRemoteDiskRequest() :
+    m_diskChargePrepaidHasBeenSet(false),
+    m_remoteDiskIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,23 @@ string RenewRemoteDiskRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_diskChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_diskChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_remoteDiskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteDiskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteDiskId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +59,37 @@ string RenewRemoteDiskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+RemoteDiskChargePrepaid RenewRemoteDiskRequest::GetDiskChargePrepaid() const
+{
+    return m_diskChargePrepaid;
+}
+
+void RenewRemoteDiskRequest::SetDiskChargePrepaid(const RemoteDiskChargePrepaid& _diskChargePrepaid)
+{
+    m_diskChargePrepaid = _diskChargePrepaid;
+    m_diskChargePrepaidHasBeenSet = true;
+}
+
+bool RenewRemoteDiskRequest::DiskChargePrepaidHasBeenSet() const
+{
+    return m_diskChargePrepaidHasBeenSet;
+}
+
+string RenewRemoteDiskRequest::GetRemoteDiskId() const
+{
+    return m_remoteDiskId;
+}
+
+void RenewRemoteDiskRequest::SetRemoteDiskId(const string& _remoteDiskId)
+{
+    m_remoteDiskId = _remoteDiskId;
+    m_remoteDiskIdHasBeenSet = true;
+}
+
+bool RenewRemoteDiskRequest::RemoteDiskIdHasBeenSet() const
+{
+    return m_remoteDiskIdHasBeenSet;
+}
 
 

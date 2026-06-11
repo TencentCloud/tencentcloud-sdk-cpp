@@ -24,6 +24,7 @@
 #include <tencentcloud/apm/v20210622/model/TopologyNode.h>
 #include <tencentcloud/apm/v20210622/model/TopologyEdgeNew.h>
 #include <tencentcloud/apm/v20210622/model/SelectorView.h>
+#include <tencentcloud/apm/v20210622/model/OverviewStats.h>
 
 
 namespace TencentCloud
@@ -47,9 +48,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点集合
+                     * 获取<p>节点集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nodes 节点集合
+                     * @return Nodes <p>节点集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,8 +64,8 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取边集合
-                     * @return Edges 边集合
+                     * 获取<p>边集合</p>
+                     * @return Edges <p>边集合</p>
                      * 
                      */
                     std::vector<TopologyEdgeNew> GetEdges() const;
@@ -77,9 +78,9 @@ namespace TencentCloud
                     bool EdgesHasBeenSet() const;
 
                     /**
-                     * 获取拓扑图是否有修改
+                     * 获取<p>拓扑图是否有修改</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopologyModifyFlag 拓扑图是否有修改
+                     * @return TopologyModifyFlag <p>拓扑图是否有修改</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +94,9 @@ namespace TencentCloud
                     bool TopologyModifyFlagHasBeenSet() const;
 
                     /**
-                     * 获取节点数量
+                     * 获取<p>节点数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Selectors 节点数量
+                     * @return Selectors <p>节点数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -108,34 +109,57 @@ namespace TencentCloud
                      */
                     bool SelectorsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OverviewStats <p>节点状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OverviewStats GetOverviewStats() const;
+
+                    /**
+                     * 判断参数 OverviewStats 是否已赋值
+                     * @return OverviewStats 是否已赋值
+                     * 
+                     */
+                    bool OverviewStatsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点集合
+                     * <p>节点集合</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopologyNode> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 边集合
+                     * <p>边集合</p>
                      */
                     std::vector<TopologyEdgeNew> m_edges;
                     bool m_edgesHasBeenSet;
 
                     /**
-                     * 拓扑图是否有修改
+                     * <p>拓扑图是否有修改</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topologyModifyFlag;
                     bool m_topologyModifyFlagHasBeenSet;
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SelectorView m_selectors;
                     bool m_selectorsHasBeenSet;
+
+                    /**
+                     * <p>节点状态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OverviewStats m_overviewStats;
+                    bool m_overviewStatsHasBeenSet;
 
                 };
             }

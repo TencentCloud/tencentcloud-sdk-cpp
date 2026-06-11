@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取剪辑后的视频播放 URL。
-                     * @return Url 剪辑后的视频播放 URL。
+                     * 获取<p>剪辑后的视频播放 URL。</p>
+                     * @return Url <p>剪辑后的视频播放 URL。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取剪辑固化后的视频的媒体文件的唯一标识。
-                     * @return FileId 剪辑固化后的视频的媒体文件的唯一标识。
+                     * 获取<p>剪辑固化后的视频的媒体文件的唯一标识。</p>
+                     * @return FileId <p>剪辑固化后的视频的媒体文件的唯一标识。</p>
                      * 
                      */
                     std::string GetFileId() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取剪辑固化后的视频任务流 ID。
-                     * @return VodTaskId 剪辑固化后的视频任务流 ID。
+                     * 获取<p>剪辑固化后的视频任务流 ID。</p>
+                     * @return VodTaskId <p>剪辑固化后的视频任务流 ID。</p>
                      * 
                      */
                     std::string GetVodTaskId() const;
@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool VodTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取剪辑后的视频元信息。
+                     * 获取<p>剪辑后的视频元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaData 剪辑后的视频元信息。
+                     * @return MetaData <p>剪辑后的视频元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取<span id="p_segmentset">剪辑后的视频片段信息。</span>
-                     * @return SegmentSet <span id="p_segmentset">剪辑后的视频片段信息。</span>
+                     * 获取<p><span id="p_segmentset">剪辑后的视频片段信息。</span></p>
+                     * @return SegmentSet <p><span id="p_segmentset">剪辑后的视频片段信息。</span></p>
                      * 
                      */
                     std::vector<LiveRealTimeClipMediaSegmentInfo> GetSegmentSet() const;
@@ -120,32 +120,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 剪辑后的视频播放 URL。
+                     * <p>剪辑后的视频播放 URL。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 剪辑固化后的视频的媒体文件的唯一标识。
+                     * <p>剪辑固化后的视频的媒体文件的唯一标识。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 剪辑固化后的视频任务流 ID。
+                     * <p>剪辑固化后的视频任务流 ID。</p>
                      */
                     std::string m_vodTaskId;
                     bool m_vodTaskIdHasBeenSet;
 
                     /**
-                     * 剪辑后的视频元信息。
+                     * <p>剪辑后的视频元信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * <span id="p_segmentset">剪辑后的视频片段信息。</span>
+                     * <p><span id="p_segmentset">剪辑后的视频片段信息。</span></p>
                      */
                     std::vector<LiveRealTimeClipMediaSegmentInfo> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

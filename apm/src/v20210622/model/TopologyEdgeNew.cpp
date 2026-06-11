@@ -33,7 +33,8 @@ TopologyEdgeNew::TopologyEdgeNew() :
     m_sqlRequestCountHasBeenSet(false),
     m_sqlErrorRequestCountHasBeenSet(false),
     m_sourceCompHasBeenSet(false),
-    m_targetCompHasBeenSet(false)
+    m_targetCompHasBeenSet(false),
+    m_reqCntHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome TopologyEdgeNew::Deserialize(const rapidjson::Value &value)
         m_targetCompHasBeenSet = true;
     }
 
+    if (value.HasMember("ReqCnt") && !value["ReqCnt"].IsNull())
+    {
+        if (!value["ReqCnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopologyEdgeNew.ReqCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reqCnt = value["ReqCnt"].GetInt64();
+        m_reqCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void TopologyEdgeNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TargetComp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetComp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reqCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReqCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reqCnt, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void TopologyEdgeNew::SetTargetComp(const string& _targetComp)
 bool TopologyEdgeNew::TargetCompHasBeenSet() const
 {
     return m_targetCompHasBeenSet;
+}
+
+int64_t TopologyEdgeNew::GetReqCnt() const
+{
+    return m_reqCnt;
+}
+
+void TopologyEdgeNew::SetReqCnt(const int64_t& _reqCnt)
+{
+    m_reqCnt = _reqCnt;
+    m_reqCntHasBeenSet = true;
+}
+
+bool TopologyEdgeNew::ReqCntHasBeenSet() const
+{
+    return m_reqCntHasBeenSet;
 }
 

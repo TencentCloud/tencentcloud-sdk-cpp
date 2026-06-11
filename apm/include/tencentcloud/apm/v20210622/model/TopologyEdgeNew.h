@@ -351,6 +351,27 @@ namespace TencentCloud
                      */
                     bool TargetCompHasBeenSet() const;
 
+                    /**
+                     * 获取组件间调用次数
+                     * @return ReqCnt 组件间调用次数
+                     * 
+                     */
+                    int64_t GetReqCnt() const;
+
+                    /**
+                     * 设置组件间调用次数
+                     * @param _reqCnt 组件间调用次数
+                     * 
+                     */
+                    void SetReqCnt(const int64_t& _reqCnt);
+
+                    /**
+                     * 判断参数 ReqCnt 是否已赋值
+                     * @return ReqCnt 是否已赋值
+                     * 
+                     */
+                    bool ReqCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -438,6 +459,12 @@ namespace TencentCloud
                      */
                     std::string m_targetComp;
                     bool m_targetCompHasBeenSet;
+
+                    /**
+                     * 组件间调用次数
+                     */
+                    int64_t m_reqCnt;
+                    bool m_reqCntHasBeenSet;
 
                 };
             }

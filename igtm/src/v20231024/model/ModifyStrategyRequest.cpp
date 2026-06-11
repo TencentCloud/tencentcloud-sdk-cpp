@@ -31,7 +31,8 @@ ModifyStrategyRequest::ModifyStrategyRequest() :
     m_strategyNameHasBeenSet(false),
     m_isEnabledHasBeenSet(false),
     m_keepDomainRecordsHasBeenSet(false),
-    m_switchPoolTypeHasBeenSet(false)
+    m_switchPoolTypeHasBeenSet(false),
+    m_keepResourceHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,14 @@ string ModifyStrategyRequest::ToJsonString() const
         string key = "SwitchPoolType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_switchPoolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepResource, allocator);
     }
 
 
@@ -285,6 +294,22 @@ void ModifyStrategyRequest::SetSwitchPoolType(const string& _switchPoolType)
 bool ModifyStrategyRequest::SwitchPoolTypeHasBeenSet() const
 {
     return m_switchPoolTypeHasBeenSet;
+}
+
+bool ModifyStrategyRequest::GetKeepResource() const
+{
+    return m_keepResource;
+}
+
+void ModifyStrategyRequest::SetKeepResource(const bool& _keepResource)
+{
+    m_keepResource = _keepResource;
+    m_keepResourceHasBeenSet = true;
+}
+
+bool ModifyStrategyRequest::KeepResourceHasBeenSet() const
+{
+    return m_keepResourceHasBeenSet;
 }
 
 

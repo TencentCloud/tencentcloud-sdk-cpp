@@ -26,7 +26,8 @@ ImageTaskInput::ImageTaskInput() :
     m_eraseConfigHasBeenSet(false),
     m_blindWatermarkConfigHasBeenSet(false),
     m_beautyConfigHasBeenSet(false),
-    m_transformConfigHasBeenSet(false)
+    m_transformConfigHasBeenSet(false),
+    m_aiTryOnConfigHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_transformConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AiTryOnConfig") && !value["AiTryOnConfig"].IsNull())
+    {
+        if (!value["AiTryOnConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.AiTryOnConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiTryOnConfig.Deserialize(value["AiTryOnConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiTryOnConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -196,6 +214,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transformConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiTryOnConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiTryOnConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiTryOnConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -295,5 +322,21 @@ void ImageTaskInput::SetTransformConfig(const ImageTransformConfig& _transformCo
 bool ImageTaskInput::TransformConfigHasBeenSet() const
 {
     return m_transformConfigHasBeenSet;
+}
+
+AiTryOnConfig ImageTaskInput::GetAiTryOnConfig() const
+{
+    return m_aiTryOnConfig;
+}
+
+void ImageTaskInput::SetAiTryOnConfig(const AiTryOnConfig& _aiTryOnConfig)
+{
+    m_aiTryOnConfig = _aiTryOnConfig;
+    m_aiTryOnConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::AiTryOnConfigHasBeenSet() const
+{
+    return m_aiTryOnConfigHasBeenSet;
 }
 

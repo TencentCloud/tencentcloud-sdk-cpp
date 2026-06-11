@@ -29,7 +29,8 @@ ConsumptionProjectSummaryDataItem::ConsumptionProjectSummaryDataItem() :
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_transferPayAmountHasBeenSet(false),
+    m_leftRealTotalCostHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjs
         m_transferPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("LeftRealTotalCost") && !value["LeftRealTotalCost"].IsNull())
+    {
+        if (!value["LeftRealTotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionProjectSummaryDataItem.LeftRealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_leftRealTotalCost = string(value["LeftRealTotalCost"].GetString());
+        m_leftRealTotalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void ConsumptionProjectSummaryDataItem::ToJsonObject(rapidjson::Value &value, ra
         string key = "TransferPayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_leftRealTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftRealTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_leftRealTotalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void ConsumptionProjectSummaryDataItem::SetTransferPayAmount(const string& _tran
 bool ConsumptionProjectSummaryDataItem::TransferPayAmountHasBeenSet() const
 {
     return m_transferPayAmountHasBeenSet;
+}
+
+string ConsumptionProjectSummaryDataItem::GetLeftRealTotalCost() const
+{
+    return m_leftRealTotalCost;
+}
+
+void ConsumptionProjectSummaryDataItem::SetLeftRealTotalCost(const string& _leftRealTotalCost)
+{
+    m_leftRealTotalCost = _leftRealTotalCost;
+    m_leftRealTotalCostHasBeenSet = true;
+}
+
+bool ConsumptionProjectSummaryDataItem::LeftRealTotalCostHasBeenSet() const
+{
+    return m_leftRealTotalCostHasBeenSet;
 }
 

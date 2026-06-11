@@ -22,6 +22,7 @@ using namespace std;
 
 AigcImageSceneInfo::AigcImageSceneInfo() :
     m_typeHasBeenSet(false),
+    m_aiTryOnConfigHasBeenSet(false),
     m_changeClothesConfigHasBeenSet(false),
     m_productImageConfigHasBeenSet(false)
 {
@@ -40,6 +41,23 @@ CoreInternalOutcome AigcImageSceneInfo::Deserialize(const rapidjson::Value &valu
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AiTryOnConfig") && !value["AiTryOnConfig"].IsNull())
+    {
+        if (!value["AiTryOnConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageSceneInfo.AiTryOnConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiTryOnConfig.Deserialize(value["AiTryOnConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiTryOnConfigHasBeenSet = true;
     }
 
     if (value.HasMember("ChangeClothesConfig") && !value["ChangeClothesConfig"].IsNull())
@@ -91,6 +109,15 @@ void AigcImageSceneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_aiTryOnConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiTryOnConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiTryOnConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_changeClothesConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +153,22 @@ void AigcImageSceneInfo::SetType(const string& _type)
 bool AigcImageSceneInfo::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+AiTryOnConfig AigcImageSceneInfo::GetAiTryOnConfig() const
+{
+    return m_aiTryOnConfig;
+}
+
+void AigcImageSceneInfo::SetAiTryOnConfig(const AiTryOnConfig& _aiTryOnConfig)
+{
+    m_aiTryOnConfig = _aiTryOnConfig;
+    m_aiTryOnConfigHasBeenSet = true;
+}
+
+bool AigcImageSceneInfo::AiTryOnConfigHasBeenSet() const
+{
+    return m_aiTryOnConfigHasBeenSet;
 }
 
 ChangeClothesConfig AigcImageSceneInfo::GetChangeClothesConfig() const

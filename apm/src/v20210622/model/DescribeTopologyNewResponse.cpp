@@ -27,7 +27,8 @@ DescribeTopologyNewResponse::DescribeTopologyNewResponse() :
     m_nodesHasBeenSet(false),
     m_edgesHasBeenSet(false),
     m_topologyModifyFlagHasBeenSet(false),
-    m_selectorsHasBeenSet(false)
+    m_selectorsHasBeenSet(false),
+    m_overviewStatsHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,23 @@ CoreInternalOutcome DescribeTopologyNewResponse::Deserialize(const string &paylo
         m_selectorsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OverviewStats") && !rsp["OverviewStats"].IsNull())
+    {
+        if (!rsp["OverviewStats"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverviewStats` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overviewStats.Deserialize(rsp["OverviewStats"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overviewStatsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -189,6 +207,15 @@ string DescribeTopologyNewResponse::ToJsonString() const
         m_selectors.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_overviewStatsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverviewStats";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overviewStats.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -239,6 +266,16 @@ SelectorView DescribeTopologyNewResponse::GetSelectors() const
 bool DescribeTopologyNewResponse::SelectorsHasBeenSet() const
 {
     return m_selectorsHasBeenSet;
+}
+
+OverviewStats DescribeTopologyNewResponse::GetOverviewStats() const
+{
+    return m_overviewStats;
+}
+
+bool DescribeTopologyNewResponse::OverviewStatsHasBeenSet() const
+{
+    return m_overviewStatsHasBeenSet;
 }
 
 

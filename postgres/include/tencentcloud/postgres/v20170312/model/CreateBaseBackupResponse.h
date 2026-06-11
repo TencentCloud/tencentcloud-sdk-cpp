@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据备份集ID
-                     * @return BaseBackupId 数据备份集ID
+                     * 获取<p>数据备份集ID</p>
+                     * @return BaseBackupId <p>数据备份集ID</p>
                      * 
                      */
                     std::string GetBaseBackupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据备份集ID
+                     * <p>数据备份集ID</p>
                      */
                     std::string m_baseBackupId;
                     bool m_baseBackupIdHasBeenSet;

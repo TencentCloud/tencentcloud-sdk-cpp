@@ -54,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -75,15 +75,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -96,15 +96,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -117,15 +117,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -138,15 +138,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取物理可用区
-                     * @return PhysicalZone 物理可用区
+                     * 获取<p>物理可用区</p>
+                     * @return PhysicalZone <p>物理可用区</p>
                      * 
                      */
                     std::string GetPhysicalZone() const;
 
                     /**
-                     * 设置物理可用区
-                     * @param _physicalZone 物理可用区
+                     * 设置<p>物理可用区</p>
+                     * @param _physicalZone <p>物理可用区</p>
                      * 
                      */
                     void SetPhysicalZone(const std::string& _physicalZone);
@@ -159,51 +159,15 @@ namespace TencentCloud
                     bool PhysicalZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态，支持的值如下：
-- creating：创建中
-- running：运行中
-- isolating：隔离中
-- isolated：已隔离
-- activating：从回收站重新恢复
-- offlining：下线中
-- offlined：已下线
-- deleting：删除中
-- deleted：已删除
-                     * @return Status 状态，支持的值如下：
-- creating：创建中
-- running：运行中
-- isolating：隔离中
-- isolated：已隔离
-- activating：从回收站重新恢复
-- offlining：下线中
-- offlined：已下线
-- deleting：删除中
-- deleted：已删除
+                     * 获取<p>状态，支持的值如下：</p><ul><li>creating：创建中</li><li>running：运行中</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>activating：从回收站重新恢复</li><li>offlining：下线中</li><li>offlined：已下线</li><li>deleting：删除中</li><li>deleted：已删除</li></ul>
+                     * @return Status <p>状态，支持的值如下：</p><ul><li>creating：创建中</li><li>running：运行中</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>activating：从回收站重新恢复</li><li>offlining：下线中</li><li>offlined：已下线</li><li>deleting：删除中</li><li>deleted：已删除</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态，支持的值如下：
-- creating：创建中
-- running：运行中
-- isolating：隔离中
-- isolated：已隔离
-- activating：从回收站重新恢复
-- offlining：下线中
-- offlined：已下线
-- deleting：删除中
-- deleted：已删除
-                     * @param _status 状态，支持的值如下：
-- creating：创建中
-- running：运行中
-- isolating：隔离中
-- isolated：已隔离
-- activating：从回收站重新恢复
-- offlining：下线中
-- offlined：已下线
-- deleting：删除中
-- deleted：已删除
+                     * 设置<p>状态，支持的值如下：</p><ul><li>creating：创建中</li><li>running：运行中</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>activating：从回收站重新恢复</li><li>offlining：下线中</li><li>offlined：已下线</li><li>deleting：删除中</li><li>deleted：已删除</li></ul>
+                     * @param _status <p>状态，支持的值如下：</p><ul><li>creating：创建中</li><li>running：运行中</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>activating：从回收站重新恢复</li><li>offlining：下线中</li><li>offlined：已下线</li><li>deleting：删除中</li><li>deleted：已删除</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -216,15 +180,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
-                     * @return StatusDesc 状态描述
+                     * 获取<p>状态描述</p>
+                     * @return StatusDesc <p>状态描述</p>
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
-                     * 设置状态描述
-                     * @param _statusDesc 状态描述
+                     * 设置<p>状态描述</p>
+                     * @param _statusDesc <p>状态描述</p>
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -237,31 +201,15 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
+                     * 获取<p>当Db类型为SERVERLESS时，serverless集群状态，可选值:<br>resume<br>resuming<br>pause<br>pausing</p>
+                     * @return ServerlessStatus <p>当Db类型为SERVERLESS时，serverless集群状态，可选值:<br>resume<br>resuming<br>pause<br>pausing</p>
                      * 
                      */
                     std::string GetServerlessStatus() const;
 
                     /**
-                     * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
-                     * @param _serverlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
+                     * 设置<p>当Db类型为SERVERLESS时，serverless集群状态，可选值:<br>resume<br>resuming<br>pause<br>pausing</p>
+                     * @param _serverlessStatus <p>当Db类型为SERVERLESS时，serverless集群状态，可选值:<br>resume<br>resuming<br>pause<br>pausing</p>
                      * 
                      */
                     void SetServerlessStatus(const std::string& _serverlessStatus);
@@ -274,15 +222,15 @@ pausing
                     bool ServerlessStatusHasBeenSet() const;
 
                     /**
-                     * 获取存储Id
-                     * @return StorageId 存储Id
+                     * 获取<p>存储Id</p>
+                     * @return StorageId <p>存储Id</p>
                      * 
                      */
                     std::string GetStorageId() const;
 
                     /**
-                     * 设置存储Id
-                     * @param _storageId 存储Id
+                     * 设置<p>存储Id</p>
+                     * @param _storageId <p>存储Id</p>
                      * 
                      */
                     void SetStorageId(const std::string& _storageId);
@@ -295,15 +243,15 @@ pausing
                     bool StorageIdHasBeenSet() const;
 
                     /**
-                     * 获取存储大小，单位为G
-                     * @return Storage 存储大小，单位为G
+                     * 获取<p>存储大小，单位为G</p>
+                     * @return Storage <p>存储大小，单位为G</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置存储大小，单位为G
-                     * @param _storage 存储大小，单位为G
+                     * 设置<p>存储大小，单位为G</p>
+                     * @param _storage <p>存储大小，单位为G</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -316,15 +264,15 @@ pausing
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取最大存储规格，单位为G
-                     * @return MaxStorageSize 最大存储规格，单位为G
+                     * 获取<p>最大存储规格，单位为G</p>
+                     * @return MaxStorageSize <p>最大存储规格，单位为G</p>
                      * 
                      */
                     int64_t GetMaxStorageSize() const;
 
                     /**
-                     * 设置最大存储规格，单位为G
-                     * @param _maxStorageSize 最大存储规格，单位为G
+                     * 设置<p>最大存储规格，单位为G</p>
+                     * @param _maxStorageSize <p>最大存储规格，单位为G</p>
                      * 
                      */
                     void SetMaxStorageSize(const int64_t& _maxStorageSize);
@@ -337,15 +285,15 @@ pausing
                     bool MaxStorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取最小存储规格，单位为G
-                     * @return MinStorageSize 最小存储规格，单位为G
+                     * 获取<p>最小存储规格，单位为G</p>
+                     * @return MinStorageSize <p>最小存储规格，单位为G</p>
                      * 
                      */
                     int64_t GetMinStorageSize() const;
 
                     /**
-                     * 设置最小存储规格，单位为G
-                     * @param _minStorageSize 最小存储规格，单位为G
+                     * 设置<p>最小存储规格，单位为G</p>
+                     * @param _minStorageSize <p>最小存储规格，单位为G</p>
                      * 
                      */
                     void SetMinStorageSize(const int64_t& _minStorageSize);
@@ -358,15 +306,15 @@ pausing
                     bool MinStorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取存储付费类型，1为包年包月，0为按量计费
-                     * @return StoragePayMode 存储付费类型，1为包年包月，0为按量计费
+                     * 获取<p>存储付费类型，1为包年包月，0为按量计费</p>
+                     * @return StoragePayMode <p>存储付费类型，1为包年包月，0为按量计费</p>
                      * 
                      */
                     int64_t GetStoragePayMode() const;
 
                     /**
-                     * 设置存储付费类型，1为包年包月，0为按量计费
-                     * @param _storagePayMode 存储付费类型，1为包年包月，0为按量计费
+                     * 设置<p>存储付费类型，1为包年包月，0为按量计费</p>
+                     * @param _storagePayMode <p>存储付费类型，1为包年包月，0为按量计费</p>
                      * 
                      */
                     void SetStoragePayMode(const int64_t& _storagePayMode);
@@ -379,15 +327,15 @@ pausing
                     bool StoragePayModeHasBeenSet() const;
 
                     /**
-                     * 获取VPC名称
-                     * @return VpcName VPC名称
+                     * 获取<p>VPC名称</p>
+                     * @return VpcName <p>VPC名称</p>
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
-                     * 设置VPC名称
-                     * @param _vpcName VPC名称
+                     * 设置<p>VPC名称</p>
+                     * @param _vpcName <p>VPC名称</p>
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -400,15 +348,15 @@ pausing
                     bool VpcNameHasBeenSet() const;
 
                     /**
-                     * 获取vpc唯一id
-                     * @return VpcId vpc唯一id
+                     * 获取<p>vpc唯一id</p>
+                     * @return VpcId <p>vpc唯一id</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc唯一id
-                     * @param _vpcId vpc唯一id
+                     * 设置<p>vpc唯一id</p>
+                     * @param _vpcId <p>vpc唯一id</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -421,15 +369,15 @@ pausing
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网名称
-                     * @return SubnetName 子网名称
+                     * 获取<p>子网名称</p>
+                     * @return SubnetName <p>子网名称</p>
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
-                     * 设置子网名称
-                     * @param _subnetName 子网名称
+                     * 设置<p>子网名称</p>
+                     * @param _subnetName <p>子网名称</p>
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -442,15 +390,15 @@ pausing
                     bool SubnetNameHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -463,15 +411,15 @@ pausing
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取字符集
-                     * @return Charset 字符集
+                     * 获取<p>字符集</p>
+                     * @return Charset <p>字符集</p>
                      * 
                      */
                     std::string GetCharset() const;
 
                     /**
-                     * 设置字符集
-                     * @param _charset 字符集
+                     * 设置<p>字符集</p>
+                     * @param _charset <p>字符集</p>
                      * 
                      */
                     void SetCharset(const std::string& _charset);
@@ -484,15 +432,15 @@ pausing
                     bool CharsetHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -505,15 +453,15 @@ pausing
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型
-                     * @return DbType 数据库类型
+                     * 获取<p>数据库类型</p>
+                     * @return DbType <p>数据库类型</p>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型
-                     * @param _dbType 数据库类型
+                     * 设置<p>数据库类型</p>
+                     * @param _dbType <p>数据库类型</p>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -526,15 +474,15 @@ pausing
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取Db类型：<li>NORMAL</li><li>SERVERLESS</li>
-                     * @return DbMode Db类型：<li>NORMAL</li><li>SERVERLESS</li>
+                     * 获取<p>Db类型：<li>NORMAL</li><li>SERVERLESS</li></p>
+                     * @return DbMode <p>Db类型：<li>NORMAL</li><li>SERVERLESS</li></p>
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
-                     * 设置Db类型：<li>NORMAL</li><li>SERVERLESS</li>
-                     * @param _dbMode Db类型：<li>NORMAL</li><li>SERVERLESS</li>
+                     * 设置<p>Db类型：<li>NORMAL</li><li>SERVERLESS</li></p>
+                     * @param _dbMode <p>Db类型：<li>NORMAL</li><li>SERVERLESS</li></p>
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -547,15 +495,15 @@ pausing
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取数据库版本
-                     * @return DbVersion 数据库版本
+                     * 获取<p>数据库版本</p>
+                     * @return DbVersion <p>数据库版本</p>
                      * 
                      */
                     std::string GetDbVersion() const;
 
                     /**
-                     * 设置数据库版本
-                     * @param _dbVersion 数据库版本
+                     * 设置<p>数据库版本</p>
+                     * @param _dbVersion <p>数据库版本</p>
                      * 
                      */
                     void SetDbVersion(const std::string& _dbVersion);
@@ -568,15 +516,15 @@ pausing
                     bool DbVersionHasBeenSet() const;
 
                     /**
-                     * 获取存储空间上限
-                     * @return StorageLimit 存储空间上限
+                     * 获取<p>存储空间上限</p>
+                     * @return StorageLimit <p>存储空间上限</p>
                      * 
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
-                     * 设置存储空间上限
-                     * @param _storageLimit 存储空间上限
+                     * 设置<p>存储空间上限</p>
+                     * @param _storageLimit <p>存储空间上限</p>
                      * 
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
@@ -589,15 +537,15 @@ pausing
                     bool StorageLimitHasBeenSet() const;
 
                     /**
-                     * 获取使用容量
-                     * @return UsedStorage 使用容量
+                     * 获取<p>使用容量</p>
+                     * @return UsedStorage <p>使用容量</p>
                      * 
                      */
                     int64_t GetUsedStorage() const;
 
                     /**
-                     * 设置使用容量
-                     * @param _usedStorage 使用容量
+                     * 设置<p>使用容量</p>
+                     * @param _usedStorage <p>使用容量</p>
                      * 
                      */
                     void SetUsedStorage(const int64_t& _usedStorage);
@@ -610,15 +558,15 @@ pausing
                     bool UsedStorageHasBeenSet() const;
 
                     /**
-                     * 获取vip地址
-                     * @return Vip vip地址
+                     * 获取<p>vip地址</p>
+                     * @return Vip <p>vip地址</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置vip地址
-                     * @param _vip vip地址
+                     * 设置<p>vip地址</p>
+                     * @param _vip <p>vip地址</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -631,15 +579,15 @@ pausing
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取vport端口
-                     * @return Vport vport端口
+                     * 获取<p>vport端口</p>
+                     * @return Vport <p>vport端口</p>
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置vport端口
-                     * @param _vport vport端口
+                     * 设置<p>vport端口</p>
+                     * @param _vport <p>vport端口</p>
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -652,15 +600,15 @@ pausing
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取集群只读实例的vip地址和vport端口
-                     * @return RoAddr 集群只读实例的vip地址和vport端口
+                     * 获取<p>集群只读实例的vip地址和vport端口</p>
+                     * @return RoAddr <p>集群只读实例的vip地址和vport端口</p>
                      * 
                      */
                     std::vector<Addr> GetRoAddr() const;
 
                     /**
-                     * 设置集群只读实例的vip地址和vport端口
-                     * @param _roAddr 集群只读实例的vip地址和vport端口
+                     * 设置<p>集群只读实例的vip地址和vport端口</p>
+                     * @param _roAddr <p>集群只读实例的vip地址和vport端口</p>
                      * 
                      */
                     void SetRoAddr(const std::vector<Addr>& _roAddr);
@@ -673,15 +621,15 @@ pausing
                     bool RoAddrHasBeenSet() const;
 
                     /**
-                     * 获取集群支持的功能
-                     * @return Ability 集群支持的功能
+                     * 获取<p>集群支持的功能</p>
+                     * @return Ability <p>集群支持的功能</p>
                      * 
                      */
                     Ability GetAbility() const;
 
                     /**
-                     * 设置集群支持的功能
-                     * @param _ability 集群支持的功能
+                     * 设置<p>集群支持的功能</p>
+                     * @param _ability <p>集群支持的功能</p>
                      * 
                      */
                     void SetAbility(const Ability& _ability);
@@ -694,15 +642,15 @@ pausing
                     bool AbilityHasBeenSet() const;
 
                     /**
-                     * 获取cynos版本
-                     * @return CynosVersion cynos版本
+                     * 获取<p>cynos版本</p>
+                     * @return CynosVersion <p>cynos版本</p>
                      * 
                      */
                     std::string GetCynosVersion() const;
 
                     /**
-                     * 设置cynos版本
-                     * @param _cynosVersion cynos版本
+                     * 设置<p>cynos版本</p>
+                     * @param _cynosVersion <p>cynos版本</p>
                      * 
                      */
                     void SetCynosVersion(const std::string& _cynosVersion);
@@ -715,15 +663,15 @@ pausing
                     bool CynosVersionHasBeenSet() const;
 
                     /**
-                     * 获取商业类型
-                     * @return BusinessType 商业类型
+                     * 获取<p>商业类型</p>
+                     * @return BusinessType <p>商业类型</p>
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置商业类型
-                     * @param _businessType 商业类型
+                     * 设置<p>商业类型</p>
+                     * @param _businessType <p>商业类型</p>
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -736,15 +684,15 @@ pausing
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否有从可用区
-                     * @return HasSlaveZone 是否有从可用区
+                     * 获取<p>是否有从可用区</p>
+                     * @return HasSlaveZone <p>是否有从可用区</p>
                      * 
                      */
                     std::string GetHasSlaveZone() const;
 
                     /**
-                     * 设置是否有从可用区
-                     * @param _hasSlaveZone 是否有从可用区
+                     * 设置<p>是否有从可用区</p>
+                     * @param _hasSlaveZone <p>是否有从可用区</p>
                      * 
                      */
                     void SetHasSlaveZone(const std::string& _hasSlaveZone);
@@ -757,15 +705,15 @@ pausing
                     bool HasSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否冻结
-                     * @return IsFreeze 是否冻结
+                     * 获取<p>是否冻结</p>
+                     * @return IsFreeze <p>是否冻结</p>
                      * 
                      */
                     std::string GetIsFreeze() const;
 
                     /**
-                     * 设置是否冻结
-                     * @param _isFreeze 是否冻结
+                     * 设置<p>是否冻结</p>
+                     * @param _isFreeze <p>是否冻结</p>
                      * 
                      */
                     void SetIsFreeze(const std::string& _isFreeze);
@@ -778,15 +726,15 @@ pausing
                     bool IsFreezeHasBeenSet() const;
 
                     /**
-                     * 获取任务列表
-                     * @return Tasks 任务列表
+                     * 获取<p>任务列表</p>
+                     * @return Tasks <p>任务列表</p>
                      * 
                      */
                     std::vector<ObjectTask> GetTasks() const;
 
                     /**
-                     * 设置任务列表
-                     * @param _tasks 任务列表
+                     * 设置<p>任务列表</p>
+                     * @param _tasks <p>任务列表</p>
                      * 
                      */
                     void SetTasks(const std::vector<ObjectTask>& _tasks);
@@ -799,15 +747,15 @@ pausing
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取主可用区
-                     * @return MasterZone 主可用区
+                     * 获取<p>主可用区</p>
+                     * @return MasterZone <p>主可用区</p>
                      * 
                      */
                     std::string GetMasterZone() const;
 
                     /**
-                     * 设置主可用区
-                     * @param _masterZone 主可用区
+                     * 设置<p>主可用区</p>
+                     * @param _masterZone <p>主可用区</p>
                      * 
                      */
                     void SetMasterZone(const std::string& _masterZone);
@@ -820,15 +768,15 @@ pausing
                     bool MasterZoneHasBeenSet() const;
 
                     /**
-                     * 获取从可用区列表
-                     * @return SlaveZones 从可用区列表
+                     * 获取<p>从可用区列表</p>
+                     * @return SlaveZones <p>从可用区列表</p>
                      * 
                      */
                     std::vector<std::string> GetSlaveZones() const;
 
                     /**
-                     * 设置从可用区列表
-                     * @param _slaveZones 从可用区列表
+                     * 设置<p>从可用区列表</p>
+                     * @param _slaveZones <p>从可用区列表</p>
                      * 
                      */
                     void SetSlaveZones(const std::vector<std::string>& _slaveZones);
@@ -841,15 +789,15 @@ pausing
                     bool SlaveZonesHasBeenSet() const;
 
                     /**
-                     * 获取实例信息
-                     * @return InstanceSet 实例信息
+                     * 获取<p>实例信息</p>
+                     * @return InstanceSet <p>实例信息</p>
                      * 
                      */
                     std::vector<ClusterInstanceDetail> GetInstanceSet() const;
 
                     /**
-                     * 设置实例信息
-                     * @param _instanceSet 实例信息
+                     * 设置<p>实例信息</p>
+                     * @param _instanceSet <p>实例信息</p>
                      * 
                      */
                     void SetInstanceSet(const std::vector<ClusterInstanceDetail>& _instanceSet);
@@ -862,15 +810,15 @@ pausing
                     bool InstanceSetHasBeenSet() const;
 
                     /**
-                     * 获取付费模式
-                     * @return PayMode 付费模式
+                     * 获取<p>付费模式</p>
+                     * @return PayMode <p>付费模式</p>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式
-                     * @param _payMode 付费模式
+                     * 设置<p>付费模式</p>
+                     * @param _payMode <p>付费模式</p>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -883,15 +831,15 @@ pausing
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return PeriodEndTime 到期时间
+                     * 获取<p>到期时间</p>
+                     * @return PeriodEndTime <p>到期时间</p>
                      * 
                      */
                     std::string GetPeriodEndTime() const;
 
                     /**
-                     * 设置到期时间
-                     * @param _periodEndTime 到期时间
+                     * 设置<p>到期时间</p>
+                     * @param _periodEndTime <p>到期时间</p>
                      * 
                      */
                     void SetPeriodEndTime(const std::string& _periodEndTime);
@@ -904,15 +852,15 @@ pausing
                     bool PeriodEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectID 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectID <p>项目id</p>
                      * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectID 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectID <p>项目id</p>
                      * 
                      */
                     void SetProjectID(const int64_t& _projectID);
@@ -925,15 +873,15 @@ pausing
                     bool ProjectIDHasBeenSet() const;
 
                     /**
-                     * 获取实例绑定的tag数组信息
-                     * @return ResourceTags 实例绑定的tag数组信息
+                     * 获取<p>实例绑定的tag数组信息</p>
+                     * @return ResourceTags <p>实例绑定的tag数组信息</p>
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
-                     * 设置实例绑定的tag数组信息
-                     * @param _resourceTags 实例绑定的tag数组信息
+                     * 设置<p>实例绑定的tag数组信息</p>
+                     * @param _resourceTags <p>实例绑定的tag数组信息</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -946,15 +894,15 @@ pausing
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取Proxy状态
-                     * @return ProxyStatus Proxy状态
+                     * 获取<p>Proxy状态</p>
+                     * @return ProxyStatus <p>Proxy状态</p>
                      * 
                      */
                     std::string GetProxyStatus() const;
 
                     /**
-                     * 设置Proxy状态
-                     * @param _proxyStatus Proxy状态
+                     * 设置<p>Proxy状态</p>
+                     * @param _proxyStatus <p>Proxy状态</p>
                      * 
                      */
                     void SetProxyStatus(const std::string& _proxyStatus);
@@ -967,15 +915,15 @@ pausing
                     bool ProxyStatusHasBeenSet() const;
 
                     /**
-                     * 获取binlog开关，可选值：ON, OFF
-                     * @return LogBin binlog开关，可选值：ON, OFF
+                     * 获取<p>binlog开关，可选值：ON, OFF</p>
+                     * @return LogBin <p>binlog开关，可选值：ON, OFF</p>
                      * 
                      */
                     std::string GetLogBin() const;
 
                     /**
-                     * 设置binlog开关，可选值：ON, OFF
-                     * @param _logBin binlog开关，可选值：ON, OFF
+                     * 设置<p>binlog开关，可选值：ON, OFF</p>
+                     * @param _logBin <p>binlog开关，可选值：ON, OFF</p>
                      * 
                      */
                     void SetLogBin(const std::string& _logBin);
@@ -988,15 +936,15 @@ pausing
                     bool LogBinHasBeenSet() const;
 
                     /**
-                     * 获取是否跳过交易
-                     * @return IsSkipTrade 是否跳过交易
+                     * 获取<p>是否跳过交易</p>
+                     * @return IsSkipTrade <p>是否跳过交易</p>
                      * 
                      */
                     std::string GetIsSkipTrade() const;
 
                     /**
-                     * 设置是否跳过交易
-                     * @param _isSkipTrade 是否跳过交易
+                     * 设置<p>是否跳过交易</p>
+                     * @param _isSkipTrade <p>是否跳过交易</p>
                      * 
                      */
                     void SetIsSkipTrade(const std::string& _isSkipTrade);
@@ -1009,15 +957,15 @@ pausing
                     bool IsSkipTradeHasBeenSet() const;
 
                     /**
-                     * 获取pitr类型，可选值：normal, redo_pitr
-                     * @return PitrType pitr类型，可选值：normal, redo_pitr
+                     * 获取<p>pitr类型，可选值：normal, redo_pitr</p>
+                     * @return PitrType <p>pitr类型，可选值：normal, redo_pitr</p>
                      * 
                      */
                     std::string GetPitrType() const;
 
                     /**
-                     * 设置pitr类型，可选值：normal, redo_pitr
-                     * @param _pitrType pitr类型，可选值：normal, redo_pitr
+                     * 设置<p>pitr类型，可选值：normal, redo_pitr</p>
+                     * @param _pitrType <p>pitr类型，可选值：normal, redo_pitr</p>
                      * 
                      */
                     void SetPitrType(const std::string& _pitrType);
@@ -1030,15 +978,15 @@ pausing
                     bool PitrTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否打开密码复杂度
-                     * @return IsOpenPasswordComplexity 是否打开密码复杂度
+                     * 获取<p>是否打开密码复杂度</p>
+                     * @return IsOpenPasswordComplexity <p>是否打开密码复杂度</p>
                      * 
                      */
                     std::string GetIsOpenPasswordComplexity() const;
 
                     /**
-                     * 设置是否打开密码复杂度
-                     * @param _isOpenPasswordComplexity 是否打开密码复杂度
+                     * 设置<p>是否打开密码复杂度</p>
+                     * @param _isOpenPasswordComplexity <p>是否打开密码复杂度</p>
                      * 
                      */
                     void SetIsOpenPasswordComplexity(const std::string& _isOpenPasswordComplexity);
@@ -1051,15 +999,15 @@ pausing
                     bool IsOpenPasswordComplexityHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-                     * @return NetworkStatus 网络类型
+                     * 获取<p>网络类型</p>
+                     * @return NetworkStatus <p>网络类型</p>
                      * 
                      */
                     std::string GetNetworkStatus() const;
 
                     /**
-                     * 设置网络类型
-                     * @param _networkStatus 网络类型
+                     * 设置<p>网络类型</p>
+                     * @param _networkStatus <p>网络类型</p>
                      * 
                      */
                     void SetNetworkStatus(const std::string& _networkStatus);
@@ -1072,15 +1020,15 @@ pausing
                     bool NetworkStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群绑定的资源包信息	
-                     * @return ResourcePackages 集群绑定的资源包信息	
+                     * 获取<p>集群绑定的资源包信息</p>
+                     * @return ResourcePackages <p>集群绑定的资源包信息</p>
                      * 
                      */
                     std::vector<ResourcePackage> GetResourcePackages() const;
 
                     /**
-                     * 设置集群绑定的资源包信息	
-                     * @param _resourcePackages 集群绑定的资源包信息	
+                     * 设置<p>集群绑定的资源包信息</p>
+                     * @param _resourcePackages <p>集群绑定的资源包信息</p>
                      * 
                      */
                     void SetResourcePackages(const std::vector<ResourcePackage>& _resourcePackages);
@@ -1093,15 +1041,15 @@ pausing
                     bool ResourcePackagesHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识，1为自动续费，0为到期不续
-                     * @return RenewFlag 自动续费标识，1为自动续费，0为到期不续
+                     * 获取<p>自动续费标识，1为自动续费，0为到期不续</p>
+                     * @return RenewFlag <p>自动续费标识，1为自动续费，0为到期不续</p>
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识，1为自动续费，0为到期不续
-                     * @param _renewFlag 自动续费标识，1为自动续费，0为到期不续
+                     * 设置<p>自动续费标识，1为自动续费，0为到期不续</p>
+                     * @param _renewFlag <p>自动续费标识，1为自动续费，0为到期不续</p>
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -1114,15 +1062,15 @@ pausing
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取节点网络类型
-                     * @return NetworkType 节点网络类型
+                     * 获取<p>节点网络类型</p>
+                     * @return NetworkType <p>节点网络类型</p>
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置节点网络类型
-                     * @param _networkType 节点网络类型
+                     * 设置<p>节点网络类型</p>
+                     * @param _networkType <p>节点网络类型</p>
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -1135,15 +1083,15 @@ pausing
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取备可用区属性
-                     * @return SlaveZoneAttr 备可用区属性
+                     * 获取<p>备可用区属性</p>
+                     * @return SlaveZoneAttr <p>备可用区属性</p>
                      * 
                      */
                     std::vector<SlaveZoneAttrItem> GetSlaveZoneAttr() const;
 
                     /**
-                     * 设置备可用区属性
-                     * @param _slaveZoneAttr 备可用区属性
+                     * 设置<p>备可用区属性</p>
+                     * @param _slaveZoneAttr <p>备可用区属性</p>
                      * 
                      */
                     void SetSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _slaveZoneAttr);
@@ -1156,15 +1104,15 @@ pausing
                     bool SlaveZoneAttrHasBeenSet() const;
 
                     /**
-                     * 获取版本标签
-                     * @return CynosVersionTag 版本标签
+                     * 获取<p>版本标签</p>
+                     * @return CynosVersionTag <p>版本标签</p>
                      * 
                      */
                     std::string GetCynosVersionTag() const;
 
                     /**
-                     * 设置版本标签
-                     * @param _cynosVersionTag 版本标签
+                     * 设置<p>版本标签</p>
+                     * @param _cynosVersionTag <p>版本标签</p>
                      * 
                      */
                     void SetCynosVersionTag(const std::string& _cynosVersionTag);
@@ -1177,15 +1125,15 @@ pausing
                     bool CynosVersionTagHasBeenSet() const;
 
                     /**
-                     * 获取全球数据库网络唯一标识
-                     * @return GdnId 全球数据库网络唯一标识
+                     * 获取<p>全球数据库网络唯一标识</p>
+                     * @return GdnId <p>全球数据库网络唯一标识</p>
                      * 
                      */
                     std::string GetGdnId() const;
 
                     /**
-                     * 设置全球数据库网络唯一标识
-                     * @param _gdnId 全球数据库网络唯一标识
+                     * 设置<p>全球数据库网络唯一标识</p>
+                     * @param _gdnId <p>全球数据库网络唯一标识</p>
                      * 
                      */
                     void SetGdnId(const std::string& _gdnId);
@@ -1198,27 +1146,15 @@ pausing
                     bool GdnIdHasBeenSet() const;
 
                     /**
-                     * 获取集群在全球数据网络中的角色。
-主集群- primary
-从集群 - standby
-如为空，该字段无效
-                     * @return GdnRole 集群在全球数据网络中的角色。
-主集群- primary
-从集群 - standby
-如为空，该字段无效
+                     * 获取<p>集群在全球数据网络中的角色。<br>主集群- primary<br>从集群 - standby<br>如为空，该字段无效</p>
+                     * @return GdnRole <p>集群在全球数据网络中的角色。<br>主集群- primary<br>从集群 - standby<br>如为空，该字段无效</p>
                      * 
                      */
                     std::string GetGdnRole() const;
 
                     /**
-                     * 设置集群在全球数据网络中的角色。
-主集群- primary
-从集群 - standby
-如为空，该字段无效
-                     * @param _gdnRole 集群在全球数据网络中的角色。
-主集群- primary
-从集群 - standby
-如为空，该字段无效
+                     * 设置<p>集群在全球数据网络中的角色。<br>主集群- primary<br>从集群 - standby<br>如为空，该字段无效</p>
+                     * @param _gdnRole <p>集群在全球数据网络中的角色。<br>主集群- primary<br>从集群 - standby<br>如为空，该字段无效</p>
                      * 
                      */
                     void SetGdnRole(const std::string& _gdnRole);
@@ -1231,15 +1167,15 @@ pausing
                     bool GdnRoleHasBeenSet() const;
 
                     /**
-                     * 获取二级存储使用量，单位：G
-                     * @return UsedArchiveStorage 二级存储使用量，单位：G
+                     * 获取<p>二级存储使用量，单位：G</p>
+                     * @return UsedArchiveStorage <p>二级存储使用量，单位：G</p>
                      * 
                      */
                     int64_t GetUsedArchiveStorage() const;
 
                     /**
-                     * 设置二级存储使用量，单位：G
-                     * @param _usedArchiveStorage 二级存储使用量，单位：G
+                     * 设置<p>二级存储使用量，单位：G</p>
+                     * @param _usedArchiveStorage <p>二级存储使用量，单位：G</p>
                      * 
                      */
                     void SetUsedArchiveStorage(const int64_t& _usedArchiveStorage);
@@ -1252,15 +1188,15 @@ pausing
                     bool UsedArchiveStorageHasBeenSet() const;
 
                     /**
-                     * 获取归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
-                     * @return ArchiveStatus 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * 获取<p>归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li></p>
+                     * @return ArchiveStatus <p>归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li></p>
                      * 
                      */
                     std::string GetArchiveStatus() const;
 
                     /**
-                     * 设置归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
-                     * @param _archiveStatus 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * 设置<p>归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li></p>
+                     * @param _archiveStatus <p>归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li></p>
                      * 
                      */
                     void SetArchiveStatus(const std::string& _archiveStatus);
@@ -1273,15 +1209,15 @@ pausing
                     bool ArchiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取归档进度，百分比。
-                     * @return ArchiveProgress 归档进度，百分比。
+                     * 获取<p>归档进度，百分比。</p>
+                     * @return ArchiveProgress <p>归档进度，百分比。</p>
                      * 
                      */
                     int64_t GetArchiveProgress() const;
 
                     /**
-                     * 设置归档进度，百分比。
-                     * @param _archiveProgress 归档进度，百分比。
+                     * 设置<p>归档进度，百分比。</p>
+                     * @param _archiveProgress <p>归档进度，百分比。</p>
                      * 
                      */
                     void SetArchiveProgress(const int64_t& _archiveProgress);
@@ -1294,15 +1230,36 @@ pausing
                     bool ArchiveProgressHasBeenSet() const;
 
                     /**
-                     * 获取是否开启透明加密
-                     * @return IsOpenTDE 是否开启透明加密
+                     * 获取<p>集群级别。例如 P0, P1</p>
+                     * @return ClusterLevel <p>集群级别。例如 P0, P1</p>
+                     * 
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置<p>集群级别。例如 P0, P1</p>
+                     * @param _clusterLevel <p>集群级别。例如 P0, P1</p>
+                     * 
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     * 
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启透明加密</p>
+                     * @return IsOpenTDE <p>是否开启透明加密</p>
                      * 
                      */
                     bool GetIsOpenTDE() const;
 
                     /**
-                     * 设置是否开启透明加密
-                     * @param _isOpenTDE 是否开启透明加密
+                     * 设置<p>是否开启透明加密</p>
+                     * @param _isOpenTDE <p>是否开启透明加密</p>
                      * 
                      */
                     void SetIsOpenTDE(const bool& _isOpenTDE);
@@ -1317,359 +1274,349 @@ pausing
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 物理可用区
+                     * <p>物理可用区</p>
                      */
                     std::string m_physicalZone;
                     bool m_physicalZoneHasBeenSet;
 
                     /**
-                     * 状态，支持的值如下：
-- creating：创建中
-- running：运行中
-- isolating：隔离中
-- isolated：已隔离
-- activating：从回收站重新恢复
-- offlining：下线中
-- offlined：已下线
-- deleting：删除中
-- deleted：已删除
+                     * <p>状态，支持的值如下：</p><ul><li>creating：创建中</li><li>running：运行中</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>activating：从回收站重新恢复</li><li>offlining：下线中</li><li>offlined：已下线</li><li>deleting：删除中</li><li>deleted：已删除</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * <p>状态描述</p>
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
-resume
-resuming
-pause
-pausing
+                     * <p>当Db类型为SERVERLESS时，serverless集群状态，可选值:<br>resume<br>resuming<br>pause<br>pausing</p>
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
 
                     /**
-                     * 存储Id
+                     * <p>存储Id</p>
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
 
                     /**
-                     * 存储大小，单位为G
+                     * <p>存储大小，单位为G</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 最大存储规格，单位为G
+                     * <p>最大存储规格，单位为G</p>
                      */
                     int64_t m_maxStorageSize;
                     bool m_maxStorageSizeHasBeenSet;
 
                     /**
-                     * 最小存储规格，单位为G
+                     * <p>最小存储规格，单位为G</p>
                      */
                     int64_t m_minStorageSize;
                     bool m_minStorageSizeHasBeenSet;
 
                     /**
-                     * 存储付费类型，1为包年包月，0为按量计费
+                     * <p>存储付费类型，1为包年包月，0为按量计费</p>
                      */
                     int64_t m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
 
                     /**
-                     * VPC名称
+                     * <p>VPC名称</p>
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
-                     * vpc唯一id
+                     * <p>vpc唯一id</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网名称
+                     * <p>子网名称</p>
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 字符集
+                     * <p>字符集</p>
                      */
                     std::string m_charset;
                     bool m_charsetHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 数据库类型
+                     * <p>数据库类型</p>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * Db类型：<li>NORMAL</li><li>SERVERLESS</li>
+                     * <p>Db类型：<li>NORMAL</li><li>SERVERLESS</li></p>
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 数据库版本
+                     * <p>数据库版本</p>
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
 
                     /**
-                     * 存储空间上限
+                     * <p>存储空间上限</p>
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
 
                     /**
-                     * 使用容量
+                     * <p>使用容量</p>
                      */
                     int64_t m_usedStorage;
                     bool m_usedStorageHasBeenSet;
 
                     /**
-                     * vip地址
+                     * <p>vip地址</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * vport端口
+                     * <p>vport端口</p>
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 集群只读实例的vip地址和vport端口
+                     * <p>集群只读实例的vip地址和vport端口</p>
                      */
                     std::vector<Addr> m_roAddr;
                     bool m_roAddrHasBeenSet;
 
                     /**
-                     * 集群支持的功能
+                     * <p>集群支持的功能</p>
                      */
                     Ability m_ability;
                     bool m_abilityHasBeenSet;
 
                     /**
-                     * cynos版本
+                     * <p>cynos版本</p>
                      */
                     std::string m_cynosVersion;
                     bool m_cynosVersionHasBeenSet;
 
                     /**
-                     * 商业类型
+                     * <p>商业类型</p>
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 是否有从可用区
+                     * <p>是否有从可用区</p>
                      */
                     std::string m_hasSlaveZone;
                     bool m_hasSlaveZoneHasBeenSet;
 
                     /**
-                     * 是否冻结
+                     * <p>是否冻结</p>
                      */
                     std::string m_isFreeze;
                     bool m_isFreezeHasBeenSet;
 
                     /**
-                     * 任务列表
+                     * <p>任务列表</p>
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 主可用区
+                     * <p>主可用区</p>
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
 
                     /**
-                     * 从可用区列表
+                     * <p>从可用区列表</p>
                      */
                     std::vector<std::string> m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
 
                     /**
-                     * 实例信息
+                     * <p>实例信息</p>
                      */
                     std::vector<ClusterInstanceDetail> m_instanceSet;
                     bool m_instanceSetHasBeenSet;
 
                     /**
-                     * 付费模式
+                     * <p>付费模式</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * <p>到期时间</p>
                      */
                     std::string m_periodEndTime;
                     bool m_periodEndTimeHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
 
                     /**
-                     * 实例绑定的tag数组信息
+                     * <p>实例绑定的tag数组信息</p>
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * Proxy状态
+                     * <p>Proxy状态</p>
                      */
                     std::string m_proxyStatus;
                     bool m_proxyStatusHasBeenSet;
 
                     /**
-                     * binlog开关，可选值：ON, OFF
+                     * <p>binlog开关，可选值：ON, OFF</p>
                      */
                     std::string m_logBin;
                     bool m_logBinHasBeenSet;
 
                     /**
-                     * 是否跳过交易
+                     * <p>是否跳过交易</p>
                      */
                     std::string m_isSkipTrade;
                     bool m_isSkipTradeHasBeenSet;
 
                     /**
-                     * pitr类型，可选值：normal, redo_pitr
+                     * <p>pitr类型，可选值：normal, redo_pitr</p>
                      */
                     std::string m_pitrType;
                     bool m_pitrTypeHasBeenSet;
 
                     /**
-                     * 是否打开密码复杂度
+                     * <p>是否打开密码复杂度</p>
                      */
                     std::string m_isOpenPasswordComplexity;
                     bool m_isOpenPasswordComplexityHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * <p>网络类型</p>
                      */
                     std::string m_networkStatus;
                     bool m_networkStatusHasBeenSet;
 
                     /**
-                     * 集群绑定的资源包信息	
+                     * <p>集群绑定的资源包信息</p>
                      */
                     std::vector<ResourcePackage> m_resourcePackages;
                     bool m_resourcePackagesHasBeenSet;
 
                     /**
-                     * 自动续费标识，1为自动续费，0为到期不续
+                     * <p>自动续费标识，1为自动续费，0为到期不续</p>
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 节点网络类型
+                     * <p>节点网络类型</p>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 备可用区属性
+                     * <p>备可用区属性</p>
                      */
                     std::vector<SlaveZoneAttrItem> m_slaveZoneAttr;
                     bool m_slaveZoneAttrHasBeenSet;
 
                     /**
-                     * 版本标签
+                     * <p>版本标签</p>
                      */
                     std::string m_cynosVersionTag;
                     bool m_cynosVersionTagHasBeenSet;
 
                     /**
-                     * 全球数据库网络唯一标识
+                     * <p>全球数据库网络唯一标识</p>
                      */
                     std::string m_gdnId;
                     bool m_gdnIdHasBeenSet;
 
                     /**
-                     * 集群在全球数据网络中的角色。
-主集群- primary
-从集群 - standby
-如为空，该字段无效
+                     * <p>集群在全球数据网络中的角色。<br>主集群- primary<br>从集群 - standby<br>如为空，该字段无效</p>
                      */
                     std::string m_gdnRole;
                     bool m_gdnRoleHasBeenSet;
 
                     /**
-                     * 二级存储使用量，单位：G
+                     * <p>二级存储使用量，单位：G</p>
                      */
                     int64_t m_usedArchiveStorage;
                     bool m_usedArchiveStorageHasBeenSet;
 
                     /**
-                     * 归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>
+                     * <p>归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li></p>
                      */
                     std::string m_archiveStatus;
                     bool m_archiveStatusHasBeenSet;
 
                     /**
-                     * 归档进度，百分比。
+                     * <p>归档进度，百分比。</p>
                      */
                     int64_t m_archiveProgress;
                     bool m_archiveProgressHasBeenSet;
 
                     /**
-                     * 是否开启透明加密
+                     * <p>集群级别。例如 P0, P1</p>
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * <p>是否开启透明加密</p>
                      */
                     bool m_isOpenTDE;
                     bool m_isOpenTDEHasBeenSet;

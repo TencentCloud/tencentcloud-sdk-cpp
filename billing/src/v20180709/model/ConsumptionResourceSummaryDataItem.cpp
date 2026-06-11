@@ -60,7 +60,8 @@ ConsumptionResourceSummaryDataItem::ConsumptionResourceSummaryDataItem() :
     m_payTimeHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_componentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_leftRealTotalCostHasBeenSet(false)
 {
 }
 
@@ -469,6 +470,16 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("LeftRealTotalCost") && !value["LeftRealTotalCost"].IsNull())
+    {
+        if (!value["LeftRealTotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.LeftRealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_leftRealTotalCost = string(value["LeftRealTotalCost"].GetString());
+        m_leftRealTotalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -794,6 +805,14 @@ void ConsumptionResourceSummaryDataItem::ToJsonObject(rapidjson::Value &value, r
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tags.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_leftRealTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftRealTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_leftRealTotalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1437,5 +1456,21 @@ void ConsumptionResourceSummaryDataItem::SetTags(const string& _tags)
 bool ConsumptionResourceSummaryDataItem::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetLeftRealTotalCost() const
+{
+    return m_leftRealTotalCost;
+}
+
+void ConsumptionResourceSummaryDataItem::SetLeftRealTotalCost(const string& _leftRealTotalCost)
+{
+    m_leftRealTotalCost = _leftRealTotalCost;
+    m_leftRealTotalCostHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::LeftRealTotalCostHasBeenSet() const
+{
+    return m_leftRealTotalCostHasBeenSet;
 }
 

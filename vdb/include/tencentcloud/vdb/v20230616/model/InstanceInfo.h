@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例自定义名称。
-                     * @return Name 实例自定义名称。
+                     * 获取<p>实例自定义名称。</p>
+                     * @return Name <p>实例自定义名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例自定义名称。
-                     * @param _name 实例自定义名称。
+                     * 设置<p>实例自定义名称。</p>
+                     * @param _name <p>实例自定义名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户APPID。
-                     * @return AppId 用户APPID。
+                     * 获取<p>用户APPID。</p>
+                     * @return AppId <p>用户APPID。</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户APPID。
-                     * @param _appId 用户APPID。
+                     * 设置<p>用户APPID。</p>
+                     * @param _appId <p>用户APPID。</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取地域。
-                     * @return Region 地域。
+                     * 获取<p>地域。</p>
+                     * @return Region <p>地域。</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域。
-                     * @param _region 地域。
+                     * 设置<p>地域。</p>
+                     * @param _region <p>地域。</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区。
-                     * @return Zone 可用区。
+                     * 获取<p>可用区。</p>
+                     * @return Zone <p>可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区。
-                     * @param _zone 可用区。
+                     * 设置<p>可用区。</p>
+                     * @param _zone <p>可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取产品。
-                     * @return Product 产品。
+                     * 获取<p>产品。</p>
+                     * @return Product <p>产品。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品。
-                     * @param _product 产品。
+                     * 设置<p>产品。</p>
+                     * @param _product <p>产品。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取网络信息。
-                     * @return Networks 网络信息。
+                     * 获取<p>网络信息。</p>
+                     * @return Networks <p>网络信息。</p>
                      * 
                      */
                     std::vector<Network> GetNetworks() const;
 
                     /**
-                     * 设置网络信息。
-                     * @param _networks 网络信息。
+                     * 设置<p>网络信息。</p>
+                     * @param _networks <p>网络信息。</p>
                      * 
                      */
                     void SetNetworks(const std::vector<Network>& _networks);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool NetworksHasBeenSet() const;
 
                     /**
-                     * 获取分片信息。
-                     * @return ShardNum 分片信息。
+                     * 获取<p>分片信息。</p>
+                     * @return ShardNum <p>分片信息。</p>
                      * 
                      */
                     uint64_t GetShardNum() const;
 
                     /**
-                     * 设置分片信息。
-                     * @param _shardNum 分片信息。
+                     * 设置<p>分片信息。</p>
+                     * @param _shardNum <p>分片信息。</p>
                      * 
                      */
                     void SetShardNum(const uint64_t& _shardNum);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
-                     * 获取副本数。
-                     * @return ReplicaNum 副本数。
+                     * 获取<p>副本数。</p>
+                     * @return ReplicaNum <p>副本数。</p>
                      * 
                      */
                     uint64_t GetReplicaNum() const;
 
                     /**
-                     * 设置副本数。
-                     * @param _replicaNum 副本数。
+                     * 设置<p>副本数。</p>
+                     * @param _replicaNum <p>副本数。</p>
                      * 
                      */
                     void SetReplicaNum(const uint64_t& _replicaNum);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
-                     * 获取CPU.
-                     * @return Cpu CPU.
+                     * 获取<p>CPU.</p>
+                     * @return Cpu <p>CPU.</p>
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置CPU.
-                     * @param _cpu CPU.
+                     * 设置<p>CPU.</p>
+                     * @param _cpu <p>CPU.</p>
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存。
-                     * @return Memory 内存。
+                     * 获取<p>内存。</p>
+                     * @return Memory <p>内存。</p>
                      * 
                      */
                     double GetMemory() const;
 
                     /**
-                     * 设置内存。
-                     * @param _memory 内存。
+                     * 设置<p>内存。</p>
+                     * @param _memory <p>内存。</p>
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取磁盘。
-                     * @return Disk 磁盘。
+                     * 获取<p>磁盘。</p>
+                     * @return Disk <p>磁盘。</p>
                      * 
                      */
                     uint64_t GetDisk() const;
 
                     /**
-                     * 设置磁盘。
-                     * @param _disk 磁盘。
+                     * 设置<p>磁盘。</p>
+                     * @param _disk <p>磁盘。</p>
                      * 
                      */
                     void SetDisk(const uint64_t& _disk);
@@ -301,18 +301,18 @@ namespace TencentCloud
                     bool DiskHasBeenSet() const;
 
                     /**
-                     * 获取健康得分。
+                     * 获取<p>健康得分。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HealthScore 健康得分。
+                     * @return HealthScore <p>健康得分。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     double GetHealthScore() const;
 
                     /**
-                     * 设置健康得分。
+                     * 设置<p>健康得分。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _healthScore 健康得分。
+                     * @param _healthScore <p>健康得分。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -326,18 +326,18 @@ namespace TencentCloud
                     bool HealthScoreHasBeenSet() const;
 
                     /**
-                     * 获取异常告警。
+                     * 获取<p>异常告警。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Warning 异常告警。
+                     * @return Warning <p>异常告警。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     int64_t GetWarning() const;
 
                     /**
-                     * 设置异常告警。
+                     * 设置<p>异常告警。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warning 异常告警。
+                     * @param _warning <p>异常告警。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -351,18 +351,18 @@ namespace TencentCloud
                     bool WarningHasBeenSet() const;
 
                     /**
-                     * 获取所属项目。
+                     * 获取<p>所属项目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Project 所属项目。
+                     * @return Project <p>所属项目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetProject() const;
 
                     /**
-                     * 设置所属项目。
+                     * 设置<p>所属项目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _project 所属项目。
+                     * @param _project <p>所属项目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -376,15 +376,15 @@ namespace TencentCloud
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取所属标签。
-                     * @return ResourceTags 所属标签。
+                     * 获取<p>所属标签。</p>
+                     * @return ResourceTags <p>所属标签。</p>
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
-                     * 设置所属标签。
-                     * @param _resourceTags 所属标签。
+                     * 设置<p>所属标签。</p>
+                     * @param _resourceTags <p>所属标签。</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -397,15 +397,15 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedAt 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedAt <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdAt 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdAt <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -418,15 +418,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取资源状态。
-                     * @return Status 资源状态。
+                     * 获取<p>资源状态。</p>
+                     * @return Status <p>资源状态。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置资源状态。
-                     * @param _status 资源状态。
+                     * 设置<p>资源状态。</p>
+                     * @param _status <p>资源状态。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -439,15 +439,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取引擎名称。
-                     * @return EngineName 引擎名称。
+                     * 获取<p>引擎名称。</p>
+                     * @return EngineName <p>引擎名称。</p>
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置引擎名称。
-                     * @param _engineName 引擎名称。
+                     * 设置<p>引擎名称。</p>
+                     * @param _engineName <p>引擎名称。</p>
                      * 
                      */
                     void SetEngineName(const std::string& _engineName);
@@ -460,15 +460,15 @@ namespace TencentCloud
                     bool EngineNameHasBeenSet() const;
 
                     /**
-                     * 获取引擎版本。
-                     * @return EngineVersion 引擎版本。
+                     * 获取<p>引擎版本。</p>
+                     * @return EngineVersion <p>引擎版本。</p>
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置引擎版本。
-                     * @param _engineVersion 引擎版本。
+                     * 设置<p>引擎版本。</p>
+                     * @param _engineVersion <p>引擎版本。</p>
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -481,15 +481,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取api版本
-                     * @return ApiVersion api版本
+                     * 获取<p>api版本</p>
+                     * @return ApiVersion <p>api版本</p>
                      * 
                      */
                     std::string GetApiVersion() const;
 
                     /**
-                     * 设置api版本
-                     * @param _apiVersion api版本
+                     * 设置<p>api版本</p>
+                     * @param _apiVersion <p>api版本</p>
                      * 
                      */
                     void SetApiVersion(const std::string& _apiVersion);
@@ -502,15 +502,15 @@ namespace TencentCloud
                     bool ApiVersionHasBeenSet() const;
 
                     /**
-                     * 获取计费模式。
-                     * @return PayMode 计费模式。
+                     * 获取<p>计费模式。</p>
+                     * @return PayMode <p>计费模式。</p>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式。
-                     * @param _payMode 计费模式。
+                     * 设置<p>计费模式。</p>
+                     * @param _payMode <p>计费模式。</p>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -523,15 +523,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取差异化扩展信息, json格式。
-                     * @return Extend 差异化扩展信息, json格式。
+                     * 获取<p>差异化扩展信息, json格式。</p>
+                     * @return Extend <p>差异化扩展信息, json格式。</p>
                      * 
                      */
                     std::string GetExtend() const;
 
                     /**
-                     * 设置差异化扩展信息, json格式。
-                     * @param _extend 差异化扩展信息, json格式。
+                     * 设置<p>差异化扩展信息, json格式。</p>
+                     * @param _extend <p>差异化扩展信息, json格式。</p>
                      * 
                      */
                     void SetExtend(const std::string& _extend);
@@ -544,15 +544,15 @@ namespace TencentCloud
                     bool ExtendHasBeenSet() const;
 
                     /**
-                     * 获取过期时间。
-                     * @return ExpiredAt 过期时间。
+                     * 获取<p>过期时间。</p>
+                     * @return ExpiredAt <p>过期时间。</p>
                      * 
                      */
                     std::string GetExpiredAt() const;
 
                     /**
-                     * 设置过期时间。
-                     * @param _expiredAt 过期时间。
+                     * 设置<p>过期时间。</p>
+                     * @param _expiredAt <p>过期时间。</p>
                      * 
                      */
                     void SetExpiredAt(const std::string& _expiredAt);
@@ -565,15 +565,15 @@ namespace TencentCloud
                     bool ExpiredAtHasBeenSet() const;
 
                     /**
-                     * 获取是否不过期(永久)。
-                     * @return IsNoExpired 是否不过期(永久)。
+                     * 获取<p>是否不过期(永久)。</p>
+                     * @return IsNoExpired <p>是否不过期(永久)。</p>
                      * 
                      */
                     bool GetIsNoExpired() const;
 
                     /**
-                     * 设置是否不过期(永久)。
-                     * @param _isNoExpired 是否不过期(永久)。
+                     * 设置<p>是否不过期(永久)。</p>
+                     * @param _isNoExpired <p>是否不过期(永久)。</p>
                      * 
                      */
                     void SetIsNoExpired(const bool& _isNoExpired);
@@ -586,15 +586,15 @@ namespace TencentCloud
                     bool IsNoExpiredHasBeenSet() const;
 
                     /**
-                     * 获取产品版本，0-标准版，1-容量增强版
-                     * @return ProductType 产品版本，0-标准版，1-容量增强版
+                     * 获取<p>产品版本，0-标准版，1-容量增强版</p>
+                     * @return ProductType <p>产品版本，0-标准版，1-容量增强版</p>
                      * 
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置产品版本，0-标准版，1-容量增强版
-                     * @param _productType 产品版本，0-标准版，1-容量增强版
+                     * 设置<p>产品版本，0-标准版，1-容量增强版</p>
+                     * @param _productType <p>产品版本，0-标准版，1-容量增强版</p>
                      * 
                      */
                     void SetProductType(const int64_t& _productType);
@@ -607,15 +607,15 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return InstanceType 实例类型
+                     * 获取<p>实例类型</p>
+                     * @return InstanceType <p>实例类型</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _instanceType 实例类型
+                     * 设置<p>实例类型</p>
+                     * @param _instanceType <p>实例类型</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -628,15 +628,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
-                     * @return NodeType 节点类型
+                     * 获取<p>节点类型</p>
+                     * @return NodeType <p>节点类型</p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型
-                     * @param _nodeType 节点类型
+                     * 设置<p>节点类型</p>
+                     * @param _nodeType <p>节点类型</p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -649,15 +649,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取外网地址。
-                     * @return WanAddress 外网地址。
+                     * 获取<p>外网地址。</p>
+                     * @return WanAddress <p>外网地址。</p>
                      * 
                      */
                     std::string GetWanAddress() const;
 
                     /**
-                     * 设置外网地址。
-                     * @param _wanAddress 外网地址。
+                     * 设置<p>外网地址。</p>
+                     * @param _wanAddress <p>外网地址。</p>
                      * 
                      */
                     void SetWanAddress(const std::string& _wanAddress);
@@ -670,15 +670,15 @@ namespace TencentCloud
                     bool WanAddressHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间
-                     * @return IsolateAt 隔离时间
+                     * 获取<p>隔离时间</p>
+                     * @return IsolateAt <p>隔离时间</p>
                      * 
                      */
                     std::string GetIsolateAt() const;
 
                     /**
-                     * 设置隔离时间
-                     * @param _isolateAt 隔离时间
+                     * 设置<p>隔离时间</p>
+                     * @param _isolateAt <p>隔离时间</p>
                      * 
                      */
                     void SetIsolateAt(const std::string& _isolateAt);
@@ -691,15 +691,15 @@ namespace TencentCloud
                     bool IsolateAtHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-                     * @return AutoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+                     * 获取<p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>
+                     * @return AutoRenew <p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>
                      * 
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-                     * @param _autoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+                     * 设置<p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>
+                     * @param _autoRenew <p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>
                      * 
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
@@ -712,15 +712,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
-                     * @return TaskStatus 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 获取<p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>
+                     * @return TaskStatus <p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>
                      * 
                      */
                     int64_t GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
-                     * @param _taskStatus 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 设置<p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>
+                     * @param _taskStatus <p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>
                      * 
                      */
                     void SetTaskStatus(const int64_t& _taskStatus);
@@ -733,15 +733,15 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取绑定的安全组id
-                     * @return SecurityGroupIds 绑定的安全组id
+                     * 获取<p>绑定的安全组id</p>
+                     * @return SecurityGroupIds <p>绑定的安全组id</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置绑定的安全组id
-                     * @param _securityGroupIds 绑定的安全组id
+                     * 设置<p>绑定的安全组id</p>
+                     * @param _securityGroupIds <p>绑定的安全组id</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -753,208 +753,262 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可升级版本号</p>
+                     * @return UpgradeVersion <p>可升级版本号</p>
+                     * 
+                     */
+                    std::string GetUpgradeVersion() const;
+
+                    /**
+                     * 设置<p>可升级版本号</p>
+                     * @param _upgradeVersion <p>可升级版本号</p>
+                     * 
+                     */
+                    void SetUpgradeVersion(const std::string& _upgradeVersion);
+
+                    /**
+                     * 判断参数 UpgradeVersion 是否已赋值
+                     * @return UpgradeVersion 是否已赋值
+                     * 
+                     */
+                    bool UpgradeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否为内部实例</p>
+                     * @return IsInternal <p>是否为内部实例</p>
+                     * 
+                     */
+                    bool GetIsInternal() const;
+
+                    /**
+                     * 设置<p>是否为内部实例</p>
+                     * @param _isInternal <p>是否为内部实例</p>
+                     * 
+                     */
+                    void SetIsInternal(const bool& _isInternal);
+
+                    /**
+                     * 判断参数 IsInternal 是否已赋值
+                     * @return IsInternal 是否已赋值
+                     * 
+                     */
+                    bool IsInternalHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例自定义名称。
+                     * <p>实例自定义名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户APPID。
+                     * <p>用户APPID。</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 地域。
+                     * <p>地域。</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区。
+                     * <p>可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 产品。
+                     * <p>产品。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 网络信息。
+                     * <p>网络信息。</p>
                      */
                     std::vector<Network> m_networks;
                     bool m_networksHasBeenSet;
 
                     /**
-                     * 分片信息。
+                     * <p>分片信息。</p>
                      */
                     uint64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
-                     * 副本数。
+                     * <p>副本数。</p>
                      */
                     uint64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
 
                     /**
-                     * CPU.
+                     * <p>CPU.</p>
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存。
+                     * <p>内存。</p>
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 磁盘。
+                     * <p>磁盘。</p>
                      */
                     uint64_t m_disk;
                     bool m_diskHasBeenSet;
 
                     /**
-                     * 健康得分。
+                     * <p>健康得分。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_healthScore;
                     bool m_healthScoreHasBeenSet;
 
                     /**
-                     * 异常告警。
+                     * <p>异常告警。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_warning;
                     bool m_warningHasBeenSet;
 
                     /**
-                     * 所属项目。
+                     * <p>所属项目。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_project;
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 所属标签。
+                     * <p>所属标签。</p>
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 资源状态。
+                     * <p>资源状态。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 引擎名称。
+                     * <p>引擎名称。</p>
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;
 
                     /**
-                     * 引擎版本。
+                     * <p>引擎版本。</p>
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * api版本
+                     * <p>api版本</p>
                      */
                     std::string m_apiVersion;
                     bool m_apiVersionHasBeenSet;
 
                     /**
-                     * 计费模式。
+                     * <p>计费模式。</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 差异化扩展信息, json格式。
+                     * <p>差异化扩展信息, json格式。</p>
                      */
                     std::string m_extend;
                     bool m_extendHasBeenSet;
 
                     /**
-                     * 过期时间。
+                     * <p>过期时间。</p>
                      */
                     std::string m_expiredAt;
                     bool m_expiredAtHasBeenSet;
 
                     /**
-                     * 是否不过期(永久)。
+                     * <p>是否不过期(永久)。</p>
                      */
                     bool m_isNoExpired;
                     bool m_isNoExpiredHasBeenSet;
 
                     /**
-                     * 产品版本，0-标准版，1-容量增强版
+                     * <p>产品版本，0-标准版，1-容量增强版</p>
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * <p>实例类型</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * <p>节点类型</p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 外网地址。
+                     * <p>外网地址。</p>
                      */
                     std::string m_wanAddress;
                     bool m_wanAddressHasBeenSet;
 
                     /**
-                     * 隔离时间
+                     * <p>隔离时间</p>
                      */
                     std::string m_isolateAt;
                     bool m_isolateAtHasBeenSet;
 
                     /**
-                     * 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+                     * <p>是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.</p>
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * <p>任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中</p>
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 绑定的安全组id
+                     * <p>绑定的安全组id</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>可升级版本号</p>
+                     */
+                    std::string m_upgradeVersion;
+                    bool m_upgradeVersionHasBeenSet;
+
+                    /**
+                     * <p>是否为内部实例</p>
+                     */
+                    bool m_isInternal;
+                    bool m_isInternalHasBeenSet;
 
                 };
             }

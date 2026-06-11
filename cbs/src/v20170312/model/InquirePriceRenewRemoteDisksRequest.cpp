@@ -22,7 +22,9 @@
 using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
-InquirePriceRenewRemoteDisksRequest::InquirePriceRenewRemoteDisksRequest()
+InquirePriceRenewRemoteDisksRequest::InquirePriceRenewRemoteDisksRequest() :
+    m_diskChargePrepaidSetHasBeenSet(false),
+    m_remoteDiskIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,34 @@ string InquirePriceRenewRemoteDisksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_diskChargePrepaidSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskChargePrepaidSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_diskChargePrepaidSet.begin(); itr != m_diskChargePrepaidSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_remoteDiskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteDiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_remoteDiskIds.begin(); itr != m_remoteDiskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +70,37 @@ string InquirePriceRenewRemoteDisksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<RemoteDiskChargePrepaid> InquirePriceRenewRemoteDisksRequest::GetDiskChargePrepaidSet() const
+{
+    return m_diskChargePrepaidSet;
+}
+
+void InquirePriceRenewRemoteDisksRequest::SetDiskChargePrepaidSet(const vector<RemoteDiskChargePrepaid>& _diskChargePrepaidSet)
+{
+    m_diskChargePrepaidSet = _diskChargePrepaidSet;
+    m_diskChargePrepaidSetHasBeenSet = true;
+}
+
+bool InquirePriceRenewRemoteDisksRequest::DiskChargePrepaidSetHasBeenSet() const
+{
+    return m_diskChargePrepaidSetHasBeenSet;
+}
+
+vector<string> InquirePriceRenewRemoteDisksRequest::GetRemoteDiskIds() const
+{
+    return m_remoteDiskIds;
+}
+
+void InquirePriceRenewRemoteDisksRequest::SetRemoteDiskIds(const vector<string>& _remoteDiskIds)
+{
+    m_remoteDiskIds = _remoteDiskIds;
+    m_remoteDiskIdsHasBeenSet = true;
+}
+
+bool InquirePriceRenewRemoteDisksRequest::RemoteDiskIdsHasBeenSet() const
+{
+    return m_remoteDiskIdsHasBeenSet;
+}
 
 

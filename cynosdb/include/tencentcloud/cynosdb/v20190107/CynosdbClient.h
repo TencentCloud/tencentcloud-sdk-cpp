@@ -43,6 +43,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CancelClusterServerlessScalePlanRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CancelClusterServerlessScalePlanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckTransferClusterZoneRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateClusterPeriodScalePolicyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateClusterPeriodScalePolicyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateIntegrateClusterRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteClusterPeriodScalePolicyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteClusterPeriodScalePolicyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterRequest.h>
@@ -175,8 +181,12 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterPeriodScalePolicyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterPeriodScalePolicyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterReadOnlyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterReadOnlyResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterServerlessScalePlansRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterServerlessScalePlansResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h>
@@ -347,6 +357,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterPasswordComplexityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterPasswordComplexityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterPeriodScalePolicyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterPeriodScalePolicyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterReadOnlyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterReadOnlyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneRequest.h>
@@ -407,6 +419,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenAIOptimizerRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OpenAIOptimizerResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenClusterPasswordComplexityRequest.h>
@@ -525,6 +539,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CalculateBackupSaveSecExpiresResponse> CalculateBackupSaveSecExpiresOutcome;
                 typedef std::future<CalculateBackupSaveSecExpiresOutcome> CalculateBackupSaveSecExpiresOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CalculateBackupSaveSecExpiresRequest&, CalculateBackupSaveSecExpiresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CalculateBackupSaveSecExpiresAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelClusterServerlessScalePlanResponse> CancelClusterServerlessScalePlanOutcome;
+                typedef std::future<CancelClusterServerlessScalePlanOutcome> CancelClusterServerlessScalePlanOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CancelClusterServerlessScalePlanRequest&, CancelClusterServerlessScalePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelClusterServerlessScalePlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckCreateLibraDBInstanceResponse> CheckCreateLibraDBInstanceOutcome;
                 typedef std::future<CheckCreateLibraDBInstanceOutcome> CheckCreateLibraDBInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CheckCreateLibraDBInstanceRequest&, CheckCreateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCreateLibraDBInstanceAsyncHandler;
@@ -573,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterDatabaseResponse> CreateClusterDatabaseOutcome;
                 typedef std::future<CreateClusterDatabaseOutcome> CreateClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClusterDatabaseRequest&, CreateClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateClusterPeriodScalePolicyResponse> CreateClusterPeriodScalePolicyOutcome;
+                typedef std::future<CreateClusterPeriodScalePolicyOutcome> CreateClusterPeriodScalePolicyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateClusterPeriodScalePolicyRequest&, CreateClusterPeriodScalePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterPeriodScalePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClustersResponse> CreateClustersOutcome;
                 typedef std::future<CreateClustersOutcome> CreateClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClustersRequest&, CreateClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClustersAsyncHandler;
@@ -621,6 +641,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClusterDatabaseResponse> DeleteClusterDatabaseOutcome;
                 typedef std::future<DeleteClusterDatabaseOutcome> DeleteClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterDatabaseRequest&, DeleteClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteClusterPeriodScalePolicyResponse> DeleteClusterPeriodScalePolicyOutcome;
+                typedef std::future<DeleteClusterPeriodScalePolicyOutcome> DeleteClusterPeriodScalePolicyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterPeriodScalePolicyRequest&, DeleteClusterPeriodScalePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterPeriodScalePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterSaveBackupResponse> DeleteClusterSaveBackupOutcome;
                 typedef std::future<DeleteClusterSaveBackupOutcome> DeleteClusterSaveBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterSaveBackupRequest&, DeleteClusterSaveBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterSaveBackupAsyncHandler;
@@ -723,9 +746,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterPasswordComplexityResponse> DescribeClusterPasswordComplexityOutcome;
                 typedef std::future<DescribeClusterPasswordComplexityOutcome> DescribeClusterPasswordComplexityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterPasswordComplexityRequest&, DescribeClusterPasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterPasswordComplexityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterPeriodScalePolicyResponse> DescribeClusterPeriodScalePolicyOutcome;
+                typedef std::future<DescribeClusterPeriodScalePolicyOutcome> DescribeClusterPeriodScalePolicyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterPeriodScalePolicyRequest&, DescribeClusterPeriodScalePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterPeriodScalePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterReadOnlyResponse> DescribeClusterReadOnlyOutcome;
                 typedef std::future<DescribeClusterReadOnlyOutcome> DescribeClusterReadOnlyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterReadOnlyRequest&, DescribeClusterReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterReadOnlyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterServerlessScalePlansResponse> DescribeClusterServerlessScalePlansOutcome;
+                typedef std::future<DescribeClusterServerlessScalePlansOutcome> DescribeClusterServerlessScalePlansOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterServerlessScalePlansRequest&, DescribeClusterServerlessScalePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterServerlessScalePlansAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterTransparentEncryptInfoResponse> DescribeClusterTransparentEncryptInfoOutcome;
                 typedef std::future<DescribeClusterTransparentEncryptInfoOutcome> DescribeClusterTransparentEncryptInfoOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterTransparentEncryptInfoRequest&, DescribeClusterTransparentEncryptInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTransparentEncryptInfoAsyncHandler;
@@ -981,6 +1010,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterPasswordComplexityResponse> ModifyClusterPasswordComplexityOutcome;
                 typedef std::future<ModifyClusterPasswordComplexityOutcome> ModifyClusterPasswordComplexityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterPasswordComplexityRequest&, ModifyClusterPasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterPasswordComplexityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterPeriodScalePolicyResponse> ModifyClusterPeriodScalePolicyOutcome;
+                typedef std::future<ModifyClusterPeriodScalePolicyOutcome> ModifyClusterPeriodScalePolicyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterPeriodScalePolicyRequest&, ModifyClusterPeriodScalePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterPeriodScalePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterReadOnlyResponse> ModifyClusterReadOnlyOutcome;
                 typedef std::future<ModifyClusterReadOnlyOutcome> ModifyClusterReadOnlyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterReadOnlyRequest&, ModifyClusterReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterReadOnlyAsyncHandler;
@@ -1071,6 +1103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OfflineLibraDBInstanceResponse> OfflineLibraDBInstanceOutcome;
                 typedef std::future<OfflineLibraDBInstanceOutcome> OfflineLibraDBInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OfflineLibraDBInstanceRequest&, OfflineLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineLibraDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenAIOptimizerResponse> OpenAIOptimizerOutcome;
+                typedef std::future<OpenAIOptimizerOutcome> OpenAIOptimizerOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OpenAIOptimizerRequest&, OpenAIOptimizerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAIOptimizerAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
@@ -1276,6 +1311,15 @@ namespace TencentCloud
                 CalculateBackupSaveSecExpiresOutcomeCallable CalculateBackupSaveSecExpiresCallable(const Model::CalculateBackupSaveSecExpiresRequest& request);
 
                 /**
+                 *取消Serverless集群的弹性计划
+                 * @param req CancelClusterServerlessScalePlanRequest
+                 * @return CancelClusterServerlessScalePlanOutcome
+                 */
+                CancelClusterServerlessScalePlanOutcome CancelClusterServerlessScalePlan(const Model::CancelClusterServerlessScalePlanRequest &request);
+                void CancelClusterServerlessScalePlanAsync(const Model::CancelClusterServerlessScalePlanRequest& request, const CancelClusterServerlessScalePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelClusterServerlessScalePlanOutcomeCallable CancelClusterServerlessScalePlanCallable(const Model::CancelClusterServerlessScalePlanRequest& request);
+
+                /**
                  *本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例
                  * @param req CheckCreateLibraDBInstanceRequest
                  * @return CheckCreateLibraDBInstanceOutcome
@@ -1420,6 +1464,15 @@ namespace TencentCloud
                 CreateClusterDatabaseOutcomeCallable CreateClusterDatabaseCallable(const Model::CreateClusterDatabaseRequest& request);
 
                 /**
+                 *创建集群的周期弹性策略
+                 * @param req CreateClusterPeriodScalePolicyRequest
+                 * @return CreateClusterPeriodScalePolicyOutcome
+                 */
+                CreateClusterPeriodScalePolicyOutcome CreateClusterPeriodScalePolicy(const Model::CreateClusterPeriodScalePolicyRequest &request);
+                void CreateClusterPeriodScalePolicyAsync(const Model::CreateClusterPeriodScalePolicyRequest& request, const CreateClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterPeriodScalePolicyOutcomeCallable CreateClusterPeriodScalePolicyCallable(const Model::CreateClusterPeriodScalePolicyRequest& request);
+
+                /**
                  *本接口（CreateClusters）用于新购集群。
                  * @param req CreateClustersRequest
                  * @return CreateClustersOutcome
@@ -1562,6 +1615,15 @@ namespace TencentCloud
                 DeleteClusterDatabaseOutcome DeleteClusterDatabase(const Model::DeleteClusterDatabaseRequest &request);
                 void DeleteClusterDatabaseAsync(const Model::DeleteClusterDatabaseRequest& request, const DeleteClusterDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterDatabaseOutcomeCallable DeleteClusterDatabaseCallable(const Model::DeleteClusterDatabaseRequest& request);
+
+                /**
+                 *删除周期弹性策略
+                 * @param req DeleteClusterPeriodScalePolicyRequest
+                 * @return DeleteClusterPeriodScalePolicyOutcome
+                 */
+                DeleteClusterPeriodScalePolicyOutcome DeleteClusterPeriodScalePolicy(const Model::DeleteClusterPeriodScalePolicyRequest &request);
+                void DeleteClusterPeriodScalePolicyAsync(const Model::DeleteClusterPeriodScalePolicyRequest& request, const DeleteClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterPeriodScalePolicyOutcomeCallable DeleteClusterPeriodScalePolicyCallable(const Model::DeleteClusterPeriodScalePolicyRequest& request);
 
                 /**
                  *本接口（DeleteClusterSaveBackup）用于为集群删除遗留备份
@@ -1870,6 +1932,15 @@ namespace TencentCloud
                 DescribeClusterPasswordComplexityOutcomeCallable DescribeClusterPasswordComplexityCallable(const Model::DescribeClusterPasswordComplexityRequest& request);
 
                 /**
+                 *查询集群内所有的周期弹性策略
+                 * @param req DescribeClusterPeriodScalePolicyRequest
+                 * @return DescribeClusterPeriodScalePolicyOutcome
+                 */
+                DescribeClusterPeriodScalePolicyOutcome DescribeClusterPeriodScalePolicy(const Model::DescribeClusterPeriodScalePolicyRequest &request);
+                void DescribeClusterPeriodScalePolicyAsync(const Model::DescribeClusterPeriodScalePolicyRequest& request, const DescribeClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterPeriodScalePolicyOutcomeCallable DescribeClusterPeriodScalePolicyCallable(const Model::DescribeClusterPeriodScalePolicyRequest& request);
+
+                /**
                  *本接口（DescribeClusterReadOnly）用于查询集群只读开关。
                  * @param req DescribeClusterReadOnlyRequest
                  * @return DescribeClusterReadOnlyOutcome
@@ -1877,6 +1948,15 @@ namespace TencentCloud
                 DescribeClusterReadOnlyOutcome DescribeClusterReadOnly(const Model::DescribeClusterReadOnlyRequest &request);
                 void DescribeClusterReadOnlyAsync(const Model::DescribeClusterReadOnlyRequest& request, const DescribeClusterReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterReadOnlyOutcomeCallable DescribeClusterReadOnlyCallable(const Model::DescribeClusterReadOnlyRequest& request);
+
+                /**
+                 *查询Serverless弹性扩容计划
+                 * @param req DescribeClusterServerlessScalePlansRequest
+                 * @return DescribeClusterServerlessScalePlansOutcome
+                 */
+                DescribeClusterServerlessScalePlansOutcome DescribeClusterServerlessScalePlans(const Model::DescribeClusterServerlessScalePlansRequest &request);
+                void DescribeClusterServerlessScalePlansAsync(const Model::DescribeClusterServerlessScalePlansRequest& request, const DescribeClusterServerlessScalePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterServerlessScalePlansOutcomeCallable DescribeClusterServerlessScalePlansCallable(const Model::DescribeClusterServerlessScalePlansRequest& request);
 
                 /**
                  *查询集群透明加密信息
@@ -2644,6 +2724,15 @@ namespace TencentCloud
                 ModifyClusterPasswordComplexityOutcomeCallable ModifyClusterPasswordComplexityCallable(const Model::ModifyClusterPasswordComplexityRequest& request);
 
                 /**
+                 *更新集群的周期弹性策略
+                 * @param req ModifyClusterPeriodScalePolicyRequest
+                 * @return ModifyClusterPeriodScalePolicyOutcome
+                 */
+                ModifyClusterPeriodScalePolicyOutcome ModifyClusterPeriodScalePolicy(const Model::ModifyClusterPeriodScalePolicyRequest &request);
+                void ModifyClusterPeriodScalePolicyAsync(const Model::ModifyClusterPeriodScalePolicyRequest& request, const ModifyClusterPeriodScalePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterPeriodScalePolicyOutcomeCallable ModifyClusterPeriodScalePolicyCallable(const Model::ModifyClusterPeriodScalePolicyRequest& request);
+
+                /**
                  *本接口（ModifyClusterReadOnly）用于修改集群只读开关。
                  * @param req ModifyClusterReadOnlyRequest
                  * @return ModifyClusterReadOnlyOutcome
@@ -2912,6 +3001,15 @@ namespace TencentCloud
                 OfflineLibraDBInstanceOutcome OfflineLibraDBInstance(const Model::OfflineLibraDBInstanceRequest &request);
                 void OfflineLibraDBInstanceAsync(const Model::OfflineLibraDBInstanceRequest& request, const OfflineLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OfflineLibraDBInstanceOutcomeCallable OfflineLibraDBInstanceCallable(const Model::OfflineLibraDBInstanceRequest& request);
+
+                /**
+                 *本接口(OpenAIOptimizer)用于开启实例的AI优化器开关。
+                 * @param req OpenAIOptimizerRequest
+                 * @return OpenAIOptimizerOutcome
+                 */
+                OpenAIOptimizerOutcome OpenAIOptimizer(const Model::OpenAIOptimizerRequest &request);
+                void OpenAIOptimizerAsync(const Model::OpenAIOptimizerRequest& request, const OpenAIOptimizerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenAIOptimizerOutcomeCallable OpenAIOptimizerCallable(const Model::OpenAIOptimizerRequest& request);
 
                 /**
                  *本接口（OpenAuditService）用于为实例开通数据库审计服务。

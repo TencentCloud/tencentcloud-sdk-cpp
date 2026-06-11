@@ -40,7 +40,9 @@ TopologyNode::TopologyNode() :
     m_consumerDurationHasBeenSet(false),
     m_consumerErrRateHasBeenSet(false),
     m_consumerQpsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_reqCntHasBeenSet(false),
+    m_consumerReqCntHasBeenSet(false)
 {
 }
 
@@ -273,6 +275,26 @@ CoreInternalOutcome TopologyNode::Deserialize(const rapidjson::Value &value)
         m_serviceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ReqCnt") && !value["ReqCnt"].IsNull())
+    {
+        if (!value["ReqCnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopologyNode.ReqCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reqCnt = value["ReqCnt"].GetInt64();
+        m_reqCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerReqCnt") && !value["ConsumerReqCnt"].IsNull())
+    {
+        if (!value["ConsumerReqCnt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopologyNode.ConsumerReqCnt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerReqCnt = value["ConsumerReqCnt"].GetInt64();
+        m_consumerReqCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -447,6 +469,22 @@ void TopologyNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reqCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReqCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reqCnt, allocator);
+    }
+
+    if (m_consumerReqCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerReqCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerReqCnt, allocator);
     }
 
 }
@@ -770,5 +808,37 @@ void TopologyNode::SetServiceId(const string& _serviceId)
 bool TopologyNode::ServiceIdHasBeenSet() const
 {
     return m_serviceIdHasBeenSet;
+}
+
+int64_t TopologyNode::GetReqCnt() const
+{
+    return m_reqCnt;
+}
+
+void TopologyNode::SetReqCnt(const int64_t& _reqCnt)
+{
+    m_reqCnt = _reqCnt;
+    m_reqCntHasBeenSet = true;
+}
+
+bool TopologyNode::ReqCntHasBeenSet() const
+{
+    return m_reqCntHasBeenSet;
+}
+
+int64_t TopologyNode::GetConsumerReqCnt() const
+{
+    return m_consumerReqCnt;
+}
+
+void TopologyNode::SetConsumerReqCnt(const int64_t& _consumerReqCnt)
+{
+    m_consumerReqCnt = _consumerReqCnt;
+    m_consumerReqCntHasBeenSet = true;
+}
+
+bool TopologyNode::ConsumerReqCntHasBeenSet() const
+{
+    return m_consumerReqCntHasBeenSet;
 }
 

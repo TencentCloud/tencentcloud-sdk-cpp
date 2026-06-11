@@ -26,7 +26,8 @@ Network::Network() :
     m_vipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_preserveDurationHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_isSSLHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome Network::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSSL") && !value["IsSSL"].IsNull())
+    {
+        if (!value["IsSSL"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Network.IsSSL` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSSL = value["IsSSL"].GetBool();
+        m_isSSLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void Network::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSSL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSSL, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void Network::SetExpireTime(const string& _expireTime)
 bool Network::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+bool Network::GetIsSSL() const
+{
+    return m_isSSL;
+}
+
+void Network::SetIsSSL(const bool& _isSSL)
+{
+    m_isSSL = _isSSL;
+    m_isSSLHasBeenSet = true;
+}
+
+bool Network::IsSSLHasBeenSet() const
+{
+    return m_isSSLHasBeenSet;
 }
 

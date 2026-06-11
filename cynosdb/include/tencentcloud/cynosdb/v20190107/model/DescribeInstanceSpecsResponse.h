@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格信息
-                     * @return InstanceSpecSet 规格信息
+                     * 获取<p>规格信息</p>
+                     * @return InstanceSpecSet <p>规格信息</p>
                      * 
                      */
                     std::vector<InstanceSpec> GetInstanceSpecSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规格信息
+                     * <p>规格信息</p>
                      */
                     std::vector<InstanceSpec> m_instanceSpecSet;
                     bool m_instanceSpecSetHasBeenSet;

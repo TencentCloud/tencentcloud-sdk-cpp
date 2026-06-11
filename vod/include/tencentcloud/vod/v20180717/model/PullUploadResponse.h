@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。
-                     * @return TaskId 拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。
+                     * 获取<p>拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。</p>
+                     * @return TaskId <p>拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。
+                     * <p>拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

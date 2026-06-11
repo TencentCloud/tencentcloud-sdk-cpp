@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标结果集
-                     * @return Records 指标结果集
+                     * 获取<p>指标结果集</p>
+                     * @return Records <p>指标结果集</p>
                      * 
                      */
                     std::vector<ApmMetricRecord> GetRecords() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RecordsHasBeenSet() const;
 
                     /**
-                     * 获取查询指标结果集条数
-                     * @return TotalCount 查询指标结果集条数
+                     * 获取<p>查询指标结果集条数</p>
+                     * @return TotalCount <p>查询指标结果集条数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标结果集
+                     * <p>指标结果集</p>
                      */
                     std::vector<ApmMetricRecord> m_records;
                     bool m_recordsHasBeenSet;
 
                     /**
-                     * 查询指标结果集条数
+                     * <p>查询指标结果集条数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

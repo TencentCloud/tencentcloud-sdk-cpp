@@ -38,7 +38,13 @@ ManualTriggerRecordOpsDto::ManualTriggerRecordOpsDto() :
     m_projectIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
-    m_timeTypeHasBeenSet(false)
+    m_timeTypeHasBeenSet(false),
+    m_triggerSourceHasBeenSet(false),
+    m_triggerSourceIdHasBeenSet(false),
+    m_parentSpTaskIdHasBeenSet(false),
+    m_parentSpInstanceNameHasBeenSet(false),
+    m_parentSpInstanceDataTimeHasBeenSet(false),
+    m_scheduleTimeListHasBeenSet(false)
 {
 }
 
@@ -230,6 +236,69 @@ CoreInternalOutcome ManualTriggerRecordOpsDto::Deserialize(const rapidjson::Valu
         m_timeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerSource") && !value["TriggerSource"].IsNull())
+    {
+        if (!value["TriggerSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.TriggerSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerSource = string(value["TriggerSource"].GetString());
+        m_triggerSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerSourceId") && !value["TriggerSourceId"].IsNull())
+    {
+        if (!value["TriggerSourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.TriggerSourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerSourceId = string(value["TriggerSourceId"].GetString());
+        m_triggerSourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpTaskId") && !value["ParentSpTaskId"].IsNull())
+    {
+        if (!value["ParentSpTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.ParentSpTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpTaskId = string(value["ParentSpTaskId"].GetString());
+        m_parentSpTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpInstanceName") && !value["ParentSpInstanceName"].IsNull())
+    {
+        if (!value["ParentSpInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.ParentSpInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpInstanceName = string(value["ParentSpInstanceName"].GetString());
+        m_parentSpInstanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpInstanceDataTime") && !value["ParentSpInstanceDataTime"].IsNull())
+    {
+        if (!value["ParentSpInstanceDataTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.ParentSpInstanceDataTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpInstanceDataTime = string(value["ParentSpInstanceDataTime"].GetString());
+        m_parentSpInstanceDataTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeList") && !value["ScheduleTimeList"].IsNull())
+    {
+        if (!value["ScheduleTimeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.ScheduleTimeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ScheduleTimeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_scheduleTimeList.push_back((*itr).GetString());
+        }
+        m_scheduleTimeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +453,59 @@ void ManualTriggerRecordOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "TimeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerSourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpInstanceDataTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpInstanceDataTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpInstanceDataTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scheduleTimeList.begin(); itr != m_scheduleTimeList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -675,5 +797,101 @@ void ManualTriggerRecordOpsDto::SetTimeType(const string& _timeType)
 bool ManualTriggerRecordOpsDto::TimeTypeHasBeenSet() const
 {
     return m_timeTypeHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetTriggerSource() const
+{
+    return m_triggerSource;
+}
+
+void ManualTriggerRecordOpsDto::SetTriggerSource(const string& _triggerSource)
+{
+    m_triggerSource = _triggerSource;
+    m_triggerSourceHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::TriggerSourceHasBeenSet() const
+{
+    return m_triggerSourceHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetTriggerSourceId() const
+{
+    return m_triggerSourceId;
+}
+
+void ManualTriggerRecordOpsDto::SetTriggerSourceId(const string& _triggerSourceId)
+{
+    m_triggerSourceId = _triggerSourceId;
+    m_triggerSourceIdHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::TriggerSourceIdHasBeenSet() const
+{
+    return m_triggerSourceIdHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetParentSpTaskId() const
+{
+    return m_parentSpTaskId;
+}
+
+void ManualTriggerRecordOpsDto::SetParentSpTaskId(const string& _parentSpTaskId)
+{
+    m_parentSpTaskId = _parentSpTaskId;
+    m_parentSpTaskIdHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::ParentSpTaskIdHasBeenSet() const
+{
+    return m_parentSpTaskIdHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetParentSpInstanceName() const
+{
+    return m_parentSpInstanceName;
+}
+
+void ManualTriggerRecordOpsDto::SetParentSpInstanceName(const string& _parentSpInstanceName)
+{
+    m_parentSpInstanceName = _parentSpInstanceName;
+    m_parentSpInstanceNameHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::ParentSpInstanceNameHasBeenSet() const
+{
+    return m_parentSpInstanceNameHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetParentSpInstanceDataTime() const
+{
+    return m_parentSpInstanceDataTime;
+}
+
+void ManualTriggerRecordOpsDto::SetParentSpInstanceDataTime(const string& _parentSpInstanceDataTime)
+{
+    m_parentSpInstanceDataTime = _parentSpInstanceDataTime;
+    m_parentSpInstanceDataTimeHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::ParentSpInstanceDataTimeHasBeenSet() const
+{
+    return m_parentSpInstanceDataTimeHasBeenSet;
+}
+
+vector<string> ManualTriggerRecordOpsDto::GetScheduleTimeList() const
+{
+    return m_scheduleTimeList;
+}
+
+void ManualTriggerRecordOpsDto::SetScheduleTimeList(const vector<string>& _scheduleTimeList)
+{
+    m_scheduleTimeList = _scheduleTimeList;
+    m_scheduleTimeListHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::ScheduleTimeListHasBeenSet() const
+{
+    return m_scheduleTimeListHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ ModifyAddressPoolRequest::ModifyAddressPoolRequest() :
     m_poolNameHasBeenSet(false),
     m_trafficStrategyHasBeenSet(false),
     m_monitorIdHasBeenSet(false),
-    m_addressSetHasBeenSet(false)
+    m_addressSetHasBeenSet(false),
+    m_keepResourceHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string ModifyAddressPoolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_keepResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepResource, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void ModifyAddressPoolRequest::SetAddressSet(const vector<Address>& _addressSet)
 bool ModifyAddressPoolRequest::AddressSetHasBeenSet() const
 {
     return m_addressSetHasBeenSet;
+}
+
+bool ModifyAddressPoolRequest::GetKeepResource() const
+{
+    return m_keepResource;
+}
+
+void ModifyAddressPoolRequest::SetKeepResource(const bool& _keepResource)
+{
+    m_keepResource = _keepResource;
+    m_keepResourceHasBeenSet = true;
+}
+
+bool ModifyAddressPoolRequest::KeepResourceHasBeenSet() const
+{
+    return m_keepResourceHasBeenSet;
 }
 
 

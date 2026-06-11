@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/RemoteDiskChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>
+                     * @return DiskChargePrepaid <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>
+                     * 
+                     */
+                    RemoteDiskChargePrepaid GetDiskChargePrepaid() const;
+
+                    /**
+                     * 设置<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>
+                     * @param _diskChargePrepaid <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>
+                     * 
+                     */
+                    void SetDiskChargePrepaid(const RemoteDiskChargePrepaid& _diskChargePrepaid);
+
+                    /**
+                     * 判断参数 DiskChargePrepaid 是否已赋值
+                     * @return DiskChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool DiskChargePrepaidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单副本SSD硬盘ID。</p>
+                     * @return RemoteDiskId <p>单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    std::string GetRemoteDiskId() const;
+
+                    /**
+                     * 设置<p>单副本SSD硬盘ID。</p>
+                     * @param _remoteDiskId <p>单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    void SetRemoteDiskId(const std::string& _remoteDiskId);
+
+                    /**
+                     * 判断参数 RemoteDiskId 是否已赋值
+                     * @return RemoteDiskId 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月单副本SSD硬盘的续费时长。 在云硬盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时单副本SSD硬盘会按对齐到实例续费后的到期时间来续费。</p>
+                     */
+                    RemoteDiskChargePrepaid m_diskChargePrepaid;
+                    bool m_diskChargePrepaidHasBeenSet;
+
+                    /**
+                     * <p>单副本SSD硬盘ID。</p>
+                     */
+                    std::string m_remoteDiskId;
+                    bool m_remoteDiskIdHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总步骤数
-                     * @return StepAll 总步骤数
+                     * 获取<p>总步骤数</p>
+                     * @return StepAll <p>总步骤数</p>
                      * 
                      */
                     uint64_t GetStepAll() const;
 
                     /**
-                     * 设置总步骤数
-                     * @param _stepAll 总步骤数
+                     * 设置<p>总步骤数</p>
+                     * @param _stepAll <p>总步骤数</p>
                      * 
                      */
                     void SetStepAll(const uint64_t& _stepAll);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StepAllHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤
-                     * @return StepNow 当前步骤
+                     * 获取<p>当前步骤</p>
+                     * @return StepNow <p>当前步骤</p>
                      * 
                      */
                     uint64_t GetStepNow() const;
 
                     /**
-                     * 设置当前步骤
-                     * @param _stepNow 当前步骤
+                     * 设置<p>当前步骤</p>
+                     * @param _stepNow <p>当前步骤</p>
                      * 
                      */
                     void SetStepNow(const uint64_t& _stepNow);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StepNowHasBeenSet() const;
 
                     /**
-                     * 获取主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
-                     * @return MasterSlaveDistance 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * 获取<p>主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
+                     * @return MasterSlaveDistance <p>主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      * 
                      */
                     int64_t GetMasterSlaveDistance() const;
 
                     /**
-                     * 设置主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
-                     * @param _masterSlaveDistance 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * 设置<p>主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
+                     * @param _masterSlaveDistance <p>主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      * 
                      */
                     void SetMasterSlaveDistance(const int64_t& _masterSlaveDistance);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MasterSlaveDistanceHasBeenSet() const;
 
                     /**
-                     * 获取主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
-                     * @return SecondsBehindMaster 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * 获取<p>主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
+                     * @return SecondsBehindMaster <p>主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      * 
                      */
                     int64_t GetSecondsBehindMaster() const;
 
                     /**
-                     * 设置主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
-                     * @param _secondsBehindMaster 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * 设置<p>主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
+                     * @param _secondsBehindMaster <p>主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      * 
                      */
                     void SetSecondsBehindMaster(const int64_t& _secondsBehindMaster);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SecondsBehindMasterHasBeenSet() const;
 
                     /**
-                     * 获取步骤信息
-                     * @return StepInfo 步骤信息
+                     * 获取<p>步骤信息</p>
+                     * @return StepInfo <p>步骤信息</p>
                      * 
                      */
                     std::vector<StepDetailInfo> GetStepInfo() const;
 
                     /**
-                     * 设置步骤信息
-                     * @param _stepInfo 步骤信息
+                     * 设置<p>步骤信息</p>
+                     * @param _stepInfo <p>步骤信息</p>
                      * 
                      */
                     void SetStepInfo(const std::vector<StepDetailInfo>& _stepInfo);
@@ -155,31 +155,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总步骤数
+                     * <p>总步骤数</p>
                      */
                     uint64_t m_stepAll;
                     bool m_stepAllHasBeenSet;
 
                     /**
-                     * 当前步骤
+                     * <p>当前步骤</p>
                      */
                     uint64_t m_stepNow;
                     bool m_stepNowHasBeenSet;
 
                     /**
-                     * 主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * <p>主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      */
                     int64_t m_masterSlaveDistance;
                     bool m_masterSlaveDistanceHasBeenSet;
 
                     /**
-                     * 主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1
+                     * <p>主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1</p>
                      */
                     int64_t m_secondsBehindMaster;
                     bool m_secondsBehindMasterHasBeenSet;
 
                     /**
-                     * 步骤信息
+                     * <p>步骤信息</p>
                      */
                     std::vector<StepDetailInfo> m_stepInfo;
                     bool m_stepInfoHasBeenSet;

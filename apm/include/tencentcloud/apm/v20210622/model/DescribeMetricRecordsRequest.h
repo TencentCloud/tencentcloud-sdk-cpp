@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统 ID
-                     * @return InstanceId 业务系统 ID
+                     * 获取<p>业务系统 ID</p>
+                     * @return InstanceId <p>业务系统 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统 ID
-                     * @param _instanceId 业务系统 ID
+                     * 设置<p>业务系统 ID</p>
+                     * @param _instanceId <p>业务系统 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取指标列表
-                     * @return Metrics 指标列表
+                     * 获取<p>指标列表</p>
+                     * @return Metrics <p>指标列表</p>
                      * 
                      */
                     std::vector<QueryMetricItem> GetMetrics() const;
 
                     /**
-                     * 设置指标列表
-                     * @param _metrics 指标列表
+                     * 设置<p>指标列表</p>
+                     * @param _metrics <p>指标列表</p>
                      * 
                      */
                     void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取开始时间（单位为秒）
-                     * @return StartTime 开始时间（单位为秒）
+                     * 获取<p>开始时间（单位为秒）</p>
+                     * @return StartTime <p>开始时间（单位为秒）</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间（单位为秒）
-                     * @param _startTime 开始时间（单位为秒）
+                     * 设置<p>开始时间（单位为秒）</p>
+                     * @param _startTime <p>开始时间（单位为秒）</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（单位为秒）
-                     * @return EndTime 结束时间（单位为秒）
+                     * 获取<p>结束时间（单位为秒）</p>
+                     * @return EndTime <p>结束时间（单位为秒）</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间（单位为秒）
-                     * @param _endTime 结束时间（单位为秒）
+                     * 设置<p>结束时间（单位为秒）</p>
+                     * @param _endTime <p>结束时间（单位为秒）</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度
-                     * @return GroupBy 聚合维度
+                     * 获取<p>聚合维度</p>
+                     * @return GroupBy <p>聚合维度</p>
                      * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置聚合维度
-                     * @param _groupBy 聚合维度
+                     * 设置<p>聚合维度</p>
+                     * @param _groupBy <p>聚合维度</p>
                      * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool GroupByHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取<p>过滤条件</p>
+                     * @return Filters <p>过滤条件</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置<p>过滤条件</p>
+                     * @param _filters <p>过滤条件</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取Or 过滤条件
-                     * @return OrFilters Or 过滤条件
+                     * 获取<p>Or 过滤条件</p>
+                     * @return OrFilters <p>Or 过滤条件</p>
                      * 
                      */
                     std::vector<Filter> GetOrFilters() const;
 
                     /**
-                     * 设置Or 过滤条件
-                     * @param _orFilters Or 过滤条件
+                     * 设置<p>Or 过滤条件</p>
+                     * @param _orFilters <p>Or 过滤条件</p>
                      * 
                      */
                     void SetOrFilters(const std::vector<Filter>& _orFilters);
@@ -193,55 +193,15 @@ namespace TencentCloud
                     bool OrFiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序
-现支持的 Key 有：
-
-- startTime(开始时间)
-- endTime(结束时间)
-- duration(响应时间)
-
-现支持的 Value 有：
-
-- desc(降序排序)
-- asc(升序排序)
-                     * @return OrderBy 排序
-现支持的 Key 有：
-
-- startTime(开始时间)
-- endTime(结束时间)
-- duration(响应时间)
-
-现支持的 Value 有：
-
-- desc(降序排序)
-- asc(升序排序)
+                     * 获取<p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>
+                     * @return OrderBy <p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>
                      * 
                      */
                     OrderBy GetOrderBy() const;
 
                     /**
-                     * 设置排序
-现支持的 Key 有：
-
-- startTime(开始时间)
-- endTime(结束时间)
-- duration(响应时间)
-
-现支持的 Value 有：
-
-- desc(降序排序)
-- asc(升序排序)
-                     * @param _orderBy 排序
-现支持的 Key 有：
-
-- startTime(开始时间)
-- endTime(结束时间)
-- duration(响应时间)
-
-现支持的 Value 有：
-
-- desc(降序排序)
-- asc(升序排序)
+                     * 设置<p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>
+                     * @param _orderBy <p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>
                      * 
                      */
                     void SetOrderBy(const OrderBy& _orderBy);
@@ -254,15 +214,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取业务名称，控制台用户请填写taw。
-                     * @return BusinessName 业务名称，控制台用户请填写taw。
+                     * 获取<p>业务名称，控制台用户请填写taw。</p>
+                     * @return BusinessName <p>业务名称，控制台用户请填写taw。</p>
                      * 
                      */
                     std::string GetBusinessName() const;
 
                     /**
-                     * 设置业务名称，控制台用户请填写taw。
-                     * @param _businessName 业务名称，控制台用户请填写taw。
+                     * 设置<p>业务名称，控制台用户请填写taw。</p>
+                     * @param _businessName <p>业务名称，控制台用户请填写taw。</p>
                      * 
                      */
                     void SetBusinessName(const std::string& _businessName);
@@ -275,15 +235,15 @@ namespace TencentCloud
                     bool BusinessNameHasBeenSet() const;
 
                     /**
-                     * 获取特殊处理查询结果
-                     * @return Type 特殊处理查询结果
+                     * 获取<p>特殊处理查询结果</p>
+                     * @return Type <p>特殊处理查询结果</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置特殊处理查询结果
-                     * @param _type 特殊处理查询结果
+                     * 设置<p>特殊处理查询结果</p>
+                     * @param _type <p>特殊处理查询结果</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -296,15 +256,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认为1000，合法取值范围为0~1000
-                     * @return Limit 每页大小，默认为1000，合法取值范围为0~1000
+                     * 获取<p>每页大小，默认为1000，合法取值范围为0~1000</p>
+                     * @return Limit <p>每页大小，默认为1000，合法取值范围为0~1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小，默认为1000，合法取值范围为0~1000
-                     * @param _limit 每页大小，默认为1000，合法取值范围为0~1000
+                     * 设置<p>每页大小，默认为1000，合法取值范围为0~1000</p>
+                     * @param _limit <p>每页大小，默认为1000，合法取值范围为0~1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -317,15 +277,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页起始点
-                     * @return Offset 分页起始点
+                     * 获取<p>分页起始点</p>
+                     * @return Offset <p>分页起始点</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页起始点
-                     * @param _offset 分页起始点
+                     * 设置<p>分页起始点</p>
+                     * @param _offset <p>分页起始点</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -338,15 +298,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageIndex 页码
+                     * 获取<p>页码</p>
+                     * @return PageIndex <p>页码</p>
                      * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageIndex 页码
+                     * 设置<p>页码</p>
+                     * @param _pageIndex <p>页码</p>
                      * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
@@ -359,15 +319,15 @@ namespace TencentCloud
                     bool PageIndexHasBeenSet() const;
 
                     /**
-                     * 获取页长
-                     * @return PageSize 页长
+                     * 获取<p>页长</p>
+                     * @return PageSize <p>页长</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置页长
-                     * @param _pageSize 页长
+                     * 设置<p>页长</p>
+                     * @param _pageSize <p>页长</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -379,101 +339,118 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用Id</p>
+                     * @return ServiceID <p>应用Id</p>
+                     * 
+                     */
+                    std::string GetServiceID() const;
+
+                    /**
+                     * 设置<p>应用Id</p>
+                     * @param _serviceID <p>应用Id</p>
+                     * 
+                     */
+                    void SetServiceID(const std::string& _serviceID);
+
+                    /**
+                     * 判断参数 ServiceID 是否已赋值
+                     * @return ServiceID 是否已赋值
+                     * 
+                     */
+                    bool ServiceIDHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务系统 ID
+                     * <p>业务系统 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 指标列表
+                     * <p>指标列表</p>
                      */
                     std::vector<QueryMetricItem> m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 开始时间（单位为秒）
+                     * <p>开始时间（单位为秒）</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间（单位为秒）
+                     * <p>结束时间（单位为秒）</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 聚合维度
+                     * <p>聚合维度</p>
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * <p>过滤条件</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * Or 过滤条件
+                     * <p>Or 过滤条件</p>
                      */
                     std::vector<Filter> m_orFilters;
                     bool m_orFiltersHasBeenSet;
 
                     /**
-                     * 排序
-现支持的 Key 有：
-
-- startTime(开始时间)
-- endTime(结束时间)
-- duration(响应时间)
-
-现支持的 Value 有：
-
-- desc(降序排序)
-- asc(升序排序)
+                     * <p>排序<br>现支持的 Key 有：</p><ul><li>startTime(开始时间)</li><li>endTime(结束时间)</li><li>duration(响应时间)</li></ul><p>现支持的 Value 有：</p><ul><li>desc(降序排序)</li><li>asc(升序排序)</li></ul>
                      */
                     OrderBy m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 业务名称，控制台用户请填写taw。
+                     * <p>业务名称，控制台用户请填写taw。</p>
                      */
                     std::string m_businessName;
                     bool m_businessNameHasBeenSet;
 
                     /**
-                     * 特殊处理查询结果
+                     * <p>特殊处理查询结果</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 每页大小，默认为1000，合法取值范围为0~1000
+                     * <p>每页大小，默认为1000，合法取值范围为0~1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页起始点
+                     * <p>分页起始点</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 页码
+                     * <p>页码</p>
                      */
                     int64_t m_pageIndex;
                     bool m_pageIndexHasBeenSet;
 
                     /**
-                     * 页长
+                     * <p>页长</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>应用Id</p>
+                     */
+                    std::string m_serviceID;
+                    bool m_serviceIDHasBeenSet;
 
                 };
             }

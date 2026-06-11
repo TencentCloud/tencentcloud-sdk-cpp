@@ -26,6 +26,7 @@ StepInfo::StepInfo() :
     m_stepIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false),
     m_errorsHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_progressHasBeenSet(false)
@@ -85,6 +86,16 @@ CoreInternalOutcome StepInfo::Deserialize(const rapidjson::Value &value)
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StepInfo.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
     }
 
     if (value.HasMember("Errors") && !value["Errors"].IsNull())
@@ -182,6 +193,14 @@ void StepInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorsHasBeenSet)
@@ -303,6 +322,22 @@ void StepInfo::SetStartTime(const string& _startTime)
 bool StepInfo::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+string StepInfo::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void StepInfo::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool StepInfo::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 
 vector<StepTip> StepInfo::GetErrors() const

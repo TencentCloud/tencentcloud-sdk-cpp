@@ -93,7 +93,10 @@ InstanceOpsDto::InstanceOpsDto() :
     m_dlcTaskIdHasBeenSet(false),
     m_dlcSparkJobIdHasBeenSet(false),
     m_extHasBeenSet(false),
-    m_relatedEventListHasBeenSet(false)
+    m_relatedEventListHasBeenSet(false),
+    m_proxyTaskIdHasBeenSet(false),
+    m_workflowRunNameHasBeenSet(false),
+    m_proxyTaskTypeHasBeenSet(false)
 {
 }
 
@@ -889,6 +892,43 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_relatedEventListHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyTaskId") && !value["ProxyTaskId"].IsNull())
+    {
+        if (!value["ProxyTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ProxyTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyTaskId = string(value["ProxyTaskId"].GetString());
+        m_proxyTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkflowRunName") && !value["WorkflowRunName"].IsNull())
+    {
+        if (!value["WorkflowRunName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.WorkflowRunName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowRunName = string(value["WorkflowRunName"].GetString());
+        m_workflowRunNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyTaskType") && !value["ProxyTaskType"].IsNull())
+    {
+        if (!value["ProxyTaskType"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ProxyTaskType` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_proxyTaskType.Deserialize(value["ProxyTaskType"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_proxyTaskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1512,6 +1552,31 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_proxyTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowRunNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowRunName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowRunName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyTaskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyTaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_proxyTaskType.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2683,5 +2748,53 @@ void InstanceOpsDto::SetRelatedEventList(const vector<EventCaseAuditLogOptDto>& 
 bool InstanceOpsDto::RelatedEventListHasBeenSet() const
 {
     return m_relatedEventListHasBeenSet;
+}
+
+string InstanceOpsDto::GetProxyTaskId() const
+{
+    return m_proxyTaskId;
+}
+
+void InstanceOpsDto::SetProxyTaskId(const string& _proxyTaskId)
+{
+    m_proxyTaskId = _proxyTaskId;
+    m_proxyTaskIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ProxyTaskIdHasBeenSet() const
+{
+    return m_proxyTaskIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetWorkflowRunName() const
+{
+    return m_workflowRunName;
+}
+
+void InstanceOpsDto::SetWorkflowRunName(const string& _workflowRunName)
+{
+    m_workflowRunName = _workflowRunName;
+    m_workflowRunNameHasBeenSet = true;
+}
+
+bool InstanceOpsDto::WorkflowRunNameHasBeenSet() const
+{
+    return m_workflowRunNameHasBeenSet;
+}
+
+TaskTypeOpsDto InstanceOpsDto::GetProxyTaskType() const
+{
+    return m_proxyTaskType;
+}
+
+void InstanceOpsDto::SetProxyTaskType(const TaskTypeOpsDto& _proxyTaskType)
+{
+    m_proxyTaskType = _proxyTaskType;
+    m_proxyTaskTypeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ProxyTaskTypeHasBeenSet() const
+{
+    return m_proxyTaskTypeHasBeenSet;
 }
 

@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>一个或多个单副本SSD硬盘ID。</p>
+                     * @return RemoteDiskIds <p>一个或多个单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetRemoteDiskIds() const;
+
+                    /**
+                     * 设置<p>一个或多个单副本SSD硬盘ID。</p>
+                     * @param _remoteDiskIds <p>一个或多个单副本SSD硬盘ID。</p>
+                     * 
+                     */
+                    void SetRemoteDiskIds(const std::vector<std::string>& _remoteDiskIds);
+
+                    /**
+                     * 判断参数 RemoteDiskIds 是否已赋值
+                     * @return RemoteDiskIds 是否已赋值
+                     * 
+                     */
+                    bool RemoteDiskIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>一个或多个单副本SSD硬盘ID。</p>
+                     */
+                    std::vector<std::string> m_remoteDiskIds;
+                    bool m_remoteDiskIdsHasBeenSet;
 
                 };
             }

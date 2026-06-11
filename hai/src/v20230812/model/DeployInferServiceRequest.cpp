@@ -27,7 +27,8 @@ DeployInferServiceRequest::DeployInferServiceRequest() :
     m_computeInfoHasBeenSet(false),
     m_deploymentConfigsHasBeenSet(false),
     m_hyperParamHasBeenSet(false),
-    m_networkSettingHasBeenSet(false)
+    m_networkSettingHasBeenSet(false),
+    m_securityTypeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string DeployInferServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_networkSetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_securityType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -175,6 +184,22 @@ void DeployInferServiceRequest::SetNetworkSetting(const NetworkSetting& _network
 bool DeployInferServiceRequest::NetworkSettingHasBeenSet() const
 {
     return m_networkSettingHasBeenSet;
+}
+
+string DeployInferServiceRequest::GetSecurityType() const
+{
+    return m_securityType;
+}
+
+void DeployInferServiceRequest::SetSecurityType(const string& _securityType)
+{
+    m_securityType = _securityType;
+    m_securityTypeHasBeenSet = true;
+}
+
+bool DeployInferServiceRequest::SecurityTypeHasBeenSet() const
+{
+    return m_securityTypeHasBeenSet;
 }
 
 

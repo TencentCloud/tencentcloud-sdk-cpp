@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @return DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 获取<p>数据库类型，取值范围: </p><li> MYSQL </li>
+                     * @return DbType <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @param _dbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 设置<p>数据库类型，取值范围: </p><li> MYSQL </li>
+                     * @param _dbType <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -68,15 +64,15 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否需要返回可用区信息
-                     * @return IncludeZoneStocks 是否需要返回可用区信息
+                     * 获取<p>是否需要返回可用区信息</p>
+                     * @return IncludeZoneStocks <p>是否需要返回可用区信息</p>
                      * 
                      */
                     bool GetIncludeZoneStocks() const;
 
                     /**
-                     * 设置是否需要返回可用区信息
-                     * @param _includeZoneStocks 是否需要返回可用区信息
+                     * 设置<p>是否需要返回可用区信息</p>
+                     * @param _includeZoneStocks <p>是否需要返回可用区信息</p>
                      * 
                      */
                     void SetIncludeZoneStocks(const bool& _includeZoneStocks);
@@ -89,15 +85,15 @@ namespace TencentCloud
                     bool IncludeZoneStocksHasBeenSet() const;
 
                     /**
-                     * 获取实例机器类型
-                     * @return DeviceType 实例机器类型
+                     * 获取<p>实例机器类型</p>
+                     * @return DeviceType <p>实例机器类型</p>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例机器类型
-                     * @param _deviceType 实例机器类型
+                     * 设置<p>实例机器类型</p>
+                     * @param _deviceType <p>实例机器类型</p>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -109,26 +105,52 @@ namespace TencentCloud
                      */
                     bool DeviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群级别，可空。例如 P0, P1</p>
+                     * @return ClusterLevel <p>集群级别，可空。例如 P0, P1</p>
+                     * 
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置<p>集群级别，可空。例如 P0, P1</p>
+                     * @param _clusterLevel <p>集群级别，可空。例如 P0, P1</p>
+                     * 
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     * 
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 是否需要返回可用区信息
+                     * <p>是否需要返回可用区信息</p>
                      */
                     bool m_includeZoneStocks;
                     bool m_includeZoneStocksHasBeenSet;
 
                     /**
-                     * 实例机器类型
+                     * <p>实例机器类型</p>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * <p>集群级别，可空。例如 P0, P1</p>
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
 
                 };
             }

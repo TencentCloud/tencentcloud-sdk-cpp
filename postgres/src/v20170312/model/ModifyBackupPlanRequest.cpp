@@ -30,7 +30,8 @@ ModifyBackupPlanRequest::ModifyBackupPlanRequest() :
     m_backupPeriodHasBeenSet(false),
     m_logBackupRetentionPeriodHasBeenSet(false),
     m_planIdHasBeenSet(false),
-    m_planNameHasBeenSet(false)
+    m_planNameHasBeenSet(false),
+    m_backupMethodHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string ModifyBackupPlanRequest::ToJsonString() const
         string key = "PlanName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -244,6 +253,22 @@ void ModifyBackupPlanRequest::SetPlanName(const string& _planName)
 bool ModifyBackupPlanRequest::PlanNameHasBeenSet() const
 {
     return m_planNameHasBeenSet;
+}
+
+string ModifyBackupPlanRequest::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void ModifyBackupPlanRequest::SetBackupMethod(const string& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool ModifyBackupPlanRequest::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
 }
 
 

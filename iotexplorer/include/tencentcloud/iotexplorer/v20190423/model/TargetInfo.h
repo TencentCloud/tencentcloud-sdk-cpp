@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频唯一ID
-                     * @return Id 视频唯一ID
+                     * 获取<p>视频唯一ID</p>
+                     * @return Id <p>视频唯一ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置视频唯一ID
-                     * @param _id 视频唯一ID
+                     * 设置<p>视频唯一ID</p>
+                     * @param _id <p>视频唯一ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductId <p>产品ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productId <p>产品ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取视频起始时间（毫秒级Unix时间戳）
-                     * @return StartTimeMs 视频起始时间（毫秒级Unix时间戳）
+                     * 获取<p>视频起始时间（毫秒级Unix时间戳）</p>
+                     * @return StartTimeMs <p>视频起始时间（毫秒级Unix时间戳）</p>
                      * 
                      */
                     int64_t GetStartTimeMs() const;
 
                     /**
-                     * 设置视频起始时间（毫秒级Unix时间戳）
-                     * @param _startTimeMs 视频起始时间（毫秒级Unix时间戳）
+                     * 设置<p>视频起始时间（毫秒级Unix时间戳）</p>
+                     * @param _startTimeMs <p>视频起始时间（毫秒级Unix时间戳）</p>
                      * 
                      */
                     void SetStartTimeMs(const int64_t& _startTimeMs);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeMsHasBeenSet() const;
 
                     /**
-                     * 获取视频结束时间（毫秒级Unix时间戳）
-                     * @return EndTimeMs 视频结束时间（毫秒级Unix时间戳）
+                     * 获取<p>视频结束时间（毫秒级Unix时间戳）</p>
+                     * @return EndTimeMs <p>视频结束时间（毫秒级Unix时间戳）</p>
                      * 
                      */
                     int64_t GetEndTimeMs() const;
 
                     /**
-                     * 设置视频结束时间（毫秒级Unix时间戳）
-                     * @param _endTimeMs 视频结束时间（毫秒级Unix时间戳）
+                     * 设置<p>视频结束时间（毫秒级Unix时间戳）</p>
+                     * @param _endTimeMs <p>视频结束时间（毫秒级Unix时间戳）</p>
                      * 
                      */
                     void SetEndTimeMs(const int64_t& _endTimeMs);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool EndTimeMsHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义事件ID，后续扩展使用
-                     * @return EventId 用户自定义事件ID，后续扩展使用
+                     * 获取<p>用户自定义事件ID，后续扩展使用</p>
+                     * @return EventId <p>用户自定义事件ID，后续扩展使用</p>
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置用户自定义事件ID，后续扩展使用
-                     * @param _eventId 用户自定义事件ID，后续扩展使用
+                     * 设置<p>用户自定义事件ID，后续扩展使用</p>
+                     * @param _eventId <p>用户自定义事件ID，后续扩展使用</p>
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取视频内容摘要
-                     * @return Summary 视频内容摘要
+                     * 获取<p>视频内容摘要</p>
+                     * @return Summary <p>视频内容摘要</p>
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
-                     * 设置视频内容摘要
-                     * @param _summary 视频内容摘要
+                     * 设置<p>视频内容摘要</p>
+                     * @param _summary <p>视频内容摘要</p>
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取通道ID
-                     * @return ChannelId 通道ID
+                     * 获取<p>通道ID</p>
+                     * @return ChannelId <p>通道ID</p>
                      * 
                      */
                     uint64_t GetChannelId() const;
 
                     /**
-                     * 设置通道ID
-                     * @param _channelId 通道ID
+                     * 设置<p>通道ID</p>
+                     * @param _channelId <p>通道ID</p>
                      * 
                      */
                     void SetChannelId(const uint64_t& _channelId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取缩略图路径
-                     * @return Thumbnail 缩略图路径
+                     * 获取<p>缩略图路径</p>
+                     * @return Thumbnail <p>缩略图路径</p>
                      * 
                      */
                     std::string GetThumbnail() const;
 
                     /**
-                     * 设置缩略图路径
-                     * @param _thumbnail 缩略图路径
+                     * 设置<p>缩略图路径</p>
+                     * @param _thumbnail <p>缩略图路径</p>
                      * 
                      */
                     void SetThumbnail(const std::string& _thumbnail);
@@ -238,55 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频唯一ID
+                     * <p>视频唯一ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 视频起始时间（毫秒级Unix时间戳）
+                     * <p>视频起始时间（毫秒级Unix时间戳）</p>
                      */
                     int64_t m_startTimeMs;
                     bool m_startTimeMsHasBeenSet;
 
                     /**
-                     * 视频结束时间（毫秒级Unix时间戳）
+                     * <p>视频结束时间（毫秒级Unix时间戳）</p>
                      */
                     int64_t m_endTimeMs;
                     bool m_endTimeMsHasBeenSet;
 
                     /**
-                     * 用户自定义事件ID，后续扩展使用
+                     * <p>用户自定义事件ID，后续扩展使用</p>
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 视频内容摘要
+                     * <p>视频内容摘要</p>
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * 通道ID
+                     * <p>通道ID</p>
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 缩略图路径
+                     * <p>缩略图路径</p>
                      */
                     std::string m_thumbnail;
                     bool m_thumbnailHasBeenSet;

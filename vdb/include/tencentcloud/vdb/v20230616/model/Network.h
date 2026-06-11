@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VpcId(VPC网络下有效)
-                     * @return VpcId VpcId(VPC网络下有效)
+                     * 获取<p>VpcId(VPC网络下有效)</p>
+                     * @return VpcId <p>VpcId(VPC网络下有效)</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VpcId(VPC网络下有效)
-                     * @param _vpcId VpcId(VPC网络下有效)
+                     * 设置<p>VpcId(VPC网络下有效)</p>
+                     * @param _vpcId <p>VpcId(VPC网络下有效)</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网Id(VPC网络下有效)。
-                     * @return SubnetId 子网Id(VPC网络下有效)。
+                     * 获取<p>子网Id(VPC网络下有效)。</p>
+                     * @return SubnetId <p>子网Id(VPC网络下有效)。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网Id(VPC网络下有效)。
-                     * @param _subnetId 子网Id(VPC网络下有效)。
+                     * 设置<p>子网Id(VPC网络下有效)。</p>
+                     * @param _subnetId <p>子网Id(VPC网络下有效)。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取内网访问IP。
-                     * @return Vip 内网访问IP。
+                     * 获取<p>内网访问IP。</p>
+                     * @return Vip <p>内网访问IP。</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置内网访问IP。
-                     * @param _vip 内网访问IP。
+                     * 设置<p>内网访问IP。</p>
+                     * @param _vip <p>内网访问IP。</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取内网访问Port。
-                     * @return Port 内网访问Port。
+                     * 获取<p>内网访问Port。</p>
+                     * @return Port <p>内网访问Port。</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置内网访问Port。
-                     * @param _port 内网访问Port。
+                     * 设置<p>内网访问Port。</p>
+                     * @param _port <p>内网访问Port。</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取旧 ip 保留时长，单位天
-                     * @return PreserveDuration 旧 ip 保留时长，单位天
+                     * 获取<p>旧 ip 保留时长，单位天</p>
+                     * @return PreserveDuration <p>旧 ip 保留时长，单位天</p>
                      * 
                      */
                     int64_t GetPreserveDuration() const;
 
                     /**
-                     * 设置旧 ip 保留时长，单位天
-                     * @param _preserveDuration 旧 ip 保留时长，单位天
+                     * 设置<p>旧 ip 保留时长，单位天</p>
+                     * @param _preserveDuration <p>旧 ip 保留时长，单位天</p>
                      * 
                      */
                     void SetPreserveDuration(const int64_t& _preserveDuration);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool PreserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取旧 ip 到期时间
-                     * @return ExpireTime 旧 ip 到期时间
+                     * 获取<p>旧 ip 到期时间</p>
+                     * @return ExpireTime <p>旧 ip 到期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置旧 ip 到期时间
-                     * @param _expireTime 旧 ip 到期时间
+                     * 设置<p>旧 ip 到期时间</p>
+                     * @param _expireTime <p>旧 ip 到期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -172,43 +172,70 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是ssl网络</p>
+                     * @return IsSSL <p>是否是ssl网络</p>
+                     * 
+                     */
+                    bool GetIsSSL() const;
+
+                    /**
+                     * 设置<p>是否是ssl网络</p>
+                     * @param _isSSL <p>是否是ssl网络</p>
+                     * 
+                     */
+                    void SetIsSSL(const bool& _isSSL);
+
+                    /**
+                     * 判断参数 IsSSL 是否已赋值
+                     * @return IsSSL 是否已赋值
+                     * 
+                     */
+                    bool IsSSLHasBeenSet() const;
+
                 private:
 
                     /**
-                     * VpcId(VPC网络下有效)
+                     * <p>VpcId(VPC网络下有效)</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网Id(VPC网络下有效)。
+                     * <p>子网Id(VPC网络下有效)。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 内网访问IP。
+                     * <p>内网访问IP。</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 内网访问Port。
+                     * <p>内网访问Port。</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 旧 ip 保留时长，单位天
+                     * <p>旧 ip 保留时长，单位天</p>
                      */
                     int64_t m_preserveDuration;
                     bool m_preserveDurationHasBeenSet;
 
                     /**
-                     * 旧 ip 到期时间
+                     * <p>旧 ip 到期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>是否是ssl网络</p>
+                     */
+                    bool m_isSSL;
+                    bool m_isSSLHasBeenSet;
 
                 };
             }

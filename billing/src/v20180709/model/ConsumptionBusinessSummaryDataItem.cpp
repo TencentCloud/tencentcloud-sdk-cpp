@@ -29,7 +29,8 @@ ConsumptionBusinessSummaryDataItem::ConsumptionBusinessSummaryDataItem() :
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_transferPayAmountHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_leftRealTotalCostHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidj
         m_regionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LeftRealTotalCost") && !value["LeftRealTotalCost"].IsNull())
+    {
+        if (!value["LeftRealTotalCost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionBusinessSummaryDataItem.LeftRealTotalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_leftRealTotalCost = string(value["LeftRealTotalCost"].GetString());
+        m_leftRealTotalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void ConsumptionBusinessSummaryDataItem::ToJsonObject(rapidjson::Value &value, r
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_leftRealTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftRealTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_leftRealTotalCost.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void ConsumptionBusinessSummaryDataItem::SetRegionName(const string& _regionName
 bool ConsumptionBusinessSummaryDataItem::RegionNameHasBeenSet() const
 {
     return m_regionNameHasBeenSet;
+}
+
+string ConsumptionBusinessSummaryDataItem::GetLeftRealTotalCost() const
+{
+    return m_leftRealTotalCost;
+}
+
+void ConsumptionBusinessSummaryDataItem::SetLeftRealTotalCost(const string& _leftRealTotalCost)
+{
+    m_leftRealTotalCost = _leftRealTotalCost;
+    m_leftRealTotalCostHasBeenSet = true;
+}
+
+bool ConsumptionBusinessSummaryDataItem::LeftRealTotalCostHasBeenSet() const
+{
+    return m_leftRealTotalCostHasBeenSet;
 }
 
