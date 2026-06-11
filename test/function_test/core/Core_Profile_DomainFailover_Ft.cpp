@@ -21,11 +21,11 @@
 
 using namespace TencentCloud;
 
-TEST(ClientProfileDomainFailoverTest, RegionBreakerDisabledByDefault) {
-    // Region failover is opt-in: users must explicitly call
-    // SetDisableRegionBreaker(false) to enable it.
+TEST(ClientProfileDomainFailoverTest, RegionBreakerEnabledByDefault) {
+    // Region failover is enabled by default. Users can opt out by calling
+    // SetDisableRegionBreaker(true).
     ClientProfile cp;
-    EXPECT_TRUE(cp.GetDisableRegionBreaker());
+    EXPECT_FALSE(cp.GetDisableRegionBreaker());
 }
 
 TEST(ClientProfileDomainFailoverTest, EnableDisableRegionBreaker) {
@@ -74,10 +74,10 @@ TEST(ClientProfileDomainFailoverTest, PreservedWithHttpProfileConstructor) {
     HttpProfile hp;
     hp.SetEndpoint("cvm.tencentcloudapi.com");
     ClientProfile cp(hp);
-    EXPECT_TRUE(cp.GetDisableRegionBreaker());
+    EXPECT_FALSE(cp.GetDisableRegionBreaker());
 }
 
 TEST(ClientProfileDomainFailoverTest, PreservedWithSignMethodConstructor) {
     ClientProfile cp(ClientProfile::SignMethod::TC3_HMAC_SHA256);
-    EXPECT_TRUE(cp.GetDisableRegionBreaker());
+    EXPECT_FALSE(cp.GetDisableRegionBreaker());
 }

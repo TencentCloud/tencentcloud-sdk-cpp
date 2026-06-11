@@ -24,6 +24,35 @@ const std::vector<std::string> DomainFailoverManager::kTldRing = {
     "tencentcloudapi.cn",
 };
 
+namespace {
+
+// True iff |s| ends with |suffix|.
+bool EndsWith(const std::string &s, const std::string &suffix) {
+  return s.size() >= suffix.size() &&
+         s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
+}
+
+// Case-insensitive lower-case conversion (ASCII only -- sufficient for
+// domain names which are restricted to ASCII per RFC 952/1123).
+std::string ToLowerAscii(const std::string &s) {
+  std::string result = s;
+  for (auto &c : result) {
+    if (c >= 'A' && c <= 'Z') {
+      c = c - 'A' + 'a';
+    }
+  }
+  return result;
+}
+
+// Ordered by descending length: longer TLDs must be tested first.
+const char *const kTencentCloudTldSuffixes[] = {
+    ".tencentcloudapi.com.cn",
+    ".tencentcloudapi.com",
+    ".tencentcloudapi.cn",
+};
+
+}  // namespace
+
 int DomainFailoverManager::GetBreakerSlotCount() {
   // 3 breaker slots (maximum across both modes):
   //   Mode A: only slot 0 is active; slots 1,2 idle.
@@ -63,13 +92,15 @@ std::string DomainFailoverManager::GetFallbackEndpoint(
     // Decide whether |backup_endpoint| is a "bare region" (e.g.
     //   "ap-guangzhou.tencentcloudapi.com")
     // or a complete endpoint with its own service prefix (e.g.
-    //   "cvm.ap-guangzhou.tencentcloudapi.com").
+    //   "cvm.ap-guangzhou.tencentcloudapi.com"  or
+    //   "cvm.tencentcloudapi.com").
     //
-    // We do NOT enumerate region prefixes. Instead we simply count
-    // how many dotted segments sit in front of the TLD:
-    //   - exactly ONE segment before the TLD -> "bare region": need
-    //     to prepend the original endpoint's service name.
-    //   - otherwise -> already complete: return as-is.
+    // Heuristic: if exactly ONE segment sits before the TLD, it could
+    // be either a region ("ap-guangzhou") or a service name ("cvm").
+    // We disambiguate by comparing with the primary's service name:
+    // if prefix == primary's service, the backup already has the right
+    // service and should be returned as-is; otherwise it is a bare
+    // region and needs the service prepended.
     std::string backup_tld = ExtractTld(backup_endpoint);
     if (backup_tld.empty()) {
       // Backup is not a TencentCloud domain at all -- return as-is.
@@ -78,12 +109,14 @@ std::string DomainFailoverManager::GetFallbackEndpoint(
     // Prefix (the part before ".{tld}").
     std::string prefix =
         backup_endpoint.substr(0, backup_endpoint.size() - backup_tld.size() - 1);
-    bool bare_region = (prefix.find('.') == std::string::npos);
+    std::string svc = ExtractService(original_endpoint);
+    // "bare region" = single segment AND that segment is NOT the same
+    // as the primary's service name.
+    bool bare_region = (prefix.find('.') == std::string::npos) && (prefix != svc);
     if (!bare_region) {
       return backup_endpoint;
     }
 
-    std::string svc = ExtractService(original_endpoint);
     if (svc.empty()) {
       return backup_endpoint;
     }
@@ -172,35 +205,6 @@ std::string DomainFailoverManager::GetFallbackEndpoint(
   result += "." + target_tld;
   return result;
 }
-
-namespace {
-
-// True iff |s| ends with |suffix|.
-bool EndsWith(const std::string &s, const std::string &suffix) {
-  return s.size() >= suffix.size() &&
-         s.compare(s.size() - suffix.size(), suffix.size(), suffix) == 0;
-}
-
-// Case-insensitive lower-case conversion (ASCII only -- sufficient for
-// domain names which are restricted to ASCII per RFC 952/1123).
-std::string ToLowerAscii(const std::string &s) {
-  std::string result = s;
-  for (auto &c : result) {
-    if (c >= 'A' && c <= 'Z') {
-      c = c - 'A' + 'a';
-    }
-  }
-  return result;
-}
-
-// Ordered by descending length: longer TLDs must be tested first.
-const char *const kTencentCloudTldSuffixes[] = {
-    ".tencentcloudapi.com.cn",
-    ".tencentcloudapi.com",
-    ".tencentcloudapi.cn",
-};
-
-}  // namespace
 
 bool DomainFailoverManager::IsTencentCloudDomain(
     const std::string &endpoint) {
