@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。
-                     * @return AuthInfoDetail 服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。
+                     * 获取<p>服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。</p>
+                     * @return AuthInfoDetail <p>服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。</p>
                      * 
                      */
                     AuthInfoDetail GetAuthInfoDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。
+                     * <p>服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。</p>
                      */
                     AuthInfoDetail m_authInfoDetail;
                     bool m_authInfoDetailHasBeenSet;

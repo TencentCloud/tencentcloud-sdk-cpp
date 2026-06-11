@@ -26,7 +26,8 @@ SerialRegionInfo::SerialRegionInfo() :
     m_elasticSwitchHasBeenSet(false),
     m_elasticBandwidthHasBeenSet(false),
     m_inFlowMaxHasBeenSet(false),
-    m_outFlowMaxHasBeenSet(false)
+    m_outFlowMaxHasBeenSet(false),
+    m_elasticTrafficSwitchHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome SerialRegionInfo::Deserialize(const rapidjson::Value &value)
         m_outFlowMaxHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticTrafficSwitch") && !value["ElasticTrafficSwitch"].IsNull())
+    {
+        if (!value["ElasticTrafficSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SerialRegionInfo.ElasticTrafficSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTrafficSwitch = value["ElasticTrafficSwitch"].GetInt64();
+        m_elasticTrafficSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void SerialRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OutFlowMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outFlowMax, allocator);
+    }
+
+    if (m_elasticTrafficSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTrafficSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTrafficSwitch, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void SerialRegionInfo::SetOutFlowMax(const int64_t& _outFlowMax)
 bool SerialRegionInfo::OutFlowMaxHasBeenSet() const
 {
     return m_outFlowMaxHasBeenSet;
+}
+
+int64_t SerialRegionInfo::GetElasticTrafficSwitch() const
+{
+    return m_elasticTrafficSwitch;
+}
+
+void SerialRegionInfo::SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch)
+{
+    m_elasticTrafficSwitch = _elasticTrafficSwitch;
+    m_elasticTrafficSwitchHasBeenSet = true;
+}
+
+bool SerialRegionInfo::ElasticTrafficSwitchHasBeenSet() const
+{
+    return m_elasticTrafficSwitchHasBeenSet;
 }
 

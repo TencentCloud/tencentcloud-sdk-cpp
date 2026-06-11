@@ -24,6 +24,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeCloudModerationResponse.h
   include/tencentcloud/trtc/v20190722/model/StartStreamIngestResponse.h
   include/tencentcloud/trtc/v20190722/model/AgentConfig.h
+  include/tencentcloud/trtc/v20190722/model/TerminologyItem.h
   include/tencentcloud/trtc/v20190722/model/CreatePictureRequest.h
   include/tencentcloud/trtc/v20190722/model/SubscribeModerationUserIds.h
   include/tencentcloud/trtc/v20190722/model/AudioEncodeParams.h
@@ -35,6 +36,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataRequest.h
   include/tencentcloud/trtc/v20190722/model/StartAIConversationResponse.h
   include/tencentcloud/trtc/v20190722/model/STTConfig.h
+  include/tencentcloud/trtc/v20190722/model/Voice.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataRequest.h
   include/tencentcloud/trtc/v20190722/model/McuLayoutVolume.h
   include/tencentcloud/trtc/v20190722/model/VoiceCloneRequest.h
@@ -161,6 +163,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/SdkAppIdRecordUsage.h
   include/tencentcloud/trtc/v20190722/model/AudioEncode.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserRequest.h
+  include/tencentcloud/trtc/v20190722/model/TTSVoice.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeUnusualEventRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeCloudRecordingRequest.h
@@ -199,7 +202,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h
   include/tencentcloud/trtc/v20190722/model/DeleteCloudRecordingRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribePictureRequest.h
-  include/tencentcloud/trtc/v20190722/model/Voice.h
+  include/tencentcloud/trtc/v20190722/model/TTSParam.h
   include/tencentcloud/trtc/v20190722/model/ModifyCloudModerationResponse.h
   include/tencentcloud/trtc/v20190722/model/Terminology.h
   include/tencentcloud/trtc/v20190722/model/TRTCDataResp.h
@@ -239,6 +242,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h
   include/tencentcloud/trtc/v20190722/model/TextToSpeechSSERequest.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h
+  include/tencentcloud/trtc/v20190722/model/TermPair.h
   include/tencentcloud/trtc/v20190722/model/DeletePictureRequest.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h
   include/tencentcloud/trtc/v20190722/model/McuSeiParams.h
@@ -287,6 +291,7 @@ set(trtc_src
   src/v20190722/model/DescribeCloudModerationResponse.cpp
   src/v20190722/model/StartStreamIngestResponse.cpp
   src/v20190722/model/AgentConfig.cpp
+  src/v20190722/model/TerminologyItem.cpp
   src/v20190722/model/CreatePictureRequest.cpp
   src/v20190722/model/SubscribeModerationUserIds.cpp
   src/v20190722/model/AudioEncodeParams.cpp
@@ -298,6 +303,7 @@ set(trtc_src
   src/v20190722/model/DescribeTRTCRealTimeScaleDataRequest.cpp
   src/v20190722/model/StartAIConversationResponse.cpp
   src/v20190722/model/STTConfig.cpp
+  src/v20190722/model/Voice.cpp
   src/v20190722/model/DescribeTRTCMarketScaleDataRequest.cpp
   src/v20190722/model/McuLayoutVolume.cpp
   src/v20190722/model/VoiceCloneRequest.cpp
@@ -424,6 +430,7 @@ set(trtc_src
   src/v20190722/model/SdkAppIdRecordUsage.cpp
   src/v20190722/model/AudioEncode.cpp
   src/v20190722/model/RemoveUserRequest.cpp
+  src/v20190722/model/TTSVoice.cpp
   src/v20190722/model/DismissRoomRequest.cpp
   src/v20190722/model/DescribeUnusualEventRequest.cpp
   src/v20190722/model/DescribeCloudRecordingRequest.cpp
@@ -462,7 +469,7 @@ set(trtc_src
   src/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.cpp
   src/v20190722/model/DeleteCloudRecordingRequest.cpp
   src/v20190722/model/DescribePictureRequest.cpp
-  src/v20190722/model/Voice.cpp
+  src/v20190722/model/TTSParam.cpp
   src/v20190722/model/ModifyCloudModerationResponse.cpp
   src/v20190722/model/Terminology.cpp
   src/v20190722/model/TRTCDataResp.cpp
@@ -502,6 +509,7 @@ set(trtc_src
   src/v20190722/model/UpdateStreamIngestRequest.cpp
   src/v20190722/model/TextToSpeechSSERequest.cpp
   src/v20190722/model/StopWebRecordResponse.cpp
+  src/v20190722/model/TermPair.cpp
   src/v20190722/model/DeletePictureRequest.cpp
   src/v20190722/model/StopWebRecordRequest.cpp
   src/v20190722/model/McuSeiParams.cpp

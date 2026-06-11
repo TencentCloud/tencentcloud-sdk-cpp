@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>
+                     * @return Action <p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>
+                     * 
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置<p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>
+                     * @param _action <p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>
+                     * 
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     * 
+                     */
+                    bool ActionHasBeenSet() const;
+
+                    /**
                      * 获取<p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>
                      * @return Scope <p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>
                      * 
@@ -66,69 +87,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ScopeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>
-                     * @return Action <p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>
-                     * 
-                     */
-                    std::string GetAction() const;
-
-                    /**
-                     * 设置<p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>
-                     * @param _action <p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>
-                     * 
-                     */
-                    void SetAction(const std::string& _action);
-
-                    /**
-                     * 判断参数 Action 是否已赋值
-                     * @return Action 是否已赋值
-                     * 
-                     */
-                    bool ActionHasBeenSet() const;
-
-                    /**
-                     * 获取<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
-                     * @return RiskLevel <p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
-                     * 
-                     */
-                    std::string GetRiskLevel() const;
-
-                    /**
-                     * 设置<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
-                     * @param _riskLevel <p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
-                     * 
-                     */
-                    void SetRiskLevel(const std::string& _riskLevel);
-
-                    /**
-                     * 判断参数 RiskLevel 是否已赋值
-                     * @return RiskLevel 是否已赋值
-                     * 
-                     */
-                    bool RiskLevelHasBeenSet() const;
-
-                    /**
-                     * 获取<p>开关状态(true:开 false:关) 适用于系统规则</p>
-                     * @return Status <p>开关状态(true:开 false:关) 适用于系统规则</p>
-                     * 
-                     */
-                    bool GetStatus() const;
-
-                    /**
-                     * 设置<p>开关状态(true:开 false:关) 适用于系统规则</p>
-                     * @param _status <p>开关状态(true:开 false:关) 适用于系统规则</p>
-                     * 
-                     */
-                    void SetStatus(const bool& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取<p>是否被删除 适用于自定义规则入参</p>
@@ -152,6 +110,27 @@ namespace TencentCloud
                     bool IsDeleteHasBeenSet() const;
 
                     /**
+                     * 获取<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
+                     * @return RiskLevel <p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
+                     * 
+                     */
+                    std::string GetRiskLevel() const;
+
+                    /**
+                     * 设置<p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
+                     * @param _riskLevel <p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
+                     * 
+                     */
+                    void SetRiskLevel(const std::string& _riskLevel);
+
+                    /**
+                     * 判断参数 RiskLevel 是否已赋值
+                     * @return RiskLevel 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelHasBeenSet() const;
+
+                    /**
                      * 获取<p>规则类型对应中文</p>
                      * @return RuleTypeZH <p>规则类型对应中文</p>
                      * 
@@ -172,7 +151,34 @@ namespace TencentCloud
                      */
                     bool RuleTypeZHHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开关状态(true:开 false:关) 适用于系统规则</p>
+                     * @return Status <p>开关状态(true:开 false:关) 适用于系统规则</p>
+                     * 
+                     */
+                    bool GetStatus() const;
+
+                    /**
+                     * 设置<p>开关状态(true:开 false:关) 适用于系统规则</p>
+                     * @param _status <p>开关状态(true:开 false:关) 适用于系统规则</p>
+                     * 
+                     */
+                    void SetStatus(const bool& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>执行动作。黑名单规则仅支持 RULE_MODE_ALERT（告警），不再支持 RULE_MODE_RELEASE/PASS（放行）。放行请使用白名单接口 ModifyK8sApiAbnormalWhitelist</p>
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                     /**
                      * <p>范围<br>系统事件:<br>ANONYMOUS_ACCESS: 匿名访问<br>ABNORMAL_UA_REQ: 异常UA请求<br>ANONYMOUS_ABNORMAL_PERMISSION: 匿名用户权限异动<br>GET_CREDENTIALS: 凭据信息获取<br>MOUNT_SENSITIVE_PATH: 敏感路径挂载<br>COMMAND_RUN: 命令执行<br>PRIVILEGE_CONTAINER: 特权容器<br>EXCEPTION_CRONTAB_TASK: 异常定时任务<br>STATICS_POD: 静态pod创建<br>ABNORMAL_CREATE_POD: 异常pod创建<br>USER_DEFINED: 用户自定义</p>
@@ -181,10 +187,10 @@ namespace TencentCloud
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * <p>动作(RULE_MODE_ALERT: 告警 RULE_MODE_RELEASE:放行)</p>
+                     * <p>是否被删除 适用于自定义规则入参</p>
                      */
-                    std::string m_action;
-                    bool m_actionHasBeenSet;
+                    bool m_isDelete;
+                    bool m_isDeleteHasBeenSet;
 
                     /**
                      * <p>威胁等级 HIGH:高级 MIDDLE: 中级 LOW:低级 NOTICE:提示</p>
@@ -193,22 +199,16 @@ namespace TencentCloud
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * <p>开关状态(true:开 false:关) 适用于系统规则</p>
-                     */
-                    bool m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * <p>是否被删除 适用于自定义规则入参</p>
-                     */
-                    bool m_isDelete;
-                    bool m_isDeleteHasBeenSet;
-
-                    /**
                      * <p>规则类型对应中文</p>
                      */
                     std::string m_ruleTypeZH;
                     bool m_ruleTypeZHHasBeenSet;
+
+                    /**
+                     * <p>开关状态(true:开 false:关) 适用于系统规则</p>
+                     */
+                    bool m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

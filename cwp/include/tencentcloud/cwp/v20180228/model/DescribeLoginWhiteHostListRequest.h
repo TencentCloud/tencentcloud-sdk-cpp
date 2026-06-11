@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取白名单ID
-                     * @return Id 白名单ID
+                     * 获取<p>白名单ID</p>
+                     * @return Id <p>白名单ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置白名单ID
-                     * @param _id 白名单ID
+                     * 设置<p>白名单ID</p>
+                     * @param _id <p>白名单ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取需要返回的数量，最大值为1000
-                     * @return Limit 需要返回的数量，最大值为1000
+                     * 获取<p>需要返回的数量，最大值为1000</p>
+                     * @return Limit <p>需要返回的数量，最大值为1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置需要返回的数量，最大值为1000
-                     * @param _limit 需要返回的数量，最大值为1000
+                     * 设置<p>需要返回的数量，最大值为1000</p>
+                     * @param _limit <p>需要返回的数量，最大值为1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     * @return Filters 过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     * 获取<p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>
+                     * @return Filters <p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>
                      * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     * @param _filters 过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     * 设置<p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>
+                     * @param _filters <p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>
                      * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 白名单ID
+                     * <p>白名单ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 需要返回的数量，最大值为1000
+                     * <p>需要返回的数量，最大值为1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     * <p>过滤条件 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li></p>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

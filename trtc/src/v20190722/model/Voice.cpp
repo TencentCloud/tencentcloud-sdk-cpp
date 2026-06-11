@@ -24,7 +24,8 @@ Voice::Voice() :
     m_voiceIdHasBeenSet(false),
     m_speedHasBeenSet(false),
     m_volumeHasBeenSet(false),
-    m_pitchHasBeenSet(false)
+    m_pitchHasBeenSet(false),
+    m_emotionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Voice::Deserialize(const rapidjson::Value &value)
         m_pitchHasBeenSet = true;
     }
 
+    if (value.HasMember("Emotion") && !value["Emotion"].IsNull())
+    {
+        if (!value["Emotion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Voice.Emotion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_emotion = string(value["Emotion"].GetString());
+        m_emotionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Voice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Pitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pitch, allocator);
+    }
+
+    if (m_emotionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Emotion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emotion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Voice::SetPitch(const int64_t& _pitch)
 bool Voice::PitchHasBeenSet() const
 {
     return m_pitchHasBeenSet;
+}
+
+string Voice::GetEmotion() const
+{
+    return m_emotion;
+}
+
+void Voice::SetEmotion(const string& _emotion)
+{
+    m_emotion = _emotion;
+    m_emotionHasBeenSet = true;
+}
+
+bool Voice::EmotionHasBeenSet() const
+{
+    return m_emotionHasBeenSet;
 }
 

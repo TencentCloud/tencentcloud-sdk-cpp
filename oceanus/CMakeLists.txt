@@ -59,6 +59,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/LogicalType.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/VariableItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeClustersRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/SlaveZone.h
@@ -111,7 +112,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h
   include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
-  include/tencentcloud/oceanus/v20190422/model/VariableItem.h
+  include/tencentcloud/oceanus/v20190422/model/HiveMetastoreInfo.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
@@ -220,6 +221,7 @@ set(oceanus_src
   src/v20190422/model/LogicalType.cpp
   src/v20190422/model/DescribeTreeResourcesRequest.cpp
   src/v20190422/model/DescribeResourceConfigsResponse.cpp
+  src/v20190422/model/VariableItem.cpp
   src/v20190422/model/DescribeClustersRequest.cpp
   src/v20190422/model/CreateWorkSpaceResponse.cpp
   src/v20190422/model/SlaveZone.cpp
@@ -272,7 +274,7 @@ set(oceanus_src
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
   src/v20190422/model/HadoopYarnItem.cpp
   src/v20190422/model/TriggerJobSavepointResponse.cpp
-  src/v20190422/model/VariableItem.cpp
+  src/v20190422/model/HiveMetastoreInfo.cpp
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp

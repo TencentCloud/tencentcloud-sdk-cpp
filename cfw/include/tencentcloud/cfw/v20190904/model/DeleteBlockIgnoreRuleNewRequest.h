@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool DeleteAllHasBeenSet() const;
 
                     /**
+                     * 获取blocklist 封禁列表 whitelist 白名单列表
+                     * @return ShowType blocklist 封禁列表 whitelist 白名单列表
+                     * 
+                     */
+                    std::string GetShowType() const;
+
+                    /**
+                     * 设置blocklist 封禁列表 whitelist 白名单列表
+                     * @param _showType blocklist 封禁列表 whitelist 白名单列表
+                     * 
+                     */
+                    void SetShowType(const std::string& _showType);
+
+                    /**
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
+                     * 
+                     */
+                    bool ShowTypeHasBeenSet() const;
+
+                    /**
                      * 获取规则列表
                      * @return Rules 规则列表
                      * 
@@ -110,27 +131,6 @@ namespace TencentCloud
                      */
                     bool RuleTypeHasBeenSet() const;
 
-                    /**
-                     * 获取blocklist 封禁列表 whitelist 白名单列表
-                     * @return ShowType blocklist 封禁列表 whitelist 白名单列表
-                     * 
-                     */
-                    std::string GetShowType() const;
-
-                    /**
-                     * 设置blocklist 封禁列表 whitelist 白名单列表
-                     * @param _showType blocklist 封禁列表 whitelist 白名单列表
-                     * 
-                     */
-                    void SetShowType(const std::string& _showType);
-
-                    /**
-                     * 判断参数 ShowType 是否已赋值
-                     * @return ShowType 是否已赋值
-                     * 
-                     */
-                    bool ShowTypeHasBeenSet() const;
-
                 private:
 
                     /**
@@ -138,6 +138,12 @@ namespace TencentCloud
                      */
                     int64_t m_deleteAll;
                     bool m_deleteAllHasBeenSet;
+
+                    /**
+                     * blocklist 封禁列表 whitelist 白名单列表
+                     */
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
 
                     /**
                      * 规则列表
@@ -151,12 +157,6 @@ namespace TencentCloud
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
-
-                    /**
-                     * blocklist 封禁列表 whitelist 白名单列表
-                     */
-                    std::string m_showType;
-                    bool m_showTypeHasBeenSet;
 
                 };
             }

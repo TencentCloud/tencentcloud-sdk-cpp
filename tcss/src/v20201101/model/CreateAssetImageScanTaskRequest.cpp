@@ -33,7 +33,8 @@ CreateAssetImageScanTaskRequest::CreateAssetImageScanTaskRequest() :
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_isOneClickScanningTaskHasBeenSet(false)
+    m_isOneClickScanningTaskHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,19 @@ string CreateAssetImageScanTaskRequest::ToJsonString() const
         string key = "IsOneClickScanningTask";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOneClickScanningTask, allocator);
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -331,6 +345,22 @@ void CreateAssetImageScanTaskRequest::SetIsOneClickScanningTask(const bool& _isO
 bool CreateAssetImageScanTaskRequest::IsOneClickScanningTaskHasBeenSet() const
 {
     return m_isOneClickScanningTaskHasBeenSet;
+}
+
+vector<string> CreateAssetImageScanTaskRequest::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+void CreateAssetImageScanTaskRequest::SetClusterIDs(const vector<string>& _clusterIDs)
+{
+    m_clusterIDs = _clusterIDs;
+    m_clusterIDsHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
 }
 
 

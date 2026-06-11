@@ -27,7 +27,8 @@ Extenders::Extenders() :
     m_managedResourcesHasBeenSet(false),
     m_extenderClientConfigHasBeenSet(false),
     m_preemptVerbHasBeenSet(false),
-    m_nodeCacheCapableHasBeenSet(false)
+    m_nodeCacheCapableHasBeenSet(false),
+    m_ignorableHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome Extenders::Deserialize(const rapidjson::Value &value)
         m_nodeCacheCapableHasBeenSet = true;
     }
 
+    if (value.HasMember("Ignorable") && !value["Ignorable"].IsNull())
+    {
+        if (!value["Ignorable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extenders.Ignorable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignorable = value["Ignorable"].GetBool();
+        m_ignorableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +203,14 @@ void Extenders::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "NodeCacheCapable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCacheCapable, allocator);
+    }
+
+    if (m_ignorableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ignorable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignorable, allocator);
     }
 
 }
@@ -307,5 +326,21 @@ void Extenders::SetNodeCacheCapable(const bool& _nodeCacheCapable)
 bool Extenders::NodeCacheCapableHasBeenSet() const
 {
     return m_nodeCacheCapableHasBeenSet;
+}
+
+bool Extenders::GetIgnorable() const
+{
+    return m_ignorable;
+}
+
+void Extenders::SetIgnorable(const bool& _ignorable)
+{
+    m_ignorable = _ignorable;
+    m_ignorableHasBeenSet = true;
+}
+
+bool Extenders::IgnorableHasBeenSet() const
+{
+    return m_ignorableHasBeenSet;
 }
 

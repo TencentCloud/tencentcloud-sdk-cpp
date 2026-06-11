@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取克隆出的音色ID，可以用此id进行语音合成
-                     * @return VoiceId 克隆出的音色ID，可以用此id进行语音合成
+                     * 获取<p>克隆出的音色ID，可以用此id进行语音合成</p>
+                     * @return VoiceId <p>克隆出的音色ID，可以用此id进行语音合成</p>
                      * 
                      */
                     std::string GetVoiceId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 克隆出的音色ID，可以用此id进行语音合成
+                     * <p>克隆出的音色ID，可以用此id进行语音合成</p>
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;

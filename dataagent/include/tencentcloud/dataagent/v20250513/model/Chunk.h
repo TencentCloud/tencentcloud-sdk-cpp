@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取切片ID
-                     * @return Id 切片ID
+                     * 获取<p>切片ID</p>
+                     * @return Id <p>切片ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置切片ID
-                     * @param _id 切片ID
+                     * 设置<p>切片ID</p>
+                     * @param _id <p>切片ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取切片内容
-                     * @return Content 切片内容
+                     * 获取<p>切片内容</p>
+                     * @return Content <p>切片内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置切片内容
-                     * @param _content 切片内容
+                     * 设置<p>切片内容</p>
+                     * @param _content <p>切片内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取切片的字数
-                     * @return Size 切片的字数
+                     * 获取<p>切片的字数</p>
+                     * @return Size <p>切片的字数</p>
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置切片的字数
-                     * @param _size 切片的字数
+                     * 设置<p>切片的字数</p>
+                     * @param _size <p>切片的字数</p>
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取切片概要
-                     * @return Summary 切片概要
+                     * 获取<p>切片概要</p>
+                     * @return Summary <p>切片概要</p>
                      * 
                      */
                     std::string GetSummary() const;
 
                     /**
-                     * 设置切片概要
-                     * @param _summary 切片概要
+                     * 设置<p>切片概要</p>
+                     * @param _summary <p>切片概要</p>
                      * 
                      */
                     void SetSummary(const std::string& _summary);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>
+                     * @return ChunkSource <p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>
+                     * 
+                     */
+                    int64_t GetChunkSource() const;
+
+                    /**
+                     * 设置<p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>
+                     * @param _chunkSource <p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>
+                     * 
+                     */
+                    void SetChunkSource(const int64_t& _chunkSource);
+
+                    /**
+                     * 判断参数 ChunkSource 是否已赋值
+                     * @return ChunkSource 是否已赋值
+                     * 
+                     */
+                    bool ChunkSourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 切片ID
+                     * <p>切片ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 切片内容
+                     * <p>切片内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 切片的字数
+                     * <p>切片的字数</p>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 切片概要
+                     * <p>切片概要</p>
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * <p>分段类型</p><p>枚举值：</p><ul><li>0： 自动分段</li><li>1： 新建分段</li></ul>
+                     */
+                    int64_t m_chunkSource;
+                    bool m_chunkSourceHasBeenSet;
 
                 };
             }

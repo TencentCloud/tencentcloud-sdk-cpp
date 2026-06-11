@@ -2790,6 +2790,56 @@ BillingClient::DescribeGatherRuleDetailOutcomeCallable BillingClient::DescribeGa
     return prom->get_future();
 }
 
+BillingClient::DescribeOrgMemberAccountBalanceOutcome BillingClient::DescribeOrgMemberAccountBalance(const DescribeOrgMemberAccountBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrgMemberAccountBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrgMemberAccountBalanceResponse rsp = DescribeOrgMemberAccountBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrgMemberAccountBalanceOutcome(rsp);
+        else
+            return DescribeOrgMemberAccountBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrgMemberAccountBalanceOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeOrgMemberAccountBalanceAsync(const DescribeOrgMemberAccountBalanceRequest& request, const DescribeOrgMemberAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOrgMemberAccountBalanceRequest&;
+    using Resp = DescribeOrgMemberAccountBalanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOrgMemberAccountBalance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::DescribeOrgMemberAccountBalanceOutcomeCallable BillingClient::DescribeOrgMemberAccountBalanceCallable(const DescribeOrgMemberAccountBalanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOrgMemberAccountBalanceOutcome>>();
+    DescribeOrgMemberAccountBalanceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeOrgMemberAccountBalanceRequest&,
+        DescribeOrgMemberAccountBalanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BillingClient::DescribeRenewInstancesOutcome BillingClient::DescribeRenewInstances(const DescribeRenewInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRenewInstances");

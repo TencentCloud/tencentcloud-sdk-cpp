@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
-                     * @return Duration <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
+                     * 获取<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
+                     * @return Duration <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
-                     * @param _duration <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
+                     * 设置<p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
+                     * @param _duration <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -409,7 +409,7 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
+                     * <p>生成视频的时长，单位：秒。</p><li>当 ModelName 是 Kling，可选值为3-15，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li><li>当 ModelName 是 PixVerse，可指定1-15，默认为5；</li>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;

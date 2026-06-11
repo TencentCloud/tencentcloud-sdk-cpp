@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群规格名称
-                     * @return SpecName 集群规格名称
+                     * 获取<p>集群规格名称</p>
+                     * @return SpecName <p>集群规格名称</p>
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置集群规格名称
-                     * @param _specName 集群规格名称
+                     * 设置<p>集群规格名称</p>
+                     * @param _specName <p>集群规格名称</p>
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取峰值tps
-                     * @return MaxTps 峰值tps
+                     * 获取<p>峰值tps</p>
+                     * @return MaxTps <p>峰值tps</p>
                      * 
                      */
                     uint64_t GetMaxTps() const;
 
                     /**
-                     * 设置峰值tps
-                     * @param _maxTps 峰值tps
+                     * 设置<p>峰值tps</p>
+                     * @param _maxTps <p>峰值tps</p>
                      * 
                      */
                     void SetMaxTps(const uint64_t& _maxTps);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MaxTpsHasBeenSet() const;
 
                     /**
-                     * 获取峰值带宽。单位：mbps
-                     * @return MaxBandWidth 峰值带宽。单位：mbps
+                     * 获取<p>峰值带宽。单位：mbps</p>
+                     * @return MaxBandWidth <p>峰值带宽。单位：mbps</p>
                      * 
                      */
                     uint64_t GetMaxBandWidth() const;
 
                     /**
-                     * 设置峰值带宽。单位：mbps
-                     * @param _maxBandWidth 峰值带宽。单位：mbps
+                     * 设置<p>峰值带宽。单位：mbps</p>
+                     * @param _maxBandWidth <p>峰值带宽。单位：mbps</p>
                      * 
                      */
                     void SetMaxBandWidth(const uint64_t& _maxBandWidth);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取最大命名空间个数
-                     * @return MaxNamespaces 最大命名空间个数
+                     * 获取<p>最大命名空间个数</p>
+                     * @return MaxNamespaces <p>最大命名空间个数</p>
                      * 
                      */
                     uint64_t GetMaxNamespaces() const;
 
                     /**
-                     * 设置最大命名空间个数
-                     * @param _maxNamespaces 最大命名空间个数
+                     * 设置<p>最大命名空间个数</p>
+                     * @param _maxNamespaces <p>最大命名空间个数</p>
                      * 
                      */
                     void SetMaxNamespaces(const uint64_t& _maxNamespaces);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MaxNamespacesHasBeenSet() const;
 
                     /**
-                     * 获取可以创建的最大主题数
-                     * @return MaxTopics 可以创建的最大主题数
+                     * 获取<p>可以创建的最大主题数</p>
+                     * @return MaxTopics <p>可以创建的最大主题数</p>
                      * 
                      */
                     uint64_t GetMaxTopics() const;
 
                     /**
-                     * 设置可以创建的最大主题数
-                     * @param _maxTopics 可以创建的最大主题数
+                     * 设置<p>可以创建的最大主题数</p>
+                     * @param _maxTopics <p>可以创建的最大主题数</p>
                      * 
                      */
                     void SetMaxTopics(const uint64_t& _maxTopics);
@@ -152,18 +152,18 @@ namespace TencentCloud
                     bool MaxTopicsHasBeenSet() const;
 
                     /**
-                     * 获取规格外弹性TPS
+                     * 获取<p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScalableTps 规格外弹性TPS
+                     * @return ScalableTps <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScalableTps() const;
 
                     /**
-                     * 设置规格外弹性TPS
+                     * 设置<p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scalableTps 规格外弹性TPS
+                     * @param _scalableTps <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -177,22 +177,18 @@ namespace TencentCloud
                     bool ScalableTpsHasBeenSet() const;
 
                     /**
-                     * 获取32或者128
-当前集群topic的最大分区数
+                     * 获取<p>32或者128<br>当前集群topic的最大分区数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxPartitions 32或者128
-当前集群topic的最大分区数
+                     * @return MaxPartitions <p>32或者128<br>当前集群topic的最大分区数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxPartitions() const;
 
                     /**
-                     * 设置32或者128
-当前集群topic的最大分区数
+                     * 设置<p>32或者128<br>当前集群topic的最大分区数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxPartitions 32或者128
-当前集群topic的最大分区数
+                     * @param _maxPartitions <p>32或者128<br>当前集群topic的最大分区数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,15 +202,15 @@ namespace TencentCloud
                     bool MaxPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取最大延迟消息数量。0代表没有限制	
-                     * @return MaxDelayedMessages 最大延迟消息数量。0代表没有限制	
+                     * 获取<p>最大延迟消息数量。0代表没有限制</p>
+                     * @return MaxDelayedMessages <p>最大延迟消息数量。0代表没有限制</p>
                      * 
                      */
                     int64_t GetMaxDelayedMessages() const;
 
                     /**
-                     * 设置最大延迟消息数量。0代表没有限制	
-                     * @param _maxDelayedMessages 最大延迟消息数量。0代表没有限制	
+                     * 设置<p>最大延迟消息数量。0代表没有限制</p>
+                     * @param _maxDelayedMessages <p>最大延迟消息数量。0代表没有限制</p>
                      * 
                      */
                     void SetMaxDelayedMessages(const int64_t& _maxDelayedMessages);
@@ -227,15 +223,15 @@ namespace TencentCloud
                     bool MaxDelayedMessagesHasBeenSet() const;
 
                     /**
-                     * 获取可以创建的最大主题分区数
-                     * @return MaxTopicsPartitioned 可以创建的最大主题分区数
+                     * 获取<p>可以创建的最大主题分区数</p>
+                     * @return MaxTopicsPartitioned <p>可以创建的最大主题分区数</p>
                      * 
                      */
                     int64_t GetMaxTopicsPartitioned() const;
 
                     /**
-                     * 设置可以创建的最大主题分区数
-                     * @param _maxTopicsPartitioned 可以创建的最大主题分区数
+                     * 设置<p>可以创建的最大主题分区数</p>
+                     * @param _maxTopicsPartitioned <p>可以创建的最大主题分区数</p>
                      * 
                      */
                     void SetMaxTopicsPartitioned(const int64_t& _maxTopicsPartitioned);
@@ -248,15 +244,15 @@ namespace TencentCloud
                     bool MaxTopicsPartitionedHasBeenSet() const;
 
                     /**
-                     * 获取单broker最大链接数
-                     * @return BrokerMaxConnections 单broker最大链接数
+                     * 获取<p>单broker最大链接数</p>
+                     * @return BrokerMaxConnections <p>单broker最大链接数</p>
                      * 
                      */
                     int64_t GetBrokerMaxConnections() const;
 
                     /**
-                     * 设置单broker最大链接数
-                     * @param _brokerMaxConnections 单broker最大链接数
+                     * 设置<p>单broker最大链接数</p>
+                     * @param _brokerMaxConnections <p>单broker最大链接数</p>
                      * 
                      */
                     void SetBrokerMaxConnections(const int64_t& _brokerMaxConnections);
@@ -269,15 +265,15 @@ namespace TencentCloud
                     bool BrokerMaxConnectionsHasBeenSet() const;
 
                     /**
-                     * 获取单IP最大链接数
-                     * @return BrokerMaxConnectionsPerIp 单IP最大链接数
+                     * 获取<p>单IP最大链接数</p>
+                     * @return BrokerMaxConnectionsPerIp <p>单IP最大链接数</p>
                      * 
                      */
                     int64_t GetBrokerMaxConnectionsPerIp() const;
 
                     /**
-                     * 设置单IP最大链接数
-                     * @param _brokerMaxConnectionsPerIp 单IP最大链接数
+                     * 设置<p>单IP最大链接数</p>
+                     * @param _brokerMaxConnectionsPerIp <p>单IP最大链接数</p>
                      * 
                      */
                     void SetBrokerMaxConnectionsPerIp(const int64_t& _brokerMaxConnectionsPerIp);
@@ -290,15 +286,15 @@ namespace TencentCloud
                     bool BrokerMaxConnectionsPerIpHasBeenSet() const;
 
                     /**
-                     * 获取弹性存储集群最大存储规格；固定存储该值为0
-                     * @return MaximumElasticStorage 弹性存储集群最大存储规格；固定存储该值为0
+                     * 获取<p>弹性存储集群最大存储规格；固定存储该值为0</p>
+                     * @return MaximumElasticStorage <p>弹性存储集群最大存储规格；固定存储该值为0</p>
                      * 
                      */
                     int64_t GetMaximumElasticStorage() const;
 
                     /**
-                     * 设置弹性存储集群最大存储规格；固定存储该值为0
-                     * @param _maximumElasticStorage 弹性存储集群最大存储规格；固定存储该值为0
+                     * 设置<p>弹性存储集群最大存储规格；固定存储该值为0</p>
+                     * @param _maximumElasticStorage <p>弹性存储集群最大存储规格；固定存储该值为0</p>
                      * 
                      */
                     void SetMaximumElasticStorage(const int64_t& _maximumElasticStorage);
@@ -310,82 +306,108 @@ namespace TencentCloud
                      */
                     bool MaximumElasticStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前集群可使用的全量TPS，包括弹性TPS</p>
+                     * @return TotalTps <p>当前集群可使用的全量TPS，包括弹性TPS</p>
+                     * 
+                     */
+                    int64_t GetTotalTps() const;
+
+                    /**
+                     * 设置<p>当前集群可使用的全量TPS，包括弹性TPS</p>
+                     * @param _totalTps <p>当前集群可使用的全量TPS，包括弹性TPS</p>
+                     * 
+                     */
+                    void SetTotalTps(const int64_t& _totalTps);
+
+                    /**
+                     * 判断参数 TotalTps 是否已赋值
+                     * @return TotalTps 是否已赋值
+                     * 
+                     */
+                    bool TotalTpsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群规格名称
+                     * <p>集群规格名称</p>
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 峰值tps
+                     * <p>峰值tps</p>
                      */
                     uint64_t m_maxTps;
                     bool m_maxTpsHasBeenSet;
 
                     /**
-                     * 峰值带宽。单位：mbps
+                     * <p>峰值带宽。单位：mbps</p>
                      */
                     uint64_t m_maxBandWidth;
                     bool m_maxBandWidthHasBeenSet;
 
                     /**
-                     * 最大命名空间个数
+                     * <p>最大命名空间个数</p>
                      */
                     uint64_t m_maxNamespaces;
                     bool m_maxNamespacesHasBeenSet;
 
                     /**
-                     * 可以创建的最大主题数
+                     * <p>可以创建的最大主题数</p>
                      */
                     uint64_t m_maxTopics;
                     bool m_maxTopicsHasBeenSet;
 
                     /**
-                     * 规格外弹性TPS
+                     * <p>规格外弹性TPS</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
 
                     /**
-                     * 32或者128
-当前集群topic的最大分区数
+                     * <p>32或者128<br>当前集群topic的最大分区数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxPartitions;
                     bool m_maxPartitionsHasBeenSet;
 
                     /**
-                     * 最大延迟消息数量。0代表没有限制	
+                     * <p>最大延迟消息数量。0代表没有限制</p>
                      */
                     int64_t m_maxDelayedMessages;
                     bool m_maxDelayedMessagesHasBeenSet;
 
                     /**
-                     * 可以创建的最大主题分区数
+                     * <p>可以创建的最大主题分区数</p>
                      */
                     int64_t m_maxTopicsPartitioned;
                     bool m_maxTopicsPartitionedHasBeenSet;
 
                     /**
-                     * 单broker最大链接数
+                     * <p>单broker最大链接数</p>
                      */
                     int64_t m_brokerMaxConnections;
                     bool m_brokerMaxConnectionsHasBeenSet;
 
                     /**
-                     * 单IP最大链接数
+                     * <p>单IP最大链接数</p>
                      */
                     int64_t m_brokerMaxConnectionsPerIp;
                     bool m_brokerMaxConnectionsPerIpHasBeenSet;
 
                     /**
-                     * 弹性存储集群最大存储规格；固定存储该值为0
+                     * <p>弹性存储集群最大存储规格；固定存储该值为0</p>
                      */
                     int64_t m_maximumElasticStorage;
                     bool m_maximumElasticStorageHasBeenSet;
+
+                    /**
+                     * <p>当前集群可使用的全量TPS，包括弹性TPS</p>
+                     */
+                    int64_t m_totalTps;
+                    bool m_totalTpsHasBeenSet;
 
                 };
             }

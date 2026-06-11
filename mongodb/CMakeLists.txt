@@ -72,7 +72,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeCurrentOpResponse.h
-  include/tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionRequest.h
+  include/tencentcloud/mongodb/v20190725/model/PromoteDBInstanceToActiveRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceMultiParam.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainResponse.h
   include/tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsResponse.h
@@ -164,6 +164,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h
   include/tencentcloud/mongodb/v20190725/model/SecurityGroup.h
+  include/tencentcloud/mongodb/v20190725/model/SetDBInstanceDeletionProtectionRequest.h
   include/tencentcloud/mongodb/v20190725/model/EnableWanServiceRequest.h
   include/tencentcloud/mongodb/v20190725/model/ReplicaSetInfo.h
   include/tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h
@@ -261,12 +262,13 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionRequest.h
   include/tencentcloud/mongodb/v20190725/model/Filters.h
   include/tencentcloud/mongodb/v20190725/model/RestoreCollection.h
   include/tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/EnableWanServiceResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h
-  include/tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionRequest.h
+  include/tencentcloud/mongodb/v20190725/model/PromoteDBInstanceToActiveResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditLogsResponse.h
   )
 
@@ -325,7 +327,7 @@ set(mongodb_src
   src/v20190725/model/DescribeSlowLogsRequest.cpp
   src/v20190725/model/FlushInstanceRouterConfigResponse.cpp
   src/v20190725/model/DescribeCurrentOpResponse.cpp
-  src/v20190725/model/SetDBInstanceDeletionProtectionRequest.cpp
+  src/v20190725/model/PromoteDBInstanceToActiveRequest.cpp
   src/v20190725/model/InstanceMultiParam.cpp
   src/v20190725/model/DescribeSRVConnectionDomainResponse.cpp
   src/v20190725/model/ModifyInstanceParamsResponse.cpp
@@ -417,6 +419,7 @@ set(mongodb_src
   src/v20190725/model/DescribeSecurityGroupResponse.cpp
   src/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.cpp
   src/v20190725/model/SecurityGroup.cpp
+  src/v20190725/model/SetDBInstanceDeletionProtectionRequest.cpp
   src/v20190725/model/EnableWanServiceRequest.cpp
   src/v20190725/model/ReplicaSetInfo.cpp
   src/v20190725/model/ResetDBInstancePasswordResponse.cpp
@@ -514,12 +517,13 @@ set(mongodb_src
   src/v20190725/model/DescribeDBInstanceParamTplDetailRequest.cpp
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/DescribeSlowLogPatternsRequest.cpp
+  src/v20190725/model/UpgradeDBInstanceKernelVersionRequest.cpp
   src/v20190725/model/Filters.cpp
   src/v20190725/model/RestoreCollection.cpp
   src/v20190725/model/RestoreDBInstanceRequest.cpp
   src/v20190725/model/EnableWanServiceResponse.cpp
   src/v20190725/model/RenewDBInstancesRequest.cpp
-  src/v20190725/model/UpgradeDBInstanceKernelVersionRequest.cpp
+  src/v20190725/model/PromoteDBInstanceToActiveResponse.cpp
   src/v20190725/model/DescribeAuditLogsResponse.cpp
   )
 

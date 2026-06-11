@@ -53,6 +53,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaNotificationChannelRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaNotificationChannelResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateOnCallFormRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateOnCallFormResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteGrafanaIntegrationResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteOnCallFormsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteOnCallFormsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusAlertGroupsRequest.h>
@@ -183,6 +187,10 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeNotificationContentTemplateSupportsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeNotificationContentTemplateSupportsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeOnCallFormRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeOnCallFormResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeOnCallFormsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeOnCallFormsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePhoneAlarmFlowTotalCountRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePhoneAlarmFlowTotalCountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePluginOverviewsRequest.h>
@@ -349,6 +357,8 @@
 #include <tencentcloud/monitor/v20180724/model/UpdateGrafanaNotificationChannelResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateOnCallFormRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateOnCallFormResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAlertGroupRequest.h>
@@ -426,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGrafanaNotificationChannelResponse> CreateGrafanaNotificationChannelOutcome;
                 typedef std::future<CreateGrafanaNotificationChannelOutcome> CreateGrafanaNotificationChannelOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateGrafanaNotificationChannelRequest&, CreateGrafanaNotificationChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrafanaNotificationChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOnCallFormResponse> CreateOnCallFormOutcome;
+                typedef std::future<CreateOnCallFormOutcome> CreateOnCallFormOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateOnCallFormRequest&, CreateOnCallFormOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOnCallFormAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePolicyGroupResponse> CreatePolicyGroupOutcome;
                 typedef std::future<CreatePolicyGroupOutcome> CreatePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePolicyGroupRequest&, CreatePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyGroupAsyncHandler;
@@ -489,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGrafanaNotificationChannelResponse> DeleteGrafanaNotificationChannelOutcome;
                 typedef std::future<DeleteGrafanaNotificationChannelOutcome> DeleteGrafanaNotificationChannelOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteGrafanaNotificationChannelRequest&, DeleteGrafanaNotificationChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGrafanaNotificationChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOnCallFormsResponse> DeleteOnCallFormsOutcome;
+                typedef std::future<DeleteOnCallFormsOutcome> DeleteOnCallFormsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteOnCallFormsRequest&, DeleteOnCallFormsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOnCallFormsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
@@ -621,6 +637,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNotificationContentTemplateSupportsResponse> DescribeNotificationContentTemplateSupportsOutcome;
                 typedef std::future<DescribeNotificationContentTemplateSupportsOutcome> DescribeNotificationContentTemplateSupportsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeNotificationContentTemplateSupportsRequest&, DescribeNotificationContentTemplateSupportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationContentTemplateSupportsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOnCallFormResponse> DescribeOnCallFormOutcome;
+                typedef std::future<DescribeOnCallFormOutcome> DescribeOnCallFormOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeOnCallFormRequest&, DescribeOnCallFormOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnCallFormAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOnCallFormsResponse> DescribeOnCallFormsOutcome;
+                typedef std::future<DescribeOnCallFormsOutcome> DescribeOnCallFormsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeOnCallFormsRequest&, DescribeOnCallFormsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnCallFormsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePhoneAlarmFlowTotalCountResponse> DescribePhoneAlarmFlowTotalCountOutcome;
                 typedef std::future<DescribePhoneAlarmFlowTotalCountOutcome> DescribePhoneAlarmFlowTotalCountOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePhoneAlarmFlowTotalCountRequest&, DescribePhoneAlarmFlowTotalCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneAlarmFlowTotalCountAsyncHandler;
@@ -870,6 +892,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateGrafanaWhiteListResponse> UpdateGrafanaWhiteListOutcome;
                 typedef std::future<UpdateGrafanaWhiteListOutcome> UpdateGrafanaWhiteListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaWhiteListRequest&, UpdateGrafanaWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOnCallFormResponse> UpdateOnCallFormOutcome;
+                typedef std::future<UpdateOnCallFormOutcome> UpdateOnCallFormOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateOnCallFormRequest&, UpdateOnCallFormOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOnCallFormAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePrometheusAgentStatusResponse> UpdatePrometheusAgentStatusOutcome;
                 typedef std::future<UpdatePrometheusAgentStatusOutcome> UpdatePrometheusAgentStatusOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusAgentStatusRequest&, UpdatePrometheusAgentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusAgentStatusAsyncHandler;
@@ -1036,6 +1061,15 @@ namespace TencentCloud
                 CreateGrafanaNotificationChannelOutcome CreateGrafanaNotificationChannel(const Model::CreateGrafanaNotificationChannelRequest &request);
                 void CreateGrafanaNotificationChannelAsync(const Model::CreateGrafanaNotificationChannelRequest& request, const CreateGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGrafanaNotificationChannelOutcomeCallable CreateGrafanaNotificationChannelCallable(const Model::CreateGrafanaNotificationChannelRequest& request);
+
+                /**
+                 *创建值班表
+                 * @param req CreateOnCallFormRequest
+                 * @return CreateOnCallFormOutcome
+                 */
+                CreateOnCallFormOutcome CreateOnCallForm(const Model::CreateOnCallFormRequest &request);
+                void CreateOnCallFormAsync(const Model::CreateOnCallFormRequest& request, const CreateOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOnCallFormOutcomeCallable CreateOnCallFormCallable(const Model::CreateOnCallFormRequest& request);
 
                 /**
                  *增加策略组
@@ -1230,6 +1264,15 @@ namespace TencentCloud
                 DeleteGrafanaNotificationChannelOutcome DeleteGrafanaNotificationChannel(const Model::DeleteGrafanaNotificationChannelRequest &request);
                 void DeleteGrafanaNotificationChannelAsync(const Model::DeleteGrafanaNotificationChannelRequest& request, const DeleteGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGrafanaNotificationChannelOutcomeCallable DeleteGrafanaNotificationChannelCallable(const Model::DeleteGrafanaNotificationChannelRequest& request);
+
+                /**
+                 *删除值班表接口
+                 * @param req DeleteOnCallFormsRequest
+                 * @return DeleteOnCallFormsOutcome
+                 */
+                DeleteOnCallFormsOutcome DeleteOnCallForms(const Model::DeleteOnCallFormsRequest &request);
+                void DeleteOnCallFormsAsync(const Model::DeleteOnCallFormsRequest& request, const DeleteOnCallFormsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOnCallFormsOutcomeCallable DeleteOnCallFormsCallable(const Model::DeleteOnCallFormsRequest& request);
 
                 /**
                  *告警 1.0 API，不能再使用否则会导致后端数据不一致
@@ -1632,6 +1675,24 @@ namespace TencentCloud
                 DescribeNotificationContentTemplateSupportsOutcome DescribeNotificationContentTemplateSupports(const Model::DescribeNotificationContentTemplateSupportsRequest &request);
                 void DescribeNotificationContentTemplateSupportsAsync(const Model::DescribeNotificationContentTemplateSupportsRequest& request, const DescribeNotificationContentTemplateSupportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNotificationContentTemplateSupportsOutcomeCallable DescribeNotificationContentTemplateSupportsCallable(const Model::DescribeNotificationContentTemplateSupportsRequest& request);
+
+                /**
+                 *查询值班表详情
+                 * @param req DescribeOnCallFormRequest
+                 * @return DescribeOnCallFormOutcome
+                 */
+                DescribeOnCallFormOutcome DescribeOnCallForm(const Model::DescribeOnCallFormRequest &request);
+                void DescribeOnCallFormAsync(const Model::DescribeOnCallFormRequest& request, const DescribeOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOnCallFormOutcomeCallable DescribeOnCallFormCallable(const Model::DescribeOnCallFormRequest& request);
+
+                /**
+                 *查询值班列表
+                 * @param req DescribeOnCallFormsRequest
+                 * @return DescribeOnCallFormsOutcome
+                 */
+                DescribeOnCallFormsOutcome DescribeOnCallForms(const Model::DescribeOnCallFormsRequest &request);
+                void DescribeOnCallFormsAsync(const Model::DescribeOnCallFormsRequest& request, const DescribeOnCallFormsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOnCallFormsOutcomeCallable DescribeOnCallFormsCallable(const Model::DescribeOnCallFormsRequest& request);
 
                 /**
                  *查询周期内电话流水总数
@@ -2427,6 +2488,15 @@ namespace TencentCloud
                 UpdateGrafanaWhiteListOutcome UpdateGrafanaWhiteList(const Model::UpdateGrafanaWhiteListRequest &request);
                 void UpdateGrafanaWhiteListAsync(const Model::UpdateGrafanaWhiteListRequest& request, const UpdateGrafanaWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateGrafanaWhiteListOutcomeCallable UpdateGrafanaWhiteListCallable(const Model::UpdateGrafanaWhiteListRequest& request);
+
+                /**
+                 *修改值班表
+                 * @param req UpdateOnCallFormRequest
+                 * @return UpdateOnCallFormOutcome
+                 */
+                UpdateOnCallFormOutcome UpdateOnCallForm(const Model::UpdateOnCallFormRequest &request);
+                void UpdateOnCallFormAsync(const Model::UpdateOnCallFormRequest& request, const UpdateOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOnCallFormOutcomeCallable UpdateOnCallFormCallable(const Model::UpdateOnCallFormRequest& request);
 
                 /**
                  *更新 Prometheus CVM Agent 状态

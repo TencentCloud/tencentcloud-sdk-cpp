@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话ID
-                     * @return SessionId 会话ID
+                     * 获取<p>会话ID</p>
+                     * @return SessionId <p>会话ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话ID
-                     * @param _sessionId 会话ID
+                     * 设置<p>会话ID</p>
+                     * @param _sessionId <p>会话ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取问题内容
-                     * @return Question 问题内容
+                     * 获取<p>问题内容</p>
+                     * @return Question <p>问题内容</p>
                      * 
                      */
                     std::string GetQuestion() const;
 
                     /**
-                     * 设置问题内容
-                     * @param _question 问题内容
+                     * 设置<p>问题内容</p>
+                     * @param _question <p>问题内容</p>
                      * 
                      */
                     void SetQuestion(const std::string& _question);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取上下文
-                     * @return Context 上下文
+                     * 获取<p>上下文</p>
+                     * @return Context <p>上下文</p>
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置上下文
-                     * @param _context 上下文
+                     * 设置<p>上下文</p>
+                     * @param _context <p>上下文</p>
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取模型
-                     * @return Model 模型
+                     * 获取<p>模型</p>
+                     * @return Model <p>模型</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置模型
-                     * @param _model 模型
+                     * 设置<p>模型</p>
+                     * @param _model <p>模型</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取是否深度思考
-                     * @return DeepThinking 是否深度思考
+                     * 获取<p>是否深度思考</p>
+                     * @return DeepThinking <p>是否深度思考</p>
                      * 
                      */
                     bool GetDeepThinking() const;
 
                     /**
-                     * 设置是否深度思考
-                     * @param _deepThinking 是否深度思考
+                     * 设置<p>是否深度思考</p>
+                     * @param _deepThinking <p>是否深度思考</p>
                      * 
                      */
                     void SetDeepThinking(const bool& _deepThinking);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DeepThinkingHasBeenSet() const;
 
                     /**
-                     * 获取数据源id
-                     * @return DataSourceIds 数据源id
+                     * 获取<p>数据源id</p>
+                     * @return DataSourceIds <p>数据源id</p>
                      * 
                      */
                     std::vector<std::string> GetDataSourceIds() const;
 
                     /**
-                     * 设置数据源id
-                     * @param _dataSourceIds 数据源id
+                     * 设置<p>数据源id</p>
+                     * @param _dataSourceIds <p>数据源id</p>
                      * 
                      */
                     void SetDataSourceIds(const std::vector<std::string>& _dataSourceIds);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool DataSourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取agent类型
-                     * @return AgentType agent类型
+                     * 获取<p>agent类型</p>
+                     * @return AgentType <p>agent类型</p>
                      * 
                      */
                     std::string GetAgentType() const;
 
                     /**
-                     * 设置agent类型
-                     * @param _agentType agent类型
+                     * 设置<p>agent类型</p>
+                     * @param _agentType <p>agent类型</p>
                      * 
                      */
                     void SetAgentType(const std::string& _agentType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool AgentTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要重新生成答案的记录ID
-                     * @return OldRecordId 需要重新生成答案的记录ID
+                     * 获取<p>需要重新生成答案的记录ID</p>
+                     * @return OldRecordId <p>需要重新生成答案的记录ID</p>
                      * 
                      */
                     std::string GetOldRecordId() const;
 
                     /**
-                     * 设置需要重新生成答案的记录ID
-                     * @param _oldRecordId 需要重新生成答案的记录ID
+                     * 设置<p>需要重新生成答案的记录ID</p>
+                     * @param _oldRecordId <p>需要重新生成答案的记录ID</p>
                      * 
                      */
                     void SetOldRecordId(const std::string& _oldRecordId);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool OldRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取知识库id列表
-                     * @return KnowledgeBaseIds 知识库id列表
+                     * 获取<p>知识库id列表</p>
+                     * @return KnowledgeBaseIds <p>知识库id列表</p>
                      * 
                      */
                     std::vector<std::string> GetKnowledgeBaseIds() const;
 
                     /**
-                     * 设置知识库id列表
-                     * @param _knowledgeBaseIds 知识库id列表
+                     * 设置<p>知识库id列表</p>
+                     * @param _knowledgeBaseIds <p>知识库id列表</p>
                      * 
                      */
                     void SetKnowledgeBaseIds(const std::vector<std::string>& _knowledgeBaseIds);
@@ -255,61 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 会话ID
+                     * <p>会话ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 问题内容
+                     * <p>问题内容</p>
                      */
                     std::string m_question;
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 上下文
+                     * <p>上下文</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 模型
+                     * <p>模型</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 是否深度思考
+                     * <p>是否深度思考</p>
                      */
                     bool m_deepThinking;
                     bool m_deepThinkingHasBeenSet;
 
                     /**
-                     * 数据源id
+                     * <p>数据源id</p>
                      */
                     std::vector<std::string> m_dataSourceIds;
                     bool m_dataSourceIdsHasBeenSet;
 
                     /**
-                     * agent类型
+                     * <p>agent类型</p>
                      */
                     std::string m_agentType;
                     bool m_agentTypeHasBeenSet;
 
                     /**
-                     * 需要重新生成答案的记录ID
+                     * <p>需要重新生成答案的记录ID</p>
                      */
                     std::string m_oldRecordId;
                     bool m_oldRecordIdHasBeenSet;
 
                     /**
-                     * 知识库id列表
+                     * <p>知识库id列表</p>
                      */
                     std::vector<std::string> m_knowledgeBaseIds;
                     bool m_knowledgeBaseIdsHasBeenSet;

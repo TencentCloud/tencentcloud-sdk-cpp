@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日期
-                     * @return SendDate 日期
+                     * 获取<p>日期</p>
+                     * @return SendDate <p>日期</p>
                      * 
                      */
                     std::string GetSendDate() const;
 
                     /**
-                     * 设置日期
-                     * @param _sendDate 日期
+                     * 设置<p>日期</p>
+                     * @param _sendDate <p>日期</p>
                      * 
                      */
                     void SetSendDate(const std::string& _sendDate);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SendDateHasBeenSet() const;
 
                     /**
-                     * 获取邮件请求数量
-                     * @return RequestCount 邮件请求数量
+                     * 获取<p>邮件请求数量</p>
+                     * @return RequestCount <p>邮件请求数量</p>
                      * 
                      */
                     uint64_t GetRequestCount() const;
 
                     /**
-                     * 设置邮件请求数量
-                     * @param _requestCount 邮件请求数量
+                     * 设置<p>邮件请求数量</p>
+                     * @param _requestCount <p>邮件请求数量</p>
                      * 
                      */
                     void SetRequestCount(const uint64_t& _requestCount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RequestCountHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云通过数量
-                     * @return AcceptedCount 腾讯云通过数量
+                     * 获取<p>腾讯云通过数量</p>
+                     * @return AcceptedCount <p>腾讯云通过数量</p>
                      * 
                      */
                     uint64_t GetAcceptedCount() const;
 
                     /**
-                     * 设置腾讯云通过数量
-                     * @param _acceptedCount 腾讯云通过数量
+                     * 设置<p>腾讯云通过数量</p>
+                     * @param _acceptedCount <p>腾讯云通过数量</p>
                      * 
                      */
                     void SetAcceptedCount(const uint64_t& _acceptedCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AcceptedCountHasBeenSet() const;
 
                     /**
-                     * 获取送达数量
-                     * @return DeliveredCount 送达数量
+                     * 获取<p>送达数量</p>
+                     * @return DeliveredCount <p>送达数量</p>
                      * 
                      */
                     uint64_t GetDeliveredCount() const;
 
                     /**
-                     * 设置送达数量
-                     * @param _deliveredCount 送达数量
+                     * 设置<p>送达数量</p>
+                     * @param _deliveredCount <p>送达数量</p>
                      * 
                      */
                     void SetDeliveredCount(const uint64_t& _deliveredCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DeliveredCountHasBeenSet() const;
 
                     /**
-                     * 获取打开邮件的用户数量，根据收件人去重
-                     * @return OpenedCount 打开邮件的用户数量，根据收件人去重
+                     * 获取<p>打开邮件总次数</p>
+                     * @return OpenedCount <p>打开邮件总次数</p>
                      * 
                      */
                     uint64_t GetOpenedCount() const;
 
                     /**
-                     * 设置打开邮件的用户数量，根据收件人去重
-                     * @param _openedCount 打开邮件的用户数量，根据收件人去重
+                     * 设置<p>打开邮件总次数</p>
+                     * @param _openedCount <p>打开邮件总次数</p>
                      * 
                      */
                     void SetOpenedCount(const uint64_t& _openedCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OpenedCountHasBeenSet() const;
 
                     /**
-                     * 获取点击了邮件中的链接数量用户数量
-                     * @return ClickedCount 点击了邮件中的链接数量用户数量
+                     * 获取<p>点击了邮件中的链接数量用户数量</p>
+                     * @return ClickedCount <p>点击了邮件中的链接数量用户数量</p>
                      * 
                      */
                     uint64_t GetClickedCount() const;
 
                     /**
-                     * 设置点击了邮件中的链接数量用户数量
-                     * @param _clickedCount 点击了邮件中的链接数量用户数量
+                     * 设置<p>点击了邮件中的链接数量用户数量</p>
+                     * @param _clickedCount <p>点击了邮件中的链接数量用户数量</p>
                      * 
                      */
                     void SetClickedCount(const uint64_t& _clickedCount);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ClickedCountHasBeenSet() const;
 
                     /**
-                     * 获取退信数量
-                     * @return BounceCount 退信数量
+                     * 获取<p>退信数量</p>
+                     * @return BounceCount <p>退信数量</p>
                      * 
                      */
                     uint64_t GetBounceCount() const;
 
                     /**
-                     * 设置退信数量
-                     * @param _bounceCount 退信数量
+                     * 设置<p>退信数量</p>
+                     * @param _bounceCount <p>退信数量</p>
                      * 
                      */
                     void SetBounceCount(const uint64_t& _bounceCount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool BounceCountHasBeenSet() const;
 
                     /**
-                     * 获取取消订阅的用户数量
-                     * @return UnsubscribeCount 取消订阅的用户数量
+                     * 获取<p>取消订阅的用户数量</p>
+                     * @return UnsubscribeCount <p>取消订阅的用户数量</p>
                      * 
                      */
                     uint64_t GetUnsubscribeCount() const;
 
                     /**
-                     * 设置取消订阅的用户数量
-                     * @param _unsubscribeCount 取消订阅的用户数量
+                     * 设置<p>取消订阅的用户数量</p>
+                     * @param _unsubscribeCount <p>取消订阅的用户数量</p>
                      * 
                      */
                     void SetUnsubscribeCount(const uint64_t& _unsubscribeCount);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日期
+                     * <p>日期</p>
                      */
                     std::string m_sendDate;
                     bool m_sendDateHasBeenSet;
 
                     /**
-                     * 邮件请求数量
+                     * <p>邮件请求数量</p>
                      */
                     uint64_t m_requestCount;
                     bool m_requestCountHasBeenSet;
 
                     /**
-                     * 腾讯云通过数量
+                     * <p>腾讯云通过数量</p>
                      */
                     uint64_t m_acceptedCount;
                     bool m_acceptedCountHasBeenSet;
 
                     /**
-                     * 送达数量
+                     * <p>送达数量</p>
                      */
                     uint64_t m_deliveredCount;
                     bool m_deliveredCountHasBeenSet;
 
                     /**
-                     * 打开邮件的用户数量，根据收件人去重
+                     * <p>打开邮件总次数</p>
                      */
                     uint64_t m_openedCount;
                     bool m_openedCountHasBeenSet;
 
                     /**
-                     * 点击了邮件中的链接数量用户数量
+                     * <p>点击了邮件中的链接数量用户数量</p>
                      */
                     uint64_t m_clickedCount;
                     bool m_clickedCountHasBeenSet;
 
                     /**
-                     * 退信数量
+                     * <p>退信数量</p>
                      */
                     uint64_t m_bounceCount;
                     bool m_bounceCountHasBeenSet;
 
                     /**
-                     * 取消订阅的用户数量
+                     * <p>取消订阅的用户数量</p>
                      */
                     uint64_t m_unsubscribeCount;
                     bool m_unsubscribeCountHasBeenSet;

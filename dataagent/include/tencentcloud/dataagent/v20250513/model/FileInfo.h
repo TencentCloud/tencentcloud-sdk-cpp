@@ -195,6 +195,27 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>分片策略</p>
                      * @return ChunkConfig <p>分片策略</p>
                      * 
@@ -384,6 +405,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>更新时间</p>
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                     /**
                      * <p>分片策略</p>

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权企业id
-                     * @return OrganizationId 授权企业id
+                     * 获取<p>授权企业id</p>
+                     * @return OrganizationId <p>授权企业id</p>
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置授权企业id
-                     * @param _organizationId 授权企业id
+                     * 设置<p>授权企业id</p>
+                     * @param _organizationId <p>授权企业id</p>
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取授权企业名称
-                     * @return OrganizationName 授权企业名称
+                     * 获取<p>授权企业名称</p>
+                     * @return OrganizationName <p>授权企业名称</p>
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置授权企业名称
-                     * @param _organizationName 授权企业名称
+                     * 设置<p>授权企业名称</p>
+                     * @param _organizationName <p>授权企业名称</p>
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取被授权企业id
-                     * @return AuthorizedOrganizationId 被授权企业id
+                     * 获取<p>被授权企业id</p>
+                     * @return AuthorizedOrganizationId <p>被授权企业id</p>
                      * 
                      */
                     std::string GetAuthorizedOrganizationId() const;
 
                     /**
-                     * 设置被授权企业id
-                     * @param _authorizedOrganizationId 被授权企业id
+                     * 设置<p>被授权企业id</p>
+                     * @param _authorizedOrganizationId <p>被授权企业id</p>
                      * 
                      */
                     void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AuthorizedOrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取被授权企业名称
-                     * @return AuthorizedOrganizationName 被授权企业名称
+                     * 获取<p>被授权企业名称</p>
+                     * @return AuthorizedOrganizationName <p>被授权企业名称</p>
                      * 
                      */
                     std::string GetAuthorizedOrganizationName() const;
 
                     /**
-                     * 设置被授权企业名称
-                     * @param _authorizedOrganizationName 被授权企业名称
+                     * 设置<p>被授权企业名称</p>
+                     * @param _authorizedOrganizationName <p>被授权企业名称</p>
                      * 
                      */
                     void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AuthorizedOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取授权模板id（仅当授权方式为模板授权时有值）
-                     * @return TemplateId 授权模板id（仅当授权方式为模板授权时有值）
+                     * 获取<p>授权模板id（仅当授权方式为模板授权时有值）</p>
+                     * @return TemplateId <p>授权模板id（仅当授权方式为模板授权时有值）</p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置授权模板id（仅当授权方式为模板授权时有值）
-                     * @param _templateId 授权模板id（仅当授权方式为模板授权时有值）
+                     * 设置<p>授权模板id（仅当授权方式为模板授权时有值）</p>
+                     * @param _templateId <p>授权模板id（仅当授权方式为模板授权时有值）</p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取授权模板名称（仅当授权方式为模板授权时有值）
-                     * @return TemplateName 授权模板名称（仅当授权方式为模板授权时有值）
+                     * 获取<p>授权模板名称（仅当授权方式为模板授权时有值）</p>
+                     * @return TemplateName <p>授权模板名称（仅当授权方式为模板授权时有值）</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置授权模板名称（仅当授权方式为模板授权时有值）
-                     * @param _templateName 授权模板名称（仅当授权方式为模板授权时有值）
+                     * 设置<p>授权模板名称（仅当授权方式为模板授权时有值）</p>
+                     * @param _templateName <p>授权模板名称（仅当授权方式为模板授权时有值）</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取授权时间，格式为时间戳，单位s
-                     * @return AuthorizeTime 授权时间，格式为时间戳，单位s
+                     * 获取<p>授权时间，格式为时间戳，单位s</p>
+                     * @return AuthorizeTime <p>授权时间，格式为时间戳，单位s</p>
                      * 
                      */
                     int64_t GetAuthorizeTime() const;
 
                     /**
-                     * 设置授权时间，格式为时间戳，单位s
-                     * @param _authorizeTime 授权时间，格式为时间戳，单位s
+                     * 设置<p>授权时间，格式为时间戳，单位s</p>
+                     * @param _authorizeTime <p>授权时间，格式为时间戳，单位s</p>
                      * 
                      */
                     void SetAuthorizeTime(const int64_t& _authorizeTime);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 授权企业id
+                     * <p>授权企业id</p>
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 授权企业名称
+                     * <p>授权企业名称</p>
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 被授权企业id
+                     * <p>被授权企业id</p>
                      */
                     std::string m_authorizedOrganizationId;
                     bool m_authorizedOrganizationIdHasBeenSet;
 
                     /**
-                     * 被授权企业名称
+                     * <p>被授权企业名称</p>
                      */
                     std::string m_authorizedOrganizationName;
                     bool m_authorizedOrganizationNameHasBeenSet;
 
                     /**
-                     * 授权模板id（仅当授权方式为模板授权时有值）
+                     * <p>授权模板id（仅当授权方式为模板授权时有值）</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 授权模板名称（仅当授权方式为模板授权时有值）
+                     * <p>授权模板名称（仅当授权方式为模板授权时有值）</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 授权时间，格式为时间戳，单位s
+                     * <p>授权时间，格式为时间戳，单位s</p>
                      */
                     int64_t m_authorizeTime;
                     bool m_authorizeTimeHasBeenSet;

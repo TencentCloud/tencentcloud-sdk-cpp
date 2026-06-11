@@ -48,7 +48,8 @@ EndpointGroupConfigurationSet::EndpointGroupConfigurationSet() :
     m_virtualExistForwardingRuleFlagHasBeenSet(false),
     m_originPublicIpsHasBeenSet(false),
     m_ispTypeHasBeenSet(false),
-    m_cipherPolicyIdHasBeenSet(false)
+    m_cipherPolicyIdHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -363,6 +364,16 @@ CoreInternalOutcome EndpointGroupConfigurationSet::Deserialize(const rapidjson::
         m_cipherPolicyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpVersion") && !value["HttpVersion"].IsNull())
+    {
+        if (!value["HttpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointGroupConfigurationSet.HttpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpVersion = string(value["HttpVersion"].GetString());
+        m_httpVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -616,6 +627,14 @@ void EndpointGroupConfigurationSet::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "CipherPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cipherPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1067,5 +1086,21 @@ void EndpointGroupConfigurationSet::SetCipherPolicyId(const string& _cipherPolic
 bool EndpointGroupConfigurationSet::CipherPolicyIdHasBeenSet() const
 {
     return m_cipherPolicyIdHasBeenSet;
+}
+
+string EndpointGroupConfigurationSet::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void EndpointGroupConfigurationSet::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool EndpointGroupConfigurationSet::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 

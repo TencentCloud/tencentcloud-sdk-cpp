@@ -35,7 +35,9 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_autoCreateTopicStatusHasBeenSet(false),
     m_defaultPartitionNumberHasBeenSet(false),
     m_tenantHasBeenSet(false),
-    m_deleteProtectionHasBeenSet(false)
+    m_deleteProtectionHasBeenSet(false),
+    m_elasticTpsEnabledHasBeenSet(false),
+    m_encryptionStatusHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,26 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_deleteProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticTpsEnabled") && !value["ElasticTpsEnabled"].IsNull())
+    {
+        if (!value["ElasticTpsEnabled"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.ElasticTpsEnabled` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTpsEnabled = value["ElasticTpsEnabled"].GetInt64();
+        m_elasticTpsEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptionStatus") && !value["EncryptionStatus"].IsNull())
+    {
+        if (!value["EncryptionStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.EncryptionStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionStatus = value["EncryptionStatus"].GetInt64();
+        m_encryptionStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +358,22 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DeleteProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteProtection, allocator);
+    }
+
+    if (m_elasticTpsEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTpsEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTpsEnabled, allocator);
+    }
+
+    if (m_encryptionStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptionStatus, allocator);
     }
 
 }
@@ -579,5 +617,37 @@ void PulsarProClusterInfo::SetDeleteProtection(const int64_t& _deleteProtection)
 bool PulsarProClusterInfo::DeleteProtectionHasBeenSet() const
 {
     return m_deleteProtectionHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetElasticTpsEnabled() const
+{
+    return m_elasticTpsEnabled;
+}
+
+void PulsarProClusterInfo::SetElasticTpsEnabled(const int64_t& _elasticTpsEnabled)
+{
+    m_elasticTpsEnabled = _elasticTpsEnabled;
+    m_elasticTpsEnabledHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::ElasticTpsEnabledHasBeenSet() const
+{
+    return m_elasticTpsEnabledHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetEncryptionStatus() const
+{
+    return m_encryptionStatus;
+}
+
+void PulsarProClusterInfo::SetEncryptionStatus(const int64_t& _encryptionStatus)
+{
+    m_encryptionStatus = _encryptionStatus;
+    m_encryptionStatusHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::EncryptionStatusHasBeenSet() const
+{
+    return m_encryptionStatusHasBeenSet;
 }
 

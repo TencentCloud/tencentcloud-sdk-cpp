@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路径
-                     * @return Path 路径
+                     * 获取<p>路径</p>
+                     * @return Path <p>路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置路径
-                     * @param _path 路径
+                     * 设置<p>路径</p>
+                     * @param _path <p>路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse
-                     * @return UpstreamResourceType 上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse
+                     * 获取<p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>
+                     * @return UpstreamResourceType <p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>
                      * 
                      */
                     std::string GetUpstreamResourceType() const;
 
                     /**
-                     * 设置上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse
-                     * @param _upstreamResourceType 上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse
+                     * 设置<p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>
+                     * @param _upstreamResourceType <p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>
                      * 
                      */
                     void SetUpstreamResourceType(const std::string& _upstreamResourceType);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool UpstreamResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取上游服务名。创建时必填，修改时可选填
-                     * @return UpstreamResourceName 上游服务名。创建时必填，修改时可选填
+                     * 获取<p>上游服务名。创建时必填，修改时可选填</p>
+                     * @return UpstreamResourceName <p>上游服务名。创建时必填，修改时可选填</p>
                      * 
                      */
                     std::string GetUpstreamResourceName() const;
 
                     /**
-                     * 设置上游服务名。创建时必填，修改时可选填
-                     * @param _upstreamResourceName 上游服务名。创建时必填，修改时可选填
+                     * 设置<p>上游服务名。创建时必填，修改时可选填</p>
+                     * @param _upstreamResourceName <p>上游服务名。创建时必填，修改时可选填</p>
                      * 
                      */
                     void SetUpstreamResourceName(const std::string& _upstreamResourceName);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool UpstreamResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取路径重写
-                     * @return PathRewrite 路径重写
+                     * 获取<p>路径重写</p>
+                     * @return PathRewrite <p>路径重写</p>
                      * 
                      */
                     HTTPServicePathRewrite GetPathRewrite() const;
 
                     /**
-                     * 设置路径重写
-                     * @param _pathRewrite 路径重写
+                     * 设置<p>路径重写</p>
+                     * @param _pathRewrite <p>路径重写</p>
                      * 
                      */
                     void SetPathRewrite(const HTTPServicePathRewrite& _pathRewrite);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool PathRewriteHasBeenSet() const;
 
                     /**
-                     * 获取是否开启安全域名。默认开启
-                     * @return EnableSafeDomain 是否开启安全域名。默认开启
+                     * 获取<p>是否开启安全域名。默认开启</p>
+                     * @return EnableSafeDomain <p>是否开启安全域名。默认开启</p>
                      * 
                      */
                     bool GetEnableSafeDomain() const;
 
                     /**
-                     * 设置是否开启安全域名。默认开启
-                     * @param _enableSafeDomain 是否开启安全域名。默认开启
+                     * 设置<p>是否开启安全域名。默认开启</p>
+                     * @param _enableSafeDomain <p>是否开启安全域名。默认开启</p>
                      * 
                      */
                     void SetEnableSafeDomain(const bool& _enableSafeDomain);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool EnableSafeDomainHasBeenSet() const;
 
                     /**
-                     * 获取是否开启身份认证。默认关闭
-                     * @return EnableAuth 是否开启身份认证。默认关闭
+                     * 获取<p>是否开启身份认证。默认关闭</p>
+                     * @return EnableAuth <p>是否开启身份认证。默认关闭</p>
                      * 
                      */
                     bool GetEnableAuth() const;
 
                     /**
-                     * 设置是否开启身份认证。默认关闭
-                     * @param _enableAuth 是否开启身份认证。默认关闭
+                     * 设置<p>是否开启身份认证。默认关闭</p>
+                     * @param _enableAuth <p>是否开启身份认证。默认关闭</p>
                      * 
                      */
                     void SetEnableAuth(const bool& _enableAuth);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool EnableAuthHasBeenSet() const;
 
                     /**
-                     * 获取是否开启路径透传。默认关闭
-                     * @return EnablePathTransmission 是否开启路径透传。默认关闭
+                     * 获取<p>是否开启路径透传。默认关闭</p>
+                     * @return EnablePathTransmission <p>是否开启路径透传。默认关闭</p>
                      * 
                      */
                     bool GetEnablePathTransmission() const;
 
                     /**
-                     * 设置是否开启路径透传。默认关闭
-                     * @param _enablePathTransmission 是否开启路径透传。默认关闭
+                     * 设置<p>是否开启路径透传。默认关闭</p>
+                     * @param _enablePathTransmission <p>是否开启路径透传。默认关闭</p>
                      * 
                      */
                     void SetEnablePathTransmission(const bool& _enablePathTransmission);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool EnablePathTransmissionHasBeenSet() const;
 
                     /**
-                     * 获取QPS限频策略
-                     * @return QPSPolicy QPS限频策略
+                     * 获取<p>QPS限频策略</p>
+                     * @return QPSPolicy <p>QPS限频策略</p>
                      * 
                      */
                     HTTPServiceRouteQPSPolicy GetQPSPolicy() const;
 
                     /**
-                     * 设置QPS限频策略
-                     * @param _qPSPolicy QPS限频策略
+                     * 设置<p>QPS限频策略</p>
+                     * @param _qPSPolicy <p>QPS限频策略</p>
                      * 
                      */
                     void SetQPSPolicy(const HTTPServiceRouteQPSPolicy& _qPSPolicy);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool QPSPolicyHasBeenSet() const;
 
                     /**
-                     * 获取是否开启路由
-                     * @return Enable 是否开启路由
+                     * 获取<p>是否开启路由</p>
+                     * @return Enable <p>是否开启路由</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置是否开启路由
-                     * @param _enable 是否开启路由
+                     * 设置<p>是否开启路由</p>
+                     * @param _enable <p>是否开启路由</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段，内部包含headers处理等
-                     * @return Extension 扩展字段，内部包含headers处理等
+                     * 获取<p>扩展字段，内部包含headers处理等</p>
+                     * @return Extension <p>扩展字段，内部包含headers处理等</p>
                      * 
                      */
                     HTTPServiceExtension GetExtension() const;
 
                     /**
-                     * 设置扩展字段，内部包含headers处理等
-                     * @param _extension 扩展字段，内部包含headers处理等
+                     * 设置<p>扩展字段，内部包含headers处理等</p>
+                     * @param _extension <p>扩展字段，内部包含headers处理等</p>
                      * 
                      */
                     void SetExtension(const HTTPServiceExtension& _extension);
@@ -262,61 +262,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 路径
+                     * <p>路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 上游服务类型。创建时必填，修改时可选填。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse
+                     * <p>上游服务类型。创建时必填，修改时可选填</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： web云函数</li><li>LH： Lighthouse</li></ul>
                      */
                     std::string m_upstreamResourceType;
                     bool m_upstreamResourceTypeHasBeenSet;
 
                     /**
-                     * 上游服务名。创建时必填，修改时可选填
+                     * <p>上游服务名。创建时必填，修改时可选填</p>
                      */
                     std::string m_upstreamResourceName;
                     bool m_upstreamResourceNameHasBeenSet;
 
                     /**
-                     * 路径重写
+                     * <p>路径重写</p>
                      */
                     HTTPServicePathRewrite m_pathRewrite;
                     bool m_pathRewriteHasBeenSet;
 
                     /**
-                     * 是否开启安全域名。默认开启
+                     * <p>是否开启安全域名。默认开启</p>
                      */
                     bool m_enableSafeDomain;
                     bool m_enableSafeDomainHasBeenSet;
 
                     /**
-                     * 是否开启身份认证。默认关闭
+                     * <p>是否开启身份认证。默认关闭</p>
                      */
                     bool m_enableAuth;
                     bool m_enableAuthHasBeenSet;
 
                     /**
-                     * 是否开启路径透传。默认关闭
+                     * <p>是否开启路径透传。默认关闭</p>
                      */
                     bool m_enablePathTransmission;
                     bool m_enablePathTransmissionHasBeenSet;
 
                     /**
-                     * QPS限频策略
+                     * <p>QPS限频策略</p>
                      */
                     HTTPServiceRouteQPSPolicy m_qPSPolicy;
                     bool m_qPSPolicyHasBeenSet;
 
                     /**
-                     * 是否开启路由
+                     * <p>是否开启路由</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 扩展字段，内部包含headers处理等
+                     * <p>扩展字段，内部包含headers处理等</p>
                      */
                     HTTPServiceExtension m_extension;
                     bool m_extensionHasBeenSet;

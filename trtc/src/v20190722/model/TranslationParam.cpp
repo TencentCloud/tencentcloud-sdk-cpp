@@ -21,7 +21,8 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 TranslationParam::TranslationParam() :
-    m_targetLangHasBeenSet(false)
+    m_targetLangHasBeenSet(false),
+    m_terminologiesHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,26 @@ CoreInternalOutcome TranslationParam::Deserialize(const rapidjson::Value &value)
             m_targetLang.push_back((*itr).GetString());
         }
         m_targetLangHasBeenSet = true;
+    }
+
+    if (value.HasMember("Terminologies") && !value["Terminologies"].IsNull())
+    {
+        if (!value["Terminologies"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TranslationParam.Terminologies` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Terminologies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TerminologyItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_terminologies.push_back(item);
+        }
+        m_terminologiesHasBeenSet = true;
     }
 
 
@@ -63,6 +84,21 @@ void TranslationParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
+    if (m_terminologiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Terminologies";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_terminologies.begin(); itr != m_terminologies.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -80,5 +116,21 @@ void TranslationParam::SetTargetLang(const vector<string>& _targetLang)
 bool TranslationParam::TargetLangHasBeenSet() const
 {
     return m_targetLangHasBeenSet;
+}
+
+vector<TerminologyItem> TranslationParam::GetTerminologies() const
+{
+    return m_terminologies;
+}
+
+void TranslationParam::SetTerminologies(const vector<TerminologyItem>& _terminologies)
+{
+    m_terminologies = _terminologies;
+    m_terminologiesHasBeenSet = true;
+}
+
+bool TranslationParam::TerminologiesHasBeenSet() const
+{
+    return m_terminologiesHasBeenSet;
 }
 

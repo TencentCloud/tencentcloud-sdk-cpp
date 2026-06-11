@@ -45,7 +45,8 @@ ModifyEndpointGroupRequest::ModifyEndpointGroupRequest() :
     m_statusMaskHasBeenSet(false),
     m_forwardProtocolHasBeenSet(false),
     m_portOverridesHasBeenSet(false),
-    m_cipherPolicyIdHasBeenSet(false)
+    m_cipherPolicyIdHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,14 @@ string ModifyEndpointGroupRequest::ToJsonString() const
         string key = "CipherPolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cipherPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -633,6 +642,22 @@ void ModifyEndpointGroupRequest::SetCipherPolicyId(const string& _cipherPolicyId
 bool ModifyEndpointGroupRequest::CipherPolicyIdHasBeenSet() const
 {
     return m_cipherPolicyIdHasBeenSet;
+}
+
+string ModifyEndpointGroupRequest::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void ModifyEndpointGroupRequest::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool ModifyEndpointGroupRequest::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 
 

@@ -790,6 +790,56 @@ MonitorClient::CreateGrafanaNotificationChannelOutcomeCallable MonitorClient::Cr
     return prom->get_future();
 }
 
+MonitorClient::CreateOnCallFormOutcome MonitorClient::CreateOnCallForm(const CreateOnCallFormRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOnCallForm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOnCallFormResponse rsp = CreateOnCallFormResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOnCallFormOutcome(rsp);
+        else
+            return CreateOnCallFormOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOnCallFormOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateOnCallFormAsync(const CreateOnCallFormRequest& request, const CreateOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateOnCallFormRequest&;
+    using Resp = CreateOnCallFormResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateOnCallForm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateOnCallFormOutcomeCallable MonitorClient::CreateOnCallFormCallable(const CreateOnCallFormRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateOnCallFormOutcome>>();
+    CreateOnCallFormAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateOnCallFormRequest&,
+        CreateOnCallFormOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::CreatePolicyGroupOutcome MonitorClient::CreatePolicyGroup(const CreatePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePolicyGroup");
@@ -1832,6 +1882,56 @@ MonitorClient::DeleteGrafanaNotificationChannelOutcomeCallable MonitorClient::De
         const MonitorClient*,
         const DeleteGrafanaNotificationChannelRequest&,
         DeleteGrafanaNotificationChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DeleteOnCallFormsOutcome MonitorClient::DeleteOnCallForms(const DeleteOnCallFormsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOnCallForms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOnCallFormsResponse rsp = DeleteOnCallFormsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOnCallFormsOutcome(rsp);
+        else
+            return DeleteOnCallFormsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOnCallFormsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteOnCallFormsAsync(const DeleteOnCallFormsRequest& request, const DeleteOnCallFormsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteOnCallFormsRequest&;
+    using Resp = DeleteOnCallFormsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteOnCallForms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteOnCallFormsOutcomeCallable MonitorClient::DeleteOnCallFormsCallable(const DeleteOnCallFormsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteOnCallFormsOutcome>>();
+    DeleteOnCallFormsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteOnCallFormsRequest&,
+        DeleteOnCallFormsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4032,6 +4132,106 @@ MonitorClient::DescribeNotificationContentTemplateSupportsOutcomeCallable Monito
         const MonitorClient*,
         const DescribeNotificationContentTemplateSupportsRequest&,
         DescribeNotificationContentTemplateSupportsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeOnCallFormOutcome MonitorClient::DescribeOnCallForm(const DescribeOnCallFormRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOnCallForm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOnCallFormResponse rsp = DescribeOnCallFormResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOnCallFormOutcome(rsp);
+        else
+            return DescribeOnCallFormOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOnCallFormOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeOnCallFormAsync(const DescribeOnCallFormRequest& request, const DescribeOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOnCallFormRequest&;
+    using Resp = DescribeOnCallFormResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOnCallForm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeOnCallFormOutcomeCallable MonitorClient::DescribeOnCallFormCallable(const DescribeOnCallFormRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOnCallFormOutcome>>();
+    DescribeOnCallFormAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeOnCallFormRequest&,
+        DescribeOnCallFormOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeOnCallFormsOutcome MonitorClient::DescribeOnCallForms(const DescribeOnCallFormsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOnCallForms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOnCallFormsResponse rsp = DescribeOnCallFormsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOnCallFormsOutcome(rsp);
+        else
+            return DescribeOnCallFormsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOnCallFormsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeOnCallFormsAsync(const DescribeOnCallFormsRequest& request, const DescribeOnCallFormsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOnCallFormsRequest&;
+    using Resp = DescribeOnCallFormsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOnCallForms", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeOnCallFormsOutcomeCallable MonitorClient::DescribeOnCallFormsCallable(const DescribeOnCallFormsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOnCallFormsOutcome>>();
+    DescribeOnCallFormsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeOnCallFormsRequest&,
+        DescribeOnCallFormsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8182,6 +8382,56 @@ MonitorClient::UpdateGrafanaWhiteListOutcomeCallable MonitorClient::UpdateGrafan
         const MonitorClient*,
         const UpdateGrafanaWhiteListRequest&,
         UpdateGrafanaWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::UpdateOnCallFormOutcome MonitorClient::UpdateOnCallForm(const UpdateOnCallFormRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOnCallForm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOnCallFormResponse rsp = UpdateOnCallFormResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOnCallFormOutcome(rsp);
+        else
+            return UpdateOnCallFormOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOnCallFormOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateOnCallFormAsync(const UpdateOnCallFormRequest& request, const UpdateOnCallFormAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateOnCallFormRequest&;
+    using Resp = UpdateOnCallFormResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateOnCallForm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::UpdateOnCallFormOutcomeCallable MonitorClient::UpdateOnCallFormCallable(const UpdateOnCallFormRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateOnCallFormOutcome>>();
+    UpdateOnCallFormAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const UpdateOnCallFormRequest&,
+        UpdateOnCallFormOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

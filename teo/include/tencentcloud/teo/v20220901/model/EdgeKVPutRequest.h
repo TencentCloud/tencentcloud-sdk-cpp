@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。
-                     * @return Key 键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。
+                     * 获取键名，长度为 1-512 个字符，支持合法 UTF-8 字符。
+                     * @return Key 键名，长度为 1-512 个字符，支持合法 UTF-8 字符。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。
-                     * @param _key 键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。
+                     * 设置键名，长度为 1-512 个字符，支持合法 UTF-8 字符。
+                     * @param _key 键名，长度为 1-512 个字符，支持合法 UTF-8 字符。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 键名，长度为 1-512 个字符，允许的字符为字母、数字、中划线和下划线。
+                     * 键名，长度为 1-512 个字符，支持合法 UTF-8 字符。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

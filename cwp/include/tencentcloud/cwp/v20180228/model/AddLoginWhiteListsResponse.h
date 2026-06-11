@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取重复添加的提示列表
-                     * @return DuplicateHosts 重复添加的提示列表
+                     * 获取<p>重复添加的提示列表</p>
+                     * @return DuplicateHosts <p>重复添加的提示列表</p>
                      * 
                      */
                     std::vector<DuplicateHosts> GetDuplicateHosts() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 重复添加的提示列表
+                     * <p>重复添加的提示列表</p>
                      */
                     std::vector<DuplicateHosts> m_duplicateHosts;
                     bool m_duplicateHostsHasBeenSet;

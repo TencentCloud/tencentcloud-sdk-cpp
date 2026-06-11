@@ -46,7 +46,8 @@ AccessKeyAlarm::AccessKeyAlarm() :
     m_cloudTypeHasBeenSet(false),
     m_aIStatusHasBeenSet(false),
     m_firstAlarmTimestampHasBeenSet(false),
-    m_lastAlarmTimestampHasBeenSet(false)
+    m_lastAlarmTimestampHasBeenSet(false),
+    m_aIFailedReasonHasBeenSet(false)
 {
 }
 
@@ -321,6 +322,16 @@ CoreInternalOutcome AccessKeyAlarm::Deserialize(const rapidjson::Value &value)
         m_lastAlarmTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("AIFailedReason") && !value["AIFailedReason"].IsNull())
+    {
+        if (!value["AIFailedReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.AIFailedReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aIFailedReason = string(value["AIFailedReason"].GetString());
+        m_aIFailedReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -544,6 +555,14 @@ void AccessKeyAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LastAlarmTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastAlarmTimestamp, allocator);
+    }
+
+    if (m_aIFailedReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIFailedReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aIFailedReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -963,5 +982,21 @@ void AccessKeyAlarm::SetLastAlarmTimestamp(const int64_t& _lastAlarmTimestamp)
 bool AccessKeyAlarm::LastAlarmTimestampHasBeenSet() const
 {
     return m_lastAlarmTimestampHasBeenSet;
+}
+
+string AccessKeyAlarm::GetAIFailedReason() const
+{
+    return m_aIFailedReason;
+}
+
+void AccessKeyAlarm::SetAIFailedReason(const string& _aIFailedReason)
+{
+    m_aIFailedReason = _aIFailedReason;
+    m_aIFailedReasonHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::AIFailedReasonHasBeenSet() const
+{
+    return m_aIFailedReasonHasBeenSet;
 }
 

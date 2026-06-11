@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取文件ID
-                     * @return FileId 文件ID
+                     * 获取<p>文件ID</p>
+                     * @return FileId <p>文件ID</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件ID
-                     * @param _fileId 文件ID
+                     * 设置<p>文件ID</p>
+                     * @param _fileId <p>文件ID</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取切片ID
-                     * @return ChunkId 切片ID
+                     * 获取<p>切片ID</p>
+                     * @return ChunkId <p>切片ID</p>
                      * 
                      */
                     std::string GetChunkId() const;
 
                     /**
-                     * 设置切片ID
-                     * @param _chunkId 切片ID
+                     * 设置<p>切片ID</p>
+                     * @param _chunkId <p>切片ID</p>
                      * 
                      */
                     void SetChunkId(const std::string& _chunkId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ChunkIdHasBeenSet() const;
 
                     /**
-                     * 获取编辑后的文本
-                     * @return Content 编辑后的文本
+                     * 获取<p>编辑后的文本</p>
+                     * @return Content <p>编辑后的文本</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置编辑后的文本
-                     * @param _content 编辑后的文本
+                     * 设置<p>编辑后的文本</p>
+                     * @param _content <p>编辑后的文本</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -127,15 +127,36 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取知识库id
-                     * @return KnowledgeBaseId 知识库id
+                     * 获取<p>分段概要</p>
+                     * @return Summary <p>分段概要</p>
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置<p>分段概要</p>
+                     * @param _summary <p>分段概要</p>
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>知识库id</p>
+                     * @return KnowledgeBaseId <p>知识库id</p>
                      * 
                      */
                     std::string GetKnowledgeBaseId() const;
 
                     /**
-                     * 设置知识库id
-                     * @param _knowledgeBaseId 知识库id
+                     * 设置<p>知识库id</p>
+                     * @param _knowledgeBaseId <p>知识库id</p>
                      * 
                      */
                     void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
@@ -150,31 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 文件ID
+                     * <p>文件ID</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 切片ID
+                     * <p>切片ID</p>
                      */
                     std::string m_chunkId;
                     bool m_chunkIdHasBeenSet;
 
                     /**
-                     * 编辑后的文本
+                     * <p>编辑后的文本</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 知识库id
+                     * <p>分段概要</p>
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
+
+                    /**
+                     * <p>知识库id</p>
                      */
                     std::string m_knowledgeBaseId;
                     bool m_knowledgeBaseIdHasBeenSet;

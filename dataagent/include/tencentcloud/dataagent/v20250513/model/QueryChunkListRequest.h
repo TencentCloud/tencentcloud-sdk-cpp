@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表示第一页
-                     * @return Page 表示第一页
+                     * 获取<p>表示第一页</p>
+                     * @return Page <p>表示第一页</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置表示第一页
-                     * @param _page 表示第一页
+                     * 设置<p>表示第一页</p>
+                     * @param _page <p>表示第一页</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取默认一页展示 10 条
-                     * @return PageSize 默认一页展示 10 条
+                     * 获取<p>默认一页展示 10 条</p>
+                     * @return PageSize <p>默认一页展示 10 条</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置默认一页展示 10 条
-                     * @param _pageSize 默认一页展示 10 条
+                     * 设置<p>默认一页展示 10 条</p>
+                     * @param _pageSize <p>默认一页展示 10 条</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取知识库id
-                     * @return KnowledgeBaseId 知识库id
+                     * 获取<p>知识库id</p>
+                     * @return KnowledgeBaseId <p>知识库id</p>
                      * 
                      */
                     std::string GetKnowledgeBaseId() const;
 
                     /**
-                     * 设置知识库id
-                     * @param _knowledgeBaseId 知识库id
+                     * 设置<p>知识库id</p>
+                     * @param _knowledgeBaseId <p>知识库id</p>
                      * 
                      */
                     void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表示第一页
+                     * <p>表示第一页</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 默认一页展示 10 条
+                     * <p>默认一页展示 10 条</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 知识库id
+                     * <p>知识库id</p>
                      */
                     std::string m_knowledgeBaseId;
                     bool m_knowledgeBaseIdHasBeenSet;

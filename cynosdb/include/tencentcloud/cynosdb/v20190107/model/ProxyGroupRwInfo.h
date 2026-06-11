@@ -299,6 +299,27 @@ namespace TencentCloud
                      */
                     bool ApQueryToOtherNodeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>
+                     * @return LoadBalanceMode <p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>
+                     * 
+                     */
+                    std::string GetLoadBalanceMode() const;
+
+                    /**
+                     * 设置<p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>
+                     * @param _loadBalanceMode <p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>
+                     * 
+                     */
+                    void SetLoadBalanceMode(const std::string& _loadBalanceMode);
+
+                    /**
+                     * 判断参数 LoadBalanceMode 是否已赋值
+                     * @return LoadBalanceMode 是否已赋值
+                     * 
+                     */
+                    bool LoadBalanceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,6 +393,12 @@ namespace TencentCloud
                      */
                     bool m_apQueryToOtherNode;
                     bool m_apQueryToOtherNodeHasBeenSet;
+
+                    /**
+                     * <p>自动负载</p><p>枚举值：</p><ul><li>static： 静态负载</li><li>dynamic： 动态负载</li></ul>
+                     */
+                    std::string m_loadBalanceMode;
+                    bool m_loadBalanceModeHasBeenSet;
 
                 };
             }

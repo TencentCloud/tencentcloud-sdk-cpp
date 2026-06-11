@@ -24,9 +24,9 @@ using namespace std;
 
 DeleteBlockIgnoreRuleNewRequest::DeleteBlockIgnoreRuleNewRequest() :
     m_deleteAllHasBeenSet(false),
+    m_showTypeHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false),
-    m_showTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false)
 {
 }
 
@@ -43,6 +43,14 @@ string DeleteBlockIgnoreRuleNewRequest::ToJsonString() const
         string key = "DeleteAll";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteAll, allocator);
+    }
+
+    if (m_showTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rulesHasBeenSet)
@@ -68,14 +76,6 @@ string DeleteBlockIgnoreRuleNewRequest::ToJsonString() const
         d.AddMember(iKey, m_ruleType, allocator);
     }
 
-    if (m_showTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ShowType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -98,6 +98,22 @@ void DeleteBlockIgnoreRuleNewRequest::SetDeleteAll(const int64_t& _deleteAll)
 bool DeleteBlockIgnoreRuleNewRequest::DeleteAllHasBeenSet() const
 {
     return m_deleteAllHasBeenSet;
+}
+
+string DeleteBlockIgnoreRuleNewRequest::GetShowType() const
+{
+    return m_showType;
+}
+
+void DeleteBlockIgnoreRuleNewRequest::SetShowType(const string& _showType)
+{
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
+}
+
+bool DeleteBlockIgnoreRuleNewRequest::ShowTypeHasBeenSet() const
+{
+    return m_showTypeHasBeenSet;
 }
 
 vector<BanAndAllowRuleDel> DeleteBlockIgnoreRuleNewRequest::GetRules() const
@@ -130,22 +146,6 @@ void DeleteBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
 bool DeleteBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
-}
-
-string DeleteBlockIgnoreRuleNewRequest::GetShowType() const
-{
-    return m_showType;
-}
-
-void DeleteBlockIgnoreRuleNewRequest::SetShowType(const string& _showType)
-{
-    m_showType = _showType;
-    m_showTypeHasBeenSet = true;
-}
-
-bool DeleteBlockIgnoreRuleNewRequest::ShowTypeHasBeenSet() const
-{
-    return m_showTypeHasBeenSet;
 }
 
 

@@ -23,10 +23,10 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAccessControlRuleDetailRequest::DescribeAccessControlRuleDetailRequest() :
-    m_ruleIdHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -36,14 +36,6 @@ string DescribeAccessControlRuleDetailRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_ruleIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_imageIdHasBeenSet)
     {
@@ -69,6 +61,14 @@ string DescribeAccessControlRuleDetailRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -76,22 +76,6 @@ string DescribeAccessControlRuleDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeAccessControlRuleDetailRequest::GetRuleId() const
-{
-    return m_ruleId;
-}
-
-void DescribeAccessControlRuleDetailRequest::SetRuleId(const string& _ruleId)
-{
-    m_ruleId = _ruleId;
-    m_ruleIdHasBeenSet = true;
-}
-
-bool DescribeAccessControlRuleDetailRequest::RuleIdHasBeenSet() const
-{
-    return m_ruleIdHasBeenSet;
-}
 
 string DescribeAccessControlRuleDetailRequest::GetImageId() const
 {
@@ -139,6 +123,22 @@ void DescribeAccessControlRuleDetailRequest::SetOffset(const uint64_t& _offset)
 bool DescribeAccessControlRuleDetailRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeAccessControlRuleDetailRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void DescribeAccessControlRuleDetailRequest::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool DescribeAccessControlRuleDetailRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 

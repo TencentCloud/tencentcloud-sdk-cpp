@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Base64编码的音频数据
-                     * @return Audio Base64编码的音频数据
+                     * 获取<p>Base64编码的音频数据</p>
+                     * @return Audio <p>Base64编码的音频数据</p>
                      * 
                      */
                     std::string GetAudio() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AudioHasBeenSet() const;
 
                     /**
-                     * 获取字幕对齐数据
-                     * @return Alignments 字幕对齐数据
+                     * 获取<p>字幕对齐数据</p>
+                     * @return Alignments <p>字幕对齐数据</p>
                      * 
                      */
                     std::vector<AlignmentItem> GetAlignments() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool AlignmentsHasBeenSet() const;
 
                     /**
-                     * 获取音频时长
-                     * @return TotalDurationMs 音频时长
+                     * 获取<p>音频时长</p>
+                     * @return TotalDurationMs <p>音频时长</p>
                      * 
                      */
                     uint64_t GetTotalDurationMs() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Base64编码的音频数据
+                     * <p>Base64编码的音频数据</p>
                      */
                     std::string m_audio;
                     bool m_audioHasBeenSet;
 
                     /**
-                     * 字幕对齐数据
+                     * <p>字幕对齐数据</p>
                      */
                     std::vector<AlignmentItem> m_alignments;
                     bool m_alignmentsHasBeenSet;
 
                     /**
-                     * 音频时长
+                     * <p>音频时长</p>
                      */
                     uint64_t m_totalDurationMs;
                     bool m_totalDurationMsHasBeenSet;

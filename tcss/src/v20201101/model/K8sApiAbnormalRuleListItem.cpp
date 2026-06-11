@@ -21,13 +21,16 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 K8sApiAbnormalRuleListItem::K8sApiAbnormalRuleListItem() :
+    m_effectAllClusterHasBeenSet(false),
+    m_effectClusterCountHasBeenSet(false),
+    m_oprUinHasBeenSet(false),
+    m_ruleActionsHasBeenSet(false),
     m_ruleIDHasBeenSet(false),
+    m_ruleInfoListHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
-    m_effectClusterCountHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_oprUinHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -35,6 +38,49 @@ CoreInternalOutcome K8sApiAbnormalRuleListItem::Deserialize(const rapidjson::Val
 {
     string requestId = "";
 
+
+    if (value.HasMember("EffectAllCluster") && !value["EffectAllCluster"].IsNull())
+    {
+        if (!value["EffectAllCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.EffectAllCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectAllCluster = value["EffectAllCluster"].GetBool();
+        m_effectAllClusterHasBeenSet = true;
+    }
+
+    if (value.HasMember("EffectClusterCount") && !value["EffectClusterCount"].IsNull())
+    {
+        if (!value["EffectClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.EffectClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectClusterCount = value["EffectClusterCount"].GetUint64();
+        m_effectClusterCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("OprUin") && !value["OprUin"].IsNull())
+    {
+        if (!value["OprUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.OprUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oprUin = string(value["OprUin"].GetString());
+        m_oprUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleActions") && !value["RuleActions"].IsNull())
+    {
+        if (!value["RuleActions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.RuleActions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ruleActions.push_back((*itr).GetString());
+        }
+        m_ruleActionsHasBeenSet = true;
+    }
 
     if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
     {
@@ -44,6 +90,26 @@ CoreInternalOutcome K8sApiAbnormalRuleListItem::Deserialize(const rapidjson::Val
         }
         m_ruleID = string(value["RuleID"].GetString());
         m_ruleIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleInfoList") && !value["RuleInfoList"].IsNull())
+    {
+        if (!value["RuleInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.RuleInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            K8sApiAbnormalRuleScopeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleInfoList.push_back(item);
+        }
+        m_ruleInfoListHasBeenSet = true;
     }
 
     if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
@@ -66,14 +132,14 @@ CoreInternalOutcome K8sApiAbnormalRuleListItem::Deserialize(const rapidjson::Val
         m_ruleTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("EffectClusterCount") && !value["EffectClusterCount"].IsNull())
+    if (value.HasMember("Status") && !value["Status"].IsNull())
     {
-        if (!value["EffectClusterCount"].IsUint64())
+        if (!value["Status"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.EffectClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.Status` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_effectClusterCount = value["EffectClusterCount"].GetUint64();
-        m_effectClusterCountHasBeenSet = true;
+        m_status = value["Status"].GetBool();
+        m_statusHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -86,26 +152,6 @@ CoreInternalOutcome K8sApiAbnormalRuleListItem::Deserialize(const rapidjson::Val
         m_updateTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("OprUin") && !value["OprUin"].IsNull())
-    {
-        if (!value["OprUin"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.OprUin` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_oprUin = string(value["OprUin"].GetString());
-        m_oprUinHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleListItem.Status` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = value["Status"].GetBool();
-        m_statusHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -113,12 +159,64 @@ CoreInternalOutcome K8sApiAbnormalRuleListItem::Deserialize(const rapidjson::Val
 void K8sApiAbnormalRuleListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_effectAllClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectAllCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_effectAllCluster, allocator);
+    }
+
+    if (m_effectClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_effectClusterCount, allocator);
+    }
+
+    if (m_oprUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OprUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oprUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleActions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleActions.begin(); itr != m_ruleActions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_ruleIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleInfoList.begin(); itr != m_ruleInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_ruleNameHasBeenSet)
@@ -137,12 +235,12 @@ void K8sApiAbnormalRuleListItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_effectClusterCountHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EffectClusterCount";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_effectClusterCount, allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -153,24 +251,72 @@ void K8sApiAbnormalRuleListItem::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_oprUinHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OprUin";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_oprUin.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
 }
 
+
+bool K8sApiAbnormalRuleListItem::GetEffectAllCluster() const
+{
+    return m_effectAllCluster;
+}
+
+void K8sApiAbnormalRuleListItem::SetEffectAllCluster(const bool& _effectAllCluster)
+{
+    m_effectAllCluster = _effectAllCluster;
+    m_effectAllClusterHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleListItem::EffectAllClusterHasBeenSet() const
+{
+    return m_effectAllClusterHasBeenSet;
+}
+
+uint64_t K8sApiAbnormalRuleListItem::GetEffectClusterCount() const
+{
+    return m_effectClusterCount;
+}
+
+void K8sApiAbnormalRuleListItem::SetEffectClusterCount(const uint64_t& _effectClusterCount)
+{
+    m_effectClusterCount = _effectClusterCount;
+    m_effectClusterCountHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleListItem::EffectClusterCountHasBeenSet() const
+{
+    return m_effectClusterCountHasBeenSet;
+}
+
+string K8sApiAbnormalRuleListItem::GetOprUin() const
+{
+    return m_oprUin;
+}
+
+void K8sApiAbnormalRuleListItem::SetOprUin(const string& _oprUin)
+{
+    m_oprUin = _oprUin;
+    m_oprUinHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleListItem::OprUinHasBeenSet() const
+{
+    return m_oprUinHasBeenSet;
+}
+
+vector<string> K8sApiAbnormalRuleListItem::GetRuleActions() const
+{
+    return m_ruleActions;
+}
+
+void K8sApiAbnormalRuleListItem::SetRuleActions(const vector<string>& _ruleActions)
+{
+    m_ruleActions = _ruleActions;
+    m_ruleActionsHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleListItem::RuleActionsHasBeenSet() const
+{
+    return m_ruleActionsHasBeenSet;
+}
 
 string K8sApiAbnormalRuleListItem::GetRuleID() const
 {
@@ -186,6 +332,22 @@ void K8sApiAbnormalRuleListItem::SetRuleID(const string& _ruleID)
 bool K8sApiAbnormalRuleListItem::RuleIDHasBeenSet() const
 {
     return m_ruleIDHasBeenSet;
+}
+
+vector<K8sApiAbnormalRuleScopeInfo> K8sApiAbnormalRuleListItem::GetRuleInfoList() const
+{
+    return m_ruleInfoList;
+}
+
+void K8sApiAbnormalRuleListItem::SetRuleInfoList(const vector<K8sApiAbnormalRuleScopeInfo>& _ruleInfoList)
+{
+    m_ruleInfoList = _ruleInfoList;
+    m_ruleInfoListHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleListItem::RuleInfoListHasBeenSet() const
+{
+    return m_ruleInfoListHasBeenSet;
 }
 
 string K8sApiAbnormalRuleListItem::GetRuleName() const
@@ -220,20 +382,20 @@ bool K8sApiAbnormalRuleListItem::RuleTypeHasBeenSet() const
     return m_ruleTypeHasBeenSet;
 }
 
-uint64_t K8sApiAbnormalRuleListItem::GetEffectClusterCount() const
+bool K8sApiAbnormalRuleListItem::GetStatus() const
 {
-    return m_effectClusterCount;
+    return m_status;
 }
 
-void K8sApiAbnormalRuleListItem::SetEffectClusterCount(const uint64_t& _effectClusterCount)
+void K8sApiAbnormalRuleListItem::SetStatus(const bool& _status)
 {
-    m_effectClusterCount = _effectClusterCount;
-    m_effectClusterCountHasBeenSet = true;
+    m_status = _status;
+    m_statusHasBeenSet = true;
 }
 
-bool K8sApiAbnormalRuleListItem::EffectClusterCountHasBeenSet() const
+bool K8sApiAbnormalRuleListItem::StatusHasBeenSet() const
 {
-    return m_effectClusterCountHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 string K8sApiAbnormalRuleListItem::GetUpdateTime() const
@@ -250,37 +412,5 @@ void K8sApiAbnormalRuleListItem::SetUpdateTime(const string& _updateTime)
 bool K8sApiAbnormalRuleListItem::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
-}
-
-string K8sApiAbnormalRuleListItem::GetOprUin() const
-{
-    return m_oprUin;
-}
-
-void K8sApiAbnormalRuleListItem::SetOprUin(const string& _oprUin)
-{
-    m_oprUin = _oprUin;
-    m_oprUinHasBeenSet = true;
-}
-
-bool K8sApiAbnormalRuleListItem::OprUinHasBeenSet() const
-{
-    return m_oprUinHasBeenSet;
-}
-
-bool K8sApiAbnormalRuleListItem::GetStatus() const
-{
-    return m_status;
-}
-
-void K8sApiAbnormalRuleListItem::SetStatus(const bool& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool K8sApiAbnormalRuleListItem::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
 }
 

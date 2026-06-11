@@ -32,7 +32,8 @@ ProxyGroupRwInfo::ProxyGroupRwInfo() :
     m_transSplitHasBeenSet(false),
     m_accessModeHasBeenSet(false),
     m_apNodeAsRoNodeHasBeenSet(false),
-    m_apQueryToOtherNodeHasBeenSet(false)
+    m_apQueryToOtherNodeHasBeenSet(false),
+    m_loadBalanceModeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome ProxyGroupRwInfo::Deserialize(const rapidjson::Value &value)
         m_apQueryToOtherNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalanceMode") && !value["LoadBalanceMode"].IsNull())
+    {
+        if (!value["LoadBalanceMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.LoadBalanceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalanceMode = string(value["LoadBalanceMode"].GetString());
+        m_loadBalanceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void ProxyGroupRwInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApQueryToOtherNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apQueryToOtherNode, allocator);
+    }
+
+    if (m_loadBalanceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void ProxyGroupRwInfo::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
 bool ProxyGroupRwInfo::ApQueryToOtherNodeHasBeenSet() const
 {
     return m_apQueryToOtherNodeHasBeenSet;
+}
+
+string ProxyGroupRwInfo::GetLoadBalanceMode() const
+{
+    return m_loadBalanceMode;
+}
+
+void ProxyGroupRwInfo::SetLoadBalanceMode(const string& _loadBalanceMode)
+{
+    m_loadBalanceMode = _loadBalanceMode;
+    m_loadBalanceModeHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::LoadBalanceModeHasBeenSet() const
+{
+    return m_loadBalanceModeHasBeenSet;
 }
 

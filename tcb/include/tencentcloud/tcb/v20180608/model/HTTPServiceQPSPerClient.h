@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。
-                     * @return LimitBy 客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。
+                     * 获取<p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>
+                     * @return LimitBy <p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>
                      * 
                      */
                     std::string GetLimitBy() const;
 
                     /**
-                     * 设置客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。
-                     * @param _limitBy 客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。
+                     * 设置<p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>
+                     * @param _limitBy <p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>
                      * 
                      */
                     void SetLimitBy(const std::string& _limitBy);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LimitByHasBeenSet() const;
 
                     /**
-                     * 获取限制QPS值，每秒请求次数
-                     * @return LimitValue 限制QPS值，每秒请求次数
+                     * 获取<p>限制QPS值，每秒请求次数</p>
+                     * @return LimitValue <p>限制QPS值，每秒请求次数</p>
                      * 
                      */
                     int64_t GetLimitValue() const;
 
                     /**
-                     * 设置限制QPS值，每秒请求次数
-                     * @param _limitValue 限制QPS值，每秒请求次数
+                     * 设置<p>限制QPS值，每秒请求次数</p>
+                     * @param _limitValue <p>限制QPS值，每秒请求次数</p>
                      * 
                      */
                     void SetLimitValue(const int64_t& _limitValue);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。
+                     * <p>客户端维度限频标识。限制当前资源被单个客户端调用的频率，客户端标识支持 用户ID（UserID） 或 客户端 IP（ClientIP）。UserID 包括 云开发用户 ID 或 微信 openid，如果请求无 UserID 信息，则不会限制。</p><p>枚举值：</p><ul><li>UserID： 云开发用户 ID 或 微信 openid</li><li>ClientIP： 客户端ip</li></ul>
                      */
                     std::string m_limitBy;
                     bool m_limitByHasBeenSet;
 
                     /**
-                     * 限制QPS值，每秒请求次数
+                     * <p>限制QPS值，每秒请求次数</p>
                      */
                     int64_t m_limitValue;
                     bool m_limitValueHasBeenSet;

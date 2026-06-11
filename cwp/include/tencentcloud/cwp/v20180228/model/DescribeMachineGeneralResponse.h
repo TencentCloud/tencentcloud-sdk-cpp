@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产总数
-                     * @return MachineCnt 资产总数
+                     * 获取<p>资产总数</p>
+                     * @return MachineCnt <p>资产总数</p>
                      * 
                      */
                     uint64_t GetMachineCnt() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool MachineCntHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云服务商机器数
-                     * @return TencentCloudMachineCnt 腾讯云服务商机器数
+                     * 获取<p>腾讯云服务商机器数</p>
+                     * @return TencentCloudMachineCnt <p>腾讯云服务商机器数</p>
                      * @deprecated
                      */
                     uint64_t GetTencentCloudMachineCnt() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TencentCloudMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取阿里云服务商机器数
-                     * @return AliCloudMachineCnt 阿里云服务商机器数
+                     * 获取<p>阿里云服务商机器数</p>
+                     * @return AliCloudMachineCnt <p>阿里云服务商机器数</p>
                      * @deprecated
                      */
                     uint64_t GetAliCloudMachineCnt() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool AliCloudMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取百度云服务商机器数
-                     * @return BaiduCloudMachineCnt 百度云服务商机器数
+                     * 获取<p>百度云服务商机器数</p>
+                     * @return BaiduCloudMachineCnt <p>百度云服务商机器数</p>
                      * @deprecated
                      */
                     uint64_t GetBaiduCloudMachineCnt() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool BaiduCloudMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取IDC机器数
-                     * @return IDCMachineCnt IDC机器数
+                     * 获取<p>IDC机器数</p>
+                     * @return IDCMachineCnt <p>IDC机器数</p>
                      * @deprecated
                      */
                     uint64_t GetIDCMachineCnt() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool IDCMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取其他云服务商机器数
-                     * @return OtherCloudMachineCnt 其他云服务商机器数
+                     * 获取<p>其他云服务商机器数</p>
+                     * @return OtherCloudMachineCnt <p>其他云服务商机器数</p>
                      * @deprecated
                      */
                     uint64_t GetOtherCloudMachineCnt() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool OtherCloudMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护机器数
-                     * @return ProtectMachineCnt 已防护机器数
+                     * 获取<p>已防护机器数</p>
+                     * @return ProtectMachineCnt <p>已防护机器数</p>
                      * 
                      */
                     uint64_t GetProtectMachineCnt() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool ProtectMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护基础版机器数
-                     * @return BaseMachineCnt 已防护基础版机器数
+                     * 获取<p>已防护基础版机器数</p>
+                     * @return BaseMachineCnt <p>已防护基础版机器数</p>
                      * 
                      */
                     uint64_t GetBaseMachineCnt() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool BaseMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护专业版机器数
-                     * @return SpecialtyMachineCnt 已防护专业版机器数
+                     * 获取<p>已防护专业版机器数</p>
+                     * @return SpecialtyMachineCnt <p>已防护专业版机器数</p>
                      * 
                      */
                     uint64_t GetSpecialtyMachineCnt() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool SpecialtyMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护旗舰版机器数
-                     * @return FlagshipMachineCnt 已防护旗舰版机器数
+                     * 获取<p>已防护旗舰版机器数</p>
+                     * @return FlagshipMachineCnt <p>已防护旗舰版机器数</p>
                      * 
                      */
                     uint64_t GetFlagshipMachineCnt() const;
@@ -185,8 +185,8 @@ namespace TencentCloud
                     bool FlagshipMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取存在风险的机器数
-                     * @return RiskMachineCnt 存在风险的机器数
+                     * 获取<p>存在风险的机器数</p>
+                     * @return RiskMachineCnt <p>存在风险的机器数</p>
                      * 
                      */
                     uint64_t GetRiskMachineCnt() const;
@@ -199,8 +199,8 @@ namespace TencentCloud
                     bool RiskMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取比较昨日风险机器数
-                     * @return CompareYesterdayRiskMachineCnt 比较昨日风险机器数
+                     * 获取<p>比较昨日风险机器数</p>
+                     * @return CompareYesterdayRiskMachineCnt <p>比较昨日风险机器数</p>
                      * 
                      */
                     int64_t GetCompareYesterdayRiskMachineCnt() const;
@@ -213,8 +213,8 @@ namespace TencentCloud
                     bool CompareYesterdayRiskMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取比较昨日未防护机器数
-                     * @return CompareYesterdayNotProtectMachineCnt 比较昨日未防护机器数
+                     * 获取<p>比较昨日未防护机器数</p>
+                     * @return CompareYesterdayNotProtectMachineCnt <p>比较昨日未防护机器数</p>
                      * 
                      */
                     int64_t GetCompareYesterdayNotProtectMachineCnt() const;
@@ -227,8 +227,8 @@ namespace TencentCloud
                     bool CompareYesterdayNotProtectMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取比较昨日即将到期的机器数
-                     * @return CompareYesterdayDeadlineMachineCnt 比较昨日即将到期的机器数
+                     * 获取<p>比较昨日即将到期的机器数</p>
+                     * @return CompareYesterdayDeadlineMachineCnt <p>比较昨日即将到期的机器数</p>
                      * 
                      */
                     int64_t GetCompareYesterdayDeadlineMachineCnt() const;
@@ -241,8 +241,8 @@ namespace TencentCloud
                     bool CompareYesterdayDeadlineMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取即将到期的机器数
-                     * @return DeadlineMachineCnt 即将到期的机器数
+                     * 获取<p>即将到期的机器数</p>
+                     * @return DeadlineMachineCnt <p>即将到期的机器数</p>
                      * 
                      */
                     uint64_t GetDeadlineMachineCnt() const;
@@ -255,8 +255,8 @@ namespace TencentCloud
                     bool DeadlineMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取未防护机器数
-                     * @return NotProtectMachineCnt 未防护机器数
+                     * 获取<p>未防护机器数</p>
+                     * @return NotProtectMachineCnt <p>未防护机器数</p>
                      * 
                      */
                     uint64_t GetNotProtectMachineCnt() const;
@@ -269,8 +269,8 @@ namespace TencentCloud
                     bool NotProtectMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护轻量机器数（Lighthouse机器）
-                     * @return LHGeneralDiscountCnt 已防护轻量机器数（Lighthouse机器）
+                     * 获取<p>已防护轻量机器数（Lighthouse机器）</p>
+                     * @return LHGeneralDiscountCnt <p>已防护轻量机器数（Lighthouse机器）</p>
                      * 
                      */
                     uint64_t GetLHGeneralDiscountCnt() const;
@@ -283,8 +283,8 @@ namespace TencentCloud
                     bool LHGeneralDiscountCntHasBeenSet() const;
 
                     /**
-                     * 获取比较昨日新增的主机数
-                     * @return CompareYesterdayMachineCnt 比较昨日新增的主机数
+                     * 获取<p>比较昨日新增的主机数</p>
+                     * @return CompareYesterdayMachineCnt <p>比较昨日新增的主机数</p>
                      * 
                      */
                     int64_t GetCompareYesterdayMachineCnt() const;
@@ -297,8 +297,8 @@ namespace TencentCloud
                     bool CompareYesterdayMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取自动清理时间,最大720小时,最小0, 默认0 ,0=关闭
-                     * @return MachineDestroyAfterOfflineHours 自动清理时间,最大720小时,最小0, 默认0 ,0=关闭
+                     * 获取<p>自动清理时间,最大720小时,最小0, 默认0 ,0=关闭</p>
+                     * @return MachineDestroyAfterOfflineHours <p>自动清理时间,最大720小时,最小0, 默认0 ,0=关闭</p>
                      * 
                      */
                     uint64_t GetMachineDestroyAfterOfflineHours() const;
@@ -311,8 +311,8 @@ namespace TencentCloud
                     bool MachineDestroyAfterOfflineHoursHasBeenSet() const;
 
                     /**
-                     * 获取云服务器类型数组
-                     * @return CloudFrom 云服务器类型数组
+                     * 获取<p>云服务器类型数组</p>
+                     * @return CloudFrom <p>云服务器类型数组</p>
                      * 
                      */
                     std::vector<CloudFromCnt> GetCloudFrom() const;
@@ -327,121 +327,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产总数
+                     * <p>资产总数</p>
                      */
                     uint64_t m_machineCnt;
                     bool m_machineCntHasBeenSet;
 
                     /**
-                     * 腾讯云服务商机器数
+                     * <p>腾讯云服务商机器数</p>
                      */
                     uint64_t m_tencentCloudMachineCnt;
                     bool m_tencentCloudMachineCntHasBeenSet;
 
                     /**
-                     * 阿里云服务商机器数
+                     * <p>阿里云服务商机器数</p>
                      */
                     uint64_t m_aliCloudMachineCnt;
                     bool m_aliCloudMachineCntHasBeenSet;
 
                     /**
-                     * 百度云服务商机器数
+                     * <p>百度云服务商机器数</p>
                      */
                     uint64_t m_baiduCloudMachineCnt;
                     bool m_baiduCloudMachineCntHasBeenSet;
 
                     /**
-                     * IDC机器数
+                     * <p>IDC机器数</p>
                      */
                     uint64_t m_iDCMachineCnt;
                     bool m_iDCMachineCntHasBeenSet;
 
                     /**
-                     * 其他云服务商机器数
+                     * <p>其他云服务商机器数</p>
                      */
                     uint64_t m_otherCloudMachineCnt;
                     bool m_otherCloudMachineCntHasBeenSet;
 
                     /**
-                     * 已防护机器数
+                     * <p>已防护机器数</p>
                      */
                     uint64_t m_protectMachineCnt;
                     bool m_protectMachineCntHasBeenSet;
 
                     /**
-                     * 已防护基础版机器数
+                     * <p>已防护基础版机器数</p>
                      */
                     uint64_t m_baseMachineCnt;
                     bool m_baseMachineCntHasBeenSet;
 
                     /**
-                     * 已防护专业版机器数
+                     * <p>已防护专业版机器数</p>
                      */
                     uint64_t m_specialtyMachineCnt;
                     bool m_specialtyMachineCntHasBeenSet;
 
                     /**
-                     * 已防护旗舰版机器数
+                     * <p>已防护旗舰版机器数</p>
                      */
                     uint64_t m_flagshipMachineCnt;
                     bool m_flagshipMachineCntHasBeenSet;
 
                     /**
-                     * 存在风险的机器数
+                     * <p>存在风险的机器数</p>
                      */
                     uint64_t m_riskMachineCnt;
                     bool m_riskMachineCntHasBeenSet;
 
                     /**
-                     * 比较昨日风险机器数
+                     * <p>比较昨日风险机器数</p>
                      */
                     int64_t m_compareYesterdayRiskMachineCnt;
                     bool m_compareYesterdayRiskMachineCntHasBeenSet;
 
                     /**
-                     * 比较昨日未防护机器数
+                     * <p>比较昨日未防护机器数</p>
                      */
                     int64_t m_compareYesterdayNotProtectMachineCnt;
                     bool m_compareYesterdayNotProtectMachineCntHasBeenSet;
 
                     /**
-                     * 比较昨日即将到期的机器数
+                     * <p>比较昨日即将到期的机器数</p>
                      */
                     int64_t m_compareYesterdayDeadlineMachineCnt;
                     bool m_compareYesterdayDeadlineMachineCntHasBeenSet;
 
                     /**
-                     * 即将到期的机器数
+                     * <p>即将到期的机器数</p>
                      */
                     uint64_t m_deadlineMachineCnt;
                     bool m_deadlineMachineCntHasBeenSet;
 
                     /**
-                     * 未防护机器数
+                     * <p>未防护机器数</p>
                      */
                     uint64_t m_notProtectMachineCnt;
                     bool m_notProtectMachineCntHasBeenSet;
 
                     /**
-                     * 已防护轻量机器数（Lighthouse机器）
+                     * <p>已防护轻量机器数（Lighthouse机器）</p>
                      */
                     uint64_t m_lHGeneralDiscountCnt;
                     bool m_lHGeneralDiscountCntHasBeenSet;
 
                     /**
-                     * 比较昨日新增的主机数
+                     * <p>比较昨日新增的主机数</p>
                      */
                     int64_t m_compareYesterdayMachineCnt;
                     bool m_compareYesterdayMachineCntHasBeenSet;
 
                     /**
-                     * 自动清理时间,最大720小时,最小0, 默认0 ,0=关闭
+                     * <p>自动清理时间,最大720小时,最小0, 默认0 ,0=关闭</p>
                      */
                     uint64_t m_machineDestroyAfterOfflineHours;
                     bool m_machineDestroyAfterOfflineHoursHasBeenSet;
 
                     /**
-                     * 云服务器类型数组
+                     * <p>云服务器类型数组</p>
                      */
                     std::vector<CloudFromCnt> m_cloudFrom;
                     bool m_cloudFromHasBeenSet;

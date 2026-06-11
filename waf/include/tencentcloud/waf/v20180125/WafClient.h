@@ -137,6 +137,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeApiDetailResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecEventDetailRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecEventDetailResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecEventListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecEventListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRequest.h>
@@ -650,6 +654,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApiListVersionTwoResponse> DescribeApiListVersionTwoOutcome;
                 typedef std::future<DescribeApiListVersionTwoOutcome> DescribeApiListVersionTwoOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeApiListVersionTwoRequest&, DescribeApiListVersionTwoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiListVersionTwoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiSecEventDetailResponse> DescribeApiSecEventDetailOutcome;
+                typedef std::future<DescribeApiSecEventDetailOutcome> DescribeApiSecEventDetailOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiSecEventDetailRequest&, DescribeApiSecEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiSecEventListResponse> DescribeApiSecEventListOutcome;
+                typedef std::future<DescribeApiSecEventListOutcome> DescribeApiSecEventListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiSecEventListRequest&, DescribeApiSecEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApiSecSensitiveRuleListResponse> DescribeApiSecSensitiveRuleListOutcome;
                 typedef std::future<DescribeApiSecSensitiveRuleListOutcome> DescribeApiSecSensitiveRuleListOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeApiSecSensitiveRuleListRequest&, DescribeApiSecSensitiveRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecSensitiveRuleListAsyncHandler;
@@ -1657,6 +1667,24 @@ namespace TencentCloud
                 DescribeApiListVersionTwoOutcome DescribeApiListVersionTwo(const Model::DescribeApiListVersionTwoRequest &request);
                 void DescribeApiListVersionTwoAsync(const Model::DescribeApiListVersionTwoRequest& request, const DescribeApiListVersionTwoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApiListVersionTwoOutcomeCallable DescribeApiListVersionTwoCallable(const Model::DescribeApiListVersionTwoRequest& request);
+
+                /**
+                 *API安全事件详情查询接口
+                 * @param req DescribeApiSecEventDetailRequest
+                 * @return DescribeApiSecEventDetailOutcome
+                 */
+                DescribeApiSecEventDetailOutcome DescribeApiSecEventDetail(const Model::DescribeApiSecEventDetailRequest &request);
+                void DescribeApiSecEventDetailAsync(const Model::DescribeApiSecEventDetailRequest& request, const DescribeApiSecEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiSecEventDetailOutcomeCallable DescribeApiSecEventDetailCallable(const Model::DescribeApiSecEventDetailRequest& request);
+
+                /**
+                 *api安全事件列表
+                 * @param req DescribeApiSecEventListRequest
+                 * @return DescribeApiSecEventListOutcome
+                 */
+                DescribeApiSecEventListOutcome DescribeApiSecEventList(const Model::DescribeApiSecEventListRequest &request);
+                void DescribeApiSecEventListAsync(const Model::DescribeApiSecEventListRequest& request, const DescribeApiSecEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiSecEventListOutcomeCallable DescribeApiSecEventListCallable(const Model::DescribeApiSecEventListRequest& request);
 
                 /**
                  *获取api安全敏感规则列表

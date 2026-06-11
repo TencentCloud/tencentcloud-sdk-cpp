@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC防火墙实例名称
-                     * @return FwInsName VPC防火墙实例名称
+                     * 获取<p>VPC防火墙实例名称</p>
+                     * @return FwInsName <p>VPC防火墙实例名称</p>
                      * 
                      */
                     std::string GetFwInsName() const;
 
                     /**
-                     * 设置VPC防火墙实例名称
-                     * @param _fwInsName VPC防火墙实例名称
+                     * 设置<p>VPC防火墙实例名称</p>
+                     * @param _fwInsName <p>VPC防火墙实例名称</p>
                      * 
                      */
                     void SetFwInsName(const std::string& _fwInsName);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool FwInsNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙实例ID
-                     * @return FwInsId VPC防火墙实例ID
+                     * 获取<p>VPC防火墙实例ID</p>
+                     * @return FwInsId <p>VPC防火墙实例ID</p>
                      * 
                      */
                     std::string GetFwInsId() const;
 
                     /**
-                     * 设置VPC防火墙实例ID
-                     * @param _fwInsId VPC防火墙实例ID
+                     * 设置<p>VPC防火墙实例ID</p>
+                     * @param _fwInsId <p>VPC防火墙实例ID</p>
                      * 
                      */
                     void SetFwInsId(const std::string& _fwInsId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool FwInsIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-                     * @return FwMode VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
+                     * 获取<p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>
+                     * @return FwMode <p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>
                      * 
                      */
                     int64_t GetFwMode() const;
 
                     /**
-                     * 设置VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-                     * @param _fwMode VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
+                     * 设置<p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>
+                     * @param _fwMode <p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>
                      * 
                      */
                     void SetFwMode(const int64_t& _fwMode);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool FwModeHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙接入网络实例个数
-                     * @return JoinInsNum VPC防火墙接入网络实例个数
+                     * 获取<p>VPC防火墙接入网络实例个数</p>
+                     * @return JoinInsNum <p>VPC防火墙接入网络实例个数</p>
                      * 
                      */
                     int64_t GetJoinInsNum() const;
 
                     /**
-                     * 设置VPC防火墙接入网络实例个数
-                     * @param _joinInsNum VPC防火墙接入网络实例个数
+                     * 设置<p>VPC防火墙接入网络实例个数</p>
+                     * @param _joinInsNum <p>VPC防火墙接入网络实例个数</p>
                      * 
                      */
                     void SetJoinInsNum(const int64_t& _joinInsNum);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool JoinInsNumHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙开关个数
-                     * @return FwSwitchNum VPC防火墙开关个数
+                     * 获取<p>VPC防火墙开关个数</p>
+                     * @return FwSwitchNum <p>VPC防火墙开关个数</p>
                      * 
                      */
                     int64_t GetFwSwitchNum() const;
 
                     /**
-                     * 设置VPC防火墙开关个数
-                     * @param _fwSwitchNum VPC防火墙开关个数
+                     * 设置<p>VPC防火墙开关个数</p>
+                     * @param _fwSwitchNum <p>VPC防火墙开关个数</p>
                      * 
                      */
                     void SetFwSwitchNum(const int64_t& _fwSwitchNum);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool FwSwitchNumHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-                     * @return Status VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
+                     * 获取<p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>
+                     * @return Status <p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-                     * @param _status VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
+                     * 设置<p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>
+                     * @param _status <p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙创建时间
-                     * @return Time VPC防火墙创建时间
+                     * 获取<p>VPC防火墙创建时间</p>
+                     * @return Time <p>VPC防火墙创建时间</p>
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置VPC防火墙创建时间
-                     * @param _time VPC防火墙创建时间
+                     * 设置<p>VPC防火墙创建时间</p>
+                     * @param _time <p>VPC防火墙创建时间</p>
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取VPC 相关云联网ID列表
-                     * @return CcnId VPC 相关云联网ID列表
+                     * 获取<p>VPC 相关云联网ID列表</p>
+                     * @return CcnId <p>VPC 相关云联网ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetCcnId() const;
 
                     /**
-                     * 设置VPC 相关云联网ID列表
-                     * @param _ccnId VPC 相关云联网ID列表
+                     * 设置<p>VPC 相关云联网ID列表</p>
+                     * @param _ccnId <p>VPC 相关云联网ID列表</p>
                      * 
                      */
                     void SetCcnId(const std::vector<std::string>& _ccnId);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC 相关云联网名称列表
-                     * @return CcnName VPC 相关云联网名称列表
+                     * 获取<p>VPC 相关云联网名称列表</p>
+                     * @return CcnName <p>VPC 相关云联网名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetCcnName() const;
 
                     /**
-                     * 设置VPC 相关云联网名称列表
-                     * @param _ccnName VPC 相关云联网名称列表
+                     * 设置<p>VPC 相关云联网名称列表</p>
+                     * @param _ccnName <p>VPC 相关云联网名称列表</p>
                      * 
                      */
                     void SetCcnName(const std::vector<std::string>& _ccnName);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool CcnNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC 相关对等连接ID列表
-                     * @return PeerConnectionId VPC 相关对等连接ID列表
+                     * 获取<p>VPC 相关对等连接ID列表</p>
+                     * @return PeerConnectionId <p>VPC 相关对等连接ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetPeerConnectionId() const;
 
                     /**
-                     * 设置VPC 相关对等连接ID列表
-                     * @param _peerConnectionId VPC 相关对等连接ID列表
+                     * 设置<p>VPC 相关对等连接ID列表</p>
+                     * @param _peerConnectionId <p>VPC 相关对等连接ID列表</p>
                      * 
                      */
                     void SetPeerConnectionId(const std::vector<std::string>& _peerConnectionId);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool PeerConnectionIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC 相关对等连接名称列表
-                     * @return PeerConnectionName VPC 相关对等连接名称列表
+                     * 获取<p>VPC 相关对等连接名称列表</p>
+                     * @return PeerConnectionName <p>VPC 相关对等连接名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetPeerConnectionName() const;
 
                     /**
-                     * 设置VPC 相关对等连接名称列表
-                     * @param _peerConnectionName VPC 相关对等连接名称列表
+                     * 设置<p>VPC 相关对等连接名称列表</p>
+                     * @param _peerConnectionName <p>VPC 相关对等连接名称列表</p>
                      * 
                      */
                     void SetPeerConnectionName(const std::vector<std::string>& _peerConnectionName);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool PeerConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙CVM的列表
-                     * @return FwCvmLst VPC防火墙CVM的列表
+                     * 获取<p>VPC防火墙CVM的列表</p>
+                     * @return FwCvmLst <p>VPC防火墙CVM的列表</p>
                      * 
                      */
                     std::vector<VpcFwCvmInsInfo> GetFwCvmLst() const;
 
                     /**
-                     * 设置VPC防火墙CVM的列表
-                     * @param _fwCvmLst VPC防火墙CVM的列表
+                     * 设置<p>VPC防火墙CVM的列表</p>
+                     * @param _fwCvmLst <p>VPC防火墙CVM的列表</p>
                      * 
                      */
                     void SetFwCvmLst(const std::vector<VpcFwCvmInsInfo>& _fwCvmLst);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool FwCvmLstHasBeenSet() const;
 
                     /**
-                     * 获取VPC防火墙接入网络实例类型列表
-                     * @return JoinInsLst VPC防火墙接入网络实例类型列表
+                     * 获取<p>VPC防火墙接入网络实例类型列表</p>
+                     * @return JoinInsLst <p>VPC防火墙接入网络实例类型列表</p>
                      * 
                      */
                     std::vector<VpcFwJoinInstanceType> GetJoinInsLst() const;
 
                     /**
-                     * 设置VPC防火墙接入网络实例类型列表
-                     * @param _joinInsLst VPC防火墙接入网络实例类型列表
+                     * 设置<p>VPC防火墙接入网络实例类型列表</p>
+                     * @param _joinInsLst <p>VPC防火墙接入网络实例类型列表</p>
                      * 
                      */
                     void SetJoinInsLst(const std::vector<VpcFwJoinInstanceType>& _joinInsLst);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool JoinInsLstHasBeenSet() const;
 
                     /**
-                     * 获取防火墙网关信息
-                     * @return FwGateway 防火墙网关信息
+                     * 获取<p>防火墙网关信息</p>
+                     * @return FwGateway <p>防火墙网关信息</p>
                      * 
                      */
                     std::vector<FwGateway> GetFwGateway() const;
 
                     /**
-                     * 设置防火墙网关信息
-                     * @param _fwGateway 防火墙网关信息
+                     * 设置<p>防火墙网关信息</p>
+                     * @param _fwGateway <p>防火墙网关信息</p>
                      * 
                      */
                     void SetFwGateway(const std::vector<FwGateway>& _fwGateway);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool FwGatewayHasBeenSet() const;
 
                     /**
-                     * 获取防火墙(组)ID
-                     * @return FwGroupId 防火墙(组)ID
+                     * 获取<p>防火墙(组)ID</p>
+                     * @return FwGroupId <p>防火墙(组)ID</p>
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
-                     * 设置防火墙(组)ID
-                     * @param _fwGroupId 防火墙(组)ID
+                     * 设置<p>防火墙(组)ID</p>
+                     * @param _fwGroupId <p>防火墙(组)ID</p>
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool FwGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取已使用规则数
-                     * @return RuleUsed 已使用规则数
+                     * 获取<p>已使用规则数</p>
+                     * @return RuleUsed <p>已使用规则数</p>
                      * 
                      */
                     int64_t GetRuleUsed() const;
 
                     /**
-                     * 设置已使用规则数
-                     * @param _ruleUsed 已使用规则数
+                     * 设置<p>已使用规则数</p>
+                     * @param _ruleUsed <p>已使用规则数</p>
                      * 
                      */
                     void SetRuleUsed(const int64_t& _ruleUsed);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool RuleUsedHasBeenSet() const;
 
                     /**
-                     * 获取最大规则数
-                     * @return RuleMax 最大规则数
+                     * 获取<p>最大规则数</p>
+                     * @return RuleMax <p>最大规则数</p>
                      * 
                      */
                     int64_t GetRuleMax() const;
 
                     /**
-                     * 设置最大规则数
-                     * @param _ruleMax 最大规则数
+                     * 设置<p>最大规则数</p>
+                     * @param _ruleMax <p>最大规则数</p>
                      * 
                      */
                     void SetRuleMax(const int64_t& _ruleMax);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool RuleMaxHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例带宽
-                     * @return Width 防火墙实例带宽
+                     * 获取<p>防火墙实例带宽</p>
+                     * @return Width <p>防火墙实例带宽</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置防火墙实例带宽
-                     * @param _width 防火墙实例带宽
+                     * 设置<p>防火墙实例带宽</p>
+                     * @param _width <p>防火墙实例带宽</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取用户VPC墙总带宽
-                     * @return UserVpcWidth 用户VPC墙总带宽
+                     * 获取<p>用户VPC墙总带宽</p>
+                     * @return UserVpcWidth <p>用户VPC墙总带宽</p>
                      * 
                      */
                     int64_t GetUserVpcWidth() const;
 
                     /**
-                     * 设置用户VPC墙总带宽
-                     * @param _userVpcWidth 用户VPC墙总带宽
+                     * 设置<p>用户VPC墙总带宽</p>
+                     * @param _userVpcWidth <p>用户VPC墙总带宽</p>
                      * 
                      */
                     void SetUserVpcWidth(const int64_t& _userVpcWidth);
@@ -449,15 +449,15 @@ namespace TencentCloud
                     bool UserVpcWidthHasBeenSet() const;
 
                     /**
-                     * 获取接入的vpc列表
-                     * @return JoinInsIdLst 接入的vpc列表
+                     * 获取<p>接入的vpc列表</p>
+                     * @return JoinInsIdLst <p>接入的vpc列表</p>
                      * 
                      */
                     std::vector<std::string> GetJoinInsIdLst() const;
 
                     /**
-                     * 设置接入的vpc列表
-                     * @param _joinInsIdLst 接入的vpc列表
+                     * 设置<p>接入的vpc列表</p>
+                     * @param _joinInsIdLst <p>接入的vpc列表</p>
                      * 
                      */
                     void SetJoinInsIdLst(const std::vector<std::string>& _joinInsIdLst);
@@ -470,15 +470,15 @@ namespace TencentCloud
                     bool JoinInsIdLstHasBeenSet() const;
 
                     /**
-                     * 获取内网间峰值带宽 (单位 bps )
-                     * @return FlowMax 内网间峰值带宽 (单位 bps )
+                     * 获取<p>内网间峰值带宽 (单位 bps )</p>
+                     * @return FlowMax <p>内网间峰值带宽 (单位 bps )</p>
                      * 
                      */
                     int64_t GetFlowMax() const;
 
                     /**
-                     * 设置内网间峰值带宽 (单位 bps )
-                     * @param _flowMax 内网间峰值带宽 (单位 bps )
+                     * 设置<p>内网间峰值带宽 (单位 bps )</p>
+                     * @param _flowMax <p>内网间峰值带宽 (单位 bps )</p>
                      * 
                      */
                     void SetFlowMax(const int64_t& _flowMax);
@@ -491,15 +491,15 @@ namespace TencentCloud
                     bool FlowMaxHasBeenSet() const;
 
                     /**
-                     * 获取实例引擎版本
-                     * @return EngineVersion 实例引擎版本
+                     * 获取<p>实例引擎版本</p>
+                     * @return EngineVersion <p>实例引擎版本</p>
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置实例引擎版本
-                     * @param _engineVersion 实例引擎版本
+                     * 设置<p>实例引擎版本</p>
+                     * @param _engineVersion <p>实例引擎版本</p>
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -512,15 +512,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取引擎是否可升级：0，不可升级；1，可升级
-                     * @return UpdateEnable 引擎是否可升级：0，不可升级；1，可升级
+                     * 获取<p>引擎是否可升级：0，不可升级；1，可升级</p>
+                     * @return UpdateEnable <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      * 
                      */
                     int64_t GetUpdateEnable() const;
 
                     /**
-                     * 设置引擎是否可升级：0，不可升级；1，可升级
-                     * @param _updateEnable 引擎是否可升级：0，不可升级；1，可升级
+                     * 设置<p>引擎是否可升级：0，不可升级；1，可升级</p>
+                     * @param _updateEnable <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      * 
                      */
                     void SetUpdateEnable(const int64_t& _updateEnable);
@@ -533,15 +533,15 @@ namespace TencentCloud
                     bool UpdateEnableHasBeenSet() const;
 
                     /**
-                     * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
-                     * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * 获取<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
+                     * @return TrafficMode <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      * 
                      */
                     std::string GetTrafficMode() const;
 
                     /**
-                     * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
-                     * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * 设置<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
+                     * @param _trafficMode <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -554,15 +554,15 @@ namespace TencentCloud
                     bool TrafficModeHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级时间
-                     * @return ReserveTime 引擎预约升级时间
+                     * 获取<p>引擎预约升级时间</p>
+                     * @return ReserveTime <p>引擎预约升级时间</p>
                      * 
                      */
                     std::string GetReserveTime() const;
 
                     /**
-                     * 设置引擎预约升级时间
-                     * @param _reserveTime 引擎预约升级时间
+                     * 设置<p>引擎预约升级时间</p>
+                     * @param _reserveTime <p>引擎预约升级时间</p>
                      * 
                      */
                     void SetReserveTime(const std::string& _reserveTime);
@@ -575,15 +575,15 @@ namespace TencentCloud
                     bool ReserveTimeHasBeenSet() const;
 
                     /**
-                     * 获取预约引擎升级版本
-                     * @return ReserveVersion 预约引擎升级版本
+                     * 获取<p>预约引擎升级版本</p>
+                     * @return ReserveVersion <p>预约引擎升级版本</p>
                      * 
                      */
                     std::string GetReserveVersion() const;
 
                     /**
-                     * 设置预约引擎升级版本
-                     * @param _reserveVersion 预约引擎升级版本
+                     * 设置<p>预约引擎升级版本</p>
+                     * @param _reserveVersion <p>预约引擎升级版本</p>
                      * 
                      */
                     void SetReserveVersion(const std::string& _reserveVersion);
@@ -596,15 +596,15 @@ namespace TencentCloud
                     bool ReserveVersionHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级版本状态
-                     * @return ReserveVersionState 引擎预约升级版本状态
+                     * 获取<p>引擎预约升级版本状态</p>
+                     * @return ReserveVersionState <p>引擎预约升级版本状态</p>
                      * 
                      */
                     std::string GetReserveVersionState() const;
 
                     /**
-                     * 设置引擎预约升级版本状态
-                     * @param _reserveVersionState 引擎预约升级版本状态
+                     * 设置<p>引擎预约升级版本状态</p>
+                     * @param _reserveVersionState <p>引擎预约升级版本状态</p>
                      * 
                      */
                     void SetReserveVersionState(const std::string& _reserveVersionState);
@@ -617,15 +617,15 @@ namespace TencentCloud
                     bool ReserveVersionStateHasBeenSet() const;
 
                     /**
-                     * 获取弹性开关 1打开 0关闭
-                     * @return ElasticSwitch 弹性开关 1打开 0关闭
+                     * 获取<p>弹性开关 1打开 0关闭</p>
+                     * @return ElasticSwitch <p>弹性开关 1打开 0关闭</p>
                      * 
                      */
                     int64_t GetElasticSwitch() const;
 
                     /**
-                     * 设置弹性开关 1打开 0关闭
-                     * @param _elasticSwitch 弹性开关 1打开 0关闭
+                     * 设置<p>弹性开关 1打开 0关闭</p>
+                     * @param _elasticSwitch <p>弹性开关 1打开 0关闭</p>
                      * 
                      */
                     void SetElasticSwitch(const int64_t& _elasticSwitch);
@@ -638,15 +638,15 @@ namespace TencentCloud
                     bool ElasticSwitchHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽，单位Mbps
-                     * @return ElasticBandwidth 弹性带宽，单位Mbps
+                     * 获取<p>弹性带宽，单位Mbps</p>
+                     * @return ElasticBandwidth <p>弹性带宽，单位Mbps</p>
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
-                     * 设置弹性带宽，单位Mbps
-                     * @param _elasticBandwidth 弹性带宽，单位Mbps
+                     * 设置<p>弹性带宽，单位Mbps</p>
+                     * @param _elasticBandwidth <p>弹性带宽，单位Mbps</p>
                      * 
                      */
                     void SetElasticBandwidth(const int64_t& _elasticBandwidth);
@@ -659,23 +659,15 @@ namespace TencentCloud
                     bool ElasticBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取是否首次开通按量付费
-1 是
-0 不是
-                     * @return IsFirstAfterPay 是否首次开通按量付费
-1 是
-0 不是
+                     * 获取<p>是否首次开通按量付费<br>1 是<br>0 不是</p>
+                     * @return IsFirstAfterPay <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      * 
                      */
                     int64_t GetIsFirstAfterPay() const;
 
                     /**
-                     * 设置是否首次开通按量付费
-1 是
-0 不是
-                     * @param _isFirstAfterPay 是否首次开通按量付费
-1 是
-0 不是
+                     * 设置<p>是否首次开通按量付费<br>1 是<br>0 不是</p>
+                     * @param _isFirstAfterPay <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      * 
                      */
                     void SetIsFirstAfterPay(const int64_t& _isFirstAfterPay);
@@ -687,189 +679,214 @@ namespace TencentCloud
                      */
                     bool IsFirstAfterPayHasBeenSet() const;
 
+                    /**
+                     * 获取<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return ElasticTrafficSwitch <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetElasticTrafficSwitch() const;
+
+                    /**
+                     * 设置<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _elasticTrafficSwitch <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch);
+
+                    /**
+                     * 判断参数 ElasticTrafficSwitch 是否已赋值
+                     * @return ElasticTrafficSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticTrafficSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * VPC防火墙实例名称
+                     * <p>VPC防火墙实例名称</p>
                      */
                     std::string m_fwInsName;
                     bool m_fwInsNameHasBeenSet;
 
                     /**
-                     * VPC防火墙实例ID
+                     * <p>VPC防火墙实例ID</p>
                      */
                     std::string m_fwInsId;
                     bool m_fwInsIdHasBeenSet;
 
                     /**
-                     * VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
+                     * <p>VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙</p>
                      */
                     int64_t m_fwMode;
                     bool m_fwModeHasBeenSet;
 
                     /**
-                     * VPC防火墙接入网络实例个数
+                     * <p>VPC防火墙接入网络实例个数</p>
                      */
                     int64_t m_joinInsNum;
                     bool m_joinInsNumHasBeenSet;
 
                     /**
-                     * VPC防火墙开关个数
+                     * <p>VPC防火墙开关个数</p>
                      */
                     int64_t m_fwSwitchNum;
                     bool m_fwSwitchNumHasBeenSet;
 
                     /**
-                     * VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
+                     * <p>VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * VPC防火墙创建时间
+                     * <p>VPC防火墙创建时间</p>
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * VPC 相关云联网ID列表
+                     * <p>VPC 相关云联网ID列表</p>
                      */
                     std::vector<std::string> m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * VPC 相关云联网名称列表
+                     * <p>VPC 相关云联网名称列表</p>
                      */
                     std::vector<std::string> m_ccnName;
                     bool m_ccnNameHasBeenSet;
 
                     /**
-                     * VPC 相关对等连接ID列表
+                     * <p>VPC 相关对等连接ID列表</p>
                      */
                     std::vector<std::string> m_peerConnectionId;
                     bool m_peerConnectionIdHasBeenSet;
 
                     /**
-                     * VPC 相关对等连接名称列表
+                     * <p>VPC 相关对等连接名称列表</p>
                      */
                     std::vector<std::string> m_peerConnectionName;
                     bool m_peerConnectionNameHasBeenSet;
 
                     /**
-                     * VPC防火墙CVM的列表
+                     * <p>VPC防火墙CVM的列表</p>
                      */
                     std::vector<VpcFwCvmInsInfo> m_fwCvmLst;
                     bool m_fwCvmLstHasBeenSet;
 
                     /**
-                     * VPC防火墙接入网络实例类型列表
+                     * <p>VPC防火墙接入网络实例类型列表</p>
                      */
                     std::vector<VpcFwJoinInstanceType> m_joinInsLst;
                     bool m_joinInsLstHasBeenSet;
 
                     /**
-                     * 防火墙网关信息
+                     * <p>防火墙网关信息</p>
                      */
                     std::vector<FwGateway> m_fwGateway;
                     bool m_fwGatewayHasBeenSet;
 
                     /**
-                     * 防火墙(组)ID
+                     * <p>防火墙(组)ID</p>
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
-                     * 已使用规则数
+                     * <p>已使用规则数</p>
                      */
                     int64_t m_ruleUsed;
                     bool m_ruleUsedHasBeenSet;
 
                     /**
-                     * 最大规则数
+                     * <p>最大规则数</p>
                      */
                     int64_t m_ruleMax;
                     bool m_ruleMaxHasBeenSet;
 
                     /**
-                     * 防火墙实例带宽
+                     * <p>防火墙实例带宽</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 用户VPC墙总带宽
+                     * <p>用户VPC墙总带宽</p>
                      */
                     int64_t m_userVpcWidth;
                     bool m_userVpcWidthHasBeenSet;
 
                     /**
-                     * 接入的vpc列表
+                     * <p>接入的vpc列表</p>
                      */
                     std::vector<std::string> m_joinInsIdLst;
                     bool m_joinInsIdLstHasBeenSet;
 
                     /**
-                     * 内网间峰值带宽 (单位 bps )
+                     * <p>内网间峰值带宽 (单位 bps )</p>
                      */
                     int64_t m_flowMax;
                     bool m_flowMaxHasBeenSet;
 
                     /**
-                     * 实例引擎版本
+                     * <p>实例引擎版本</p>
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 引擎是否可升级：0，不可升级；1，可升级
+                     * <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
 
                     /**
-                     * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;
 
                     /**
-                     * 引擎预约升级时间
+                     * <p>引擎预约升级时间</p>
                      */
                     std::string m_reserveTime;
                     bool m_reserveTimeHasBeenSet;
 
                     /**
-                     * 预约引擎升级版本
+                     * <p>预约引擎升级版本</p>
                      */
                     std::string m_reserveVersion;
                     bool m_reserveVersionHasBeenSet;
 
                     /**
-                     * 引擎预约升级版本状态
+                     * <p>引擎预约升级版本状态</p>
                      */
                     std::string m_reserveVersionState;
                     bool m_reserveVersionStateHasBeenSet;
 
                     /**
-                     * 弹性开关 1打开 0关闭
+                     * <p>弹性开关 1打开 0关闭</p>
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
-                     * 弹性带宽，单位Mbps
+                     * <p>弹性带宽，单位Mbps</p>
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
 
                     /**
-                     * 是否首次开通按量付费
-1 是
-0 不是
+                     * <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      */
                     int64_t m_isFirstAfterPay;
                     bool m_isFirstAfterPayHasBeenSet;
+
+                    /**
+                     * <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    int64_t m_elasticTrafficSwitch;
+                    bool m_elasticTrafficSwitchHasBeenSet;
 
                 };
             }

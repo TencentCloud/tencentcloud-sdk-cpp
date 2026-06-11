@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关
-                     * @return Enable 开关
+                     * 获取<p>开关</p>
+                     * @return Enable <p>开关</p>
                      * 
                      */
                     bool GetEnable() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取扫描时刻(完整时间;后端按0时区解析时分秒)
-                     * @return ScanTime 扫描时刻(完整时间;后端按0时区解析时分秒)
+                     * 获取<p>扫描时刻(完整时间;后端按0时区解析时分秒)</p>
+                     * @return ScanTime <p>扫描时刻(完整时间;后端按0时区解析时分秒)</p>
                      * 
                      */
                     std::string GetScanTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool ScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取扫描间隔
-                     * @return ScanPeriod 扫描间隔
+                     * 获取<p>扫描间隔</p>
+                     * @return ScanPeriod <p>扫描间隔</p>
                      * 
                      */
                     uint64_t GetScanPeriod() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ScanPeriodHasBeenSet() const;
 
                     /**
-                     * 获取扫描木马
-                     * @return ScanVirus 扫描木马
+                     * 获取<p>扫描木马</p>
+                     * @return ScanVirus <p>扫描木马</p>
                      * 
                      */
                     bool GetScanVirus() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ScanVirusHasBeenSet() const;
 
                     /**
-                     * 获取扫描敏感信息
-                     * @return ScanRisk 扫描敏感信息
+                     * 获取<p>扫描敏感信息</p>
+                     * @return ScanRisk <p>扫描敏感信息</p>
                      * 
                      */
                     bool GetScanRisk() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ScanRiskHasBeenSet() const;
 
                     /**
-                     * 获取扫描漏洞
-                     * @return ScanVul 扫描漏洞
+                     * 获取<p>扫描漏洞</p>
+                     * @return ScanVul <p>扫描漏洞</p>
                      * 
                      */
                     bool GetScanVul() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool ScanVulHasBeenSet() const;
 
                     /**
-                     * 获取扫描全部镜像
-                     * @return All 扫描全部镜像
+                     * 获取<p>扫描全部镜像</p>
+                     * @return All <p>扫描全部镜像</p>
                      * @deprecated
                      */
                     bool GetAll() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool AllHasBeenSet() const;
 
                     /**
-                     * 获取自定义扫描镜像
-                     * @return Images 自定义扫描镜像
+                     * 获取<p>自定义扫描镜像</p>
+                     * @return Images <p>自定义扫描镜像</p>
                      * 
                      */
                     std::vector<std::string> GetImages() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取镜像是否存在运行中的容器
-                     * @return ContainerRunning 镜像是否存在运行中的容器
+                     * 获取<p>镜像是否存在运行中的容器</p>
+                     * @return ContainerRunning <p>镜像是否存在运行中的容器</p>
                      * 
                      */
                     bool GetContainerRunning() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool ContainerRunningHasBeenSet() const;
 
                     /**
-                     * 获取扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
-                     * @return ScanScope 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * 获取<p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 3:集群筛选扫描</p>
+                     * @return ScanScope <p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 3:集群筛选扫描</p>
                      * 
                      */
                     uint64_t GetScanScope() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool ScanScopeHasBeenSet() const;
 
                     /**
-                     * 获取扫描结束时间 02:00 时分
-                     * @return ScanEndTime 扫描结束时间 02:00 时分
+                     * 获取<p>扫描结束时间 02:00 时分</p>
+                     * @return ScanEndTime <p>扫描结束时间 02:00 时分</p>
                      * 
                      */
                     std::string GetScanEndTime() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool ScanEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排除的扫描镜像
-                     * @return ExcludeImages 排除的扫描镜像
+                     * 获取<p>排除的扫描镜像</p>
+                     * @return ExcludeImages <p>排除的扫描镜像</p>
                      * 
                      */
                     std::vector<std::string> GetExcludeImages() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool ExcludeImagesHasBeenSet() const;
 
                     /**
-                     * 获取最后一次扫描时间
-                     * @return LastScanTime 最后一次扫描时间
+                     * 获取<p>最后一次扫描时间</p>
+                     * @return LastScanTime <p>最后一次扫描时间</p>
                      * 
                      */
                     std::string GetLastScanTime() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool LastScanTimeHasBeenSet() const;
 
                     /**
-                     * 获取扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
-                     * @return ScanResult 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
+                     * 获取<p>扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)</p>
+                     * @return ScanResult <p>扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)</p>
                      * 
                      */
                     std::string GetScanResult() const;
@@ -239,91 +239,111 @@ namespace TencentCloud
                      */
                     bool ScanResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群id</p>
+                     * @return ClusterIDs <p>集群id</p>
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIDs() const;
+
+                    /**
+                     * 判断参数 ClusterIDs 是否已赋值
+                     * @return ClusterIDs 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开关
+                     * <p>开关</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 扫描时刻(完整时间;后端按0时区解析时分秒)
+                     * <p>扫描时刻(完整时间;后端按0时区解析时分秒)</p>
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;
 
                     /**
-                     * 扫描间隔
+                     * <p>扫描间隔</p>
                      */
                     uint64_t m_scanPeriod;
                     bool m_scanPeriodHasBeenSet;
 
                     /**
-                     * 扫描木马
+                     * <p>扫描木马</p>
                      */
                     bool m_scanVirus;
                     bool m_scanVirusHasBeenSet;
 
                     /**
-                     * 扫描敏感信息
+                     * <p>扫描敏感信息</p>
                      */
                     bool m_scanRisk;
                     bool m_scanRiskHasBeenSet;
 
                     /**
-                     * 扫描漏洞
+                     * <p>扫描漏洞</p>
                      */
                     bool m_scanVul;
                     bool m_scanVulHasBeenSet;
 
                     /**
-                     * 扫描全部镜像
+                     * <p>扫描全部镜像</p>
                      */
                     bool m_all;
                     bool m_allHasBeenSet;
 
                     /**
-                     * 自定义扫描镜像
+                     * <p>自定义扫描镜像</p>
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 镜像是否存在运行中的容器
+                     * <p>镜像是否存在运行中的容器</p>
                      */
                     bool m_containerRunning;
                     bool m_containerRunningHasBeenSet;
 
                     /**
-                     * 扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描
+                     * <p>扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描 3:集群筛选扫描</p>
                      */
                     uint64_t m_scanScope;
                     bool m_scanScopeHasBeenSet;
 
                     /**
-                     * 扫描结束时间 02:00 时分
+                     * <p>扫描结束时间 02:00 时分</p>
                      */
                     std::string m_scanEndTime;
                     bool m_scanEndTimeHasBeenSet;
 
                     /**
-                     * 排除的扫描镜像
+                     * <p>排除的扫描镜像</p>
                      */
                     std::vector<std::string> m_excludeImages;
                     bool m_excludeImagesHasBeenSet;
 
                     /**
-                     * 最后一次扫描时间
+                     * <p>最后一次扫描时间</p>
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
-                     * 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
+                     * <p>扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)</p>
                      */
                     std::string m_scanResult;
                     bool m_scanResultHasBeenSet;
+
+                    /**
+                     * <p>集群id</p>
+                     */
+                    std::vector<std::string> m_clusterIDs;
+                    bool m_clusterIDsHasBeenSet;
 
                 };
             }

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取白名单用户（多个用户逗号隔开）
-                     * @return UserName 白名单用户（多个用户逗号隔开）
+                     * 获取<p>白名单用户（多个用户逗号隔开）</p>
+                     * @return UserName <p>白名单用户（多个用户逗号隔开）</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置白名单用户（多个用户逗号隔开）
-                     * @param _userName 白名单用户（多个用户逗号隔开）
+                     * 设置<p>白名单用户（多个用户逗号隔开）</p>
+                     * @param _userName <p>白名单用户（多个用户逗号隔开）</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取更新后记录的白名单维度信息
-                     * @return SrcIp 更新后记录的白名单维度信息
+                     * 获取<p>更新后记录的白名单维度信息</p>
+                     * @return SrcIp <p>更新后记录的白名单维度信息</p>
                      * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
-                     * 设置更新后记录的白名单维度信息
-                     * @param _srcIp 更新后记录的白名单维度信息
+                     * 设置<p>更新后记录的白名单维度信息</p>
+                     * @param _srcIp <p>更新后记录的白名单维度信息</p>
                      * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool SrcIpHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取是否对所有服务器生效，0-否，1-是
-                     * @return IsGlobal 是否对所有服务器生效，0-否，1-是
+                     * 获取<p>是否对所有服务器生效，0-否，1-是</p>
+                     * @return IsGlobal <p>是否对所有服务器生效，0-否，1-是</p>
                      * 
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
-                     * 设置是否对所有服务器生效，0-否，1-是
-                     * @param _isGlobal 是否对所有服务器生效，0-否，1-是
+                     * 设置<p>是否对所有服务器生效，0-否，1-是</p>
+                     * @param _isGlobal <p>是否对所有服务器生效，0-否，1-是</p>
                      * 
                      */
                     void SetIsGlobal(const uint64_t& _isGlobal);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool IsGlobalHasBeenSet() const;
 
                     /**
-                     * 获取白名单ID
-                     * @return Id 白名单ID
+                     * 获取<p>白名单ID</p>
+                     * @return Id <p>白名单ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置白名单ID
-                     * @param _id 白名单ID
+                     * 设置<p>白名单ID</p>
+                     * @param _id <p>白名单ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取服务器列表
-                     * @return Hosts 服务器列表
+                     * 获取<p>服务器列表</p>
+                     * @return Hosts <p>服务器列表</p>
                      * 
                      */
                     std::vector<HostInfo> GetHosts() const;
 
                     /**
-                     * 设置服务器列表
-                     * @param _hosts 服务器列表
+                     * 设置<p>服务器列表</p>
+                     * @param _hosts <p>服务器列表</p>
                      * 
                      */
                     void SetHosts(const std::vector<HostInfo>& _hosts);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                     /**
-                     * 获取地域列表
-                     * @return Places 地域列表
+                     * 获取<p>地域列表</p>
+                     * @return Places <p>地域列表</p>
                      * 
                      */
                     std::vector<Place> GetPlaces() const;
 
                     /**
-                     * 设置地域列表
-                     * @param _places 地域列表
+                     * 设置<p>地域列表</p>
+                     * @param _places <p>地域列表</p>
                      * 
                      */
                     void SetPlaces(const std::vector<Place>& _places);
@@ -236,55 +236,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 白名单用户（多个用户逗号隔开）
+                     * <p>白名单用户（多个用户逗号隔开）</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 更新后记录的白名单维度信息
+                     * <p>更新后记录的白名单维度信息</p>
                      */
                     std::string m_srcIp;
                     bool m_srcIpHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 是否对所有服务器生效，0-否，1-是
+                     * <p>是否对所有服务器生效，0-否，1-是</p>
                      */
                     uint64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;
 
                     /**
-                     * 白名单ID
+                     * <p>白名单ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 服务器列表
+                     * <p>服务器列表</p>
                      */
                     std::vector<HostInfo> m_hosts;
                     bool m_hostsHasBeenSet;
 
                     /**
-                     * 地域列表
+                     * <p>地域列表</p>
                      */
                     std::vector<Place> m_places;
                     bool m_placesHasBeenSet;

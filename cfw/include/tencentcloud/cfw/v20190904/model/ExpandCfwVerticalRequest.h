@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nat：nat防火墙，ew：东西向防火墙
-                     * @return FwType nat：nat防火墙，ew：东西向防火墙
+                     * 获取<p>nat：nat防火墙，ew：东西向防火墙</p>
+                     * @return FwType <p>nat：nat防火墙，ew：东西向防火墙</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置nat：nat防火墙，ew：东西向防火墙
-                     * @param _fwType nat：nat防火墙，ew：东西向防火墙
+                     * 设置<p>nat：nat防火墙，ew：东西向防火墙</p>
+                     * @param _fwType <p>nat：nat防火墙，ew：东西向防火墙</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽值
-                     * @return Width 带宽值
+                     * 获取<p>带宽值</p>
+                     * @return Width <p>带宽值</p>
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置带宽值
-                     * @param _width 带宽值
+                     * 设置<p>带宽值</p>
+                     * @param _width <p>带宽值</p>
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInstance 防火墙实例id
+                     * 获取<p>防火墙实例id</p>
+                     * @return CfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id
-                     * @param _cfwInstance 防火墙实例id
+                     * 设置<p>防火墙实例id</p>
+                     * @param _cfwInstance <p>防火墙实例id</p>
                      * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool CfwInstanceHasBeenSet() const;
 
                     /**
-                     * 获取弹性开关 1打开 0 关闭
-                     * @return ElasticSwitch 弹性开关 1打开 0 关闭
+                     * 获取<p>弹性开关 1打开 0 关闭</p>
+                     * @return ElasticSwitch <p>弹性开关 1打开 0 关闭</p>
                      * 
                      */
                     int64_t GetElasticSwitch() const;
 
                     /**
-                     * 设置弹性开关 1打开 0 关闭
-                     * @param _elasticSwitch 弹性开关 1打开 0 关闭
+                     * 设置<p>弹性开关 1打开 0 关闭</p>
+                     * @param _elasticSwitch <p>弹性开关 1打开 0 关闭</p>
                      * 
                      */
                     void SetElasticSwitch(const int64_t& _elasticSwitch);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ElasticSwitchHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽上限，单位Mbps
-                     * @return ElasticBandwidth 弹性带宽上限，单位Mbps
+                     * 获取<p>弹性带宽上限，单位Mbps</p>
+                     * @return ElasticBandwidth <p>弹性带宽上限，单位Mbps</p>
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
-                     * 设置弹性带宽上限，单位Mbps
-                     * @param _elasticBandwidth 弹性带宽上限，单位Mbps
+                     * 设置<p>弹性带宽上限，单位Mbps</p>
+                     * @param _elasticBandwidth <p>弹性带宽上限，单位Mbps</p>
                      * 
                      */
                     void SetElasticBandwidth(const int64_t& _elasticBandwidth);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ElasticBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取按量计费标签
-                     * @return Tags 按量计费标签
+                     * 获取<p>按量计费标签</p>
+                     * @return Tags <p>按量计费标签</p>
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置按量计费标签
-                     * @param _tags 按量计费标签
+                     * 设置<p>按量计费标签</p>
+                     * @param _tags <p>按量计费标签</p>
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -169,43 +169,70 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return ElasticTrafficSwitch <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetElasticTrafficSwitch() const;
+
+                    /**
+                     * 设置<p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _elasticTrafficSwitch <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch);
+
+                    /**
+                     * 判断参数 ElasticTrafficSwitch 是否已赋值
+                     * @return ElasticTrafficSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticTrafficSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * nat：nat防火墙，ew：东西向防火墙
+                     * <p>nat：nat防火墙，ew：东西向防火墙</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 带宽值
+                     * <p>带宽值</p>
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 防火墙实例id
+                     * <p>防火墙实例id</p>
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;
 
                     /**
-                     * 弹性开关 1打开 0 关闭
+                     * <p>弹性开关 1打开 0 关闭</p>
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
-                     * 弹性带宽上限，单位Mbps
+                     * <p>弹性带宽上限，单位Mbps</p>
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
 
                     /**
-                     * 按量计费标签
+                     * <p>按量计费标签</p>
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    int64_t m_elasticTrafficSwitch;
+                    bool m_elasticTrafficSwitchHasBeenSet;
 
                 };
             }

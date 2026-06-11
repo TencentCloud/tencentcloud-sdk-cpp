@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
-                     * @return RuleMode <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
-                     * 
-                     */
-                    std::string GetRuleMode() const;
-
-                    /**
-                     * 设置<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
-                     * @param _ruleMode <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
-                     * 
-                     */
-                    void SetRuleMode(const std::string& _ruleMode);
-
-                    /**
-                     * 判断参数 RuleMode 是否已赋值
-                     * @return RuleMode 是否已赋值
-                     * 
-                     */
-                    bool RuleModeHasBeenSet() const;
-
-                    /**
                      * 获取<p>进程路径</p>
                      * @return ProcessPath <p>进程路径</p>
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ProcessPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     * @return RuleMode <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     * 
+                     */
+                    std::string GetRuleMode() const;
+
+                    /**
+                     * 设置<p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     * @param _ruleMode <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     * 
+                     */
+                    void SetRuleMode(const std::string& _ruleMode);
+
+                    /**
+                     * 判断参数 RuleMode 是否已赋值
+                     * @return RuleMode 是否已赋值
+                     * 
+                     */
+                    bool RuleModeHasBeenSet() const;
 
                     /**
                      * 获取<p>被访问文件路径，仅仅在访问控制生效</p>
@@ -110,27 +110,6 @@ namespace TencentCloud
                     bool TargetFilePathHasBeenSet() const;
 
                     /**
-                     * 获取<p>子策略id</p>
-                     * @return RuleId <p>子策略id</p>
-                     * 
-                     */
-                    std::string GetRuleId() const;
-
-                    /**
-                     * 设置<p>子策略id</p>
-                     * @param _ruleId <p>子策略id</p>
-                     * 
-                     */
-                    void SetRuleId(const std::string& _ruleId);
-
-                    /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
-                     * 
-                     */
-                    bool RuleIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>命令行参数</p>
                      * @return CmdLine <p>命令行参数</p>
                      * 
@@ -151,13 +130,28 @@ namespace TencentCloud
                      */
                     bool CmdLineHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>子策略id</p>
+                     * @return RuleId <p>子策略id</p>
+                     * 
+                     */
+                    std::string GetRuleId() const;
 
                     /**
-                     * <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     * 设置<p>子策略id</p>
+                     * @param _ruleId <p>子策略id</p>
+                     * 
                      */
-                    std::string m_ruleMode;
-                    bool m_ruleModeHasBeenSet;
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>进程路径</p>
@@ -166,22 +160,28 @@ namespace TencentCloud
                     bool m_processPathHasBeenSet;
 
                     /**
+                     * <p>策略模式,  RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
+                     */
+                    std::string m_ruleMode;
+                    bool m_ruleModeHasBeenSet;
+
+                    /**
                      * <p>被访问文件路径，仅仅在访问控制生效</p>
                      */
                     std::string m_targetFilePath;
                     bool m_targetFilePathHasBeenSet;
 
                     /**
-                     * <p>子策略id</p>
-                     */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
-
-                    /**
                      * <p>命令行参数</p>
                      */
                     std::string m_cmdLine;
                     bool m_cmdLineHasBeenSet;
+
+                    /**
+                     * <p>子策略id</p>
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

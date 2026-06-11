@@ -24,7 +24,8 @@ Chunk::Chunk() :
     m_idHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_chunkSourceHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Chunk::Deserialize(const rapidjson::Value &value)
         m_summaryHasBeenSet = true;
     }
 
+    if (value.HasMember("ChunkSource") && !value["ChunkSource"].IsNull())
+    {
+        if (!value["ChunkSource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Chunk.ChunkSource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_chunkSource = value["ChunkSource"].GetInt64();
+        m_chunkSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Chunk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Summary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chunkSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChunkSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_chunkSource, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Chunk::SetSummary(const string& _summary)
 bool Chunk::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+int64_t Chunk::GetChunkSource() const
+{
+    return m_chunkSource;
+}
+
+void Chunk::SetChunkSource(const int64_t& _chunkSource)
+{
+    m_chunkSource = _chunkSource;
+    m_chunkSourceHasBeenSet = true;
+}
+
+bool Chunk::ChunkSourceHasBeenSet() const
+{
+    return m_chunkSourceHasBeenSet;
 }
 

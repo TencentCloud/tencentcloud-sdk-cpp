@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符
-                     * @return Text 需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符
+                     * 获取<p>需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符</p>
+                     * @return Text <p>需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符
-                     * @param _text 需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符
+                     * 设置<p>需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符</p>
+                     * @param _text <p>需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取文本转语音的声音配置
-                     * @return Voice 文本转语音的声音配置
+                     * 获取<p>文本转语音的声音配置</p>
+                     * @return Voice <p>文本转语音的声音配置</p>
                      * 
                      */
                     Voice GetVoice() const;
 
                     /**
-                     * 设置文本转语音的声音配置
-                     * @param _voice 文本转语音的声音配置
+                     * 设置<p>文本转语音的声音配置</p>
+                     * @param _voice <p>文本转语音的声音配置</p>
                      * 
                      */
                     void SetVoice(const Voice& _voice);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool VoiceHasBeenSet() const;
 
                     /**
-                     * 获取TRTC的SdkAppId
-                     * @return SdkAppId TRTC的SdkAppId
+                     * 获取<p>TRTC的SdkAppId</p>
+                     * @return SdkAppId <p>TRTC的SdkAppId</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的SdkAppId
-                     * @param _sdkAppId TRTC的SdkAppId
+                     * 设置<p>TRTC的SdkAppId</p>
+                     * @param _sdkAppId <p>TRTC的SdkAppId</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取文本转语音的输出音频的格式
-                     * @return AudioFormat 文本转语音的输出音频的格式
+                     * 获取<p>文本转语音的输出音频的格式</p>
+                     * @return AudioFormat <p>文本转语音的输出音频的格式</p>
                      * 
                      */
                     AudioFormat GetAudioFormat() const;
 
                     /**
-                     * 设置文本转语音的输出音频的格式
-                     * @param _audioFormat 文本转语音的输出音频的格式
+                     * 设置<p>文本转语音的输出音频的格式</p>
+                     * @param _audioFormat <p>文本转语音的输出音频的格式</p>
                      * 
                      */
                     void SetAudioFormat(const AudioFormat& _audioFormat);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool AudioFormatHasBeenSet() const;
 
                     /**
-                     * 获取TTS的模型，当前固定为：flow_01_turbo
-                     * @return Model TTS的模型，当前固定为：flow_01_turbo
+                     * 获取<p>TTS的模型，当前固定为：flow_02_turbo</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li></ul>
+                     * @return Model <p>TTS的模型，当前固定为：flow_02_turbo</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置TTS的模型，当前固定为：flow_01_turbo
-                     * @param _model TTS的模型，当前固定为：flow_01_turbo
+                     * 设置<p>TTS的模型，当前固定为：flow_02_turbo</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li></ul>
+                     * @param _model <p>TTS的模型，当前固定为：flow_02_turbo</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
-                     * @return PronunciationDict 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * 获取<p>多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。</p>
+                     * @return PronunciationDict <p>多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。</p>
                      * 
                      */
                     std::vector<PronunciationDict> GetPronunciationDict() const;
 
                     /**
-                     * 设置多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
-                     * @param _pronunciationDict 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * 设置<p>多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。</p>
+                     * @param _pronunciationDict <p>多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。</p>
                      * 
                      */
                     void SetPronunciationDict(const std::vector<PronunciationDict>& _pronunciationDict);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool PronunciationDictHasBeenSet() const;
 
                     /**
-                     * 获取默认为0，0表示不生成字幕，1表示生成字幕
-                     * @return AlignmentMode 默认为0，0表示不生成字幕，1表示生成字幕
+                     * 获取<p>默认为0，0表示不生成字幕，1表示生成字幕</p>
+                     * @return AlignmentMode <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
                      * 
                      */
                     uint64_t GetAlignmentMode() const;
 
                     /**
-                     * 设置默认为0，0表示不生成字幕，1表示生成字幕
-                     * @param _alignmentMode 默认为0，0表示不生成字幕，1表示生成字幕
+                     * 设置<p>默认为0，0表示不生成字幕，1表示生成字幕</p>
+                     * @param _alignmentMode <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
                      * 
                      */
                     void SetAlignmentMode(const uint64_t& _alignmentMode);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool AlignmentModeHasBeenSet() const;
 
                     /**
-                     * 获取需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）
-                     * @return LanguageCode 需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）
+                     * 获取<p>需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）</p>
+                     * @return LanguageCode <p>需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）</p>
                      * 
                      */
                     std::string GetLanguageCode() const;
 
                     /**
-                     * 设置需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）
-                     * @param _languageCode 需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）
+                     * 设置<p>需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）</p>
+                     * @param _languageCode <p>需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）</p>
                      * 
                      */
                     void SetLanguageCode(const std::string& _languageCode);
@@ -216,49 +216,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符
+                     * <p>需要转语音的文字内容，最大允许50000字符，注意 1汉字=2字符</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 文本转语音的声音配置
+                     * <p>文本转语音的声音配置</p>
                      */
                     Voice m_voice;
                     bool m_voiceHasBeenSet;
 
                     /**
-                     * TRTC的SdkAppId
+                     * <p>TRTC的SdkAppId</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 文本转语音的输出音频的格式
+                     * <p>文本转语音的输出音频的格式</p>
                      */
                     AudioFormat m_audioFormat;
                     bool m_audioFormatHasBeenSet;
 
                     /**
-                     * TTS的模型，当前固定为：flow_01_turbo
+                     * <p>TTS的模型，当前固定为：flow_02_turbo</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。
+                     * <p>多音字/生僻字发音纠正词典条目。指定特定词语在本次请求中使用的发音。</p>
                      */
                     std::vector<PronunciationDict> m_pronunciationDict;
                     bool m_pronunciationDictHasBeenSet;
 
                     /**
-                     * 默认为0，0表示不生成字幕，1表示生成字幕
+                     * <p>默认为0，0表示不生成字幕，1表示生成字幕</p>
                      */
                     uint64_t m_alignmentMode;
                     bool m_alignmentModeHasBeenSet;
 
                     /**
-                     * 需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）
+                     * <p>需要合成的语言（ISO 639-1），默认自动识别，支持的语言如下：  zh（中文） en（英文） yue（粤语） ja（日语） ko（韩语） ar（阿拉伯语） id（印尼语） th（泰语）</p>
                      */
                     std::string m_languageCode;
                     bool m_languageCodeHasBeenSet;

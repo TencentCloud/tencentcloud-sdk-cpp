@@ -886,6 +886,34 @@ namespace TencentCloud
                      */
                     bool MaintenanceWindowHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启透明加密，0：未开启；1：已开启</p>
+                     * @return EncryptionEnable <p>是否开启透明加密，0：未开启；1：已开启</p>
+                     * 
+                     */
+                    int64_t GetEncryptionEnable() const;
+
+                    /**
+                     * 判断参数 EncryptionEnable 是否已赋值
+                     * @return EncryptionEnable 是否已赋值
+                     * 
+                     */
+                    bool EncryptionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>真实使用的kms地域，用于后续调用kms服务</p>
+                     * @return EncryptionKmsRegion <p>真实使用的kms地域，用于后续调用kms服务</p>
+                     * 
+                     */
+                    std::string GetEncryptionKmsRegion() const;
+
+                    /**
+                     * 判断参数 EncryptionKmsRegion 是否已赋值
+                     * @return EncryptionKmsRegion 是否已赋值
+                     * 
+                     */
+                    bool EncryptionKmsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1246,6 +1274,18 @@ namespace TencentCloud
                      */
                     MaintenanceWindowInfo m_maintenanceWindow;
                     bool m_maintenanceWindowHasBeenSet;
+
+                    /**
+                     * <p>是否开启透明加密，0：未开启；1：已开启</p>
+                     */
+                    int64_t m_encryptionEnable;
+                    bool m_encryptionEnableHasBeenSet;
+
+                    /**
+                     * <p>真实使用的kms地域，用于后续调用kms服务</p>
+                     */
+                    std::string m_encryptionKmsRegion;
+                    bool m_encryptionKmsRegionHasBeenSet;
 
                 };
             }

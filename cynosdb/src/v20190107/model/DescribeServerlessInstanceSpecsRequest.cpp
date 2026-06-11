@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeServerlessInstanceSpecsRequest::DescribeServerlessInstanceSpecsRequest() :
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeServerlessInstanceSpecsRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeServerlessInstanceSpecsRequest::SetZone(const string& _zone)
 bool DescribeServerlessInstanceSpecsRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string DescribeServerlessInstanceSpecsRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void DescribeServerlessInstanceSpecsRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool DescribeServerlessInstanceSpecsRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
 }
 
 

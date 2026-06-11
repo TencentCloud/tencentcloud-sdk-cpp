@@ -23,11 +23,11 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeK8sApiAbnormalRuleListRequest::DescribeK8sApiAbnormalRuleListRequest() :
+    m_byHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,14 @@ string DescribeK8sApiAbnormalRuleListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -77,14 +85,6 @@ string DescribeK8sApiAbnormalRuleListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_byHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "By";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -92,6 +92,22 @@ string DescribeK8sApiAbnormalRuleListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeK8sApiAbnormalRuleListRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeK8sApiAbnormalRuleListRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeK8sApiAbnormalRuleListRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
+}
 
 vector<RunTimeFilters> DescribeK8sApiAbnormalRuleListRequest::GetFilters() const
 {
@@ -155,22 +171,6 @@ void DescribeK8sApiAbnormalRuleListRequest::SetOrder(const string& _order)
 bool DescribeK8sApiAbnormalRuleListRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
-}
-
-string DescribeK8sApiAbnormalRuleListRequest::GetBy() const
-{
-    return m_by;
-}
-
-void DescribeK8sApiAbnormalRuleListRequest::SetBy(const string& _by)
-{
-    m_by = _by;
-    m_byHasBeenSet = true;
-}
-
-bool DescribeK8sApiAbnormalRuleListRequest::ByHasBeenSet() const
-{
-    return m_byHasBeenSet;
 }
 
 

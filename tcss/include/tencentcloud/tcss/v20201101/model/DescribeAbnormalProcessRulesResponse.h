@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/AbnormalProcessRuleExtSetItem.h>
 #include <tencentcloud/tcss/v20201101/model/RuleBaseInfo.h>
 
 
@@ -45,18 +46,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件总数量
-                     * @return TotalCount 事件总数量
+                     * 获取异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleExtSet 异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetTotalCount() const;
+                    std::vector<AbnormalProcessRuleExtSetItem> GetRuleExtSet() const;
 
                     /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
+                     * 判断参数 RuleExtSet 是否已赋值
+                     * @return RuleExtSet 是否已赋值
                      * 
                      */
-                    bool TotalCountHasBeenSet() const;
+                    bool RuleExtSetHasBeenSet() const;
 
                     /**
                      * 获取异常进程策略信息列表
@@ -72,19 +75,40 @@ namespace TencentCloud
                      */
                     bool RuleSetHasBeenSet() const;
 
+                    /**
+                     * 获取事件总数量
+                     * @return TotalCount 事件总数量
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 事件总数量
+                     * 异常进程策略扩展信息列表（含子规则内容和执行动作）。新前端优先使用此字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
+                    std::vector<AbnormalProcessRuleExtSetItem> m_ruleExtSet;
+                    bool m_ruleExtSetHasBeenSet;
 
                     /**
                      * 异常进程策略信息列表
                      */
                     std::vector<RuleBaseInfo> m_ruleSet;
                     bool m_ruleSetHasBeenSet;
+
+                    /**
+                     * 事件总数量
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

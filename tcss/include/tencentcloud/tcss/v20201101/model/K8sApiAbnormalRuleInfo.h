@@ -48,46 +48,46 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取是否所有集群生效
+                     * @return EffectAllCluster 是否所有集群生效
                      * 
                      */
-                    std::string GetRuleName() const;
+                    bool GetEffectAllCluster() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置是否所有集群生效
+                     * @param _effectAllCluster 是否所有集群生效
                      * 
                      */
-                    void SetRuleName(const std::string& _ruleName);
+                    void SetEffectAllCluster(const bool& _effectAllCluster);
 
                     /**
-                     * 判断参数 RuleName 是否已赋值
-                     * @return RuleName 是否已赋值
+                     * 判断参数 EffectAllCluster 是否已赋值
+                     * @return EffectAllCluster 是否已赋值
                      * 
                      */
-                    bool RuleNameHasBeenSet() const;
+                    bool EffectAllClusterHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取生效集群IDSet
+                     * @return EffectClusterIDSet 生效集群IDSet
                      * 
                      */
-                    bool GetStatus() const;
+                    std::vector<std::string> GetEffectClusterIDSet() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置生效集群IDSet
+                     * @param _effectClusterIDSet 生效集群IDSet
                      * 
                      */
-                    void SetStatus(const bool& _status);
+                    void SetEffectClusterIDSet(const std::vector<std::string>& _effectClusterIDSet);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 EffectClusterIDSet 是否已赋值
+                     * @return EffectClusterIDSet 是否已赋值
                      * 
                      */
-                    bool StatusHasBeenSet() const;
+                    bool EffectClusterIDSetHasBeenSet() const;
 
                     /**
                      * 获取规则信息列表
@@ -111,25 +111,25 @@ namespace TencentCloud
                     bool RuleInfoListHasBeenSet() const;
 
                     /**
-                     * 获取生效集群IDSet
-                     * @return EffectClusterIDSet 生效集群IDSet
+                     * 获取规则名称
+                     * @return RuleName 规则名称
                      * 
                      */
-                    std::vector<std::string> GetEffectClusterIDSet() const;
+                    std::string GetRuleName() const;
 
                     /**
-                     * 设置生效集群IDSet
-                     * @param _effectClusterIDSet 生效集群IDSet
+                     * 设置规则名称
+                     * @param _ruleName 规则名称
                      * 
                      */
-                    void SetEffectClusterIDSet(const std::vector<std::string>& _effectClusterIDSet);
+                    void SetRuleName(const std::string& _ruleName);
 
                     /**
-                     * 判断参数 EffectClusterIDSet 是否已赋值
-                     * @return EffectClusterIDSet 是否已赋值
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
                      * 
                      */
-                    bool EffectClusterIDSetHasBeenSet() const;
+                    bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则类型
@@ -161,25 +161,25 @@ RT_USER 用户自定义
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否所有集群生效
-                     * @return EffectAllCluster 是否所有集群生效
+                     * 获取状态
+                     * @return Status 状态
                      * 
                      */
-                    bool GetEffectAllCluster() const;
+                    bool GetStatus() const;
 
                     /**
-                     * 设置是否所有集群生效
-                     * @param _effectAllCluster 是否所有集群生效
+                     * 设置状态
+                     * @param _status 状态
                      * 
                      */
-                    void SetEffectAllCluster(const bool& _effectAllCluster);
+                    void SetStatus(const bool& _status);
 
                     /**
-                     * 判断参数 EffectAllCluster 是否已赋值
-                     * @return EffectAllCluster 是否已赋值
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
                      * 
                      */
-                    bool EffectAllClusterHasBeenSet() const;
+                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取规则ID
@@ -205,16 +205,16 @@ RT_USER 用户自定义
                 private:
 
                     /**
-                     * 规则名称
+                     * 是否所有集群生效
                      */
-                    std::string m_ruleName;
-                    bool m_ruleNameHasBeenSet;
+                    bool m_effectAllCluster;
+                    bool m_effectAllClusterHasBeenSet;
 
                     /**
-                     * 状态
+                     * 生效集群IDSet
                      */
-                    bool m_status;
-                    bool m_statusHasBeenSet;
+                    std::vector<std::string> m_effectClusterIDSet;
+                    bool m_effectClusterIDSetHasBeenSet;
 
                     /**
                      * 规则信息列表
@@ -223,10 +223,10 @@ RT_USER 用户自定义
                     bool m_ruleInfoListHasBeenSet;
 
                     /**
-                     * 生效集群IDSet
+                     * 规则名称
                      */
-                    std::vector<std::string> m_effectClusterIDSet;
-                    bool m_effectClusterIDSetHasBeenSet;
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
 
                     /**
                      * 规则类型
@@ -237,10 +237,10 @@ RT_USER 用户自定义
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 是否所有集群生效
+                     * 状态
                      */
-                    bool m_effectAllCluster;
-                    bool m_effectAllClusterHasBeenSet;
+                    bool m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 规则ID

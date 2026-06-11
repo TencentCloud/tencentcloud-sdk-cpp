@@ -23,11 +23,11 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAbnormalProcessRulesRequest::DescribeAbnormalProcessRulesRequest() :
+    m_byHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -38,20 +38,12 @@ string DescribeAbnormalProcessRulesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_byHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "By";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -69,20 +61,28 @@ string DescribeAbnormalProcessRulesRequest::ToJsonString() const
         }
     }
 
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
     if (m_orderHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_byHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "By";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -92,6 +92,38 @@ string DescribeAbnormalProcessRulesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAbnormalProcessRulesRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeAbnormalProcessRulesRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeAbnormalProcessRulesRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
+}
+
+vector<RunTimeFilters> DescribeAbnormalProcessRulesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAbnormalProcessRulesRequest::SetFilters(const vector<RunTimeFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAbnormalProcessRulesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 uint64_t DescribeAbnormalProcessRulesRequest::GetLimit() const
 {
@@ -125,22 +157,6 @@ bool DescribeAbnormalProcessRulesRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<RunTimeFilters> DescribeAbnormalProcessRulesRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeAbnormalProcessRulesRequest::SetFilters(const vector<RunTimeFilters>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeAbnormalProcessRulesRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 string DescribeAbnormalProcessRulesRequest::GetOrder() const
 {
     return m_order;
@@ -155,22 +171,6 @@ void DescribeAbnormalProcessRulesRequest::SetOrder(const string& _order)
 bool DescribeAbnormalProcessRulesRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
-}
-
-string DescribeAbnormalProcessRulesRequest::GetBy() const
-{
-    return m_by;
-}
-
-void DescribeAbnormalProcessRulesRequest::SetBy(const string& _by)
-{
-    m_by = _by;
-    m_byHasBeenSet = true;
-}
-
-bool DescribeAbnormalProcessRulesRequest::ByHasBeenSet() const
-{
-    return m_byHasBeenSet;
 }
 
 

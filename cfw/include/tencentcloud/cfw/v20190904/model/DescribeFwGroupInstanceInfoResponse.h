@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙(组)详细信息
-                     * @return VpcFwGroupLst 防火墙(组)详细信息
+                     * 获取<p>防火墙(组)详细信息</p>
+                     * @return VpcFwGroupLst <p>防火墙(组)详细信息</p>
                      * 
                      */
                     std::vector<VpcFwGroupInfo> GetVpcFwGroupLst() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool VpcFwGroupLstHasBeenSet() const;
 
                     /**
-                     * 获取防火墙(组)个数
-                     * @return Total 防火墙(组)个数
+                     * 获取<p>防火墙(组)个数</p>
+                     * @return Total <p>防火墙(组)个数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙(组)详细信息
+                     * <p>防火墙(组)详细信息</p>
                      */
                     std::vector<VpcFwGroupInfo> m_vpcFwGroupLst;
                     bool m_vpcFwGroupLstHasBeenSet;
 
                     /**
-                     * 防火墙(组)个数
+                     * <p>防火墙(组)个数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

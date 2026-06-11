@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/K8sApiAbnormalRuleScopeInfo.h>
 
 
 namespace TencentCloud
@@ -47,6 +48,94 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效
+                     * @return EffectAllCluster 是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效
+                     * 
+                     */
+                    bool GetEffectAllCluster() const;
+
+                    /**
+                     * 设置是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效
+                     * @param _effectAllCluster 是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效
+                     * 
+                     */
+                    void SetEffectAllCluster(const bool& _effectAllCluster);
+
+                    /**
+                     * 判断参数 EffectAllCluster 是否已赋值
+                     * @return EffectAllCluster 是否已赋值
+                     * 
+                     */
+                    bool EffectAllClusterHasBeenSet() const;
+
+                    /**
+                     * 获取受影响集群总数
+                     * @return EffectClusterCount 受影响集群总数
+                     * 
+                     */
+                    uint64_t GetEffectClusterCount() const;
+
+                    /**
+                     * 设置受影响集群总数
+                     * @param _effectClusterCount 受影响集群总数
+                     * 
+                     */
+                    void SetEffectClusterCount(const uint64_t& _effectClusterCount);
+
+                    /**
+                     * 判断参数 EffectClusterCount 是否已赋值
+                     * @return EffectClusterCount 是否已赋值
+                     * 
+                     */
+                    bool EffectClusterCountHasBeenSet() const;
+
+                    /**
+                     * 获取编辑账号
+                     * @return OprUin 编辑账号
+                     * 
+                     */
+                    std::string GetOprUin() const;
+
+                    /**
+                     * 设置编辑账号
+                     * @param _oprUin 编辑账号
+                     * 
+                     */
+                    void SetOprUin(const std::string& _oprUin);
+
+                    /**
+                     * 判断参数 OprUin 是否已赋值
+                     * @return OprUin 是否已赋值
+                     * 
+                     */
+                    bool OprUinHasBeenSet() const;
+
+                    /**
+                     * 获取规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleActions 规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetRuleActions() const;
+
+                    /**
+                     * 设置规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleActions 规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleActions(const std::vector<std::string>& _ruleActions);
+
+                    /**
+                     * 判断参数 RuleActions 是否已赋值
+                     * @return RuleActions 是否已赋值
+                     * 
+                     */
+                    bool RuleActionsHasBeenSet() const;
+
+                    /**
                      * 获取规则ID
                      * @return RuleID 规则ID
                      * 
@@ -66,6 +155,31 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleIDHasBeenSet() const;
+
+                    /**
+                     * 获取子规则内容列表，从 rule_details JSON 反序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleInfoList 子规则内容列表，从 rule_details JSON 反序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<K8sApiAbnormalRuleScopeInfo> GetRuleInfoList() const;
+
+                    /**
+                     * 设置子规则内容列表，从 rule_details JSON 反序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleInfoList 子规则内容列表，从 rule_details JSON 反序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleInfoList(const std::vector<K8sApiAbnormalRuleScopeInfo>& _ruleInfoList);
+
+                    /**
+                     * 判断参数 RuleInfoList 是否已赋值
+                     * @return RuleInfoList 是否已赋值
+                     * 
+                     */
+                    bool RuleInfoListHasBeenSet() const;
 
                     /**
                      * 获取规则名称
@@ -118,25 +232,25 @@ RT_USER 用户自定义
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取受影响集群总数
-                     * @return EffectClusterCount 受影响集群总数
+                     * 获取状态
+                     * @return Status 状态
                      * 
                      */
-                    uint64_t GetEffectClusterCount() const;
+                    bool GetStatus() const;
 
                     /**
-                     * 设置受影响集群总数
-                     * @param _effectClusterCount 受影响集群总数
+                     * 设置状态
+                     * @param _status 状态
                      * 
                      */
-                    void SetEffectClusterCount(const uint64_t& _effectClusterCount);
+                    void SetStatus(const bool& _status);
 
                     /**
-                     * 判断参数 EffectClusterCount 是否已赋值
-                     * @return EffectClusterCount 是否已赋值
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
                      * 
                      */
-                    bool EffectClusterCountHasBeenSet() const;
+                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取更新时间
@@ -159,55 +273,45 @@ RT_USER 用户自定义
                      */
                     bool UpdateTimeHasBeenSet() const;
 
-                    /**
-                     * 获取编辑账号
-                     * @return OprUin 编辑账号
-                     * 
-                     */
-                    std::string GetOprUin() const;
-
-                    /**
-                     * 设置编辑账号
-                     * @param _oprUin 编辑账号
-                     * 
-                     */
-                    void SetOprUin(const std::string& _oprUin);
-
-                    /**
-                     * 判断参数 OprUin 是否已赋值
-                     * @return OprUin 是否已赋值
-                     * 
-                     */
-                    bool OprUinHasBeenSet() const;
-
-                    /**
-                     * 获取状态
-                     * @return Status 状态
-                     * 
-                     */
-                    bool GetStatus() const;
-
-                    /**
-                     * 设置状态
-                     * @param _status 状态
-                     * 
-                     */
-                    void SetStatus(const bool& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 是否全部集群生效。true表示全部集群生效，false表示仅指定集群生效
+                     */
+                    bool m_effectAllCluster;
+                    bool m_effectAllClusterHasBeenSet;
+
+                    /**
+                     * 受影响集群总数
+                     */
+                    uint64_t m_effectClusterCount;
+                    bool m_effectClusterCountHasBeenSet;
+
+                    /**
+                     * 编辑账号
+                     */
+                    std::string m_oprUin;
+                    bool m_oprUinHasBeenSet;
+
+                    /**
+                     * 规则组中所有执行动作的去重列表。当前黑名单仅包含 RULE_MODE_ALERT（告警）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ruleActions;
+                    bool m_ruleActionsHasBeenSet;
 
                     /**
                      * 规则ID
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;
+
+                    /**
+                     * 子规则内容列表，从 rule_details JSON 反序列化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<K8sApiAbnormalRuleScopeInfo> m_ruleInfoList;
+                    bool m_ruleInfoListHasBeenSet;
 
                     /**
                      * 规则名称
@@ -224,28 +328,16 @@ RT_USER 用户自定义
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 受影响集群总数
+                     * 状态
                      */
-                    uint64_t m_effectClusterCount;
-                    bool m_effectClusterCountHasBeenSet;
+                    bool m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
-
-                    /**
-                     * 编辑账号
-                     */
-                    std::string m_oprUin;
-                    bool m_oprUinHasBeenSet;
-
-                    /**
-                     * 状态
-                     */
-                    bool m_status;
-                    bool m_statusHasBeenSet;
 
                 };
             }

@@ -31,7 +31,10 @@ CreateVulScanTaskRequest::CreateVulScanTaskRequest() :
     m_registryTaskIDHasBeenSet(false),
     m_localImageContainerRunningHasBeenSet(false),
     m_registryImageContainerRunningHasBeenSet(false),
-    m_isLatestHasBeenSet(false)
+    m_isLatestHasBeenSet(false),
+    m_excludeLocalImageIDsHasBeenSet(false),
+    m_excludeRegistryImageIDsHasBeenSet(false),
+    m_localClusterIDsHasBeenSet(false)
 {
 }
 
@@ -122,6 +125,45 @@ string CreateVulScanTaskRequest::ToJsonString() const
         string key = "IsLatest";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isLatest, allocator);
+    }
+
+    if (m_excludeLocalImageIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeLocalImageIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeLocalImageIDs.begin(); itr != m_excludeLocalImageIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeRegistryImageIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeRegistryImageIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeRegistryImageIDs.begin(); itr != m_excludeRegistryImageIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_localClusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_localClusterIDs.begin(); itr != m_localClusterIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -274,6 +316,54 @@ void CreateVulScanTaskRequest::SetIsLatest(const bool& _isLatest)
 bool CreateVulScanTaskRequest::IsLatestHasBeenSet() const
 {
     return m_isLatestHasBeenSet;
+}
+
+vector<string> CreateVulScanTaskRequest::GetExcludeLocalImageIDs() const
+{
+    return m_excludeLocalImageIDs;
+}
+
+void CreateVulScanTaskRequest::SetExcludeLocalImageIDs(const vector<string>& _excludeLocalImageIDs)
+{
+    m_excludeLocalImageIDs = _excludeLocalImageIDs;
+    m_excludeLocalImageIDsHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::ExcludeLocalImageIDsHasBeenSet() const
+{
+    return m_excludeLocalImageIDsHasBeenSet;
+}
+
+vector<uint64_t> CreateVulScanTaskRequest::GetExcludeRegistryImageIDs() const
+{
+    return m_excludeRegistryImageIDs;
+}
+
+void CreateVulScanTaskRequest::SetExcludeRegistryImageIDs(const vector<uint64_t>& _excludeRegistryImageIDs)
+{
+    m_excludeRegistryImageIDs = _excludeRegistryImageIDs;
+    m_excludeRegistryImageIDsHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::ExcludeRegistryImageIDsHasBeenSet() const
+{
+    return m_excludeRegistryImageIDsHasBeenSet;
+}
+
+vector<string> CreateVulScanTaskRequest::GetLocalClusterIDs() const
+{
+    return m_localClusterIDs;
+}
+
+void CreateVulScanTaskRequest::SetLocalClusterIDs(const vector<string>& _localClusterIDs)
+{
+    m_localClusterIDs = _localClusterIDs;
+    m_localClusterIDsHasBeenSet = true;
+}
+
+bool CreateVulScanTaskRequest::LocalClusterIDsHasBeenSet() const
+{
+    return m_localClusterIDsHasBeenSet;
 }
 
 

@@ -52,7 +52,11 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_instanceModeHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_sQLModeHasBeenSet(false),
-    m_autoScaleConfigHasBeenSet(false)
+    m_autoScaleConfigHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_encryptionEnableHasBeenSet(false)
 {
 }
 
@@ -326,6 +330,43 @@ string CreateDBInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoScaleConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryptionEnable, allocator);
     }
 
 
@@ -814,6 +855,70 @@ void CreateDBInstancesRequest::SetAutoScaleConfig(const AutoScalingConfig& _auto
 bool CreateDBInstancesRequest::AutoScaleConfigHasBeenSet() const
 {
     return m_autoScaleConfigHasBeenSet;
+}
+
+vector<string> CreateDBInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateDBInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void CreateDBInstancesRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateDBInstancesRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+int64_t CreateDBInstancesRequest::GetEncryptionEnable() const
+{
+    return m_encryptionEnable;
+}
+
+void CreateDBInstancesRequest::SetEncryptionEnable(const int64_t& _encryptionEnable)
+{
+    m_encryptionEnable = _encryptionEnable;
+    m_encryptionEnableHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::EncryptionEnableHasBeenSet() const
+{
+    return m_encryptionEnableHasBeenSet;
 }
 
 

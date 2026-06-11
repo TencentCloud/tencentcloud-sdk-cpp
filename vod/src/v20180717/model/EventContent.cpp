@@ -55,7 +55,10 @@ EventContent::EventContent() :
     m_aigcVideoCompleteEventHasBeenSet(false),
     m_extractBlindWatermarkCompleteHasBeenSet(false),
     m_sceneAigcImageCompleteEventHasBeenSet(false),
-    m_processImageAsyncCompleteEventHasBeenSet(false)
+    m_processImageAsyncCompleteEventHasBeenSet(false),
+    m_createAigcAdvancedCustomElementCompleteEventHasBeenSet(false),
+    m_createAigcCustomVoiceCompleteEventHasBeenSet(false),
+    m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet(false)
 {
 }
 
@@ -645,6 +648,57 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_processImageAsyncCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateAigcAdvancedCustomElementCompleteEvent") && !value["CreateAigcAdvancedCustomElementCompleteEvent"].IsNull())
+    {
+        if (!value["CreateAigcAdvancedCustomElementCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.CreateAigcAdvancedCustomElementCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcAdvancedCustomElementCompleteEvent.Deserialize(value["CreateAigcAdvancedCustomElementCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcAdvancedCustomElementCompleteEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateAigcCustomVoiceCompleteEvent") && !value["CreateAigcCustomVoiceCompleteEvent"].IsNull())
+    {
+        if (!value["CreateAigcCustomVoiceCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.CreateAigcCustomVoiceCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcCustomVoiceCompleteEvent.Deserialize(value["CreateAigcCustomVoiceCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcCustomVoiceCompleteEventHasBeenSet = true;
+    }
+
+    if (value.HasMember("DescribeAigcFaceInfoAsyncCompleteEvent") && !value["DescribeAigcFaceInfoAsyncCompleteEvent"].IsNull())
+    {
+        if (!value["DescribeAigcFaceInfoAsyncCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.DescribeAigcFaceInfoAsyncCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_describeAigcFaceInfoAsyncCompleteEvent.Deserialize(value["DescribeAigcFaceInfoAsyncCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -963,6 +1017,33 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_processImageAsyncCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcAdvancedCustomElementCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcAdvancedCustomElementCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcAdvancedCustomElementCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcCustomVoiceCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcCustomVoiceCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcCustomVoiceCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescribeAigcFaceInfoAsyncCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_describeAigcFaceInfoAsyncCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1526,5 +1607,53 @@ void EventContent::SetProcessImageAsyncCompleteEvent(const ProcessImageAsyncTask
 bool EventContent::ProcessImageAsyncCompleteEventHasBeenSet() const
 {
     return m_processImageAsyncCompleteEventHasBeenSet;
+}
+
+CreateAigcAdvancedCustomElementTask EventContent::GetCreateAigcAdvancedCustomElementCompleteEvent() const
+{
+    return m_createAigcAdvancedCustomElementCompleteEvent;
+}
+
+void EventContent::SetCreateAigcAdvancedCustomElementCompleteEvent(const CreateAigcAdvancedCustomElementTask& _createAigcAdvancedCustomElementCompleteEvent)
+{
+    m_createAigcAdvancedCustomElementCompleteEvent = _createAigcAdvancedCustomElementCompleteEvent;
+    m_createAigcAdvancedCustomElementCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::CreateAigcAdvancedCustomElementCompleteEventHasBeenSet() const
+{
+    return m_createAigcAdvancedCustomElementCompleteEventHasBeenSet;
+}
+
+CreateAigcCustomVoiceTask EventContent::GetCreateAigcCustomVoiceCompleteEvent() const
+{
+    return m_createAigcCustomVoiceCompleteEvent;
+}
+
+void EventContent::SetCreateAigcCustomVoiceCompleteEvent(const CreateAigcCustomVoiceTask& _createAigcCustomVoiceCompleteEvent)
+{
+    m_createAigcCustomVoiceCompleteEvent = _createAigcCustomVoiceCompleteEvent;
+    m_createAigcCustomVoiceCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::CreateAigcCustomVoiceCompleteEventHasBeenSet() const
+{
+    return m_createAigcCustomVoiceCompleteEventHasBeenSet;
+}
+
+DescribeAigcFaceInfoAsyncTask EventContent::GetDescribeAigcFaceInfoAsyncCompleteEvent() const
+{
+    return m_describeAigcFaceInfoAsyncCompleteEvent;
+}
+
+void EventContent::SetDescribeAigcFaceInfoAsyncCompleteEvent(const DescribeAigcFaceInfoAsyncTask& _describeAigcFaceInfoAsyncCompleteEvent)
+{
+    m_describeAigcFaceInfoAsyncCompleteEvent = _describeAigcFaceInfoAsyncCompleteEvent;
+    m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::DescribeAigcFaceInfoAsyncCompleteEventHasBeenSet() const
+{
+    return m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet;
 }
 

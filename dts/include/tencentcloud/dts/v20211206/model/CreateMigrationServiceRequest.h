@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
-                     * @return SrcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * 获取<p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
+                     * @return SrcDatabaseType <p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      * 
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
-                     * 设置源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
-                     * @param _srcDatabaseType 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * 设置<p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
+                     * @param _srcDatabaseType <p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      * 
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SrcDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
-                     * @return DstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * 获取<p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
+                     * @return DstDatabaseType <p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      * 
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
-                     * @param _dstDatabaseType 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * 设置<p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
+                     * @param _dstDatabaseType <p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      * 
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DstDatabaseTypeHasBeenSet() const;
 
                     /**
-                     * 获取源实例地域，如：ap-guangzhou
-                     * @return SrcRegion 源实例地域，如：ap-guangzhou
+                     * 获取<p>源实例地域，如：ap-guangzhou</p>
+                     * @return SrcRegion <p>源实例地域，如：ap-guangzhou</p>
                      * 
                      */
                     std::string GetSrcRegion() const;
 
                     /**
-                     * 设置源实例地域，如：ap-guangzhou
-                     * @param _srcRegion 源实例地域，如：ap-guangzhou
+                     * 设置<p>源实例地域，如：ap-guangzhou</p>
+                     * @param _srcRegion <p>源实例地域，如：ap-guangzhou</p>
                      * 
                      */
                     void SetSrcRegion(const std::string& _srcRegion);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SrcRegionHasBeenSet() const;
 
                     /**
-                     * 获取目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。
-                     * @return DstRegion 目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。
+                     * 获取<p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>
+                     * @return DstRegion <p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>
                      * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
-                     * 设置目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。
-                     * @param _dstRegion 目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。
+                     * 设置<p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>
+                     * @param _dstRegion <p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>
                      * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
-                     * @return InstanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
+                     * 获取<p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href="https://cloud.tencent.com/document/product/571/18736">计费概述</a></p>
+                     * @return InstanceClass <p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href="https://cloud.tencent.com/document/product/571/18736">计费概述</a></p>
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
-                     * @param _instanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
+                     * 设置<p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href="https://cloud.tencent.com/document/product/571/18736">计费概述</a></p>
+                     * @param _instanceClass <p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href="https://cloud.tencent.com/document/product/571/18736">计费概述</a></p>
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool InstanceClassHasBeenSet() const;
 
                     /**
-                     * 获取购买数量，范围为[1,15]，默认为1
-                     * @return Count 购买数量，范围为[1,15]，默认为1
+                     * 获取<p>购买数量，范围为[1,15]，默认为1</p>
+                     * @return Count <p>购买数量，范围为[1,15]，默认为1</p>
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置购买数量，范围为[1,15]，默认为1
-                     * @param _count 购买数量，范围为[1,15]，默认为1
+                     * 设置<p>购买数量，范围为[1,15]，默认为1</p>
+                     * @param _count <p>购买数量，范围为[1,15]，默认为1</p>
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取迁移服务名称，最大长度128
-                     * @return JobName 迁移服务名称，最大长度128
+                     * 获取<p>迁移服务名称，最大长度128</p>
+                     * @return JobName <p>迁移服务名称，最大长度128</p>
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置迁移服务名称，最大长度128
-                     * @param _jobName 迁移服务名称，最大长度128
+                     * 设置<p>迁移服务名称，最大长度128</p>
+                     * @param _jobName <p>迁移服务名称，最大长度128</p>
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取标签信息
-                     * @return Tags 标签信息
+                     * 获取<p>标签信息</p>
+                     * @return Tags <p>标签信息</p>
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
-                     * 设置标签信息
-                     * @param _tags 标签信息
+                     * 设置<p>标签信息</p>
+                     * @param _tags <p>标签信息</p>
                      * 
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * <p>源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
-                     * 目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)
+                     * <p>目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)tdsqlmysql,keewidb,tdstore,tendis</p><p>枚举值：</p><ul><li>mysql： MySQL数据库</li></ul>
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;
 
                     /**
-                     * 源实例地域，如：ap-guangzhou
+                     * <p>源实例地域，如：ap-guangzhou</p>
                      */
                     std::string m_srcRegion;
                     bool m_srcRegionHasBeenSet;
 
                     /**
-                     * 目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。
+                     * <p>目标实例地域，如：ap-guangzhou。注意，目标地域必须和API请求地域保持一致。</p>
                      */
                     std::string m_dstRegion;
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)
+                     * <p>实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考<a href="https://cloud.tencent.com/document/product/571/18736">计费概述</a></p>
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
-                     * 购买数量，范围为[1,15]，默认为1
+                     * <p>购买数量，范围为[1,15]，默认为1</p>
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 迁移服务名称，最大长度128
+                     * <p>迁移服务名称，最大长度128</p>
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * 标签信息
+                     * <p>标签信息</p>
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;

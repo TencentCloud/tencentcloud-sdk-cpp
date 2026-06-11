@@ -35,6 +35,7 @@
 #include <tencentcloud/oceanus/v20190422/model/Setats.h>
 #include <tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h>
 #include <tencentcloud/oceanus/v20190422/model/SlaveZone.h>
+#include <tencentcloud/oceanus/v20190422/model/HiveMetastoreInfo.h>
 
 
 namespace TencentCloud
@@ -247,15 +248,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>最后一次操作集群的时间</p>
-                     * @return UpdateTime <p>最后一次操作集群的时间</p>
+                     * 获取<p>最后一次操作集群的时间</p><p>默认值：-</p>
+                     * @return UpdateTime <p>最后一次操作集群的时间</p><p>默认值：-</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置<p>最后一次操作集群的时间</p>
-                     * @param _updateTime <p>最后一次操作集群的时间</p>
+                     * 设置<p>最后一次操作集群的时间</p><p>默认值：-</p>
+                     * @param _updateTime <p>最后一次操作集群的时间</p><p>默认值：-</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -440,18 +441,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取<p>集群隔离时间; 没隔离时间，则为 -</p>
+                     * 获取<p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p>
+                     * @return IsolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置<p>集群隔离时间; 没隔离时间，则为 -</p>
+                     * 设置<p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p>
+                     * @param _isolatedTime <p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1461,6 +1462,77 @@ namespace TencentCloud
                      */
                     bool MaxCuPerJobHasBeenSet() const;
 
+                    /**
+                     * 获取<p>元数据服务信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HiveMetastore <p>元数据服务信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    HiveMetastoreInfo GetHiveMetastore() const;
+
+                    /**
+                     * 设置<p>元数据服务信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hiveMetastore <p>元数据服务信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHiveMetastore(const HiveMetastoreInfo& _hiveMetastore);
+
+                    /**
+                     * 判断参数 HiveMetastore 是否已赋值
+                     * @return HiveMetastore 是否已赋值
+                     * 
+                     */
+                    bool HiveMetastoreHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupIds <p>安全组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置<p>安全组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _securityGroupIds <p>安全组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>
+                     * @return NetEniType <p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>
+                     * 
+                     */
+                    int64_t GetNetEniType() const;
+
+                    /**
+                     * 设置<p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>
+                     * @param _netEniType <p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>
+                     * 
+                     */
+                    void SetNetEniType(const int64_t& _netEniType);
+
+                    /**
+                     * 判断参数 NetEniType 是否已赋值
+                     * @return NetEniType 是否已赋值
+                     * 
+                     */
+                    bool NetEniTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1518,7 +1590,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * <p>最后一次操作集群的时间</p>
+                     * <p>最后一次操作集群的时间</p><p>默认值：-</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -1573,7 +1645,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * <p>集群隔离时间; 没隔离时间，则为 -</p>
+                     * <p>集群隔离时间; 没隔离时间，则为 -</p><p>默认值：-</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedTime;
@@ -1858,6 +1930,26 @@ namespace TencentCloud
                      */
                     int64_t m_maxCuPerJob;
                     bool m_maxCuPerJobHasBeenSet;
+
+                    /**
+                     * <p>元数据服务信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HiveMetastoreInfo m_hiveMetastore;
+                    bool m_hiveMetastoreHasBeenSet;
+
+                    /**
+                     * <p>安全组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>弹性网卡方案，0：POD弹性网卡，1：Node弹性网卡。</p><p>枚举值：</p><ul><li>0： POD弹性网卡</li><li>1： Node弹性网卡</li></ul>
+                     */
+                    int64_t m_netEniType;
+                    bool m_netEniTypeHasBeenSet;
 
                 };
             }

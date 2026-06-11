@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略唯一id
-                     * @return RuleId 策略唯一id
-                     * 
-                     */
-                    std::string GetRuleId() const;
-
-                    /**
-                     * 设置策略唯一id
-                     * @param _ruleId 策略唯一id
-                     * 
-                     */
-                    void SetRuleId(const std::string& _ruleId);
-
-                    /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
-                     * 
-                     */
-                    bool RuleIdHasBeenSet() const;
-
-                    /**
                      * 获取镜像id, 在添加白名单的时候使用
                      * @return ImageId 镜像id, 在添加白名单的时候使用
                      * 
@@ -126,13 +105,28 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取策略唯一id
+                     * @return RuleId 策略唯一id
+                     * 
+                     */
+                    std::string GetRuleId() const;
 
                     /**
-                     * 策略唯一id
+                     * 设置策略唯一id
+                     * @param _ruleId 策略唯一id
+                     * 
                      */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 镜像id, 在添加白名单的时候使用
@@ -151,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 策略唯一id
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

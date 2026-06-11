@@ -27,7 +27,8 @@ DescribeExtendedServiceAuthDetailRequest::DescribeExtendedServiceAuthDetailReque
     m_extendServiceTypeHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_partnerOrganizationNameHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string DescribeExtendedServiceAuthDetailRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_partnerOrganizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartnerOrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_partnerOrganizationName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +175,22 @@ void DescribeExtendedServiceAuthDetailRequest::SetOffset(const int64_t& _offset)
 bool DescribeExtendedServiceAuthDetailRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeExtendedServiceAuthDetailRequest::GetPartnerOrganizationName() const
+{
+    return m_partnerOrganizationName;
+}
+
+void DescribeExtendedServiceAuthDetailRequest::SetPartnerOrganizationName(const string& _partnerOrganizationName)
+{
+    m_partnerOrganizationName = _partnerOrganizationName;
+    m_partnerOrganizationNameHasBeenSet = true;
+}
+
+bool DescribeExtendedServiceAuthDetailRequest::PartnerOrganizationNameHasBeenSet() const
+{
+    return m_partnerOrganizationNameHasBeenSet;
 }
 
 

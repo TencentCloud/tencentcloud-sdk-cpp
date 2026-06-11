@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
-                     * @return AccessType <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
+                     * 获取<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>
+                     * @return AccessType <p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
-                     * @param _accessType <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
+                     * 设置<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>
+                     * @param _accessType <p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>证书ID。当前账户下SSL平台的证书ID</p>
-                     * @return CertId <p>证书ID。当前账户下SSL平台的证书ID</p>
+                     * 获取<p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>
+                     * @return CertId <p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置<p>证书ID。当前账户下SSL平台的证书ID</p>
-                     * @param _certId <p>证书ID。当前账户下SSL平台的证书ID</p>
+                     * 设置<p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>
+                     * @param _certId <p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
-                     * @return Protocol <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
+                     * 获取<p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>
+                     * @return Protocol <p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
-                     * @param _protocol <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
+                     * 设置<p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>
+                     * @param _protocol <p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -225,19 +225,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
+                     * <p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li></ul><p>默认值：DIRECT</p>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * <p>证书ID。当前账户下SSL平台的证书ID</p>
+                     * <p>证书ID。当前账户下SSL平台的证书ID，无证书无法使用https访问</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
+                     * <p>协议类型</p><p>枚举值：</p><ul><li>HTTP： 仅开启http</li><li>HTTPS： 仅开启https</li><li>HTTP_AND_HTTPS： 同时开启http和https，默认</li><li>HTTP_TO_HTTPS： http重定向成https，需配置证书</li><li>HTTPS_TO_HTTP： https重定向成http，需配置证书</li></ul><p>默认值：HTTP_AND_HTTPS</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @return DatasetName 数据集名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 获取<p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @return DatasetName <p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     std::string GetDatasetName() const;
 
                     /**
-                     * 设置数据集名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @param _datasetName 数据集名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 设置<p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @param _datasetName <p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     void SetDatasetName(const std::string& _datasetName);
@@ -68,31 +68,36 @@ namespace TencentCloud
                     bool DatasetNameHasBeenSet() const;
 
                     /**
-                     * 获取数据集类型:
-TYPE_DATASET_TEXT，文本
-TYPE_DATASET_IMAGE，图片
-TYPE_DATASET_TABLE，表格
-TYPE_DATASET_OTHER，其他
-                     * @return DatasetType 数据集类型:
-TYPE_DATASET_TEXT，文本
-TYPE_DATASET_IMAGE，图片
-TYPE_DATASET_TABLE，表格
-TYPE_DATASET_OTHER，其他
+                     * 获取<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>
+                     * @return DatasetType <p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>
                      * 
                      */
                     std::string GetDatasetType() const;
 
                     /**
-                     * 设置数据集类型:
-TYPE_DATASET_TEXT，文本
-TYPE_DATASET_IMAGE，图片
-TYPE_DATASET_TABLE，表格
-TYPE_DATASET_OTHER，其他
-                     * @param _datasetType 数据集类型:
-TYPE_DATASET_TEXT，文本
-TYPE_DATASET_IMAGE，图片
-TYPE_DATASET_TABLE，表格
-TYPE_DATASET_OTHER，其他
+                     * 设置<p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>
+                     * @param _datasetType <p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>
                      * 
                      */
                     void SetDatasetType(const std::string& _datasetType);
@@ -105,15 +110,15 @@ TYPE_DATASET_OTHER，其他
                     bool DatasetTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源cos路径
-                     * @return StorageDataPath 数据源cos路径
+                     * 获取<p>数据源cos路径</p>
+                     * @return StorageDataPath <p>数据源cos路径</p>
                      * 
                      */
                     CosPathInfo GetStorageDataPath() const;
 
                     /**
-                     * 设置数据源cos路径
-                     * @param _storageDataPath 数据源cos路径
+                     * 设置<p>数据源cos路径</p>
+                     * @param _storageDataPath <p>数据源cos路径</p>
                      * 
                      */
                     void SetStorageDataPath(const CosPathInfo& _storageDataPath);
@@ -126,15 +131,15 @@ TYPE_DATASET_OTHER，其他
                     bool StorageDataPathHasBeenSet() const;
 
                     /**
-                     * 获取数据集标签cos存储路径
-                     * @return StorageLabelPath 数据集标签cos存储路径
+                     * 获取<p>数据集标签cos存储路径</p>
+                     * @return StorageLabelPath <p>数据集标签cos存储路径</p>
                      * 
                      */
                     CosPathInfo GetStorageLabelPath() const;
 
                     /**
-                     * 设置数据集标签cos存储路径
-                     * @param _storageLabelPath 数据集标签cos存储路径
+                     * 设置<p>数据集标签cos存储路径</p>
+                     * @param _storageLabelPath <p>数据集标签cos存储路径</p>
                      * 
                      */
                     void SetStorageLabelPath(const CosPathInfo& _storageLabelPath);
@@ -147,15 +152,15 @@ TYPE_DATASET_OTHER，其他
                     bool StorageLabelPathHasBeenSet() const;
 
                     /**
-                     * 获取数据集标签
-                     * @return DatasetTags 数据集标签
+                     * 获取<p>数据集标签</p>
+                     * @return DatasetTags <p>数据集标签</p>
                      * 
                      */
                     std::vector<Tag> GetDatasetTags() const;
 
                     /**
-                     * 设置数据集标签
-                     * @param _datasetTags 数据集标签
+                     * 设置<p>数据集标签</p>
+                     * @param _datasetTags <p>数据集标签</p>
                      * 
                      */
                     void SetDatasetTags(const std::vector<Tag>& _datasetTags);
@@ -168,23 +173,15 @@ TYPE_DATASET_OTHER，其他
                     bool DatasetTagsHasBeenSet() const;
 
                     /**
-                     * 获取数据集标注状态:
-STATUS_NON_ANNOTATED，未标注
-STATUS_ANNOTATED，已标注
-                     * @return AnnotationStatus 数据集标注状态:
-STATUS_NON_ANNOTATED，未标注
-STATUS_ANNOTATED，已标注
+                     * 获取<p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>
+                     * @return AnnotationStatus <p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>
                      * 
                      */
                     std::string GetAnnotationStatus() const;
 
                     /**
-                     * 设置数据集标注状态:
-STATUS_NON_ANNOTATED，未标注
-STATUS_ANNOTATED，已标注
-                     * @param _annotationStatus 数据集标注状态:
-STATUS_NON_ANNOTATED，未标注
-STATUS_ANNOTATED，已标注
+                     * 设置<p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>
+                     * @param _annotationStatus <p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>
                      * 
                      */
                     void SetAnnotationStatus(const std::string& _annotationStatus);
@@ -197,39 +194,15 @@ STATUS_ANNOTATED，已标注
                     bool AnnotationStatusHasBeenSet() const;
 
                     /**
-                     * 获取标注类型:
-ANNOTATION_TYPE_CLASSIFICATION，图片分类
-ANNOTATION_TYPE_DETECTION，目标检测
-ANNOTATION_TYPE_SEGMENTATION，图片分割
-ANNOTATION_TYPE_TRACKING，目标跟踪
-ANNOTATION_TYPE_OCR，OCR
-ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
-                     * @return AnnotationType 标注类型:
-ANNOTATION_TYPE_CLASSIFICATION，图片分类
-ANNOTATION_TYPE_DETECTION，目标检测
-ANNOTATION_TYPE_SEGMENTATION，图片分割
-ANNOTATION_TYPE_TRACKING，目标跟踪
-ANNOTATION_TYPE_OCR，OCR
-ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
+                     * 获取<p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>
+                     * @return AnnotationType <p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>
                      * 
                      */
                     std::string GetAnnotationType() const;
 
                     /**
-                     * 设置标注类型:
-ANNOTATION_TYPE_CLASSIFICATION，图片分类
-ANNOTATION_TYPE_DETECTION，目标检测
-ANNOTATION_TYPE_SEGMENTATION，图片分割
-ANNOTATION_TYPE_TRACKING，目标跟踪
-ANNOTATION_TYPE_OCR，OCR
-ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
-                     * @param _annotationType 标注类型:
-ANNOTATION_TYPE_CLASSIFICATION，图片分类
-ANNOTATION_TYPE_DETECTION，目标检测
-ANNOTATION_TYPE_SEGMENTATION，图片分割
-ANNOTATION_TYPE_TRACKING，目标跟踪
-ANNOTATION_TYPE_OCR，OCR
-ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
+                     * 设置<p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>
+                     * @param _annotationType <p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>
                      * 
                      */
                     void SetAnnotationType(const std::string& _annotationType);
@@ -242,47 +215,15 @@ ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                     bool AnnotationTypeHasBeenSet() const;
 
                     /**
-                     * 获取标注格式:
-ANNOTATION_FORMAT_TI，TI平台格式
-ANNOTATION_FORMAT_PASCAL，Pascal Voc
-ANNOTATION_FORMAT_COCO，COCO
-ANNOTATION_FORMAT_FILE，文件目录结构
-ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
-ANNOTATION_FORMAT_TXT，文本类型TXT格式
-ANNOTATION_FORMAT_CSV，文本类型CSV格式
-ANNOTATION_FORMAT_JSON，文本类型JSON格式
-                     * @return AnnotationFormat 标注格式:
-ANNOTATION_FORMAT_TI，TI平台格式
-ANNOTATION_FORMAT_PASCAL，Pascal Voc
-ANNOTATION_FORMAT_COCO，COCO
-ANNOTATION_FORMAT_FILE，文件目录结构
-ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
-ANNOTATION_FORMAT_TXT，文本类型TXT格式
-ANNOTATION_FORMAT_CSV，文本类型CSV格式
-ANNOTATION_FORMAT_JSON，文本类型JSON格式
+                     * 获取<p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>
+                     * @return AnnotationFormat <p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>
                      * 
                      */
                     std::string GetAnnotationFormat() const;
 
                     /**
-                     * 设置标注格式:
-ANNOTATION_FORMAT_TI，TI平台格式
-ANNOTATION_FORMAT_PASCAL，Pascal Voc
-ANNOTATION_FORMAT_COCO，COCO
-ANNOTATION_FORMAT_FILE，文件目录结构
-ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
-ANNOTATION_FORMAT_TXT，文本类型TXT格式
-ANNOTATION_FORMAT_CSV，文本类型CSV格式
-ANNOTATION_FORMAT_JSON，文本类型JSON格式
-                     * @param _annotationFormat 标注格式:
-ANNOTATION_FORMAT_TI，TI平台格式
-ANNOTATION_FORMAT_PASCAL，Pascal Voc
-ANNOTATION_FORMAT_COCO，COCO
-ANNOTATION_FORMAT_FILE，文件目录结构
-ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
-ANNOTATION_FORMAT_TXT，文本类型TXT格式
-ANNOTATION_FORMAT_CSV，文本类型CSV格式
-ANNOTATION_FORMAT_JSON，文本类型JSON格式
+                     * 设置<p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>
+                     * @param _annotationFormat <p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>
                      * 
                      */
                     void SetAnnotationFormat(const std::string& _annotationFormat);
@@ -295,15 +236,15 @@ ANNOTATION_FORMAT_JSON，文本类型JSON格式
                     bool AnnotationFormatHasBeenSet() const;
 
                     /**
-                     * 获取表头信息
-                     * @return SchemaInfos 表头信息
+                     * 获取<p>表头信息</p>
+                     * @return SchemaInfos <p>表头信息</p>
                      * 
                      */
                     std::vector<SchemaInfo> GetSchemaInfos() const;
 
                     /**
-                     * 设置表头信息
-                     * @param _schemaInfos 表头信息
+                     * 设置<p>表头信息</p>
+                     * @param _schemaInfos <p>表头信息</p>
                      * 
                      */
                     void SetSchemaInfos(const std::vector<SchemaInfo>& _schemaInfos);
@@ -316,15 +257,15 @@ ANNOTATION_FORMAT_JSON，文本类型JSON格式
                     bool SchemaInfosHasBeenSet() const;
 
                     /**
-                     * 获取数据是否存在表头
-                     * @return IsSchemaExisted 数据是否存在表头
+                     * 获取<p>数据是否存在表头</p>
+                     * @return IsSchemaExisted <p>数据是否存在表头</p>
                      * 
                      */
                     bool GetIsSchemaExisted() const;
 
                     /**
-                     * 设置数据是否存在表头
-                     * @param _isSchemaExisted 数据是否存在表头
+                     * 设置<p>数据是否存在表头</p>
+                     * @param _isSchemaExisted <p>数据是否存在表头</p>
                      * 
                      */
                     void SetIsSchemaExisted(const bool& _isSchemaExisted);
@@ -337,23 +278,15 @@ ANNOTATION_FORMAT_JSON，文本类型JSON格式
                     bool IsSchemaExistedHasBeenSet() const;
 
                     /**
-                     * 获取导入文件粒度
-TYPE_TEXT_LINE，按行
-TYPE_TEXT_FILE，按文件
-                     * @return ContentType 导入文件粒度
-TYPE_TEXT_LINE，按行
-TYPE_TEXT_FILE，按文件
+                     * 获取<p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>
+                     * @return ContentType <p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置导入文件粒度
-TYPE_TEXT_LINE，按行
-TYPE_TEXT_FILE，按文件
-                     * @param _contentType 导入文件粒度
-TYPE_TEXT_LINE，按行
-TYPE_TEXT_FILE，按文件
+                     * 设置<p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>
+                     * @param _contentType <p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -366,15 +299,15 @@ TYPE_TEXT_FILE，按文件
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
-                     * @return DatasetScene 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * 获取<p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>
+                     * @return DatasetScene <p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>
                      * 
                      */
                     std::string GetDatasetScene() const;
 
                     /**
-                     * 设置数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
-                     * @param _datasetScene 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * 设置<p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>
+                     * @param _datasetScene <p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>
                      * 
                      */
                     void SetDatasetScene(const std::string& _datasetScene);
@@ -387,15 +320,15 @@ TYPE_TEXT_FILE，按文件
                     bool DatasetSceneHasBeenSet() const;
 
                     /**
-                     * 获取数据集标签。
-                     * @return SceneTags 数据集标签。
+                     * 获取<p>数据集标签。</p>
+                     * @return SceneTags <p>数据集标签。</p>
                      * 
                      */
                     std::vector<std::string> GetSceneTags() const;
 
                     /**
-                     * 设置数据集标签。
-                     * @param _sceneTags 数据集标签。
+                     * 设置<p>数据集标签。</p>
+                     * @param _sceneTags <p>数据集标签。</p>
                      * 
                      */
                     void SetSceneTags(const std::vector<std::string>& _sceneTags);
@@ -408,15 +341,15 @@ TYPE_TEXT_FILE，按文件
                     bool SceneTagsHasBeenSet() const;
 
                     /**
-                     * 获取数据集CFS配置。仅支持LLM场景
-                     * @return CFSConfig 数据集CFS配置。仅支持LLM场景
+                     * 获取<p>数据集CFS配置。仅支持LLM场景</p>
+                     * @return CFSConfig <p>数据集CFS配置。仅支持LLM场景</p>
                      * 
                      */
                     CFSConfig GetCFSConfig() const;
 
                     /**
-                     * 设置数据集CFS配置。仅支持LLM场景
-                     * @param _cFSConfig 数据集CFS配置。仅支持LLM场景
+                     * 设置<p>数据集CFS配置。仅支持LLM场景</p>
+                     * @param _cFSConfig <p>数据集CFS配置。仅支持LLM场景</p>
                      * 
                      */
                     void SetCFSConfig(const CFSConfig& _cFSConfig);
@@ -431,107 +364,91 @@ TYPE_TEXT_FILE，按文件
                 private:
 
                     /**
-                     * 数据集名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * <p>数据集名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      */
                     std::string m_datasetName;
                     bool m_datasetNameHasBeenSet;
 
                     /**
-                     * 数据集类型:
-TYPE_DATASET_TEXT，文本
-TYPE_DATASET_IMAGE，图片
-TYPE_DATASET_TABLE，表格
-TYPE_DATASET_OTHER，其他
+                     * <p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>数据集类型</p><p>枚举值：</p><ul><li>TYPE_DATASET_IMAGE： 图片</li><li>TYPE_DATASET_LLM： 大模型</li><li>TYPE_DATASET_TABLE： 表格</li><li>TYPE_DATASET_OTHER： 其他</li></ul>
                      */
                     std::string m_datasetType;
                     bool m_datasetTypeHasBeenSet;
 
                     /**
-                     * 数据源cos路径
+                     * <p>数据源cos路径</p>
                      */
                     CosPathInfo m_storageDataPath;
                     bool m_storageDataPathHasBeenSet;
 
                     /**
-                     * 数据集标签cos存储路径
+                     * <p>数据集标签cos存储路径</p>
                      */
                     CosPathInfo m_storageLabelPath;
                     bool m_storageLabelPathHasBeenSet;
 
                     /**
-                     * 数据集标签
+                     * <p>数据集标签</p>
                      */
                     std::vector<Tag> m_datasetTags;
                     bool m_datasetTagsHasBeenSet;
 
                     /**
-                     * 数据集标注状态:
-STATUS_NON_ANNOTATED，未标注
-STATUS_ANNOTATED，已标注
+                     * <p>数据集标注状态</p><p>枚举值：</p><ul><li>STATUS_NON_ANNOTATED： 未标注</li><li>STATUS_ANNOTATED： 已标注</li></ul>
                      */
                     std::string m_annotationStatus;
                     bool m_annotationStatusHasBeenSet;
 
                     /**
-                     * 标注类型:
-ANNOTATION_TYPE_CLASSIFICATION，图片分类
-ANNOTATION_TYPE_DETECTION，目标检测
-ANNOTATION_TYPE_SEGMENTATION，图片分割
-ANNOTATION_TYPE_TRACKING，目标跟踪
-ANNOTATION_TYPE_OCR，OCR
-ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
+                     * <p>标注类型</p><p>枚举值：</p><ul><li>ANNOTATION_TYPE_CLASSIFICATION： 图片分类</li><li>ANNOTATION_TYPE_DETECTION： 目标检测</li><li>ANNOTATION_TYPE_SEGMENTATION： 图片分割</li><li>ANNOTATION_TYPE_TRACKING： 目标跟踪</li><li>ANNOTATION_TYPE_OCR： OCR</li></ul>
                      */
                     std::string m_annotationType;
                     bool m_annotationTypeHasBeenSet;
 
                     /**
-                     * 标注格式:
-ANNOTATION_FORMAT_TI，TI平台格式
-ANNOTATION_FORMAT_PASCAL，Pascal Voc
-ANNOTATION_FORMAT_COCO，COCO
-ANNOTATION_FORMAT_FILE，文件目录结构
-ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
-ANNOTATION_FORMAT_TXT，文本类型TXT格式
-ANNOTATION_FORMAT_CSV，文本类型CSV格式
-ANNOTATION_FORMAT_JSON，文本类型JSON格式
+                     * <p>标注格式</p><p>枚举值：</p><ul><li>ANNOTATION_FORMAT_TI： TI-ONE平台格式</li><li>ANNOTATION_FORMAT_PASCAL： Pascal Voc格式</li><li>ANNOTATION_FORMAT_COCO： COCO格式</li><li>ANNOTATION_FORMAT_FILE： 文件目录结构</li></ul>
                      */
                     std::string m_annotationFormat;
                     bool m_annotationFormatHasBeenSet;
 
                     /**
-                     * 表头信息
+                     * <p>表头信息</p>
                      */
                     std::vector<SchemaInfo> m_schemaInfos;
                     bool m_schemaInfosHasBeenSet;
 
                     /**
-                     * 数据是否存在表头
+                     * <p>数据是否存在表头</p>
                      */
                     bool m_isSchemaExisted;
                     bool m_isSchemaExistedHasBeenSet;
 
                     /**
-                     * 导入文件粒度
-TYPE_TEXT_LINE，按行
-TYPE_TEXT_FILE，按文件
+                     * <p>导入文件粒度</p><p>枚举值：</p><ul><li>TYPE_TEXT_LINE： 按行</li><li>TYPE_TEXT_FILE： 按文件</li></ul>
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * <p>数据集建模一级类别</p><p>枚举值：</p><ul><li>LLM： 大模型建模</li><li>CV： 传统CV建模</li><li>STRUCTURE： 大数据建模</li><li>OTHER： 其它</li></ul>
                      */
                     std::string m_datasetScene;
                     bool m_datasetSceneHasBeenSet;
 
                     /**
-                     * 数据集标签。
+                     * <p>数据集标签。</p>
                      */
                     std::vector<std::string> m_sceneTags;
                     bool m_sceneTagsHasBeenSet;
 
                     /**
-                     * 数据集CFS配置。仅支持LLM场景
+                     * <p>数据集CFS配置。仅支持LLM场景</p>
                      */
                     CFSConfig m_cFSConfig;
                     bool m_cFSConfigHasBeenSet;

@@ -37,7 +37,8 @@ DescribeAssetImageScanSettingResponse::DescribeAssetImageScanSettingResponse() :
     m_scanEndTimeHasBeenSet(false),
     m_excludeImagesHasBeenSet(false),
     m_lastScanTimeHasBeenSet(false),
-    m_scanResultHasBeenSet(false)
+    m_scanResultHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,19 @@ CoreInternalOutcome DescribeAssetImageScanSettingResponse::Deserialize(const str
         m_scanResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterIDs") && !rsp["ClusterIDs"].IsNull())
+    {
+        if (!rsp["ClusterIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ClusterIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_clusterIDs.push_back((*itr).GetString());
+        }
+        m_clusterIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +365,19 @@ string DescribeAssetImageScanSettingResponse::ToJsonString() const
         string key = "ScanResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scanResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -503,6 +530,16 @@ string DescribeAssetImageScanSettingResponse::GetScanResult() const
 bool DescribeAssetImageScanSettingResponse::ScanResultHasBeenSet() const
 {
     return m_scanResultHasBeenSet;
+}
+
+vector<string> DescribeAssetImageScanSettingResponse::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+bool DescribeAssetImageScanSettingResponse::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
 }
 
 

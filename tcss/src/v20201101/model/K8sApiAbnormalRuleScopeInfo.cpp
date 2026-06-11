@@ -21,12 +21,12 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 K8sApiAbnormalRuleScopeInfo::K8sApiAbnormalRuleScopeInfo() :
-    m_scopeHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_riskLevelHasBeenSet(false),
-    m_statusHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_isDeleteHasBeenSet(false),
-    m_ruleTypeZHHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_ruleTypeZHHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -34,16 +34,6 @@ CoreInternalOutcome K8sApiAbnormalRuleScopeInfo::Deserialize(const rapidjson::Va
 {
     string requestId = "";
 
-
-    if (value.HasMember("Scope") && !value["Scope"].IsNull())
-    {
-        if (!value["Scope"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.Scope` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_scope = string(value["Scope"].GetString());
-        m_scopeHasBeenSet = true;
-    }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
     {
@@ -55,24 +45,14 @@ CoreInternalOutcome K8sApiAbnormalRuleScopeInfo::Deserialize(const rapidjson::Va
         m_actionHasBeenSet = true;
     }
 
-    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
     {
-        if (!value["RiskLevel"].IsString())
+        if (!value["Scope"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.Scope` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_riskLevel = string(value["RiskLevel"].GetString());
-        m_riskLevelHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = value["Status"].GetBool();
-        m_statusHasBeenSet = true;
+        m_scope = string(value["Scope"].GetString());
+        m_scopeHasBeenSet = true;
     }
 
     if (value.HasMember("IsDelete") && !value["IsDelete"].IsNull())
@@ -85,6 +65,16 @@ CoreInternalOutcome K8sApiAbnormalRuleScopeInfo::Deserialize(const rapidjson::Va
         m_isDeleteHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = string(value["RiskLevel"].GetString());
+        m_riskLevelHasBeenSet = true;
+    }
+
     if (value.HasMember("RuleTypeZH") && !value["RuleTypeZH"].IsNull())
     {
         if (!value["RuleTypeZH"].IsString())
@@ -95,20 +85,22 @@ CoreInternalOutcome K8sApiAbnormalRuleScopeInfo::Deserialize(const rapidjson::Va
         m_ruleTypeZHHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalRuleScopeInfo.Status` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetBool();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void K8sApiAbnormalRuleScopeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_scopeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Scope";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_actionHasBeenSet)
     {
@@ -118,20 +110,12 @@ void K8sApiAbnormalRuleScopeInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_riskLevelHasBeenSet)
+    if (m_scopeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RiskLevel";
+        string key = "Scope";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isDeleteHasBeenSet)
@@ -142,6 +126,14 @@ void K8sApiAbnormalRuleScopeInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         value.AddMember(iKey, m_isDelete, allocator);
     }
 
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ruleTypeZHHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -150,24 +142,16 @@ void K8sApiAbnormalRuleScopeInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         value.AddMember(iKey, rapidjson::Value(m_ruleTypeZH.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
 }
 
-
-string K8sApiAbnormalRuleScopeInfo::GetScope() const
-{
-    return m_scope;
-}
-
-void K8sApiAbnormalRuleScopeInfo::SetScope(const string& _scope)
-{
-    m_scope = _scope;
-    m_scopeHasBeenSet = true;
-}
-
-bool K8sApiAbnormalRuleScopeInfo::ScopeHasBeenSet() const
-{
-    return m_scopeHasBeenSet;
-}
 
 string K8sApiAbnormalRuleScopeInfo::GetAction() const
 {
@@ -185,36 +169,20 @@ bool K8sApiAbnormalRuleScopeInfo::ActionHasBeenSet() const
     return m_actionHasBeenSet;
 }
 
-string K8sApiAbnormalRuleScopeInfo::GetRiskLevel() const
+string K8sApiAbnormalRuleScopeInfo::GetScope() const
 {
-    return m_riskLevel;
+    return m_scope;
 }
 
-void K8sApiAbnormalRuleScopeInfo::SetRiskLevel(const string& _riskLevel)
+void K8sApiAbnormalRuleScopeInfo::SetScope(const string& _scope)
 {
-    m_riskLevel = _riskLevel;
-    m_riskLevelHasBeenSet = true;
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
 }
 
-bool K8sApiAbnormalRuleScopeInfo::RiskLevelHasBeenSet() const
+bool K8sApiAbnormalRuleScopeInfo::ScopeHasBeenSet() const
 {
-    return m_riskLevelHasBeenSet;
-}
-
-bool K8sApiAbnormalRuleScopeInfo::GetStatus() const
-{
-    return m_status;
-}
-
-void K8sApiAbnormalRuleScopeInfo::SetStatus(const bool& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool K8sApiAbnormalRuleScopeInfo::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
+    return m_scopeHasBeenSet;
 }
 
 bool K8sApiAbnormalRuleScopeInfo::GetIsDelete() const
@@ -233,6 +201,22 @@ bool K8sApiAbnormalRuleScopeInfo::IsDeleteHasBeenSet() const
     return m_isDeleteHasBeenSet;
 }
 
+string K8sApiAbnormalRuleScopeInfo::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void K8sApiAbnormalRuleScopeInfo::SetRiskLevel(const string& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleScopeInfo::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
+}
+
 string K8sApiAbnormalRuleScopeInfo::GetRuleTypeZH() const
 {
     return m_ruleTypeZH;
@@ -247,5 +231,21 @@ void K8sApiAbnormalRuleScopeInfo::SetRuleTypeZH(const string& _ruleTypeZH)
 bool K8sApiAbnormalRuleScopeInfo::RuleTypeZHHasBeenSet() const
 {
     return m_ruleTypeZHHasBeenSet;
+}
+
+bool K8sApiAbnormalRuleScopeInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void K8sApiAbnormalRuleScopeInfo::SetStatus(const bool& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool K8sApiAbnormalRuleScopeInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

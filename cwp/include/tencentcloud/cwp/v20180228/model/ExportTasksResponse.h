@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况
-                     * @return Status PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况
+                     * 获取<p>PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况</p>
+                     * @return Status <p>PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取下载链接
-                     * @return DownloadUrl 下载链接
+                     * 获取<p>下载链接</p>
+                     * @return DownloadUrl <p>下载链接</p>
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool DownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件名称</p>
+                     * @return FileName <p>文件名称</p>
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况
+                     * <p>PENDING：正在生成下载链接，FINISHED：下载链接已生成，ERROR：网络异常等异常情况</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 下载链接
+                     * <p>下载链接</p>
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * <p>文件名称</p>
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
 
                 };
             }

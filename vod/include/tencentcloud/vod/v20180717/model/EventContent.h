@@ -57,6 +57,9 @@
 #include <tencentcloud/vod/v20180717/model/ExtractBlindWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/SceneAigcImageTask.h>
 #include <tencentcloud/vod/v20180717/model/ProcessImageAsyncTask.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementTask.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceTask.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncTask.h>
 
 
 namespace TencentCloud
@@ -80,15 +83,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。
-                     * @return EventHandle 事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。
+                     * 获取<p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>
+                     * @return EventHandle <p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>
                      * 
                      */
                     std::string GetEventHandle() const;
 
                     /**
-                     * 设置事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。
-                     * @param _eventHandle 事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。
+                     * 设置<p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>
+                     * @param _eventHandle <p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>
                      * 
                      */
                     void SetEventHandle(const std::string& _eventHandle);
@@ -101,127 +104,15 @@ namespace TencentCloud
                     bool EventHandleHasBeenSet() const;
 
                     /**
-                     * 获取<b>支持事件类型：</b>
-<li>NewFileUpload：视频上传完成；</li>
-<li>ProcedureStateChanged：任务流状态变更；</li>
-<li>FileDeleted：视频删除完成；</li>
-<li>RestoreMediaComplete：视频取回完成；</li>
-<li>PullComplete：视频转拉完成；</li>
-<li>EditMediaComplete：视频编辑完成；</li>
-<li>SplitMediaComplete：视频拆分完成；</li>
-<li>ComposeMediaComplete：制作媒体文件完成；</li>
-<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
-<li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
-<li>ReviewAudioVideoComplete：音视频审核完成；</li>
-<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
-<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
-<li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成；</li>
-<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
-<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
-<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>
-<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>
-<b>兼容 2017 版的事件类型：</b>
-<li>TranscodeComplete：视频转码完成；</li>
-<li>ConcatComplete：视频拼接完成；</li>
-<li>ClipComplete：视频剪辑完成；</li>
-<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>
-<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
-                     * @return EventType <b>支持事件类型：</b>
-<li>NewFileUpload：视频上传完成；</li>
-<li>ProcedureStateChanged：任务流状态变更；</li>
-<li>FileDeleted：视频删除完成；</li>
-<li>RestoreMediaComplete：视频取回完成；</li>
-<li>PullComplete：视频转拉完成；</li>
-<li>EditMediaComplete：视频编辑完成；</li>
-<li>SplitMediaComplete：视频拆分完成；</li>
-<li>ComposeMediaComplete：制作媒体文件完成；</li>
-<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
-<li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
-<li>ReviewAudioVideoComplete：音视频审核完成；</li>
-<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
-<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
-<li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成；</li>
-<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
-<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
-<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>
-<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>
-<b>兼容 2017 版的事件类型：</b>
-<li>TranscodeComplete：视频转码完成；</li>
-<li>ConcatComplete：视频拼接完成；</li>
-<li>ClipComplete：视频剪辑完成；</li>
-<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>
-<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
+                     * 获取<p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
+                     * @return EventType <p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
                      * 
                      */
                     std::string GetEventType() const;
 
                     /**
-                     * 设置<b>支持事件类型：</b>
-<li>NewFileUpload：视频上传完成；</li>
-<li>ProcedureStateChanged：任务流状态变更；</li>
-<li>FileDeleted：视频删除完成；</li>
-<li>RestoreMediaComplete：视频取回完成；</li>
-<li>PullComplete：视频转拉完成；</li>
-<li>EditMediaComplete：视频编辑完成；</li>
-<li>SplitMediaComplete：视频拆分完成；</li>
-<li>ComposeMediaComplete：制作媒体文件完成；</li>
-<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
-<li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
-<li>ReviewAudioVideoComplete：音视频审核完成；</li>
-<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
-<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
-<li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成；</li>
-<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
-<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
-<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>
-<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>
-<b>兼容 2017 版的事件类型：</b>
-<li>TranscodeComplete：视频转码完成；</li>
-<li>ConcatComplete：视频拼接完成；</li>
-<li>ClipComplete：视频剪辑完成；</li>
-<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>
-<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
-                     * @param _eventType <b>支持事件类型：</b>
-<li>NewFileUpload：视频上传完成；</li>
-<li>ProcedureStateChanged：任务流状态变更；</li>
-<li>FileDeleted：视频删除完成；</li>
-<li>RestoreMediaComplete：视频取回完成；</li>
-<li>PullComplete：视频转拉完成；</li>
-<li>EditMediaComplete：视频编辑完成；</li>
-<li>SplitMediaComplete：视频拆分完成；</li>
-<li>ComposeMediaComplete：制作媒体文件完成；</li>
-<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
-<li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
-<li>ReviewAudioVideoComplete：音视频审核完成；</li>
-<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
-<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
-<li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成；</li>
-<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
-<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
-<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>
-<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>
-<b>兼容 2017 版的事件类型：</b>
-<li>TranscodeComplete：视频转码完成；</li>
-<li>ConcatComplete：视频拼接完成；</li>
-<li>ClipComplete：视频剪辑完成；</li>
-<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>
-<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
+                     * 设置<p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
+                     * @param _eventType <p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
                      * 
                      */
                     void SetEventType(const std::string& _eventType);
@@ -234,18 +125,18 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取视频上传完成事件，当事件类型为 NewFileUpload 时有效。
+                     * 获取<p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileUploadEvent 视频上传完成事件，当事件类型为 NewFileUpload 时有效。
+                     * @return FileUploadEvent <p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileUploadTask GetFileUploadEvent() const;
 
                     /**
-                     * 设置视频上传完成事件，当事件类型为 NewFileUpload 时有效。
+                     * 设置<p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileUploadEvent 视频上传完成事件，当事件类型为 NewFileUpload 时有效。
+                     * @param _fileUploadEvent <p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,18 +150,18 @@ namespace TencentCloud
                     bool FileUploadEventHasBeenSet() const;
 
                     /**
-                     * 获取任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。
+                     * 获取<p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProcedureStateChangeEvent 任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。
+                     * @return ProcedureStateChangeEvent <p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcedureTask GetProcedureStateChangeEvent() const;
 
                     /**
-                     * 设置任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。
+                     * 设置<p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _procedureStateChangeEvent 任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。
+                     * @param _procedureStateChangeEvent <p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,18 +175,18 @@ namespace TencentCloud
                     bool ProcedureStateChangeEventHasBeenSet() const;
 
                     /**
-                     * 获取文件删除事件，当事件类型为 FileDeleted 时有效。
+                     * 获取<p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileDeleteEvent 文件删除事件，当事件类型为 FileDeleted 时有效。
+                     * @return FileDeleteEvent <p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileDeleteTask GetFileDeleteEvent() const;
 
                     /**
-                     * 设置文件删除事件，当事件类型为 FileDeleted 时有效。
+                     * 设置<p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileDeleteEvent 文件删除事件，当事件类型为 FileDeleted 时有效。
+                     * @param _fileDeleteEvent <p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -309,18 +200,18 @@ namespace TencentCloud
                     bool FileDeleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频转拉完成事件，当事件类型为 PullComplete 时有效。
+                     * 获取<p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PullCompleteEvent 视频转拉完成事件，当事件类型为 PullComplete 时有效。
+                     * @return PullCompleteEvent <p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PullUploadTask GetPullCompleteEvent() const;
 
                     /**
-                     * 设置视频转拉完成事件，当事件类型为 PullComplete 时有效。
+                     * 设置<p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pullCompleteEvent 视频转拉完成事件，当事件类型为 PullComplete 时有效。
+                     * @param _pullCompleteEvent <p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -334,18 +225,18 @@ namespace TencentCloud
                     bool PullCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。
+                     * 获取<p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EditMediaCompleteEvent 视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。
+                     * @return EditMediaCompleteEvent <p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EditMediaTask GetEditMediaCompleteEvent() const;
 
                     /**
-                     * 设置视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。
+                     * 设置<p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _editMediaCompleteEvent 视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。
+                     * @param _editMediaCompleteEvent <p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,18 +250,18 @@ namespace TencentCloud
                     bool EditMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。
+                     * 获取<p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SplitMediaCompleteEvent 视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。
+                     * @return SplitMediaCompleteEvent <p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SplitMediaTask GetSplitMediaCompleteEvent() const;
 
                     /**
-                     * 设置视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。
+                     * 设置<p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _splitMediaCompleteEvent 视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。
+                     * @param _splitMediaCompleteEvent <p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -384,18 +275,18 @@ namespace TencentCloud
                     bool SplitMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * 获取<p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComposeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * @return ComposeMediaCompleteEvent <p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComposeMediaTask GetComposeMediaCompleteEvent() const;
 
                     /**
-                     * 设置制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * 设置<p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _composeMediaCompleteEvent 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * @param _composeMediaCompleteEvent <p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -409,18 +300,18 @@ namespace TencentCloud
                     bool ComposeMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
+                     * 获取<p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClipCompleteEvent 视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
+                     * @return ClipCompleteEvent <p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClipTask2017 GetClipCompleteEvent() const;
 
                     /**
-                     * 设置视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
+                     * 设置<p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clipCompleteEvent 视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
+                     * @param _clipCompleteEvent <p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -434,18 +325,18 @@ namespace TencentCloud
                     bool ClipCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * 获取<p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranscodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * @return TranscodeCompleteEvent <p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TranscodeTask2017 GetTranscodeCompleteEvent() const;
 
                     /**
-                     * 设置视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * 设置<p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transcodeCompleteEvent 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * @param _transcodeCompleteEvent <p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -459,18 +350,18 @@ namespace TencentCloud
                     bool TranscodeCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
+                     * 获取<p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateImageSpriteCompleteEvent 视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
+                     * @return CreateImageSpriteCompleteEvent <p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreateImageSpriteTask2017 GetCreateImageSpriteCompleteEvent() const;
 
                     /**
-                     * 设置视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
+                     * 设置<p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createImageSpriteCompleteEvent 视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
+                     * @param _createImageSpriteCompleteEvent <p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -484,18 +375,18 @@ namespace TencentCloud
                     bool CreateImageSpriteCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+                     * 获取<p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConcatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+                     * @return ConcatCompleteEvent <p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConcatTask2017 GetConcatCompleteEvent() const;
 
                     /**
-                     * 设置视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+                     * 设置<p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _concatCompleteEvent 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+                     * @param _concatCompleteEvent <p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -509,18 +400,18 @@ namespace TencentCloud
                     bool ConcatCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
+                     * 获取<p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotByTimeOffsetCompleteEvent 视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
+                     * @return SnapshotByTimeOffsetCompleteEvent <p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SnapshotByTimeOffsetTask2017 GetSnapshotByTimeOffsetCompleteEvent() const;
 
                     /**
-                     * 设置视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
+                     * 设置<p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotByTimeOffsetCompleteEvent 视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
+                     * @param _snapshotByTimeOffsetCompleteEvent <p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -534,18 +425,18 @@ namespace TencentCloud
                     bool SnapshotByTimeOffsetCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * 获取<p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * @return WechatPublishCompleteEvent <p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WechatPublishTask GetWechatPublishCompleteEvent() const;
 
                     /**
-                     * 设置微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * 设置<p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wechatPublishCompleteEvent 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * @param _wechatPublishCompleteEvent <p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -559,18 +450,18 @@ namespace TencentCloud
                     bool WechatPublishCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+                     * 获取<p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatMiniProgramPublishCompleteEvent 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+                     * @return WechatMiniProgramPublishCompleteEvent <p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WechatMiniProgramPublishTask GetWechatMiniProgramPublishCompleteEvent() const;
 
                     /**
-                     * 设置微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+                     * 设置<p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wechatMiniProgramPublishCompleteEvent 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+                     * @param _wechatMiniProgramPublishCompleteEvent <p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -584,18 +475,18 @@ namespace TencentCloud
                     bool WechatMiniProgramPublishCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。
+                     * 获取<p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoveWatermarkCompleteEvent 智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。
+                     * @return RemoveWatermarkCompleteEvent <p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RemoveWatermarkTask GetRemoveWatermarkCompleteEvent() const;
 
                     /**
-                     * 设置智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。
+                     * 设置<p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _removeWatermarkCompleteEvent 智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。
+                     * @param _removeWatermarkCompleteEvent <p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -609,18 +500,18 @@ namespace TencentCloud
                     bool RemoveWatermarkCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。
+                     * 获取<p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RestoreMediaCompleteEvent 视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。
+                     * @return RestoreMediaCompleteEvent <p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RestoreMediaTask GetRestoreMediaCompleteEvent() const;
 
                     /**
-                     * 设置视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。
+                     * 设置<p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _restoreMediaCompleteEvent 视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。
+                     * @param _restoreMediaCompleteEvent <p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -634,18 +525,18 @@ namespace TencentCloud
                     bool RestoreMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。
+                     * 获取<p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RebuildMediaCompleteEvent 音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。
+                     * @return RebuildMediaCompleteEvent <p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RebuildMediaTask GetRebuildMediaCompleteEvent() const;
 
                     /**
-                     * 设置音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。
+                     * 设置<p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rebuildMediaCompleteEvent 音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。
+                     * @param _rebuildMediaCompleteEvent <p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -659,18 +550,18 @@ namespace TencentCloud
                     bool RebuildMediaCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。
+                     * 获取<p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtractTraceWatermarkCompleteEvent 溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。
+                     * @return ExtractTraceWatermarkCompleteEvent <p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractTraceWatermarkTask GetExtractTraceWatermarkCompleteEvent() const;
 
                     /**
-                     * 设置溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。
+                     * 设置<p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extractTraceWatermarkCompleteEvent 溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。
+                     * @param _extractTraceWatermarkCompleteEvent <p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -684,18 +575,18 @@ namespace TencentCloud
                     bool ExtractTraceWatermarkCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+                     * 获取<p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtractCopyRightWatermarkCompleteEvent 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+                     * @return ExtractCopyRightWatermarkCompleteEvent <p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractCopyRightWatermarkTask GetExtractCopyRightWatermarkCompleteEvent() const;
 
                     /**
-                     * 设置版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+                     * 设置<p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extractCopyRightWatermarkCompleteEvent 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+                     * @param _extractCopyRightWatermarkCompleteEvent <p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -709,18 +600,18 @@ namespace TencentCloud
                     bool ExtractCopyRightWatermarkCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
+                     * 获取<p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewAudioVideoCompleteEvent 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
+                     * @return ReviewAudioVideoCompleteEvent <p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReviewAudioVideoTask GetReviewAudioVideoCompleteEvent() const;
 
                     /**
-                     * 设置音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
+                     * 设置<p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reviewAudioVideoCompleteEvent 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
+                     * @param _reviewAudioVideoCompleteEvent <p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -734,18 +625,18 @@ namespace TencentCloud
                     bool ReviewAudioVideoCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取该字段已无效。
+                     * 获取<p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReduceMediaBitrateCompleteEvent 该字段已无效。
+                     * @return ReduceMediaBitrateCompleteEvent <p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReduceMediaBitrateTask GetReduceMediaBitrateCompleteEvent() const;
 
                     /**
-                     * 设置该字段已无效。
+                     * 设置<p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reduceMediaBitrateCompleteEvent 该字段已无效。
+                     * @param _reduceMediaBitrateCompleteEvent <p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -759,18 +650,18 @@ namespace TencentCloud
                     bool ReduceMediaBitrateCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。
+                     * 获取<p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DescribeFileAttributesCompleteEvent 获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。
+                     * @return DescribeFileAttributesCompleteEvent <p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeFileAttributesTask GetDescribeFileAttributesCompleteEvent() const;
 
                     /**
-                     * 设置获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。
+                     * 设置<p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _describeFileAttributesCompleteEvent 获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。
+                     * @param _describeFileAttributesCompleteEvent <p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -784,18 +675,18 @@ namespace TencentCloud
                     bool DescribeFileAttributesCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。
+                     * 获取<p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityInspectCompleteEvent 音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。
+                     * @return QualityInspectCompleteEvent <p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityInspectTask GetQualityInspectCompleteEvent() const;
 
                     /**
-                     * 设置音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。
+                     * 设置<p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityInspectCompleteEvent 音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。
+                     * @param _qualityInspectCompleteEvent <p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -809,18 +700,18 @@ namespace TencentCloud
                     bool QualityInspectCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+                     * 获取<p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityEnhanceCompleteEvent 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+                     * @return QualityEnhanceCompleteEvent <p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityEnhanceTask GetQualityEnhanceCompleteEvent() const;
 
                     /**
-                     * 设置音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+                     * 设置<p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityEnhanceCompleteEvent 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+                     * @param _qualityEnhanceCompleteEvent <p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -834,18 +725,18 @@ namespace TencentCloud
                     bool QualityEnhanceCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+                     * 获取<p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaCastStatusChangedEvent 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+                     * @return MediaCastStatusChangedEvent <p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaCastEvent GetMediaCastStatusChangedEvent() const;
 
                     /**
-                     * 设置媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+                     * 设置<p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mediaCastStatusChangedEvent 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+                     * @param _mediaCastStatusChangedEvent <p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -859,18 +750,18 @@ namespace TencentCloud
                     bool MediaCastStatusChangedEventHasBeenSet() const;
 
                     /**
-                     * 获取剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+                     * 获取<p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PersistenceCompleteEvent 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+                     * @return PersistenceCompleteEvent <p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PersistenceCompleteTask GetPersistenceCompleteEvent() const;
 
                     /**
-                     * 设置剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+                     * 设置<p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _persistenceCompleteEvent 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+                     * @param _persistenceCompleteEvent <p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -884,18 +775,18 @@ namespace TencentCloud
                     bool PersistenceCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+                     * 获取<p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComplexAdaptiveDynamicStreamingCompleteEvent 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+                     * @return ComplexAdaptiveDynamicStreamingCompleteEvent <p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplexAdaptiveDynamicStreamingTask GetComplexAdaptiveDynamicStreamingCompleteEvent() const;
 
                     /**
-                     * 设置自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+                     * 设置<p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _complexAdaptiveDynamicStreamingCompleteEvent 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+                     * @param _complexAdaptiveDynamicStreamingCompleteEvent <p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -909,15 +800,15 @@ namespace TencentCloud
                     bool ComplexAdaptiveDynamicStreamingCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
-                     * @return ProcessMediaByMPSCompleteEvent MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * 获取<p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>
+                     * @return ProcessMediaByMPSCompleteEvent <p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>
                      * 
                      */
                     ProcessMediaByMPS GetProcessMediaByMPSCompleteEvent() const;
 
                     /**
-                     * 设置MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
-                     * @param _processMediaByMPSCompleteEvent MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * 设置<p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>
+                     * @param _processMediaByMPSCompleteEvent <p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>
                      * 
                      */
                     void SetProcessMediaByMPSCompleteEvent(const ProcessMediaByMPS& _processMediaByMPSCompleteEvent);
@@ -930,15 +821,15 @@ namespace TencentCloud
                     bool ProcessMediaByMPSCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。
-                     * @return AigcImageCompleteEvent AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。
+                     * 获取<p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>
+                     * @return AigcImageCompleteEvent <p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>
                      * 
                      */
                     AigcImageTask GetAigcImageCompleteEvent() const;
 
                     /**
-                     * 设置AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。
-                     * @param _aigcImageCompleteEvent AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。
+                     * 设置<p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>
+                     * @param _aigcImageCompleteEvent <p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>
                      * 
                      */
                     void SetAigcImageCompleteEvent(const AigcImageTask& _aigcImageCompleteEvent);
@@ -951,15 +842,15 @@ namespace TencentCloud
                     bool AigcImageCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。
-                     * @return AigcVideoCompleteEvent AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。
+                     * 获取<p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>
+                     * @return AigcVideoCompleteEvent <p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>
                      * 
                      */
                     AigcVideoTask GetAigcVideoCompleteEvent() const;
 
                     /**
-                     * 设置AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。
-                     * @param _aigcVideoCompleteEvent AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。
+                     * 设置<p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>
+                     * @param _aigcVideoCompleteEvent <p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>
                      * 
                      */
                     void SetAigcVideoCompleteEvent(const AigcVideoTask& _aigcVideoCompleteEvent);
@@ -972,15 +863,15 @@ namespace TencentCloud
                     bool AigcVideoCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
-                     * @return ExtractBlindWatermarkComplete 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * 获取<p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>
+                     * @return ExtractBlindWatermarkComplete <p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>
                      * 
                      */
                     ExtractBlindWatermarkTask GetExtractBlindWatermarkComplete() const;
 
                     /**
-                     * 设置提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
-                     * @param _extractBlindWatermarkComplete 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * 设置<p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>
+                     * @param _extractBlindWatermarkComplete <p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>
                      * 
                      */
                     void SetExtractBlindWatermarkComplete(const ExtractBlindWatermarkTask& _extractBlindWatermarkComplete);
@@ -993,15 +884,15 @@ namespace TencentCloud
                     bool ExtractBlindWatermarkCompleteHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
-                     * @return SceneAigcImageCompleteEvent AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * 获取<p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>
+                     * @return SceneAigcImageCompleteEvent <p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>
                      * 
                      */
                     SceneAigcImageTask GetSceneAigcImageCompleteEvent() const;
 
                     /**
-                     * 设置AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
-                     * @param _sceneAigcImageCompleteEvent AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * 设置<p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>
+                     * @param _sceneAigcImageCompleteEvent <p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>
                      * 
                      */
                     void SetSceneAigcImageCompleteEvent(const SceneAigcImageTask& _sceneAigcImageCompleteEvent);
@@ -1014,15 +905,15 @@ namespace TencentCloud
                     bool SceneAigcImageCompleteEventHasBeenSet() const;
 
                     /**
-                     * 获取图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
-                     * @return ProcessImageAsyncCompleteEvent 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * 获取<p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>
+                     * @return ProcessImageAsyncCompleteEvent <p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>
                      * 
                      */
                     ProcessImageAsyncTask GetProcessImageAsyncCompleteEvent() const;
 
                     /**
-                     * 设置图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
-                     * @param _processImageAsyncCompleteEvent 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * 设置<p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>
+                     * @param _processImageAsyncCompleteEvent <p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>
                      * 
                      */
                     void SetProcessImageAsyncCompleteEvent(const ProcessImageAsyncTask& _processImageAsyncCompleteEvent);
@@ -1034,272 +925,325 @@ namespace TencentCloud
                      */
                     bool ProcessImageAsyncCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>
+                     * @return CreateAigcAdvancedCustomElementCompleteEvent <p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>
+                     * 
+                     */
+                    CreateAigcAdvancedCustomElementTask GetCreateAigcAdvancedCustomElementCompleteEvent() const;
+
+                    /**
+                     * 设置<p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>
+                     * @param _createAigcAdvancedCustomElementCompleteEvent <p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>
+                     * 
+                     */
+                    void SetCreateAigcAdvancedCustomElementCompleteEvent(const CreateAigcAdvancedCustomElementTask& _createAigcAdvancedCustomElementCompleteEvent);
+
+                    /**
+                     * 判断参数 CreateAigcAdvancedCustomElementCompleteEvent 是否已赋值
+                     * @return CreateAigcAdvancedCustomElementCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool CreateAigcAdvancedCustomElementCompleteEventHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>
+                     * @return CreateAigcCustomVoiceCompleteEvent <p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>
+                     * 
+                     */
+                    CreateAigcCustomVoiceTask GetCreateAigcCustomVoiceCompleteEvent() const;
+
+                    /**
+                     * 设置<p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>
+                     * @param _createAigcCustomVoiceCompleteEvent <p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>
+                     * 
+                     */
+                    void SetCreateAigcCustomVoiceCompleteEvent(const CreateAigcCustomVoiceTask& _createAigcCustomVoiceCompleteEvent);
+
+                    /**
+                     * 判断参数 CreateAigcCustomVoiceCompleteEvent 是否已赋值
+                     * @return CreateAigcCustomVoiceCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool CreateAigcCustomVoiceCompleteEventHasBeenSet() const;
+
+                    /**
+                     * 获取<p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>
+                     * @return DescribeAigcFaceInfoAsyncCompleteEvent <p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>
+                     * 
+                     */
+                    DescribeAigcFaceInfoAsyncTask GetDescribeAigcFaceInfoAsyncCompleteEvent() const;
+
+                    /**
+                     * 设置<p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>
+                     * @param _describeAigcFaceInfoAsyncCompleteEvent <p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>
+                     * 
+                     */
+                    void SetDescribeAigcFaceInfoAsyncCompleteEvent(const DescribeAigcFaceInfoAsyncTask& _describeAigcFaceInfoAsyncCompleteEvent);
+
+                    /**
+                     * 判断参数 DescribeAigcFaceInfoAsyncCompleteEvent 是否已赋值
+                     * @return DescribeAigcFaceInfoAsyncCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool DescribeAigcFaceInfoAsyncCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。
+                     * <p>事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。</p>
                      */
                     std::string m_eventHandle;
                     bool m_eventHandleHasBeenSet;
 
                     /**
-                     * <b>支持事件类型：</b>
-<li>NewFileUpload：视频上传完成；</li>
-<li>ProcedureStateChanged：任务流状态变更；</li>
-<li>FileDeleted：视频删除完成；</li>
-<li>RestoreMediaComplete：视频取回完成；</li>
-<li>PullComplete：视频转拉完成；</li>
-<li>EditMediaComplete：视频编辑完成；</li>
-<li>SplitMediaComplete：视频拆分完成；</li>
-<li>ComposeMediaComplete：制作媒体文件完成；</li>
-<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
-<li>RemoveWatermark：智能去除水印完成。</li>
-<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>
-<li>ReviewAudioVideoComplete：音视频审核完成；</li>
-<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
-<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
-<li>DescribeFileAttributesComplete：获取文件属性完成；</li>
-<li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成；</li>
-<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
-<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>
-<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>
-<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>
-<b>兼容 2017 版的事件类型：</b>
-<li>TranscodeComplete：视频转码完成；</li>
-<li>ConcatComplete：视频拼接完成；</li>
-<li>ClipComplete：视频剪辑完成；</li>
-<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>
-<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
+                     * <p><b>支持事件类型：</b></p><li>NewFileUpload：视频上传完成；</li><li>ProcedureStateChanged：任务流状态变更；</li><li>FileDeleted：视频删除完成；</li><li>RestoreMediaComplete：视频取回完成；</li><li>PullComplete：视频转拉完成；</li><li>EditMediaComplete：视频编辑完成；</li><li>SplitMediaComplete：视频拆分完成；</li><li>ComposeMediaComplete：制作媒体文件完成；</li><li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li><li>RemoveWatermark：智能去除水印完成。</li><li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li><li>ReviewAudioVideoComplete：音视频审核完成；</li><li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li><li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li><li>DescribeFileAttributesComplete：获取文件属性完成；</li><li>QualityInspectComplete：音画质检测完成；</li><li>QualityEnhanceComplete：音画质重生任务完成；</li><li>PersistenceComplete：剪辑固化完成；</li><li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li><li>ProcessMediaByMPSComplete：MPS视频处理完成。</li><li>AigcImageTaskComplete：AIGC 生图任务完成。</li><li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li><li>DescribeAigcFaceInfoAsyncComplete：异步获取 AIGC 人脸信息任务完成。</li><b>兼容 2017 版的事件类型：</b><li>TranscodeComplete：视频转码完成；</li><li>ConcatComplete：视频拼接完成；</li><li>ClipComplete：视频剪辑完成；</li><li>CreateImageSpriteComplete：视频截取雪碧图完成；</li><li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 视频上传完成事件，当事件类型为 NewFileUpload 时有效。
+                     * <p>视频上传完成事件，当事件类型为 NewFileUpload 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileUploadTask m_fileUploadEvent;
                     bool m_fileUploadEventHasBeenSet;
 
                     /**
-                     * 任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。
+                     * <p>任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcedureTask m_procedureStateChangeEvent;
                     bool m_procedureStateChangeEventHasBeenSet;
 
                     /**
-                     * 文件删除事件，当事件类型为 FileDeleted 时有效。
+                     * <p>文件删除事件，当事件类型为 FileDeleted 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileDeleteTask m_fileDeleteEvent;
                     bool m_fileDeleteEventHasBeenSet;
 
                     /**
-                     * 视频转拉完成事件，当事件类型为 PullComplete 时有效。
+                     * <p>视频转拉完成事件，当事件类型为 PullComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PullUploadTask m_pullCompleteEvent;
                     bool m_pullCompleteEventHasBeenSet;
 
                     /**
-                     * 视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。
+                     * <p>视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTask m_editMediaCompleteEvent;
                     bool m_editMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。
+                     * <p>视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SplitMediaTask m_splitMediaCompleteEvent;
                     bool m_splitMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。
+                     * <p>制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComposeMediaTask m_composeMediaCompleteEvent;
                     bool m_composeMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 视频剪辑完成事件，当事件类型为 ClipComplete 时有效。
+                     * <p>视频剪辑完成事件，当事件类型为 ClipComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClipTask2017 m_clipCompleteEvent;
                     bool m_clipCompleteEventHasBeenSet;
 
                     /**
-                     * 视频转码完成事件，当事件类型为 TranscodeComplete 时有效。
+                     * <p>视频转码完成事件，当事件类型为 TranscodeComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TranscodeTask2017 m_transcodeCompleteEvent;
                     bool m_transcodeCompleteEventHasBeenSet;
 
                     /**
-                     * 视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。
+                     * <p>视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateImageSpriteTask2017 m_createImageSpriteCompleteEvent;
                     bool m_createImageSpriteCompleteEventHasBeenSet;
 
                     /**
-                     * 视频拼接完成事件，当事件类型为 ConcatComplete 时有效。
+                     * <p>视频拼接完成事件，当事件类型为 ConcatComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConcatTask2017 m_concatCompleteEvent;
                     bool m_concatCompleteEventHasBeenSet;
 
                     /**
-                     * 视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。
+                     * <p>视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SnapshotByTimeOffsetTask2017 m_snapshotByTimeOffsetCompleteEvent;
                     bool m_snapshotByTimeOffsetCompleteEventHasBeenSet;
 
                     /**
-                     * 微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。
+                     * <p>微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WechatPublishTask m_wechatPublishCompleteEvent;
                     bool m_wechatPublishCompleteEventHasBeenSet;
 
                     /**
-                     * 微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。
+                     * <p>微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WechatMiniProgramPublishTask m_wechatMiniProgramPublishCompleteEvent;
                     bool m_wechatMiniProgramPublishCompleteEventHasBeenSet;
 
                     /**
-                     * 智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。
+                     * <p>智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RemoveWatermarkTask m_removeWatermarkCompleteEvent;
                     bool m_removeWatermarkCompleteEventHasBeenSet;
 
                     /**
-                     * 视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。
+                     * <p>视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RestoreMediaTask m_restoreMediaCompleteEvent;
                     bool m_restoreMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。
+                     * <p>音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTask m_rebuildMediaCompleteEvent;
                     bool m_rebuildMediaCompleteEventHasBeenSet;
 
                     /**
-                     * 溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。
+                     * <p>溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractTraceWatermarkTask m_extractTraceWatermarkCompleteEvent;
                     bool m_extractTraceWatermarkCompleteEventHasBeenSet;
 
                     /**
-                     * 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+                     * <p>版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractCopyRightWatermarkTask m_extractCopyRightWatermarkCompleteEvent;
                     bool m_extractCopyRightWatermarkCompleteEventHasBeenSet;
 
                     /**
-                     * 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
+                     * <p>音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReviewAudioVideoTask m_reviewAudioVideoCompleteEvent;
                     bool m_reviewAudioVideoCompleteEventHasBeenSet;
 
                     /**
-                     * 该字段已无效。
+                     * <p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateTask m_reduceMediaBitrateCompleteEvent;
                     bool m_reduceMediaBitrateCompleteEventHasBeenSet;
 
                     /**
-                     * 获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。
+                     * <p>获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeFileAttributesTask m_describeFileAttributesCompleteEvent;
                     bool m_describeFileAttributesCompleteEventHasBeenSet;
 
                     /**
-                     * 音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。
+                     * <p>音画质检测完成事件，当事件类型为 QualityInspectComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityInspectTask m_qualityInspectCompleteEvent;
                     bool m_qualityInspectCompleteEventHasBeenSet;
 
                     /**
-                     * 音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。
+                     * <p>音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityEnhanceTask m_qualityEnhanceCompleteEvent;
                     bool m_qualityEnhanceCompleteEventHasBeenSet;
 
                     /**
-                     * 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+                     * <p>媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaCastEvent m_mediaCastStatusChangedEvent;
                     bool m_mediaCastStatusChangedEventHasBeenSet;
 
                     /**
-                     * 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+                     * <p>剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PersistenceCompleteTask m_persistenceCompleteEvent;
                     bool m_persistenceCompleteEventHasBeenSet;
 
                     /**
-                     * 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+                     * <p>自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplexAdaptiveDynamicStreamingTask m_complexAdaptiveDynamicStreamingCompleteEvent;
                     bool m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet;
 
                     /**
-                     * MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。
+                     * <p>MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。</p>
                      */
                     ProcessMediaByMPS m_processMediaByMPSCompleteEvent;
                     bool m_processMediaByMPSCompleteEventHasBeenSet;
 
                     /**
-                     * AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。
+                     * <p>AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。</p>
                      */
                     AigcImageTask m_aigcImageCompleteEvent;
                     bool m_aigcImageCompleteEventHasBeenSet;
 
                     /**
-                     * AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。
+                     * <p>AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。</p>
                      */
                     AigcVideoTask m_aigcVideoCompleteEvent;
                     bool m_aigcVideoCompleteEventHasBeenSet;
 
                     /**
-                     * 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * <p>提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。</p>
                      */
                     ExtractBlindWatermarkTask m_extractBlindWatermarkComplete;
                     bool m_extractBlindWatermarkCompleteHasBeenSet;
 
                     /**
-                     * AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * <p>AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。</p>
                      */
                     SceneAigcImageTask m_sceneAigcImageCompleteEvent;
                     bool m_sceneAigcImageCompleteEventHasBeenSet;
 
                     /**
-                     * 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * <p>图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。</p>
                      */
                     ProcessImageAsyncTask m_processImageAsyncCompleteEvent;
                     bool m_processImageAsyncCompleteEventHasBeenSet;
+
+                    /**
+                     * <p>AIGC 自定义主体信息，仅当 EventType 为 CreateAigcAdvancedCustomElementCompleteEvent，该字段有值。</p>
+                     */
+                    CreateAigcAdvancedCustomElementTask m_createAigcAdvancedCustomElementCompleteEvent;
+                    bool m_createAigcAdvancedCustomElementCompleteEventHasBeenSet;
+
+                    /**
+                     * <p>AIGC 自定义音色信息，仅当 EventType 为 CreateAigcCustomVoiceCompleteEvent，该字段有值。</p>
+                     */
+                    CreateAigcCustomVoiceTask m_createAigcCustomVoiceCompleteEvent;
+                    bool m_createAigcCustomVoiceCompleteEventHasBeenSet;
+
+                    /**
+                     * <p>异步获取 AIGC 人脸信息，仅当 EventType 为 DescribeAigcFaceInfoAsyncComplete，该字段有值。</p>
+                     */
+                    DescribeAigcFaceInfoAsyncTask m_describeAigcFaceInfoAsyncCompleteEvent;
+                    bool m_describeAigcFaceInfoAsyncCompleteEventHasBeenSet;
 
                 };
             }

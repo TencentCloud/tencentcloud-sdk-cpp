@@ -675,6 +675,90 @@ namespace TencentCloud
                      */
                     bool AutoScaleConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>绑定安全组列表</p>
+                     * @return SecurityGroupIds <p>绑定安全组列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置<p>绑定安全组列表</p>
+                     * @param _securityGroupIds <p>绑定安全组列表</p>
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>root用户名,当前版本默认为dbaadmin，传值也会重置为dbaadmin</p>
+                     * @return UserName <p>root用户名,当前版本默认为dbaadmin，传值也会重置为dbaadmin</p>
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置<p>root用户名,当前版本默认为dbaadmin，传值也会重置为dbaadmin</p>
+                     * @param _userName <p>root用户名,当前版本默认为dbaadmin，传值也会重置为dbaadmin</p>
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>dbaadmin密码</p>
+                     * @return Password <p>dbaadmin密码</p>
+                     * 
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置<p>dbaadmin密码</p>
+                     * @param _password <p>dbaadmin密码</p>
+                     * 
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     * 
+                     */
+                    bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启透明加密，0：不开启，1：开启</p>
+                     * @return EncryptionEnable <p>是否开启透明加密，0：不开启，1：开启</p>
+                     * 
+                     */
+                    int64_t GetEncryptionEnable() const;
+
+                    /**
+                     * 设置<p>是否开启透明加密，0：不开启，1：开启</p>
+                     * @param _encryptionEnable <p>是否开启透明加密，0：不开启，1：开启</p>
+                     * 
+                     */
+                    void SetEncryptionEnable(const int64_t& _encryptionEnable);
+
+                    /**
+                     * 判断参数 EncryptionEnable 是否已赋值
+                     * @return EncryptionEnable 是否已赋值
+                     * 
+                     */
+                    bool EncryptionEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -856,6 +940,30 @@ namespace TencentCloud
                      */
                     AutoScalingConfig m_autoScaleConfig;
                     bool m_autoScaleConfigHasBeenSet;
+
+                    /**
+                     * <p>绑定安全组列表</p>
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>root用户名,当前版本默认为dbaadmin，传值也会重置为dbaadmin</p>
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * <p>dbaadmin密码</p>
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
+
+                    /**
+                     * <p>是否开启透明加密，0：不开启，1：开启</p>
+                     */
+                    int64_t m_encryptionEnable;
+                    bool m_encryptionEnableHasBeenSet;
 
                 };
             }

@@ -358,6 +358,27 @@ namespace TencentCloud
                      */
                     bool ClientCaCertificatesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>
+                     * @return HttpVersion <p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>
+                     * 
+                     */
+                    std::string GetHttpVersion() const;
+
+                    /**
+                     * 设置<p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>
+                     * @param _httpVersion <p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>
+                     * 
+                     */
+                    void SetHttpVersion(const std::string& _httpVersion);
+
+                    /**
+                     * 判断参数 HttpVersion 是否已赋值
+                     * @return HttpVersion 是否已赋值
+                     * 
+                     */
+                    bool HttpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -449,6 +470,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_clientCaCertificates;
                     bool m_clientCaCertificatesHasBeenSet;
+
+                    /**
+                     * <p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： HTTP/1.1</li><li>HTTP/2： HTTP/2</li></ul>
+                     */
+                    std::string m_httpVersion;
+                    bool m_httpVersionHasBeenSet;
 
                 };
             }

@@ -47,25 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取true: 默认策略，false:自定义策略
-                     * @return IsDefault true: 默认策略，false:自定义策略
+                     * 获取编辑用户名称
+                     * @return EditUserName 编辑用户名称
                      * 
                      */
-                    bool GetIsDefault() const;
+                    std::string GetEditUserName() const;
 
                     /**
-                     * 设置true: 默认策略，false:自定义策略
-                     * @param _isDefault true: 默认策略，false:自定义策略
+                     * 设置编辑用户名称
+                     * @param _editUserName 编辑用户名称
                      * 
                      */
-                    void SetIsDefault(const bool& _isDefault);
+                    void SetEditUserName(const std::string& _editUserName);
 
                     /**
-                     * 判断参数 IsDefault 是否已赋值
-                     * @return IsDefault 是否已赋值
+                     * 判断参数 EditUserName 是否已赋值
+                     * @return EditUserName 是否已赋值
                      * 
                      */
-                    bool IsDefaultHasBeenSet() const;
+                    bool EditUserNameHasBeenSet() const;
 
                     /**
                      * 获取策略生效镜像数量
@@ -89,6 +89,69 @@ namespace TencentCloud
                     bool EffectImageCountHasBeenSet() const;
 
                     /**
+                     * 获取true: 默认策略，false:自定义策略
+                     * @return IsDefault true: 默认策略，false:自定义策略
+                     * 
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置true: 默认策略，false:自定义策略
+                     * @param _isDefault true: 默认策略，false:自定义策略
+                     * 
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
+                    /**
+                     * 获取是否为全部镜像规则。true表示对所有镜像生效
+                     * @return IsGlobal 是否为全部镜像规则。true表示对所有镜像生效
+                     * 
+                     */
+                    bool GetIsGlobal() const;
+
+                    /**
+                     * 设置是否为全部镜像规则。true表示对所有镜像生效
+                     * @param _isGlobal 是否为全部镜像规则。true表示对所有镜像生效
+                     * 
+                     */
+                    void SetIsGlobal(const bool& _isGlobal);
+
+                    /**
+                     * 判断参数 IsGlobal 是否已赋值
+                     * @return IsGlobal 是否已赋值
+                     * 
+                     */
+                    bool IsGlobalHasBeenSet() const;
+
+                    /**
+                     * 获取true: 策略启用，false：策略禁用
+                     * @return IsEnable true: 策略启用，false：策略禁用
+                     * 
+                     */
+                    bool GetIsEnable() const;
+
+                    /**
+                     * 设置true: 策略启用，false：策略禁用
+                     * @param _isEnable true: 策略启用，false：策略禁用
+                     * 
+                     */
+                    void SetIsEnable(const bool& _isEnable);
+
+                    /**
+                     * 判断参数 IsEnable 是否已赋值
+                     * @return IsEnable 是否已赋值
+                     * 
+                     */
+                    bool IsEnableHasBeenSet() const;
+
+                    /**
                      * 获取策略Id
                      * @return RuleId 策略Id
                      * 
@@ -108,27 +171,6 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleIdHasBeenSet() const;
-
-                    /**
-                     * 获取策略更新时间, 存在为空的情况
-                     * @return UpdateTime 策略更新时间, 存在为空的情况
-                     * 
-                     */
-                    std::string GetUpdateTime() const;
-
-                    /**
-                     * 设置策略更新时间, 存在为空的情况
-                     * @param _updateTime 策略更新时间, 存在为空的情况
-                     * 
-                     */
-                    void SetUpdateTime(const std::string& _updateTime);
-
-                    /**
-                     * 判断参数 UpdateTime 是否已赋值
-                     * @return UpdateTime 是否已赋值
-                     * 
-                     */
-                    bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取策略名字
@@ -152,78 +194,27 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取编辑用户名称
-                     * @return EditUserName 编辑用户名称
+                     * 获取策略更新时间, 存在为空的情况
+                     * @return UpdateTime 策略更新时间, 存在为空的情况
                      * 
                      */
-                    std::string GetEditUserName() const;
+                    std::string GetUpdateTime() const;
 
                     /**
-                     * 设置编辑用户名称
-                     * @param _editUserName 编辑用户名称
+                     * 设置策略更新时间, 存在为空的情况
+                     * @param _updateTime 策略更新时间, 存在为空的情况
                      * 
                      */
-                    void SetEditUserName(const std::string& _editUserName);
+                    void SetUpdateTime(const std::string& _updateTime);
 
                     /**
-                     * 判断参数 EditUserName 是否已赋值
-                     * @return EditUserName 是否已赋值
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
                      * 
                      */
-                    bool EditUserNameHasBeenSet() const;
-
-                    /**
-                     * 获取true: 策略启用，false：策略禁用
-                     * @return IsEnable true: 策略启用，false：策略禁用
-                     * 
-                     */
-                    bool GetIsEnable() const;
-
-                    /**
-                     * 设置true: 策略启用，false：策略禁用
-                     * @param _isEnable true: 策略启用，false：策略禁用
-                     * 
-                     */
-                    void SetIsEnable(const bool& _isEnable);
-
-                    /**
-                     * 判断参数 IsEnable 是否已赋值
-                     * @return IsEnable 是否已赋值
-                     * 
-                     */
-                    bool IsEnableHasBeenSet() const;
+                    bool UpdateTimeHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * true: 默认策略，false:自定义策略
-                     */
-                    bool m_isDefault;
-                    bool m_isDefaultHasBeenSet;
-
-                    /**
-                     * 策略生效镜像数量
-                     */
-                    uint64_t m_effectImageCount;
-                    bool m_effectImageCountHasBeenSet;
-
-                    /**
-                     * 策略Id
-                     */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
-
-                    /**
-                     * 策略更新时间, 存在为空的情况
-                     */
-                    std::string m_updateTime;
-                    bool m_updateTimeHasBeenSet;
-
-                    /**
-                     * 策略名字
-                     */
-                    std::string m_ruleName;
-                    bool m_ruleNameHasBeenSet;
 
                     /**
                      * 编辑用户名称
@@ -232,10 +223,46 @@ namespace TencentCloud
                     bool m_editUserNameHasBeenSet;
 
                     /**
+                     * 策略生效镜像数量
+                     */
+                    uint64_t m_effectImageCount;
+                    bool m_effectImageCountHasBeenSet;
+
+                    /**
+                     * true: 默认策略，false:自定义策略
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 是否为全部镜像规则。true表示对所有镜像生效
+                     */
+                    bool m_isGlobal;
+                    bool m_isGlobalHasBeenSet;
+
+                    /**
                      * true: 策略启用，false：策略禁用
                      */
                     bool m_isEnable;
                     bool m_isEnableHasBeenSet;
+
+                    /**
+                     * 策略Id
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 策略名字
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 策略更新时间, 存在为空的情况
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

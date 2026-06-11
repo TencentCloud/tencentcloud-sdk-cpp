@@ -42,7 +42,8 @@ EndpointGroupConfiguration::EndpointGroupConfiguration() :
     m_statusMaskHasBeenSet(false),
     m_portOverridesHasBeenSet(false),
     m_ispTypeHasBeenSet(false),
-    m_cipherPolicyIdHasBeenSet(false)
+    m_cipherPolicyIdHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,16 @@ CoreInternalOutcome EndpointGroupConfiguration::Deserialize(const rapidjson::Val
         m_cipherPolicyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpVersion") && !value["HttpVersion"].IsNull())
+    {
+        if (!value["HttpVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointGroupConfiguration.HttpVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_httpVersion = string(value["HttpVersion"].GetString());
+        m_httpVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -494,6 +505,14 @@ void EndpointGroupConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "CipherPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cipherPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -849,5 +868,21 @@ void EndpointGroupConfiguration::SetCipherPolicyId(const string& _cipherPolicyId
 bool EndpointGroupConfiguration::CipherPolicyIdHasBeenSet() const
 {
     return m_cipherPolicyIdHasBeenSet;
+}
+
+string EndpointGroupConfiguration::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void EndpointGroupConfiguration::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool EndpointGroupConfiguration::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 

@@ -39,7 +39,8 @@ ModifyProxyRwSplitRequest::ModifyProxyRwSplitRequest() :
     m_connectionPoolTypeHasBeenSet(false),
     m_connectionPoolTimeOutHasBeenSet(false),
     m_apNodeAsRoNodeHasBeenSet(false),
-    m_apQueryToOtherNodeHasBeenSet(false)
+    m_apQueryToOtherNodeHasBeenSet(false),
+    m_loadBalanceModeHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,14 @@ string ModifyProxyRwSplitRequest::ToJsonString() const
         string key = "ApQueryToOtherNode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_apQueryToOtherNode, allocator);
+    }
+
+    if (m_loadBalanceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -471,6 +480,22 @@ void ModifyProxyRwSplitRequest::SetApQueryToOtherNode(const bool& _apQueryToOthe
 bool ModifyProxyRwSplitRequest::ApQueryToOtherNodeHasBeenSet() const
 {
     return m_apQueryToOtherNodeHasBeenSet;
+}
+
+string ModifyProxyRwSplitRequest::GetLoadBalanceMode() const
+{
+    return m_loadBalanceMode;
+}
+
+void ModifyProxyRwSplitRequest::SetLoadBalanceMode(const string& _loadBalanceMode)
+{
+    m_loadBalanceMode = _loadBalanceMode;
+    m_loadBalanceModeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::LoadBalanceModeHasBeenSet() const
+{
+    return m_loadBalanceModeHasBeenSet;
 }
 
 

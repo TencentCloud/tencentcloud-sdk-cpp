@@ -25,7 +25,8 @@ using namespace std;
 SetInstanceMaintenanceRequest::SetInstanceMaintenanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_maintenanceStartHasBeenSet(false),
-    m_maintenanceEndHasBeenSet(false)
+    m_maintenanceEndHasBeenSet(false),
+    m_maintenanceDaysHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string SetInstanceMaintenanceRequest::ToJsonString() const
         string key = "MaintenanceEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_maintenanceEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maintenanceDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintenanceDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maintenanceDays.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void SetInstanceMaintenanceRequest::SetMaintenanceEnd(const string& _maintenance
 bool SetInstanceMaintenanceRequest::MaintenanceEndHasBeenSet() const
 {
     return m_maintenanceEndHasBeenSet;
+}
+
+string SetInstanceMaintenanceRequest::GetMaintenanceDays() const
+{
+    return m_maintenanceDays;
+}
+
+void SetInstanceMaintenanceRequest::SetMaintenanceDays(const string& _maintenanceDays)
+{
+    m_maintenanceDays = _maintenanceDays;
+    m_maintenanceDaysHasBeenSet = true;
+}
+
+bool SetInstanceMaintenanceRequest::MaintenanceDaysHasBeenSet() const
+{
+    return m_maintenanceDaysHasBeenSet;
 }
 
 

@@ -80,7 +80,10 @@ Cluster::Cluster() :
     m_logCOSBucketHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_clusterProcessMsgHasBeenSet(false),
-    m_maxCuPerJobHasBeenSet(false)
+    m_maxCuPerJobHasBeenSet(false),
+    m_hiveMetastoreHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_netEniTypeHasBeenSet(false)
 {
 }
 
@@ -790,6 +793,46 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_maxCuPerJobHasBeenSet = true;
     }
 
+    if (value.HasMember("HiveMetastore") && !value["HiveMetastore"].IsNull())
+    {
+        if (!value["HiveMetastore"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.HiveMetastore` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hiveMetastore.Deserialize(value["HiveMetastore"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hiveMetastoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetEniType") && !value["NetEniType"].IsNull())
+    {
+        if (!value["NetEniType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.NetEniType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_netEniType = value["NetEniType"].GetInt64();
+        m_netEniTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1334,6 +1377,36 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MaxCuPerJob";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCuPerJob, allocator);
+    }
+
+    if (m_hiveMetastoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HiveMetastore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hiveMetastore.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_netEniTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetEniType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_netEniType, allocator);
     }
 
 }
@@ -2297,5 +2370,53 @@ void Cluster::SetMaxCuPerJob(const int64_t& _maxCuPerJob)
 bool Cluster::MaxCuPerJobHasBeenSet() const
 {
     return m_maxCuPerJobHasBeenSet;
+}
+
+HiveMetastoreInfo Cluster::GetHiveMetastore() const
+{
+    return m_hiveMetastore;
+}
+
+void Cluster::SetHiveMetastore(const HiveMetastoreInfo& _hiveMetastore)
+{
+    m_hiveMetastore = _hiveMetastore;
+    m_hiveMetastoreHasBeenSet = true;
+}
+
+bool Cluster::HiveMetastoreHasBeenSet() const
+{
+    return m_hiveMetastoreHasBeenSet;
+}
+
+vector<string> Cluster::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void Cluster::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool Cluster::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+int64_t Cluster::GetNetEniType() const
+{
+    return m_netEniType;
+}
+
+void Cluster::SetNetEniType(const int64_t& _netEniType)
+{
+    m_netEniType = _netEniType;
+    m_netEniTypeHasBeenSet = true;
+}
+
+bool Cluster::NetEniTypeHasBeenSet() const
+{
+    return m_netEniTypeHasBeenSet;
 }
 

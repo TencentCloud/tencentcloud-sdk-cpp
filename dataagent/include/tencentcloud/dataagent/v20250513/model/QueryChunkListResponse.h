@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,36 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取分片信息
-                     * @return Chunks 分片信息
+                     * 获取<p>文档的自动分段数</p>
+                     * @return AutoTotal <p>文档的自动分段数</p>
+                     * 
+                     */
+                    int64_t GetAutoTotal() const;
+
+                    /**
+                     * 判断参数 AutoTotal 是否已赋值
+                     * @return AutoTotal 是否已赋值
+                     * 
+                     */
+                    bool AutoTotalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文档的手动新建分段数</p>
+                     * @return ManualTotal <p>文档的手动新建分段数</p>
+                     * 
+                     */
+                    int64_t GetManualTotal() const;
+
+                    /**
+                     * 判断参数 ManualTotal 是否已赋值
+                     * @return ManualTotal 是否已赋值
+                     * 
+                     */
+                    bool ManualTotalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分片信息</p>
+                     * @return Chunks <p>分片信息</p>
                      * 
                      */
                     std::vector<Chunk> GetChunks() const;
@@ -75,13 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 分片信息
+                     * <p>文档的自动分段数</p>
+                     */
+                    int64_t m_autoTotal;
+                    bool m_autoTotalHasBeenSet;
+
+                    /**
+                     * <p>文档的手动新建分段数</p>
+                     */
+                    int64_t m_manualTotal;
+                    bool m_manualTotalHasBeenSet;
+
+                    /**
+                     * <p>分片信息</p>
                      */
                     std::vector<Chunk> m_chunks;
                     bool m_chunksHasBeenSet;

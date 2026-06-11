@@ -37,7 +37,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_certificationTypeHasBeenSet(false),
     m_cipherPolicyIdHasBeenSet(false),
     m_serverCertificatesHasBeenSet(false),
-    m_clientCaCertificatesHasBeenSet(false)
+    m_clientCaCertificatesHasBeenSet(false),
+    m_httpVersionHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,14 @@ string CreateListenerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_httpVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -425,6 +434,22 @@ void CreateListenerRequest::SetClientCaCertificates(const vector<string>& _clien
 bool CreateListenerRequest::ClientCaCertificatesHasBeenSet() const
 {
     return m_clientCaCertificatesHasBeenSet;
+}
+
+string CreateListenerRequest::GetHttpVersion() const
+{
+    return m_httpVersion;
+}
+
+void CreateListenerRequest::SetHttpVersion(const string& _httpVersion)
+{
+    m_httpVersion = _httpVersion;
+    m_httpVersionHasBeenSet = true;
+}
+
+bool CreateListenerRequest::HttpVersionHasBeenSet() const
+{
+    return m_httpVersionHasBeenSet;
 }
 
 

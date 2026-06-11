@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool CopySrcRuleIDHasBeenSet() const;
 
                     /**
-                     * 获取事件ID(适用于事件加白场景)
-                     * @return EventID 事件ID(适用于事件加白场景)
+                     * 获取事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)
+                     * @return EventID 事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)
                      * 
                      */
                     uint64_t GetEventID() const;
 
                     /**
-                     * 设置事件ID(适用于事件加白场景)
-                     * @param _eventID 事件ID(适用于事件加白场景)
+                     * 设置事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)
+                     * @param _eventID 事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)
                      * 
                      */
                     void SetEventID(const uint64_t& _eventID);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_copySrcRuleIDHasBeenSet;
 
                     /**
-                     * 事件ID(适用于事件加白场景)
+                     * 事件ID(已废弃，保留兼容性。事件加白请使用白名单接口 ModifyK8sApiAbnormalWhitelist)
                      */
                     uint64_t m_eventID;
                     bool m_eventIDHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目id
-                     * @return ProjectID 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectID <p>项目id</p>
                      * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectID 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectID <p>项目id</p>
                      * 
                      */
                     void SetProjectID(const int64_t& _projectID);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProjectIDHasBeenSet() const;
 
                     /**
-                     * 获取项目总分
-                     * @return Score 项目总分
+                     * 获取<p>项目总分</p>
+                     * @return Score <p>项目总分</p>
                      * 
                      */
                     double GetScore() const;
 
                     /**
-                     * 设置项目总分
-                     * @param _score 项目总分
+                     * 设置<p>项目总分</p>
+                     * @param _score <p>项目总分</p>
                      * 
                      */
                     void SetScore(const double& _score);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取API性能评分
-                     * @return ApiPerformanceScore API性能评分
+                     * 获取<p>API性能评分</p>
+                     * @return ApiPerformanceScore <p>API性能评分</p>
                      * 
                      */
                     double GetApiPerformanceScore() const;
 
                     /**
-                     * 设置API性能评分
-                     * @param _apiPerformanceScore API性能评分
+                     * 设置<p>API性能评分</p>
+                     * @param _apiPerformanceScore <p>API性能评分</p>
                      * 
                      */
                     void SetApiPerformanceScore(const double& _apiPerformanceScore);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ApiPerformanceScoreHasBeenSet() const;
 
                     /**
-                     * 获取API可用性评分
-                     * @return ApiAvailableScore API可用性评分
+                     * 获取<p>API可用性评分</p>
+                     * @return ApiAvailableScore <p>API可用性评分</p>
                      * 
                      */
                     double GetApiAvailableScore() const;
 
                     /**
-                     * 设置API可用性评分
-                     * @param _apiAvailableScore API可用性评分
+                     * 设置<p>API可用性评分</p>
+                     * @param _apiAvailableScore <p>API可用性评分</p>
                      * 
                      */
                     void SetApiAvailableScore(const double& _apiAvailableScore);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ApiAvailableScoreHasBeenSet() const;
 
                     /**
-                     * 获取API调用总数
-                     * @return ApiNum API调用总数
+                     * 获取<p>API调用总数</p>
+                     * @return ApiNum <p>API调用总数</p>
                      * 
                      */
                     int64_t GetApiNum() const;
 
                     /**
-                     * 设置API调用总数
-                     * @param _apiNum API调用总数
+                     * 设置<p>API调用总数</p>
+                     * @param _apiNum <p>API调用总数</p>
                      * 
                      */
                     void SetApiNum(const int64_t& _apiNum);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ApiNumHasBeenSet() const;
 
                     /**
-                     * 获取API失败次数
-                     * @return ApiFail API失败次数
+                     * 获取<p>API失败次数</p>
+                     * @return ApiFail <p>API失败次数</p>
                      * 
                      */
                     int64_t GetApiFail() const;
 
                     /**
-                     * 设置API失败次数
-                     * @param _apiFail API失败次数
+                     * 设置<p>API失败次数</p>
+                     * @param _apiFail <p>API失败次数</p>
                      * 
                      */
                     void SetApiFail(const int64_t& _apiFail);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ApiFailHasBeenSet() const;
 
                     /**
-                     * 获取API平均持续时间
-                     * @return ApiDuration API平均持续时间
+                     * 获取<p>API平均持续时间</p>
+                     * @return ApiDuration <p>API平均持续时间</p>
                      * 
                      */
                     double GetApiDuration() const;
 
                     /**
-                     * 设置API平均持续时间
-                     * @param _apiDuration API平均持续时间
+                     * 设置<p>API平均持续时间</p>
+                     * @param _apiDuration <p>API平均持续时间</p>
                      * 
                      */
                     void SetApiDuration(const double& _apiDuration);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ApiDurationHasBeenSet() const;
 
                     /**
-                     * 获取页面性能评分
-                     * @return PagePerformanceScore 页面性能评分
+                     * 获取<p>页面性能评分</p>
+                     * @return PagePerformanceScore <p>页面性能评分</p>
                      * 
                      */
                     double GetPagePerformanceScore() const;
 
                     /**
-                     * 设置页面性能评分
-                     * @param _pagePerformanceScore 页面性能评分
+                     * 设置<p>页面性能评分</p>
+                     * @param _pagePerformanceScore <p>页面性能评分</p>
                      * 
                      */
                     void SetPagePerformanceScore(const double& _pagePerformanceScore);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool PagePerformanceScoreHasBeenSet() const;
 
                     /**
-                     * 获取页面浏览量
-                     * @return PagePv 页面浏览量
+                     * 获取<p>页面浏览量</p>
+                     * @return PagePv <p>页面浏览量</p>
                      * 
                      */
                     int64_t GetPagePv() const;
 
                     /**
-                     * 设置页面浏览量
-                     * @param _pagePv 页面浏览量
+                     * 设置<p>页面浏览量</p>
+                     * @param _pagePv <p>页面浏览量</p>
                      * 
                      */
                     void SetPagePv(const int64_t& _pagePv);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool PagePvHasBeenSet() const;
 
                     /**
-                     * 获取独立访客数
-                     * @return PageUv 独立访客数
+                     * 获取<p>独立访客数</p>
+                     * @return PageUv <p>独立访客数</p>
                      * 
                      */
                     int64_t GetPageUv() const;
 
                     /**
-                     * 设置独立访客数
-                     * @param _pageUv 独立访客数
+                     * 设置<p>独立访客数</p>
+                     * @param _pageUv <p>独立访客数</p>
                      * 
                      */
                     void SetPageUv(const int64_t& _pageUv);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool PageUvHasBeenSet() const;
 
                     /**
-                     * 获取页面错误数
-                     * @return PageError 页面错误数
+                     * 获取<p>页面错误数</p>
+                     * @return PageError <p>页面错误数</p>
                      * 
                      */
                     int64_t GetPageError() const;
 
                     /**
-                     * 设置页面错误数
-                     * @param _pageError 页面错误数
+                     * 设置<p>页面错误数</p>
+                     * @param _pageError <p>页面错误数</p>
                      * 
                      */
                     void SetPageError(const int64_t& _pageError);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool PageErrorHasBeenSet() const;
 
                     /**
-                     * 获取首屏时间
-                     * @return PageDuration 首屏时间
+                     * 获取<p>首屏时间</p>
+                     * @return PageDuration <p>首屏时间</p>
                      * 
                      */
                     double GetPageDuration() const;
 
                     /**
-                     * 设置首屏时间
-                     * @param _pageDuration 首屏时间
+                     * 设置<p>首屏时间</p>
+                     * @param _pageDuration <p>首屏时间</p>
                      * 
                      */
                     void SetPageDuration(const double& _pageDuration);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool PageDurationHasBeenSet() const;
 
                     /**
-                     * 获取平均 LCP
-                     * @return PageLCP 平均 LCP
+                     * 获取<p>平均 LCP</p>
+                     * @return PageLCP <p>平均 LCP</p>
                      * 
                      */
                     double GetPageLCP() const;
 
                     /**
-                     * 设置平均 LCP
-                     * @param _pageLCP 平均 LCP
+                     * 设置<p>平均 LCP</p>
+                     * @param _pageLCP <p>平均 LCP</p>
                      * 
                      */
                     void SetPageLCP(const double& _pageLCP);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool PageLCPHasBeenSet() const;
 
                     /**
-                     * 获取平均 FID
-                     * @return PageFID 平均 FID
+                     * 获取<p>平均 FID</p>
+                     * @return PageFID <p>平均 FID</p>
                      * 
                      */
                     double GetPageFID() const;
 
                     /**
-                     * 设置平均 FID
-                     * @param _pageFID 平均 FID
+                     * 设置<p>平均 FID</p>
+                     * @param _pageFID <p>平均 FID</p>
                      * 
                      */
                     void SetPageFID(const double& _pageFID);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool PageFIDHasBeenSet() const;
 
                     /**
-                     * 获取平均 CLS
-                     * @return PageCLS 平均 CLS
+                     * 获取<p>平均 CLS</p>
+                     * @return PageCLS <p>平均 CLS</p>
                      * 
                      */
                     double GetPageCLS() const;
 
                     /**
-                     * 设置平均 CLS
-                     * @param _pageCLS 平均 CLS
+                     * 设置<p>平均 CLS</p>
+                     * @param _pageCLS <p>平均 CLS</p>
                      * 
                      */
                     void SetPageCLS(const double& _pageCLS);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool PageCLSHasBeenSet() const;
 
                     /**
-                     * 获取平均 FCP
-                     * @return PageFCP 平均 FCP
+                     * 获取<p>平均 FCP</p>
+                     * @return PageFCP <p>平均 FCP</p>
                      * 
                      */
                     double GetPageFCP() const;
 
                     /**
-                     * 设置平均 FCP
-                     * @param _pageFCP 平均 FCP
+                     * 设置<p>平均 FCP</p>
+                     * @param _pageFCP <p>平均 FCP</p>
                      * 
                      */
                     void SetPageFCP(const double& _pageFCP);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool PageFCPHasBeenSet() const;
 
                     /**
-                     * 获取平均 INP
-                     * @return PageINP 平均 INP
+                     * 获取<p>平均 INP</p>
+                     * @return PageINP <p>平均 INP</p>
                      * 
                      */
                     double GetPageINP() const;
 
                     /**
-                     * 设置平均 INP
-                     * @param _pageINP 平均 INP
+                     * 设置<p>平均 INP</p>
+                     * @param _pageINP <p>平均 INP</p>
                      * 
                      */
                     void SetPageINP(const double& _pageINP);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool PageINPHasBeenSet() const;
 
                     /**
-                     * 获取JavaScript错误评分
-                     * @return JsErrorScore JavaScript错误评分
+                     * 获取<p>JavaScript错误评分</p>
+                     * @return JsErrorScore <p>JavaScript错误评分</p>
                      * 
                      */
                     double GetJsErrorScore() const;
 
                     /**
-                     * 设置JavaScript错误评分
-                     * @param _jsErrorScore JavaScript错误评分
+                     * 设置<p>JavaScript错误评分</p>
+                     * @param _jsErrorScore <p>JavaScript错误评分</p>
                      * 
                      */
                     void SetJsErrorScore(const double& _jsErrorScore);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool JsErrorScoreHasBeenSet() const;
 
                     /**
-                     * 获取静态资源可用性评分
-                     * @return StaticAvailableScore 静态资源可用性评分
+                     * 获取<p>静态资源可用性评分</p>
+                     * @return StaticAvailableScore <p>静态资源可用性评分</p>
                      * 
                      */
                     double GetStaticAvailableScore() const;
 
                     /**
-                     * 设置静态资源可用性评分
-                     * @param _staticAvailableScore 静态资源可用性评分
+                     * 设置<p>静态资源可用性评分</p>
+                     * @param _staticAvailableScore <p>静态资源可用性评分</p>
                      * 
                      */
                     void SetStaticAvailableScore(const double& _staticAvailableScore);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool StaticAvailableScoreHasBeenSet() const;
 
                     /**
-                     * 获取静态资源性能评分
-                     * @return StaticPerformanceScore 静态资源性能评分
+                     * 获取<p>静态资源性能评分</p>
+                     * @return StaticPerformanceScore <p>静态资源性能评分</p>
                      * 
                      */
                     double GetStaticPerformanceScore() const;
 
                     /**
-                     * 设置静态资源性能评分
-                     * @param _staticPerformanceScore 静态资源性能评分
+                     * 设置<p>静态资源性能评分</p>
+                     * @param _staticPerformanceScore <p>静态资源性能评分</p>
                      * 
                      */
                     void SetStaticPerformanceScore(const double& _staticPerformanceScore);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool StaticPerformanceScoreHasBeenSet() const;
 
                     /**
-                     * 获取静态资源请求总数
-                     * @return StaticNum 静态资源请求总数
+                     * 获取<p>静态资源请求总数</p>
+                     * @return StaticNum <p>静态资源请求总数</p>
                      * 
                      */
                     int64_t GetStaticNum() const;
 
                     /**
-                     * 设置静态资源请求总数
-                     * @param _staticNum 静态资源请求总数
+                     * 设置<p>静态资源请求总数</p>
+                     * @param _staticNum <p>静态资源请求总数</p>
                      * 
                      */
                     void SetStaticNum(const int64_t& _staticNum);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool StaticNumHasBeenSet() const;
 
                     /**
-                     * 获取静态资源加载失败数
-                     * @return StaticFail 静态资源加载失败数
+                     * 获取<p>静态资源加载失败数</p>
+                     * @return StaticFail <p>静态资源加载失败数</p>
                      * 
                      */
                     int64_t GetStaticFail() const;
 
                     /**
-                     * 设置静态资源加载失败数
-                     * @param _staticFail 静态资源加载失败数
+                     * 设置<p>静态资源加载失败数</p>
+                     * @param _staticFail <p>静态资源加载失败数</p>
                      * 
                      */
                     void SetStaticFail(const int64_t& _staticFail);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool StaticFailHasBeenSet() const;
 
                     /**
-                     * 获取静态资源加载时间
-                     * @return StaticDuration 静态资源加载时间
+                     * 获取<p>静态资源加载时间</p>
+                     * @return StaticDuration <p>静态资源加载时间</p>
                      * 
                      */
                     double GetStaticDuration() const;
 
                     /**
-                     * 设置静态资源加载时间
-                     * @param _staticDuration 静态资源加载时间
+                     * 设置<p>静态资源加载时间</p>
+                     * @param _staticDuration <p>静态资源加载时间</p>
                      * 
                      */
                     void SetStaticDuration(const double& _staticDuration);
@@ -529,145 +529,172 @@ namespace TencentCloud
                      */
                     bool StaticDurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>忽略的配置项</p>
+                     * @return Exclusion <p>忽略的配置项</p>
+                     * 
+                     */
+                    std::string GetExclusion() const;
+
+                    /**
+                     * 设置<p>忽略的配置项</p>
+                     * @param _exclusion <p>忽略的配置项</p>
+                     * 
+                     */
+                    void SetExclusion(const std::string& _exclusion);
+
+                    /**
+                     * 判断参数 Exclusion 是否已赋值
+                     * @return Exclusion 是否已赋值
+                     * 
+                     */
+                    bool ExclusionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
 
                     /**
-                     * 项目总分
+                     * <p>项目总分</p>
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * API性能评分
+                     * <p>API性能评分</p>
                      */
                     double m_apiPerformanceScore;
                     bool m_apiPerformanceScoreHasBeenSet;
 
                     /**
-                     * API可用性评分
+                     * <p>API可用性评分</p>
                      */
                     double m_apiAvailableScore;
                     bool m_apiAvailableScoreHasBeenSet;
 
                     /**
-                     * API调用总数
+                     * <p>API调用总数</p>
                      */
                     int64_t m_apiNum;
                     bool m_apiNumHasBeenSet;
 
                     /**
-                     * API失败次数
+                     * <p>API失败次数</p>
                      */
                     int64_t m_apiFail;
                     bool m_apiFailHasBeenSet;
 
                     /**
-                     * API平均持续时间
+                     * <p>API平均持续时间</p>
                      */
                     double m_apiDuration;
                     bool m_apiDurationHasBeenSet;
 
                     /**
-                     * 页面性能评分
+                     * <p>页面性能评分</p>
                      */
                     double m_pagePerformanceScore;
                     bool m_pagePerformanceScoreHasBeenSet;
 
                     /**
-                     * 页面浏览量
+                     * <p>页面浏览量</p>
                      */
                     int64_t m_pagePv;
                     bool m_pagePvHasBeenSet;
 
                     /**
-                     * 独立访客数
+                     * <p>独立访客数</p>
                      */
                     int64_t m_pageUv;
                     bool m_pageUvHasBeenSet;
 
                     /**
-                     * 页面错误数
+                     * <p>页面错误数</p>
                      */
                     int64_t m_pageError;
                     bool m_pageErrorHasBeenSet;
 
                     /**
-                     * 首屏时间
+                     * <p>首屏时间</p>
                      */
                     double m_pageDuration;
                     bool m_pageDurationHasBeenSet;
 
                     /**
-                     * 平均 LCP
+                     * <p>平均 LCP</p>
                      */
                     double m_pageLCP;
                     bool m_pageLCPHasBeenSet;
 
                     /**
-                     * 平均 FID
+                     * <p>平均 FID</p>
                      */
                     double m_pageFID;
                     bool m_pageFIDHasBeenSet;
 
                     /**
-                     * 平均 CLS
+                     * <p>平均 CLS</p>
                      */
                     double m_pageCLS;
                     bool m_pageCLSHasBeenSet;
 
                     /**
-                     * 平均 FCP
+                     * <p>平均 FCP</p>
                      */
                     double m_pageFCP;
                     bool m_pageFCPHasBeenSet;
 
                     /**
-                     * 平均 INP
+                     * <p>平均 INP</p>
                      */
                     double m_pageINP;
                     bool m_pageINPHasBeenSet;
 
                     /**
-                     * JavaScript错误评分
+                     * <p>JavaScript错误评分</p>
                      */
                     double m_jsErrorScore;
                     bool m_jsErrorScoreHasBeenSet;
 
                     /**
-                     * 静态资源可用性评分
+                     * <p>静态资源可用性评分</p>
                      */
                     double m_staticAvailableScore;
                     bool m_staticAvailableScoreHasBeenSet;
 
                     /**
-                     * 静态资源性能评分
+                     * <p>静态资源性能评分</p>
                      */
                     double m_staticPerformanceScore;
                     bool m_staticPerformanceScoreHasBeenSet;
 
                     /**
-                     * 静态资源请求总数
+                     * <p>静态资源请求总数</p>
                      */
                     int64_t m_staticNum;
                     bool m_staticNumHasBeenSet;
 
                     /**
-                     * 静态资源加载失败数
+                     * <p>静态资源加载失败数</p>
                      */
                     int64_t m_staticFail;
                     bool m_staticFailHasBeenSet;
 
                     /**
-                     * 静态资源加载时间
+                     * <p>静态资源加载时间</p>
                      */
                     double m_staticDuration;
                     bool m_staticDurationHasBeenSet;
+
+                    /**
+                     * <p>忽略的配置项</p>
+                     */
+                    std::string m_exclusion;
+                    bool m_exclusionHasBeenSet;
 
                 };
             }

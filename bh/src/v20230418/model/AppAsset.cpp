@@ -39,7 +39,16 @@ AppAsset::AppAsset() :
     m_domainIdHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_groupSetHasBeenSet(false),
-    m_departmentHasBeenSet(false)
+    m_departmentHasBeenSet(false),
+    m_accountCountHasBeenSet(false),
+    m_agentInputTypeHasBeenSet(false),
+    m_agentInputSubmitHasBeenSet(false),
+    m_userNameTypeHasBeenSet(false),
+    m_userNameValueHasBeenSet(false),
+    m_passwordTypeHasBeenSet(false),
+    m_passwordValueHasBeenSet(false),
+    m_submitTypeHasBeenSet(false),
+    m_submitValueHasBeenSet(false)
 {
 }
 
@@ -262,6 +271,96 @@ CoreInternalOutcome AppAsset::Deserialize(const rapidjson::Value &value)
         m_departmentHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountCount") && !value["AccountCount"].IsNull())
+    {
+        if (!value["AccountCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.AccountCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountCount = value["AccountCount"].GetUint64();
+        m_accountCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentInputType") && !value["AgentInputType"].IsNull())
+    {
+        if (!value["AgentInputType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.AgentInputType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentInputType = value["AgentInputType"].GetUint64();
+        m_agentInputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentInputSubmit") && !value["AgentInputSubmit"].IsNull())
+    {
+        if (!value["AgentInputSubmit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.AgentInputSubmit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentInputSubmit = value["AgentInputSubmit"].GetUint64();
+        m_agentInputSubmitHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserNameType") && !value["UserNameType"].IsNull())
+    {
+        if (!value["UserNameType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.UserNameType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userNameType = string(value["UserNameType"].GetString());
+        m_userNameTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserNameValue") && !value["UserNameValue"].IsNull())
+    {
+        if (!value["UserNameValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.UserNameValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userNameValue = string(value["UserNameValue"].GetString());
+        m_userNameValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswordType") && !value["PasswordType"].IsNull())
+    {
+        if (!value["PasswordType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.PasswordType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwordType = string(value["PasswordType"].GetString());
+        m_passwordTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PasswordValue") && !value["PasswordValue"].IsNull())
+    {
+        if (!value["PasswordValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.PasswordValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwordValue = string(value["PasswordValue"].GetString());
+        m_passwordValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubmitType") && !value["SubmitType"].IsNull())
+    {
+        if (!value["SubmitType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.SubmitType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submitType = string(value["SubmitType"].GetString());
+        m_submitTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubmitValue") && !value["SubmitValue"].IsNull())
+    {
+        if (!value["SubmitValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppAsset.SubmitValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submitValue = string(value["SubmitValue"].GetString());
+        m_submitValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +527,78 @@ void AppAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_department.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accountCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountCount, allocator);
+    }
+
+    if (m_agentInputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentInputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentInputType, allocator);
+    }
+
+    if (m_agentInputSubmitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentInputSubmit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentInputSubmit, allocator);
+    }
+
+    if (m_userNameTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserNameType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userNameType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserNameValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userNameValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passwordType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passwordValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submitType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submitValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submitValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +906,149 @@ void AppAsset::SetDepartment(const Department& _department)
 bool AppAsset::DepartmentHasBeenSet() const
 {
     return m_departmentHasBeenSet;
+}
+
+uint64_t AppAsset::GetAccountCount() const
+{
+    return m_accountCount;
+}
+
+void AppAsset::SetAccountCount(const uint64_t& _accountCount)
+{
+    m_accountCount = _accountCount;
+    m_accountCountHasBeenSet = true;
+}
+
+bool AppAsset::AccountCountHasBeenSet() const
+{
+    return m_accountCountHasBeenSet;
+}
+
+uint64_t AppAsset::GetAgentInputType() const
+{
+    return m_agentInputType;
+}
+
+void AppAsset::SetAgentInputType(const uint64_t& _agentInputType)
+{
+    m_agentInputType = _agentInputType;
+    m_agentInputTypeHasBeenSet = true;
+}
+
+bool AppAsset::AgentInputTypeHasBeenSet() const
+{
+    return m_agentInputTypeHasBeenSet;
+}
+
+uint64_t AppAsset::GetAgentInputSubmit() const
+{
+    return m_agentInputSubmit;
+}
+
+void AppAsset::SetAgentInputSubmit(const uint64_t& _agentInputSubmit)
+{
+    m_agentInputSubmit = _agentInputSubmit;
+    m_agentInputSubmitHasBeenSet = true;
+}
+
+bool AppAsset::AgentInputSubmitHasBeenSet() const
+{
+    return m_agentInputSubmitHasBeenSet;
+}
+
+string AppAsset::GetUserNameType() const
+{
+    return m_userNameType;
+}
+
+void AppAsset::SetUserNameType(const string& _userNameType)
+{
+    m_userNameType = _userNameType;
+    m_userNameTypeHasBeenSet = true;
+}
+
+bool AppAsset::UserNameTypeHasBeenSet() const
+{
+    return m_userNameTypeHasBeenSet;
+}
+
+string AppAsset::GetUserNameValue() const
+{
+    return m_userNameValue;
+}
+
+void AppAsset::SetUserNameValue(const string& _userNameValue)
+{
+    m_userNameValue = _userNameValue;
+    m_userNameValueHasBeenSet = true;
+}
+
+bool AppAsset::UserNameValueHasBeenSet() const
+{
+    return m_userNameValueHasBeenSet;
+}
+
+string AppAsset::GetPasswordType() const
+{
+    return m_passwordType;
+}
+
+void AppAsset::SetPasswordType(const string& _passwordType)
+{
+    m_passwordType = _passwordType;
+    m_passwordTypeHasBeenSet = true;
+}
+
+bool AppAsset::PasswordTypeHasBeenSet() const
+{
+    return m_passwordTypeHasBeenSet;
+}
+
+string AppAsset::GetPasswordValue() const
+{
+    return m_passwordValue;
+}
+
+void AppAsset::SetPasswordValue(const string& _passwordValue)
+{
+    m_passwordValue = _passwordValue;
+    m_passwordValueHasBeenSet = true;
+}
+
+bool AppAsset::PasswordValueHasBeenSet() const
+{
+    return m_passwordValueHasBeenSet;
+}
+
+string AppAsset::GetSubmitType() const
+{
+    return m_submitType;
+}
+
+void AppAsset::SetSubmitType(const string& _submitType)
+{
+    m_submitType = _submitType;
+    m_submitTypeHasBeenSet = true;
+}
+
+bool AppAsset::SubmitTypeHasBeenSet() const
+{
+    return m_submitTypeHasBeenSet;
+}
+
+string AppAsset::GetSubmitValue() const
+{
+    return m_submitValue;
+}
+
+void AppAsset::SetSubmitValue(const string& _submitValue)
+{
+    m_submitValue = _submitValue;
+    m_submitValueHasBeenSet = true;
+}
+
+bool AppAsset::SubmitValueHasBeenSet() const
+{
+    return m_submitValueHasBeenSet;
 }
 

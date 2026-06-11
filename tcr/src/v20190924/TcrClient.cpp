@@ -1340,6 +1340,56 @@ TcrClient::CreateWebhookTriggerOutcomeCallable TcrClient::CreateWebhookTriggerCa
     return prom->get_future();
 }
 
+TcrClient::DeleteAIModelOutcome TcrClient::DeleteAIModel(const DeleteAIModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIModelResponse rsp = DeleteAIModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIModelOutcome(rsp);
+        else
+            return DeleteAIModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIModelOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteAIModelAsync(const DeleteAIModelRequest& request, const DeleteAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIModelRequest&;
+    using Resp = DeleteAIModelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIModel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DeleteAIModelOutcomeCallable TcrClient::DeleteAIModelCallable(const DeleteAIModelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIModelOutcome>>();
+    DeleteAIModelAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DeleteAIModelRequest&,
+        DeleteAIModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::DeleteApplicationTriggerPersonalOutcome TcrClient::DeleteApplicationTriggerPersonal(const DeleteApplicationTriggerPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApplicationTriggerPersonal");
@@ -2390,6 +2440,56 @@ TcrClient::DeleteSignaturePolicyOutcomeCallable TcrClient::DeleteSignaturePolicy
     return prom->get_future();
 }
 
+TcrClient::DeleteSkillOutcome TcrClient::DeleteSkill(const DeleteSkillRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSkill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSkillResponse rsp = DeleteSkillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSkillOutcome(rsp);
+        else
+            return DeleteSkillOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSkillOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteSkillAsync(const DeleteSkillRequest& request, const DeleteSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSkillRequest&;
+    using Resp = DeleteSkillResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSkill", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DeleteSkillOutcomeCallable TcrClient::DeleteSkillCallable(const DeleteSkillRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSkillOutcome>>();
+    DeleteSkillAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DeleteSkillRequest&,
+        DeleteSkillOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::DeleteTagRetentionRuleOutcome TcrClient::DeleteTagRetentionRule(const DeleteTagRetentionRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTagRetentionRule");
@@ -2482,6 +2582,56 @@ TcrClient::DeleteWebhookTriggerOutcomeCallable TcrClient::DeleteWebhookTriggerCa
         const TcrClient*,
         const DeleteWebhookTriggerRequest&,
         DeleteWebhookTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::DescribeAIModelVersionDetailOutcome TcrClient::DescribeAIModelVersionDetail(const DescribeAIModelVersionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModelVersionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelVersionDetailResponse rsp = DescribeAIModelVersionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelVersionDetailOutcome(rsp);
+        else
+            return DescribeAIModelVersionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelVersionDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeAIModelVersionDetailAsync(const DescribeAIModelVersionDetailRequest& request, const DescribeAIModelVersionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIModelVersionDetailRequest&;
+    using Resp = DescribeAIModelVersionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIModelVersionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeAIModelVersionDetailOutcomeCallable TcrClient::DescribeAIModelVersionDetailCallable(const DescribeAIModelVersionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIModelVersionDetailOutcome>>();
+    DescribeAIModelVersionDetailAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeAIModelVersionDetailRequest&,
+        DescribeAIModelVersionDetailOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4190,6 +4340,106 @@ TcrClient::DescribeServiceAccountsOutcomeCallable TcrClient::DescribeServiceAcco
     return prom->get_future();
 }
 
+TcrClient::DescribeSkillDetailOutcome TcrClient::DescribeSkillDetail(const DescribeSkillDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillDetailResponse rsp = DescribeSkillDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillDetailOutcome(rsp);
+        else
+            return DescribeSkillDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeSkillDetailAsync(const DescribeSkillDetailRequest& request, const DescribeSkillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillDetailRequest&;
+    using Resp = DescribeSkillDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeSkillDetailOutcomeCallable TcrClient::DescribeSkillDetailCallable(const DescribeSkillDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillDetailOutcome>>();
+    DescribeSkillDetailAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeSkillDetailRequest&,
+        DescribeSkillDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::DescribeSkillDownloadInfoOutcome TcrClient::DescribeSkillDownloadInfo(const DescribeSkillDownloadInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillDownloadInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillDownloadInfoResponse rsp = DescribeSkillDownloadInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillDownloadInfoOutcome(rsp);
+        else
+            return DescribeSkillDownloadInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillDownloadInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeSkillDownloadInfoAsync(const DescribeSkillDownloadInfoRequest& request, const DescribeSkillDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillDownloadInfoRequest&;
+    using Resp = DescribeSkillDownloadInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillDownloadInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeSkillDownloadInfoOutcomeCallable TcrClient::DescribeSkillDownloadInfoCallable(const DescribeSkillDownloadInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillDownloadInfoOutcome>>();
+    DescribeSkillDownloadInfoAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeSkillDownloadInfoRequest&,
+        DescribeSkillDownloadInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::DescribeTagRetentionExecutionOutcome TcrClient::DescribeTagRetentionExecution(const DescribeTagRetentionExecutionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTagRetentionExecution");
@@ -4632,6 +4882,206 @@ TcrClient::DuplicateImagePersonalOutcomeCallable TcrClient::DuplicateImagePerson
         const TcrClient*,
         const DuplicateImagePersonalRequest&,
         DuplicateImagePersonalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::ListAIModelVersionsOutcome TcrClient::ListAIModelVersions(const ListAIModelVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIModelVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIModelVersionsResponse rsp = ListAIModelVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIModelVersionsOutcome(rsp);
+        else
+            return ListAIModelVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIModelVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ListAIModelVersionsAsync(const ListAIModelVersionsRequest& request, const ListAIModelVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIModelVersionsRequest&;
+    using Resp = ListAIModelVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIModelVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::ListAIModelVersionsOutcomeCallable TcrClient::ListAIModelVersionsCallable(const ListAIModelVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIModelVersionsOutcome>>();
+    ListAIModelVersionsAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const ListAIModelVersionsRequest&,
+        ListAIModelVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::ListAIModelsOutcome TcrClient::ListAIModels(const ListAIModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAIModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAIModelsResponse rsp = ListAIModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAIModelsOutcome(rsp);
+        else
+            return ListAIModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAIModelsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ListAIModelsAsync(const ListAIModelsRequest& request, const ListAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAIModelsRequest&;
+    using Resp = ListAIModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAIModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::ListAIModelsOutcomeCallable TcrClient::ListAIModelsCallable(const ListAIModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAIModelsOutcome>>();
+    ListAIModelsAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const ListAIModelsRequest&,
+        ListAIModelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::ListSkillVersionsOutcome TcrClient::ListSkillVersions(const ListSkillVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSkillVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSkillVersionsResponse rsp = ListSkillVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSkillVersionsOutcome(rsp);
+        else
+            return ListSkillVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSkillVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ListSkillVersionsAsync(const ListSkillVersionsRequest& request, const ListSkillVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListSkillVersionsRequest&;
+    using Resp = ListSkillVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListSkillVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::ListSkillVersionsOutcomeCallable TcrClient::ListSkillVersionsCallable(const ListSkillVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListSkillVersionsOutcome>>();
+    ListSkillVersionsAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const ListSkillVersionsRequest&,
+        ListSkillVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::ListSkillsOutcome TcrClient::ListSkills(const ListSkillsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListSkills");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListSkillsResponse rsp = ListSkillsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListSkillsOutcome(rsp);
+        else
+            return ListSkillsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListSkillsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ListSkillsAsync(const ListSkillsRequest& request, const ListSkillsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListSkillsRequest&;
+    using Resp = ListSkillsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListSkills", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::ListSkillsOutcomeCallable TcrClient::ListSkillsCallable(const ListSkillsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListSkillsOutcome>>();
+    ListSkillsAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const ListSkillsRequest&,
+        ListSkillsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

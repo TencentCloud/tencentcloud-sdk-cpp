@@ -49,7 +49,8 @@ NatInstanceInfo::NatInstanceInfo() :
     m_reserveVersionStateHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
     m_elasticBandwidthHasBeenSet(false),
-    m_isFirstAfterPayHasBeenSet(false)
+    m_isFirstAfterPayHasBeenSet(false),
+    m_elasticTrafficSwitchHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,16 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_isFirstAfterPayHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticTrafficSwitch") && !value["ElasticTrafficSwitch"].IsNull())
+    {
+        if (!value["ElasticTrafficSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ElasticTrafficSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTrafficSwitch = value["ElasticTrafficSwitch"].GetInt64();
+        m_elasticTrafficSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -609,6 +620,14 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsFirstAfterPay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFirstAfterPay, allocator);
+    }
+
+    if (m_elasticTrafficSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTrafficSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTrafficSwitch, allocator);
     }
 
 }
@@ -1076,5 +1095,21 @@ void NatInstanceInfo::SetIsFirstAfterPay(const int64_t& _isFirstAfterPay)
 bool NatInstanceInfo::IsFirstAfterPayHasBeenSet() const
 {
     return m_isFirstAfterPayHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetElasticTrafficSwitch() const
+{
+    return m_elasticTrafficSwitch;
+}
+
+void NatInstanceInfo::SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch)
+{
+    m_elasticTrafficSwitch = _elasticTrafficSwitch;
+    m_elasticTrafficSwitchHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ElasticTrafficSwitchHasBeenSet() const
+{
+    return m_elasticTrafficSwitchHasBeenSet;
 }
 

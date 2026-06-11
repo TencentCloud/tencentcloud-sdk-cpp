@@ -61,6 +61,12 @@
 #include <tencentcloud/csip/v20221121/model/CreateDspmRiskExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCAccessTokenResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCFileExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCFileExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCFileReScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateIaCFileReScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateSkillScanRequest.h>
@@ -85,6 +91,10 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDspmRestoreLogListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteIaCAccessTokenResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteIaCFileRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteIaCFileResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
@@ -293,6 +303,14 @@
 #include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileOverviewRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileReportRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCFileReportResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCTokenListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeIaCTokenListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIpInvokeRecordDetailRequest.h>
@@ -429,6 +447,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyDspmRiskStrategyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyDspmWhitelistStrategyResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyIaCTokenPeriodResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyOrganizationAccountStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyPolicyStatusRequest.h>
@@ -532,6 +552,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDspmWhitelistStrategyResponse> CreateDspmWhitelistStrategyOutcome;
                 typedef std::future<CreateDspmWhitelistStrategyOutcome> CreateDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDspmWhitelistStrategyRequest&, CreateDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIaCAccessTokenResponse> CreateIaCAccessTokenOutcome;
+                typedef std::future<CreateIaCAccessTokenOutcome> CreateIaCAccessTokenOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateIaCAccessTokenRequest&, CreateIaCAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIaCAccessTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIaCFileExportJobResponse> CreateIaCFileExportJobOutcome;
+                typedef std::future<CreateIaCFileExportJobOutcome> CreateIaCFileExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateIaCFileExportJobRequest&, CreateIaCFileExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIaCFileExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIaCFileReScanTaskResponse> CreateIaCFileReScanTaskOutcome;
+                typedef std::future<CreateIaCFileReScanTaskOutcome> CreateIaCFileReScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateIaCFileReScanTaskRequest&, CreateIaCFileReScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIaCFileReScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRiskCenterScanTaskResponse> CreateRiskCenterScanTaskOutcome;
                 typedef std::future<CreateRiskCenterScanTaskOutcome> CreateRiskCenterScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateRiskCenterScanTaskRequest&, CreateRiskCenterScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskCenterScanTaskAsyncHandler;
@@ -568,6 +597,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDspmWhitelistStrategyResponse> DeleteDspmWhitelistStrategyOutcome;
                 typedef std::future<DeleteDspmWhitelistStrategyOutcome> DeleteDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteDspmWhitelistStrategyRequest&, DeleteDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIaCAccessTokenResponse> DeleteIaCAccessTokenOutcome;
+                typedef std::future<DeleteIaCAccessTokenOutcome> DeleteIaCAccessTokenOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteIaCAccessTokenRequest&, DeleteIaCAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIaCAccessTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIaCFileResponse> DeleteIaCFileOutcome;
+                typedef std::future<DeleteIaCFileOutcome> DeleteIaCFileOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteIaCFileRequest&, DeleteIaCFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIaCFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
@@ -880,6 +915,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHighBaseLineRiskListResponse> DescribeHighBaseLineRiskListOutcome;
                 typedef std::future<DescribeHighBaseLineRiskListOutcome> DescribeHighBaseLineRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHighBaseLineRiskListRequest&, DescribeHighBaseLineRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHighBaseLineRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIaCFileListResponse> DescribeIaCFileListOutcome;
+                typedef std::future<DescribeIaCFileListOutcome> DescribeIaCFileListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIaCFileListRequest&, DescribeIaCFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCFileListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIaCFileOverviewResponse> DescribeIaCFileOverviewOutcome;
+                typedef std::future<DescribeIaCFileOverviewOutcome> DescribeIaCFileOverviewOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIaCFileOverviewRequest&, DescribeIaCFileOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCFileOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIaCFileReportResponse> DescribeIaCFileReportOutcome;
+                typedef std::future<DescribeIaCFileReportOutcome> DescribeIaCFileReportOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIaCFileReportRequest&, DescribeIaCFileReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCFileReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIaCTokenListResponse> DescribeIaCTokenListOutcome;
+                typedef std::future<DescribeIaCTokenListOutcome> DescribeIaCTokenListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeIaCTokenListRequest&, DescribeIaCTokenListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCTokenListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIpInvokeRecordResponse> DescribeIpInvokeRecordOutcome;
                 typedef std::future<DescribeIpInvokeRecordOutcome> DescribeIpInvokeRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIpInvokeRecordRequest&, DescribeIpInvokeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpInvokeRecordAsyncHandler;
@@ -1084,6 +1131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDspmWhitelistStrategyResponse> ModifyDspmWhitelistStrategyOutcome;
                 typedef std::future<ModifyDspmWhitelistStrategyOutcome> ModifyDspmWhitelistStrategyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyDspmWhitelistStrategyRequest&, ModifyDspmWhitelistStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDspmWhitelistStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIaCTokenPeriodResponse> ModifyIaCTokenPeriodOutcome;
+                typedef std::future<ModifyIaCTokenPeriodOutcome> ModifyIaCTokenPeriodOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyIaCTokenPeriodRequest&, ModifyIaCTokenPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIaCTokenPeriodAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOrganizationAccountStatusResponse> ModifyOrganizationAccountStatusOutcome;
                 typedef std::future<ModifyOrganizationAccountStatusOutcome> ModifyOrganizationAccountStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyOrganizationAccountStatusRequest&, ModifyOrganizationAccountStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrganizationAccountStatusAsyncHandler;
@@ -1307,6 +1357,33 @@ namespace TencentCloud
                 CreateDspmWhitelistStrategyOutcomeCallable CreateDspmWhitelistStrategyCallable(const Model::CreateDspmWhitelistStrategyRequest& request);
 
                 /**
+                 *创建IaC检测接入Token
+                 * @param req CreateIaCAccessTokenRequest
+                 * @return CreateIaCAccessTokenOutcome
+                 */
+                CreateIaCAccessTokenOutcome CreateIaCAccessToken(const Model::CreateIaCAccessTokenRequest &request);
+                void CreateIaCAccessTokenAsync(const Model::CreateIaCAccessTokenRequest& request, const CreateIaCAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIaCAccessTokenOutcomeCallable CreateIaCAccessTokenCallable(const Model::CreateIaCAccessTokenRequest& request);
+
+                /**
+                 *创建IaC检测文件导出任务
+                 * @param req CreateIaCFileExportJobRequest
+                 * @return CreateIaCFileExportJobOutcome
+                 */
+                CreateIaCFileExportJobOutcome CreateIaCFileExportJob(const Model::CreateIaCFileExportJobRequest &request);
+                void CreateIaCFileExportJobAsync(const Model::CreateIaCFileExportJobRequest& request, const CreateIaCFileExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIaCFileExportJobOutcomeCallable CreateIaCFileExportJobCallable(const Model::CreateIaCFileExportJobRequest& request);
+
+                /**
+                 *创建IaC检测文件重新扫描任务
+                 * @param req CreateIaCFileReScanTaskRequest
+                 * @return CreateIaCFileReScanTaskOutcome
+                 */
+                CreateIaCFileReScanTaskOutcome CreateIaCFileReScanTask(const Model::CreateIaCFileReScanTaskRequest &request);
+                void CreateIaCFileReScanTaskAsync(const Model::CreateIaCFileReScanTaskRequest& request, const CreateIaCFileReScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIaCFileReScanTaskOutcomeCallable CreateIaCFileReScanTaskCallable(const Model::CreateIaCFileReScanTaskRequest& request);
+
+                /**
                  *创建风险中心扫描任务
                  * @param req CreateRiskCenterScanTaskRequest
                  * @return CreateRiskCenterScanTaskOutcome
@@ -1413,6 +1490,24 @@ namespace TencentCloud
                 DeleteDspmWhitelistStrategyOutcome DeleteDspmWhitelistStrategy(const Model::DeleteDspmWhitelistStrategyRequest &request);
                 void DeleteDspmWhitelistStrategyAsync(const Model::DeleteDspmWhitelistStrategyRequest& request, const DeleteDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDspmWhitelistStrategyOutcomeCallable DeleteDspmWhitelistStrategyCallable(const Model::DeleteDspmWhitelistStrategyRequest& request);
+
+                /**
+                 *删除IaC检测接入Token
+                 * @param req DeleteIaCAccessTokenRequest
+                 * @return DeleteIaCAccessTokenOutcome
+                 */
+                DeleteIaCAccessTokenOutcome DeleteIaCAccessToken(const Model::DeleteIaCAccessTokenRequest &request);
+                void DeleteIaCAccessTokenAsync(const Model::DeleteIaCAccessTokenRequest& request, const DeleteIaCAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIaCAccessTokenOutcomeCallable DeleteIaCAccessTokenCallable(const Model::DeleteIaCAccessTokenRequest& request);
+
+                /**
+                 *删除IaC检测文件
+                 * @param req DeleteIaCFileRequest
+                 * @return DeleteIaCFileOutcome
+                 */
+                DeleteIaCFileOutcome DeleteIaCFile(const Model::DeleteIaCFileRequest &request);
+                void DeleteIaCFileAsync(const Model::DeleteIaCFileRequest& request, const DeleteIaCFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIaCFileOutcomeCallable DeleteIaCFileCallable(const Model::DeleteIaCFileRequest& request);
 
                 /**
                  *删除风险中心扫描任务
@@ -2351,6 +2446,42 @@ namespace TencentCloud
                 DescribeHighBaseLineRiskListOutcomeCallable DescribeHighBaseLineRiskListCallable(const Model::DescribeHighBaseLineRiskListRequest& request);
 
                 /**
+                 *获取IaC检测文件列表
+                 * @param req DescribeIaCFileListRequest
+                 * @return DescribeIaCFileListOutcome
+                 */
+                DescribeIaCFileListOutcome DescribeIaCFileList(const Model::DescribeIaCFileListRequest &request);
+                void DescribeIaCFileListAsync(const Model::DescribeIaCFileListRequest& request, const DescribeIaCFileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIaCFileListOutcomeCallable DescribeIaCFileListCallable(const Model::DescribeIaCFileListRequest& request);
+
+                /**
+                 *获取IaC检测文件概览
+                 * @param req DescribeIaCFileOverviewRequest
+                 * @return DescribeIaCFileOverviewOutcome
+                 */
+                DescribeIaCFileOverviewOutcome DescribeIaCFileOverview(const Model::DescribeIaCFileOverviewRequest &request);
+                void DescribeIaCFileOverviewAsync(const Model::DescribeIaCFileOverviewRequest& request, const DescribeIaCFileOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIaCFileOverviewOutcomeCallable DescribeIaCFileOverviewCallable(const Model::DescribeIaCFileOverviewRequest& request);
+
+                /**
+                 *获取IaC检测文件报告
+                 * @param req DescribeIaCFileReportRequest
+                 * @return DescribeIaCFileReportOutcome
+                 */
+                DescribeIaCFileReportOutcome DescribeIaCFileReport(const Model::DescribeIaCFileReportRequest &request);
+                void DescribeIaCFileReportAsync(const Model::DescribeIaCFileReportRequest& request, const DescribeIaCFileReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIaCFileReportOutcomeCallable DescribeIaCFileReportCallable(const Model::DescribeIaCFileReportRequest& request);
+
+                /**
+                 *获取IaC检测接入Token列表
+                 * @param req DescribeIaCTokenListRequest
+                 * @return DescribeIaCTokenListOutcome
+                 */
+                DescribeIaCTokenListOutcome DescribeIaCTokenList(const Model::DescribeIaCTokenListRequest &request);
+                void DescribeIaCTokenListAsync(const Model::DescribeIaCTokenListRequest& request, const DescribeIaCTokenListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIaCTokenListOutcomeCallable DescribeIaCTokenListCallable(const Model::DescribeIaCTokenListRequest& request);
+
+                /**
                  *对象存储异常检测调用记录信息
                  * @param req DescribeIpInvokeRecordRequest
                  * @return DescribeIpInvokeRecordOutcome
@@ -2961,6 +3092,15 @@ namespace TencentCloud
                 ModifyDspmWhitelistStrategyOutcome ModifyDspmWhitelistStrategy(const Model::ModifyDspmWhitelistStrategyRequest &request);
                 void ModifyDspmWhitelistStrategyAsync(const Model::ModifyDspmWhitelistStrategyRequest& request, const ModifyDspmWhitelistStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDspmWhitelistStrategyOutcomeCallable ModifyDspmWhitelistStrategyCallable(const Model::ModifyDspmWhitelistStrategyRequest& request);
+
+                /**
+                 *修改IaC检测接入Token存储周期
+                 * @param req ModifyIaCTokenPeriodRequest
+                 * @return ModifyIaCTokenPeriodOutcome
+                 */
+                ModifyIaCTokenPeriodOutcome ModifyIaCTokenPeriod(const Model::ModifyIaCTokenPeriodRequest &request);
+                void ModifyIaCTokenPeriodAsync(const Model::ModifyIaCTokenPeriodRequest& request, const ModifyIaCTokenPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIaCTokenPeriodOutcomeCallable ModifyIaCTokenPeriodCallable(const Model::ModifyIaCTokenPeriodRequest& request);
 
                 /**
                  *修改集团账号状态

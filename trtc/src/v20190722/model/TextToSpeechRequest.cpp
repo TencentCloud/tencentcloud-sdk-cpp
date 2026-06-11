@@ -31,7 +31,8 @@ TextToSpeechRequest::TextToSpeechRequest() :
     m_modelHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_pronunciationDictHasBeenSet(false),
-    m_alignmentModeHasBeenSet(false)
+    m_alignmentModeHasBeenSet(false),
+    m_extraParamsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string TextToSpeechRequest::ToJsonString() const
         string key = "AlignmentMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alignmentMode, allocator);
+    }
+
+    if (m_extraParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraParams.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -273,6 +282,22 @@ void TextToSpeechRequest::SetAlignmentMode(const uint64_t& _alignmentMode)
 bool TextToSpeechRequest::AlignmentModeHasBeenSet() const
 {
     return m_alignmentModeHasBeenSet;
+}
+
+string TextToSpeechRequest::GetExtraParams() const
+{
+    return m_extraParams;
+}
+
+void TextToSpeechRequest::SetExtraParams(const string& _extraParams)
+{
+    m_extraParams = _extraParams;
+    m_extraParamsHasBeenSet = true;
+}
+
+bool TextToSpeechRequest::ExtraParamsHasBeenSet() const
+{
+    return m_extraParamsHasBeenSet;
 }
 
 

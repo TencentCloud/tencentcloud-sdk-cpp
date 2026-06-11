@@ -26,7 +26,9 @@ MarkInfo::MarkInfo() :
     m_markInfosHasBeenSet(false),
     m_questionPositionsHasBeenSet(false),
     m_questionImagePositionsHasBeenSet(false),
-    m_rightAnswerHasBeenSet(false)
+    m_rightAnswerHasBeenSet(false),
+    m_subjectHasBeenSet(false),
+    m_questionTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome MarkInfo::Deserialize(const rapidjson::Value &value)
         m_rightAnswerHasBeenSet = true;
     }
 
+    if (value.HasMember("Subject") && !value["Subject"].IsNull())
+    {
+        if (!value["Subject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MarkInfo.Subject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subject = string(value["Subject"].GetString());
+        m_subjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuestionType") && !value["QuestionType"].IsNull())
+    {
+        if (!value["QuestionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MarkInfo.QuestionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_questionType = string(value["QuestionType"].GetString());
+        m_questionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +229,22 @@ void MarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RightAnswer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rightAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_questionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_questionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -306,5 +344,37 @@ void MarkInfo::SetRightAnswer(const string& _rightAnswer)
 bool MarkInfo::RightAnswerHasBeenSet() const
 {
     return m_rightAnswerHasBeenSet;
+}
+
+string MarkInfo::GetSubject() const
+{
+    return m_subject;
+}
+
+void MarkInfo::SetSubject(const string& _subject)
+{
+    m_subject = _subject;
+    m_subjectHasBeenSet = true;
+}
+
+bool MarkInfo::SubjectHasBeenSet() const
+{
+    return m_subjectHasBeenSet;
+}
+
+string MarkInfo::GetQuestionType() const
+{
+    return m_questionType;
+}
+
+void MarkInfo::SetQuestionType(const string& _questionType)
+{
+    m_questionType = _questionType;
+    m_questionTypeHasBeenSet = true;
+}
+
+bool MarkInfo::QuestionTypeHasBeenSet() const
+{
+    return m_questionTypeHasBeenSet;
 }
 

@@ -240,6 +240,56 @@ CbsClient::AttachDisksOutcomeCallable CbsClient::AttachDisksCallable(const Attac
     return prom->get_future();
 }
 
+CbsClient::AttachRemoteDisksOutcome CbsClient::AttachRemoteDisks(const AttachRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachRemoteDisksResponse rsp = AttachRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachRemoteDisksOutcome(rsp);
+        else
+            return AttachRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::AttachRemoteDisksAsync(const AttachRemoteDisksRequest& request, const AttachRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AttachRemoteDisksRequest&;
+    using Resp = AttachRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AttachRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::AttachRemoteDisksOutcomeCallable CbsClient::AttachRemoteDisksCallable(const AttachRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AttachRemoteDisksOutcome>>();
+    AttachRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const AttachRemoteDisksRequest&,
+        AttachRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::BindAutoSnapshotPolicyOutcome CbsClient::BindAutoSnapshotPolicy(const BindAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "BindAutoSnapshotPolicy");
@@ -532,6 +582,56 @@ CbsClient::CreateDisksOutcomeCallable CbsClient::CreateDisksCallable(const Creat
         const CbsClient*,
         const CreateDisksRequest&,
         CreateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::CreateRemoteDisksOutcome CbsClient::CreateRemoteDisks(const CreateRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRemoteDisksResponse rsp = CreateRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRemoteDisksOutcome(rsp);
+        else
+            return CreateRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CreateRemoteDisksAsync(const CreateRemoteDisksRequest& request, const CreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRemoteDisksRequest&;
+    using Resp = CreateRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::CreateRemoteDisksOutcomeCallable CbsClient::CreateRemoteDisksCallable(const CreateRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRemoteDisksOutcome>>();
+    CreateRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const CreateRemoteDisksRequest&,
+        CreateRemoteDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1190,6 +1290,156 @@ CbsClient::DescribeInstancesDiskNumOutcomeCallable CbsClient::DescribeInstancesD
     return prom->get_future();
 }
 
+CbsClient::DescribeRemoteDiskConfigQuotaOutcome CbsClient::DescribeRemoteDiskConfigQuota(const DescribeRemoteDiskConfigQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteDiskConfigQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteDiskConfigQuotaResponse rsp = DescribeRemoteDiskConfigQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteDiskConfigQuotaOutcome(rsp);
+        else
+            return DescribeRemoteDiskConfigQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteDiskConfigQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeRemoteDiskConfigQuotaAsync(const DescribeRemoteDiskConfigQuotaRequest& request, const DescribeRemoteDiskConfigQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRemoteDiskConfigQuotaRequest&;
+    using Resp = DescribeRemoteDiskConfigQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRemoteDiskConfigQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::DescribeRemoteDiskConfigQuotaOutcomeCallable CbsClient::DescribeRemoteDiskConfigQuotaCallable(const DescribeRemoteDiskConfigQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRemoteDiskConfigQuotaOutcome>>();
+    DescribeRemoteDiskConfigQuotaAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const DescribeRemoteDiskConfigQuotaRequest&,
+        DescribeRemoteDiskConfigQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::DescribeRemoteDisksOutcome CbsClient::DescribeRemoteDisks(const DescribeRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteDisksResponse rsp = DescribeRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteDisksOutcome(rsp);
+        else
+            return DescribeRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeRemoteDisksAsync(const DescribeRemoteDisksRequest& request, const DescribeRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRemoteDisksRequest&;
+    using Resp = DescribeRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::DescribeRemoteDisksOutcomeCallable CbsClient::DescribeRemoteDisksCallable(const DescribeRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRemoteDisksOutcome>>();
+    DescribeRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const DescribeRemoteDisksRequest&,
+        DescribeRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::DescribeRemoteDisksDeniedActionsOutcome CbsClient::DescribeRemoteDisksDeniedActions(const DescribeRemoteDisksDeniedActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteDisksDeniedActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteDisksDeniedActionsResponse rsp = DescribeRemoteDisksDeniedActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteDisksDeniedActionsOutcome(rsp);
+        else
+            return DescribeRemoteDisksDeniedActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteDisksDeniedActionsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeRemoteDisksDeniedActionsAsync(const DescribeRemoteDisksDeniedActionsRequest& request, const DescribeRemoteDisksDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRemoteDisksDeniedActionsRequest&;
+    using Resp = DescribeRemoteDisksDeniedActionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRemoteDisksDeniedActions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::DescribeRemoteDisksDeniedActionsOutcomeCallable CbsClient::DescribeRemoteDisksDeniedActionsCallable(const DescribeRemoteDisksDeniedActionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRemoteDisksDeniedActionsOutcome>>();
+    DescribeRemoteDisksDeniedActionsAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const DescribeRemoteDisksDeniedActionsRequest&,
+        DescribeRemoteDisksDeniedActionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::DescribeSnapshotGroupsOutcome CbsClient::DescribeSnapshotGroups(const DescribeSnapshotGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshotGroups");
@@ -1440,6 +1690,56 @@ CbsClient::DetachDisksOutcomeCallable CbsClient::DetachDisksCallable(const Detac
     return prom->get_future();
 }
 
+CbsClient::DetachRemoteDisksOutcome CbsClient::DetachRemoteDisks(const DetachRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachRemoteDisksResponse rsp = DetachRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachRemoteDisksOutcome(rsp);
+        else
+            return DetachRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DetachRemoteDisksAsync(const DetachRemoteDisksRequest& request, const DetachRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DetachRemoteDisksRequest&;
+    using Resp = DetachRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DetachRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::DetachRemoteDisksOutcomeCallable CbsClient::DetachRemoteDisksCallable(const DetachRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DetachRemoteDisksOutcome>>();
+    DetachRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const DetachRemoteDisksRequest&,
+        DetachRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::GetSnapOverviewOutcome CbsClient::GetSnapOverview(const GetSnapOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "GetSnapOverview");
@@ -1540,6 +1840,56 @@ CbsClient::InitializeDisksOutcomeCallable CbsClient::InitializeDisksCallable(con
     return prom->get_future();
 }
 
+CbsClient::InquirePriceCreateRemoteDisksOutcome CbsClient::InquirePriceCreateRemoteDisks(const InquirePriceCreateRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateRemoteDisksResponse rsp = InquirePriceCreateRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateRemoteDisksOutcome(rsp);
+        else
+            return InquirePriceCreateRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InquirePriceCreateRemoteDisksAsync(const InquirePriceCreateRemoteDisksRequest& request, const InquirePriceCreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceCreateRemoteDisksRequest&;
+    using Resp = InquirePriceCreateRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceCreateRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::InquirePriceCreateRemoteDisksOutcomeCallable CbsClient::InquirePriceCreateRemoteDisksCallable(const InquirePriceCreateRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceCreateRemoteDisksOutcome>>();
+    InquirePriceCreateRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const InquirePriceCreateRemoteDisksRequest&,
+        InquirePriceCreateRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::InquirePriceModifyDiskBackupQuotaOutcome CbsClient::InquirePriceModifyDiskBackupQuota(const InquirePriceModifyDiskBackupQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceModifyDiskBackupQuota");
@@ -1632,6 +1982,56 @@ CbsClient::InquirePriceModifyDiskExtraPerformanceOutcomeCallable CbsClient::Inqu
         const CbsClient*,
         const InquirePriceModifyDiskExtraPerformanceRequest&,
         InquirePriceModifyDiskExtraPerformanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::InquirePriceRenewRemoteDisksOutcome CbsClient::InquirePriceRenewRemoteDisks(const InquirePriceRenewRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRenewRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRenewRemoteDisksResponse rsp = InquirePriceRenewRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRenewRemoteDisksOutcome(rsp);
+        else
+            return InquirePriceRenewRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRenewRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InquirePriceRenewRemoteDisksAsync(const InquirePriceRenewRemoteDisksRequest& request, const InquirePriceRenewRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceRenewRemoteDisksRequest&;
+    using Resp = InquirePriceRenewRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceRenewRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::InquirePriceRenewRemoteDisksOutcomeCallable CbsClient::InquirePriceRenewRemoteDisksCallable(const InquirePriceRenewRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceRenewRemoteDisksOutcome>>();
+    InquirePriceRenewRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const InquirePriceRenewRemoteDisksRequest&,
+        InquirePriceRenewRemoteDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2090,6 +2490,56 @@ CbsClient::ModifyDisksRenewFlagOutcomeCallable CbsClient::ModifyDisksRenewFlagCa
     return prom->get_future();
 }
 
+CbsClient::ModifyRemoteDiskAttributesOutcome CbsClient::ModifyRemoteDiskAttributes(const ModifyRemoteDiskAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRemoteDiskAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRemoteDiskAttributesResponse rsp = ModifyRemoteDiskAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRemoteDiskAttributesOutcome(rsp);
+        else
+            return ModifyRemoteDiskAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRemoteDiskAttributesOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifyRemoteDiskAttributesAsync(const ModifyRemoteDiskAttributesRequest& request, const ModifyRemoteDiskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRemoteDiskAttributesRequest&;
+    using Resp = ModifyRemoteDiskAttributesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRemoteDiskAttributes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::ModifyRemoteDiskAttributesOutcomeCallable CbsClient::ModifyRemoteDiskAttributesCallable(const ModifyRemoteDiskAttributesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRemoteDiskAttributesOutcome>>();
+    ModifyRemoteDiskAttributesAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const ModifyRemoteDiskAttributesRequest&,
+        ModifyRemoteDiskAttributesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::ModifySnapshotAttributeOutcome CbsClient::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySnapshotAttribute");
@@ -2240,6 +2690,56 @@ CbsClient::RenewDiskOutcomeCallable CbsClient::RenewDiskCallable(const RenewDisk
     return prom->get_future();
 }
 
+CbsClient::RenewRemoteDiskOutcome CbsClient::RenewRemoteDisk(const RenewRemoteDiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewRemoteDisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewRemoteDiskResponse rsp = RenewRemoteDiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewRemoteDiskOutcome(rsp);
+        else
+            return RenewRemoteDiskOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewRemoteDiskOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::RenewRemoteDiskAsync(const RenewRemoteDiskRequest& request, const RenewRemoteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewRemoteDiskRequest&;
+    using Resp = RenewRemoteDiskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewRemoteDisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::RenewRemoteDiskOutcomeCallable CbsClient::RenewRemoteDiskCallable(const RenewRemoteDiskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewRemoteDiskOutcome>>();
+    RenewRemoteDiskAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const RenewRemoteDiskRequest&,
+        RenewRemoteDiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::ResizeDiskOutcome CbsClient::ResizeDisk(const ResizeDiskRequest &request)
 {
     auto outcome = MakeRequest(request, "ResizeDisk");
@@ -2290,6 +2790,106 @@ CbsClient::ResizeDiskOutcomeCallable CbsClient::ResizeDiskCallable(const ResizeD
     return prom->get_future();
 }
 
+CbsClient::SwitchParameterCreateRemoteDisksOutcome CbsClient::SwitchParameterCreateRemoteDisks(const SwitchParameterCreateRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchParameterCreateRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchParameterCreateRemoteDisksResponse rsp = SwitchParameterCreateRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchParameterCreateRemoteDisksOutcome(rsp);
+        else
+            return SwitchParameterCreateRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchParameterCreateRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::SwitchParameterCreateRemoteDisksAsync(const SwitchParameterCreateRemoteDisksRequest& request, const SwitchParameterCreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SwitchParameterCreateRemoteDisksRequest&;
+    using Resp = SwitchParameterCreateRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SwitchParameterCreateRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::SwitchParameterCreateRemoteDisksOutcomeCallable CbsClient::SwitchParameterCreateRemoteDisksCallable(const SwitchParameterCreateRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SwitchParameterCreateRemoteDisksOutcome>>();
+    SwitchParameterCreateRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const SwitchParameterCreateRemoteDisksRequest&,
+        SwitchParameterCreateRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::SwitchParameterRenewRemoteDisksOutcome CbsClient::SwitchParameterRenewRemoteDisks(const SwitchParameterRenewRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchParameterRenewRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchParameterRenewRemoteDisksResponse rsp = SwitchParameterRenewRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchParameterRenewRemoteDisksOutcome(rsp);
+        else
+            return SwitchParameterRenewRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchParameterRenewRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::SwitchParameterRenewRemoteDisksAsync(const SwitchParameterRenewRemoteDisksRequest& request, const SwitchParameterRenewRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SwitchParameterRenewRemoteDisksRequest&;
+    using Resp = SwitchParameterRenewRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SwitchParameterRenewRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::SwitchParameterRenewRemoteDisksOutcomeCallable CbsClient::SwitchParameterRenewRemoteDisksCallable(const SwitchParameterRenewRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SwitchParameterRenewRemoteDisksOutcome>>();
+    SwitchParameterRenewRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const SwitchParameterRenewRemoteDisksRequest&,
+        SwitchParameterRenewRemoteDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::TerminateDisksOutcome CbsClient::TerminateDisks(const TerminateDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateDisks");
@@ -2332,6 +2932,56 @@ CbsClient::TerminateDisksOutcomeCallable CbsClient::TerminateDisksCallable(const
         const CbsClient*,
         const TerminateDisksRequest&,
         TerminateDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CbsClient::TerminateRemoteDisksOutcome CbsClient::TerminateRemoteDisks(const TerminateRemoteDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateRemoteDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateRemoteDisksResponse rsp = TerminateRemoteDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateRemoteDisksOutcome(rsp);
+        else
+            return TerminateRemoteDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateRemoteDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::TerminateRemoteDisksAsync(const TerminateRemoteDisksRequest& request, const TerminateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TerminateRemoteDisksRequest&;
+    using Resp = TerminateRemoteDisksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TerminateRemoteDisks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::TerminateRemoteDisksOutcomeCallable CbsClient::TerminateRemoteDisksCallable(const TerminateRemoteDisksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TerminateRemoteDisksOutcome>>();
+    TerminateRemoteDisksAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const TerminateRemoteDisksRequest&,
+        TerminateRemoteDisksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

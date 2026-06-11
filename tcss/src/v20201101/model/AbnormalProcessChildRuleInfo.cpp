@@ -21,11 +21,11 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 AbnormalProcessChildRuleInfo::AbnormalProcessChildRuleInfo() :
-    m_ruleModeHasBeenSet(false),
     m_processPathHasBeenSet(false),
+    m_ruleModeHasBeenSet(false),
+    m_cmdLineHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleLevelHasBeenSet(false),
-    m_cmdLineHasBeenSet(false)
+    m_ruleLevelHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,16 @@ CoreInternalOutcome AbnormalProcessChildRuleInfo::Deserialize(const rapidjson::V
 {
     string requestId = "";
 
+
+    if (value.HasMember("ProcessPath") && !value["ProcessPath"].IsNull())
+    {
+        if (!value["ProcessPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.ProcessPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processPath = string(value["ProcessPath"].GetString());
+        m_processPathHasBeenSet = true;
+    }
 
     if (value.HasMember("RuleMode") && !value["RuleMode"].IsNull())
     {
@@ -44,14 +54,14 @@ CoreInternalOutcome AbnormalProcessChildRuleInfo::Deserialize(const rapidjson::V
         m_ruleModeHasBeenSet = true;
     }
 
-    if (value.HasMember("ProcessPath") && !value["ProcessPath"].IsNull())
+    if (value.HasMember("CmdLine") && !value["CmdLine"].IsNull())
     {
-        if (!value["ProcessPath"].IsString())
+        if (!value["CmdLine"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.ProcessPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_processPath = string(value["ProcessPath"].GetString());
-        m_processPathHasBeenSet = true;
+        m_cmdLine = string(value["CmdLine"].GetString());
+        m_cmdLineHasBeenSet = true;
     }
 
     if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
@@ -74,22 +84,20 @@ CoreInternalOutcome AbnormalProcessChildRuleInfo::Deserialize(const rapidjson::V
         m_ruleLevelHasBeenSet = true;
     }
 
-    if (value.HasMember("CmdLine") && !value["CmdLine"].IsNull())
-    {
-        if (!value["CmdLine"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cmdLine = string(value["CmdLine"].GetString());
-        m_cmdLineHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void AbnormalProcessChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_processPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processPath.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_ruleModeHasBeenSet)
     {
@@ -99,12 +107,12 @@ void AbnormalProcessChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         value.AddMember(iKey, rapidjson::Value(m_ruleMode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_processPathHasBeenSet)
+    if (m_cmdLineHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProcessPath";
+        string key = "CmdLine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_processPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIdHasBeenSet)
@@ -123,16 +131,24 @@ void AbnormalProcessChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         value.AddMember(iKey, rapidjson::Value(m_ruleLevel.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_cmdLineHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CmdLine";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cmdLine.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string AbnormalProcessChildRuleInfo::GetProcessPath() const
+{
+    return m_processPath;
+}
+
+void AbnormalProcessChildRuleInfo::SetProcessPath(const string& _processPath)
+{
+    m_processPath = _processPath;
+    m_processPathHasBeenSet = true;
+}
+
+bool AbnormalProcessChildRuleInfo::ProcessPathHasBeenSet() const
+{
+    return m_processPathHasBeenSet;
+}
 
 string AbnormalProcessChildRuleInfo::GetRuleMode() const
 {
@@ -150,20 +166,20 @@ bool AbnormalProcessChildRuleInfo::RuleModeHasBeenSet() const
     return m_ruleModeHasBeenSet;
 }
 
-string AbnormalProcessChildRuleInfo::GetProcessPath() const
+string AbnormalProcessChildRuleInfo::GetCmdLine() const
 {
-    return m_processPath;
+    return m_cmdLine;
 }
 
-void AbnormalProcessChildRuleInfo::SetProcessPath(const string& _processPath)
+void AbnormalProcessChildRuleInfo::SetCmdLine(const string& _cmdLine)
 {
-    m_processPath = _processPath;
-    m_processPathHasBeenSet = true;
+    m_cmdLine = _cmdLine;
+    m_cmdLineHasBeenSet = true;
 }
 
-bool AbnormalProcessChildRuleInfo::ProcessPathHasBeenSet() const
+bool AbnormalProcessChildRuleInfo::CmdLineHasBeenSet() const
 {
-    return m_processPathHasBeenSet;
+    return m_cmdLineHasBeenSet;
 }
 
 string AbnormalProcessChildRuleInfo::GetRuleId() const
@@ -196,21 +212,5 @@ void AbnormalProcessChildRuleInfo::SetRuleLevel(const string& _ruleLevel)
 bool AbnormalProcessChildRuleInfo::RuleLevelHasBeenSet() const
 {
     return m_ruleLevelHasBeenSet;
-}
-
-string AbnormalProcessChildRuleInfo::GetCmdLine() const
-{
-    return m_cmdLine;
-}
-
-void AbnormalProcessChildRuleInfo::SetCmdLine(const string& _cmdLine)
-{
-    m_cmdLine = _cmdLine;
-    m_cmdLineHasBeenSet = true;
-}
-
-bool AbnormalProcessChildRuleInfo::CmdLineHasBeenSet() const
-{
-    return m_cmdLineHasBeenSet;
 }
 

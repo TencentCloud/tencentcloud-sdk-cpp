@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的结果数量。
-                     * @return TotalCount 返回的结果数量。
+                     * 获取<p>返回的结果数量。</p>
+                     * @return TotalCount <p>返回的结果数量。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取可用区信息集合。
-                     * @return ZoneSet 可用区信息集合。
+                     * 获取<p>可用区信息集合。</p>
+                     * @return ZoneSet <p>可用区信息集合。</p>
                      * 
                      */
                     std::vector<ZoneInfo> GetZoneSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的结果数量。
+                     * <p>返回的结果数量。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 可用区信息集合。
+                     * <p>可用区信息集合。</p>
                      */
                     std::vector<ZoneInfo> m_zoneSet;
                     bool m_zoneSetHasBeenSet;

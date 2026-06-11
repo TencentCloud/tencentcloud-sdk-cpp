@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -70,15 +66,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
-                     * @return BusinessType 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
+                     * 获取<p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color="red">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>
+                     * @return BusinessType <p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color="red">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>
                      * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
-                     * 设置文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
-                     * @param _businessType 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
+                     * 设置<p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color="red">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>
+                     * @param _businessType <p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color="red">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>
                      * 
                      */
                     void SetBusinessType(const std::string& _businessType);
@@ -91,15 +87,15 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
-                     * @return BusinessIds 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
+                     * 获取<p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>
+                     * @return BusinessIds <p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>
                      * 
                      */
                     std::vector<std::string> GetBusinessIds() const;
 
                     /**
-                     * 设置业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
-                     * @param _businessIds 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
+                     * 设置<p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>
+                     * @param _businessIds <p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>
                      * 
                      */
                     void SetBusinessIds(const std::vector<std::string>& _businessIds);
@@ -112,15 +108,15 @@ namespace TencentCloud
                     bool BusinessIdsHasBeenSet() const;
 
                     /**
-                     * 获取下载后的文件命名，只有FileType为zip的时候生效
-                     * @return FileName 下载后的文件命名，只有FileType为zip的时候生效
+                     * 获取<p>下载后的文件命名，只有FileType为zip的时候生效</p>
+                     * @return FileName <p>下载后的文件命名，只有FileType为zip的时候生效</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置下载后的文件命名，只有FileType为zip的时候生效
-                     * @param _fileName 下载后的文件命名，只有FileType为zip的时候生效
+                     * 设置<p>下载后的文件命名，只有FileType为zip的时候生效</p>
+                     * @param _fileName <p>下载后的文件命名，只有FileType为zip的时候生效</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -133,35 +129,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取要下载的文件类型，取值如下：
-<ul>
-<li>JPG</li>
-<li>PDF</li>
-<li>ZIP</li>
-</ul>
-                     * @return FileType 要下载的文件类型，取值如下：
-<ul>
-<li>JPG</li>
-<li>PDF</li>
-<li>ZIP</li>
-</ul>
+                     * 获取<p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>
+                     * @return FileType <p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置要下载的文件类型，取值如下：
-<ul>
-<li>JPG</li>
-<li>PDF</li>
-<li>ZIP</li>
-</ul>
-                     * @param _fileType 要下载的文件类型，取值如下：
-<ul>
-<li>JPG</li>
-<li>PDF</li>
-<li>ZIP</li>
-</ul>
+                     * 设置<p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>
+                     * @param _fileType <p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -174,15 +150,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
-                     * @return Offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
+                     * 获取<p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>
+                     * @return Offset <p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
-                     * @param _offset 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
+                     * 设置<p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>
+                     * @param _offset <p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -195,15 +171,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
-                     * @return Limit 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
+                     * 获取<p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>
+                     * @return Limit <p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
-                     * @param _limit 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
+                     * 设置<p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>
+                     * @param _limit <p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -216,15 +192,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
-                     * @return UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
+                     * 获取<p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>
+                     * @return UrlTtl <p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>
                      * 
                      */
                     int64_t GetUrlTtl() const;
 
                     /**
-                     * 设置下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
-                     * @param _urlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
+                     * 设置<p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>
+                     * @param _urlTtl <p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>
                      * 
                      */
                     void SetUrlTtl(const int64_t& _urlTtl);
@@ -237,15 +213,15 @@ namespace TencentCloud
                     bool UrlTtlHasBeenSet() const;
 
                     /**
-                     * 获取暂不开放
-                     * @return CcToken 暂不开放
+                     * 获取<p>暂不开放</p>
+                     * @return CcToken <p>暂不开放</p>
                      * @deprecated
                      */
                     std::string GetCcToken() const;
 
                     /**
-                     * 设置暂不开放
-                     * @param _ccToken 暂不开放
+                     * 设置<p>暂不开放</p>
+                     * @param _ccToken <p>暂不开放</p>
                      * @deprecated
                      */
                     void SetCcToken(const std::string& _ccToken);
@@ -258,15 +234,15 @@ namespace TencentCloud
                     bool CcTokenHasBeenSet() const;
 
                     /**
-                     * 获取暂不开放
-                     * @return Scene 暂不开放
+                     * 获取<p>暂不开放</p>
+                     * @return Scene <p>暂不开放</p>
                      * @deprecated
                      */
                     std::string GetScene() const;
 
                     /**
-                     * 设置暂不开放
-                     * @param _scene 暂不开放
+                     * 设置<p>暂不开放</p>
+                     * @param _scene <p>暂不开放</p>
                      * @deprecated
                      */
                     void SetScene(const std::string& _scene);
@@ -279,19 +255,15 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -306,74 +278,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color="red">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>
+                     * <p>文件对应的业务类型，目前支持：<ul><li><strong>FLOW</strong> : <font color="red">如需下载合同文件请选择此项</font></li><li><strong>TEMPLATE</strong> : 如需下载模板文件请选择此项</li><li><strong>DOCUMENT</strong>: 如需下载文档文件请选择此项</li><li><strong>SEAL</strong>: 如需下载印章图片请选择此项</li><li><strong>DIGITFILE</strong>: 如需下载加签文件请选择此项</li><li><strong>ARCHIVE</strong>: 如需下载合同归档文件请选择此项</li></ul></p><p>枚举值：</p><ul><li>FLOW： 如需下载合同文件请选择此项</li><li>TEMPLATE： 如需下载模板文件请选择此项</li><li>DOCUMENT： 如需下载文档文件请选择此项</li><li>SEAL： 如需下载印章图片请选择此项</li><li>DIGITFILE： 如需下载加签文件请选择此项</li><li>ARCHIVE： 如需下载合同归档文件请选择此项</li></ul>
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>
+                     * <p>业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul></p>
                      */
                     std::vector<std::string> m_businessIds;
                     bool m_businessIdsHasBeenSet;
 
                     /**
-                     * 下载后的文件命名，只有FileType为zip的时候生效
+                     * <p>下载后的文件命名，只有FileType为zip的时候生效</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 要下载的文件类型，取值如下：
-<ul>
-<li>JPG</li>
-<li>PDF</li>
-<li>ZIP</li>
-</ul>
+                     * <p>要下载的文件类型，取值如下：</p><ul><li>JPG</li><li>PDF</li><li>ZIP</li></ul>
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。
+                     * <p>指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。
+                     * <p>指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
+                     * <p>下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)</p>
                      */
                     int64_t m_urlTtl;
                     bool m_urlTtlHasBeenSet;
 
                     /**
-                     * 暂不开放
+                     * <p>暂不开放</p>
                      */
                     std::string m_ccToken;
                     bool m_ccTokenHasBeenSet;
 
                     /**
-                     * 暂不开放
+                     * <p>暂不开放</p>
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

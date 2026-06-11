@@ -26,6 +26,7 @@
 #include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
 #include <tencentcloud/clb/v20180317/model/SnatIp.h>
 #include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
+#include <tencentcloud/clb/v20180317/model/AvailableZoneAffinityInfo.h>
 
 
 namespace TencentCloud
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
-                     * @return SubnetId <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
+                     * 获取<p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。<br>创建内网负载均衡实例，或者创建 IPv6FullChain 版本的负载均衡实例，此参数必填。<br>创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
+                     * @return SubnetId <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。<br>创建内网负载均衡实例，或者创建 IPv6FullChain 版本的负载均衡实例，此参数必填。<br>创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置<p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
-                     * @param _subnetId <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
+                     * 设置<p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。<br>创建内网负载均衡实例，或者创建 IPv6FullChain 版本的负载均衡实例，此参数必填。<br>创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
+                     * @param _subnetId <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。<br>创建内网负载均衡实例，或者创建 IPv6FullChain 版本的负载均衡实例，此参数必填。<br>创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -258,15 +259,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @return InternetAccessible <p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 获取<p>网络计费模式，其中的最大出带宽，仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>
+                     * @return InternetAccessible <p>网络计费模式，其中的最大出带宽，仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置<p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @param _internetAccessible <p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 设置<p>网络计费模式，其中的最大出带宽，仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>
+                     * @param _internetAccessible <p>网络计费模式，其中的最大出带宽，仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -615,15 +616,15 @@ namespace TencentCloud
                     bool EgressHasBeenSet() const;
 
                     /**
-                     * 获取<p>负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @return LBChargePrepaid <p>负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 获取<p>负载均衡实例的预付费相关属性</p>
+                     * @return LBChargePrepaid <p>负载均衡实例的预付费相关属性</p>
                      * 
                      */
                     LBChargePrepaid GetLBChargePrepaid() const;
 
                     /**
-                     * 设置<p>负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @param _lBChargePrepaid <p>负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 设置<p>负载均衡实例的预付费相关属性</p>
+                     * @param _lBChargePrepaid <p>负载均衡实例的预付费相关属性</p>
                      * 
                      */
                     void SetLBChargePrepaid(const LBChargePrepaid& _lBChargePrepaid);
@@ -636,15 +637,15 @@ namespace TencentCloud
                     bool LBChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取<p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @return LBChargeType <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 获取<p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>PREPAID： 包年包月</li></ul>
+                     * @return LBChargeType <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>PREPAID： 包年包月</li></ul>
                      * 
                      */
                     std::string GetLBChargeType() const;
 
                     /**
-                     * 设置<p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
-                     * @param _lBChargeType <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * 设置<p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>PREPAID： 包年包月</li></ul>
+                     * @param _lBChargeType <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>PREPAID： 包年包月</li></ul>
                      * 
                      */
                     void SetLBChargeType(const std::string& _lBChargeType);
@@ -698,6 +699,27 @@ namespace TencentCloud
                      */
                     bool AdvancedRouteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可用区亲和信息</p>
+                     * @return AvailableZoneAffinityInfo <p>可用区亲和信息</p>
+                     * 
+                     */
+                    AvailableZoneAffinityInfo GetAvailableZoneAffinityInfo() const;
+
+                    /**
+                     * 设置<p>可用区亲和信息</p>
+                     * @param _availableZoneAffinityInfo <p>可用区亲和信息</p>
+                     * 
+                     */
+                    void SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo);
+
+                    /**
+                     * 判断参数 AvailableZoneAffinityInfo 是否已赋值
+                     * @return AvailableZoneAffinityInfo 是否已赋值
+                     * 
+                     */
+                    bool AvailableZoneAffinityInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -725,7 +747,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
+                     * <p>在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。<br>创建内网负载均衡实例，或者创建 IPv6FullChain 版本的负载均衡实例，此参数必填。<br>创建公网IPv4负载均衡实例时，不支持指定该参数。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -761,7 +783,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * <p>网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * <p>网络计费模式，其中的最大出带宽，仅对内网属性的性能容量型实例和公网属性的所有实例生效。</p>
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
@@ -863,13 +885,13 @@ namespace TencentCloud
                     bool m_egressHasBeenSet;
 
                     /**
-                     * <p>负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * <p>负载均衡实例的预付费相关属性</p>
                      */
                     LBChargePrepaid m_lBChargePrepaid;
                     bool m_lBChargePrepaidHasBeenSet;
 
                     /**
-                     * <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a></p>
+                     * <p>负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量计费</li><li>PREPAID： 包年包月</li></ul>
                      */
                     std::string m_lBChargeType;
                     bool m_lBChargeTypeHasBeenSet;
@@ -885,6 +907,12 @@ namespace TencentCloud
                      */
                     bool m_advancedRoute;
                     bool m_advancedRouteHasBeenSet;
+
+                    /**
+                     * <p>可用区亲和信息</p>
+                     */
+                    AvailableZoneAffinityInfo m_availableZoneAffinityInfo;
+                    bool m_availableZoneAffinityInfoHasBeenSet;
 
                 };
             }

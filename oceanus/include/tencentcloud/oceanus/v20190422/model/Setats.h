@@ -455,15 +455,15 @@ namespace TencentCloud
                     bool WebUITypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>setats集群的名字</p>
-                     * @return Name <p>setats集群的名字</p>
+                     * 获取<p>Setats集群名字</p>
+                     * @return Name <p>Setats集群名字</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>setats集群的名字</p>
-                     * @param _name <p>setats集群的名字</p>
+                     * 设置<p>Setats集群名字</p>
+                     * @param _name <p>Setats集群名字</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -476,15 +476,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>setats集群注释</p>
-                     * @return Remark <p>setats集群注释</p>
+                     * 获取<p>Setats集群描述</p>
+                     * @return Remark <p>Setats集群描述</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置<p>setats集群注释</p>
-                     * @param _remark <p>setats集群注释</p>
+                     * 设置<p>Setats集群描述</p>
+                     * @param _remark <p>Setats集群描述</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -613,13 +613,13 @@ namespace TencentCloud
                     bool m_webUITypeHasBeenSet;
 
                     /**
-                     * <p>setats集群的名字</p>
+                     * <p>Setats集群名字</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>setats集群注释</p>
+                     * <p>Setats集群描述</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

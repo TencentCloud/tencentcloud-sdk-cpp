@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取分配带宽值 单位Mbps
+                     * 获取<p>分配带宽值 单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 分配带宽值 单位Mbps
+                     * @return Width <p>分配带宽值 单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置分配带宽值 单位Mbps
+                     * 设置<p>分配带宽值 单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 分配带宽值 单位Mbps
+                     * @param _width <p>分配带宽值 单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取弹性开关
+                     * 获取<p>弹性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ElasticSwitch 弹性开关
+                     * @return ElasticSwitch <p>弹性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticSwitch() const;
 
                     /**
-                     * 设置弹性开关
+                     * 设置<p>弹性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _elasticSwitch 弹性开关
+                     * @param _elasticSwitch <p>弹性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ElasticSwitchHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽上限，单位Mbps
+                     * 获取<p>弹性带宽上限，单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ElasticBandwidth 弹性带宽上限，单位Mbps
+                     * @return ElasticBandwidth <p>弹性带宽上限，单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
-                     * 设置弹性带宽上限，单位Mbps
+                     * 设置<p>弹性带宽上限，单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _elasticBandwidth 弹性带宽上限，单位Mbps
+                     * @param _elasticBandwidth <p>弹性带宽上限，单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,15 +147,15 @@ namespace TencentCloud
                     bool ElasticBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取七天入向峰值带宽，单位bps
-                     * @return InFlowMax 七天入向峰值带宽，单位bps
+                     * 获取<p>七天入向峰值带宽，单位bps</p>
+                     * @return InFlowMax <p>七天入向峰值带宽，单位bps</p>
                      * 
                      */
                     int64_t GetInFlowMax() const;
 
                     /**
-                     * 设置七天入向峰值带宽，单位bps
-                     * @param _inFlowMax 七天入向峰值带宽，单位bps
+                     * 设置<p>七天入向峰值带宽，单位bps</p>
+                     * @param _inFlowMax <p>七天入向峰值带宽，单位bps</p>
                      * 
                      */
                     void SetInFlowMax(const int64_t& _inFlowMax);
@@ -168,15 +168,15 @@ namespace TencentCloud
                     bool InFlowMaxHasBeenSet() const;
 
                     /**
-                     * 获取七天出向峰值带宽，单位bps
-                     * @return OutFlowMax 七天出向峰值带宽，单位bps
+                     * 获取<p>七天出向峰值带宽，单位bps</p>
+                     * @return OutFlowMax <p>七天出向峰值带宽，单位bps</p>
                      * 
                      */
                     int64_t GetOutFlowMax() const;
 
                     /**
-                     * 设置七天出向峰值带宽，单位bps
-                     * @param _outFlowMax 七天出向峰值带宽，单位bps
+                     * 设置<p>七天出向峰值带宽，单位bps</p>
+                     * @param _outFlowMax <p>七天出向峰值带宽，单位bps</p>
                      * 
                      */
                     void SetOutFlowMax(const int64_t& _outFlowMax);
@@ -188,47 +188,74 @@ namespace TencentCloud
                      */
                     bool OutFlowMaxHasBeenSet() const;
 
+                    /**
+                     * 获取<p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return ElasticTrafficSwitch <p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetElasticTrafficSwitch() const;
+
+                    /**
+                     * 设置<p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _elasticTrafficSwitch <p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch);
+
+                    /**
+                     * 判断参数 ElasticTrafficSwitch 是否已赋值
+                     * @return ElasticTrafficSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticTrafficSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 分配带宽值 单位Mbps
+                     * <p>分配带宽值 单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 弹性开关
+                     * <p>弹性开关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
-                     * 弹性带宽上限，单位Mbps
+                     * <p>弹性带宽上限，单位Mbps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
 
                     /**
-                     * 七天入向峰值带宽，单位bps
+                     * <p>七天入向峰值带宽，单位bps</p>
                      */
                     int64_t m_inFlowMax;
                     bool m_inFlowMaxHasBeenSet;
 
                     /**
-                     * 七天出向峰值带宽，单位bps
+                     * <p>七天出向峰值带宽，单位bps</p>
                      */
                     int64_t m_outFlowMax;
                     bool m_outFlowMaxHasBeenSet;
+
+                    /**
+                     * <p>边界按流量弹性开关</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    int64_t m_elasticTrafficSwitch;
+                    bool m_elasticTrafficSwitchHasBeenSet;
 
                 };
             }

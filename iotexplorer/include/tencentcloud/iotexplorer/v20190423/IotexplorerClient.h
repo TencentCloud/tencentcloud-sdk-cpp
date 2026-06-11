@@ -63,6 +63,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDevicePublishSDPAnswerRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDevicePublishSDPAnswerResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskRequest.h>
@@ -115,6 +117,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteCloudStorageEventResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceSDPRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceSDPResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteFenceBindRequest.h>
@@ -549,6 +553,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
                 typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDevicePublishSDPAnswerResponse> CreateDevicePublishSDPAnswerOutcome;
+                typedef std::future<CreateDevicePublishSDPAnswerOutcome> CreateDevicePublishSDPAnswerOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateDevicePublishSDPAnswerRequest&, CreateDevicePublishSDPAnswerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDevicePublishSDPAnswerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceSDPAnswerResponse> CreateDeviceSDPAnswerOutcome;
                 typedef std::future<CreateDeviceSDPAnswerOutcome> CreateDeviceSDPAnswerOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceSDPAnswerRequest&, CreateDeviceSDPAnswerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceSDPAnswerAsyncHandler;
@@ -627,6 +634,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeviceSDPResponse> DeleteDeviceSDPOutcome;
+                typedef std::future<DeleteDeviceSDPOutcome> DeleteDeviceSDPOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceSDPRequest&, DeleteDeviceSDPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceSDPAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDevicesResponse> DeleteDevicesOutcome;
                 typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDevicesRequest&, DeleteDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
@@ -1351,7 +1361,16 @@ namespace TencentCloud
                 CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
 
                 /**
-                 *创建设备SDP应答
+                 *创建设备推流SDP应答，此接口调用前需要先调用CreateDeviceSDPAnswer接口以保证设备处于拉流状态，接口返回是另外一路webrtc推流SDP信息，可以用来进行标准的WHIP推流
+                 * @param req CreateDevicePublishSDPAnswerRequest
+                 * @return CreateDevicePublishSDPAnswerOutcome
+                 */
+                CreateDevicePublishSDPAnswerOutcome CreateDevicePublishSDPAnswer(const Model::CreateDevicePublishSDPAnswerRequest &request);
+                void CreateDevicePublishSDPAnswerAsync(const Model::CreateDevicePublishSDPAnswerRequest& request, const CreateDevicePublishSDPAnswerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDevicePublishSDPAnswerOutcomeCallable CreateDevicePublishSDPAnswerCallable(const Model::CreateDevicePublishSDPAnswerRequest& request);
+
+                /**
+                 *创建设备SDP应答，调用此接口后，后台会对传入参数的设备进行拉流，并返回webrtc answer SDP返回，可以进行WHEP协议拉流。
                  * @param req CreateDeviceSDPAnswerRequest
                  * @return CreateDeviceSDPAnswerOutcome
                  */
@@ -1583,6 +1602,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *删除设备SDP应答，此接口调用是手动结束设备后台推拉流信息，快速响应挂断需求。
+                 * @param req DeleteDeviceSDPRequest
+                 * @return DeleteDeviceSDPOutcome
+                 */
+                DeleteDeviceSDPOutcome DeleteDeviceSDP(const Model::DeleteDeviceSDPRequest &request);
+                void DeleteDeviceSDPAsync(const Model::DeleteDeviceSDPRequest& request, const DeleteDeviceSDPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceSDPOutcomeCallable DeleteDeviceSDPCallable(const Model::DeleteDeviceSDPRequest& request);
 
                 /**
                  *批量删除设备

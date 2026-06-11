@@ -82,7 +82,9 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_analysisModeHasBeenSet(false),
     m_analysisRelationInfosHasBeenSet(false),
     m_analysisInstanceInfoHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false)
+    m_maintenanceWindowHasBeenSet(false),
+    m_encryptionEnableHasBeenSet(false),
+    m_encryptionKmsRegionHasBeenSet(false)
 {
 }
 
@@ -774,6 +776,26 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_maintenanceWindowHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EncryptionEnable") && !rsp["EncryptionEnable"].IsNull())
+    {
+        if (!rsp["EncryptionEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionEnable = rsp["EncryptionEnable"].GetInt64();
+        m_encryptionEnableHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EncryptionKmsRegion") && !rsp["EncryptionKmsRegion"].IsNull())
+    {
+        if (!rsp["EncryptionKmsRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptionKmsRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionKmsRegion = string(rsp["EncryptionKmsRegion"].GetString());
+        m_encryptionKmsRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1290,6 +1312,22 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_maintenanceWindow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptionEnable, allocator);
+    }
+
+    if (m_encryptionKmsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionKmsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptionKmsRegion.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1892,6 +1930,26 @@ MaintenanceWindowInfo DescribeDBInstanceDetailResponse::GetMaintenanceWindow() c
 bool DescribeDBInstanceDetailResponse::MaintenanceWindowHasBeenSet() const
 {
     return m_maintenanceWindowHasBeenSet;
+}
+
+int64_t DescribeDBInstanceDetailResponse::GetEncryptionEnable() const
+{
+    return m_encryptionEnable;
+}
+
+bool DescribeDBInstanceDetailResponse::EncryptionEnableHasBeenSet() const
+{
+    return m_encryptionEnableHasBeenSet;
+}
+
+string DescribeDBInstanceDetailResponse::GetEncryptionKmsRegion() const
+{
+    return m_encryptionKmsRegion;
+}
+
+bool DescribeDBInstanceDetailResponse::EncryptionKmsRegionHasBeenSet() const
+{
+    return m_encryptionKmsRegionHasBeenSet;
 }
 
 

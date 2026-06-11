@@ -195,6 +195,27 @@ namespace TencentCloud
                      */
                     bool NodeCacheCapableHasBeenSet() const;
 
+                    /**
+                     * 获取<p>extender 是否可忽略</p>
+                     * @return Ignorable <p>extender 是否可忽略</p>
+                     * 
+                     */
+                    bool GetIgnorable() const;
+
+                    /**
+                     * 设置<p>extender 是否可忽略</p>
+                     * @param _ignorable <p>extender 是否可忽略</p>
+                     * 
+                     */
+                    void SetIgnorable(const bool& _ignorable);
+
+                    /**
+                     * 判断参数 Ignorable 是否已赋值
+                     * @return Ignorable 是否已赋值
+                     * 
+                     */
+                    bool IgnorableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +259,12 @@ namespace TencentCloud
                      */
                     bool m_nodeCacheCapable;
                     bool m_nodeCacheCapableHasBeenSet;
+
+                    /**
+                     * <p>extender 是否可忽略</p>
+                     */
+                    bool m_ignorable;
+                    bool m_ignorableHasBeenSet;
 
                 };
             }

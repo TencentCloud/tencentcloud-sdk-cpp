@@ -527,6 +527,27 @@ namespace TencentCloud
                      */
                     bool CipherPolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>
+                     * @return HttpVersion <p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>
+                     * 
+                     */
+                    std::string GetHttpVersion() const;
+
+                    /**
+                     * 设置<p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>
+                     * @param _httpVersion <p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>
+                     * 
+                     */
+                    void SetHttpVersion(const std::string& _httpVersion);
+
+                    /**
+                     * 判断参数 HttpVersion 是否已赋值
+                     * @return HttpVersion 是否已赋值
+                     * 
+                     */
+                    bool HttpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -666,6 +687,12 @@ namespace TencentCloud
                      */
                     std::string m_cipherPolicyId;
                     bool m_cipherPolicyIdHasBeenSet;
+
+                    /**
+                     * <p>仅HTTPS回源协议支持选择[&#39;HTTP/1.1&#39;, &#39;HTTP/2&#39;]</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>
+                     */
+                    std::string m_httpVersion;
+                    bool m_httpVersionHasBeenSet;
 
                 };
             }

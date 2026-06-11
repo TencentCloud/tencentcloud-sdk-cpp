@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本地镜像重新漏洞扫描时的任务ID
-                     * @return LocalTaskID 本地镜像重新漏洞扫描时的任务ID
+                     * 获取<p>本地镜像重新漏洞扫描时的任务ID</p>
+                     * @return LocalTaskID <p>本地镜像重新漏洞扫描时的任务ID</p>
                      * 
                      */
                     int64_t GetLocalTaskID() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LocalTaskIDHasBeenSet() const;
 
                     /**
-                     * 获取仓库镜像重新漏洞扫描时的任务ID
-                     * @return RegistryTaskID 仓库镜像重新漏洞扫描时的任务ID
+                     * 获取<p>仓库镜像重新漏洞扫描时的任务ID</p>
+                     * @return RegistryTaskID <p>仓库镜像重新漏洞扫描时的任务ID</p>
                      * 
                      */
                     int64_t GetRegistryTaskID() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本地镜像重新漏洞扫描时的任务ID
+                     * <p>本地镜像重新漏洞扫描时的任务ID</p>
                      */
                     int64_t m_localTaskID;
                     bool m_localTaskIDHasBeenSet;
 
                     /**
-                     * 仓库镜像重新漏洞扫描时的任务ID
+                     * <p>仓库镜像重新漏洞扫描时的任务ID</p>
                      */
                     int64_t m_registryTaskID;
                     bool m_registryTaskIDHasBeenSet;

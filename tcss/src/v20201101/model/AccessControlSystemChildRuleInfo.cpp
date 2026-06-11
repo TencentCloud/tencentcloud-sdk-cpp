@@ -21,9 +21,9 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 AccessControlSystemChildRuleInfo::AccessControlSystemChildRuleInfo() :
+    m_isEnableHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_ruleModeHasBeenSet(false),
-    m_isEnableHasBeenSet(false),
     m_ruleTypeHasBeenSet(false)
 {
 }
@@ -32,6 +32,16 @@ CoreInternalOutcome AccessControlSystemChildRuleInfo::Deserialize(const rapidjso
 {
     string requestId = "";
 
+
+    if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
+    {
+        if (!value["IsEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlSystemChildRuleInfo.IsEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnable = value["IsEnable"].GetBool();
+        m_isEnableHasBeenSet = true;
+    }
 
     if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
     {
@@ -53,16 +63,6 @@ CoreInternalOutcome AccessControlSystemChildRuleInfo::Deserialize(const rapidjso
         m_ruleModeHasBeenSet = true;
     }
 
-    if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
-    {
-        if (!value["IsEnable"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccessControlSystemChildRuleInfo.IsEnable` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isEnable = value["IsEnable"].GetBool();
-        m_isEnableHasBeenSet = true;
-    }
-
     if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
     {
         if (!value["RuleType"].IsString())
@@ -80,6 +80,14 @@ CoreInternalOutcome AccessControlSystemChildRuleInfo::Deserialize(const rapidjso
 void AccessControlSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_isEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEnable, allocator);
+    }
+
     if (m_ruleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -96,14 +104,6 @@ void AccessControlSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, rap
         value.AddMember(iKey, rapidjson::Value(m_ruleMode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_isEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsEnable";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isEnable, allocator);
-    }
-
     if (m_ruleTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,6 +114,22 @@ void AccessControlSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, rap
 
 }
 
+
+bool AccessControlSystemChildRuleInfo::GetIsEnable() const
+{
+    return m_isEnable;
+}
+
+void AccessControlSystemChildRuleInfo::SetIsEnable(const bool& _isEnable)
+{
+    m_isEnable = _isEnable;
+    m_isEnableHasBeenSet = true;
+}
+
+bool AccessControlSystemChildRuleInfo::IsEnableHasBeenSet() const
+{
+    return m_isEnableHasBeenSet;
+}
 
 string AccessControlSystemChildRuleInfo::GetRuleId() const
 {
@@ -145,22 +161,6 @@ void AccessControlSystemChildRuleInfo::SetRuleMode(const string& _ruleMode)
 bool AccessControlSystemChildRuleInfo::RuleModeHasBeenSet() const
 {
     return m_ruleModeHasBeenSet;
-}
-
-bool AccessControlSystemChildRuleInfo::GetIsEnable() const
-{
-    return m_isEnable;
-}
-
-void AccessControlSystemChildRuleInfo::SetIsEnable(const bool& _isEnable)
-{
-    m_isEnable = _isEnable;
-    m_isEnableHasBeenSet = true;
-}
-
-bool AccessControlSystemChildRuleInfo::IsEnableHasBeenSet() const
-{
-    return m_isEnableHasBeenSet;
 }
 
 string AccessControlSystemChildRuleInfo::GetRuleType() const

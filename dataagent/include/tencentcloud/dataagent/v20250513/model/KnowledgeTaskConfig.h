@@ -240,6 +240,27 @@ namespace TencentCloud
                      */
                     bool EnableImageUnderstandingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>
+                     * @return EnableExtractDb <p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetEnableExtractDb() const;
+
+                    /**
+                     * 设置<p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>
+                     * @param _enableExtractDb <p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    void SetEnableExtractDb(const int64_t& _enableExtractDb);
+
+                    /**
+                     * 判断参数 EnableExtractDb 是否已赋值
+                     * @return EnableExtractDb 是否已赋值
+                     * 
+                     */
+                    bool EnableExtractDbHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +317,12 @@ namespace TencentCloud
                      */
                     int64_t m_enableImageUnderstanding;
                     bool m_enableImageUnderstandingHasBeenSet;
+
+                    /**
+                     * <p>是否开启表格结构化提取</p><p>枚举值：</p><ul><li>0： 不开启表格提取</li><li>1： 开启表格提取</li></ul><p>默认值：1</p>
+                     */
+                    int64_t m_enableExtractDb;
+                    bool m_enableExtractDbHasBeenSet;
 
                 };
             }

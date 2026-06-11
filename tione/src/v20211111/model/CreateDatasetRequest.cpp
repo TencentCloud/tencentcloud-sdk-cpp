@@ -24,6 +24,7 @@ using namespace std;
 
 CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetNameHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_datasetTypeHasBeenSet(false),
     m_storageDataPathHasBeenSet(false),
     m_storageLabelPathHasBeenSet(false),
@@ -53,6 +54,14 @@ string CreateDatasetRequest::ToJsonString() const
         string key = "DatasetName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_datasetTypeHasBeenSet)
@@ -203,6 +212,22 @@ void CreateDatasetRequest::SetDatasetName(const string& _datasetName)
 bool CreateDatasetRequest::DatasetNameHasBeenSet() const
 {
     return m_datasetNameHasBeenSet;
+}
+
+string CreateDatasetRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateDatasetRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateDatasetRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string CreateDatasetRequest::GetDatasetType() const

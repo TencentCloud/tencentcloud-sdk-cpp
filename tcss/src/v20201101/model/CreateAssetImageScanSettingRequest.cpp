@@ -34,7 +34,8 @@ CreateAssetImageScanSettingRequest::CreateAssetImageScanSettingRequest() :
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_scanEndTimeHasBeenSet(false),
-    m_excludeImagesHasBeenSet(false)
+    m_excludeImagesHasBeenSet(false),
+    m_clusterIDsHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,19 @@ string CreateAssetImageScanSettingRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_excludeImages.begin(); itr != m_excludeImages.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIDs.begin(); itr != m_clusterIDs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -349,6 +363,22 @@ void CreateAssetImageScanSettingRequest::SetExcludeImages(const vector<string>& 
 bool CreateAssetImageScanSettingRequest::ExcludeImagesHasBeenSet() const
 {
     return m_excludeImagesHasBeenSet;
+}
+
+vector<string> CreateAssetImageScanSettingRequest::GetClusterIDs() const
+{
+    return m_clusterIDs;
+}
+
+void CreateAssetImageScanSettingRequest::SetClusterIDs(const vector<string>& _clusterIDs)
+{
+    m_clusterIDs = _clusterIDs;
+    m_clusterIDsHasBeenSet = true;
+}
+
+bool CreateAssetImageScanSettingRequest::ClusterIDsHasBeenSet() const
+{
+    return m_clusterIDsHasBeenSet;
 }
 
 

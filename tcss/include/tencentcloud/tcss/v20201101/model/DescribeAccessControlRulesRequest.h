@@ -44,6 +44,68 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取排序字段
+                     * @return By 排序字段
+                     * 
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _by 排序字段
+                     * 
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     * 
+                     */
+                    bool ByHasBeenSet() const;
+
+                    /**
+                     * 获取过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>
+<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>
+<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>
+<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>
+
+                     * @return Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>
+<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>
+<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>
+<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>
+
+                     * 
+                     */
+                    std::vector<RunTimeFilters> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>
+<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>
+<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>
+<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>
+
+                     * @param _filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>
+<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>
+<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>
+<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>
+
+                     * 
+                     */
+                    void SetFilters(const std::vector<RunTimeFilters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
                      * 
@@ -86,27 +148,6 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @return Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * 
-                     */
-                    std::vector<RunTimeFilters> GetFilters() const;
-
-                    /**
-                     * 设置过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @param _filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * 
-                     */
-                    void SetFilters(const std::vector<RunTimeFilters>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     * 
-                     */
-                    bool FiltersHasBeenSet() const;
-
-                    /**
                      * 获取升序降序,asc desc
                      * @return Order 升序降序,asc desc
                      * 
@@ -127,28 +168,24 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
-                    /**
-                     * 获取排序字段
-                     * @return By 排序字段
-                     * 
-                     */
-                    std::string GetBy() const;
-
-                    /**
-                     * 设置排序字段
-                     * @param _by 排序字段
-                     * 
-                     */
-                    void SetBy(const std::string& _by);
-
-                    /**
-                     * 判断参数 By 是否已赋值
-                     * @return By 是否已赋值
-                     * 
-                     */
-                    bool ByHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
+
+                    /**
+                     * 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+<li>ImageName- String - 是否必填：否 - 镜像名称，模糊查找绑定了该镜像的规则 </li>
+<li>ImageId- String - 是否必填：否 - 镜像ID，模糊查找绑定了该镜像的规则 </li>
+<li>RuleType- String - 是否必填：否 - 策略类型过滤，取值：system（系统策略）、user（用户策略） </li>
+<li>RuleAction- String - 是否必填：否 - 执行动作过滤，取值：RULE_MODE_ALERT（告警）、RULE_MODE_HOLDUP（拦截） </li>
+
+                     */
+                    std::vector<RunTimeFilters> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 需要返回的数量，默认为10，最大值为100
@@ -163,22 +200,10 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     */
-                    std::vector<RunTimeFilters> m_filters;
-                    bool m_filtersHasBeenSet;
-
-                    /**
                      * 升序降序,asc desc
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
-
-                    /**
-                     * 排序字段
-                     */
-                    std::string m_by;
-                    bool m_byHasBeenSet;
 
                 };
             }

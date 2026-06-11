@@ -24,8 +24,9 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAbnormalProcessRulesResponse::DescribeAbnormalProcessRulesResponse() :
-    m_totalCountHasBeenSet(false),
-    m_ruleSetHasBeenSet(false)
+    m_ruleExtSetHasBeenSet(false),
+    m_ruleSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -63,14 +64,24 @@ CoreInternalOutcome DescribeAbnormalProcessRulesResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("RuleExtSet") && !rsp["RuleExtSet"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["RuleExtSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleExtSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleExtSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            AbnormalProcessRuleExtSetItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleExtSet.push_back(item);
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_ruleExtSetHasBeenSet = true;
     }
 
     if (rsp.HasMember("RuleSet") && !rsp["RuleSet"].IsNull())
@@ -93,6 +104,16 @@ CoreInternalOutcome DescribeAbnormalProcessRulesResponse::Deserialize(const stri
         m_ruleSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -103,12 +124,19 @@ string DescribeAbnormalProcessRulesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_ruleExtSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "RuleExtSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleExtSet.begin(); itr != m_ruleExtSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_ruleSetHasBeenSet)
@@ -126,6 +154,14 @@ string DescribeAbnormalProcessRulesResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -138,14 +174,14 @@ string DescribeAbnormalProcessRulesResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeAbnormalProcessRulesResponse::GetTotalCount() const
+vector<AbnormalProcessRuleExtSetItem> DescribeAbnormalProcessRulesResponse::GetRuleExtSet() const
 {
-    return m_totalCount;
+    return m_ruleExtSet;
 }
 
-bool DescribeAbnormalProcessRulesResponse::TotalCountHasBeenSet() const
+bool DescribeAbnormalProcessRulesResponse::RuleExtSetHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_ruleExtSetHasBeenSet;
 }
 
 vector<RuleBaseInfo> DescribeAbnormalProcessRulesResponse::GetRuleSet() const
@@ -156,6 +192,16 @@ vector<RuleBaseInfo> DescribeAbnormalProcessRulesResponse::GetRuleSet() const
 bool DescribeAbnormalProcessRulesResponse::RuleSetHasBeenSet() const
 {
     return m_ruleSetHasBeenSet;
+}
+
+uint64_t DescribeAbnormalProcessRulesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeAbnormalProcessRulesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取 音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID
-                     * @return VoiceId  音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID
+                     * 获取<p>音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID</p>
+                     * @return VoiceId <p>音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID</p>
                      * 
                      */
                     std::string GetVoiceId() const;
 
                     /**
-                     * 设置 音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID
-                     * @param _voiceId  音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID
+                     * 设置<p>音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID</p>
+                     * @param _voiceId <p>音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID</p>
                      * 
                      */
                     void SetVoiceId(const std::string& _voiceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VoiceIdHasBeenSet() const;
 
                     /**
-                     * 获取语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0
-                     * @return Speed 语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0
+                     * 获取<p>语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0</p>
+                     * @return Speed <p>语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0</p>
                      * 
                      */
                     double GetSpeed() const;
 
                     /**
-                     * 设置语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0
-                     * @param _speed 语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0
+                     * 设置<p>语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0</p>
+                     * @param _speed <p>语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0</p>
                      * 
                      */
                     void SetSpeed(const double& _speed);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SpeedHasBeenSet() const;
 
                     /**
-                     * 获取 音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0
-                     * @return Volume  音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0
+                     * 获取<p>音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0</p>
+                     * @return Volume <p>音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0</p>
                      * 
                      */
                     double GetVolume() const;
 
                     /**
-                     * 设置 音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0
-                     * @param _volume  音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0
+                     * 设置<p>音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0</p>
+                     * @param _volume <p>音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0</p>
                      * 
                      */
                     void SetVolume(const double& _volume);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取 音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0
-                     * @return Pitch  音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0
+                     * 获取<p>音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0</p>
+                     * @return Pitch <p>音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0</p>
                      * 
                      */
                     int64_t GetPitch() const;
 
                     /**
-                     * 设置 音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0
-                     * @param _pitch  音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0
+                     * 设置<p>音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0</p>
+                     * @param _pitch <p>音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0</p>
                      * 
                      */
                     void SetPitch(const int64_t& _pitch);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool PitchHasBeenSet() const;
 
+                    /**
+                     * 获取<p>情绪控制，目前仅flow_01_ex模型支持</p><p>枚举值：</p><ul><li>happy： 高兴</li><li>sad： 悲伤</li><li>angry： 愤怒</li><li>fearful： 害怕</li><li>disgusted： 厌恶</li><li>surprised： 惊讶</li><li>calm： 中性</li><li>fluent： 生动</li><li>whisper： 低语</li></ul>
+                     * @return Emotion <p>情绪控制，目前仅flow_01_ex模型支持</p><p>枚举值：</p><ul><li>happy： 高兴</li><li>sad： 悲伤</li><li>angry： 愤怒</li><li>fearful： 害怕</li><li>disgusted： 厌恶</li><li>surprised： 惊讶</li><li>calm： 中性</li><li>fluent： 生动</li><li>whisper： 低语</li></ul>
+                     * 
+                     */
+                    std::string GetEmotion() const;
+
+                    /**
+                     * 设置<p>情绪控制，目前仅flow_01_ex模型支持</p><p>枚举值：</p><ul><li>happy： 高兴</li><li>sad： 悲伤</li><li>angry： 愤怒</li><li>fearful： 害怕</li><li>disgusted： 厌恶</li><li>surprised： 惊讶</li><li>calm： 中性</li><li>fluent： 生动</li><li>whisper： 低语</li></ul>
+                     * @param _emotion <p>情绪控制，目前仅flow_01_ex模型支持</p><p>枚举值：</p><ul><li>happy： 高兴</li><li>sad： 悲伤</li><li>angry： 愤怒</li><li>fearful： 害怕</li><li>disgusted： 厌恶</li><li>surprised： 惊讶</li><li>calm： 中性</li><li>fluent： 生动</li><li>whisper： 低语</li></ul>
+                     * 
+                     */
+                    void SetEmotion(const std::string& _emotion);
+
+                    /**
+                     * 判断参数 Emotion 是否已赋值
+                     * @return Emotion 是否已赋值
+                     * 
+                     */
+                    bool EmotionHasBeenSet() const;
+
                 private:
 
                     /**
-                     *  音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID
+                     * <p>音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID</p>
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
 
                     /**
-                     * 语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0
+                     * <p>语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0</p>
                      */
                     double m_speed;
                     bool m_speedHasBeenSet;
 
                     /**
-                     *  音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0
+                     * <p>音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0</p>
                      */
                     double m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     *  音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0
+                     * <p>音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0</p>
                      */
                     int64_t m_pitch;
                     bool m_pitchHasBeenSet;
+
+                    /**
+                     * <p>情绪控制，目前仅flow_01_ex模型支持</p><p>枚举值：</p><ul><li>happy： 高兴</li><li>sad： 悲伤</li><li>angry： 愤怒</li><li>fearful： 害怕</li><li>disgusted： 厌恶</li><li>surprised： 惊讶</li><li>calm： 中性</li><li>fluent： 生动</li><li>whisper： 低语</li></ul>
+                     */
+                    std::string m_emotion;
+                    bool m_emotionHasBeenSet;
 
                 };
             }

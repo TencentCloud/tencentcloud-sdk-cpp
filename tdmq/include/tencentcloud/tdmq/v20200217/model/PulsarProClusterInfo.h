@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id。
-                     * @return ClusterId 集群Id。
+                     * 获取<p>集群Id。</p>
+                     * @return ClusterId <p>集群Id。</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群Id。
-                     * @param _clusterId 集群Id。
+                     * 设置<p>集群Id。</p>
+                     * @param _clusterId <p>集群Id。</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称。
-                     * @return ClusterName 集群名称。
+                     * 获取<p>集群名称。</p>
+                     * @return ClusterName <p>集群名称。</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称。
-                     * @param _clusterName 集群名称。
+                     * 设置<p>集群名称。</p>
+                     * @param _clusterName <p>集群名称。</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取说明信息。
-                     * @return Remark 说明信息。
+                     * 获取<p>说明信息。</p>
+                     * @return Remark <p>说明信息。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明信息。
-                     * @param _remark 说明信息。
+                     * 设置<p>说明信息。</p>
+                     * @param _remark <p>说明信息。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群状态，0:创建中，1:正常，2:隔离
-                     * @return Status 集群状态，0:创建中，1:正常，2:隔离
+                     * 获取<p>集群状态，0:创建中，1:正常，2:隔离</p>
+                     * @return Status <p>集群状态，0:创建中，1:正常，2:隔离</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置集群状态，0:创建中，1:正常，2:隔离
-                     * @param _status 集群状态，0:创建中，1:正常，2:隔离
+                     * 设置<p>集群状态，0:创建中，1:正常，2:隔离</p>
+                     * @param _status <p>集群状态，0:创建中，1:正常，2:隔离</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取集群版本
-                     * @return Version 集群版本
+                     * 获取<p>集群版本</p>
+                     * @return Version <p>集群版本</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置集群版本
-                     * @param _version 集群版本
+                     * 设置<p>集群版本</p>
+                     * @param _version <p>集群版本</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取节点分布情况
+                     * 获取<p>节点分布情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeDistribution 节点分布情况
+                     * @return NodeDistribution <p>节点分布情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNodeDistribution> GetNodeDistribution() const;
 
                     /**
-                     * 设置节点分布情况
+                     * 设置<p>节点分布情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeDistribution 节点分布情况
+                     * @param _nodeDistribution <p>节点分布情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,15 +199,15 @@ namespace TencentCloud
                     bool NodeDistributionHasBeenSet() const;
 
                     /**
-                     * 获取最大储存容量，单位：MB
-                     * @return MaxStorage 最大储存容量，单位：MB
+                     * 获取<p>最大储存容量，单位：MB</p>
+                     * @return MaxStorage <p>最大储存容量，单位：MB</p>
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
-                     * 设置最大储存容量，单位：MB
-                     * @param _maxStorage 最大储存容量，单位：MB
+                     * 设置<p>最大储存容量，单位：MB</p>
+                     * @param _maxStorage <p>最大储存容量，单位：MB</p>
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -220,18 +220,18 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取是否可以修改路由
+                     * 获取<p>是否可以修改路由</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CanEditRoute 是否可以修改路由
+                     * @return CanEditRoute <p>是否可以修改路由</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanEditRoute() const;
 
                     /**
-                     * 设置是否可以修改路由
+                     * 设置<p>是否可以修改路由</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _canEditRoute 是否可以修改路由
+                     * @param _canEditRoute <p>是否可以修改路由</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -245,18 +245,18 @@ namespace TencentCloud
                     bool CanEditRouteHasBeenSet() const;
 
                     /**
-                     * 获取代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * 获取<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * @return BillingLabelVersion <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingLabelVersion() const;
 
                     /**
-                     * 设置代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * 设置<p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * @param _billingLabelVersion <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -270,18 +270,18 @@ namespace TencentCloud
                     bool BillingLabelVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间戳，毫秒级精度。
+                     * 获取<p>实例到期时间戳，毫秒级精度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 实例到期时间戳，毫秒级精度。
+                     * @return ExpireTime <p>实例到期时间戳，毫秒级精度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置实例到期时间戳，毫秒级精度。
+                     * 设置<p>实例到期时间戳，毫秒级精度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 实例到期时间戳，毫秒级精度。
+                     * @param _expireTime <p>实例到期时间戳，毫秒级精度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -295,22 +295,18 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动创建主题
-true就是开启了，false是关闭
+                     * 获取<p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoCreateTopicStatus 是否开启自动创建主题
-true就是开启了，false是关闭
+                     * @return AutoCreateTopicStatus <p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoCreateTopicStatus() const;
 
                     /**
-                     * 设置是否开启自动创建主题
-true就是开启了，false是关闭
+                     * 设置<p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoCreateTopicStatus 是否开启自动创建主题
-true就是开启了，false是关闭
+                     * @param _autoCreateTopicStatus <p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +320,18 @@ true就是开启了，false是关闭
                     bool AutoCreateTopicStatusHasBeenSet() const;
 
                     /**
-                     * 获取自动创建主题的默认分区数，如果没开启就是0
+                     * 获取<p>自动创建主题的默认分区数，如果没开启就是0</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+                     * @return DefaultPartitionNumber <p>自动创建主题的默认分区数，如果没开启就是0</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultPartitionNumber() const;
 
                     /**
-                     * 设置自动创建主题的默认分区数，如果没开启就是0
+                     * 设置<p>自动创建主题的默认分区数，如果没开启就是0</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+                     * @param _defaultPartitionNumber <p>自动创建主题的默认分区数，如果没开启就是0</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,19 +345,15 @@ true就是开启了，false是关闭
                     bool DefaultPartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义的租户别名，如果没有，会复用专业集群 ID
-
-                     * @return Tenant 用户自定义的租户别名，如果没有，会复用专业集群 ID
-
+                     * 获取<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
+                     * @return Tenant <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
                      * 
                      */
                     std::string GetTenant() const;
 
                     /**
-                     * 设置用户自定义的租户别名，如果没有，会复用专业集群 ID
-
-                     * @param _tenant 用户自定义的租户别名，如果没有，会复用专业集群 ID
-
+                     * 设置<p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
+                     * @param _tenant <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
                      * 
                      */
                     void SetTenant(const std::string& _tenant);
@@ -374,15 +366,15 @@ true就是开启了，false是关闭
                     bool TenantHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关标识
-                     * @return DeleteProtection 删除保护开关标识
+                     * 获取<p>删除保护开关标识</p>
+                     * @return DeleteProtection <p>删除保护开关标识</p>
                      * 
                      */
                     int64_t GetDeleteProtection() const;
 
                     /**
-                     * 设置删除保护开关标识
-                     * @param _deleteProtection 删除保护开关标识
+                     * 设置<p>删除保护开关标识</p>
+                     * @param _deleteProtection <p>删除保护开关标识</p>
                      * 
                      */
                     void SetDeleteProtection(const int64_t& _deleteProtection);
@@ -394,105 +386,157 @@ true就是开启了，false是关闭
                      */
                     bool DeleteProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @return ElasticTpsEnabled <p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    int64_t GetElasticTpsEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @param _elasticTpsEnabled <p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    void SetElasticTpsEnabled(const int64_t& _elasticTpsEnabled);
+
+                    /**
+                     * 判断参数 ElasticTpsEnabled 是否已赋值
+                     * @return ElasticTpsEnabled 是否已赋值
+                     * 
+                     */
+                    bool ElasticTpsEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>
+                     * @return EncryptionStatus <p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>
+                     * 
+                     */
+                    int64_t GetEncryptionStatus() const;
+
+                    /**
+                     * 设置<p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>
+                     * @param _encryptionStatus <p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>
+                     * 
+                     */
+                    void SetEncryptionStatus(const int64_t& _encryptionStatus);
+
+                    /**
+                     * 判断参数 EncryptionStatus 是否已赋值
+                     * @return EncryptionStatus 是否已赋值
+                     * 
+                     */
+                    bool EncryptionStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群Id。
+                     * <p>集群Id。</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称。
+                     * <p>集群名称。</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 说明信息。
+                     * <p>说明信息。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 集群状态，0:创建中，1:正常，2:隔离
+                     * <p>集群状态，0:创建中，1:正常，2:隔离</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 集群版本
+                     * <p>集群版本</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 节点分布情况
+                     * <p>节点分布情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNodeDistribution> m_nodeDistribution;
                     bool m_nodeDistributionHasBeenSet;
 
                     /**
-                     * 最大储存容量，单位：MB
+                     * <p>最大储存容量，单位：MB</p>
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 是否可以修改路由
+                     * <p>是否可以修改路由</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canEditRoute;
                     bool m_canEditRouteHasBeenSet;
 
                     /**
-                     * 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+                     * <p>代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
 
                     /**
-                     * 实例到期时间戳，毫秒级精度。
+                     * <p>实例到期时间戳，毫秒级精度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 是否开启自动创建主题
-true就是开启了，false是关闭
+                     * <p>是否开启自动创建主题<br>true就是开启了，false是关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoCreateTopicStatus;
                     bool m_autoCreateTopicStatusHasBeenSet;
 
                     /**
-                     * 自动创建主题的默认分区数，如果没开启就是0
+                     * <p>自动创建主题的默认分区数，如果没开启就是0</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultPartitionNumber;
                     bool m_defaultPartitionNumberHasBeenSet;
 
                     /**
-                     * 用户自定义的租户别名，如果没有，会复用专业集群 ID
-
+                     * <p>用户自定义的租户别名，如果没有，会复用专业集群 ID</p>
                      */
                     std::string m_tenant;
                     bool m_tenantHasBeenSet;
 
                     /**
-                     * 删除保护开关标识
+                     * <p>删除保护开关标识</p>
                      */
                     int64_t m_deleteProtection;
                     bool m_deleteProtectionHasBeenSet;
+
+                    /**
+                     * <p>是否开启弹性tps</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     */
+                    int64_t m_elasticTpsEnabled;
+                    bool m_elasticTpsEnabledHasBeenSet;
+
+                    /**
+                     * <p>是否开启数据加密</p><p>枚举值：</p><ul><li>0： 关闭数据加密</li><li>1： 开启数据加密</li></ul>
+                     */
+                    int64_t m_encryptionStatus;
+                    bool m_encryptionStatusHasBeenSet;
 
                 };
             }

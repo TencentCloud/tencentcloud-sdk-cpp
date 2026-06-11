@@ -43,7 +43,8 @@ ScoreInfoV2::ScoreInfoV2() :
     m_staticPerformanceScoreHasBeenSet(false),
     m_staticNumHasBeenSet(false),
     m_staticFailHasBeenSet(false),
-    m_staticDurationHasBeenSet(false)
+    m_staticDurationHasBeenSet(false),
+    m_exclusionHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome ScoreInfoV2::Deserialize(const rapidjson::Value &value)
         m_staticDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("Exclusion") && !value["Exclusion"].IsNull())
+    {
+        if (!value["Exclusion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfoV2.Exclusion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusion = string(value["Exclusion"].GetString());
+        m_exclusionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void ScoreInfoV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StaticDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_staticDuration, allocator);
+    }
+
+    if (m_exclusionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exclusion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exclusion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void ScoreInfoV2::SetStaticDuration(const double& _staticDuration)
 bool ScoreInfoV2::StaticDurationHasBeenSet() const
 {
     return m_staticDurationHasBeenSet;
+}
+
+string ScoreInfoV2::GetExclusion() const
+{
+    return m_exclusion;
+}
+
+void ScoreInfoV2::SetExclusion(const string& _exclusion)
+{
+    m_exclusion = _exclusion;
+    m_exclusionHasBeenSet = true;
+}
+
+bool ScoreInfoV2::ExclusionHasBeenSet() const
+{
+    return m_exclusionHasBeenSet;
 }
 

@@ -42,7 +42,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_storageTypeHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_fullReplicationsHasBeenSet(false),
-    m_instanceModeHasBeenSet(false)
+    m_instanceModeHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -223,6 +224,19 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "InstanceMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -551,6 +565,22 @@ void CreateCloneInstanceRequest::SetInstanceMode(const string& _instanceMode)
 bool CreateCloneInstanceRequest::InstanceModeHasBeenSet() const
 {
     return m_instanceModeHasBeenSet;
+}
+
+vector<string> CreateCloneInstanceRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateCloneInstanceRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

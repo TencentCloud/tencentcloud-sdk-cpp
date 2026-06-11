@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据集ID
+                     * 获取<p>数据集ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatasetId 数据集ID
+                     * @return DatasetId <p>数据集ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据集ID
+                     * <p>数据集ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasetId;

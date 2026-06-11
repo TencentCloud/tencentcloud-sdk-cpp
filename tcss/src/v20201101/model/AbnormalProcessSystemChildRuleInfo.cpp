@@ -21,8 +21,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 AbnormalProcessSystemChildRuleInfo::AbnormalProcessSystemChildRuleInfo() :
-    m_ruleIdHasBeenSet(false),
     m_isEnableHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
     m_ruleModeHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
     m_ruleLevelHasBeenSet(false)
@@ -34,16 +34,6 @@ CoreInternalOutcome AbnormalProcessSystemChildRuleInfo::Deserialize(const rapidj
     string requestId = "";
 
 
-    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
-    {
-        if (!value["RuleId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AbnormalProcessSystemChildRuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleId = string(value["RuleId"].GetString());
-        m_ruleIdHasBeenSet = true;
-    }
-
     if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
     {
         if (!value["IsEnable"].IsBool())
@@ -52,6 +42,16 @@ CoreInternalOutcome AbnormalProcessSystemChildRuleInfo::Deserialize(const rapidj
         }
         m_isEnable = value["IsEnable"].GetBool();
         m_isEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessSystemChildRuleInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = string(value["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
     }
 
     if (value.HasMember("RuleMode") && !value["RuleMode"].IsNull())
@@ -91,20 +91,20 @@ CoreInternalOutcome AbnormalProcessSystemChildRuleInfo::Deserialize(const rapidj
 void AbnormalProcessSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_ruleIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_isEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEnable, allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleModeHasBeenSet)
@@ -134,22 +134,6 @@ void AbnormalProcessSystemChildRuleInfo::ToJsonObject(rapidjson::Value &value, r
 }
 
 
-string AbnormalProcessSystemChildRuleInfo::GetRuleId() const
-{
-    return m_ruleId;
-}
-
-void AbnormalProcessSystemChildRuleInfo::SetRuleId(const string& _ruleId)
-{
-    m_ruleId = _ruleId;
-    m_ruleIdHasBeenSet = true;
-}
-
-bool AbnormalProcessSystemChildRuleInfo::RuleIdHasBeenSet() const
-{
-    return m_ruleIdHasBeenSet;
-}
-
 bool AbnormalProcessSystemChildRuleInfo::GetIsEnable() const
 {
     return m_isEnable;
@@ -164,6 +148,22 @@ void AbnormalProcessSystemChildRuleInfo::SetIsEnable(const bool& _isEnable)
 bool AbnormalProcessSystemChildRuleInfo::IsEnableHasBeenSet() const
 {
     return m_isEnableHasBeenSet;
+}
+
+string AbnormalProcessSystemChildRuleInfo::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void AbnormalProcessSystemChildRuleInfo::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool AbnormalProcessSystemChildRuleInfo::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 string AbnormalProcessSystemChildRuleInfo::GetRuleMode() const

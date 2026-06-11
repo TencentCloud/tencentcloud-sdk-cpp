@@ -31,6 +31,8 @@
 #include <tencentcloud/cbs/v20170312/model/ApplySnapshotGroupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/AttachDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/AttachDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/AttachRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/AttachRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/cbs/v20170312/model/CreateDiskBackupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/CreateRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/CreateRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotGroupRequest.h>
@@ -69,6 +73,12 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDiskConfigQuotaRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDiskConfigQuotaResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDisksDeniedActionsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeRemoteDisksDeniedActionsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotGroupsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotGroupsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewRequest.h>
@@ -79,14 +89,20 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DetachDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DetachDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DetachRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DetachRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InitializeDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InitializeDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceCreateRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceCreateRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceRenewRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceRenewRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceRenewDisksRequest.h>
@@ -105,16 +121,26 @@
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyRemoteDiskAttributesRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyRemoteDiskAttributesResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionResponse.h>
 #include <tencentcloud/cbs/v20170312/model/RenewDiskRequest.h>
 #include <tencentcloud/cbs/v20170312/model/RenewDiskResponse.h>
+#include <tencentcloud/cbs/v20170312/model/RenewRemoteDiskRequest.h>
+#include <tencentcloud/cbs/v20170312/model/RenewRemoteDiskResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ResizeDiskRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ResizeDiskResponse.h>
+#include <tencentcloud/cbs/v20170312/model/SwitchParameterCreateRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/SwitchParameterCreateRemoteDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/SwitchParameterRenewRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/SwitchParameterRenewRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/TerminateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/TerminateDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/TerminateRemoteDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/TerminateRemoteDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/UnbindAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/UnbindAutoSnapshotPolicyResponse.h>
 
@@ -143,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachDisksResponse> AttachDisksOutcome;
                 typedef std::future<AttachDisksOutcome> AttachDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::AttachDisksRequest&, AttachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachRemoteDisksResponse> AttachRemoteDisksOutcome;
+                typedef std::future<AttachRemoteDisksOutcome> AttachRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::AttachRemoteDisksRequest&, AttachRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindAutoSnapshotPolicyResponse> BindAutoSnapshotPolicyOutcome;
                 typedef std::future<BindAutoSnapshotPolicyOutcome> BindAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::BindAutoSnapshotPolicyRequest&, BindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoSnapshotPolicyAsyncHandler;
@@ -161,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDisksResponse> CreateDisksOutcome;
                 typedef std::future<CreateDisksOutcome> CreateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateDisksRequest&, CreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRemoteDisksResponse> CreateRemoteDisksOutcome;
+                typedef std::future<CreateRemoteDisksOutcome> CreateRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::CreateRemoteDisksRequest&, CreateRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
                 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
@@ -200,6 +232,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDiskNumResponse> DescribeInstancesDiskNumOutcome;
                 typedef std::future<DescribeInstancesDiskNumOutcome> DescribeInstancesDiskNumOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeInstancesDiskNumRequest&, DescribeInstancesDiskNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDiskNumAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRemoteDiskConfigQuotaResponse> DescribeRemoteDiskConfigQuotaOutcome;
+                typedef std::future<DescribeRemoteDiskConfigQuotaOutcome> DescribeRemoteDiskConfigQuotaOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeRemoteDiskConfigQuotaRequest&, DescribeRemoteDiskConfigQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteDiskConfigQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRemoteDisksResponse> DescribeRemoteDisksOutcome;
+                typedef std::future<DescribeRemoteDisksOutcome> DescribeRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeRemoteDisksRequest&, DescribeRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRemoteDisksDeniedActionsResponse> DescribeRemoteDisksDeniedActionsOutcome;
+                typedef std::future<DescribeRemoteDisksDeniedActionsOutcome> DescribeRemoteDisksDeniedActionsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeRemoteDisksDeniedActionsRequest&, DescribeRemoteDisksDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteDisksDeniedActionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotGroupsResponse> DescribeSnapshotGroupsOutcome;
                 typedef std::future<DescribeSnapshotGroupsOutcome> DescribeSnapshotGroupsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotGroupsRequest&, DescribeSnapshotGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotGroupsAsyncHandler;
@@ -215,18 +256,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachDisksResponse> DetachDisksOutcome;
                 typedef std::future<DetachDisksOutcome> DetachDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DetachDisksRequest&, DetachDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachRemoteDisksResponse> DetachRemoteDisksOutcome;
+                typedef std::future<DetachRemoteDisksOutcome> DetachRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DetachRemoteDisksRequest&, DetachRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetSnapOverviewResponse> GetSnapOverviewOutcome;
                 typedef std::future<GetSnapOverviewOutcome> GetSnapOverviewOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::GetSnapOverviewRequest&, GetSnapOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::InitializeDisksResponse> InitializeDisksOutcome;
                 typedef std::future<InitializeDisksOutcome> InitializeDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InitializeDisksRequest&, InitializeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceCreateRemoteDisksResponse> InquirePriceCreateRemoteDisksOutcome;
+                typedef std::future<InquirePriceCreateRemoteDisksOutcome> InquirePriceCreateRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InquirePriceCreateRemoteDisksRequest&, InquirePriceCreateRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyDiskBackupQuotaResponse> InquirePriceModifyDiskBackupQuotaOutcome;
                 typedef std::future<InquirePriceModifyDiskBackupQuotaOutcome> InquirePriceModifyDiskBackupQuotaOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskBackupQuotaRequest&, InquirePriceModifyDiskBackupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskBackupQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyDiskExtraPerformanceResponse> InquirePriceModifyDiskExtraPerformanceOutcome;
                 typedef std::future<InquirePriceModifyDiskExtraPerformanceOutcome> InquirePriceModifyDiskExtraPerformanceOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskExtraPerformanceRequest&, InquirePriceModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskExtraPerformanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceRenewRemoteDisksResponse> InquirePriceRenewRemoteDisksOutcome;
+                typedef std::future<InquirePriceRenewRemoteDisksOutcome> InquirePriceRenewRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InquirePriceRenewRemoteDisksRequest&, InquirePriceRenewRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceCreateDisksResponse> InquiryPriceCreateDisksOutcome;
                 typedef std::future<InquiryPriceCreateDisksOutcome> InquiryPriceCreateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquiryPriceCreateDisksRequest&, InquiryPriceCreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateDisksAsyncHandler;
@@ -254,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDisksRenewFlagResponse> ModifyDisksRenewFlagOutcome;
                 typedef std::future<ModifyDisksRenewFlagOutcome> ModifyDisksRenewFlagOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDisksRenewFlagRequest&, ModifyDisksRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRemoteDiskAttributesResponse> ModifyRemoteDiskAttributesOutcome;
+                typedef std::future<ModifyRemoteDiskAttributesOutcome> ModifyRemoteDiskAttributesOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ModifyRemoteDiskAttributesRequest&, ModifyRemoteDiskAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRemoteDiskAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySnapshotAttributeResponse> ModifySnapshotAttributeOutcome;
                 typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifySnapshotAttributeRequest&, ModifySnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
@@ -263,12 +316,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewDiskResponse> RenewDiskOutcome;
                 typedef std::future<RenewDiskOutcome> RenewDiskOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::RenewDiskRequest&, RenewDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewRemoteDiskResponse> RenewRemoteDiskOutcome;
+                typedef std::future<RenewRemoteDiskOutcome> RenewRemoteDiskOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::RenewRemoteDiskRequest&, RenewRemoteDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewRemoteDiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResizeDiskResponse> ResizeDiskOutcome;
                 typedef std::future<ResizeDiskOutcome> ResizeDiskOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ResizeDiskRequest&, ResizeDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchParameterCreateRemoteDisksResponse> SwitchParameterCreateRemoteDisksOutcome;
+                typedef std::future<SwitchParameterCreateRemoteDisksOutcome> SwitchParameterCreateRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::SwitchParameterCreateRemoteDisksRequest&, SwitchParameterCreateRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchParameterCreateRemoteDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchParameterRenewRemoteDisksResponse> SwitchParameterRenewRemoteDisksOutcome;
+                typedef std::future<SwitchParameterRenewRemoteDisksOutcome> SwitchParameterRenewRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::SwitchParameterRenewRemoteDisksRequest&, SwitchParameterRenewRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchParameterRenewRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateDisksResponse> TerminateDisksOutcome;
                 typedef std::future<TerminateDisksOutcome> TerminateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::TerminateDisksRequest&, TerminateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateRemoteDisksResponse> TerminateRemoteDisksOutcome;
+                typedef std::future<TerminateRemoteDisksOutcome> TerminateRemoteDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::TerminateRemoteDisksRequest&, TerminateRemoteDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateRemoteDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindAutoSnapshotPolicyResponse> UnbindAutoSnapshotPolicyOutcome;
                 typedef std::future<UnbindAutoSnapshotPolicyOutcome> UnbindAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::UnbindAutoSnapshotPolicyRequest&, UnbindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAutoSnapshotPolicyAsyncHandler;
@@ -324,6 +389,15 @@ namespace TencentCloud
                 AttachDisksOutcome AttachDisks(const Model::AttachDisksRequest &request);
                 void AttachDisksAsync(const Model::AttachDisksRequest& request, const AttachDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachDisksOutcomeCallable AttachDisksCallable(const Model::AttachDisksRequest& request);
+
+                /**
+                 *本接口用于挂载一个或多个弹性单副本SSD硬盘到指定的云服务器实例上。仅支持弹性盘类型。
+                 * @param req AttachRemoteDisksRequest
+                 * @return AttachRemoteDisksOutcome
+                 */
+                AttachRemoteDisksOutcome AttachRemoteDisks(const Model::AttachRemoteDisksRequest &request);
+                void AttachRemoteDisksAsync(const Model::AttachRemoteDisksRequest& request, const AttachRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachRemoteDisksOutcomeCallable AttachRemoteDisksCallable(const Model::AttachRemoteDisksRequest& request);
 
                 /**
                  *本接口（BindAutoSnapshotPolicy）用于绑定云硬盘到指定的定期快照策略。
@@ -391,6 +465,15 @@ namespace TencentCloud
                 CreateDisksOutcome CreateDisks(const Model::CreateDisksRequest &request);
                 void CreateDisksAsync(const Model::CreateDisksRequest& request, const CreateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDisksOutcomeCallable CreateDisksCallable(const Model::CreateDisksRequest& request);
+
+                /**
+                 *本接口用于创建弹性单副本SSD硬盘并自动挂载到指定实例。弹性盘在创建时就需要绑定目标实例，计费回调后由CBS自身完成装箱+挂载的全流程。
+                 * @param req CreateRemoteDisksRequest
+                 * @return CreateRemoteDisksOutcome
+                 */
+                CreateRemoteDisksOutcome CreateRemoteDisks(const Model::CreateRemoteDisksRequest &request);
+                void CreateRemoteDisksAsync(const Model::CreateRemoteDisksRequest& request, const CreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRemoteDisksOutcomeCallable CreateRemoteDisksCallable(const Model::CreateRemoteDisksRequest& request);
 
                 /**
                  *本接口（CreateSnapshot）用于对指定云盘创建快照。
@@ -537,6 +620,33 @@ namespace TencentCloud
                 DescribeInstancesDiskNumOutcomeCallable DescribeInstancesDiskNumCallable(const Model::DescribeInstancesDiskNumRequest& request);
 
                 /**
+                 *本接口用于查询单副本SSD硬盘机型搭配配额。可根据机型族、机型规格、可用区、付费方式等条件过滤查询结果。
+                 * @param req DescribeRemoteDiskConfigQuotaRequest
+                 * @return DescribeRemoteDiskConfigQuotaOutcome
+                 */
+                DescribeRemoteDiskConfigQuotaOutcome DescribeRemoteDiskConfigQuota(const Model::DescribeRemoteDiskConfigQuotaRequest &request);
+                void DescribeRemoteDiskConfigQuotaAsync(const Model::DescribeRemoteDiskConfigQuotaRequest& request, const DescribeRemoteDiskConfigQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRemoteDiskConfigQuotaOutcomeCallable DescribeRemoteDiskConfigQuotaCallable(const Model::DescribeRemoteDiskConfigQuotaRequest& request);
+
+                /**
+                 *本接口用于查询已购买的单副本SSD硬盘列表。可根据单副本SSD硬盘ID、类型、状态等条件过滤查询结果。
+                 * @param req DescribeRemoteDisksRequest
+                 * @return DescribeRemoteDisksOutcome
+                 */
+                DescribeRemoteDisksOutcome DescribeRemoteDisks(const Model::DescribeRemoteDisksRequest &request);
+                void DescribeRemoteDisksAsync(const Model::DescribeRemoteDisksRequest& request, const DescribeRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRemoteDisksOutcomeCallable DescribeRemoteDisksCallable(const Model::DescribeRemoteDisksRequest& request);
+
+                /**
+                 *本接口用于查询一个或多个单副本SSD硬盘的操作限制列表。
+                 * @param req DescribeRemoteDisksDeniedActionsRequest
+                 * @return DescribeRemoteDisksDeniedActionsOutcome
+                 */
+                DescribeRemoteDisksDeniedActionsOutcome DescribeRemoteDisksDeniedActions(const Model::DescribeRemoteDisksDeniedActionsRequest &request);
+                void DescribeRemoteDisksDeniedActionsAsync(const Model::DescribeRemoteDisksDeniedActionsRequest& request, const DescribeRemoteDisksDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRemoteDisksDeniedActionsOutcomeCallable DescribeRemoteDisksDeniedActionsCallable(const Model::DescribeRemoteDisksDeniedActionsRequest& request);
+
+                /**
                  *本接口（DescribeSnapshotGroups）用于查询快照组列表。
 * 可以根据快照组ID、快照组状态、快照组关联的快照ID等来查询快照组列表，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
 * 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照组列表。
@@ -590,6 +700,15 @@ namespace TencentCloud
                 DetachDisksOutcomeCallable DetachDisksCallable(const Model::DetachDisksRequest& request);
 
                 /**
+                 *本接口用于从云服务器实例上卸载一个或多个弹性单副本SSD硬盘。仅支持弹性盘类型。
+                 * @param req DetachRemoteDisksRequest
+                 * @return DetachRemoteDisksOutcome
+                 */
+                DetachRemoteDisksOutcome DetachRemoteDisks(const Model::DetachRemoteDisksRequest &request);
+                void DetachRemoteDisksAsync(const Model::DetachRemoteDisksRequest& request, const DetachRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachRemoteDisksOutcomeCallable DetachRemoteDisksCallable(const Model::DetachRemoteDisksRequest& request);
+
+                /**
                  *为进一步规范化API命名，该接口决定预下线，新接口命名为：DescribeSnapshotOverview
 
 获取快照概览信息
@@ -614,6 +733,15 @@ namespace TencentCloud
                 InitializeDisksOutcomeCallable InitializeDisksCallable(const Model::InitializeDisksRequest& request);
 
                 /**
+                 *该接口用于查询创建弹性单副本SSD硬盘的价格。支持预付费和后付费两种计费类型的询价。
+                 * @param req InquirePriceCreateRemoteDisksRequest
+                 * @return InquirePriceCreateRemoteDisksOutcome
+                 */
+                InquirePriceCreateRemoteDisksOutcome InquirePriceCreateRemoteDisks(const Model::InquirePriceCreateRemoteDisksRequest &request);
+                void InquirePriceCreateRemoteDisksAsync(const Model::InquirePriceCreateRemoteDisksRequest& request, const InquirePriceCreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateRemoteDisksOutcomeCallable InquirePriceCreateRemoteDisksCallable(const Model::InquirePriceCreateRemoteDisksRequest& request);
+
+                /**
                  *本接口（InquirePricePriceModifyDiskBackupQuota）用于修改云硬盘备份点配额询价。
                  * @param req InquirePriceModifyDiskBackupQuotaRequest
                  * @return InquirePriceModifyDiskBackupQuotaOutcome
@@ -630,6 +758,15 @@ namespace TencentCloud
                 InquirePriceModifyDiskExtraPerformanceOutcome InquirePriceModifyDiskExtraPerformance(const Model::InquirePriceModifyDiskExtraPerformanceRequest &request);
                 void InquirePriceModifyDiskExtraPerformanceAsync(const Model::InquirePriceModifyDiskExtraPerformanceRequest& request, const InquirePriceModifyDiskExtraPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceModifyDiskExtraPerformanceOutcomeCallable InquirePriceModifyDiskExtraPerformanceCallable(const Model::InquirePriceModifyDiskExtraPerformanceRequest& request);
+
+                /**
+                 *该接口用于查询续费弹性单副本SSD硬盘的价格。
+                 * @param req InquirePriceRenewRemoteDisksRequest
+                 * @return InquirePriceRenewRemoteDisksOutcome
+                 */
+                InquirePriceRenewRemoteDisksOutcome InquirePriceRenewRemoteDisks(const Model::InquirePriceRenewRemoteDisksRequest &request);
+                void InquirePriceRenewRemoteDisksAsync(const Model::InquirePriceRenewRemoteDisksRequest& request, const InquirePriceRenewRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewRemoteDisksOutcomeCallable InquirePriceRenewRemoteDisksCallable(const Model::InquirePriceRenewRemoteDisksRequest& request);
 
                 /**
                  *本接口（InquiryPriceCreateDisks）用于创建云硬盘询价。
@@ -728,6 +865,15 @@ namespace TencentCloud
                 ModifyDisksRenewFlagOutcomeCallable ModifyDisksRenewFlagCallable(const Model::ModifyDisksRenewFlagRequest& request);
 
                 /**
+                 *本接口用于修改单副本SSD硬盘的属性，包括硬盘名称和项目ID。
+                 * @param req ModifyRemoteDiskAttributesRequest
+                 * @return ModifyRemoteDiskAttributesOutcome
+                 */
+                ModifyRemoteDiskAttributesOutcome ModifyRemoteDiskAttributes(const Model::ModifyRemoteDiskAttributesRequest &request);
+                void ModifyRemoteDiskAttributesAsync(const Model::ModifyRemoteDiskAttributesRequest& request, const ModifyRemoteDiskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRemoteDiskAttributesOutcomeCallable ModifyRemoteDiskAttributesCallable(const Model::ModifyRemoteDiskAttributesRequest& request);
+
+                /**
                  *本接口（ModifySnapshotAttribute）用于修改指定快照的属性。
 
 * 本接口支持修改快照名称及到期时间，以及将非永久快照修改为永久快照。
@@ -767,6 +913,15 @@ namespace TencentCloud
                 RenewDiskOutcomeCallable RenewDiskCallable(const Model::RenewDiskRequest& request);
 
                 /**
+                 *该接口用于续费弹性单副本SSD硬盘。用户发起续费下单后，由计费系统完成扣费和到期时间更新。
+                 * @param req RenewRemoteDiskRequest
+                 * @return RenewRemoteDiskOutcome
+                 */
+                RenewRemoteDiskOutcome RenewRemoteDisk(const Model::RenewRemoteDiskRequest &request);
+                void RenewRemoteDiskAsync(const Model::RenewRemoteDiskRequest& request, const RenewRemoteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewRemoteDiskOutcomeCallable RenewRemoteDiskCallable(const Model::RenewRemoteDiskRequest& request);
+
+                /**
                  *本接口（ResizeDisk）用于扩容云硬盘。
 
 * 只支持扩容弹性云盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。非弹性云硬盘需通过[ResizeInstanceDisks](/document/product/213/15731)接口扩容。
@@ -777,6 +932,24 @@ namespace TencentCloud
                 ResizeDiskOutcome ResizeDisk(const Model::ResizeDiskRequest &request);
                 void ResizeDiskAsync(const Model::ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResizeDiskOutcomeCallable ResizeDiskCallable(const Model::ResizeDiskRequest& request);
+
+                /**
+                 *该接口用于获取创建弹性单副本SSD硬盘的订单参数，生成的订单参数由前端透传到计费系统用于发货。创建时必须指定云服务器实例。
+                 * @param req SwitchParameterCreateRemoteDisksRequest
+                 * @return SwitchParameterCreateRemoteDisksOutcome
+                 */
+                SwitchParameterCreateRemoteDisksOutcome SwitchParameterCreateRemoteDisks(const Model::SwitchParameterCreateRemoteDisksRequest &request);
+                void SwitchParameterCreateRemoteDisksAsync(const Model::SwitchParameterCreateRemoteDisksRequest& request, const SwitchParameterCreateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchParameterCreateRemoteDisksOutcomeCallable SwitchParameterCreateRemoteDisksCallable(const Model::SwitchParameterCreateRemoteDisksRequest& request);
+
+                /**
+                 *该接口用于获取续费弹性单副本SSD硬盘的订单参数，生成的订单参数由前端透传到计费系统用于续费。
+                 * @param req SwitchParameterRenewRemoteDisksRequest
+                 * @return SwitchParameterRenewRemoteDisksOutcome
+                 */
+                SwitchParameterRenewRemoteDisksOutcome SwitchParameterRenewRemoteDisks(const Model::SwitchParameterRenewRemoteDisksRequest &request);
+                void SwitchParameterRenewRemoteDisksAsync(const Model::SwitchParameterRenewRemoteDisksRequest& request, const SwitchParameterRenewRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchParameterRenewRemoteDisksOutcomeCallable SwitchParameterRenewRemoteDisksCallable(const Model::SwitchParameterRenewRemoteDisksRequest& request);
 
                 /**
                  *本接口（TerminateDisks）用于退还云硬盘。
@@ -790,6 +963,15 @@ namespace TencentCloud
                 TerminateDisksOutcome TerminateDisks(const Model::TerminateDisksRequest &request);
                 void TerminateDisksAsync(const Model::TerminateDisksRequest& request, const TerminateDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateDisksOutcomeCallable TerminateDisksCallable(const Model::TerminateDisksRequest& request);
+
+                /**
+                 *本接口用于销毁一个或多个弹性单副本SSD硬盘。仅支持弹性盘类型，且要求硬盘处于 INITED 或 UNINIT 状态。
+                 * @param req TerminateRemoteDisksRequest
+                 * @return TerminateRemoteDisksOutcome
+                 */
+                TerminateRemoteDisksOutcome TerminateRemoteDisks(const Model::TerminateRemoteDisksRequest &request);
+                void TerminateRemoteDisksAsync(const Model::TerminateRemoteDisksRequest& request, const TerminateRemoteDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateRemoteDisksOutcomeCallable TerminateRemoteDisksCallable(const Model::TerminateRemoteDisksRequest& request);
 
                 /**
                  *本接口（UnbindAutoSnapshotPolicy）用于解除云硬盘绑定的定期快照策略。

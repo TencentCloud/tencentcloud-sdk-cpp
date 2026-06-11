@@ -28,6 +28,7 @@ FileInfo::FileInfo() :
     m_statusHasBeenSet(false),
     m_createUserHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_chunkConfigHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
@@ -111,6 +112,16 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
     }
 
     if (value.HasMember("ChunkConfig") && !value["ChunkConfig"].IsNull())
@@ -254,6 +265,14 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chunkConfigHasBeenSet)
@@ -431,6 +450,22 @@ void FileInfo::SetCreateTime(const string& _createTime)
 bool FileInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string FileInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void FileInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool FileInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 KnowledgeTaskConfig FileInfo::GetChunkConfig() const

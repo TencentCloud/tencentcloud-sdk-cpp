@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码，从1开始
-                     * @return Page 页码，从1开始
+                     * 获取<p>页码，从1开始</p>
+                     * @return Page <p>页码，从1开始</p>
                      * 
                      */
                     uint64_t GetPage() const;
 
                     /**
-                     * 设置页码，从1开始
-                     * @param _page 页码，从1开始
+                     * 设置<p>页码，从1开始</p>
+                     * @param _page <p>页码，从1开始</p>
                      * 
                      */
                     void SetPage(const uint64_t& _page);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页行数，不能大于200
-                     * @return Rp 每页行数，不能大于200
+                     * 获取<p>每页行数，不能大于200</p>
+                     * @return Rp <p>每页行数，不能大于200</p>
                      * 
                      */
                     uint64_t GetRp() const;
 
                     /**
-                     * 设置每页行数，不能大于200
-                     * @param _rp 每页行数，不能大于200
+                     * 设置<p>每页行数，不能大于200</p>
+                     * @param _rp <p>每页行数，不能大于200</p>
                      * 
                      */
                     void SetRp(const uint64_t& _rp);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RpHasBeenSet() const;
 
                     /**
-                     * 获取标签筛选
-                     * @return Tags 标签筛选
+                     * 获取<p>标签筛选</p>
+                     * @return Tags <p>标签筛选</p>
                      * 
                      */
                     std::vector<RoleTags> GetTags() const;
 
                     /**
-                     * 设置标签筛选
-                     * @param _tags 标签筛选
+                     * 设置<p>标签筛选</p>
+                     * @param _tags <p>标签筛选</p>
                      * 
                      */
                     void SetTags(const std::vector<RoleTags>& _tags);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页码，从1开始
+                     * <p>页码，从1开始</p>
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页行数，不能大于200
+                     * <p>每页行数，不能大于200</p>
                      */
                     uint64_t m_rp;
                     bool m_rpHasBeenSet;
 
                     /**
-                     * 标签筛选
+                     * <p>标签筛选</p>
                      */
                     std::vector<RoleTags> m_tags;
                     bool m_tagsHasBeenSet;

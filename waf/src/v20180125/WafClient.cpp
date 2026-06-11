@@ -2890,6 +2890,106 @@ WafClient::DescribeApiListVersionTwoOutcomeCallable WafClient::DescribeApiListVe
     return prom->get_future();
 }
 
+WafClient::DescribeApiSecEventDetailOutcome WafClient::DescribeApiSecEventDetail(const DescribeApiSecEventDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiSecEventDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiSecEventDetailResponse rsp = DescribeApiSecEventDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiSecEventDetailOutcome(rsp);
+        else
+            return DescribeApiSecEventDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiSecEventDetailOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeApiSecEventDetailAsync(const DescribeApiSecEventDetailRequest& request, const DescribeApiSecEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApiSecEventDetailRequest&;
+    using Resp = DescribeApiSecEventDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiSecEventDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeApiSecEventDetailOutcomeCallable WafClient::DescribeApiSecEventDetailCallable(const DescribeApiSecEventDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApiSecEventDetailOutcome>>();
+    DescribeApiSecEventDetailAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeApiSecEventDetailRequest&,
+        DescribeApiSecEventDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeApiSecEventListOutcome WafClient::DescribeApiSecEventList(const DescribeApiSecEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiSecEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiSecEventListResponse rsp = DescribeApiSecEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiSecEventListOutcome(rsp);
+        else
+            return DescribeApiSecEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiSecEventListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeApiSecEventListAsync(const DescribeApiSecEventListRequest& request, const DescribeApiSecEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApiSecEventListRequest&;
+    using Resp = DescribeApiSecEventListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiSecEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeApiSecEventListOutcomeCallable WafClient::DescribeApiSecEventListCallable(const DescribeApiSecEventListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApiSecEventListOutcome>>();
+    DescribeApiSecEventListAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeApiSecEventListRequest&,
+        DescribeApiSecEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeApiSecSensitiveRuleListOutcome WafClient::DescribeApiSecSensitiveRuleList(const DescribeApiSecSensitiveRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApiSecSensitiveRuleList");

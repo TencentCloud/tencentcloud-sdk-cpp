@@ -63,7 +63,8 @@ Instance::Instance() :
     m_defaultLoginPortHasBeenSet(false),
     m_latestOperationErrorMsgHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_publicIPv6AddressesHasBeenSet(false)
+    m_publicIPv6AddressesHasBeenSet(false),
+    m_cpuTopologyHasBeenSet(false)
 {
 }
 
@@ -589,6 +590,23 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_publicIPv6AddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuTopology") && !value["CpuTopology"].IsNull())
+    {
+        if (!value["CpuTopology"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.CpuTopology` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cpuTopology.Deserialize(value["CpuTopology"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cpuTopologyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -989,6 +1007,15 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cpuTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTopology";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cpuTopology.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1680,5 +1707,21 @@ void Instance::SetPublicIPv6Addresses(const vector<string>& _publicIPv6Addresses
 bool Instance::PublicIPv6AddressesHasBeenSet() const
 {
     return m_publicIPv6AddressesHasBeenSet;
+}
+
+CpuTopology Instance::GetCpuTopology() const
+{
+    return m_cpuTopology;
+}
+
+void Instance::SetCpuTopology(const CpuTopology& _cpuTopology)
+{
+    m_cpuTopology = _cpuTopology;
+    m_cpuTopologyHasBeenSet = true;
+}
+
+bool Instance::CpuTopologyHasBeenSet() const
+{
+    return m_cpuTopologyHasBeenSet;
 }
 

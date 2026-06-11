@@ -49,25 +49,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关,true:开启，false:禁用
-                     * @return IsEnable 开关,true:开启，false:禁用
+                     * 获取用户策略的子策略数组
+                     * @return ChildRules 用户策略的子策略数组
                      * 
                      */
-                    bool GetIsEnable() const;
+                    std::vector<AccessControlChildRuleInfo> GetChildRules() const;
 
                     /**
-                     * 设置开关,true:开启，false:禁用
-                     * @param _isEnable 开关,true:开启，false:禁用
+                     * 设置用户策略的子策略数组
+                     * @param _childRules 用户策略的子策略数组
                      * 
                      */
-                    void SetIsEnable(const bool& _isEnable);
+                    void SetChildRules(const std::vector<AccessControlChildRuleInfo>& _childRules);
 
                     /**
-                     * 判断参数 IsEnable 是否已赋值
-                     * @return IsEnable 是否已赋值
+                     * 判断参数 ChildRules 是否已赋值
+                     * @return ChildRules 是否已赋值
                      * 
                      */
-                    bool IsEnableHasBeenSet() const;
+                    bool ChildRulesHasBeenSet() const;
 
                     /**
                      * 获取生效镜像id，空数组代表全部镜像
@@ -91,25 +91,25 @@ namespace TencentCloud
                     bool ImageIdsHasBeenSet() const;
 
                     /**
-                     * 获取用户策略的子策略数组
-                     * @return ChildRules 用户策略的子策略数组
+                     * 获取开关,true:开启，false:禁用
+                     * @return IsEnable 开关,true:开启，false:禁用
                      * 
                      */
-                    std::vector<AccessControlChildRuleInfo> GetChildRules() const;
+                    bool GetIsEnable() const;
 
                     /**
-                     * 设置用户策略的子策略数组
-                     * @param _childRules 用户策略的子策略数组
+                     * 设置开关,true:开启，false:禁用
+                     * @param _isEnable 开关,true:开启，false:禁用
                      * 
                      */
-                    void SetChildRules(const std::vector<AccessControlChildRuleInfo>& _childRules);
+                    void SetIsEnable(const bool& _isEnable);
 
                     /**
-                     * 判断参数 ChildRules 是否已赋值
-                     * @return ChildRules 是否已赋值
+                     * 判断参数 IsEnable 是否已赋值
+                     * @return IsEnable 是否已赋值
                      * 
                      */
-                    bool ChildRulesHasBeenSet() const;
+                    bool IsEnableHasBeenSet() const;
 
                     /**
                      * 获取策略名字
@@ -131,6 +131,48 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否是系统默认策略
+                     * @return IsDefault 是否是系统默认策略
+                     * 
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置是否是系统默认策略
+                     * @param _isDefault 是否是系统默认策略
+                     * 
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
+                    /**
+                     * 获取true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组
+                     * @return IsGlobal true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组
+                     * 
+                     */
+                    bool GetIsGlobal() const;
+
+                    /**
+                     * 设置true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组
+                     * @param _isGlobal true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组
+                     * 
+                     */
+                    void SetIsGlobal(const bool& _isGlobal);
+
+                    /**
+                     * 判断参数 IsGlobal 是否已赋值
+                     * @return IsGlobal 是否已赋值
+                     * 
+                     */
+                    bool IsGlobalHasBeenSet() const;
 
                     /**
                      * 获取策略id
@@ -174,40 +216,7 @@ namespace TencentCloud
                      */
                     bool SystemChildRulesHasBeenSet() const;
 
-                    /**
-                     * 获取是否是系统默认策略
-                     * @return IsDefault 是否是系统默认策略
-                     * 
-                     */
-                    bool GetIsDefault() const;
-
-                    /**
-                     * 设置是否是系统默认策略
-                     * @param _isDefault 是否是系统默认策略
-                     * 
-                     */
-                    void SetIsDefault(const bool& _isDefault);
-
-                    /**
-                     * 判断参数 IsDefault 是否已赋值
-                     * @return IsDefault 是否已赋值
-                     * 
-                     */
-                    bool IsDefaultHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 开关,true:开启，false:禁用
-                     */
-                    bool m_isEnable;
-                    bool m_isEnableHasBeenSet;
-
-                    /**
-                     * 生效镜像id，空数组代表全部镜像
-                     */
-                    std::vector<std::string> m_imageIds;
-                    bool m_imageIdsHasBeenSet;
 
                     /**
                      * 用户策略的子策略数组
@@ -216,10 +225,34 @@ namespace TencentCloud
                     bool m_childRulesHasBeenSet;
 
                     /**
+                     * 生效镜像id，空数组代表全部镜像
+                     */
+                    std::vector<std::string> m_imageIds;
+                    bool m_imageIdsHasBeenSet;
+
+                    /**
+                     * 开关,true:开启，false:禁用
+                     */
+                    bool m_isEnable;
+                    bool m_isEnableHasBeenSet;
+
+                    /**
                      * 策略名字
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 是否是系统默认策略
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * true:全部镜像，false:指定镜像。IsGlobal=true时ImageIds返回空数组
+                     */
+                    bool m_isGlobal;
+                    bool m_isGlobalHasBeenSet;
 
                     /**
                      * 策略id
@@ -232,12 +265,6 @@ namespace TencentCloud
                      */
                     std::vector<AccessControlSystemChildRuleInfo> m_systemChildRules;
                     bool m_systemChildRulesHasBeenSet;
-
-                    /**
-                     * 是否是系统默认策略
-                     */
-                    bool m_isDefault;
-                    bool m_isDefaultHasBeenSet;
 
                 };
             }

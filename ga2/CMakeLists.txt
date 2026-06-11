@@ -67,11 +67,13 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/DescribeAccelerateAreasResponse.h
   include/tencentcloud/ga2/v20250115/model/DeleteListenerRequest.h
   include/tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorResponse.h
+  include/tencentcloud/ga2/v20250115/model/HideResponseHeaders.h
   include/tencentcloud/ga2/v20250115/model/DescribeListenersRequest.h
   include/tencentcloud/ga2/v20250115/model/RuleAction.h
   include/tencentcloud/ga2/v20250115/model/DescribeForwardingPolicyRequest.h
   include/tencentcloud/ga2/v20250115/model/RuleCondition.h
   include/tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsRequest.h
+  include/tencentcloud/ga2/v20250115/model/ResponseHeaders.h
   include/tencentcloud/ga2/v20250115/model/DeleteForwardingRuleResponse.h
   include/tencentcloud/ga2/v20250115/model/Filter.h
   include/tencentcloud/ga2/v20250115/model/DeleteEndpointGroupsRequest.h
@@ -142,11 +144,13 @@ set(ga2_src
   src/v20250115/model/DescribeAccelerateAreasResponse.cpp
   src/v20250115/model/DeleteListenerRequest.cpp
   src/v20250115/model/ModifyGlobalAcceleratorResponse.cpp
+  src/v20250115/model/HideResponseHeaders.cpp
   src/v20250115/model/DescribeListenersRequest.cpp
   src/v20250115/model/RuleAction.cpp
   src/v20250115/model/DescribeForwardingPolicyRequest.cpp
   src/v20250115/model/RuleCondition.cpp
   src/v20250115/model/DescribeAccelerateRegionsRequest.cpp
+  src/v20250115/model/ResponseHeaders.cpp
   src/v20250115/model/DeleteForwardingRuleResponse.cpp
   src/v20250115/model/Filter.cpp
   src/v20250115/model/DeleteEndpointGroupsRequest.cpp

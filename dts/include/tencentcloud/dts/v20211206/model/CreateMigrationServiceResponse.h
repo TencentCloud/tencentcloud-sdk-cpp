@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21
+                     * 获取<p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobIds 下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21
+                     * @return JobIds <p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21
+                     * <p>下单成功随机生成的迁移任务id列表，形如：dts-c1f6rs21</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_jobIds;

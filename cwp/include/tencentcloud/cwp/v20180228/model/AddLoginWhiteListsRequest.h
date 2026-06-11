@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异地登录白名单实体
-                     * @return HostLoginWhiteObj 异地登录白名单实体
+                     * 获取<p>异地登录白名单实体</p>
+                     * @return HostLoginWhiteObj <p>异地登录白名单实体</p>
                      * 
                      */
                     HostLoginWhiteObj GetHostLoginWhiteObj() const;
 
                     /**
-                     * 设置异地登录白名单实体
-                     * @param _hostLoginWhiteObj 异地登录白名单实体
+                     * 设置<p>异地登录白名单实体</p>
+                     * @param _hostLoginWhiteObj <p>异地登录白名单实体</p>
                      * 
                      */
                     void SetHostLoginWhiteObj(const HostLoginWhiteObj& _hostLoginWhiteObj);
@@ -65,27 +65,15 @@ namespace TencentCloud
                     bool HostLoginWhiteObjHasBeenSet() const;
 
                     /**
-                     * 获取事件同步处理方式：
-  "" -- 不操作
-  "All" -- 将符合此配置的所有事件记录加白
-  "Id" -- 将EventId对应的事件记录加白
-                     * @return ProcessType 事件同步处理方式：
-  "" -- 不操作
-  "All" -- 将符合此配置的所有事件记录加白
-  "Id" -- 将EventId对应的事件记录加白
+                     * 获取<p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>
+                     * @return ProcessType <p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>
                      * 
                      */
                     std::string GetProcessType() const;
 
                     /**
-                     * 设置事件同步处理方式：
-  "" -- 不操作
-  "All" -- 将符合此配置的所有事件记录加白
-  "Id" -- 将EventId对应的事件记录加白
-                     * @param _processType 事件同步处理方式：
-  "" -- 不操作
-  "All" -- 将符合此配置的所有事件记录加白
-  "Id" -- 将EventId对应的事件记录加白
+                     * 设置<p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>
+                     * @param _processType <p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>
                      * 
                      */
                     void SetProcessType(const std::string& _processType);
@@ -98,15 +86,15 @@ namespace TencentCloud
                     bool ProcessTypeHasBeenSet() const;
 
                     /**
-                     * 获取异地登录事件ID，当ProcessType为Id时此项必填
-                     * @return EventId 异地登录事件ID，当ProcessType为Id时此项必填
+                     * 获取<p>异地登录事件ID，当ProcessType为Id时此项必填</p>
+                     * @return EventId <p>异地登录事件ID，当ProcessType为Id时此项必填</p>
                      * 
                      */
                     uint64_t GetEventId() const;
 
                     /**
-                     * 设置异地登录事件ID，当ProcessType为Id时此项必填
-                     * @param _eventId 异地登录事件ID，当ProcessType为Id时此项必填
+                     * 设置<p>异地登录事件ID，当ProcessType为Id时此项必填</p>
+                     * @param _eventId <p>异地登录事件ID，当ProcessType为Id时此项必填</p>
                      * 
                      */
                     void SetEventId(const uint64_t& _eventId);
@@ -121,22 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异地登录白名单实体
+                     * <p>异地登录白名单实体</p>
                      */
                     HostLoginWhiteObj m_hostLoginWhiteObj;
                     bool m_hostLoginWhiteObjHasBeenSet;
 
                     /**
-                     * 事件同步处理方式：
-  "" -- 不操作
-  "All" -- 将符合此配置的所有事件记录加白
-  "Id" -- 将EventId对应的事件记录加白
+                     * <p>事件同步处理方式：<br>  &quot;&quot; -- 不操作<br>  &quot;All&quot; -- 将符合此配置的所有事件记录加白<br>  &quot;Id&quot; -- 将EventId对应的事件记录加白</p>
                      */
                     std::string m_processType;
                     bool m_processTypeHasBeenSet;
 
                     /**
-                     * 异地登录事件ID，当ProcessType为Id时此项必填
+                     * <p>异地登录事件ID，当ProcessType为Id时此项必填</p>
                      */
                     uint64_t m_eventId;
                     bool m_eventIdHasBeenSet;

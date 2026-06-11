@@ -201,6 +201,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAigcApiTokensResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcFaceInfoAsyncResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
@@ -746,6 +748,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAigcFaceInfoResponse> DescribeAigcFaceInfoOutcome;
                 typedef std::future<DescribeAigcFaceInfoOutcome> DescribeAigcFaceInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcFaceInfoRequest&, DescribeAigcFaceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcFaceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcFaceInfoAsyncResponse> DescribeAigcFaceInfoAsyncOutcome;
+                typedef std::future<DescribeAigcFaceInfoAsyncOutcome> DescribeAigcFaceInfoAsyncOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcFaceInfoAsyncRequest&, DescribeAigcFaceInfoAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcFaceInfoAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAigcUsageDataResponse> DescribeAigcUsageDataOutcome;
                 typedef std::future<DescribeAigcUsageDataOutcome> DescribeAigcUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcUsageDataRequest&, DescribeAigcUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcUsageDataAsyncHandler;
@@ -2009,6 +2014,15 @@ namespace TencentCloud
                 DescribeAigcFaceInfoOutcome DescribeAigcFaceInfo(const Model::DescribeAigcFaceInfoRequest &request);
                 void DescribeAigcFaceInfoAsync(const Model::DescribeAigcFaceInfoRequest& request, const DescribeAigcFaceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAigcFaceInfoOutcomeCallable DescribeAigcFaceInfoCallable(const Model::DescribeAigcFaceInfoRequest& request);
+
+                /**
+                 *该接口用于异步获取 AIGC 人脸信息。注意，调用本接口会产生人脸识别费用，请参考[计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。
+                 * @param req DescribeAigcFaceInfoAsyncRequest
+                 * @return DescribeAigcFaceInfoAsyncOutcome
+                 */
+                DescribeAigcFaceInfoAsyncOutcome DescribeAigcFaceInfoAsync(const Model::DescribeAigcFaceInfoAsyncRequest &request);
+                void DescribeAigcFaceInfoAsyncAsync(const Model::DescribeAigcFaceInfoAsyncRequest& request, const DescribeAigcFaceInfoAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcFaceInfoAsyncOutcomeCallable DescribeAigcFaceInfoAsyncCallable(const Model::DescribeAigcFaceInfoAsyncRequest& request);
 
                 /**
                  *该接口返回查询时间范围内AIGC的统计信息。

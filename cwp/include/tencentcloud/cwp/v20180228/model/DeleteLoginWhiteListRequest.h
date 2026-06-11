@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取白名单ID (最大 100 条)
-                     * @return Ids 白名单ID (最大 100 条)
+                     * 获取<p>白名单ID (最大 100 条)</p>
+                     * @return Ids <p>白名单ID (最大 100 条)</p>
                      * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置白名单ID (最大 100 条)
-                     * @param _ids 白名单ID (最大 100 条)
+                     * 设置<p>白名单ID (最大 100 条)</p>
+                     * @param _ids <p>白名单ID (最大 100 条)</p>
                      * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 白名单ID (最大 100 条)
+                     * <p>白名单ID (最大 100 条)</p>
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

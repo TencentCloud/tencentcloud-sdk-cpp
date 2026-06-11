@@ -25,7 +25,8 @@ using namespace std;
 DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeDBInstancesRequest::SetOffset(const int64_t& _offset)
 bool DescribeDBInstancesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void DescribeDBInstancesRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 

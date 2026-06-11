@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子策略Id
-                     * @return RuleId 子策略Id
-                     * 
-                     */
-                    std::string GetRuleId() const;
-
-                    /**
-                     * 设置子策略Id
-                     * @param _ruleId 子策略Id
-                     * 
-                     */
-                    void SetRuleId(const std::string& _ruleId);
-
-                    /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
-                     * 
-                     */
-                    bool RuleIdHasBeenSet() const;
-
-                    /**
                      * 获取子策略状态，true为开启，false为关闭
                      * @return IsEnable 子策略状态，true为开启，false为关闭
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsEnableHasBeenSet() const;
+
+                    /**
+                     * 获取子策略Id
+                     * @return RuleId 子策略Id
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置子策略Id
+                     * @param _ruleId 子策略Id
+                     * 
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取策略模式,  RULE_MODE_RELEASE: 放行
@@ -190,16 +190,16 @@ ABNORMAL_CHILD_PROC: 敏感服务异常子进程启动
                 private:
 
                     /**
-                     * 子策略Id
-                     */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
-
-                    /**
                      * 子策略状态，true为开启，false为关闭
                      */
                     bool m_isEnable;
                     bool m_isEnableHasBeenSet;
+
+                    /**
+                     * 子策略Id
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                     /**
                      * 策略模式,  RULE_MODE_RELEASE: 放行

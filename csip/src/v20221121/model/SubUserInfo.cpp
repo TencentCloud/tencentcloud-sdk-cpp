@@ -38,7 +38,8 @@ SubUserInfo::SubUserInfo() :
     m_actionRiskCountHasBeenSet(false),
     m_isAccessCloudAuditHasBeenSet(false),
     m_isAccessCheckHasBeenSet(false),
-    m_isAccessUebaHasBeenSet(false)
+    m_isAccessUebaHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome SubUserInfo::Deserialize(const rapidjson::Value &value)
         m_isAccessUebaHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubUserInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void SubUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsAccessUeba";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAccessUeba, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void SubUserInfo::SetIsAccessUeba(const bool& _isAccessUeba)
 bool SubUserInfo::IsAccessUebaHasBeenSet() const
 {
     return m_isAccessUebaHasBeenSet;
+}
+
+int64_t SubUserInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void SubUserInfo::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool SubUserInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展服务类型，和入参一致
-                     * @return Type 扩展服务类型，和入参一致
+                     * 获取<p>扩展服务类型，和入参一致</p>
+                     * @return Type <p>扩展服务类型，和入参一致</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置扩展服务类型，和入参一致
-                     * @param _type 扩展服务类型，和入参一致
+                     * 设置<p>扩展服务类型，和入参一致</p>
+                     * @param _type <p>扩展服务类型，和入参一致</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取扩展服务名称
-                     * @return Name 扩展服务名称
+                     * 获取<p>扩展服务名称</p>
+                     * @return Name <p>扩展服务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置扩展服务名称
-                     * @param _name 扩展服务名称
+                     * 设置<p>扩展服务名称</p>
+                     * @param _name <p>扩展服务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取授权员工列表
-                     * @return HasAuthUserList 授权员工列表
+                     * 获取<p>授权员工列表</p>
+                     * @return HasAuthUserList <p>授权员工列表</p>
                      * 
                      */
                     std::vector<HasAuthUser> GetHasAuthUserList() const;
 
                     /**
-                     * 设置授权员工列表
-                     * @param _hasAuthUserList 授权员工列表
+                     * 设置<p>授权员工列表</p>
+                     * @param _hasAuthUserList <p>授权员工列表</p>
                      * 
                      */
                     void SetHasAuthUserList(const std::vector<HasAuthUser>& _hasAuthUserList);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool HasAuthUserListHasBeenSet() const;
 
                     /**
-                     * 获取授权企业列表（企业自动签时，该字段有值）
-                     * @return HasAuthOrganizationList 授权企业列表（企业自动签时，该字段有值）
+                     * 获取<p>授权企业列表（企业自动签时，该字段有值）</p>
+                     * @return HasAuthOrganizationList <p>授权企业列表（企业自动签时，该字段有值）</p>
                      * 
                      */
                     std::vector<HasAuthOrganization> GetHasAuthOrganizationList() const;
 
                     /**
-                     * 设置授权企业列表（企业自动签时，该字段有值）
-                     * @param _hasAuthOrganizationList 授权企业列表（企业自动签时，该字段有值）
+                     * 设置<p>授权企业列表（企业自动签时，该字段有值）</p>
+                     * @param _hasAuthOrganizationList <p>授权企业列表（企业自动签时，该字段有值）</p>
                      * 
                      */
                     void SetHasAuthOrganizationList(const std::vector<HasAuthOrganization>& _hasAuthOrganizationList);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool HasAuthOrganizationListHasBeenSet() const;
 
                     /**
-                     * 获取授权员工列表总数
-                     * @return AuthUserTotal 授权员工列表总数
+                     * 获取<p>授权员工列表总数</p>
+                     * @return AuthUserTotal <p>授权员工列表总数</p>
                      * 
                      */
                     int64_t GetAuthUserTotal() const;
 
                     /**
-                     * 设置授权员工列表总数
-                     * @param _authUserTotal 授权员工列表总数
+                     * 设置<p>授权员工列表总数</p>
+                     * @param _authUserTotal <p>授权员工列表总数</p>
                      * 
                      */
                     void SetAuthUserTotal(const int64_t& _authUserTotal);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool AuthUserTotalHasBeenSet() const;
 
                     /**
-                     * 获取授权企业列表总数
-                     * @return AuthOrganizationTotal 授权企业列表总数
+                     * 获取<p>授权企业列表总数</p>
+                     * @return AuthOrganizationTotal <p>授权企业列表总数</p>
                      * 
                      */
                     int64_t GetAuthOrganizationTotal() const;
 
                     /**
-                     * 设置授权企业列表总数
-                     * @param _authOrganizationTotal 授权企业列表总数
+                     * 设置<p>授权企业列表总数</p>
+                     * @param _authOrganizationTotal <p>授权企业列表总数</p>
                      * 
                      */
                     void SetAuthOrganizationTotal(const int64_t& _authOrganizationTotal);
@@ -177,37 +177,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 扩展服务类型，和入参一致
+                     * <p>扩展服务类型，和入参一致</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 扩展服务名称
+                     * <p>扩展服务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 授权员工列表
+                     * <p>授权员工列表</p>
                      */
                     std::vector<HasAuthUser> m_hasAuthUserList;
                     bool m_hasAuthUserListHasBeenSet;
 
                     /**
-                     * 授权企业列表（企业自动签时，该字段有值）
+                     * <p>授权企业列表（企业自动签时，该字段有值）</p>
                      */
                     std::vector<HasAuthOrganization> m_hasAuthOrganizationList;
                     bool m_hasAuthOrganizationListHasBeenSet;
 
                     /**
-                     * 授权员工列表总数
+                     * <p>授权员工列表总数</p>
                      */
                     int64_t m_authUserTotal;
                     bool m_authUserTotalHasBeenSet;
 
                     /**
-                     * 授权企业列表总数
+                     * <p>授权企业列表总数</p>
                      */
                     int64_t m_authOrganizationTotal;
                     bool m_authOrganizationTotalHasBeenSet;

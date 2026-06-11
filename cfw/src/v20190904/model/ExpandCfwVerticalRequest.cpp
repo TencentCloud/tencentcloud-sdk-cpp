@@ -28,7 +28,8 @@ ExpandCfwVerticalRequest::ExpandCfwVerticalRequest() :
     m_cfwInstanceHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
     m_elasticBandwidthHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_elasticTrafficSwitchHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ExpandCfwVerticalRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_elasticTrafficSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTrafficSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticTrafficSwitch, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ExpandCfwVerticalRequest::SetTags(const vector<TagInfo>& _tags)
 bool ExpandCfwVerticalRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t ExpandCfwVerticalRequest::GetElasticTrafficSwitch() const
+{
+    return m_elasticTrafficSwitch;
+}
+
+void ExpandCfwVerticalRequest::SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch)
+{
+    m_elasticTrafficSwitch = _elasticTrafficSwitch;
+    m_elasticTrafficSwitchHasBeenSet = true;
+}
+
+bool ExpandCfwVerticalRequest::ElasticTrafficSwitchHasBeenSet() const
+{
+    return m_elasticTrafficSwitchHasBeenSet;
 }
 
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤参数
-                     * @return Filters 过滤参数
+                     * 获取<p>过滤参数</p>
+                     * @return Filters <p>过滤参数</p>
                      * 
                      */
                     std::vector<InstanceFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数
-                     * @param _filters 过滤参数
+                     * 设置<p>过滤参数</p>
+                     * @param _filters <p>过滤参数</p>
                      * 
                      */
                     void SetFilters(const std::vector<InstanceFilter>& _filters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取最大返回个数，默认为20，上限为100
-                     * @return Limit 最大返回个数，默认为20，上限为100
+                     * 获取<p>最大返回个数，默认为20，上限为100</p>
+                     * @return Limit <p>最大返回个数，默认为20，上限为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置最大返回个数，默认为20，上限为100
-                     * @param _limit 最大返回个数，默认为20，上限为100
+                     * 设置<p>最大返回个数，默认为20，上限为100</p>
+                     * @param _limit <p>最大返回个数，默认为20，上限为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
+                     * 获取<p>偏移量，取Limit整数倍</p>
+                     * @return Offset <p>偏移量，取Limit整数倍</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param _offset 偏移量，取Limit整数倍
+                     * 设置<p>偏移量，取Limit整数倍</p>
+                     * @param _offset <p>偏移量，取Limit整数倍</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,25 +106,52 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>指定查询引擎类型</p><p>枚举值：</p><ul><li>libra： 列存引擎</li></ul>
+                     * @return EngineType <p>指定查询引擎类型</p><p>枚举值：</p><ul><li>libra： 列存引擎</li></ul>
+                     * 
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置<p>指定查询引擎类型</p><p>枚举值：</p><ul><li>libra： 列存引擎</li></ul>
+                     * @param _engineType <p>指定查询引擎类型</p><p>枚举值：</p><ul><li>libra： 列存引擎</li></ul>
+                     * 
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤参数
+                     * <p>过滤参数</p>
                      */
                     std::vector<InstanceFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 最大返回个数，默认为20，上限为100
+                     * <p>最大返回个数，默认为20，上限为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍
+                     * <p>偏移量，取Limit整数倍</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>指定查询引擎类型</p><p>枚举值：</p><ul><li>libra： 列存引擎</li></ul>
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

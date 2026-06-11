@@ -21,13 +21,14 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 AccessControlRuleInfo::AccessControlRuleInfo() :
-    m_isEnableHasBeenSet(false),
-    m_imageIdsHasBeenSet(false),
     m_childRulesHasBeenSet(false),
+    m_imageIdsHasBeenSet(false),
+    m_isEnableHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
+    m_isDefaultHasBeenSet(false),
+    m_isGlobalHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_systemChildRulesHasBeenSet(false),
-    m_isDefaultHasBeenSet(false)
+    m_systemChildRulesHasBeenSet(false)
 {
 }
 
@@ -35,29 +36,6 @@ CoreInternalOutcome AccessControlRuleInfo::Deserialize(const rapidjson::Value &v
 {
     string requestId = "";
 
-
-    if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
-    {
-        if (!value["IsEnable"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsEnable` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isEnable = value["IsEnable"].GetBool();
-        m_isEnableHasBeenSet = true;
-    }
-
-    if (value.HasMember("ImageIds") && !value["ImageIds"].IsNull())
-    {
-        if (!value["ImageIds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.ImageIds` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["ImageIds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_imageIds.push_back((*itr).GetString());
-        }
-        m_imageIdsHasBeenSet = true;
-    }
 
     if (value.HasMember("ChildRules") && !value["ChildRules"].IsNull())
     {
@@ -79,6 +57,29 @@ CoreInternalOutcome AccessControlRuleInfo::Deserialize(const rapidjson::Value &v
         m_childRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageIds") && !value["ImageIds"].IsNull())
+    {
+        if (!value["ImageIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.ImageIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_imageIds.push_back((*itr).GetString());
+        }
+        m_imageIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
+    {
+        if (!value["IsEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnable = value["IsEnable"].GetBool();
+        m_isEnableHasBeenSet = true;
+    }
+
     if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
     {
         if (!value["RuleName"].IsString())
@@ -87,6 +88,26 @@ CoreInternalOutcome AccessControlRuleInfo::Deserialize(const rapidjson::Value &v
         }
         m_ruleName = string(value["RuleName"].GetString());
         m_ruleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsGlobal") && !value["IsGlobal"].IsNull())
+    {
+        if (!value["IsGlobal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsGlobal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isGlobal = value["IsGlobal"].GetBool();
+        m_isGlobalHasBeenSet = true;
     }
 
     if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
@@ -119,43 +140,12 @@ CoreInternalOutcome AccessControlRuleInfo::Deserialize(const rapidjson::Value &v
         m_systemChildRulesHasBeenSet = true;
     }
 
-    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
-    {
-        if (!value["IsDefault"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isDefault = value["IsDefault"].GetBool();
-        m_isDefaultHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void AccessControlRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_isEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsEnable";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isEnable, allocator);
-    }
-
-    if (m_imageIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageIds";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_imageIds.begin(); itr != m_imageIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_childRulesHasBeenSet)
     {
@@ -172,12 +162,49 @@ void AccessControlRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
+    if (m_imageIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageIds.begin(); itr != m_imageIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEnable, allocator);
+    }
+
     if (m_ruleNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
+    }
+
+    if (m_isGlobalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGlobal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isGlobal, allocator);
     }
 
     if (m_ruleIdHasBeenSet)
@@ -203,31 +230,23 @@ void AccessControlRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
-    if (m_isDefaultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsDefault";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isDefault, allocator);
-    }
-
 }
 
 
-bool AccessControlRuleInfo::GetIsEnable() const
+vector<AccessControlChildRuleInfo> AccessControlRuleInfo::GetChildRules() const
 {
-    return m_isEnable;
+    return m_childRules;
 }
 
-void AccessControlRuleInfo::SetIsEnable(const bool& _isEnable)
+void AccessControlRuleInfo::SetChildRules(const vector<AccessControlChildRuleInfo>& _childRules)
 {
-    m_isEnable = _isEnable;
-    m_isEnableHasBeenSet = true;
+    m_childRules = _childRules;
+    m_childRulesHasBeenSet = true;
 }
 
-bool AccessControlRuleInfo::IsEnableHasBeenSet() const
+bool AccessControlRuleInfo::ChildRulesHasBeenSet() const
 {
-    return m_isEnableHasBeenSet;
+    return m_childRulesHasBeenSet;
 }
 
 vector<string> AccessControlRuleInfo::GetImageIds() const
@@ -246,20 +265,20 @@ bool AccessControlRuleInfo::ImageIdsHasBeenSet() const
     return m_imageIdsHasBeenSet;
 }
 
-vector<AccessControlChildRuleInfo> AccessControlRuleInfo::GetChildRules() const
+bool AccessControlRuleInfo::GetIsEnable() const
 {
-    return m_childRules;
+    return m_isEnable;
 }
 
-void AccessControlRuleInfo::SetChildRules(const vector<AccessControlChildRuleInfo>& _childRules)
+void AccessControlRuleInfo::SetIsEnable(const bool& _isEnable)
 {
-    m_childRules = _childRules;
-    m_childRulesHasBeenSet = true;
+    m_isEnable = _isEnable;
+    m_isEnableHasBeenSet = true;
 }
 
-bool AccessControlRuleInfo::ChildRulesHasBeenSet() const
+bool AccessControlRuleInfo::IsEnableHasBeenSet() const
 {
-    return m_childRulesHasBeenSet;
+    return m_isEnableHasBeenSet;
 }
 
 string AccessControlRuleInfo::GetRuleName() const
@@ -276,6 +295,38 @@ void AccessControlRuleInfo::SetRuleName(const string& _ruleName)
 bool AccessControlRuleInfo::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+bool AccessControlRuleInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void AccessControlRuleInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool AccessControlRuleInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
+}
+
+bool AccessControlRuleInfo::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void AccessControlRuleInfo::SetIsGlobal(const bool& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool AccessControlRuleInfo::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
 }
 
 string AccessControlRuleInfo::GetRuleId() const
@@ -308,21 +359,5 @@ void AccessControlRuleInfo::SetSystemChildRules(const vector<AccessControlSystem
 bool AccessControlRuleInfo::SystemChildRulesHasBeenSet() const
 {
     return m_systemChildRulesHasBeenSet;
-}
-
-bool AccessControlRuleInfo::GetIsDefault() const
-{
-    return m_isDefault;
-}
-
-void AccessControlRuleInfo::SetIsDefault(const bool& _isDefault)
-{
-    m_isDefault = _isDefault;
-    m_isDefaultHasBeenSet = true;
-}
-
-bool AccessControlRuleInfo::IsDefaultHasBeenSet() const
-{
-    return m_isDefaultHasBeenSet;
 }
 

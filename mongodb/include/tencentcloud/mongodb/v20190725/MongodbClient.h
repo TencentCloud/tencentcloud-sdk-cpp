@@ -161,6 +161,8 @@
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/OpenAuditServiceResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/PromoteDBInstanceToActiveRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/PromoteDBInstanceToActiveResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RenameInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/RenameInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h>
@@ -406,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::PromoteDBInstanceToActiveResponse> PromoteDBInstanceToActiveOutcome;
+                typedef std::future<PromoteDBInstanceToActiveOutcome> PromoteDBInstanceToActiveOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::PromoteDBInstanceToActiveRequest&, PromoteDBInstanceToActiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PromoteDBInstanceToActiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenameInstanceResponse> RenameInstanceOutcome;
                 typedef std::future<RenameInstanceOutcome> RenameInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::RenameInstanceRequest&, RenameInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameInstanceAsyncHandler;
@@ -1071,6 +1076,15 @@ namespace TencentCloud
                 OpenAuditServiceOutcome OpenAuditService(const Model::OpenAuditServiceRequest &request);
                 void OpenAuditServiceAsync(const Model::OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
+
+                /**
+                 *本接口（PromoteDBInstanceToActive）用于灾备实例转正
+                 * @param req PromoteDBInstanceToActiveRequest
+                 * @return PromoteDBInstanceToActiveOutcome
+                 */
+                PromoteDBInstanceToActiveOutcome PromoteDBInstanceToActive(const Model::PromoteDBInstanceToActiveRequest &request);
+                void PromoteDBInstanceToActiveAsync(const Model::PromoteDBInstanceToActiveRequest& request, const PromoteDBInstanceToActiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PromoteDBInstanceToActiveOutcomeCallable PromoteDBInstanceToActiveCallable(const Model::PromoteDBInstanceToActiveRequest& request);
 
                 /**
                  *本接口(RenameInstance)用于修改云数据库实例的名称。

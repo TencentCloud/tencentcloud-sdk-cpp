@@ -40,7 +40,8 @@ CreateProxyEndPointRequest::CreateProxyEndPointRequest() :
     m_consistencyTimeOutHasBeenSet(false),
     m_transSplitHasBeenSet(false),
     m_accessModeHasBeenSet(false),
-    m_instanceWeightsHasBeenSet(false)
+    m_instanceWeightsHasBeenSet(false),
+    m_loadBalanceModeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string CreateProxyEndPointRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_loadBalanceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalanceMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -501,6 +510,22 @@ void CreateProxyEndPointRequest::SetInstanceWeights(const vector<ProxyInstanceWe
 bool CreateProxyEndPointRequest::InstanceWeightsHasBeenSet() const
 {
     return m_instanceWeightsHasBeenSet;
+}
+
+string CreateProxyEndPointRequest::GetLoadBalanceMode() const
+{
+    return m_loadBalanceMode;
+}
+
+void CreateProxyEndPointRequest::SetLoadBalanceMode(const string& _loadBalanceMode)
+{
+    m_loadBalanceMode = _loadBalanceMode;
+    m_loadBalanceModeHasBeenSet = true;
+}
+
+bool CreateProxyEndPointRequest::LoadBalanceModeHasBeenSet() const
+{
+    return m_loadBalanceModeHasBeenSet;
 }
 
 

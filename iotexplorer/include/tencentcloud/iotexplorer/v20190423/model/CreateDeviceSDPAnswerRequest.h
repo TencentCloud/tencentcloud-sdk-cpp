@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool SDPOfferHasBeenSet() const;
 
+                    /**
+                     * 获取客户自定义拉流标识
+                     * @return RequesterTag 客户自定义拉流标识
+                     * 
+                     */
+                    std::string GetRequesterTag() const;
+
+                    /**
+                     * 设置客户自定义拉流标识
+                     * @param _requesterTag 客户自定义拉流标识
+                     * 
+                     */
+                    void SetRequesterTag(const std::string& _requesterTag);
+
+                    /**
+                     * 判断参数 RequesterTag 是否已赋值
+                     * @return RequesterTag 是否已赋值
+                     * 
+                     */
+                    bool RequesterTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_sDPOffer;
                     bool m_sDPOfferHasBeenSet;
+
+                    /**
+                     * 客户自定义拉流标识
+                     */
+                    std::string m_requesterTag;
+                    bool m_requesterTagHasBeenSet;
 
                 };
             }

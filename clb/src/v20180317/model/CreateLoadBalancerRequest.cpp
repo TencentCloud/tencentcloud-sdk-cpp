@@ -53,7 +53,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_lBChargePrepaidHasBeenSet(false),
     m_lBChargeTypeHasBeenSet(false),
     m_accessLogTopicIdHasBeenSet(false),
-    m_advancedRouteHasBeenSet(false)
+    m_advancedRouteHasBeenSet(false),
+    m_availableZoneAffinityInfoHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,15 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "AdvancedRoute";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_advancedRoute, allocator);
+    }
+
+    if (m_availableZoneAffinityInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableZoneAffinityInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_availableZoneAffinityInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -836,6 +846,22 @@ void CreateLoadBalancerRequest::SetAdvancedRoute(const bool& _advancedRoute)
 bool CreateLoadBalancerRequest::AdvancedRouteHasBeenSet() const
 {
     return m_advancedRouteHasBeenSet;
+}
+
+AvailableZoneAffinityInfo CreateLoadBalancerRequest::GetAvailableZoneAffinityInfo() const
+{
+    return m_availableZoneAffinityInfo;
+}
+
+void CreateLoadBalancerRequest::SetAvailableZoneAffinityInfo(const AvailableZoneAffinityInfo& _availableZoneAffinityInfo)
+{
+    m_availableZoneAffinityInfo = _availableZoneAffinityInfo;
+    m_availableZoneAffinityInfoHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AvailableZoneAffinityInfoHasBeenSet() const
+{
+    return m_availableZoneAffinityInfoHasBeenSet;
 }
 
 

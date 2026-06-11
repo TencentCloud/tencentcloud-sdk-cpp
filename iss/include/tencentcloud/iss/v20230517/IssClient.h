@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/iss/v20230517/model/AddAITaskRequest.h>
-#include <tencentcloud/iss/v20230517/model/AddAITaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/AddOrganizationRequest.h>
 #include <tencentcloud/iss/v20230517/model/AddOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/AddRecordBackupPlanRequest.h>
@@ -61,8 +59,6 @@
 #include <tencentcloud/iss/v20230517/model/ControlRecordTimelineResponse.h>
 #include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskResponse.h>
-#include <tencentcloud/iss/v20230517/model/DeleteAITaskRequest.h>
-#include <tencentcloud/iss/v20230517/model/DeleteAITaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteGatewayRequest.h>
@@ -83,10 +79,6 @@
 #include <tencentcloud/iss/v20230517/model/DeleteTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeAITaskRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeAITaskResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeAITaskResultRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeAITaskResultResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeCNAMERequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeCNAMEResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeDeviceChannelRequest.h>
@@ -139,8 +131,6 @@
 #include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlResponse.h>
-#include <tencentcloud/iss/v20230517/model/ListAITasksRequest.h>
-#include <tencentcloud/iss/v20230517/model/ListAITasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesRequest.h>
@@ -183,10 +173,6 @@
 #include <tencentcloud/iss/v20230517/model/RefreshDeviceChannelResponse.h>
 #include <tencentcloud/iss/v20230517/model/SetForbidPlayChannelsRequest.h>
 #include <tencentcloud/iss/v20230517/model/SetForbidPlayChannelsResponse.h>
-#include <tencentcloud/iss/v20230517/model/UpdateAITaskRequest.h>
-#include <tencentcloud/iss/v20230517/model/UpdateAITaskResponse.h>
-#include <tencentcloud/iss/v20230517/model/UpdateAITaskStatusRequest.h>
-#include <tencentcloud/iss/v20230517/model/UpdateAITaskStatusResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceOrganizationRequest.h>
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceStatusRequest.h>
@@ -221,9 +207,6 @@ namespace TencentCloud
                 IssClient(const Credential &credential, const std::string &region);
                 IssClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AddAITaskResponse> AddAITaskOutcome;
-                typedef std::future<AddAITaskOutcome> AddAITaskOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::AddAITaskRequest&, AddAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAITaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddOrganizationResponse> AddOrganizationOutcome;
                 typedef std::future<AddOrganizationOutcome> AddOrganizationOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::AddOrganizationRequest&, AddOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationAsyncHandler;
@@ -278,9 +261,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVideoDownloadTaskResponse> CreateVideoDownloadTaskOutcome;
                 typedef std::future<CreateVideoDownloadTaskOutcome> CreateVideoDownloadTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::CreateVideoDownloadTaskRequest&, CreateVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoDownloadTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteAITaskResponse> DeleteAITaskOutcome;
-                typedef std::future<DeleteAITaskOutcome> DeleteAITaskOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DeleteAITaskRequest&, DeleteAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAITaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -311,12 +291,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserDeviceResponse> DeleteUserDeviceOutcome;
                 typedef std::future<DeleteUserDeviceOutcome> DeleteUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteUserDeviceRequest&, DeleteUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserDeviceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAITaskResponse> DescribeAITaskOutcome;
-                typedef std::future<DescribeAITaskOutcome> DescribeAITaskOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeAITaskRequest&, DescribeAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAITaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAITaskResultResponse> DescribeAITaskResultOutcome;
-                typedef std::future<DescribeAITaskResultOutcome> DescribeAITaskResultOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeAITaskResultRequest&, DescribeAITaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAITaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCNAMEResponse> DescribeCNAMEOutcome;
                 typedef std::future<DescribeCNAMEOutcome> DescribeCNAMEOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeCNAMERequest&, DescribeCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNAMEAsyncHandler;
@@ -395,9 +369,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoDownloadUrlResponse> DescribeVideoDownloadUrlOutcome;
                 typedef std::future<DescribeVideoDownloadUrlOutcome> DescribeVideoDownloadUrlOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeVideoDownloadUrlRequest&, DescribeVideoDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoDownloadUrlAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListAITasksResponse> ListAITasksOutcome;
-                typedef std::future<ListAITasksOutcome> ListAITasksOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::ListAITasksRequest&, ListAITasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAITasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListDeviceSnapshotsResponse> ListDeviceSnapshotsOutcome;
                 typedef std::future<ListDeviceSnapshotsOutcome> ListDeviceSnapshotsOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListDeviceSnapshotsRequest&, ListDeviceSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceSnapshotsAsyncHandler;
@@ -461,12 +432,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetForbidPlayChannelsResponse> SetForbidPlayChannelsOutcome;
                 typedef std::future<SetForbidPlayChannelsOutcome> SetForbidPlayChannelsOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::SetForbidPlayChannelsRequest&, SetForbidPlayChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetForbidPlayChannelsAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateAITaskResponse> UpdateAITaskOutcome;
-                typedef std::future<UpdateAITaskOutcome> UpdateAITaskOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::UpdateAITaskRequest&, UpdateAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAITaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateAITaskStatusResponse> UpdateAITaskStatusOutcome;
-                typedef std::future<UpdateAITaskStatusOutcome> UpdateAITaskStatusOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::UpdateAITaskStatusRequest&, UpdateAITaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAITaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceOrganizationResponse> UpdateDeviceOrganizationOutcome;
                 typedef std::future<UpdateDeviceOrganizationOutcome> UpdateDeviceOrganizationOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::UpdateDeviceOrganizationRequest&, UpdateDeviceOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceOrganizationAsyncHandler;
@@ -499,15 +464,6 @@ namespace TencentCloud
                 typedef std::function<void(const IssClient*, const Model::UpgradeGatewayRequest&, UpgradeGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGatewayAsyncHandler;
 
 
-
-                /**
-                 *添加AI任务
-                 * @param req AddAITaskRequest
-                 * @return AddAITaskOutcome
-                 */
-                AddAITaskOutcome AddAITask(const Model::AddAITaskRequest &request);
-                void AddAITaskAsync(const Model::AddAITaskRequest& request, const AddAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddAITaskOutcomeCallable AddAITaskCallable(const Model::AddAITaskRequest& request);
 
                 /**
                  *用于新增组织。
@@ -675,15 +631,6 @@ namespace TencentCloud
                 CreateVideoDownloadTaskOutcomeCallable CreateVideoDownloadTaskCallable(const Model::CreateVideoDownloadTaskRequest& request);
 
                 /**
-                 *删除AI任务
-                 * @param req DeleteAITaskRequest
-                 * @return DeleteAITaskOutcome
-                 */
-                DeleteAITaskOutcome DeleteAITask(const Model::DeleteAITaskRequest &request);
-                void DeleteAITaskAsync(const Model::DeleteAITaskRequest& request, const DeleteAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteAITaskOutcomeCallable DeleteAITaskCallable(const Model::DeleteAITaskRequest& request);
-
-                /**
                  *用于删除域名。
                  * @param req DeleteDomainRequest
                  * @return DeleteDomainOutcome
@@ -772,24 +719,6 @@ namespace TencentCloud
                 DeleteUserDeviceOutcome DeleteUserDevice(const Model::DeleteUserDeviceRequest &request);
                 void DeleteUserDeviceAsync(const Model::DeleteUserDeviceRequest& request, const DeleteUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserDeviceOutcomeCallable DeleteUserDeviceCallable(const Model::DeleteUserDeviceRequest& request);
-
-                /**
-                 *获取AI任务详情
-                 * @param req DescribeAITaskRequest
-                 * @return DescribeAITaskOutcome
-                 */
-                DescribeAITaskOutcome DescribeAITask(const Model::DescribeAITaskRequest &request);
-                void DescribeAITaskAsync(const Model::DescribeAITaskRequest& request, const DescribeAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAITaskOutcomeCallable DescribeAITaskCallable(const Model::DescribeAITaskRequest& request);
-
-                /**
-                 *获取AI任务识别结果
-                 * @param req DescribeAITaskResultRequest
-                 * @return DescribeAITaskResultOutcome
-                 */
-                DescribeAITaskResultOutcome DescribeAITaskResult(const Model::DescribeAITaskResultRequest &request);
-                void DescribeAITaskResultAsync(const Model::DescribeAITaskResultRequest& request, const DescribeAITaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAITaskResultOutcomeCallable DescribeAITaskResultCallable(const Model::DescribeAITaskResultRequest& request);
 
                 /**
                  *用于根据服务节点获取 CNAME 值。
@@ -1027,15 +956,6 @@ namespace TencentCloud
                 DescribeVideoDownloadUrlOutcomeCallable DescribeVideoDownloadUrlCallable(const Model::DescribeVideoDownloadUrlRequest& request);
 
                 /**
-                 *获取AI任务列表
-                 * @param req ListAITasksRequest
-                 * @return ListAITasksOutcome
-                 */
-                ListAITasksOutcome ListAITasks(const Model::ListAITasksRequest &request);
-                void ListAITasksAsync(const Model::ListAITasksRequest& request, const ListAITasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListAITasksOutcomeCallable ListAITasksCallable(const Model::ListAITasksRequest& request);
-
-                /**
                  *获取设备抓拍结果列表
                  * @param req ListDeviceSnapshotsRequest
                  * @return ListDeviceSnapshotsOutcome
@@ -1223,24 +1143,6 @@ namespace TencentCloud
                 SetForbidPlayChannelsOutcome SetForbidPlayChannels(const Model::SetForbidPlayChannelsRequest &request);
                 void SetForbidPlayChannelsAsync(const Model::SetForbidPlayChannelsRequest& request, const SetForbidPlayChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetForbidPlayChannelsOutcomeCallable SetForbidPlayChannelsCallable(const Model::SetForbidPlayChannelsRequest& request);
-
-                /**
-                 *更新AI任务
-                 * @param req UpdateAITaskRequest
-                 * @return UpdateAITaskOutcome
-                 */
-                UpdateAITaskOutcome UpdateAITask(const Model::UpdateAITaskRequest &request);
-                void UpdateAITaskAsync(const Model::UpdateAITaskRequest& request, const UpdateAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateAITaskOutcomeCallable UpdateAITaskCallable(const Model::UpdateAITaskRequest& request);
-
-                /**
-                 *更新 AI 任务状态
-                 * @param req UpdateAITaskStatusRequest
-                 * @return UpdateAITaskStatusOutcome
-                 */
-                UpdateAITaskStatusOutcome UpdateAITaskStatus(const Model::UpdateAITaskStatusRequest &request);
-                void UpdateAITaskStatusAsync(const Model::UpdateAITaskStatusRequest& request, const UpdateAITaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateAITaskStatusOutcomeCallable UpdateAITaskStatusCallable(const Model::UpdateAITaskStatusRequest& request);
 
                 /**
                  *用于批量更改设备的组织。

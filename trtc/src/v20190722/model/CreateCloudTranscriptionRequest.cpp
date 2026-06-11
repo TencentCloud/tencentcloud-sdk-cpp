@@ -28,7 +28,8 @@ CreateCloudTranscriptionRequest::CreateCloudTranscriptionRequest() :
     m_roomIdTypeHasBeenSet(false),
     m_transcriptionParamHasBeenSet(false),
     m_asrParamHasBeenSet(false),
-    m_translationParamHasBeenSet(false)
+    m_translationParamHasBeenSet(false),
+    m_tTSParamHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,21 @@ string CreateCloudTranscriptionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_translationParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tTSParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TTSParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tTSParam.begin(); itr != m_tTSParam.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -192,6 +208,22 @@ void CreateCloudTranscriptionRequest::SetTranslationParam(const TranslationParam
 bool CreateCloudTranscriptionRequest::TranslationParamHasBeenSet() const
 {
     return m_translationParamHasBeenSet;
+}
+
+vector<TTSParam> CreateCloudTranscriptionRequest::GetTTSParam() const
+{
+    return m_tTSParam;
+}
+
+void CreateCloudTranscriptionRequest::SetTTSParam(const vector<TTSParam>& _tTSParam)
+{
+    m_tTSParam = _tTSParam;
+    m_tTSParamHasBeenSet = true;
+}
+
+bool CreateCloudTranscriptionRequest::TTSParamHasBeenSet() const
+{
+    return m_tTSParamHasBeenSet;
 }
 
 

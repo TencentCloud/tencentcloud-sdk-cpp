@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色详情列表。
-                     * @return List 角色详情列表。
+                     * 获取<p>角色详情列表。</p>
+                     * @return List <p>角色详情列表。</p>
                      * 
                      */
                     std::vector<RoleInfo> GetList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取角色总数
-                     * @return TotalNum 角色总数
+                     * 获取<p>角色总数</p>
+                     * @return TotalNum <p>角色总数</p>
                      * 
                      */
                     uint64_t GetTotalNum() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色详情列表。
+                     * <p>角色详情列表。</p>
                      */
                     std::vector<RoleInfo> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 角色总数
+                     * <p>角色总数</p>
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

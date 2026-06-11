@@ -32,7 +32,9 @@ ModifyForwardingRuleRequest::ModifyForwardingRuleRequest() :
     m_originHeadersHasBeenSet(false),
     m_enableOriginSniHasBeenSet(false),
     m_originSniHasBeenSet(false),
-    m_originHostHasBeenSet(false)
+    m_originHostHasBeenSet(false),
+    m_responseHeadersHasBeenSet(false),
+    m_hideResponseHeadersHasBeenSet(false)
 {
 }
 
@@ -142,6 +144,36 @@ string ModifyForwardingRuleRequest::ToJsonString() const
         string key = "OriginHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_originHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_responseHeaders.begin(); itr != m_responseHeaders.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hideResponseHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideResponseHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hideResponseHeaders.begin(); itr != m_hideResponseHeaders.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -310,6 +342,38 @@ void ModifyForwardingRuleRequest::SetOriginHost(const string& _originHost)
 bool ModifyForwardingRuleRequest::OriginHostHasBeenSet() const
 {
     return m_originHostHasBeenSet;
+}
+
+vector<ResponseHeaders> ModifyForwardingRuleRequest::GetResponseHeaders() const
+{
+    return m_responseHeaders;
+}
+
+void ModifyForwardingRuleRequest::SetResponseHeaders(const vector<ResponseHeaders>& _responseHeaders)
+{
+    m_responseHeaders = _responseHeaders;
+    m_responseHeadersHasBeenSet = true;
+}
+
+bool ModifyForwardingRuleRequest::ResponseHeadersHasBeenSet() const
+{
+    return m_responseHeadersHasBeenSet;
+}
+
+vector<HideResponseHeaders> ModifyForwardingRuleRequest::GetHideResponseHeaders() const
+{
+    return m_hideResponseHeaders;
+}
+
+void ModifyForwardingRuleRequest::SetHideResponseHeaders(const vector<HideResponseHeaders>& _hideResponseHeaders)
+{
+    m_hideResponseHeaders = _hideResponseHeaders;
+    m_hideResponseHeadersHasBeenSet = true;
+}
+
+bool ModifyForwardingRuleRequest::HideResponseHeadersHasBeenSet() const
+{
+    return m_hideResponseHeadersHasBeenSet;
 }
 
 

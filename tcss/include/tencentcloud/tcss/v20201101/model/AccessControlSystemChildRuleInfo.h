@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取子策略状态，true为开启，false为关闭
+                     * @return IsEnable 子策略状态，true为开启，false为关闭
+                     * 
+                     */
+                    bool GetIsEnable() const;
+
+                    /**
+                     * 设置子策略状态，true为开启，false为关闭
+                     * @param _isEnable 子策略状态，true为开启，false为关闭
+                     * 
+                     */
+                    void SetIsEnable(const bool& _isEnable);
+
+                    /**
+                     * 判断参数 IsEnable 是否已赋值
+                     * @return IsEnable 是否已赋值
+                     * 
+                     */
+                    bool IsEnableHasBeenSet() const;
+
+                    /**
                      * 获取子策略Id
                      * @return RuleId 子策略Id
                      * 
@@ -97,27 +118,6 @@ namespace TencentCloud
                     bool RuleModeHasBeenSet() const;
 
                     /**
-                     * 获取子策略状态，true为开启，false为关闭
-                     * @return IsEnable 子策略状态，true为开启，false为关闭
-                     * 
-                     */
-                    bool GetIsEnable() const;
-
-                    /**
-                     * 设置子策略状态，true为开启，false为关闭
-                     * @param _isEnable 子策略状态，true为开启，false为关闭
-                     * 
-                     */
-                    void SetIsEnable(const bool& _isEnable);
-
-                    /**
-                     * 判断参数 IsEnable 是否已赋值
-                     * @return IsEnable 是否已赋值
-                     * 
-                     */
-                    bool IsEnableHasBeenSet() const;
-
-                    /**
                      * 获取子策略检测的入侵行为类型
 CHANGE_CRONTAB：篡改计划任务
 CHANGE_SYS_BIN：篡改系统程序
@@ -153,6 +153,12 @@ CHANGE_USRCFG：篡改用户配置
                 private:
 
                     /**
+                     * 子策略状态，true为开启，false为关闭
+                     */
+                    bool m_isEnable;
+                    bool m_isEnableHasBeenSet;
+
+                    /**
                      * 子策略Id
                      */
                     std::string m_ruleId;
@@ -165,12 +171,6 @@ CHANGE_USRCFG：篡改用户配置
                      */
                     std::string m_ruleMode;
                     bool m_ruleModeHasBeenSet;
-
-                    /**
-                     * 子策略状态，true为开启，false为关闭
-                     */
-                    bool m_isEnable;
-                    bool m_isEnableHasBeenSet;
 
                     /**
                      * 子策略检测的入侵行为类型

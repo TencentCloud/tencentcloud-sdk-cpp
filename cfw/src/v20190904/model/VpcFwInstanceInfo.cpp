@@ -50,7 +50,8 @@ VpcFwInstanceInfo::VpcFwInstanceInfo() :
     m_reserveVersionStateHasBeenSet(false),
     m_elasticSwitchHasBeenSet(false),
     m_elasticBandwidthHasBeenSet(false),
-    m_isFirstAfterPayHasBeenSet(false)
+    m_isFirstAfterPayHasBeenSet(false),
+    m_elasticTrafficSwitchHasBeenSet(false)
 {
 }
 
@@ -404,6 +405,16 @@ CoreInternalOutcome VpcFwInstanceInfo::Deserialize(const rapidjson::Value &value
         m_isFirstAfterPayHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticTrafficSwitch") && !value["ElasticTrafficSwitch"].IsNull())
+    {
+        if (!value["ElasticTrafficSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwInstanceInfo.ElasticTrafficSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTrafficSwitch = value["ElasticTrafficSwitch"].GetInt64();
+        m_elasticTrafficSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -695,6 +706,14 @@ void VpcFwInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsFirstAfterPay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFirstAfterPay, allocator);
+    }
+
+    if (m_elasticTrafficSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTrafficSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTrafficSwitch, allocator);
     }
 
 }
@@ -1178,5 +1197,21 @@ void VpcFwInstanceInfo::SetIsFirstAfterPay(const int64_t& _isFirstAfterPay)
 bool VpcFwInstanceInfo::IsFirstAfterPayHasBeenSet() const
 {
     return m_isFirstAfterPayHasBeenSet;
+}
+
+int64_t VpcFwInstanceInfo::GetElasticTrafficSwitch() const
+{
+    return m_elasticTrafficSwitch;
+}
+
+void VpcFwInstanceInfo::SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch)
+{
+    m_elasticTrafficSwitch = _elasticTrafficSwitch;
+    m_elasticTrafficSwitchHasBeenSet = true;
+}
+
+bool VpcFwInstanceInfo::ElasticTrafficSwitchHasBeenSet() const
+{
+    return m_elasticTrafficSwitchHasBeenSet;
 }
 

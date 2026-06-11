@@ -272,6 +272,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeSystemVulListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeContainerSecEventSummaryRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistrySummaryResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogCleanSettingInfoRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulScanAuthorizedImageSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageAuthorizedInfoResponse.h
@@ -651,6 +652,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeVulTopRankingRequest.h
   include/tencentcloud/tcss/v20201101/model/RegexpRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/ConfirmNetworkFirewallPolicyRequest.h
+  include/tencentcloud/tcss/v20201101/model/CreateClusterAccessResponse.h
   include/tencentcloud/tcss/v20201101/model/ContainerMount.h
   include/tencentcloud/tcss/v20201101/model/DeleteSearchTemplateResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleDetailResponse.h
@@ -729,7 +731,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/RaspInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallClusterListRequest.h
-  include/tencentcloud/tcss/v20201101/model/DescribeVulRegistryImageListResponse.h
+  include/tencentcloud/tcss/v20201101/model/AccessControlRuleExtSetItem.h
   include/tencentcloud/tcss/v20201101/model/CreateVulDefenceEventExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/AutoAuthorizedRuleHostInfo.h
   include/tencentcloud/tcss/v20201101/model/CreateExportComplianceStatusListJobRequest.h
@@ -748,7 +750,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeUnfinishRefreshTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryRiskInfoListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListRequest.h
-  include/tencentcloud/tcss/v20201101/model/CreateClusterAccessResponse.h
+  include/tencentcloud/tcss/v20201101/model/AbnormalProcessRuleExtSetItem.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryScanStatusOneKeyRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyAccessControlRuleStatusRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulScanAuthorizedImageSummaryRequest.h
@@ -1170,6 +1172,7 @@ set(tcss_src
   src/v20201101/model/DescribeSystemVulListRequest.cpp
   src/v20201101/model/DescribeContainerSecEventSummaryRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistrySummaryResponse.cpp
+  src/v20201101/model/DescribeVulRegistryImageListResponse.cpp
   src/v20201101/model/DescribeSecLogCleanSettingInfoRequest.cpp
   src/v20201101/model/DescribeVulScanAuthorizedImageSummaryResponse.cpp
   src/v20201101/model/DescribeImageAuthorizedInfoResponse.cpp
@@ -1549,6 +1552,7 @@ set(tcss_src
   src/v20201101/model/DescribeVulTopRankingRequest.cpp
   src/v20201101/model/RegexpRuleInfo.cpp
   src/v20201101/model/ConfirmNetworkFirewallPolicyRequest.cpp
+  src/v20201101/model/CreateClusterAccessResponse.cpp
   src/v20201101/model/ContainerMount.cpp
   src/v20201101/model/DeleteSearchTemplateResponse.cpp
   src/v20201101/model/DescribeImageDenyRuleDetailResponse.cpp
@@ -1627,7 +1631,7 @@ set(tcss_src
   src/v20201101/model/CreateClusterCheckTaskRequest.cpp
   src/v20201101/model/RaspInfo.cpp
   src/v20201101/model/DescribeNetworkFirewallClusterListRequest.cpp
-  src/v20201101/model/DescribeVulRegistryImageListResponse.cpp
+  src/v20201101/model/AccessControlRuleExtSetItem.cpp
   src/v20201101/model/CreateVulDefenceEventExportJobResponse.cpp
   src/v20201101/model/AutoAuthorizedRuleHostInfo.cpp
   src/v20201101/model/CreateExportComplianceStatusListJobRequest.cpp
@@ -1646,7 +1650,7 @@ set(tcss_src
   src/v20201101/model/DescribeUnfinishRefreshTaskRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistryRiskInfoListRequest.cpp
   src/v20201101/model/DescribeImageRegistryNamespaceListRequest.cpp
-  src/v20201101/model/CreateClusterAccessResponse.cpp
+  src/v20201101/model/AbnormalProcessRuleExtSetItem.cpp
   src/v20201101/model/DescribeAssetImageRegistryScanStatusOneKeyRequest.cpp
   src/v20201101/model/ModifyAccessControlRuleStatusRequest.cpp
   src/v20201101/model/DescribeVulScanAuthorizedImageSummaryRequest.cpp

@@ -22,7 +22,8 @@ using namespace std;
 
 BindingItem::BindingItem() :
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome BindingItem::Deserialize(const rapidjson::Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindingItem.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void BindingItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void BindingItem::SetResourceType(const string& _resourceType)
 bool BindingItem::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string BindingItem::GetStatus() const
+{
+    return m_status;
+}
+
+void BindingItem::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool BindingItem::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

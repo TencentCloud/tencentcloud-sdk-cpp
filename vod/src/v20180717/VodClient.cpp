@@ -4490,6 +4490,56 @@ VodClient::DescribeAigcFaceInfoOutcomeCallable VodClient::DescribeAigcFaceInfoCa
     return prom->get_future();
 }
 
+VodClient::DescribeAigcFaceInfoAsyncOutcome VodClient::DescribeAigcFaceInfoAsync(const DescribeAigcFaceInfoAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcFaceInfoAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcFaceInfoAsyncResponse rsp = DescribeAigcFaceInfoAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcFaceInfoAsyncOutcome(rsp);
+        else
+            return DescribeAigcFaceInfoAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcFaceInfoAsyncOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcFaceInfoAsyncAsync(const DescribeAigcFaceInfoAsyncRequest& request, const DescribeAigcFaceInfoAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcFaceInfoAsyncRequest&;
+    using Resp = DescribeAigcFaceInfoAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcFaceInfoAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcFaceInfoAsyncOutcomeCallable VodClient::DescribeAigcFaceInfoAsyncCallable(const DescribeAigcFaceInfoAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcFaceInfoAsyncOutcome>>();
+    DescribeAigcFaceInfoAsyncAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcFaceInfoAsyncRequest&,
+        DescribeAigcFaceInfoAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DescribeAigcUsageDataOutcome VodClient::DescribeAigcUsageData(const DescribeAigcUsageDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAigcUsageData");

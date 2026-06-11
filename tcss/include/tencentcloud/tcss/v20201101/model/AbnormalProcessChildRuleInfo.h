@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>进程路径</p>
+                     * @return ProcessPath <p>进程路径</p>
+                     * 
+                     */
+                    std::string GetProcessPath() const;
+
+                    /**
+                     * 设置<p>进程路径</p>
+                     * @param _processPath <p>进程路径</p>
+                     * 
+                     */
+                    void SetProcessPath(const std::string& _processPath);
+
+                    /**
+                     * 判断参数 ProcessPath 是否已赋值
+                     * @return ProcessPath 是否已赋值
+                     * 
+                     */
+                    bool ProcessPathHasBeenSet() const;
+
+                    /**
                      * 获取<p>策略模式，   RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
                      * @return RuleMode <p>策略模式，   RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
                      * 
@@ -68,25 +89,25 @@ namespace TencentCloud
                     bool RuleModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>进程路径</p>
-                     * @return ProcessPath <p>进程路径</p>
+                     * 获取<p>命令行参数</p>
+                     * @return CmdLine <p>命令行参数</p>
                      * 
                      */
-                    std::string GetProcessPath() const;
+                    std::string GetCmdLine() const;
 
                     /**
-                     * 设置<p>进程路径</p>
-                     * @param _processPath <p>进程路径</p>
+                     * 设置<p>命令行参数</p>
+                     * @param _cmdLine <p>命令行参数</p>
                      * 
                      */
-                    void SetProcessPath(const std::string& _processPath);
+                    void SetCmdLine(const std::string& _cmdLine);
 
                     /**
-                     * 判断参数 ProcessPath 是否已赋值
-                     * @return ProcessPath 是否已赋值
+                     * 判断参数 CmdLine 是否已赋值
+                     * @return CmdLine 是否已赋值
                      * 
                      */
-                    bool ProcessPathHasBeenSet() const;
+                    bool CmdLineHasBeenSet() const;
 
                     /**
                      * 获取<p>子策略id</p>
@@ -130,28 +151,13 @@ namespace TencentCloud
                      */
                     bool RuleLevelHasBeenSet() const;
 
-                    /**
-                     * 获取<p>命令行参数</p>
-                     * @return CmdLine <p>命令行参数</p>
-                     * 
-                     */
-                    std::string GetCmdLine() const;
-
-                    /**
-                     * 设置<p>命令行参数</p>
-                     * @param _cmdLine <p>命令行参数</p>
-                     * 
-                     */
-                    void SetCmdLine(const std::string& _cmdLine);
-
-                    /**
-                     * 判断参数 CmdLine 是否已赋值
-                     * @return CmdLine 是否已赋值
-                     * 
-                     */
-                    bool CmdLineHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * <p>进程路径</p>
+                     */
+                    std::string m_processPath;
+                    bool m_processPathHasBeenSet;
 
                     /**
                      * <p>策略模式，   RULE_MODE_RELEASE: 放行<br>   RULE_MODE_ALERT: 告警<br>   RULE_MODE_HOLDUP:拦截</p>
@@ -160,10 +166,10 @@ namespace TencentCloud
                     bool m_ruleModeHasBeenSet;
 
                     /**
-                     * <p>进程路径</p>
+                     * <p>命令行参数</p>
                      */
-                    std::string m_processPath;
-                    bool m_processPathHasBeenSet;
+                    std::string m_cmdLine;
+                    bool m_cmdLineHasBeenSet;
 
                     /**
                      * <p>子策略id</p>
@@ -176,12 +182,6 @@ namespace TencentCloud
                      */
                     std::string m_ruleLevel;
                     bool m_ruleLevelHasBeenSet;
-
-                    /**
-                     * <p>命令行参数</p>
-                     */
-                    std::string m_cmdLine;
-                    bool m_cmdLineHasBeenSet;
 
                 };
             }

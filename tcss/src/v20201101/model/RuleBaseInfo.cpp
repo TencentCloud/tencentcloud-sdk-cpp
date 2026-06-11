@@ -21,13 +21,14 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 RuleBaseInfo::RuleBaseInfo() :
-    m_isDefaultHasBeenSet(false),
-    m_effectImageCountHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
     m_editUserNameHasBeenSet(false),
-    m_isEnableHasBeenSet(false)
+    m_effectImageCountHasBeenSet(false),
+    m_isDefaultHasBeenSet(false),
+    m_isGlobalHasBeenSet(false),
+    m_isEnableHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -36,14 +37,14 @@ CoreInternalOutcome RuleBaseInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    if (value.HasMember("EditUserName") && !value["EditUserName"].IsNull())
     {
-        if (!value["IsDefault"].IsBool())
+        if (!value["EditUserName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.EditUserName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_isDefault = value["IsDefault"].GetBool();
-        m_isDefaultHasBeenSet = true;
+        m_editUserName = string(value["EditUserName"].GetString());
+        m_editUserNameHasBeenSet = true;
     }
 
     if (value.HasMember("EffectImageCount") && !value["EffectImageCount"].IsNull())
@@ -56,44 +57,24 @@ CoreInternalOutcome RuleBaseInfo::Deserialize(const rapidjson::Value &value)
         m_effectImageCountHasBeenSet = true;
     }
 
-    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
     {
-        if (!value["RuleId"].IsString())
+        if (!value["IsDefault"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_ruleId = string(value["RuleId"].GetString());
-        m_ruleIdHasBeenSet = true;
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
     }
 
-    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    if (value.HasMember("IsGlobal") && !value["IsGlobal"].IsNull())
     {
-        if (!value["UpdateTime"].IsString())
+        if (!value["IsGlobal"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.IsGlobal` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_updateTime = string(value["UpdateTime"].GetString());
-        m_updateTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
-    {
-        if (!value["RuleName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleName = string(value["RuleName"].GetString());
-        m_ruleNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("EditUserName") && !value["EditUserName"].IsNull())
-    {
-        if (!value["EditUserName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.EditUserName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_editUserName = string(value["EditUserName"].GetString());
-        m_editUserNameHasBeenSet = true;
+        m_isGlobal = value["IsGlobal"].GetBool();
+        m_isGlobalHasBeenSet = true;
     }
 
     if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
@@ -106,6 +87,36 @@ CoreInternalOutcome RuleBaseInfo::Deserialize(const rapidjson::Value &value)
         m_isEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = string(value["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleBaseInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,12 +124,12 @@ CoreInternalOutcome RuleBaseInfo::Deserialize(const rapidjson::Value &value)
 void RuleBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_isDefaultHasBeenSet)
+    if (m_editUserNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsDefault";
+        string key = "EditUserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isDefault, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_editUserName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_effectImageCountHasBeenSet)
@@ -129,36 +140,20 @@ void RuleBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_effectImageCount, allocator);
     }
 
-    if (m_ruleIdHasBeenSet)
+    if (m_isDefaultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleId";
+        string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
     }
 
-    if (m_updateTimeHasBeenSet)
+    if (m_isGlobalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpdateTime";
+        string key = "IsGlobal";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ruleNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_editUserNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EditUserName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_editUserName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_isGlobal, allocator);
     }
 
     if (m_isEnableHasBeenSet)
@@ -169,23 +164,47 @@ void RuleBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_isEnable, allocator);
     }
 
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-bool RuleBaseInfo::GetIsDefault() const
+string RuleBaseInfo::GetEditUserName() const
 {
-    return m_isDefault;
+    return m_editUserName;
 }
 
-void RuleBaseInfo::SetIsDefault(const bool& _isDefault)
+void RuleBaseInfo::SetEditUserName(const string& _editUserName)
 {
-    m_isDefault = _isDefault;
-    m_isDefaultHasBeenSet = true;
+    m_editUserName = _editUserName;
+    m_editUserNameHasBeenSet = true;
 }
 
-bool RuleBaseInfo::IsDefaultHasBeenSet() const
+bool RuleBaseInfo::EditUserNameHasBeenSet() const
 {
-    return m_isDefaultHasBeenSet;
+    return m_editUserNameHasBeenSet;
 }
 
 uint64_t RuleBaseInfo::GetEffectImageCount() const
@@ -204,6 +223,54 @@ bool RuleBaseInfo::EffectImageCountHasBeenSet() const
     return m_effectImageCountHasBeenSet;
 }
 
+bool RuleBaseInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void RuleBaseInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool RuleBaseInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
+}
+
+bool RuleBaseInfo::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void RuleBaseInfo::SetIsGlobal(const bool& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool RuleBaseInfo::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
+}
+
+bool RuleBaseInfo::GetIsEnable() const
+{
+    return m_isEnable;
+}
+
+void RuleBaseInfo::SetIsEnable(const bool& _isEnable)
+{
+    m_isEnable = _isEnable;
+    m_isEnableHasBeenSet = true;
+}
+
+bool RuleBaseInfo::IsEnableHasBeenSet() const
+{
+    return m_isEnableHasBeenSet;
+}
+
 string RuleBaseInfo::GetRuleId() const
 {
     return m_ruleId;
@@ -218,22 +285,6 @@ void RuleBaseInfo::SetRuleId(const string& _ruleId)
 bool RuleBaseInfo::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
-}
-
-string RuleBaseInfo::GetUpdateTime() const
-{
-    return m_updateTime;
-}
-
-void RuleBaseInfo::SetUpdateTime(const string& _updateTime)
-{
-    m_updateTime = _updateTime;
-    m_updateTimeHasBeenSet = true;
-}
-
-bool RuleBaseInfo::UpdateTimeHasBeenSet() const
-{
-    return m_updateTimeHasBeenSet;
 }
 
 string RuleBaseInfo::GetRuleName() const
@@ -252,35 +303,19 @@ bool RuleBaseInfo::RuleNameHasBeenSet() const
     return m_ruleNameHasBeenSet;
 }
 
-string RuleBaseInfo::GetEditUserName() const
+string RuleBaseInfo::GetUpdateTime() const
 {
-    return m_editUserName;
+    return m_updateTime;
 }
 
-void RuleBaseInfo::SetEditUserName(const string& _editUserName)
+void RuleBaseInfo::SetUpdateTime(const string& _updateTime)
 {
-    m_editUserName = _editUserName;
-    m_editUserNameHasBeenSet = true;
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
 }
 
-bool RuleBaseInfo::EditUserNameHasBeenSet() const
+bool RuleBaseInfo::UpdateTimeHasBeenSet() const
 {
-    return m_editUserNameHasBeenSet;
-}
-
-bool RuleBaseInfo::GetIsEnable() const
-{
-    return m_isEnable;
-}
-
-void RuleBaseInfo::SetIsEnable(const bool& _isEnable)
-{
-    m_isEnable = _isEnable;
-    m_isEnableHasBeenSet = true;
-}
-
-bool RuleBaseInfo::IsEnableHasBeenSet() const
-{
-    return m_isEnableHasBeenSet;
+    return m_updateTimeHasBeenSet;
 }
 

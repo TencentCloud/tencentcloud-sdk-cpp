@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警名称
-                     * @return Name 告警名称
+                     * 获取<p>告警名称</p>
+                     * @return Name <p>告警名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警名称
-                     * @param _name 告警名称
+                     * 设置<p>告警名称</p>
+                     * @param _name <p>告警名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,19 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取告警等级
-0-无效 1-提示 2-低危 3-中危 4-高危 5-严重
-                     * @return Level 告警等级
-0-无效 1-提示 2-低危 3-中危 4-高危 5-严重
+                     * 获取<p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>
+                     * @return Level <p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置告警等级
-0-无效 1-提示 2-低危 3-中危 4-高危 5-严重
-                     * @param _level 告警等级
-0-无效 1-提示 2-低危 3-中危 4-高危 5-严重
+                     * 设置<p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>
+                     * @param _level <p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -93,15 +89,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取告警记录ID
-                     * @return ID 告警记录ID
+                     * 获取<p>告警记录ID</p>
+                     * @return ID <p>告警记录ID</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置告警记录ID
-                     * @param _iD 告警记录ID
+                     * 设置<p>告警记录ID</p>
+                     * @param _iD <p>告警记录ID</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -114,15 +110,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取告警规则ID
-                     * @return AlarmRuleID 告警规则ID
+                     * 获取<p>告警规则ID</p>
+                     * @return AlarmRuleID <p>告警规则ID</p>
                      * 
                      */
                     int64_t GetAlarmRuleID() const;
 
                     /**
-                     * 设置告警规则ID
-                     * @param _alarmRuleID 告警规则ID
+                     * 设置<p>告警规则ID</p>
+                     * @param _alarmRuleID <p>告警规则ID</p>
                      * 
                      */
                     void SetAlarmRuleID(const int64_t& _alarmRuleID);
@@ -135,23 +131,15 @@ namespace TencentCloud
                     bool AlarmRuleIDHasBeenSet() const;
 
                     /**
-                     * 获取告警类型
-0 异常调用
-1 泄漏监测
-                     * @return AlarmType 告警类型
-0 异常调用
-1 泄漏监测
+                     * 获取<p>告警类型<br>0 异常调用<br>1 泄漏监测</p>
+                     * @return AlarmType <p>告警类型<br>0 异常调用<br>1 泄漏监测</p>
                      * 
                      */
                     int64_t GetAlarmType() const;
 
                     /**
-                     * 设置告警类型
-0 异常调用
-1 泄漏监测
-                     * @param _alarmType 告警类型
-0 异常调用
-1 泄漏监测
+                     * 设置<p>告警类型<br>0 异常调用<br>1 泄漏监测</p>
+                     * @param _alarmType <p>告警类型<br>0 异常调用<br>1 泄漏监测</p>
                      * 
                      */
                     void SetAlarmType(const int64_t& _alarmType);
@@ -164,15 +152,15 @@ namespace TencentCloud
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
-                     * 获取访问密钥
-                     * @return AccessKey 访问密钥
+                     * 获取<p>访问密钥</p>
+                     * @return AccessKey <p>访问密钥</p>
                      * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
-                     * 设置访问密钥
-                     * @param _accessKey 访问密钥
+                     * 设置<p>访问密钥</p>
+                     * @param _accessKey <p>访问密钥</p>
                      * 
                      */
                     void SetAccessKey(const std::string& _accessKey);
@@ -185,15 +173,15 @@ namespace TencentCloud
                     bool AccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取访问密钥ID
-                     * @return AccessKeyID 访问密钥ID
+                     * 获取<p>访问密钥ID</p>
+                     * @return AccessKeyID <p>访问密钥ID</p>
                      * 
                      */
                     uint64_t GetAccessKeyID() const;
 
                     /**
-                     * 设置访问密钥ID
-                     * @param _accessKeyID 访问密钥ID
+                     * 设置<p>访问密钥ID</p>
+                     * @param _accessKeyID <p>访问密钥ID</p>
                      * 
                      */
                     void SetAccessKeyID(const uint64_t& _accessKeyID);
@@ -206,15 +194,15 @@ namespace TencentCloud
                     bool AccessKeyIDHasBeenSet() const;
 
                     /**
-                     * 获取访问密钥备注
-                     * @return AccessKeyRemark 访问密钥备注
+                     * 获取<p>访问密钥备注</p>
+                     * @return AccessKeyRemark <p>访问密钥备注</p>
                      * 
                      */
                     std::string GetAccessKeyRemark() const;
 
                     /**
-                     * 设置访问密钥备注
-                     * @param _accessKeyRemark 访问密钥备注
+                     * 设置<p>访问密钥备注</p>
+                     * @param _accessKeyRemark <p>访问密钥备注</p>
                      * 
                      */
                     void SetAccessKeyRemark(const std::string& _accessKeyRemark);
@@ -227,15 +215,15 @@ namespace TencentCloud
                     bool AccessKeyRemarkHasBeenSet() const;
 
                     /**
-                     * 获取最后告警时间
-                     * @return LastAlarmTime 最后告警时间
+                     * 获取<p>最后告警时间</p>
+                     * @return LastAlarmTime <p>最后告警时间</p>
                      * 
                      */
                     std::string GetLastAlarmTime() const;
 
                     /**
-                     * 设置最后告警时间
-                     * @param _lastAlarmTime 最后告警时间
+                     * 设置<p>最后告警时间</p>
+                     * @param _lastAlarmTime <p>最后告警时间</p>
                      * 
                      */
                     void SetLastAlarmTime(const std::string& _lastAlarmTime);
@@ -248,19 +236,15 @@ namespace TencentCloud
                     bool LastAlarmTimeHasBeenSet() const;
 
                     /**
-                     * 获取告警状态
-0-未处理 1-已处理 2-已忽略
-                     * @return Status 告警状态
-0-未处理 1-已处理 2-已忽略
+                     * 获取<p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>
+                     * @return Status <p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置告警状态
-0-未处理 1-已处理 2-已忽略
-                     * @param _status 告警状态
-0-未处理 1-已处理 2-已忽略
+                     * 设置<p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>
+                     * @param _status <p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -273,15 +257,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取聚合日期
-                     * @return Date 聚合日期
+                     * 获取<p>聚合日期</p>
+                     * @return Date <p>聚合日期</p>
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置聚合日期
-                     * @param _date 聚合日期
+                     * 设置<p>聚合日期</p>
+                     * @param _date <p>聚合日期</p>
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -294,15 +278,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取告警标签
-                     * @return Tag 告警标签
+                     * 获取<p>告警标签</p>
+                     * @return Tag <p>告警标签</p>
                      * 
                      */
                     std::vector<std::string> GetTag() const;
 
                     /**
-                     * 设置告警标签
-                     * @param _tag 告警标签
+                     * 设置<p>告警标签</p>
+                     * @param _tag <p>告警标签</p>
                      * 
                      */
                     void SetTag(const std::vector<std::string>& _tag);
@@ -315,15 +299,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取所属主账号Uin
-                     * @return Uin 所属主账号Uin
+                     * 获取<p>所属主账号Uin</p>
+                     * @return Uin <p>所属主账号Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置所属主账号Uin
-                     * @param _uin 所属主账号Uin
+                     * 设置<p>所属主账号Uin</p>
+                     * @param _uin <p>所属主账号Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -336,15 +320,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取所属主账号昵称
-                     * @return Nickname 所属主账号昵称
+                     * 获取<p>所属主账号昵称</p>
+                     * @return Nickname <p>所属主账号昵称</p>
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置所属主账号昵称
-                     * @param _nickname 所属主账号昵称
+                     * 设置<p>所属主账号昵称</p>
+                     * @param _nickname <p>所属主账号昵称</p>
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -357,15 +341,15 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取所属子账号Uin
-                     * @return SubUin 所属子账号Uin
+                     * 获取<p>所属子账号Uin</p>
+                     * @return SubUin <p>所属子账号Uin</p>
                      * 
                      */
                     std::string GetSubUin() const;
 
                     /**
-                     * 设置所属子账号Uin
-                     * @param _subUin 所属子账号Uin
+                     * 设置<p>所属子账号Uin</p>
+                     * @param _subUin <p>所属子账号Uin</p>
                      * 
                      */
                     void SetSubUin(const std::string& _subUin);
@@ -378,15 +362,15 @@ namespace TencentCloud
                     bool SubUinHasBeenSet() const;
 
                     /**
-                     * 获取所属子账号昵称
-                     * @return SubNickname 所属子账号昵称
+                     * 获取<p>所属子账号昵称</p>
+                     * @return SubNickname <p>所属子账号昵称</p>
                      * 
                      */
                     std::string GetSubNickname() const;
 
                     /**
-                     * 设置所属子账号昵称
-                     * @param _subNickname 所属子账号昵称
+                     * 设置<p>所属子账号昵称</p>
+                     * @param _subNickname <p>所属子账号昵称</p>
                      * 
                      */
                     void SetSubNickname(const std::string& _subNickname);
@@ -399,19 +383,15 @@ namespace TencentCloud
                     bool SubNicknameHasBeenSet() const;
 
                     /**
-                     * 获取账号类型
-0 主账号AK 1 子账号AK 2 临时密钥
-                     * @return Type 账号类型
-0 主账号AK 1 子账号AK 2 临时密钥
+                     * 获取<p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>
+                     * @return Type <p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置账号类型
-0 主账号AK 1 子账号AK 2 临时密钥
-                     * @param _type 账号类型
-0 主账号AK 1 子账号AK 2 临时密钥
+                     * 设置<p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>
+                     * @param _type <p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -424,15 +404,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取所属appid
-                     * @return AppID 所属appid
+                     * 获取<p>所属appid</p>
+                     * @return AppID <p>所属appid</p>
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置所属appid
-                     * @param _appID 所属appid
+                     * 设置<p>所属appid</p>
+                     * @param _appID <p>所属appid</p>
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -445,15 +425,15 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取泄漏证据
-                     * @return LeakEvidence 泄漏证据
+                     * 获取<p>泄漏证据</p>
+                     * @return LeakEvidence <p>泄漏证据</p>
                      * 
                      */
                     std::vector<std::string> GetLeakEvidence() const;
 
                     /**
-                     * 设置泄漏证据
-                     * @param _leakEvidence 泄漏证据
+                     * 设置<p>泄漏证据</p>
+                     * @param _leakEvidence <p>泄漏证据</p>
                      * 
                      */
                     void SetLeakEvidence(const std::vector<std::string>& _leakEvidence);
@@ -466,15 +446,15 @@ namespace TencentCloud
                     bool LeakEvidenceHasBeenSet() const;
 
                     /**
-                     * 获取是否支持编辑信任账号
-                     * @return IsSupportEditWhiteAccount 是否支持编辑信任账号
+                     * 获取<p>是否支持编辑信任账号</p>
+                     * @return IsSupportEditWhiteAccount <p>是否支持编辑信任账号</p>
                      * 
                      */
                     bool GetIsSupportEditWhiteAccount() const;
 
                     /**
-                     * 设置是否支持编辑信任账号
-                     * @param _isSupportEditWhiteAccount 是否支持编辑信任账号
+                     * 设置<p>是否支持编辑信任账号</p>
+                     * @param _isSupportEditWhiteAccount <p>是否支持编辑信任账号</p>
                      * 
                      */
                     void SetIsSupportEditWhiteAccount(const bool& _isSupportEditWhiteAccount);
@@ -487,15 +467,15 @@ namespace TencentCloud
                     bool IsSupportEditWhiteAccountHasBeenSet() const;
 
                     /**
-                     * 获取告警证据
-                     * @return Evidence 告警证据
+                     * 获取<p>告警证据</p>
+                     * @return Evidence <p>告警证据</p>
                      * 
                      */
                     std::string GetEvidence() const;
 
                     /**
-                     * 设置告警证据
-                     * @param _evidence 告警证据
+                     * 设置<p>告警证据</p>
+                     * @param _evidence <p>告警证据</p>
                      * 
                      */
                     void SetEvidence(const std::string& _evidence);
@@ -508,15 +488,15 @@ namespace TencentCloud
                     bool EvidenceHasBeenSet() const;
 
                     /**
-                     * 获取告警规则标识
-                     * @return RuleKey 告警规则标识
+                     * 获取<p>告警规则标识</p>
+                     * @return RuleKey <p>告警规则标识</p>
                      * 
                      */
                     std::string GetRuleKey() const;
 
                     /**
-                     * 设置告警规则标识
-                     * @param _ruleKey 告警规则标识
+                     * 设置<p>告警规则标识</p>
+                     * @param _ruleKey <p>告警规则标识</p>
                      * 
                      */
                     void SetRuleKey(const std::string& _ruleKey);
@@ -529,15 +509,15 @@ namespace TencentCloud
                     bool RuleKeyHasBeenSet() const;
 
                     /**
-                     * 获取云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
-                     * @return CloudType 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * 获取<p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>
+                     * @return CloudType <p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>
                      * 
                      */
                     int64_t GetCloudType() const;
 
                     /**
-                     * 设置云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
-                     * @param _cloudType 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * 设置<p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>
+                     * @param _cloudType <p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -550,35 +530,15 @@ namespace TencentCloud
                     bool CloudTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警AI分析状态
--1 分析失败
-0 未分析
-1 分析中
-2 分析成功，真实告警
-3 分析成功，可疑告警
-                     * @return AIStatus 告警AI分析状态
--1 分析失败
-0 未分析
-1 分析中
-2 分析成功，真实告警
-3 分析成功，可疑告警
+                     * 获取<p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>
+                     * @return AIStatus <p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>
                      * 
                      */
                     int64_t GetAIStatus() const;
 
                     /**
-                     * 设置告警AI分析状态
--1 分析失败
-0 未分析
-1 分析中
-2 分析成功，真实告警
-3 分析成功，可疑告警
-                     * @param _aIStatus 告警AI分析状态
--1 分析失败
-0 未分析
-1 分析中
-2 分析成功，真实告警
-3 分析成功，可疑告警
+                     * 设置<p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>
+                     * @param _aIStatus <p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>
                      * 
                      */
                     void SetAIStatus(const int64_t& _aIStatus);
@@ -591,15 +551,15 @@ namespace TencentCloud
                     bool AIStatusHasBeenSet() const;
 
                     /**
-                     * 获取首次告警时间戳（秒级）
-                     * @return FirstAlarmTimestamp 首次告警时间戳（秒级）
+                     * 获取<p>首次告警时间戳（秒级）</p>
+                     * @return FirstAlarmTimestamp <p>首次告警时间戳（秒级）</p>
                      * 
                      */
                     int64_t GetFirstAlarmTimestamp() const;
 
                     /**
-                     * 设置首次告警时间戳（秒级）
-                     * @param _firstAlarmTimestamp 首次告警时间戳（秒级）
+                     * 设置<p>首次告警时间戳（秒级）</p>
+                     * @param _firstAlarmTimestamp <p>首次告警时间戳（秒级）</p>
                      * 
                      */
                     void SetFirstAlarmTimestamp(const int64_t& _firstAlarmTimestamp);
@@ -612,15 +572,15 @@ namespace TencentCloud
                     bool FirstAlarmTimestampHasBeenSet() const;
 
                     /**
-                     * 获取最后告警时间戳（秒级）
-                     * @return LastAlarmTimestamp 最后告警时间戳（秒级）
+                     * 获取<p>最后告警时间戳（秒级）</p>
+                     * @return LastAlarmTimestamp <p>最后告警时间戳（秒级）</p>
                      * 
                      */
                     int64_t GetLastAlarmTimestamp() const;
 
                     /**
-                     * 设置最后告警时间戳（秒级）
-                     * @param _lastAlarmTimestamp 最后告警时间戳（秒级）
+                     * 设置<p>最后告警时间戳（秒级）</p>
+                     * @param _lastAlarmTimestamp <p>最后告警时间戳（秒级）</p>
                      * 
                      */
                     void SetLastAlarmTimestamp(const int64_t& _lastAlarmTimestamp);
@@ -632,173 +592,190 @@ namespace TencentCloud
                      */
                     bool LastAlarmTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ai分析失败描述，未失败为空字符串</p>
+                     * @return AIFailedReason <p>ai分析失败描述，未失败为空字符串</p>
+                     * 
+                     */
+                    std::string GetAIFailedReason() const;
+
+                    /**
+                     * 设置<p>ai分析失败描述，未失败为空字符串</p>
+                     * @param _aIFailedReason <p>ai分析失败描述，未失败为空字符串</p>
+                     * 
+                     */
+                    void SetAIFailedReason(const std::string& _aIFailedReason);
+
+                    /**
+                     * 判断参数 AIFailedReason 是否已赋值
+                     * @return AIFailedReason 是否已赋值
+                     * 
+                     */
+                    bool AIFailedReasonHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 告警名称
+                     * <p>告警名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 告警等级
-0-无效 1-提示 2-低危 3-中危 4-高危 5-严重
+                     * <p>告警等级<br>0-无效 1-提示 2-低危 3-中危 4-高危 5-严重</p>
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 告警记录ID
+                     * <p>告警记录ID</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 告警规则ID
+                     * <p>告警规则ID</p>
                      */
                     int64_t m_alarmRuleID;
                     bool m_alarmRuleIDHasBeenSet;
 
                     /**
-                     * 告警类型
-0 异常调用
-1 泄漏监测
+                     * <p>告警类型<br>0 异常调用<br>1 泄漏监测</p>
                      */
                     int64_t m_alarmType;
                     bool m_alarmTypeHasBeenSet;
 
                     /**
-                     * 访问密钥
+                     * <p>访问密钥</p>
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
 
                     /**
-                     * 访问密钥ID
+                     * <p>访问密钥ID</p>
                      */
                     uint64_t m_accessKeyID;
                     bool m_accessKeyIDHasBeenSet;
 
                     /**
-                     * 访问密钥备注
+                     * <p>访问密钥备注</p>
                      */
                     std::string m_accessKeyRemark;
                     bool m_accessKeyRemarkHasBeenSet;
 
                     /**
-                     * 最后告警时间
+                     * <p>最后告警时间</p>
                      */
                     std::string m_lastAlarmTime;
                     bool m_lastAlarmTimeHasBeenSet;
 
                     /**
-                     * 告警状态
-0-未处理 1-已处理 2-已忽略
+                     * <p>告警状态<br>0-未处理 1-已处理 2-已忽略</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 聚合日期
+                     * <p>聚合日期</p>
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 告警标签
+                     * <p>告警标签</p>
                      */
                     std::vector<std::string> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 所属主账号Uin
+                     * <p>所属主账号Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 所属主账号昵称
+                     * <p>所属主账号昵称</p>
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 所属子账号Uin
+                     * <p>所属子账号Uin</p>
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
-                     * 所属子账号昵称
+                     * <p>所属子账号昵称</p>
                      */
                     std::string m_subNickname;
                     bool m_subNicknameHasBeenSet;
 
                     /**
-                     * 账号类型
-0 主账号AK 1 子账号AK 2 临时密钥
+                     * <p>账号类型<br>0 主账号AK 1 子账号AK 2 临时密钥</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 所属appid
+                     * <p>所属appid</p>
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 泄漏证据
+                     * <p>泄漏证据</p>
                      */
                     std::vector<std::string> m_leakEvidence;
                     bool m_leakEvidenceHasBeenSet;
 
                     /**
-                     * 是否支持编辑信任账号
+                     * <p>是否支持编辑信任账号</p>
                      */
                     bool m_isSupportEditWhiteAccount;
                     bool m_isSupportEditWhiteAccountHasBeenSet;
 
                     /**
-                     * 告警证据
+                     * <p>告警证据</p>
                      */
                     std::string m_evidence;
                     bool m_evidenceHasBeenSet;
 
                     /**
-                     * 告警规则标识
+                     * <p>告警规则标识</p>
                      */
                     std::string m_ruleKey;
                     bool m_ruleKeyHasBeenSet;
 
                     /**
-                     * 云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云
+                     * <p>云厂商类型 0:腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云</p>
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
-                     * 告警AI分析状态
--1 分析失败
-0 未分析
-1 分析中
-2 分析成功，真实告警
-3 分析成功，可疑告警
+                     * <p>告警AI分析状态<br>-1 分析失败<br>0 未分析<br>1 分析中<br>2 分析成功，真实告警<br>3 分析成功，可疑告警</p>
                      */
                     int64_t m_aIStatus;
                     bool m_aIStatusHasBeenSet;
 
                     /**
-                     * 首次告警时间戳（秒级）
+                     * <p>首次告警时间戳（秒级）</p>
                      */
                     int64_t m_firstAlarmTimestamp;
                     bool m_firstAlarmTimestampHasBeenSet;
 
                     /**
-                     * 最后告警时间戳（秒级）
+                     * <p>最后告警时间戳（秒级）</p>
                      */
                     int64_t m_lastAlarmTimestamp;
                     bool m_lastAlarmTimestampHasBeenSet;
+
+                    /**
+                     * <p>ai分析失败描述，未失败为空字符串</p>
+                     */
+                    std::string m_aIFailedReason;
+                    bool m_aIFailedReasonHasBeenSet;
 
                 };
             }

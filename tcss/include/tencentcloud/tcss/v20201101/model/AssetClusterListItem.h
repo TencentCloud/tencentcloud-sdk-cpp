@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterID 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterID <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterID 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterID <p>集群ID</p>
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -89,27 +89,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群状态
-CSR_RUNNING: 运行中
-CSR_EXCEPTION:异常
-CSR_DEL:已经删除
-                     * @return Status 集群状态
-CSR_RUNNING: 运行中
-CSR_EXCEPTION:异常
-CSR_DEL:已经删除
+                     * 获取<p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>
+                     * @return Status <p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置集群状态
-CSR_RUNNING: 运行中
-CSR_EXCEPTION:异常
-CSR_DEL:已经删除
-                     * @param _status 集群状态
-CSR_RUNNING: 运行中
-CSR_EXCEPTION:异常
-CSR_DEL:已经删除
+                     * 设置<p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>
+                     * @param _status <p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -122,15 +110,40 @@ CSR_DEL:已经删除
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取绑定规则名称
-                     * @return BindRuleName 绑定规则名称
+                     * 获取<p>绑定的集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindRuleID <p>绑定的集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBindRuleID() const;
+
+                    /**
+                     * 设置<p>绑定的集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bindRuleID <p>绑定的集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBindRuleID(const std::string& _bindRuleID);
+
+                    /**
+                     * 判断参数 BindRuleID 是否已赋值
+                     * @return BindRuleID 是否已赋值
+                     * 
+                     */
+                    bool BindRuleIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>绑定规则名称</p>
+                     * @return BindRuleName <p>绑定规则名称</p>
                      * 
                      */
                     std::string GetBindRuleName() const;
 
                     /**
-                     * 设置绑定规则名称
-                     * @param _bindRuleName 绑定规则名称
+                     * 设置<p>绑定规则名称</p>
+                     * @param _bindRuleName <p>绑定规则名称</p>
                      * 
                      */
                     void SetBindRuleName(const std::string& _bindRuleName);
@@ -143,27 +156,15 @@ CSR_DEL:已经删除
                     bool BindRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型:
-CT_TKE:TKE集群;
-CT_USER_CREATE:用户自建集群;
-CT_TKE_SERVERLESS:TKE Serverless集群;
-                     * @return ClusterType 集群类型:
-CT_TKE:TKE集群;
-CT_USER_CREATE:用户自建集群;
-CT_TKE_SERVERLESS:TKE Serverless集群;
+                     * 获取<p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>
+                     * @return ClusterType <p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型:
-CT_TKE:TKE集群;
-CT_USER_CREATE:用户自建集群;
-CT_TKE_SERVERLESS:TKE Serverless集群;
-                     * @param _clusterType 集群类型:
-CT_TKE:TKE集群;
-CT_USER_CREATE:用户自建集群;
-CT_TKE_SERVERLESS:TKE Serverless集群;
+                     * 设置<p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>
+                     * @param _clusterType <p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -176,15 +177,15 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群版本
-                     * @return ClusterVersion 集群版本
+                     * 获取<p>集群版本</p>
+                     * @return ClusterVersion <p>集群版本</p>
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
-                     * 设置集群版本
-                     * @param _clusterVersion 集群版本
+                     * 设置<p>集群版本</p>
+                     * @param _clusterVersion <p>集群版本</p>
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -197,15 +198,15 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                     bool ClusterVersionHasBeenSet() const;
 
                     /**
-                     * 获取内存量
-                     * @return MemLimit 内存量
+                     * 获取<p>内存量</p>
+                     * @return MemLimit <p>内存量</p>
                      * 
                      */
                     int64_t GetMemLimit() const;
 
                     /**
-                     * 设置内存量
-                     * @param _memLimit 内存量
+                     * 设置<p>内存量</p>
+                     * @param _memLimit <p>内存量</p>
                      * 
                      */
                     void SetMemLimit(const int64_t& _memLimit);
@@ -218,15 +219,15 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                     bool MemLimitHasBeenSet() const;
 
                     /**
-                     * 获取cpu
-                     * @return CpuLimit cpu
+                     * 获取<p>cpu</p>
+                     * @return CpuLimit <p>cpu</p>
                      * 
                      */
                     int64_t GetCpuLimit() const;
 
                     /**
-                     * 设置cpu
-                     * @param _cpuLimit cpu
+                     * 设置<p>cpu</p>
+                     * @param _cpuLimit <p>cpu</p>
                      * 
                      */
                     void SetCpuLimit(const int64_t& _cpuLimit);
@@ -239,19 +240,15 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                     bool CpuLimitHasBeenSet() const;
 
                     /**
-                     * 获取集群审计开关状态：
-已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
-                     * @return ClusterAuditStatus 集群审计开关状态：
-已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 获取<p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>
+                     * @return ClusterAuditStatus <p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>
                      * 
                      */
                     std::string GetClusterAuditStatus() const;
 
                     /**
-                     * 设置集群审计开关状态：
-已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
-                     * @param _clusterAuditStatus 集群审计开关状态：
-已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 设置<p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>
+                     * @param _clusterAuditStatus <p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>
                      * 
                      */
                     void SetClusterAuditStatus(const std::string& _clusterAuditStatus);
@@ -264,47 +261,15 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                     bool ClusterAuditStatusHasBeenSet() const;
 
                     /**
-                     * 获取接入状态:
-未接入: AccessedNone
-已防护: AccessedDefended
-未防护: AccessedInstalled
-部分防护: AccessedPartialDefence
-接入异常: AccessedException
-卸载异常: AccessedUninstallException
-接入中: AccessedInstalling
-卸载中: AccessedUninstalling
-                     * @return AccessedStatus 接入状态:
-未接入: AccessedNone
-已防护: AccessedDefended
-未防护: AccessedInstalled
-部分防护: AccessedPartialDefence
-接入异常: AccessedException
-卸载异常: AccessedUninstallException
-接入中: AccessedInstalling
-卸载中: AccessedUninstalling
+                     * 获取<p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>
+                     * @return AccessedStatus <p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>
                      * 
                      */
                     std::string GetAccessedStatus() const;
 
                     /**
-                     * 设置接入状态:
-未接入: AccessedNone
-已防护: AccessedDefended
-未防护: AccessedInstalled
-部分防护: AccessedPartialDefence
-接入异常: AccessedException
-卸载异常: AccessedUninstallException
-接入中: AccessedInstalling
-卸载中: AccessedUninstalling
-                     * @param _accessedStatus 接入状态:
-未接入: AccessedNone
-已防护: AccessedDefended
-未防护: AccessedInstalled
-部分防护: AccessedPartialDefence
-接入异常: AccessedException
-卸载异常: AccessedUninstallException
-接入中: AccessedInstalling
-卸载中: AccessedUninstalling
+                     * 设置<p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>
+                     * @param _accessedStatus <p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>
                      * 
                      */
                     void SetAccessedStatus(const std::string& _accessedStatus);
@@ -319,76 +284,68 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群状态
-CSR_RUNNING: 运行中
-CSR_EXCEPTION:异常
-CSR_DEL:已经删除
+                     * <p>集群状态<br>CSR_RUNNING: 运行中<br>CSR_EXCEPTION:异常<br>CSR_DEL:已经删除</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 绑定规则名称
+                     * <p>绑定的集群ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bindRuleID;
+                    bool m_bindRuleIDHasBeenSet;
+
+                    /**
+                     * <p>绑定规则名称</p>
                      */
                     std::string m_bindRuleName;
                     bool m_bindRuleNameHasBeenSet;
 
                     /**
-                     * 集群类型:
-CT_TKE:TKE集群;
-CT_USER_CREATE:用户自建集群;
-CT_TKE_SERVERLESS:TKE Serverless集群;
+                     * <p>集群类型:<br>CT_TKE:TKE集群;<br>CT_USER_CREATE:用户自建集群;<br>CT_TKE_SERVERLESS:TKE Serverless集群;</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群版本
+                     * <p>集群版本</p>
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
 
                     /**
-                     * 内存量
+                     * <p>内存量</p>
                      */
                     int64_t m_memLimit;
                     bool m_memLimitHasBeenSet;
 
                     /**
-                     * cpu
+                     * <p>cpu</p>
                      */
                     int64_t m_cpuLimit;
                     bool m_cpuLimitHasBeenSet;
 
                     /**
-                     * 集群审计开关状态：
-已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * <p>集群审计开关状态：<br>已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed</p>
                      */
                     std::string m_clusterAuditStatus;
                     bool m_clusterAuditStatusHasBeenSet;
 
                     /**
-                     * 接入状态:
-未接入: AccessedNone
-已防护: AccessedDefended
-未防护: AccessedInstalled
-部分防护: AccessedPartialDefence
-接入异常: AccessedException
-卸载异常: AccessedUninstallException
-接入中: AccessedInstalling
-卸载中: AccessedUninstalling
+                     * <p>接入状态:<br>未接入: AccessedNone<br>已防护: AccessedDefended<br>未防护: AccessedInstalled<br>部分防护: AccessedPartialDefence<br>接入异常: AccessedException<br>卸载异常: AccessedUninstallException<br>接入中: AccessedInstalling<br>卸载中: AccessedUninstalling</p>
                      */
                     std::string m_accessedStatus;
                     bool m_accessedStatusHasBeenSet;

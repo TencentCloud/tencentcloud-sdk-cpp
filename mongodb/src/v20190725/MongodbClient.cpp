@@ -3490,6 +3490,56 @@ MongodbClient::OpenAuditServiceOutcomeCallable MongodbClient::OpenAuditServiceCa
     return prom->get_future();
 }
 
+MongodbClient::PromoteDBInstanceToActiveOutcome MongodbClient::PromoteDBInstanceToActive(const PromoteDBInstanceToActiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "PromoteDBInstanceToActive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PromoteDBInstanceToActiveResponse rsp = PromoteDBInstanceToActiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PromoteDBInstanceToActiveOutcome(rsp);
+        else
+            return PromoteDBInstanceToActiveOutcome(o.GetError());
+    }
+    else
+    {
+        return PromoteDBInstanceToActiveOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::PromoteDBInstanceToActiveAsync(const PromoteDBInstanceToActiveRequest& request, const PromoteDBInstanceToActiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PromoteDBInstanceToActiveRequest&;
+    using Resp = PromoteDBInstanceToActiveResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PromoteDBInstanceToActive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::PromoteDBInstanceToActiveOutcomeCallable MongodbClient::PromoteDBInstanceToActiveCallable(const PromoteDBInstanceToActiveRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PromoteDBInstanceToActiveOutcome>>();
+    PromoteDBInstanceToActiveAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const PromoteDBInstanceToActiveRequest&,
+        PromoteDBInstanceToActiveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::RenameInstanceOutcome MongodbClient::RenameInstance(const RenameInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RenameInstance");

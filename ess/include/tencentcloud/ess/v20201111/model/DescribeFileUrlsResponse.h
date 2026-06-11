@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件URL信息；
-链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
-                     * @return FileUrls 文件URL信息；
-链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
+                     * 获取<p>文件URL信息；<br>链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。</p>
+                     * @return FileUrls <p>文件URL信息；<br>链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。</p>
                      * 
                      */
                     std::vector<FileUrl> GetFileUrls() const;
@@ -61,8 +59,8 @@ namespace TencentCloud
                     bool FileUrlsHasBeenSet() const;
 
                     /**
-                     * 获取URL数量
-                     * @return TotalCount URL数量
+                     * 获取<p>URL数量</p>
+                     * @return TotalCount <p>URL数量</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,14 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件URL信息；
-链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。
+                     * <p>文件URL信息；<br>链接不是永久链接,  过期时间受UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。</p>
                      */
                     std::vector<FileUrl> m_fileUrls;
                     bool m_fileUrlsHasBeenSet;
 
                     /**
-                     * URL数量
+                     * <p>URL数量</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

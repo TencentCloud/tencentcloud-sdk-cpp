@@ -161,6 +161,27 @@ namespace TencentCloud
                      */
                     bool TkeClusterNodePoolHasBeenSet() const;
 
+                    /**
+                     * 获取<p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>
+                     * @return NodePoolJoinMode <p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>
+                     * 
+                     */
+                    std::string GetNodePoolJoinMode() const;
+
+                    /**
+                     * 设置<p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>
+                     * @param _nodePoolJoinMode <p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>
+                     * 
+                     */
+                    void SetNodePoolJoinMode(const std::string& _nodePoolJoinMode);
+
+                    /**
+                     * 判断参数 NodePoolJoinMode 是否已赋值
+                     * @return NodePoolJoinMode 是否已赋值
+                     * 
+                     */
+                    bool NodePoolJoinModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +215,12 @@ namespace TencentCloud
                      */
                     std::string m_tkeClusterNodePool;
                     bool m_tkeClusterNodePoolHasBeenSet;
+
+                    /**
+                     * <p>加入节点池的模式</p><p>枚举值：</p><ul><li>Inherit： 从节点池继承配置</li><li>OnlyJoin： 仅加入节点池，不继承配置</li></ul><p>默认值：Inherit</p>
+                     */
+                    std::string m_nodePoolJoinMode;
+                    bool m_nodePoolJoinModeHasBeenSet;
 
                 };
             }

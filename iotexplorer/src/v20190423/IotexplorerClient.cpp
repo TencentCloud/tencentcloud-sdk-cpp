@@ -1040,6 +1040,56 @@ IotexplorerClient::CreateDeviceChannelOutcomeCallable IotexplorerClient::CreateD
     return prom->get_future();
 }
 
+IotexplorerClient::CreateDevicePublishSDPAnswerOutcome IotexplorerClient::CreateDevicePublishSDPAnswer(const CreateDevicePublishSDPAnswerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDevicePublishSDPAnswer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDevicePublishSDPAnswerResponse rsp = CreateDevicePublishSDPAnswerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDevicePublishSDPAnswerOutcome(rsp);
+        else
+            return CreateDevicePublishSDPAnswerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDevicePublishSDPAnswerOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateDevicePublishSDPAnswerAsync(const CreateDevicePublishSDPAnswerRequest& request, const CreateDevicePublishSDPAnswerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDevicePublishSDPAnswerRequest&;
+    using Resp = CreateDevicePublishSDPAnswerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDevicePublishSDPAnswer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateDevicePublishSDPAnswerOutcomeCallable IotexplorerClient::CreateDevicePublishSDPAnswerCallable(const CreateDevicePublishSDPAnswerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDevicePublishSDPAnswerOutcome>>();
+    CreateDevicePublishSDPAnswerAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateDevicePublishSDPAnswerRequest&,
+        CreateDevicePublishSDPAnswerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CreateDeviceSDPAnswerOutcome IotexplorerClient::CreateDeviceSDPAnswer(const CreateDeviceSDPAnswerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeviceSDPAnswer");
@@ -2332,6 +2382,56 @@ IotexplorerClient::DeleteDeviceOutcomeCallable IotexplorerClient::DeleteDeviceCa
         const IotexplorerClient*,
         const DeleteDeviceRequest&,
         DeleteDeviceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeleteDeviceSDPOutcome IotexplorerClient::DeleteDeviceSDP(const DeleteDeviceSDPRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceSDP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceSDPResponse rsp = DeleteDeviceSDPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceSDPOutcome(rsp);
+        else
+            return DeleteDeviceSDPOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceSDPOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteDeviceSDPAsync(const DeleteDeviceSDPRequest& request, const DeleteDeviceSDPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeviceSDPRequest&;
+    using Resp = DeleteDeviceSDPResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeviceSDP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteDeviceSDPOutcomeCallable IotexplorerClient::DeleteDeviceSDPCallable(const DeleteDeviceSDPRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeviceSDPOutcome>>();
+    DeleteDeviceSDPAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteDeviceSDPRequest&,
+        DeleteDeviceSDPOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

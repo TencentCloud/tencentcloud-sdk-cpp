@@ -40,7 +40,10 @@ Snapshot::Snapshot() :
     m_diskUsageHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_timeStartShareHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isLockedHasBeenSet(false),
+    m_latestModifyTimeHasBeenSet(false),
+    m_autoSnapshotPolicyIdHasBeenSet(false)
 {
 }
 
@@ -279,6 +282,36 @@ CoreInternalOutcome Snapshot::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLocked") && !value["IsLocked"].IsNull())
+    {
+        if (!value["IsLocked"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshot.IsLocked` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLocked = value["IsLocked"].GetBool();
+        m_isLockedHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestModifyTime") && !value["LatestModifyTime"].IsNull())
+    {
+        if (!value["LatestModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshot.LatestModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestModifyTime = string(value["LatestModifyTime"].GetString());
+        m_latestModifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoSnapshotPolicyId") && !value["AutoSnapshotPolicyId"].IsNull())
+    {
+        if (!value["AutoSnapshotPolicyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshot.AutoSnapshotPolicyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoSnapshotPolicyId = string(value["AutoSnapshotPolicyId"].GetString());
+        m_autoSnapshotPolicyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -464,6 +497,30 @@ void Snapshot::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isLockedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocked";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLocked, allocator);
+    }
+
+    if (m_latestModifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestModifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoSnapshotPolicyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSnapshotPolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -787,5 +844,53 @@ void Snapshot::SetTags(const vector<Tag>& _tags)
 bool Snapshot::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool Snapshot::GetIsLocked() const
+{
+    return m_isLocked;
+}
+
+void Snapshot::SetIsLocked(const bool& _isLocked)
+{
+    m_isLocked = _isLocked;
+    m_isLockedHasBeenSet = true;
+}
+
+bool Snapshot::IsLockedHasBeenSet() const
+{
+    return m_isLockedHasBeenSet;
+}
+
+string Snapshot::GetLatestModifyTime() const
+{
+    return m_latestModifyTime;
+}
+
+void Snapshot::SetLatestModifyTime(const string& _latestModifyTime)
+{
+    m_latestModifyTime = _latestModifyTime;
+    m_latestModifyTimeHasBeenSet = true;
+}
+
+bool Snapshot::LatestModifyTimeHasBeenSet() const
+{
+    return m_latestModifyTimeHasBeenSet;
+}
+
+string Snapshot::GetAutoSnapshotPolicyId() const
+{
+    return m_autoSnapshotPolicyId;
+}
+
+void Snapshot::SetAutoSnapshotPolicyId(const string& _autoSnapshotPolicyId)
+{
+    m_autoSnapshotPolicyId = _autoSnapshotPolicyId;
+    m_autoSnapshotPolicyIdHasBeenSet = true;
+}
+
+bool Snapshot::AutoSnapshotPolicyIdHasBeenSet() const
+{
+    return m_autoSnapshotPolicyIdHasBeenSet;
 }
 

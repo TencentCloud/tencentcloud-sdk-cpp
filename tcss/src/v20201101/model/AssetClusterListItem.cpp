@@ -24,6 +24,7 @@ AssetClusterListItem::AssetClusterListItem() :
     m_clusterIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_bindRuleIDHasBeenSet(false),
     m_bindRuleNameHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome AssetClusterListItem::Deserialize(const rapidjson::Value &va
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("BindRuleID") && !value["BindRuleID"].IsNull())
+    {
+        if (!value["BindRuleID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetClusterListItem.BindRuleID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindRuleID = string(value["BindRuleID"].GetString());
+        m_bindRuleIDHasBeenSet = true;
     }
 
     if (value.HasMember("BindRuleName") && !value["BindRuleName"].IsNull())
@@ -168,6 +179,14 @@ void AssetClusterListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindRuleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindRuleID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bindRuleID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindRuleNameHasBeenSet)
@@ -275,6 +294,22 @@ void AssetClusterListItem::SetStatus(const string& _status)
 bool AssetClusterListItem::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string AssetClusterListItem::GetBindRuleID() const
+{
+    return m_bindRuleID;
+}
+
+void AssetClusterListItem::SetBindRuleID(const string& _bindRuleID)
+{
+    m_bindRuleID = _bindRuleID;
+    m_bindRuleIDHasBeenSet = true;
+}
+
+bool AssetClusterListItem::BindRuleIDHasBeenSet() const
+{
+    return m_bindRuleIDHasBeenSet;
 }
 
 string AssetClusterListItem::GetBindRuleName() const

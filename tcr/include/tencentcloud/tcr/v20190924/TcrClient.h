@@ -75,6 +75,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateUserPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteAIModelRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteAIModelResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageRequest.h>
@@ -117,10 +119,14 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteServiceAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSkillRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSkillResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeAIModelVersionDetailRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeAIModelVersionDetailResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalRequest.h>
@@ -189,6 +195,10 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeServiceAccountsRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeServiceAccountsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSkillDetailRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSkillDetailResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSkillDownloadInfoRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeSkillDownloadInfoResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionTaskRequest.h>
@@ -207,6 +217,14 @@
 #include <tencentcloud/tcr/v20190924/model/DuplicateImageResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ListAIModelVersionsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ListAIModelVersionsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ListAIModelsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ListAIModelsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ListSkillVersionsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ListSkillVersionsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ListSkillsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ListSkillsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ManageExternalEndpointResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h>
@@ -345,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWebhookTriggerResponse> CreateWebhookTriggerOutcome;
                 typedef std::future<CreateWebhookTriggerOutcome> CreateWebhookTriggerOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateWebhookTriggerRequest&, CreateWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebhookTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAIModelResponse> DeleteAIModelOutcome;
+                typedef std::future<DeleteAIModelOutcome> DeleteAIModelOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteAIModelRequest&, DeleteAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteApplicationTriggerPersonalResponse> DeleteApplicationTriggerPersonalOutcome;
                 typedef std::future<DeleteApplicationTriggerPersonalOutcome> DeleteApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteApplicationTriggerPersonalRequest&, DeleteApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationTriggerPersonalAsyncHandler;
@@ -408,12 +429,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSignaturePolicyResponse> DeleteSignaturePolicyOutcome;
                 typedef std::future<DeleteSignaturePolicyOutcome> DeleteSignaturePolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteSignaturePolicyRequest&, DeleteSignaturePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSignaturePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSkillResponse> DeleteSkillOutcome;
+                typedef std::future<DeleteSkillOutcome> DeleteSkillOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteSkillRequest&, DeleteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSkillAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTagRetentionRuleResponse> DeleteTagRetentionRuleOutcome;
                 typedef std::future<DeleteTagRetentionRuleOutcome> DeleteTagRetentionRuleOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteTagRetentionRuleRequest&, DeleteTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagRetentionRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWebhookTriggerResponse> DeleteWebhookTriggerOutcome;
                 typedef std::future<DeleteWebhookTriggerOutcome> DeleteWebhookTriggerOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteWebhookTriggerRequest&, DeleteWebhookTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebhookTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIModelVersionDetailResponse> DescribeAIModelVersionDetailOutcome;
+                typedef std::future<DescribeAIModelVersionDetailOutcome> DescribeAIModelVersionDetailOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeAIModelVersionDetailRequest&, DescribeAIModelVersionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelVersionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationTriggerLogPersonalResponse> DescribeApplicationTriggerLogPersonalOutcome;
                 typedef std::future<DescribeApplicationTriggerLogPersonalOutcome> DescribeApplicationTriggerLogPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeApplicationTriggerLogPersonalRequest&, DescribeApplicationTriggerLogPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationTriggerLogPersonalAsyncHandler;
@@ -516,6 +543,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceAccountsResponse> DescribeServiceAccountsOutcome;
                 typedef std::future<DescribeServiceAccountsOutcome> DescribeServiceAccountsOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeServiceAccountsRequest&, DescribeServiceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillDetailResponse> DescribeSkillDetailOutcome;
+                typedef std::future<DescribeSkillDetailOutcome> DescribeSkillDetailOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeSkillDetailRequest&, DescribeSkillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillDownloadInfoResponse> DescribeSkillDownloadInfoOutcome;
+                typedef std::future<DescribeSkillDownloadInfoOutcome> DescribeSkillDownloadInfoOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeSkillDownloadInfoRequest&, DescribeSkillDownloadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillDownloadInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTagRetentionExecutionResponse> DescribeTagRetentionExecutionOutcome;
                 typedef std::future<DescribeTagRetentionExecutionOutcome> DescribeTagRetentionExecutionOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeTagRetentionExecutionRequest&, DescribeTagRetentionExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRetentionExecutionAsyncHandler;
@@ -543,6 +576,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DuplicateImagePersonalResponse> DuplicateImagePersonalOutcome;
                 typedef std::future<DuplicateImagePersonalOutcome> DuplicateImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DuplicateImagePersonalRequest&, DuplicateImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateImagePersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAIModelVersionsResponse> ListAIModelVersionsOutcome;
+                typedef std::future<ListAIModelVersionsOutcome> ListAIModelVersionsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ListAIModelVersionsRequest&, ListAIModelVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAIModelVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAIModelsResponse> ListAIModelsOutcome;
+                typedef std::future<ListAIModelsOutcome> ListAIModelsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ListAIModelsRequest&, ListAIModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAIModelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSkillVersionsResponse> ListSkillVersionsOutcome;
+                typedef std::future<ListSkillVersionsOutcome> ListSkillVersionsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ListSkillVersionsRequest&, ListSkillVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSkillVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSkillsResponse> ListSkillsOutcome;
+                typedef std::future<ListSkillsOutcome> ListSkillsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ListSkillsRequest&, ListSkillsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSkillsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManageExternalEndpointResponse> ManageExternalEndpointOutcome;
                 typedef std::future<ManageExternalEndpointOutcome> ManageExternalEndpointOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ManageExternalEndpointRequest&, ManageExternalEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageExternalEndpointAsyncHandler;
@@ -850,6 +895,15 @@ namespace TencentCloud
                 CreateWebhookTriggerOutcomeCallable CreateWebhookTriggerCallable(const Model::CreateWebhookTriggerRequest& request);
 
                 /**
+                 *删除指定模型版本（通过 tag 或 digest 引用）。调用 Harbor v2 API 删除 artifact。
+                 * @param req DeleteAIModelRequest
+                 * @return DeleteAIModelOutcome
+                 */
+                DeleteAIModelOutcome DeleteAIModel(const Model::DeleteAIModelRequest &request);
+                void DeleteAIModelAsync(const Model::DeleteAIModelRequest& request, const DeleteAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAIModelOutcomeCallable DeleteAIModelCallable(const Model::DeleteAIModelRequest& request);
+
+                /**
                  *用于删除应用更新触发器
                  * @param req DeleteApplicationTriggerPersonalRequest
                  * @return DeleteApplicationTriggerPersonalOutcome
@@ -1041,6 +1095,15 @@ namespace TencentCloud
                 DeleteSignaturePolicyOutcomeCallable DeleteSignaturePolicyCallable(const Model::DeleteSignaturePolicyRequest& request);
 
                 /**
+                 *删除指定 Skill
+                 * @param req DeleteSkillRequest
+                 * @return DeleteSkillOutcome
+                 */
+                DeleteSkillOutcome DeleteSkill(const Model::DeleteSkillRequest &request);
+                void DeleteSkillAsync(const Model::DeleteSkillRequest& request, const DeleteSkillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSkillOutcomeCallable DeleteSkillCallable(const Model::DeleteSkillRequest& request);
+
+                /**
                  *删除版本保留规则
                  * @param req DeleteTagRetentionRuleRequest
                  * @return DeleteTagRetentionRuleOutcome
@@ -1057,6 +1120,15 @@ namespace TencentCloud
                 DeleteWebhookTriggerOutcome DeleteWebhookTrigger(const Model::DeleteWebhookTriggerRequest &request);
                 void DeleteWebhookTriggerAsync(const Model::DeleteWebhookTriggerRequest& request, const DeleteWebhookTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWebhookTriggerOutcomeCallable DeleteWebhookTriggerCallable(const Model::DeleteWebhookTriggerRequest& request);
+
+                /**
+                 *查询模型详情
+                 * @param req DescribeAIModelVersionDetailRequest
+                 * @return DescribeAIModelVersionDetailOutcome
+                 */
+                DescribeAIModelVersionDetailOutcome DescribeAIModelVersionDetail(const Model::DescribeAIModelVersionDetailRequest &request);
+                void DescribeAIModelVersionDetailAsync(const Model::DescribeAIModelVersionDetailRequest& request, const DescribeAIModelVersionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIModelVersionDetailOutcomeCallable DescribeAIModelVersionDetailCallable(const Model::DescribeAIModelVersionDetailRequest& request);
 
                 /**
                  *用于查询应用更新触发器触发日志
@@ -1365,6 +1437,24 @@ namespace TencentCloud
                 DescribeServiceAccountsOutcomeCallable DescribeServiceAccountsCallable(const Model::DescribeServiceAccountsRequest& request);
 
                 /**
+                 *查询单个 Skill 的完整详情
+                 * @param req DescribeSkillDetailRequest
+                 * @return DescribeSkillDetailOutcome
+                 */
+                DescribeSkillDetailOutcome DescribeSkillDetail(const Model::DescribeSkillDetailRequest &request);
+                void DescribeSkillDetailAsync(const Model::DescribeSkillDetailRequest& request, const DescribeSkillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillDetailOutcomeCallable DescribeSkillDetailCallable(const Model::DescribeSkillDetailRequest& request);
+
+                /**
+                 *返回 Skill 下载链接
+                 * @param req DescribeSkillDownloadInfoRequest
+                 * @return DescribeSkillDownloadInfoOutcome
+                 */
+                DescribeSkillDownloadInfoOutcome DescribeSkillDownloadInfo(const Model::DescribeSkillDownloadInfoRequest &request);
+                void DescribeSkillDownloadInfoAsync(const Model::DescribeSkillDownloadInfoRequest& request, const DescribeSkillDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillDownloadInfoOutcomeCallable DescribeSkillDownloadInfoCallable(const Model::DescribeSkillDownloadInfoRequest& request);
+
+                /**
                  *查询版本保留执行记录
                  * @param req DescribeTagRetentionExecutionRequest
                  * @return DescribeTagRetentionExecutionOutcome
@@ -1444,6 +1534,42 @@ namespace TencentCloud
                 DuplicateImagePersonalOutcome DuplicateImagePersonal(const Model::DuplicateImagePersonalRequest &request);
                 void DuplicateImagePersonalAsync(const Model::DuplicateImagePersonalRequest& request, const DuplicateImagePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DuplicateImagePersonalOutcomeCallable DuplicateImagePersonalCallable(const Model::DuplicateImagePersonalRequest& request);
+
+                /**
+                 *查询指定模型仓库的所有版本列表。调用 Harbor v2 API 获取 artifact 列表，从 extra_attrs 提取模型元数据（框架、任务类型、精度等），从 tags 判断是否为推荐版本。
+                 * @param req ListAIModelVersionsRequest
+                 * @return ListAIModelVersionsOutcome
+                 */
+                ListAIModelVersionsOutcome ListAIModelVersions(const Model::ListAIModelVersionsRequest &request);
+                void ListAIModelVersionsAsync(const Model::ListAIModelVersionsRequest& request, const ListAIModelVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAIModelVersionsOutcomeCallable ListAIModelVersionsCallable(const Model::ListAIModelVersionsRequest& request);
+
+                /**
+                 *查询指定实例下的 AI 模型列表。可按 namespace 和仓库名过滤。每条记录代表一个模型仓库，返回最新版本信息。
+                 * @param req ListAIModelsRequest
+                 * @return ListAIModelsOutcome
+                 */
+                ListAIModelsOutcome ListAIModels(const Model::ListAIModelsRequest &request);
+                void ListAIModelsAsync(const Model::ListAIModelsRequest& request, const ListAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAIModelsOutcomeCallable ListAIModelsCallable(const Model::ListAIModelsRequest& request);
+
+                /**
+                 *查询指定 Skill 的版本历史列表
+                 * @param req ListSkillVersionsRequest
+                 * @return ListSkillVersionsOutcome
+                 */
+                ListSkillVersionsOutcome ListSkillVersions(const Model::ListSkillVersionsRequest &request);
+                void ListSkillVersionsAsync(const Model::ListSkillVersionsRequest& request, const ListSkillVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSkillVersionsOutcomeCallable ListSkillVersionsCallable(const Model::ListSkillVersionsRequest& request);
+
+                /**
+                 *查询指定实例下的 AI Skill 列表。
+                 * @param req ListSkillsRequest
+                 * @return ListSkillsOutcome
+                 */
+                ListSkillsOutcome ListSkills(const Model::ListSkillsRequest &request);
+                void ListSkillsAsync(const Model::ListSkillsRequest& request, const ListSkillsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSkillsOutcomeCallable ListSkillsCallable(const Model::ListSkillsRequest& request);
 
                 /**
                  *管理实例公网访问

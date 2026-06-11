@@ -93,7 +93,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeGatherResourceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByProjectResponse.h
   include/tencentcloud/billing/v20180709/model/AnalyseProjectDetail.h
-  include/tencentcloud/billing/v20180709/model/ProjectSummaryOverviewItem.h
+  include/tencentcloud/billing/v20180709/model/DescribeOrgMemberAccountBalanceData.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h
   include/tencentcloud/billing/v20180709/model/ModifyAllocationRuleResponse.h
   include/tencentcloud/billing/v20180709/model/SummaryDetail.h
@@ -136,6 +136,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/BillDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h
   include/tencentcloud/billing/v20180709/model/Deal.h
+  include/tencentcloud/billing/v20180709/model/ProjectSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h
   include/tencentcloud/billing/v20180709/model/BillZoneId.h
   include/tencentcloud/billing/v20180709/model/BillRegion.h
@@ -146,6 +147,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeRenewInstancesRequest.h
   include/tencentcloud/billing/v20180709/model/PayDealsRequest.h
   include/tencentcloud/billing/v20180709/model/SummaryTotal.h
+  include/tencentcloud/billing/v20180709/model/DescribeOrgMemberAccountBalanceRequest.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryTotal.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationBillConditionsResponse.h
   include/tencentcloud/billing/v20180709/model/CostComponentSet.h
@@ -179,6 +181,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/CreateInstanceRequest.h
   include/tencentcloud/billing/v20180709/model/AllocationStat.h
   include/tencentcloud/billing/v20180709/model/ModifyBudgetRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeOrgMemberAccountBalanceResponse.h
   include/tencentcloud/billing/v20180709/model/BillProject.h
   include/tencentcloud/billing/v20180709/model/ActionSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailForOrganizationRequest.h
@@ -349,7 +352,7 @@ set(billing_src
   src/v20180709/model/DescribeGatherResourceRequest.cpp
   src/v20180709/model/DescribeCostSummaryByProjectResponse.cpp
   src/v20180709/model/AnalyseProjectDetail.cpp
-  src/v20180709/model/ProjectSummaryOverviewItem.cpp
+  src/v20180709/model/DescribeOrgMemberAccountBalanceData.cpp
   src/v20180709/model/DescribeBillSummaryByTagResponse.cpp
   src/v20180709/model/ModifyAllocationRuleResponse.cpp
   src/v20180709/model/SummaryDetail.cpp
@@ -392,6 +395,7 @@ set(billing_src
   src/v20180709/model/BillDetail.cpp
   src/v20180709/model/DescribeBillDetailResponse.cpp
   src/v20180709/model/Deal.cpp
+  src/v20180709/model/ProjectSummaryOverviewItem.cpp
   src/v20180709/model/DescribeDealsByCondResponse.cpp
   src/v20180709/model/BillZoneId.cpp
   src/v20180709/model/BillRegion.cpp
@@ -402,6 +406,7 @@ set(billing_src
   src/v20180709/model/DescribeRenewInstancesRequest.cpp
   src/v20180709/model/PayDealsRequest.cpp
   src/v20180709/model/SummaryTotal.cpp
+  src/v20180709/model/DescribeOrgMemberAccountBalanceRequest.cpp
   src/v20180709/model/BusinessSummaryTotal.cpp
   src/v20180709/model/DescribeAllocationBillConditionsResponse.cpp
   src/v20180709/model/CostComponentSet.cpp
@@ -435,6 +440,7 @@ set(billing_src
   src/v20180709/model/CreateInstanceRequest.cpp
   src/v20180709/model/AllocationStat.cpp
   src/v20180709/model/ModifyBudgetRequest.cpp
+  src/v20180709/model/DescribeOrgMemberAccountBalanceResponse.cpp
   src/v20180709/model/BillProject.cpp
   src/v20180709/model/ActionSummaryOverviewItem.cpp
   src/v20180709/model/DescribeBillDetailForOrganizationRequest.cpp

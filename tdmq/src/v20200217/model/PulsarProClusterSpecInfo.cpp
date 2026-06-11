@@ -32,7 +32,8 @@ PulsarProClusterSpecInfo::PulsarProClusterSpecInfo() :
     m_maxTopicsPartitionedHasBeenSet(false),
     m_brokerMaxConnectionsHasBeenSet(false),
     m_brokerMaxConnectionsPerIpHasBeenSet(false),
-    m_maximumElasticStorageHasBeenSet(false)
+    m_maximumElasticStorageHasBeenSet(false),
+    m_totalTpsHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome PulsarProClusterSpecInfo::Deserialize(const rapidjson::Value
         m_maximumElasticStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalTps") && !value["TotalTps"].IsNull())
+    {
+        if (!value["TotalTps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.TotalTps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalTps = value["TotalTps"].GetInt64();
+        m_totalTpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void PulsarProClusterSpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "MaximumElasticStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maximumElasticStorage, allocator);
+    }
+
+    if (m_totalTpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalTps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalTps, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void PulsarProClusterSpecInfo::SetMaximumElasticStorage(const int64_t& _maximumE
 bool PulsarProClusterSpecInfo::MaximumElasticStorageHasBeenSet() const
 {
     return m_maximumElasticStorageHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetTotalTps() const
+{
+    return m_totalTps;
+}
+
+void PulsarProClusterSpecInfo::SetTotalTps(const int64_t& _totalTps)
+{
+    m_totalTps = _totalTps;
+    m_totalTpsHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::TotalTpsHasBeenSet() const
+{
+    return m_totalTpsHasBeenSet;
 }
 

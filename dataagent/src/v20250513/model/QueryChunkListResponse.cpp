@@ -25,6 +25,8 @@ using namespace std;
 
 QueryChunkListResponse::QueryChunkListResponse() :
     m_totalHasBeenSet(false),
+    m_autoTotalHasBeenSet(false),
+    m_manualTotalHasBeenSet(false),
     m_chunksHasBeenSet(false)
 {
 }
@@ -73,6 +75,26 @@ CoreInternalOutcome QueryChunkListResponse::Deserialize(const string &payload)
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoTotal") && !rsp["AutoTotal"].IsNull())
+    {
+        if (!rsp["AutoTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoTotal = rsp["AutoTotal"].GetInt64();
+        m_autoTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ManualTotal") && !rsp["ManualTotal"].IsNull())
+    {
+        if (!rsp["ManualTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_manualTotal = rsp["ManualTotal"].GetInt64();
+        m_manualTotalHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Chunks") && !rsp["Chunks"].IsNull())
     {
         if (!rsp["Chunks"].IsArray())
@@ -111,6 +133,22 @@ string QueryChunkListResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_autoTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoTotal, allocator);
+    }
+
+    if (m_manualTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manualTotal, allocator);
+    }
+
     if (m_chunksHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +184,26 @@ int64_t QueryChunkListResponse::GetTotal() const
 bool QueryChunkListResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+int64_t QueryChunkListResponse::GetAutoTotal() const
+{
+    return m_autoTotal;
+}
+
+bool QueryChunkListResponse::AutoTotalHasBeenSet() const
+{
+    return m_autoTotalHasBeenSet;
+}
+
+int64_t QueryChunkListResponse::GetManualTotal() const
+{
+    return m_manualTotal;
+}
+
+bool QueryChunkListResponse::ManualTotalHasBeenSet() const
+{
+    return m_manualTotalHasBeenSet;
 }
 
 vector<Chunk> QueryChunkListResponse::GetChunks() const

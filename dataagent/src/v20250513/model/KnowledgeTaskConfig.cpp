@@ -29,7 +29,8 @@ KnowledgeTaskConfig::KnowledgeTaskConfig() :
     m_indexesHasBeenSet(false),
     m_genDocSummaryHasBeenSet(false),
     m_genParaSummaryHasBeenSet(false),
-    m_enableImageUnderstandingHasBeenSet(false)
+    m_enableImageUnderstandingHasBeenSet(false),
+    m_enableExtractDbHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,16 @@ CoreInternalOutcome KnowledgeTaskConfig::Deserialize(const rapidjson::Value &val
         m_enableImageUnderstandingHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableExtractDb") && !value["EnableExtractDb"].IsNull())
+    {
+        if (!value["EnableExtractDb"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeTaskConfig.EnableExtractDb` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableExtractDb = value["EnableExtractDb"].GetInt64();
+        m_enableExtractDbHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +249,14 @@ void KnowledgeTaskConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EnableImageUnderstanding";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableImageUnderstanding, allocator);
+    }
+
+    if (m_enableExtractDbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableExtractDb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableExtractDb, allocator);
     }
 
 }
@@ -385,5 +404,21 @@ void KnowledgeTaskConfig::SetEnableImageUnderstanding(const int64_t& _enableImag
 bool KnowledgeTaskConfig::EnableImageUnderstandingHasBeenSet() const
 {
     return m_enableImageUnderstandingHasBeenSet;
+}
+
+int64_t KnowledgeTaskConfig::GetEnableExtractDb() const
+{
+    return m_enableExtractDb;
+}
+
+void KnowledgeTaskConfig::SetEnableExtractDb(const int64_t& _enableExtractDb)
+{
+    m_enableExtractDb = _enableExtractDb;
+    m_enableExtractDbHasBeenSet = true;
+}
+
+bool KnowledgeTaskConfig::EnableExtractDbHasBeenSet() const
+{
+    return m_enableExtractDbHasBeenSet;
 }
 

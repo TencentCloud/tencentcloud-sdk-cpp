@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nat实例id
-                     * @return NatinsId nat实例id
+                     * 获取<p>nat实例id</p>
+                     * @return NatinsId <p>nat实例id</p>
                      * 
                      */
                     std::string GetNatinsId() const;
 
                     /**
-                     * 设置nat实例id
-                     * @param _natinsId nat实例id
+                     * 设置<p>nat实例id</p>
+                     * @param _natinsId <p>nat实例id</p>
                      * 
                      */
                     void SetNatinsId(const std::string& _natinsId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NatinsIdHasBeenSet() const;
 
                     /**
-                     * 获取nat实例名称
-                     * @return NatinsName nat实例名称
+                     * 获取<p>nat实例名称</p>
+                     * @return NatinsName <p>nat实例名称</p>
                      * 
                      */
                     std::string GetNatinsName() const;
 
                     /**
-                     * 设置nat实例名称
-                     * @param _natinsName nat实例名称
+                     * 设置<p>nat实例名称</p>
+                     * @param _natinsName <p>nat实例名称</p>
                      * 
                      */
                     void SetNatinsName(const std::string& _natinsName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NatinsNameHasBeenSet() const;
 
                     /**
-                     * 获取实例所在地域
-                     * @return Region 实例所在地域
+                     * 获取<p>实例所在地域</p>
+                     * @return Region <p>实例所在地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例所在地域
-                     * @param _region 实例所在地域
+                     * 设置<p>实例所在地域</p>
+                     * @param _region <p>实例所在地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取0: 新增模式，1:接入模式
-                     * @return FwMode 0: 新增模式，1:接入模式
+                     * 获取<p>0: 新增模式，1:接入模式</p>
+                     * @return FwMode <p>0: 新增模式，1:接入模式</p>
                      * 
                      */
                     int64_t GetFwMode() const;
 
                     /**
-                     * 设置0: 新增模式，1:接入模式
-                     * @param _fwMode 0: 新增模式，1:接入模式
+                     * 设置<p>0: 新增模式，1:接入模式</p>
+                     * @param _fwMode <p>0: 新增模式，1:接入模式</p>
                      * 
                      */
                     void SetFwMode(const int64_t& _fwMode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FwModeHasBeenSet() const;
 
                     /**
-                     * 获取实例带宽大小 Mbps
-                     * @return BandWidth 实例带宽大小 Mbps
+                     * 获取<p>实例带宽大小 Mbps</p>
+                     * @return BandWidth <p>实例带宽大小 Mbps</p>
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置实例带宽大小 Mbps
-                     * @param _bandWidth 实例带宽大小 Mbps
+                     * 设置<p>实例带宽大小 Mbps</p>
+                     * @param _bandWidth <p>实例带宽大小 Mbps</p>
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool BandWidthHasBeenSet() const;
 
                     /**
-                     * 获取入向带宽峰值 bps
-                     * @return InFlowMax 入向带宽峰值 bps
+                     * 获取<p>入向带宽峰值 bps</p>
+                     * @return InFlowMax <p>入向带宽峰值 bps</p>
                      * 
                      */
                     int64_t GetInFlowMax() const;
 
                     /**
-                     * 设置入向带宽峰值 bps
-                     * @param _inFlowMax 入向带宽峰值 bps
+                     * 设置<p>入向带宽峰值 bps</p>
+                     * @param _inFlowMax <p>入向带宽峰值 bps</p>
                      * 
                      */
                     void SetInFlowMax(const int64_t& _inFlowMax);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InFlowMaxHasBeenSet() const;
 
                     /**
-                     * 获取出向带宽峰值 bps
-                     * @return OutFlowMax 出向带宽峰值 bps
+                     * 获取<p>出向带宽峰值 bps</p>
+                     * @return OutFlowMax <p>出向带宽峰值 bps</p>
                      * 
                      */
                     uint64_t GetOutFlowMax() const;
 
                     /**
-                     * 设置出向带宽峰值 bps
-                     * @param _outFlowMax 出向带宽峰值 bps
+                     * 设置<p>出向带宽峰值 bps</p>
+                     * @param _outFlowMax <p>出向带宽峰值 bps</p>
                      * 
                      */
                     void SetOutFlowMax(const uint64_t& _outFlowMax);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool OutFlowMaxHasBeenSet() const;
 
                     /**
-                     * 获取地域中文信息
-                     * @return RegionZh 地域中文信息
+                     * 获取<p>地域中文信息</p>
+                     * @return RegionZh <p>地域中文信息</p>
                      * 
                      */
                     std::string GetRegionZh() const;
 
                     /**
-                     * 设置地域中文信息
-                     * @param _regionZh 地域中文信息
+                     * 设置<p>地域中文信息</p>
+                     * @param _regionZh <p>地域中文信息</p>
                      * 
                      */
                     void SetRegionZh(const std::string& _regionZh);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool RegionZhHasBeenSet() const;
 
                     /**
-                     * 获取公网ip数组
-                     * @return EipAddress 公网ip数组
+                     * 获取<p>公网ip数组</p>
+                     * @return EipAddress <p>公网ip数组</p>
                      * 
                      */
                     std::vector<std::string> GetEipAddress() const;
 
                     /**
-                     * 设置公网ip数组
-                     * @param _eipAddress 公网ip数组
+                     * 设置<p>公网ip数组</p>
+                     * @param _eipAddress <p>公网ip数组</p>
                      * 
                      */
                     void SetEipAddress(const std::vector<std::string>& _eipAddress);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool EipAddressHasBeenSet() const;
 
                     /**
-                     * 获取内外使用ip数组
-                     * @return VpcIp 内外使用ip数组
+                     * 获取<p>内外使用ip数组</p>
+                     * @return VpcIp <p>内外使用ip数组</p>
                      * 
                      */
                     std::vector<std::string> GetVpcIp() const;
 
                     /**
-                     * 设置内外使用ip数组
-                     * @param _vpcIp 内外使用ip数组
+                     * 设置<p>内外使用ip数组</p>
+                     * @param _vpcIp <p>内外使用ip数组</p>
                      * 
                      */
                     void SetVpcIp(const std::vector<std::string>& _vpcIp);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool VpcIpHasBeenSet() const;
 
                     /**
-                     * 获取实例关联子网数组
-                     * @return Subnets 实例关联子网数组
+                     * 获取<p>实例关联子网数组</p>
+                     * @return Subnets <p>实例关联子网数组</p>
                      * 
                      */
                     std::vector<std::string> GetSubnets() const;
 
                     /**
-                     * 设置实例关联子网数组
-                     * @param _subnets 实例关联子网数组
+                     * 设置<p>实例关联子网数组</p>
+                     * @param _subnets <p>实例关联子网数组</p>
                      * 
                      */
                     void SetSubnets(const std::vector<std::string>& _subnets);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SubnetsHasBeenSet() const;
 
                     /**
-                     * 获取0 :正常 1：正在初始化
-                     * @return Status 0 :正常 1：正在初始化
+                     * 获取<p>0 :正常 1：正在初始化</p>
+                     * @return Status <p>0 :正常 1：正在初始化</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置0 :正常 1：正在初始化
-                     * @param _status 0 :正常 1：正在初始化
+                     * 设置<p>0 :正常 1：正在初始化</p>
+                     * @param _status <p>0 :正常 1：正在初始化</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取地域区域信息
-                     * @return RegionDetail 地域区域信息
+                     * 获取<p>地域区域信息</p>
+                     * @return RegionDetail <p>地域区域信息</p>
                      * 
                      */
                     std::string GetRegionDetail() const;
 
                     /**
-                     * 设置地域区域信息
-                     * @param _regionDetail 地域区域信息
+                     * 设置<p>地域区域信息</p>
+                     * @param _regionDetail <p>地域区域信息</p>
                      * 
                      */
                     void SetRegionDetail(const std::string& _regionDetail);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool RegionDetailHasBeenSet() const;
 
                     /**
-                     * 获取实例所在可用区
-                     * @return ZoneZh 实例所在可用区
+                     * 获取<p>实例所在可用区</p>
+                     * @return ZoneZh <p>实例所在可用区</p>
                      * 
                      */
                     std::string GetZoneZh() const;
 
                     /**
-                     * 设置实例所在可用区
-                     * @param _zoneZh 实例所在可用区
+                     * 设置<p>实例所在可用区</p>
+                     * @param _zoneZh <p>实例所在可用区</p>
                      * 
                      */
                     void SetZoneZh(const std::string& _zoneZh);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ZoneZhHasBeenSet() const;
 
                     /**
-                     * 获取实例所在可用区
-                     * @return ZoneZhBak 实例所在可用区
+                     * 获取<p>实例所在可用区</p>
+                     * @return ZoneZhBak <p>实例所在可用区</p>
                      * 
                      */
                     std::string GetZoneZhBak() const;
 
                     /**
-                     * 设置实例所在可用区
-                     * @param _zoneZhBak 实例所在可用区
+                     * 设置<p>实例所在可用区</p>
+                     * @param _zoneZhBak <p>实例所在可用区</p>
                      * 
                      */
                     void SetZoneZhBak(const std::string& _zoneZhBak);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ZoneZhBakHasBeenSet() const;
 
                     /**
-                     * 获取已使用规则数
-                     * @return RuleUsed 已使用规则数
+                     * 获取<p>已使用规则数</p>
+                     * @return RuleUsed <p>已使用规则数</p>
                      * 
                      */
                     uint64_t GetRuleUsed() const;
 
                     /**
-                     * 设置已使用规则数
-                     * @param _ruleUsed 已使用规则数
+                     * 设置<p>已使用规则数</p>
+                     * @param _ruleUsed <p>已使用规则数</p>
                      * 
                      */
                     void SetRuleUsed(const uint64_t& _ruleUsed);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool RuleUsedHasBeenSet() const;
 
                     /**
-                     * 获取实例的规则限制最大规格数
-                     * @return RuleMax 实例的规则限制最大规格数
+                     * 获取<p>实例的规则限制最大规格数</p>
+                     * @return RuleMax <p>实例的规则限制最大规格数</p>
                      * 
                      */
                     uint64_t GetRuleMax() const;
 
                     /**
-                     * 设置实例的规则限制最大规格数
-                     * @param _ruleMax 实例的规则限制最大规格数
+                     * 设置<p>实例的规则限制最大规格数</p>
+                     * @param _ruleMax <p>实例的规则限制最大规格数</p>
                      * 
                      */
                     void SetRuleMax(const uint64_t& _ruleMax);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool RuleMaxHasBeenSet() const;
 
                     /**
-                     * 获取实例引擎版本
-                     * @return EngineVersion 实例引擎版本
+                     * 获取<p>实例引擎版本</p>
+                     * @return EngineVersion <p>实例引擎版本</p>
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置实例引擎版本
-                     * @param _engineVersion 实例引擎版本
+                     * 设置<p>实例引擎版本</p>
+                     * @param _engineVersion <p>实例引擎版本</p>
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取引擎是否可升级：0，不可升级；1，可升级
-                     * @return UpdateEnable 引擎是否可升级：0，不可升级；1，可升级
+                     * 获取<p>引擎是否可升级：0，不可升级；1，可升级</p>
+                     * @return UpdateEnable <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      * 
                      */
                     int64_t GetUpdateEnable() const;
 
                     /**
-                     * 设置引擎是否可升级：0，不可升级；1，可升级
-                     * @param _updateEnable 引擎是否可升级：0，不可升级；1，可升级
+                     * 设置<p>引擎是否可升级：0，不可升级；1，可升级</p>
+                     * @param _updateEnable <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      * 
                      */
                     void SetUpdateEnable(const int64_t& _updateEnable);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool UpdateEnableHasBeenSet() const;
 
                     /**
-                     * 获取是的需要升级引擎 支持 nat拨测 1需要 0不需要
-                     * @return NeedProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+                     * 获取<p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>
+                     * @return NeedProbeEngineUpdate <p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>
                      * 
                      */
                     int64_t GetNeedProbeEngineUpdate() const;
 
                     /**
-                     * 设置是的需要升级引擎 支持 nat拨测 1需要 0不需要
-                     * @param _needProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+                     * 设置<p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>
+                     * @param _needProbeEngineUpdate <p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>
                      * 
                      */
                     void SetNeedProbeEngineUpdate(const int64_t& _needProbeEngineUpdate);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool NeedProbeEngineUpdateHasBeenSet() const;
 
                     /**
-                     * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
-                     * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * 获取<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
+                     * @return TrafficMode <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      * 
                      */
                     std::string GetTrafficMode() const;
 
                     /**
-                     * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
-                     * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * 设置<p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
+                     * @param _trafficMode <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool TrafficModeHasBeenSet() const;
 
                     /**
-                     * 获取实例主所在可用区
-                     * @return Zone 实例主所在可用区
+                     * 获取<p>实例主所在可用区</p>
+                     * @return Zone <p>实例主所在可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例主所在可用区
-                     * @param _zone 实例主所在可用区
+                     * 设置<p>实例主所在可用区</p>
+                     * @param _zone <p>实例主所在可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例备所在可用区
-                     * @return ZoneBak 实例备所在可用区
+                     * 获取<p>实例备所在可用区</p>
+                     * @return ZoneBak <p>实例备所在可用区</p>
                      * 
                      */
                     std::string GetZoneBak() const;
 
                     /**
-                     * 设置实例备所在可用区
-                     * @param _zoneBak 实例备所在可用区
+                     * 设置<p>实例备所在可用区</p>
+                     * @param _zoneBak <p>实例备所在可用区</p>
                      * 
                      */
                     void SetZoneBak(const std::string& _zoneBak);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool ZoneBakHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级时间
-                     * @return ReserveTime 引擎预约升级时间
+                     * 获取<p>引擎预约升级时间</p>
+                     * @return ReserveTime <p>引擎预约升级时间</p>
                      * 
                      */
                     std::string GetReserveTime() const;
 
                     /**
-                     * 设置引擎预约升级时间
-                     * @param _reserveTime 引擎预约升级时间
+                     * 设置<p>引擎预约升级时间</p>
+                     * @param _reserveTime <p>引擎预约升级时间</p>
                      * 
                      */
                     void SetReserveTime(const std::string& _reserveTime);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool ReserveTimeHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级版本
-                     * @return ReserveVersion 引擎预约升级版本
+                     * 获取<p>引擎预约升级版本</p>
+                     * @return ReserveVersion <p>引擎预约升级版本</p>
                      * 
                      */
                     std::string GetReserveVersion() const;
 
                     /**
-                     * 设置引擎预约升级版本
-                     * @param _reserveVersion 引擎预约升级版本
+                     * 设置<p>引擎预约升级版本</p>
+                     * @param _reserveVersion <p>引擎预约升级版本</p>
                      * 
                      */
                     void SetReserveVersion(const std::string& _reserveVersion);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool ReserveVersionHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级版本状态 stable:稳定版；previewed:预览版
-                     * @return ReserveVersionState 引擎预约升级版本状态 stable:稳定版；previewed:预览版
+                     * 获取<p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>
+                     * @return ReserveVersionState <p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>
                      * 
                      */
                     std::string GetReserveVersionState() const;
 
                     /**
-                     * 设置引擎预约升级版本状态 stable:稳定版；previewed:预览版
-                     * @param _reserveVersionState 引擎预约升级版本状态 stable:稳定版；previewed:预览版
+                     * 设置<p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>
+                     * @param _reserveVersionState <p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>
                      * 
                      */
                     void SetReserveVersionState(const std::string& _reserveVersionState);
@@ -593,23 +593,15 @@ namespace TencentCloud
                     bool ReserveVersionStateHasBeenSet() const;
 
                     /**
-                     * 获取弹性开关
-1 打开
-0 关闭
-                     * @return ElasticSwitch 弹性开关
-1 打开
-0 关闭
+                     * 获取<p>弹性开关<br>1 打开<br>0 关闭</p>
+                     * @return ElasticSwitch <p>弹性开关<br>1 打开<br>0 关闭</p>
                      * 
                      */
                     int64_t GetElasticSwitch() const;
 
                     /**
-                     * 设置弹性开关
-1 打开
-0 关闭
-                     * @param _elasticSwitch 弹性开关
-1 打开
-0 关闭
+                     * 设置<p>弹性开关<br>1 打开<br>0 关闭</p>
+                     * @param _elasticSwitch <p>弹性开关<br>1 打开<br>0 关闭</p>
                      * 
                      */
                     void SetElasticSwitch(const int64_t& _elasticSwitch);
@@ -622,15 +614,15 @@ namespace TencentCloud
                     bool ElasticSwitchHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽，单位Mbps
-                     * @return ElasticBandwidth 弹性带宽，单位Mbps
+                     * 获取<p>弹性带宽，单位Mbps</p>
+                     * @return ElasticBandwidth <p>弹性带宽，单位Mbps</p>
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
-                     * 设置弹性带宽，单位Mbps
-                     * @param _elasticBandwidth 弹性带宽，单位Mbps
+                     * 设置<p>弹性带宽，单位Mbps</p>
+                     * @param _elasticBandwidth <p>弹性带宽，单位Mbps</p>
                      * 
                      */
                     void SetElasticBandwidth(const int64_t& _elasticBandwidth);
@@ -643,23 +635,15 @@ namespace TencentCloud
                     bool ElasticBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取是否首次开通按量付费
-1 是
-0 不是
-                     * @return IsFirstAfterPay 是否首次开通按量付费
-1 是
-0 不是
+                     * 获取<p>是否首次开通按量付费<br>1 是<br>0 不是</p>
+                     * @return IsFirstAfterPay <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      * 
                      */
                     int64_t GetIsFirstAfterPay() const;
 
                     /**
-                     * 设置是否首次开通按量付费
-1 是
-0 不是
-                     * @param _isFirstAfterPay 是否首次开通按量付费
-1 是
-0 不是
+                     * 设置<p>是否首次开通按量付费<br>1 是<br>0 不是</p>
+                     * @param _isFirstAfterPay <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      * 
                      */
                     void SetIsFirstAfterPay(const int64_t& _isFirstAfterPay);
@@ -671,185 +655,208 @@ namespace TencentCloud
                      */
                     bool IsFirstAfterPayHasBeenSet() const;
 
+                    /**
+                     * 获取<p>按流量弹性开关</p><p>默认值：0</p>
+                     * @return ElasticTrafficSwitch <p>按流量弹性开关</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetElasticTrafficSwitch() const;
+
+                    /**
+                     * 设置<p>按流量弹性开关</p><p>默认值：0</p>
+                     * @param _elasticTrafficSwitch <p>按流量弹性开关</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetElasticTrafficSwitch(const int64_t& _elasticTrafficSwitch);
+
+                    /**
+                     * 判断参数 ElasticTrafficSwitch 是否已赋值
+                     * @return ElasticTrafficSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticTrafficSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * nat实例id
+                     * <p>nat实例id</p>
                      */
                     std::string m_natinsId;
                     bool m_natinsIdHasBeenSet;
 
                     /**
-                     * nat实例名称
+                     * <p>nat实例名称</p>
                      */
                     std::string m_natinsName;
                     bool m_natinsNameHasBeenSet;
 
                     /**
-                     * 实例所在地域
+                     * <p>实例所在地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 0: 新增模式，1:接入模式
+                     * <p>0: 新增模式，1:接入模式</p>
                      */
                     int64_t m_fwMode;
                     bool m_fwModeHasBeenSet;
 
                     /**
-                     * 实例带宽大小 Mbps
+                     * <p>实例带宽大小 Mbps</p>
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
-                     * 入向带宽峰值 bps
+                     * <p>入向带宽峰值 bps</p>
                      */
                     int64_t m_inFlowMax;
                     bool m_inFlowMaxHasBeenSet;
 
                     /**
-                     * 出向带宽峰值 bps
+                     * <p>出向带宽峰值 bps</p>
                      */
                     uint64_t m_outFlowMax;
                     bool m_outFlowMaxHasBeenSet;
 
                     /**
-                     * 地域中文信息
+                     * <p>地域中文信息</p>
                      */
                     std::string m_regionZh;
                     bool m_regionZhHasBeenSet;
 
                     /**
-                     * 公网ip数组
+                     * <p>公网ip数组</p>
                      */
                     std::vector<std::string> m_eipAddress;
                     bool m_eipAddressHasBeenSet;
 
                     /**
-                     * 内外使用ip数组
+                     * <p>内外使用ip数组</p>
                      */
                     std::vector<std::string> m_vpcIp;
                     bool m_vpcIpHasBeenSet;
 
                     /**
-                     * 实例关联子网数组
+                     * <p>实例关联子网数组</p>
                      */
                     std::vector<std::string> m_subnets;
                     bool m_subnetsHasBeenSet;
 
                     /**
-                     * 0 :正常 1：正在初始化
+                     * <p>0 :正常 1：正在初始化</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 地域区域信息
+                     * <p>地域区域信息</p>
                      */
                     std::string m_regionDetail;
                     bool m_regionDetailHasBeenSet;
 
                     /**
-                     * 实例所在可用区
+                     * <p>实例所在可用区</p>
                      */
                     std::string m_zoneZh;
                     bool m_zoneZhHasBeenSet;
 
                     /**
-                     * 实例所在可用区
+                     * <p>实例所在可用区</p>
                      */
                     std::string m_zoneZhBak;
                     bool m_zoneZhBakHasBeenSet;
 
                     /**
-                     * 已使用规则数
+                     * <p>已使用规则数</p>
                      */
                     uint64_t m_ruleUsed;
                     bool m_ruleUsedHasBeenSet;
 
                     /**
-                     * 实例的规则限制最大规格数
+                     * <p>实例的规则限制最大规格数</p>
                      */
                     uint64_t m_ruleMax;
                     bool m_ruleMaxHasBeenSet;
 
                     /**
-                     * 实例引擎版本
+                     * <p>实例引擎版本</p>
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 引擎是否可升级：0，不可升级；1，可升级
+                     * <p>引擎是否可升级：0，不可升级；1，可升级</p>
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
 
                     /**
-                     * 是的需要升级引擎 支持 nat拨测 1需要 0不需要
+                     * <p>是的需要升级引擎 支持 nat拨测 1需要 0不需要</p>
                      */
                     int64_t m_needProbeEngineUpdate;
                     bool m_needProbeEngineUpdateHasBeenSet;
 
                     /**
-                     * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
+                     * <p>引擎运行模式，Normal:正常, OnlyRoute:透明模式</p>
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;
 
                     /**
-                     * 实例主所在可用区
+                     * <p>实例主所在可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例备所在可用区
+                     * <p>实例备所在可用区</p>
                      */
                     std::string m_zoneBak;
                     bool m_zoneBakHasBeenSet;
 
                     /**
-                     * 引擎预约升级时间
+                     * <p>引擎预约升级时间</p>
                      */
                     std::string m_reserveTime;
                     bool m_reserveTimeHasBeenSet;
 
                     /**
-                     * 引擎预约升级版本
+                     * <p>引擎预约升级版本</p>
                      */
                     std::string m_reserveVersion;
                     bool m_reserveVersionHasBeenSet;
 
                     /**
-                     * 引擎预约升级版本状态 stable:稳定版；previewed:预览版
+                     * <p>引擎预约升级版本状态 stable:稳定版；previewed:预览版</p>
                      */
                     std::string m_reserveVersionState;
                     bool m_reserveVersionStateHasBeenSet;
 
                     /**
-                     * 弹性开关
-1 打开
-0 关闭
+                     * <p>弹性开关<br>1 打开<br>0 关闭</p>
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
-                     * 弹性带宽，单位Mbps
+                     * <p>弹性带宽，单位Mbps</p>
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
 
                     /**
-                     * 是否首次开通按量付费
-1 是
-0 不是
+                     * <p>是否首次开通按量付费<br>1 是<br>0 不是</p>
                      */
                     int64_t m_isFirstAfterPay;
                     bool m_isFirstAfterPayHasBeenSet;
+
+                    /**
+                     * <p>按流量弹性开关</p><p>默认值：0</p>
+                     */
+                    int64_t m_elasticTrafficSwitch;
+                    bool m_elasticTrafficSwitchHasBeenSet;
 
                 };
             }

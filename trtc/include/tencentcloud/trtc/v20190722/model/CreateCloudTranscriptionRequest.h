@@ -24,6 +24,7 @@
 #include <tencentcloud/trtc/v20190722/model/TranscriptionParam.h>
 #include <tencentcloud/trtc/v20190722/model/AsrParam.h>
 #include <tencentcloud/trtc/v20190722/model/TranslationParam.h>
+#include <tencentcloud/trtc/v20190722/model/TTSParam.h>
 
 
 namespace TencentCloud
@@ -46,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。
-                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。
+                     * 获取<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转录的房间所对应的SdkAppId相同。</p>
+                     * @return SdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转录的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。
-                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。
+                     * 设置<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转录的房间所对应的SdkAppId相同。</p>
+                     * @param _sdkAppId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转录的房间所对应的SdkAppId相同。</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
-                     * @return RoomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+                     * 获取<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#roomid">RoomId</a>，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。</p>
+                     * @return RoomId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#roomid">RoomId</a>，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
-                     * @param _roomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+                     * 设置<p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#roomid">RoomId</a>，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。</p>
+                     * @param _roomId <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#roomid">RoomId</a>，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -88,15 +89,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
-                     * @return RoomIdType 房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * 获取<p>房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
+                     * @return RoomIdType <p>房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
-                     * 设置房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
-                     * @param _roomIdType 房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * 设置<p>房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
+                     * @param _roomIdType <p>房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
@@ -109,15 +110,15 @@ namespace TencentCloud
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
-                     * 获取转录服务加入TRTC房间的参数。
-                     * @return TranscriptionParam 转录服务加入TRTC房间的参数。
+                     * 获取<p>转录服务加入TRTC房间的参数。</p>
+                     * @return TranscriptionParam <p>转录服务加入TRTC房间的参数。</p>
                      * 
                      */
                     TranscriptionParam GetTranscriptionParam() const;
 
                     /**
-                     * 设置转录服务加入TRTC房间的参数。
-                     * @param _transcriptionParam 转录服务加入TRTC房间的参数。
+                     * 设置<p>转录服务加入TRTC房间的参数。</p>
+                     * @param _transcriptionParam <p>转录服务加入TRTC房间的参数。</p>
                      * 
                      */
                     void SetTranscriptionParam(const TranscriptionParam& _transcriptionParam);
@@ -130,15 +131,15 @@ namespace TencentCloud
                     bool TranscriptionParamHasBeenSet() const;
 
                     /**
-                     * 获取转录服务ASR使用的参数。
-                     * @return AsrParam 转录服务ASR使用的参数。
+                     * 获取<p>转录服务ASR使用的参数。</p>
+                     * @return AsrParam <p>转录服务ASR使用的参数。</p>
                      * 
                      */
                     AsrParam GetAsrParam() const;
 
                     /**
-                     * 设置转录服务ASR使用的参数。
-                     * @param _asrParam 转录服务ASR使用的参数。
+                     * 设置<p>转录服务ASR使用的参数。</p>
+                     * @param _asrParam <p>转录服务ASR使用的参数。</p>
                      * 
                      */
                     void SetAsrParam(const AsrParam& _asrParam);
@@ -151,15 +152,15 @@ namespace TencentCloud
                     bool AsrParamHasBeenSet() const;
 
                     /**
-                     * 获取转录服务翻译使用的参数。
-                     * @return TranslationParam 转录服务翻译使用的参数。
+                     * 获取<p>转录服务翻译使用的参数。</p>
+                     * @return TranslationParam <p>转录服务翻译使用的参数。</p>
                      * 
                      */
                     TranslationParam GetTranslationParam() const;
 
                     /**
-                     * 设置转录服务翻译使用的参数。
-                     * @param _translationParam 转录服务翻译使用的参数。
+                     * 设置<p>转录服务翻译使用的参数。</p>
+                     * @param _translationParam <p>转录服务翻译使用的参数。</p>
                      * 
                      */
                     void SetTranslationParam(const TranslationParam& _translationParam);
@@ -171,43 +172,70 @@ namespace TencentCloud
                      */
                     bool TranslationParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转录服务TTS使用的参数。</p>
+                     * @return TTSParam <p>转录服务TTS使用的参数。</p>
+                     * 
+                     */
+                    std::vector<TTSParam> GetTTSParam() const;
+
+                    /**
+                     * 设置<p>转录服务TTS使用的参数。</p>
+                     * @param _tTSParam <p>转录服务TTS使用的参数。</p>
+                     * 
+                     */
+                    void SetTTSParam(const std::vector<TTSParam>& _tTSParam);
+
+                    /**
+                     * 判断参数 TTSParam 是否已赋值
+                     * @return TTSParam 是否已赋值
+                     * 
+                     */
+                    bool TTSParamHasBeenSet() const;
+
                 private:
 
                     /**
-                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转录的房间所对应的SdkAppId相同。
+                     * <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#sdkappid">SdkAppId</a>，和转录的房间所对应的SdkAppId相同。</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+                     * <p>TRTC的<a href="https://cloud.tencent.com/document/product/647/46351#roomid">RoomId</a>，转录的TRTC房间所对应的RoomId。注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。
+                     * <p>房间信息RoomType，必须和转录的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。</p>
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;
 
                     /**
-                     * 转录服务加入TRTC房间的参数。
+                     * <p>转录服务加入TRTC房间的参数。</p>
                      */
                     TranscriptionParam m_transcriptionParam;
                     bool m_transcriptionParamHasBeenSet;
 
                     /**
-                     * 转录服务ASR使用的参数。
+                     * <p>转录服务ASR使用的参数。</p>
                      */
                     AsrParam m_asrParam;
                     bool m_asrParamHasBeenSet;
 
                     /**
-                     * 转录服务翻译使用的参数。
+                     * <p>转录服务翻译使用的参数。</p>
                      */
                     TranslationParam m_translationParam;
                     bool m_translationParamHasBeenSet;
+
+                    /**
+                     * <p>转录服务TTS使用的参数。</p>
+                     */
+                    std::vector<TTSParam> m_tTSParam;
+                    bool m_tTSParamHasBeenSet;
 
                 };
             }

@@ -82,7 +82,8 @@ InstanceInfo::InstanceInfo() :
     m_clusterIdHasBeenSet(false),
     m_autoScaleConfigHasBeenSet(false),
     m_analysisModeHasBeenSet(false),
-    m_analysisRelationInfosHasBeenSet(false)
+    m_analysisRelationInfosHasBeenSet(false),
+    m_analysisInstanceInfoHasBeenSet(false)
 {
 }
 
@@ -761,6 +762,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_analysisRelationInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisInstanceInfo") && !value["AnalysisInstanceInfo"].IsNull())
+    {
+        if (!value["AnalysisInstanceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AnalysisInstanceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_analysisInstanceInfo.Deserialize(value["AnalysisInstanceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_analysisInstanceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1296,6 +1314,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_analysisInstanceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisInstanceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_analysisInstanceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2291,5 +2318,21 @@ void InstanceInfo::SetAnalysisRelationInfos(const vector<AnalysisRelationInfo>& 
 bool InstanceInfo::AnalysisRelationInfosHasBeenSet() const
 {
     return m_analysisRelationInfosHasBeenSet;
+}
+
+AnalysisInstanceInfo InstanceInfo::GetAnalysisInstanceInfo() const
+{
+    return m_analysisInstanceInfo;
+}
+
+void InstanceInfo::SetAnalysisInstanceInfo(const AnalysisInstanceInfo& _analysisInstanceInfo)
+{
+    m_analysisInstanceInfo = _analysisInstanceInfo;
+    m_analysisInstanceInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::AnalysisInstanceInfoHasBeenSet() const
+{
+    return m_analysisInstanceInfoHasBeenSet;
 }
 

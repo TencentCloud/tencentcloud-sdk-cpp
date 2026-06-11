@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
-                     * @return Product <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
+                     * 获取<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;mongodb&quot;- 云数据库MongoDB, &quot;postgres&quot;-云数据库postgres,云数据库&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;mongodb&quot;- 云数据库MongoDB, &quot;postgres&quot;-云数据库postgres,云数据库&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
-                     * @param _product <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
+                     * 设置<p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;mongodb&quot;- 云数据库MongoDB, &quot;postgres&quot;-云数据库postgres,云数据库&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;mongodb&quot;- 云数据库MongoDB, &quot;postgres&quot;-云数据库postgres,云数据库&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
+                     * <p>服务产品类型，支持值包括：&quot;mysql&quot; - 云数据库 MySQL，&quot;mongodb&quot;- 云数据库MongoDB, &quot;postgres&quot;-云数据库postgres,云数据库&quot;redis&quot; - 云数据库 Redis，&quot;mariadb&quot;-数据库mariadb，&quot;cynosdb&quot;-数据库 TDSQL-C, &quot;dcdb&quot;-数据库TDSQL MySQL    默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

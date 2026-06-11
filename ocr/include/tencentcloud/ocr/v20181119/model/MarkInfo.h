@@ -175,6 +175,48 @@ namespace TencentCloud
                      */
                     bool RightAnswerHasBeenSet() const;
 
+                    /**
+                     * 获取<p>学科（如语文、数学、英语）</p>
+                     * @return Subject <p>学科（如语文、数学、英语）</p>
+                     * 
+                     */
+                    std::string GetSubject() const;
+
+                    /**
+                     * 设置<p>学科（如语文、数学、英语）</p>
+                     * @param _subject <p>学科（如语文、数学、英语）</p>
+                     * 
+                     */
+                    void SetSubject(const std::string& _subject);
+
+                    /**
+                     * 判断参数 Subject 是否已赋值
+                     * @return Subject 是否已赋值
+                     * 
+                     */
+                    bool SubjectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>
+                     * @return QuestionType <p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>
+                     * 
+                     */
+                    std::string GetQuestionType() const;
+
+                    /**
+                     * 设置<p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>
+                     * @param _questionType <p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>
+                     * 
+                     */
+                    void SetQuestionType(const std::string& _questionType);
+
+                    /**
+                     * 判断参数 QuestionType 是否已赋值
+                     * @return QuestionType 是否已赋值
+                     * 
+                     */
+                    bool QuestionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +254,18 @@ namespace TencentCloud
                      */
                     std::string m_rightAnswer;
                     bool m_rightAnswerHasBeenSet;
+
+                    /**
+                     * <p>学科（如语文、数学、英语）</p>
+                     */
+                    std::string m_subject;
+                    bool m_subjectHasBeenSet;
+
+                    /**
+                     * <p>题型（如选择题、填空题、计算题、应用题、判断题、作文题）</p>
+                     */
+                    std::string m_questionType;
+                    bool m_questionTypeHasBeenSet;
 
                 };
             }

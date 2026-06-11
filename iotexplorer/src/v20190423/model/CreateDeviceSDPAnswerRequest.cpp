@@ -25,7 +25,8 @@ using namespace std;
 CreateDeviceSDPAnswerRequest::CreateDeviceSDPAnswerRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_sDPOfferHasBeenSet(false)
+    m_sDPOfferHasBeenSet(false),
+    m_requesterTagHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateDeviceSDPAnswerRequest::ToJsonString() const
         string key = "SDPOffer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sDPOffer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requesterTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequesterTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requesterTag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateDeviceSDPAnswerRequest::SetSDPOffer(const string& _sDPOffer)
 bool CreateDeviceSDPAnswerRequest::SDPOfferHasBeenSet() const
 {
     return m_sDPOfferHasBeenSet;
+}
+
+string CreateDeviceSDPAnswerRequest::GetRequesterTag() const
+{
+    return m_requesterTag;
+}
+
+void CreateDeviceSDPAnswerRequest::SetRequesterTag(const string& _requesterTag)
+{
+    m_requesterTag = _requesterTag;
+    m_requesterTagHasBeenSet = true;
+}
+
+bool CreateDeviceSDPAnswerRequest::RequesterTagHasBeenSet() const
+{
+    return m_requesterTagHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的SdkAppId
-                     * @return SdkAppId TRTC的SdkAppId
+                     * 获取<p>TRTC的SdkAppId</p>
+                     * @return SdkAppId <p>TRTC的SdkAppId</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的SdkAppId
-                     * @param _sdkAppId TRTC的SdkAppId
+                     * 设置<p>TRTC的SdkAppId</p>
+                     * @param _sdkAppId <p>TRTC的SdkAppId</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
-                     * @return VoiceName 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
+                     * 获取<p>声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位</p>
+                     * @return VoiceName <p>声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位</p>
                      * 
                      */
                     std::string GetVoiceName() const;
 
                     /**
-                     * 设置声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
-                     * @param _voiceName 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
+                     * 设置<p>声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位</p>
+                     * @param _voiceName <p>声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位</p>
                      * 
                      */
                     void SetVoiceName(const std::string& _voiceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VoiceNameHasBeenSet() const;
 
                     /**
-                     * 获取声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间
-                     * @return PromptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间
+                     * 获取<p>声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间</p>
+                     * @return PromptAudio <p>声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间</p>
                      * 
                      */
                     std::string GetPromptAudio() const;
 
                     /**
-                     * 设置声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间
-                     * @param _promptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间
+                     * 设置<p>声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间</p>
+                     * @param _promptAudio <p>声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间</p>
                      * 
                      */
                     void SetPromptAudio(const std::string& _promptAudio);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PromptAudioHasBeenSet() const;
 
                     /**
-                     * 获取TTS的API密钥
-                     * @return APIKey TTS的API密钥
+                     * 获取<p>TTS的API密钥</p>
+                     * @return APIKey <p>TTS的API密钥</p>
                      * @deprecated
                      */
                     std::string GetAPIKey() const;
 
                     /**
-                     * 设置TTS的API密钥
-                     * @param _aPIKey TTS的API密钥
+                     * 设置<p>TTS的API密钥</p>
+                     * @param _aPIKey <p>TTS的API密钥</p>
                      * @deprecated
                      */
                     void SetAPIKey(const std::string& _aPIKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool APIKeyHasBeenSet() const;
 
                     /**
-                     * 获取声音克隆的参考文本，为参考音频对应的文字。
-                     * @return PromptText 声音克隆的参考文本，为参考音频对应的文字。
+                     * 获取<p>声音克隆的参考文本，为参考音频对应的文字。</p>
+                     * @return PromptText <p>声音克隆的参考文本，为参考音频对应的文字。</p>
                      * 
                      */
                     std::string GetPromptText() const;
 
                     /**
-                     * 设置声音克隆的参考文本，为参考音频对应的文字。
-                     * @param _promptText 声音克隆的参考文本，为参考音频对应的文字。
+                     * 设置<p>声音克隆的参考文本，为参考音频对应的文字。</p>
+                     * @param _promptText <p>声音克隆的参考文本，为参考音频对应的文字。</p>
                      * 
                      */
                     void SetPromptText(const std::string& _promptText);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PromptTextHasBeenSet() const;
 
                     /**
-                     * 获取TTS的模型：flow_01_turbo，flow_01_ex
-                     * @return Model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 获取<p>TTS的模型：flow_02_turbo，flow_01_ex</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li><li>flow_01_ex： flow_01_ex</li></ul>
+                     * @return Model <p>TTS的模型：flow_02_turbo，flow_01_ex</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li><li>flow_01_ex： flow_01_ex</li></ul>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置TTS的模型：flow_01_turbo，flow_01_ex
-                     * @param _model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 设置<p>TTS的模型：flow_02_turbo，flow_01_ex</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li><li>flow_01_ex： flow_01_ex</li></ul>
+                     * @param _model <p>TTS的模型：flow_02_turbo，flow_01_ex</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li><li>flow_01_ex： flow_01_ex</li></ul>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取语言参数，默认为空， 参考： (ISO 639-1) 
-                     * @return Language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 获取<p>语言参数，默认为空， 参考： (ISO 639-1)</p>
+                     * @return Language <p>语言参数，默认为空， 参考： (ISO 639-1)</p>
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置语言参数，默认为空， 参考： (ISO 639-1) 
-                     * @param _language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 设置<p>语言参数，默认为空， 参考： (ISO 639-1)</p>
+                     * @param _language <p>语言参数，默认为空， 参考： (ISO 639-1)</p>
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC的SdkAppId
+                     * <p>TRTC的SdkAppId</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位
+                     * <p>声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位</p>
                      */
                     std::string m_voiceName;
                     bool m_voiceNameHasBeenSet;
 
                     /**
-                     * 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间
+                     * <p>声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在6秒～180秒之间</p>
                      */
                     std::string m_promptAudio;
                     bool m_promptAudioHasBeenSet;
 
                     /**
-                     * TTS的API密钥
+                     * <p>TTS的API密钥</p>
                      */
                     std::string m_aPIKey;
                     bool m_aPIKeyHasBeenSet;
 
                     /**
-                     * 声音克隆的参考文本，为参考音频对应的文字。
+                     * <p>声音克隆的参考文本，为参考音频对应的文字。</p>
                      */
                     std::string m_promptText;
                     bool m_promptTextHasBeenSet;
 
                     /**
-                     * TTS的模型：flow_01_turbo，flow_01_ex
+                     * <p>TTS的模型：flow_02_turbo，flow_01_ex</p><p>枚举值：</p><ul><li>flow_02_turbo： flow_02_turbo</li><li>flow_01_ex： flow_01_ex</li></ul>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * <p>语言参数，默认为空， 参考： (ISO 639-1)</p>
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

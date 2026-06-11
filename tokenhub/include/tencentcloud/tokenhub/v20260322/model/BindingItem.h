@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取资源状态
+                     * @return Status 资源状态
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置资源状态
+                     * @param _status 资源状态
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 资源状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

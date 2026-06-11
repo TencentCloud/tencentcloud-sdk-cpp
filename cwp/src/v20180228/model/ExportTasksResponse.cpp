@@ -25,7 +25,8 @@ using namespace std;
 
 ExportTasksResponse::ExportTasksResponse() :
     m_statusHasBeenSet(false),
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_fileNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ExportTasksResponse::Deserialize(const string &payload)
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string ExportTasksResponse::ToJsonString() const
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string ExportTasksResponse::GetDownloadUrl() const
 bool ExportTasksResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string ExportTasksResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool ExportTasksResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
 }
 
 

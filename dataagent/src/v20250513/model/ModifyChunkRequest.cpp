@@ -27,6 +27,7 @@ ModifyChunkRequest::ModifyChunkRequest() :
     m_fileIdHasBeenSet(false),
     m_chunkIdHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_summaryHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string ModifyChunkRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summary";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
     }
 
     if (m_knowledgeBaseIdHasBeenSet)
@@ -148,6 +157,22 @@ void ModifyChunkRequest::SetContent(const string& _content)
 bool ModifyChunkRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string ModifyChunkRequest::GetSummary() const
+{
+    return m_summary;
+}
+
+void ModifyChunkRequest::SetSummary(const string& _summary)
+{
+    m_summary = _summary;
+    m_summaryHasBeenSet = true;
+}
+
+bool ModifyChunkRequest::SummaryHasBeenSet() const
+{
+    return m_summaryHasBeenSet;
 }
 
 string ModifyChunkRequest::GetKnowledgeBaseId() const

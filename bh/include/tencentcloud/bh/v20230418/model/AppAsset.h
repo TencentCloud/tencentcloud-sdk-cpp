@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用资产id
-                     * @return Id 应用资产id
+                     * 获取<p>应用资产id</p>
+                     * @return Id <p>应用资产id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置应用资产id
-                     * @param _id 应用资产id
+                     * 设置<p>应用资产id</p>
+                     * @param _id <p>应用资产id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取资产名称
-                     * @return Name 资产名称
+                     * 获取<p>资产名称</p>
+                     * @return Name <p>资产名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资产名称
-                     * @param _name 资产名称
+                     * 设置<p>资产名称</p>
+                     * @param _name <p>资产名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取应用服务器id
-                     * @return DeviceId 应用服务器id
+                     * 获取<p>应用服务器id</p>
+                     * @return DeviceId <p>应用服务器id</p>
                      * 
                      */
                     uint64_t GetDeviceId() const;
 
                     /**
-                     * 设置应用服务器id
-                     * @param _deviceId 应用服务器id
+                     * 设置<p>应用服务器id</p>
+                     * @param _deviceId <p>应用服务器id</p>
                      * 
                      */
                     void SetDeviceId(const uint64_t& _deviceId);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用服务器账号id
-                     * @return DeviceAccountId 应用服务器账号id
+                     * 获取<p>应用服务器账号id</p>
+                     * @return DeviceAccountId <p>应用服务器账号id</p>
                      * 
                      */
                     uint64_t GetDeviceAccountId() const;
 
                     /**
-                     * 设置应用服务器账号id
-                     * @param _deviceAccountId 应用服务器账号id
+                     * 设置<p>应用服务器账号id</p>
+                     * @param _deviceAccountId <p>应用服务器账号id</p>
                      * 
                      */
                     void SetDeviceAccountId(const uint64_t& _deviceAccountId);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool DeviceAccountIdHasBeenSet() const;
 
                     /**
-                     * 获取应用资产类型。1-web应用
-                     * @return Kind 应用资产类型。1-web应用
+                     * 获取<p>应用资产类型。1-web应用</p>
+                     * @return Kind <p>应用资产类型。1-web应用</p>
                      * 
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置应用资产类型。1-web应用
-                     * @param _kind 应用资产类型。1-web应用
+                     * 设置<p>应用资产类型。1-web应用</p>
+                     * @param _kind <p>应用资产类型。1-web应用</p>
                      * 
                      */
                     void SetKind(const uint64_t& _kind);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取客户端工具路径
-                     * @return ClientAppPath 客户端工具路径
+                     * 获取<p>客户端工具路径</p>
+                     * @return ClientAppPath <p>客户端工具路径</p>
                      * 
                      */
                     std::string GetClientAppPath() const;
 
                     /**
-                     * 设置客户端工具路径
-                     * @param _clientAppPath 客户端工具路径
+                     * 设置<p>客户端工具路径</p>
+                     * @param _clientAppPath <p>客户端工具路径</p>
                      * 
                      */
                     void SetClientAppPath(const std::string& _clientAppPath);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool ClientAppPathHasBeenSet() const;
 
                     /**
-                     * 获取客户端工具类型
-                     * @return ClientAppKind 客户端工具类型
+                     * 获取<p>客户端工具类型</p>
+                     * @return ClientAppKind <p>客户端工具类型</p>
                      * 
                      */
                     std::string GetClientAppKind() const;
 
                     /**
-                     * 设置客户端工具类型
-                     * @param _clientAppKind 客户端工具类型
+                     * 设置<p>客户端工具类型</p>
+                     * @param _clientAppKind <p>客户端工具类型</p>
                      * 
                      */
                     void SetClientAppKind(const std::string& _clientAppKind);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool ClientAppKindHasBeenSet() const;
 
                     /**
-                     * 获取应用资产url
-                     * @return Url 应用资产url
+                     * 获取<p>应用资产url</p>
+                     * @return Url <p>应用资产url</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置应用资产url
-                     * @param _url 应用资产url
+                     * 设置<p>应用资产url</p>
+                     * @param _url <p>应用资产url</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取托管状态。0-未托管，1-已托管
-                     * @return BindStatus 托管状态。0-未托管，1-已托管
+                     * 获取<p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>
+                     * @return BindStatus <p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>
                      * 
                      */
                     uint64_t GetBindStatus() const;
 
                     /**
-                     * 设置托管状态。0-未托管，1-已托管
-                     * @param _bindStatus 托管状态。0-未托管，1-已托管
+                     * 设置<p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>
+                     * @param _bindStatus <p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>
                      * 
                      */
                     void SetBindStatus(const uint64_t& _bindStatus);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool BindStatusHasBeenSet() const;
 
                     /**
-                     * 获取应用服务器实例id
-                     * @return DeviceInstanceId 应用服务器实例id
+                     * 获取<p>应用服务器实例id</p>
+                     * @return DeviceInstanceId <p>应用服务器实例id</p>
                      * 
                      */
                     std::string GetDeviceInstanceId() const;
 
                     /**
-                     * 设置应用服务器实例id
-                     * @param _deviceInstanceId 应用服务器实例id
+                     * 设置<p>应用服务器实例id</p>
+                     * @param _deviceInstanceId <p>应用服务器实例id</p>
                      * 
                      */
                     void SetDeviceInstanceId(const std::string& _deviceInstanceId);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool DeviceInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用服务器名称
-                     * @return DeviceName 应用服务器名称
+                     * 获取<p>应用服务器名称</p>
+                     * @return DeviceName <p>应用服务器名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置应用服务器名称
-                     * @param _deviceName 应用服务器名称
+                     * 设置<p>应用服务器名称</p>
+                     * @param _deviceName <p>应用服务器名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取应用服务器账号名称
-                     * @return DeviceAccountName 应用服务器账号名称
+                     * 获取<p>应用服务器账号名称</p>
+                     * @return DeviceAccountName <p>应用服务器账号名称</p>
                      * 
                      */
                     std::string GetDeviceAccountName() const;
 
                     /**
-                     * 设置应用服务器账号名称
-                     * @param _deviceAccountName 应用服务器账号名称
+                     * 设置<p>应用服务器账号名称</p>
+                     * @param _deviceAccountName <p>应用服务器账号名称</p>
                      * 
                      */
                     void SetDeviceAccountName(const std::string& _deviceAccountName);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool DeviceAccountNameHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机实例id
-                     * @return ResourceId 堡垒机实例id
+                     * 获取<p>堡垒机实例id</p>
+                     * @return ResourceId <p>堡垒机实例id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置堡垒机实例id
-                     * @param _resourceId 堡垒机实例id
+                     * 设置<p>堡垒机实例id</p>
+                     * @param _resourceId <p>堡垒机实例id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机实例信息
-                     * @return Resource 堡垒机实例信息
+                     * 获取<p>堡垒机实例信息</p>
+                     * @return Resource <p>堡垒机实例信息</p>
                      * 
                      */
                     Resource GetResource() const;
 
                     /**
-                     * 设置堡垒机实例信息
-                     * @param _resource 堡垒机实例信息
+                     * 设置<p>堡垒机实例信息</p>
+                     * @param _resource <p>堡垒机实例信息</p>
                      * 
                      */
                     void SetResource(const Resource& _resource);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取网络域id
-                     * @return DomainId 网络域id
+                     * 获取<p>网络域id</p>
+                     * @return DomainId <p>网络域id</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置网络域id
-                     * @param _domainId 网络域id
+                     * 设置<p>网络域id</p>
+                     * @param _domainId <p>网络域id</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取网络域名称
-                     * @return DomainName 网络域名称
+                     * 获取<p>网络域名称</p>
+                     * @return DomainName <p>网络域名称</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置网络域名称
-                     * @param _domainName 网络域名称
+                     * 设置<p>网络域名称</p>
+                     * @param _domainName <p>网络域名称</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取资产组信息
-                     * @return GroupSet 资产组信息
+                     * 获取<p>资产组信息</p>
+                     * @return GroupSet <p>资产组信息</p>
                      * 
                      */
                     std::vector<Group> GetGroupSet() const;
 
                     /**
-                     * 设置资产组信息
-                     * @param _groupSet 资产组信息
+                     * 设置<p>资产组信息</p>
+                     * @param _groupSet <p>资产组信息</p>
                      * 
                      */
                     void SetGroupSet(const std::vector<Group>& _groupSet);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool GroupSetHasBeenSet() const;
 
                     /**
-                     * 获取资产所属部门
-                     * @return Department 资产所属部门
+                     * 获取<p>资产所属部门</p>
+                     * @return Department <p>资产所属部门</p>
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
-                     * 设置资产所属部门
-                     * @param _department 资产所属部门
+                     * 设置<p>资产所属部门</p>
+                     * @param _department <p>资产所属部门</p>
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -448,121 +448,364 @@ namespace TencentCloud
                      */
                     bool DepartmentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>账号数量</p>
+                     * @return AccountCount <p>账号数量</p>
+                     * 
+                     */
+                    uint64_t GetAccountCount() const;
+
+                    /**
+                     * 设置<p>账号数量</p>
+                     * @param _accountCount <p>账号数量</p>
+                     * 
+                     */
+                    void SetAccountCount(const uint64_t& _accountCount);
+
+                    /**
+                     * 判断参数 AccountCount 是否已赋值
+                     * @return AccountCount 是否已赋值
+                     * 
+                     */
+                    bool AccountCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>
+                     * @return AgentInputType <p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>
+                     * 
+                     */
+                    uint64_t GetAgentInputType() const;
+
+                    /**
+                     * 设置<p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>
+                     * @param _agentInputType <p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>
+                     * 
+                     */
+                    void SetAgentInputType(const uint64_t& _agentInputType);
+
+                    /**
+                     * 判断参数 AgentInputType 是否已赋值
+                     * @return AgentInputType 是否已赋值
+                     * 
+                     */
+                    bool AgentInputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>
+                     * @return AgentInputSubmit <p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>
+                     * 
+                     */
+                    uint64_t GetAgentInputSubmit() const;
+
+                    /**
+                     * 设置<p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>
+                     * @param _agentInputSubmit <p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>
+                     * 
+                     */
+                    void SetAgentInputSubmit(const uint64_t& _agentInputSubmit);
+
+                    /**
+                     * 判断参数 AgentInputSubmit 是否已赋值
+                     * @return AgentInputSubmit 是否已赋值
+                     * 
+                     */
+                    bool AgentInputSubmitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @return UserNameType <p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    std::string GetUserNameType() const;
+
+                    /**
+                     * 设置<p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @param _userNameType <p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    void SetUserNameType(const std::string& _userNameType);
+
+                    /**
+                     * 判断参数 UserNameType 是否已赋值
+                     * @return UserNameType 是否已赋值
+                     * 
+                     */
+                    bool UserNameTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户名输入框选择器属性</p>
+                     * @return UserNameValue <p>用户名输入框选择器属性</p>
+                     * 
+                     */
+                    std::string GetUserNameValue() const;
+
+                    /**
+                     * 设置<p>用户名输入框选择器属性</p>
+                     * @param _userNameValue <p>用户名输入框选择器属性</p>
+                     * 
+                     */
+                    void SetUserNameValue(const std::string& _userNameValue);
+
+                    /**
+                     * 判断参数 UserNameValue 是否已赋值
+                     * @return UserNameValue 是否已赋值
+                     * 
+                     */
+                    bool UserNameValueHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @return PasswordType <p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    std::string GetPasswordType() const;
+
+                    /**
+                     * 设置<p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @param _passwordType <p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    void SetPasswordType(const std::string& _passwordType);
+
+                    /**
+                     * 判断参数 PasswordType 是否已赋值
+                     * @return PasswordType 是否已赋值
+                     * 
+                     */
+                    bool PasswordTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密码输入框选择器属性</p>
+                     * @return PasswordValue <p>密码输入框选择器属性</p>
+                     * 
+                     */
+                    std::string GetPasswordValue() const;
+
+                    /**
+                     * 设置<p>密码输入框选择器属性</p>
+                     * @param _passwordValue <p>密码输入框选择器属性</p>
+                     * 
+                     */
+                    void SetPasswordValue(const std::string& _passwordValue);
+
+                    /**
+                     * 判断参数 PasswordValue 是否已赋值
+                     * @return PasswordValue 是否已赋值
+                     * 
+                     */
+                    bool PasswordValueHasBeenSet() const;
+
+                    /**
+                     * 获取<p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @return SubmitType <p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    std::string GetSubmitType() const;
+
+                    /**
+                     * 设置<p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * @param _submitType <p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     * 
+                     */
+                    void SetSubmitType(const std::string& _submitType);
+
+                    /**
+                     * 判断参数 SubmitType 是否已赋值
+                     * @return SubmitType 是否已赋值
+                     * 
+                     */
+                    bool SubmitTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>提交按钮选择器属性值</p>
+                     * @return SubmitValue <p>提交按钮选择器属性值</p>
+                     * 
+                     */
+                    std::string GetSubmitValue() const;
+
+                    /**
+                     * 设置<p>提交按钮选择器属性值</p>
+                     * @param _submitValue <p>提交按钮选择器属性值</p>
+                     * 
+                     */
+                    void SetSubmitValue(const std::string& _submitValue);
+
+                    /**
+                     * 判断参数 SubmitValue 是否已赋值
+                     * @return SubmitValue 是否已赋值
+                     * 
+                     */
+                    bool SubmitValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用资产id
+                     * <p>应用资产id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 资产名称
+                     * <p>资产名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 应用服务器id
+                     * <p>应用服务器id</p>
                      */
                     uint64_t m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 应用服务器账号id
+                     * <p>应用服务器账号id</p>
                      */
                     uint64_t m_deviceAccountId;
                     bool m_deviceAccountIdHasBeenSet;
 
                     /**
-                     * 应用资产类型。1-web应用
+                     * <p>应用资产类型。1-web应用</p>
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 客户端工具路径
+                     * <p>客户端工具路径</p>
                      */
                     std::string m_clientAppPath;
                     bool m_clientAppPathHasBeenSet;
 
                     /**
-                     * 客户端工具类型
+                     * <p>客户端工具类型</p>
                      */
                     std::string m_clientAppKind;
                     bool m_clientAppKindHasBeenSet;
 
                     /**
-                     * 应用资产url
+                     * <p>应用资产url</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 托管状态。0-未托管，1-已托管
+                     * <p>托管状态</p><p>枚举值：</p><ul><li>0： 未托管</li><li>1： 已托管</li></ul>
                      */
                     uint64_t m_bindStatus;
                     bool m_bindStatusHasBeenSet;
 
                     /**
-                     * 应用服务器实例id
+                     * <p>应用服务器实例id</p>
                      */
                     std::string m_deviceInstanceId;
                     bool m_deviceInstanceIdHasBeenSet;
 
                     /**
-                     * 应用服务器名称
+                     * <p>应用服务器名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 应用服务器账号名称
+                     * <p>应用服务器账号名称</p>
                      */
                     std::string m_deviceAccountName;
                     bool m_deviceAccountNameHasBeenSet;
 
                     /**
-                     * 堡垒机实例id
+                     * <p>堡垒机实例id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 堡垒机实例信息
+                     * <p>堡垒机实例信息</p>
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 网络域id
+                     * <p>网络域id</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 网络域名称
+                     * <p>网络域名称</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 资产组信息
+                     * <p>资产组信息</p>
                      */
                     std::vector<Group> m_groupSet;
                     bool m_groupSetHasBeenSet;
 
                     /**
-                     * 资产所属部门
+                     * <p>资产所属部门</p>
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
+
+                    /**
+                     * <p>账号数量</p>
+                     */
+                    uint64_t m_accountCount;
+                    bool m_accountCountHasBeenSet;
+
+                    /**
+                     * <p>代填类型</p><p>枚举值：</p><ul><li>0： 不支持代填</li><li>1： 元素定位代填</li></ul>
+                     */
+                    uint64_t m_agentInputType;
+                    bool m_agentInputTypeHasBeenSet;
+
+                    /**
+                     * <p>是否自动提交</p><p>枚举值：</p><ul><li>0： 不自动提交</li><li>1： 自动提交</li></ul>
+                     */
+                    uint64_t m_agentInputSubmit;
+                    bool m_agentInputSubmitHasBeenSet;
+
+                    /**
+                     * <p>用户名输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     */
+                    std::string m_userNameType;
+                    bool m_userNameTypeHasBeenSet;
+
+                    /**
+                     * <p>用户名输入框选择器属性</p>
+                     */
+                    std::string m_userNameValue;
+                    bool m_userNameValueHasBeenSet;
+
+                    /**
+                     * <p>密码输入框选择器类型</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     */
+                    std::string m_passwordType;
+                    bool m_passwordTypeHasBeenSet;
+
+                    /**
+                     * <p>密码输入框选择器属性</p>
+                     */
+                    std::string m_passwordValue;
+                    bool m_passwordValueHasBeenSet;
+
+                    /**
+                     * <p>提交按钮选择器类型，为空表示不支持自动提交</p><p>枚举值：</p><ul><li>id： html标签id属性</li><li>name： html标签name属性</li><li>selector： css选择器</li><li>xpath： xpath</li></ul>
+                     */
+                    std::string m_submitType;
+                    bool m_submitTypeHasBeenSet;
+
+                    /**
+                     * <p>提交按钮选择器属性值</p>
+                     */
+                    std::string m_submitValue;
+                    bool m_submitValueHasBeenSet;
 
                 };
             }
