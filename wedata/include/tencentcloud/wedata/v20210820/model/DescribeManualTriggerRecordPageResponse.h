@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool RequestFromSourceHasBeenSet() const;
 
                     /**
-                     * 获取详情结果
+                     * 获取<p>详情结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 详情结果
+                     * @return Data <p>详情结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -86,7 +86,7 @@ namespace TencentCloud
                     bool m_requestFromSourceHasBeenSet;
 
                     /**
-                     * 详情结果
+                     * <p>详情结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ManualTriggerRecordOpsDtoPage m_data;

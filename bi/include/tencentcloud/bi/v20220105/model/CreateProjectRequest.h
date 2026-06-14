@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目名称
-                     * @return Name 项目名称
+                     * 获取<p>项目名称</p>
+                     * @return Name <p>项目名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置项目名称
-                     * @param _name 项目名称
+                     * 设置<p>项目名称</p>
+                     * @param _name <p>项目名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取logo底色
-                     * @return ColorCode logo底色
+                     * 获取<p>logo底色</p>
+                     * @return ColorCode <p>logo底色</p>
                      * 
                      */
                     std::string GetColorCode() const;
 
                     /**
-                     * 设置logo底色
-                     * @param _colorCode logo底色
+                     * 设置<p>logo底色</p>
+                     * @param _colorCode <p>logo底色</p>
                      * 
                      */
                     void SetColorCode(const std::string& _colorCode);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ColorCodeHasBeenSet() const;
 
                     /**
-                     * 获取项目Logo
-                     * @return Logo 项目Logo
+                     * 获取<p>项目Logo</p>
+                     * @return Logo <p>项目Logo</p>
                      * 
                      */
                     std::string GetLogo() const;
 
                     /**
-                     * 设置项目Logo
-                     * @param _logo 项目Logo
+                     * 设置<p>项目Logo</p>
+                     * @param _logo <p>项目Logo</p>
                      * 
                      */
                     void SetLogo(const std::string& _logo);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LogoHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Mark 备注
+                     * 获取<p>备注</p>
+                     * @return Mark <p>备注</p>
                      * 
                      */
                     std::string GetMark() const;
 
                     /**
-                     * 设置备注
-                     * @param _mark 备注
+                     * 设置<p>备注</p>
+                     * @param _mark <p>备注</p>
                      * 
                      */
                     void SetMark(const std::string& _mark);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MarkHasBeenSet() const;
 
                     /**
-                     * 获取是否允许用户申请
-                     * @return IsApply 是否允许用户申请
+                     * 获取<p>是否允许用户申请</p>
+                     * @return IsApply <p>是否允许用户申请</p>
                      * 
                      */
                     bool GetIsApply() const;
 
                     /**
-                     * 设置是否允许用户申请
-                     * @param _isApply 是否允许用户申请
+                     * 设置<p>是否允许用户申请</p>
+                     * @param _isApply <p>是否允许用户申请</p>
                      * 
                      */
                     void SetIsApply(const bool& _isApply);
@@ -148,27 +148,15 @@ namespace TencentCloud
                     bool IsApplyHasBeenSet() const;
 
                     /**
-                     * 获取默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @return DefaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 获取<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @return DefaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     int64_t GetDefaultPanelType() const;
 
                     /**
-                     * 设置默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @param _defaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 设置<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @param _defaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     void SetDefaultPanelType(const int64_t& _defaultPanelType);
@@ -181,15 +169,15 @@ namespace TencentCloud
                     bool DefaultPanelTypeHasBeenSet() const;
 
                     /**
-                     * 获取管理平台
-                     * @return ManagePlatform 管理平台
+                     * 获取<p>管理平台</p>
+                     * @return ManagePlatform <p>管理平台</p>
                      * 
                      */
                     std::string GetManagePlatform() const;
 
                     /**
-                     * 设置管理平台
-                     * @param _managePlatform 管理平台
+                     * 设置<p>管理平台</p>
+                     * @param _managePlatform <p>管理平台</p>
                      * 
                      */
                     void SetManagePlatform(const std::string& _managePlatform);
@@ -204,46 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目名称
+                     * <p>项目名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * logo底色
+                     * <p>logo底色</p>
                      */
                     std::string m_colorCode;
                     bool m_colorCodeHasBeenSet;
 
                     /**
-                     * 项目Logo
+                     * <p>项目Logo</p>
                      */
                     std::string m_logo;
                     bool m_logoHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_mark;
                     bool m_markHasBeenSet;
 
                     /**
-                     * 是否允许用户申请
+                     * <p>是否允许用户申请</p>
                      */
                     bool m_isApply;
                     bool m_isApplyHasBeenSet;
 
                     /**
-                     * 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      */
                     int64_t m_defaultPanelType;
                     bool m_defaultPanelTypeHasBeenSet;
 
                     /**
-                     * 管理平台
+                     * <p>管理平台</p>
                      */
                     std::string m_managePlatform;
                     bool m_managePlatformHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取触发运行名称
-                     * @return TriggerName 触发运行名称
+                     * 获取<p>触发运行名称</p>
+                     * @return TriggerName <p>触发运行名称</p>
                      * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
-                     * 设置触发运行名称
-                     * @param _triggerName 触发运行名称
+                     * 设置<p>触发运行名称</p>
+                     * @param _triggerName <p>触发运行名称</p>
                      * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TriggerNameHasBeenSet() const;
 
                     /**
-                     * 获取工作流过滤关键字，工作流名称 or 工作流ID
-                     * @return WorkflowKeyword 工作流过滤关键字，工作流名称 or 工作流ID
+                     * 获取<p>工作流过滤关键字，工作流名称 or 工作流ID</p>
+                     * @return WorkflowKeyword <p>工作流过滤关键字，工作流名称 or 工作流ID</p>
                      * 
                      */
                     std::string GetWorkflowKeyword() const;
 
                     /**
-                     * 设置工作流过滤关键字，工作流名称 or 工作流ID
-                     * @param _workflowKeyword 工作流过滤关键字，工作流名称 or 工作流ID
+                     * 设置<p>工作流过滤关键字，工作流名称 or 工作流ID</p>
+                     * @param _workflowKeyword <p>工作流过滤关键字，工作流名称 or 工作流ID</p>
                      * 
                      */
                     void SetWorkflowKeyword(const std::string& _workflowKeyword);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool WorkflowKeywordHasBeenSet() const;
 
                     /**
-                     * 获取触发运行提交人过滤，多个提交人用英文逗号分割
-                     * @return Creator 触发运行提交人过滤，多个提交人用英文逗号分割
+                     * 获取<p>触发运行提交人过滤，多个提交人用英文逗号分割</p>
+                     * @return Creator <p>触发运行提交人过滤，多个提交人用英文逗号分割</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置触发运行提交人过滤，多个提交人用英文逗号分割
-                     * @param _creator 触发运行提交人过滤，多个提交人用英文逗号分割
+                     * 设置<p>触发运行提交人过滤，多个提交人用英文逗号分割</p>
+                     * @param _creator <p>触发运行提交人过滤，多个提交人用英文逗号分割</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取触发提交创建时间过滤，起始时间
-                     * @return TriggerStartTime 触发提交创建时间过滤，起始时间
+                     * 获取<p>触发提交创建时间过滤，起始时间</p>
+                     * @return TriggerStartTime <p>触发提交创建时间过滤，起始时间</p>
                      * 
                      */
                     std::string GetTriggerStartTime() const;
 
                     /**
-                     * 设置触发提交创建时间过滤，起始时间
-                     * @param _triggerStartTime 触发提交创建时间过滤，起始时间
+                     * 设置<p>触发提交创建时间过滤，起始时间</p>
+                     * @param _triggerStartTime <p>触发提交创建时间过滤，起始时间</p>
                      * 
                      */
                     void SetTriggerStartTime(const std::string& _triggerStartTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TriggerStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发提交创建时间过滤，结束时间
-                     * @return TriggerEndTime 触发提交创建时间过滤，结束时间
+                     * 获取<p>触发提交创建时间过滤，结束时间</p>
+                     * @return TriggerEndTime <p>触发提交创建时间过滤，结束时间</p>
                      * 
                      */
                     std::string GetTriggerEndTime() const;
 
                     /**
-                     * 设置触发提交创建时间过滤，结束时间
-                     * @param _triggerEndTime 触发提交创建时间过滤，结束时间
+                     * 设置<p>触发提交创建时间过滤，结束时间</p>
+                     * @param _triggerEndTime <p>触发提交创建时间过滤，结束时间</p>
                      * 
                      */
                     void SetTriggerEndTime(const std::string& _triggerEndTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TriggerEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取页码，整型
-                     * @return PageNumber 页码，整型
+                     * 获取<p>页码，整型</p>
+                     * @return PageNumber <p>页码，整型</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码，整型
-                     * @param _pageNumber 页码，整型
+                     * 设置<p>页码，整型</p>
+                     * @param _pageNumber <p>页码，整型</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数目，整型
-                     * @return PageSize 每页数目，整型
+                     * 获取<p>每页数目，整型</p>
+                     * @return PageSize <p>每页数目，整型</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数目，整型
-                     * @param _pageSize 每页数目，整型
+                     * 设置<p>每页数目，整型</p>
+                     * @param _pageSize <p>每页数目，整型</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -210,55 +210,82 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>触发ID</p>
+                     * @return TriggerId <p>触发ID</p>
+                     * 
+                     */
+                    std::string GetTriggerId() const;
+
+                    /**
+                     * 设置<p>触发ID</p>
+                     * @param _triggerId <p>触发ID</p>
+                     * 
+                     */
+                    void SetTriggerId(const std::string& _triggerId);
+
+                    /**
+                     * 判断参数 TriggerId 是否已赋值
+                     * @return TriggerId 是否已赋值
+                     * 
+                     */
+                    bool TriggerIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 触发运行名称
+                     * <p>触发运行名称</p>
                      */
                     std::string m_triggerName;
                     bool m_triggerNameHasBeenSet;
 
                     /**
-                     * 工作流过滤关键字，工作流名称 or 工作流ID
+                     * <p>工作流过滤关键字，工作流名称 or 工作流ID</p>
                      */
                     std::string m_workflowKeyword;
                     bool m_workflowKeywordHasBeenSet;
 
                     /**
-                     * 触发运行提交人过滤，多个提交人用英文逗号分割
+                     * <p>触发运行提交人过滤，多个提交人用英文逗号分割</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 触发提交创建时间过滤，起始时间
+                     * <p>触发提交创建时间过滤，起始时间</p>
                      */
                     std::string m_triggerStartTime;
                     bool m_triggerStartTimeHasBeenSet;
 
                     /**
-                     * 触发提交创建时间过滤，结束时间
+                     * <p>触发提交创建时间过滤，结束时间</p>
                      */
                     std::string m_triggerEndTime;
                     bool m_triggerEndTimeHasBeenSet;
 
                     /**
-                     * 页码，整型
+                     * <p>页码，整型</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数目，整型
+                     * <p>每页数目，整型</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>触发ID</p>
+                     */
+                    std::string m_triggerId;
+                    bool m_triggerIdHasBeenSet;
 
                 };
             }

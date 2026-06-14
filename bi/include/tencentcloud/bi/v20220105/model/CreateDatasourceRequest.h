@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HOST
-                     * @return DbHost HOST
+                     * 获取<p>HOST</p>
+                     * @return DbHost <p>HOST</p>
                      * 
                      */
                     std::string GetDbHost() const;
 
                     /**
-                     * 设置HOST
-                     * @param _dbHost HOST
+                     * 设置<p>HOST</p>
+                     * @param _dbHost <p>HOST</p>
                      * 
                      */
                     void SetDbHost(const std::string& _dbHost);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DbHostHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return DbPort 端口
+                     * 获取<p>端口</p>
+                     * @return DbPort <p>端口</p>
                      * 
                      */
                     uint64_t GetDbPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _dbPort 端口
+                     * 设置<p>端口</p>
+                     * @param _dbPort <p>端口</p>
                      * 
                      */
                     void SetDbPort(const uint64_t& _dbPort);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DbPortHasBeenSet() const;
 
                     /**
-                     * 获取后端提供字典：域类型，1、腾讯云，2、本地
-                     * @return ServiceType 后端提供字典：域类型，1、腾讯云，2、本地
+                     * 获取<p>后端提供字典：域类型，1、腾讯云，2、本地</p>
+                     * @return ServiceType <p>后端提供字典：域类型，1、腾讯云，2、本地</p>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置后端提供字典：域类型，1、腾讯云，2、本地
-                     * @param _serviceType 后端提供字典：域类型，1、腾讯云，2、本地
+                     * 设置<p>后端提供字典：域类型，1、腾讯云，2、本地</p>
+                     * @param _serviceType <p>后端提供字典：域类型，1、腾讯云，2、本地</p>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -106,39 +106,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取驱动
-取值范围：
-MYSQL：MySQL数据库
-PRESTO：PRESTO数据库
-POSTGRE：PostgreSQL数据库
-DLC：DLC数据库
-MSSQL：微软SQL Server数据库
-                     * @return DbType 驱动
-取值范围：
-MYSQL：MySQL数据库
-PRESTO：PRESTO数据库
-POSTGRE：PostgreSQL数据库
-DLC：DLC数据库
-MSSQL：微软SQL Server数据库
+                     * 获取<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>
+                     * @return DbType <p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置驱动
-取值范围：
-MYSQL：MySQL数据库
-PRESTO：PRESTO数据库
-POSTGRE：PostgreSQL数据库
-DLC：DLC数据库
-MSSQL：微软SQL Server数据库
-                     * @param _dbType 驱动
-取值范围：
-MYSQL：MySQL数据库
-PRESTO：PRESTO数据库
-POSTGRE：PostgreSQL数据库
-DLC：DLC数据库
-MSSQL：微软SQL Server数据库
+                     * 设置<p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>
+                     * @param _dbType <p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -151,15 +127,15 @@ MSSQL：微软SQL Server数据库
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库编码
-                     * @return Charset 数据库编码
+                     * 获取<p>数据库编码</p>
+                     * @return Charset <p>数据库编码</p>
                      * 
                      */
                     std::string GetCharset() const;
 
                     /**
-                     * 设置数据库编码
-                     * @param _charset 数据库编码
+                     * 设置<p>数据库编码</p>
+                     * @param _charset <p>数据库编码</p>
                      * 
                      */
                     void SetCharset(const std::string& _charset);
@@ -172,15 +148,15 @@ MSSQL：微软SQL Server数据库
                     bool CharsetHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return DbUser 用户名
+                     * 获取<p>用户名</p>
+                     * @return DbUser <p>用户名</p>
                      * 
                      */
                     std::string GetDbUser() const;
 
                     /**
-                     * 设置用户名
-                     * @param _dbUser 用户名
+                     * 设置<p>用户名</p>
+                     * @param _dbUser <p>用户名</p>
                      * 
                      */
                     void SetDbUser(const std::string& _dbUser);
@@ -193,15 +169,15 @@ MSSQL：微软SQL Server数据库
                     bool DbUserHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return DbPwd 密码
+                     * 获取<p>密码</p>
+                     * @return DbPwd <p>密码</p>
                      * 
                      */
                     std::string GetDbPwd() const;
 
                     /**
-                     * 设置密码
-                     * @param _dbPwd 密码
+                     * 设置<p>密码</p>
+                     * @param _dbPwd <p>密码</p>
                      * 
                      */
                     void SetDbPwd(const std::string& _dbPwd);
@@ -214,15 +190,15 @@ MSSQL：微软SQL Server数据库
                     bool DbPwdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名称
-                     * @return DbName 数据库名称
+                     * 获取<p>数据库名称</p>
+                     * @return DbName <p>数据库名称</p>
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置数据库名称
-                     * @param _dbName 数据库名称
+                     * 设置<p>数据库名称</p>
+                     * @param _dbName <p>数据库名称</p>
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -235,15 +211,15 @@ MSSQL：微软SQL Server数据库
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库别名
-                     * @return SourceName 数据库别名
+                     * 获取<p>数据库别名</p>
+                     * @return SourceName <p>数据库别名</p>
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
-                     * 设置数据库别名
-                     * @param _sourceName 数据库别名
+                     * 设置<p>数据库别名</p>
+                     * @param _sourceName <p>数据库别名</p>
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -256,15 +232,15 @@ MSSQL：微软SQL Server数据库
                     bool SourceNameHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -277,15 +253,15 @@ MSSQL：微软SQL Server数据库
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取catalog值
-                     * @return Catalog catalog值
+                     * 获取<p>catalog值</p>
+                     * @return Catalog <p>catalog值</p>
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
-                     * 设置catalog值
-                     * @param _catalog catalog值
+                     * 设置<p>catalog值</p>
+                     * @param _catalog <p>catalog值</p>
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -298,15 +274,15 @@ MSSQL：微软SQL Server数据库
                     bool CatalogHasBeenSet() const;
 
                     /**
-                     * 获取第三方数据源标识
-                     * @return DataOrigin 第三方数据源标识
+                     * 获取<p>第三方数据源标识</p>
+                     * @return DataOrigin <p>第三方数据源标识</p>
                      * 
                      */
                     std::string GetDataOrigin() const;
 
                     /**
-                     * 设置第三方数据源标识
-                     * @param _dataOrigin 第三方数据源标识
+                     * 设置<p>第三方数据源标识</p>
+                     * @param _dataOrigin <p>第三方数据源标识</p>
                      * 
                      */
                     void SetDataOrigin(const std::string& _dataOrigin);
@@ -319,15 +295,15 @@ MSSQL：微软SQL Server数据库
                     bool DataOriginHasBeenSet() const;
 
                     /**
-                     * 获取第三方项目id
-                     * @return DataOriginProjectId 第三方项目id
+                     * 获取<p>第三方项目id</p>
+                     * @return DataOriginProjectId <p>第三方项目id</p>
                      * 
                      */
                     std::string GetDataOriginProjectId() const;
 
                     /**
-                     * 设置第三方项目id
-                     * @param _dataOriginProjectId 第三方项目id
+                     * 设置<p>第三方项目id</p>
+                     * @param _dataOriginProjectId <p>第三方项目id</p>
                      * 
                      */
                     void SetDataOriginProjectId(const std::string& _dataOriginProjectId);
@@ -340,15 +316,15 @@ MSSQL：微软SQL Server数据库
                     bool DataOriginProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方数据源id
-                     * @return DataOriginDatasourceId 第三方数据源id
+                     * 获取<p>第三方数据源id</p>
+                     * @return DataOriginDatasourceId <p>第三方数据源id</p>
                      * 
                      */
                     std::string GetDataOriginDatasourceId() const;
 
                     /**
-                     * 设置第三方数据源id
-                     * @param _dataOriginDatasourceId 第三方数据源id
+                     * 设置<p>第三方数据源id</p>
+                     * @param _dataOriginDatasourceId <p>第三方数据源id</p>
                      * 
                      */
                     void SetDataOriginDatasourceId(const std::string& _dataOriginDatasourceId);
@@ -361,15 +337,15 @@ MSSQL：微软SQL Server数据库
                     bool DataOriginDatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展参数
-                     * @return ExtraParam 扩展参数
+                     * 获取<p>扩展参数</p>
+                     * @return ExtraParam <p>扩展参数</p>
                      * 
                      */
                     std::string GetExtraParam() const;
 
                     /**
-                     * 设置扩展参数
-                     * @param _extraParam 扩展参数
+                     * 设置<p>扩展参数</p>
+                     * @param _extraParam <p>扩展参数</p>
                      * 
                      */
                     void SetExtraParam(const std::string& _extraParam);
@@ -382,15 +358,15 @@ MSSQL：微软SQL Server数据库
                     bool ExtraParamHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云私有网络统一标识
-                     * @return UniqVpcId 腾讯云私有网络统一标识
+                     * 获取<p>腾讯云私有网络统一标识</p>
+                     * @return UniqVpcId <p>腾讯云私有网络统一标识</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置腾讯云私有网络统一标识
-                     * @param _uniqVpcId 腾讯云私有网络统一标识
+                     * 设置<p>腾讯云私有网络统一标识</p>
+                     * @param _uniqVpcId <p>腾讯云私有网络统一标识</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -403,15 +379,15 @@ MSSQL：微软SQL Server数据库
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ip
-                     * @return Vip 私有网络ip
+                     * 获取<p>私有网络ip</p>
+                     * @return Vip <p>私有网络ip</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置私有网络ip
-                     * @param _vip 私有网络ip
+                     * 设置<p>私有网络ip</p>
+                     * @param _vip <p>私有网络ip</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -424,15 +400,15 @@ MSSQL：微软SQL Server数据库
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取私有网络端口
-                     * @return Vport 私有网络端口
+                     * 获取<p>私有网络端口</p>
+                     * @return Vport <p>私有网络端口</p>
                      * 
                      */
                     std::string GetVport() const;
 
                     /**
-                     * 设置私有网络端口
-                     * @param _vport 私有网络端口
+                     * 设置<p>私有网络端口</p>
+                     * @param _vport <p>私有网络端口</p>
                      * 
                      */
                     void SetVport(const std::string& _vport);
@@ -445,15 +421,15 @@ MSSQL：微软SQL Server数据库
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云私有网络标识
-                     * @return VpcId 腾讯云私有网络标识
+                     * 获取<p>腾讯云私有网络标识</p>
+                     * @return VpcId <p>腾讯云私有网络标识</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置腾讯云私有网络标识
-                     * @param _vpcId 腾讯云私有网络标识
+                     * 设置<p>腾讯云私有网络标识</p>
+                     * @param _vpcId <p>腾讯云私有网络标识</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -466,15 +442,15 @@ MSSQL：微软SQL Server数据库
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取操作权限限制
-                     * @return OperationAuthLimit 操作权限限制
+                     * 获取<p>操作权限限制</p>
+                     * @return OperationAuthLimit <p>操作权限限制</p>
                      * 
                      */
                     std::vector<std::string> GetOperationAuthLimit() const;
 
                     /**
-                     * 设置操作权限限制
-                     * @param _operationAuthLimit 操作权限限制
+                     * 设置<p>操作权限限制</p>
+                     * @param _operationAuthLimit <p>操作权限限制</p>
                      * 
                      */
                     void SetOperationAuthLimit(const std::vector<std::string>& _operationAuthLimit);
@@ -487,15 +463,15 @@ MSSQL：微软SQL Server数据库
                     bool OperationAuthLimitHasBeenSet() const;
 
                     /**
-                     * 获取开启vpc
-                     * @return UseVPC 开启vpc
+                     * 获取<p>开启vpc</p>
+                     * @return UseVPC <p>开启vpc</p>
                      * 
                      */
                     bool GetUseVPC() const;
 
                     /**
-                     * 设置开启vpc
-                     * @param _useVPC 开启vpc
+                     * 设置<p>开启vpc</p>
+                     * @param _useVPC <p>开启vpc</p>
                      * 
                      */
                     void SetUseVPC(const bool& _useVPC);
@@ -508,15 +484,15 @@ MSSQL：微软SQL Server数据库
                     bool UseVPCHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return RegionId 地域
+                     * 获取<p>地域</p>
+                     * @return RegionId <p>地域</p>
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置地域
-                     * @param _regionId 地域
+                     * 设置<p>地域</p>
+                     * @param _regionId <p>地域</p>
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -529,15 +505,15 @@ MSSQL：微软SQL Server数据库
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库schema
-                     * @return Schema 数据库schema
+                     * 获取<p>数据库schema</p>
+                     * @return Schema <p>数据库schema</p>
                      * 
                      */
                     std::string GetSchema() const;
 
                     /**
-                     * 设置数据库schema
-                     * @param _schema 数据库schema
+                     * 设置<p>数据库schema</p>
+                     * @param _schema <p>数据库schema</p>
                      * 
                      */
                     void SetSchema(const std::string& _schema);
@@ -550,15 +526,15 @@ MSSQL：微软SQL Server数据库
                     bool SchemaHasBeenSet() const;
 
                     /**
-                     * 获取数据库版本
-                     * @return DbVersion 数据库版本
+                     * 获取<p>数据库版本</p>
+                     * @return DbVersion <p>数据库版本</p>
                      * 
                      */
                     std::string GetDbVersion() const;
 
                     /**
-                     * 设置数据库版本
-                     * @param _dbVersion 数据库版本
+                     * 设置<p>数据库版本</p>
+                     * @param _dbVersion <p>数据库版本</p>
                      * 
                      */
                     void SetDbVersion(const std::string& _dbVersion);
@@ -573,151 +549,145 @@ MSSQL：微软SQL Server数据库
                 private:
 
                     /**
-                     * HOST
+                     * <p>HOST</p>
                      */
                     std::string m_dbHost;
                     bool m_dbHostHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     uint64_t m_dbPort;
                     bool m_dbPortHasBeenSet;
 
                     /**
-                     * 后端提供字典：域类型，1、腾讯云，2、本地
+                     * <p>后端提供字典：域类型，1、腾讯云，2、本地</p>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 驱动
-取值范围：
-MYSQL：MySQL数据库
-PRESTO：PRESTO数据库
-POSTGRE：PostgreSQL数据库
-DLC：DLC数据库
-MSSQL：微软SQL Server数据库
+                     * <p>驱动</p><p>枚举值：</p><ul><li>MYSQL： MySQL数据库</li><li>PRESTO： PRESTO数据库</li><li>POSTGRE： PostgreSQL数据库</li><li>DLC： DLC数据库</li><li>MSSQL： 微软SQL Server数据库</li></ul>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 数据库编码
+                     * <p>数据库编码</p>
                      */
                     std::string m_charset;
                     bool m_charsetHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_dbUser;
                     bool m_dbUserHasBeenSet;
 
                     /**
-                     * 密码
+                     * <p>密码</p>
                      */
                     std::string m_dbPwd;
                     bool m_dbPwdHasBeenSet;
 
                     /**
-                     * 数据库名称
+                     * <p>数据库名称</p>
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 数据库别名
+                     * <p>数据库别名</p>
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * catalog值
+                     * <p>catalog值</p>
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
-                     * 第三方数据源标识
+                     * <p>第三方数据源标识</p>
                      */
                     std::string m_dataOrigin;
                     bool m_dataOriginHasBeenSet;
 
                     /**
-                     * 第三方项目id
+                     * <p>第三方项目id</p>
                      */
                     std::string m_dataOriginProjectId;
                     bool m_dataOriginProjectIdHasBeenSet;
 
                     /**
-                     * 第三方数据源id
+                     * <p>第三方数据源id</p>
                      */
                     std::string m_dataOriginDatasourceId;
                     bool m_dataOriginDatasourceIdHasBeenSet;
 
                     /**
-                     * 扩展参数
+                     * <p>扩展参数</p>
                      */
                     std::string m_extraParam;
                     bool m_extraParamHasBeenSet;
 
                     /**
-                     * 腾讯云私有网络统一标识
+                     * <p>腾讯云私有网络统一标识</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * 私有网络ip
+                     * <p>私有网络ip</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 私有网络端口
+                     * <p>私有网络端口</p>
                      */
                     std::string m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 腾讯云私有网络标识
+                     * <p>腾讯云私有网络标识</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 操作权限限制
+                     * <p>操作权限限制</p>
                      */
                     std::vector<std::string> m_operationAuthLimit;
                     bool m_operationAuthLimitHasBeenSet;
 
                     /**
-                     * 开启vpc
+                     * <p>开启vpc</p>
                      */
                     bool m_useVPC;
                     bool m_useVPCHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 数据库schema
+                     * <p>数据库schema</p>
                      */
                     std::string m_schema;
                     bool m_schemaHasBeenSet;
 
                     /**
-                     * 数据库版本
+                     * <p>数据库版本</p>
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;

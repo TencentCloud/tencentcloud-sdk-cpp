@@ -27,6 +27,8 @@
 #include <tencentcloud/dataagent/v20250513/model/AddChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/AddSceneRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/AddSceneResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ChatAIRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/ChatAIResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QuerySceneListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QuerySceneListResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h>
@@ -87,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddSceneResponse> AddSceneOutcome;
                 typedef std::future<AddSceneOutcome> AddSceneOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::AddSceneRequest&, AddSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSceneAsyncHandler;
+                typedef Outcome<Core::Error, Model::AppendKnowledgeTaskResponse> AppendKnowledgeTaskOutcome;
+                typedef std::future<AppendKnowledgeTaskOutcome> AppendKnowledgeTaskOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::AppendKnowledgeTaskRequest&, AppendKnowledgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AppendKnowledgeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChatAIResponse> ChatAIOutcome;
                 typedef std::future<ChatAIOutcome> ChatAIOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::ChatAIRequest&, ChatAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatAIAsyncHandler;
@@ -132,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryChunkListResponse> QueryChunkListOutcome;
                 typedef std::future<QueryChunkListOutcome> QueryChunkListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryChunkListRequest&, QueryChunkListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChunkListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryKnowledgeTaskResponse> QueryKnowledgeTaskOutcome;
+                typedef std::future<QueryKnowledgeTaskOutcome> QueryKnowledgeTaskOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::QueryKnowledgeTaskRequest&, QueryKnowledgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryKnowledgeTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuerySceneListResponse> QuerySceneListOutcome;
                 typedef std::future<QuerySceneListOutcome> QuerySceneListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QuerySceneListRequest&, QuerySceneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuerySceneListAsyncHandler;
@@ -167,6 +177,15 @@ namespace TencentCloud
                 AddSceneOutcome AddScene(const Model::AddSceneRequest &request);
                 void AddSceneAsync(const Model::AddSceneRequest& request, const AddSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddSceneOutcomeCallable AddSceneCallable(const Model::AddSceneRequest& request);
+
+                /**
+                 *追加文件
+                 * @param req AppendKnowledgeTaskRequest
+                 * @return AppendKnowledgeTaskOutcome
+                 */
+                AppendKnowledgeTaskOutcome AppendKnowledgeTask(const Model::AppendKnowledgeTaskRequest &request);
+                void AppendKnowledgeTaskAsync(const Model::AppendKnowledgeTaskRequest& request, const AppendKnowledgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AppendKnowledgeTaskOutcomeCallable AppendKnowledgeTaskCallable(const Model::AppendKnowledgeTaskRequest& request);
 
                 /**
                  *提供DataAgent 产品服务API
@@ -302,6 +321,15 @@ namespace TencentCloud
                 QueryChunkListOutcome QueryChunkList(const Model::QueryChunkListRequest &request);
                 void QueryChunkListAsync(const Model::QueryChunkListRequest& request, const QueryChunkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryChunkListOutcomeCallable QueryChunkListCallable(const Model::QueryChunkListRequest& request);
+
+                /**
+                 *查询文件任务状态
+                 * @param req QueryKnowledgeTaskRequest
+                 * @return QueryKnowledgeTaskOutcome
+                 */
+                QueryKnowledgeTaskOutcome QueryKnowledgeTask(const Model::QueryKnowledgeTaskRequest &request);
+                void QueryKnowledgeTaskAsync(const Model::QueryKnowledgeTaskRequest& request, const QueryKnowledgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryKnowledgeTaskOutcomeCallable QueryKnowledgeTaskCallable(const Model::QueryKnowledgeTaskRequest& request);
 
                 /**
                  *查询场景列表

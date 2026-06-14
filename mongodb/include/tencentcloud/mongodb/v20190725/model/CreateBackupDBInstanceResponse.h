@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询备份流程的状态。
-                     * @return AsyncRequestId 查询备份流程的状态。
+                     * 获取<p>查询备份流程的状态。</p>
+                     * @return AsyncRequestId <p>查询备份流程的状态。</p>
                      * 
                      */
                     std::string GetAsyncRequestId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询备份流程的状态。
+                     * <p>查询备份流程的状态。</p>
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

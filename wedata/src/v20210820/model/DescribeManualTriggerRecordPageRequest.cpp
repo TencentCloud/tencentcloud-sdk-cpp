@@ -30,7 +30,8 @@ DescribeManualTriggerRecordPageRequest::DescribeManualTriggerRecordPageRequest()
     m_triggerStartTimeHasBeenSet(false),
     m_triggerEndTimeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_triggerIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeManualTriggerRecordPageRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_triggerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeManualTriggerRecordPageRequest::SetPageSize(const uint64_t& _pageSi
 bool DescribeManualTriggerRecordPageRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeManualTriggerRecordPageRequest::GetTriggerId() const
+{
+    return m_triggerId;
+}
+
+void DescribeManualTriggerRecordPageRequest::SetTriggerId(const string& _triggerId)
+{
+    m_triggerId = _triggerId;
+    m_triggerIdHasBeenSet = true;
+}
+
+bool DescribeManualTriggerRecordPageRequest::TriggerIdHasBeenSet() const
+{
+    return m_triggerIdHasBeenSet;
 }
 
 

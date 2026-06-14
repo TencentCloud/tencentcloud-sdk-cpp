@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取<p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
-                     * @return District <p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
+                     * 获取<p>Area 为 overseas 时，仅支持地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
+                     * @return District <p>Area 为 overseas 时，仅支持地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
                      * 
                      */
                     int64_t GetDistrict() const;
 
                     /**
-                     * 设置<p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
-                     * @param _district <p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
+                     * 设置<p>Area 为 overseas 时，仅支持地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
+                     * @param _district <p>Area 为 overseas 时，仅支持地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
                      * 
                      */
                     void SetDistrict(const int64_t& _district);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_areaHasBeenSet;
 
                     /**
-                     * <p>Area 为 overseas 时，指定国家/地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
+                     * <p>Area 为 overseas 时，仅支持地区查询<br>省份、国家/地区编码可以查看 <a href="https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84">省份编码映射</a><br>不填充时，查询所有国家/地区</p>
                      */
                     int64_t m_district;
                     bool m_districtHasBeenSet;

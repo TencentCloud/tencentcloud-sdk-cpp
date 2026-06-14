@@ -37,8 +37,6 @@
 #include <tencentcloud/tsf/v20180326/model/BindPluginResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusResponse.h>
-#include <tencentcloud/tsf/v20180326/model/ContinueRunFailedTaskBatchRequest.h>
-#include <tencentcloud/tsf/v20180326/model/ContinueRunFailedTaskBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateAllGatewayApiAsyncRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateAllGatewayApiAsyncResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateApiGroupRequest.h>
@@ -91,10 +89,6 @@
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigWithDetailRespResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateRepositoryResponse.h>
-#include <tencentcloud/tsf/v20180326/model/CreateTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/CreateTaskResponse.h>
-#include <tencentcloud/tsf/v20180326/model/CreateTaskFlowRequest.h>
-#include <tencentcloud/tsf/v20180326/model/CreateTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateUnitRuleRequest.h>
@@ -139,10 +133,6 @@
 #include <tencentcloud/tsf/v20180326/model/DeletePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteRepositoryRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteRepositoryResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DeleteServerlessGroupResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DeleteTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DeleteTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteUnitRuleRequest.h>
@@ -219,8 +209,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeFileConfigReleasesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeFileConfigsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeFileConfigsResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayAllGroupApisRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayAllGroupApisResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayApisRequest.h>
@@ -323,12 +311,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeSimpleNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeStatisticsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeStatisticsResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskRecordsRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeTaskRecordsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitNamespacesRequest.h>
@@ -345,10 +327,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeUsableUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DisableLaneRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DisableLaneRuleResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DisableTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DisableTaskResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DisableTaskFlowRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DisableTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DisableUnitRouteRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DisableUnitRouteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DisableUnitRuleRequest.h>
@@ -361,18 +339,10 @@
 #include <tencentcloud/tsf/v20180326/model/DraftApiGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/EnableLaneRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/EnableLaneRuleResponse.h>
-#include <tencentcloud/tsf/v20180326/model/EnableTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/EnableTaskResponse.h>
-#include <tencentcloud/tsf/v20180326/model/EnableTaskFlowRequest.h>
-#include <tencentcloud/tsf/v20180326/model/EnableTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/EnableUnitRouteRequest.h>
 #include <tencentcloud/tsf/v20180326/model/EnableUnitRouteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/EnableUnitRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/EnableUnitRuleResponse.h>
-#include <tencentcloud/tsf/v20180326/model/ExecuteTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/ExecuteTaskResponse.h>
-#include <tencentcloud/tsf/v20180326/model/ExecuteTaskFlowRequest.h>
-#include <tencentcloud/tsf/v20180326/model/ExecuteTaskFlowResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ExpandGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ExpandGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyApplicationRequest.h>
@@ -399,22 +369,12 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyPathRewriteResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyProgramRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyProgramResponse.h>
-#include <tencentcloud/tsf/v20180326/model/ModifyTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/ModifyTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingRequest.h>
 #include <tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReassociateBusinessLogConfigResponse.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskRequest.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskResponse.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskBatchRequest.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskBatchResponse.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskExecuteRequest.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskExecuteResponse.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchRequest.h>
-#include <tencentcloud/tsf/v20180326/model/RedoTaskFlowBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseApiGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseApiGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
@@ -451,12 +411,6 @@
 #include <tencentcloud/tsf/v20180326/model/StopContainerGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/StopGroupResponse.h>
-#include <tencentcloud/tsf/v20180326/model/StopTaskBatchRequest.h>
-#include <tencentcloud/tsf/v20180326/model/StopTaskBatchResponse.h>
-#include <tencentcloud/tsf/v20180326/model/StopTaskExecuteRequest.h>
-#include <tencentcloud/tsf/v20180326/model/StopTaskExecuteResponse.h>
-#include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchRequest.h>
-#include <tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchResponse.h>
 #include <tencentcloud/tsf/v20180326/model/UnbindApiGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/UnbindApiGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/UpdateApiGroupRequest.h>
@@ -512,9 +466,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChangeApiUsableStatusResponse> ChangeApiUsableStatusOutcome;
                 typedef std::future<ChangeApiUsableStatusOutcome> ChangeApiUsableStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ChangeApiUsableStatusRequest&, ChangeApiUsableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeApiUsableStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ContinueRunFailedTaskBatchResponse> ContinueRunFailedTaskBatchOutcome;
-                typedef std::future<ContinueRunFailedTaskBatchOutcome> ContinueRunFailedTaskBatchOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::ContinueRunFailedTaskBatchRequest&, ContinueRunFailedTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ContinueRunFailedTaskBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAllGatewayApiAsyncResponse> CreateAllGatewayApiAsyncOutcome;
                 typedef std::future<CreateAllGatewayApiAsyncOutcome> CreateAllGatewayApiAsyncOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateAllGatewayApiAsyncRequest&, CreateAllGatewayApiAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllGatewayApiAsyncAsyncHandler;
@@ -593,12 +544,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRepositoryResponse> CreateRepositoryOutcome;
                 typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateRepositoryRequest&, CreateRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
-                typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateTaskFlowResponse> CreateTaskFlowOutcome;
-                typedef std::future<CreateTaskFlowOutcome> CreateTaskFlowOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::CreateTaskFlowRequest&, CreateTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUnitNamespacesResponse> CreateUnitNamespacesOutcome;
                 typedef std::future<CreateUnitNamespacesOutcome> CreateUnitNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateUnitNamespacesRequest&, CreateUnitNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUnitNamespacesAsyncHandler;
@@ -665,12 +610,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRepositoryResponse> DeleteRepositoryOutcome;
                 typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteRepositoryRequest&, DeleteRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteServerlessGroupResponse> DeleteServerlessGroupOutcome;
-                typedef std::future<DeleteServerlessGroupOutcome> DeleteServerlessGroupOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DeleteServerlessGroupRequest&, DeleteServerlessGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteTaskResponse> DeleteTaskOutcome;
-                typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DeleteTaskRequest&, DeleteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUnitNamespacesResponse> DeleteUnitNamespacesOutcome;
                 typedef std::future<DeleteUnitNamespacesOutcome> DeleteUnitNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteUnitNamespacesRequest&, DeleteUnitNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUnitNamespacesAsyncHandler;
@@ -785,9 +724,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFileConfigsResponse> DescribeFileConfigsOutcome;
                 typedef std::future<DescribeFileConfigsOutcome> DescribeFileConfigsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeFileConfigsRequest&, DescribeFileConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileConfigsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFlowLastBatchStateResponse> DescribeFlowLastBatchStateOutcome;
-                typedef std::future<DescribeFlowLastBatchStateOutcome> DescribeFlowLastBatchStateOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeFlowLastBatchStateRequest&, DescribeFlowLastBatchStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowLastBatchStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewayAllGroupApisResponse> DescribeGatewayAllGroupApisOutcome;
                 typedef std::future<DescribeGatewayAllGroupApisOutcome> DescribeGatewayAllGroupApisOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeGatewayAllGroupApisRequest&, DescribeGatewayAllGroupApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayAllGroupApisAsyncHandler;
@@ -941,15 +877,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStatisticsResponse> DescribeStatisticsOutcome;
                 typedef std::future<DescribeStatisticsOutcome> DescribeStatisticsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeStatisticsRequest&, DescribeStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
-                typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTaskLastStatusResponse> DescribeTaskLastStatusOutcome;
-                typedef std::future<DescribeTaskLastStatusOutcome> DescribeTaskLastStatusOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeTaskLastStatusRequest&, DescribeTaskLastStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLastStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTaskRecordsResponse> DescribeTaskRecordsOutcome;
-                typedef std::future<DescribeTaskRecordsOutcome> DescribeTaskRecordsOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeTaskRecordsRequest&, DescribeTaskRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUnitApiUseDetailResponse> DescribeUnitApiUseDetailOutcome;
                 typedef std::future<DescribeUnitApiUseDetailOutcome> DescribeUnitApiUseDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUnitApiUseDetailRequest&, DescribeUnitApiUseDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitApiUseDetailAsyncHandler;
@@ -974,12 +901,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableLaneRuleResponse> DisableLaneRuleOutcome;
                 typedef std::future<DisableLaneRuleOutcome> DisableLaneRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DisableLaneRuleRequest&, DisableLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableLaneRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::DisableTaskResponse> DisableTaskOutcome;
-                typedef std::future<DisableTaskOutcome> DisableTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DisableTaskRequest&, DisableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::DisableTaskFlowResponse> DisableTaskFlowOutcome;
-                typedef std::future<DisableTaskFlowOutcome> DisableTaskFlowOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DisableTaskFlowRequest&, DisableTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTaskFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableUnitRouteResponse> DisableUnitRouteOutcome;
                 typedef std::future<DisableUnitRouteOutcome> DisableUnitRouteOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DisableUnitRouteRequest&, DisableUnitRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableUnitRouteAsyncHandler;
@@ -998,24 +919,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableLaneRuleResponse> EnableLaneRuleOutcome;
                 typedef std::future<EnableLaneRuleOutcome> EnableLaneRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::EnableLaneRuleRequest&, EnableLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableLaneRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::EnableTaskResponse> EnableTaskOutcome;
-                typedef std::future<EnableTaskOutcome> EnableTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::EnableTaskRequest&, EnableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::EnableTaskFlowResponse> EnableTaskFlowOutcome;
-                typedef std::future<EnableTaskFlowOutcome> EnableTaskFlowOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::EnableTaskFlowRequest&, EnableTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTaskFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableUnitRouteResponse> EnableUnitRouteOutcome;
                 typedef std::future<EnableUnitRouteOutcome> EnableUnitRouteOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::EnableUnitRouteRequest&, EnableUnitRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableUnitRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableUnitRuleResponse> EnableUnitRuleOutcome;
                 typedef std::future<EnableUnitRuleOutcome> EnableUnitRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::EnableUnitRuleRequest&, EnableUnitRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableUnitRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::ExecuteTaskResponse> ExecuteTaskOutcome;
-                typedef std::future<ExecuteTaskOutcome> ExecuteTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::ExecuteTaskRequest&, ExecuteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::ExecuteTaskFlowResponse> ExecuteTaskFlowOutcome;
-                typedef std::future<ExecuteTaskFlowOutcome> ExecuteTaskFlowOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::ExecuteTaskFlowRequest&, ExecuteTaskFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteTaskFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExpandGroupResponse> ExpandGroupOutcome;
                 typedef std::future<ExpandGroupOutcome> ExpandGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ExpandGroupRequest&, ExpandGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandGroupAsyncHandler;
@@ -1055,9 +964,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProgramResponse> ModifyProgramOutcome;
                 typedef std::future<ModifyProgramOutcome> ModifyProgramOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyProgramRequest&, ModifyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProgramAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyTaskResponse> ModifyTaskOutcome;
-                typedef std::future<ModifyTaskOutcome> ModifyTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::ModifyTaskRequest&, ModifyTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUploadInfoResponse> ModifyUploadInfoOutcome;
                 typedef std::future<ModifyUploadInfoOutcome> ModifyUploadInfoOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyUploadInfoRequest&, ModifyUploadInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUploadInfoAsyncHandler;
@@ -1067,18 +973,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReassociateBusinessLogConfigResponse> ReassociateBusinessLogConfigOutcome;
                 typedef std::future<ReassociateBusinessLogConfigOutcome> ReassociateBusinessLogConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReassociateBusinessLogConfigRequest&, ReassociateBusinessLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReassociateBusinessLogConfigAsyncHandler;
-                typedef Outcome<Core::Error, Model::RedoTaskResponse> RedoTaskOutcome;
-                typedef std::future<RedoTaskOutcome> RedoTaskOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::RedoTaskRequest&, RedoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::RedoTaskBatchResponse> RedoTaskBatchOutcome;
-                typedef std::future<RedoTaskBatchOutcome> RedoTaskBatchOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::RedoTaskBatchRequest&, RedoTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskBatchAsyncHandler;
-                typedef Outcome<Core::Error, Model::RedoTaskExecuteResponse> RedoTaskExecuteOutcome;
-                typedef std::future<RedoTaskExecuteOutcome> RedoTaskExecuteOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::RedoTaskExecuteRequest&, RedoTaskExecuteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskExecuteAsyncHandler;
-                typedef Outcome<Core::Error, Model::RedoTaskFlowBatchResponse> RedoTaskFlowBatchOutcome;
-                typedef std::future<RedoTaskFlowBatchOutcome> RedoTaskFlowBatchOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::RedoTaskFlowBatchRequest&, RedoTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RedoTaskFlowBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseApiGroupResponse> ReleaseApiGroupOutcome;
                 typedef std::future<ReleaseApiGroupOutcome> ReleaseApiGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReleaseApiGroupRequest&, ReleaseApiGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseApiGroupAsyncHandler;
@@ -1133,15 +1027,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopGroupResponse> StopGroupOutcome;
                 typedef std::future<StopGroupOutcome> StopGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::StopGroupRequest&, StopGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::StopTaskBatchResponse> StopTaskBatchOutcome;
-                typedef std::future<StopTaskBatchOutcome> StopTaskBatchOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::StopTaskBatchRequest&, StopTaskBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskBatchAsyncHandler;
-                typedef Outcome<Core::Error, Model::StopTaskExecuteResponse> StopTaskExecuteOutcome;
-                typedef std::future<StopTaskExecuteOutcome> StopTaskExecuteOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::StopTaskExecuteRequest&, StopTaskExecuteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskExecuteAsyncHandler;
-                typedef Outcome<Core::Error, Model::TerminateTaskFlowBatchResponse> TerminateTaskFlowBatchOutcome;
-                typedef std::future<TerminateTaskFlowBatchOutcome> TerminateTaskFlowBatchOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::TerminateTaskFlowBatchRequest&, TerminateTaskFlowBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTaskFlowBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindApiGroupResponse> UnbindApiGroupOutcome;
                 typedef std::future<UnbindApiGroupOutcome> UnbindApiGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::UnbindApiGroupRequest&, UnbindApiGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindApiGroupAsyncHandler;
@@ -1237,17 +1122,6 @@ namespace TencentCloud
                 ChangeApiUsableStatusOutcome ChangeApiUsableStatus(const Model::ChangeApiUsableStatusRequest &request);
                 void ChangeApiUsableStatusAsync(const Model::ChangeApiUsableStatusRequest& request, const ChangeApiUsableStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChangeApiUsableStatusOutcomeCallable ChangeApiUsableStatusCallable(const Model::ChangeApiUsableStatusRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-对执行失败的任务批次执行续跑
-                 * @param req ContinueRunFailedTaskBatchRequest
-                 * @return ContinueRunFailedTaskBatchOutcome
-                 */
-                ContinueRunFailedTaskBatchOutcome ContinueRunFailedTaskBatch(const Model::ContinueRunFailedTaskBatchRequest &request);
-                void ContinueRunFailedTaskBatchAsync(const Model::ContinueRunFailedTaskBatchRequest& request, const ContinueRunFailedTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ContinueRunFailedTaskBatchOutcomeCallable ContinueRunFailedTaskBatchCallable(const Model::ContinueRunFailedTaskBatchRequest& request);
 
                 /**
                  *一键导入API分组
@@ -1484,28 +1358,6 @@ namespace TencentCloud
                 CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request);
 
                 /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-创建任务
-                 * @param req CreateTaskRequest
-                 * @return CreateTaskOutcome
-                 */
-                CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
-                void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-创建工作流
-                 * @param req CreateTaskFlowRequest
-                 * @return CreateTaskFlowOutcome
-                 */
-                CreateTaskFlowOutcome CreateTaskFlow(const Model::CreateTaskFlowRequest &request);
-                void CreateTaskFlowAsync(const Model::CreateTaskFlowRequest& request, const CreateTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateTaskFlowOutcomeCallable CreateTaskFlowCallable(const Model::CreateTaskFlowRequest& request);
-
-                /**
                  *批量创建单元化命名空间
                  * @param req CreateUnitNamespacesRequest
                  * @return CreateUnitNamespacesOutcome
@@ -1703,28 +1555,6 @@ namespace TencentCloud
                 DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest &request);
                 void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request);
-
-                /**
-                 *serverless 能力已下线。下线对应接口。
-
-删除Serverless部署组
-                 * @param req DeleteServerlessGroupRequest
-                 * @return DeleteServerlessGroupOutcome
-                 */
-                DeleteServerlessGroupOutcome DeleteServerlessGroup(const Model::DeleteServerlessGroupRequest &request);
-                void DeleteServerlessGroupAsync(const Model::DeleteServerlessGroupRequest& request, const DeleteServerlessGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteServerlessGroupOutcomeCallable DeleteServerlessGroupCallable(const Model::DeleteServerlessGroupRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-删除任务
-                 * @param req DeleteTaskRequest
-                 * @return DeleteTaskOutcome
-                 */
-                DeleteTaskOutcome DeleteTask(const Model::DeleteTaskRequest &request);
-                void DeleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
 
                 /**
                  *删除单元化命名空间
@@ -2071,17 +1901,6 @@ namespace TencentCloud
                 DescribeFileConfigsOutcome DescribeFileConfigs(const Model::DescribeFileConfigsRequest &request);
                 void DescribeFileConfigsAsync(const Model::DescribeFileConfigsRequest& request, const DescribeFileConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFileConfigsOutcomeCallable DescribeFileConfigsCallable(const Model::DescribeFileConfigsRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-查询工作流最新一个批次的状态信息
-                 * @param req DescribeFlowLastBatchStateRequest
-                 * @return DescribeFlowLastBatchStateOutcome
-                 */
-                DescribeFlowLastBatchStateOutcome DescribeFlowLastBatchState(const Model::DescribeFlowLastBatchStateRequest &request);
-                void DescribeFlowLastBatchStateAsync(const Model::DescribeFlowLastBatchStateRequest& request, const DescribeFlowLastBatchStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFlowLastBatchStateOutcomeCallable DescribeFlowLastBatchStateCallable(const Model::DescribeFlowLastBatchStateRequest& request);
 
                 /**
                  *查询网关所有分组下Api列表
@@ -2543,39 +2362,6 @@ namespace TencentCloud
                 DescribeStatisticsOutcomeCallable DescribeStatisticsCallable(const Model::DescribeStatisticsRequest& request);
 
                 /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-查询任务详情
-                 * @param req DescribeTaskDetailRequest
-                 * @return DescribeTaskDetailOutcome
-                 */
-                DescribeTaskDetailOutcome DescribeTaskDetail(const Model::DescribeTaskDetailRequest &request);
-                void DescribeTaskDetailAsync(const Model::DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTaskDetailOutcomeCallable DescribeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-查询任务最近一次执行状态
-                 * @param req DescribeTaskLastStatusRequest
-                 * @return DescribeTaskLastStatusOutcome
-                 */
-                DescribeTaskLastStatusOutcome DescribeTaskLastStatus(const Model::DescribeTaskLastStatusRequest &request);
-                void DescribeTaskLastStatusAsync(const Model::DescribeTaskLastStatusRequest& request, const DescribeTaskLastStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTaskLastStatusOutcomeCallable DescribeTaskLastStatusCallable(const Model::DescribeTaskLastStatusRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-翻页查询任务列表
-                 * @param req DescribeTaskRecordsRequest
-                 * @return DescribeTaskRecordsOutcome
-                 */
-                DescribeTaskRecordsOutcome DescribeTaskRecords(const Model::DescribeTaskRecordsRequest &request);
-                void DescribeTaskRecordsAsync(const Model::DescribeTaskRecordsRequest& request, const DescribeTaskRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTaskRecordsOutcomeCallable DescribeTaskRecordsCallable(const Model::DescribeTaskRecordsRequest& request);
-
-                /**
                  *查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail
                  * @param req DescribeUnitApiUseDetailRequest
                  * @return DescribeUnitApiUseDetailOutcome
@@ -2649,28 +2435,6 @@ namespace TencentCloud
                 DisableLaneRuleOutcomeCallable DisableLaneRuleCallable(const Model::DisableLaneRuleRequest& request);
 
                 /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-停用任务
-                 * @param req DisableTaskRequest
-                 * @return DisableTaskOutcome
-                 */
-                DisableTaskOutcome DisableTask(const Model::DisableTaskRequest &request);
-                void DisableTaskAsync(const Model::DisableTaskRequest& request, const DisableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DisableTaskOutcomeCallable DisableTaskCallable(const Model::DisableTaskRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-停用工作流
-                 * @param req DisableTaskFlowRequest
-                 * @return DisableTaskFlowOutcome
-                 */
-                DisableTaskFlowOutcome DisableTaskFlow(const Model::DisableTaskFlowRequest &request);
-                void DisableTaskFlowAsync(const Model::DisableTaskFlowRequest& request, const DisableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DisableTaskFlowOutcomeCallable DisableTaskFlowCallable(const Model::DisableTaskFlowRequest& request);
-
-                /**
                  *禁用单元化路由
                  * @param req DisableUnitRouteRequest
                  * @return DisableUnitRouteOutcome
@@ -2725,28 +2489,6 @@ namespace TencentCloud
                 EnableLaneRuleOutcomeCallable EnableLaneRuleCallable(const Model::EnableLaneRuleRequest& request);
 
                 /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-启用任务
-                 * @param req EnableTaskRequest
-                 * @return EnableTaskOutcome
-                 */
-                EnableTaskOutcome EnableTask(const Model::EnableTaskRequest &request);
-                void EnableTaskAsync(const Model::EnableTaskRequest& request, const EnableTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnableTaskOutcomeCallable EnableTaskCallable(const Model::EnableTaskRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-启用工作流
-                 * @param req EnableTaskFlowRequest
-                 * @return EnableTaskFlowOutcome
-                 */
-                EnableTaskFlowOutcome EnableTaskFlow(const Model::EnableTaskFlowRequest &request);
-                void EnableTaskFlowAsync(const Model::EnableTaskFlowRequest& request, const EnableTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnableTaskFlowOutcomeCallable EnableTaskFlowCallable(const Model::EnableTaskFlowRequest& request);
-
-                /**
                  *启用单元化路由
                  * @param req EnableUnitRouteRequest
                  * @return EnableUnitRouteOutcome
@@ -2763,28 +2505,6 @@ namespace TencentCloud
                 EnableUnitRuleOutcome EnableUnitRule(const Model::EnableUnitRuleRequest &request);
                 void EnableUnitRuleAsync(const Model::EnableUnitRuleRequest& request, const EnableUnitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableUnitRuleOutcomeCallable EnableUnitRuleCallable(const Model::EnableUnitRuleRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-手动执行一次任务
-                 * @param req ExecuteTaskRequest
-                 * @return ExecuteTaskOutcome
-                 */
-                ExecuteTaskOutcome ExecuteTask(const Model::ExecuteTaskRequest &request);
-                void ExecuteTaskAsync(const Model::ExecuteTaskRequest& request, const ExecuteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ExecuteTaskOutcomeCallable ExecuteTaskCallable(const Model::ExecuteTaskRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-执行一次工作流
-                 * @param req ExecuteTaskFlowRequest
-                 * @return ExecuteTaskFlowOutcome
-                 */
-                ExecuteTaskFlowOutcome ExecuteTaskFlow(const Model::ExecuteTaskFlowRequest &request);
-                void ExecuteTaskFlowAsync(const Model::ExecuteTaskFlowRequest& request, const ExecuteTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ExecuteTaskFlowOutcomeCallable ExecuteTaskFlowCallable(const Model::ExecuteTaskFlowRequest& request);
 
                 /**
                  *虚拟机部署组添加实例
@@ -2904,17 +2624,6 @@ namespace TencentCloud
                 ModifyProgramOutcomeCallable ModifyProgramCallable(const Model::ModifyProgramRequest& request);
 
                 /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-修改任务
-                 * @param req ModifyTaskRequest
-                 * @return ModifyTaskOutcome
-                 */
-                ModifyTaskOutcome ModifyTask(const Model::ModifyTaskRequest &request);
-                void ModifyTaskAsync(const Model::ModifyTaskRequest& request, const ModifyTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyTaskOutcomeCallable ModifyTaskCallable(const Model::ModifyTaskRequest& request);
-
-                /**
                  *调用该接口和COS的上传接口后，需要调用此接口更新TSF中保存的程序包状态。
 调用此接口完成后，才标志上传包流程结束。
                  * @param req ModifyUploadInfoRequest
@@ -2943,50 +2652,6 @@ namespace TencentCloud
                 ReassociateBusinessLogConfigOutcome ReassociateBusinessLogConfig(const Model::ReassociateBusinessLogConfigRequest &request);
                 void ReassociateBusinessLogConfigAsync(const Model::ReassociateBusinessLogConfigRequest& request, const ReassociateBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReassociateBusinessLogConfigOutcomeCallable ReassociateBusinessLogConfigCallable(const Model::ReassociateBusinessLogConfigRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-重新执行任务
-                 * @param req RedoTaskRequest
-                 * @return RedoTaskOutcome
-                 */
-                RedoTaskOutcome RedoTask(const Model::RedoTaskRequest &request);
-                void RedoTaskAsync(const Model::RedoTaskRequest& request, const RedoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RedoTaskOutcomeCallable RedoTaskCallable(const Model::RedoTaskRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-重新执行任务批次
-                 * @param req RedoTaskBatchRequest
-                 * @return RedoTaskBatchOutcome
-                 */
-                RedoTaskBatchOutcome RedoTaskBatch(const Model::RedoTaskBatchRequest &request);
-                void RedoTaskBatchAsync(const Model::RedoTaskBatchRequest& request, const RedoTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RedoTaskBatchOutcomeCallable RedoTaskBatchCallable(const Model::RedoTaskBatchRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-重新执行在某个节点上执行任务。
-                 * @param req RedoTaskExecuteRequest
-                 * @return RedoTaskExecuteOutcome
-                 */
-                RedoTaskExecuteOutcome RedoTaskExecute(const Model::RedoTaskExecuteRequest &request);
-                void RedoTaskExecuteAsync(const Model::RedoTaskExecuteRequest& request, const RedoTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RedoTaskExecuteOutcomeCallable RedoTaskExecuteCallable(const Model::RedoTaskExecuteRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-重新执行工作流批次
-                 * @param req RedoTaskFlowBatchRequest
-                 * @return RedoTaskFlowBatchOutcome
-                 */
-                RedoTaskFlowBatchOutcome RedoTaskFlowBatch(const Model::RedoTaskFlowBatchRequest &request);
-                void RedoTaskFlowBatchAsync(const Model::RedoTaskFlowBatchRequest& request, const RedoTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RedoTaskFlowBatchOutcomeCallable RedoTaskFlowBatchCallable(const Model::RedoTaskFlowBatchRequest& request);
 
                 /**
                  *发布Api分组
@@ -3149,39 +2814,6 @@ namespace TencentCloud
                 StopGroupOutcome StopGroup(const Model::StopGroupRequest &request);
                 void StopGroupAsync(const Model::StopGroupRequest& request, const StopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopGroupOutcomeCallable StopGroupCallable(const Model::StopGroupRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-停止执行中的任务批次， 非运行中的任务不可调用。
-                 * @param req StopTaskBatchRequest
-                 * @return StopTaskBatchOutcome
-                 */
-                StopTaskBatchOutcome StopTaskBatch(const Model::StopTaskBatchRequest &request);
-                void StopTaskBatchAsync(const Model::StopTaskBatchRequest& request, const StopTaskBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StopTaskBatchOutcomeCallable StopTaskBatchCallable(const Model::StopTaskBatchRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-停止正在某个节点上执行的任务
-                 * @param req StopTaskExecuteRequest
-                 * @return StopTaskExecuteOutcome
-                 */
-                StopTaskExecuteOutcome StopTaskExecute(const Model::StopTaskExecuteRequest &request);
-                void StopTaskExecuteAsync(const Model::StopTaskExecuteRequest& request, const StopTaskExecuteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                StopTaskExecuteOutcomeCallable StopTaskExecuteCallable(const Model::StopTaskExecuteRequest& request);
-
-                /**
-                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
-
-停止一个工作流批次
-                 * @param req TerminateTaskFlowBatchRequest
-                 * @return TerminateTaskFlowBatchOutcome
-                 */
-                TerminateTaskFlowBatchOutcome TerminateTaskFlowBatch(const Model::TerminateTaskFlowBatchRequest &request);
-                void TerminateTaskFlowBatchAsync(const Model::TerminateTaskFlowBatchRequest& request, const TerminateTaskFlowBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                TerminateTaskFlowBatchOutcomeCallable TerminateTaskFlowBatchCallable(const Model::TerminateTaskFlowBatchRequest& request);
 
                 /**
                  *API分组批量与网关解绑

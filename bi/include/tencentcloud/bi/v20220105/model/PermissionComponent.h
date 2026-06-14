@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限值
+                     * 获取<p>权限值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModuleId 权限值
+                     * @return ModuleId <p>权限值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModuleId() const;
 
                     /**
-                     * 设置权限值
+                     * 设置<p>权限值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _moduleId 权限值
+                     * @param _moduleId <p>权限值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,54 +72,18 @@ namespace TencentCloud
                     bool ModuleIdHasBeenSet() const;
 
                     /**
-                     * 获取可用性。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * 获取<p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IncludeType 可用性。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * @return IncludeType <p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeType() const;
 
                     /**
-                     * 设置可用性。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * 设置<p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _includeType 可用性。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * @param _includeType <p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -133,18 +97,18 @@ namespace TencentCloud
                     bool IncludeTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标升级版本
+                     * 获取<p>目标升级版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpgradeVersionType 目标升级版本
+                     * @return UpgradeVersionType <p>目标升级版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpgradeVersionType() const;
 
                     /**
-                     * 设置目标升级版本
+                     * 设置<p>目标升级版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _upgradeVersionType 目标升级版本
+                     * @param _upgradeVersionType <p>目标升级版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,18 +122,18 @@ namespace TencentCloud
                     bool UpgradeVersionTypeHasBeenSet() const;
 
                     /**
-                     * 获取补充信息
+                     * 获取<p>补充信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tips 补充信息
+                     * @return Tips <p>补充信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTips() const;
 
                     /**
-                     * 设置补充信息
+                     * 设置<p>补充信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tips 补充信息
+                     * @param _tips <p>补充信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,18 +147,18 @@ namespace TencentCloud
                     bool TipsHasBeenSet() const;
 
                     /**
-                     * 获取补充信息的key值
+                     * 获取<p>补充信息的key值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TipsKey 补充信息的key值
+                     * @return TipsKey <p>补充信息的key值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTipsKey() const;
 
                     /**
-                     * 设置补充信息的key值
+                     * 设置<p>补充信息的key值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tipsKey 补充信息的key值
+                     * @param _tipsKey <p>补充信息的key值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -210,44 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限值
+                     * <p>权限值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_moduleId;
                     bool m_moduleIdHasBeenSet;
 
                     /**
-                     * 可用性。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * <p>可用性</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeType;
                     bool m_includeTypeHasBeenSet;
 
                     /**
-                     * 目标升级版本
+                     * <p>目标升级版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upgradeVersionType;
                     bool m_upgradeVersionTypeHasBeenSet;
 
                     /**
-                     * 补充信息
+                     * <p>补充信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tips;
                     bool m_tipsHasBeenSet;
 
                     /**
-                     * 补充信息的key值
+                     * <p>补充信息的key值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tipsKey;

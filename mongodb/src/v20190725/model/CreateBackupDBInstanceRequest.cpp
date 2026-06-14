@@ -25,7 +25,8 @@ using namespace std;
 CreateBackupDBInstanceRequest::CreateBackupDBInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_backupRemarkHasBeenSet(false)
+    m_backupRemarkHasBeenSet(false),
+    m_backupRetentionDaysHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateBackupDBInstanceRequest::ToJsonString() const
         string key = "BackupRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupRetentionDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupRetentionDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupRetentionDays, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateBackupDBInstanceRequest::SetBackupRemark(const string& _backupRemark)
 bool CreateBackupDBInstanceRequest::BackupRemarkHasBeenSet() const
 {
     return m_backupRemarkHasBeenSet;
+}
+
+int64_t CreateBackupDBInstanceRequest::GetBackupRetentionDays() const
+{
+    return m_backupRetentionDays;
+}
+
+void CreateBackupDBInstanceRequest::SetBackupRetentionDays(const int64_t& _backupRetentionDays)
+{
+    m_backupRetentionDays = _backupRetentionDays;
+    m_backupRetentionDaysHasBeenSet = true;
+}
+
+bool CreateBackupDBInstanceRequest::BackupRetentionDaysHasBeenSet() const
+{
+    return m_backupRetentionDaysHasBeenSet;
 }
 
 

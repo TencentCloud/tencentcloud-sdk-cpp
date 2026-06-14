@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置名称
+                     * 获取<p>配置名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModuleId 配置名称
+                     * @return ModuleId <p>配置名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModuleId() const;
 
                     /**
-                     * 设置配置名称
+                     * 设置<p>配置名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _moduleId 配置名称
+                     * @param _moduleId <p>配置名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,54 +72,18 @@ namespace TencentCloud
                     bool ModuleIdHasBeenSet() const;
 
                     /**
-                     * 获取配置方式。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * 获取<p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IncludeType 配置方式。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * @return IncludeType <p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeType() const;
 
                     /**
-                     * 设置配置方式。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * 设置<p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _includeType 配置方式。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * @param _includeType <p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -133,18 +97,18 @@ namespace TencentCloud
                     bool IncludeTypeHasBeenSet() const;
 
                     /**
-                     * 获取额外参数
+                     * 获取<p>额外参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Params 额外参数
+                     * @return Params <p>额外参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParams() const;
 
                     /**
-                     * 设置额外参数
+                     * 设置<p>额外参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _params 额外参数
+                     * @param _params <p>额外参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,30 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置名称
+                     * <p>配置名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_moduleId;
                     bool m_moduleIdHasBeenSet;
 
                     /**
-                     * 配置方式。
-取值范围：
-
-- usable：可用
-- visible：可见
-- disabled：不可用
-- hidden：隐藏
-
-默认值：disabled
-示例值：disabled
+                     * <p>配置方式</p><p>枚举值：</p><ul><li>usable： 可用</li><li>visible： 可见</li><li>disabled： 不可用</li><li>hidden： 隐藏</li></ul><p>默认值：disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeType;
                     bool m_includeTypeHasBeenSet;
 
                     /**
-                     * 额外参数
+                     * <p>额外参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_params;

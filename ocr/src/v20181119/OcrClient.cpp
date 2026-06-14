@@ -2690,56 +2690,6 @@ OcrClient::RecognizeGeneralInvoiceOutcomeCallable OcrClient::RecognizeGeneralInv
     return prom->get_future();
 }
 
-OcrClient::RecognizeHealthCodeOCROutcome OcrClient::RecognizeHealthCodeOCR(const RecognizeHealthCodeOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeHealthCodeOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeHealthCodeOCRResponse rsp = RecognizeHealthCodeOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeHealthCodeOCROutcome(rsp);
-        else
-            return RecognizeHealthCodeOCROutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeHealthCodeOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeHealthCodeOCRAsync(const RecognizeHealthCodeOCRRequest& request, const RecognizeHealthCodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RecognizeHealthCodeOCRRequest&;
-    using Resp = RecognizeHealthCodeOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RecognizeHealthCodeOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::RecognizeHealthCodeOCROutcomeCallable OcrClient::RecognizeHealthCodeOCRCallable(const RecognizeHealthCodeOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RecognizeHealthCodeOCROutcome>>();
-    RecognizeHealthCodeOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const RecognizeHealthCodeOCRRequest&,
-        RecognizeHealthCodeOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 OcrClient::RecognizeMedicalInvoiceOCROutcome OcrClient::RecognizeMedicalInvoiceOCR(const RecognizeMedicalInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeMedicalInvoiceOCR");
@@ -2982,56 +2932,6 @@ OcrClient::RecognizeThaiIDCardOCROutcomeCallable OcrClient::RecognizeThaiIDCardO
         const OcrClient*,
         const RecognizeThaiIDCardOCRRequest&,
         RecognizeThaiIDCardOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-OcrClient::RecognizeTravelCardOCROutcome OcrClient::RecognizeTravelCardOCR(const RecognizeTravelCardOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeTravelCardOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeTravelCardOCRResponse rsp = RecognizeTravelCardOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeTravelCardOCROutcome(rsp);
-        else
-            return RecognizeTravelCardOCROutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeTravelCardOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeTravelCardOCRAsync(const RecognizeTravelCardOCRRequest& request, const RecognizeTravelCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RecognizeTravelCardOCRRequest&;
-    using Resp = RecognizeTravelCardOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RecognizeTravelCardOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::RecognizeTravelCardOCROutcomeCallable OcrClient::RecognizeTravelCardOCRCallable(const RecognizeTravelCardOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RecognizeTravelCardOCROutcome>>();
-    RecognizeTravelCardOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const RecognizeTravelCardOCRRequest&,
-        RecognizeTravelCardOCROutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3832,6 +3732,56 @@ OcrClient::VehicleRegCertOCROutcomeCallable OcrClient::VehicleRegCertOCRCallable
         const OcrClient*,
         const VehicleRegCertOCRRequest&,
         VehicleRegCertOCROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::VerifyBizLicenseEnterprise3Outcome OcrClient::VerifyBizLicenseEnterprise3(const VerifyBizLicenseEnterprise3Request &request)
+{
+    auto outcome = MakeRequest(request, "VerifyBizLicenseEnterprise3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyBizLicenseEnterprise3Response rsp = VerifyBizLicenseEnterprise3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyBizLicenseEnterprise3Outcome(rsp);
+        else
+            return VerifyBizLicenseEnterprise3Outcome(o.GetError());
+    }
+    else
+    {
+        return VerifyBizLicenseEnterprise3Outcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyBizLicenseEnterprise3Async(const VerifyBizLicenseEnterprise3Request& request, const VerifyBizLicenseEnterprise3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyBizLicenseEnterprise3Request&;
+    using Resp = VerifyBizLicenseEnterprise3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyBizLicenseEnterprise3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::VerifyBizLicenseEnterprise3OutcomeCallable OcrClient::VerifyBizLicenseEnterprise3Callable(const VerifyBizLicenseEnterprise3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyBizLicenseEnterprise3Outcome>>();
+    VerifyBizLicenseEnterprise3Async(
+    request,
+    [prom](
+        const OcrClient*,
+        const VerifyBizLicenseEnterprise3Request&,
+        VerifyBizLicenseEnterprise3Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

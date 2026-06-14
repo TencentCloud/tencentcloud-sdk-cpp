@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
-                     * @return ClusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * 获取<p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
+                     * @return ClusterType <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
-                     * @param _clusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * 设置<p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
+                     * @param _clusterType <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群容器网络配置信息
-                     * @return ClusterCIDRSettings 集群容器网络配置信息
+                     * 获取<p>集群容器网络配置信息</p>
+                     * @return ClusterCIDRSettings <p>集群容器网络配置信息</p>
                      * 
                      */
                     ClusterCIDRSettings GetClusterCIDRSettings() const;
 
                     /**
-                     * 设置集群容器网络配置信息
-                     * @param _clusterCIDRSettings 集群容器网络配置信息
+                     * 设置<p>集群容器网络配置信息</p>
+                     * @param _clusterCIDRSettings <p>集群容器网络配置信息</p>
                      * 
                      */
                     void SetClusterCIDRSettings(const ClusterCIDRSettings& _clusterCIDRSettings);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool ClusterCIDRSettingsHasBeenSet() const;
 
                     /**
-                     * 获取CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
-                     * @return RunInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
+                     * 获取<p>CVM创建透传参数，json化字符串格式，详见<a href="https://cloud.tencent.com/document/product/213/15730">CVM创建实例</a>接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。</p>
+                     * @return RunInstancesForNode <p>CVM创建透传参数，json化字符串格式，详见<a href="https://cloud.tencent.com/document/product/213/15730">CVM创建实例</a>接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。</p>
                      * 
                      */
                     std::vector<RunInstancesForNode> GetRunInstancesForNode() const;
 
                     /**
-                     * 设置CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
-                     * @param _runInstancesForNode CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
+                     * 设置<p>CVM创建透传参数，json化字符串格式，详见<a href="https://cloud.tencent.com/document/product/213/15730">CVM创建实例</a>接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。</p>
+                     * @param _runInstancesForNode <p>CVM创建透传参数，json化字符串格式，详见<a href="https://cloud.tencent.com/document/product/213/15730">CVM创建实例</a>接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。</p>
                      * 
                      */
                     void SetRunInstancesForNode(const std::vector<RunInstancesForNode>& _runInstancesForNode);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool RunInstancesForNodeHasBeenSet() const;
 
                     /**
-                     * 获取集群的基本配置信息
-                     * @return ClusterBasicSettings 集群的基本配置信息
+                     * 获取<p>集群的基本配置信息</p>
+                     * @return ClusterBasicSettings <p>集群的基本配置信息</p>
                      * 
                      */
                     ClusterBasicSettings GetClusterBasicSettings() const;
 
                     /**
-                     * 设置集群的基本配置信息
-                     * @param _clusterBasicSettings 集群的基本配置信息
+                     * 设置<p>集群的基本配置信息</p>
+                     * @param _clusterBasicSettings <p>集群的基本配置信息</p>
                      * 
                      */
                     void SetClusterBasicSettings(const ClusterBasicSettings& _clusterBasicSettings);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool ClusterBasicSettingsHasBeenSet() const;
 
                     /**
-                     * 获取集群高级配置信息
-                     * @return ClusterAdvancedSettings 集群高级配置信息
+                     * 获取<p>集群高级配置信息</p>
+                     * @return ClusterAdvancedSettings <p>集群高级配置信息</p>
                      * 
                      */
                     ClusterAdvancedSettings GetClusterAdvancedSettings() const;
 
                     /**
-                     * 设置集群高级配置信息
-                     * @param _clusterAdvancedSettings 集群高级配置信息
+                     * 设置<p>集群高级配置信息</p>
+                     * @param _clusterAdvancedSettings <p>集群高级配置信息</p>
                      * 
                      */
                     void SetClusterAdvancedSettings(const ClusterAdvancedSettings& _clusterAdvancedSettings);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ClusterAdvancedSettingsHasBeenSet() const;
 
                     /**
-                     * 获取节点高级配置信息
-                     * @return InstanceAdvancedSettings 节点高级配置信息
+                     * 获取<p>节点高级配置信息</p>
+                     * @return InstanceAdvancedSettings <p>节点高级配置信息</p>
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
-                     * 设置节点高级配置信息
-                     * @param _instanceAdvancedSettings 节点高级配置信息
+                     * 设置<p>节点高级配置信息</p>
+                     * @param _instanceAdvancedSettings <p>节点高级配置信息</p>
                      * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
-                     * 获取已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
-                     * @return ExistedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
+                     * 获取<p>已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过 50，不支持添加竞价实例。</p>
+                     * @return ExistedInstancesForNode <p>已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过 50，不支持添加竞价实例。</p>
                      * 
                      */
                     std::vector<ExistedInstancesForNode> GetExistedInstancesForNode() const;
 
                     /**
-                     * 设置已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
-                     * @param _existedInstancesForNode 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
+                     * 设置<p>已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过 50，不支持添加竞价实例。</p>
+                     * @param _existedInstancesForNode <p>已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过 50，不支持添加竞价实例。</p>
                      * 
                      */
                     void SetExistedInstancesForNode(const std::vector<ExistedInstancesForNode>& _existedInstancesForNode);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool ExistedInstancesForNodeHasBeenSet() const;
 
                     /**
-                     * 获取CVM类型和其对应的数据盘挂载配置信息
-                     * @return InstanceDataDiskMountSettings CVM类型和其对应的数据盘挂载配置信息
+                     * 获取<p>CVM类型和其对应的数据盘挂载配置信息</p>
+                     * @return InstanceDataDiskMountSettings <p>CVM类型和其对应的数据盘挂载配置信息</p>
                      * 
                      */
                     std::vector<InstanceDataDiskMountSetting> GetInstanceDataDiskMountSettings() const;
 
                     /**
-                     * 设置CVM类型和其对应的数据盘挂载配置信息
-                     * @param _instanceDataDiskMountSettings CVM类型和其对应的数据盘挂载配置信息
+                     * 设置<p>CVM类型和其对应的数据盘挂载配置信息</p>
+                     * @param _instanceDataDiskMountSettings <p>CVM类型和其对应的数据盘挂载配置信息</p>
                      * 
                      */
                     void SetInstanceDataDiskMountSettings(const std::vector<InstanceDataDiskMountSetting>& _instanceDataDiskMountSettings);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool InstanceDataDiskMountSettingsHasBeenSet() const;
 
                     /**
-                     * 获取需要安装的扩展组件信息
-                     * @return ExtensionAddons 需要安装的扩展组件信息
+                     * 获取<p>需要安装的扩展组件信息</p>
+                     * @return ExtensionAddons <p>需要安装的扩展组件信息</p>
                      * 
                      */
                     std::vector<ExtensionAddon> GetExtensionAddons() const;
 
                     /**
-                     * 设置需要安装的扩展组件信息
-                     * @param _extensionAddons 需要安装的扩展组件信息
+                     * 设置<p>需要安装的扩展组件信息</p>
+                     * @param _extensionAddons <p>需要安装的扩展组件信息</p>
                      * 
                      */
                     void SetExtensionAddons(const std::vector<ExtensionAddon>& _extensionAddons);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool ExtensionAddonsHasBeenSet() const;
 
                     /**
-                     * 获取本地专用集群Id
-                     * @return CdcId 本地专用集群Id
+                     * 获取<p>本地专用集群Id</p>
+                     * @return CdcId <p>本地专用集群Id</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置本地专用集群Id
-                     * @param _cdcId 本地专用集群Id
+                     * 设置<p>本地专用集群Id</p>
+                     * @param _cdcId <p>本地专用集群Id</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取屏蔽安装指定Addon组件，填写相应的AddonName
-                     * @return DisableAddons 屏蔽安装指定Addon组件，填写相应的AddonName
+                     * 获取<p>屏蔽安装指定Addon组件，填写相应的AddonName</p>
+                     * @return DisableAddons <p>屏蔽安装指定Addon组件，填写相应的AddonName</p>
                      * 
                      */
                     std::vector<std::string> GetDisableAddons() const;
 
                     /**
-                     * 设置屏蔽安装指定Addon组件，填写相应的AddonName
-                     * @param _disableAddons 屏蔽安装指定Addon组件，填写相应的AddonName
+                     * 设置<p>屏蔽安装指定Addon组件，填写相应的AddonName</p>
+                     * @param _disableAddons <p>屏蔽安装指定Addon组件，填写相应的AddonName</p>
                      * 
                      */
                     void SetDisableAddons(const std::vector<std::string>& _disableAddons);
@@ -284,67 +284,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * <p>集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群容器网络配置信息
+                     * <p>集群容器网络配置信息</p>
                      */
                     ClusterCIDRSettings m_clusterCIDRSettings;
                     bool m_clusterCIDRSettingsHasBeenSet;
 
                     /**
-                     * CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
+                     * <p>CVM创建透传参数，json化字符串格式，详见<a href="https://cloud.tencent.com/document/product/213/15730">CVM创建实例</a>接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。</p>
                      */
                     std::vector<RunInstancesForNode> m_runInstancesForNode;
                     bool m_runInstancesForNodeHasBeenSet;
 
                     /**
-                     * 集群的基本配置信息
+                     * <p>集群的基本配置信息</p>
                      */
                     ClusterBasicSettings m_clusterBasicSettings;
                     bool m_clusterBasicSettingsHasBeenSet;
 
                     /**
-                     * 集群高级配置信息
+                     * <p>集群高级配置信息</p>
                      */
                     ClusterAdvancedSettings m_clusterAdvancedSettings;
                     bool m_clusterAdvancedSettingsHasBeenSet;
 
                     /**
-                     * 节点高级配置信息
+                     * <p>节点高级配置信息</p>
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;
 
                     /**
-                     * 已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。
+                     * <p>已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过 50，不支持添加竞价实例。</p>
                      */
                     std::vector<ExistedInstancesForNode> m_existedInstancesForNode;
                     bool m_existedInstancesForNodeHasBeenSet;
 
                     /**
-                     * CVM类型和其对应的数据盘挂载配置信息
+                     * <p>CVM类型和其对应的数据盘挂载配置信息</p>
                      */
                     std::vector<InstanceDataDiskMountSetting> m_instanceDataDiskMountSettings;
                     bool m_instanceDataDiskMountSettingsHasBeenSet;
 
                     /**
-                     * 需要安装的扩展组件信息
+                     * <p>需要安装的扩展组件信息</p>
                      */
                     std::vector<ExtensionAddon> m_extensionAddons;
                     bool m_extensionAddonsHasBeenSet;
 
                     /**
-                     * 本地专用集群Id
+                     * <p>本地专用集群Id</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * 屏蔽安装指定Addon组件，填写相应的AddonName
+                     * <p>屏蔽安装指定Addon组件，填写相应的AddonName</p>
                      */
                     std::vector<std::string> m_disableAddons;
                     bool m_disableAddonsHasBeenSet;

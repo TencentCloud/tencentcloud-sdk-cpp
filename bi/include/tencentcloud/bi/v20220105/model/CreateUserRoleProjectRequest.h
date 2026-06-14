@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取角色ID列表
-                     * @return RoleIdList 角色ID列表
+                     * 获取<p>角色ID列表</p>
+                     * @return RoleIdList <p>角色ID列表</p>
                      * 
                      */
                     std::vector<int64_t> GetRoleIdList() const;
 
                     /**
-                     * 设置角色ID列表
-                     * @param _roleIdList 角色ID列表
+                     * 设置<p>角色ID列表</p>
+                     * @param _roleIdList <p>角色ID列表</p>
                      * 
                      */
                     void SetRoleIdList(const std::vector<int64_t>& _roleIdList);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RoleIdListHasBeenSet() const;
 
                     /**
-                     * 获取用户列表（废弃）
-                     * @return UserList 用户列表（废弃）
+                     * 获取<p>用户列表（废弃）</p>
+                     * @return UserList <p>用户列表（废弃）</p>
                      * @deprecated
                      */
                     std::vector<UserIdAndUserName> GetUserList() const;
 
                     /**
-                     * 设置用户列表（废弃）
-                     * @param _userList 用户列表（废弃）
+                     * 设置<p>用户列表（废弃）</p>
+                     * @param _userList <p>用户列表（废弃）</p>
                      * @deprecated
                      */
                     void SetUserList(const std::vector<UserIdAndUserName>& _userList);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool UserListHasBeenSet() const;
 
                     /**
-                     * 获取用户列表（新）
-                     * @return UserInfoList 用户列表（新）
+                     * 获取<p>用户列表（新）</p>
+                     * @return UserInfoList <p>用户列表（新）</p>
                      * 
                      */
                     std::vector<UserInfo> GetUserInfoList() const;
 
                     /**
-                     * 设置用户列表（新）
-                     * @param _userInfoList 用户列表（新）
+                     * 设置<p>用户列表（新）</p>
+                     * @param _userInfoList <p>用户列表（新）</p>
                      * 
                      */
                     void SetUserInfoList(const std::vector<UserInfo>& _userInfoList);
@@ -131,25 +131,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 角色ID列表
+                     * <p>角色ID列表</p>
                      */
                     std::vector<int64_t> m_roleIdList;
                     bool m_roleIdListHasBeenSet;
 
                     /**
-                     * 用户列表（废弃）
+                     * <p>用户列表（废弃）</p>
                      */
                     std::vector<UserIdAndUserName> m_userList;
                     bool m_userListHasBeenSet;
 
                     /**
-                     * 用户列表（新）
+                     * <p>用户列表（新）</p>
                      */
                     std::vector<UserInfo> m_userInfoList;
                     bool m_userInfoListHasBeenSet;

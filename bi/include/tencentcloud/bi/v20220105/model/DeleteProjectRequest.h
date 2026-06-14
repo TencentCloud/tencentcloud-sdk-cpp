@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return Id 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return Id <p>项目ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _id 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _id <p>项目ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取随机数
-                     * @return Seed 随机数
+                     * 获取<p>随机数</p>
+                     * @return Seed <p>随机数</p>
                      * 
                      */
                     std::string GetSeed() const;
 
                     /**
-                     * 设置随机数
-                     * @param _seed 随机数
+                     * 设置<p>随机数</p>
+                     * @param _seed <p>随机数</p>
                      * 
                      */
                     void SetSeed(const std::string& _seed);
@@ -85,27 +85,15 @@ namespace TencentCloud
                     bool SeedHasBeenSet() const;
 
                     /**
-                     * 获取默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @return DefaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 获取<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @return DefaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     int64_t GetDefaultPanelType() const;
 
                     /**
-                     * 设置默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @param _defaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 设置<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @param _defaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     void SetDefaultPanelType(const int64_t& _defaultPanelType);
@@ -120,22 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 随机数
+                     * <p>随机数</p>
                      */
                     std::string m_seed;
                     bool m_seedHasBeenSet;
 
                     /**
-                     * 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      */
                     int64_t m_defaultPanelType;
                     bool m_defaultPanelTypeHasBeenSet;

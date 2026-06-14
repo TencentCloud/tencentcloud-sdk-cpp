@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目Id
-                     * @return Id 项目Id
+                     * 获取<p>项目Id</p>
+                     * @return Id <p>项目Id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _id 项目Id
+                     * 设置<p>项目Id</p>
+                     * @param _id <p>项目Id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @return DefaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 获取<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @return DefaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     int64_t GetDefaultPanelType() const;
 
                     /**
-                     * 设置默认看板
-取值范围：
-1：项目看板 
-2：我的看板
-                     * @param _defaultPanelType 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * 设置<p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
+                     * @param _defaultPanelType <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      * 
                      */
                     void SetDefaultPanelType(const int64_t& _defaultPanelType);
@@ -99,16 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目Id
+                     * <p>项目Id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 默认看板
-取值范围：
-1：项目看板 
-2：我的看板
+                     * <p>默认看板</p><p>枚举值：</p><ul><li>1： 项目看板</li><li>2： 我的看板</li></ul>
                      */
                     int64_t m_defaultPanelType;
                     bool m_defaultPanelTypeHasBeenSet;

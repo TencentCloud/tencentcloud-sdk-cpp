@@ -43,6 +43,8 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateLogDownloadTaskRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateLogDownloadTaskResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateSlowLogPatternDownloadTaskRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateSlowLogPatternDownloadTaskResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAuditLogFileRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceLogToCLSRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceLogToCLSResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNamespaceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNamespaceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyRequest.h>
@@ -127,6 +131,8 @@
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/IncreaseDBInstanceConnectionLimitRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/IncreaseDBInstanceConnectionLimitResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecRequest.h>
@@ -143,6 +149,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ModifyAuditServiceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyBackupExpireTimeResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceLogToCLSRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceLogToCLSResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceParamTplRequest.h>
@@ -231,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLogDownloadTaskResponse> CreateLogDownloadTaskOutcome;
                 typedef std::future<CreateLogDownloadTaskOutcome> CreateLogDownloadTaskOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateLogDownloadTaskRequest&, CreateLogDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSlowLogPatternDownloadTaskResponse> CreateSlowLogPatternDownloadTaskOutcome;
+                typedef std::future<CreateSlowLogPatternDownloadTaskOutcome> CreateSlowLogPatternDownloadTaskOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateSlowLogPatternDownloadTaskRequest&, CreateSlowLogPatternDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSlowLogPatternDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountUserResponse> DeleteAccountUserOutcome;
                 typedef std::future<DeleteAccountUserOutcome> DeleteAccountUserOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DeleteAccountUserRequest&, DeleteAccountUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountUserAsyncHandler;
@@ -279,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceDealResponse> DescribeDBInstanceDealOutcome;
                 typedef std::future<DescribeDBInstanceDealOutcome> DescribeDBInstanceDealOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceDealRequest&, DescribeDBInstanceDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceDealAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceLogToCLSResponse> DescribeDBInstanceLogToCLSOutcome;
+                typedef std::future<DescribeDBInstanceLogToCLSOutcome> DescribeDBInstanceLogToCLSOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceLogToCLSRequest&, DescribeDBInstanceLogToCLSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceLogToCLSAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceNamespaceResponse> DescribeDBInstanceNamespaceOutcome;
                 typedef std::future<DescribeDBInstanceNamespaceOutcome> DescribeDBInstanceNamespaceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceNamespaceRequest&, DescribeDBInstanceNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNamespaceAsyncHandler;
@@ -357,6 +371,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FlushInstanceRouterConfigResponse> FlushInstanceRouterConfigOutcome;
                 typedef std::future<FlushInstanceRouterConfigOutcome> FlushInstanceRouterConfigOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::FlushInstanceRouterConfigRequest&, FlushInstanceRouterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushInstanceRouterConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::IncreaseDBInstanceConnectionLimitResponse> IncreaseDBInstanceConnectionLimitOutcome;
+                typedef std::future<IncreaseDBInstanceConnectionLimitOutcome> IncreaseDBInstanceConnectionLimitOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::IncreaseDBInstanceConnectionLimitRequest&, IncreaseDBInstanceConnectionLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IncreaseDBInstanceConnectionLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceCreateDBInstancesResponse> InquirePriceCreateDBInstancesOutcome;
                 typedef std::future<InquirePriceCreateDBInstancesOutcome> InquirePriceCreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::InquirePriceCreateDBInstancesRequest&, InquirePriceCreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateDBInstancesAsyncHandler;
@@ -381,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupExpireTimeResponse> ModifyBackupExpireTimeOutcome;
                 typedef std::future<ModifyBackupExpireTimeOutcome> ModifyBackupExpireTimeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyBackupExpireTimeRequest&, ModifyBackupExpireTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupExpireTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceLogToCLSResponse> ModifyDBInstanceLogToCLSOutcome;
+                typedef std::future<ModifyDBInstanceLogToCLSOutcome> ModifyDBInstanceLogToCLSOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceLogToCLSRequest&, ModifyDBInstanceLogToCLSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceLogToCLSAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNetworkAddressResponse> ModifyDBInstanceNetworkAddressOutcome;
                 typedef std::future<ModifyDBInstanceNetworkAddressOutcome> ModifyDBInstanceNetworkAddressOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceNetworkAddressRequest&, ModifyDBInstanceNetworkAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAddressAsyncHandler;
@@ -542,6 +562,15 @@ namespace TencentCloud
                 CreateLogDownloadTaskOutcomeCallable CreateLogDownloadTaskCallable(const Model::CreateLogDownloadTaskRequest& request);
 
                 /**
+                 *创建慢日志统计下载任务
+                 * @param req CreateSlowLogPatternDownloadTaskRequest
+                 * @return CreateSlowLogPatternDownloadTaskOutcome
+                 */
+                CreateSlowLogPatternDownloadTaskOutcome CreateSlowLogPatternDownloadTask(const Model::CreateSlowLogPatternDownloadTaskRequest &request);
+                void CreateSlowLogPatternDownloadTaskAsync(const Model::CreateSlowLogPatternDownloadTaskRequest& request, const CreateSlowLogPatternDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSlowLogPatternDownloadTaskOutcomeCallable CreateSlowLogPatternDownloadTaskCallable(const Model::CreateSlowLogPatternDownloadTaskRequest& request);
+
+                /**
                  *本接口（DeleteAccountUser）用于删除实例的自定义账号。
                  * @param req DeleteAccountUserRequest
                  * @return DeleteAccountUserOutcome
@@ -684,6 +713,15 @@ namespace TencentCloud
                 DescribeDBInstanceDealOutcome DescribeDBInstanceDeal(const Model::DescribeDBInstanceDealRequest &request);
                 void DescribeDBInstanceDealAsync(const Model::DescribeDBInstanceDealRequest& request, const DescribeDBInstanceDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBInstanceDealOutcomeCallable DescribeDBInstanceDealCallable(const Model::DescribeDBInstanceDealRequest& request);
+
+                /**
+                 *获取日志投递的相关配置信息
+                 * @param req DescribeDBInstanceLogToCLSRequest
+                 * @return DescribeDBInstanceLogToCLSOutcome
+                 */
+                DescribeDBInstanceLogToCLSOutcome DescribeDBInstanceLogToCLS(const Model::DescribeDBInstanceLogToCLSRequest &request);
+                void DescribeDBInstanceLogToCLSAsync(const Model::DescribeDBInstanceLogToCLSRequest& request, const DescribeDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceLogToCLSOutcomeCallable DescribeDBInstanceLogToCLSCallable(const Model::DescribeDBInstanceLogToCLSRequest& request);
 
                 /**
                  *本接口（DescribeDBInstanceNamespace）用于查询数据库的表信息。
@@ -924,6 +962,15 @@ namespace TencentCloud
                 FlushInstanceRouterConfigOutcomeCallable FlushInstanceRouterConfigCallable(const Model::FlushInstanceRouterConfigRequest& request);
 
                 /**
+                 *终止实例流程
+                 * @param req IncreaseDBInstanceConnectionLimitRequest
+                 * @return IncreaseDBInstanceConnectionLimitOutcome
+                 */
+                IncreaseDBInstanceConnectionLimitOutcome IncreaseDBInstanceConnectionLimit(const Model::IncreaseDBInstanceConnectionLimitRequest &request);
+                void IncreaseDBInstanceConnectionLimitAsync(const Model::IncreaseDBInstanceConnectionLimitRequest& request, const IncreaseDBInstanceConnectionLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IncreaseDBInstanceConnectionLimitOutcomeCallable IncreaseDBInstanceConnectionLimitCallable(const Model::IncreaseDBInstanceConnectionLimitRequest& request);
+
+                /**
                  *本接口（InquirePriceCreateDBInstances）用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。
                  * @param req InquirePriceCreateDBInstancesRequest
                  * @return InquirePriceCreateDBInstancesOutcome
@@ -994,6 +1041,15 @@ namespace TencentCloud
                 ModifyBackupExpireTimeOutcome ModifyBackupExpireTime(const Model::ModifyBackupExpireTimeRequest &request);
                 void ModifyBackupExpireTimeAsync(const Model::ModifyBackupExpireTimeRequest& request, const ModifyBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupExpireTimeOutcomeCallable ModifyBackupExpireTimeCallable(const Model::ModifyBackupExpireTimeRequest& request);
+
+                /**
+                 *开启或关闭MongoDB慢日志、错误日志、操作日志投递CLS
+                 * @param req ModifyDBInstanceLogToCLSRequest
+                 * @return ModifyDBInstanceLogToCLSOutcome
+                 */
+                ModifyDBInstanceLogToCLSOutcome ModifyDBInstanceLogToCLS(const Model::ModifyDBInstanceLogToCLSRequest &request);
+                void ModifyDBInstanceLogToCLSAsync(const Model::ModifyDBInstanceLogToCLSRequest& request, const ModifyDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceLogToCLSOutcomeCallable ModifyDBInstanceLogToCLSCallable(const Model::ModifyDBInstanceLogToCLSRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceNetworkAddress）用于修改云数据库实例的网络信息，支持基础网络切换为私有网络、私有网络切换私有网络。

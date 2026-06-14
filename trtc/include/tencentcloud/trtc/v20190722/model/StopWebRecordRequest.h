@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要停止的任务Id
-                     * @return TaskId 需要停止的任务Id
+                     * 获取<p>需要停止的任务Id</p>
+                     * @return TaskId <p>需要停止的任务Id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置需要停止的任务Id
-                     * @param _taskId 需要停止的任务Id
+                     * 设置<p>需要停止的任务Id</p>
+                     * @param _taskId <p>需要停止的任务Id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要停止的任务Id
+                     * <p>需要停止的任务Id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

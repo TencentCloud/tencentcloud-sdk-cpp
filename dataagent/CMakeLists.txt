@@ -49,9 +49,10 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetJobsByKnowledgeBaseIdResponse.h
   include/tencentcloud/dataagent/v20250513/model/QuerySceneListRequest.h
-  include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
+  include/tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/UploadAndCommitFileResponse.h
+  include/tencentcloud/dataagent/v20250513/model/QueryKnowledgeTaskResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddSceneResponse.h
@@ -62,13 +63,17 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h
   include/tencentcloud/dataagent/v20250513/model/FileInfo.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseFileListRequest.h
+  include/tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskResponse.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsRequest.h
+  include/tencentcloud/dataagent/v20250513/model/FileTaskStatus.h
+  include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkResponse.h
   include/tencentcloud/dataagent/v20250513/model/StepInfo.h
   include/tencentcloud/dataagent/v20250513/model/Chunk.h
   include/tencentcloud/dataagent/v20250513/model/UpdateSceneResponse.h
   include/tencentcloud/dataagent/v20250513/model/Scene.h
+  include/tencentcloud/dataagent/v20250513/model/AppendKnowledgeTaskRequest.h
   include/tencentcloud/dataagent/v20250513/model/KnowledgeTaskConfig.h
   include/tencentcloud/dataagent/v20250513/model/UpdateSceneRequest.h
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionRequest.h
@@ -78,6 +83,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/DeleteDataAgentSessionRequest.h
   include/tencentcloud/dataagent/v20250513/model/ColumnInfo.h
   include/tencentcloud/dataagent/v20250513/model/GetKnowledgeBaseListResponse.h
+  include/tencentcloud/dataagent/v20250513/model/AppendDocument.h
   )
 
 set(dataagent_src
@@ -112,9 +118,10 @@ set(dataagent_src
   src/v20250513/model/ModifyUserAuthorityRequest.cpp
   src/v20250513/model/GetJobsByKnowledgeBaseIdResponse.cpp
   src/v20250513/model/QuerySceneListRequest.cpp
-  src/v20250513/model/StopChatAIResponse.cpp
+  src/v20250513/model/QueryKnowledgeTaskRequest.cpp
   src/v20250513/model/GetUploadJobDetailsResponse.cpp
   src/v20250513/model/UploadAndCommitFileResponse.cpp
+  src/v20250513/model/QueryKnowledgeTaskResponse.cpp
   src/v20250513/model/ModifyChunkResponse.cpp
   src/v20250513/model/DeleteDataAgentSessionResponse.cpp
   src/v20250513/model/AddSceneResponse.cpp
@@ -125,13 +132,17 @@ set(dataagent_src
   src/v20250513/model/QueryUserAuthorityRequest.cpp
   src/v20250513/model/FileInfo.cpp
   src/v20250513/model/GetKnowledgeBaseFileListRequest.cpp
+  src/v20250513/model/AppendKnowledgeTaskResponse.cpp
   src/v20250513/model/GetUploadJobDetailsRequest.cpp
+  src/v20250513/model/FileTaskStatus.cpp
+  src/v20250513/model/StopChatAIResponse.cpp
   src/v20250513/model/ModifyUserAuthorityResponse.cpp
   src/v20250513/model/AddChunkResponse.cpp
   src/v20250513/model/StepInfo.cpp
   src/v20250513/model/Chunk.cpp
   src/v20250513/model/UpdateSceneResponse.cpp
   src/v20250513/model/Scene.cpp
+  src/v20250513/model/AppendKnowledgeTaskRequest.cpp
   src/v20250513/model/KnowledgeTaskConfig.cpp
   src/v20250513/model/UpdateSceneRequest.cpp
   src/v20250513/model/CreateDataAgentSessionRequest.cpp
@@ -141,6 +152,7 @@ set(dataagent_src
   src/v20250513/model/DeleteDataAgentSessionRequest.cpp
   src/v20250513/model/ColumnInfo.cpp
   src/v20250513/model/GetKnowledgeBaseListResponse.cpp
+  src/v20250513/model/AppendDocument.cpp
   )
 
 set(dataagent_include

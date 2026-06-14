@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取拓展的目标及事件检测类别
-                     * @return DetectTypes 拓展的目标及事件检测类别
+                     * 获取<p>拓展的目标及事件检测类别</p>
+                     * @return DetectTypes <p>拓展的目标及事件检测类别</p>
                      * 
                      */
                     std::vector<std::string> GetDetectTypes() const;
 
                     /**
-                     * 设置拓展的目标及事件检测类别
-                     * @param _detectTypes 拓展的目标及事件检测类别
+                     * 设置<p>拓展的目标及事件检测类别</p>
+                     * @param _detectTypes <p>拓展的目标及事件检测类别</p>
                      * 
                      */
                     void SetDetectTypes(const std::vector<std::string>& _detectTypes);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DetectTypesHasBeenSet() const;
 
                     /**
-                     * 获取使该视频 / 图片录入搜索库，后续可进行搜索
-                     * @return EnableSearch 使该视频 / 图片录入搜索库，后续可进行搜索
+                     * 获取<p>使该视频 / 图片录入搜索库，后续可进行搜索</p>
+                     * @return EnableSearch <p>使该视频 / 图片录入搜索库，后续可进行搜索</p>
                      * 
                      */
                     bool GetEnableSearch() const;
 
                     /**
-                     * 设置使该视频 / 图片录入搜索库，后续可进行搜索
-                     * @param _enableSearch 使该视频 / 图片录入搜索库，后续可进行搜索
+                     * 设置<p>使该视频 / 图片录入搜索库，后续可进行搜索</p>
+                     * @param _enableSearch <p>使该视频 / 图片录入搜索库，后续可进行搜索</p>
                      * 
                      */
                     void SetEnableSearch(const bool& _enableSearch);
@@ -89,43 +89,15 @@ namespace TencentCloud
                     bool EnableSearchHasBeenSet() const;
 
                     /**
-                     * 获取主输出语言，可选值包括：
-- `zh` 中文（默认值）
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-                     * @return OutputLang 主输出语言，可选值包括：
-- `zh` 中文（默认值）
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
+                     * 获取<p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
+                     * @return OutputLang <p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      * 
                      */
                     std::string GetOutputLang() const;
 
                     /**
-                     * 设置主输出语言，可选值包括：
-- `zh` 中文（默认值）
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-                     * @param _outputLang 主输出语言，可选值包括：
-- `zh` 中文（默认值）
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
+                     * 设置<p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
+                     * @param _outputLang <p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      * 
                      */
                     void SetOutputLang(const std::string& _outputLang);
@@ -138,47 +110,15 @@ namespace TencentCloud
                     bool OutputLangHasBeenSet() const;
 
                     /**
-                     * 获取次选输出语言，可选值包括：
-- `zh` 中文
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-
-                     * @return AlternativeOutputLang 次选输出语言，可选值包括：
-- `zh` 中文
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-
+                     * 获取<p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
+                     * @return AlternativeOutputLang <p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      * 
                      */
                     std::string GetAlternativeOutputLang() const;
 
                     /**
-                     * 设置次选输出语言，可选值包括：
-- `zh` 中文
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-
-                     * @param _alternativeOutputLang 次选输出语言，可选值包括：
-- `zh` 中文
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-
+                     * 设置<p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
+                     * @param _alternativeOutputLang <p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      * 
                      */
                     void SetAlternativeOutputLang(const std::string& _alternativeOutputLang);
@@ -191,71 +131,15 @@ namespace TencentCloud
                     bool AlternativeOutputLangHasBeenSet() const;
 
                     /**
-                     * 获取多摄像头布局定义。可选值包括：
-
-- 单摄（默认值）：`Single`
-
-- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`
-- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`
-- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`
-
-- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`
-- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`
-- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`
-- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`
-- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
-- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
-- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
-                     * @return MultiCameraLayout 多摄像头布局定义。可选值包括：
-
-- 单摄（默认值）：`Single`
-
-- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`
-- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`
-- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`
-
-- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`
-- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`
-- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`
-- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`
-- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
-- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
-- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
+                     * 获取<p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>
+                     * @return MultiCameraLayout <p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>
                      * 
                      */
                     std::string GetMultiCameraLayout() const;
 
                     /**
-                     * 设置多摄像头布局定义。可选值包括：
-
-- 单摄（默认值）：`Single`
-
-- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`
-- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`
-- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`
-
-- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`
-- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`
-- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`
-- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`
-- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
-- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
-- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
-                     * @param _multiCameraLayout 多摄像头布局定义。可选值包括：
-
-- 单摄（默认值）：`Single`
-
-- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`
-- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`
-- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`
-
-- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`
-- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`
-- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`
-- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`
-- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
-- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
-- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
+                     * 设置<p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>
+                     * @param _multiCameraLayout <p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>
                      * 
                      */
                     void SetMultiCameraLayout(const std::string& _multiCameraLayout);
@@ -268,15 +152,15 @@ namespace TencentCloud
                     bool MultiCameraLayoutHasBeenSet() const;
 
                     /**
-                     * 获取最大处理的输入视频时长，单位：秒（仅对视频输入生效）
-                     * @return MaxDuration 最大处理的输入视频时长，单位：秒（仅对视频输入生效）
+                     * 获取<p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>
+                     * @return MaxDuration <p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>
                      * 
                      */
                     int64_t GetMaxDuration() const;
 
                     /**
-                     * 设置最大处理的输入视频时长，单位：秒（仅对视频输入生效）
-                     * @param _maxDuration 最大处理的输入视频时长，单位：秒（仅对视频输入生效）
+                     * 设置<p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>
+                     * @param _maxDuration <p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>
                      * 
                      */
                     void SetMaxDuration(const int64_t& _maxDuration);
@@ -291,66 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 拓展的目标及事件检测类别
+                     * <p>拓展的目标及事件检测类别</p>
                      */
                     std::vector<std::string> m_detectTypes;
                     bool m_detectTypesHasBeenSet;
 
                     /**
-                     * 使该视频 / 图片录入搜索库，后续可进行搜索
+                     * <p>使该视频 / 图片录入搜索库，后续可进行搜索</p>
                      */
                     bool m_enableSearch;
                     bool m_enableSearchHasBeenSet;
 
                     /**
-                     * 主输出语言，可选值包括：
-- `zh` 中文（默认值）
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
+                     * <p>主输出语言，可选值包括：</p><ul><li><code>zh</code> 中文（默认值）</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      */
                     std::string m_outputLang;
                     bool m_outputLangHasBeenSet;
 
                     /**
-                     * 次选输出语言，可选值包括：
-- `zh` 中文
-- `en` 英语
-- `ja` 日语
-- `ko` 韩文
-- `pt-BR` 葡萄牙语（巴西）
-- `th` 泰语
-- `ms` 马来语
-
+                     * <p>次选输出语言，可选值包括：</p><ul><li><code>zh</code> 中文</li><li><code>en</code> 英语</li><li><code>ja</code> 日语</li><li><code>ko</code> 韩文</li><li><code>pt-BR</code> 葡萄牙语（巴西）</li><li><code>th</code> 泰语</li><li><code>ms</code> 马来语</li></ul>
                      */
                     std::string m_alternativeOutputLang;
                     bool m_alternativeOutputLangHasBeenSet;
 
                     /**
-                     * 多摄像头布局定义。可选值包括：
-
-- 单摄（默认值）：`Single`
-
-- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`
-- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`
-- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`
-
-- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`
-- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`
-- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`
-- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`
-- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
-- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
-- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
+                     * <p>多摄像头布局定义。可选值包括：</p><ul><li><p>单摄（默认值）：<code>Single</code></p></li><li><p>双摄（纵向排列）- 全部画面：<code>Vertical,Num=2,Index=0;1</code></p></li><li><p>双摄（纵向排列）- 画面1：<code>Vertical,Num=2,Index=0</code></p></li><li><p>双摄（纵向排列）- 画面2：<code>Vertical,Num=2,Index=1</code></p></li><li><p>三摄（纵向排列）- 全部画面：<code>Vertical,Num=3,Index=0;1;2</code></p></li><li><p>三摄（纵向排列）- 画面1：<code>Vertical,Num=3,Index=0</code></p></li><li><p>三摄（纵向排列）- 画面2：<code>Vertical,Num=3,Index=1</code></p></li><li><p>三摄（纵向排列）- 画面3：<code>Vertical,Num=3,Index=2</code></p></li><li><p>三摄（纵向排列）- 画面1+2：<code>Vertical,Num=3,Index=0;1</code></p></li><li><p>三摄（纵向排列）- 画面1+3：<code>Vertical,Num=3,Index=0;2</code></p></li><li><p>三摄（纵向排列）- 画面2+3：<code>Vertical,Num=3,Index=1;2</code></p></li></ul>
                      */
                     std::string m_multiCameraLayout;
                     bool m_multiCameraLayoutHasBeenSet;
 
                     /**
-                     * 最大处理的输入视频时长，单位：秒（仅对视频输入生效）
+                     * <p>最大处理的输入视频时长，单位：秒（仅对视频输入生效）</p>
                      */
                     int64_t m_maxDuration;
                     bool m_maxDurationHasBeenSet;

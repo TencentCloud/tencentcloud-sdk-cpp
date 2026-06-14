@@ -19,18 +19,22 @@ set(tokenhub_public_header
   )
 
 set(tokenhub_public_header_model
-  include/tencentcloud/tokenhub/v20260322/model/TokenPlanApiKeyListItem.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListResponse.h
   include/tencentcloud/tokenhub/v20260322/model/BindingItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeySecretResponse.h
-  include/tencentcloud/tokenhub/v20260322/model/UsageStats.h
+  include/tencentcloud/tokenhub/v20260322/model/TokenPlanApiKeyListItem.h
   include/tencentcloud/tokenhub/v20260322/model/CreateApiKeysResultItem.h
+  include/tencentcloud/tokenhub/v20260322/model/GlossaryEntryInput.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeySecretResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListResponse.h
-  include/tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntryInput.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/GlossaryEntryItem.h
+  include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeySecretRequest.h
   include/tencentcloud/tokenhub/v20260322/model/SubPackageBalance.h
+  include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntriesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RenewTokenPlanTeamOrderResponse.h
   include/tencentcloud/tokenhub/v20260322/model/UsageRankItem.h
@@ -38,54 +42,73 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/DescribeModelListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/UsageSeries.h
-  include/tencentcloud/tokenhub/v20260322/model/UpgradeTokenPlanTeamOrderRequest.h
-  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/CreateGlossaryRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeGlossaryEntriesResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeGlossaryEntriesRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryEntriesRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/CreateGlossaryEntriesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanApiKeysResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntryInput.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/TokenSummaryBillingItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyUsageDetailResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RequestSort.h
   include/tencentcloud/tokenhub/v20260322/model/TokenPlanListItem.h
-  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/CreateGlossaryResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.h
-  include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesRequest.h
   include/tencentcloud/tokenhub/v20260322/model/RenewTokenPlanTeamOrderRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeGlossariesRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteTokenPlanApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyUsageDetailRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/UpgradeTokenPlanTeamOrderRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/CreateGlossaryEntriesRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ApiKeyDetail.h
-  include/tencentcloud/tokenhub/v20260322/model/UsageDetailItem.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeGlossariesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/BatchCreateFailedItem.h
+  include/tencentcloud/tokenhub/v20260322/model/GlossaryItem.h
+  include/tencentcloud/tokenhub/v20260322/model/TokenPlanPackageInfo.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RequestFilter.h
   include/tencentcloud/tokenhub/v20260322/model/TokenSummary.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/UpgradeTokenPlanTeamOrderResponse.h
-  include/tencentcloud/tokenhub/v20260322/model/TokenPlanPackageInfo.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntriesResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanApiKeysRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/UsageStats.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteTokenPlanApiKeyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/UsageDetailItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeySecretRequest.h
   )
 
 set(tokenhub_src
   src/v20260322/TokenhubClient.cpp
-  src/v20260322/model/TokenPlanApiKeyListItem.cpp
+  src/v20260322/model/DescribeTokenPlanListResponse.cpp
   src/v20260322/model/BindingItem.cpp
   src/v20260322/model/DescribeTokenPlanApiKeySecretResponse.cpp
-  src/v20260322/model/UsageStats.cpp
+  src/v20260322/model/TokenPlanApiKeyListItem.cpp
   src/v20260322/model/CreateApiKeysResultItem.cpp
+  src/v20260322/model/GlossaryEntryInput.cpp
   src/v20260322/model/ModifyTokenPlanApiKeySecretResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyListResponse.cpp
-  src/v20260322/model/DescribeUsageRankListRequest.cpp
+  src/v20260322/model/DeleteGlossaryEntryInput.cpp
   src/v20260322/model/DescribeTokenPlanRequest.cpp
+  src/v20260322/model/GlossaryEntryItem.cpp
+  src/v20260322/model/DeleteGlossaryResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyResponse.cpp
   src/v20260322/model/ModifyTokenPlanApiKeySecretRequest.cpp
   src/v20260322/model/SubPackageBalance.cpp
+  src/v20260322/model/DeleteGlossaryEntriesResponse.cpp
   src/v20260322/model/DescribeApiKeyListResponse.cpp
   src/v20260322/model/RenewTokenPlanTeamOrderResponse.cpp
   src/v20260322/model/UsageRankItem.cpp
@@ -93,37 +116,52 @@ set(tokenhub_src
   src/v20260322/model/DescribeModelListRequest.cpp
   src/v20260322/model/DescribeApiKeyListRequest.cpp
   src/v20260322/model/UsageSeries.cpp
-  src/v20260322/model/UpgradeTokenPlanTeamOrderRequest.cpp
-  src/v20260322/model/DescribeTokenPlanListResponse.cpp
+  src/v20260322/model/CreateGlossaryRequest.cpp
+  src/v20260322/model/DescribeGlossaryEntriesResponse.cpp
+  src/v20260322/model/DeleteGlossaryRequest.cpp
+  src/v20260322/model/DescribeGlossaryEntriesRequest.cpp
+  src/v20260322/model/DeleteGlossaryEntriesRequest.cpp
+  src/v20260322/model/CreateGlossaryEntriesResponse.cpp
   src/v20260322/model/CreateTokenPlanApiKeysResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyRequest.cpp
   src/v20260322/model/DescribeApiKeyRequest.cpp
+  src/v20260322/model/ModifyGlossaryEntryInput.cpp
+  src/v20260322/model/ModifyTokenPlanApiKeyRequest.cpp
   src/v20260322/model/TokenSummaryBillingItem.cpp
   src/v20260322/model/DescribeModelListResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyUsageDetailResponse.cpp
   src/v20260322/model/RequestSort.cpp
   src/v20260322/model/TokenPlanListItem.cpp
-  src/v20260322/model/DescribeTokenPlanApiKeyListRequest.cpp
+  src/v20260322/model/CreateGlossaryResponse.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.cpp
-  src/v20260322/model/ModifyTokenPlanApiKeyRequest.cpp
+  src/v20260322/model/ModifyGlossaryEntriesRequest.cpp
   src/v20260322/model/RenewTokenPlanTeamOrderRequest.cpp
+  src/v20260322/model/DescribeGlossariesRequest.cpp
   src/v20260322/model/DeleteTokenPlanApiKeyResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyUsageDetailRequest.cpp
+  src/v20260322/model/UpgradeTokenPlanTeamOrderRequest.cpp
+  src/v20260322/model/DescribeUsageRankListRequest.cpp
   src/v20260322/model/ModifyTokenPlanApiKeyResponse.cpp
+  src/v20260322/model/CreateGlossaryEntriesRequest.cpp
   src/v20260322/model/ApiKeyDetail.cpp
-  src/v20260322/model/UsageDetailItem.cpp
+  src/v20260322/model/DescribeGlossariesResponse.cpp
   src/v20260322/model/BatchCreateFailedItem.cpp
+  src/v20260322/model/GlossaryItem.cpp
+  src/v20260322/model/TokenPlanPackageInfo.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.cpp
   src/v20260322/model/RequestFilter.cpp
   src/v20260322/model/TokenSummary.cpp
   src/v20260322/model/DescribeTokenPlanListRequest.cpp
   src/v20260322/model/UpgradeTokenPlanTeamOrderResponse.cpp
-  src/v20260322/model/TokenPlanPackageInfo.cpp
+  src/v20260322/model/ModifyGlossaryEntriesResponse.cpp
   src/v20260322/model/DescribeTokenPlanResponse.cpp
   src/v20260322/model/CreateTokenPlanApiKeysRequest.cpp
+  src/v20260322/model/UsageStats.cpp
   src/v20260322/model/DescribeUsageRankListResponse.cpp
   src/v20260322/model/DeleteTokenPlanApiKeyRequest.cpp
   src/v20260322/model/DescribeApiKeyResponse.cpp
+  src/v20260322/model/DescribeTokenPlanApiKeyListRequest.cpp
+  src/v20260322/model/UsageDetailItem.cpp
   src/v20260322/model/DescribeTokenPlanApiKeySecretRequest.cpp
   )
 

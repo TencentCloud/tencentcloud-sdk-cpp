@@ -129,8 +129,6 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h>
@@ -141,8 +139,6 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
@@ -175,6 +171,8 @@
 #include <tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise3Request.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise3Response.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Request.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h>
@@ -358,9 +356,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
                 typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
-                typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeMedicalInvoiceOCRResponse> RecognizeMedicalInvoiceOCROutcome;
                 typedef std::future<RecognizeMedicalInvoiceOCROutcome> RecognizeMedicalInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeMedicalInvoiceOCRRequest&, RecognizeMedicalInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMedicalInvoiceOCRAsyncHandler;
@@ -376,9 +371,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
                 typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeTravelCardOCRResponse> RecognizeTravelCardOCROutcome;
-                typedef std::future<RecognizeTravelCardOCROutcome> RecognizeTravelCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeTravelCardOCRRequest&, RecognizeTravelCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTravelCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeValidIDCardOCRResponse> RecognizeValidIDCardOCROutcome;
                 typedef std::future<RecognizeValidIDCardOCROutcome> RecognizeValidIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeValidIDCardOCRRequest&, RecognizeValidIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeValidIDCardOCRAsyncHandler;
@@ -427,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VehicleRegCertOCRResponse> VehicleRegCertOCROutcome;
                 typedef std::future<VehicleRegCertOCROutcome> VehicleRegCertOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VehicleRegCertOCRRequest&, VehicleRegCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VehicleRegCertOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyBizLicenseEnterprise3Response> VerifyBizLicenseEnterprise3Outcome;
+                typedef std::future<VerifyBizLicenseEnterprise3Outcome> VerifyBizLicenseEnterprise3OutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseEnterprise3Request&, VerifyBizLicenseEnterprise3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseEnterprise3AsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyBizLicenseEnterprise4Response> VerifyBizLicenseEnterprise4Outcome;
                 typedef std::future<VerifyBizLicenseEnterprise4Outcome> VerifyBizLicenseEnterprise4OutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseEnterprise4Request&, VerifyBizLicenseEnterprise4Outcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseEnterprise4AsyncHandler;
@@ -1508,19 +1503,6 @@ namespace TencentCloud
                 RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
 
                 /**
-                 *产品规划
-
-本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。
-
-默认接口请求频率限制：10次/秒。
-                 * @param req RecognizeHealthCodeOCRRequest
-                 * @return RecognizeHealthCodeOCROutcome
-                 */
-                RecognizeHealthCodeOCROutcome RecognizeHealthCodeOCR(const Model::RecognizeHealthCodeOCRRequest &request);
-                void RecognizeHealthCodeOCRAsync(const Model::RecognizeHealthCodeOCRRequest& request, const RecognizeHealthCodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeHealthCodeOCROutcomeCallable RecognizeHealthCodeOCRCallable(const Model::RecognizeHealthCodeOCRRequest& request);
-
-                /**
                  *医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。
 
 默认接口请求频率限制：5次/秒。
@@ -1574,19 +1556,6 @@ namespace TencentCloud
                 RecognizeThaiIDCardOCROutcome RecognizeThaiIDCardOCR(const Model::RecognizeThaiIDCardOCRRequest &request);
                 void RecognizeThaiIDCardOCRAsync(const Model::RecognizeThaiIDCardOCRRequest& request, const RecognizeThaiIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeThaiIDCardOCROutcomeCallable RecognizeThaiIDCardOCRCallable(const Model::RecognizeThaiIDCardOCRRequest& request);
-
-                /**
-                 *产品规划
-
-本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。
-
-默认接口请求频率限制：20次/秒。
-                 * @param req RecognizeTravelCardOCRRequest
-                 * @return RecognizeTravelCardOCROutcome
-                 */
-                RecognizeTravelCardOCROutcome RecognizeTravelCardOCR(const Model::RecognizeTravelCardOCRRequest &request);
-                void RecognizeTravelCardOCRAsync(const Model::RecognizeTravelCardOCRRequest& request, const RecognizeTravelCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeTravelCardOCROutcomeCallable RecognizeTravelCardOCRCallable(const Model::RecognizeTravelCardOCRRequest& request);
 
                 /**
                  *本接口支持二代身份证、临时身份证、港澳台居住证、外国人永久居留证，字段内容识别功能，包括姓名、性别、民族、出生、出生日期、住址、公民身份号码、签发机关、有效期限、国籍、通行证号码、持证人持有号码；支持返回证件类型；支持翻拍、复印、边框不完整、遮挡、字段级反光和字段级完整性告警；支持卡片主体框裁剪和头像裁剪。
@@ -1771,6 +1740,16 @@ namespace TencentCloud
                 VehicleRegCertOCROutcome VehicleRegCertOCR(const Model::VehicleRegCertOCRRequest &request);
                 void VehicleRegCertOCRAsync(const Model::VehicleRegCertOCRRequest& request, const VehicleRegCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VehicleRegCertOCROutcomeCallable VehicleRegCertOCRCallable(const Model::VehicleRegCertOCRRequest& request);
+
+                /**
+                 *提供比对核验企业名称、统一社会信用代码、法人姓名一致性的服务，助力快速核验企业资质。
+注意：核验准确率在99%以上，存在个别特殊情况下核验结果不准确，请选用前知悉。
+                 * @param req VerifyBizLicenseEnterprise3Request
+                 * @return VerifyBizLicenseEnterprise3Outcome
+                 */
+                VerifyBizLicenseEnterprise3Outcome VerifyBizLicenseEnterprise3(const Model::VerifyBizLicenseEnterprise3Request &request);
+                void VerifyBizLicenseEnterprise3Async(const Model::VerifyBizLicenseEnterprise3Request& request, const VerifyBizLicenseEnterprise3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyBizLicenseEnterprise3OutcomeCallable VerifyBizLicenseEnterprise3Callable(const Model::VerifyBizLicenseEnterprise3Request& request);
 
                 /**
                  *提供比对校验企业名称、统一社会信用代码、法人姓名、注册登记证件号码一致性的服务，助力快速核验企业资质。

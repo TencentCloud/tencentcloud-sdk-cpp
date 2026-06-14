@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页数
-                     * @return TableId 页数
+                     * 获取<p>页数</p>
+                     * @return TableId <p>页数</p>
                      * 
                      */
                     int64_t GetTableId() const;
 
                     /**
-                     * 设置页数
-                     * @param _tableId 页数
+                     * 设置<p>页数</p>
+                     * @param _tableId <p>页数</p>
                      * 
                      */
                     void SetTableId(const int64_t& _tableId);
@@ -64,47 +64,15 @@ namespace TencentCloud
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取模式。
-取值范围：
-
-- ALL：全部
-- Specify：指定
-- TAG：标签
-
-默认值：ALL
-示例值：ALL
-                     * @return Mode 模式。
-取值范围：
-
-- ALL：全部
-- Specify：指定
-- TAG：标签
-
-默认值：ALL
-示例值：ALL
+                     * 获取<p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>
+                     * @return Mode <p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置模式。
-取值范围：
-
-- ALL：全部
-- Specify：指定
-- TAG：标签
-
-默认值：ALL
-示例值：ALL
-                     * @param _mode 模式。
-取值范围：
-
-- ALL：全部
-- Specify：指定
-- TAG：标签
-
-默认值：ALL
-示例值：ALL
+                     * 设置<p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>
+                     * @param _mode <p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -117,43 +85,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取角色类型。
-取值范围：
-
-- ROLES：按角色
-- Others：其它
-
-默认值：Others
-示例值：Others
-                     * @return RoleType 角色类型。
-取值范围：
-
-- ROLES：按角色
-- Others：其它
-
-默认值：Others
-示例值：Others
+                     * 获取<p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>
+                     * @return RoleType <p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>
                      * 
                      */
                     std::string GetRoleType() const;
 
                     /**
-                     * 设置角色类型。
-取值范围：
-
-- ROLES：按角色
-- Others：其它
-
-默认值：Others
-示例值：Others
-                     * @param _roleType 角色类型。
-取值范围：
-
-- ROLES：按角色
-- Others：其它
-
-默认值：Others
-示例值：Others
+                     * 设置<p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>
+                     * @param _roleType <p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>
                      * 
                      */
                     void SetRoleType(const std::string& _roleType);
@@ -166,15 +106,15 @@ namespace TencentCloud
                     bool RoleTypeHasBeenSet() const;
 
                     /**
-                     * 获取所有页码
-                     * @return RoleId 所有页码
+                     * 获取<p>所有页码</p>
+                     * @return RoleId <p>所有页码</p>
                      * 
                      */
                     int64_t GetRoleId() const;
 
                     /**
-                     * 设置所有页码
-                     * @param _roleId 所有页码
+                     * 设置<p>所有页码</p>
+                     * @param _roleId <p>所有页码</p>
                      * 
                      */
                     void SetRoleId(const int64_t& _roleId);
@@ -187,43 +127,15 @@ namespace TencentCloud
                     bool RoleIdHasBeenSet() const;
 
                     /**
-                     * 获取类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
-                     * @return Type 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
-                     * @param _type 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -236,15 +148,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
+                     * 获取<p>项目id</p>
+                     * @return ProjectId <p>项目id</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目id
-                     * @param _projectId 项目id
+                     * 设置<p>项目id</p>
+                     * @param _projectId <p>项目id</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -259,59 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页数
+                     * <p>页数</p>
                      */
                     int64_t m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 模式。
-取值范围：
-
-- ALL：全部
-- Specify：指定
-- TAG：标签
-
-默认值：ALL
-示例值：ALL
+                     * <p>模式</p><p>枚举值：</p><ul><li>ALL： 全部</li><li>Specify： 指定</li><li>TAG： 标签</li></ul><p>默认值：ALL</p>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 角色类型。
-取值范围：
-
-- ROLES：按角色
-- Others：其它
-
-默认值：Others
-示例值：Others
+                     * <p>角色类型</p><p>枚举值：</p><ul><li>ROLES： 按角色</li><li>Others： 其它</li></ul><p>默认值：Others</p>
                      */
                     std::string m_roleType;
                     bool m_roleTypeHasBeenSet;
 
                     /**
-                     * 所有页码
+                     * <p>所有页码</p>
                      */
                     int64_t m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
-                     * 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

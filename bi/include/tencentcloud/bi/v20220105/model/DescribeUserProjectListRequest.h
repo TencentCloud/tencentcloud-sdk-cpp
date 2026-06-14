@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return AllPage 无
+                     * 获取<p>无</p>
+                     * @return AllPage <p>无</p>
                      * 
                      */
                     bool GetAllPage() const;
 
                     /**
-                     * 设置无
-                     * @param _allPage 无
+                     * 设置<p>无</p>
+                     * @param _allPage <p>无</p>
                      * 
                      */
                     void SetAllPage(const bool& _allPage);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AllPageHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return PageNo 无
+                     * 获取<p>无</p>
+                     * @return PageNo <p>无</p>
                      * 
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置无
-                     * @param _pageNo 无
+                     * 设置<p>无</p>
+                     * @param _pageNo <p>无</p>
                      * 
                      */
                     void SetPageNo(const int64_t& _pageNo);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return PageSize 无
+                     * 获取<p>无</p>
+                     * @return PageSize <p>无</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置无
-                     * @param _pageSize 无
+                     * 设置<p>无</p>
+                     * @param _pageSize <p>无</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤掉企业管理员
-                     * @return IsFilterPerAuthUser 是否过滤掉企业管理员
+                     * 获取<p>是否过滤掉企业管理员</p>
+                     * @return IsFilterPerAuthUser <p>是否过滤掉企业管理员</p>
                      * 
                      */
                     bool GetIsFilterPerAuthUser() const;
 
                     /**
-                     * 设置是否过滤掉企业管理员
-                     * @param _isFilterPerAuthUser 是否过滤掉企业管理员
+                     * 设置<p>是否过滤掉企业管理员</p>
+                     * @param _isFilterPerAuthUser <p>是否过滤掉企业管理员</p>
                      * 
                      */
                     void SetIsFilterPerAuthUser(const bool& _isFilterPerAuthUser);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IsFilterPerAuthUserHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤掉当前用户
-                     * @return IsFilterCurrentUser 是否过滤掉当前用户
+                     * 获取<p>是否过滤掉当前用户</p>
+                     * @return IsFilterCurrentUser <p>是否过滤掉当前用户</p>
                      * 
                      */
                     bool GetIsFilterCurrentUser() const;
 
                     /**
-                     * 设置是否过滤掉当前用户
-                     * @param _isFilterCurrentUser 是否过滤掉当前用户
+                     * 设置<p>是否过滤掉当前用户</p>
+                     * @param _isFilterCurrentUser <p>是否过滤掉当前用户</p>
                      * 
                      */
                     void SetIsFilterCurrentUser(const bool& _isFilterCurrentUser);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IsFilterCurrentUserHasBeenSet() const;
 
                     /**
-                     * 获取关键字
-                     * @return Keyword 关键字
+                     * 获取<p>关键字</p>
+                     * @return Keyword <p>关键字</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置关键字
-                     * @param _keyword 关键字
+                     * 设置<p>关键字</p>
+                     * @param _keyword <p>关键字</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     bool m_allPage;
                     bool m_allPageHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 是否过滤掉企业管理员
+                     * <p>是否过滤掉企业管理员</p>
                      */
                     bool m_isFilterPerAuthUser;
                     bool m_isFilterPerAuthUserHasBeenSet;
 
                     /**
-                     * 是否过滤掉当前用户
+                     * <p>是否过滤掉当前用户</p>
                      */
                     bool m_isFilterCurrentUser;
                     bool m_isFilterCurrentUserHasBeenSet;
 
                     /**
-                     * 关键字
+                     * <p>关键字</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;

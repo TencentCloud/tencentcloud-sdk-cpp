@@ -140,6 +140,56 @@ DataagentClient::AddSceneOutcomeCallable DataagentClient::AddSceneCallable(const
     return prom->get_future();
 }
 
+DataagentClient::AppendKnowledgeTaskOutcome DataagentClient::AppendKnowledgeTask(const AppendKnowledgeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "AppendKnowledgeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AppendKnowledgeTaskResponse rsp = AppendKnowledgeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AppendKnowledgeTaskOutcome(rsp);
+        else
+            return AppendKnowledgeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return AppendKnowledgeTaskOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::AppendKnowledgeTaskAsync(const AppendKnowledgeTaskRequest& request, const AppendKnowledgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AppendKnowledgeTaskRequest&;
+    using Resp = AppendKnowledgeTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AppendKnowledgeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::AppendKnowledgeTaskOutcomeCallable DataagentClient::AppendKnowledgeTaskCallable(const AppendKnowledgeTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AppendKnowledgeTaskOutcome>>();
+    AppendKnowledgeTaskAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const AppendKnowledgeTaskRequest&,
+        AppendKnowledgeTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::ChatAIOutcome DataagentClient::ChatAI(const ChatAIRequest &request)
 {
     auto outcome = MakeRequest(request, "ChatAI");
@@ -882,6 +932,56 @@ DataagentClient::QueryChunkListOutcomeCallable DataagentClient::QueryChunkListCa
         const DataagentClient*,
         const QueryChunkListRequest&,
         QueryChunkListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::QueryKnowledgeTaskOutcome DataagentClient::QueryKnowledgeTask(const QueryKnowledgeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryKnowledgeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryKnowledgeTaskResponse rsp = QueryKnowledgeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryKnowledgeTaskOutcome(rsp);
+        else
+            return QueryKnowledgeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryKnowledgeTaskOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::QueryKnowledgeTaskAsync(const QueryKnowledgeTaskRequest& request, const QueryKnowledgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryKnowledgeTaskRequest&;
+    using Resp = QueryKnowledgeTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryKnowledgeTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::QueryKnowledgeTaskOutcomeCallable DataagentClient::QueryKnowledgeTaskCallable(const QueryKnowledgeTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryKnowledgeTaskOutcome>>();
+    QueryKnowledgeTaskAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QueryKnowledgeTaskRequest&,
+        QueryKnowledgeTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

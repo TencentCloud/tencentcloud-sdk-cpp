@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求id
+                     * 获取<p>请求id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 请求id
+                     * @return Id <p>请求id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置请求id
+                     * 设置<p>请求id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 请求id
+                     * @param _id <p>请求id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取key
+                     * 获取<p>key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccessKey key
+                     * @return AccessKey <p>key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
-                     * 设置key
+                     * 设置<p>key</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accessKey key
+                     * @param _accessKey <p>key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool AccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取id
+                     * 获取<p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId id
+                     * @return ProjectId <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置id
+                     * 设置<p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId id
+                     * @param _projectId <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取事务id
+                     * 获取<p>事务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranId 事务id
+                     * @return TranId <p>事务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranId() const;
 
                     /**
-                     * 设置事务id
+                     * 设置<p>事务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tranId 事务id
+                     * @param _tranId <p>事务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,34 +147,18 @@ namespace TencentCloud
                     bool TranIdHasBeenSet() const;
 
                     /**
-                     * 获取事务状态
-取值范围：
-1: 处理中
-2: 处理成功
-3: 处理失败
+                     * 获取<p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranStatus 事务状态
-取值范围：
-1: 处理中
-2: 处理成功
-3: 处理失败
+                     * @return TranStatus <p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTranStatus() const;
 
                     /**
-                     * 设置事务状态
-取值范围：
-1: 处理中
-2: 处理成功
-3: 处理失败
+                     * 设置<p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tranStatus 事务状态
-取值范围：
-1: 处理中
-2: 处理成功
-3: 处理失败
+                     * @param _tranStatus <p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -190,39 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求id
+                     * <p>请求id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * key
+                     * <p>key</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
 
                     /**
-                     * id
+                     * <p>id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 事务id
+                     * <p>事务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
-                     * 事务状态
-取值范围：
-1: 处理中
-2: 处理成功
-3: 处理失败
+                     * <p>事务状态</p><p>枚举值：</p><ul><li>1： 处理中</li><li>2： 处理成功</li><li>3： 处理失败</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tranStatus;

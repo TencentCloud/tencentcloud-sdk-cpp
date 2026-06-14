@@ -540,6 +540,56 @@ MongodbClient::CreateLogDownloadTaskOutcomeCallable MongodbClient::CreateLogDown
     return prom->get_future();
 }
 
+MongodbClient::CreateSlowLogPatternDownloadTaskOutcome MongodbClient::CreateSlowLogPatternDownloadTask(const CreateSlowLogPatternDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSlowLogPatternDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSlowLogPatternDownloadTaskResponse rsp = CreateSlowLogPatternDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSlowLogPatternDownloadTaskOutcome(rsp);
+        else
+            return CreateSlowLogPatternDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSlowLogPatternDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateSlowLogPatternDownloadTaskAsync(const CreateSlowLogPatternDownloadTaskRequest& request, const CreateSlowLogPatternDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSlowLogPatternDownloadTaskRequest&;
+    using Resp = CreateSlowLogPatternDownloadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSlowLogPatternDownloadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::CreateSlowLogPatternDownloadTaskOutcomeCallable MongodbClient::CreateSlowLogPatternDownloadTaskCallable(const CreateSlowLogPatternDownloadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSlowLogPatternDownloadTaskOutcome>>();
+    CreateSlowLogPatternDownloadTaskAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const CreateSlowLogPatternDownloadTaskRequest&,
+        CreateSlowLogPatternDownloadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::DeleteAccountUserOutcome MongodbClient::DeleteAccountUser(const DeleteAccountUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccountUser");
@@ -1332,6 +1382,56 @@ MongodbClient::DescribeDBInstanceDealOutcomeCallable MongodbClient::DescribeDBIn
         const MongodbClient*,
         const DescribeDBInstanceDealRequest&,
         DescribeDBInstanceDealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::DescribeDBInstanceLogToCLSOutcome MongodbClient::DescribeDBInstanceLogToCLS(const DescribeDBInstanceLogToCLSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceLogToCLS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceLogToCLSResponse rsp = DescribeDBInstanceLogToCLSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceLogToCLSOutcome(rsp);
+        else
+            return DescribeDBInstanceLogToCLSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceLogToCLSOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceLogToCLSAsync(const DescribeDBInstanceLogToCLSRequest& request, const DescribeDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBInstanceLogToCLSRequest&;
+    using Resp = DescribeDBInstanceLogToCLSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBInstanceLogToCLS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeDBInstanceLogToCLSOutcomeCallable MongodbClient::DescribeDBInstanceLogToCLSCallable(const DescribeDBInstanceLogToCLSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBInstanceLogToCLSOutcome>>();
+    DescribeDBInstanceLogToCLSAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeDBInstanceLogToCLSRequest&,
+        DescribeDBInstanceLogToCLSOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2640,6 +2740,56 @@ MongodbClient::FlushInstanceRouterConfigOutcomeCallable MongodbClient::FlushInst
     return prom->get_future();
 }
 
+MongodbClient::IncreaseDBInstanceConnectionLimitOutcome MongodbClient::IncreaseDBInstanceConnectionLimit(const IncreaseDBInstanceConnectionLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "IncreaseDBInstanceConnectionLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IncreaseDBInstanceConnectionLimitResponse rsp = IncreaseDBInstanceConnectionLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IncreaseDBInstanceConnectionLimitOutcome(rsp);
+        else
+            return IncreaseDBInstanceConnectionLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return IncreaseDBInstanceConnectionLimitOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::IncreaseDBInstanceConnectionLimitAsync(const IncreaseDBInstanceConnectionLimitRequest& request, const IncreaseDBInstanceConnectionLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const IncreaseDBInstanceConnectionLimitRequest&;
+    using Resp = IncreaseDBInstanceConnectionLimitResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "IncreaseDBInstanceConnectionLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::IncreaseDBInstanceConnectionLimitOutcomeCallable MongodbClient::IncreaseDBInstanceConnectionLimitCallable(const IncreaseDBInstanceConnectionLimitRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<IncreaseDBInstanceConnectionLimitOutcome>>();
+    IncreaseDBInstanceConnectionLimitAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const IncreaseDBInstanceConnectionLimitRequest&,
+        IncreaseDBInstanceConnectionLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::InquirePriceCreateDBInstancesOutcome MongodbClient::InquirePriceCreateDBInstances(const InquirePriceCreateDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceCreateDBInstances");
@@ -3032,6 +3182,56 @@ MongodbClient::ModifyBackupExpireTimeOutcomeCallable MongodbClient::ModifyBackup
         const MongodbClient*,
         const ModifyBackupExpireTimeRequest&,
         ModifyBackupExpireTimeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::ModifyDBInstanceLogToCLSOutcome MongodbClient::ModifyDBInstanceLogToCLS(const ModifyDBInstanceLogToCLSRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceLogToCLS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceLogToCLSResponse rsp = ModifyDBInstanceLogToCLSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceLogToCLSOutcome(rsp);
+        else
+            return ModifyDBInstanceLogToCLSOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceLogToCLSOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyDBInstanceLogToCLSAsync(const ModifyDBInstanceLogToCLSRequest& request, const ModifyDBInstanceLogToCLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBInstanceLogToCLSRequest&;
+    using Resp = ModifyDBInstanceLogToCLSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstanceLogToCLS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyDBInstanceLogToCLSOutcomeCallable MongodbClient::ModifyDBInstanceLogToCLSCallable(const ModifyDBInstanceLogToCLSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceLogToCLSOutcome>>();
+    ModifyDBInstanceLogToCLSAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyDBInstanceLogToCLSRequest&,
+        ModifyDBInstanceLogToCLSOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页数
-                     * @return TableId 页数
+                     * 获取<p>页数</p>
+                     * @return TableId <p>页数</p>
                      * 
                      */
                     int64_t GetTableId() const;
 
                     /**
-                     * 设置页数
-                     * @param _tableId 页数
+                     * 设置<p>页数</p>
+                     * @param _tableId <p>页数</p>
                      * 
                      */
                     void SetTableId(const int64_t& _tableId);
@@ -64,43 +64,15 @@ namespace TencentCloud
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
-                     * @return Type 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * 获取<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
+                     * @return Type <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
-                     * @param _type 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * 设置<p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
+                     * @param _type <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -113,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取1
-                     * @return ProjectId 1
+                     * 获取<p>1</p>
+                     * @return ProjectId <p>1</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置1
-                     * @param _projectId 1
+                     * 设置<p>1</p>
+                     * @param _projectId <p>1</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -136,26 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 页数
+                     * <p>页数</p>
                      */
                     int64_t m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 类型。
-取值范围：
-
-- ROW：行权限
-- COLUMN：列权限
-
-默认值：ROW
-示例值：ROW
+                     * <p>类型</p><p>枚举值：</p><ul><li>ROW： 行权限</li><li>COLUMN： 列权限</li></ul><p>默认值：ROW</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 1
+                     * <p>1</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

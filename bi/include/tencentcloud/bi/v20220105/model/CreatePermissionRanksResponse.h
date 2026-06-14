@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ErrorInfoHasBeenSet() const;
 
                     /**
-                     * 获取消息
+                     * 获取<p>消息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Msg 消息
+                     * @return Msg <p>消息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
-                     * 获取112
+                     * 获取<p>112</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra 112
+                     * @return Extra <p>112</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取<p>1</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 1
+                     * @return Data <p>1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,21 +118,21 @@ namespace TencentCloud
                     bool m_errorInfoHasBeenSet;
 
                     /**
-                     * 消息
+                     * <p>消息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
 
                     /**
-                     * 112
+                     * <p>112</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 1
+                     * <p>1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;

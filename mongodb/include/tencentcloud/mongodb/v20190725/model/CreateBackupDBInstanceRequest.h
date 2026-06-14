@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @return InstanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 获取<p>实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
+                     * @return InstanceId <p>实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @param _instanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 设置<p>实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
+                     * @param _instanceId <p>实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,39 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取设置备份方式。
-- 0：逻辑备份。
-- 1：物理备份。
-- 3：快照备份。
-**说明**:
-1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
-2. 实例开通存储加密，则备份方式不能为物理备份。
-                     * @return BackupMethod 设置备份方式。
-- 0：逻辑备份。
-- 1：物理备份。
-- 3：快照备份。
-**说明**:
-1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
-2. 实例开通存储加密，则备份方式不能为物理备份。
+                     * 获取<p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>
+                     * @return BackupMethod <p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>
                      * 
                      */
                     int64_t GetBackupMethod() const;
 
                     /**
-                     * 设置设置备份方式。
-- 0：逻辑备份。
-- 1：物理备份。
-- 3：快照备份。
-**说明**:
-1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
-2. 实例开通存储加密，则备份方式不能为物理备份。
-                     * @param _backupMethod 设置备份方式。
-- 0：逻辑备份。
-- 1：物理备份。
-- 3：快照备份。
-**说明**:
-1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
-2. 实例开通存储加密，则备份方式不能为物理备份。
+                     * 设置<p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>
+                     * @param _backupMethod <p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>
                      * 
                      */
                     void SetBackupMethod(const int64_t& _backupMethod);
@@ -109,15 +85,15 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取备份备注信息。
-                     * @return BackupRemark 备份备注信息。
+                     * 获取<p>备份备注信息。</p>
+                     * @return BackupRemark <p>备份备注信息。</p>
                      * 
                      */
                     std::string GetBackupRemark() const;
 
                     /**
-                     * 设置备份备注信息。
-                     * @param _backupRemark 备份备注信息。
+                     * 设置<p>备份备注信息。</p>
+                     * @param _backupRemark <p>备份备注信息。</p>
                      * 
                      */
                     void SetBackupRemark(const std::string& _backupRemark);
@@ -129,31 +105,52 @@ namespace TencentCloud
                      */
                     bool BackupRemarkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>
+                     * @return BackupRetentionDays <p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>
+                     * 
+                     */
+                    int64_t GetBackupRetentionDays() const;
+
+                    /**
+                     * 设置<p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>
+                     * @param _backupRetentionDays <p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>
+                     * 
+                     */
+                    void SetBackupRetentionDays(const int64_t& _backupRetentionDays);
+
+                    /**
+                     * 判断参数 BackupRetentionDays 是否已赋值
+                     * @return BackupRetentionDays 是否已赋值
+                     * 
+                     */
+                    bool BackupRetentionDaysHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * <p>实例 ID。例如：cmgo-p8vn****。请登录 <a href="https://console.cloud.tencent.com/mongodb">MongoDB 控制台</a>在实例列表复制实例 ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 设置备份方式。
-- 0：逻辑备份。
-- 1：物理备份。
-- 3：快照备份。
-**说明**:
-1. 通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。
-2. 实例开通存储加密，则备份方式不能为物理备份。
+                     * <p>设置备份方式。</p><ul><li>0：逻辑备份。</li><li>1：物理备份。</li><li>3：快照备份。<br><strong>说明</strong>:</li><li>通用版实例支持逻辑备份与物理备份。云盘版实例支持物理备份与快照备份，暂不支持逻辑备份。</li><li>实例开通存储加密，则备份方式不能为物理备份。</li></ul>
                      */
                     int64_t m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * 备份备注信息。
+                     * <p>备份备注信息。</p>
                      */
                     std::string m_backupRemark;
                     bool m_backupRemarkHasBeenSet;
+
+                    /**
+                     * <p>保存天数，-2-永久保留（不定期保留），-1-跟随长期保留时长，0-按配置天数，1~7300-自定义天数（最长20年）</p><p>单位：天</p>
+                     */
+                    int64_t m_backupRetentionDays;
+                    bool m_backupRetentionDaysHasBeenSet;
 
                 };
             }
