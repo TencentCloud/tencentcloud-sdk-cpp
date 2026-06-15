@@ -77,12 +77,42 @@ TEST(CircuitBreakerTest, DoesNotTripWhenCountTooLow) {
     EXPECT_EQ(cb.GetState(), CircuitBreaker::State::kOpen);
 }
 
-TEST(CircuitBreakerTest, TripOnConsecutiveFailuresGreaterThanFive) {
-    // Even with an unreachable rate threshold, >=5 consecutive
-    // failures still trip the breaker via the consecutive-failure
-    // branch.
-    CircuitBreaker cb(MakeProfile(100, 1.1, 300, 60, 3));
+TEST(CircuitBreakerTest, TripOnConsecutiveFailuresReachesMaxFailNum) {
+    // Even with an unreachable rate threshold, consecutive failures
+    // reaching max_fail_num still trip the breaker via the
+    // consecutive-failure branch. Here max_fail_num=3, so 3 consecutive
+    // failures are enough (no need to wait for the rate branch).
+    CircuitBreaker cb(MakeProfile(3, 1.1, 300, 60, 3));
+    DrainN(cb, 3, false);
+    EXPECT_EQ(cb.GetState(), CircuitBreaker::State::kOpen);
+}
+
+TEST(CircuitBreakerTest, ConsecutiveFailuresUseConfiguredMaxFailNum) {
+    // Verify that the consecutive-failure threshold follows the user's
+    // max_fail_num, not a hardcoded value. With max_fail_num=7 the
+    // breaker should NOT trip after 5 consecutive failures (the old
+    // hardcoded default), but SHOULD trip after 7.
+    CircuitBreaker cb(MakeProfile(7, 1.1, 300, 60, 3));
     DrainN(cb, 5, false);
+    EXPECT_EQ(cb.GetState(), CircuitBreaker::State::kClosed);
+    DrainN(cb, 2, false);
+    EXPECT_EQ(cb.GetState(), CircuitBreaker::State::kOpen);
+}
+
+TEST(CircuitBreakerTest, ConsecutiveFailuresOverrideRateBranch) {
+    // When failures are interleaved with successes, the rate branch
+    // may not trigger, but consecutive failures should still work.
+    // max_fail_num=3, max_fail_percent=0.9 (90% failure rate needed).
+    CircuitBreaker cb(MakeProfile(3, 0.9, 300, 60, 3));
+    // 2 failures, 1 success, 3 consecutive failures:
+    // total=6, failures=5, rate=83% < 90% → rate branch NOT triggered.
+    // But consecutive=3 >= max_fail_num=3 → consecutive branch triggers.
+    ASSERT_TRUE(cb.Allow()); cb.Report(false);  // consec=1, total=1, fail=1
+    ASSERT_TRUE(cb.Allow()); cb.Report(false);  // consec=2, total=2, fail=2
+    ASSERT_TRUE(cb.Allow()); cb.Report(true);   // consec=0, total=3, fail=2
+    ASSERT_TRUE(cb.Allow()); cb.Report(false);  // consec=1, total=4, fail=3
+    ASSERT_TRUE(cb.Allow()); cb.Report(false);  // consec=2, total=5, fail=4
+    ASSERT_TRUE(cb.Allow()); cb.Report(false);  // consec=3, total=6, fail=5
     EXPECT_EQ(cb.GetState(), CircuitBreaker::State::kOpen);
 }
 

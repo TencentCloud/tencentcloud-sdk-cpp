@@ -30,18 +30,18 @@ namespace TencentCloud
 ///   BackupEndpoint is configured:
 ///
 ///   Mode A (BackupEndpoint configured):
-///     Primary → BackupEndpoint (sole fallback, acts as bottom)
+///     Primary -> BackupEndpoint (sole fallback, acts as bottom)
 ///     No TLD fallback is performed.
 ///     Works regardless of whether primary has a region segment.
 ///
 ///   Mode B (BackupEndpoint empty, default):
 ///     - If primary does NOT contain a region segment:
-///       Primary → next TLD in ring → second TLD (bottom)
-///       TLD ring order: .com → .com.cn → .cn → .com → ...
+///       Primary -> next TLD in ring -> second TLD (bottom)
+///       TLD ring order: .com -> .com.cn -> .cn -> .com -> ...
 ///       Examples:
-///         cvm.tencentcloudapi.com        → .com.cn → .cn (bottom)
-///         hunyuan.ai.tencentcloudapi.com → hunyuan.ai.tencentcloudapi.com.cn → .cn
-///         cvm.internal.tencentcloudapi.com → cvm.internal.tencentcloudapi.com.cn → .cn
+///         cvm.tencentcloudapi.com        -> .com.cn -> .cn (bottom)
+///         hunyuan.ai.tencentcloudapi.com -> hunyuan.ai.tencentcloudapi.com.cn -> .cn
+///         cvm.internal.tencentcloudapi.com -> cvm.internal.tencentcloudapi.com.cn -> .cn
 ///
 ///     - If primary DOES contain a region segment:
 ///       No TLD fallback is performed (returns "").
@@ -50,65 +50,66 @@ namespace TencentCloud
 ///       Users who need failover for regional endpoints should
 ///       configure a BackupEndpoint explicitly (Mode A).
 ///       Examples (no fallback):
-///         cvm.ap-shanghai.tencentcloudapi.com     → "" (no fallback)
-///         hunyuan.ai.ap-shanghai.tencentcloudapi.com → "" (no fallback)
+///         cvm.ap-shanghai.tencentcloudapi.com     -> "" (no fallback)
+///         hunyuan.ai.ap-shanghai.tencentcloudapi.com -> "" (no fallback)
 ///
 /// This class is stateless; state (closed/open/halfopen) lives in CircuitBreaker.
-class DomainFailoverManager {
- public:
-  /// Number of breaker slots needed for the failover chain.
-  /// 3 slots (the maximum across both modes):
-  ///   Mode A (BackupEndpoint set): only breaker[0] is used (primary);
-  ///     BackupEndpoint is the bottom, no breaker needed.
-  ///   Mode B (no BackupEndpoint): breaker[0] skipped, breaker[1] guards
-  ///     primary, breaker[2] guards 1st TLD fallback; last TLD is bottom.
-  /// Unused slots are skipped via empty GetFallbackEndpoint() returns.
-  static int GetBreakerSlotCount();
+class DomainFailoverManager
+{
+public:
+    /// Number of breaker slots needed for the failover chain.
+    /// 3 slots (the maximum across both modes):
+    ///   Mode A (BackupEndpoint set): only breaker[0] is used (primary);
+    ///     BackupEndpoint is the bottom, no breaker needed.
+    ///   Mode B (no BackupEndpoint): breaker[0] skipped, breaker[1] guards
+    ///     primary, breaker[2] guards 1st TLD fallback; last TLD is bottom.
+    /// Unused slots are skipped via empty GetFallbackEndpoint() returns.
+    static int GetBreakerSlotCount();
 
-  /// Build a fallback endpoint for |fallback_index| given the primary
-  /// |original_endpoint| and user-configured |backup_endpoint|.
-  ///
-  /// Returns empty string if |fallback_index| is out of range or if
-  /// |original_endpoint| is not a TencentCloud domain.
-  static std::string GetFallbackEndpoint(const std::string &original_endpoint,
-                                          const std::string &backup_endpoint,
-                                          int fallback_index);
+    /// Build a fallback endpoint for |fallback_index| given the primary
+    /// |original_endpoint| and user-configured |backup_endpoint|.
+    ///
+    /// Returns empty string if |fallback_index| is out of range or if
+    /// |original_endpoint| is not a TencentCloud domain.
+    static std::string GetFallbackEndpoint(const std::string &original_endpoint,
+                                            const std::string &backup_endpoint,
+                                            int fallback_index);
 
-  /// True iff |endpoint| targets tencentcloudapi.com / .com.cn / .cn .
-  static bool IsTencentCloudDomain(const std::string &endpoint);
+    /// True iff |endpoint| targets tencentcloudapi.com / .com.cn / .cn .
+    static bool IsTencentCloudDomain(const std::string &endpoint);
 
-  /// Extract the longest matching TLD suffix from |endpoint|, returning
-  /// one of "tencentcloudapi.com.cn", "tencentcloudapi.com",
-  /// "tencentcloudapi.cn", or "" if none match.
-  static std::string ExtractTld(const std::string &endpoint);
+    /// Extract the longest matching TLD suffix from |endpoint|, returning
+    /// one of "tencentcloudapi.com.cn", "tencentcloudapi.com",
+    /// "tencentcloudapi.cn", or "" if none match.
+    static std::string ExtractTld(const std::string &endpoint);
 
-  /// Extract the first segment (service name) from |endpoint|.
-  /// e.g. "hunyuan.ai.tencentcloudapi.com" -> "hunyuan".
-  static std::string ExtractService(const std::string &endpoint);
+    /// Extract the first segment (service name) from |endpoint|.
+    /// e.g. "hunyuan.ai.tencentcloudapi.com" -> "hunyuan".
+    static std::string ExtractService(const std::string &endpoint);
 
-  /// Extract the "middle" segment between the service and the TLD.
-  /// TencentCloud API domains have these shapes:
-  ///   {service}[.{region}].{tld}              -> returns ""
-  ///   {service}.ai[.{region}].{tld}           -> returns "ai"
-  ///   {service}.internal.{tld}                -> returns "internal"
-  ///
-  /// "ai" is a product identifier -- preserved in both TLD fallback
-  /// and BackupEndpoint construction.
-  ///
-  /// "internal" is a network route marker (intranet resolution) --
-  /// preserved in TLD fallback (staying on internal route with
-  /// different TLD), but stripped in BackupEndpoint construction
-  /// (falling back from internal to public route).
-  ///
-  /// Region segments are not enumerated, so new regions need no
-  /// change here.
-  static std::string ExtractMiddleSegment(const std::string &endpoint,
-                                           const std::string &tld);
+    /// Extract the "middle" segment between the service and the TLD.
+    /// TencentCloud API domains have these shapes:
+    ///   {service}[.{region}].{tld}              -> returns ""
+    ///   {service}.ai[.{region}].{tld}           -> returns "ai"
+    ///   {service}.internal.{tld}                -> returns "internal"
+    ///
+    /// "ai" is a product identifier -- preserved in both TLD fallback
+    /// and BackupEndpoint construction.
+    ///
+    /// "internal" is a network route marker (intranet resolution) --
+    /// preserved in TLD fallback (staying on internal route with
+    /// different TLD), but stripped in BackupEndpoint construction
+    /// (falling back from internal to public route).
+    ///
+    /// Region segments are not enumerated, so new regions need no
+    /// change here.
+    static std::string ExtractMiddleSegment(const std::string &endpoint,
+                                             const std::string &tld);
 
- private:
-  /// TLD ring: .com → .com.cn → .cn → (wraps to .com).
-  /// Used to compute the two non-primary TLD fallback candidates.
-  static const std::vector<std::string> kTldRing;
+private:
+    /// TLD ring: .com -> .com.cn -> .cn -> (wraps to .com).
+    /// Used to compute the two non-primary TLD fallback candidates.
+    static const std::vector<std::string> kTldRing;
 };
 
 }  // namespace TencentCloud

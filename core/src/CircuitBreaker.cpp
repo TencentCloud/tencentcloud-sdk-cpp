@@ -20,15 +20,6 @@
 
 using namespace TencentCloud;
 
-namespace
-{
-    // Trip condition tuning: consecutive-failure branch, independent
-    // of configured rate/count thresholds, to catch fast-failing
-    // endpoints that would otherwise not accumulate enough samples to
-    // trip the rate-based branch.
-    const int kConsecutiveFailureTripThreshold = 5;
-}
-
 CircuitBreaker::CircuitBreaker()
     : CircuitBreaker(RegionBreakerProfile())
 {
@@ -194,7 +185,7 @@ bool CircuitBreaker::ReadyToOpenLocked() const
     // Trip condition (two independent branches, either is sufficient):
     //   (failures >= max_fail_num AND failures/total >= max_fail_percent)
     //   OR
-    //   (consecutive_failures >= kConsecutiveFailureTripThreshold)
+    //   (consecutive_failures >= max_fail_num)
     if (m_total > 0)
     {
         double rate = static_cast<double>(m_failures) /
@@ -204,7 +195,7 @@ bool CircuitBreaker::ReadyToOpenLocked() const
             return true;
         }
     }
-    if (m_consecutiveFailures >= kConsecutiveFailureTripThreshold)
+    if (m_consecutiveFailures >= m_maxFailNum)
     {
         return true;
     }
