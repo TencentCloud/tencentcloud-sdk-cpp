@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API 请求路径
-                     * @return Path API 请求路径
+                     * 获取<p>API 请求路径</p>
+                     * @return Path <p>API 请求路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置API 请求路径
-                     * @param _path API 请求路径
+                     * 设置<p>API 请求路径</p>
+                     * @param _path <p>API 请求路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取请求方法
-                     * @return Method 请求方法
+                     * 获取<p>请求方法</p>
+                     * @return Method <p>请求方法</p>
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置请求方法
-                     * @param _method 请求方法
+                     * 设置<p>请求方法</p>
+                     * @param _method <p>请求方法</p>
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取方法描述
+                     * 获取<p>方法描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 方法描述
+                     * @return Description <p>方法描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置方法描述
+                     * 设置<p>方法描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 方法描述
+                     * @param _description <p>方法描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取API状态 0:离线 1:在线
+                     * 获取<p>API状态 0:离线 1:在线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status API状态 0:离线 1:在线
+                     * @return Status <p>API状态 0:离线 1:在线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置API状态 0:离线 1:在线
+                     * 设置<p>API状态 0:离线 1:在线</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status API状态 0:离线 1:在线
+                     * @param _status <p>API状态 0:离线 1:在线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,33 +138,87 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>API ID</p>
+                     * @return ApiId <p>API ID</p>
+                     * 
+                     */
+                    std::string GetApiId() const;
+
+                    /**
+                     * 设置<p>API ID</p>
+                     * @param _apiId <p>API ID</p>
+                     * 
+                     */
+                    void SetApiId(const std::string& _apiId);
+
+                    /**
+                     * 判断参数 ApiId 是否已赋值
+                     * @return ApiId 是否已赋值
+                     * 
+                     */
+                    bool ApiIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>
+                     * @return SrcTypeName <p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>
+                     * 
+                     */
+                    std::string GetSrcTypeName() const;
+
+                    /**
+                     * 设置<p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>
+                     * @param _srcTypeName <p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>
+                     * 
+                     */
+                    void SetSrcTypeName(const std::string& _srcTypeName);
+
+                    /**
+                     * 判断参数 SrcTypeName 是否已赋值
+                     * @return SrcTypeName 是否已赋值
+                     * 
+                     */
+                    bool SrcTypeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * API 请求路径
+                     * <p>API 请求路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 请求方法
+                     * <p>请求方法</p>
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 方法描述
+                     * <p>方法描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * API状态 0:离线 1:在线
+                     * <p>API状态 0:离线 1:在线</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>API ID</p>
+                     */
+                    std::string m_apiId;
+                    bool m_apiIdHasBeenSet;
+
+                    /**
+                     * <p>API来源</p><p>枚举值：</p><ul><li>FROM_CONSUL： 服务注册</li><li>FROM_MANUAL： 手动录入</li></ul>
+                     */
+                    std::string m_srcTypeName;
+                    bool m_srcTypeNameHasBeenSet;
 
                 };
             }

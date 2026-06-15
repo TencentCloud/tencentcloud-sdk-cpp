@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取磁盘增长量(MB)。
-                     * @return Growth 磁盘增长量(MB)。
+                     * 获取<p>磁盘增长量(MB)。</p>
+                     * @return Growth <p>磁盘增长量(MB)。</p>
                      * 
                      */
                     int64_t GetGrowth() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool GrowthHasBeenSet() const;
 
                     /**
-                     * 获取磁盘剩余(MB)。
-                     * @return Remain 磁盘剩余(MB)。
+                     * 获取<p>磁盘剩余(MB)。</p>
+                     * @return Remain <p>磁盘剩余(MB)。</p>
                      * 
                      */
                     int64_t GetRemain() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool RemainHasBeenSet() const;
 
                     /**
-                     * 获取磁盘总量(MB)。
-                     * @return Total 磁盘总量(MB)。
+                     * 获取<p>磁盘总量(MB)。</p>
+                     * @return Total <p>磁盘总量(MB)。</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取预计可用天数。
-                     * @return AvailableDays 预计可用天数。
+                     * 获取<p>预计可用天数。</p>
+                     * @return AvailableDays <p>预计可用天数。</p>
                      * 
                      */
                     int64_t GetAvailableDays() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 磁盘增长量(MB)。
+                     * <p>磁盘增长量(MB)。</p>
                      */
                     int64_t m_growth;
                     bool m_growthHasBeenSet;
 
                     /**
-                     * 磁盘剩余(MB)。
+                     * <p>磁盘剩余(MB)。</p>
                      */
                     int64_t m_remain;
                     bool m_remainHasBeenSet;
 
                     /**
-                     * 磁盘总量(MB)。
+                     * <p>磁盘总量(MB)。</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 预计可用天数。
+                     * <p>预计可用天数。</p>
                      */
                     int64_t m_availableDays;
                     bool m_availableDaysHasBeenSet;

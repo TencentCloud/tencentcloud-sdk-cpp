@@ -738,6 +738,31 @@ namespace TencentCloud
                      */
                     bool PathMappingUnsupportedMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiOnlineStatus <p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApiOnlineStatus() const;
+
+                    /**
+                     * 设置<p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiOnlineStatus <p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiOnlineStatus(const std::string& _apiOnlineStatus);
+
+                    /**
+                     * 判断参数 ApiOnlineStatus 是否已赋值
+                     * @return ApiOnlineStatus 是否已赋值
+                     * 
+                     */
+                    bool ApiOnlineStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -933,6 +958,13 @@ namespace TencentCloud
                      */
                     std::string m_pathMappingUnsupportedMsg;
                     bool m_pathMappingUnsupportedMsgHasBeenSet;
+
+                    /**
+                     * <p>API在线状态</p><p>枚举值：</p><ul><li>ONLINE： 在线</li><li>OFFLINE： 离线</li><li>UNKNOWN： 未知</li><li>DELETED： 查询服务治理API不存在</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apiOnlineStatus;
+                    bool m_apiOnlineStatusHasBeenSet;
 
                 };
             }

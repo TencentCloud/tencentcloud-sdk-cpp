@@ -28,7 +28,9 @@ DescribeGatewayApisRequest::DescribeGatewayApisRequest() :
     m_limitHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_gatewayDeployGroupIdHasBeenSet(false),
-    m_releaseStatusHasBeenSet(false)
+    m_releaseStatusHasBeenSet(false),
+    m_extendFieldListHasBeenSet(false),
+    m_apiOnlineStatusHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,27 @@ string DescribeGatewayApisRequest::ToJsonString() const
         string key = "ReleaseStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_releaseStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extendFieldListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendFieldList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extendFieldList.begin(); itr != m_extendFieldList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_apiOnlineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiOnlineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiOnlineStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +212,38 @@ void DescribeGatewayApisRequest::SetReleaseStatus(const string& _releaseStatus)
 bool DescribeGatewayApisRequest::ReleaseStatusHasBeenSet() const
 {
     return m_releaseStatusHasBeenSet;
+}
+
+vector<string> DescribeGatewayApisRequest::GetExtendFieldList() const
+{
+    return m_extendFieldList;
+}
+
+void DescribeGatewayApisRequest::SetExtendFieldList(const vector<string>& _extendFieldList)
+{
+    m_extendFieldList = _extendFieldList;
+    m_extendFieldListHasBeenSet = true;
+}
+
+bool DescribeGatewayApisRequest::ExtendFieldListHasBeenSet() const
+{
+    return m_extendFieldListHasBeenSet;
+}
+
+string DescribeGatewayApisRequest::GetApiOnlineStatus() const
+{
+    return m_apiOnlineStatus;
+}
+
+void DescribeGatewayApisRequest::SetApiOnlineStatus(const string& _apiOnlineStatus)
+{
+    m_apiOnlineStatus = _apiOnlineStatus;
+    m_apiOnlineStatusHasBeenSet = true;
+}
+
+bool DescribeGatewayApisRequest::ApiOnlineStatusHasBeenSet() const
+{
+    return m_apiOnlineStatusHasBeenSet;
 }
 
 

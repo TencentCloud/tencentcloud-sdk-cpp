@@ -57,15 +57,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return ApplicationId <p>应用ID</p>
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _applicationId <p>应用ID</p>
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -78,15 +78,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取可观测配置
-                     * @return ObservabilityConfig 可观测配置
+                     * 获取<p>可观测配置</p>
+                     * @return ObservabilityConfig <p>可观测配置</p>
                      * 
                      */
                     ContainerGroupObservabilityConfig GetObservabilityConfig() const;
 
                     /**
-                     * 设置可观测配置
-                     * @param _observabilityConfig 可观测配置
+                     * 设置<p>可观测配置</p>
+                     * @param _observabilityConfig <p>可观测配置</p>
                      * 
                      */
                     void SetObservabilityConfig(const ContainerGroupObservabilityConfig& _observabilityConfig);
@@ -99,15 +99,15 @@ namespace TencentCloud
                     bool ObservabilityConfigHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -120,15 +120,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID，分组唯一标识
-                     * @return GroupId 部署组ID，分组唯一标识
+                     * 获取<p>部署组ID，分组唯一标识</p>
+                     * @return GroupId <p>部署组ID，分组唯一标识</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID，分组唯一标识
-                     * @param _groupId 部署组ID，分组唯一标识
+                     * 设置<p>部署组ID，分组唯一标识</p>
+                     * @param _groupId <p>部署组ID，分组唯一标识</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -141,15 +141,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的环境变量参数
-                     * @return Envs 业务容器的环境变量参数
+                     * 获取<p>业务容器的环境变量参数</p>
+                     * @return Envs <p>业务容器的环境变量参数</p>
                      * 
                      */
                     std::vector<Env> GetEnvs() const;
 
                     /**
-                     * 设置业务容器的环境变量参数
-                     * @param _envs 业务容器的环境变量参数
+                     * 设置<p>业务容器的环境变量参数</p>
+                     * @param _envs <p>业务容器的环境变量参数</p>
                      * 
                      */
                     void SetEnvs(const std::vector<Env>& _envs);
@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的挂载信息
-                     * @return VolumeMountInfoList 业务容器的挂载信息
+                     * 获取<p>业务容器的挂载信息</p>
+                     * @return VolumeMountInfoList <p>业务容器的挂载信息</p>
                      * 
                      */
                     std::vector<VolumeMountInfo> GetVolumeMountInfoList() const;
 
                     /**
-                     * 设置业务容器的挂载信息
-                     * @param _volumeMountInfoList 业务容器的挂载信息
+                     * 设置<p>业务容器的挂载信息</p>
+                     * @param _volumeMountInfoList <p>业务容器的挂载信息</p>
                      * 
                      */
                     void SetVolumeMountInfoList(const std::vector<VolumeMountInfo>& _volumeMountInfoList);
@@ -183,15 +183,15 @@ namespace TencentCloud
                     bool VolumeMountInfoListHasBeenSet() const;
 
                     /**
-                     * 获取业务主容器生命周期钩子列表
-                     * @return LifeCycleHookList 业务主容器生命周期钩子列表
+                     * 获取<p>业务主容器生命周期钩子列表</p>
+                     * @return LifeCycleHookList <p>业务主容器生命周期钩子列表</p>
                      * 
                      */
                     std::vector<LifeCycleHook> GetLifeCycleHookList() const;
 
                     /**
-                     * 设置业务主容器生命周期钩子列表
-                     * @param _lifeCycleHookList 业务主容器生命周期钩子列表
+                     * 设置<p>业务主容器生命周期钩子列表</p>
+                     * @param _lifeCycleHookList <p>业务主容器生命周期钩子列表</p>
                      * 
                      */
                     void SetLifeCycleHookList(const std::vector<LifeCycleHook>& _lifeCycleHookList);
@@ -204,15 +204,15 @@ namespace TencentCloud
                     bool LifeCycleHookListHasBeenSet() const;
 
                     /**
-                     * 获取附属容器列表
-                     * @return AdditionalContainerList 附属容器列表
+                     * 获取<p>附属容器列表</p>
+                     * @return AdditionalContainerList <p>附属容器列表</p>
                      * 
                      */
                     std::vector<ContainerInfo> GetAdditionalContainerList() const;
 
                     /**
-                     * 设置附属容器列表
-                     * @param _additionalContainerList 附属容器列表
+                     * 设置<p>附属容器列表</p>
+                     * @param _additionalContainerList <p>附属容器列表</p>
                      * 
                      */
                     void SetAdditionalContainerList(const std::vector<ContainerInfo>& _additionalContainerList);
@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool AdditionalContainerListHasBeenSet() const;
 
                     /**
-                     * 获取容器卷信息
-                     * @return VolumeInfoList 容器卷信息
+                     * 获取<p>容器卷信息</p>
+                     * @return VolumeInfoList <p>容器卷信息</p>
                      * 
                      */
                     std::vector<VolumeInfo> GetVolumeInfoList() const;
 
                     /**
-                     * 设置容器卷信息
-                     * @param _volumeInfoList 容器卷信息
+                     * 设置<p>容器卷信息</p>
+                     * @param _volumeInfoList <p>容器卷信息</p>
                      * 
                      */
                     void SetVolumeInfoList(const std::vector<VolumeInfo>& _volumeInfoList);
@@ -246,15 +246,15 @@ namespace TencentCloud
                     bool VolumeInfoListHasBeenSet() const;
 
                     /**
-                     * 获取Service访问配置列表
-                     * @return ServiceSettingList Service访问配置列表
+                     * 获取<p>Service访问配置列表</p>
+                     * @return ServiceSettingList <p>Service访问配置列表</p>
                      * 
                      */
                     std::vector<ServiceSetting> GetServiceSettingList() const;
 
                     /**
-                     * 设置Service访问配置列表
-                     * @param _serviceSettingList Service访问配置列表
+                     * 设置<p>Service访问配置列表</p>
+                     * @param _serviceSettingList <p>Service访问配置列表</p>
                      * 
                      */
                     void SetServiceSettingList(const std::vector<ServiceSetting>& _serviceSettingList);
@@ -267,15 +267,15 @@ namespace TencentCloud
                     bool ServiceSettingListHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Alias 备注
+                     * 获取<p>备注</p>
+                     * @return Alias <p>备注</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置备注
-                     * @param _alias 备注
+                     * 设置<p>备注</p>
+                     * @param _alias <p>备注</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -288,15 +288,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取部署组名称
-                     * @return GroupName 部署组名称
+                     * 获取<p>部署组名称</p>
+                     * @return GroupName <p>部署组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置部署组名称
-                     * @param _groupName 部署组名称
+                     * 设置<p>部署组名称</p>
+                     * @param _groupName <p>部署组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -309,15 +309,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -330,15 +330,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取容器类型
-                     * @return ContainerKind 容器类型
+                     * 获取<p>容器类型</p>
+                     * @return ContainerKind <p>容器类型</p>
                      * 
                      */
                     std::string GetContainerKind() const;
 
                     /**
-                     * 设置容器类型
-                     * @param _containerKind 容器类型
+                     * 设置<p>容器类型</p>
+                     * @param _containerKind <p>容器类型</p>
                      * 
                      */
                     void SetContainerKind(const std::string& _containerKind);
@@ -351,15 +351,15 @@ namespace TencentCloud
                     bool ContainerKindHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 镜像Server ccr.ccs.tencentyun.com
-                     * @return Server 业务容器的 镜像Server ccr.ccs.tencentyun.com
+                     * 获取<p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>
+                     * @return Server <p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>
                      * 
                      */
                     std::string GetServer() const;
 
                     /**
-                     * 设置业务容器的 镜像Server ccr.ccs.tencentyun.com
-                     * @param _server 业务容器的 镜像Server ccr.ccs.tencentyun.com
+                     * 设置<p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>
+                     * @param _server <p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>
                      * 
                      */
                     void SetServer(const std::string& _server);
@@ -372,15 +372,15 @@ namespace TencentCloud
                     bool ServerHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的镜像名
-                     * @return RepoName 业务容器的镜像名
+                     * 获取<p>业务容器的镜像名</p>
+                     * @return RepoName <p>业务容器的镜像名</p>
                      * 
                      */
                     std::string GetRepoName() const;
 
                     /**
-                     * 设置业务容器的镜像名
-                     * @param _repoName 业务容器的镜像名
+                     * 设置<p>业务容器的镜像名</p>
+                     * @param _repoName <p>业务容器的镜像名</p>
                      * 
                      */
                     void SetRepoName(const std::string& _repoName);
@@ -393,15 +393,15 @@ namespace TencentCloud
                     bool RepoNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型
-                     * @return RepoType 仓库类型
+                     * 获取<p>仓库类型</p>
+                     * @return RepoType <p>仓库类型</p>
                      * 
                      */
                     std::string GetRepoType() const;
 
                     /**
-                     * 设置仓库类型
-                     * @param _repoType 仓库类型
+                     * 设置<p>仓库类型</p>
+                     * @param _repoType <p>仓库类型</p>
                      * 
                      */
                     void SetRepoType(const std::string& _repoType);
@@ -414,15 +414,15 @@ namespace TencentCloud
                     bool RepoTypeHasBeenSet() const;
 
                     /**
-                     * 获取TCR仓库信息
-                     * @return TcrRepoInfo TCR仓库信息
+                     * 获取<p>TCR仓库信息</p>
+                     * @return TcrRepoInfo <p>TCR仓库信息</p>
                      * 
                      */
                     TcrRepoInfo GetTcrRepoInfo() const;
 
                     /**
-                     * 设置TCR仓库信息
-                     * @param _tcrRepoInfo TCR仓库信息
+                     * 设置<p>TCR仓库信息</p>
+                     * @param _tcrRepoInfo <p>TCR仓库信息</p>
                      * 
                      */
                     void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
@@ -435,15 +435,15 @@ namespace TencentCloud
                     bool TcrRepoInfoHasBeenSet() const;
 
                     /**
-                     * 获取容器访问凭证名称
-                     * @return SecretName 容器访问凭证名称
+                     * 获取<p>容器访问凭证名称</p>
+                     * @return SecretName <p>容器访问凭证名称</p>
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置容器访问凭证名称
-                     * @param _secretName 容器访问凭证名称
+                     * 设置<p>容器访问凭证名称</p>
+                     * @param _secretName <p>容器访问凭证名称</p>
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -456,15 +456,15 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的镜像版本号
-                     * @return TagName 业务容器的镜像版本号
+                     * 获取<p>业务容器的镜像版本号</p>
+                     * @return TagName <p>业务容器的镜像版本号</p>
                      * 
                      */
                     std::string GetTagName() const;
 
                     /**
-                     * 设置业务容器的镜像版本号
-                     * @param _tagName 业务容器的镜像版本号
+                     * 设置<p>业务容器的镜像版本号</p>
+                     * @param _tagName <p>业务容器的镜像版本号</p>
                      * 
                      */
                     void SetTagName(const std::string& _tagName);
@@ -477,15 +477,15 @@ namespace TencentCloud
                     bool TagNameHasBeenSet() const;
 
                     /**
-                     * 获取健康检查
-                     * @return HealthCheckSettings 健康检查
+                     * 获取<p>健康检查</p>
+                     * @return HealthCheckSettings <p>健康检查</p>
                      * 
                      */
                     HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
-                     * 设置健康检查
-                     * @param _healthCheckSettings 健康检查
+                     * 设置<p>健康检查</p>
+                     * @param _healthCheckSettings <p>健康检查</p>
                      * 
                      */
                     void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
@@ -498,15 +498,15 @@ namespace TencentCloud
                     bool HealthCheckSettingsHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 cpu  request
-                     * @return CpuRequest 业务容器的 cpu  request
+                     * 获取<p>业务容器的 cpu  request</p>
+                     * @return CpuRequest <p>业务容器的 cpu  request</p>
                      * 
                      */
                     std::string GetCpuRequest() const;
 
                     /**
-                     * 设置业务容器的 cpu  request
-                     * @param _cpuRequest 业务容器的 cpu  request
+                     * 设置<p>业务容器的 cpu  request</p>
+                     * @param _cpuRequest <p>业务容器的 cpu  request</p>
                      * 
                      */
                     void SetCpuRequest(const std::string& _cpuRequest);
@@ -519,15 +519,15 @@ namespace TencentCloud
                     bool CpuRequestHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 cpu limit
-                     * @return CpuLimit 业务容器的 cpu limit
+                     * 获取<p>业务容器的 cpu limit</p>
+                     * @return CpuLimit <p>业务容器的 cpu limit</p>
                      * 
                      */
                     std::string GetCpuLimit() const;
 
                     /**
-                     * 设置业务容器的 cpu limit
-                     * @param _cpuLimit 业务容器的 cpu limit
+                     * 设置<p>业务容器的 cpu limit</p>
+                     * @param _cpuLimit <p>业务容器的 cpu limit</p>
                      * 
                      */
                     void SetCpuLimit(const std::string& _cpuLimit);
@@ -540,15 +540,15 @@ namespace TencentCloud
                     bool CpuLimitHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 mem request
-                     * @return MemRequest 业务容器的 mem request
+                     * 获取<p>业务容器的 mem request</p>
+                     * @return MemRequest <p>业务容器的 mem request</p>
                      * 
                      */
                     std::string GetMemRequest() const;
 
                     /**
-                     * 设置业务容器的 mem request
-                     * @param _memRequest 业务容器的 mem request
+                     * 设置<p>业务容器的 mem request</p>
+                     * @param _memRequest <p>业务容器的 mem request</p>
                      * 
                      */
                     void SetMemRequest(const std::string& _memRequest);
@@ -561,15 +561,15 @@ namespace TencentCloud
                     bool MemRequestHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 mem limit
-                     * @return MemLimit 业务容器的 mem limit
+                     * 获取<p>业务容器的 mem limit</p>
+                     * @return MemLimit <p>业务容器的 mem limit</p>
                      * 
                      */
                     std::string GetMemLimit() const;
 
                     /**
-                     * 设置业务容器的 mem limit
-                     * @param _memLimit 业务容器的 mem limit
+                     * 设置<p>业务容器的 mem limit</p>
+                     * @param _memLimit <p>业务容器的 mem limit</p>
                      * 
                      */
                     void SetMemLimit(const std::string& _memLimit);
@@ -582,15 +582,15 @@ namespace TencentCloud
                     bool MemLimitHasBeenSet() const;
 
                     /**
-                     * 获取业务容器的 jvm 参数
-                     * @return JvmOpts 业务容器的 jvm 参数
+                     * 获取<p>业务容器的 jvm 参数</p>
+                     * @return JvmOpts <p>业务容器的 jvm 参数</p>
                      * 
                      */
                     std::string GetJvmOpts() const;
 
                     /**
-                     * 设置业务容器的 jvm 参数
-                     * @param _jvmOpts 业务容器的 jvm 参数
+                     * 设置<p>业务容器的 jvm 参数</p>
+                     * @param _jvmOpts <p>业务容器的 jvm 参数</p>
                      * 
                      */
                     void SetJvmOpts(const std::string& _jvmOpts);
@@ -603,15 +603,15 @@ namespace TencentCloud
                     bool JvmOptsHasBeenSet() const;
 
                     /**
-                     * 获取是否为初始化容器 业务主容器不能为初始化容
-                     * @return InitContainerEnable 是否为初始化容器 业务主容器不能为初始化容
+                     * 获取<p>是否为初始化容器 业务主容器不能为初始化容</p>
+                     * @return InitContainerEnable <p>是否为初始化容器 业务主容器不能为初始化容</p>
                      * 
                      */
                     bool GetInitContainerEnable() const;
 
                     /**
-                     * 设置是否为初始化容器 业务主容器不能为初始化容
-                     * @param _initContainerEnable 是否为初始化容器 业务主容器不能为初始化容
+                     * 设置<p>是否为初始化容器 业务主容器不能为初始化容</p>
+                     * @param _initContainerEnable <p>是否为初始化容器 业务主容器不能为初始化容</p>
                      * 
                      */
                     void SetInitContainerEnable(const bool& _initContainerEnable);
@@ -624,15 +624,15 @@ namespace TencentCloud
                     bool InitContainerEnableHasBeenSet() const;
 
                     /**
-                     * 获取业务主容器是否为特权容器
-                     * @return PrivilegeContainerEnable 业务主容器是否为特权容器
+                     * 获取<p>业务主容器是否为特权容器</p>
+                     * @return PrivilegeContainerEnable <p>业务主容器是否为特权容器</p>
                      * 
                      */
                     bool GetPrivilegeContainerEnable() const;
 
                     /**
-                     * 设置业务主容器是否为特权容器
-                     * @param _privilegeContainerEnable 业务主容器是否为特权容器
+                     * 设置<p>业务主容器是否为特权容器</p>
+                     * @param _privilegeContainerEnable <p>业务主容器是否为特权容器</p>
                      * 
                      */
                     void SetPrivilegeContainerEnable(const bool& _privilegeContainerEnable);
@@ -645,15 +645,15 @@ namespace TencentCloud
                     bool PrivilegeContainerEnableHasBeenSet() const;
 
                     /**
-                     * 获取业务主容器运行命令(转base64)
-                     * @return RunCommand 业务主容器运行命令(转base64)
+                     * 获取<p>业务主容器运行命令(转base64)</p>
+                     * @return RunCommand <p>业务主容器运行命令(转base64)</p>
                      * 
                      */
                     std::string GetRunCommand() const;
 
                     /**
-                     * 设置业务主容器运行命令(转base64)
-                     * @param _runCommand 业务主容器运行命令(转base64)
+                     * 设置<p>业务主容器运行命令(转base64)</p>
+                     * @param _runCommand <p>业务主容器运行命令(转base64)</p>
                      * 
                      */
                     void SetRunCommand(const std::string& _runCommand);
@@ -666,15 +666,15 @@ namespace TencentCloud
                     bool RunCommandHasBeenSet() const;
 
                     /**
-                     * 获取业务主容器运行参数(转base64)
-                     * @return RunArg 业务主容器运行参数(转base64)
+                     * 获取<p>业务主容器运行参数(转base64)</p>
+                     * @return RunArg <p>业务主容器运行参数(转base64)</p>
                      * 
                      */
                     std::string GetRunArg() const;
 
                     /**
-                     * 设置业务主容器运行参数(转base64)
-                     * @param _runArg 业务主容器运行参数(转base64)
+                     * 设置<p>业务主容器运行参数(转base64)</p>
+                     * @param _runArg <p>业务主容器运行参数(转base64)</p>
                      * 
                      */
                     void SetRunArg(const std::string& _runArg);
@@ -687,15 +687,15 @@ namespace TencentCloud
                     bool RunArgHasBeenSet() const;
 
                     /**
-                     * 获取实例数量
-                     * @return InstanceNum 实例数量
+                     * 获取<p>实例数量</p>
+                     * @return InstanceNum <p>实例数量</p>
                      * 
                      */
                     int64_t GetInstanceNum() const;
 
                     /**
-                     * 设置实例数量
-                     * @param _instanceNum 实例数量
+                     * 设置<p>实例数量</p>
+                     * @param _instanceNum <p>实例数量</p>
                      * 
                      */
                     void SetInstanceNum(const int64_t& _instanceNum);
@@ -708,15 +708,15 @@ namespace TencentCloud
                     bool InstanceNumHasBeenSet() const;
 
                     /**
-                     * 获取调度策略
-                     * @return SchedulingStrategy 调度策略
+                     * 获取<p>调度策略</p>
+                     * @return SchedulingStrategy <p>调度策略</p>
                      * 
                      */
                     SchedulingStrategy GetSchedulingStrategy() const;
 
                     /**
-                     * 设置调度策略
-                     * @param _schedulingStrategy 调度策略
+                     * 设置<p>调度策略</p>
+                     * @param _schedulingStrategy <p>调度策略</p>
                      * 
                      */
                     void SetSchedulingStrategy(const SchedulingStrategy& _schedulingStrategy);
@@ -729,15 +729,15 @@ namespace TencentCloud
                     bool SchedulingStrategyHasBeenSet() const;
 
                     /**
-                     * 获取重启策略
-                     * @return RestartPolicy 重启策略
+                     * 获取<p>重启策略</p>
+                     * @return RestartPolicy <p>重启策略</p>
                      * 
                      */
                     std::string GetRestartPolicy() const;
 
                     /**
-                     * 设置重启策略
-                     * @param _restartPolicy 重启策略
+                     * 设置<p>重启策略</p>
+                     * @param _restartPolicy <p>重启策略</p>
                      * 
                      */
                     void SetRestartPolicy(const std::string& _restartPolicy);
@@ -750,15 +750,15 @@ namespace TencentCloud
                     bool RestartPolicyHasBeenSet() const;
 
                     /**
-                     * 获取服务治理配置
-                     * @return ServiceSpecEncode 服务治理配置
+                     * 获取<p>服务治理配置</p>
+                     * @return ServiceSpecEncode <p>服务治理配置</p>
                      * 
                      */
                     std::string GetServiceSpecEncode() const;
 
                     /**
-                     * 设置服务治理配置
-                     * @param _serviceSpecEncode 服务治理配置
+                     * 设置<p>服务治理配置</p>
+                     * @param _serviceSpecEncode <p>服务治理配置</p>
                      * 
                      */
                     void SetServiceSpecEncode(const std::string& _serviceSpecEncode);
@@ -771,15 +771,15 @@ namespace TencentCloud
                     bool ServiceSpecEncodeHasBeenSet() const;
 
                     /**
-                     * 获取istio容器的 mem Request
-                     * @return IstioMemRequest istio容器的 mem Request
+                     * 获取<p>istio容器的 mem Request</p>
+                     * @return IstioMemRequest <p>istio容器的 mem Request</p>
                      * 
                      */
                     std::string GetIstioMemRequest() const;
 
                     /**
-                     * 设置istio容器的 mem Request
-                     * @param _istioMemRequest istio容器的 mem Request
+                     * 设置<p>istio容器的 mem Request</p>
+                     * @param _istioMemRequest <p>istio容器的 mem Request</p>
                      * 
                      */
                     void SetIstioMemRequest(const std::string& _istioMemRequest);
@@ -792,15 +792,15 @@ namespace TencentCloud
                     bool IstioMemRequestHasBeenSet() const;
 
                     /**
-                     * 获取 istio容器的 cpu Request
-                     * @return IstioCpuRequest  istio容器的 cpu Request
+                     * 获取<p>istio容器的 cpu Request</p>
+                     * @return IstioCpuRequest <p>istio容器的 cpu Request</p>
                      * 
                      */
                     std::string GetIstioCpuRequest() const;
 
                     /**
-                     * 设置 istio容器的 cpu Request
-                     * @param _istioCpuRequest  istio容器的 cpu Request
+                     * 设置<p>istio容器的 cpu Request</p>
+                     * @param _istioCpuRequest <p>istio容器的 cpu Request</p>
                      * 
                      */
                     void SetIstioCpuRequest(const std::string& _istioCpuRequest);
@@ -813,15 +813,15 @@ namespace TencentCloud
                     bool IstioCpuRequestHasBeenSet() const;
 
                     /**
-                     * 获取istio容器的 mem Limit
-                     * @return IstioMemLimit istio容器的 mem Limit
+                     * 获取<p>istio容器的 mem Limit</p>
+                     * @return IstioMemLimit <p>istio容器的 mem Limit</p>
                      * 
                      */
                     std::string GetIstioMemLimit() const;
 
                     /**
-                     * 设置istio容器的 mem Limit
-                     * @param _istioMemLimit istio容器的 mem Limit
+                     * 设置<p>istio容器的 mem Limit</p>
+                     * @param _istioMemLimit <p>istio容器的 mem Limit</p>
                      * 
                      */
                     void SetIstioMemLimit(const std::string& _istioMemLimit);
@@ -834,15 +834,15 @@ namespace TencentCloud
                     bool IstioMemLimitHasBeenSet() const;
 
                     /**
-                     * 获取istio容器的 cpu Limit
-                     * @return IstioCpuLimit istio容器的 cpu Limit
+                     * 获取<p>istio容器的 cpu Limit</p>
+                     * @return IstioCpuLimit <p>istio容器的 cpu Limit</p>
                      * 
                      */
                     std::string GetIstioCpuLimit() const;
 
                     /**
-                     * 设置istio容器的 cpu Limit
-                     * @param _istioCpuLimit istio容器的 cpu Limit
+                     * 设置<p>istio容器的 cpu Limit</p>
+                     * @param _istioCpuLimit <p>istio容器的 cpu Limit</p>
                      * 
                      */
                     void SetIstioCpuLimit(const std::string& _istioCpuLimit);
@@ -855,15 +855,15 @@ namespace TencentCloud
                     bool IstioCpuLimitHasBeenSet() const;
 
                     /**
-                     * 获取服务治理配置
-                     * @return ServiceGovernanceConfig 服务治理配置
+                     * 获取<p>服务治理配置</p>
+                     * @return ServiceGovernanceConfig <p>服务治理配置</p>
                      * 
                      */
                     ContainerGroupServiceGovernanceConfig GetServiceGovernanceConfig() const;
 
                     /**
-                     * 设置服务治理配置
-                     * @param _serviceGovernanceConfig 服务治理配置
+                     * 设置<p>服务治理配置</p>
+                     * @param _serviceGovernanceConfig <p>服务治理配置</p>
                      * 
                      */
                     void SetServiceGovernanceConfig(const ContainerGroupServiceGovernanceConfig& _serviceGovernanceConfig);
@@ -876,15 +876,15 @@ namespace TencentCloud
                     bool ServiceGovernanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取agent容器的 mem Request
-                     * @return AgentMemRequest agent容器的 mem Request
+                     * 获取<p>agent容器的 mem Request</p>
+                     * @return AgentMemRequest <p>agent容器的 mem Request</p>
                      * 
                      */
                     std::string GetAgentMemRequest() const;
 
                     /**
-                     * 设置agent容器的 mem Request
-                     * @param _agentMemRequest agent容器的 mem Request
+                     * 设置<p>agent容器的 mem Request</p>
+                     * @param _agentMemRequest <p>agent容器的 mem Request</p>
                      * 
                      */
                     void SetAgentMemRequest(const std::string& _agentMemRequest);
@@ -897,15 +897,15 @@ namespace TencentCloud
                     bool AgentMemRequestHasBeenSet() const;
 
                     /**
-                     * 获取agent容器的 cpu Request
-                     * @return AgentCpuRequest agent容器的 cpu Request
+                     * 获取<p>agent容器的 cpu Request</p>
+                     * @return AgentCpuRequest <p>agent容器的 cpu Request</p>
                      * 
                      */
                     std::string GetAgentCpuRequest() const;
 
                     /**
-                     * 设置agent容器的 cpu Request
-                     * @param _agentCpuRequest agent容器的 cpu Request
+                     * 设置<p>agent容器的 cpu Request</p>
+                     * @param _agentCpuRequest <p>agent容器的 cpu Request</p>
                      * 
                      */
                     void SetAgentCpuRequest(const std::string& _agentCpuRequest);
@@ -918,15 +918,15 @@ namespace TencentCloud
                     bool AgentCpuRequestHasBeenSet() const;
 
                     /**
-                     * 获取agent容器的 mem Limit
-                     * @return AgentMemLimit agent容器的 mem Limit
+                     * 获取<p>agent容器的 mem Limit</p>
+                     * @return AgentMemLimit <p>agent容器的 mem Limit</p>
                      * 
                      */
                     std::string GetAgentMemLimit() const;
 
                     /**
-                     * 设置agent容器的 mem Limit
-                     * @param _agentMemLimit agent容器的 mem Limit
+                     * 设置<p>agent容器的 mem Limit</p>
+                     * @param _agentMemLimit <p>agent容器的 mem Limit</p>
                      * 
                      */
                     void SetAgentMemLimit(const std::string& _agentMemLimit);
@@ -939,15 +939,15 @@ namespace TencentCloud
                     bool AgentMemLimitHasBeenSet() const;
 
                     /**
-                     * 获取agent容器的 cpu Limit
-                     * @return AgentCpuLimit agent容器的 cpu Limit
+                     * 获取<p>agent容器的 cpu Limit</p>
+                     * @return AgentCpuLimit <p>agent容器的 cpu Limit</p>
                      * 
                      */
                     std::string GetAgentCpuLimit() const;
 
                     /**
-                     * 设置agent容器的 cpu Limit
-                     * @param _agentCpuLimit agent容器的 cpu Limit
+                     * 设置<p>agent容器的 cpu Limit</p>
+                     * @param _agentCpuLimit <p>agent容器的 cpu Limit</p>
                      * 
                      */
                     void SetAgentCpuLimit(const std::string& _agentCpuLimit);
@@ -960,15 +960,15 @@ namespace TencentCloud
                     bool AgentCpuLimitHasBeenSet() const;
 
                     /**
-                     * 获取发布策略(0表示快速更新，1表示滚动更新。默认值为0)
-                     * @return UpdateType 发布策略(0表示快速更新，1表示滚动更新。默认值为0)
+                     * 获取<p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>
+                     * @return UpdateType <p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>
                      * 
                      */
                     int64_t GetUpdateType() const;
 
                     /**
-                     * 设置发布策略(0表示快速更新，1表示滚动更新。默认值为0)
-                     * @param _updateType 发布策略(0表示快速更新，1表示滚动更新。默认值为0)
+                     * 设置<p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>
+                     * @param _updateType <p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>
                      * 
                      */
                     void SetUpdateType(const int64_t& _updateType);
@@ -981,15 +981,15 @@ namespace TencentCloud
                     bool UpdateTypeHasBeenSet() const;
 
                     /**
-                     * 获取更新间隔,单位秒
-                     * @return UpdateIvl 更新间隔,单位秒
+                     * 获取<p>更新间隔,单位秒</p>
+                     * @return UpdateIvl <p>更新间隔,单位秒</p>
                      * 
                      */
                     int64_t GetUpdateIvl() const;
 
                     /**
-                     * 设置更新间隔,单位秒
-                     * @param _updateIvl 更新间隔,单位秒
+                     * 设置<p>更新间隔,单位秒</p>
+                     * @param _updateIvl <p>更新间隔,单位秒</p>
                      * 
                      */
                     void SetUpdateIvl(const int64_t& _updateIvl);
@@ -1002,15 +1002,15 @@ namespace TencentCloud
                     bool UpdateIvlHasBeenSet() const;
 
                     /**
-                     * 获取对应更新策略和策略配置参数
-                     * @return MaxSurge 对应更新策略和策略配置参数
+                     * 获取<p>对应更新策略和策略配置参数</p>
+                     * @return MaxSurge <p>对应更新策略和策略配置参数</p>
                      * 
                      */
                     std::string GetMaxSurge() const;
 
                     /**
-                     * 设置对应更新策略和策略配置参数
-                     * @param _maxSurge 对应更新策略和策略配置参数
+                     * 设置<p>对应更新策略和策略配置参数</p>
+                     * @param _maxSurge <p>对应更新策略和策略配置参数</p>
                      * 
                      */
                     void SetMaxSurge(const std::string& _maxSurge);
@@ -1023,15 +1023,15 @@ namespace TencentCloud
                     bool MaxSurgeHasBeenSet() const;
 
                     /**
-                     * 获取对应更新策略和策略配置参数
-                     * @return MaxUnavailable 对应更新策略和策略配置参数
+                     * 获取<p>对应更新策略和策略配置参数</p>
+                     * @return MaxUnavailable <p>对应更新策略和策略配置参数</p>
                      * 
                      */
                     std::string GetMaxUnavailable() const;
 
                     /**
-                     * 设置对应更新策略和策略配置参数
-                     * @param _maxUnavailable 对应更新策略和策略配置参数
+                     * 设置<p>对应更新策略和策略配置参数</p>
+                     * @param _maxUnavailable <p>对应更新策略和策略配置参数</p>
                      * 
                      */
                     void SetMaxUnavailable(const std::string& _maxUnavailable);
@@ -1044,15 +1044,15 @@ namespace TencentCloud
                     bool MaxUnavailableHasBeenSet() const;
 
                     /**
-                     * 获取预热参数配置
-                     * @return WarmupSetting 预热参数配置
+                     * 获取<p>预热参数配置</p>
+                     * @return WarmupSetting <p>预热参数配置</p>
                      * 
                      */
                     WarmupSetting GetWarmupSetting() const;
 
                     /**
-                     * 设置预热参数配置
-                     * @param _warmupSetting 预热参数配置
+                     * 设置<p>预热参数配置</p>
+                     * @param _warmupSetting <p>预热参数配置</p>
                      * 
                      */
                     void SetWarmupSetting(const WarmupSetting& _warmupSetting);
@@ -1065,15 +1065,15 @@ namespace TencentCloud
                     bool WarmupSettingHasBeenSet() const;
 
                     /**
-                     * 获取配置模版ID
-                     * @return ConfigTemplateId 配置模版ID
+                     * 获取<p>配置模版ID</p>
+                     * @return ConfigTemplateId <p>配置模版ID</p>
                      * 
                      */
                     std::string GetConfigTemplateId() const;
 
                     /**
-                     * 设置配置模版ID
-                     * @param _configTemplateId 配置模版ID
+                     * 设置<p>配置模版ID</p>
+                     * @param _configTemplateId <p>配置模版ID</p>
                      * 
                      */
                     void SetConfigTemplateId(const std::string& _configTemplateId);
@@ -1086,15 +1086,15 @@ namespace TencentCloud
                     bool ConfigTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取配置模版Version
-                     * @return ConfigTemplateVersion 配置模版Version
+                     * 获取<p>配置模版Version</p>
+                     * @return ConfigTemplateVersion <p>配置模版Version</p>
                      * 
                      */
                     int64_t GetConfigTemplateVersion() const;
 
                     /**
-                     * 设置配置模版Version
-                     * @param _configTemplateVersion 配置模版Version
+                     * 设置<p>配置模版Version</p>
+                     * @param _configTemplateVersion <p>配置模版Version</p>
                      * 
                      */
                     void SetConfigTemplateVersion(const int64_t& _configTemplateVersion);
@@ -1107,15 +1107,15 @@ namespace TencentCloud
                     bool ConfigTemplateVersionHasBeenSet() const;
 
                     /**
-                     * 获取是否清除数据卷信息
-                     * @return VolumeClean 是否清除数据卷信息
+                     * 获取<p>是否清除数据卷信息</p>
+                     * @return VolumeClean <p>是否清除数据卷信息</p>
                      * 
                      */
                     bool GetVolumeClean() const;
 
                     /**
-                     * 设置是否清除数据卷信息
-                     * @param _volumeClean 是否清除数据卷信息
+                     * 设置<p>是否清除数据卷信息</p>
+                     * @param _volumeClean <p>是否清除数据卷信息</p>
                      * 
                      */
                     void SetVolumeClean(const bool& _volumeClean);
@@ -1128,15 +1128,15 @@ namespace TencentCloud
                     bool VolumeCleanHasBeenSet() const;
 
                     /**
-                     * 获取命名空间Id
-                     * @return NamespaceId 命名空间Id
+                     * 获取<p>命名空间Id</p>
+                     * @return NamespaceId <p>命名空间Id</p>
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间Id
-                     * @param _namespaceId 命名空间Id
+                     * 设置<p>命名空间Id</p>
+                     * @param _namespaceId <p>命名空间Id</p>
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -1149,15 +1149,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否部署agent容器
-                     * @return DeployAgent 是否部署agent容器
+                     * 获取<p>是否部署agent容器</p>
+                     * @return DeployAgent <p>是否部署agent容器</p>
                      * 
                      */
                     bool GetDeployAgent() const;
 
                     /**
-                     * 设置是否部署agent容器
-                     * @param _deployAgent 是否部署agent容器
+                     * 设置<p>是否部署agent容器</p>
+                     * @param _deployAgent <p>是否部署agent容器</p>
                      * 
                      */
                     void SetDeployAgent(const bool& _deployAgent);
@@ -1170,15 +1170,15 @@ namespace TencentCloud
                     bool DeployAgentHasBeenSet() const;
 
                     /**
-                     * 获取javaagent信息: SERVICE_AGENT/OT_AGENT
-                     * @return AgentProfileList javaagent信息: SERVICE_AGENT/OT_AGENT
+                     * 获取<p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>
+                     * @return AgentProfileList <p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>
                      * 
                      */
                     std::vector<AgentProfile> GetAgentProfileList() const;
 
                     /**
-                     * 设置javaagent信息: SERVICE_AGENT/OT_AGENT
-                     * @param _agentProfileList javaagent信息: SERVICE_AGENT/OT_AGENT
+                     * 设置<p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>
+                     * @param _agentProfileList <p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>
                      * 
                      */
                     void SetAgentProfileList(const std::vector<AgentProfile>& _agentProfileList);
@@ -1191,15 +1191,15 @@ namespace TencentCloud
                     bool AgentProfileListHasBeenSet() const;
 
                     /**
-                     * 获取是否清除Service信息
-                     * @return ServiceClean 是否清除Service信息
+                     * 获取<p>是否清除Service信息</p>
+                     * @return ServiceClean <p>是否清除Service信息</p>
                      * 
                      */
                     bool GetServiceClean() const;
 
                     /**
-                     * 设置是否清除Service信息
-                     * @param _serviceClean 是否清除Service信息
+                     * 设置<p>是否清除Service信息</p>
+                     * @param _serviceClean <p>是否清除Service信息</p>
                      * 
                      */
                     void SetServiceClean(const bool& _serviceClean);
@@ -1212,15 +1212,15 @@ namespace TencentCloud
                     bool ServiceCleanHasBeenSet() const;
 
                     /**
-                     * 获取是否清除Env信息
-                     * @return EnvClean 是否清除Env信息
+                     * 获取<p>是否清除Env信息</p>
+                     * @return EnvClean <p>是否清除Env信息</p>
                      * 
                      */
                     bool GetEnvClean() const;
 
                     /**
-                     * 设置是否清除Env信息
-                     * @param _envClean 是否清除Env信息
+                     * 设置<p>是否清除Env信息</p>
+                     * @param _envClean <p>是否清除Env信息</p>
                      * 
                      */
                     void SetEnvClean(const bool& _envClean);
@@ -1233,15 +1233,15 @@ namespace TencentCloud
                     bool EnvCleanHasBeenSet() const;
 
                     /**
-                     * 获取本次部署的描述信息
-                     * @return DeployDesc 本次部署的描述信息
+                     * 获取<p>本次部署的描述信息</p>
+                     * @return DeployDesc <p>本次部署的描述信息</p>
                      * 
                      */
                     std::string GetDeployDesc() const;
 
                     /**
-                     * 设置本次部署的描述信息
-                     * @param _deployDesc 本次部署的描述信息
+                     * 设置<p>本次部署的描述信息</p>
+                     * @param _deployDesc <p>本次部署的描述信息</p>
                      * 
                      */
                     void SetDeployDesc(const std::string& _deployDesc);
@@ -1254,15 +1254,15 @@ namespace TencentCloud
                     bool DeployDescHasBeenSet() const;
 
                     /**
-                     * 获取k8s命名空间名称
-                     * @return K8sNamespaceName k8s命名空间名称
+                     * 获取<p>k8s命名空间名称</p>
+                     * @return K8sNamespaceName <p>k8s命名空间名称</p>
                      * 
                      */
                     std::string GetK8sNamespaceName() const;
 
                     /**
-                     * 设置k8s命名空间名称
-                     * @param _k8sNamespaceName k8s命名空间名称
+                     * 设置<p>k8s命名空间名称</p>
+                     * @param _k8sNamespaceName <p>k8s命名空间名称</p>
                      * 
                      */
                     void SetK8sNamespaceName(const std::string& _k8sNamespaceName);
@@ -1275,15 +1275,15 @@ namespace TencentCloud
                     bool K8sNamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用静态IP
-                     * @return StaticIpEnabled 是否启用静态IP
+                     * 获取<p>是否启用静态IP</p>
+                     * @return StaticIpEnabled <p>是否启用静态IP</p>
                      * 
                      */
                     bool GetStaticIpEnabled() const;
 
                     /**
-                     * 设置是否启用静态IP
-                     * @param _staticIpEnabled 是否启用静态IP
+                     * 设置<p>是否启用静态IP</p>
+                     * @param _staticIpEnabled <p>是否启用静态IP</p>
                      * 
                      */
                     void SetStaticIpEnabled(const bool& _staticIpEnabled);
@@ -1296,15 +1296,15 @@ namespace TencentCloud
                     bool StaticIpEnabledHasBeenSet() const;
 
                     /**
-                     * 获取启动策略[OrderedReady/Parallel]
-                     * @return PodManagementPolicyType 启动策略[OrderedReady/Parallel]
+                     * 获取<p>启动策略[OrderedReady/Parallel]</p>
+                     * @return PodManagementPolicyType <p>启动策略[OrderedReady/Parallel]</p>
                      * 
                      */
                     std::string GetPodManagementPolicyType() const;
 
                     /**
-                     * 设置启动策略[OrderedReady/Parallel]
-                     * @param _podManagementPolicyType 启动策略[OrderedReady/Parallel]
+                     * 设置<p>启动策略[OrderedReady/Parallel]</p>
+                     * @param _podManagementPolicyType <p>启动策略[OrderedReady/Parallel]</p>
                      * 
                      */
                     void SetPodManagementPolicyType(const std::string& _podManagementPolicyType);
@@ -1317,15 +1317,15 @@ namespace TencentCloud
                     bool PodManagementPolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取滚动更新分区序号
-                     * @return Partition 滚动更新分区序号
+                     * 获取<p>滚动更新分区序号</p>
+                     * @return Partition <p>滚动更新分区序号</p>
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置滚动更新分区序号
-                     * @param _partition 滚动更新分区序号
+                     * 设置<p>滚动更新分区序号</p>
+                     * @param _partition <p>滚动更新分区序号</p>
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -1338,15 +1338,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
-                     * @return IncrementalDeployment 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * 获取<p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>
+                     * @return IncrementalDeployment <p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>
                      * 
                      */
                     bool GetIncrementalDeployment() const;
 
                     /**
-                     * 设置是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
-                     * @param _incrementalDeployment 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * 设置<p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>
+                     * @param _incrementalDeployment <p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>
                      * 
                      */
                     void SetIncrementalDeployment(const bool& _incrementalDeployment);
@@ -1358,379 +1358,406 @@ namespace TencentCloud
                      */
                     bool IncrementalDeploymentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否不立即启动</p>
+                     * @return DoNotStart <p>是否不立即启动</p>
+                     * 
+                     */
+                    bool GetDoNotStart() const;
+
+                    /**
+                     * 设置<p>是否不立即启动</p>
+                     * @param _doNotStart <p>是否不立即启动</p>
+                     * 
+                     */
+                    void SetDoNotStart(const bool& _doNotStart);
+
+                    /**
+                     * 判断参数 DoNotStart 是否已赋值
+                     * @return DoNotStart 是否已赋值
+                     * 
+                     */
+                    bool DoNotStartHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 可观测配置
+                     * <p>可观测配置</p>
                      */
                     ContainerGroupObservabilityConfig m_observabilityConfig;
                     bool m_observabilityConfigHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 部署组ID，分组唯一标识
+                     * <p>部署组ID，分组唯一标识</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 业务容器的环境变量参数
+                     * <p>业务容器的环境变量参数</p>
                      */
                     std::vector<Env> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 业务容器的挂载信息
+                     * <p>业务容器的挂载信息</p>
                      */
                     std::vector<VolumeMountInfo> m_volumeMountInfoList;
                     bool m_volumeMountInfoListHasBeenSet;
 
                     /**
-                     * 业务主容器生命周期钩子列表
+                     * <p>业务主容器生命周期钩子列表</p>
                      */
                     std::vector<LifeCycleHook> m_lifeCycleHookList;
                     bool m_lifeCycleHookListHasBeenSet;
 
                     /**
-                     * 附属容器列表
+                     * <p>附属容器列表</p>
                      */
                     std::vector<ContainerInfo> m_additionalContainerList;
                     bool m_additionalContainerListHasBeenSet;
 
                     /**
-                     * 容器卷信息
+                     * <p>容器卷信息</p>
                      */
                     std::vector<VolumeInfo> m_volumeInfoList;
                     bool m_volumeInfoListHasBeenSet;
 
                     /**
-                     * Service访问配置列表
+                     * <p>Service访问配置列表</p>
                      */
                     std::vector<ServiceSetting> m_serviceSettingList;
                     bool m_serviceSettingListHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 部署组名称
+                     * <p>部署组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 容器类型
+                     * <p>容器类型</p>
                      */
                     std::string m_containerKind;
                     bool m_containerKindHasBeenSet;
 
                     /**
-                     * 业务容器的 镜像Server ccr.ccs.tencentyun.com
+                     * <p>业务容器的 镜像Server ccr.ccs.tencentyun.com</p>
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
 
                     /**
-                     * 业务容器的镜像名
+                     * <p>业务容器的镜像名</p>
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;
 
                     /**
-                     * 仓库类型
+                     * <p>仓库类型</p>
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
 
                     /**
-                     * TCR仓库信息
+                     * <p>TCR仓库信息</p>
                      */
                     TcrRepoInfo m_tcrRepoInfo;
                     bool m_tcrRepoInfoHasBeenSet;
 
                     /**
-                     * 容器访问凭证名称
+                     * <p>容器访问凭证名称</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 业务容器的镜像版本号
+                     * <p>业务容器的镜像版本号</p>
                      */
                     std::string m_tagName;
                     bool m_tagNameHasBeenSet;
 
                     /**
-                     * 健康检查
+                     * <p>健康检查</p>
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
 
                     /**
-                     * 业务容器的 cpu  request
+                     * <p>业务容器的 cpu  request</p>
                      */
                     std::string m_cpuRequest;
                     bool m_cpuRequestHasBeenSet;
 
                     /**
-                     * 业务容器的 cpu limit
+                     * <p>业务容器的 cpu limit</p>
                      */
                     std::string m_cpuLimit;
                     bool m_cpuLimitHasBeenSet;
 
                     /**
-                     * 业务容器的 mem request
+                     * <p>业务容器的 mem request</p>
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
 
                     /**
-                     * 业务容器的 mem limit
+                     * <p>业务容器的 mem limit</p>
                      */
                     std::string m_memLimit;
                     bool m_memLimitHasBeenSet;
 
                     /**
-                     * 业务容器的 jvm 参数
+                     * <p>业务容器的 jvm 参数</p>
                      */
                     std::string m_jvmOpts;
                     bool m_jvmOptsHasBeenSet;
 
                     /**
-                     * 是否为初始化容器 业务主容器不能为初始化容
+                     * <p>是否为初始化容器 业务主容器不能为初始化容</p>
                      */
                     bool m_initContainerEnable;
                     bool m_initContainerEnableHasBeenSet;
 
                     /**
-                     * 业务主容器是否为特权容器
+                     * <p>业务主容器是否为特权容器</p>
                      */
                     bool m_privilegeContainerEnable;
                     bool m_privilegeContainerEnableHasBeenSet;
 
                     /**
-                     * 业务主容器运行命令(转base64)
+                     * <p>业务主容器运行命令(转base64)</p>
                      */
                     std::string m_runCommand;
                     bool m_runCommandHasBeenSet;
 
                     /**
-                     * 业务主容器运行参数(转base64)
+                     * <p>业务主容器运行参数(转base64)</p>
                      */
                     std::string m_runArg;
                     bool m_runArgHasBeenSet;
 
                     /**
-                     * 实例数量
+                     * <p>实例数量</p>
                      */
                     int64_t m_instanceNum;
                     bool m_instanceNumHasBeenSet;
 
                     /**
-                     * 调度策略
+                     * <p>调度策略</p>
                      */
                     SchedulingStrategy m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
 
                     /**
-                     * 重启策略
+                     * <p>重启策略</p>
                      */
                     std::string m_restartPolicy;
                     bool m_restartPolicyHasBeenSet;
 
                     /**
-                     * 服务治理配置
+                     * <p>服务治理配置</p>
                      */
                     std::string m_serviceSpecEncode;
                     bool m_serviceSpecEncodeHasBeenSet;
 
                     /**
-                     * istio容器的 mem Request
+                     * <p>istio容器的 mem Request</p>
                      */
                     std::string m_istioMemRequest;
                     bool m_istioMemRequestHasBeenSet;
 
                     /**
-                     *  istio容器的 cpu Request
+                     * <p>istio容器的 cpu Request</p>
                      */
                     std::string m_istioCpuRequest;
                     bool m_istioCpuRequestHasBeenSet;
 
                     /**
-                     * istio容器的 mem Limit
+                     * <p>istio容器的 mem Limit</p>
                      */
                     std::string m_istioMemLimit;
                     bool m_istioMemLimitHasBeenSet;
 
                     /**
-                     * istio容器的 cpu Limit
+                     * <p>istio容器的 cpu Limit</p>
                      */
                     std::string m_istioCpuLimit;
                     bool m_istioCpuLimitHasBeenSet;
 
                     /**
-                     * 服务治理配置
+                     * <p>服务治理配置</p>
                      */
                     ContainerGroupServiceGovernanceConfig m_serviceGovernanceConfig;
                     bool m_serviceGovernanceConfigHasBeenSet;
 
                     /**
-                     * agent容器的 mem Request
+                     * <p>agent容器的 mem Request</p>
                      */
                     std::string m_agentMemRequest;
                     bool m_agentMemRequestHasBeenSet;
 
                     /**
-                     * agent容器的 cpu Request
+                     * <p>agent容器的 cpu Request</p>
                      */
                     std::string m_agentCpuRequest;
                     bool m_agentCpuRequestHasBeenSet;
 
                     /**
-                     * agent容器的 mem Limit
+                     * <p>agent容器的 mem Limit</p>
                      */
                     std::string m_agentMemLimit;
                     bool m_agentMemLimitHasBeenSet;
 
                     /**
-                     * agent容器的 cpu Limit
+                     * <p>agent容器的 cpu Limit</p>
                      */
                     std::string m_agentCpuLimit;
                     bool m_agentCpuLimitHasBeenSet;
 
                     /**
-                     * 发布策略(0表示快速更新，1表示滚动更新。默认值为0)
+                     * <p>发布策略(0表示快速更新，1表示滚动更新。默认值为0)</p>
                      */
                     int64_t m_updateType;
                     bool m_updateTypeHasBeenSet;
 
                     /**
-                     * 更新间隔,单位秒
+                     * <p>更新间隔,单位秒</p>
                      */
                     int64_t m_updateIvl;
                     bool m_updateIvlHasBeenSet;
 
                     /**
-                     * 对应更新策略和策略配置参数
+                     * <p>对应更新策略和策略配置参数</p>
                      */
                     std::string m_maxSurge;
                     bool m_maxSurgeHasBeenSet;
 
                     /**
-                     * 对应更新策略和策略配置参数
+                     * <p>对应更新策略和策略配置参数</p>
                      */
                     std::string m_maxUnavailable;
                     bool m_maxUnavailableHasBeenSet;
 
                     /**
-                     * 预热参数配置
+                     * <p>预热参数配置</p>
                      */
                     WarmupSetting m_warmupSetting;
                     bool m_warmupSettingHasBeenSet;
 
                     /**
-                     * 配置模版ID
+                     * <p>配置模版ID</p>
                      */
                     std::string m_configTemplateId;
                     bool m_configTemplateIdHasBeenSet;
 
                     /**
-                     * 配置模版Version
+                     * <p>配置模版Version</p>
                      */
                     int64_t m_configTemplateVersion;
                     bool m_configTemplateVersionHasBeenSet;
 
                     /**
-                     * 是否清除数据卷信息
+                     * <p>是否清除数据卷信息</p>
                      */
                     bool m_volumeClean;
                     bool m_volumeCleanHasBeenSet;
 
                     /**
-                     * 命名空间Id
+                     * <p>命名空间Id</p>
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 是否部署agent容器
+                     * <p>是否部署agent容器</p>
                      */
                     bool m_deployAgent;
                     bool m_deployAgentHasBeenSet;
 
                     /**
-                     * javaagent信息: SERVICE_AGENT/OT_AGENT
+                     * <p>javaagent信息: SERVICE_AGENT/OT_AGENT</p>
                      */
                     std::vector<AgentProfile> m_agentProfileList;
                     bool m_agentProfileListHasBeenSet;
 
                     /**
-                     * 是否清除Service信息
+                     * <p>是否清除Service信息</p>
                      */
                     bool m_serviceClean;
                     bool m_serviceCleanHasBeenSet;
 
                     /**
-                     * 是否清除Env信息
+                     * <p>是否清除Env信息</p>
                      */
                     bool m_envClean;
                     bool m_envCleanHasBeenSet;
 
                     /**
-                     * 本次部署的描述信息
+                     * <p>本次部署的描述信息</p>
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
 
                     /**
-                     * k8s命名空间名称
+                     * <p>k8s命名空间名称</p>
                      */
                     std::string m_k8sNamespaceName;
                     bool m_k8sNamespaceNameHasBeenSet;
 
                     /**
-                     * 是否启用静态IP
+                     * <p>是否启用静态IP</p>
                      */
                     bool m_staticIpEnabled;
                     bool m_staticIpEnabledHasBeenSet;
 
                     /**
-                     * 启动策略[OrderedReady/Parallel]
+                     * <p>启动策略[OrderedReady/Parallel]</p>
                      */
                     std::string m_podManagementPolicyType;
                     bool m_podManagementPolicyTypeHasBeenSet;
 
                     /**
-                     * 滚动更新分区序号
+                     * <p>滚动更新分区序号</p>
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数
+                     * <p>是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数</p>
                      */
                     bool m_incrementalDeployment;
                     bool m_incrementalDeploymentHasBeenSet;
+
+                    /**
+                     * <p>是否不立即启动</p>
+                     */
+                    bool m_doNotStart;
+                    bool m_doNotStartHasBeenSet;
 
                 };
             }

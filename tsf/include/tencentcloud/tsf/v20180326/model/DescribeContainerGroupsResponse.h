@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的权限数据对象
-                     * @return Result 查询的权限数据对象
+                     * 获取<p>查询的权限数据对象</p>
+                     * @return Result <p>查询的权限数据对象</p>
                      * 
                      */
                     ContainGroupResult GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的权限数据对象
+                     * <p>查询的权限数据对象</p>
                      */
                     ContainGroupResult m_result;
                     bool m_resultHasBeenSet;

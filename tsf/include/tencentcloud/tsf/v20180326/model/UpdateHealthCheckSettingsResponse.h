@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取更新健康检查配置操作是否成功。
-true：操作成功。
-false：操作失败。
-                     * @return Result 更新健康检查配置操作是否成功。
-true：操作成功。
-false：操作失败。
+                     * 获取<p>更新健康检查配置操作是否成功。<br>true：操作成功。<br>false：操作失败。</p>
+                     * @return Result <p>更新健康检查配置操作是否成功。<br>true：操作成功。<br>false：操作失败。</p>
                      * 
                      */
                     bool GetResult() const;
@@ -64,9 +60,7 @@ false：操作失败。
                 private:
 
                     /**
-                     * 更新健康检查配置操作是否成功。
-true：操作成功。
-false：操作失败。
+                     * <p>更新健康检查配置操作是否成功。<br>true：操作成功。<br>false：操作失败。</p>
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

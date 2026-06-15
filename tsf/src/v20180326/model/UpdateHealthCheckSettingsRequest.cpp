@@ -25,7 +25,8 @@ using namespace std;
 UpdateHealthCheckSettingsRequest::UpdateHealthCheckSettingsRequest() :
     m_groupIdHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
-    m_healthCheckSettingsHasBeenSet(false)
+    m_healthCheckSettingsHasBeenSet(false),
+    m_livenessAutoRestartHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string UpdateHealthCheckSettingsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheckSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_livenessAutoRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessAutoRestart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_livenessAutoRestart, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void UpdateHealthCheckSettingsRequest::SetHealthCheckSettings(const HealthCheckS
 bool UpdateHealthCheckSettingsRequest::HealthCheckSettingsHasBeenSet() const
 {
     return m_healthCheckSettingsHasBeenSet;
+}
+
+bool UpdateHealthCheckSettingsRequest::GetLivenessAutoRestart() const
+{
+    return m_livenessAutoRestart;
+}
+
+void UpdateHealthCheckSettingsRequest::SetLivenessAutoRestart(const bool& _livenessAutoRestart)
+{
+    m_livenessAutoRestart = _livenessAutoRestart;
+    m_livenessAutoRestartHasBeenSet = true;
+}
+
+bool UpdateHealthCheckSettingsRequest::LivenessAutoRestartHasBeenSet() const
+{
+    return m_livenessAutoRestartHasBeenSet;
 }
 
 

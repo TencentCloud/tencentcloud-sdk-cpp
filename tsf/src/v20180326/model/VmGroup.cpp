@@ -65,7 +65,8 @@ VmGroup::VmGroup() :
     m_filebeatMaxMemHasBeenSet(false),
     m_repositoryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_repositoryTypeHasBeenSet(false)
+    m_repositoryTypeHasBeenSet(false),
+    m_livenessAutoRestartHasBeenSet(false)
 {
 }
 
@@ -558,6 +559,16 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_repositoryTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LivenessAutoRestart") && !value["LivenessAutoRestart"].IsNull())
+    {
+        if (!value["LivenessAutoRestart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.LivenessAutoRestart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_livenessAutoRestart = value["LivenessAutoRestart"].GetBool();
+        m_livenessAutoRestartHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -938,6 +949,14 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RepositoryType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessAutoRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessAutoRestart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_livenessAutoRestart, allocator);
     }
 
 }
@@ -1661,5 +1680,21 @@ void VmGroup::SetRepositoryType(const string& _repositoryType)
 bool VmGroup::RepositoryTypeHasBeenSet() const
 {
     return m_repositoryTypeHasBeenSet;
+}
+
+bool VmGroup::GetLivenessAutoRestart() const
+{
+    return m_livenessAutoRestart;
+}
+
+void VmGroup::SetLivenessAutoRestart(const bool& _livenessAutoRestart)
+{
+    m_livenessAutoRestart = _livenessAutoRestart;
+    m_livenessAutoRestartHasBeenSet = true;
+}
+
+bool VmGroup::LivenessAutoRestartHasBeenSet() const
+{
+    return m_livenessAutoRestartHasBeenSet;
 }
 

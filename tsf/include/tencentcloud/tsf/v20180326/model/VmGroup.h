@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取<p>部署组ID</p>
+                     * @return GroupId <p>部署组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置<p>部署组ID</p>
+                     * @param _groupId <p>部署组ID</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取部署组名称
-                     * @return GroupName 部署组名称
+                     * 获取<p>部署组名称</p>
+                     * @return GroupName <p>部署组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置部署组名称
-                     * @param _groupName 部署组名称
+                     * 设置<p>部署组名称</p>
+                     * @param _groupName <p>部署组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组状态
-                     * @return GroupStatus 部署组状态
+                     * 获取<p>部署组状态</p>
+                     * @return GroupStatus <p>部署组状态</p>
                      * 
                      */
                     std::string GetGroupStatus() const;
 
                     /**
-                     * 设置部署组状态
-                     * @param _groupStatus 部署组状态
+                     * 设置<p>部署组状态</p>
+                     * @param _groupStatus <p>部署组状态</p>
                      * 
                      */
                     void SetGroupStatus(const std::string& _groupStatus);
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool GroupStatusHasBeenSet() const;
 
                     /**
-                     * 获取程序包ID
+                     * 获取<p>程序包ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageId 程序包ID
+                     * @return PackageId <p>程序包ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置程序包ID
+                     * 设置<p>程序包ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _packageId 程序包ID
+                     * @param _packageId <p>程序包ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取程序包名称
+                     * 获取<p>程序包名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageName 程序包名称
+                     * @return PackageName <p>程序包名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置程序包名称
+                     * 设置<p>程序包名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _packageName 程序包名称
+                     * @param _packageName <p>程序包名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool PackageNameHasBeenSet() const;
 
                     /**
-                     * 获取程序包版本号
+                     * 获取<p>程序包版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageVersion 程序包版本号
+                     * @return PackageVersion <p>程序包版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
-                     * 设置程序包版本号
+                     * 设置<p>程序包版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _packageVersion 程序包版本号
+                     * @param _packageVersion <p>程序包版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool PackageVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -210,15 +210,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -231,15 +231,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取<p>命名空间ID</p>
+                     * @return NamespaceId <p>命名空间ID</p>
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置<p>命名空间ID</p>
+                     * @param _namespaceId <p>命名空间ID</p>
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -252,15 +252,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间名称
-                     * @return NamespaceName 命名空间名称
+                     * 获取<p>命名空间名称</p>
+                     * @return NamespaceName <p>命名空间名称</p>
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间名称
-                     * @param _namespaceName 命名空间名称
+                     * 设置<p>命名空间名称</p>
+                     * @param _namespaceName <p>命名空间名称</p>
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -273,15 +273,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
-                     * @return ApplicationId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return ApplicationId <p>应用ID</p>
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _applicationId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _applicationId <p>应用ID</p>
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -294,15 +294,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取应用名称
-                     * @return ApplicationName 应用名称
+                     * 获取<p>应用名称</p>
+                     * @return ApplicationName <p>应用名称</p>
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _applicationName 应用名称
+                     * 设置<p>应用名称</p>
+                     * @param _applicationName <p>应用名称</p>
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -315,15 +315,15 @@ namespace TencentCloud
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
-                     * 获取部署组机器数目
-                     * @return InstanceCount 部署组机器数目
+                     * 获取<p>部署组机器数目</p>
+                     * @return InstanceCount <p>部署组机器数目</p>
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置部署组机器数目
-                     * @param _instanceCount 部署组机器数目
+                     * 设置<p>部署组机器数目</p>
+                     * @param _instanceCount <p>部署组机器数目</p>
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -336,15 +336,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组运行中机器数目
-                     * @return RunInstanceCount 部署组运行中机器数目
+                     * 获取<p>部署组运行中机器数目</p>
+                     * @return RunInstanceCount <p>部署组运行中机器数目</p>
                      * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
-                     * 设置部署组运行中机器数目
-                     * @param _runInstanceCount 部署组运行中机器数目
+                     * 设置<p>部署组运行中机器数目</p>
+                     * @param _runInstanceCount <p>部署组运行中机器数目</p>
                      * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
@@ -357,18 +357,18 @@ namespace TencentCloud
                     bool RunInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组启动参数信息
+                     * 获取<p>部署组启动参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartupParameters 部署组启动参数信息
+                     * @return StartupParameters <p>部署组启动参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartupParameters() const;
 
                     /**
-                     * 设置部署组启动参数信息
+                     * 设置<p>部署组启动参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startupParameters 部署组启动参数信息
+                     * @param _startupParameters <p>部署组启动参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,15 +382,15 @@ namespace TencentCloud
                     bool StartupParametersHasBeenSet() const;
 
                     /**
-                     * 获取部署组创建时间
-                     * @return CreateTime 部署组创建时间
+                     * 获取<p>部署组创建时间</p>
+                     * @return CreateTime <p>部署组创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置部署组创建时间
-                     * @param _createTime 部署组创建时间
+                     * 设置<p>部署组创建时间</p>
+                     * @param _createTime <p>部署组创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -403,15 +403,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署组更新时间
-                     * @return UpdateTime 部署组更新时间
+                     * 获取<p>部署组更新时间</p>
+                     * @return UpdateTime <p>部署组更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置部署组更新时间
-                     * @param _updateTime 部署组更新时间
+                     * 设置<p>部署组更新时间</p>
+                     * @param _updateTime <p>部署组更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -424,15 +424,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署组停止机器数目
-                     * @return OffInstanceCount 部署组停止机器数目
+                     * 获取<p>部署组停止机器数目</p>
+                     * @return OffInstanceCount <p>部署组停止机器数目</p>
                      * 
                      */
                     int64_t GetOffInstanceCount() const;
 
                     /**
-                     * 设置部署组停止机器数目
-                     * @param _offInstanceCount 部署组停止机器数目
+                     * 设置<p>部署组停止机器数目</p>
+                     * @param _offInstanceCount <p>部署组停止机器数目</p>
                      * 
                      */
                     void SetOffInstanceCount(const int64_t& _offInstanceCount);
@@ -445,18 +445,18 @@ namespace TencentCloud
                     bool OffInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取部署组描述信息
+                     * 获取<p>部署组描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupDesc 部署组描述信息
+                     * @return GroupDesc <p>部署组描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupDesc() const;
 
                     /**
-                     * 设置部署组描述信息
+                     * 设置<p>部署组描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupDesc 部署组描述信息
+                     * @param _groupDesc <p>部署组描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -470,15 +470,15 @@ namespace TencentCloud
                     bool GroupDescHasBeenSet() const;
 
                     /**
-                     * 获取微服务类型
-                     * @return MicroserviceType 微服务类型
+                     * 获取<p>微服务类型</p>
+                     * @return MicroserviceType <p>微服务类型</p>
                      * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
-                     * 设置微服务类型
-                     * @param _microserviceType 微服务类型
+                     * 设置<p>微服务类型</p>
+                     * @param _microserviceType <p>微服务类型</p>
                      * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
@@ -491,15 +491,15 @@ namespace TencentCloud
                     bool MicroserviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用类型
-                     * @return ApplicationType 应用类型
+                     * 获取<p>应用类型</p>
+                     * @return ApplicationType <p>应用类型</p>
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
-                     * 设置应用类型
-                     * @param _applicationType 应用类型
+                     * 设置<p>应用类型</p>
+                     * @param _applicationType <p>应用类型</p>
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -512,15 +512,15 @@ namespace TencentCloud
                     bool ApplicationTypeHasBeenSet() const;
 
                     /**
-                     * 获取部署组资源类型
-                     * @return GroupResourceType 部署组资源类型
+                     * 获取<p>部署组资源类型</p>
+                     * @return GroupResourceType <p>部署组资源类型</p>
                      * 
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
-                     * 设置部署组资源类型
-                     * @param _groupResourceType 部署组资源类型
+                     * 设置<p>部署组资源类型</p>
+                     * @param _groupResourceType <p>部署组资源类型</p>
                      * 
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
@@ -533,15 +533,15 @@ namespace TencentCloud
                     bool GroupResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取部署组更新时间戳
-                     * @return UpdatedTime 部署组更新时间戳
+                     * 获取<p>部署组更新时间戳</p>
+                     * @return UpdatedTime <p>部署组更新时间戳</p>
                      * 
                      */
                     int64_t GetUpdatedTime() const;
 
                     /**
-                     * 设置部署组更新时间戳
-                     * @param _updatedTime 部署组更新时间戳
+                     * 设置<p>部署组更新时间戳</p>
+                     * @param _updatedTime <p>部署组更新时间戳</p>
                      * 
                      */
                     void SetUpdatedTime(const int64_t& _updatedTime);
@@ -554,18 +554,18 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署应用描述信息
+                     * 获取<p>部署应用描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployDesc 部署应用描述信息
+                     * @return DeployDesc <p>部署应用描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployDesc() const;
 
                     /**
-                     * 设置部署应用描述信息
+                     * 设置<p>部署应用描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deployDesc 部署应用描述信息
+                     * @param _deployDesc <p>部署应用描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -579,15 +579,15 @@ namespace TencentCloud
                     bool DeployDescHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布的更新方式
-                     * @return UpdateType 滚动发布的更新方式
+                     * 获取<p>滚动发布的更新方式</p>
+                     * @return UpdateType <p>滚动发布的更新方式</p>
                      * 
                      */
                     uint64_t GetUpdateType() const;
 
                     /**
-                     * 设置滚动发布的更新方式
-                     * @param _updateType 滚动发布的更新方式
+                     * 设置<p>滚动发布的更新方式</p>
+                     * @param _updateType <p>滚动发布的更新方式</p>
                      * 
                      */
                     void SetUpdateType(const uint64_t& _updateType);
@@ -600,15 +600,15 @@ namespace TencentCloud
                     bool UpdateTypeHasBeenSet() const;
 
                     /**
-                     * 获取发布是否启用beta批次
-                     * @return DeployBetaEnable 发布是否启用beta批次
+                     * 获取<p>发布是否启用beta批次</p>
+                     * @return DeployBetaEnable <p>发布是否启用beta批次</p>
                      * 
                      */
                     bool GetDeployBetaEnable() const;
 
                     /**
-                     * 设置发布是否启用beta批次
-                     * @param _deployBetaEnable 发布是否启用beta批次
+                     * 设置<p>发布是否启用beta批次</p>
+                     * @param _deployBetaEnable <p>发布是否启用beta批次</p>
                      * 
                      */
                     void SetDeployBetaEnable(const bool& _deployBetaEnable);
@@ -621,15 +621,15 @@ namespace TencentCloud
                     bool DeployBetaEnableHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布的批次比例列表
-                     * @return DeployBatch 滚动发布的批次比例列表
+                     * 获取<p>滚动发布的批次比例列表</p>
+                     * @return DeployBatch <p>滚动发布的批次比例列表</p>
                      * 
                      */
                     std::vector<double> GetDeployBatch() const;
 
                     /**
-                     * 设置滚动发布的批次比例列表
-                     * @param _deployBatch 滚动发布的批次比例列表
+                     * 设置<p>滚动发布的批次比例列表</p>
+                     * @param _deployBatch <p>滚动发布的批次比例列表</p>
                      * 
                      */
                     void SetDeployBatch(const std::vector<double>& _deployBatch);
@@ -642,15 +642,15 @@ namespace TencentCloud
                     bool DeployBatchHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布的批次执行方式
-                     * @return DeployExeMode 滚动发布的批次执行方式
+                     * 获取<p>滚动发布的批次执行方式</p>
+                     * @return DeployExeMode <p>滚动发布的批次执行方式</p>
                      * 
                      */
                     std::string GetDeployExeMode() const;
 
                     /**
-                     * 设置滚动发布的批次执行方式
-                     * @param _deployExeMode 滚动发布的批次执行方式
+                     * 设置<p>滚动发布的批次执行方式</p>
+                     * @param _deployExeMode <p>滚动发布的批次执行方式</p>
                      * 
                      */
                     void SetDeployExeMode(const std::string& _deployExeMode);
@@ -663,15 +663,15 @@ namespace TencentCloud
                     bool DeployExeModeHasBeenSet() const;
 
                     /**
-                     * 获取滚动发布的每个批次的等待时间
-                     * @return DeployWaitTime 滚动发布的每个批次的等待时间
+                     * 获取<p>滚动发布的每个批次的等待时间</p>
+                     * @return DeployWaitTime <p>滚动发布的每个批次的等待时间</p>
                      * 
                      */
                     uint64_t GetDeployWaitTime() const;
 
                     /**
-                     * 设置滚动发布的每个批次的等待时间
-                     * @param _deployWaitTime 滚动发布的每个批次的等待时间
+                     * 设置<p>滚动发布的每个批次的等待时间</p>
+                     * @param _deployWaitTime <p>滚动发布的每个批次的等待时间</p>
                      * 
                      */
                     void SetDeployWaitTime(const uint64_t& _deployWaitTime);
@@ -684,15 +684,15 @@ namespace TencentCloud
                     bool DeployWaitTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启了健康检查
-                     * @return EnableHealthCheck 是否开启了健康检查
+                     * 获取<p>是否开启了健康检查</p>
+                     * @return EnableHealthCheck <p>是否开启了健康检查</p>
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否开启了健康检查
-                     * @param _enableHealthCheck 是否开启了健康检查
+                     * 设置<p>是否开启了健康检查</p>
+                     * @param _enableHealthCheck <p>是否开启了健康检查</p>
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -705,18 +705,18 @@ namespace TencentCloud
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取健康检查配置
+                     * 获取<p>健康检查配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HealthCheckSettings 健康检查配置
+                     * @return HealthCheckSettings <p>健康检查配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
-                     * 设置健康检查配置
+                     * 设置<p>健康检查配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _healthCheckSettings 健康检查配置
+                     * @param _healthCheckSettings <p>健康检查配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -730,18 +730,18 @@ namespace TencentCloud
                     bool HealthCheckSettingsHasBeenSet() const;
 
                     /**
-                     * 获取程序包类型
+                     * 获取<p>程序包类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 程序包类型
+                     * @return PackageType <p>程序包类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置程序包类型
+                     * 设置<p>程序包类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _packageType 程序包类型
+                     * @param _packageType <p>程序包类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -755,18 +755,18 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取启动脚本 base64编码
+                     * 获取<p>启动脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartScript 启动脚本 base64编码
+                     * @return StartScript <p>启动脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartScript() const;
 
                     /**
-                     * 设置启动脚本 base64编码
+                     * 设置<p>启动脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startScript 启动脚本 base64编码
+                     * @param _startScript <p>启动脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -780,18 +780,18 @@ namespace TencentCloud
                     bool StartScriptHasBeenSet() const;
 
                     /**
-                     * 获取停止脚本 base64编码
+                     * 获取<p>停止脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StopScript 停止脚本 base64编码
+                     * @return StopScript <p>停止脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStopScript() const;
 
                     /**
-                     * 设置停止脚本 base64编码
+                     * 设置<p>停止脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stopScript 停止脚本 base64编码
+                     * @param _stopScript <p>停止脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -805,18 +805,18 @@ namespace TencentCloud
                     bool StopScriptHasBeenSet() const;
 
                     /**
-                     * 获取部署组备注
+                     * 获取<p>部署组备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Alias 部署组备注
+                     * @return Alias <p>部署组备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置部署组备注
+                     * 设置<p>部署组备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alias 部署组备注
+                     * @param _alias <p>部署组备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -830,15 +830,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取javaagent信息
-                     * @return AgentProfileList javaagent信息
+                     * 获取<p>javaagent信息</p>
+                     * @return AgentProfileList <p>javaagent信息</p>
                      * 
                      */
                     std::vector<AgentProfile> GetAgentProfileList() const;
 
                     /**
-                     * 设置javaagent信息
-                     * @param _agentProfileList javaagent信息
+                     * 设置<p>javaagent信息</p>
+                     * @param _agentProfileList <p>javaagent信息</p>
                      * 
                      */
                     void SetAgentProfileList(const std::vector<AgentProfile>& _agentProfileList);
@@ -851,15 +851,15 @@ namespace TencentCloud
                     bool AgentProfileListHasBeenSet() const;
 
                     /**
-                     * 获取预热属性配置
-                     * @return WarmupSetting 预热属性配置
+                     * 获取<p>预热属性配置</p>
+                     * @return WarmupSetting <p>预热属性配置</p>
                      * 
                      */
                     WarmupSetting GetWarmupSetting() const;
 
                     /**
-                     * 设置预热属性配置
-                     * @param _warmupSetting 预热属性配置
+                     * 设置<p>预热属性配置</p>
+                     * @param _warmupSetting <p>预热属性配置</p>
                      * 
                      */
                     void SetWarmupSetting(const WarmupSetting& _warmupSetting);
@@ -872,18 +872,18 @@ namespace TencentCloud
                     bool WarmupSettingHasBeenSet() const;
 
                     /**
-                     * 获取Envoy网关配置
+                     * 获取<p>Envoy网关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GatewayConfig Envoy网关配置
+                     * @return GatewayConfig <p>Envoy网关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GatewayConfig GetGatewayConfig() const;
 
                     /**
-                     * 设置Envoy网关配置
+                     * 设置<p>Envoy网关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gatewayConfig Envoy网关配置
+                     * @param _gatewayConfig <p>Envoy网关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -897,15 +897,15 @@ namespace TencentCloud
                     bool GatewayConfigHasBeenSet() const;
 
                     /**
-                     * 获取批次是否开启健康检查
-                     * @return EnableBatchHealthCheck 批次是否开启健康检查
+                     * 获取<p>批次是否开启健康检查</p>
+                     * @return EnableBatchHealthCheck <p>批次是否开启健康检查</p>
                      * 
                      */
                     bool GetEnableBatchHealthCheck() const;
 
                     /**
-                     * 设置批次是否开启健康检查
-                     * @param _enableBatchHealthCheck 批次是否开启健康检查
+                     * 设置<p>批次是否开启健康检查</p>
+                     * @param _enableBatchHealthCheck <p>批次是否开启健康检查</p>
                      * 
                      */
                     void SetEnableBatchHealthCheck(const bool& _enableBatchHealthCheck);
@@ -918,15 +918,15 @@ namespace TencentCloud
                     bool EnableBatchHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否开启cgroup控制内存cpu
-                     * @return FilebeatCgroupEnable 是否开启cgroup控制内存cpu
+                     * 获取<p>是否开启cgroup控制内存cpu</p>
+                     * @return FilebeatCgroupEnable <p>是否开启cgroup控制内存cpu</p>
                      * 
                      */
                     bool GetFilebeatCgroupEnable() const;
 
                     /**
-                     * 设置是否开启cgroup控制内存cpu
-                     * @param _filebeatCgroupEnable 是否开启cgroup控制内存cpu
+                     * 设置<p>是否开启cgroup控制内存cpu</p>
+                     * @param _filebeatCgroupEnable <p>是否开启cgroup控制内存cpu</p>
                      * 
                      */
                     void SetFilebeatCgroupEnable(const bool& _filebeatCgroupEnable);
@@ -939,15 +939,15 @@ namespace TencentCloud
                     bool FilebeatCgroupEnableHasBeenSet() const;
 
                     /**
-                     * 获取filebeat使用cpu上限
-                     * @return FilebeatMaxCpu filebeat使用cpu上限
+                     * 获取<p>filebeat使用cpu上限</p>
+                     * @return FilebeatMaxCpu <p>filebeat使用cpu上限</p>
                      * 
                      */
                     double GetFilebeatMaxCpu() const;
 
                     /**
-                     * 设置filebeat使用cpu上限
-                     * @param _filebeatMaxCpu filebeat使用cpu上限
+                     * 设置<p>filebeat使用cpu上限</p>
+                     * @param _filebeatMaxCpu <p>filebeat使用cpu上限</p>
                      * 
                      */
                     void SetFilebeatMaxCpu(const double& _filebeatMaxCpu);
@@ -960,15 +960,15 @@ namespace TencentCloud
                     bool FilebeatMaxCpuHasBeenSet() const;
 
                     /**
-                     * 获取filebeat使用内存上限
-                     * @return FilebeatMaxMem filebeat使用内存上限
+                     * 获取<p>filebeat使用内存上限</p>
+                     * @return FilebeatMaxMem <p>filebeat使用内存上限</p>
                      * 
                      */
                     int64_t GetFilebeatMaxMem() const;
 
                     /**
-                     * 设置filebeat使用内存上限
-                     * @param _filebeatMaxMem filebeat使用内存上限
+                     * 设置<p>filebeat使用内存上限</p>
+                     * @param _filebeatMaxMem <p>filebeat使用内存上限</p>
                      * 
                      */
                     void SetFilebeatMaxMem(const int64_t& _filebeatMaxMem);
@@ -981,15 +981,15 @@ namespace TencentCloud
                     bool FilebeatMaxMemHasBeenSet() const;
 
                     /**
-                     * 获取仓库ID
-                     * @return RepositoryId 仓库ID
+                     * 获取<p>仓库ID</p>
+                     * @return RepositoryId <p>仓库ID</p>
                      * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
-                     * 设置仓库ID
-                     * @param _repositoryId 仓库ID
+                     * 设置<p>仓库ID</p>
+                     * @param _repositoryId <p>仓库ID</p>
                      * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
@@ -1002,15 +1002,15 @@ namespace TencentCloud
                     bool RepositoryIdHasBeenSet() const;
 
                     /**
-                     * 获取仓库名称
-                     * @return RepositoryName 仓库名称
+                     * 获取<p>仓库名称</p>
+                     * @return RepositoryName <p>仓库名称</p>
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _repositoryName 仓库名称
+                     * 设置<p>仓库名称</p>
+                     * @param _repositoryName <p>仓库名称</p>
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -1023,15 +1023,15 @@ namespace TencentCloud
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型
-                     * @return RepositoryType 仓库类型
+                     * 获取<p>仓库类型</p>
+                     * @return RepositoryType <p>仓库类型</p>
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
-                     * 设置仓库类型
-                     * @param _repositoryType 仓库类型
+                     * 设置<p>仓库类型</p>
+                     * @param _repositoryType <p>仓库类型</p>
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -1043,289 +1043,316 @@ namespace TencentCloud
                      */
                     bool RepositoryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否自动重启</p>
+                     * @return LivenessAutoRestart <p>是否自动重启</p>
+                     * 
+                     */
+                    bool GetLivenessAutoRestart() const;
+
+                    /**
+                     * 设置<p>是否自动重启</p>
+                     * @param _livenessAutoRestart <p>是否自动重启</p>
+                     * 
+                     */
+                    void SetLivenessAutoRestart(const bool& _livenessAutoRestart);
+
+                    /**
+                     * 判断参数 LivenessAutoRestart 是否已赋值
+                     * @return LivenessAutoRestart 是否已赋值
+                     * 
+                     */
+                    bool LivenessAutoRestartHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 部署组ID
+                     * <p>部署组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 部署组名称
+                     * <p>部署组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 部署组状态
+                     * <p>部署组状态</p>
                      */
                     std::string m_groupStatus;
                     bool m_groupStatusHasBeenSet;
 
                     /**
-                     * 程序包ID
+                     * <p>程序包ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 程序包名称
+                     * <p>程序包名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
-                     * 程序包版本号
+                     * <p>程序包版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageVersion;
                     bool m_packageVersionHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 命名空间ID
+                     * <p>命名空间ID</p>
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 命名空间名称
+                     * <p>命名空间名称</p>
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 应用名称
+                     * <p>应用名称</p>
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
-                     * 部署组机器数目
+                     * <p>部署组机器数目</p>
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 部署组运行中机器数目
+                     * <p>部署组运行中机器数目</p>
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
 
                     /**
-                     * 部署组启动参数信息
+                     * <p>部署组启动参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startupParameters;
                     bool m_startupParametersHasBeenSet;
 
                     /**
-                     * 部署组创建时间
+                     * <p>部署组创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 部署组更新时间
+                     * <p>部署组更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 部署组停止机器数目
+                     * <p>部署组停止机器数目</p>
                      */
                     int64_t m_offInstanceCount;
                     bool m_offInstanceCountHasBeenSet;
 
                     /**
-                     * 部署组描述信息
+                     * <p>部署组描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupDesc;
                     bool m_groupDescHasBeenSet;
 
                     /**
-                     * 微服务类型
+                     * <p>微服务类型</p>
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
-                     * 应用类型
+                     * <p>应用类型</p>
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
 
                     /**
-                     * 部署组资源类型
+                     * <p>部署组资源类型</p>
                      */
                     std::string m_groupResourceType;
                     bool m_groupResourceTypeHasBeenSet;
 
                     /**
-                     * 部署组更新时间戳
+                     * <p>部署组更新时间戳</p>
                      */
                     int64_t m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 部署应用描述信息
+                     * <p>部署应用描述信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
 
                     /**
-                     * 滚动发布的更新方式
+                     * <p>滚动发布的更新方式</p>
                      */
                     uint64_t m_updateType;
                     bool m_updateTypeHasBeenSet;
 
                     /**
-                     * 发布是否启用beta批次
+                     * <p>发布是否启用beta批次</p>
                      */
                     bool m_deployBetaEnable;
                     bool m_deployBetaEnableHasBeenSet;
 
                     /**
-                     * 滚动发布的批次比例列表
+                     * <p>滚动发布的批次比例列表</p>
                      */
                     std::vector<double> m_deployBatch;
                     bool m_deployBatchHasBeenSet;
 
                     /**
-                     * 滚动发布的批次执行方式
+                     * <p>滚动发布的批次执行方式</p>
                      */
                     std::string m_deployExeMode;
                     bool m_deployExeModeHasBeenSet;
 
                     /**
-                     * 滚动发布的每个批次的等待时间
+                     * <p>滚动发布的每个批次的等待时间</p>
                      */
                     uint64_t m_deployWaitTime;
                     bool m_deployWaitTimeHasBeenSet;
 
                     /**
-                     * 是否开启了健康检查
+                     * <p>是否开启了健康检查</p>
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 健康检查配置
+                     * <p>健康检查配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
 
                     /**
-                     * 程序包类型
+                     * <p>程序包类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 启动脚本 base64编码
+                     * <p>启动脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startScript;
                     bool m_startScriptHasBeenSet;
 
                     /**
-                     * 停止脚本 base64编码
+                     * <p>停止脚本 base64编码</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stopScript;
                     bool m_stopScriptHasBeenSet;
 
                     /**
-                     * 部署组备注
+                     * <p>部署组备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * javaagent信息
+                     * <p>javaagent信息</p>
                      */
                     std::vector<AgentProfile> m_agentProfileList;
                     bool m_agentProfileListHasBeenSet;
 
                     /**
-                     * 预热属性配置
+                     * <p>预热属性配置</p>
                      */
                     WarmupSetting m_warmupSetting;
                     bool m_warmupSettingHasBeenSet;
 
                     /**
-                     * Envoy网关配置
+                     * <p>Envoy网关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;
 
                     /**
-                     * 批次是否开启健康检查
+                     * <p>批次是否开启健康检查</p>
                      */
                     bool m_enableBatchHealthCheck;
                     bool m_enableBatchHealthCheckHasBeenSet;
 
                     /**
-                     * 是否开启cgroup控制内存cpu
+                     * <p>是否开启cgroup控制内存cpu</p>
                      */
                     bool m_filebeatCgroupEnable;
                     bool m_filebeatCgroupEnableHasBeenSet;
 
                     /**
-                     * filebeat使用cpu上限
+                     * <p>filebeat使用cpu上限</p>
                      */
                     double m_filebeatMaxCpu;
                     bool m_filebeatMaxCpuHasBeenSet;
 
                     /**
-                     * filebeat使用内存上限
+                     * <p>filebeat使用内存上限</p>
                      */
                     int64_t m_filebeatMaxMem;
                     bool m_filebeatMaxMemHasBeenSet;
 
                     /**
-                     * 仓库ID
+                     * <p>仓库ID</p>
                      */
                     std::string m_repositoryId;
                     bool m_repositoryIdHasBeenSet;
 
                     /**
-                     * 仓库名称
+                     * <p>仓库名称</p>
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;
 
                     /**
-                     * 仓库类型
+                     * <p>仓库类型</p>
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;
+
+                    /**
+                     * <p>是否自动重启</p>
+                     */
+                    bool m_livenessAutoRestart;
+                    bool m_livenessAutoRestartHasBeenSet;
 
                 };
             }

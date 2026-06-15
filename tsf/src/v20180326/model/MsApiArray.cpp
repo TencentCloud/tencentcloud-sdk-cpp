@@ -24,7 +24,9 @@ MsApiArray::MsApiArray() :
     m_pathHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_apiIdHasBeenSet(false),
+    m_srcTypeNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome MsApiArray::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiId") && !value["ApiId"].IsNull())
+    {
+        if (!value["ApiId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsApiArray.ApiId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiId = string(value["ApiId"].GetString());
+        m_apiIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SrcTypeName") && !value["SrcTypeName"].IsNull())
+    {
+        if (!value["SrcTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsApiArray.SrcTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcTypeName = string(value["SrcTypeName"].GetString());
+        m_srcTypeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void MsApiArray::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_apiIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcTypeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void MsApiArray::SetStatus(const int64_t& _status)
 bool MsApiArray::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string MsApiArray::GetApiId() const
+{
+    return m_apiId;
+}
+
+void MsApiArray::SetApiId(const string& _apiId)
+{
+    m_apiId = _apiId;
+    m_apiIdHasBeenSet = true;
+}
+
+bool MsApiArray::ApiIdHasBeenSet() const
+{
+    return m_apiIdHasBeenSet;
+}
+
+string MsApiArray::GetSrcTypeName() const
+{
+    return m_srcTypeName;
+}
+
+void MsApiArray::SetSrcTypeName(const string& _srcTypeName)
+{
+    m_srcTypeName = _srcTypeName;
+    m_srcTypeNameHasBeenSet = true;
+}
+
+bool MsApiArray::SrcTypeNameHasBeenSet() const
+{
+    return m_srcTypeNameHasBeenSet;
 }
 

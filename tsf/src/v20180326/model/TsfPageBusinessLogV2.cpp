@@ -25,7 +25,8 @@ TsfPageBusinessLogV2::TsfPageBusinessLogV2() :
     m_contentHasBeenSet(false),
     m_scrollIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_searchAfterHasBeenSet(false)
+    m_searchAfterHasBeenSet(false),
+    m_compressedHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome TsfPageBusinessLogV2::Deserialize(const rapidjson::Value &va
         m_searchAfterHasBeenSet = true;
     }
 
+    if (value.HasMember("Compressed") && !value["Compressed"].IsNull())
+    {
+        if (!value["Compressed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TsfPageBusinessLogV2.Compressed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressed = value["Compressed"].GetBool();
+        m_compressedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void TsfPageBusinessLogV2::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_compressedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compressed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compressed, allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void TsfPageBusinessLogV2::SetSearchAfter(const vector<string>& _searchAfter)
 bool TsfPageBusinessLogV2::SearchAfterHasBeenSet() const
 {
     return m_searchAfterHasBeenSet;
+}
+
+bool TsfPageBusinessLogV2::GetCompressed() const
+{
+    return m_compressed;
+}
+
+void TsfPageBusinessLogV2::SetCompressed(const bool& _compressed)
+{
+    m_compressed = _compressed;
+    m_compressedHasBeenSet = true;
+}
+
+bool TsfPageBusinessLogV2::CompressedHasBeenSet() const
+{
+    return m_compressedHasBeenSet;
 }
 

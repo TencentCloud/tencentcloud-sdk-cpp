@@ -216,6 +216,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateContainGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/CreatePathRewritesWithDetailRespResponse.h
+  include/tencentcloud/tsf/v20180326/model/ApiParam.h
   include/tencentcloud/tsf/v20180326/model/Ports.h
   include/tencentcloud/tsf/v20180326/model/UpdateRepositoryRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupGatewaysResponse.h
@@ -837,6 +838,7 @@ set(tsf_src
   src/v20180326/model/CreateContainGroupResponse.cpp
   src/v20180326/model/DescribeContainerGroupDetailResponse.cpp
   src/v20180326/model/CreatePathRewritesWithDetailRespResponse.cpp
+  src/v20180326/model/ApiParam.cpp
   src/v20180326/model/Ports.cpp
   src/v20180326/model/UpdateRepositoryRequest.cpp
   src/v20180326/model/DescribeGroupGatewaysResponse.cpp

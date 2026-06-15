@@ -50,7 +50,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_jumpEventsHasBeenSet(false),
     m_organizationIdCardTypeHasBeenSet(false),
     m_organizationIdCardTypeSameHasBeenSet(false),
-    m_authorizationMethodHasBeenSet(false)
+    m_authorizationMethodHasBeenSet(false),
+    m_hideBizLicenseHasBeenSet(false)
 {
 }
 
@@ -311,6 +312,14 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_hideBizLicenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideBizLicense";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hideBizLicense, allocator);
     }
 
 
@@ -767,6 +776,22 @@ void CreateOrganizationAuthUrlRequest::SetAuthorizationMethod(const vector<uint6
 bool CreateOrganizationAuthUrlRequest::AuthorizationMethodHasBeenSet() const
 {
     return m_authorizationMethodHasBeenSet;
+}
+
+bool CreateOrganizationAuthUrlRequest::GetHideBizLicense() const
+{
+    return m_hideBizLicense;
+}
+
+void CreateOrganizationAuthUrlRequest::SetHideBizLicense(const bool& _hideBizLicense)
+{
+    m_hideBizLicense = _hideBizLicense;
+    m_hideBizLicenseHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::HideBizLicenseHasBeenSet() const
+{
+    return m_hideBizLicenseHasBeenSet;
 }
 
 

@@ -45,13 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署容器应用是否成功。
-true：成功。
-false：失败。
+                     * 获取<p>部署容器应用是否成功。<br>true：成功。<br>false：失败。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 部署容器应用是否成功。
-true：成功。
-false：失败。
+                     * @return Result <p>部署容器应用是否成功。<br>true：成功。<br>false：失败。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -67,9 +63,7 @@ false：失败。
                 private:
 
                     /**
-                     * 部署容器应用是否成功。
-true：成功。
-false：失败。
+                     * <p>部署容器应用是否成功。<br>true：成功。<br>false：失败。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeployContainerApplicationResp m_result;

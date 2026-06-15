@@ -29,7 +29,8 @@ GatewayPlugin::GatewayPlugin() :
     m_updatedTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_deleteDisabledHasBeenSet(false),
-    m_deleteDisabledReasonHasBeenSet(false)
+    m_deleteDisabledReasonHasBeenSet(false),
+    m_bindDisabledHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome GatewayPlugin::Deserialize(const rapidjson::Value &value)
         m_deleteDisabledReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("BindDisabled") && !value["BindDisabled"].IsNull())
+    {
+        if (!value["BindDisabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayPlugin.BindDisabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindDisabled = value["BindDisabled"].GetBool();
+        m_bindDisabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void GatewayPlugin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DeleteDisabledReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deleteDisabledReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindDisabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindDisabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bindDisabled, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void GatewayPlugin::SetDeleteDisabledReason(const string& _deleteDisabledReason)
 bool GatewayPlugin::DeleteDisabledReasonHasBeenSet() const
 {
     return m_deleteDisabledReasonHasBeenSet;
+}
+
+bool GatewayPlugin::GetBindDisabled() const
+{
+    return m_bindDisabled;
+}
+
+void GatewayPlugin::SetBindDisabled(const bool& _bindDisabled)
+{
+    m_bindDisabled = _bindDisabled;
+    m_bindDisabledHasBeenSet = true;
+}
+
+bool GatewayPlugin::BindDisabledHasBeenSet() const
+{
+    return m_bindDisabledHasBeenSet;
 }
 

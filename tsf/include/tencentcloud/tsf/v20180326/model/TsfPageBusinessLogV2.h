@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return TotalCount 总条数
+                     * 获取<p>总条数</p>
+                     * @return TotalCount <p>总条数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置总条数
-                     * @param _totalCount 总条数
+                     * 设置<p>总条数</p>
+                     * @param _totalCount <p>总条数</p>
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取业务日志列表
-                     * @return Content 业务日志列表
+                     * 获取<p>业务日志列表</p>
+                     * @return Content <p>业务日志列表</p>
                      * 
                      */
                     std::vector<BusinessLogV2> GetContent() const;
 
                     /**
-                     * 设置业务日志列表
-                     * @param _content 业务日志列表
+                     * 设置<p>业务日志列表</p>
+                     * @param _content <p>业务日志列表</p>
                      * 
                      */
                     void SetContent(const std::vector<BusinessLogV2>& _content);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取游标ID
-                     * @return ScrollId 游标ID
+                     * 获取<p>游标ID</p>
+                     * @return ScrollId <p>游标ID</p>
                      * 
                      */
                     std::string GetScrollId() const;
 
                     /**
-                     * 设置游标ID
-                     * @param _scrollId 游标ID
+                     * 设置<p>游标ID</p>
+                     * @param _scrollId <p>游标ID</p>
                      * 
                      */
                     void SetScrollId(const std::string& _scrollId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ScrollIdHasBeenSet() const;
 
                     /**
-                     * 获取查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-                     * @return Status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
+                     * 获取<p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>
+                     * @return Status <p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-                     * @param _status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
+                     * 设置<p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>
+                     * @param _status <p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取查询es时，使用searchAfter返回的游标
-                     * @return SearchAfter 查询es时，使用searchAfter返回的游标
+                     * 获取<p>查询es时，使用searchAfter返回的游标</p>
+                     * @return SearchAfter <p>查询es时，使用searchAfter返回的游标</p>
                      * 
                      */
                     std::vector<std::string> GetSearchAfter() const;
 
                     /**
-                     * 设置查询es时，使用searchAfter返回的游标
-                     * @param _searchAfter 查询es时，使用searchAfter返回的游标
+                     * 设置<p>查询es时，使用searchAfter返回的游标</p>
+                     * @param _searchAfter <p>查询es时，使用searchAfter返回的游标</p>
                      * 
                      */
                     void SetSearchAfter(const std::vector<std::string>& _searchAfter);
@@ -152,37 +152,64 @@ namespace TencentCloud
                      */
                     bool SearchAfterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否压缩</p>
+                     * @return Compressed <p>是否压缩</p>
+                     * 
+                     */
+                    bool GetCompressed() const;
+
+                    /**
+                     * 设置<p>是否压缩</p>
+                     * @param _compressed <p>是否压缩</p>
+                     * 
+                     */
+                    void SetCompressed(const bool& _compressed);
+
+                    /**
+                     * 判断参数 Compressed 是否已赋值
+                     * @return Compressed 是否已赋值
+                     * 
+                     */
+                    bool CompressedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 业务日志列表
+                     * <p>业务日志列表</p>
                      */
                     std::vector<BusinessLogV2> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 游标ID
+                     * <p>游标ID</p>
                      */
                     std::string m_scrollId;
                     bool m_scrollIdHasBeenSet;
 
                     /**
-                     * 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
+                     * <p>查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 查询es时，使用searchAfter返回的游标
+                     * <p>查询es时，使用searchAfter返回的游标</p>
                      */
                     std::vector<std::string> m_searchAfter;
                     bool m_searchAfterHasBeenSet;
+
+                    /**
+                     * <p>是否压缩</p>
+                     */
+                    bool m_compressed;
+                    bool m_compressedHasBeenSet;
 
                 };
             }

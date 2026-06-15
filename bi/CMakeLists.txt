@@ -30,6 +30,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ModifyUserGroupResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserRequest.h
   include/tencentcloud/bi/v20220105/model/CorpUserListData.h
   include/tencentcloud/bi/v20220105/model/UserGroupUpdateDTO.h
   include/tencentcloud/bi/v20220105/model/RowColumnConfig.h
@@ -61,6 +62,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h
   include/tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h
   include/tencentcloud/bi/v20220105/model/ApiKeyAuthApplyVOList.h
+  include/tencentcloud/bi/v20220105/model/ModifyResourceUserResponse.h
   include/tencentcloud/bi/v20220105/model/CreateDataTableRequest.h
   include/tencentcloud/bi/v20220105/model/CreatePermissionRanksRequest.h
   include/tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResourceRequest.h
@@ -191,6 +193,7 @@ set(bi_src
   src/v20220105/model/ModifyUserGroupResponse.cpp
   src/v20220105/model/DeleteUserRoleResponse.cpp
   src/v20220105/model/DescribeUserProjectListRequest.cpp
+  src/v20220105/model/ModifyResourceUserRequest.cpp
   src/v20220105/model/CorpUserListData.cpp
   src/v20220105/model/UserGroupUpdateDTO.cpp
   src/v20220105/model/RowColumnConfig.cpp
@@ -222,6 +225,7 @@ set(bi_src
   src/v20220105/model/UserRoleListDataRoleInfo.cpp
   src/v20220105/model/ExportScreenPageResponse.cpp
   src/v20220105/model/ApiKeyAuthApplyVOList.cpp
+  src/v20220105/model/ModifyResourceUserResponse.cpp
   src/v20220105/model/CreateDataTableRequest.cpp
   src/v20220105/model/CreatePermissionRanksRequest.cpp
   src/v20220105/model/ModifyResourceUserGroupResourceRequest.cpp

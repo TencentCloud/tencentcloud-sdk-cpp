@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关插件id
+                     * 获取<p>网关插件id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 网关插件id
+                     * @return Id <p>网关插件id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置网关插件id
+                     * 设置<p>网关插件id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 网关插件id
+                     * @param _id <p>网关插件id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取插件名称
+                     * 获取<p>插件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 插件名称
+                     * @return Name <p>插件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置插件名称
+                     * 设置<p>插件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 插件名称
+                     * @param _name <p>插件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取插件类型
+                     * 获取<p>插件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 插件类型
+                     * @return Type <p>插件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置插件类型
+                     * 设置<p>插件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 插件类型
+                     * @param _type <p>插件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取插件描述
+                     * 获取<p>插件描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 插件描述
+                     * @return Description <p>插件描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置插件描述
+                     * 设置<p>插件描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 插件描述
+                     * @param _description <p>插件描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedTime 创建时间
+                     * @return CreatedTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdTime 创建时间
+                     * @param _createdTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedTime 更新时间
+                     * @return UpdatedTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedTime 更新时间
+                     * @param _updatedTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取发布状态
+                     * 获取<p>发布状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 发布状态
+                     * @return Status <p>发布状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置发布状态
+                     * 设置<p>发布状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 发布状态
+                     * @param _status <p>发布状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,15 +222,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否禁用删除
-                     * @return DeleteDisabled 是否禁用删除
+                     * 获取<p>是否禁用删除</p>
+                     * @return DeleteDisabled <p>是否禁用删除</p>
                      * 
                      */
                     bool GetDeleteDisabled() const;
 
                     /**
-                     * 设置是否禁用删除
-                     * @param _deleteDisabled 是否禁用删除
+                     * 设置<p>是否禁用删除</p>
+                     * @param _deleteDisabled <p>是否禁用删除</p>
                      * 
                      */
                     void SetDeleteDisabled(const bool& _deleteDisabled);
@@ -243,15 +243,15 @@ namespace TencentCloud
                     bool DeleteDisabledHasBeenSet() const;
 
                     /**
-                     * 获取禁用原因
-                     * @return DeleteDisabledReason 禁用原因
+                     * 获取<p>禁用原因</p>
+                     * @return DeleteDisabledReason <p>禁用原因</p>
                      * 
                      */
                     std::string GetDeleteDisabledReason() const;
 
                     /**
-                     * 设置禁用原因
-                     * @param _deleteDisabledReason 禁用原因
+                     * 设置<p>禁用原因</p>
+                     * @param _deleteDisabledReason <p>禁用原因</p>
                      * 
                      */
                     void SetDeleteDisabledReason(const std::string& _deleteDisabledReason);
@@ -263,68 +263,95 @@ namespace TencentCloud
                      */
                     bool DeleteDisabledReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>
+                     * @return BindDisabled <p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>
+                     * 
+                     */
+                    bool GetBindDisabled() const;
+
+                    /**
+                     * 设置<p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>
+                     * @param _bindDisabled <p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>
+                     * 
+                     */
+                    void SetBindDisabled(const bool& _bindDisabled);
+
+                    /**
+                     * 判断参数 BindDisabled 是否已赋值
+                     * @return BindDisabled 是否已赋值
+                     * 
+                     */
+                    bool BindDisabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关插件id
+                     * <p>网关插件id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 插件名称
+                     * <p>插件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 插件类型
+                     * <p>插件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 插件描述
+                     * <p>插件描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 发布状态
+                     * <p>发布状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否禁用删除
+                     * <p>是否禁用删除</p>
                      */
                     bool m_deleteDisabled;
                     bool m_deleteDisabledHasBeenSet;
 
                     /**
-                     * 禁用原因
+                     * <p>禁用原因</p>
                      */
                     std::string m_deleteDisabledReason;
                     bool m_deleteDisabledReasonHasBeenSet;
+
+                    /**
+                     * <p>是否不可绑定</p><p>枚举值：</p><ul><li>true： 禁止绑定</li><li>false： 允许绑定</li></ul>
+                     */
+                    bool m_bindDisabled;
+                    bool m_bindDisabledHasBeenSet;
 
                 };
             }

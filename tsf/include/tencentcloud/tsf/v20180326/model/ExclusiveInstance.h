@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置中心类型[注册中心Registration、配置中心Configuration]
-                     * @return CenterType 配置中心类型[注册中心Registration、配置中心Configuration]
+                     * 获取<p>配置中心类型[注册中心Registration、配置中心Configuration]</p>
+                     * @return CenterType <p>配置中心类型[注册中心Registration、配置中心Configuration]</p>
                      * 
                      */
                     std::string GetCenterType() const;
 
                     /**
-                     * 设置配置中心类型[注册中心Registration、配置中心Configuration]
-                     * @param _centerType 配置中心类型[注册中心Registration、配置中心Configuration]
+                     * 设置<p>配置中心类型[注册中心Registration、配置中心Configuration]</p>
+                     * @param _centerType <p>配置中心类型[注册中心Registration、配置中心Configuration]</p>
                      * 
                      */
                     void SetCenterType(const std::string& _centerType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CenterTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @return InstanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 获取<p>实例id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @return InstanceId <p>实例id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @param _instanceId 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 设置<p>实例id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @param _instanceId <p>实例id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，例如北极星Polaris
-                     * @return InstanceType 实例类型，例如北极星Polaris
+                     * 获取<p>实例类型，例如北极星Polaris</p>
+                     * @return InstanceType <p>实例类型，例如北极星Polaris</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，例如北极星Polaris
-                     * @param _instanceType 实例类型，例如北极星Polaris
+                     * 设置<p>实例类型，例如北极星Polaris</p>
+                     * @param _instanceType <p>实例类型，例如北极星Polaris</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @return RegionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 获取<p>实例地域id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @return RegionId <p>实例地域id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
-                     * 设置实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @param _regionId 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 设置<p>实例地域id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @param _regionId <p>实例地域id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @return InstanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 获取<p>实例命名空间ID，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @return InstanceNamespaceId <p>实例命名空间ID，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     std::string GetInstanceNamespaceId() const;
 
                     /**
-                     * 设置实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
-                     * @param _instanceNamespaceId 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * 设置<p>实例命名空间ID，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
+                     * @param _instanceNamespaceId <p>实例命名空间ID，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      * 
                      */
                     void SetInstanceNamespaceId(const std::string& _instanceNamespaceId);
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool InstanceNamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取部署组Id
+                     * 获取<p>部署组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 部署组Id
+                     * @return GroupId <p>部署组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组Id
+                     * 设置<p>部署组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 部署组Id
+                     * @param _groupId <p>部署组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,64 +247,91 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文档ID</p>
+                     * @return ApplicationId <p>文档ID</p>
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置<p>文档ID</p>
+                     * @param _applicationId <p>文档ID</p>
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 配置中心类型[注册中心Registration、配置中心Configuration]
+                     * <p>配置中心类型[注册中心Registration、配置中心Configuration]</p>
                      */
                     std::string m_centerType;
                     bool m_centerTypeHasBeenSet;
 
                     /**
-                     * 实例id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * <p>实例id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例类型，例如北极星Polaris
+                     * <p>实例类型，例如北极星Polaris</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例地域id，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * <p>实例地域id，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 实例命名空间ID，通过[北极星控制台](https://console.cloud.tencent.com/tse/governance)获取
+                     * <p>实例命名空间ID，通过<a href="https://console.cloud.tencent.com/tse/governance">北极星控制台</a>获取</p>
                      */
                     std::string m_instanceNamespaceId;
                     bool m_instanceNamespaceIdHasBeenSet;
 
                     /**
-                     * 部署组Id
+                     * <p>部署组Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>文档ID</p>
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

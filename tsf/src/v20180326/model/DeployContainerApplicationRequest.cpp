@@ -84,7 +84,8 @@ DeployContainerApplicationRequest::DeployContainerApplicationRequest() :
     m_staticIpEnabledHasBeenSet(false),
     m_podManagementPolicyTypeHasBeenSet(false),
     m_partitionHasBeenSet(false),
-    m_incrementalDeploymentHasBeenSet(false)
+    m_incrementalDeploymentHasBeenSet(false),
+    m_doNotStartHasBeenSet(false)
 {
 }
 
@@ -651,6 +652,14 @@ string DeployContainerApplicationRequest::ToJsonString() const
         string key = "IncrementalDeployment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_incrementalDeployment, allocator);
+    }
+
+    if (m_doNotStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DoNotStart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_doNotStart, allocator);
     }
 
 
@@ -1651,6 +1660,22 @@ void DeployContainerApplicationRequest::SetIncrementalDeployment(const bool& _in
 bool DeployContainerApplicationRequest::IncrementalDeploymentHasBeenSet() const
 {
     return m_incrementalDeploymentHasBeenSet;
+}
+
+bool DeployContainerApplicationRequest::GetDoNotStart() const
+{
+    return m_doNotStart;
+}
+
+void DeployContainerApplicationRequest::SetDoNotStart(const bool& _doNotStart)
+{
+    m_doNotStart = _doNotStart;
+    m_doNotStartHasBeenSet = true;
+}
+
+bool DeployContainerApplicationRequest::DoNotStartHasBeenSet() const
+{
+    return m_doNotStartHasBeenSet;
 }
 
 

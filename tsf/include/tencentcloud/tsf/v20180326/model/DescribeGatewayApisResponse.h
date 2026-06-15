@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取翻页结构
-                     * @return Result 翻页结构
+                     * 获取<p>翻页结构</p>
+                     * @return Result <p>翻页结构</p>
                      * 
                      */
                     TsfPageApiDetailInfo GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 翻页结构
+                     * <p>翻页结构</p>
                      */
                     TsfPageApiDetailInfo m_result;
                     bool m_resultHasBeenSet;

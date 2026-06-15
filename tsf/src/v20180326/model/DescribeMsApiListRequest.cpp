@@ -26,7 +26,8 @@ DescribeMsApiListRequest::DescribeMsApiListRequest() :
     m_microserviceIdHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_batchApiParamListHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string DescribeMsApiListRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_batchApiParamListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchApiParamList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_batchApiParamList.begin(); itr != m_batchApiParamList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void DescribeMsApiListRequest::SetOffset(const int64_t& _offset)
 bool DescribeMsApiListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<ApiParam> DescribeMsApiListRequest::GetBatchApiParamList() const
+{
+    return m_batchApiParamList;
+}
+
+void DescribeMsApiListRequest::SetBatchApiParamList(const vector<ApiParam>& _batchApiParamList)
+{
+    m_batchApiParamList = _batchApiParamList;
+    m_batchApiParamListHasBeenSet = true;
+}
+
+bool DescribeMsApiListRequest::BatchApiParamListHasBeenSet() const
+{
+    return m_batchApiParamListHasBeenSet;
 }
 
 

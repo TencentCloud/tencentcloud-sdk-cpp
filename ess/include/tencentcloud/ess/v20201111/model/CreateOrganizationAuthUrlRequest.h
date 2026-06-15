@@ -632,6 +632,27 @@ namespace TencentCloud
                      */
                     bool AuthorizationMethodHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业认证页面隐藏上传营业执照<br><img src="https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png" alt="image"><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png" alt="image"></p>
+                     * @return HideBizLicense <p>企业认证页面隐藏上传营业执照<br><img src="https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png" alt="image"><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png" alt="image"></p>
+                     * 
+                     */
+                    bool GetHideBizLicense() const;
+
+                    /**
+                     * 设置<p>企业认证页面隐藏上传营业执照<br><img src="https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png" alt="image"><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png" alt="image"></p>
+                     * @param _hideBizLicense <p>企业认证页面隐藏上传营业执照<br><img src="https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png" alt="image"><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png" alt="image"></p>
+                     * 
+                     */
+                    void SetHideBizLicense(const bool& _hideBizLicense);
+
+                    /**
+                     * 判断参数 HideBizLicense 是否已赋值
+                     * @return HideBizLicense 是否已赋值
+                     * 
+                     */
+                    bool HideBizLicenseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -801,6 +822,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authorizationMethod;
                     bool m_authorizationMethodHasBeenSet;
+
+                    /**
+                     * <p>企业认证页面隐藏上传营业执照<br><img src="https://qcloudimg.tencent-cloud.cn/raw/cf827ce0e2043d8cc85e0735c9cfa3fc.png" alt="image"><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f908cabe71238c78ee8fafc70888a344.png" alt="image"></p>
+                     */
+                    bool m_hideBizLicense;
+                    bool m_hideBizLicenseHasBeenSet;
 
                 };
             }

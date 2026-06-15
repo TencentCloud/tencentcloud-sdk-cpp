@@ -25,7 +25,11 @@ using namespace std;
 CreateMicroserviceWithDetailRespRequest::CreateMicroserviceWithDetailRespRequest() :
     m_namespaceIdHasBeenSet(false),
     m_microserviceNameHasBeenSet(false),
-    m_microserviceDescHasBeenSet(false)
+    m_microserviceDescHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
+    m_serviceUrlHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_serviceDiscoveryHasBeenSet(false)
 {
 }
 
@@ -58,6 +62,38 @@ string CreateMicroserviceWithDetailRespRequest::ToJsonString() const
         string key = "MicroserviceDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_microserviceDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceDiscoveryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceDiscovery";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceDiscovery.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +150,70 @@ void CreateMicroserviceWithDetailRespRequest::SetMicroserviceDesc(const string& 
 bool CreateMicroserviceWithDetailRespRequest::MicroserviceDescHasBeenSet() const
 {
     return m_microserviceDescHasBeenSet;
+}
+
+string CreateMicroserviceWithDetailRespRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CreateMicroserviceWithDetailRespRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CreateMicroserviceWithDetailRespRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
+string CreateMicroserviceWithDetailRespRequest::GetServiceUrl() const
+{
+    return m_serviceUrl;
+}
+
+void CreateMicroserviceWithDetailRespRequest::SetServiceUrl(const string& _serviceUrl)
+{
+    m_serviceUrl = _serviceUrl;
+    m_serviceUrlHasBeenSet = true;
+}
+
+bool CreateMicroserviceWithDetailRespRequest::ServiceUrlHasBeenSet() const
+{
+    return m_serviceUrlHasBeenSet;
+}
+
+string CreateMicroserviceWithDetailRespRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateMicroserviceWithDetailRespRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateMicroserviceWithDetailRespRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string CreateMicroserviceWithDetailRespRequest::GetServiceDiscovery() const
+{
+    return m_serviceDiscovery;
+}
+
+void CreateMicroserviceWithDetailRespRequest::SetServiceDiscovery(const string& _serviceDiscovery)
+{
+    m_serviceDiscovery = _serviceDiscovery;
+    m_serviceDiscoveryHasBeenSet = true;
+}
+
+bool CreateMicroserviceWithDetailRespRequest::ServiceDiscoveryHasBeenSet() const
+{
+    return m_serviceDiscoveryHasBeenSet;
 }
 
 

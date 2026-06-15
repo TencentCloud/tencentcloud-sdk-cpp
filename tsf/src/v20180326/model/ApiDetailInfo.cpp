@@ -48,7 +48,8 @@ ApiDetailInfo::ApiDetailInfo() :
     m_md5HasBeenSet(false),
     m_rpcTypeHasBeenSet(false),
     m_pathMappingUnsupportedHasBeenSet(false),
-    m_pathMappingUnsupportedMsgHasBeenSet(false)
+    m_pathMappingUnsupportedMsgHasBeenSet(false),
+    m_apiOnlineStatusHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
         m_pathMappingUnsupportedMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiOnlineStatus") && !value["ApiOnlineStatus"].IsNull())
+    {
+        if (!value["ApiOnlineStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ApiOnlineStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiOnlineStatus = string(value["ApiOnlineStatus"].GetString());
+        m_apiOnlineStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void ApiDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PathMappingUnsupportedMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pathMappingUnsupportedMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiOnlineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiOnlineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiOnlineStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1036,21 @@ void ApiDetailInfo::SetPathMappingUnsupportedMsg(const string& _pathMappingUnsup
 bool ApiDetailInfo::PathMappingUnsupportedMsgHasBeenSet() const
 {
     return m_pathMappingUnsupportedMsgHasBeenSet;
+}
+
+string ApiDetailInfo::GetApiOnlineStatus() const
+{
+    return m_apiOnlineStatus;
+}
+
+void ApiDetailInfo::SetApiOnlineStatus(const string& _apiOnlineStatus)
+{
+    m_apiOnlineStatus = _apiOnlineStatus;
+    m_apiOnlineStatusHasBeenSet = true;
+}
+
+bool ApiDetailInfo::ApiOnlineStatusHasBeenSet() const
+{
+    return m_apiOnlineStatusHasBeenSet;
 }
 

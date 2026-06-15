@@ -107,6 +107,8 @@
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceCloudResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyProjectRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyProjectResponse.h>
+#include <tencentcloud/bi/v20220105/model/ModifyResourceUserRequest.h>
+#include <tencentcloud/bi/v20220105/model/ModifyResourceUserResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyResourceUserGroupRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyResourceUserGroupResourceRequest.h>
@@ -261,6 +263,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourceUserResponse> ModifyResourceUserOutcome;
+                typedef std::future<ModifyResourceUserOutcome> ModifyResourceUserOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ModifyResourceUserRequest&, ModifyResourceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceUserGroupResponse> ModifyResourceUserGroupOutcome;
                 typedef std::future<ModifyResourceUserGroupOutcome> ModifyResourceUserGroupOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyResourceUserGroupRequest&, ModifyResourceUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceUserGroupAsyncHandler;
@@ -662,6 +667,15 @@ namespace TencentCloud
                 ModifyProjectOutcome ModifyProject(const Model::ModifyProjectRequest &request);
                 void ModifyProjectAsync(const Model::ModifyProjectRequest& request, const ModifyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProjectOutcomeCallable ModifyProjectCallable(const Model::ModifyProjectRequest& request);
+
+                /**
+                 *按用户资源修改
+                 * @param req ModifyResourceUserRequest
+                 * @return ModifyResourceUserOutcome
+                 */
+                ModifyResourceUserOutcome ModifyResourceUser(const Model::ModifyResourceUserRequest &request);
+                void ModifyResourceUserAsync(const Model::ModifyResourceUserRequest& request, const ModifyResourceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourceUserOutcomeCallable ModifyResourceUserCallable(const Model::ModifyResourceUserRequest& request);
 
                 /**
                  *更新用户组权限

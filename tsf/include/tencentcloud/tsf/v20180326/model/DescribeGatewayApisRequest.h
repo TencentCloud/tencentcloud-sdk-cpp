@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分组ID
-                     * @return GroupId 分组ID
+                     * 获取<p>分组ID</p>
+                     * @return GroupId <p>分组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置分组ID
-                     * @param _groupId 分组ID
+                     * 设置<p>分组ID</p>
+                     * @param _groupId <p>分组ID</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取翻页偏移量
-                     * @return Offset 翻页偏移量
+                     * 获取<p>翻页偏移量</p>
+                     * @return Offset <p>翻页偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置翻页偏移量
-                     * @param _offset 翻页偏移量
+                     * 设置<p>翻页偏移量</p>
+                     * @param _offset <p>翻页偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页的记录数
-                     * @return Limit 每页的记录数
+                     * 获取<p>每页的记录数</p>
+                     * @return Limit <p>每页的记录数</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页的记录数
-                     * @param _limit 每页的记录数
+                     * 设置<p>每页的记录数</p>
+                     * @param _limit <p>每页的记录数</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字，支持 API path
-                     * @return SearchWord 搜索关键字，支持 API path
+                     * 获取<p>搜索关键字，支持 API path</p>
+                     * @return SearchWord <p>搜索关键字，支持 API path</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键字，支持 API path
-                     * @param _searchWord 搜索关键字，支持 API path
+                     * 设置<p>搜索关键字，支持 API path</p>
+                     * @param _searchWord <p>搜索关键字，支持 API path</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID
-                     * @return GatewayDeployGroupId 部署组ID
+                     * 获取<p>部署组ID</p>
+                     * @return GatewayDeployGroupId <p>部署组ID</p>
                      * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _gatewayDeployGroupId 部署组ID
+                     * 设置<p>部署组ID</p>
+                     * @param _gatewayDeployGroupId <p>部署组ID</p>
                      * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
-                     * @return ReleaseStatus 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * 获取<p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>
+                     * @return ReleaseStatus <p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>
                      * 
                      */
                     std::string GetReleaseStatus() const;
 
                     /**
-                     * 设置发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
-                     * @param _releaseStatus 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * 设置<p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>
+                     * @param _releaseStatus <p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>
                      * 
                      */
                     void SetReleaseStatus(const std::string& _releaseStatus);
@@ -168,43 +168,97 @@ namespace TencentCloud
                      */
                     bool ReleaseStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回扩展出参字段名</p>
+                     * @return ExtendFieldList <p>返回扩展出参字段名</p>
+                     * 
+                     */
+                    std::vector<std::string> GetExtendFieldList() const;
+
+                    /**
+                     * 设置<p>返回扩展出参字段名</p>
+                     * @param _extendFieldList <p>返回扩展出参字段名</p>
+                     * 
+                     */
+                    void SetExtendFieldList(const std::vector<std::string>& _extendFieldList);
+
+                    /**
+                     * 判断参数 ExtendFieldList 是否已赋值
+                     * @return ExtendFieldList 是否已赋值
+                     * 
+                     */
+                    bool ExtendFieldListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>
+                     * @return ApiOnlineStatus <p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>
+                     * 
+                     */
+                    std::string GetApiOnlineStatus() const;
+
+                    /**
+                     * 设置<p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>
+                     * @param _apiOnlineStatus <p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>
+                     * 
+                     */
+                    void SetApiOnlineStatus(const std::string& _apiOnlineStatus);
+
+                    /**
+                     * 判断参数 ApiOnlineStatus 是否已赋值
+                     * @return ApiOnlineStatus 是否已赋值
+                     * 
+                     */
+                    bool ApiOnlineStatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 分组ID
+                     * <p>分组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 翻页偏移量
+                     * <p>翻页偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页的记录数
+                     * <p>每页的记录数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键字，支持 API path
+                     * <p>搜索关键字，支持 API path</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 部署组ID
+                     * <p>部署组ID</p>
                      */
                     std::string m_gatewayDeployGroupId;
                     bool m_gatewayDeployGroupIdHasBeenSet;
 
                     /**
-                     * 发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)
+                     * <p>发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)</p>
                      */
                     std::string m_releaseStatus;
                     bool m_releaseStatusHasBeenSet;
+
+                    /**
+                     * <p>返回扩展出参字段名</p>
+                     */
+                    std::vector<std::string> m_extendFieldList;
+                    bool m_extendFieldListHasBeenSet;
+
+                    /**
+                     * <p>服务接口状态</p><p>枚举值：</p><ul><li>ONLINE： 在线状态</li><li>OFFLINE： 离线状态</li><li>UNKNOWN： 未知</li><li>DELETED： 查询MS API不存在</li></ul>
+                     */
+                    std::string m_apiOnlineStatus;
+                    bool m_apiOnlineStatusHasBeenSet;
 
                 };
             }

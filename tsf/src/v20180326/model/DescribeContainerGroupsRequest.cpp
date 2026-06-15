@@ -30,7 +30,8 @@ DescribeContainerGroupsRequest::DescribeContainerGroupsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_groupIdListHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,19 @@ string DescribeContainerGroupsRequest::ToJsonString() const
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIdList.begin(); itr != m_groupIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -239,6 +253,22 @@ void DescribeContainerGroupsRequest::SetNamespaceId(const string& _namespaceId)
 bool DescribeContainerGroupsRequest::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+vector<string> DescribeContainerGroupsRequest::GetGroupIdList() const
+{
+    return m_groupIdList;
+}
+
+void DescribeContainerGroupsRequest::SetGroupIdList(const vector<string>& _groupIdList)
+{
+    m_groupIdList = _groupIdList;
+    m_groupIdListHasBeenSet = true;
+}
+
+bool DescribeContainerGroupsRequest::GroupIdListHasBeenSet() const
+{
+    return m_groupIdListHasBeenSet;
 }
 
 

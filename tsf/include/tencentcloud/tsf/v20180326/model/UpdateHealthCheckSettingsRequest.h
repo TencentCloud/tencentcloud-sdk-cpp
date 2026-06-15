@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
-                     * @return GroupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * 获取<p>部署组ID，可通过调用<a href="https://cloud.tencent.com/document/api/649/36068">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href="https://cloud.tencent.com/document/api/649/36075">CreateContainGroup</a>创建新的部署组。</p>
+                     * @return GroupId <p>部署组ID，可通过调用<a href="https://cloud.tencent.com/document/api/649/36068">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href="https://cloud.tencent.com/document/api/649/36075">CreateContainGroup</a>创建新的部署组。</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
-                     * @param _groupId 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * 设置<p>部署组ID，可通过调用<a href="https://cloud.tencent.com/document/api/649/36068">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href="https://cloud.tencent.com/document/api/649/36075">CreateContainGroup</a>创建新的部署组。</p>
+                     * @param _groupId <p>部署组ID，可通过调用<a href="https://cloud.tencent.com/document/api/649/36068">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href="https://cloud.tencent.com/document/api/649/36075">CreateContainGroup</a>创建新的部署组。</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启健康检查
-                     * @return EnableHealthCheck 是否开启健康检查
+                     * 获取<p>是否开启健康检查</p>
+                     * @return EnableHealthCheck <p>是否开启健康检查</p>
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否开启健康检查
-                     * @param _enableHealthCheck 是否开启健康检查
+                     * 设置<p>是否开启健康检查</p>
+                     * @param _enableHealthCheck <p>是否开启健康检查</p>
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取健康检查配置
-                     * @return HealthCheckSettings 健康检查配置
+                     * 获取<p>健康检查配置</p>
+                     * @return HealthCheckSettings <p>健康检查配置</p>
                      * 
                      */
                     HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
-                     * 设置健康检查配置
-                     * @param _healthCheckSettings 健康检查配置
+                     * 设置<p>健康检查配置</p>
+                     * @param _healthCheckSettings <p>健康检查配置</p>
                      * 
                      */
                     void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
@@ -106,25 +106,52 @@ namespace TencentCloud
                      */
                     bool HealthCheckSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否自动重启</p>
+                     * @return LivenessAutoRestart <p>是否自动重启</p>
+                     * 
+                     */
+                    bool GetLivenessAutoRestart() const;
+
+                    /**
+                     * 设置<p>是否自动重启</p>
+                     * @param _livenessAutoRestart <p>是否自动重启</p>
+                     * 
+                     */
+                    void SetLivenessAutoRestart(const bool& _livenessAutoRestart);
+
+                    /**
+                     * 判断参数 LivenessAutoRestart 是否已赋值
+                     * @return LivenessAutoRestart 是否已赋值
+                     * 
+                     */
+                    bool LivenessAutoRestartHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。
+                     * <p>部署组ID，可通过调用<a href="https://cloud.tencent.com/document/api/649/36068">DescribeContainerGroups</a>查询已创建的部署组列表或登录控制台进行查看；也可以调用<a href="https://cloud.tencent.com/document/api/649/36075">CreateContainGroup</a>创建新的部署组。</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 是否开启健康检查
+                     * <p>是否开启健康检查</p>
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 健康检查配置
+                     * <p>健康检查配置</p>
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
+
+                    /**
+                     * <p>是否自动重启</p>
+                     */
+                    bool m_livenessAutoRestart;
+                    bool m_livenessAutoRestartHasBeenSet;
 
                 };
             }
