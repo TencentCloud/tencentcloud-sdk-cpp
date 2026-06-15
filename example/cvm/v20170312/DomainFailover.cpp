@@ -57,10 +57,11 @@ static void PrintOutcome(CvmClient::DescribeInstancesOutcome outcome) {
     cout << endl;
 }
 
-/// Example 1: Default behavior - region failover is DISABLED by default
-/// (aligned with Python SDK). The SDK uses the primary endpoint only.
-void DefaultDisabled() {
-    cout << "=== Example 1: Default (Region Failover Disabled) ===" << endl;
+/// Example 1: Default behavior - region failover is ENABLED by default.
+/// The SDK uses circuit breakers to automatically fall back to alternate
+/// endpoints when the primary endpoint keeps failing.
+void DefaultEnabled() {
+    cout << "=== Example 1: Default (Region Failover Enabled) ===" << endl;
 
     const char* sid = getenv("TENCENTCLOUD_SECRET_ID");
     const char* skey = getenv("TENCENTCLOUD_SECRET_KEY");
@@ -96,13 +97,29 @@ void EnableWithoutBackupEndpoint() {
     PrintOutcome(client.DescribeInstances(req));
 }
 
-/// Example 3: Custom RegionBreakerProfile (configuration only).
+/// Example 3: Custom RegionBreakerProfile with multiple requests.
+///
+/// Uses a fabricated sub-domain as primary (will fail with SSLError) and a
+/// real BackupEndpoint. After enough failures trip the breaker (max_fail_num=3),
+/// subsequent requests are routed to the BackupEndpoint.
+///
+/// Expected output:
+///   Requests 1~3: SSLError (primary endpoint cert mismatch)
+///   Request  4+:  Success  (failover to backup endpoint)
 void EnableWithCustomProfile() {
     cout << "=== Example 3: Custom RegionBreakerProfile ===" << endl;
+    cout << "  Primary endpoint: cvm.does-not-exist.tencentcloudapi.com (SSL will fail)" << endl;
+    cout << "  Backup endpoint:  ap-beijing.tencentcloudapi.com (will succeed)" << endl;
+    cout << endl;
 
     const char* sid = getenv("TENCENTCLOUD_SECRET_ID");
     const char* skey = getenv("TENCENTCLOUD_SECRET_KEY");
-    Credential cred(sid ? sid : "", skey ? skey : "");
+    if (!sid || !skey) {
+        cout << "  [SKIP] Set TENCENTCLOUD_SECRET_ID and TENCENTCLOUD_SECRET_KEY to run this example." << endl;
+        cout << endl;
+        return;
+    }
+    Credential cred(sid, skey);
 
     RegionBreakerProfile rb(
         /*backup_endpoint=*/ "ap-beijing.tencentcloudapi.com",
@@ -117,16 +134,39 @@ void EnableWithCustomProfile() {
     clientProfile.SetRegionBreakerProfile(rb);
 
     HttpProfile httpProfile;
-    httpProfile.SetEndpoint("cvm.ap-shanghai.tencentcloudapi.com");
+    httpProfile.SetEndpoint("cvm.does-not-exist.tencentcloudapi.com");
+    httpProfile.SetConnectTimeout(3);
     httpProfile.SetReqTimeout(5);
     clientProfile.SetHttpProfile(httpProfile);
 
-    CvmClient client(cred, "ap-shanghai", clientProfile);
+    CvmClient client(cred, "ap-guangzhou", clientProfile);
 
     DescribeInstancesRequest req;
     req.SetOffset(0);
-    req.SetLimit(5);
-    PrintOutcome(client.DescribeInstances(req));
+    req.SetLimit(1);
+
+    const int kTotalRequests = 6;
+    int fail_count = 0;
+    int success_count = 0;
+
+    for (int i = 1; i <= kTotalRequests; ++i) {
+        cout << "  Request #" << i << ": ";
+        auto outcome = client.DescribeInstances(req);
+        if (!outcome.IsSuccess()) {
+            ++fail_count;
+            cout << "FAILED - " << outcome.GetError().GetErrorCode()
+                 << ": " << outcome.GetError().GetErrorMessage() << endl;
+        } else {
+            ++success_count;
+            cout << "SUCCESS - RequestId=" << outcome.GetResult().GetRequestId() << endl;
+        }
+    }
+
+    cout << endl;
+    cout << "  Summary: " << fail_count << " failed, "
+         << success_count << " succeeded (failover triggered after "
+         << fail_count << " failures)" << endl;
+    cout << endl;
 }
 
 /// Example 4: Demonstrate actual failover in action.
@@ -315,7 +355,7 @@ void DemonstrateFailoverWithoutBackup() {
 int main() {
     TencentCloud::InitAPI();
 
-    DefaultDisabled();
+    DefaultEnabled();
     EnableWithoutBackupEndpoint();
     EnableWithCustomProfile();
     DemonstrateActualFailover();
