@@ -36,6 +36,7 @@ add_executable(core_ft
                Core_Http_ResolveIp_Ft.cpp
                Core_CircuitBreaker_Ft.cpp
                Core_DomainFailoverManager_Ft.cpp
+               Core_AbstractClient_Breaker_Ft.cpp
                Main.cpp)
 target_link_libraries(core_ft tencentcloud-sdk-cpp-cbs tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core)
 target_link_libraries(core_ft gtest gmock_main -lpthread -lm)

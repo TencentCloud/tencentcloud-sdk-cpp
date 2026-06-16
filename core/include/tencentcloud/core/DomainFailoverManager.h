@@ -23,57 +23,83 @@
 namespace TencentCloud
 {
 
-/// Pure utility that constructs fallback endpoint candidates.
+/// Pure utility that constructs fallback endpoint candidates from a
+/// structured parse of the primary endpoint (see ParseEndpoint).
 ///
-/// Design:
-///   Two mutually exclusive failover modes depending on whether a
-///   BackupEndpoint is configured:
+/// Two mutually exclusive failover modes depending on whether a
+/// BackupEndpoint is configured:
 ///
 ///   Mode A (BackupEndpoint configured):
-///     Primary -> BackupEndpoint (sole fallback, acts as bottom)
+///     Primary -> ResolveBackupEndpoint(backup) (sole fallback / bottom).
 ///     No TLD fallback is performed.
-///     Works regardless of whether primary has a region segment.
 ///
 ///   Mode B (BackupEndpoint empty, default):
-///     - If primary does NOT contain a region segment:
-///       Primary -> next TLD in ring -> second TLD (bottom)
-///       TLD ring order: .com -> .com.cn -> .cn -> .com -> ...
-///       Examples:
-///         cvm.tencentcloudapi.com        -> .com.cn -> .cn (bottom)
-///         hunyuan.ai.tencentcloudapi.com -> hunyuan.ai.tencentcloudapi.com.cn -> .cn
-///         cvm.internal.tencentcloudapi.com -> cvm.internal.tencentcloudapi.com.cn -> .cn
-///
-///     - If primary DOES contain a region segment:
-///       No TLD fallback is performed (returns "").
-///       Rationale: TLD fallback strips the region, which may route
-///       requests to a different geography, violating user intent.
-///       Users who need failover for regional endpoints should
-///       configure a BackupEndpoint explicitly (Mode A).
-///       Examples (no fallback):
-///         cvm.ap-shanghai.tencentcloudapi.com     -> "" (no fallback)
-///         hunyuan.ai.ap-shanghai.tencentcloudapi.com -> "" (no fallback)
+///     Primary -> next TLD in ring -> second TLD (bottom).
+///     TLD ring order: .com -> .com.cn -> .cn -> .com -> ...
+///     The fallback target is rebuilt from the parsed primary as
+///       service + [kept-modifier] + new-tld
+///     so the region segment and dropped-modifiers (intl) are removed,
+///     while service and kept-modifiers (ai/internal) are preserved.
+///     Region is NO LONGER suppressed: a regional primary also falls
+///     back (dropping its region), trading geography drift for
+///     availability.
+///     Examples:
+///       cvm.tencentcloudapi.com             -> .com.cn -> .cn
+///       hunyuan.ai.tencentcloudapi.com      -> hunyuan.ai...com.cn -> .cn
+///       cvm.intl.tencentcloudapi.com        -> cvm...com.cn -> .cn (intl dropped)
+///       cvm.ap-shanghai.tencentcloudapi.com -> cvm...com.cn -> .cn (region dropped)
 ///
 /// This class is stateless; state (closed/open/halfopen) lives in CircuitBreaker.
 class DomainFailoverManager
 {
 public:
-    /// Number of breaker slots needed for the failover chain.
-    /// 3 slots (the maximum across both modes):
-    ///   Mode A (BackupEndpoint set): only breaker[0] is used (primary);
-    ///     BackupEndpoint is the bottom, no breaker needed.
-    ///   Mode B (no BackupEndpoint): breaker[0] skipped, breaker[1] guards
-    ///     primary, breaker[2] guards 1st TLD fallback; last TLD is bottom.
-    /// Unused slots are skipped via empty GetFallbackEndpoint() returns.
-    static int GetBreakerSlotCount();
+    /// Structured parse of a TencentCloud API endpoint.
+    /// Shape: {service}.[modifier?].[region...].{tld}
+    ///   - modifier is one of the known modifiers (ai/internal/intl),
+    ///     mutually exclusive, at most one.
+    ///   - ORDERING CONTRACT: the modifier MUST immediately follow the
+    ///     service (i.e. always before region). Only the first segment
+    ///     after service is checked. Reversed input (region before
+    ///     modifier, e.g. "cvm.ap-shanghai.ai...") is NOT supported: the
+    ///     modifier there falls into region and is dropped.
+    ///   - region (everything between modifier/service and tld) is NOT
+    ///     stored: it is always dropped on fallback.
+    struct ParsedEndpoint
+    {
+        bool        is_tc_domain = false;  // false -> not a TC domain
+        std::string service;               // first segment, e.g. "cvm"
+        std::string modifier;              // "ai"/"internal"/"intl"/""
+        bool        modifier_kept = false; // keep this modifier on fallback?
+        std::string tld;                   // normalized lower-case TLD
+    };
 
-    /// Build a fallback endpoint for |fallback_index| given the primary
-    /// |original_endpoint| and user-configured |backup_endpoint|.
+    /// Parse |endpoint| into its structured parts. If |endpoint| is not a
+    /// TencentCloud domain, returns a ParsedEndpoint with is_tc_domain=false.
+    static ParsedEndpoint ParseEndpoint(const std::string &endpoint);
+
+    /// Normalize a user-configured BackupEndpoint (Mode A) using the
+    /// primary's service name to disambiguate the "bare region" form.
+    ///   - non-TencentCloud domain      -> returned as-is
+    ///   - bare region (single segment != primary_service)
+    ///                                   -> "{primary_service}.{backup}"
+    ///   - complete domain (multi-segment, or single == primary_service)
+    ///                                   -> returned as-is
+    /// Modifiers (ai/internal/intl) are never auto-prepended.
+    static std::string ResolveBackupEndpoint(const std::string &backup_endpoint,
+                                              const std::string &primary_service);
+
+    /// Build the ordered candidate endpoint list for one request:
+    /// [primary, fallback1, fallback2, ...]. The first element is always
+    /// |primary|; the LAST element is the bottom fallback (the caller
+    /// must NOT guard it with a breaker -- it is force-sent without
+    /// reporting, preserving legacy behavior).
     ///
-    /// Returns empty string if |fallback_index| is out of range or if
-    /// |original_endpoint| is not a TencentCloud domain.
-    static std::string GetFallbackEndpoint(const std::string &original_endpoint,
-                                            const std::string &backup_endpoint,
-                                            int fallback_index);
+    /// Built on ParseEndpoint(): Mode A (BackupEndpoint set) appends the
+    /// normalized backup via ResolveBackupEndpoint(); Mode B (no backup)
+    /// walks the TLD ring, dropping region and dropped-modifiers (intl)
+    /// while keeping service and kept-modifiers (ai/internal).
+    static std::vector<std::string> BuildCandidates(
+        const std::string &primary, const std::string &backup_endpoint);
 
     /// True iff |endpoint| targets tencentcloudapi.com / .com.cn / .cn .
     static bool IsTencentCloudDomain(const std::string &endpoint);
@@ -83,32 +109,8 @@ public:
     /// "tencentcloudapi.cn", or "" if none match.
     static std::string ExtractTld(const std::string &endpoint);
 
-    /// Extract the first segment (service name) from |endpoint|.
-    /// e.g. "hunyuan.ai.tencentcloudapi.com" -> "hunyuan".
-    static std::string ExtractService(const std::string &endpoint);
-
-    /// Extract the "middle" segment between the service and the TLD.
-    /// TencentCloud API domains have these shapes:
-    ///   {service}[.{region}].{tld}              -> returns ""
-    ///   {service}.ai[.{region}].{tld}           -> returns "ai"
-    ///   {service}.internal.{tld}                -> returns "internal"
-    ///
-    /// "ai" is a product identifier -- preserved in both TLD fallback
-    /// and BackupEndpoint construction.
-    ///
-    /// "internal" is a network route marker (intranet resolution) --
-    /// preserved in TLD fallback (staying on internal route with
-    /// different TLD), but stripped in BackupEndpoint construction
-    /// (falling back from internal to public route).
-    ///
-    /// Region segments are not enumerated, so new regions need no
-    /// change here.
-    static std::string ExtractMiddleSegment(const std::string &endpoint,
-                                             const std::string &tld);
-
 private:
     /// TLD ring: .com -> .com.cn -> .cn -> (wraps to .com).
-    /// Used to compute the two non-primary TLD fallback candidates.
     static const std::vector<std::string> kTldRing;
 };
 

@@ -26,6 +26,7 @@
 #include "AbstractModel.h"
 #include <map>
 #include <memory>
+#include <mutex>
 #include <unordered_map>
 #include <vector>
 
@@ -42,17 +43,13 @@ namespace TencentCloud
     ///      threads.
     ///
     ///   2. DoRequestAsync() dispatches work on HttpClient's background
-    ///      worker; its completion callback captures `this` and touches
-    ///      m_endpointBreakers via ReportResult(). Correctness of those
-    ///      callbacks relies on the invariant that by the time
-    ///      ~AbstractClient() proceeds past `delete m_httpClient`, the
-    ///      worker has been joined and no callback is still running.
-    ///      The destructor is written to preserve this ordering; DO
-    ///      NOT:
-    ///        * reorder the dtor to release breakers before deleting
-    ///          m_httpClient;
-    ///        * replace m_httpClient with any lifetime management that
-    ///          lets it outlive AbstractClient.
+    ///      worker; its completion callback captures the selected
+    ///      breaker as a std::shared_ptr<CircuitBreaker> (NOT `this`).
+    ///      The breaker therefore stays alive for the whole callback
+    ///      regardless of AbstractClient's destruction timing, so the
+    ///      callback never dereferences a dangling client. The
+    ///      destructor still deletes m_httpClient first to join the
+    ///      worker before other members are torn down.
     class AbstractClient
     {
     public:
@@ -88,6 +85,28 @@ namespace TencentCloud
         template <typename Req, typename Resp>
         void DoRequestAsync(std::string action, Req req, ReqOpts opts, AsyncCompletionHandler<Req, Resp> handler);
 
+        // Result of picking an endpoint for one request.
+        struct EndpointDecision
+        {
+            std::string host;  // endpoint to send to (always non-empty)
+            // Breaker to report the outcome to; nullptr when bypassed
+            // (failover disabled / non-TencentCloud) or when falling
+            // through to the bottom fallback (force-send, no report).
+            std::shared_ptr<CircuitBreaker> breaker;
+        };
+
+        // Get-or-create the breaker guarding |host| under |origin|.
+        std::shared_ptr<CircuitBreaker> BreakerFor(const std::string &origin,
+                                                   const std::string &host);
+
+        // Pick the endpoint for this request. See EndpointDecision.
+        EndpointDecision SelectEndpoint(const std::string &primary_endpoint);
+
+        // Report the outcome to the breaker that Allow()ed this request.
+        // |breaker| == nullptr is a no-op (bypass / bottom fallback).
+        static void ReportResult(const std::shared_ptr<CircuitBreaker> &breaker,
+                                 bool success);
+
     private:
         Credential m_credential;
         ClientProfile m_clientProfile;
@@ -101,71 +120,27 @@ namespace TencentCloud
 
         // Region failover (domain-level circuit breaker).
         //
-        // Two mutually exclusive failover modes:
+        // Breakers are keyed by (origin, host) in a lazily-populated
+        // registry. The candidate list for a request is built by
+        // DomainFailoverManager::BuildCandidates(); every candidate
+        // except the LAST is guarded by a breaker. The last candidate is
+        // the bottom fallback: it is force-sent without a breaker and
+        // without reporting (legacy behavior preserved).
         //
-        // Mode A (BackupEndpoint configured):
-        //   breaker[0]: guards primary; if Open → descend to BackupEndpoint
-        //   breaker[1]: (unused, GetFallbackEndpoint returns "")
-        //   breaker[2]: (unused, GetFallbackEndpoint returns "")
-        //   BackupEndpoint is the bottom fallback (no breaker needed).
-        //
-        // Mode B (no BackupEndpoint, default):
-        //   breaker[0]: (skipped, GetFallbackEndpoint returns "" for index 0)
-        //   breaker[1]: guards primary; if Open → descend to 1st TLD fallback
-        //   breaker[2]: guards 1st TLD fallback; if Open → descend to 2nd TLD
-        //   2nd TLD is the bottom fallback (no breaker needed).
-        //
-        //   TLD ring: .com → .com.cn → .cn → .com → ...
-        //   Example (primary = cvm.ap-shanghai.tencentcloudapi.com):
-        //     breaker[0]: (idle, skipped -- no BackupEndpoint configured)
-        //     breaker[1]: guards primary; Open → fall to cvm.tencentcloudapi.com.cn
-        //     breaker[2]: guards .com.cn;  Open → fall to cvm.tencentcloudapi.cn
-        //     bottom:     cvm.tencentcloudapi.cn (no breaker)
-        //
-        // Semantics: breaker[i] Open means "the endpoint currently
-        // handled by this breaker is unhealthy -- the next request
-        // should skip past it to endpoint i+1". When all active
-        // breakers are Open, requests go to the bottom (no breaker
-        // needed since there is no further fallback).
-        //
-        // For any single request, at most ONE breaker is Allow()ed ==
-        // true, and that breaker is the only one that receives a
-        // Report() call. Breakers whose Allow() returned false are not
-        // reported; they recover via their own Open-to-HalfOpen
-        // timeout.
-        //
-        // Size == DomainFailoverManager::GetBreakerSlotCount() (== 3).
-        //
-        // Stored as raw pointers (new[]/delete[] in Init/Release) to
-        // preserve AbstractClient's implicit copyability -- adding
-        // unique_ptr would make the class non-copyable and break
-        // backward compatibility even though no one actually copies
-        // a Client instance. The ownership is clear: AbstractClient
-        // creates them in the ctor and destroys them in the dtor.
-        CircuitBreaker **m_endpointBreakers;
-        int m_endpointBreakerCount;
+        // shared_ptr is used so async completion callbacks can capture
+        // the selected breaker directly; the breaker then outlives the
+        // AbstractClient if needed, independent of destruction order.
+        struct BreakerRegistry
+        {
+            std::mutex mutex;  // guards lazy insertion into |map|
+            // key = origin + "\n" + host
+            std::map<std::string, std::shared_ptr<CircuitBreaker> > map;
+        };
+
+        // nullptr when region failover is disabled -> fully bypassed.
+        std::shared_ptr<BreakerRegistry> m_breakers;
 
         void InitRegionBreakers();
-        void ReleaseRegionBreakers();
-
-        /// Pick the endpoint to use for this request.
-        /// |out_allowed_breaker_idx| is set to the index (0..2) of the
-        /// breaker that returned Allow() == true (the breaker
-        /// associated with the endpoint this request will use), or -1
-        /// in the following cases:
-        ///   - region failover disabled (no breaker consulted)
-        ///   - non-TencentCloud primary endpoint (breakers bypassed)
-        ///   - all three breakers are Open, so the request falls
-        ///     through to the bottom TLD endpoint (the last in the
-        ///     ring) which has no breaker to report to
-        /// In any of these cases, ReportResult() is a no-op.
-        std::string SelectEndpoint(const std::string &primary_endpoint,
-                                    int &out_allowed_breaker_idx);
-
-        /// Report the request outcome to the single breaker that
-        /// Allow()ed this request. |allowed_breaker_idx| == -1 is a
-        /// no-op (see SelectEndpoint for when that happens).
-        void ReportResult(int allowed_breaker_idx, bool success);
 
         static bool IsFailoverTriggering(const std::string &error_code);
 
@@ -189,8 +164,9 @@ void TencentCloud::AbstractClient::DoRequestAsync(
     }
 
     // Pick an endpoint for this request based on circuit breaker state.
-    int allowed_breaker_idx = -1;
-    std::string resolved_endpoint = SelectEndpoint(primary_endpoint, allowed_breaker_idx);
+    EndpointDecision decision = SelectEndpoint(primary_endpoint);
+    std::string resolved_endpoint = decision.host;
+    std::shared_ptr<CircuitBreaker> breaker = decision.breaker;
 
     std::string::size_type pos = resolved_endpoint.find_first_of('.');
     if (pos != std::string::npos)
@@ -201,7 +177,7 @@ void TencentCloud::AbstractClient::DoRequestAsync(
         // Endpoint is syntactically invalid and cannot be used.
         // Release the HalfOpen probe slot SelectEndpoint reserved, so
         // invalid-endpoint paths don't leak breaker probe capacity.
-        ReportResult(allowed_breaker_idx, /*success=*/false);
+        ReportResult(breaker, /*success=*/false);
         Core::Error err("ClientError", "endpoint `" + resolved_endpoint + "` is not valid");
         handler(req, RequestOutcome(err));
         return;
@@ -261,31 +237,27 @@ void TencentCloud::AbstractClient::DoRequestAsync(
     m_httpClient->SetCaPath(http_profile.GetCaPath());
     m_httpClient->SetResolveIp(http_profile.GetResolveIp());
 
-    // Capture |allowed_breaker_idx| (a plain int) so the async
-    // callback can Report() via AbstractClient's method.
-    //
-    // Capturing `this` is safe because of the lifetime contract
-    // documented on the AbstractClient class: ~AbstractClient() deletes
-    // m_httpClient first, which joins the async worker and guarantees
-    // no callback is running before m_endpointBreakers is released.
-    // Breaking that contract (e.g. reordering the dtor, or sharing
-    // HttpClient across longer-lived owners) turns this capture into a
-    // dangling-this bug.
+    // Capture the selected breaker (a shared_ptr) so the async callback
+    // can Report() to it. The breaker is kept alive by the captured
+    // shared_ptr for the whole callback, independent of AbstractClient's
+    // destruction order. The callback no longer captures `this`.
     m_httpClient->SendRequestAsync(http_req,
-        [this, req, handler, allowed_breaker_idx](
+        [req, handler, breaker](
             HttpClient::HttpResponseOutcome http_resp) mutable
     {
+        // Unified report rule: any Allow()==true request MUST Report()
+        // exactly once. A non-failover error (business 4xx / throttling)
+        // is treated as a "success" for the endpoint, so the HalfOpen
+        // probe slot is released (fixes P7). |breaker| nullptr -> no-op.
+        bool ok = http_resp.IsSuccess() ||
+                  !IsFailoverTriggering(http_resp.GetError().GetErrorCode());
+        ReportResult(breaker, ok);
+
         if (!http_resp.IsSuccess())
         {
-            const auto& error_code = http_resp.GetError().GetErrorCode();
-            if (IsFailoverTriggering(error_code)) {
-                ReportResult(allowed_breaker_idx, /*success=*/false);
-            }
             handler(req, RequestOutcome(http_resp.GetError()));
             return;
         }
-
-        ReportResult(allowed_breaker_idx, /*success=*/true);
 
         std::string http_resp_body{http_resp.GetResult().Body(), http_resp.GetResult().BodySize()};
 

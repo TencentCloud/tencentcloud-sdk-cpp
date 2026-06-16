@@ -49,6 +49,19 @@ std::string ToLowerAscii(const std::string &s)
     return result;
 }
 
+// Known middle-segment modifiers and whether they are kept on fallback.
+// New modifiers only require a row here.
+struct ModifierSpec
+{
+    const char *name;
+    bool kept;
+};
+const ModifierSpec kModifiers[] = {
+    {"ai", true},        // product identifier, kept
+    {"internal", true},  // intranet route marker, kept
+    {"intl", false},     // international-site marker, dropped on fallback
+};
+
 // Ordered by descending length: longer TLDs must be tested first.
 const char *const kTencentCloudTldSuffixes[] = {
     ".tencentcloudapi.com.cn",
@@ -58,175 +71,127 @@ const char *const kTencentCloudTldSuffixes[] = {
 
 }  // namespace
 
-int DomainFailoverManager::GetBreakerSlotCount()
+DomainFailoverManager::ParsedEndpoint DomainFailoverManager::ParseEndpoint(
+    const std::string &endpoint)
 {
-    // 3 breaker slots (maximum across both modes):
-    //   Mode A: only slot 0 is active; slots 1,2 idle.
-    //   Mode B: slot 0 skipped; slots 1,2 active.
-    // The last endpoint in either mode is the bottom fallback with no
-    // breaker. Numerically equals kTldRing.size().
-    return static_cast<int>(kTldRing.size());
-}
-
-std::string DomainFailoverManager::GetFallbackEndpoint(
-    const std::string &original_endpoint,
-    const std::string &backup_endpoint,
-    int fallback_index)
-{
-    if (!IsTencentCloudDomain(original_endpoint))
+    ParsedEndpoint p;
+    std::string tld = ExtractTld(endpoint);
+    if (tld.empty())
     {
-        return "";
+        return p;  // is_tc_domain stays false
     }
-    if (fallback_index < 0)
+    p.is_tc_domain = true;
+    p.tld = tld;
+
+    // prefix = everything before ".{tld}" (length-based, case kept).
+    std::string prefix = endpoint.substr(0, endpoint.size() - tld.size() - 1);
+
+    std::string::size_type dot = prefix.find('.');
+    if (dot == std::string::npos)
     {
-        return "";
+        p.service = prefix;  // service only, no middle/region
+        return p;
     }
+    p.service = prefix.substr(0, dot);
 
-    // Two mutually exclusive modes:
-    //
-    // Mode A (BackupEndpoint configured):
-    //   index 0 = BackupEndpoint (the only fallback, acts as bottom)
-    //   index 1..N = "" (no TLD fallback)
-    //
-    // Mode B (BackupEndpoint empty):
-    //   index 0 = "" (skipped)
-    //   index 1 = next TLD in ring (region stripped)
-    //   index 2 = second TLD in ring (region stripped, bottom)
+    // First segment after service.
+    std::string rest = prefix.substr(dot + 1);
+    std::string::size_type dot2 = rest.find('.');
+    std::string second = (dot2 == std::string::npos) ? rest : rest.substr(0, dot2);
 
-    if (!backup_endpoint.empty())
+    std::string second_lower = ToLowerAscii(second);
+    for (const ModifierSpec &m : kModifiers)
     {
-        // Mode A: BackupEndpoint is set -- use it as the sole fallback.
-        if (fallback_index != 0)
+        if (second_lower == m.name)
         {
-            return "";  // No further fallback beyond BackupEndpoint.
-        }
-        // Decide whether |backup_endpoint| is a "bare region" (e.g.
-        //   "ap-guangzhou.tencentcloudapi.com")
-        // or a complete endpoint with its own service prefix (e.g.
-        //   "cvm.ap-guangzhou.tencentcloudapi.com"  or
-        //   "cvm.tencentcloudapi.com").
-        //
-        // Heuristic: if exactly ONE segment sits before the TLD, it could
-        // be either a region ("ap-guangzhou") or a service name ("cvm").
-        // We disambiguate by comparing with the primary's service name:
-        // if prefix == primary's service, the backup already has the right
-        // service and should be returned as-is; otherwise it is a bare
-        // region and needs the service prepended.
-        std::string backup_tld = ExtractTld(backup_endpoint);
-        if (backup_tld.empty())
-        {
-            // Backup is not a TencentCloud domain at all -- return as-is.
-            return backup_endpoint;
-        }
-        // Prefix (the part before ".{tld}").
-        std::string prefix =
-            backup_endpoint.substr(0, backup_endpoint.size() - backup_tld.size() - 1);
-        std::string svc = ExtractService(original_endpoint);
-        // "bare region" = single segment AND that segment is NOT the same
-        // as the primary's service name.
-        bool bare_region = (prefix.find('.') == std::string::npos) && (prefix != svc);
-        if (!bare_region)
-        {
-            return backup_endpoint;
-        }
-
-        if (svc.empty())
-        {
-            return backup_endpoint;
-        }
-        // Only prepend the service name. Middle segments (ai, internal)
-        // are NOT automatically carried over -- this aligns with Go SDK
-        // behavior where: newEndpoint = service + "." + backupEndpoint.
-        // If the user wants the backup to include ".ai" or ".internal",
-        // they should configure a complete backup domain explicitly.
-        std::string result = svc + "." + backup_endpoint;
-        return result;
-    }
-
-    // Mode B: No BackupEndpoint -- use TLD ring fallback.
-    if (fallback_index == 0)
-    {
-        return "";  // Slot 0 is unused when no BackupEndpoint is set.
-    }
-    // Only index 1 and 2 are valid TLD fallback slots.
-    int ring_size_limit = static_cast<int>(kTldRing.size());
-    if (fallback_index >= ring_size_limit)
-    {
-        return "";
-    }
-
-    // Index 1..2: TLD fallback, with region segment stripped.
-    // TLDs form a ring: .com -> .com.cn -> .cn -> .com -> ...
-    // Starting from the primary's own TLD, walk the ring and pick the
-    // next two distinct TLDs. fallback_index 1 gets the first, 2 the
-    // second. This guarantees no TLD is ever repeated regardless of
-    // which TLD the user started with.
-    int tld_step = fallback_index;  // 1 or 2
-    std::string original_tld = ExtractTld(original_endpoint);
-    if (original_tld.empty())
-    {
-        return "";
-    }
-
-    std::string svc = ExtractService(original_endpoint);
-    std::string middle = ExtractMiddleSegment(original_endpoint, original_tld);
-
-    // Check whether the original endpoint contains a region segment.
-    // Structure: {service}[.{middle}][.{region}].{tld}
-    // If after removing service, middle, and tld there is still a segment
-    // left, that is the region.
-    // When region is present and no BackupEndpoint is configured, do NOT
-    // perform TLD fallback -- because the fallback domain would lack the
-    // region segment and may route to a different geography, violating
-    // the user's intent.
-    {
-        // Reconstruct what the endpoint would look like without a region:
-        //   {service}[.{middle}].{tld}
-        std::string without_region = svc;
-        if (!middle.empty())
-        {
-            without_region += "." + middle;
-        }
-        without_region += "." + original_tld;
-        // If the original is longer than "without_region", it has a region.
-        std::string lower_endpoint = ToLowerAscii(original_endpoint);
-        std::string lower_without = ToLowerAscii(without_region);
-        if (lower_endpoint != lower_without)
-        {
-            // Region detected -- suppress TLD fallback.
-            return "";
-        }
-    }
-
-    // Find the primary's position in the ring.
-    int ring_size = static_cast<int>(kTldRing.size());
-    int origin_pos = -1;
-    for (int i = 0; i < ring_size; ++i)
-    {
-        if (kTldRing[i] == original_tld)
-        {
-            origin_pos = i;
+            p.modifier = m.name;       // normalized lower-case form
+            p.modifier_kept = m.kept;
             break;
         }
     }
-    if (origin_pos < 0)
+    // Otherwise no modifier: |second| is the start of region (dropped).
+    // ORDERING CONTRACT: only |second| (the first segment after service) is
+    // checked. A modifier appearing after a region segment (reversed input)
+    // is therefore swallowed by region and dropped -- not supported by design.
+    return p;
+}
+
+std::string DomainFailoverManager::ResolveBackupEndpoint(
+    const std::string &backup_endpoint, const std::string &primary_service)
+{
+    std::string tld = ExtractTld(backup_endpoint);
+    if (tld.empty())
     {
-        return "";  // Unknown TLD, should not happen for a valid TC domain.
+        return backup_endpoint;  // non-TencentCloud, as-is
+    }
+    std::string prefix =
+        backup_endpoint.substr(0, backup_endpoint.size() - tld.size() - 1);
+
+    if (prefix.find('.') != std::string::npos)
+    {
+        return backup_endpoint;  // multi-segment -> complete domain
+    }
+    if (prefix == primary_service)
+    {
+        return backup_endpoint;  // single segment == service -> complete
+    }
+    if (primary_service.empty())
+    {
+        return backup_endpoint;  // defensive: cannot prepend
+    }
+    return primary_service + "." + backup_endpoint;  // bare region
+}
+
+std::vector<std::string> DomainFailoverManager::BuildCandidates(
+    const std::string &primary, const std::string &backup_endpoint)
+{
+    std::vector<std::string> candidates;
+    candidates.push_back(primary);  // first element is always primary
+
+    ParsedEndpoint p = ParseEndpoint(primary);
+    if (!p.is_tc_domain)
+    {
+        return candidates;  // non-TencentCloud: no failover
     }
 
-    int target_pos = (origin_pos + tld_step) % ring_size;
-    const std::string &target_tld = kTldRing[target_pos];
-
-    // Build: {service}[.{middle}].{target_tld}
-    // Region segment is intentionally dropped (only reachable when
-    // original has no region -- verified above).
-    std::string result = svc;
-    if (!middle.empty())
+    if (!backup_endpoint.empty())
     {
-        result += "." + middle;
+        // Mode A: single fallback to the (normalized) backup endpoint.
+        std::string resolved = ResolveBackupEndpoint(backup_endpoint, p.service);
+        if (!resolved.empty())
+        {
+            candidates.push_back(resolved);
+        }
+        return candidates;
     }
-    result += "." + target_tld;
-    return result;
+
+    // Mode B: walk the TLD ring starting from the primary's own TLD.
+    // Region is dropped; kept-modifiers (ai/internal) preserved; intl dropped.
+    const std::size_t ring_size = kTldRing.size();
+    std::size_t origin = ring_size;  // sentinel: not found
+    for (std::size_t i = 0; i < ring_size; ++i)
+    {
+        if (kTldRing[i] == p.tld)
+        {
+            origin = i;
+            break;
+        }
+    }
+    if (origin == ring_size)
+    {
+        return candidates;  // unknown TLD, no fallback
+    }
+
+    std::string prefix = p.service;
+    if (p.modifier_kept && !p.modifier.empty())
+    {
+        prefix += "." + p.modifier;
+    }
+    for (std::size_t off = 1; off < ring_size; ++off)
+    {
+        candidates.push_back(prefix + "." + kTldRing[(origin + off) % ring_size]);
+    }
+    return candidates;
 }
 
 bool DomainFailoverManager::IsTencentCloudDomain(
@@ -259,52 +224,6 @@ std::string DomainFailoverManager::ExtractTld(const std::string &endpoint)
             // suffix starts with '.'; skip it when returning.
             return std::string(suffix + 1);
         }
-    }
-    return "";
-}
-
-std::string DomainFailoverManager::ExtractService(
-    const std::string &endpoint)
-{
-    auto pos = endpoint.find('.');
-    if (pos == std::string::npos)
-    {
-        return endpoint;
-    }
-    return endpoint.substr(0, pos);
-}
-
-std::string DomainFailoverManager::ExtractMiddleSegment(
-    const std::string &endpoint,
-    const std::string &tld)
-{
-    // Tencent Cloud API domains come in exactly two shapes:
-    //   1) {service}[.{region}].{tld}             -- no middle segment
-    //   2) {service}.ai[.{region}].{tld}          -- middle == "ai"
-    // So the "middle" is determined solely by whether the SECOND dotted
-    // segment equals the literal "ai". No region-prefix enumeration is
-    // needed, which means new regions (me-/cn-/...) require no changes.
-    auto dot1 = endpoint.find('.');
-    if (dot1 == std::string::npos)
-    {
-        return "";
-    }
-    auto dot2 = endpoint.find('.', dot1 + 1);
-    if (dot2 == std::string::npos)
-    {
-        return "";
-    }
-    // The second segment must lie strictly before the TLD to be a
-    // middle (otherwise it IS the start of the TLD).
-    auto tld_pos = endpoint.rfind("." + tld);
-    if (tld_pos == std::string::npos || tld_pos < dot2)
-    {
-        return "";
-    }
-    std::string second = endpoint.substr(dot1 + 1, dot2 - dot1 - 1);
-    if (second == "ai" || second == "internal")
-    {
-        return second;
     }
     return "";
 }

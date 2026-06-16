@@ -41,22 +41,18 @@ AbstractClient::AbstractClient(const string &endpoint, const string &version, co
     m_apiVersion(version),
     m_httpClient(new HttpClient()),
     m_service(""),
-    m_endpointBreakers(nullptr),
-    m_endpointBreakerCount(0)
+    m_breakers(nullptr)
 {
     InitRegionBreakers();
 }
 
 AbstractClient::~AbstractClient()
 {
-    // Order matters: deleting m_httpClient joins its async worker,
-    // ensuring no DoRequestAsync callback is still running (and thus no
-    // callback is still holding `this` or about to touch
-    // m_endpointBreakers) by the time ReleaseRegionBreakers() runs.
-    // Do NOT reorder these two lines. See the lifetime note in
-    // AbstractClient.h.
+    // delete m_httpClient first to join its async worker. Breakers are
+    // held by shared_ptr (in m_breakers and possibly captured by async
+    // callbacks), so they release automatically and safely regardless
+    // of destruction timing.
     delete m_httpClient;
-    ReleaseRegionBreakers();
 }
 
 void AbstractClient::SetNetworkProxy(const NetworkProxy &proxy)
@@ -124,114 +120,82 @@ typedef std::map<std::string, std::string> OctetStreamHeadersMap;
 
 void AbstractClient::InitRegionBreakers()
 {
-    // Only allocate breakers when region failover is enabled.
-    // When disabled, m_endpointBreakers stays nullptr and
-    // SelectEndpoint early-returns without touching them.
+    // Only build the registry when region failover is enabled.
+    // When disabled, m_breakers stays nullptr and SelectEndpoint
+    // early-returns without touching it.
     if (m_clientProfile.GetDisableRegionBreaker())
     {
         return;
     }
-    m_endpointBreakerCount = DomainFailoverManager::GetBreakerSlotCount();
-    RegionBreakerProfile rb_profile = m_clientProfile.GetRegionBreakerProfile();
-    m_endpointBreakers = new CircuitBreaker*[m_endpointBreakerCount];
-    for (int i = 0; i < m_endpointBreakerCount; ++i)
-    {
-        m_endpointBreakers[i] = new CircuitBreaker(rb_profile);
-    }
+    m_breakers = std::make_shared<BreakerRegistry>();
 }
 
-void AbstractClient::ReleaseRegionBreakers()
+std::shared_ptr<CircuitBreaker> AbstractClient::BreakerFor(
+    const std::string &origin, const std::string &host)
 {
-    if (m_endpointBreakers != nullptr)
+    const std::string key = origin + "\n" + host;
+    std::lock_guard<std::mutex> lock(m_breakers->mutex);
+    std::map<std::string, std::shared_ptr<CircuitBreaker> >::iterator it =
+        m_breakers->map.find(key);
+    if (it != m_breakers->map.end())
     {
-        for (int i = 0; i < m_endpointBreakerCount; ++i)
-        {
-            delete m_endpointBreakers[i];
-        }
-        delete[] m_endpointBreakers;
-        m_endpointBreakers = nullptr;
-        m_endpointBreakerCount = 0;
+        return it->second;  // reuse (accumulates state)
     }
+    std::shared_ptr<CircuitBreaker> breaker = std::make_shared<CircuitBreaker>(
+        m_clientProfile.GetRegionBreakerProfile());
+    m_breakers->map.insert(std::make_pair(key, breaker));  // lazy load
+    return breaker;
 }
 
-std::string AbstractClient::SelectEndpoint(const std::string &primary_endpoint,
-                                            int &out_allowed_breaker_idx)
+AbstractClient::EndpointDecision AbstractClient::SelectEndpoint(
+    const std::string &primary_endpoint)
 {
-    out_allowed_breaker_idx = -1;
-
-    // If region failover is disabled, always use the primary endpoint.
-    if (m_clientProfile.GetDisableRegionBreaker())
+    // Bypass: failover disabled / non-TencentCloud endpoint -> send the
+    // primary directly, no breaker, no report.
+    if (!m_breakers ||
+        !DomainFailoverManager::IsTencentCloudDomain(primary_endpoint))
     {
-        return primary_endpoint;
-    }
-    // Guard: breakers were not allocated (e.g. failover was disabled
-    // at construction time but enabled at runtime via SetClientProfile).
-    if (m_endpointBreakers == nullptr || m_endpointBreakerCount == 0)
-    {
-        return primary_endpoint;
-    }
-    // Non-TencentCloud endpoints (e.g. custom proxy) bypass failover.
-    if (!DomainFailoverManager::IsTencentCloudDomain(primary_endpoint))
-    {
-        return primary_endpoint;
+        EndpointDecision d;
+        d.host = primary_endpoint;
+        d.breaker = nullptr;
+        return d;
     }
 
     RegionBreakerProfile rb_profile = m_clientProfile.GetRegionBreakerProfile();
     std::string backup_ep = rb_profile.GetBackupEndpoint();
+    std::vector<std::string> candidates =
+        DomainFailoverManager::BuildCandidates(primary_endpoint, backup_ep);
 
-    // Walk the fallback chain. At iteration |i| we:
-    //   - compute |next| = the endpoint that |i|-th fallback target
-    //     resolves to (or empty if that fallback is not configured,
-    //     i.e. layer 0 with no BackupEndpoint);
-    //   - consult m_endpointBreakers[i], which records the statistics
-    //     of the endpoint currently held in |current|.
-    //
-    // If that breaker Allow()s, we stay on |current| and reply to the
-    // caller that m_endpointBreakers[i] is the one to Report() back
-    // to. Otherwise the breaker is Open -- |current| is unhealthy --
-    // and we descend to |next|, consulting the next breaker on the
-    // next iteration.
-    //
-    // If all breakers end up Open, the loop completes without setting
-    // out_allowed_breaker_idx. |current| will be the last-resort
-    // bottom TLD endpoint (the last in the ring after primary's TLD)
-    // and out_allowed_breaker_idx stays -1: no breaker needs
-    // to hear about this request because .cn is the bottom and has no
-    // further fallback.
-    std::string current = primary_endpoint;
-    const int count = m_endpointBreakerCount;
-    for (int i = 0; i < count; ++i)
+    // The LAST candidate is the bottom fallback: no breaker, force-sent,
+    // not reported (legacy behavior). Only consult breakers for the
+    // candidates before it.
+    const size_t last = candidates.size() - 1;
+    for (size_t i = 0; i < last; ++i)
     {
-        std::string next = DomainFailoverManager::GetFallbackEndpoint(
-            primary_endpoint, backup_ep, i);
-        if (next.empty())
+        std::shared_ptr<CircuitBreaker> breaker =
+            BreakerFor(primary_endpoint, candidates[i]);
+        if (breaker->Allow())
         {
-            // This fallback slot is unused (e.g. layer 0 with no
-            // BackupEndpoint). Skip WITHOUT consulting breaker[i];
-            // it stays idle for this request. The next iteration
-            // will consult breaker[i+1] for the |current| endpoint.
-            continue;
+            EndpointDecision d;
+            d.host = candidates[i];
+            d.breaker = breaker;  // hit -> must Report
+            return d;
         }
-
-        if (m_endpointBreakers[i]->Allow())
-        {
-            // Breaker i says: "the endpoint you are currently on is
-            // healthy -- stay." Remember this breaker so the outcome
-            // can be reported back to it.
-            out_allowed_breaker_idx = i;
-            break;
-        }
-        // Breaker i Open: |current| is unhealthy. Descend.
-        current = next;
     }
-    return current;
+    // All front candidates Open (or single-candidate case) -> fall to
+    // the bottom; force-send without reporting.
+    EndpointDecision d;
+    d.host = candidates[last];
+    d.breaker = nullptr;
+    return d;
 }
 
-void AbstractClient::ReportResult(int allowed_breaker_idx, bool success)
+void AbstractClient::ReportResult(
+    const std::shared_ptr<CircuitBreaker> &breaker, bool success)
 {
-    if (allowed_breaker_idx >= 0 && m_endpointBreakers != nullptr)
+    if (breaker)
     {
-        m_endpointBreakers[allowed_breaker_idx]->Report(success);
+        breaker->Report(success);
     }
 }
 
@@ -331,24 +295,18 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     // Pick an endpoint for this request based on circuit breaker state.
     // No in-request retry: the breakers make the decision once per
     // request. The outcome of that single request is then fed back to
-    // the breaker (success or failover-triggering error).
-    int allowed_breaker_idx = -1;
-    string target_endpoint = SelectEndpoint(primary_endpoint, allowed_breaker_idx);
+    // the breaker.
+    EndpointDecision decision = SelectEndpoint(primary_endpoint);
 
-    auto outcome = DoRequestWithEndpoint(actionName, body, headers, target_endpoint);
+    auto outcome = DoRequestWithEndpoint(actionName, body, headers, decision.host);
 
-    if (outcome.IsSuccess())
-    {
-        ReportResult(allowed_breaker_idx, /*success=*/true);
-    }
-    else
-    {
-        const auto &error_code = outcome.GetError().GetErrorCode();
-        if (IsFailoverTriggering(error_code))
-        {
-            ReportResult(allowed_breaker_idx, /*success=*/false);
-        }
-    }
+    // Unified report rule: any Allow()==true request MUST Report() once.
+    // A non-failover error (business 4xx / throttling) counts as a
+    // "success" for the endpoint so the HalfOpen probe slot is released
+    // (fixes P7). decision.breaker == nullptr (bypass / bottom) -> no-op.
+    bool ok = outcome.IsSuccess() ||
+              !IsFailoverTriggering(outcome.GetError().GetErrorCode());
+    ReportResult(decision.breaker, ok);
 
     return outcome;
 }

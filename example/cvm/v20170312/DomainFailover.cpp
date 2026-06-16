@@ -19,10 +19,11 @@
 /// Python SDK's region_breaker) in the C++ SDK.
 ///
 /// When the primary endpoint keeps failing, a circuit breaker drives
-/// automatic switching:
-///     primary -> user-configured BackupEndpoint
-///             -> tencentcloudapi.com.cn (TLD fallback)
-///             -> tencentcloudapi.cn     (TLD fallback)
+/// automatic switching. There are two mutually exclusive fallback modes:
+///   Mode A (BackupEndpoint configured):
+///     primary -> user-configured BackupEndpoint   (no TLD fallback)
+///   Mode B (no BackupEndpoint, default):
+///     primary -> tencentcloudapi.com.cn -> tencentcloudapi.cn  (TLD ring)
 ///
 /// Run with: TENCENTCLOUD_SECRET_ID=xxx TENCENTCLOUD_SECRET_KEY=yyy ./DomainFailover
 ///
@@ -200,7 +201,8 @@ void DemonstrateActualFailover() {
     }
     Credential cred(sid, skey);
 
-    // Configure breaker with low thresholds so failover triggers quickly.
+    // Use the default breaker thresholds (max_fail_num=5): the breaker
+    // trips after 5 consecutive SSLError failures on the primary.
     RegionBreakerProfile rb(
         /*backup_endpoint=*/ "ap-guangzhou.tencentcloudapi.com",
         /*max_fail_num=*/    5,
@@ -247,7 +249,7 @@ void DemonstrateActualFailover() {
     //
     // For deeper debugging, enable curl verbose mode or add a log line
     // in AbstractClient::DoRequest() after SelectEndpoint() returns:
-    //   std::cerr << "[Failover] endpoint=" << target_endpoint << std::endl;
+    //   std::cerr << "[Failover] endpoint=" << decision.host << std::endl;
     const int kTotalRequests = 10;
     int fail_count = 0;
     int success_count = 0;
@@ -274,12 +276,13 @@ void DemonstrateActualFailover() {
 
 /// Example 5: Failover WITHOUT BackupEndpoint (TLD-only fallback).
 ///
-/// When BackupEndpoint is empty, the fallback chain skips index 0 and
-/// goes directly to TLD switching:
-///   primary (.com) -> .com.cn -> .cn
+/// With no BackupEndpoint, fallback goes through the TLD ring. The
+/// primary cvm.does-not-exist.tencentcloudapi.com carries a region-like
+/// segment ("does-not-exist") which is DROPPED on fallback, so the
+/// breaker trips and the SDK switches to cvm.tencentcloudapi.com.cn.
 ///
 /// Expected output:
-///   Requests 1~5: SSLError (primary endpoint cert mismatch)
+///   Requests 1~5: SSLError (primary cert mismatch on fabricated domain)
 ///   Request  6+:  Success  (failover to cvm.tencentcloudapi.com.cn)
 void DemonstrateFailoverWithoutBackup() {
     cout << "=== Example 5: Failover Without BackupEndpoint (TLD fallback) ===" << endl;
@@ -311,7 +314,8 @@ void DemonstrateFailoverWithoutBackup() {
     clientProfile.SetRegionBreakerProfile(rb);
 
     HttpProfile httpProfile;
-    // Fabricated sub-domain under .com: SSL cert mismatch triggers failover.
+    // Fabricated two-level sub-domain: SSL cert SAN mismatch triggers
+    // SSLError, which opens the breaker and drives TLD fallback.
     httpProfile.SetEndpoint("cvm.does-not-exist.tencentcloudapi.com");
     httpProfile.SetConnectTimeout(3);
     httpProfile.SetReqTimeout(5);
@@ -323,11 +327,10 @@ void DemonstrateFailoverWithoutBackup() {
     req.SetOffset(0);
     req.SetLimit(1);
 
-    // After 5 consecutive SSLError failures on the primary, the breaker
-    // opens. Since BackupEndpoint is empty (index 0 skipped), the SDK
-    // falls back to the next TLD in the ring:
-    //   primary .com -> index 1 = .com.cn
-    // So requests should hit cvm.tencentcloudapi.com.cn
+    // After max_fail_num consecutive SSLError failures on the primary, the
+    // breaker opens. With no BackupEndpoint, the region-like segment is
+    // dropped and the SDK falls back through the TLD ring:
+    //   cvm.does-not-exist.tencentcloudapi.com -> cvm.tencentcloudapi.com.cn
     const int kTotalRequests = 10;
     int fail_count = 0;
     int success_count = 0;
