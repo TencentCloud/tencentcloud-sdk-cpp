@@ -89,10 +89,10 @@ DomainFailoverManager::ParsedEndpoint DomainFailoverManager::ParseEndpoint(
     std::string::size_type dot = prefix.find('.');
     if (dot == std::string::npos)
     {
-        p.service = prefix;  // service only, no middle/region
+        p.service = ToLowerAscii(prefix);  // service only, no middle/region
         return p;
     }
-    p.service = prefix.substr(0, dot);
+    p.service = ToLowerAscii(prefix.substr(0, dot));
 
     // First segment after service.
     std::string rest = prefix.substr(dot + 1);

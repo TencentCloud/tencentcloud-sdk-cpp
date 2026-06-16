@@ -44,10 +44,10 @@ namespace TencentCloud
 ///     back (dropping its region), trading geography drift for
 ///     availability.
 ///     Examples:
-///       cvm.tencentcloudapi.com             -> .com.cn -> .cn
-///       hunyuan.ai.tencentcloudapi.com      -> hunyuan.ai...com.cn -> .cn
-///       cvm.intl.tencentcloudapi.com        -> cvm...com.cn -> .cn (intl dropped)
-///       cvm.ap-shanghai.tencentcloudapi.com -> cvm...com.cn -> .cn (region dropped)
+///       cvm.tencentcloudapi.com             -> cvm.tencentcloudapi.com.cn -> cvm.tencentcloudapi.cn
+///       hunyuan.ai.tencentcloudapi.com      -> hunyuan.ai.tencentcloudapi.com.cn -> hunyuan.ai.tencentcloudapi.cn
+///       cvm.intl.tencentcloudapi.com        -> cvm.tencentcloudapi.com.cn -> cvm.tencentcloudapi.cn (intl dropped)
+///       cvm.ap-shanghai.tencentcloudapi.com -> cvm.tencentcloudapi.com.cn -> cvm.tencentcloudapi.cn (region dropped)
 ///
 /// This class is stateless; state (closed/open/halfopen) lives in CircuitBreaker.
 class DomainFailoverManager

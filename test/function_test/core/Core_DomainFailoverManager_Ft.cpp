@@ -250,6 +250,7 @@ TEST(ParseEndpointTest, NonTencentCloud) {
 TEST(ParseEndpointTest, CaseInsensitiveTldAndModifier) {
     auto p = DomainFailoverManager::ParseEndpoint("CVM.AI.TencentCloudApi.COM");
     EXPECT_TRUE(p.is_tc_domain);
+    EXPECT_EQ(p.service, "cvm");           // normalized lower-case
     EXPECT_EQ(p.modifier, "ai");           // normalized lower-case
     EXPECT_TRUE(p.modifier_kept);
     EXPECT_EQ(p.tld, "tencentcloudapi.com");
