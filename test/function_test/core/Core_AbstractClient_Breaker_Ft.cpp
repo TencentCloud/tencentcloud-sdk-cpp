@@ -113,12 +113,15 @@ TEST(AbstractClientBreakerTest, NonTencentCloudBypass) {
     EXPECT_EQ(d.breaker, nullptr);
 }
 
-TEST(AbstractClientBreakerTest, RegionPrimarySingleCandidateNoReport) {
+TEST(AbstractClientBreakerTest, RegionPrimaryNowHasFallbackWithBreaker) {
+    // CHANGED BEHAVIOR: region is no longer suppressed. A regional primary
+    // with no backup now produces 3 candidates (primary + 2 TLD fallbacks),
+    // so SelectEndpoint assigns a breaker to the primary (Closed -> Allow).
     TestableClient c(MakeProfile(""));
     TestableClient::EndpointDecision d =
         c.SelectEndpoint("cvm.ap-shanghai.tencentcloudapi.com");
     EXPECT_EQ(d.host, "cvm.ap-shanghai.tencentcloudapi.com");
-    EXPECT_EQ(d.breaker, nullptr);
+    EXPECT_NE(d.breaker, nullptr);  // breaker assigned (Closed state)
 }
 
 TEST(AbstractClientBreakerTest, ReportNullBreakerIsNoop) {
