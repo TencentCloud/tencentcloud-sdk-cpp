@@ -1940,6 +1940,56 @@ EssClient::CreateFlowGroupByTemplatesOutcomeCallable EssClient::CreateFlowGroupB
     return prom->get_future();
 }
 
+EssClient::CreateFlowGroupRemindsOutcome EssClient::CreateFlowGroupReminds(const CreateFlowGroupRemindsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowGroupReminds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowGroupRemindsResponse rsp = CreateFlowGroupRemindsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowGroupRemindsOutcome(rsp);
+        else
+            return CreateFlowGroupRemindsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowGroupRemindsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowGroupRemindsAsync(const CreateFlowGroupRemindsRequest& request, const CreateFlowGroupRemindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateFlowGroupRemindsRequest&;
+    using Resp = CreateFlowGroupRemindsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateFlowGroupReminds", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateFlowGroupRemindsOutcomeCallable EssClient::CreateFlowGroupRemindsCallable(const CreateFlowGroupRemindsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateFlowGroupRemindsOutcome>>();
+    CreateFlowGroupRemindsAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateFlowGroupRemindsRequest&,
+        CreateFlowGroupRemindsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreateFlowGroupSignReviewOutcome EssClient::CreateFlowGroupSignReview(const CreateFlowGroupSignReviewRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowGroupSignReview");

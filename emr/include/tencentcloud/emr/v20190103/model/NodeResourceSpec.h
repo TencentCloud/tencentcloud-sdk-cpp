@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/DiskSpecInfo.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/ServiceDeploy.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格类型，如S2.MEDIUM8
-                     * @return InstanceType 规格类型，如S2.MEDIUM8
+                     * 获取<p>规格类型，如S2.MEDIUM8</p>
+                     * @return InstanceType <p>规格类型，如S2.MEDIUM8</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置规格类型，如S2.MEDIUM8
-                     * @param _instanceType 规格类型，如S2.MEDIUM8
+                     * 设置<p>规格类型，如S2.MEDIUM8</p>
+                     * @param _instanceType <p>规格类型，如S2.MEDIUM8</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -70,18 +71,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘，系统盘个数不超过1块
+                     * 获取<p>系统盘，系统盘个数不超过1块</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SystemDisk 系统盘，系统盘个数不超过1块
+                     * @return SystemDisk <p>系统盘，系统盘个数不超过1块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiskSpecInfo> GetSystemDisk() const;
 
                     /**
-                     * 设置系统盘，系统盘个数不超过1块
+                     * 设置<p>系统盘，系统盘个数不超过1块</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _systemDisk 系统盘，系统盘个数不超过1块
+                     * @param _systemDisk <p>系统盘，系统盘个数不超过1块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,18 +96,18 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的标签列表
+                     * 获取<p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 需要绑定的标签列表
+                     * @return Tags <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置需要绑定的标签列表
+                     * 设置<p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 需要绑定的标签列表
+                     * @param _tags <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,18 +121,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取云数据盘，云数据盘总个数不超过15块
+                     * 获取<p>云数据盘，云数据盘总个数不超过15块</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataDisk 云数据盘，云数据盘总个数不超过15块
+                     * @return DataDisk <p>云数据盘，云数据盘总个数不超过15块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiskSpecInfo> GetDataDisk() const;
 
                     /**
-                     * 设置云数据盘，云数据盘总个数不超过15块
+                     * 设置<p>云数据盘，云数据盘总个数不超过15块</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataDisk 云数据盘，云数据盘总个数不超过15块
+                     * @param _dataDisk <p>云数据盘，云数据盘总个数不超过15块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -145,18 +146,18 @@ namespace TencentCloud
                     bool DataDiskHasBeenSet() const;
 
                     /**
-                     * 获取本地数据盘
+                     * 获取<p>本地数据盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalDataDisk 本地数据盘
+                     * @return LocalDataDisk <p>本地数据盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiskSpecInfo> GetLocalDataDisk() const;
 
                     /**
-                     * 设置本地数据盘
+                     * 设置<p>本地数据盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _localDataDisk 本地数据盘
+                     * @param _localDataDisk <p>本地数据盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -169,41 +170,68 @@ namespace TencentCloud
                      */
                     bool LocalDataDiskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>
+                     * @return SoftwareConfig <p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>
+                     * 
+                     */
+                    std::vector<ServiceDeploy> GetSoftwareConfig() const;
+
+                    /**
+                     * 设置<p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>
+                     * @param _softwareConfig <p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>
+                     * 
+                     */
+                    void SetSoftwareConfig(const std::vector<ServiceDeploy>& _softwareConfig);
+
+                    /**
+                     * 判断参数 SoftwareConfig 是否已赋值
+                     * @return SoftwareConfig 是否已赋值
+                     * 
+                     */
+                    bool SoftwareConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规格类型，如S2.MEDIUM8
+                     * <p>规格类型，如S2.MEDIUM8</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 系统盘，系统盘个数不超过1块
+                     * <p>系统盘，系统盘个数不超过1块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiskSpecInfo> m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 需要绑定的标签列表
+                     * <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 云数据盘，云数据盘总个数不超过15块
+                     * <p>云数据盘，云数据盘总个数不超过15块</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiskSpecInfo> m_dataDisk;
                     bool m_dataDiskHasBeenSet;
 
                     /**
-                     * 本地数据盘
+                     * <p>本地数据盘</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiskSpecInfo> m_localDataDisk;
                     bool m_localDataDiskHasBeenSet;
+
+                    /**
+                     * <p>节点配置信息，目前仅提供给terraform平台校验参数使用</p>
+                     */
+                    std::vector<ServiceDeploy> m_softwareConfig;
+                    bool m_softwareConfigHasBeenSet;
 
                 };
             }

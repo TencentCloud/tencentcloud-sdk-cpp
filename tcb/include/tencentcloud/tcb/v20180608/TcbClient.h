@@ -89,12 +89,18 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeBillingInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeClientRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeClientResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudAppListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreditsUsageRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreditsUsageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreditsUsageDetailRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreditsUsageDetailResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
@@ -316,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientResponse> DescribeClientOutcome;
                 typedef std::future<DescribeClientOutcome> DescribeClientOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeClientRequest&, DescribeClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudAppListResponse> DescribeCloudAppListOutcome;
+                typedef std::future<DescribeCloudAppListOutcome> DescribeCloudAppListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudAppListRequest&, DescribeCloudAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAppListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
@@ -325,6 +334,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCreateMySQLResultResponse> DescribeCreateMySQLResultOutcome;
                 typedef std::future<DescribeCreateMySQLResultOutcome> DescribeCreateMySQLResultOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCreateMySQLResultRequest&, DescribeCreateMySQLResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateMySQLResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCreditsUsageResponse> DescribeCreditsUsageOutcome;
+                typedef std::future<DescribeCreditsUsageOutcome> DescribeCreditsUsageOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCreditsUsageRequest&, DescribeCreditsUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreditsUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCreditsUsageDetailResponse> DescribeCreditsUsageDetailOutcome;
+                typedef std::future<DescribeCreditsUsageDetailOutcome> DescribeCreditsUsageDetailOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCreditsUsageDetailRequest&, DescribeCreditsUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreditsUsageDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCurveDataResponse> DescribeCurveDataOutcome;
                 typedef std::future<DescribeCurveDataOutcome> DescribeCurveDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCurveDataRequest&, DescribeCurveDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurveDataAsyncHandler;
@@ -861,6 +876,15 @@ namespace TencentCloud
                 DescribeClientOutcomeCallable DescribeClientCallable(const Model::DescribeClientRequest& request);
 
                 /**
+                 *查询云应用服务列表信息
+                 * @param req DescribeCloudAppListRequest
+                 * @return DescribeCloudAppListOutcome
+                 */
+                DescribeCloudAppListOutcome DescribeCloudAppList(const Model::DescribeCloudAppListRequest &request);
+                void DescribeCloudAppListAsync(const Model::DescribeCloudAppListRequest& request, const DescribeCloudAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudAppListOutcomeCallable DescribeCloudAppListCallable(const Model::DescribeCloudAppListRequest& request);
+
+                /**
                  *获取云托管代码上传url
                  * @param req DescribeCloudBaseBuildServiceRequest
                  * @return DescribeCloudBaseBuildServiceOutcome
@@ -889,6 +913,24 @@ namespace TencentCloud
                 DescribeCreateMySQLResultOutcome DescribeCreateMySQLResult(const Model::DescribeCreateMySQLResultRequest &request);
                 void DescribeCreateMySQLResultAsync(const Model::DescribeCreateMySQLResultRequest& request, const DescribeCreateMySQLResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCreateMySQLResultOutcomeCallable DescribeCreateMySQLResultCallable(const Model::DescribeCreateMySQLResultRequest& request);
+
+                /**
+                 *查询资源点模式下的资源点用量
+                 * @param req DescribeCreditsUsageRequest
+                 * @return DescribeCreditsUsageOutcome
+                 */
+                DescribeCreditsUsageOutcome DescribeCreditsUsage(const Model::DescribeCreditsUsageRequest &request);
+                void DescribeCreditsUsageAsync(const Model::DescribeCreditsUsageRequest& request, const DescribeCreditsUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCreditsUsageOutcomeCallable DescribeCreditsUsageCallable(const Model::DescribeCreditsUsageRequest& request);
+
+                /**
+                 *查询资源点模式下的资源点用量及原始用量明细
+                 * @param req DescribeCreditsUsageDetailRequest
+                 * @return DescribeCreditsUsageDetailOutcome
+                 */
+                DescribeCreditsUsageDetailOutcome DescribeCreditsUsageDetail(const Model::DescribeCreditsUsageDetailRequest &request);
+                void DescribeCreditsUsageDetailAsync(const Model::DescribeCreditsUsageDetailRequest& request, const DescribeCreditsUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCreditsUsageDetailOutcomeCallable DescribeCreditsUsageDetailCallable(const Model::DescribeCreditsUsageDetailRequest& request);
 
                 /**
                  *根据指定指标名称，查询某环境在指定时间范围内的监控数据，返回按统计粒度聚合后的时序数据。

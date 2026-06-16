@@ -1690,6 +1690,56 @@ TcbClient::DescribeClientOutcomeCallable TcbClient::DescribeClientCallable(const
     return prom->get_future();
 }
 
+TcbClient::DescribeCloudAppListOutcome TcbClient::DescribeCloudAppList(const DescribeCloudAppListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudAppList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudAppListResponse rsp = DescribeCloudAppListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudAppListOutcome(rsp);
+        else
+            return DescribeCloudAppListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudAppListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudAppListAsync(const DescribeCloudAppListRequest& request, const DescribeCloudAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudAppListRequest&;
+    using Resp = DescribeCloudAppListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudAppList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudAppListOutcomeCallable TcbClient::DescribeCloudAppListCallable(const DescribeCloudAppListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudAppListOutcome>>();
+    DescribeCloudAppListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudAppListRequest&,
+        DescribeCloudAppListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuildService(const DescribeCloudBaseBuildServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseBuildService");
@@ -1832,6 +1882,106 @@ TcbClient::DescribeCreateMySQLResultOutcomeCallable TcbClient::DescribeCreateMyS
         const TcbClient*,
         const DescribeCreateMySQLResultRequest&,
         DescribeCreateMySQLResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCreditsUsageOutcome TcbClient::DescribeCreditsUsage(const DescribeCreditsUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreditsUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreditsUsageResponse rsp = DescribeCreditsUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreditsUsageOutcome(rsp);
+        else
+            return DescribeCreditsUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreditsUsageOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCreditsUsageAsync(const DescribeCreditsUsageRequest& request, const DescribeCreditsUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCreditsUsageRequest&;
+    using Resp = DescribeCreditsUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCreditsUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCreditsUsageOutcomeCallable TcbClient::DescribeCreditsUsageCallable(const DescribeCreditsUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCreditsUsageOutcome>>();
+    DescribeCreditsUsageAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCreditsUsageRequest&,
+        DescribeCreditsUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCreditsUsageDetailOutcome TcbClient::DescribeCreditsUsageDetail(const DescribeCreditsUsageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreditsUsageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreditsUsageDetailResponse rsp = DescribeCreditsUsageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreditsUsageDetailOutcome(rsp);
+        else
+            return DescribeCreditsUsageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreditsUsageDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCreditsUsageDetailAsync(const DescribeCreditsUsageDetailRequest& request, const DescribeCreditsUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCreditsUsageDetailRequest&;
+    using Resp = DescribeCreditsUsageDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCreditsUsageDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCreditsUsageDetailOutcomeCallable TcbClient::DescribeCreditsUsageDetailCallable(const DescribeCreditsUsageDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCreditsUsageDetailOutcome>>();
+    DescribeCreditsUsageDetailAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCreditsUsageDetailRequest&,
+        DescribeCreditsUsageDetailOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -68,6 +68,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/NodeSpecDisk.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowRequest.h
   include/tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h
+  include/tencentcloud/emr/v20190103/model/ServiceDeploy.h
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h
   include/tencentcloud/emr/v20190103/model/ResultItem.h
   include/tencentcloud/emr/v20190103/model/CreateClusterResponse.h
@@ -486,6 +487,7 @@ set(emr_src
   src/v20190103/model/NodeSpecDisk.cpp
   src/v20190103/model/RunJobFlowRequest.cpp
   src/v20190103/model/ScaleOutClusterRequest.cpp
+  src/v20190103/model/ServiceDeploy.cpp
   src/v20190103/model/DescribeHiveQueriesRequest.cpp
   src/v20190103/model/ResultItem.cpp
   src/v20190103/model/CreateClusterResponse.cpp
