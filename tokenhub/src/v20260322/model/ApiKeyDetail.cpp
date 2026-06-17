@@ -36,7 +36,9 @@ ApiKeyDetail::ApiKeyDetail() :
     m_editableHasBeenSet(false),
     m_bindingItemsHasBeenSet(false),
     m_ipWhitelistHasBeenSet(false),
-    m_creatorHasBeenSet(false)
+    m_creatorHasBeenSet(false),
+    m_quotaSetHasBeenSet(false),
+    m_quotaStatusHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,36 @@ CoreInternalOutcome ApiKeyDetail::Deserialize(const rapidjson::Value &value)
         m_creatorHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaSet") && !value["QuotaSet"].IsNull())
+    {
+        if (!value["QuotaSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApiKeyDetail.QuotaSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QuotaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_quotaSet.push_back(item);
+        }
+        m_quotaSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuotaStatus") && !value["QuotaStatus"].IsNull())
+    {
+        if (!value["QuotaStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiKeyDetail.QuotaStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaStatus = string(value["QuotaStatus"].GetString());
+        m_quotaStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +395,29 @@ void ApiKeyDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quotaSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_quotaSet.begin(); itr != m_quotaSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_quotaStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -622,5 +677,37 @@ void ApiKeyDetail::SetCreator(const string& _creator)
 bool ApiKeyDetail::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+vector<QuotaInfo> ApiKeyDetail::GetQuotaSet() const
+{
+    return m_quotaSet;
+}
+
+void ApiKeyDetail::SetQuotaSet(const vector<QuotaInfo>& _quotaSet)
+{
+    m_quotaSet = _quotaSet;
+    m_quotaSetHasBeenSet = true;
+}
+
+bool ApiKeyDetail::QuotaSetHasBeenSet() const
+{
+    return m_quotaSetHasBeenSet;
+}
+
+string ApiKeyDetail::GetQuotaStatus() const
+{
+    return m_quotaStatus;
+}
+
+void ApiKeyDetail::SetQuotaStatus(const string& _quotaStatus)
+{
+    m_quotaStatus = _quotaStatus;
+    m_quotaStatusHasBeenSet = true;
+}
+
+bool ApiKeyDetail::QuotaStatusHasBeenSet() const
+{
+    return m_quotaStatusHasBeenSet;
 }
 

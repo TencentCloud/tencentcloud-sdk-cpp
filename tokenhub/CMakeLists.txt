@@ -89,6 +89,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/UsageDetailItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeySecretRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/QuotaInfo.h
   )
 
 set(tokenhub_src
@@ -163,6 +164,7 @@ set(tokenhub_src
   src/v20260322/model/DescribeTokenPlanApiKeyListRequest.cpp
   src/v20260322/model/UsageDetailItem.cpp
   src/v20260322/model/DescribeTokenPlanApiKeySecretRequest.cpp
+  src/v20260322/model/QuotaInfo.cpp
   )
 
 set(tokenhub_include

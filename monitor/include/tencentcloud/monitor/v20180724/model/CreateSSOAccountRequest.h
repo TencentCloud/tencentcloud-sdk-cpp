@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 获取<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @return InstanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 设置<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @param _instanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户账号 ID ，例如：10000000
-                     * @return UserId 用户账号 ID ，例如：10000000
+                     * 获取<p>用户账号 ID ，例如：10000000</p>
+                     * @return UserId <p>用户账号 ID ，例如：10000000</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户账号 ID ，例如：10000000
-                     * @param _userId 用户账号 ID ，例如：10000000
+                     * 设置<p>用户账号 ID ，例如：10000000</p>
+                     * @param _userId <p>用户账号 ID ，例如：10000000</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
-                     * @return Role 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
+                     * 获取<p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>
+                     * @return Role <p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>
                      * 
                      */
                     std::vector<GrafanaAccountRole> GetRole() const;
 
                     /**
-                     * 设置权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
-                     * @param _role 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
+                     * 设置<p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>
+                     * @param _role <p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>
                      * 
                      */
                     void SetRole(const std::vector<GrafanaAccountRole>& _role);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Notes 备注
+                     * 获取<p>备注</p>
+                     * @return Notes <p>备注</p>
                      * 
                      */
                     std::string GetNotes() const;
 
                     /**
-                     * 设置备注
-                     * @param _notes 备注
+                     * 设置<p>备注</p>
+                     * @param _notes <p>备注</p>
                      * 
                      */
                     void SetNotes(const std::string& _notes);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-abcdefgh
+                     * <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户账号 ID ，例如：10000000
+                     * <p>用户账号 ID ，例如：10000000</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)
+                     * <p>权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)</p>
                      */
                     std::vector<GrafanaAccountRole> m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_notes;
                     bool m_notesHasBeenSet;

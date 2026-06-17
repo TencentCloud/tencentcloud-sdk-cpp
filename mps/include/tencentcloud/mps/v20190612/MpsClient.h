@@ -327,6 +327,8 @@
 #include <tencentcloud/mps/v20190612/model/DesignVoiceAsyncResponse.h>
 #include <tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaRequest.h>
 #include <tencentcloud/mps/v20190612/model/DetectVideoSubtitleAreaResponse.h>
+#include <tencentcloud/mps/v20190612/model/DetectVideoWatermarkRequest.h>
+#include <tencentcloud/mps/v20190612/model/DetectVideoWatermarkResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
@@ -915,6 +917,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectVideoSubtitleAreaResponse> DetectVideoSubtitleAreaOutcome;
                 typedef std::future<DetectVideoSubtitleAreaOutcome> DetectVideoSubtitleAreaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DetectVideoSubtitleAreaRequest&, DetectVideoSubtitleAreaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoSubtitleAreaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectVideoWatermarkResponse> DetectVideoWatermarkOutcome;
+                typedef std::future<DetectVideoWatermarkOutcome> DetectVideoWatermarkOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DetectVideoWatermarkRequest&, DetectVideoWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoWatermarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableScheduleResponse> DisableScheduleOutcome;
                 typedef std::future<DisableScheduleOutcome> DisableScheduleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableScheduleRequest&, DisableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableScheduleAsyncHandler;
@@ -2498,6 +2503,15 @@ namespace TencentCloud
                 DetectVideoSubtitleAreaOutcome DetectVideoSubtitleArea(const Model::DetectVideoSubtitleAreaRequest &request);
                 void DetectVideoSubtitleAreaAsync(const Model::DetectVideoSubtitleAreaRequest& request, const DetectVideoSubtitleAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectVideoSubtitleAreaOutcomeCallable DetectVideoSubtitleAreaCallable(const Model::DetectVideoSubtitleAreaRequest& request);
+
+                /**
+                 *快速探测视频文件是否包含水印
+                 * @param req DetectVideoWatermarkRequest
+                 * @return DetectVideoWatermarkOutcome
+                 */
+                DetectVideoWatermarkOutcome DetectVideoWatermark(const Model::DetectVideoWatermarkRequest &request);
+                void DetectVideoWatermarkAsync(const Model::DetectVideoWatermarkRequest& request, const DetectVideoWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectVideoWatermarkOutcomeCallable DetectVideoWatermarkCallable(const Model::DetectVideoWatermarkRequest& request);
 
                 /**
                  *禁用自动化触发编排任务。

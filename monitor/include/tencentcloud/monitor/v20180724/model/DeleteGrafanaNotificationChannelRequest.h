@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
-                     * @return ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
+                     * 获取<p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>
+                     * @return ChannelIDs <p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>
                      * 
                      */
                     std::vector<std::string> GetChannelIDs() const;
 
                     /**
-                     * 设置通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
-                     * @param _channelIDs 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
+                     * 设置<p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>
+                     * @param _channelIDs <p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>
                      * 
                      */
                     void SetChannelIDs(const std::vector<std::string>& _channelIDs);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ChannelIDsHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 获取<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @return InstanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 设置<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @param _instanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取
+                     * <p>通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取</p>
                      */
                     std::vector<std::string> m_channelIDs;
                     bool m_channelIDsHasBeenSet;
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-abcdefgh
+                     * <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

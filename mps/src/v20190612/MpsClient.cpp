@@ -7640,6 +7640,56 @@ MpsClient::DetectVideoSubtitleAreaOutcomeCallable MpsClient::DetectVideoSubtitle
     return prom->get_future();
 }
 
+MpsClient::DetectVideoWatermarkOutcome MpsClient::DetectVideoWatermark(const DetectVideoWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectVideoWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectVideoWatermarkResponse rsp = DetectVideoWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectVideoWatermarkOutcome(rsp);
+        else
+            return DetectVideoWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectVideoWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DetectVideoWatermarkAsync(const DetectVideoWatermarkRequest& request, const DetectVideoWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DetectVideoWatermarkRequest&;
+    using Resp = DetectVideoWatermarkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DetectVideoWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DetectVideoWatermarkOutcomeCallable MpsClient::DetectVideoWatermarkCallable(const DetectVideoWatermarkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DetectVideoWatermarkOutcome>>();
+    DetectVideoWatermarkAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DetectVideoWatermarkRequest&,
+        DetectVideoWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DisableScheduleOutcome MpsClient::DisableSchedule(const DisableScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableSchedule");

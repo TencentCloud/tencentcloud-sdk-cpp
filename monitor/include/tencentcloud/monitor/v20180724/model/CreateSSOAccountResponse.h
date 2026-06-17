@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已添加的用户 UIN
-                     * @return UserId 已添加的用户 UIN
+                     * 获取<p>已添加的用户 UIN</p>
+                     * @return UserId <p>已添加的用户 UIN</p>
                      * 
                      */
                     std::string GetUserId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 已添加的用户 UIN
+                     * <p>已添加的用户 UIN</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

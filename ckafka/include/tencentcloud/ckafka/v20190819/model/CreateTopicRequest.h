@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool MinInsyncReplicasHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许</p>
-                     * @return UncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许</p>
+                     * 获取<p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认取实例维度的值</p>
+                     * @return UncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认取实例维度的值</p>
                      * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
-                     * 设置<p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许</p>
-                     * @param _uncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许</p>
+                     * 设置<p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认取实例维度的值</p>
+                     * @param _uncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认取实例维度的值</p>
                      * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
@@ -478,7 +478,7 @@ namespace TencentCloud
                     bool m_minInsyncReplicasHasBeenSet;
 
                     /**
-                     * <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许</p>
+                     * <p>是否允许未同步的副本选为leader，0:不允许，1:允许，默认取实例维度的值</p>
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;

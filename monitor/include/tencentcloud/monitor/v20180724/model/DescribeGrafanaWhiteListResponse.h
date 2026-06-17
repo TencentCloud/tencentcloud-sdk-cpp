@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数组
-                     * @return WhiteList 数组
+                     * 获取<p>数组</p>
+                     * @return WhiteList <p>数组</p>
                      * 
                      */
                     std::vector<std::string> GetWhiteList() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数组
+                     * <p>数组</p>
                      */
                     std::vector<std::string> m_whiteList;
                     bool m_whiteListHasBeenSet;

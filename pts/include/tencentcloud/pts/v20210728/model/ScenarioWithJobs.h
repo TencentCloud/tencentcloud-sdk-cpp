@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取scecario结果
-                     * @return Scenario scecario结果
+                     * 获取<p>Scenario结果</p>
+                     * @return Scenario <p>Scenario结果</p>
                      * 
                      */
                     Scenario GetScenario() const;
 
                     /**
-                     * 设置scecario结果
-                     * @param _scenario scecario结果
+                     * 设置<p>Scenario结果</p>
+                     * @param _scenario <p>Scenario结果</p>
                      * 
                      */
                     void SetScenario(const Scenario& _scenario);
@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool ScenarioHasBeenSet() const;
 
                     /**
-                     * 获取job结果
+                     * 获取<p>job结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Jobs job结果
+                     * @return Jobs <p>job结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Job> GetJobs() const;
 
                     /**
-                     * 设置job结果
+                     * 设置<p>job结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jobs job结果
+                     * @param _jobs <p>job结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,13 +97,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * scecario结果
+                     * <p>Scenario结果</p>
                      */
                     Scenario m_scenario;
                     bool m_scenarioHasBeenSet;
 
                     /**
-                     * job结果
+                     * <p>job结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Job> m_jobs;

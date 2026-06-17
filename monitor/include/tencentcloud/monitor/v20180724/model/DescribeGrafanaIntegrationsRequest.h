@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceId <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集成 ID
-                     * @return IntegrationId 集成 ID
+                     * 获取<p>集成 ID</p>
+                     * @return IntegrationId <p>集成 ID</p>
                      * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
-                     * 设置集成 ID
-                     * @param _integrationId 集成 ID
+                     * 设置<p>集成 ID</p>
+                     * @param _integrationId <p>集成 ID</p>
                      * 
                      */
                     void SetIntegrationId(const std::string& _integrationId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IntegrationIdHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Kind 类型
+                     * 获取<p>类型</p>
+                     * @return Kind <p>类型</p>
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型
-                     * @param _kind 类型
+                     * 设置<p>类型</p>
+                     * @param _kind <p>类型</p>
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集成 ID
+                     * <p>集成 ID</p>
                      */
                     std::string m_integrationId;
                     bool m_integrationIdHasBeenSet;
 
                     /**
-                     * 类型
+                     * <p>类型</p>
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

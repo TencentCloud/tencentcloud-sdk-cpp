@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权账号列表
+                     * 获取<p>授权账号列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountSet 授权账号列表
+                     * @return AccountSet <p>授权账号列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 授权账号列表
+                     * <p>授权账号列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GrafanaAccountInfo> m_accountSet;

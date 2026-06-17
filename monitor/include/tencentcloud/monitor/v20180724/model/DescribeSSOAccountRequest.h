@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 获取<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @return InstanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 设置<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @param _instanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
-                     * @return UserId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * 获取<p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>
+                     * @return UserId <p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
-                     * @param _userId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * 设置<p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>
+                     * @param _userId <p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-abcdefgh
+                     * <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * <p>填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道 ID
+                     * 获取<p>通道 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelId 通道 ID
+                     * @return ChannelId <p>通道 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道 ID
+                     * <p>通道 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;

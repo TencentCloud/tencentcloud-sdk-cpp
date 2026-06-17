@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-12345678
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 获取<p>Grafana 实例 ID，例如：grafana-12345678</p>
+                     * @return InstanceId <p>Grafana 实例 ID，例如：grafana-12345678</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-12345678
-                     * @param _instanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 设置<p>Grafana 实例 ID，例如：grafana-12345678</p>
+                     * @param _instanceId <p>Grafana 实例 ID，例如：grafana-12345678</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询数量
-                     * @return Limit 查询数量
+                     * 获取<p>查询数量</p>
+                     * @return Limit <p>查询数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询数量
-                     * @param _limit 查询数量
+                     * 设置<p>查询数量</p>
+                     * @param _limit <p>查询数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取告警通道名称，例如：test
-                     * @return ChannelName 告警通道名称，例如：test
+                     * 获取<p>告警通道名称，例如：test</p>
+                     * @return ChannelName <p>告警通道名称，例如：test</p>
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置告警通道名称，例如：test
-                     * @param _channelName 告警通道名称，例如：test
+                     * 设置<p>告警通道名称，例如：test</p>
+                     * @param _channelName <p>告警通道名称，例如：test</p>
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取告警通道 ID，例如：nchannel-abcd1234
-                     * @return ChannelIds 告警通道 ID，例如：nchannel-abcd1234
+                     * 获取<p>告警通道 ID，例如：nchannel-abcd1234</p>
+                     * @return ChannelIds <p>告警通道 ID，例如：nchannel-abcd1234</p>
                      * 
                      */
                     std::vector<std::string> GetChannelIds() const;
 
                     /**
-                     * 设置告警通道 ID，例如：nchannel-abcd1234
-                     * @param _channelIds 告警通道 ID，例如：nchannel-abcd1234
+                     * 设置<p>告警通道 ID，例如：nchannel-abcd1234</p>
+                     * @param _channelIds <p>告警通道 ID，例如：nchannel-abcd1234</p>
                      * 
                      */
                     void SetChannelIds(const std::vector<std::string>& _channelIds);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ChannelIdsHasBeenSet() const;
 
                     /**
-                     * 获取告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
-                     * @return ChannelState 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
+                     * 获取<p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>
+                     * @return ChannelState <p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>
                      * 
                      */
                     int64_t GetChannelState() const;
 
                     /**
-                     * 设置告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
-                     * @param _channelState 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
+                     * 设置<p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>
+                     * @param _channelState <p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>
                      * 
                      */
                     void SetChannelState(const int64_t& _channelState);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-12345678
+                     * <p>Grafana 实例 ID，例如：grafana-12345678</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询数量
+                     * <p>查询数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 告警通道名称，例如：test
+                     * <p>告警通道名称，例如：test</p>
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 告警通道 ID，例如：nchannel-abcd1234
+                     * <p>告警通道 ID，例如：nchannel-abcd1234</p>
                      */
                     std::vector<std::string> m_channelIds;
                     bool m_channelIdsHasBeenSet;
 
                     /**
-                     * 告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)
+                     * <p>告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)</p>
                      */
                     int64_t m_channelState;
                     bool m_channelStateHasBeenSet;

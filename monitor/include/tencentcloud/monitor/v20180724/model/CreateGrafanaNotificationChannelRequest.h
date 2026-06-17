@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 获取<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @return InstanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 设置<p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
+                     * @param _instanceId <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取告警通道名称，例如：test
-                     * @return ChannelName 告警通道名称，例如：test
+                     * 获取<p>告警通道名称，例如：my-channel</p>
+                     * @return ChannelName <p>告警通道名称，例如：my-channel</p>
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置告警通道名称，例如：test
-                     * @param _channelName 告警通道名称，例如：test
+                     * 设置<p>告警通道名称，例如：my-channel</p>
+                     * @param _channelName <p>告警通道名称，例如：my-channel</p>
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
-                     * @return Receivers 接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
+                     * 获取<p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>
+                     * @return Receivers <p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>
                      * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
-                     * 设置接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
-                     * @param _receivers 接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
+                     * 设置<p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>
+                     * @param _receivers <p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>
                      * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取默认为1，建议使用 OrganizationIds
-                     * @return OrgId 默认为1，建议使用 OrganizationIds
+                     * 获取<p>默认为1，建议使用 OrganizationIds</p>
+                     * @return OrgId <p>默认为1，建议使用 OrganizationIds</p>
                      * 
                      */
                     int64_t GetOrgId() const;
 
                     /**
-                     * 设置默认为1，建议使用 OrganizationIds
-                     * @param _orgId 默认为1，建议使用 OrganizationIds
+                     * 设置<p>默认为1，建议使用 OrganizationIds</p>
+                     * @param _orgId <p>默认为1，建议使用 OrganizationIds</p>
                      * 
                      */
                     void SetOrgId(const int64_t& _orgId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取额外组织 ID 数组，已废弃，请使用 OrganizationIds
-                     * @return ExtraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * 获取<p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>
+                     * @return ExtraOrgIds <p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>
                      * 
                      */
                     std::vector<std::string> GetExtraOrgIds() const;
 
                     /**
-                     * 设置额外组织 ID 数组，已废弃，请使用 OrganizationIds
-                     * @param _extraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * 设置<p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>
+                     * @param _extraOrgIds <p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>
                      * 
                      */
                     void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ExtraOrgIdsHasBeenSet() const;
 
                     /**
-                     * 获取生效的所有组织 ID 数组，默认为 ["1"]
-                     * @return OrganizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     * 获取<p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>
+                     * @return OrganizationIds <p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetOrganizationIds() const;
 
                     /**
-                     * 设置生效的所有组织 ID 数组，默认为 ["1"]
-                     * @param _organizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     * 设置<p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>
+                     * @param _organizationIds <p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>
                      * 
                      */
                     void SetOrganizationIds(const std::vector<std::string>& _organizationIds);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-abcdefgh
+                     * <p>Grafana 实例 ID，例如：grafana-abcdefgh</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 告警通道名称，例如：test
+                     * <p>告警通道名称，例如：my-channel</p>
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID 
+                     * <p>接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID</p>
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 默认为1，建议使用 OrganizationIds
+                     * <p>默认为1，建议使用 OrganizationIds</p>
                      */
                     int64_t m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * 额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * <p>额外组织 ID 数组，已废弃，请使用 OrganizationIds</p>
                      */
                     std::vector<std::string> m_extraOrgIds;
                     bool m_extraOrgIdsHasBeenSet;
 
                     /**
-                     * 生效的所有组织 ID 数组，默认为 ["1"]
+                     * <p>生效的所有组织 ID 数组，默认为 [&quot;1&quot;]</p>
                      */
                     std::vector<std::string> m_organizationIds;
                     bool m_organizationIdsHasBeenSet;

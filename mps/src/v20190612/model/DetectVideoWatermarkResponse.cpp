@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h>
+#include <tencentcloud/mps/v20190612/model/DetectVideoWatermarkResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ags::V20250920::Model;
+using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
-PauseSandboxInstanceResponse::PauseSandboxInstanceResponse() :
-    m_instanceStatusHasBeenSet(false)
+DetectVideoWatermarkResponse::DetectVideoWatermarkResponse() :
+    m_confidenceHasBeenSet(false),
+    m_hasWatermarkHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome PauseSandboxInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DetectVideoWatermarkResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +64,68 @@ CoreInternalOutcome PauseSandboxInstanceResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("InstanceStatus") && !rsp["InstanceStatus"].IsNull())
+    if (rsp.HasMember("Confidence") && !rsp["Confidence"].IsNull())
     {
-        if (!rsp["InstanceStatus"].IsString())
+        if (!rsp["Confidence"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceStatus = string(rsp["InstanceStatus"].GetString());
-        m_instanceStatusHasBeenSet = true;
+        m_confidence = rsp["Confidence"].GetDouble();
+        m_confidenceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HasWatermark") && !rsp["HasWatermark"].IsNull())
+    {
+        if (!rsp["HasWatermark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasWatermark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasWatermark = rsp["HasWatermark"].GetBool();
+        m_hasWatermarkHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string PauseSandboxInstanceResponse::ToJsonString() const
+string DetectVideoWatermarkResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_instanceStatusHasBeenSet)
+    if (m_confidenceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceStatus";
+        string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_confidence, allocator);
+    }
+
+    if (m_hasWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasWatermark, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +140,34 @@ string PauseSandboxInstanceResponse::ToJsonString() const
 }
 
 
-string PauseSandboxInstanceResponse::GetInstanceStatus() const
+double DetectVideoWatermarkResponse::GetConfidence() const
 {
-    return m_instanceStatus;
+    return m_confidence;
 }
 
-bool PauseSandboxInstanceResponse::InstanceStatusHasBeenSet() const
+bool DetectVideoWatermarkResponse::ConfidenceHasBeenSet() const
 {
-    return m_instanceStatusHasBeenSet;
+    return m_confidenceHasBeenSet;
+}
+
+bool DetectVideoWatermarkResponse::GetHasWatermark() const
+{
+    return m_hasWatermark;
+}
+
+bool DetectVideoWatermarkResponse::HasWatermarkHasBeenSet() const
+{
+    return m_hasWatermarkHasBeenSet;
+}
+
+string DetectVideoWatermarkResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool DetectVideoWatermarkResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

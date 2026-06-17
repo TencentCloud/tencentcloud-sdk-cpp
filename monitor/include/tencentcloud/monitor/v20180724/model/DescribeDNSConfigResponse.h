@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DNS 服务器数组
-                     * @return NameServers DNS 服务器数组
+                     * 获取<p>DNS 服务器数组</p>
+                     * @return NameServers <p>DNS 服务器数组</p>
                      * 
                      */
                     std::vector<std::string> GetNameServers() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DNS 服务器数组
+                     * <p>DNS 服务器数组</p>
                      */
                     std::vector<std::string> m_nameServers;
                     bool m_nameServersHasBeenSet;

@@ -1542,7 +1542,7 @@ namespace TencentCloud
                 DescribeConditionsTemplateListOutcomeCallable DescribeConditionsTemplateListCallable(const Model::DescribeConditionsTemplateListRequest& request);
 
                 /**
-                 *列出 Grafana DNS 配置
+                 *列出 Grafana DNS 配置。
                  * @param req DescribeDNSConfigRequest
                  * @return DescribeDNSConfigOutcome
                  */
@@ -1578,7 +1578,7 @@ namespace TencentCloud
                 DescribeExternalClusterUninstallCommandOutcomeCallable DescribeExternalClusterUninstallCommandCallable(const Model::DescribeExternalClusterUninstallCommandRequest& request);
 
                 /**
-                 *列出 Grafana 所有告警通道
+                 *列出 Grafana 所有告警通道。
                  * @param req DescribeGrafanaChannelsRequest
                  * @return DescribeGrafanaChannelsOutcome
                  */
@@ -2007,7 +2007,7 @@ namespace TencentCloud
                 DescribeRemoteWritesOutcomeCallable DescribeRemoteWritesCallable(const Model::DescribeRemoteWritesRequest& request);
 
                 /**
-                 *列出当前grafana实例的所有授权账号
+                 *列出当前grafana实例的所有授权账号.
                  * @param req DescribeSSOAccountRequest
                  * @return DescribeSSOAccountOutcome
                  */

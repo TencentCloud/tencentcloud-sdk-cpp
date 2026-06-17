@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tokenhub/v20260322/model/BindingItem.h>
+#include <tencentcloud/tokenhub/v20260322/model/QuotaInfo.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,34 @@ namespace TencentCloud
                      */
                     bool CreatorHasBeenSet() const;
 
+                    /**
+                     * 获取Token 限额多维度信息。未配置限额时不返回该字段。
+                     * @return QuotaSet Token 限额多维度信息。未配置限额时不返回该字段。
+                     * 
+                     */
+                    std::vector<QuotaInfo> GetQuotaSet() const;
+
+                    /**
+                     * 判断参数 QuotaSet 是否已赋值
+                     * @return QuotaSet 是否已赋值
+                     * 
+                     */
+                    bool QuotaSetHasBeenSet() const;
+
+                    /**
+                     * 获取Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽
+                     * @return QuotaStatus Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽
+                     * 
+                     */
+                    std::string GetQuotaStatus() const;
+
+                    /**
+                     * 判断参数 QuotaStatus 是否已赋值
+                     * @return QuotaStatus 是否已赋值
+                     * 
+                     */
+                    bool QuotaStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +394,18 @@ namespace TencentCloud
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
+
+                    /**
+                     * Token 限额多维度信息。未配置限额时不返回该字段。
+                     */
+                    std::vector<QuotaInfo> m_quotaSet;
+                    bool m_quotaSetHasBeenSet;
+
+                    /**
+                     * Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽
+                     */
+                    std::string m_quotaStatus;
+                    bool m_quotaStatusHasBeenSet;
 
                 };
             }

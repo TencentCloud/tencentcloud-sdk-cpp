@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道 ID
-                     * @return ChannelId 渠道 ID
+                     * 获取<p>渠道 ID</p>
+                     * @return ChannelId <p>渠道 ID</p>
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置渠道 ID
-                     * @param _channelId 渠道 ID
+                     * 设置<p>渠道 ID</p>
+                     * @param _channelId <p>渠道 ID</p>
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道名
-                     * @return ChannelName 渠道名
+                     * 获取<p>渠道名</p>
+                     * @return ChannelName <p>渠道名</p>
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置渠道名
-                     * @param _channelName 渠道名
+                     * 设置<p>渠道名</p>
+                     * @param _channelName <p>渠道名</p>
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取告警通道模板 ID 数组
-                     * @return Receivers 告警通道模板 ID 数组
+                     * 获取<p>告警通道模板 ID 数组</p>
+                     * @return Receivers <p>告警通道模板 ID 数组</p>
                      * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
-                     * 设置告警通道模板 ID 数组
-                     * @param _receivers 告警通道模板 ID 数组
+                     * 设置<p>告警通道模板 ID 数组</p>
+                     * @param _receivers <p>告警通道模板 ID 数组</p>
                      * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdAt <p>创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedAt 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdatedAt <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updatedAt 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updatedAt <p>更新时间</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -152,18 +152,18 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取告警渠道的所有生效组织
+                     * 获取<p>告警渠道的所有生效组织</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrganizationIds 告警渠道的所有生效组织
+                     * @return OrganizationIds <p>告警渠道的所有生效组织</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOrganizationIds() const;
 
                     /**
-                     * 设置告警渠道的所有生效组织
+                     * 设置<p>告警渠道的所有生效组织</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _organizationIds 告警渠道的所有生效组织
+                     * @param _organizationIds <p>告警渠道的所有生效组织</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,37 +179,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道 ID
+                     * <p>渠道 ID</p>
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 渠道名
+                     * <p>渠道名</p>
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 告警通道模板 ID 数组
+                     * <p>告警通道模板 ID 数组</p>
                      */
                     std::vector<std::string> m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 告警渠道的所有生效组织
+                     * <p>告警渠道的所有生效组织</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_organizationIds;
