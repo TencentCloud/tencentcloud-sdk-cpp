@@ -22,7 +22,8 @@ using namespace std;
 
 ResourceConfiguration::ResourceConfiguration() :
     m_cPUHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_storageHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ResourceConfiguration::Deserialize(const rapidjson::Value &v
         m_memoryHasBeenSet = true;
     }
 
+    if (value.HasMember("Storage") && !value["Storage"].IsNull())
+    {
+        if (!value["Storage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceConfiguration.Storage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storage = string(value["Storage"].GetString());
+        m_storageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ResourceConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_memory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ResourceConfiguration::SetMemory(const string& _memory)
 bool ResourceConfiguration::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
+}
+
+string ResourceConfiguration::GetStorage() const
+{
+    return m_storage;
+}
+
+void ResourceConfiguration::SetStorage(const string& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool ResourceConfiguration::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
 }
 

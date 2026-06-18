@@ -190,6 +190,56 @@ BiClient::CreateAuthApiKeyOutcomeCallable BiClient::CreateAuthApiKeyCallable(con
     return prom->get_future();
 }
 
+BiClient::CreateCorpTagOutcome BiClient::CreateCorpTag(const CreateCorpTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCorpTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCorpTagResponse rsp = CreateCorpTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCorpTagOutcome(rsp);
+        else
+            return CreateCorpTagOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCorpTagOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateCorpTagAsync(const CreateCorpTagRequest& request, const CreateCorpTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCorpTagRequest&;
+    using Resp = CreateCorpTagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCorpTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateCorpTagOutcomeCallable BiClient::CreateCorpTagCallable(const CreateCorpTagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCorpTagOutcome>>();
+    CreateCorpTagAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateCorpTagRequest&,
+        CreateCorpTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::CreateDataTableOutcome BiClient::CreateDataTable(const CreateDataTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataTable");
@@ -482,6 +532,56 @@ BiClient::CreateProjectOutcomeCallable BiClient::CreateProjectCallable(const Cre
         const BiClient*,
         const CreateProjectRequest&,
         CreateProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::CreateTagTableOutcome BiClient::CreateTagTable(const CreateTagTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTagTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTagTableResponse rsp = CreateTagTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTagTableOutcome(rsp);
+        else
+            return CreateTagTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTagTableOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::CreateTagTableAsync(const CreateTagTableRequest& request, const CreateTagTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTagTableRequest&;
+    using Resp = CreateTagTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTagTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::CreateTagTableOutcomeCallable BiClient::CreateTagTableCallable(const CreateTagTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTagTableOutcome>>();
+    CreateTagTableAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const CreateTagTableRequest&,
+        CreateTagTableOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1890,6 +1990,56 @@ BiClient::DescribeUserRoleProjectListOutcomeCallable BiClient::DescribeUserRoleP
     return prom->get_future();
 }
 
+BiClient::EditCorpTagOutcome BiClient::EditCorpTag(const EditCorpTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditCorpTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditCorpTagResponse rsp = EditCorpTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditCorpTagOutcome(rsp);
+        else
+            return EditCorpTagOutcome(o.GetError());
+    }
+    else
+    {
+        return EditCorpTagOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::EditCorpTagAsync(const EditCorpTagRequest& request, const EditCorpTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EditCorpTagRequest&;
+    using Resp = EditCorpTagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EditCorpTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::EditCorpTagOutcomeCallable BiClient::EditCorpTagCallable(const EditCorpTagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EditCorpTagOutcome>>();
+    EditCorpTagAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const EditCorpTagRequest&,
+        EditCorpTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::ExportScreenPageOutcome BiClient::ExportScreenPage(const ExportScreenPageRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportScreenPage");
@@ -2290,6 +2440,56 @@ BiClient::ModifyResourceUserGroupResourceOutcomeCallable BiClient::ModifyResourc
     return prom->get_future();
 }
 
+BiClient::ModifyTagTableOutcome BiClient::ModifyTagTable(const ModifyTagTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTagTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTagTableResponse rsp = ModifyTagTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTagTableOutcome(rsp);
+        else
+            return ModifyTagTableOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTagTableOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyTagTableAsync(const ModifyTagTableRequest& request, const ModifyTagTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTagTableRequest&;
+    using Resp = ModifyTagTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTagTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyTagTableOutcomeCallable BiClient::ModifyTagTableCallable(const ModifyTagTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTagTableOutcome>>();
+    ModifyTagTableAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyTagTableRequest&,
+        ModifyTagTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BiClient::ModifyUserDetailInfoOutcome BiClient::ModifyUserDetailInfo(const ModifyUserDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserDetailInfo");
@@ -2482,6 +2682,56 @@ BiClient::ModifyUserRoleProjectOutcomeCallable BiClient::ModifyUserRoleProjectCa
         const BiClient*,
         const ModifyUserRoleProjectRequest&,
         ModifyUserRoleProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BiClient::ModifyUserTagOutcome BiClient::ModifyUserTag(const ModifyUserTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserTagResponse rsp = ModifyUserTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserTagOutcome(rsp);
+        else
+            return ModifyUserTagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserTagOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ModifyUserTagAsync(const ModifyUserTagRequest& request, const ModifyUserTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserTagRequest&;
+    using Resp = ModifyUserTagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BiClient::ModifyUserTagOutcomeCallable BiClient::ModifyUserTagCallable(const ModifyUserTagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserTagOutcome>>();
+    ModifyUserTagAsync(
+    request,
+    [prom](
+        const BiClient*,
+        const ModifyUserTagRequest&,
+        ModifyUserTagOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

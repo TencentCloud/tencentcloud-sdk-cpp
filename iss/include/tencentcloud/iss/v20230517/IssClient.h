@@ -61,8 +61,6 @@
 #include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainResponse.h>
-#include <tencentcloud/iss/v20230517/model/DeleteGatewayRequest.h>
-#include <tencentcloud/iss/v20230517/model/DeleteGatewayResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteOrganizationRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteRecordBackupPlanRequest.h>
@@ -93,14 +91,6 @@
 #include <tencentcloud/iss/v20230517/model/DescribeDomainRegionResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeGBDeviceAddrRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeGBDeviceAddrResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayMonitorRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayMonitorResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayProtocolRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayProtocolResponse.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayVersionRequest.h>
-#include <tencentcloud/iss/v20230517/model/DescribeGatewayVersionResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeOrganizationRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanRequest.h>
@@ -135,10 +125,6 @@
 #include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesResponse.h>
-#include <tencentcloud/iss/v20230517/model/ListGatewayDevicesRequest.h>
-#include <tencentcloud/iss/v20230517/model/ListGatewayDevicesResponse.h>
-#include <tencentcloud/iss/v20230517/model/ListGatewaysRequest.h>
-#include <tencentcloud/iss/v20230517/model/ListGatewaysResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListOrganizationChannelsRequest.h>
@@ -177,8 +163,6 @@
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceStatusRequest.h>
 #include <tencentcloud/iss/v20230517/model/UpdateDeviceStatusResponse.h>
-#include <tencentcloud/iss/v20230517/model/UpdateGatewayRequest.h>
-#include <tencentcloud/iss/v20230517/model/UpdateGatewayResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateOrganizationRequest.h>
 #include <tencentcloud/iss/v20230517/model/UpdateOrganizationResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateRecordBackupPlanRequest.h>
@@ -191,8 +175,6 @@
 #include <tencentcloud/iss/v20230517/model/UpdateRecordTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/UpdateUserDeviceResponse.h>
-#include <tencentcloud/iss/v20230517/model/UpgradeGatewayRequest.h>
-#include <tencentcloud/iss/v20230517/model/UpgradeGatewayResponse.h>
 
 
 namespace TencentCloud
@@ -264,9 +246,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteGatewayResponse> DeleteGatewayOutcome;
-                typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DeleteGatewayRequest&, DeleteGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrganizationResponse> DeleteOrganizationOutcome;
                 typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteOrganizationRequest&, DeleteOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationAsyncHandler;
@@ -312,18 +291,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGBDeviceAddrResponse> DescribeGBDeviceAddrOutcome;
                 typedef std::future<DescribeGBDeviceAddrOutcome> DescribeGBDeviceAddrOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeGBDeviceAddrRequest&, DescribeGBDeviceAddrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGBDeviceAddrAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeGatewayResponse> DescribeGatewayOutcome;
-                typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeGatewayRequest&, DescribeGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeGatewayMonitorResponse> DescribeGatewayMonitorOutcome;
-                typedef std::future<DescribeGatewayMonitorOutcome> DescribeGatewayMonitorOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeGatewayMonitorRequest&, DescribeGatewayMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayMonitorAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeGatewayProtocolResponse> DescribeGatewayProtocolOutcome;
-                typedef std::future<DescribeGatewayProtocolOutcome> DescribeGatewayProtocolOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeGatewayProtocolRequest&, DescribeGatewayProtocolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayProtocolAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeGatewayVersionResponse> DescribeGatewayVersionOutcome;
-                typedef std::future<DescribeGatewayVersionOutcome> DescribeGatewayVersionOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::DescribeGatewayVersionRequest&, DescribeGatewayVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationResponse> DescribeOrganizationOutcome;
                 typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeOrganizationRequest&, DescribeOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAsyncHandler;
@@ -375,12 +342,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListDevicesResponse> ListDevicesOutcome;
                 typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListDevicesRequest&, ListDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListGatewayDevicesResponse> ListGatewayDevicesOutcome;
-                typedef std::future<ListGatewayDevicesOutcome> ListGatewayDevicesOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::ListGatewayDevicesRequest&, ListGatewayDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGatewayDevicesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ListGatewaysResponse> ListGatewaysOutcome;
-                typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::ListGatewaysRequest&, ListGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGatewaysAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListOrganizationChannelNumbersResponse> ListOrganizationChannelNumbersOutcome;
                 typedef std::future<ListOrganizationChannelNumbersOutcome> ListOrganizationChannelNumbersOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListOrganizationChannelNumbersRequest&, ListOrganizationChannelNumbersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationChannelNumbersAsyncHandler;
@@ -438,9 +399,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDeviceStatusResponse> UpdateDeviceStatusOutcome;
                 typedef std::future<UpdateDeviceStatusOutcome> UpdateDeviceStatusOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::UpdateDeviceStatusRequest&, UpdateDeviceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateGatewayResponse> UpdateGatewayOutcome;
-                typedef std::future<UpdateGatewayOutcome> UpdateGatewayOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::UpdateGatewayRequest&, UpdateGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationResponse> UpdateOrganizationOutcome;
                 typedef std::future<UpdateOrganizationOutcome> UpdateOrganizationOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::UpdateOrganizationRequest&, UpdateOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationAsyncHandler;
@@ -459,9 +417,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateUserDeviceResponse> UpdateUserDeviceOutcome;
                 typedef std::future<UpdateUserDeviceOutcome> UpdateUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::UpdateUserDeviceRequest&, UpdateUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserDeviceAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpgradeGatewayResponse> UpgradeGatewayOutcome;
-                typedef std::future<UpgradeGatewayOutcome> UpgradeGatewayOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::UpgradeGatewayRequest&, UpgradeGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGatewayAsyncHandler;
 
 
 
@@ -640,15 +595,6 @@ namespace TencentCloud
                 DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request);
 
                 /**
-                 *用于删除网关。
-                 * @param req DeleteGatewayRequest
-                 * @return DeleteGatewayOutcome
-                 */
-                DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest &request);
-                void DeleteGatewayAsync(const Model::DeleteGatewayRequest& request, const DeleteGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteGatewayOutcomeCallable DeleteGatewayCallable(const Model::DeleteGatewayRequest& request);
-
-                /**
                  *用于删除组织。
                  * @param req DeleteOrganizationRequest
                  * @return DeleteOrganizationOutcome
@@ -782,42 +728,6 @@ namespace TencentCloud
                 DescribeGBDeviceAddrOutcome DescribeGBDeviceAddr(const Model::DescribeGBDeviceAddrRequest &request);
                 void DescribeGBDeviceAddrAsync(const Model::DescribeGBDeviceAddrRequest& request, const DescribeGBDeviceAddrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGBDeviceAddrOutcomeCallable DescribeGBDeviceAddrCallable(const Model::DescribeGBDeviceAddrRequest& request);
-
-                /**
-                 *用于获取网关详情。
-                 * @param req DescribeGatewayRequest
-                 * @return DescribeGatewayOutcome
-                 */
-                DescribeGatewayOutcome DescribeGateway(const Model::DescribeGatewayRequest &request);
-                void DescribeGatewayAsync(const Model::DescribeGatewayRequest& request, const DescribeGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeGatewayOutcomeCallable DescribeGatewayCallable(const Model::DescribeGatewayRequest& request);
-
-                /**
-                 *用于获取网关的数据及流量监控信息。
-                 * @param req DescribeGatewayMonitorRequest
-                 * @return DescribeGatewayMonitorOutcome
-                 */
-                DescribeGatewayMonitorOutcome DescribeGatewayMonitor(const Model::DescribeGatewayMonitorRequest &request);
-                void DescribeGatewayMonitorAsync(const Model::DescribeGatewayMonitorRequest& request, const DescribeGatewayMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeGatewayMonitorOutcomeCallable DescribeGatewayMonitorCallable(const Model::DescribeGatewayMonitorRequest& request);
-
-                /**
-                 *用于查询网关接入协议。
-                 * @param req DescribeGatewayProtocolRequest
-                 * @return DescribeGatewayProtocolOutcome
-                 */
-                DescribeGatewayProtocolOutcome DescribeGatewayProtocol(const Model::DescribeGatewayProtocolRequest &request);
-                void DescribeGatewayProtocolAsync(const Model::DescribeGatewayProtocolRequest& request, const DescribeGatewayProtocolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeGatewayProtocolOutcomeCallable DescribeGatewayProtocolCallable(const Model::DescribeGatewayProtocolRequest& request);
-
-                /**
-                 *查询网关服务版本
-                 * @param req DescribeGatewayVersionRequest
-                 * @return DescribeGatewayVersionOutcome
-                 */
-                DescribeGatewayVersionOutcome DescribeGatewayVersion(const Model::DescribeGatewayVersionRequest &request);
-                void DescribeGatewayVersionAsync(const Model::DescribeGatewayVersionRequest& request, const DescribeGatewayVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeGatewayVersionOutcomeCallable DescribeGatewayVersionCallable(const Model::DescribeGatewayVersionRequest& request);
 
                 /**
                  *用于查询组织。
@@ -972,24 +882,6 @@ namespace TencentCloud
                 ListDevicesOutcome ListDevices(const Model::ListDevicesRequest &request);
                 void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request);
-
-                /**
-                 *用于查询网关下挂载的设备列表。
-                 * @param req ListGatewayDevicesRequest
-                 * @return ListGatewayDevicesOutcome
-                 */
-                ListGatewayDevicesOutcome ListGatewayDevices(const Model::ListGatewayDevicesRequest &request);
-                void ListGatewayDevicesAsync(const Model::ListGatewayDevicesRequest& request, const ListGatewayDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListGatewayDevicesOutcomeCallable ListGatewayDevicesCallable(const Model::ListGatewayDevicesRequest& request);
-
-                /**
-                 *用于获取网关列表。
-                 * @param req ListGatewaysRequest
-                 * @return ListGatewaysOutcome
-                 */
-                ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest &request);
-                void ListGatewaysAsync(const Model::ListGatewaysRequest& request, const ListGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ListGatewaysOutcomeCallable ListGatewaysCallable(const Model::ListGatewaysRequest& request);
 
                 /**
                  *用于查询组织目录下的未添加到实时上云计划中的通道数量
@@ -1163,15 +1055,6 @@ namespace TencentCloud
                 UpdateDeviceStatusOutcomeCallable UpdateDeviceStatusCallable(const Model::UpdateDeviceStatusRequest& request);
 
                 /**
-                 *用于修改网关信息（支持对网关名称和描述的修改）。
-                 * @param req UpdateGatewayRequest
-                 * @return UpdateGatewayOutcome
-                 */
-                UpdateGatewayOutcome UpdateGateway(const Model::UpdateGatewayRequest &request);
-                void UpdateGatewayAsync(const Model::UpdateGatewayRequest& request, const UpdateGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateGatewayOutcomeCallable UpdateGatewayCallable(const Model::UpdateGatewayRequest& request);
-
-                /**
                  *用于修改组织。
                  * @param req UpdateOrganizationRequest
                  * @return UpdateOrganizationOutcome
@@ -1224,15 +1107,6 @@ namespace TencentCloud
                 UpdateUserDeviceOutcome UpdateUserDevice(const Model::UpdateUserDeviceRequest &request);
                 void UpdateUserDeviceAsync(const Model::UpdateUserDeviceRequest& request, const UpdateUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateUserDeviceOutcomeCallable UpdateUserDeviceCallable(const Model::UpdateUserDeviceRequest& request);
-
-                /**
-                 *用于网关升级（支持对所有待更新的服务一键升级）。
-                 * @param req UpgradeGatewayRequest
-                 * @return UpgradeGatewayOutcome
-                 */
-                UpgradeGatewayOutcome UpgradeGateway(const Model::UpgradeGatewayRequest &request);
-                void UpgradeGatewayAsync(const Model::UpgradeGatewayRequest& request, const UpgradeGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpgradeGatewayOutcomeCallable UpgradeGatewayCallable(const Model::UpgradeGatewayRequest& request);
 
             };
         }
